@@ -6,7 +6,7 @@
 
 | # | 赛题要求 | 在本提交中的位置 |
 |---|---|---|
-| 1 | **数据集文件**，提供互联网可访问开源链接，明确标注 **Sci-Align 或 Sci-Evo** | [`dataset_link.md`](dataset_link.md) — 指向公开数据集（OpenDataLab / Hugging Face）；标注为 **Sci-Evo** |
+| 1 | **数据集文件**，提供互联网可访问开源链接，明确标注 **Sci-Align 或 Sci-Evo** | ✅ **https://github.com/Zhao-Xinda/Sci-Evo_MinerU_xinda** — 237 条 trace 已通过 GitHub 公开；详见 [`dataset_link.md`](dataset_link.md)；标注为 **Sci-Evo** |
 | 2 | **原始数据样例**（可选但建议） | [`original_data_samples/`](original_data_samples/) — 5 篇用于构造样本 trace 的源 OA PDF |
 | 3 | **完整技术报告**：含数据集简介、设计方案、结构说明（字段/来源/标注/质量评估）、≥10 条完整样例、使用方式、应用场景 | [`technical_report.md`](technical_report.md) — 12 节，覆盖全部要求；§6 含 10 个 worked example，深度叙事在 [`walkthroughs/`](walkthroughs/) |
 | 4 | **数据集构建方案** — 处理/加工说明，可追溯、可解析、合规；**禁止虚构科学**；**禁止使用未授权数据** | [`technical_report.md`](technical_report.md) §4（pipeline）+ §10（合规/伦理）；每条记录的 `_provenance` 区块记录每个模型、batch_id、时间戳 |
@@ -17,7 +17,7 @@
 
 | 项目 | 状态 |
 |---|---|
-| 代码开源到 **GitHub** | ✅ 仓库 URL 在 [`code_repo.md`](code_repo.md)；MIT（代码）+ CC-BY-4.0（数据集标注与 Schema） |
+| 代码开源到 **GitHub** | ✅ **https://github.com/Zhao-Xinda/Sci-Evo_MinerU_xinda** — MIT（代码）+ CC-BY-4.0（数据集标注与 Schema），详见 [`code_repo.md`](code_repo.md) |
 | **PPT / 视频** 介绍项目 | ⏳ 提交前补充 |
 
 ## 自审 — 数据集是否真正体现 Sci-Evo
@@ -35,8 +35,8 @@
 
 ## 提交前最终自检
 
-- [ ] [`dataset_link.md`](dataset_link.md) 中的公开数据集链接可访问
-- [ ] [`code_repo.md`](code_repo.md) 中的 GitHub 链接可访问
+- [x] [`dataset_link.md`](dataset_link.md) 中的公开数据集链接可访问 — GitHub 仓库已就位
+- [x] [`code_repo.md`](code_repo.md) 中的 GitHub 链接可访问 — https://github.com/Zhao-Xinda/Sci-Evo_MinerU_xinda
 - [ ] [`samples/`](samples/) 下 10 条样本 trace JSON 全部能解析、且通过 [`schema/sci_evo_total_synthesis.schema.json`](schema/sci_evo_total_synthesis.schema.json) 校验
 - [ ] [`original_data_samples/`](original_data_samples/) 下的 PDF 都能打开并对应到正确 DOI
 - [ ] 每条样本的 `_provenance` 区块中的 MinerU `batch_id` 真实有效（可通过 `result_zip_url` 复取）

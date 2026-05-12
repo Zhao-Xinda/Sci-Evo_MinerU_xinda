@@ -7,12 +7,15 @@
 
 ## 公开访问
 
-数据集将在以下平台发布：
+**当前已开放（GitHub）：** **https://github.com/Zhao-Xinda/Sci-Evo_MinerU_xinda**
+— 完整 pipeline 源码、Schema、237 条 trace 数据均已开源，可通过 `git clone` 直接获取。
+trace JSON 位于 [`data/traces/`](data/traces/)，Schema 位于 [`schema/`](schema/)。
 
-- **主镜像 — OpenDataLab：** `https://opendatalab.com/<上传后填写>`
-- **副镜像 — Hugging Face：** `https://huggingface.co/datasets/<上传后填写>`
+**计划镜像：**
+- OpenDataLab：`https://opendatalab.com/<待上传>`
+- Hugging Face：`https://huggingface.co/datasets/<待上传>`
 
-最终提交时两个 URL 会替换为生效的链接。
+最终提交时两个镜像 URL 会补全。提交评审期间，GitHub 仓库本身即承担"互联网可访问数据内容的开源数据集链接"的角色。
 
 ## Dataset Card
 

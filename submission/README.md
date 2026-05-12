@@ -4,6 +4,9 @@
 **提交截止：** 2026-05-24
 **许可：** CC-BY-4.0（数据结构与标注）；每篇论文原始 OA 协议在每条记录中保留
 
+**🔗 代码仓库（GitHub）：** **https://github.com/Zhao-Xinda/Sci-Evo_MinerU_xinda**
+（含完整 pipeline 源码、237 条 trace 数据、Schema、技术报告；MIT 代码协议 + CC-BY-4.0 数据协议）
+
 ---
 
 ## 本提交目录内容
@@ -50,8 +53,9 @@
 完整 pipeline 在公开代码仓库（参见 [`code_repo.md`](code_repo.md)）。最简单的端到端冒烟流程：
 
 ```bash
-git clone <repo>
-cd minerU-1
+git clone https://github.com/Zhao-Xinda/Sci-Evo_MinerU_xinda.git
+cd Sci-Evo_MinerU_xinda
+cd Sci-Evo_MinerU_xinda
 pip install -r requirements.txt
 export MINERU_TOKEN=<token>          # 用于云端解析
 export OPENROUTER_API_KEY=<key>      # 用于 SMILES + trace 抽取

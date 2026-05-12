@@ -1,6 +1,6 @@
 # 代码仓库
 
-**仓库地址：** `https://github.com/<待填>` （仓库公开后填写完整 URL — 代码本地已就绪可直接推）
+**仓库地址：** **https://github.com/Zhao-Xinda/Sci-Evo_MinerU_xinda**
 
 **许可：**
 - Pipeline 源代码：**MIT**
@@ -47,7 +47,7 @@ minerU-1/
 ## 快速复现
 
 ```bash
-git clone https://github.com/<待填>
+git clone https://github.com/Zhao-Xinda/Sci-Evo_MinerU_xinda.git
 cd minerU-1
 pip install -r requirements.txt
 export MINERU_TOKEN=<token>
@@ -68,4 +68,4 @@ python src/extract_walkthroughs.py
 
 ## 本提交对应的分支 / commit
 
-本提交对应代码仓库 `main` 分支的 commit `<待填>`。发布数据集时 `_release.commit_hash` 字段会记录精确 commit。
+本提交对应代码仓库 `main` 分支的 commit `e231eea`（首次公开发布）。发布数据集时 `_release.commit_hash` 字段会记录精确 commit。
