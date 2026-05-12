@@ -1,0 +1,355 @@
+{
+  "trace_id": "TS-PMC12993919",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-Raistrickindole A",
+    "smiles": "O=C1N[C@@H](Cc2ccccc2)C(=O)N2[C@@H]3[C@@H](Nc4ccccc4[C@@H]3O)O[C@H]12",
+    "natural_product_class": "indole diketopiperazine alkaloid",
+    "structural_features": {
+      "stereocenters": 4,
+      "key_motifs": [
+        "N-oxy-2,5-diketopiperazine",
+        "tetrahydro-1,2-oxazine",
+        "indole"
+      ]
+    },
+    "motivation": "N-oxy-2,5-diketopiperazines (N-oxy-DKPs) are found in a variety of bioactive natural products and present a significant synthetic challenge due to the highly sensitive N-O bond. (+)-Raistrickindole A exhibits modest hepatitis C antiviral activity, underscoring its potential as a structurally unique lead compound.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Bates",
+        "year": 2022,
+        "doi": "10.1021/acs.joc.2c01900",
+        "key_strategy": "biomimetic approach via intramolecular Mitsunobu reaction of a hydroxamic acid intermediate, followed by stereoselective oxidation and ring closure"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Successful synthesis of (+)-raistrickindole A (1) via a stereochemical relay strategy, featuring a regio- and diastereoselective intermolecular nitroso Diels-Alder (NDA) cycloaddition and a subsequent diastereoselective Mukaiyama hydration."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-N bond of the diketopiperazine ring",
+        "named_strategy": "intramolecular peptide coupling",
+        "reasoning": "To form the diketopiperazine core from a linear precursor."
+      },
+      {
+        "bond_description": "C-O and N-C bonds of the 1,2-oxazine ring",
+        "named_strategy": "intermolecular nitroso Diels-Alder (NDA) cycloaddition",
+        "reasoning": "Expected to diastereoselectively furnish the cycloadduct with a trisubstituted olefin poised for further functionalization, relaying stereocontrol from a single asymmetric center."
+      }
+    ],
+    "rationale": "The synthetic design anticipated the formation of the 1,2-oxazine core via an intermolecular nitroso Diels-Alder (NDA) cycloaddition between a conjugated indole and a phenylalanine-derived acyl nitroso species. This cycloaddition was expected to diastereoselectively furnish a cycloadduct with a trisubstituted olefin, enabling subsequent diastereotopic face- and regioselective functionalization to install the requisite hydroxyl group. Stereocontrol would be relayed from a single asymmetric center."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Nosyl-protected indole-3-carbaldehyde (17) is a known starting material.",
+        "gap": "Need to homologate the aldehyde to an enoate.",
+        "decision": "To homologate indole-3-carbaldehyde (17) to the enoate (18), chose the Masamune-Roush modified Horner-Wadsworth-Emmons olefination, expecting good yield and E-selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1cn(S(=O)(=O)c2ccc(F)cc2)c2ccccc12"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C=Cc1cn(S(=O)(=O)c2ccc(F)cc2)c2ccccc12"
+        ],
+        "reagents": [
+          "CCOC(=O)CP(=O)(OCC)OCC",
+          "LiCl",
+          "N1C=CC=C2N(CCC1)CCCC2"
+        ],
+        "solvent": "CC#N",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "The derived enoate (18) was obtained in excellent yield."
+      },
+      "evidence": {
+        "text_span": "Our synthesis of $( + )$ -raistrickindole A (1) commenced with nosyl-protected indole-3-carbaldehyde (17),15 which was homologated with triethyl phosphonoacetate using the Masamune−Roush modified Horner−Wadsworth−Emmons olefination.16 Sequential treatment of the derived enoate (18) with DIBAL-H, followed by TBS-Cl, produced silyl ether 13 in an excellent yield over the two steps (Scheme 2A).",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enoate 18 is available.",
+        "gap": "Need to reduce the ester and protect the resulting alcohol to form the diene 13.",
+        "decision": "To convert enoate (18) to silyl ether (13), chose sequential DIBAL-H reduction and TBS-Cl protection, expecting an excellent overall yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1cn(S(=O)(=O)c2ccc(F)cc2)c2ccccc12"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[Si](C)(C)OCC=Cc1cn(S(=O)(=O)c2ccc(F)cc2)c2ccccc12"
+        ],
+        "reagents": [
+          "CC(C)C[Al]CC(C)C",
+          "CC(C)(C)[Si](C)(C)Cl",
+          "c1cnc[nH]1"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C; 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Silyl ether 13 was produced in an excellent yield over the two steps."
+      },
+      "evidence": {
+        "text_span": "Sequential treatment of the derived enoate (18) with DIBAL-H, followed by TBS-Cl, produced silyl ether 13 in an excellent yield over the two steps (Scheme 2A).",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diene 13 is available. The key step is an intermolecular nitroso Diels-Alder (NDA) cycloaddition.",
+        "gap": "Need to react diene 13 with a phenylalanine-derived acyl nitroso species to form the 1,2-oxazine core.",
+        "decision": "To construct the 1,2-oxazine core, chose to expose diene 13 to N-Boc-protected phenylalanine hydroxamic acid (19) in the presence of phenyliodine(III) diacetate (PIDA), expecting the desired cycloadduct (15) with high regio- and diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(C)(C)OC(=O)NC(C[C@H](N)C(=O)O)C(=O)NO"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)N[C@@H](Cc1ccccc1)C(=O)NO[C@H]1[C@H](CO[Si](C)(C)C(C)(C)C)C=C2C=CC=CC2N1S(=O)(=O)c1ccc([N+](=O)[O-])cc1"
+        ],
+        "reagents": [
+          "I(OC(C)=O)OC(C)=O"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 to -20 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "The desired cycloadduct (15) was produced in excellent yield as the only isolable product, with high regio- and diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "As illustrated in Scheme 2B, exposure of diene 13 to N-Bocprotected phenylalanine hydroxamic acid (19)17 in the presence of phenyliodine(III) diacetate (PIDA) produced the desired cycloadduct (15) in excellent yield as the only isolable product.18 Further, as illustrated, the high regio- and diastereoselectivity of the intermolecular NDA cycloaddition can be rationalized by a transition state wherein the dienophilic acyl nitroso unit is engaged in a six-membered intramolecular hydrogen bond with the amide proton, thereby imparting a facial bias which, in combination with an endoselective NDA, enables 1,4-asymmetric induction from the single stereogenic center.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cycloadduct 15 is available, containing a trisubstituted olefin.",
+        "gap": "Need to diastereoselectively install the tertiary alcohol.",
+        "decision": "To install the tertiary alcohol, chose modified Mukaiyama hydration conditions reported by Echavarren, including an oxygen atmosphere and lower reaction temperatures, expecting the desired tertiary alcohol (16)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N[C@@H](Cc1ccccc1)C(=O)N1C[C@H](C[Si](C)(C)OC(C)(C)C)N(S(=O)(=O)c2ccccc2)C2=C3C=CC=CC3N2O1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)N[C@@H](Cc1ccccc1)C(=O)N1C[C@H](C[Si](C)(C)OC(C)(C)C)N(S(=O)(=O)c2ccccc2O)C2=C3C=CC=CC3N2O1"
+        ],
+        "reagents": [
+          "Mn(dpm)3",
+          "[Na+].[BH4-]",
+          "O2",
+          "3A MS"
+        ],
+        "solvent": "ClCCl/CCO",
+        "temperature": "-78 to 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "The desired tertiary alcohol (16) was obtained."
+      },
+      "evidence": {
+        "text_span": "After screening a number of Mukaiyama hydration conditions, we were delighted to obtain the desired tertiary alcohol (16) by employing slight modifications of conditions reported by Echavarren that included use of an oxygen atmosphere and lower reaction temperatures (see Supporting Information).",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tertiary alcohol 16 is available. The next steps involve deprotection and oxidation to prepare for cyclization.",
+        "gap": "Need to remove the TBS protecting group, oxidize the primary alcohol to a carboxylic acid, and deprotect the Boc group.",
+        "decision": "To prepare for cyclization, chose a one-pot desilylation and Jones oxidation of 16, followed by exposure to hydrochloric acid to remove the Boc protecting group, expecting the corresponding hydrochloric acid salt (20)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N[C@@H](Cc1ccccc1)C(=O)N1C[C@H](C[Si](C)(C)OC(C)(C)C)N(S(=O)(=O)c2ccccc2O)C2=C3C=CC=CC3N2O1"
+        ],
+        "product_smiles": [
+          "Cl.N[C@@H](Cc1ccccc1)C(=O)N1C[C@H](C(=O)O)N(S(=O)(=O)c2ccccc2O)C2=C3C=CC=CC3N2O1"
+        ],
+        "reagents": [
+          "CrO3",
+          "H2O",
+          "OS(=O)(=O)O",
+          "Cl"
+        ],
+        "solvent": "CC(=O)C",
+        "temperature": "0 °C; 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "The hydrochloric acid salt (20) was delivered in 75% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent one-pot desilylation and Jones oxidation of 16 afforded an intermediate carboxylic acid which, without purification, was exposed to hydrochloric acid to remove the Boc protecting group and deliver the corresponding hydrochloric acid salt (20) in $7 5 \\%$ yield.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Hydrochloric acid salt 20 is available, containing the necessary functional groups for cyclization.",
+        "gap": "Need to form the diketopiperazine ring.",
+        "decision": "To assemble the tetracyclic framework, chose to subject 20 to 2-ethoxy-1-ethoxycarbonyl-1,2-dihydroquinoline (EEDQ)-mediated intramolecular peptide coupling, expecting the DKP (21)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cl.N[C@@H](Cc1ccccc1)C(=O)N1C[C@H](C(=O)O)N(S(=O)(=O)c2ccccc2O)C2=C3C=CC=CC3N2O1"
+        ],
+        "product_smiles": [
+          "O=C1N[C@@H](Cc2ccccc2)C(=O)N2ON3C(=C4C=CC=CC43)N(S(=O)(=O)c3ccccc3)C2[C@@H]1O"
+        ],
+        "reagents": [
+          "CCOC(=O)C1=C(OCC)NCCC1"
+        ],
+        "solvent": "CCO",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "observation": "The resultant DKP (21) was obtained."
+      },
+      "evidence": {
+        "text_span": "The tetracyclic framework of $( + )$ -raistrickindole A (1) was assembled by subjecting 20 to 2-ethoxy-1-ethoxycarbonyl-1,2-dihydroquinoline (EEDQ)-mediated intramolecular peptide coupling.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "DKP 21 is available, which is a protected form of the target molecule.",
+        "gap": "Need to remove the nosyl protecting group to obtain (+)-raistrickindole A.",
+        "decision": "To complete the synthesis, chose to treat DKP (21) with thiophenol to remove the nosyl protecting group, expecting (+)-raistrickindole A (1)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1N[C@@H](Cc2ccccc2)C(=O)N2ON3C(=C4C=CC=CC43)N(S(=O)(=O)c3ccccc3)C2[C@@H]1O"
+        ],
+        "product_smiles": [
+          "O=C1N[C@@H](Cc2ccccc2)C(=O)N2[C@@H]3[C@@H](Nc4ccccc4[C@@H]3O)O[C@H]12"
+        ],
+        "reagents": [
+          "C1=CC=C(S)C=C1",
+          "[Cs+].[Cs+].[O-]C([O-])=O"
+        ],
+        "solvent": "CC#N",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "Product 1 was produced in a good yield."
+      },
+      "evidence": {
+        "text_span": "Finally, treatment of the resultant DKP (21) with thiophenol removed the nosyl protecting group, thus producing 1 in a good yield.",
+        "section": "main text"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield not explicitly stated, but individual steps are high yielding."
+      },
+      "Longest Linear Steps": {
+        "value": 7,
+        "unit": "steps",
+        "interpretation": "The total number of steps in the longest linear sequence."
+      },
+      "Total Steps": {
+        "value": 7,
+        "unit": "steps",
+        "interpretation": "The total number of synthetic steps reported."
+      }
+    },
+    "significance": "The total synthesis of (+)-raistrickindole A was achieved via a stereochemical relay strategy, featuring a regio- and diastereoselective intermolecular nitroso Diels-Alder (NDA) cycloaddition and a subsequent diastereoselective Mukaiyama hydration. This work expands the scope of stereoselective NDA reactions of amino-acid-derived acyl nitroso intermediates and illustrates the potential utility of this reaction for the synthesis of other N-oxy-DKP-containing compounds."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.6c00417",
+      "pmcid": "PMC12993919",
+      "title": "Total Synthesis of (+)-Raistrickindole A.",
+      "authors": "Jackson AC, Cho YS, Hwang T, Park J, Wood JL.",
+      "journal": "Org Lett",
+      "year": 2026,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC12993919?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/c24e5e11-06e6-40cb-aa65-76593f3d7cfc.zip",
+      "parsed_at": "2026-05-07T15:40:58.792318+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 16,
+    "parseable": 15,
+    "canonicalized": 11,
+    "invalid": 1,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)(C)[Si](C)(C)OCC=C1C=C2C(C=CC=C2)=N1S(=O)(=O)C3=CC=C(C=C3)[N+](=O)[O-]"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

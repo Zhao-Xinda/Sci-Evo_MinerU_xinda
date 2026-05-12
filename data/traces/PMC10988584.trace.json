@@ -1,0 +1,1106 @@
+{
+  "trace_id": "TS-PMC10988584",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "20,21-dihydroambruticin F",
+    "smiles": "CC[C@@H]1O[C@@H](C)CC[C@@H]1CC(C)=C[C@@H]1C[C@@H]1C=C[C@H]1O[C@H](CC(=O)O)C[C@H](O)[C@H]1O",
+    "natural_product_class": "polyketide",
+    "structural_features": {
+      "stereocenters": 12,
+      "ring_systems": "tetrahydropyran, cyclopropane",
+      "key_motifs": [
+        "tetrahydropyran",
+        "cyclopropane",
+        "polyketide"
+      ]
+    },
+    "motivation": "20,21-dihydroambruticin F is a novel compound, and an authentic sample was required to confirm the structures of accumulated products in gene knockout experiments related to ambruticin biosynthesis. The synthesis also aimed to provide a flexible modular approach for the total synthesis of ambruticins.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "First total synthesis of 20,21-dihydroambruticin F, and a flexible modular approach adaptable for other ambruticins."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C13-C14 alkene",
+        "named_strategy": "Julia-Kocienski olefination",
+        "reasoning": "To unite fragment 12 (C1-C8) and fragment 13 (C9-C13) to form the C1-C13 aldehyde 10.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C20-C21 alkene",
+        "named_strategy": "Julia-Kocienski olefination",
+        "reasoning": "To unite the C1-C13 aldehyde 10 and the C14-C26 sulfone 11 to form the full carbon skeleton of 20,21-dihydroambruticin F.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "12",
+        "smiles": "",
+        "role": "C1-C8 fragment",
+        "comes_from": "degradation of larger molecule"
+      },
+      {
+        "fragment_id": "13",
+        "smiles": "",
+        "role": "C9-C13 fragment",
+        "comes_from": "degradation of larger molecule"
+      },
+      {
+        "fragment_id": "11",
+        "smiles": "CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC",
+        "role": "C14-C26 fragment",
+        "comes_from": "degradation of larger molecule"
+      }
+    ],
+    "rationale": "The strategy involves a flexible modular approach, uniting three fragments (C1-C8, C9-C13, and C14-C26) using two Julia-Kocienski olefinations. This modularity allows for adaptation to synthesize other ambruticins, such as ambruticin F, by simply changing one of the fragments."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C1-C8 fragment (12) was to be prepared via a bioinspired epoxidation–cyclisation cascade based on the proposed selective THP formation in the AmbJ catalysed conversion of ambruticin J to ambruticin F.",
+        "gap": "Need to synthesize the beta-hydroxy ketone 17 from acetylthiazolidinethione 15.",
+        "decision": "To synthesize beta-hydroxy ketone 17, chose asymmetric aldol condensation between E,E-hexadienal and acetylthiazolidinethione 15, followed by a decarboxylative Claisen condensation, expecting to form the desired intermediate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)N1C[C@@H](C(C)C)SC1=S"
+        ],
+        "product_smiles": [
+          "CC=C[C@@H](O)CC(=O)N1C(=S)S[C@@H]1C(C)C"
+        ],
+        "rxn_smiles": "[CH2:1]([CH:2]=[CH:3][CH:4]=[CH:5])[CH:6]([OH:7])[CH2:8][C:9](=[O:10])[N:11]1[C:12](=[S:13])[S:14][CH:15]([C:16]([CH3:17])([CH3:18])[CH3:19])C1",
+        "reagents": [
+          "TiCl4",
+          "DIPEA"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Asymmetric aldol condensation between E,E-hexadienal and acetylthiazolidinethione 15 gave 16."
+      },
+      "evidence": {
+        "text_span": "Asymmetric aldol condensation between $^ { E , E }$ -hexadienal and acetylthiazolidinethione 15, followed by a decarboxylative Claisen condensation gave $\beta$ -hydroxy ketone 17 (Scheme 3A).27",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ace723b6fa76fec57624eb43d8b4e276db9633c16d33d6ac30d1771ba40cb645.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 16 was successfully synthesized.",
+        "gap": "Need to convert 16 to beta-hydroxy ketone 17.",
+        "decision": "To convert 16 to 17, chose a decarboxylative Claisen condensation using ethyl potassium malonate, expecting to form the desired beta-hydroxy ketone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC=C[C@@H](O)CC(=O)N1C(=S)S[C@@H]1C(C)C"
+        ],
+        "product_smiles": [
+          "CC=C[C@H](O)CC(=O)CC(=O)OCC"
+        ],
+        "rxn_smiles": "CC=C[CH:1]([OH:2])[CH2:3][C:4](=[O:5])[N:6]1C[CH:10]([C:11]([CH3:12])([CH3:13])[CH3:14])[S:9][C:7]1=[S:8]>>CC=C[CH:1](CC(=O)CC(=O)OCC)[OH:2]",
+        "reagents": [
+          "MgCl2",
+          "Imidazole",
+          "Ethyl potassium malonate"
+        ],
+        "solvent": "THF",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Decarboxylative Claisen condensation gave beta-hydroxy ketone 17."
+      },
+      "evidence": {
+        "text_span": "Asymmetric aldol condensation between $^ { E , E }$ -hexadienal and acetylthiazolidinethione 15, followed by a decarboxylative Claisen condensation gave $\beta$ -hydroxy ketone 17 (Scheme 3A).27",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ace723b6fa76fec57624eb43d8b4e276db9633c16d33d6ac30d1771ba40cb645.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Beta-hydroxy ketone 17 was successfully synthesized.",
+        "gap": "Need to convert 17 to syn-diol 18.",
+        "decision": "To obtain syn-diol 18, chose stereoselective Narasaka–Prasad reduction of 17, expecting to achieve the desired syn-diol relationship."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC=C[C@H](O)CC(=O)CC(=O)OCC"
+        ],
+        "product_smiles": [
+          "CC=C[C@H](O)CC(O)CC(=O)OCC"
+        ],
+        "rxn_smiles": "CC=C[C@H](O)CC(=O)CC(=O)OCC>>CC=C[C@H](O)CC(O)CC(=O)OCC",
+        "reagents": [
+          "NaBH4",
+          "Et2BOMe"
+        ],
+        "solvent": "MeOH, THF",
+        "temperature": "-78 °C",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "observation": "Stereoselective Narasaka–Prasad reduction of 17 yielded syn-diol 18 in 69% yield over the three steps (from 15). The syn-diol relationship was confirmed by Rychnovsky analysis of the corresponding acetonide."
+      },
+      "evidence": {
+        "text_span": "Stereoselective Narasaka–Prasad reduction of 17 yielded syn-diol 18 in $6 9 \\%$ yield over the three steps. The syn-diol relationship was conrmed by Rychnovsky analysis of the corresponding acetonide (see ESI†).28–30",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ace723b6fa76fec57624eb43d8b4e276db9633c16d33d6ac30d1771ba40cb645.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Syn-diol 18 was successfully synthesized.",
+        "gap": "Need to convert 18 to THP 19.",
+        "decision": "To form THP 19, chose Sharpless asymmetric epoxidation of 18, expecting the intermediate epoxide to undergo selective spontaneous cyclisation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC=C[C@H](O)CC(O)CC(=O)OCC"
+        ],
+        "product_smiles": [
+          "C=C[C@H]1O[C@H](CC(=O)OCC)C[C@H](O)[C@@H]1O"
+        ],
+        "rxn_smiles": "CC=C[C@H](O)CC(O)CC(=O)OCC>>C=C[C@H]1O[C@H](CC(=O)OCC)C[C@H](O)[C@@H]1O",
+        "reagents": [
+          "tBuOOH",
+          "Ti(OiPr)4",
+          "(-)-DIPT"
+        ],
+        "solvent": "DCM",
+        "temperature": "-20 °C",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Conversion of 3,5-dihydroxy ester 18 to THP 19 was achieved via Sharpless asymmetric epoxidation, with the intermediate epoxide undergoing selective spontaneous cyclisation, providing THP 19 in 81% yield. These reactions could be readily conducted on >23 mmol scale."
+      },
+      "evidence": {
+        "text_span": "Conversion of 3,5-dihydroxy ester 18 to THP 19 was achieved via Sharpless asymmetric epoxidation, with the intermediate epoxide undergoing selective spontaneous cyclisation, providing THP 19 in $8 1 \\%$ yield.24,31 These reactions could be readily conducted on ${ > } 2 3$ mmol scale.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ace723b6fa76fec57624eb43d8b4e276db9633c16d33d6ac30d1771ba40cb645.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "THP 19 was successfully synthesized.",
+        "gap": "Need to convert 19 to the desired aldehyde fragment 12.",
+        "decision": "To obtain aldehyde 12, chose protection of the syn-diol as silyl ethers followed by oxidative cleavage of the alkene, expecting to yield the desired aldehyde."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H]1O[C@H](CC(=O)OCC)C[C@H](O)[C@@H]1O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "TBSOTf",
+          "2,6-Lutidine",
+          "K2OsO4.2H2O",
+          "NMO",
+          "NaIO4"
+        ],
+        "solvent": "DCM, H2O, Acetone, THF",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Protection of the syn-diol as silyl ethers followed by oxidative cleavage of the alkene afforded the desired aldehyde fragment 12 in 45% yield over 6 steps from 15."
+      },
+      "evidence": {
+        "text_span": "Protection of the syn-diol as silyl ethers followed by oxidative cleavage of the alkene afforded the desired aldehyde fragment 12 in $4 5 \\%$ yield over 6 steps from 15.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ace723b6fa76fec57624eb43d8b4e276db9633c16d33d6ac30d1771ba40cb645.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "13",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C9-C13 fragment (13) was required.",
+        "gap": "Need to reduce aldehyde 20.",
+        "decision": "To obtain the reduced alcohol, chose reduction of the known aldehyde 20 with DIBAL-H, expecting a high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H]1C[C@@H](CO)C1=O"
+        ],
+        "product_smiles": [
+          "C[C@H]1C[C@@H](CO)C1CO"
+        ],
+        "rxn_smiles": "C[C@H]1C[C@@H](CO)C1=O>>C[C@H]1C[C@@H](CO)C1CO",
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "DCM",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Reduction of the known aldehyde 20 with DIBAL-H gave 21 in 98% yield."
+      },
+      "evidence": {
+        "text_span": "For the C9–C13 fragment (13), reduction of the known aldehyde 20 (ref. 20) with DIBAL-H followed by a Mitsunobu reaction and oxidation with mCPBA provided the phenyl tetrazole sulfone 13 (Scheme 3B).17",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ace723b6fa76fec57624eb43d8b4e276db9633c16d33d6ac30d1771ba40cb645.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "13",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alcohol 21 was successfully synthesized.",
+        "gap": "Need to convert 21 to the phenyl tetrazole sulfone 13.",
+        "decision": "To obtain sulfone 13, chose a Mitsunobu reaction with PT-SH followed by oxidation with mCPBA, expecting to form the desired sulfone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H]1C[C@@H](CO)C1CO"
+        ],
+        "product_smiles": [
+          "C[C@H]1C[C@@H](CO)C1CS(C)(=O)=O"
+        ],
+        "rxn_smiles": "C[C@H]1C[C@@H](CO)C1CO>>C[C@H]1C[C@@H](CO)C1CS(C)(=O)=O",
+        "reagents": [
+          "PT-SH",
+          "DIAD",
+          "PPh3",
+          "mCPBA"
+        ],
+        "solvent": "THF, DCM",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Mitsunobu reaction and oxidation with mCPBA provided the phenyl tetrazole sulfone 13 in 89% yield. Oxidation of the intermediate sulfide was also achieved using molybdate and H2O2 in ethanol giving similar yields of sulfone 13, but the reaction proved less amenable to scale up."
+      },
+      "evidence": {
+        "text_span": "For the C9–C13 fragment (13), reduction of the known aldehyde 20 (ref. 20) with DIBAL-H followed by a Mitsunobu reaction and oxidation with mCPBA provided the phenyl tetrazole sulfone 13 (Scheme 3B).17 Oxidation of the intermediate sulde was also achieved using molybdate and $\\mathbf { H } _ { 2 } \\mathbf { O } _ { 2 }$ in ethanol giving similar yields of sulfone 13, but the reaction proved less amenable to scale up.32",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ace723b6fa76fec57624eb43d8b4e276db9633c16d33d6ac30d1771ba40cb645.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Fragments 12 and 13 were successfully synthesized.",
+        "gap": "Need to couple aldehyde 12 with sulfone 13 to form the E-olefin 22.",
+        "decision": "To form E-olefin 22, chose Julia–Kocienski reaction of aldehyde 12 with sulfone 13, expecting to achieve the required trans-selectivity with LiHMDS in DMF and HMPA."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C[C@H]1C[C@@H](CO)C1CS(C)(=O)=O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "LiHMDS"
+        ],
+        "solvent": "DMF, HMPA",
+        "temperature": "-60 °C to rt",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Julia–Kocienski reaction of aldehyde 12 with sulfone 13 afforded the desired E-olefin 22 in 70% yield. LiHMDS in a mixture of DMF and HMPA was required to achieve the required trans-selectivity, and the reaction was conducted successfully on >7.5 mmol scale."
+      },
+      "evidence": {
+        "text_span": "Julia–Kocienski reaction of aldehyde 12 with sulfone 13 afforded the desired $E$ -olen 22 in $7 0 \\%$ yield. LiHMDS in a mixture of DMF and HMPA was required to achieve the required trans-selectivity in the reaction, which was conducted successfully on $> 7 . 5$ mmol scale.17",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ace723b6fa76fec57624eb43d8b4e276db9633c16d33d6ac30d1771ba40cb645.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "E-olefin 22 was successfully synthesized.",
+        "gap": "Need to selectively deprotect the primary alcohol of 22.",
+        "decision": "To deprotect the primary alcohol, chose TBAF and acetic acid in THF, expecting selective deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "TBAF",
+          "AcOH"
+        ],
+        "solvent": "THF",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Selective deprotection of the primary alcohol with TBAF and acetic acid in THF gave 23 in 81% yield."
+      },
+      "evidence": {
+        "text_span": "Selective deprotection of the primary alcohol with TBAF and acetic acid in THF followed by oxidation with Dess–Martin periodinane (DMP) furnished aldehyde 10 in $7 3 \\%$ yield over the two steps.33",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ace723b6fa76fec57624eb43d8b4e276db9633c16d33d6ac30d1771ba40cb645.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deprotected alcohol 23 was successfully synthesized.",
+        "gap": "Need to oxidize 23 to aldehyde 10.",
+        "decision": "To obtain aldehyde 10, chose oxidation with Dess–Martin periodinane (DMP), expecting to furnish the desired aldehyde."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "DMP"
+        ],
+        "solvent": "DCM",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Oxidation with Dess–Martin periodinane (DMP) furnished aldehyde 10 in 73% yield over the two steps (deprotection and oxidation)."
+      },
+      "evidence": {
+        "text_span": "Selective deprotection of the primary alcohol with TBAF and acetic acid in THF followed by oxidation with Dess–Martin periodinane (DMP) furnished aldehyde 10 in $7 3 \\%$ yield over the two steps.33",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ace723b6fa76fec57624eb43d8b4e276db9633c16d33d6ac30d1771ba40cb645.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The final building block required for the total synthesis of 20,21-dihydroambruticin F (9) was tetrahydropyran 11. Prins cyclisations have been widely used in natural product synthesis.",
+        "gap": "Need to synthesize homoallylic alcohol 25.",
+        "decision": "To obtain homoallylic alcohol 25, chose reaction of trans-but-2-ene with tBuOK, nBuLi, (-)-Ipc2-BOMe, and BF3.OEt2, expecting to form the desired alcohol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC=O"
+        ],
+        "product_smiles": [
+          "C=C[C@H](C)[C@@H](O)CC"
+        ],
+        "rxn_smiles": "CCC=O>>C=C[C@H](C)[C@@H](O)CC",
+        "reagents": [
+          "trans-But-2-ene",
+          "tBuOK",
+          "nBuLi",
+          "(-)-Ipc2-BOMe",
+          "BF3.OEt2"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to -45 °C",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 44,
+        "observation": "Homoallylic alcohol 25 was synthesized in 44% yield."
+      },
+      "evidence": {
+        "text_span": "Reaction of homoallylic alcohol 25 with 2-tert-butyldimethylsilyloxypropanal 26, gave THP 28 with all four substituents in the required equatorial position but in a disappointing $2 7 \\%$ yield due to in situ deprotection of the silyl ether (Scheme 4).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "76573a835858cb8005391029ad943304a9644f6ed62dd29d8de6be0468d21623.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": "11",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Homoallylic alcohol 25 was synthesized. Prins cyclisations were investigated for stereoselective construction of the THP ring.",
+        "gap": "Need to form THP 28 with the required stereochemistry.",
+        "decision": "To form THP 28, chose SnCl4 mediated Prins cyclisation of homoallylic alcohol 25 with 2-tert-butyldimethylsilyloxypropanal 26, expecting stereoselective formation of the THP ring."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](C)[C@@H](O)CC",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "SnCl4"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 27,
+        "failure_mode": "low_yield",
+        "observation": "Reaction of homoallylic alcohol 25 with 2-tert-butyldimethylsilyloxypropanal 26 gave THP 28 with all four substituents in the required equatorial position but in a disappointing 27% yield due to in situ deprotection of the silyl ether."
+      },
+      "evidence": {
+        "text_span": "Reaction of homoallylic alcohol 25 with 2-tert-butyldimethylsilyloxypropanal 26, gave THP 28 with all four substituents in the required equatorial position but in a disappointing $2 7 \\%$ yield due to in situ deprotection of the silyl ether (Scheme 4).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "76573a835858cb8005391029ad943304a9644f6ed62dd29d8de6be0468d21623.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "11",
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "The Prins cyclisation with 2-tert-butyldimethylsilyloxypropanal 26 resulted in low yield due to in situ deprotection of the silyl ether.",
+        "gap": "Need to improve the yield of the Prins cyclisation by using a more robust protecting group.",
+        "decision": "To improve the yield, chose to use the more robust TBDPS protecting group (27) in the Prins cyclisation, expecting a higher yield of THP 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](C)[C@@H](O)CC",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "SnCl4"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 41,
+        "observation": "Using the more robust TBDPS protecting group gave 29 in 41% yield, an improvement over the previous attempt."
+      },
+      "evidence": {
+        "text_span": "Using the more robust TBDPS protecting group gave 29 in $4 1 \\%$ yield.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "76573a835858cb8005391029ad943304a9644f6ed62dd29d8de6be0468d21623.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "THP 29 was successfully synthesized.",
+        "gap": "Need to remove the chlorine atom from 29.",
+        "decision": "To remove the chlorine, chose radical dechlorination of 29 using AIBN and HSnBu3, expecting to form 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "AIBN",
+          "HSnBu3"
+        ],
+        "solvent": "Toluene",
+        "temperature": "80 °C",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "Radical dechlorination of 29 gave 30 in 93% yield."
+      },
+      "evidence": {
+        "text_span": "Radical dechlorination of 29 followed by deprotection of the",
+        "section": "Results and discussion",
+        "image_refs": [
+          "76573a835858cb8005391029ad943304a9644f6ed62dd29d8de6be0468d21623.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 30 was successfully synthesized.",
+        "gap": "Need to deprotect the silyl ether of 30.",
+        "decision": "To deprotect the silyl ether, chose TBAF in THF, expecting to form alcohol 31."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC[C@H]1O[C@H]([C@H](C)O)C[C@@H](C)C[C@@H]1C"
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "THF",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Deprotection of the silyl ether gave 31 in 90% yield."
+      },
+      "evidence": {
+        "text_span": "Radical dechlorination of 29 followed by deprotection of the",
+        "section": "Results and discussion",
+        "image_refs": [
+          "76573a835858cb8005391029ad943304a9644f6ed62dd29d8de6be0468d21623.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alcohol 31 was successfully synthesized.",
+        "gap": "Need to oxidize alcohol 31 to ketone 32.",
+        "decision": "To obtain ketone 32, chose oxidation of 31 with DMP and NaHCO3, expecting a high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H]1O[C@H]([C@H](C)O)C[C@@H](C)C[C@@H]1C"
+        ],
+        "product_smiles": [
+          "CC[C@H]1O[C@H](C(C)=O)C[C@@H](C)C[C@@H]1C"
+        ],
+        "rxn_smiles": "CC[C@H]1O[C@H]([C@H](C)O)C[C@@H](C)C[C@@H]1C>>CC[C@H]1O[C@H](C(C)=O)C[C@@H](C)C[C@@H]1C",
+        "reagents": [
+          "DMP",
+          "NaHCO3"
+        ],
+        "solvent": "DCM",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Oxidation of the resultant alcohol gave ketone 32 in 80% yield over the 3 steps from 29."
+      },
+      "evidence": {
+        "text_span": "Radical dechlorination of 29 followed by deprotection of the silyl ether and subsequent oxidation of the resultant alcohol gave ketone 32 in $8 0 \\%$ yield over the 3 steps from 29.35",
+        "section": "Results and discussion",
+        "image_refs": [
+          "76573a835858cb8005391029ad943304a9644f6ed62dd29d8de6be0468d21623.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "An alternative approach to ketone 32 began with the known DHP 34.",
+        "gap": "Need to synthesize DHP 34 from 33.",
+        "decision": "To obtain DHP 34, chose a 7-step synthesis from 33, expecting to form the desired DHP."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)C=O"
+        ],
+        "product_smiles": [
+          "CC[C@H]1O[C@H]([C@H](C)O)C=C(C)C[C@@H]1C"
+        ],
+        "rxn_smiles": "C=C(C)C=O>>CC[C@H]1O[C@H]([C@H](C)O)C=C(C)C[C@@H]1C",
+        "named_reaction": "unspecified",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 20,
+        "observation": "The known DHP 34 was prepared in 7 steps and 20% overall yield from 33."
+      },
+      "evidence": {
+        "text_span": "An alternative approach to ketone 32 began with the known DHP 34 prepared in 7 steps and $2 0 \\%$ overall yield from 33.20,36",
+        "section": "Results and discussion",
+        "image_refs": [
+          "76573a835858cb8005391029ad943304a9644f6ed62dd29d8de6be0468d21623.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "DHP 34 was successfully synthesized.",
+        "gap": "Need to oxidize 34 to ketone 35.",
+        "decision": "To obtain ketone 35, chose oxidation of 34 with DMP and NaHCO3, expecting a high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H]1O[C@H]([C@H](C)O)C=C(C)C[C@@H]1C"
+        ],
+        "product_smiles": [
+          "CC[C@H]1O[C@H](C(C)=O)C=C(C)C[C@@H]1C"
+        ],
+        "rxn_smiles": "CC[C@H]1O[C@H]([C@H](C)O)C=C(C)C[C@@H]1C>>CC[C@H]1O[C@H](C(C)=O)C=C(C)C[C@@H]1C",
+        "reagents": [
+          "DMP",
+          "NaHCO3"
+        ],
+        "solvent": "DCM",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Oxidation of 34 gave ketone 35 in 96% yield."
+      },
+      "evidence": {
+        "text_span": "Following oxidation of 34, hydrogenation of 35 with Crabtree's catalyst afforded the desired THP fragment 32 in $8 9 \\%$ yield as a single diastereomer (Scheme 4).37",
+        "section": "Results and discussion",
+        "image_refs": [
+          "76573a835858cb8005391029ad943304a9644f6ed62dd29d8de6be0468d21623.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ketone 35 was successfully synthesized.",
+        "gap": "Need to hydrogenate 35 to form the desired THP fragment 32.",
+        "decision": "To obtain THP fragment 32, chose hydrogenation of 35 with Crabtree's catalyst, expecting to afford the desired THP as a single diastereomer due to directed hydrogenation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H]1O[C@H](C(C)=O)C=C(C)C[C@@H]1C"
+        ],
+        "product_smiles": [
+          "CC[C@H]1O[C@H](C(C)=O)C[C@@H](C)C[C@@H]1C"
+        ],
+        "rxn_smiles": "CC[C@H]1O[C@H](C(C)=O)C=C(C)C[C@@H]1C>>CC[C@H]1O[C@H](C(C)=O)C[C@@H](C)C[C@@H]1C",
+        "reagents": [],
+        "catalyst": "Crabtree's catalyst",
+        "solvent": "DCM",
+        "atmosphere": "H2",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Hydrogenation of 35 with Crabtree's catalyst afforded the desired THP fragment 32 in 89% yield as a single diastereomer. The observed selectivity was rationalised by hydrogenation being directed to the top face of the alkene by the ketone."
+      },
+      "evidence": {
+        "text_span": "Following oxidation of 34, hydrogenation of 35 with Crabtree's catalyst afforded the desired THP fragment 32 in $8 9 \\%$ yield as a single diastereomer (Scheme 4).37 The observed selectivity was rationalised by hydrogenation being directed to the top face of the alkene by the ketone.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "76573a835858cb8005391029ad943304a9644f6ed62dd29d8de6be0468d21623.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ketone 32 was successfully synthesized by two different routes.",
+        "gap": "Need to couple ketone 32 with phosphorus diamide 36.",
+        "decision": "To form the alkene, chose coupling ketone 32 with known phosphorus diamide 36 under conditions developed by Hanessian, expecting to obtain the desired alkene with good selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H]1O[C@H](C(C)=O)C[C@@H](C)C[C@@H]1C",
+          "CC[C@H](C)COP(=O)(N(C)C)N1CCN(C)CC1"
+        ],
+        "product_smiles": [
+          "CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC"
+        ],
+        "rxn_smiles": "CC[C@H]1O[C@H](C(C)=O)C[C@@H](C)C[C@@H]1C.CC[C@H](C)COP(=O)(N(C)C)N1CCN(C)CC1>>CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC",
+        "named_reaction": "Hanessian olefination",
+        "reagents": [
+          "nBuLi"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 49,
+        "regio_selectivity": "15:1 alkene isomers",
+        "observation": "Ketone 32 was coupled with known phosphorus diamide 36. The olefination provided a 15:1 mixture of alkene isomers."
+      },
+      "evidence": {
+        "text_span": "Ketone 32 was coupled with known phosphorus diamide 36 under conditions developed by Hanessian in the total synthesis of ambruticin S (Scheme 5).19 The olenation provided a 15 : 1 mixture of alkene isomers which, aer silyl deprotection, were separated to afford the desired $E$ -alkene 38 in $3 9 \\%$ yield over the two steps.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "478ad675fe5ad176d8e32fe750fe3aa75e63f1afac1894040419c5aa370f300d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkene 37 was successfully synthesized.",
+        "gap": "Need to deprotect the silyl ether of 37.",
+        "decision": "To deprotect the silyl ether, chose TBAF in THF, expecting to form alcohol 38."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC"
+        ],
+        "product_smiles": [
+          "CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC"
+        ],
+        "rxn_smiles": "CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC>>CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC",
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "THF",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "After silyl deprotection, the desired E-alkene 38 was afforded in 39% yield over the two steps (olefination and deprotection)."
+      },
+      "evidence": {
+        "text_span": "Ketone 32 was coupled with known phosphorus diamide 36 under conditions developed by Hanessian in the total synthesis of ambruticin S (Scheme 5).19 The olenation provided a 15 : 1 mixture of alkene isomers which, aer silyl deprotection, were separated to afford the desired $E$ -alkene 38 in $3 9 \\%$ yield over the two steps.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "478ad675fe5ad176d8e32fe750fe3aa75e63f1afac1894040419c5aa370f300d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alcohol 38 was successfully synthesized.",
+        "gap": "Need to convert alcohol 38 to the corresponding phenyl tetrazole sulfone 11.",
+        "decision": "To obtain sulfone 11, chose a sequence of Mitsunobu coupling and subsequent oxidation of the intermediate sulfide, expecting a smooth conversion."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC"
+        ],
+        "product_smiles": [
+          "CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC"
+        ],
+        "rxn_smiles": "CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC>>CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC",
+        "named_reaction": "Mitsunobu reaction",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Conversion of alcohol 38 to the corresponding phenyl tetrazole sulfone 11 (fragment 3) proceeded smoothly through a sequence of Mitsunobu coupling and subsequent oxidation of the intermediate sulfide."
+      },
+      "evidence": {
+        "text_span": "Finally, conversion of alcohol 38 to the corresponding phenyl tetrazole sulfone 11 (fragment 3) proceeded smoothly through a sequence of Mitsunobu coupling and subsequent oxidation of the intermediate sulde.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "478ad675fe5ad176d8e32fe750fe3aa75e63f1afac1894040419c5aa370f300d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Aldehyde 10 and sulfone 11 were successfully synthesized.",
+        "gap": "Need to couple 10 and 11 to form the final alkene.",
+        "decision": "To form the alkene, chose deprotonation of sulfone 11 with 1.2 equivalents of KHMDS in DME, followed by treatment with 1.2 equivalents of aldehyde 10, expecting to form the desired alkene."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "DME",
+        "temperature": "-60 °C to rt",
+        "stoichiometry": {
+          "KHMDS": "1.2 equiv",
+          "aldehyde 10": "1.2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 40,
+        "failure_mode": "low_yield",
+        "observation": "Deprotonation of sulfone 11 with 1.2 equivalents of KHMDS in DME, followed by treatment with 1.2 equivalents of aldehyde 10 gave an inseparable mixture of alkene isomers [E/Z = 10:1] in 40% yield."
+      },
+      "evidence": {
+        "text_span": "Deprotonation of sulfone 11 with 1.2 equivalents of KHMDS in DME, followed by treatment with 1.2 equivalents of aldehyde 10 gave an inseparable mixture of alkene isomers $[ E/Z$ $= 1 0 : 1 ]$ in $4 0 \\%$ yield.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "478ad675fe5ad176d8e32fe750fe3aa75e63f1afac1894040419c5aa370f300d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 23,
+      "thought": {
+        "background": "The previous coupling attempt yielded only 40% of the desired alkene.",
+        "gap": "Need to improve the yield of the coupling reaction.",
+        "decision": "To improve the yield, chose to use NaHMDS in a mixture of THF and HMPA, expecting an improved yield, though potentially with reduced stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C)C=C(C)C[C@H]1CC[C@H](C)O[C@H]1CC",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "NaHMDS"
+        ],
+        "solvent": "THF, HMPA",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "regio_selectivity": "3:1 E/Z",
+        "observation": "The use of NaHMDS in a mixture of THF and HMPA resulted in an improved yield of 78% for the required coupling but reduced the stereoselectivity (E/Z = 3:1). A screen of further solvents and bases failed to improve either the yield or selectivity."
+      },
+      "evidence": {
+        "text_span": "The use of NaHMDS in a mixture of THF and HMPA resulted in an improved yield of $78 \\%$ for the required coupling but reduced the stereoselectivity $\\left( E/Z = 3 : 1 \\right)$ . A screen of further solvents and bases failed to improve either the yield or selectivity.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "478ad675fe5ad176d8e32fe750fe3aa75e63f1afac1894040419c5aa370f300d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkene 39 was successfully synthesized.",
+        "gap": "Need to deprotect the silyl groups of 39.",
+        "decision": "To deprotect the silyl groups, chose TBAF, expecting to form 40."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCOC(=O)C[C@@H]1C[C@H](O)[C@@H](O)[C@@H](C=C[C@H]2C[C@H]2C=C(C)C[C@H]2CC[C@H](C)O[C@H]2CC)O1"
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "THF",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Silyl deprotection of 39 with TBAF gave 40 in 91% yield."
+      },
+      "evidence": {
+        "text_span": "Silyl deprotection of 39 with TBAF followed by hydrolysis of the ethyl ester gave the target, 20,21- dihydroambruticin F (9).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "478ad675fe5ad176d8e32fe750fe3aa75e63f1afac1894040419c5aa370f300d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 40 was successfully synthesized.",
+        "gap": "Need to hydrolyze the ethyl ester of 40 to obtain the target 20,21-dihydroambruticin F (9).",
+        "decision": "To obtain 20,21-dihydroambruticin F (9), chose hydrolysis of the ethyl ester of 40 with LiOH in MeOH/THF/H2O, expecting to yield the final product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C[C@@H]1C[C@H](O)[C@@H](O)[C@@H](C=C[C@H]2C[C@H]2C=C(C)C[C@H]2CC[C@H](C)O[C@H]2CC)O1"
+        ],
+        "product_smiles": [
+          "CC[C@@H]1O[C@@H](C)CC[C@@H]1CC(C)=C[C@@H]1C[C@@H]1C=C[C@H]1O[C@H](CC(=O)O)C[C@H](O)[C@H]1O"
+        ],
+        "rxn_smiles": "CCOC(=O)C[C@@H]1C[C@H](O)[C@@H](O)[C@@H](C=C[C@H]2C[C@H]2C=C(C)C[C@H]2CC[C@H](C)O[C@H]2CC)O1>>CC[C@@H]1O[C@@H](C)CC[C@@H]1CC(C)=C[C@@H]1C[C@@H]1C=C[C@H]1O[C@H](CC(=O)O)C[C@H](O)[C@H]1O",
+        "reagents": [
+          "LiOH"
+        ],
+        "solvent": "MeOH, THF, H2O",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Hydrolysis of the ethyl ester gave the target, 20,21-dihydroambruticin F (9) in 85% yield."
+      },
+      "evidence": {
+        "text_span": "Silyl deprotection of 39 with TBAF followed by hydrolysis of the ethyl ester gave the target, 20,21- dihydroambruticin F (9).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "478ad675fe5ad176d8e32fe750fe3aa75e63f1afac1894040419c5aa370f300d.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "NMR"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield for the total synthesis of 20,21-dihydroambruticin F is not explicitly stated, but individual step yields are provided."
+      }
+    },
+    "significance": "This is the first total synthesis of 20,21-dihydroambruticin F, providing an authentic sample for biological studies and confirming the structure of accumulated products in gene knockout experiments. The modular approach is flexible and adaptable for the synthesis of other ambruticins."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d4sc00720d",
+      "pmcid": "PMC10988584",
+      "title": "Combining total synthesis and genetic engineering to probe dihydropyran formation in ambruticin biosynthesis.",
+      "authors": "Bowen JI, Zhong X, Gao K, Reed B, Crump MP, Wang L, Willis CL.",
+      "journal": "Chem Sci",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC10988584?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/27820e3e-198c-4a27-825a-8ee233ff99e0.zip",
+      "parsed_at": "2026-05-11T06:32:48.258051+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 62,
+    "parseable": 41,
+    "canonicalized": 23,
+    "invalid": 21,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CCOC(=O)C[C@H]1O[C@H](C=O)[C@@H](OSi(C)(C)C(C)(C)C)[C@H]1OSi(C)(C)C(C)(C)C",
+      "O=S(=O)(C1=CC=CC=C1)C[C@H]2C[C@@H](C)C2OSi(C)(C)C(C)(C)C(C)(C)C",
+      "CCOC(=O)C[C@H]1O[C@H](C=O)[C@@H](OSi(C)(C)C(C)(C)C)[C@H]1OSi(C)(C)C(C)(C)C",
+      "CCOC(=O)C[C@H]1O[C@H](C=O)[C@@H](OSi(C)(C)C(C)(C)C)[C@H]1OSi(C)(C)C(C)(C)C",
+      "CCOC(=O)C[C@H]1O[C@H](C=C[C@H]2C[C@@H](CO)C2CO)[C@@H](OTBS)[C@@H](OTBS)C1",
+      "CCOC(=O)C[C@H]1O[C@H](C=C[C@H]2C[C@@H](CO)C2CO)[C@@H](OTBS)[C@@H](OTBS)C1",
+      "CCOC(=O)C[C@H]1O[C@H](C=C[C@H]2C[C@@H](CO)C2CO)[C@@H](OTBS)[C@@H](OTBS)C1",
+      "CCOC(=O)C[C@H]1O[C@H](C=C[C@H]2C[C@@H](CO)C2CO)[C@@H](OTBS)[C@@H](OTBS)C1",
+      "CCOC(=O)C[C@H]1O[C@H](C=C[C@H]2C[C@@H](CO)C2C=O)[C@@H](OTBS)[C@@H](OTBS)C1",
+      "O=C[C@H](C)OSi(C)(C)C(C)(C)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

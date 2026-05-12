@@ -1,0 +1,738 @@
+{
+  "trace_id": "TS-PMC11600149",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-Pleurotin",
+    "smiles": "CC1CC2[C@H](C1)O[C@H]1[C@@H]3C(=O)C(=O)C4=C(O)C(=O)C(=O)C4=C3[C@H]21",
+    "natural_product_class": "benzoquinone meroterpenoid",
+    "structural_features": {
+      "stereocenters": 8,
+      "ring_systems": "pentacyclic",
+      "key_motifs": [
+        "fused pentacyclic core",
+        "redox-sensitive para-quinone moiety"
+      ]
+    },
+    "motivation": "Promising biological activities (antitumor, antibiotic, TrxR inhibitor) and interesting unique structures, but lack of available natural products and scalable synthesis for medicinal chemical study and SAR exploration.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Hart",
+        "year": 1988,
+        "doi": null,
+        "key_strategy": "diastereoselective radical cyclization (racemic)"
+      },
+      {
+        "lead_author": "Kraus",
+        "year": 1991,
+        "doi": null,
+        "key_strategy": "tandem photoenolization/intramolecular Diels–Alder reaction"
+      },
+      {
+        "lead_author": "Sorensen",
+        "year": 2011,
+        "doi": null,
+        "key_strategy": "leveraged Kraus's strategy to build pentacyclic skeletons"
+      },
+      {
+        "lead_author": "Sorensen",
+        "year": 2014,
+        "doi": null,
+        "key_strategy": "leveraged Kraus's strategy to build pentacyclic skeletons"
+      },
+      {
+        "lead_author": "Sorensen",
+        "year": 2022,
+        "doi": null,
+        "key_strategy": "intermolecular photoenolization/Diels–Alder cycloaddition and alkoxy-radical-induced hydrogen atom transfer-mediated C-H epimerization (formal synthesis of racemic)"
+      },
+      {
+        "lead_author": "Xuan",
+        "year": 2024,
+        "doi": null,
+        "key_strategy": "diastereocontrolled sequential hydroboration–oxidation and SOMO/photoredox-activated aldehyde α-alkylation (asymmetric)"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Concise and efficient asymmetric total synthesis, enabling late-stage diversification and scalable preparation of the pentacyclic scaffold."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming the carboxylic acid",
+        "named_strategy": "Hydroboration/Copper-catalyzed Carboxylation",
+        "reasoning": "To introduce the challenging carboxylic acid functionality in dihydropleurotinic acid (2) and enable late-stage modification."
+      },
+      {
+        "bond_description": "C-C bond forming the bridging E ring",
+        "named_strategy": "Intramolecular Friedel–Crafts reaction",
+        "reasoning": "To construct the bridging E ring of the pentacyclic core."
+      },
+      {
+        "bond_description": "Lactone formation",
+        "named_strategy": "Lactonization",
+        "reasoning": "To form the C ring from silyl-ether-substituted trans-hydrindane 4."
+      },
+      {
+        "bond_description": "C-C bond forming the B ring",
+        "named_strategy": "Ring-closing metathesis (RCM) followed by stereoselective reduction",
+        "reasoning": "To construct the trans-[6,5]-fused A/B ring system with the correct stereochemistry at C3 and a pseudo-axially disposed isopropyl-type group."
+      },
+      {
+        "bond_description": "C-C bonds forming C5 and C10 stereocenters",
+        "named_strategy": "Michael addition/alkylation cascade reaction",
+        "reasoning": "To assemble the key intermediate 5, bearing three consecutive stereogenic centers, and generate correct stereocenters simultaneously at C5 and C10."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "6",
+        "smiles": "COC(=O)C1C=CC(=O)CC1",
+        "role": "starting material",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "7",
+        "smiles": "",
+        "role": "chiral building block",
+        "comes_from": "known, readily available (R)-Roche ester-derived vinyl bromide"
+      },
+      {
+        "fragment_id": "8",
+        "smiles": "C=CCBr",
+        "role": "starting material",
+        "comes_from": "commercial"
+      }
+    ],
+    "rationale": "The retrosynthetic analysis aims to construct the pentacyclic architecture 3 as a key precursor, which can be converted to dihydropleurotinic acid (2) and pleurotin (1) through a hydroboration/copper-catalyzed carboxylation sequence and oxidation. The core scaffold 3 is envisioned to arise from silyl-ether-substituted trans-hydrindane 4 via lactonization, hydrobenzoquinone installation, and intramolecular Friedel–Crafts reaction. The A/B ring system 4 is built from diene 5 through RCM and stereoselective reduction. Finally, diene 5 is assembled via a Michael addition/alkylation cascade reaction using chiral vinyl bromide 7 from the chiral pool, methyl 6-oxocyclohex-1-ene-1-carboxylate 6, and allyl bromide 8."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The key intermediate 5, bearing three consecutive stereogenic centers, needs to be assembled. The chiral pool (R)-Roche ester-derived 7 is chosen as the chiral building block for asymmetric syntheses.",
+        "gap": "How to efficiently form the C-C bonds and establish the correct stereocenters at C5 and C10.",
+        "decision": "To assemble the key intermediate 5, a Michael addition/alkylation cascade reaction of methyl 6-oxocyclohex-1-ene-1-carboxylate 6 with chiral vinyl bromide 7 and allyl bromide 8 was chosen, expecting to generate the correct stereocenters simultaneously at C5 and C10 with high stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C=CC(=O)CC1",
+          "",
+          "C=CCBr"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuLi",
+          "CuCN"
+        ],
+        "solvent": "Et2O",
+        "temperature": "-78 °C to 60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "Lithium–bromo exchange between vinyl bromide 7 and t-BuLi, followed by conjugate addition of the in situ-generated homocuprate to 6, and subsequent quenching with allyl bromide 8, produced two diastereoisomers 9 and 5 in 20% and 40% yield, respectively. The reaction proceeded with high stereoselectivity, resulting in two trans-adducts with retained (S)-4-methyl chirality from 7 but asymmetrically induced C5 and C10 chirality, with an overall dr of 1:2."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Our synthesis commenced with a Michael addition/ alkylation cascade reaction of methyl 6-oxocyclohex-1-ene-1- carboxylate 6 with the chiral vinyl bromide 7 and allyl bromide 8, as depicted in Scheme 2. 11 After several trials, we identified that lithium−bromo exchange between vinyl bromide 7 and t-BuLi in $\\mathrm { Et } _ { 2 } \\mathrm { O }$ at $- 7 8 \\ ^ { \\circ } \\mathrm { C }$ could be accomplished to give the corresponding vinyllithium. Conjugate addition of the in situgenerated homocuprate from the reaction of vinyllithium and CuCN at $- 4 0 ~ ^ { \\circ } \\mathrm { C }$ on 6, followed by quenching of the resulting enolate with allyl bromide 8 at $6 0 \\ ^ { \\circ } \\mathrm { C } ,$ , proceeded smoothly to produce two compounds, 9 and 5, in $2 0 \\%$ and $4 0 \\%$ yield, respectively.12 Different NMR analyses of 9 and 5 indicated that they were diastereoisomers, and the stereochemical structure of 9 was unambiguously determined by X-ray crystallographic analysis (see Supporting Information for details). Specifically, the chiral vinyl bromide 7 underwent a cascade Michael addition and alkylation reaction with 6 and 8 sequentially with high stereoselectivity, resulting in two transadducts, 9 and 5, with retained (S)-4-methyl chirality from the chiral pool 7 but asymmetrically induced C5 and C10 chirality, with an overall dr of 1:2 (Scheme 2).",
+        "page": 2,
+        "section": "main text",
+        "image_refs": [
+          "8ee127433f5cb95959fa0b7a154a18b76487b45966dfa7fbde510f458d5b9e98.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Michael addition/alkylation cascade reaction successfully produced dienes 9 and 5, with 5 being the predominant diene.",
+        "gap": "How to form the B ring of the trans-[6,5]-fused A/B ring system from the diene 5.",
+        "decision": "To form the B ring, a ring-closing metathesis (RCM) reaction of the predominant diene 5 was chosen using the second-generation Grubbs catalyst, expecting efficient cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Grubbs II metathesis",
+        "catalyst": "second-generation Grubbs catalyst",
+        "solvent": "toluene",
+        "temperature": "110 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Cyclization of the predominant diene 5 furnished the olefin 10 in 85% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Cyclization of the predominant diene 5 in the presence of the second-generation Grubbs catalyst in toluene at $1 1 0 ~ ^ { \\circ } \\mathrm { C }$ for $^ { 4 \\mathrm { ~ h ~ } }$ furnished the olefin 10 in $8 5 \\%$ yield.",
+        "page": 2,
+        "section": "main text",
+        "image_refs": [
+          "8ee127433f5cb95959fa0b7a154a18b76487b45966dfa7fbde510f458d5b9e98.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Olefin 10 has been secured in sufficient quantities.",
+        "gap": "How to stereoselectively reduce the olefin in 10 to generate the trans-[6,5]-fused A/B ring system with a pseudo-axially disposed isopropyl-type group on C3.",
+        "decision": "A stereoselective reduction of olefin 10 was explored using PtO2 under a hydrogen atmosphere, expecting to generate the desired product 11 as a single isomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "PtO2",
+        "reagents": [
+          "H2"
+        ],
+        "solvent": "MeOH",
+        "temperature": "rt",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "The optimized conditions delivered both the ketone and the double-bond-reduced product alcohol 11 as a single isomer in 73% yield. An undesired byproduct B was also formed in 10% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Having secured olefin 10 in sufficient quantities, we explored stereoselective reduction of olefin 10 to generate the trans-[6,5]-fused A/B ring system possessing a pseudo-axially disposed isopropyl-type group on C3, as shown in Scheme 2. 13 By carefully examining the reaction conditions, we were delighted to determine the optimized conditions, delivering both the ketone and the double-bond-reduced product alcohol 11 as a single isomer in $7 3 \\%$ yield and the undesired byproduct B in $1 0 \\%$ yield (see Supporting Information for details).",
+        "page": 2,
+        "section": "main text",
+        "image_refs": [
+          "8ee127433f5cb95959fa0b7a154a18b76487b45966dfa7fbde510f458d5b9e98.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A robust synthesis route to 11 has been established.",
+        "gap": "The next goal is to install the para-quinone moiety and form lactone 15. This requires oxidation of the alcohol in 11 to a ketone.",
+        "decision": "Oxidation of 11 with Dess–Martin periodinane (DMP) was chosen to form the ketone 4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Dess–Martin periodinane"
+        ],
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Oxidation of 11 with Dess–Martin periodinane (DMP) formed the ketone 4 in 90% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Oxidation of 11 with Dess− Martin periodinane (DMP) formed the ketone 4 in $9 0 \\%$ yield.",
+        "page": 3,
+        "section": "main text",
+        "image_refs": [
+          "028f0a8cd123f091cc69445a43754305bb1f3ecb78b26569e9b44aef46a8f299.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ketone 4 has been successfully formed.",
+        "gap": "The TBDPS protecting group needs to be removed to allow for subsequent lactonization.",
+        "decision": "Removal of the TBDPS group with pyridine hydrofluoride was chosen to give alcohol 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC[C@@H](O)C[C@H]1C[C@@H]2C(=O)C[C@H]2C1C(=O)OC"
+        ],
+        "reagents": [
+          "pyridine hydrofluoride"
+        ],
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "Removal of the TBDPS group with pyridine hydrofluoride gave alcohol 12 in 74% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Then removal of the TBDPS group with pyridine hydrofluoride gave alcohol 12 in $7 4 \\%$ yield",
+        "page": 3,
+        "section": "main text",
+        "image_refs": [
+          "028f0a8cd123f091cc69445a43754305bb1f3ecb78b26569e9b44aef46a8f299.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alcohol 12 has been obtained.",
+        "gap": "The next step is to form the C ring via lactonization to construct the rigid tricyclic skeleton 13.",
+        "decision": "Lactonization of alcohol 12 was performed in the presence of DBU in CH2Cl2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@@H](O)C[C@H]1C[C@@H]2C(=O)C[C@H]2C1C(=O)OC"
+        ],
+        "product_smiles": [
+          "CC1CC2C(=O)C3CCC(C(=O)O3)C2C1"
+        ],
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "96 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "observation": "Lactonization in the presence of DBU in CH2Cl2 at room temperature for 96 h constructed the rigid tricyclic skeleton 13 in 69% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "which underwent lactonization in the presence of DBU in $\\mathrm { C H } _ { 2 } \\mathrm { Cl } _ { 2 }$ at room temperature for $9 6 \\mathrm { { h } }$ to construct the rigid tricyclic skeleton 13 in $6 9 \\%$ yield.",
+        "page": 3,
+        "section": "main text",
+        "image_refs": [
+          "c3716ad4597ddbf1b4f25f6b792f059f3273e84e58ab643df8b6d04e7a566fa2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The keto ester 13 has been successfully synthesized.",
+        "gap": "To introduce the hydrobenzoquinone moiety, the keto ester 13 needs to be converted into the corresponding enol triflate 14 for cross-coupling.",
+        "decision": "Keto ester 13 was converted into the corresponding enol triflate 14 using LHMDS and PhNTf2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC2C(=O)C3CCC(C(=O)O3)C2C1"
+        ],
+        "product_smiles": [
+          "CC1CC2OC(=O)C(C=C(OS(=O)(=O)CF)C3CC3)C2C1"
+        ],
+        "reagents": [
+          "LHMDS",
+          "PhNTf2"
+        ],
+        "temperature": "-78 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "The keto ester 13 was converted into the corresponding enol triflate 14 in 90% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "The keto ester 13 was converted into the corresponding enol triflate 14",
+        "page": 3,
+        "section": "main text",
+        "image_refs": [
+          "c3716ad4597ddbf1b4f25f6b792f059f3273e84e58ab643df8b6d04e7a566fa2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Enol triflate 14 has been prepared.",
+        "gap": "The para-quinone moiety needs to be introduced via cross-coupling.",
+        "decision": "Kumada cross-coupling with a para-quinone Grignard reagent was attempted using various catalysts, solvents, additives, and temperatures."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC2OC(=O)C(C=C(OS(=O)(=O)CF)C3CC3)C2C1"
+        ],
+        "product_smiles": [
+          "COc1ccc(CC(=CC2C(=O)OC3CC(C)CC32)C2CC2)cc1OC"
+        ],
+        "reagents": [
+          "para-quinone Grignard reagent"
+        ],
+        "catalyst": "NiCl2(dppp), Pd(PPh3)4, PdCl2(dppf), Fe(acac)3",
+        "solvent": "THF, Et2O, DMF",
+        "temperature": "-78 °C, -40 °C, -20 °C, 0 °C, 25 °C, 50 °C, 60 °C, 90 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "An assortment of reaction conditions with various catalysts, solvents, additives, and temperatures turned out to be sluggish. The possible reason might be the instability of the electron-rich para-quinone Grignard reagent in the complex system."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "and subsequent Kumada crosscoupling was performed with the para-quinone Grignard reagent to form 15. 14 Unfortunately, an assortment of reaction conditions with various catalysts $\\big ( \\mathrm { NiCl } _ { 2 } \\big ( \\mathrm { d p p p } \\big )$ , $\\mathrm { P d } ( \\mathrm { P P h } _ { 3 } ) _ { 4 } ,$ $\\mathrm { P d C l } _ { 2 } ( \\mathrm { d p p f } )$ , $\\mathrm { F e } \\left( \\mathsf { a c a c } \\right) _ { 3 } ,$ ), solvents (THF, $\\mathrm { Et } _ { 2 } \\mathrm { O } _ { \\cdot }$ , DMF), additives (NMP, $\\mathrm { Z n C l } _ { 2 } ,$ , LiCl, $\\mathrm { C s } _ { 2 } \\mathrm { C O } _ { 3 } ,$ ), and temperatures (−78 °C, $- 4 0 ~ ^ { \\circ } \\mathrm { C } ,$ , $- 2 0 \\ ^ { \\circ } \\mathrm { C } ,$ , $0 ~ ^ { \\circ } \\mathrm { C }$ , $2 5 ~ ^ { \\circ } \\mathrm { C } _ { \\mathrm { \\lambda } }$ , $5 0 ~ ^ { \\circ } \\mathrm { C } ,$ , 60 °C, 90 °C) turned out to be sluggish. The possible reason might be the instability of the electron-rich para-quinone Grignard reagent in the complex system.",
+        "page": 3,
+        "section": "main text",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Kumada cross-coupling with a para-quinone Grignard reagent was unsuccessful due to the instability of the Grignard reagent.",
+        "gap": "A more robust method is needed to introduce the hydrobenzoquinone moiety into the [5,6,7] tricyclic skeleton.",
+        "decision": "Negishi cross-coupling was leveraged to introduce the hydrobenzoquinone moiety, using freshly prepared (2,5-dimethoxybenzyl)zinc(II) bromide and Pd(PPh3)2Cl2 as catalyst, expecting a more stable and efficient reaction."
+      },
+      "revises_step_id": 8,
+      "references": [],
+      "evidence": {
+        "text_span": "Alternatively, we leveraged Negishi cross-coupling to introduce the hydrobenzoquinone moiety into the [5,6,7] tricyclic skeleton directly.",
+        "page": 3,
+        "section": "main text",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Kumada cross-coupling failed. Negishi cross-coupling was chosen as an alternative.",
+        "gap": "To successfully couple triflate 14 with the hydrobenzoquinone moiety.",
+        "decision": "Cross-coupling of triflate 14 and freshly prepared (2,5-dimethoxybenzyl)zinc(II) bromide in the presence of Pd(PPh3)2Cl2 in DMF at 90 °C was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC2OC(=O)C(C=C(OS(=O)(=O)CF)C3CC3)C2C1",
+          "COc1ccc(CBr)c(OC)c1"
+        ],
+        "product_smiles": [
+          "COc1ccc2c(c1)C[C@@H]1C[C@H]3O[C@H](C)[C@@H]2[C@@H]13"
+        ],
+        "named_reaction": "Negishi cross-coupling",
+        "reagents": [
+          "(2,5-dimethoxybenzyl)zinc(II) bromide"
+        ],
+        "catalyst": "Pd(PPh3)2Cl2",
+        "solvent": "DMF",
+        "temperature": "90 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "The cross-coupling of triflate 14 and freshly prepared (2,5-dimethoxybenzyl)zinc(II) bromide afforded the desired lactone 3, possessing the para-quinone moiety, in 70% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "To our delight, the cross-coupling of triflate 14 and freshly prepared (2,5- dimethoxybenzyl)zinc(II) bromide in the presence of Pd-$( \\mathrm { P P h } _ { 3 } ) _ { 2 } \\mathrm { C l } _ { 2 }$ in DMF at $9 0 ~ ^ { \\circ } \\mathrm { C }$ for 2 h eventually afforded the desired lactone 3, possessing the para-quinone moiety, in $7 0 \\%$ yield.15",
+        "page": 3,
+        "section": "main text",
+        "image_refs": [
+          "337ae97f3a55e8cc1e1dd7f5f569baf7d63653472faae5c3278979c10.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The key advanced intermediate 3 has been synthesized.",
+        "gap": "The strained seven-membered lactone 15 needs to be reduced and cyclized to form the pentacyclic core 3.",
+        "decision": "Reduction of the strained seven-membered lactone 15 with diisobutylaluminum hydride followed by treatment with boron trifluoride etherate was chosen to achieve cyclization. The amount of DIBAL-H and reaction temperature were identified as critical."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(CC(=CC2C(=O)OC3CC(C)CC32)C2CC2)cc1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc2c(c1)C[C@@H]1C[C@H]3O[C@H](C)[C@@H]2[C@@H]13"
+        ],
+        "reagents": [
+          "DIBAL-H",
+          "BF3.OEt2"
+        ],
+        "solvent": "toluene",
+        "temperature": "-85 °C to -20 °C",
+        "time": "2 h",
+        "scale": "505 mg",
+        "stoichiometry": {
+          "DIBAL-H": "1.2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 47,
+        "observation": "Reduction of the strained seven-membered lactone 15 with diisobutylaluminum hydride generated the mixed acetal in situ, which was directly treated with boron trifluoride etherate to give the desired cyclization product 3 in an overall yield of 47% on a 505 mg scale. The low yield might be due to the ring opening of the strained seven-membered ring in the unstable hemiketal intermediate and subsequent decomposition. The amount of DIBAL-H (1.2 equiv) and reaction temperature (-85 °C) were critical."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Finally, the key advanced intermediate 3 was devised efficiently in a scalable process. As shown in Scheme 3, reduction of the strained seven-membered lactone 15 with diisobutylaluminum hydride generated the mixed acetal in situ, which was directly treated with boron trifluoride etherate in toluene at $- 2 0 ~ ^ { \\circ } \\mathrm { C }$ for $^ { 2 \\mathrm { ~ h ~ } }$ to give rise to the desired cyclization product 3 in an overall yield of $4 7 \\%$ on a $5 0 5 ~ \\mathrm { m g }$ scale. The low yield for the formation of 3 might be due to the ring opening of the strained seven-membered ring in the unstable hemiketal intermediate, which would further undergo slow decomposition. Notably, the amount of diisobutylaluminum hydride (1.2 equiv) and reaction temperature $( - 8 \\dot { 5 } ^ { \\circ } \\mathrm { C } )$ were critical to the reaction yield.",
+        "page": 3,
+        "section": "main text",
+        "image_refs": [
+          "568ea31ff828e247c578124272d577e5afceba36ba04253833cf85eb93378c51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The pentacyclic core 3 has been successfully synthesized.",
+        "gap": "The vital carboxyl group needs to be incorporated to form carboxylic acid 16.",
+        "decision": "Hydroboration of 3 using 9-BBN followed by carboxylation with carbon dioxide in the presence of CuI, NHC ligand IPr, and cesium fluoride was chosen."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc2c(c1)C[C@@H]1C[C@H]3O[C@H](C)[C@@H]2[C@@H]13"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "9-BBN",
+          "CO2",
+          "CuI",
+          "IPr",
+          "CsF",
+          "HCl(aq)"
+        ],
+        "solvent": "dioxane",
+        "temperature": "90 °C",
+        "time": "24 h, then 18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 50,
+        "observation": "Hydroboration of 3 using 9-BBN followed by carboxylation with carbon dioxide led to the formation of carboxylic acid 16 in an overall yield of 50% in 2 steps."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Hydroboration of 3 using 9-BBN followed by carboxylation with carbon dioxide in the presence of CuI, NHC ligand $\\mathrm { I P r } _ { \\l }$ , and cesium fluoride led to the formation of carboxylic acid 16 in an overall yield of $5 0 \\%$ in 2 steps.16",
+        "page": 3,
+        "section": "main text",
+        "image_refs": [
+          "568ea31ff828e247c578124272d577e5afceba36ba04253833cf85eb93378c51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carboxylic acid 16 has been formed.",
+        "gap": "To obtain (+)-dihydropleurotinic acid (2), the hydrobenzoquinone moiety needs to be oxidized.",
+        "decision": "Treatment of 16 with the strong SET-based oxidant ceric ammonium nitrate (CAN) in aqueous acetonitrile was chosen, expecting a quick and clean oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC1CCC2OC3CCC(C)C4CC(C(O)C(=O)C4C3)C2C(=O)C=CC1=O"
+        ],
+        "reagents": [
+          "ceric ammonium nitrate"
+        ],
+        "solvent": "aqueous acetonitrile",
+        "temperature": "0 °C",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Treatment of 16 with CAN quickly furnished clean (+)-dihydropleurotinic acid (2) in 87% yield, without (-)-pleurotin (1) produced during the process. This was attributed to the low temperature (0 °C) and short reaction time (30 min)."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Treatment of 16 with the strong SET-based oxidant ceric ammonium nitrate (CAN) in aqueous acetonitrile quickly furnished clean $\\left( + \\right)$ -dihydropleurotinic acid (2) in $8 7 \\%$ yield, without $( - )$ -pleurotin (1) produced during the process. The possible reason might be that the reaction was conducted at a low temperature $( 0 ^ { \\circ } \\mathrm { C } )$ and for a short time $\\mathrm { { } } ^ { \\prime } 3 0 \\mathrm { { \\ m i n } } \\mathrm { { } } ,$ ).",
+        "page": 3,
+        "section": "main text",
+        "image_refs": [
+          "b45dbb859d8d2e32b2f7d49da124e59578c5b1cd71afc21d95c23a01dc512dae.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "(+)-Dihydropleurotinic acid (2) has been synthesized.",
+        "gap": "To obtain (-)-pleurotin (1), (+)-dihydropleurotinic acid (2) needs to be oxidized.",
+        "decision": "Oxidation of 2 by the mild SET-based oxidant manganese dioxide in CH3CN was chosen. The amount of MnO2, reaction time, and temperature were identified as pivotal."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CCC2OC3CCC(C)C4CC(C(O)C(=O)C4C3)C2C(=O)C=CC1=O"
+        ],
+        "product_smiles": [
+          "CC1CC2[C@H](C1)O[C@H]1[C@@H]3C(=O)C(=O)C4=C(O)C(=O)C(=O)C4=C3[C@H]21"
+        ],
+        "reagents": [
+          "MnO2"
+        ],
+        "solvent": "MeCN",
+        "temperature": "50 °C",
+        "time": "12 h",
+        "stoichiometry": {
+          "MnO2": "10 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "Oxidation of 2 by the mild SET-based oxidant manganese dioxide in CH3CN at 50 °C for 12 h gave (-)-pleurotin (1) in 55% yield. The amount of manganese dioxide (10 equiv), reaction time (12 h), and reaction temperature (50 °C) were pivotal to the reaction yield. All analytical data matched with those reported for the natural products."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Finally, oxidation of 2 by the mild SET-based oxidant manganese dioxide in $\\mathrm { C H } _ { 3 } \\mathrm { C N }$ at $5 0 ~ ^ { \\circ } \\mathrm { C }$ for $^ { 1 2 \\mathrm { ~ h ~ } }$ gave $( - )$ -pleurotin (1) in $5 5 \\%$ yield. It is worth noting that the amount of manganese dioxide (10 equiv), reaction time (12 h), and reaction temperature $( 5 0 ~ ^ { \\circ } \\mathrm { C } )$ were pivotal to the reaction yield. All analytical data $\\mathrm { ^ { \\circ } H N M R }$ , $^ { 1 3 } \\dot { \\mathrm { C } }$ NMR, HRMS, and $[ \\alpha ] _ { \\mathrm { D } } )$ of our synthesized $\\left( + \\right) - 2$ and $( - ) _ { -1 }$ matched with those reported for the natural products.1,6c,17",
+        "page": 3,
+        "section": "main text",
+        "image_refs": [
+          "a68755e8cf2d2414c3902dbf2c3c0a50866cae01af7a360d8d75f248a462e546.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "specific_rotation",
+      "X-ray crystallography",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated for the entire synthesis, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 13,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence to (-)-pleurotin (1)."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Total number of steps not explicitly stated."
+      },
+      "Failed Attempts Count": {
+        "value": 1,
+        "unit": "count",
+        "interpretation": "One explicitly described failed attempt for Kumada cross-coupling."
+      }
+    },
+    "comparison_to_prior": "The synthesis is concise (12 and 13 longest linear steps) and efficient, enabling rapid late-stage diversification, which was a key motivation due to the lack of scalable syntheses in prior work. The synthesized natural products matched reported analytical data. The late-stage diversification led to analogs with significantly improved antiproliferative activities against TrxR-1 overexpressed human breast cancer cell lines (10-13 fold increase) compared to natural pleurotin (1).",
+    "significance": "The robust asymmetric total syntheses of (+)-dihydropleurotinic acid (2) and (-)-pleurotin (1) provide sufficient quantities of the pentacyclic core scaffold 3, enabling rapid late-stage diversification. This led to the discovery of pleurotin analogs with remarkably enhanced antiproliferative activities against TrxR-1 overexpressed human breast cancer cell lines, highlighting their potential as promising lead compounds for novel TrxR inhibitors. The synthesis features key transformations such as a Michael addition/alkylation cascade, PtO2-catalyzed stereoselective reduction, Pd-catalyzed Negishi cross-coupling, and hydroboration/copper-catalyzed carboxylation."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.4c00942",
+      "pmcid": "PMC11600149",
+      "title": "Concise Asymmetric Total Syntheses of (+)-Dihydropleurotinic Acid and (-)-Pleurotin, Enabling Rapid Late-Stage Diversification.",
+      "authors": "Huang B, Pang J, Cao N, Dai YS, Long YQ.",
+      "journal": "JACS Au",
+      "year": 2024,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC11600149?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/f475559c-f5f5-458d-84cc-27cd87a94912.zip",
+      "parsed_at": "2026-05-11T06:35:41.124610+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 34,
+    "parseable": 21,
+    "canonicalized": 13,
+    "invalid": 13,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "BrC(=C)C[C@H](C)COTBDPS",
+      "BrC(=C)C[C@H](C)COTBDPS",
+      "COC(=O)C1=C(C=C)C[C@@H]2[C@H](C)[C@@H](OTBDPS)C[C@H]2C1=O",
+      "COC(=O)C1=C(C=C)C[C@H]2[C@@H](C)[C@H](OTBDPS)C[C@H]2C1=O",
+      "COC(=O)C1=C(C=C)C[C@H]2[C@@H](C)[C@H](OTBDPS)C[C@H]2C1=O",
+      "COC(=O)C1C(=O)C2C(C)[C@H](OTBDPS)CCC2C1",
+      "COC(=O)C1C(=O)C2C(C)[C@H](OTBDPS)CCC2C1",
+      "COC(=O)C1C(O)C2C(C)[C@H](OTBDPS)CCC2C1",
+      "CC[C@H](C[C@H]1C[C@@H]2C[C@H](O)C[C@H]2C1C(=O)OC)OTBDPS",
+      "CC[C@H](C[C@H]1C[C@@H]2C(=O)C[C@H]2C1C(=O)OC)OTBDPS"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

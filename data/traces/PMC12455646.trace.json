@@ -1,0 +1,199 @@
+{
+  "trace_id": "TS-PMC12455646",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "5-Hydroxymellein",
+    "smiles": "CC1COC(=O)c2c(O)cc(O)cc21",
+    "natural_product_class": "isocoumarin",
+    "structural_features": {
+      "molecular_weight": 194.18,
+      "stereocenters": 1,
+      "ring_systems": "dihydropyranone, benzene",
+      "key_motifs": [
+        "isocoumarin",
+        "phenol"
+      ]
+    },
+    "motivation": "5-Hydroxymellein has interesting biological activities, including antiatherosclerotic, antibacterial, antifungal, and algicidal properties and is a potential multifunctional skin UV protectant.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Efficient synthesis utilizing the contrasteric aromatic Claisen rearrangement."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-O bond of the dihydrocoumarin ring",
+        "named_strategy": "Lactonization",
+        "reasoning": "Formation of the dihydrocoumarin ring from a precursor with an appropriate hydroxyl and carboxylic acid functionality."
+      },
+      {
+        "bond_description": "C-C bond forming the allyl group on the aromatic ring",
+        "named_strategy": "Aromatic Claisen Rearrangement",
+        "reasoning": "This is the key step to introduce the allyl group regioselectively at the contrasteric position, which will then be transformed into the dihydrocoumarin ring."
+      }
+    ],
+    "rationale": "The strategy hinges on a highly regioselective contrasteric aromatic Claisen rearrangement to form a polysubstituted aromatic ring, followed by a simple cyclization to form the dihydroisocoumarin core. This approach aims for step-economical synthesis."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "The aromatic Claisen rearrangement is a known method for ortho-alkylation of phenols. However, regioselectivity with meta-substituted benzenes is often poor.",
+        "gap": "How to achieve high regioselectivity for the contrasteric position in an aromatic Claisen rearrangement with a meta-substituted benzene, specifically for the synthesis of 5-hydroxymellein and botyroisocoumarin A.",
+        "decision": "To address the regioselectivity challenge, we will investigate the potential of an internal base (lactone carbonyl) to direct the regioselectivity of the aromatic Claisen rearrangement. The starting material will be a gentisic acid derived lactone with an allyloxy group."
+      },
+      "evidence": {
+        "text_span": "During our efforts toward the total synthesis of ambuic acid, an epoxyquinol natural product with promising biological activity against methicillin-resistant Staphylococcus aureus (MRSA),17 it was discovered that the aromatic Claisen rearrangement was highly regioselective with a 20:1 ratio of products in favor of the more sterically hindered position (Figure 1). It was anticipated that the aromatic Claisen rearrangement would have been nonselective and that we would require a subsequent chemoselective functionalization. The unexpected, contrasteric regioselectivity raised questions about the potential of the lactone carbonyl to direct the reaction by acting as an internal base. In this paper, various aromatic substitution patterns and internal bases are tested to understand the source of the observed contrasteric regioselectivity and demonstrate its utility in synthesis.",
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous studies showed that a specific lactone-containing allyloxybenzene (compound 1) exhibited high regioselectivity (20:1) for the contrasteric position in an aromatic Claisen rearrangement.",
+        "gap": "The mechanism behind this contrasteric regioselectivity needs to be understood and validated for broader synthetic utility.",
+        "decision": "To confirm the regioselectivity and prepare a key intermediate for natural product synthesis, we will perform the aromatic Claisen rearrangement on lactone 1 on a gram scale."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCOc1ccc2c(c1)C(=O)OC(C)(C)O2"
+        ],
+        "product_smiles": [
+          "C=CCc1c(O)ccc2c1OC(=O)C(C)(C)O2"
+        ],
+        "named_reaction": "Aromatic Claisen Rearrangement",
+        "reagents": [],
+        "solvent": "PhMe",
+        "temperature": "210 °C",
+        "time": "3 h",
+        "scale": "gram-scale"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "regio_selectivity": "20:1 (contrasteric:steric)",
+        "observation": "The reaction of lactone 1 yielded 1a as the major product with high regioselectivity (20:1) for the contrasteric site. This was also performed on a gram-scale with good yield."
+      },
+      "evidence": {
+        "text_span": "Based on the clear value to this contrasteric and regioselective aromatic Claisen rearrangement, parent lactone 1a was prepared on a gram-scale in three steps from gentisic acid (see Supporting Information). Phenol 1a was treated with aqueous sulfuric acid in THF, to generate 5-hydroxymellein (46) in a single step (Scheme 2).",
+        "page": 12961,
+        "section": "Synthetic Application",
+        "image_refs": [
+          "062bae0eee905159fcc6aaca8c97af6d859b3041beaff65a0fe3118e26dc5aa1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactone 1a, a product of the regioselective aromatic Claisen rearrangement, contains the necessary structural elements for 5-hydroxymellein.",
+        "gap": "A method is needed to convert the allyl group and the lactone into the dihydrocoumarin ring system of 5-hydroxymellein.",
+        "decision": "To synthesize 5-hydroxymellein, we will treat lactone 1a with aqueous sulfuric acid in THF, expecting hydrolysis of the acetal and subsequent lactonization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1c(O)ccc2c1OC(=O)C(C)(C)O2"
+        ],
+        "product_smiles": [
+          "CC1COC(=O)c2c(O)cc(O)cc21"
+        ],
+        "reagents": [
+          "H2SO4",
+          "H2O"
+        ],
+        "solvent": "THF",
+        "temperature": "60 °C",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "5-Hydroxymellein (46) was generated in a single step from 1a with a 68% yield."
+      },
+      "evidence": {
+        "text_span": "Phenol 1a was treated with aqueous sulfuric acid in THF, to generate 5-hydroxymellein (46) in a single step (Scheme 2).",
+        "page": 12961,
+        "section": "Synthetic Application",
+        "image_refs": [
+          "e91eb6965a3b66e0656b9c64c27262f035adb402e5220f12ac90367daed4496a.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 64.6,
+        "unit": "%",
+        "interpretation": "Calculated from 95% (step 2) * 68% (step 3)"
+      },
+      "Longest Linear Steps": {
+        "value": 2,
+        "unit": "steps",
+        "interpretation": "From 1 to 1a, then 1a to 46"
+      },
+      "Total Steps": {
+        "value": 2,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps from the starting material 1 to 46"
+      }
+    },
+    "significance": "This synthesis demonstrates the utility of the contrasteric aromatic Claisen rearrangement for the efficient preparation of biologically relevant molecules, specifically 5-hydroxymellein, in a step-economical manner. The high regioselectivity achieved without blocking groups is a significant advancement."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.joc.5c01268",
+      "pmcid": "PMC12455646",
+      "title": "Regioselectivity Study of Contrasteric Aromatic Claisen Rearrangements and Their Utilization in the Total Syntheses of 5-Hydroxymellein and Botyroisocoumarin A.",
+      "authors": "Tanas DK, Li R, Khan HH, Johnson TC, Brown LE, West PM, Guin EJ, Jones SE, Garci NK, Canning DM, Ramirez EJ, Sekhon GS, Pierce TH, Ustoyev A, Croatt MP.",
+      "journal": "J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12455646?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/6e73d902-f92a-4b33-8204-62003728b40a.zip",
+      "parsed_at": "2026-05-11T06:27:50.368652+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 5,
+    "parseable": 5,
+    "canonicalized": 3,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

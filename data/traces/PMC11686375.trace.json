@@ -1,0 +1,992 @@
+{
+  "trace_id": "TS-PMC11686375",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "conidiogenone C",
+    "smiles": "CC1(CO)C[C@H]2C[C@]3(C)C=CC(=O)[C@@H]4CC(C)(C[C@@H]43)[C@H]2C1",
+    "natural_product_class": "diterpenoid",
+    "structural_features": {
+      "molecular_weight": 316.46,
+      "stereocenters": 6,
+      "ring_systems": "6-5-5-5 tetracyclic",
+      "key_motifs": [
+        "all-carbon quaternary centers"
+      ]
+    },
+    "motivation": "Unique skeleton and intriguing biological activities, including potent cytotoxicity against HL60 cells and anti-inflammatory activity. The target features an oxidized D ring with an additional all-carbon quaternary center compared to previously synthesized congeners.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Tu",
+        "year": 2016,
+        "doi": "10.1002/anie.201600070",
+        "key_strategy": "semi-pinacol rearrangement"
+      },
+      {
+        "lead_author": "Snyder",
+        "year": 2019,
+        "doi": "10.1038/s41586-019-1192-x",
+        "key_strategy": "quaternary-centre-guided synthesis, Heck/reductive Heck"
+      },
+      {
+        "lead_author": "Zhai",
+        "year": 2020,
+        "doi": "10.1002/anie.202008000",
+        "key_strategy": "Danheiser annulation"
+      },
+      {
+        "lead_author": "Han and Lee",
+        "year": 2023,
+        "doi": "10.1016/j.chempr.2023.03.001",
+        "key_strategy": "trimethylenemethane diyl-mediated cycloaddition"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Asymmetric total synthesis of conidiogenones C, K and 12β-hydroxy conidiogenone C, and identification of Immunity-related GTPase family M protein 1 (IRGM1) as a cellular target."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C11-C12 bond (cyclopentenone D ring)",
+        "named_strategy": "Gold-catalyzed 1,3-acyloxy migration followed by Nazarov cyclization",
+        "reasoning": "To rapidly construct the 6-5-5-5 tetracyclic skeleton and control the stereochemistry of the cyclopentenone. This strategy allows for the late-stage construction of the highly substituted five-membered D ring, which is oxidized in the target natural products.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C5-C6 bond (tricyclic skeleton)",
+        "named_strategy": "Intramolecular Pauson-Khand reaction",
+        "reasoning": "To efficiently form the tricyclic core from a 1,6-enyne intermediate, setting the all-carbon quaternary center at C5.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C12-C13 and C14-C15 bonds (quaternary centers)",
+        "named_strategy": "Alkylation and conjugate addition by Nagata reagent (Et2AlCN)",
+        "reasoning": "To construct the challenging all-carbon quaternary centers at C11 and C14 from the convex face of the cyclopentenone, with the nitrile group serving as a masked primary alcohol.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The synthesis commences from Wieland-Miescher ketone and features a sequential intramolecular Pauson-Khand reaction and gold-catalyzed Nazarov cyclization to rapidly construct the 6-5-5-5 tetracyclic skeleton. The stereocontrolled cyclopentenone construction is further investigated on complex settings to demonstrate its synthetic utility. The strategy aims to access previously inaccessible natural products with highly oxidized D rings."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Wieland-Miescher ketone is a known starting material for steroid synthesis.",
+        "gap": "Need to convert Wieland-Miescher ketone into the 1,6-enyne intermediate 11.",
+        "decision": "To obtain 1,6-enyne 11, chose a reported sequence including selective ketone protection, Weitz-Scheffer epoxidation, Eschenmoser-Tanabe fragmentation and Wittig olefination, expecting to form the desired enyne."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCCCC(=O)C1=CCC2=O"
+        ],
+        "product_smiles": [
+          "C=C1C[C@H]2CCOC(O)C2(C)C1"
+        ],
+        "rxn_smiles": "CC12CCCCC(=O)C1=CCC2=O>>C=C1C[C@H]2CCOC(O)C2(C)C1",
+        "reagents": [],
+        "solvent": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The 1,6-enyne 11 was synthesized in 6 steps from commercially available 2-methyl-1,3-cyclohexanedione."
+      },
+      "evidence": {
+        "text_span": "The synthetic route commenced from Wieland-Miescher ketone which was prepared in one step by Luo’s procedure (Fig. 3A)42. Following the reported sequence41 including selective ketone protection, Weitz-Scheffer epoxidation, Eschenmoser-Tanabe fragmentation and Wittig olefination, the 1,6-enyne 11 was synthesized. (For details, see page S15-S17 of the Supplementary Information).",
+        "image_refs": [
+          "3e3d3c9c9d4afb9e036d0bdee1bd8b2a7112413aa4c3231515491e02d6139af2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "1,6-enyne 11 is available. The tricyclic skeleton needs to be formed.",
+        "gap": "How to efficiently form the tricyclic skeleton and set the C5 all-carbon quaternary center?",
+        "decision": "To form the tricyclic skeleton, chose Co2(CO)8-mediated intramolecular Pauson-Khand reaction, expecting to form 12 and set the C5 stereocenter due to Thorpe-Ingold effect."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1C[C@H]2CCOC(O)C2(C)C1"
+        ],
+        "product_smiles": [
+          "C[C@@]12CCOC1O[C@@H]1C(=O)C=C[C@H]12"
+        ],
+        "rxn_smiles": "C=C1C[C@H]2CCOC(O)C2(C)C1>>C[C@@]12CCOC1O[C@@H]1C(=O)C=C[C@H]12",
+        "reagents": [
+          "Co2(CO)8",
+          "NMO"
+        ],
+        "yield_percent": 60
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The tricyclic skeleton 12 was prepared. The success in setting the all-carbon quaternary center at C5 may be explained by a Thorpe-Ingold effect imparted by C9 stereocenter."
+      },
+      "evidence": {
+        "text_span": "Through Co2(CO)8- mediated intramolecular Pauson-Khand reaction43–47, the tricyclic skeleton was prepared in only 6 steps from commercially available 2- methyl-1,3-cyclohexanedione. The success in setting the all-carbon quaternary center at C5 may be explained by a Thorpe-Ingold effect imparted by C9 stereocenter.",
+        "image_refs": [
+          "3e3d3c9c9d4afb9e036d0bdee1bd8b2a7112413aa4c3231515491e02d6139af2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The tricyclic skeleton 12 has been formed, and the C5 stereochemistry is proposed.",
+        "gap": "Need to confirm the stereochemistry of C5.",
+        "decision": "To confirm the stereochemistry of C5, chose X-ray analysis of crystalline 18, which was synthesized through stereoselective hydrogenation of 12, expecting to obtain definitive structural information."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@]12CCOC1O[C@@H]1C(=O)C=C[C@H]12"
+        ],
+        "product_smiles": [
+          "C[C@@]12CCOC1O[C@@H]1C(=O)C=C[C@H]12"
+        ],
+        "reagents": [
+          "Pd/C",
+          "H2"
+        ],
+        "solvent": "MeOH",
+        "yield_percent": 82
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The stereochemistry of C5 was further confirmed by X-ray analysis of crystalline 18."
+      },
+      "evidence": {
+        "text_span": "The stereochemistry of C5 was further confirmed by X-ray analysis of crystalline 18 which was synthesized through stereoselective hydrogenation of the Pauson-Khand product 12.",
+        "image_refs": [
+          "3e3d3c9c9d4afb9e036d0bdee1bd8b2a7112413aa4c3231515491e02d6139af2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 18 is available. The next step is to introduce the propargylic alcohol moiety for the Nazarov cyclization precursor.",
+        "gap": "Need to convert 18 into the enynyl alcohol 20.",
+        "decision": "To obtain enynyl alcohol 20, chose vinyl triflate formation followed by Sonogashira cross-coupling with propargylic alcohol 19, expecting to introduce the alkyne and alcohol functionalities."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@]12CCOC1O[C@@H]1C(=O)C=C[C@H]12"
+        ],
+        "product_smiles": [
+          "CC(O)C#CC1=C[C@@H]2[C@@H]1OC1OCC[C@]12C"
+        ],
+        "rxn_smiles": "C[C@@]12CCOC1O[C@@H]1C(=O)C=C[C@H]12.C#CC(C)O>>CC(O)C#CC1=C[C@@H]2[C@@H]1OC1OCC[C@]12C",
+        "reagents": [
+          "LiTMP",
+          "Comins' reagent",
+          "Pd(PPh3)2Cl2",
+          "CuI",
+          "i-Pr2NH",
+          "CC(O)C#C"
+        ],
+        "yield_percent": 59
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Ketone 18 was elaborated to key enynyl alcohol 20."
+      },
+      "evidence": {
+        "text_span": "Ketone 18 was quickly elaborated to key enynyl acetates 21 and 22 by vinyl triflate formation, Sonogashira cross-coupling and acylation.",
+        "image_refs": [
+          "3e3d3c9c9d4afb9e036d0bdee1bd8b2a7112413aa4c3231515491e02d6139af2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enynyl alcohol 20 is available. The Nazarov cyclization requires an enynyl benzoate.",
+        "gap": "Need to convert enynyl alcohol 20 into enynyl benzoate 13.",
+        "decision": "To obtain enynyl benzoate 13, chose acylation of 20 with benzoyl chloride, expecting to form the desired benzoate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(O)C#CC1=C[C@@H]2[C@@H]1OC1OCC[C@]12C"
+        ],
+        "product_smiles": [
+          "CC(C#CC1=C[C@@H]2[C@@H]1OC1OCC[C@]12C)OC(=O)c1ccccc1"
+        ],
+        "rxn_smiles": "CC(O)C#CC1=C[C@@H]2[C@@H]1OC1OCC[C@]12C.O=C(Cl)c1ccccc1>>CC(C#CC1=C[C@@H]2[C@@H]1OC1OCC[C@]12C)OC(=O)c1ccccc1",
+        "reagents": [
+          "BzCl"
+        ],
+        "yield_percent": 97
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Enynyl benzoate 13 was prepared in high yield."
+      },
+      "evidence": {
+        "text_span": "Ketone 18 was quickly elaborated to key enynyl acetates 21 and 22 by vinyl triflate formation, Sonogashira cross-coupling and acylation. With the two diastereomers in hand, we started investigating the key step (Table 1).",
+        "image_refs": [
+          "3e3d3c9c9d4afb9e036d0bdee1bd8b2a7112413aa4c3231515491e02d6139af2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Enynyl acetates 21 and 22 are available. The key step is the gold-catalyzed Nazarov cyclization to form the cyclopentenone ring.",
+        "gap": "Need to find conditions for efficient and stereoselective Nazarov cyclization.",
+        "decision": "To form the cyclopentenone ring, chose Zhang’s conditions (Ph3PAuCl, AgSbF6) with substrate 21, expecting cyclization but uncertain about stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC#CC(OC(C)=O)C1CC2C(C)C3CC(C)C(OC4CO4)C3C12"
+        ],
+        "product_smiles": [
+          "CC1=CC(=O)C2C1C1C(C)C3CC(C)C(OC4CO4)C3C21",
+          "CC1=CC(=O)C2C1C1C(C)C3CC(C)C(OC4CO4)C3C21"
+        ],
+        "reagents": [
+          "Ph3PAuCl",
+          "AgSbF6"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 51,
+        "failure_mode": "low_yield",
+        "observation": "The cyclopentanone ring was formed as expected, but unsatisfactory diastereomeric ratio (16:24 = 3:2) was observed. The C6 stereocenter was not able to impart sufficient substrate control."
+      },
+      "evidence": {
+        "text_span": "When either substrate 21 or 22 were submitted to Zhang’s conditions (entries 1 and 3)34, the cyclopentanone ring was formed as expected, but unsatisfactory diastereomeric ratio was observed. Echavarren’s catalyst (Au(MeCN)(JohnPhos)SbF6)35 yielded only minor improvement (Table 1, entry 2). Apparently, the C6 stereocenter was not able to impart sufficient substrate control as both products 16 and 24 are formed in all cases. Chirality transfer from propargylic alcohol moiety was not efficient either.",
+        "image_refs": [
+          "418d060d349409fd9687ebe3688d78292240573667e16d572cc2d0de727b47dc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Zhang's conditions for Nazarov cyclization of enynyl acetate 21 resulted in low yield and poor diastereoselectivity.",
+        "gap": "Need to improve the yield and diastereoselectivity of the Nazarov cyclization.",
+        "decision": "To improve the Nazarov cyclization, chose Echavarren’s catalyst (Au(MeCN)(JohnPhos)SbF6) with substrate 21, expecting minor improvement based on literature precedent."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC#CC(OC(C)=O)C1CC2C(C)C3CC(C)C(OC4CO4)C3C12"
+        ],
+        "product_smiles": [
+          "CC1=CC(=O)C2C1C1C(C)C3CC(C)C(OC4CO4)C3C21",
+          "CC1=CC(=O)C2C1C1C(C)C3CC(C)C(OC4CO4)C3C21"
+        ],
+        "reagents": [
+          "Au(MeCN)(JohnPhos)SbF6"
+        ],
+        "solvent": "THF/H2O"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 35,
+        "failure_mode": "low_yield",
+        "observation": "Only minor improvement in yield and diastereoselectivity (16:24 = 2:1) was observed. Chirality transfer from the propargylic alcohol moiety was not efficient."
+      },
+      "evidence": {
+        "text_span": "When either substrate 21 or 22 were submitted to Zhang’s conditions (entries 1 and 3)34, the cyclopentanone ring was formed as expected, but unsatisfactory diastereomeric ratio was observed. Echavarren’s catalyst (Au(MeCN)(JohnPhos)SbF6)35 yielded only minor improvement (Table 1, entry 2). Apparently, the C6 stereocenter was not able to impart sufficient substrate control as both products 16 and 24 are formed in all cases. Chirality transfer from propargylic alcohol moiety was not efficient either.",
+        "image_refs": [
+          "418d060d349409fd9687ebe3688d78292240573667e16d572cc2d0de727b47dc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempts with enynyl acetates 21 and 22 showed poor diastereoselectivity in the Nazarov cyclization.",
+        "gap": "Need to find a more effective substrate and catalyst system for stereocontrolled Nazarov cyclization.",
+        "decision": "To improve stereoselectivity, chose enynyl benzoate 13 as substrate and t-BuBrettphosAuCl with NaBARF as catalyst, inspired by Zhang and Liu's work, expecting improved chirality transfer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C#CC1=C[C@@H]2[C@@H]1OC1OCC[C@]12C)OC(=O)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC1=CC(=O)C2C1C1C(C)C3CC(C)C(OC4CO4)C3C21",
+          "CC1=CC(=O)C2C1C1C(C)C3CC(C)C(OC4CO4)C3C21"
+        ],
+        "reagents": [
+          "t-BuBrettphosAuCl",
+          "NaBARF"
+        ],
+        "solvent": "toluene"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 42,
+        "failure_mode": "low_yield",
+        "observation": "The desired product 16 was obtained as the major product (16:24 = 9:1), but the yield was still moderate."
+      },
+      "evidence": {
+        "text_span": "During this investigation, Zhang and Liu reported48 significant improvement by using enynyl benzoate substrates and, more importantly, identified - tBuBrettphosAuCl as superior catalyst for chirality transfer. Inspired by their work, the enynyl benzoates 13 and 23 were prepared. When 13 was submitted to the reported conditions, to our delight, the desired product 16 was obtained as major product (Table 1, entry 7).",
+        "image_refs": [
+          "418d060d349409fd9687ebe3688d78292240573667e16d572cc2d0de727b47dc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "Using enynyl benzoate 13 with t-BuBrettphosAuCl and NaBARF gave good diastereoselectivity but moderate yield.",
+        "gap": "Need to further optimize the conditions to improve the yield of the Nazarov cyclization.",
+        "decision": "To improve the yield, chose a combination of t-BuBrettphosAuCl and AgSbF6, expecting to achieve higher conversion and yield for the tetracyclic product 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C#CC1=C[C@@H]2[C@@H]1OC1OCC[C@]12C)OC(=O)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC1=CC(=O)C2C1C1C(C)C3CC(C)C(OC4CO4)C3C21"
+        ],
+        "reagents": [
+          "t-BuBrettphosAuCl",
+          "AgSbF6"
+        ],
+        "solvent": "CH2Cl2",
+        "yield_percent": 75
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Further optimization showed that a combination of t-BuBrettphosAuCl and AgSbF6 yielded exclusively the tetracyclic product 25 in good yield. The cyclopentanone product was directly formed, and no benzoate product was observed."
+      },
+      "evidence": {
+        "text_span": "Further optimization showed that a combination of -BuBrettphosAuCl and AgSbF6 t, yielded exclusively the tetracyclic product 25 (Table 1, entry 8). In all cases, the cyclopentanone product was directly formed in the reaction mixture and no benzoate product was observed which also fascinated the overall transformation.",
+        "image_refs": [
+          "418d060d349409fd9687ebe3688d78292240573667e16d572cc2d0de727b47dc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The tetracyclic skeleton 25 has been successfully constructed. The next step is to introduce the C11 and C14 quaternary centers.",
+        "gap": "Need to protect the ketone and then introduce the methyl group and nitrile group stereoselectively.",
+        "decision": "To introduce the C11 and C14 quaternary centers, chose ketal protection of the ketone, followed by alkylation with methyl iodide and 1,4-addition of Nagata reagent (Et2AlCN) in combination with TMSCl, expecting stereoselective addition from the convex face."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=C[C@H]2[C@@H]3[C@H]4CC(=O)CC[C@]4(C)[C@H]3CC(=O)[C@@H]2C1"
+        ],
+        "product_smiles": [
+          "CC1(C#N)C[C@H]2C(=O)C[C@H]3[C@H]([C@@H]21)[C@H]1CC2COC(C[C@@]13C)O2"
+        ],
+        "reagents": [
+          "glycol",
+          "PTSA",
+          "LDA",
+          "MeI",
+          "HMPA",
+          "Et2AlCN",
+          "TMSCl"
+        ],
+        "yield_percent": 80
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The C11 and C14 quaternary centers were synthesized through alkylation and an efficient 1,4-addition of Nagata reagent. Freshly prepared Et2AlCN in combination with TMSCl was crucial for high yield and proved uniquely suitable to set this all-carbon quaternary center."
+      },
+      "evidence": {
+        "text_span": "The C11 and C14 quaternary centers were synthesized through alkylation and an efficient 1,4-addition of Nagata reagent49–54, both from the convex face of the cyclopentenone. Notably, freshly prepared Et2AlCN in combination with TMSCl was crucial for high yield and proved uniquely suitable to set this all-carbon quaternary center.",
+        "image_refs": [
+          "10ee493fc76a4fce79ba736fe6ae53ab36b836841adb0bec341fef61c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 43 contains a ketone at C12. The target 12β-hydroxy conidiogenone C requires a secondary alcohol at C12.",
+        "gap": "Need to stereoselectively reduce the C12 ketone to the desired alcohol.",
+        "decision": "To reduce the C12 ketone, initially surveyed metallic sodium or SmI2 mediated reductions, expecting stereoselective formation of the C12 alcohol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C#N)C[C@H]2C(=O)C[C@H]3[C@H]([C@@H]21)[C@H]1CC2COC(C[C@@]13C)O2"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "metallic sodium",
+          "SmI2"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Initially surveyed metallic sodium or SmI2 mediated reductions for stereoselective construction of the C12 alcohol resulted in no product formation."
+      },
+      "evidence": {
+        "text_span": "Commenced from key intermediate 43, the initially surveyed metallic sodium or SmI2 mediated reductions for stereoselective construction of the C12 alcohol resulted in no product formation.",
+        "image_refs": [
+          "10ee493fc76a4fce79ba736fe6ae53ab36b836841adb0bec341fef61c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "Metallic sodium or SmI2 reductions failed to convert the C12 ketone to the alcohol.",
+        "gap": "Need an alternative reduction method that provides the C12 alcohol, ideally stereoselectively.",
+        "decision": "To reduce the C12 ketone, switched to NaBH4 reduction and screened reaction solvents and temperatures, expecting to obtain the C12 alcohol, potentially as a mixture of diastereomers."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C#N)C[C@H]2C(=O)C[C@H]3[C@H]([C@@H]21)[C@H]1CC2COC(C[C@@]13C)O2"
+        ],
+        "product_smiles": [
+          "CC1(C#N)C[C@H]2C(O)C[C@H]3[C@H]([C@@H]21)[C@H]1CC2COC(C[C@@]13C)O2",
+          "CC1(C#N)C[C@H]2C(O)C[C@H]3[C@H]([C@@H]21)[C@H]1CC2COC(C[C@@]13C)O2"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "yield_percent": 82
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A separable mixture of 44 and 45 was obtained. The tetracyclic skeleton as well as the stereochemistry from alkylation and 1,4-addition was further confirmed through X-ray of compound 44."
+      },
+      "evidence": {
+        "text_span": "We then switched to NaBH4 reduction and after screening reaction solvents and temperatures, a separable mixture of 44 and 45 was obtained. The tetracyclic skeleton as well as the stereochemistry from alkylation and 1,4-addition was further confirmed through X-ray of compound 44 and this undesired diastereomer was recycled to 43 through Ley oxidation.",
+        "image_refs": [
+          "10ee493fc76a4fce79ba736fe6ae53ab36b836841adb0bec341fef61c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The reduction of 43 yielded a mixture of 44 and 45. Compound 44 is the undesired diastereomer.",
+        "gap": "Need to convert the undesired diastereomer 44 back to ketone 43 for recycling.",
+        "decision": "To recycle 44, chose Ley oxidation (TPAP, NMO), expecting to oxidize the alcohol back to the ketone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C#N)C[C@H]2C(O)C[C@H]3[C@H]([C@@H]21)[C@H]1CC2COC(C[C@@]13C)O2"
+        ],
+        "product_smiles": [
+          "CC1(C#N)C[C@H]2C(=O)C[C@H]3[C@H]([C@@H]21)[C@H]1CC2COC(C[C@@]13C)O2"
+        ],
+        "reagents": [
+          "TPAP",
+          "NMO"
+        ],
+        "yield_percent": 80
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The undesired diastereomer 44 was recycled to 43 through Ley oxidation."
+      },
+      "evidence": {
+        "text_span": "The tetracyclic skeleton as well as the stereochemistry from alkylation and 1,4-addition was further confirmed through X-ray of compound 44 and this undesired diastereomer was recycled to 43 through Ley oxidation.",
+        "image_refs": [
+          "10ee493fc76a4fce79ba736fe6ae53ab36b836841adb0bec341fef61c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 45 features the tetracyclic skeleton and all four all-carbon quaternary stereocenters. Late-stage modification of the A ring is required for 12β-hydroxy conidiogenone C.",
+        "gap": "Need to remove the ketal protecting group, protect the C12 hydroxy group, form a methyl enol ether, and perform allylic oxidation to introduce unsaturation in the A ring.",
+        "decision": "To modify the A ring, chose removing the ketal protecting group, protecting the hydroxy group as propionate, then methyl enol ether formation and allylic oxidation as reported by Corey and Yu, expecting to synthesize the unsaturated ketone 46."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C#N)C[C@H]2C(O)C[C@H]3[C@H]([C@@H]21)[C@H]1CC2COC(C[C@@]13C)O2"
+        ],
+        "product_smiles": [
+          "CCC(=O)O[C@H]1CC[C@]2(C)C1C(=O)[C@@]1(C)C2CC[C@H]2CC[C@@]1(C)[C@H](C#N)[C@H]2C"
+        ],
+        "reagents": [
+          "PTSA",
+          "CH(OMe)3",
+          "Pd(OH)2/C",
+          "t-BuOOH",
+          "Cs2CO3"
+        ],
+        "yield_percent": 54
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Compound 46 was synthesized after removing the ketal protecting group and protecting the hydroxy group as propionate. Then through methyl enol ether formation and allylic oxidation, the unsaturated ketone was synthesized."
+      },
+      "evidence": {
+        "text_span": "From this intermediate, the late-stage modification of A ring inspired by Tu’s synthetic route23 was investigated. Compound 46 was synthesized after removing the ketal protecting group and protected the hydroxy group as propionate. Then through methyl enol ether formation and allylic oxidation as reported by Corey and Yu55, unsaturated ketone was synthesized.",
+        "image_refs": [
+          "c4127b340f8804937a6918dc207e3ce2e585d11aacc4fa205662daded6c98522.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Unsaturated ketone 46 is available. The C4 methyl group needs to be installed stereoselectively.",
+        "gap": "Need to install the C4 methyl group stereoselectively.",
+        "decision": "To install the C4 methyl group, chose deprotonation by LDA followed by stereoselective alkylation with methyl iodide, expecting the α face of the in-situ formed enolate to be blocked by the adjacent B ring, leading to correct stereochemistry. Propionate protection of the C12 hydroxy group was deemed necessary."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC(=O)O[C@H]1CC[C@]2(C)C1C(=O)[C@@]1(C)C2CC[C@H]2CC[C@@]1(C)[C@H](C#N)[C@H]2C"
+        ],
+        "product_smiles": [
+          "CCC(=O)O[C@H]1CC[C@]2(C)C1C(=O)[C@@]1(C)C2CC[C@H]2CC[C@@]1(C)[C@H](C#N)[C@H]2C"
+        ],
+        "reagents": [
+          "LDA",
+          "HMPA",
+          "MeI"
+        ],
+        "yield_percent": 54
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The C4 methyl group was correctly installed through stereoselective alkylation. Propionate protection of the C12 hydroxy group proved necessary as the related acetate underwent competitive alkylation during the methylation at C4."
+      },
+      "evidence": {
+        "text_span": "From the enone intermediate, after deprotonation by LDA, the α face of in-situ formed enolate was blocked by the adjacent B rin- g56,57, thereby the C4 methyl group was correctly installed through this stereoselective alkylation. Notably, propionate protection of the C12 hydroxy group proved necessary as the related acetate underwent competitive alkylation during the methylation at C4.",
+        "image_refs": [
+          "c4127b340f8804937a6918dc207e3ce2e585d11aacc4fa205662daded6c98522.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 47 is available. The planned triple reduction of ketone, ester, and nitrile groups is needed to form aldehyde 48.",
+        "gap": "Need to perform a triple reduction to convert the ketone, ester, and nitrile groups into the aldehyde.",
+        "decision": "To achieve the triple reduction, chose DIBAL-H followed by HCl workup (Stork-Danheiser reductive sequence), expecting to form the cyclohexanone ring with the α-methyl group and the aldehyde functionality."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC(=O)O[C@H]1CC[C@]2(C)C1C(=O)[C@@]1(C)C2CC[C@H]2CC[C@@]1(C)[C@H](C#N)[C@H]2C"
+        ],
+        "product_smiles": [
+          "CC1=C[C@]2(C)C(C1=O)C(O)[C@@]1(C)C2CC[C@H]2CC[C@@]1(C)[C@H](C=O)[C@H]2C"
+        ],
+        "reagents": [
+          "DIBAL-H",
+          "HCl"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The planned triple reduction of ketone, ester and nitrile groups were successfully achieved, and the cyclohexanone ring with α-methyl group was constructed efficiently."
+      },
+      "evidence": {
+        "text_span": "With 47 in hand, the planned triple reduction58 of ketone (Stork-Danheiser reductive squence59), ester and nitrile groups were successfully achieved, and the cyclohexanone ring with α-methyl group was constructed efficiently.",
+        "image_refs": [
+          "c4127b340f8804937a6918dc207e3ce2e585d11aacc4fa205662daded6c98522.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 48 is available. The final step for 12β-hydroxy conidiogenone C is the chemoselective reduction of the neopentyl aldehyde in the presence of an unsaturated ketone.",
+        "gap": "Need to chemoselectively reduce the aldehyde to an alcohol without affecting the unsaturated ketone.",
+        "decision": "To achieve chemoselective reduction, chose the reported combination of NaBH4 and acetylacetone, expecting to selectively reduce the aldehyde to the primary alcohol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=C[C@]2(C)C(C1=O)C(O)[C@@]1(C)C2CC[C@H]2CC[C@@]1(C)[C@H](C=O)[C@H]2C"
+        ],
+        "product_smiles": [
+          "CC1=C[C@]2(C)C(C1=O)C(O)[C@@]1(C)C2CC[C@H]2CC[C@@]1(C)[C@H](CO)[C@H]2C"
+        ],
+        "reagents": [
+          "NaBH4",
+          "acac"
+        ],
+        "yield_percent": 41
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The final chemoselective reduction of neopentyl aldehyde 48 in the presence of an unsaturated ketone group was achieved, completing the total synthesis of 12β-hydroxy conidiogenone C."
+      },
+      "evidence": {
+        "text_span": "The final chemoselective reduction of neopentyl aldehyde 48 in the presence of an unsaturated ketone group was achieved under our previously reported combination60,61 of NaBH4 and acetylacetone and total synthesis of 12β-hydroxy conidiogenone C was achieved.",
+        "image_refs": [
+          "c4127b340f8804937a6918dc207e3ce2e585d11aacc4fa205662daded6c98522.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 43 is available. For conidiogenones C and K, the C12 carbonyl group needs to be removed.",
+        "gap": "Need to remove the C12 carbonyl group to convert 43 to a methylene group.",
+        "decision": "To remove the C12 carbonyl group, attempted direct conversion to methylene through Huang Minlon modification of Wolf-Kishner reduction or Caglioti reduction, expecting to deoxygenate the ketone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C#N)C[C@H]2C(=O)C[C@H]3[C@H]([C@@H]21)[C@H]1CC2COC(C[C@@]13C)O2"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Wolf-Kishner reduction",
+        "reagents": [
+          "hydrazine hydrate",
+          "NH2NHTs"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Attempts at direct conversion to methylene through Huang Minlon modification of Wolf-Kishner reduction or Caglioti reduction resulted in recovered starting material 43. The failure is likely due to the sterically hindered environment of the C12 carbonyl group."
+      },
+      "evidence": {
+        "text_span": "To reach these two natural products, the C12 carbonyl group needed to be removed. Attempts at direct conversion to methylene through Huang Minlon modification of Wolf-Kishner reduction or Caglioti reduction resulted in recovered starting material 43. The failure is likely due to the sterically hindered environment of the C12 carbonyl group, which preclude direct nucleophilic attack by hydrazine hydrate or NH2NHTs.",
+        "image_refs": [
+          "7828cfa9ae18369ea7f98cbe82d40255bb237800d87fa7d3f3026c3eb3f86d43.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 18,
+      "thought": {
+        "background": "Direct deoxygenation of the C12 carbonyl group failed due to steric hindrance.",
+        "gap": "Need an alternative strategy to remove the C12 carbonyl group, circumventing the steric hindrance.",
+        "decision": "To overcome the steric hindrance, chose to deprotonate the carbonyl group at C13 with KHMDS and transform it into the vinyl triflate 49 with Comins’ reagent, expecting to enable subsequent reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C#N)C[C@H]2C(=O)C[C@H]3[C@H]([C@@H]21)[C@H]1CC2COC(C[C@@]13C)O2"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS",
+          "Comins' reagent"
+        ],
+        "yield_percent": 70
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The carbonyl group was deprotonated at C13 by KHMDS and transformed into the vinyl triflate 49 with Comins’ reagent."
+      },
+      "evidence": {
+        "text_span": "To overcome this problem, the carbonyl group was deprotonated at C13 by KHMDS and transformed into the vinyl triflate with Comins’ reagent.",
+        "image_refs": [
+          "7828cfa9ae18369ea7f98cbe82d40255bb237800d87fa7d3f3026c3eb3f86d43.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Vinyl triflate 49 is available. The goal is to reduce the vinyl triflate to a methylene group.",
+        "gap": "Need to find conditions for reductive removal of the triflate.",
+        "decision": "To reduce the vinyl triflate, attempted a two-step procedure consisting of palladium-catalyzed reductive cross-coupling and hydrogenation, using formic acid or Et3SiH, expecting to achieve the transformation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "formic acid",
+          "Et3SiH",
+          "Pd/C",
+          "H2"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Neither formic acid nor Et3SiH provided conversion, indicating the steric hindrance preclude oxidative addition of palladium catalyst."
+      },
+      "evidence": {
+        "text_span": "The planned two-step procedure consisting of palladium-catalyzed reductive cross-coupling and hydrogenation were attempted, but neither formic acid nor Et3SiH provided conversion, indicating the steric hindrance preclude oxidative addition of palladium catalyst.",
+        "image_refs": [
+          "7828cfa9ae18369ea7f98cbe82d40255bb237800d87fa7d3f3026c3eb3f86d43.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 20,
+      "thought": {
+        "background": "Palladium-catalyzed reductive cross-coupling and hydrogenation failed for vinyl triflate 49.",
+        "gap": "Need an alternative method for hydrogenolysis of the vinyl triflate.",
+        "decision": "To achieve hydrogenolysis, found direct hydrogenolysis of vinyl triflate 49 after treatment with acid, expecting transformation into 50 via hydrogenation of the double bond followed by substitution of the labile triflate intermediate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd/C",
+          "H2",
+          "PTSA"
+        ],
+        "yield_percent": 87
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Direct hydrogenolysis of the vinyl triflate 49 enabled the transformation into 50 after treatment with acid."
+      },
+      "evidence": {
+        "text_span": "Ultimately, we found direct hydrogenolysis62–65 of the vinyl triflate 49 enabled the transformation into 50 after treatment with acid. A plausible pathway involves hydrogenation of the double bond followed by substitution of the labile triflate intermediate.",
+        "image_refs": [
+          "7828cfa9ae18369ea7f98cbe82d40255bb237800d87fa7d3f3026c3eb3f86d43.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 50 is available. The goal is to synthesize conidiogenone C (4).",
+        "gap": "Need to perform a sequence of modifications on the A ring and chemoselective aldehyde reduction.",
+        "decision": "To synthesize conidiogenone C (4), chose a similar sequence as for 12β-hydroxy conidiogenone C, including modification of the A ring and chemoselective aldehyde reduction, expecting to obtain the target."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC1(CO)C[C@H]2C[C@]3(C)C=CC(=O)[C@@H]4CC(C)(C[C@@H]43)[C@H]2C1"
+        ],
+        "reagents": [
+          "PTSA",
+          "MeOH",
+          "Pd(OH)2",
+          "Cs2CO3",
+          "t-BuOOH",
+          "LDA",
+          "HMPA",
+          "MeI",
+          "DIBAL-H",
+          "HCl",
+          "NaBH4",
+          "acac"
+        ],
+        "yield_percent": 22
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Conidiogenone C (4) was synthesized. The spectra were identical to previously reported data. This also constituted a formal synthesis of conidiogenol D (5)."
+      },
+      "evidence": {
+        "text_span": "From 50, through a similar sequence as above including modification of A ring and chemoselective aldehyde reduction, conidiogenone C (4) was synthesized. As the NaBH4-mediated transformation of conidiogenone C (4) to conidiogenol D (5) was reported10, our work also constituted a formal synthesis of conidiogenol D (5).",
+        "image_refs": [
+          "7828cfa9ae18369ea7f98cbe82d40255bb237800d87fa7d3f3026c3eb3f86d43.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Conidiogenone C (4) is available. The goal is to synthesize conidiogenone K (8).",
+        "gap": "Need to introduce an epoxide functionality into conidiogenone C.",
+        "decision": "To synthesize conidiogenone K (8), chose Weitz-Scheffer epoxidation of conidiogenone C, expecting to form the epoxide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(CO)C[C@H]2C[C@]3(C)C=CC(=O)[C@@H]4CC(C)(C[C@@H]43)[C@H]2C1"
+        ],
+        "product_smiles": [
+          "CC1(CO)C[C@H]2C[C@]3(C)C4OC4C(=O)[C@@H]4CC(C)(C[C@@H]43)[C@H]2C1"
+        ],
+        "reagents": [
+          "TBHP",
+          "Triton B"
+        ],
+        "yield_percent": 61
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The first total synthesis of conidiogenone K was completed. The spectra were identical to previously reported data."
+      },
+      "evidence": {
+        "text_span": "After Weitz-Scheffer epoxidation of conidiogenone C, the first total synthesis of conidiogenone K was completed (Fig. 3B). The spectra of those three natural products were identical in all respects to those previously reported7,12,24.",
+        "image_refs": [
+          "7828cfa9ae18369ea7f98cbe82d40255bb237800d87fa7d3f3026c3eb3f86d43.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Conidiogenone C (4) has been synthesized. For biological evaluation, an alkyne-tagged probe is needed.",
+        "gap": "Need to synthesize an alkyne-tagged conidiogenone C-derived probe (51).",
+        "decision": "To synthesize probe 51, chose to react conidiogenone C (4) with 5-hexynoic acid using EDCI, HOBT, and DMAP, expecting to form an ester linkage with the alkyne handle."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(CO)C[C@H]2C[C@]3(C)C=CC(=O)[C@@H]4CC(C)(C[C@@H]43)[C@H]2C1",
+          "C#CCCCC(=O)O"
+        ],
+        "product_smiles": [
+          "C#CCCCC(=O)OCC1(C)C[C@H]2C[C@]3(C)C=CC(=O)[C@@H]4CC(C)(C[C@@H]43)[C@H]2C1"
+        ],
+        "reagents": [
+          "EDCI",
+          "HOBT",
+          "DMAP"
+        ],
+        "solvent": "DCM",
+        "yield_percent": 66
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The alkyne-tagged conidiogenone C probe (51) was successfully synthesized."
+      },
+      "evidence": {
+        "text_span": "Therefore, we introduced an alkyne handle and synthesized an activity-based conidiogenone C probe (51) (Fig. 4B), which could be subsequently linked with azide-fluorescent dye or azide-biotin to label the direct cellular protein targets.",
+        "image_refs": [
+          "072d1162ca90748bc5e4f5e5a9c4041e522077bda3954ad27a3295efe382adc1.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "X-ray crystallography",
+      "HRMS",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield for the total synthesis of conidiogenone C is not explicitly stated, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence to construct the tetracyclic skeleton 25 is 10 steps."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Total steps for the complete synthesis of conidiogenone C, K, and 12β-hydroxy conidiogenone C are not explicitly stated as a single number, but individual routes are described."
+      },
+      "Failed Attempts Count": {
+        "value": 4,
+        "unit": "attempts",
+        "interpretation": "Four distinct failed attempts were reported during the synthesis."
+      }
+    },
+    "comparison_to_prior": "The spectra of the synthesized natural products (conidiogenone C, conidiogenone K, and 12β-hydroxy conidiogenone C) were identical in all respects to those previously reported.",
+    "significance": "The work provides an asymmetric total synthesis of conidiogenones C, K and 12β-hydroxy conidiogenone C, featuring a gold-catalyzed 1,3-acyloxy migration and Nazarov cyclization with efficient chirality transfer. It also includes the first total synthesis of conidiogenone K and a formal synthesis of conidiogenol D. Furthermore, the study identifies IRGM1 as a key cellular target of conidiogenone C, responsible for its anti-inflammatory activity, and elucidates its mechanism of action involving IRGM1-mediated dysfunctional mitochondria autophagy. This represents the first small-molecule activator of IRGM1, opening avenues for SAR studies and potential therapeutic applications for autoimmune diseases."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s41467-024-55189-8",
+      "pmcid": "PMC11686375",
+      "title": "Total synthesis and target identification of marine cyclopiane diterpenes.",
+      "authors": "Li T, Jiang S, Dai Y, Wu X, Guo H, Shi L, Sang X, Ren L, Wang J, Shi L, Zhou W, Li H, Hao HD.",
+      "journal": "Nat Commun",
+      "year": 2024,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC11686375?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/6215042e-5ab9-4a35-a995-de9d3cf1f7ae.zip",
+      "parsed_at": "2026-05-11T06:37:15.378820+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 54,
+    "parseable": 46,
+    "canonicalized": 45,
+    "invalid": 8,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1(C(C(C2C3C(C(C(O3)OC2(C)OC)C)C)C1=C(C)OTf)C)C#N",
+      "CC1(C(C(C2C3C(C(C(O3)OC2(C)OC)C)C)C1=C(C)OTf)C)C#N",
+      "CC1(C(C(C2C3C(C(C(O3)OC2(C)OC)C)C)C1=C(C)OTf)C)C#N",
+      "CC1(C(=O)C2(C(C(C3C4C(C(C(O4)OC3(C)OC)C)C)C2)C)C)C#N",
+      "CC1(C(=O)C2(C(C(C3C4C(C(C(O4)OC3(C)OC)C)C)C2)C)C)C#N"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

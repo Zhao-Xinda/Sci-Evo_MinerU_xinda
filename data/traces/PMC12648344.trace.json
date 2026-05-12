@@ -1,0 +1,283 @@
+{
+  "trace_id": "TS-PMC12648344",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Gramicidin A (1a)",
+    "smiles": "",
+    "natural_product_class": "peptide",
+    "structural_features": {
+      "molecular_weight": 1882,
+      "stereocenters": 14,
+      "key_motifs": [
+        "indole",
+        "peptide bond",
+        "formyl group",
+        "2-aminoethanol"
+      ]
+    },
+    "motivation": "To understand the impact of tryptophan positional isomerism on physicochemical and biological properties, specifically to develop gramicidin A analogs with enhanced bacterial selectivity and reduced mammalian toxicity.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Takada",
+        "year": 2020,
+        "doi": "10.1038/s41467-020-18742-w",
+        "key_strategy": "one-bead-one-compound strategy to construct a large library by randomizing six aliphatic monomers"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Discovery of novel gramicidin A analogs with disparate bacterial selectivity, specifically analogs with maintained antibacterial activity but significantly reduced mammalian toxicity (e.g., >20-fold decrease in HC10 and GI50 compared to 1a)."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [],
+    "fragments": [
+      {
+        "fragment_id": "3b-3f",
+        "smiles": "CC(C)(C)OC(=O)n1ccc([C@@H](NC(=O)OCC2C=Cc3ccccc32)C(=O)O)c1-c1ccccc1",
+        "role": "protected tryptophan isomers",
+        "comes_from": "previous synthesis"
+      },
+      {
+        "fragment_id": "4",
+        "smiles": "",
+        "role": "resin-bound Trp-15",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "7",
+        "smiles": "O=C(O)c1ccc([N+](=O)[O-])cc1",
+        "role": "formylating agent",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "8",
+        "smiles": "NCCCO",
+        "role": "C-terminal modifying agent",
+        "comes_from": "commercial"
+      }
+    ],
+    "rationale": "The strategy involves solid-phase peptide synthesis (SPPS) using Fmoc chemistry, incorporating pre-synthesized Nα-Fmoc-Nindole-Boc-protected Trp isomers. This allows for efficient assembly of the 15-mer peptide on a ChemMatrix resin, followed by N-terminal formylation and C-terminal modification via ester-amide exchange."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Gramicidin A (1a) is a 15-mer linear peptidic natural product with potent toxicity against bacteria and mammalian cells, limiting its therapeutic use to topical applications. Previous work identified analog 2a with reduced mammalian toxicity but maintained antibacterial activity by replacing Val-8 and Leu-14 with Thr-8 and Val-14, respectively.",
+        "gap": "Further improvement in bacterial selectivity is desired. The role of tryptophan's amphipathic indole ring in controlling membrane interactions and selectivity is not fully understood, especially how positional isomerism affects these properties.",
+        "decision": "To explore the hypothesis that selectivity can be controlled by enhancing hydrophilicity, we will design and synthesize a focused library of gramicidin A analogs by altering the positional isomerism of Trp-11. Trp-11 is chosen due to its deep embedding in the hydrophobic membrane, suggesting its significant impact on hydrophobicity and ion channel function."
+      },
+      "evidence": {
+        "text_span": "As toxicities toward bacteria and mammalian cells originate from the ion channel activity, the attenuated hemolytic activity of 2a is attributed to its less effective ion channel function in the mammalian membrane compared to its bacterial counterpart. Whereas the bacterial membrane is composed of anionic lipids (e.g., POPG, Figure 1d),25 the mammalian plasma membrane contains zwitterionic lipids (e.g., POPC) and 20 to 50 mol % neutral cholesterol.26,27 The presence of cholesterol in the mammalian membrane endows higher hydrophobicity,28,29 which may destabilize the ion-conducting structure of more hydrophilic 2a in comparison to 1a. These considerations led us to propose that the selectivity against bacteria over mammalian cells could be controlled simply by enhancing the hydrophilicity. To explore this hypothesis, we aimed to discover novel analogs with enhanced bacterial selectivity based on the structures of 1a and 2a. Instead of constructing a large library by changing multiple residues, we planned to efficiently prepare a focused library by switching one specific residue.30 Achieving the desired activities of natural products from a focused library is extremely challenging, however, as even small structural changes can abolish their evolutionarily optimized functions. This difficulty is further highlighted by the fact that only 3 of 4096 peptides exhibited the required activity profile, resulting in a 0.07% hit rate.21 0.07% In rationally designing these new analogs, we directed our attention to the positional isomerism of the amphiphilic indole rings of the Trp residues (Figure 1a).31−33 We envisioned that alterations of the indole-substitution positions from the original C3 to C2/4/5/6/7 would change the orientation of the N−H hydrogen-bond donor, thereby affecting the hydrophilicity of 1a with minimum perturbation of the hydrophobic exterior of the channel structure. Among the four Trp residues of 1a, Trp-11 was designated as the substitution site. Trp-11 was selected because switching Trp-9 and Trp-15 would disrupt the π−π stacking and destabilize the β6.3-helix, and altering Trp-13 would be less effective than substituting Trp-11, which is more deeply embedded in the hydrophobic membrane (Figure 1b).",
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "The amphiphilic nature of the indole ring of tryptophan residues is crucial for the function of gramicidin A. Positional isomerism of the indole ring could alter the exposure of the N-H group, thereby modulating the overall hydrophilicity of the peptide.",
+        "gap": "The precise relationship between indole substitution position, N-H group exposure, and overall molecular hydrophilicity needs to be quantified.",
+        "decision": "To quantify the effect of positional isomerism on hydrophilicity, we will computationally analyze the exposure of the N-H group (r2 value) for different methylindole isomers. This will guide the selection of Trp isomers for synthesis, predicting their relative hydrophilicity."
+      },
+      "evidence": {
+        "text_span": "The indole positional isomers of 1a−1f change the distance of the most hydrophilic NH group from the main chain, thereby affecting the hydrophobic exterior of their β6.3-helical structures. To precisely compare the structural differences among the six indole isomers, we first analyzed the exposure of the NH group from the main chain (Figure 1e). The distance between the Cβ atom and the H atom of the NH group is defined as r1 (blue line). As the NH group from the Cβ position is averaged by the free rotation of the Cβ−Cγ bond, the projection of r2 to the Cβ−Cγ axis (red line) should be more suitable for comparing the six isomers, and thus r2 was defined as the NH group exposure factor. Therefore, we measured the r2 values using methylindole structures, which were simplified for computational calculations (Figure 1f). We found that the r2 values largely differed among the six isomers, ranging from 0.91 Å (C7-isomer) to 6.36 Å (C5-isomer). The data indicated that positional isomerism would efficiently modulate the hydrophilicity of the molecules. According to these analyses, 1f (C7-isomer) and 1d (C5-isomer) would be the least and most hydrophilic analogs. Analog 2d was designed to confirm whether the C3-to-C5 substitution change further enhances the hydrophilicity of 2a and modulates its bacterial selectivity (Figure 1a).",
+        "section": "Computational Analysis of the Trp Positional Isomers"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A robust solid-phase peptide synthesis (SPPS) method is required to efficiently synthesize the gramicidin A analogs with various Trp positional isomers. Previous work established a unified synthetic route to Nα-Fmoc-Nindole-Boc-protected Trp isomers.",
+        "gap": "The established Trp isomer synthesis needs to be integrated into a SPPS strategy for gramicidin A analogs, ensuring high-yielding amide bond formation and efficient deprotection/cleavage.",
+        "decision": "To synthesize 1b−1f and 2d, we will use an Fmoc-based solid-phase strategy. ChemMatrix resin will be used as the solid support, and HMBA as the linker for C-terminal modification. HATU/HOAt will be used for amide bond formation under microwave irradiation. After peptide assembly, N-terminal formylation with p-nitrophenylformate, followed by TFA-mediated deprotection and ester-amide exchange with 2-aminoethanol, will complete the synthesis."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "reagents": [
+          "O=C(O)[C@H](NC(=O)OCC1C2=CC=CC=C2C=C1)C3=C(N(C(=O)OC(C)(C)C)C=C3)C4=CC=CC=C4",
+          "C[N+](C)=C(N(C)C)N1C=NC2=C1N=C(N)N2.[PF6-]",
+          "O=C1NC(=N)N2C=CC=C12",
+          "O=C(O)C1=CC=C(C=C1)[N+](=O)[O-]",
+          "N-methylmorpholine",
+          "CF3CO2H",
+          "H2O",
+          "NCCCO"
+        ],
+        "solvent": "DMF",
+        "temperature": "50 °C",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": "18% (1b), 28% (1c), 6.8% (1d), 6.3% (1e), 4.6% (1f), 18% (2d)",
+        "observation": "Five Trp-11 isomers (1b, 1c, 1d, 1e, 1f) and triply mutated analog 2d were successfully obtained after HPLC purification. The consistent overall yields across different analogs demonstrate the robustness of the synthetic route."
+      },
+      "evidence": {
+        "text_span": "Thus, the synthesis of 1b−1f and 2d started with Trp-15- HMBA-linked ChemMatrix resin 4. To ensure high-yielding amide bond formation, a reagent mixture of O-(7-aza-1Hbenzotriazol-1-yl)−N,N,N′,N′-tetramethyluronium hexafluorophosphate (HATU) and 1-hydroxy-7-azabenzotriazole (HOAt)43 were utilized under heating at 40 °C by microwave irradiation.44 Repeats of piperidine-mediated Fmoc removal and condensation of a Fmoc-protected amino acid from 14 afforded the resin-bound 15-mer peptide. Fmoc removal of the 15-mer, followed by formylation of the N-terminal amine with p-nitrophenylformate (7) in the presence of N-methylmorpholine gave rise to 5b−5f/6d. Then, treatment with CF3CO2H and H2O resulted in on-resin detachment of the Boc group of the indole rings of 5b−5f/6d and the t-Bu group on the alcohol of 6d. Finally, resin removal and C-terminal modification were simultaneously achieved by an ester-amide exchange reaction with 8 in DMF at 50 °C. After HPLC purification, five Trp-11 isomers 1b, 1c, 1d, 1e, and 1f were successfully obtained in 18%, 28%, 6.8%, 6.3%, and 4.6% yields respectively, over 32 steps from 4, while triply mutated analog 2d was produced in 18% yield. The consistent overall yields of the analogs corroborated the robustness and high efficiency of the established synthetic routes to Trp positional isomers with disparate reactivities.",
+        "section": "Solid-phase Total Synthesis of Five Trp-11 Positional Isomers 1b−1f and 2d"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The computational analysis predicted that Trp positional isomerism would modulate the hydrophilicity of the molecules, with 1f (C7-isomer) being the least hydrophilic and 1d (C5-isomer) being the most hydrophilic.",
+        "gap": "Experimental validation of the hydrophilicity of the synthesized analogs is needed to confirm the computational predictions and establish a correlation between indole substitution patterns and overall molecular hydrophobicity.",
+        "decision": "To evaluate the hydrophilicity, the log D values of 1b−1f, 2a, and 2d will be determined using UHPLC-based methods. These values will be compared with the computationally derived r2 values to assess the correlation."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Log D values varied from 5.05 (1d) to 6.49 (1f) for 1a-based analogs, confirming that substitution patterns control hydrophilicity. A strong linear correlation (R^2 = 0.961) was observed between log D and the calculated r2 values, validating the computational predictions. 1d (C5-isomer) was the least hydrophobic among 1a and its five analogs, and 2d (C5-isomer in 2a background) was even less hydrophobic than 2a."
+      },
+      "characterization": [
+        "UHPLC"
+      ],
+      "evidence": {
+        "text_span": "Having synthesized 1b−1f and 2d, we next validated whether Trp positional isomerism indeed influences the hydrophilicity. Thus, the log D values of 1b−1f and 2d were determined as hydrophobicity indexes, along with those of their parent compounds 1a and 2a (Table 1). To calculate log D, the retention times of the peptides were measured using ultra highperformance liquid chromatography (UHPLC) equipped with a C18 stationary phase, and compared with those of standard samples having known log D values.45 The log D values of 1abased analogs 1b−1f varied from 5.05 (1d) to 6.49 (1f). The data demonstrated that the substitution patterns of the single indole ring control the hydrophilicity of the entire molecules of 1882 Da. Remarkably, the hydrophobicity index (log D) linearly correlated with the exposure factor of the NH group (r2) of 1a−1f (Figure 2, square of the correlation coefficient = 0.961). C7-isomer 1f and C2-isomer 1b had the largest and second largest log D values (6.49 for 1f and 6.29 for 1b) and thus belong to the group with low r2 values (0.91 Å for 1f and 1.81 Å for 1b). Alternatively, the parent C3-isomer (4.42 Å), along with the artificial C4-isomer 1c (5.04 Å), C5-isomer1d (6.36 Å), and C6-isomer 1e (4.26 Å), were classified as the group with low log D and high r2 values, and C5-isomer 1d was the least hydrophobic among them. These data indicate that the relative orientation of the NH group with respect to the main chain is the primary factor regulating hydrophobicity. The log D value of 2a with Thr-8 and Val-14 instead of Val-8 and Leu-14 of 1a was lower than those of 1a−1f (4.31), and that of 2d with Trp-11 C5-isomer was even lower (4.02), confirming the large and consistent effect of the C3-to-C5 isomeric change on the hydrophobicity.",
+        "section": "Evaluation of the Hydrophilicity of 1a−1f, 2a, and 2d"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Gramicidin A functions as an ion channel, and its activity is known to be influenced by membrane composition. The synthesized analogs have varying hydrophilicity.",
+        "gap": "It is unknown how the Trp positional isomerism and resulting hydrophilicity changes affect the ion channel activity in different membrane environments, particularly those mimicking bacterial and mammalian cells.",
+        "decision": "To evaluate ion channel activities, we will use two types of large unilamellar vesicles (LUVs): EYPC/EYPG (bacterial model) and EYPC/cholesterol (mammalian model). Pyranine-based fluorescence assays will be used to measure H+/Na+ transport activity and determine EC50 values for all synthesized peptides."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "In bacterial model LUVs (EYPC/EYPG), all peptides showed similar potent ion channel activities (1.83-6.01 nM EC50). In contrast, in mammalian model LUVs (EYPC/cholesterol), EC50 values varied significantly (10.8-202 nM). Hydrophobic analogs (1b, 1f) showed more potent activity than hydrophilic ones (1a, 1c, 1d, 1e, 2a, 2d). This suggests that cholesterol in mammalian membranes destabilizes the ion-conducting helix for hydrophilic analogs."
+      },
+      "characterization": [
+        "fluorescence assay"
+      ],
+      "evidence": {
+        "text_span": "To investigate whether ion channel activities of 1a−1f, 2a, and 2d are affected by membrane components, we utilized two types of large unilamellar vesicles (LUVs) as simple bacterial and mammalian cell model systems. Namely, the first LUVs contained a 19:1 mixture of zwitterionic egg yolk phosphatidylcholine (EYPC) and anionic egg yolk phosphatidyl glycerol (EYPG) to mimic the anionic bacterial membrane, while the second LUVs consist of a 2:1 mixture of EYPC and chargeneutral cholesterol to emulate mammalian plasma membrane. Pyranine46 was encapsulated in these LUVs, and then a pH gradient across the membrane was generated. The ion channel formation of the peptides at various concentrations induced the H+/Na+ exchange, and the resultant fluorescence increase from deprotonated pyranine was measured. The median effective concentration (EC50) of each peptide was then deduced to quantify its channel activity (Table 1). When using the EYPC/EYPG-containing LUVs, all peptides 1a−1f, 2a, and 2d were calculated to possess one-digit nanomolar EC50 values, and the maximum difference was only 3.3-fold (6.01 nM for 1c vs 1.83 nM for 2a). Thus, not only the six substitution patterns of the indole ring of Trp-11 of 1a− 1f but also the change of Val-8/Leu-14 to Thr-8/Val-14 in 2a and 2b were inconsequential to the ion channel activities. Despite the large difference in hydrophobicity between them, all peptides functioned effectively as ion channels in this bacterial model membrane. In sharp contrast to the above results, the EC50 values of 1a−1f, 2a, and 2d markedly varied in the mammalian model LUVs containing EYPC and cholesterol, with a maximum difference of 19-fold (10.8 nM for 1b vs 202 nM for 2a). Among the six Trp-11 positional isomers 1a−1f, the hydrophobic group members 1b (10.8 nM) and 1f (14.2 nM) had several times more potent transport activity than the hydrophilic group members 1a (45.6 nM), 1c (38.8 nM), 1d (43.4 nM), and 1e (34.7 nM). Furthermore, the EC50 values of hydrophilic analogs 2a (202 nM) and 2d (114nM) were higher than that of 1a. The results suggested that the presence of neutral cholesterol created a highly hydrophobic environment and negatively influenced the stability of the ionconducting β6.3-helix, particularly for hydrophilic analogs 1a, 1c, 1d, 1e, 2a, and 2d, compared with hydrophobic analogs 1b and 1f. Experiments using the two types of LUVs together validated that membrane components can modulate the ion channel functions of the eight peptides.",
+        "section": "Evaluation of Ion Channel Activities of 1a−1f, 2a, and 2d"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The ion channel activities of the analogs were evaluated in model membranes. Now, their biological activities against actual bacterial and mammalian cells need to be assessed to determine their therapeutic potential and selectivity.",
+        "gap": "The antibacterial activity, mammalian cytotoxicity, and hemolytic activity of the synthesized analogs need to be quantified and correlated with their hydrophilicity and ion channel function.",
+        "decision": "To evaluate biological activities, we will measure minimum inhibitory concentrations (MIC) against five Gram-positive bacterial strains, median growth inhibitory concentrations (GI50) against MCF-7 human breast cancer cells using a sulforhodamine B assay, and 10% hemolytic concentrations (HC10) against rabbit red blood cells."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Most analogs (1b-1e, 2a, 2d) retained potent antibacterial activities comparable to 1a, with some showing enhanced potency against specific strains (e.g., 1d and 1e against S. pyogenes). Mammalian cytotoxicity (GI50 against MCF-7) and hemolytic activity (HC10) were strongly correlated with hydrophobicity (log D). More hydrophilic analogs (2a, 2d) showed significantly reduced mammalian toxicity (e.g., 2d had >20-fold weaker activity than 1a in both assays), while maintaining antibacterial efficacy. This confirms the hypothesis that enhancing hydrophilicity can control selectivity."
+      },
+      "characterization": [
+        "MIC assay",
+        "sulforhodamine B assay",
+        "hemolysis assay"
+      ],
+      "evidence": {
+        "text_span": "Antibacterial activities of 1a−1f, 2a, and 2d were compared by evaluating their MIC values against five Gram-positive strains (Table 1). Analogs 1b−1f, 2a, and 2d retained the antibacterial activities of parent 1a, although the most hydrophobic C7- isomer 1f was somewhat weaker than that of 1a and the other analogs. Intriguingly, the antibacterial spectra of these compounds were mostly similar: the MIC values against S. pneumoniae and S. pyogenes of 1a−1f, 2a, and 2d were significantly lower than those against E. faecalis, S. agalactiae, and L. monocytogenes. It is noteworthy that some of the analogs exhibited more potent activities than 1a. Namely, 1d and 1e were 4-fold more potent against S. pyogenes (8.3 nM for 1d and 1e vs 33 nM for 1a), and 1b−1e (130 nM) exhibited 4-fold enhanced antibacterial activities against E. faecalis than 1a (530 nM). Moreover, while 1c and 1d showed 4-fold higher potency against S. agalactiae (530 nM vs 2100 nM), 1f and 2d were 4- fold more toxic toward L. monocytogenes (1100 nM vs 4300 nM). The maintained antibacterial activities of analogs 1b−1f, 2a, and 2d should reflect consistent ion channel formation in the bacterial membranes. In contrast to the narrow range of EC50 values (1.83−6.01 nM) in the LUV assay using EYPC/EYPG, however, the range of MIC values against the five different bacterial strains was much broader (4.2−17000 nM). This discrepancy can be attributed to the huge diversity in the membrane compositions across different strains. These membranes contain not only PC and PG but also cardiolipin, lysyl-phosphatidylglycerol, lysyl-cardiolipin, and phosphatidylinositol.47,48 Although the specific factors influencing the antibacterial spectra have yet to be determined, these data suggest that interactions between the hydrophobic exterior of the ion-channel-forming peptides and the multiple membrane components determine the potency of their antibacterial activities. Next, the toxicities of 1a−1f, 2a, and 2d against mammalian cells were assessed using MCF-7 human breast cancer cells and rabbit red blood cells (Table 1). The median growth inhibitory concentrations (GI50) against MCF-7 were estimated using a sulforhodamine B assay.49 The assay of the six positional isomers 1a−1f revealed that the substitution patterns of the indole ring influenced the potency. The GI50 values of hydrophilic group members 1a (42.6 nM), 1c (68.3 nM), 1d (106 nM), and 1e (110 nM) were higher than those of hydrophobic group members 1b (23.3 nM) and 1f (36.5 nM). Moreover, the activities of more hydrophilic 2a (397 nM) and 2d (878 nM) were decreased 9.3- and 21-fold, respectively, from that of 1a. To clarify the relationship between growth inhibition activity and hydrophobicity, the log D values of the eight peptides were plotted against the −log(GI50) values (Figure 3). The points of 1a−1f, 2a, and 2d were linearly aligned (R2 = 0.827). These findings corroborated that the activities against MCF-7 cells were effectively controlled by modulating the hydrophobicity of the entire molecule.50 The greater hydrophilicities of the analogs more strongly reduced the toxicities against red blood cells (Table 1). Hemolytic activities of 1a−1f, 2a, and 2d were evaluated by calculating the concentration for inducing 10% hemolysis (HC10) using hemoglobin leakage from the damaged red blood cells. The HC10 values of the four hydrophilic positional isomers 1a (107 nM), 1c (174 nM), 1d (261 nM), and 1e (99.6 nM) were 1.4- to 5.1-fold larger than those of 1b (72.7 nM) and 1f (51.5 nM). Most importantly, the two more hydrophilic analogs 2a and 2d showed at least 10-fold weaker hemolytic activities than 1a and 1d (HC10 > 3000 nM). Hence, hemolysis was effectively diminished by enhancing the hydrophilicity of the analogs. The potency orders in the LUV assay using POPG/ cholesterol, the growth inhibition assay using MCF-7, and the hemolysis assay using red blood cells were mostly similar. Although the order within each group changed depending on the specific assay, the magnitude of potency in all three assays was classified into three groups: the strong and hydrophobic analogs 1b/1f, the moderate and hydrophilic analogs 1a/1c/ 1d/1e, and the weak and more hydrophilic analogs 2a/2b. These consistent activity profiles strongly indicated that the cholesterol-rich hydrophobic environment in mammalian cells destabilized the ion-conducting β6.3-helix more greatly for the hydrophilic analogs than the hydrophobic analogs.51 Importantly, the assay data of 1a−1f, 2a, and 2d for bacterial strains and mammalian cells supported our hypothesis that enhancing hydrophilicity can control selectivity against bacteria over mammalian cells. The original gramicidin A (1a) and the most hydrophilic analog 2d exhibited single- to double-digit nanomolar MIC values against S. pyogenes and S. pneumoniae (4.2−33 nM, Table 1). In sharp contrast to their analogous antibacterial activities, the GI50 value in the MCF-7 assay and the HC10 value in the hemolysis assay of 2d were 878 nM and >3000 nM, respectively, more than 20-fold larger than those of 1a. Given this high bacterial selectivity, the triply mutated 2d with the Trp-11 C5-isomer provides a new chemical basis for developing systemic antibacterial agents.",
+        "section": "Evaluation of Biological Activities of 1a−1f, 2a, and 2d"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "UHPLC",
+      "fluorescence assay",
+      "MIC assay",
+      "sulforhodamine B assay",
+      "hemolysis assay"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "4.6-28",
+        "unit": "%",
+        "interpretation": "Yields for individual analogs over 32 steps."
+      },
+      "Longest Linear Steps": null,
+      "Total Steps": 32,
+      "Failed Attempts Count": 0
+    },
+    "comparison_to_prior": "The study successfully demonstrated that Trp positional isomerism can be used to tune the hydrophobicity and biological properties of gramicidin A analogs. Analog 2d, with a C5-substituted Trp-11, showed significantly reduced mammalian toxicity (>20-fold decrease in GI50 and HC10) compared to the parent 1a, while maintaining potent antibacterial activity. This represents a substantial improvement in bacterial selectivity compared to previously reported analogs.",
+    "significance": "This work provides a novel molecular editing approach to optimize the physicochemical and biological properties of Trp-containing bioactive peptides. By subtly altering the indole substitution position, the hydrophilicity of the entire molecule can be modulated, leading to enhanced bacterial selectivity. This strategy has broad applicability for developing new antibacterial agents and other bioactive peptides with improved therapeutic profiles."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.5c00969",
+      "pmcid": "PMC12648344",
+      "title": "Impact of Tryptophan Positional Isomerism on Physicochemical and Biological Properties: A Case Study Using Gramicidin A Analogs.",
+      "authors": "Migita T, Itoh H, Hamamoto H, Inoue M.",
+      "journal": "JACS Au",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC12648344?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/94ccaebf-5604-4d15-b25f-088b49a24c74.zip",
+      "parsed_at": "2026-05-11T06:38:56.340004+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 12,
+    "parseable": 3,
+    "canonicalized": 2,
+    "invalid": 9,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=CN[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)NCCO",
+      "O=C(O[C@H](C1=CC=C(CNC(=O)C2)C=C1)C3=CNC4=CC=CC=C43)OCC5C6=CC=CC=C6C=C5",
+      "O=C(O[C@H](C1=CC=C(CNC(=O)C2)C=C1)C3=CNC4=CC=CC=C43)OCC5C6=CC=CC=C6C=C5",
+      "O=CN[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)NCCO",
+      "O=CN[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)NCCO",
+      "O=CN[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)NCCO",
+      "O=CN[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)NCCO",
+      "O=CN[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)NCCO",
+      "O=CN[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](C)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](CC(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)N[C@@H](C(C)C)C(=O)N[C@H](Cc1cnc2ccccc21)C(=O)NCCO"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "Gramicidin A (1a)",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

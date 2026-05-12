@@ -1,0 +1,1318 @@
+{
+  "trace_id": "TS-PMC12828479",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Cochlearenine",
+    "smiles": "CC[N+]12C[C@@H]1CC1=C3[C@@H](C[C@@H]1[C@H](C)C2)C(C)(C)[C@@H](O)[C@H](O)[C@H]3O",
+    "natural_product_class": "Diterpenoid alkaloid",
+    "structural_features": {
+      "molecular_weight": 377.5,
+      "stereocenters": 12,
+      "ring_systems": "hexacyclic",
+      "key_motifs": [
+        "azabicyclo[3.3.1]nonane",
+        "bicyclo[2.2.1]heptane",
+        "bicyclo[2.2.2]octane"
+      ]
+    },
+    "motivation": "Cochlearenine (4) behaves as an antioxidant. The denudatine alkaloids have also attracted interest as biosynthetic precursors of aconitine alkaloids with extremely potent biological activities. No divergent routes to denudatine alkaloids had been reported.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Sarpong",
+        "year": 2016,
+        "doi": "10.1021/jacs.6b06000",
+        "key_strategy": "unified total syntheses of (±)-cochlearenine (4), (±)-paniculamine (5), and (±)–N-ethyl-1α-hydroxy-17-veratroyldictizine (6)"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Asymmetric total synthesis of cochlearenine (4), macrocentrine (8), dictizine (9), and 15-veratroyl-17-acetyl-19-oxodictizine (10), and asymmetric synthesis of the proposed structure of acochlearine (7)."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bonds of bicyclo[2.2.2]octane C/D rings",
+        "named_strategy": "Diels–Alder reaction",
+        "reasoning": "The bicyclo[2.2.2]octane C/D rings should be constructed following Fukuyama and Yokoshima’s intermolecular Diels–Alder strategy using diene 18 and ethylene."
+      },
+      {
+        "bond_description": "C10–C20 bond",
+        "named_strategy": "intramolecular Mannich reaction",
+        "reasoning": "To construct nitrogen-containing tetracyclic A/B/E/F rings containing aza-bicyclo[3.3.1]nonane and bicyclo[2.2.1]heptane rings, Fukuyama and Yokoshima performed an intramolecular Mannich reaction of tricyclic ketone 11, forming the crucial C10–C20 bond."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "common_precursor_17",
+        "smiles": "CCN1C[C@@]2(C)[C@@H]3CC[C@@]4(C)c5c(cc6c(c5C)OC(C)(C)O6)C(=O)C[C@@H]4[C@H]3CC[C@@H]2[C@@H]1O",
+        "role": "common precursor",
+        "comes_from": "retrosynthetic_analysis"
+      },
+      {
+        "fragment_id": "diene_18",
+        "smiles": "",
+        "role": "Diels-Alder diene",
+        "comes_from": "retrosynthetic_analysis"
+      },
+      {
+        "fragment_id": "phenol_19",
+        "smiles": "",
+        "role": "intermediate",
+        "comes_from": "retrosynthetic_analysis"
+      },
+      {
+        "fragment_id": "tetracyclic_ketone_21",
+        "smiles": "",
+        "role": "key tetracyclic intermediate",
+        "comes_from": "retrosynthetic_analysis"
+      },
+      {
+        "fragment_id": "hemiaminal_23",
+        "smiles": "",
+        "role": "acyliminium ion precursor",
+        "comes_from": "retrosynthetic_analysis"
+      },
+      {
+        "fragment_id": "enone_25",
+        "smiles": "COC(=O)C1=C(C=O)CCC2(C1)OCCO2",
+        "role": "starting material",
+        "comes_from": "retrosynthetic_analysis"
+      }
+    ],
+    "rationale": "The strategy aims for a divergent synthesis of denudatine alkaloids by constructing a common hexacyclic core framework through an intramolecular Mannich reaction and two Diels-Alder reactions, followed by late-stage chemo- and stereoselective modifications. The keto-diol acetonide 17 (R=Et or Me) was selected as a common precursor. The bicyclo[2.2.2]octane C/D rings would be formed via an intermolecular Diels-Alder reaction. The keto-diol acetonide moiety would be formed from phenol 19, which in turn would come from tetracyclic intermediate 21. The key tetracyclic ketone 21 would be formed from hemiaminal 23, which is derived from optically active enone 25."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Previous syntheses of denudatine alkaloids have been reported, but a divergent route is lacking. The construction of the nitrogen-containing tetracyclic A/B/E/F rings, the bicyclo[2.2.2]octane C/D rings, and the installation of oxygen functionalities with correct stereochemistry are major challenges.",
+        "gap": "An efficient and divergent route to denudatine alkaloids, especially one enabling diverse oxidation states of the A and C rings, is needed.",
+        "decision": "To address the synthetic challenges, we will develop a new strategy focusing on a common hexacyclic core and late-stage modifications."
+      },
+      "evidence": {
+        "text_span": "To develop an efficient and divergent route to denudatine alkaloids, three major synthetic challenges needed to be addressed. The first task should be the construction of nitrogen-containing tetracyclic A/B/E/F rings containing aza-bicyclo[3.3.1]nonane and bicyclo[2.2.1]heptane rings. The second would be formation of bicyclo[2.2.2]octane C/D rings. The final challenge should be the installation of four to five oxygen functionalities at the requisite positions with the correct stereochemistries.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "enone_25",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis requires an optically active enone as a starting material.",
+        "gap": "Need to prepare optically pure enone 25.",
+        "decision": "To prepare enone 25, we will use a modified Costa’s Robinson annulation including an asymmetric Michael reaction, followed by recrystallization for optical purification."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(O)CCC2(C1)OCCO2",
+          "C[C@H](N)c1ccccc1"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(C=O)CCC2(C1)OCCO2"
+        ],
+        "rxn_smiles": "COC(=O)C1=C(O)CCC2(C1)OCCO2.C[C@H](N)c1ccccc1>>COC(=O)C1=C(C=O)CCC2(C1)OCCO2",
+        "reagents": [
+          "AcOH",
+          "methyl vinyl ketone",
+          "ZnCl2",
+          "pyrrolidine"
+        ],
+        "solvent": "MeOH",
+        "temperature": "60 °C",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 80,
+          "ee_percent": 85,
+          "observation": "Enone 25 was obtained in 80% yield (85% ee) and then recrystallized to >99% ee."
+        }
+      },
+      "evidence": {
+        "text_span": "Our synthesis commenced with the preparation of enone 25 via a modified Costa’s Robinson annulation including an asymmetric Michael reaction (Scheme 2).[34] A chiral enamine 28 was prepared via condensation of the commercially available ester 26 and (S)-(–)-1-phenylethylamine (27),[35] and then subjected to the asymmetric Michael reaction with methyl vinyl ketone and subsequent the intramolecular aldol condensation obtaining enone 25 in 80% yield (85% ee). The enone 25 was then recrystallized to obtain 25 in optically pure form (>99% ee).",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "99d407684ed30f9bb2ce3c137b3cb44e177f43e033dcec19661fe575f1af87ee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "enone_25",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enone 25 is prepared. The next step is to modify the functional groups to prepare for the Birch reduction and C-acylation.",
+        "gap": "Need to reduce ketone and ester, selectively oxidize allylic alcohol, and protect primary alcohol.",
+        "decision": "To prepare enone 29, we will perform reduction of both ketone and ester, chemoselective oxidation of the resulting allylic alcohol, and protection of the primary alcohol with the methoxymethyl (MOM) group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(C=O)CCC2(C1)OCCO2"
+        ],
+        "product_smiles": [
+          "COCOC1C=CC(=O)C2(C1)OCCO2"
+        ],
+        "reagents": [
+          "LiAlH4",
+          "MnO2",
+          "MOMCl",
+          "DIPEA"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C to rt",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 87,
+          "observation": "Enone 29 was obtained in 87% yield over three steps."
+        }
+      },
+      "evidence": {
+        "text_span": "Reduction of both ketone and ester, chemoselective oxidation of the resulting allylic alcohol, and protection of the primary alcohol with the methoxymethyl (MOM) group afforded enone 29, which was subjected to the Birch reduction condition followed by C-acylation of the generated lithium enolate with Mander’s reagent, furnishing ketoester 30 as a single isomer.",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "99d407684ed30f9bb2ce3c137b3cb44e177f43e033dcec19661fe575f1af87ee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enone 29 is prepared. The next step is to introduce a new carbon and functionalize the ring.",
+        "gap": "Need to perform Birch reduction and C-acylation to obtain ketoester 30.",
+        "decision": "To obtain ketoester 30, we will subject enone 29 to Birch reduction conditions followed by C-acylation of the generated lithium enolate with Mander’s reagent."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1C=CC(=O)C2(C1)OCCO2"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1CC(OCOC)C2(OCCO2)C1=O"
+        ],
+        "reagents": [
+          "Li",
+          "NH3",
+          "t-BuOH",
+          "EtO2CCN"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 90,
+          "observation": "Ketoester 30 was furnished as a single isomer in 90% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "The enone 29 was then subjected to the Birch reduction condition followed by C-acylation of the generated lithium enolate with Mander’s reagent, furnishing ketoester 30 as a single isomer.",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "99d407684ed30f9bb2ce3c137b3cb44e177f43e033dcec19661fe575f1af87ee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ketoester 30 is prepared. The next step is to introduce hydroxyl groups with controlled stereochemistry.",
+        "gap": "Need to perform diastereoselective aldol reaction and stereoselective ketone reduction to obtain 1,3-diol 31.",
+        "decision": "To obtain 1,3-diol 31, we will perform a Yb(OTf)3-catalyzed diastereoselective aldol reaction of 30 with formalin and stereoselective reduction of the ketone with NaBH(OAc)3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1CC(OCOC)C2(OCCO2)C1=O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1CC(OCOC)C2(OCCO2)C(O)C1O"
+        ],
+        "named_reaction": "Aldol reaction",
+        "reagents": [
+          "formalin",
+          "NaBH(OAc)3"
+        ],
+        "catalyst": "Yb(OTf)3",
+        "solvent": "THF",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 80,
+          "observation": "1,3-diol 31 was afforded as a single isomer in 80% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "The Yb(OTf)3-catalyzed diastereoselective aldol reaction[37] of 30 with formalin and stereoselective reduction of a ketone with NaBH(OAc)3 afforded 1,3-diol 31 as a single isomer.[38]",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "99d407684ed30f9bb2ce3c137b3cb44e177f43e033dcec19661fe575f1af87ee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "1,3-diol 31 is prepared. The MOM group needs to be removed, and the molecule needs to be lactonized and the C8 ketal removed.",
+        "gap": "Need to convert 31 to keto-lactone 32 and then to ketal 33.",
+        "decision": "To obtain 33, we will remove the MOM group by treating 31 with conc. HCl, followed by lactonization and removal of the C8 ketal to yield 32, and then reprotect the C8 ketone to provide 33."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1CC(OCOC)C2(OCCO2)C(O)C1O"
+        ],
+        "product_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "reagents": [
+          "conc. HCl"
+        ],
+        "solvent": "MeOH",
+        "outcome": {
+          "valid": true,
+          "observation": "A mixture of keto-lactone 32 with a trace amount of ketal 33 was obtained. Removal of MeOH and H2O by evaporation promoted reprotection of the C8 ketone, providing 33."
+        }
+      },
+      "evidence": {
+        "text_span": "The MOM group was removed by treating 31 with conc. HCl in a mixture of MeOH and ethylene glycol. Lactonization and removal of the C8 ketal yielded a mixture of keto-lactone 32 with a trace amount of ketal 33. Removal of MeOH and H2O by evaporation promoted reprotection of the C8 ketone, providing 33.",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "99d407684ed30f9bb2ce3c137b3cb44e177f43e033dcec19661fe575f1af87ee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ketal 33 is prepared. The 1,3-diol needs to be protected as an acetonide.",
+        "gap": "Need to convert 33 to lactone 34.",
+        "decision": "To obtain lactone 34, we will perform one-pot protection of the 1,3-diol with acetonide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "product_smiles": [
+          "COCOC1CC(=O)C(OC(C)(C)O)C(OC(C)(C)O)C12OCCO2"
+        ],
+        "reagents": [
+          "(MeO)2CMe2",
+          "TsOH·H2O"
+        ],
+        "solvent": "acetone",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 60,
+          "observation": "Lactone 34 was afforded in 60% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "One-pot protection of the 1,3-diol with acetonide then afforded lactone 34.",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "99d407684ed30f9bb2ce3c137b3cb44e177f43e033dcec19661fe575f1af87ee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactone 34 is prepared. The next step is to open the lactone ring with lithium ethylamide.",
+        "gap": "Need to convert lactone 34 to N-ethylamide 35.",
+        "decision": "To obtain N-ethylamide 35, we will perform lactone opening of 34 by lithium ethylamide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(OC(C)(C)O)C(OC(C)(C)O)C12OCCO2"
+        ],
+        "product_smiles": [
+          "CCNC(=O)C1CC(OCOC)C2(OCCO2)C(O)C1O"
+        ],
+        "reagents": [
+          "n-BuLi",
+          "EtNH2·HCl"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C to rt",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 88,
+          "observation": "The desired N-ethylamide 35 was afforded in 88% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "Lactone opening of 34 by lithium ethylamide afforded the desired N-ethylamide 35.",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "99d407684ed30f9bb2ce3c137b3cb44e177f43e033dcec19661fe575f1af87ee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "hemiaminal_37",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "N-ethylamide 35 is prepared. The next step is to generate the hemiaminal 37, which is the acyliminium ion precursor.",
+        "gap": "Need to convert 35 to hemiaminal 37.",
+        "decision": "To obtain hemiaminal 37, we will perform oxidation of 35 with Dess–Martin periodinane (DMP) in the presence of acetic acid."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCNC(=O)C1CC(OCOC)C2(OCCO2)C(O)C1O"
+        ],
+        "product_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "reagents": [
+          "Dess–Martin periodinane (DMP)",
+          "acetic acid"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to rt",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 96,
+          "observation": "Hemiaminal 37 was generated in 96% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "Oxidation of 35 with Dess–Martin periodinane (DMP) in the presence of acetic acid generated the hemiaminal 37.",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "99d407684ed30f9bb2ce3c137b3cb44e177f43e033dcec19661fe575f1af87ee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Hemiaminal 37 is prepared. The key intramolecular Mannich reaction needs to be performed.",
+        "gap": "Need to find suitable conditions for the intramolecular Mannich reaction to form 38.",
+        "decision": "To form 38, we will try using weak Brønsted acids such as acetic acid or trifluoroacetic acid (TFA)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "intramolecular Mannich reaction",
+        "reagents": [
+          "acetic acid",
+          "trifluoroacetic acid (TFA)"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No observable Mannich products were formed; only 1,3-diol was formed via removal of acetonide."
+      },
+      "evidence": {
+        "text_span": "The initial trial using weak Brønsted acids such as acetic acid or trifluoroacetic acid (TFA) yielded no observable Mannich products and only 1,3-diol was formed via removal of acetonide (entry 1).",
+        "page": 3,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Weak Brønsted acids failed to promote the Mannich reaction. A stronger acid might be needed.",
+        "gap": "Need to find suitable conditions for the intramolecular Mannich reaction to form 38.",
+        "decision": "To form 38, we will try using MsOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "product_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "named_reaction": "intramolecular Mannich reaction",
+        "reagents": [
+          "MsOH"
+        ],
+        "solvent": "acetone"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "A mixture of Mannich product 38 and its 1,3-diol derivative was obtained. After reprotection, 38 was obtained in 15% yield over two steps."
+      },
+      "evidence": {
+        "text_span": "The reaction using MsOH in acetone provided a mixture of Mannich product 38 and its 1,3-diol derivative generated by removal of the acetonide. This mixture was subjected to acetonide formation conditions to obtain Mannich product 38 in 15% yield over two steps (entry 2).",
+        "page": 3,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "MsOH gave low yield and required reprotection. A more effective Brønsted acid is needed.",
+        "gap": "Need to find optimal conditions for the intramolecular Mannich reaction to form 38 with higher yield.",
+        "decision": "To improve the yield of 38, we will investigate other Brønsted acids, specifically p-toluenesulfonic acid monohydrate (TsOH·H2O)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "product_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "named_reaction": "intramolecular Mannich reaction",
+        "reagents": [
+          "p-toluenesulfonic acid monohydrate (TsOH·H2O)"
+        ],
+        "outcome": {
+          "valid": true,
+          "yield_percent": 64,
+          "observation": "TsOH·H2O was identified as the optimal Brønsted acid, affording 38 in 64% yield after reprotection of the partially generated 1,3-diol."
+        }
+      },
+      "evidence": {
+        "text_span": "After extensive investigations, p-toluenesulfonic acid monohydrate (TsOH·H2O)A) was identified as the optimal Brønsted acid, affording 38 in 64% yield after reprotection of the partially generated 1,3-diol (entry 3).",
+        "page": 3,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "TsOH·H2O gave a good yield, but further improvement might be possible with a stronger acid.",
+        "gap": "Need to find even better conditions for the intramolecular Mannich reaction to form 38.",
+        "decision": "To potentially improve the reaction, we will try a stronger acid, TfOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "intramolecular Mannich reaction",
+        "reagents": [
+          "TfOH"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "TfOH only decomposed the starting material."
+      },
+      "evidence": {
+        "text_span": "A stronger acid, TfOH, only decomposed the starting material (entry 4).",
+        "page": 3,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "TsOH·H2O was effective, but a more reproducible and scalable protocol is desired.",
+        "gap": "Need to establish a reproducible Gram-scale protocol for the intramolecular Mannich reaction.",
+        "decision": "To establish a Gram-scale protocol, we will use TsOH·H2O with improved one-pot reprotection using 2,2-dimethoxypropane, molecular sieves 4A (4Å MS), and pyridine under reflux."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "product_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "named_reaction": "intramolecular Mannich reaction",
+        "reagents": [
+          "p-toluenesulfonic acid monohydrate (TsOH·H2O)",
+          "2,2-dimethoxypropane",
+          "pyridine"
+        ],
+        "solvent": "acetone",
+        "temperature": "reflux",
+        "outcome": {
+          "valid": true,
+          "observation": "A reproducible Gram-scale protocol was established."
+        }
+      },
+      "evidence": {
+        "text_span": "Finally, we established a reproducible Gram-scale protocol with improved one-pot reprotection of 1,3-diol using 2,2-dimethoxypropane, molecular sieves 4A (4Å MS), and pyridine under reflux (entry 5).",
+        "page": 3,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The tetracyclic ketone 38 is formed. The next step is to construct the C ring.",
+        "gap": "Need to convert ketone 38 to enol triflate 39.",
+        "decision": "To obtain enol triflate 39, we will convert ketone 38 to enol triflate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "product_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "outcome": {
+          "valid": true,
+          "observation": "Ketone 38 was converted to enol triflate 39."
+        }
+      },
+      "evidence": {
+        "text_span": "Ketone 38 was converted to enol triflate 39,[33] which was subjected to Stille coupling with tributyl(1-ethoxyvinyl)stannane (40) and one-pot acidic hydrolysis of the resultant vinyl ether and acetonide, furnishing keto-diol 41.",
+        "page": 4,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enol triflate 39 is formed. The next step is to perform Stille coupling and acidic hydrolysis.",
+        "gap": "Need to convert enol triflate 39 to keto-diol 41.",
+        "decision": "To obtain keto-diol 41, we will subject enol triflate 39 to Stille coupling with tributyl(1-ethoxyvinyl)stannane (40) and one-pot acidic hydrolysis of the resultant vinyl ether and acetonide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2",
+          "CC[CH2][Sn]([CH]=C(O)CC)([CH2]CC)[CH2]CC"
+        ],
+        "product_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "named_reaction": "Stille coupling",
+        "reagents": [
+          "tributyl(1-ethoxyvinyl)stannane (40)",
+          "acid"
+        ],
+        "outcome": {
+          "valid": true,
+          "observation": "Keto-diol 41 was furnished."
+        }
+      },
+      "evidence": {
+        "text_span": "Ketone 38 was converted to enol triflate 39,[33] which was subjected to Stille coupling with tributyl(1-ethoxyvinyl)stannane (40) and one-pot acidic hydrolysis of the resultant vinyl ether and acetonide, furnishing keto-diol 41.",
+        "page": 4,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Keto-diol 41 is formed. The C ring needs to be constructed via a Diels–Alder reaction.",
+        "gap": "Need to convert keto-diol 41 to phenol 45.",
+        "decision": "To obtain phenol 45, we will heat keto-diol 41 with isopropenyl acetate in the presence of TsOH to form enone 42 and acetoxydiene 43, then add trans-1,2-bis(phenylsulfonyl)ethylene for the Diels–Alder reaction to form 44, followed by two-fold elimination of sulfonyl groups with DBU and selective aminolysis of acetylphenol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "product_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "named_reaction": "Diels–Alder reaction",
+        "reagents": [
+          "isopropenyl acetate",
+          "trans-1,2-bis(phenylsulfonyl)ethylene",
+          "DBU"
+        ],
+        "catalyst": "TsOH",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 82,
+          "observation": "Phenol 45 was obtained in 82% yield over two steps from 41."
+        }
+      },
+      "evidence": {
+        "text_span": "Upon heating keto-diol 41 with isopropenyl acetate in the presence of a catalytic amount of TsOH, enone 42 established equilibrium with acetoxydiene 43. One-pot addition of trans-1,2-bis(phenylsulfonyl)ethylene then facilitated the Diels–Alder reaction and shifted the equilibrium toward the formation of 43. Cycloadduct 44, obtained as a diastereomeric mixture, underwent two-fold elimination of its sulfonyl groups with 1,8-diazabicyclo[5.4.0]undec-7-ene (DBU). After subsequent selective aminolysis of acetylphenol, phenol 45 was obtained in 82% yield over two steps from 41.[40]",
+        "page": 4,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Phenol 45 is formed. The D ring needs to be formed via a second Diels–Alder reaction, but first, C17 carbon and oxygen functionalities need to be introduced.",
+        "gap": "Need to convert phenol 45 to a diastereomeric mixture of dienes 47a and 47b.",
+        "decision": "To obtain dienes 47a and 47b, we will perform regioselective formylation of phenol 45 by hexamethylenetetramine (HMTA), reduction of the formyl group, and NaIO4-mediated oxidative dearomatization of 46."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "product_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "reagents": [
+          "hexamethylenetetramine (HMTA)",
+          "reducing agent",
+          "NaIO4"
+        ],
+        "outcome": {
+          "valid": true,
+          "observation": "A diastereomeric mixture of dienes 47a and 47b in a 1:1 ratio was provided."
+        }
+      },
+      "evidence": {
+        "text_span": "Regioselective formylation of phenol 45 by hexamethylenetetramine (HMTA),[41–43] reduction of the formyl group, and NaIO4-mediated oxidative dearomatization of 46 provided a diastereomeric mixture of dienes 47a and 47b in a 1:1 ratio.[44,45]",
+        "page": 4,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "A mixture of dienes 47a and 47b is obtained. Only 47b is reactive in the Diels-Alder reaction.",
+        "gap": "Need to isolate or selectively synthesize the desired 47b.",
+        "decision": "To obtain 47b, we will attempt to isolate or selectively synthesize it."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "scope_limited",
+        "observation": "All attempts to isolate or selectively synthesize the desired 47b were unsuccessful."
+      },
+      "evidence": {
+        "text_span": "As all attempts to isolate[46] or selectively synthesize[47] the desired 47b were unsuccessful, the 47a/47b mixture was subjected to the Diels–Alder reaction under pressurized ethylene (50 bar).[19]",
+        "page": 4,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The mixture of 47a and 47b is obtained, and 47b is the reactive component for the Diels-Alder reaction.",
+        "gap": "Need to perform the Diels-Alder reaction and subsequent hydration to obtain 1,2-diol 49.",
+        "decision": "To obtain 1,2-diol 49, we will subject the 47a/47b mixture to the Diels–Alder reaction under pressurized ethylene (50 bar), followed by hydration in refluxing acetonitrile."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "product_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "named_reaction": "Diels–Alder reaction",
+        "reagents": [
+          "ethylene",
+          "water"
+        ],
+        "solvent": "acetonitrile",
+        "atmosphere": "50 bar H2",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 35,
+          "observation": "Only diene 47b underwent the expected Diels–Alder reaction, affording the cycloadduct 48b with perfect facial selectivity while leaving 47a intact. The inseparable mixture of 48b and 47a was then hydrated, providing the 1,2-diol 49 in 35% yield over three steps from 46."
+        }
+      },
+      "evidence": {
+        "text_span": "Interestingly, only diene 47b underwent the expected Diels–Alder reaction, affording the cycloadduct 48b with perfect facial selectivity while leaving 47a intact. The low reactivity of 47a was attributed to steric hindrances of the α- and β-faces caused by the two hydrogen atoms at C5 and C6 and by the methylene carbon of epoxide, respectively. In contrast, the sterically less-hindered α-face of 47b could be approached by the dienophile while its β-face was shielded by the C5 and C6 hydrogen atoms.[48,49] The inseparable mixture of 48b and 47a was then hydrated in refluxing acetonitrile, providing the 1,2-diol 49 in 35% yield over three steps from 46.",
+        "page": 4,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": "common_precursor_51",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "1,2-diol 49 is obtained. The next step is to prepare the key precursor 51 for divergent synthesis.",
+        "gap": "Need to protect 1,2-diol 49 as acetonide, remove acetyl groups, and selectively remove the C18 hydroxyl group.",
+        "decision": "To obtain 51, we will protect 1,2-diol 49 as acetonide, remove the two acetyl groups to afford 1,3-diol 50, and then selectively remove the C18 hydroxyl group via Hanessian’s protocol (monotosylation, replacement with iodine, and reductive deiodination)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(O)C(O)C12OCCO2"
+        ],
+        "product_smiles": [
+          "CCN1C[C@@]2(C)[C@@H]3CC[C@@]4(C)c5c(cc6c(c5C)OC(C)(C)O6)C(=O)C[C@@H]4[C@H]3CC[C@@H]2[C@@H]1O"
+        ],
+        "reagents": [
+          "acetonide protecting group",
+          "Hanessian’s protocol"
+        ],
+        "outcome": {
+          "valid": true,
+          "observation": "Key precursor 51 was furnished."
+        }
+      },
+      "evidence": {
+        "text_span": "Protection of 1,2-diol 49 as acetonide, followed by removal of the two acetyl groups, afforded the 1,3-diol 50. Finally, the hydroxyl group at C18 was selectively removed via Hanessian’s protocol,[50] which converted 50 to monotosylate. Replacement of the TsO- group with an iodine atom and reductive deiodination then furnished 51, the key precursor of the planned divergent synthesis of denudatine alkaloids.",
+        "page": 4,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": "common_precursor_51",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Key precursor 51 is obtained. The first target is acochlearine (7).",
+        "gap": "Need to reduce the C9–C11 double bond, C15 ketone, and C19 lactam.",
+        "decision": "To obtain lactam 52, we will use rhodium/carbon (Rh/C) in methanol under a pressurized hydrogen atmosphere (90 bar) to promote hydrogenation of the C9–C11 double bond, 1,2-reduction of the C15 ketone, and removal of acetonide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "Rh/C",
+        "solvent": "MeOH",
+        "atmosphere": "90 bar",
+        "temperature": "120 °C",
+        "outcome": {
+          "valid": true,
+          "observation": "Lactam 52 was afforded as a single isomer."
+        }
+      },
+      "evidence": {
+        "text_span": "Surprisingly, the reaction condition with rhodium/carbon (Rh/C) in methanol under a pressurized hydrogen atmosphere (90 bar) promoted not only the hydrogenation of the C9–C11 double bond, but also 1,2-reduction of the C15 ketone[51–53] and removal of acetonide affording lactam 52 as a single isomer.[54,55]",
+        "page": 4,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": "target_7",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactam 52 is obtained. The final step for acochlearine (7) is to reduce the lactam.",
+        "gap": "Need to convert lactam 52 to acochlearine (7).",
+        "decision": "To obtain acochlearine (7), we will reduce lactam 52 by alane generated from LiAlH4 and AlCl3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCN1C[C@]2(C)[C@H](CC[C@]3(C)[C@H]2CC[C@@]3(C)[C@H]2C[C@@H](O)[C@H](O)[C@H](O)C2)[C@H]1O"
+        ],
+        "reagents": [
+          "LiAlH4",
+          "AlCl3"
+        ],
+        "solvent": "THF",
+        "temperature": "-10 °C to rt",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 40,
+          "observation": "The reported structure of acochlearine (7) was furnished in 40% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "Finally, lactam 52 was reduced by alane generated from LiAlH4 and AlCl3, furnishing the reported structure of acochlearine (7).",
+        "page": 4,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": "common_precursor_51",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Key precursor 51 is obtained. The next target is cochlearenine (4), which has an oxygen functionality at C1.",
+        "gap": "Need to dehydrate alcohol 51 and perform allylic oxidation.",
+        "decision": "To obtain enone 54, we will dehydrate alcohol 51 with POCl3/pyridine, followed by allylic oxidation of the resulting 53 by SeO2, and one-pot treatment of the nonseparated mixture with Dess–Martin periodinane."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "POCl3",
+          "DBU",
+          "SeO2",
+          "Dess–Martin periodinane (DMP)"
+        ],
+        "solvent": "pyridine",
+        "temperature": "110 °C",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 72,
+          "observation": "Enone 54 was obtained in 72% yield over two steps."
+        }
+      },
+      "evidence": {
+        "text_span": "Dehydration of alcohol 51, followed by allylic oxidation of the resulting 53 by SeO2, provided a mixture of enone 54 and an allylic alcohol intermediate. One-pot treatment of this nonseparated mixture with Dess–Martin periodinane afforded enone 54, which underwent the Rh/C-mediated global reductions of C2–C3 and C9–C11 double bonds and C15 ketone, along with 1,2-reduction of C1 ketone and removal of acetonide, affording lactam 55 as a single isomer.",
+        "page": 5,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enone 54 is obtained. The next step is to perform global reductions.",
+        "gap": "Need to convert enone 54 to lactam 55.",
+        "decision": "To obtain lactam 55, we will perform Rh/C-mediated global reductions of C2–C3 and C9–C11 double bonds and C15 ketone, along with 1,2-reduction of C1 ketone and removal of acetonide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "Rh/C",
+        "solvent": "MeOH",
+        "atmosphere": "90 bar",
+        "temperature": "120 °C",
+        "outcome": {
+          "valid": true,
+          "observation": "Lactam 55 was afforded as a single isomer."
+        }
+      },
+      "evidence": {
+        "text_span": "One-pot treatment of this nonseparated mixture with Dess–Martin periodinane afforded enone 54, which underwent the Rh/C-mediated global reductions of C2–C3 and C9–C11 double bonds and C15 ketone, along with 1,2-reduction of C1 ketone and removal of acetonide, affording lactam 55 as a single isomer.",
+        "page": 5,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": "target_4",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactam 55 is obtained. The final step for cochlearenine (4) is to reduce the lactam.",
+        "gap": "Need to convert lactam 55 to cochlearenine (4).",
+        "decision": "To obtain cochlearenine (4), we will reduce lactam 55 with alane."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCN1C[C@]2(C)[C@H](CC[C@]3(C)[C@H]2CC[C@@]3(C)[C@H]2C[C@@H](O)[C@H](O)[C@H](O)C2)[C@H]1O"
+        ],
+        "reagents": [
+          "alane"
+        ],
+        "outcome": {
+          "valid": true,
+          "yield_percent": 31,
+          "observation": "(-)-Cochlearenine (4) was provided in 31% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "Finally, reduction of lactam 55 with alane provided (–)-cochlearenine (4).",
+        "page": 5,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": "common_precursor_51",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Key precursor 51 is obtained. The next target is macrocentrine (8), which requires construction of a 1,2-cis-diol at the sterically hindered α-face.",
+        "gap": "Need to convert 53 to β-epoxide 56.",
+        "decision": "To obtain β-epoxide 56, we will react 53 with m-chloroperoxybenzoic acid (mCPBA)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "m-chloroperoxybenzoic acid (mCPBA)",
+          "NaHCO3"
+        ],
+        "solvent": "CH2Cl2",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 70,
+          "observation": "β-epoxide 56 was provided as a single isomer in 70% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "Reaction of 53 with m-chloroperoxybenzoic acid (mCPBA) provided β-epoxide 56 as a single isomer, which was selectively opened at the C2 position by potassium acetate, yielding 57.",
+        "page": 5,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 28,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "β-epoxide 56 is obtained. The next step is to open the epoxide and invert the stereochemistry at C3.",
+        "gap": "Need to convert β-epoxide 56 to 1,2-cis-diol 58.",
+        "decision": "To obtain 1,2-cis-diol 58, we will selectively open 56 at the C2 position by potassium acetate, yielding 57, and then invert the undesired stereochemistry at C3 via the oxidation/reduction protocol followed by hydrolysis of the acetyl group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "AcOK",
+          "DMP",
+          "NaHCO3",
+          "NaBH4",
+          "15% NaOH aq."
+        ],
+        "solvent": "AcOH",
+        "temperature": "80 °C",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 75,
+          "observation": "1,2-cis-diol 58 was obtained in 75% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "Reaction of 53 with m-chloroperoxybenzoic acid (mCPBA) provided β-epoxide 56 as a single isomer, which was selectively opened at the C2 position by potassium acetate, yielding 57. The undesired stereochemistry at C3 was inverted, obtaining 1,2-cis-diol 58 via the oxidation/reduction protocol followed by hydrolysis of the acetyl group.",
+        "page": 5,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 29,
+      "fragment_id": "target_8",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "1,2-cis-diol 58 is obtained. The final steps for macrocentrine (8) are global reductions and lactam reduction.",
+        "gap": "Need to convert 58 to macrocentrine (8).",
+        "decision": "To obtain macrocentrine (8), we will subject 58 to Rh/C-mediated global reductions, followed by reduction of the lactam."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCN1C[C@]2(C)[C@H](CC[C@]3(C)[C@H]2CC[C@@]3(C)[C@H]2C[C@@H](O)[C@H](O)[C@H](O)C2)[C@H]1O"
+        ],
+        "reagents": [
+          "H2",
+          "LiAlH4",
+          "AlCl3"
+        ],
+        "catalyst": "Rh/C",
+        "solvent": "MeOH",
+        "atmosphere": "90 bar",
+        "temperature": "120 °C",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 47,
+          "observation": "The first total synthesis of (-)-macrocentrine (8) was completed in 47% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "Then, 58 was subjected to Rh/C-mediated global reductions, followed by reduction of lactam to complete the first total synthesis of (–)-macrocentrine (8).",
+        "page": 5,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 30,
+      "fragment_id": "common_precursor_34",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactone 34 is a pivotal intermediate. The divergent strategy needs to be expanded to congeners with an N-methyl group, specifically dictizine (9) and 15-veratroyl-17-acetyl-19-oxodictizine (10).",
+        "gap": "Need to introduce an N-Me group and convert lactone 34 to the N-methyl derivative 59.",
+        "decision": "To obtain 59, we will open lactone 34 using lithium methylamide to give the corresponding N-methylamide, which will then be converted into 59 in the same manner as the synthesis of N-ethyl derivative 53."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCOC1CC(=O)C(OC(C)(C)O)C(OC(C)(C)O)C12OCCO2"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "lithium methylamide"
+        ],
+        "outcome": {
+          "valid": true,
+          "observation": "The N-methyl derivative 59 was obtained."
+        }
+      },
+      "evidence": {
+        "text_span": "The N-Me group was introduced by opening lactone 34 using lithium methylamide to give the corresponding N-methylamide, which was converted into 59 in the same manner as the synthesis of N-ethyl derivative 53 (see Supporting Information for the details).",
+        "page": 5,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 31,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "N-methyl derivative 59 is obtained. The next step is to perform global reductions.",
+        "gap": "Need to convert 59 to lactam 60.",
+        "decision": "To obtain lactam 60, we will perform the Rh/C-mediated global reduction protocol on 59."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "Rh/C",
+        "solvent": "MeOH",
+        "atmosphere": "90 bar",
+        "temperature": "120 °C",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 59,
+          "observation": "Lactam 60 was obtained in 59% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "The Rh/C-mediated global reduction protocol, followed by the reduction of lactam 60, accomplished the first total synthesis of (–)-dictizine (9).",
+        "page": 5,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 32,
+      "fragment_id": "target_9",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactam 60 is obtained. The final step for dictizine (9) is to reduce the lactam.",
+        "gap": "Need to convert lactam 60 to dictizine (9).",
+        "decision": "To obtain dictizine (9), we will reduce lactam 60."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiAlH4",
+          "AlCl3"
+        ],
+        "solvent": "THF",
+        "temperature": "-10 °C to rt",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 72,
+          "observation": "The first total synthesis of (-)-dictizine (9) was accomplished in 72% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "The Rh/C-mediated global reduction protocol, followed by the reduction of lactam 60, accomplished the first total synthesis of (–)-dictizine (9).[28–30]",
+        "page": 5,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 33,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactam 60 is obtained. The next target is 15-veratroyl-17-acetyl-19-oxodictizine (10).",
+        "gap": "Need to introduce acetyl and veratroyl groups.",
+        "decision": "To obtain 10, we will perform sequential introductions of acetyl and veratroyl groups on the primary and secondary alcohols of 60, respectively."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Ac2O",
+          "Et3N",
+          "DIPEA",
+          "DMAP"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "rt",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 27,
+          "observation": "The first total synthesis of (-)-15-veratroyl-17-acetyl-19-oxodictizine (10) was achieved in 27% yield."
+        }
+      },
+      "evidence": {
+        "text_span": "In addition, sequential introductions of acetyl and veratroyl groups on the primary and secondary alcohols of 60, respectively, achieved the first total synthesis of (–)-15-veratroyl-17-acetyl-19-oxodictizine (10).[31]",
+        "page": 5,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "1a5c61f0dd8f3b235257888563128006c92e9cde55c7aeee75da685ade7695f8.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for cochlearenine (4) is not explicitly stated, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 13,
+        "unit": "steps",
+        "interpretation": "Calculated from the synthesis of cochlearenine (4)."
+      },
+      "Total Steps": {
+        "value": 13,
+        "unit": "steps",
+        "interpretation": "Calculated from the synthesis of cochlearenine (4)."
+      },
+      "Failed Attempts Count": {
+        "value": 3,
+        "unit": "attempts",
+        "interpretation": "Three failed attempts were reported during the synthesis."
+      }
+    },
+    "comparison_to_prior": "The 1H-NMR and 13C-NMR spectral data and specific rotation of synthetic acochlearine (7) disagreed with the reported data of natural (–)-acochlearine. The 1H-NMR, 13C-NMR, and other spectroscopic data of synthetic cochlearenine (4) perfectly matched the reported data. The 1H- and 13C-NMR spectra of synthetic macrocentrine (8) perfectly agreed with the reported data. The 1H-NMR, 13C-NMR, and other spectroscopic data of synthetic dictizine (9) and 15-veratroyl-17-acetyl-19-oxodictizine (10) perfectly matched those of the natural products; the exception was the specific rotation of 10, which the authors suspect was affected by impurities in the natural sample.",
+    "significance": "The first asymmetric total syntheses of four denudatine alkaloids (cochlearenine, macrocentrine, dictizine, and 15-veratroyl-17-acetyl-19-oxodictizine) and the asymmetric synthesis of the proposed structure of acochlearine were accomplished in a divergent manner. The study also suggests a structural reassignment for acochlearine."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.202521481",
+      "pmcid": "PMC12828479",
+      "title": "Divergent Total Synthesis of Denudatine Alkaloids Cochlearenine, Macrocentrine, Dictizine, 15-Veratroyl-17-Acetyl-19-Oxodictizine, and the Proposed Structure of Acochlearine.",
+      "authors": "Kawano S, Miyamoto N, Fujioka K, Toya H, Sakata J, Tokuyama H.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12828479?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/dfa48a6b-a63a-4019-9be8-1573d0818787.zip",
+      "parsed_at": "2026-05-07T14:32:00.441104+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 71,
+    "parseable": 45,
+    "canonicalized": 45,
+    "invalid": 26,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C1C[C@@H]2[C@@]3(C[C@H]4C=CC(C=C4C3=C[C@@H]2O1)C)N(R)C(RO)[C@@H]1C(=O)C[C@H]1RO",
+      "O=C1C[C@@H]2[C@@]3(C[C@H]4C=CC(O)=C(C=C4C3=C[C@@H]2O1)C)N(R)C(RO)[C@@H]1C(=O)C[C@H]1RO",
+      "CC(C)(O[C@@H]1CN(R)[C@H]2C(=O)C=C[C@H]3[C@@H]2[C@H]1C(=O)O3)C",
+      "CC(C)(C)OC1COC(=O)C2(C)C3C(O)C4(C)C(N(R)C2C1O3)C(O4)C5(O5)CCC",
+      "CC1(C)Oc2c(C)c3c(C(=O)C[C@@H]4[C@H]5CC[C@@H]6[C@H](O)N(CC)C[C@@]6(C)[C@@H]5CC[C@@]34C)",
+      "CC1(C)Oc2c(C)c3c(C[C@@H](O)[C@@H]4[C@H]5CC[C@@H]6[C@H](O)N(CC)C[C@@]6(C)[C@@H]5CC[C@@]34C)",
+      "CC1(C)Oc2c(C)c3c(C[C@@H](O)[C@@H]4[C@H]5CC[C@@H]6[C@H](O)N(CC)C[C@@]6(C)[C@@H]5CC[C@@]34C)",
+      "CC1(C)Oc2c(C)c3c(C(=O)C[C@@H]4[C@H]5CC[C@@H]6[C@H](O)N(CC)C[C@@]6(C)[C@@H]5CC[C@@]34C)",
+      "CC1(C)Oc2c(C)c3c(C(=O)C[C@@H]4[C@H]5CC[C@@H]6[C@H](O)N(CC)C[C@@]6(C)[C@@H]5CC[C@@]34C)",
+      "CC1(C)Oc2c(C)c3c(C(=O)C[C@@H]4[C@H]5CC[C@@H]6[C@H](O)N(CC)C[C@@]6(C)[C@@H]5CC[C@@]34C)"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

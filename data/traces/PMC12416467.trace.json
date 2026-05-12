@@ -1,0 +1,1151 @@
+{
+  "trace_id": "TS-PMC12416467",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Feglymycin",
+    "smiles": "CC(C)C(NC(=O)C(NC(=O)C(N)c1ccc(O)cc1)c1cc(O)cc(O)c1)C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(Cc1ccccc1)C(=O)NC(CC(=O)O)C(=O)O)c1ccc(O)cc1)c1cc(O)cc(O)c1)C(C)C)c1cc(O)cc(O)c1)c1ccc(O)cc1)c1cc(O)cc(O)c1)c1ccc(O)cc1)c1cc(O)cc(O)c1",
+    "natural_product_class": "peptide",
+    "structural_features": {
+      "key_motifs": [
+        "aryl glycinamide"
+      ]
+    },
+    "motivation": "The preparation of peptidic molecules is a mainstay of synthesis, creating new tools that advance chemical biology, catalysis, and drug discovery. Despite the wide adoption of methods for amide synthesis based on electrophilic acyl transfer reactions, significant limitations remain that restrict access to chemical space and plague accessible peptides with imperfect conservation of stereochemical information. These problems persist in key applications (i.e., solid phase peptide synthesis) where reagent excess can be used to drive maximal yield. As a general tactic, however, use of excess coupling agents that are often hazardous is unsustainable. Here we report the synthesis of the antiviral tridecapeptide feglymycin where half of the amides are formed using umpolung amide synthesis (UmAS) to replace conventional amide synthesis.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Süssmuth",
+        "year": 2009,
+        "doi": "10.1002/anie.200806000",
+        "key_strategy": "Maximized convergency, used DEPBT to suppress epimerization"
+      },
+      {
+        "lead_author": "Fuse",
+        "year": 2016,
+        "doi": "10.1038/ncomms13491",
+        "key_strategy": "Used microflow, required high amounts of DEPBT and triphosgene"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Successful total synthesis of feglymycin, demonstrating the integration of umpolung amide synthesis (UmAS) to reduce epimerization risk and reagent waste, and the enantioselective synthesis of noncanonical residues from inexpensive aldehydes."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "amide bonds at valine residues",
+        "reasoning": "To provide an initial level of convergency (3+6+4) by segmenting feglymycin into three peptides (A-C, D-I, and J-M).",
+        "named_strategy": "Segment joining"
+      },
+      {
+        "bond_description": "amide bonds within the central hexapeptide",
+        "reasoning": "To further enhance convergency by dividing the central hexapeptide into three dipeptides (2+2+2).",
+        "named_strategy": "Segment joining"
+      },
+      {
+        "bond_description": "amide bonds involving aryl glycine residues",
+        "named_strategy": "Umpolung Amide Synthesis (UmAS)",
+        "reasoning": "To mechanistically eliminate epimerization during aryl glycinamide formation, a known liability in traditional amide synthesis, especially with aryl glycine donors. This also allows for enantioselective synthesis of noncanonical residues from inexpensive aldehydes."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "A-C",
+        "smiles": "CC(C)[C@@H](NC(=O)[C@@H](Cc1cc(O)cc(O)c1)NC(=O)[C@H](N)Cc1ccc(O)cc1)C(=O)O",
+        "role": "tripeptide",
+        "comes_from": "Figure 3c"
+      },
+      {
+        "fragment_id": "D-I",
+        "smiles": "N[C@H](Cc1cc(O)cc(O)c1)C(=O)N[C@H](Cc1ccc(O)cc1)C(=O)N[C@H](Cc1cc(O)cc(O)c1)C(=O)N[C@H](Cc1ccc(O)cc1)C(=O)N[C@H](Cc1cc(O)cc(O)c1)C(=O)O",
+        "role": "hexapeptide",
+        "comes_from": "Figure 2"
+      },
+      {
+        "fragment_id": "J-M",
+        "smiles": "N[C@H](Cc1ccc(O)cc1)C(=O)N[C@H](Cc1cc(O)cc(O)c1)C(=O)N[C@H](Cc1ccc(O)cc1)C(=O)N[C@H](Cc1cc(O)cc(O)c1)C(=O)O",
+        "role": "tetrapeptide",
+        "comes_from": "Figure 3b"
+      },
+      {
+        "fragment_id": "BC",
+        "smiles": "CC(C)[C@@H](NC(=O)[C@H](N)Cc1cc(O)cc(O)c1)C(=O)O",
+        "role": "dipeptide",
+        "comes_from": "Figure 3a"
+      },
+      {
+        "fragment_id": "HI",
+        "smiles": "CC(C)[C@@H](NC(=O)[C@H](N)Cc1cc(O)cc(O)c1)C(=O)O",
+        "role": "dipeptide",
+        "comes_from": "Figure 3a"
+      }
+    ],
+    "rationale": "The strategy combines UmAS for epimerization-prone aryl glycinamide formations with traditional amide synthesis for other couplings. This approach maximizes the advantages of both methods, using enantioselective organocatalysis for noncanonical residues and reducing hazardous coupling reagents. The synthesis is designed to be convergent, with common preparations for identical dipeptide units (BC and HI)."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aryl glycine residues are challenging to prepare and incorporate into complex peptides. Short sequences often rely on expensive feedstock, while inexpensive feedstock requires five or more steps.",
+        "gap": "Need an efficient and enantioselective method to prepare the aryl glycine equivalent (Hpg unit) from an inexpensive starting material.",
+        "decision": "To prepare the alpha-amido sulfone 1 from commercial para-benzyloxy benzaldehyde, followed by treatment under basic conditions to form electrophilic aldimine 2 for subsequent catalyzed addition of bromo nitromethane by (S,S)-PBAM. This should provide the alpha-bromo nitroalkane 3 with high enantiomeric excess."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccc(OCc2ccccc2)cc1",
+          "",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)NC(C=O)S(=O)(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "BocNH2",
+          "PhSO2Na",
+          "HCO2H"
+        ],
+        "solvent": "toluene, H2O"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "Alpha-amido sulfone 1 was prepared from commercial para-benzyloxy benzaldehyde."
+      },
+      "evidence": {
+        "text_span": "$\\alpha$ -Amido sulfone 1 was prepared from commercial para-benzyloxy benzaldehyde",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc967c5894061b3edcdf0b7ccd94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alpha-amido sulfone 1 has been prepared.",
+        "gap": "Need to convert 1 into the electrophilic aldimine 2 for the subsequent catalyzed addition.",
+        "decision": "To treat 1 under basic conditions (K2CO3) in THF to form the electrophilic aldimine 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NC(C=O)S(=O)(=O)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)NC(C=O)c1ccc(OCc2ccccc2)cc1"
+        ],
+        "reagents": [
+          "K2CO3",
+          "Na2SO4"
+        ],
+        "solvent": "THF",
+        "temperature": "66 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Electrophilic aldimine 2 was formed."
+      },
+      "evidence": {
+        "text_span": "and then treated under basic conditions to form the electrophilic aldimine 2",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc967c5894061b3edcdf0b7ccd94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Electrophilic aldimine 2 is ready for addition.",
+        "gap": "Need to perform the enantioselective addition of bromo nitromethane to 2 to form the alpha-bromo nitroalkane 3 with high enantiomeric excess.",
+        "decision": "To use (S,S)-PBAM as a chiral Brønsted acid organocatalyst for the addition of bromo nitromethane to 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NC(C=O)c1ccc(OCc2ccccc2)cc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "BrCH2NO2"
+        ],
+        "catalyst": "(S,S)-PBAM",
+        "solvent": "toluene",
+        "temperature": "-20 °C",
+        "stoichiometry": {
+          "(S,S)-PBAM": "2 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "dr": "1:1.2",
+        "ee_percent": 88,
+        "observation": "The alpha-bromo nitroalkane 3 was isolated in 68% yield and high ee for each diastereomer (1:1.2 dr, 88/90% ee). This material could be recrystallized to provide 3 as a mixture of diastereomers (>98% ee each) at the nitro-substituted carbon."
+      },
+      "evidence": {
+        "text_span": "for the subsequent catalyzed addition of bromo nitromethane by (S,S)-PBAM. The $\\alpha$ - bromo nitroalkane was isolated in $6 8\\%$ yield and high ee for each diastereomer (1:1.2 dr, $8 8 / 9 0\\%$ ee).[21] This material could be recrystallized to provide 3 as a mixture of diastereomers $( > 9 8\\%$ ee each) at the nitro-substituted carbon.",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diastereomers of 3 were obtained with high ee.",
+        "gap": "Need to convert 3 into the N-methyl amide 4 using UmAS conditions, ensuring convergence of diastereomers and enantiomeric purity.",
+        "decision": "To subject 3 to UmAS conditions with methylamine, KI, K2CO3, and UHP."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(NC(=O)OC(C)(C)C)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(OCc2ccccc2)cc1"
+        ],
+        "reagents": [
+          "MeNH2·HCl",
+          "KI",
+          "K2CO3",
+          "aq 3 M UHP"
+        ],
+        "solvent": "DME",
+        "temperature": "0-25 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "The N-methyl amide 4 was obtained in 67% yield, with the diastereomers converging and providing enantiomerically pure product."
+      },
+      "evidence": {
+        "text_span": "These diastereomers converged in the next step where UmAS conditions provided enantiomerically pure $N$ -methyl amide 4 in $6 7\\%$ yield.",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Hpg unit 4 has been synthesized.",
+        "gap": "Need to deprotect the N-Boc group to allow for further homologation.",
+        "decision": "To perform HCl/dioxane mediated deprotection of 4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)OC(C)(C)C)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(OCc2ccccc2)cc1"
+        ],
+        "product_smiles": [
+          "CC(N)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(OCc2ccccc2)cc1"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "dioxane"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Deprotection of the Boc group was successful, yielding 5."
+      },
+      "evidence": {
+        "text_span": "Following HCl/dioxane mediated deprotection, this Hpg unit was homologated using UmAS",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The deprotected Hpg unit 5 is ready for homologation. Donor 20, a Dpg unit, needs to be prepared.",
+        "gap": "Need to synthesize donor 20 from 3,5-dibenzyloxy benzaldehyde using an identical sequence to 3, but with the opposite catalyst antipode ((R,R)-PBAM).",
+        "decision": "To follow the same sequence as steps 1-3, but starting with 3,5-dibenzyloxy benzaldehyde and using (R,R)-PBAM to prepare 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "BocNH2",
+          "PhSO2Na",
+          "HCO2H",
+          "K2CO3",
+          "Na2SO4",
+          "BrCH2NO2"
+        ],
+        "catalyst": "(R,R)-PBAM",
+        "solvent": "toluene, H2O, THF",
+        "temperature": "-20 °C",
+        "stoichiometry": {
+          "(R,R)-PBAM": "2 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "ee_percent": 92,
+        "observation": "The nitroalkane donor (20) was formed in 92% ee (each diastereomer) and 76% yield from 18, and it was also readily recrystallized."
+      },
+      "evidence": {
+        "text_span": "Donor 20 was prepared from 3,5-dibenzyloxy benzaldehyde using the identical sequence of reactions for preparation of 3, except that the catalyst antipode was used $( R , R )$ -PBAM) (Figure 3a). The nitroalkane donor (20) was formed in $9 2\\%$ ee (each diastereomer) and $7 6\\%$ yield from 18, and it was also readily recrystallized.",
+        "image_refs": [
+          "67766f570c7e6a28024e9f109f554d6fdff861d11f041731a73b6225dafb700.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The deprotected Hpg unit 5 and Dpg donor 20 are available.",
+        "gap": "Need to homologate 5 with donor 20 using UmAS conditions to form 6.",
+        "decision": "To couple 5 with 20 under UmAS conditions (KI, K2CO3, UHP)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(N)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(OCc2ccccc2)cc1",
+          ""
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(OCc2ccccc2)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(OCc2ccccc2)cc1"
+        ],
+        "reagents": [
+          "KI",
+          "K2CO3",
+          "aq 3 M UHP"
+        ],
+        "solvent": "DME",
+        "temperature": "0-25 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "Homologation of 5 with donor 20 provided 6 in 66% yield."
+      },
+      "evidence": {
+        "text_span": "this Hpg unit was homologated using UmAS conditions and donor 20 to provide 6 in $6 6\\%$ yield.",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The N-methyl amide 6 has been formed.",
+        "gap": "Need to saponify the N-methyl amide after chemoselective nitrosation to form carboxylic acid 8.",
+        "decision": "To perform chemoselective nitrosation of 6 using tBuONO, followed by saponification with LiOH/H2O2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(OCc2ccccc2)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(OCc2ccccc2)cc1"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(OCc2ccccc2)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(OCc2ccccc2)cc1"
+        ],
+        "reagents": [
+          "tBuONO",
+          "LiOH",
+          "H2O2"
+        ],
+        "solvent": "CH2Cl2",
+        "named_reaction": "Chemoselective nitrosation, Saponification"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "The N-methyl amide was conveniently saponified after chemoselective nitrosation to form carboxylic acid 8 in 98% yield (2 steps)."
+      },
+      "evidence": {
+        "text_span": "The $N$ -methyl amide was conveniently saponified after chemiselective nitrosation[22] in this synthesis to form carboxylic acid 8 in $9 8\\%$ yield (2 steps)",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carboxylic acid 8 has been formed.",
+        "gap": "Need to remove the benzyl ethers to furnish 9.",
+        "decision": "To perform hydrogenolysis using H2 and Pd/C catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(OCc2ccccc2)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(OCc2ccccc2)cc1"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "10% Pd/C",
+        "solvent": "MeOH/CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Hydrogenolysis successfully furnished 9."
+      },
+      "evidence": {
+        "text_span": "prior to removal of the benzyl ethers by hydrogenolysis to furnish 9.",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "HI",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Donor 20 (Dpg unit) is available.",
+        "gap": "Need to couple donor 20 to the benzyl ester of valine using UmAS conditions to form the HI dipeptide.",
+        "decision": "To couple 20 with Val-OBn using KI, K2CO3, and UHP in DME."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(C)[C@@H](N)C(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KI",
+          "K2CO3",
+          "aq 3 M UHP"
+        ],
+        "solvent": "DME",
+        "temperature": "0-25 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "Donor 20 was coupled to the benzyl ester of valine using UmAS conditions, delivering the HI dipeptide 21 in 74% yield."
+      },
+      "evidence": {
+        "text_span": "Donor 20 was also coupled to the benzyl ester of valine using UmAS conditions, delivering the HI dipeptide in $7 4\\%$ yield (Figure 3a).",
+        "image_refs": [
+          "67766f570c7e6a28024e9f109f554d6fdff861d11f041731a73b6225dafb700.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "HI",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The HI dipeptide 21 has been synthesized.",
+        "gap": "Need to deprotect the Boc group to reveal the amine 22 for subsequent homologation.",
+        "decision": "To deprotect 21 with TFA."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Deprotection of the Boc group in 21 successfully revealed the amine 22."
+      },
+      "evidence": {
+        "text_span": "Deprotection of the Boc group in 21 to reveal the amine (22) preceded homologation with acid 9 to give tetrapeptide 10 (Figure 2).",
+        "image_refs": [
+          "67766f570c7e6a28024e9f109f554d6fdff861d11f041731a73b6225dafb700.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amine 22 and acid 9 are available.",
+        "gap": "Need to homologate 22 with acid 9 to give tetrapeptide 10.",
+        "decision": "To couple 22 with 9 using DEPBT and NaHCO3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "DEPBT",
+          "NaHCO3"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt",
+        "stoichiometry": {
+          "DEPBT": "1.3 equiv",
+          "NaHCO3": "3.3 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "Homologation of 22 with acid 9 gave tetrapeptide 10 in 58% yield."
+      },
+      "evidence": {
+        "text_span": "Deprotection of the Boc group in 21 to reveal the amine (22) preceded homologation with acid 9 to give tetrapeptide 10 (Figure 2).",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetrapeptide 10 has been formed.",
+        "gap": "Need to deprotect the N-Boc group to allow for a second homologation.",
+        "decision": "To perform N-deprotection of 10 with TFA."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](N)C(C=O)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "N-deprotection of 10 successfully yielded 11."
+      },
+      "evidence": {
+        "text_span": "N-Deprotection to 11 allowed a second homologation using 9, followed by hydrogenolysis to furnish hexapeptide 13.",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deprotected tetrapeptide 11 and acid 9 are available.",
+        "gap": "Need to perform a second homologation using 9 to extend the peptide chain.",
+        "decision": "To couple 11 with 9 using DEPBT and NaHCO3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](N)C(C=O)c1ccc(O)cc1",
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "DEPBT",
+          "NaHCO3"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt",
+        "stoichiometry": {
+          "DEPBT": "1.5 equiv",
+          "NaHCO3": "4 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "The second homologation using 9 was successful, yielding 12 in 70% yield."
+      },
+      "evidence": {
+        "text_span": "N-Deprotection to 11 allowed a second homologation using 9, followed by hydrogenolysis to furnish hexapeptide 13.",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Peptide 12 has been formed.",
+        "gap": "Need to remove the benzyl protecting groups to furnish hexapeptide 13.",
+        "decision": "To perform hydrogenolysis using H2 and Pd/Pd(OH)2/C catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "10% Pd/Pd(OH)2/C",
+        "solvent": "MeOH/EtOAc"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Hydrogenolysis successfully furnished hexapeptide 13 in 99% yield."
+      },
+      "evidence": {
+        "text_span": "N-Deprotection to 11 allowed a second homologation using 9, followed by hydrogenolysis to furnish hexapeptide 13.",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "J-M",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Need to synthesize the JKLM tetrapeptide segment.",
+        "gap": "Need to couple Boc-Phe and Asp-OBn to form dipeptide 23.",
+        "decision": "To couple Boc-Phe and Asp-OBn using EDC/HOAt."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N[C@H](Cc1ccccc1)C(=O)O",
+          "Cc1ccc(S(=O)(=O)O)cc1.N[C@H](CC(=O)OCc1ccccc1)C(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)N[C@H](Cc1ccccc1)C(=O)N[C@H](CC(=O)OCc1ccccc1)C(=O)OCc1ccccc1"
+        ],
+        "reagents": [
+          "EDC",
+          "HOAt"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt",
+        "stoichiometry": {
+          "EDC": "1.2 equiv",
+          "HOAt": "1.2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Boc-Phe and Asp-OBn were coupled using EDC/HOAt to give 23 in 90% yield."
+      },
+      "evidence": {
+        "text_span": "Separately, Boc-Phe and Asp-OBn were coupled using EDC/HOAt to give 23 in $9 0\\%$ yield (Figure 3b).",
+        "image_refs": [
+          "bf253f4d033d9b7b591ab551d49867766284e0fc200ed314854ad8fb5300d70c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": "J-M",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dipeptide 23 has been synthesized.",
+        "gap": "Need to deprotect 23 to obtain dipeptide 24 for homologation.",
+        "decision": "To deprotect 23 with trifluoroacetic acid (TFA)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N[C@H](Cc1ccccc1)C(=O)N[C@H](CC(=O)OCc1ccccc1)C(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "N[C@H](Cc1ccccc1)C(=O)N[C@H](CC(=O)OCc1ccccc1)C(=O)OCc1ccccc1"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Deprotection of 23 with TFA gave dipeptide 24."
+      },
+      "evidence": {
+        "text_span": "Deprotection of 23 with trifluoroacetic acid (TFA) gave dipeptide 24 which was homologated with dipeptide 9 to give 26 after Boc-deprotection.",
+        "image_refs": [
+          "bf253f4d033d9b7b591ab551d49867766284e0fc200ed314854ad8fb5300d70c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": "J-M",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dipeptide 24 and dipeptide 9 are available.",
+        "gap": "Need to homologate 24 with 9 to form 25.",
+        "decision": "To couple 24 with 9 using DEPBT and NaHCO3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "N[C@H](Cc1ccccc1)C(=O)N[C@H](CC(=O)OCc1ccccc1)C(=O)OCc1ccccc1",
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)N[C@H](Cc1ccccc1)C(=O)N[C@@H](C(=O)N[C@H](CC(=O)OCc1ccccc1)C(=O)OCc1ccccc1)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "DEPBT",
+          "NaHCO3"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt",
+        "stoichiometry": {
+          "DEPBT": "3 equiv",
+          "NaHCO3": "4 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Homologation of 24 with dipeptide 9 gave 25 in 94% yield."
+      },
+      "evidence": {
+        "text_span": "Deprotection of 23 with trifluoroacetic acid (TFA) gave dipeptide 24 which was homologated with dipeptide 9 to give 26 after Boc-deprotection.",
+        "image_refs": [
+          "bf253f4d033d9b7b591ab551d49867766284e0fc200ed314854ad8fb5300d70c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": "J-M",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetrapeptide 25 has been formed.",
+        "gap": "Need to deprotect the Boc group to obtain 26.",
+        "decision": "To deprotect 25 with TFA."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N[C@H](Cc1ccccc1)C(=O)N[C@@H](C(=O)N[C@H](CC(=O)OCc1ccccc1)C(=O)OCc1ccccc1)c1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "N[C@H](Cc1ccccc1)C(=O)N[C@@H](C(=O)N[C@H](CC(=O)OCc1ccccc1)C(=O)OCc1ccccc1)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Boc-deprotection of 25 gave 26."
+      },
+      "evidence": {
+        "text_span": "Deprotection of 23 with trifluoroacetic acid (TFA) gave dipeptide 24 which was homologated with dipeptide 9 to give 26 after Boc-deprotection.",
+        "image_refs": [
+          "bf253f4d033d9b7b591ab551d49867766284e0fc200ed314854ad8fb5300d70c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Hexapeptide 13 and tetrapeptide 26 are available.",
+        "gap": "Need to couple 13 and 26 to produce decapeptide 14 in protected form.",
+        "decision": "To activate carboxylic acid 13 with DEPBT for coupling with 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1",
+          "N[C@H](Cc1ccccc1)C(=O)N[C@@H](C(=O)N[C@H](CC(=O)OCc1ccccc1)C(=O)OCc1ccccc1)c1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "DEPBT",
+          "NaHCO3"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt",
+        "stoichiometry": {
+          "DEPBT": "3.3 equiv",
+          "NaHCO3": "4 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 38,
+        "observation": "Carboxylic acid 13 was activated with DEPBT in its coupling with 26 to produce decapeptide 14 in protected form in 38% yield."
+      },
+      "evidence": {
+        "text_span": "Carboxylic acid 13 was activated with DEPBT in its coupling with 26 to produce decapeptide 14 in protected form.",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Decapeptide 14 has been formed.",
+        "gap": "Need to perform N-deprotection to obtain 15.",
+        "decision": "To use TFA for N-deprotection of 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OC(C)(C)C)C(C=O)c1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](N)C(C=O)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "TFA was effective for N-deprotection, and 15 was produced in 90% yield."
+      },
+      "evidence": {
+        "text_span": "TFA was effective for $N .$ -deprotection, and 15 so-produced was homologated with 30.",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": "A-C",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amine 22 is available.",
+        "gap": "Need to synthesize tripeptide 27 by homologating 22 with (R)-3 using UmAS conditions.",
+        "decision": "To couple 22 with (R)-3 using KI, K2CO3, and UHP in DME."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@H](NC(=O)[C@H](Cc1cc(O)cc(O)c1)NC(=O)[C@@H](N)Cc1ccc(O)cc1)C(=O)O",
+          "CC[C@H](C)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)[C@H](NC(=O)[C@H](Cc1cc(OCc2ccccc2)cc(OCc2ccccc2)c1)NC(=O)[C@H](Cc1ccc(O)cc1)NC(=O)OC(C)(C)C)C(=O)OCc1ccccc1"
+        ],
+        "reagents": [
+          "KI",
+          "K2CO3",
+          "aq 3 M UHP"
+        ],
+        "solvent": "DME",
+        "temperature": "0->25 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "observation": "The resulting tripeptide 27 was obtained in 48% yield."
+      },
+      "evidence": {
+        "text_span": "Donor (R)-3 was prepared from $^ { ( R , R ) }$ -PBAM in a sequence otherwise identical to the preparation of (S)-3, and then subjected to UmAS conditions for homologation of 22. The resulting tripeptide 27 required three steps to prepare $N$ -Cbz protected 30.",
+        "image_refs": [
+          "db11870b9c86e0aac4b9aaccc39b9cecd8a0f5b7f826bd9a13f624977de6e343.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": "A-C",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tripeptide 27 has been synthesized.",
+        "gap": "Need to deprotect the benzyl protecting groups to obtain 28.",
+        "decision": "To perform hydrogenolysis using H2 and Pd/C catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@H](NC(=O)[C@H](Cc1cc(OCc2ccccc2)cc(OCc2ccccc2)c1)NC(=O)[C@H](Cc1ccc(O)cc1)NC(=O)OC(C)(C)C)C(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)[C@H](NC(=O)[C@H](Cc1cc(O)cc(O)c1)NC(=O)[C@H](Cc1ccc(O)cc1)NC(=O)OC(C)(C)C)C(=O)O"
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "10% Pd/C",
+        "solvent": "MeOH/H2O"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Hydrogenolysis successfully yielded 28."
+      },
+      "evidence": {
+        "text_span": "The resulting tripeptide 27 required three steps to prepare $N$ -Cbz protected 30.",
+        "image_refs": [
+          "db11870b9c86e0aac4b9aaccc39b9cecd8a0f5b7f826bd9a13f624977de6e343.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": "A-C",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tripeptide 28 has been formed.",
+        "gap": "Need to deprotect the Boc group to obtain 29.",
+        "decision": "To deprotect 28 with TFA."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@H](NC(=O)[C@H](Cc1cc(O)cc(O)c1)NC(=O)[C@H](Cc1ccc(O)cc1)NC(=O)OC(C)(C)C)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)[C@H](NC(=O)[C@H](Cc1cc(O)cc(O)c1)NC(=O)[C@@H](N)Cc1ccc(O)cc1)C(=O)O"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Deprotection of 28 with TFA yielded 29."
+      },
+      "evidence": {
+        "text_span": "The resulting tripeptide 27 required three steps to prepare $N$ -Cbz protected 30.",
+        "image_refs": [
+          "db11870b9c86e0aac4b9aaccc39b9cecd8a0f5b7f826bd9a13f624977de6e343.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": "A-C",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tripeptide 29 has been formed.",
+        "gap": "Need to protect the N-terminus with Cbz to obtain 30.",
+        "decision": "To react 29 with CbzCl and NaHCO3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@H](NC(=O)[C@H](Cc1cc(O)cc(O)c1)NC(=O)[C@@H](N)Cc1ccc(O)cc1)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)[C@H](NC(=O)[C@H](Cc1cc(O)cc(O)c1)NC(=O)[C@H](Cc1ccc(O)cc1)NC(=O)OCc1ccccc1)C(=O)O"
+        ],
+        "reagents": [
+          "CbzCl",
+          "NaHCO3"
+        ],
+        "solvent": "dioxane-H2O (1:1)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "N-Cbz protected 30 was prepared in 95% yield."
+      },
+      "evidence": {
+        "text_span": "The resulting tripeptide 27 required three steps to prepare $N$ -Cbz protected 30.",
+        "image_refs": [
+          "db11870b9c86e0aac4b9aaccc39b9cecd8a0f5b7f826bd9a13f624977de6e343.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Decapeptide 15 and tripeptide 30 are available.",
+        "gap": "Need to homologate 15 with 30 to form 16.",
+        "decision": "To couple 15 with 30 using DEPBT and NaHCO3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](N)C(C=O)c1ccc(O)cc1",
+          "CC(C)[C@H](NC(=O)[C@H](Cc1cc(O)cc(O)c1)NC(=O)[C@H](Cc1ccc(O)cc1)NC(=O)OCc1ccccc1)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OCc1ccccc1)C(C=O)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "DEPBT",
+          "NaHCO3"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt",
+        "stoichiometry": {
+          "DEPBT": "3 equiv",
+          "NaHCO3": "4 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "15 was homologated with 30 to yield 16 in 66% yield."
+      },
+      "evidence": {
+        "text_span": "TFA was effective for $N .$ -deprotection, and 15 so-produced was homologated with 30.",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The protected feglymycin precursor 16 has been synthesized.",
+        "gap": "Need to deprotect the N-Cbz and benzyl esters to form synthetic feglymycin.",
+        "decision": "To perform hydrogenolysis using H2 and Pd/C catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](NC(=O)OCc1ccccc1)C(C=O)c1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(C=O)c1ccc(O)cc1)C(=O)N[C@@H](N)C(C=O)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "10% Pd/C",
+        "solvent": "MeOH/H2O"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "Deprotection of N-Cbz and benzyl esters successfully formed synthetic feglymycin in 66% yield, which was identical spectroscopically to natural feglymycin."
+      },
+      "evidence": {
+        "text_span": "The final step involved deprotection of $N .$ -Cbz and benzyl esters to form synthetic feglymycin, which was identical spectroscopically to natural feglymycin.",
+        "image_refs": [
+          "954db4683602a2ba01dac07cc94f571166175cdc.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "spectroscopic data",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 14,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence for the synthesis."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Total number of steps not explicitly stated, but 14 LLS steps are mentioned."
+      },
+      "Failed Attempts Count": {
+        "value": 0,
+        "unit": "count",
+        "interpretation": "No explicit failed attempts described in the provided text."
+      }
+    },
+    "comparison_to_prior": "This synthesis required 14 steps along the longest linear sequence (LLS) from a material (3) equivalent to that purchased commercially (D/L-Hpg) for the shortest prior synthesis. More than half of the steps replaced hazardous coupling reagents servicing conventional amide synthesis with KI/UHP reagents for UmAS, resulting in a 50% reduction in mmol DEPBT/EDC per mmol feglymycin compared to Süssmuth's synthesis (169 mmol DEPBT/mmol feglymycin) and an 88% decrease compared to Fuse's microflow synthesis (781 mmol DEPBT and trisphosgene/mmol feglymycin).",
+    "significance": "The total synthesis of feglymycin using a holistic approach that blends UmAS and conventional amide synthesis demonstrates a greener and more efficient method for preparing complex peptides, especially those with noncanonical and epimerization-prone aryl glycinamide residues. It establishes the utility of nitroalkanes as protected alpha-amino acid equivalents from sustainable synthesis. This approach has implications for the synthesis of other aryl glycinamide natural products like vancomycin, arylomycin, and ramoplanin."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.202508819",
+      "pmcid": "PMC12416467",
+      "title": "Total Synthesis of Feglymycin Using Umpolung Amide Synthesis.",
+      "authors": "Gourville PC, Bing JA, Quarels RD, Tsukanov SV, Schwieter KE, Tokumaru K, Stephens AB, Makley DM, Shen B, Smith AN, Johnston JN.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12416467?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/11f16f30-3cb0-442a-8aac-788f03e00ecc.zip",
+      "parsed_at": "2026-05-11T06:27:39.200220+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 72,
+    "parseable": 58,
+    "canonicalized": 57,
+    "invalid": 14,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "N[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)N[C@@H](C(=O)O)C(C)C)Cc1cc(O)cc(O)c1)Cc1ccc(O)cc1)Cc1cc(O)cc(O)c1)Cc1ccc(O)cc1)Cc1cc(O)cc(O)c1)Cc1ccc(O)cc1)Cc1cc(O)cc(O)c1)Cc1ccc(O)cc1)Cc1cc(O)cc(O)c1)Cc1ccc(O)cc1)Cc1cc(O)cc(O)c1)Cc1ccc(O)cc1)Cc1cc(O)cc(O)c1",
+      "BocNH2",
+      "PhSO2Na",
+      "HCO2H",
+      "CC(C)(C)OC(=O)N[C@@H](CBr)C(NO2)C1=CC=C(OCC2=CC=CC=C2)C=C1",
+      "CC(C)(C)OC(=O)N[C@@H](CBr)C(NO2)C1=CC=C(OCC2=CC=CC=C2)C=C1",
+      "O=Cc1cc(OBn)cc(OBn)c1",
+      "O=N(=O)C(Br)C[C@@H](NC(=O)OC(C)(C)C)c1cc(OBn)cc(OBn)c1",
+      "O=N(=O)C(Br)C[C@@H](NC(=O)OC(C)(C)C)c1cc(OBn)cc(OBn)c1",
+      "O=N(=O)C(Br)C[C@@H](NC(=O)OC(C)(C)C)c1cc(OBn)cc(OBn)c1"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "Feglymycin",
+        "smiles": "CC(C)C(NC(=O)C(NC(=O)C(N)c1ccc(O)cc1)c1cc(O)cc(O)c1)C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(C(=O)NC(Cc1ccccc1)C(=O)NC(CC(=O)O)C(=O)O)c1ccc(O)cc1)c1cc(O)cc(O)c1)C(C)C)c1cc(O)cc(O)c1)c1ccc(O)cc1)c1cc(O)cc(O)c1)c1ccc(O)cc1)c1cc(O)cc(O)c1"
+      }
+    ]
+  }
+}

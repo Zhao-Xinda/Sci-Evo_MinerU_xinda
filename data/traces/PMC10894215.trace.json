@@ -1,0 +1,868 @@
+{
+  "trace_id": "TS-PMC10894215",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "sorbicillactone A",
+    "smiles": "CC=CC=C[C@@H]1C(=O)C(O)=C(C)C(O)=C1[C@@]1(C)O[C@H](C(=O)NC(=O)C=CC(=O)O)C(=O)C1C",
+    "natural_product_class": "sorbicillinoid",
+    "structural_features": {
+      "molecular_weight": 456.45,
+      "stereocenters": 3,
+      "ring_systems": "bicyclic lactone",
+      "key_motifs": [
+        "sorbicillinol",
+        "alanine",
+        "fumaric acid"
+      ]
+    },
+    "motivation": "Sorbicillactone A (7) exhibits potent anti-leukemic and anti-HIV activities and possesses a unique structure. Efficient synthetic access is needed for future biomedical studies and compound development, especially given the challenges with stereoselectivity and separation from sorbicillactone B.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Volp",
+        "year": 2011,
+        "doi": "10.1021/ol201600w",
+        "key_strategy": "Oxidative dearomatization of phenol using PIFA, followed by C-methylation of a lactone intermediate. This synthesis yielded racemic product with undesired diastereoselectivity at C9."
+      }
+    ],
+    "success_criteria": {
+      "yield_target_percent": "11% overall yield from 2-methylresorcinol",
+      "stereochemistry_required": true,
+      "free_text": "Stereochemically pure sorbicillactone A (7) with precise stereochemical control at C5, C6, and C9. Avoidance of C9 epimer formation."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "Retrosynthetic removal of N-fumaryl residue from 7 to 10.",
+        "reasoning": "Simplifies the target structure and allows for a more modular approach."
+      },
+      {
+        "bond_description": "Disconnection of C6/C9-C,C-bond in 10 to ester 11.",
+        "named_strategy": "Intramolecular Michael addition",
+        "reasoning": "Envisioned intramolecular Michael addition to form the bicyclic lactone core. This step was inspired by work from Nicolaou et al. and Kazmaier et al. for zinc-chelated enolate chemistry."
+      },
+      {
+        "bond_description": "Removal of amino acid ester in 11 to sorbicillinol (2).",
+        "reasoning": "Sorbicillinol (2) is enantioselectively accessible from sorbicillin (1) by enzymatic oxidative dearomatization using SorbC."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "sorbicillin (1)",
+        "smiles": "CC=CC(=O)c1cc(C)c(O)c(C)c1O",
+        "role": "precursor to sorbicillinol (2)",
+        "comes_from": "synthesis from 2-methylresorcinol"
+      },
+      {
+        "fragment_id": "sorbicillinol (2)",
+        "smiles": "CC=CC(=O)c1cc(C)c(O)c(C)c1O",
+        "role": "key intermediate, Michael acceptor",
+        "comes_from": "enzymatic oxidative dearomatization of 1"
+      },
+      {
+        "fragment_id": "azlactone 31",
+        "smiles": "CC1=CC(C=CC(=O)O)=NC1=O",
+        "role": "Michael nucleophile",
+        "comes_from": "synthesis from L-alanine-OMe and mono-ethyl fumarate"
+      }
+    ],
+    "rationale": "The strategy aims for a highly convergent, stereoselective, and short route. Key steps include the enantioselective oxidative dearomatization of sorbicillin to sorbicillinol catalyzed by SorbC and the subsequent Michael addition of a fumarylazlactone building block. This approach leverages biocatalysis for stereocontrol and aims to install all stereogenic centers in a single reaction pot."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Sorbicillactone A (7) is a complex natural product with promising biological activities. Prior syntheses were racemic or low-yielding. The biosynthesis involves oxidative dearomatization of sorbicillin (1) to sorbicillinol (2) by SorbC.",
+        "gap": "A stereoselective and efficient total synthesis of 7 is needed.",
+        "decision": "To achieve a stereoselective synthesis, we will use an enzyme-mediated enantioselective dearomatization of sorbicillin (1) to sorbicillinol (2) as a key step. The bicyclic lactone core will be formed via intramolecular Michael addition, inspired by Nicolaou and Kazmaier's work. The N-fumaryl residue will be added later or incorporated into a Michael donor."
+      },
+      "evidence": {
+        "text_span": "In our retrosynthetic analysis (Fig. 2a), we considered work published by Nicolaou et al.23, who demonstrated that treatment of O-acetylsorbicillinol with KHMDS leads to an intramolecular Michael addition resulting in a lactone analog of 7, only devoid of the C9 methyl and aminofumaryl substituents. With this in mind, retrosynthetic removal of the N-fumaryl residue would deliver 10, which, upon disconnection of the C6/C9- C,C-bond, results in ester 11. We envisioned that intramolecular Michael addition, e.g., by applying methodology developed by Kazmaier et al.24,25, should allow bond formation to 10. Specifically, an Nprotected amino acid residue attached to 11 should be converted into a zinc-chelated enolate by double deprotonation to install sufficient nucleophilicity for intramolecular cyclization. Suitable electronwithdrawing protective groups can be installed in 11 to facilitate enolate formation. By directly using the required amino acid as a building block, additional downstream interconversion chemistry can be reduced to a minimum. Furthermore, conjugate addition in 11 was expected to proceed with chirality transfer from C5 to at least position C6. Removal of the amino acid ester in 11 results in sorbicillinol (2), which in turn is enantioselectively accessible from 1 by enzymatic oxidative aromatization employing SorbC (cf. Figure 1).",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "sorbicillin (1)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Sorbicillin (1) is a known precursor for sorbicillinoids.",
+        "gap": "Need to synthesize sorbicillin (1) for further experiments.",
+        "decision": "To obtain sorbicillin (1), we will synthesize it in three steps from 2-methylresorcinol according to previous work."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(O)c(C)cc1O"
+        ],
+        "product_smiles": [
+          "CC=CC(=O)c1cc(C)c(O)c(C)c1O"
+        ],
+        "reagents": [],
+        "named_reaction": "unspecified",
+        "rxn_smiles": "Cc1cc(O)c(C)cc1O>>CC=CC(=O)c1cc(C)c(O)c(C)c1O",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 38,
+        "observation": "Sorbicillin (1) was synthesized in 38% yield over three steps."
+      },
+      "evidence": {
+        "text_span": "Sorbicillin (1) was synthesized in 38% yield over three steps according to previous work starting from 2-methylresorcinol16.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "L-alanine (12) is a readily available amino acid.",
+        "gap": "Need to protect the amino group of L-alanine to facilitate subsequent reactions.",
+        "decision": "To protect the amino group, we will use TFA (trifluoroacetyl) protection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(N)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C(F)(F)F)C(=O)O"
+        ],
+        "reagents": [
+          "TFAA",
+          "TFA"
+        ],
+        "solvent": "TFA",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "observation": "TFA protection of the amino group of L-alanine (12) yielded 13 quantitatively."
+      },
+      "evidence": {
+        "text_span": "Starting from L-alanine (12), we performed a TFA (trifluoroacetyl) protection of the amino group to obtain 13 in quantitative yield (Fig. 2b).",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have protected L-alanine (13) and sorbicillin (1).",
+        "gap": "Need to couple 13 to sorbicillin (1) to form ester 14.",
+        "decision": "To couple 13 and 1, we will use Steglich esterification conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)C(F)(F)F)C(=O)O",
+          "CC=CC(=O)c1cc(C)c(O)c(C)c1O"
+        ],
+        "product_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)C=C(C)C1O[C@@H](C)NC(=O)C(F)(F)F"
+        ],
+        "reagents": [
+          "DCC",
+          "DMAP"
+        ],
+        "solvent": "DCM",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Coupling of 13 to sorbicillin (1) using Steglich esterification yielded 14 in 92%."
+      },
+      "evidence": {
+        "text_span": "Subsequently, we coupled 13 to sorbicillin (1) using Steglich esterification to yield 14 in 92%.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have ester 14. PIFA-mediated oxidation is known to cause oxidative dearomatization and 1,2-acyl shift.",
+        "gap": "Need to dearomatize 14 and induce the 1,2-acyl shift to form sorbicillinol derivative 15.",
+        "decision": "To achieve dearomatization and acyl shift, we will use PIFA-mediated oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)C=C(C)C1O[C@@H](C)NC(=O)C(F)(F)F"
+        ],
+        "product_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)C=C(C)C1O[C@@H](C)NC(=O)C(F)(F)F"
+        ],
+        "reagents": [
+          "PIFA"
+        ],
+        "solvent": "MeCN/H2O",
+        "time": "0.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 29,
+        "observation": "PIFA-mediated oxidation of 14 yielded sorbicillinol derivative 15 in 29%."
+      },
+      "evidence": {
+        "text_span": "The PIFA-mediated oxidation indeed allowed for the dearomatization of 14 and the simultaneous 1,2-acyl shift of the attached alanine residue, yielding sorbicillinol derivative 15 in 29%.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have sorbicillinol derivative 15. Intramolecular Michael addition is expected to form the lactone core.",
+        "gap": "Need to cyclize 15 to form the desired lactone 16a.",
+        "decision": "To cyclize 15, we will use LiTMP and ZnCl2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)C=C(C)C1O[C@@H](C)NC(=O)C(F)(F)F"
+        ],
+        "product_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)[C@H]2C[C@@H](NC(=O)C(F)(F)F)[C@@H](C1O)C2(C)O",
+          "C=CC=CC(=O)C1C(O)=C(C)[C@H]2C[C@@H](NC(=O)C(F)(F)F)[C@@H](C1O)C2(C)O"
+        ],
+        "reagents": [
+          "LiTMP",
+          "ZnCl2"
+        ],
+        "solvent": "THF",
+        "temperature": "-78°C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 52,
+        "observation": "Lactone 16a was formed in 52% yield. The undesired 16b was isolated as a minor product in 6% yield."
+      },
+      "evidence": {
+        "text_span": "The latter was readily converted to the desired lactone 16a (52%) by intramolecular Michael addition. We also isolated the undesired 16b as the minor product in a 6% yield.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "sorbicillin (1)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have established a chemical route to 16a. Now we want to explore a chemoenzymatic approach to stereochemically pure 16a.",
+        "gap": "Need to enzymatically produce sorbicillinol (2) and intercept it with a suitable N-TFA-protected L-alanine derivative.",
+        "decision": "To achieve this, sorbicillinol (2) will be made enzymatically and intercepted in vitro with pentafluorophenol (pfp) activated N-TFA-protected L-alanine."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC=CC(=O)c1cc(C)c(O)c(C)c1O"
+        ],
+        "product_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)[C@H]2C[C@@H](NC(=O)C(F)(F)F)[C@@H](C1O)C2(C)O"
+        ],
+        "reagents": [
+          "SorbC",
+          "NADH",
+          "PfpAlaTFA"
+        ],
+        "solvent": "phosphate buffer",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 18,
+        "observation": "Direct conversion to stereochemically defined (5S, 6R, 9S)-16a in 18% yield. No formation of the corresponding C9 epimer (5S, 6R, 9R)-16b or any other stereoisomer was observed."
+      },
+      "evidence": {
+        "text_span": "Therefore, sorbicillinol (2) was made enzymatically and intercepted in vitro with pentafluorophenol (pfp) activated N-TFA-protected L-alanine. Surprisingly, this did not deliver ester intermediate 15 but led to direct conversion to stereochemically defined (5S, 6R, 9S)-16a in 18% yield. To our delight, we did not observe the formation of the corresponding C9 epimer (5S, 6R, 9R)-16b or any other stereoisomer, attesting to the possibility of utilizing such an approach for a highly stereoselective synthesis of 7.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "We have successfully synthesized 16a using a chemoenzymatic approach.",
+        "gap": "Need to deprotect 16a/b to 17 to advance towards sorbicillactone A (7).",
+        "decision": "To deprotect 16a/b, we will attempt various acidic, basic, or reductive conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)[C@H]2C[C@@H](NC(=O)C(F)(F)F)[C@@H](C1O)C2(C)O"
+        ],
+        "product_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)[C@H]2C[C@@H](N)[C@@H](C1O)C2(C)O"
+        ],
+        "reagents": [],
+        "named_reaction": "deprotection",
+        "rxn_smiles": "C=CC=CC(=O)C1C(O)=C(C)[C@H]2C[C@@H](NC(=O)C(F)(F)F)[C@@H](C1O)C2(C)O>>C=CC=CC(=O)C1C(O)=C(C)[C@H]2C[C@@H](N)[C@@H](C1O)C2(C)O"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "All attempts to deprotect 16a/b to 17 either showed no conversion or led to decomposition."
+      },
+      "evidence": {
+        "text_span": "However, despite extensive experimentation, it was impossible to deprotect 16a/b to 17 under acidic, basic, or reductive conditions. All attempts either did not show any conversion or led to decomposition.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "N-TFA protection proved difficult to remove. Other N-protection groups might be more suitable for cyclization and subsequent deprotection.",
+        "gap": "Need to find an alternative N-protection group that allows cyclization to lactones 16 and subsequent deprotection.",
+        "decision": "To find a suitable protection group, we will screen alternative N-protection groups (e.g., SES, Boc, Cbz, or Pht) and attempt cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "named_reaction": "cyclization",
+        "rxn_smiles": ""
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "None of the tested esters 15 with different N-protection groups (e.g., SES, Boc, Cbz, or Pht) could be cyclized to the respective desired lactones 16. This is likely due to insufficient acidity at the amino acid alpha-carbon."
+      },
+      "evidence": {
+        "text_span": "We next screened for alternative protection groups to replace N.-TFA protection. Unfortunately, none of the tested esters 15 with different Nprotection groups (e.g., SES, Boc, Cbz, or Pht) could be cyclized to the respective desired lactones 16. This is likely a result of the insufficient acidity at the amino acid alpha-carbon when using less electron-withdrawing protective groups compared to N.-TFA.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "Alternative N-protection groups failed to facilitate cyclization due to insufficient acidity at the alpha-carbon. The N-TFA group, while effective for cyclization, was impossible to remove.",
+        "gap": "Need a strategy that allows for cyclization without requiring intermediate deprotection, or a protection group that is easily removed.",
+        "decision": "To circumvent the need for intermediate deprotection while facilitating alpha deprotonation, we will investigate the synthesis of a nitro derivative (21), where the nitro group could serve as a masked amino group and an electron-withdrawing group."
+      },
+      "evidence": {
+        "text_span": "To circumvent the need for intermediate deprotection while facilitating alpha deprotonation, we next investigated the synthesis of the nitro derivative 21 (Fig. 2d). As 2-nitropropanoic acid is prone to decarboxylation, we envisioned the attachment of a building block to the sorbicillin core that would allow later installation of the desired nitro functionality.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We are pursuing a nitro derivative strategy. 2-bromopropanoic acid (18) can serve as a precursor for the nitro functionality.",
+        "gap": "Need to attach 2-bromopropanoic acid (18) to sorbicillin (1).",
+        "decision": "To attach 18 to 1, we will use a coupling reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(Br)C(=O)O",
+          "CC=CC(=O)c1cc(C)c(O)c(C)c1O"
+        ],
+        "product_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)C=C(C)C1OC(=O)C(C)Br"
+        ],
+        "reagents": [
+          "DCC",
+          "DMAP"
+        ],
+        "solvent": "DCM",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "2-bromopropanoic acid (18) was coupled to sorbicillin (1) in 96% yield, forming 19."
+      },
+      "evidence": {
+        "text_span": "Therefore, we coupled 2-bromo propanoic acid (18) to sorbicillin (1) in 96% yield.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have ester 19. PIFA-mediated oxidation is known to cause oxidative dearomatization.",
+        "gap": "Need to oxidize 19 to the sorbicillinol derivative 20.",
+        "decision": "To oxidize 19, we will use PIFA-mediated oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)C=C(C)C1OC(=O)C(C)Br"
+        ],
+        "product_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)C=C(C)C1OC(=O)C(C)Br"
+        ],
+        "reagents": [
+          "PIFA"
+        ],
+        "solvent": "MeCN/H2O",
+        "time": "0.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 32,
+        "observation": "Oxidation of 19 with PIFA yielded sorbicillinol derivative 20 in 32% yield."
+      },
+      "evidence": {
+        "text_span": "The oxidation of 19 with PIFA yielded sorbicillinol derivative 20 in 32% yield.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "We have sorbicillinol derivative 20. We need to introduce the nitro functionality and induce cyclization.",
+        "gap": "Need to nitrate 20 and achieve concomitant cyclization to nitrosorbicillactone 21a.",
+        "decision": "To achieve nitration and cyclization, we will use NaNO2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC=CC(=O)C1C(O)=C(C)C=C(C)C1OC(=O)C(C)Br"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "NaNO2",
+          "phloroglucinol"
+        ],
+        "solvent": "DMF",
+        "temperature": "-15°C to 10°C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 4,
+        "failure_mode": "low_yield",
+        "observation": "Nitration of 20 using NaNO2 led to concomitant spontaneous cyclization to directly give nitrosorbicillactone 21a (4% yield) and the undesired 21b (11% yield). The overall yield was low, and the undesired epimer 21b was the major product."
+      },
+      "evidence": {
+        "text_span": "The nitration of 20 using NaNO2 led to a concomitant spontaneous cyclization to directly give nitrosorbicillactone 21a with the desired relative stereochemistry and the undesired 21b in 4 and 11% yield, respectively. As the overall yield in this cyclization step was low and as the undesired epimer 21b was the major product, this route was not further investigated.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "The nitro derivative route yielded low amounts of the desired product and favored the undesired epimer.",
+        "gap": "Need a more efficient and stereoselective cyclization strategy.",
+        "decision": "To improve efficiency and stereoselectivity, we will investigate performing the cyclization reaction with the fumaric acid residue already attached, potentially avoiding the need for a protective group."
+      },
+      "evidence": {
+        "text_span": "As an alternative, we next investigated the possibility of performing the cyclization reaction without a protective group but rather with the required fumaric acid residue already attached (Fig. 3a).",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We are exploring a strategy where the fumaric acid residue is already attached. L-alanine-OtBu (22) is a suitable starting material.",
+        "gap": "Need to couple L-alanine-OtBu (22) with mono-ethyl fumarate.",
+        "decision": "To couple 22 with mono-ethyl fumarate, we will use peptide coupling conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCOC(=O)C(C)N",
+          "CCOC(=O)C=CC(=O)O"
+        ],
+        "product_smiles": [
+          "CCCOC(=O)C(C)NC(=O)C=CC(=O)OCC"
+        ],
+        "reagents": [
+          "EDC",
+          "HOBt",
+          "NEt3"
+        ],
+        "solvent": "DMF",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "Peptide coupling of L-alanine-OtBu (22) with mono-ethyl fumarate gave 23 in 97% yield."
+      },
+      "evidence": {
+        "text_span": "Peptide coupling of L-alanine-OtBu (22) with mono-ethyl fumarate gave 23 in 97% yield.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have compound 23 with a tBu protective group.",
+        "gap": "Need to remove the tBu protective group to obtain 24.",
+        "decision": "To remove the tBu group, we will use acidic conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCOC(=O)C(C)NC(=O)C=CC(=O)OCC"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C=CC(=O)NC(C)C(=O)O"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "dioxane",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "observation": "Removal of the tBu protective group from 23 was quantitative, yielding 24."
+      },
+      "evidence": {
+        "text_span": "After the removal of the tBu protective group (quant.), esterification of 23 with sorbicillin (1) yielded 25 in 37% yield.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have compound 24 and sorbicillin (1).",
+        "gap": "Need to esterify 24 with sorbicillin (1) to form 25.",
+        "decision": "To esterify 24 with 1, we will use DCC and DMAP."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=CC(=O)NC(C)C(=O)O",
+          "CC=CC(=O)c1cc(C)c(O)c(C)c1O"
+        ],
+        "product_smiles": [
+          "C=CC=CC(=O)C1C(C)=C(OC(=O)C(C)NC(=O)C=CC(=O)OCC)C=C(C)C1O"
+        ],
+        "reagents": [
+          "DCC",
+          "DMAP"
+        ],
+        "solvent": "DCM",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 37,
+        "observation": "Esterification of 24 with sorbicillin (1) yielded 25 in 37% yield."
+      },
+      "evidence": {
+        "text_span": "After the removal of the tBu protective group (quant.), esterification of 23 with sorbicillin (1) yielded 25 in 37% yield.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have compound 25. PIFA-mediated oxidation is known to cause oxidative dearomatization.",
+        "gap": "Need to oxidize 25 to the sorbicillinol derivative 26.",
+        "decision": "To oxidize 25, we will use PIFA-mediated oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC=CC(=O)C1C(C)=C(OC(=O)C(C)NC(=O)C=CC(=O)OCC)C=C(C)C1O"
+        ],
+        "product_smiles": [
+          "C=CC=CC(=O)C1C(C)=C(OC(=O)C(C)NC(=O)C=CC(=O)OCC)C=C(C)C1O"
+        ],
+        "reagents": [
+          "PIFA"
+        ],
+        "solvent": "MeCN/H2O",
+        "time": "0.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "observation": "PIFA-mediated oxidation of 25 yielded sorbicillinol derivative 26 in 48%."
+      },
+      "evidence": {
+        "text_span": "The PIFA-mediated oxidation of 25 yielded sorbicillinol derivative 26 in 48%, which was further cyclized to the desired sorbicillactone ethyl ester 27a and the undesired 27b.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "We have sorbicillinol derivative 26. We need to cyclize it to form sorbicillactone ethyl ester 27a.",
+        "gap": "Need to cyclize 26 efficiently and stereoselectively.",
+        "decision": "To cyclize 26, we will use LiTMP and ZnCl2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC=CC(=O)C1C(C)=C(OC(=O)C(C)NC(=O)C=CC(=O)OCC)C=C(C)C1O"
+        ],
+        "product_smiles": [
+          "C=CC=CC(=O)C1C(C)=C(OC(=O)C(C)NC(=O)C=CC(=O)OCC)C=C(C)C1O",
+          "C=CC=CC(=O)C1C(C)=C(OC(=O)C(C)NC(=O)C=CC(=O)OCC)C=C(C)C1O"
+        ],
+        "reagents": [
+          "LiTMP",
+          "ZnCl2"
+        ],
+        "solvent": "THF",
+        "temperature": "-78°C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 1,
+        "failure_mode": "low_yield",
+        "observation": "The yields and stereochemical outcome in this crucial step were unsatisfactory, delivering ~1% of 27a and 2% of 27b."
+      },
+      "evidence": {
+        "text_span": "Unfortunately, the yields and the stereochemical outcome in this crucial step were unsatisfactory, delivering ~1% of 27a and 2% of 27b.",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The previous cyclization attempt yielded poorly and lacked stereoselectivity. We previously had success with pfp-activated N-TFA-protected L-alanine in the chemoenzymatic synthesis of 16a.",
+        "gap": "Need to prepare a pfp-activated ester of 24 to intercept chemoenzymatically prepared sorbicillinol (2).",
+        "decision": "To prepare the active ester, we will attempt to convert 24 into a pfp-activated ester."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=CC(=O)NC(C)C(=O)O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "pentafluorophenol"
+        ],
+        "named_reaction": "esterification",
+        "rxn_smiles": ""
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "No formation of the desired active ester was observed. Instead, an azlactone was formed."
+      },
+      "evidence": {
+        "text_span": "Surprisingly, we did not see any formation of the desired active ester. In a detailed investigation of the reaction course by NMR and HRMS analysis, we proved that an azlactone was formed instead (see supporting information section 2.19, incl. Fig. S1/S2).",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 20,
+      "thought": {
+        "background": "Attempting to form a pfp-activated ester of 24 unexpectedly led to the formation of an azlactone. Azlactones are known nucleophiles in Michael-type reactions.",
+        "gap": "The unexpected formation of an azlactone might be a new opportunity for direct access to sorbicillactone A (7).",
+        "decision": "To leverage this discovery, we will investigate converting enzymatically produced sorbicillinol (2) with an unprotected azlactone (31) to directly access sorbicillactone A (7)."
+      },
+      "evidence": {
+        "text_span": "Since azlactones can act as nucleophiles in Michael-type reactions and as they are generally widely used in organic synthesis27, we next turned our attention to converting enzymatically produced sorbicillinol (2) with unprotected azlactone 31 to potentially gain direct access to sorbicillactone A (7).",
+        "section": "Initial synthetic efforts towards sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We need to synthesize the azlactone precursor 30.",
+        "gap": "Need to couple L-alanine-OMe (28) and mono-ethyl fumarate, then saponify the esters.",
+        "decision": "To synthesize 30, we will couple L-alanine-OMe (28) and mono-ethyl fumarate, followed by saponification of both esters in 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(C)N",
+          "CCOC(=O)C=CC(=O)O"
+        ],
+        "product_smiles": [
+          "CC(NC(=O)C=CC(=O)O)C(=O)O"
+        ],
+        "reagents": [
+          "EDC",
+          "HOBt",
+          "NEt3",
+          "LiOH"
+        ],
+        "solvent": "DMF, H2O",
+        "time": "18 h (coupling), 24 h (saponification)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Azlactone precursor 30 was synthesized in 90% yield over two steps (coupling to 29, then saponification)."
+      },
+      "evidence": {
+        "text_span": "The desired azlactone precursor 30 can readily be synthesized by coupling of L-alanine-OMe (28) and mono-ethyl fumarate followed by saponification of both esters in 29 to give 30 in 90% yield over two steps. (Fig. 3b)",
+        "section": "Chemoenzymatic total synthesis of sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": "azlactone 31",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have azlactone precursor 30.",
+        "gap": "Need to form the azlactone 31 from 30.",
+        "decision": "To form azlactone 31, we will activate the carboxylic acid with EDC."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(NC(=O)C=CC(=O)O)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC1=CC(C=CC(=O)O)=NC1=O"
+        ],
+        "reagents": [
+          "EDC"
+        ],
+        "solvent": "MeCN",
+        "time": "0.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The ring closure to form azlactone 31 was performed by simply activating the carboxylic acid with EDC. The unstable compound 31 thus prepared was used without further purification."
+      },
+      "evidence": {
+        "text_span": "The ring closure to form azlactone 31 was performed by simply activating the carboxylic acid with EDC. The unstable compound 31 thus prepared was used without further purification and reacted in situ with enzymatically prepared sorbicillinol (2).",
+        "section": "Chemoenzymatic total synthesis of sorbicillactone A (7)"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": "sorbicillin (1)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have unstable azlactone 31 and can enzymatically produce sorbicillinol (2) from sorbicillin (1).",
+        "gap": "Need to react 31 with enzymatically produced 2 to form sorbicillactone A (7) in a stereoselective manner.",
+        "decision": "To achieve this, 31 will be reacted in situ with enzymatically prepared sorbicillinol (2) in a one-pot chemoenzymatic reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC=CC(=O)c1cc(C)c(O)c(C)c1O",
+          "CC1=CC(C=CC(=O)O)=NC1=O"
+        ],
+        "product_smiles": [
+          "CC=CC=C[C@@H]1C(=O)C(O)=C(C)C(O)=C1[C@@]1(C)O[C@H](C(=O)NC(=O)C=CC(=O)O)C(=O)C1C"
+        ],
+        "reagents": [
+          "SorbC",
+          "NADH"
+        ],
+        "solvent": "phosphate buffer",
+        "temperature": "rt",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 29,
+        "observation": "This directly furnished stereochemically pure sorbicillactone A (7) in 29% yield. The reaction proceeded smoothly and did not show the formation of any undesired stereoisomer."
+      },
+      "evidence": {
+        "text_span": "This directly furnished stereochemically pure sorbicillactone A (7) in 29% yield. The reaction proceeded smoothly and did not show the formation of any undesired stereoisomer.",
+        "section": "Chemoenzymatic total synthesis of sorbicillactone A (7)"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 11,
+        "unit": "%",
+        "interpretation": "Overall yield starting from 2-methylresorcinol"
+      },
+      "Longest Linear Steps": {
+        "value": 4,
+        "unit": "steps",
+        "interpretation": "Number of steps in the longest linear sequence"
+      }
+    },
+    "comparison_to_prior": "The current synthesis is highly convergent (4 steps in the longest linear sequence) and provides excellent yields (11% overall from 2-methylresorcinol) with precise stereochemical control, significantly improving upon the prior synthesis by Volp et al. (12 linear steps, 0.13% overall yield of rac-7, with undesired diastereoselectivity).",
+    "significance": "This chemoenzymatic approach provides efficient and stereoselective access to sorbicillactone A and its analogs, which is crucial for in-depth biological evaluation and structure-activity relationship studies. The methodology also supports the hypothesis of an analogous biosynthetic pathway for sorbicillactone A."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s42004-024-01126-1",
+      "pmcid": "PMC10894215",
+      "title": "Chemoenzymatic total synthesis of sorbicillactone A.",
+      "authors": "Müller JI, Gulder TAM.",
+      "journal": "Commun Chem",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC10894215?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/416f2de9-e278-469c-bea6-3c1a703b02d9.zip",
+      "parsed_at": "2026-05-11T06:32:47.662196+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 53,
+    "parseable": 48,
+    "canonicalized": 36,
+    "invalid": 5,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1=C(O)C(C(=O)C=CC=C)C(O[C@@H](C)N(PG)C(=O)C(F)(F)F)C(C)=C1",
+      "CC1=C(O)C(C(=O)C=CC=C)C(O)[C@H]2C(C)(O)[C@@H]1C[C@H]2N(PG)C(=O)C(F)(F)F",
+      "CC1=C(O)C(C(=O)C=CC=C)C(O)[C@H]2C(C)(O)[C@@H]1C[C@H]2NO2",
+      "CC1=C(O)C(C(=O)C=CC=C)C(O)[C@H]2C(C)(O)[C@@H]1C[C@H]2NO2",
+      "unspecified"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

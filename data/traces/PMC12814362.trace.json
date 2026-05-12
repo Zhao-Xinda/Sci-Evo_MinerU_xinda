@@ -1,0 +1,762 @@
+{
+  "trace_id": "TS-PMC12814362",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "3q (intermediate for Forskolin)",
+    "smiles": "C=CC(C)(C)CC1CC(C)=CC(=O)O1",
+    "natural_product_class": "terpenoid",
+    "structural_features": {
+      "key_motifs": [
+        "gamma-lactone",
+        "alpha,beta-unsaturated carbonyl",
+        "alkene"
+      ]
+    },
+    "motivation": "The alpha,beta-desaturation of esters is a challenging transformation. This work aims to develop a greener and more stereoselective biocatalytic method for the dynamic enantioconvergent desaturation of 4,5-disubstituted gamma-lactones, specifically applied to a key intermediate in forskolin total synthesis.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Ikegami",
+        "year": 1988,
+        "doi": "10.1021/ja00218a050",
+        "key_strategy": "Total synthesis of racemic forskolin, involving aldehyde 8 as a key intermediate."
+      },
+      {
+        "lead_author": "Corey",
+        "year": 1988,
+        "doi": "10.1021/ja00218a051",
+        "key_strategy": "Total synthesis of (±)-Forskolin."
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Achieve high enantioselectivity (up to ee 99%) for the (R)-configured product, funneling all four initial stereoisomers into a single product. Demonstrate applicability to a key intermediate in forskolin synthesis."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C=C double bond formation in the lactone ring",
+        "named_strategy": "Biocatalytic desaturation",
+        "reasoning": "This is the central transformation, aiming for a greener and stereoselective alternative to traditional chemical methods. The strategy involves dynamic enantioconvergent desaturation."
+      },
+      {
+        "bond_description": "Lactone ring opening",
+        "named_strategy": "Hydrolysis",
+        "reasoning": "Mechanistic studies suggest an initial ring-opening step to a hydroxy carboxylate intermediate, which then undergoes further transformations."
+      }
+    ],
+    "rationale": "The strategy leverages the enzymatic machinery of Rhodococcus erythropolis to perform a dynamic enantioconvergent desaturation of 4,5-disubstituted gamma-lactones. This involves a complex pathway including lactone ring-opening by esterases, stereoselective oxidation by alcohol dehydrogenases (ADHs), desaturation of carboxylates by ene-reductases (ERs), and stereoselective reductive steps by ERs and ketoreductases (KRs). The key is to funnel all four initial stereoisomers into a single (R)-configured product with high enantioselectivity, driven by a site-selective de-epimerization and an ER-mediated E/Z isomerization coupled to irreversible lactonization."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Traditional chemical desaturation methods often require high catalyst loading, non-green solvents, and rarely enable stereoselective transformations. Biocatalytic desaturations, inspired by natural processes like the Krebs cycle, offer a greener alternative.",
+        "gap": "Despite advancements in biocatalytic desaturations, a dynamic enantioconvergent desaturation of 4,5-disubstituted gamma-lactones has not been reported, especially for complex natural product intermediates.",
+        "decision": "To explore the potential of whole cells of Rhodococcus erythropolis for the stereoselective desaturation of gamma-lactones, building on previous work with ADHs from this bacterium."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Review of existing methods for catalytic desaturation, including transition-metal-catalyzed and biocatalytic approaches using ene-reductases (ERs)."
+      },
+      "references": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19"
+      ],
+      "evidence": {
+        "text_span": "The biocatalytic counterpart to the chemical dehydrogenations likely drew inspiration from the oxidation of succinic acid to fumaric acid, an essential transformation in the Krebs cycle. The reaction is catalyzed by the enzyme succinate dehydrogenases, where the flavoprotein subunit facilitates the hydride abstraction from the succinate enolate to the flavin cofactor.10 Massey demonstrated that also flavoproteins belonging to the class of ene-reductase (ER) enzymes can desaturate carbonyl compounds (aldehydes or ketones) simply by substituting the natural flavin mononucleotide (FMN) cofactor with a synthetic analogue having a higher redox potential.11 After the desaturation step, the reduced form of flavin is oxidized by O2, resulting in the formation of H2O2 and the regeneration of the oxidized cofactor required for catalytic turnover (Figure 1A). ERs are redox enzymes largely employed in the stereospecific reduction of C=C double bonds conjugated with electron-withdrawing groups (typical EWGs are −CO of ketones, aldehydes and methyl esters, −CNi, and −NO2,).12",
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous work showed stereoselective synthesis of gamma-lactone 1a from diol 2a using Rhodococcus bacteria ADHs.",
+        "gap": "An unexpected side product, 3a, was observed in trace amounts during the biotransformation of anti-1a with R. erythropolis, suggesting a previously unreported enzymatic activity.",
+        "decision": "To investigate the formation of 3a, a dehydrogenated lactone, from anti-2a using R. erythropolis under standard conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC[C@H](O)C[C@@H](C)CCO"
+        ],
+        "product_smiles": [
+          "CCC[C@H]1OC(=O)C=C1C"
+        ],
+        "reagents": [
+          "glucose"
+        ],
+        "catalyst": "Rhodococcus erythropolis (strain DSM 44534)",
+        "solvent": "demineralized H2O",
+        "temperature": "26 °C",
+        "time": "7 days",
+        "stoichiometry": {
+          "glucose": "256 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 0,
+        "observation": "Trace amount (<2%) of dehydrogenated lactone 3a detected by GC-MS. Product not isolated."
+      },
+      "evidence": {
+        "text_span": "While repeating the biotransformation of anti-1a with whole cells of R. erythropolis (strain DSM 44534), we discovered a previously unreported enzymatic activity for this microorganism. In addition to the enantioenriched whisky lactone we detected the presence of a very small amount of dehydrogenated lactone <2% by GC-MS), later identified as 3a (entry 1 of Table 1).",
+        "page": 1780,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "71b2152bd9c1466a3f991730d2f50903787b1cf8d12d8c4a8853f967f5db0e44.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Trace amounts of 3a were observed from anti-2a. The hypothesis is that ER enzymes might be capable of directly desaturating whisky lactone 1a.",
+        "gap": "The yield of 3a is very low. The reaction conditions need to be optimized for desaturation.",
+        "decision": "To test the direct desaturation of 1a under the same conditions as the previous experiment (entry 1, Table 1)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCC1C(=O)OCC1C"
+        ],
+        "product_smiles": [
+          "CCC[C@H]1OC(=O)C=C1C"
+        ],
+        "reagents": [
+          "glucose"
+        ],
+        "catalyst": "Rhodococcus erythropolis (strain DSM 44534)",
+        "solvent": "demineralized H2O",
+        "temperature": "26 °C",
+        "time": "7 days",
+        "stoichiometry": {
+          "glucose": "256 eq."
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 0,
+        "failure_mode": "low_yield",
+        "observation": "Only 8% conversion of 1a to 3a. Product not isolated."
+      },
+      "evidence": {
+        "text_span": "To our delight, simply by favoring the oxidative reaction conditions typically applied in the ER-catalyzed desaturations (slightly basic medium and stronger aerobic conditions,16−18 entries 3, 4), decreasing substantially the equivalents of glucose (13 vs 256), and using a commercially available diastereomeric mixture of whisky lactone as substrate (1a, cis/trans = 46:54 by GC-MS) instead of a single diastereoisomer of diol 2a, we were able to isolate 3a in a yield of 43%, after column chromatography (entry 4).",
+        "page": 1780,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "71b2152bd9c1466a3f991730d2f50903787b1cf8d12d8c4a8853f967f5db0e44.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "Initial attempts to desaturate 1a yielded very low conversion. ER-catalyzed desaturations typically favor oxidative conditions, slightly basic medium, and stronger aerobic conditions.",
+        "gap": "The reaction conditions are not optimized for efficient desaturation.",
+        "decision": "To optimize the reaction conditions by favoring oxidative conditions, increasing pH, decreasing glucose equivalents, and using a diastereomeric mixture of 1a as substrate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCC1C(=O)OCC1C"
+        ],
+        "product_smiles": [
+          "CCC[C@H]1OC(=O)C=C1C"
+        ],
+        "reagents": [
+          "glucose"
+        ],
+        "catalyst": "Rhodococcus erythropolis (strain DSM 44534)",
+        "solvent": "demineralized H2O",
+        "temperature": "26 °C",
+        "time": "7 days",
+        "atmosphere": "aerobic",
+        "stoichiometry": {
+          "glucose": "13 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 43,
+        "ee_percent": 96,
+        "observation": "Achieved 99% conversion and 43% isolated yield of 3a with 96% ee. The (R) absolute configuration was assigned. Product isolated by column chromatography."
+      },
+      "evidence": {
+        "text_span": "To our delight, simply by favoring the oxidative reaction conditions typically applied in the ER-catalyzed desaturations (slightly basic medium and stronger aerobic conditions,16−18 entries 3, 4), decreasing substantially the equivalents of glucose (13 vs 256), and using a commercially available diastereomeric mixture of whisky lactone as substrate (1a, cis/trans = 46:54 by GC-MS) instead of a single diastereoisomer of diol 2a, we were able to isolate 3a in a yield of 43%, after column chromatography (entry 4).",
+        "page": 1780,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "71b2152bd9c1466a3f967f5db0e44.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Optimized conditions yielded 43% of 3a. To improve efficiency, increasing substrate concentration is a common strategy.",
+        "gap": "The effect of higher substrate concentration on the biotransformation is unknown.",
+        "decision": "To attempt the biotransformation with increased substrate concentration (from 0.6 g L^-1 to 1.2 g L^-1)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCC1C(=O)OCC1C"
+        ],
+        "product_smiles": [
+          "CCC[C@H]1OC(=O)C=C1C"
+        ],
+        "reagents": [
+          "glucose"
+        ],
+        "catalyst": "Rhodococcus erythropolis (strain DSM 44534)",
+        "solvent": "demineralized H2O",
+        "temperature": "26 °C",
+        "time": "7 days",
+        "atmosphere": "aerobic",
+        "stoichiometry": {
+          "glucose": "13 eq."
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 0,
+        "failure_mode": "low_yield",
+        "observation": "No formation of 3a detected. Substrate concentration must be kept lower than 0.6 g L^-1, likely due to toxicity of lactone-based substrates."
+      },
+      "evidence": {
+        "text_span": "Then, with the optimized reaction conditions in our hands, we attempted to increase the substrate concentration (from 0.6 g L−1 to 1.2 g L−1, entries 4−6), but the formation of 3a decreased significantly, indicating that the substrate concentration must be kept lower than 0.6 g L−1., very likely because of the toxicity of lactone-based substrates on the used Rhodococcus erythropolis strain.",
+        "page": 1780,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "71b2152bd9c1466a3f967f5db0e44.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The dehydrogenated lactone 3a was obtained with high enantioselectivity.",
+        "gap": "The structural identity and absolute configuration of 3a need to be unambiguously confirmed.",
+        "decision": "To confirm the structural identity of 3a by comparing NMR spectra with an authentic sample and assign absolute configuration based on optical rotation."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Structural identity of 3a confirmed by 1H and 13C NMR comparison with an authentic sample. (R) absolute configuration assigned based on optical rotation ([α]D^20 = -7.4, c 1.1, CHCl3 vs lit. [α]D = +2.7, c 1.07, CHCl3 for (S) enantiomer, 94% ee)."
+      },
+      "references": [
+        "24"
+      ],
+      "evidence": {
+        "text_span": "Noteworthy, in the biotransformation under optimized conditions, only a trace amount of starting whisky lactone was left, mainly the trans diastereoisomer (Figure 3 and Figure 5). Then, the structural identity of 3a was unambiguously confirmed by comparing 1H and o13C NMR spectra with those of an authentic sample of dehydrogenated lactone, chemically prepared by oxidation of the α-phenyl selenide derivative of 1a (for more details see the Supporting Information, Scheme S6). However, our great surprise came when we discovered that the formation of 3a was highly enantioselective (ee 96% by chiral GC, see the Supporting Information) with stereopreference for the (R) absolute configuration ([α]D^20 = −7.4, c 1.1, CHCl3, vs lit. [α]D = +2.7, c 1.07, CHCl3,, for (S) enantiomer, 94% ee).24",
+        "page": 1780,
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The biotransformation of 1a to 3a was successful and highly enantioselective. To demonstrate the generality of this method, the substrate scope needs to be explored.",
+        "gap": "The applicability of this biotransformation to other structurally similar disubstituted gamma-lactones (oak or Quercus lactones) is unknown.",
+        "decision": "To explore the substrate scope using various 4,5-disubstituted gamma-lactones (1b-i) under the optimized conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "R. erythropolis DSM 44534",
+        "solvent": "demineralized H2O",
+        "temperature": "26 °C",
+        "time": "7 days",
+        "atmosphere": "aerobic",
+        "reagents": [
+          "glucose"
+        ],
+        "stoichiometry": {
+          "glucose": "13 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Seven out of ten substrates (1b-i) were converted. Cognac lactone 1e afforded 3e with comparable yield and selectivity to 3a. (R) stereochemical configuration was assigned to all products based on chiral GC elution order and optical rotation."
+      },
+      "references": [
+        "25",
+        "26"
+      ],
+      "evidence": {
+        "text_span": "Encouraged by these results, we explored the substrate scope of this biotransformation, focusing our interest on the dehydrogenation of structurally similar disubstituted γ-lactones (1b-i, Figure 3A). This important class of natural compounds, also known as oak or Quercus lactones, is characterized by the methyl substituent at C(4) and an alkyl or alkenyl substituent at C(5) (for their preparation see the Supporting Information, Schemes S1 and S2). Remarkably, seven out of ten substrates were converted. The desaturation of cognac lactone 1e afforded 3e with a yield and selectivity comparable to those achieved for 3a. The (R) absolute configuration was assigned by reconverting the optically enriched 3e (ee 94% by chiral GC) into the cis diastereoisomer of cognac lactone 1e (cis/trans = 86:14, [α]D^25 = +46.0, c 1.5, CHCl3, vs lit. [α]D = +63.3, c 1.12, CHCl3,, for (4R,5R) enantiomer),25 through Rh/Al2O3-catalyzed hydrogenation of the C=C double bond (Scheme S7 of the Supporting Information). The yield of substrates with linear substituents (1b and 1g) was comparable to those of cognac and whisky lactones, while for substrates with nonlinear substituents (1c,d and 1f), the conversion was strongly influenced by the branching position: the closer the branching carbon was to C(5), the lower the yield. Substrates with alkenyl substituents were desaturated with a conversion that correlated with the distance between the C=C double-bond unsaturation and C(5). For instance, the substrate with the allyl chain (1h) was not dehydrogenated, whereas the eldanolide (1i), bearing the prenyl substituent, was transformed into 3i in a 10% yield. Finally, (R) stereochemical configuration was assigned to all products, based on the chiral GC elution order and on the sign of the optical rotation value, which was consistent with those of lactones 3a and 3e. 26",
+        "page": 1781,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "e458e3d0f8d78631b97d132832d930b167082019c1457b982ca0c6b36419e6d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The substrate scope exploration showed that the biotransformation is sensitive to structural features.",
+        "gap": "Certain lactones (1m, 1n, 1l, 1o, 1p) were not desaturated, indicating specific structural requirements for the enzyme activity.",
+        "decision": "To test lactones 1m, 1n, 1l, 1o, and 1p to understand the limitations of the substrate scope."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC[C@H]1OC(=O)C[C@@H]1C",
+          "CCCC[C@@H]1CCC(=O)O1",
+          "CC1CCC(=O)O1",
+          "CCC(C)C[C@H]1OC(=O)C[C@@H]1C",
+          "CCC[C@@H]1CCCC(=O)O1"
+        ],
+        "product_smiles": [],
+        "catalyst": "R. erythropolis DSM 44534",
+        "solvent": "demineralized H2O",
+        "temperature": "26 °C",
+        "time": "7 days",
+        "atmosphere": "aerobic",
+        "reagents": [
+          "glucose"
+        ],
+        "stoichiometry": {
+          "glucose": "13 eq."
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No desaturation observed for 1m (methyl at C(3)), 1n (no methyl at C(4)), 1l (beta-methyl butyrolactone), 1o (quaternary carbon at gamma-position), and 1p (delta-lactone). This indicates crucial roles for the methyl substituent at C(4) and C(5), and sensitivity to steric hindrance and ring size."
+      },
+      "evidence": {
+        "text_span": "Testing substrates 1m (Supporting Information, Scheme S3) and 1n, both regioisomers of whisky lactone, revealed the crucial role of the methyl substituent at C(4) (Figure 3B). When this group was shifted from C(4) to C(3) or simply replaced by hydrogen (1m and 1n, respectively), no formation of unsaturated lactones was detected. Likewise, β-methyl butyrolactone (1l) was not desaturated (Figure 3A), indicating that the methyl substituent at C(5) is also required to activate the desaturation pathway. Interestingly, lactone 1o (Supporting Information, Scheme S4), bearing a quaternary carbon at the γ-position, was not dehydrogenated, most likely due to an increased steric hindrance at C(5) and/or the absence of the methyl substituent at C(4). Finally, δ-lactones such as 1p proved to be unsuitable substrates for R. erythropolis-catalyzed desaturation (Figure 3B).",
+        "page": 1781,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "88d620b96442570212ab475ac791dca8efca4840ccd8079bedb2681dc7443bd3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "The biotransformation of 1a and 1e was successful at analytical scale.",
+        "gap": "Scaling up the reaction to gram-scale in a bioreactor might affect yield and reaction time.",
+        "decision": "To perform the desaturation of 1a and 1e at gram-scale in a 2L bioreactor under controlled aerobic conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCC1C(=O)OCC1C",
+          "CCC(C)C1C(=O)OCC1C"
+        ],
+        "product_smiles": [
+          "CCC[C@H]1OC(=O)C=C1C",
+          "CCC(C)C[C@H]1OC(=O)C=C1C"
+        ],
+        "catalyst": "R. erythropolis DSM 44534",
+        "solvent": "demineralized H2O",
+        "temperature": "26 °C",
+        "atmosphere": "aerobic",
+        "reagents": [
+          "glucose"
+        ],
+        "scale": "gram-scale",
+        "stoichiometry": {
+          "glucose": "13 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "observation": "Yield and reaction time significantly improved (54% in 4 days for 1a vs 43% in 7 days). Similar improvements for 1e."
+      },
+      "evidence": {
+        "text_span": "When the desaturation was carried out in a bioreactor at gram-scale and under controlled aerobic conditions, both yield and reaction time were significantly improved (54% in 4 days vs 43% in 7 days for substrate 1a; similar improvements were achieved for desaturating cognac lactone 1e, Figure 3A).",
+        "page": 1782,
+        "section": "Searching for Biosynthetic Pathways"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The biotransformation yields the unsaturated lactone 3a. The mechanism (direct desaturation vs. complex routes involving ring-opening) and the origin of enantioselectivity are unclear.",
+        "gap": "Need to determine if 3a is formed by direct dehydrogenation (path A) or through initial ring-opening (paths B and/or C), and how enantioselectivity arises.",
+        "decision": "To monitor the reaction time course by GC-MS to observe intermediate formation and substrate consumption."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "During the first 38h, almost no dehydrogenated lactone 3a was formed, but starting material 1a decreased significantly. This suggests 1a is first hydrolyzed to hydroxy carboxylate intermediate I, which is then transformed into 3a."
+      },
+      "evidence": {
+        "text_span": "At first, monitoring of the reaction time course (by GC-MS, Figure 5, Table S2 of the Supporting Information) showed that during the first phase of biotransformation (usually within 38 h), when the pH of the microbial broth under aerobic conditions naturally increases from neutral to basic (pH = 8.3−8.5), almost no dehydrogenated lactone was formed. Nonetheless, the concentration of the starting material decreased progressively, almost reaching its complete consumption (from 0.6 g L−1 to 0.01 g L−1,). This outcome suggested that 1a might be first hydrolyzed to the hydroxy carboxylate intermediate I, which only after the end of hydrolysis is transformed into 3a.",
+        "page": 1782,
+        "section": "Searching for Biosynthetic Pathways",
+        "image_refs": [
+          "ca586ccba411acb82d05f567fe24e7e219ce1d65add6b3bd61e9c38a32c541.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Reaction monitoring suggested hydrolysis of 1a to intermediate I. This needs experimental validation.",
+        "gap": "Direct detection of intermediate I is challenging due to its low concentration.",
+        "decision": "To acidify a biotransformation sample, treat it with CH2N2, and identify the methyl ester derivative (4a) of I by GC-MS."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The presence of I as a methyl ester derivative (4a) was confirmed, supporting the hypothesis of hydrolase activity and ring-opening (paths B and C)."
+      },
+      "evidence": {
+        "text_span": "The slight acidification of a biotransformation sample (pH = 6)), followed by treatment with CH2N2 after liquid−liquid extraction with EtOAc, showed the presence of I as a methyl ester derivative (4a), confirming our hypothesis on the hydrolase activity of Rhodococcus erythropolis (paths B and C, Figure 4).",
+        "page": 1782,
+        "section": "Searching for Biosynthetic Pathways"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Enzymatic hydrolysis of 1a to I was observed. It's important to rule out chemical hydrolysis under reaction conditions.",
+        "gap": "Need to confirm that the observed hydrolysis is enzyme-catalyzed and not a chemical process.",
+        "decision": "To perform control experiments without the microorganism to assess chemical hydrolysis of 1a."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Chemical hydrolysis of 1a is negligible at biotransformation pH and occurs only at high temperatures (>60 °C). Enzymatic hydrolysis is diastereoselective (cis-1a consumed faster than trans-1a), unlike chemical hydrolysis. This further supports enzymatic involvement and rules out direct alpha,beta-dehydrogenation (path A)."
+      },
+      "evidence": {
+        "text_span": "Control experiments without the microorganism showed that at reaction conditions very similar to those of biotransformation (D2O,, 50 mM Tris buffer pH = 8.5, 26 °C,, 5 days), chemical hydrolysis of 1a is negligible (by 1H NMR, Figure S1 of the Supporting Information), and it occurs only at high temperatures (T > 60 °C), but conversely to that observed in the biotransformation, it is not diastereoselective. Indeed, the reaction monitoring of biotransformation confirmed that during the hydrolysis cis-1a was consumed more rapidly than trans-1a (Figure 5 and Table S2 of the Supporting Information). Overall, these results suggest that direct α,β.- dehydrogenation of 1a is unlikely (path A). Thus, the desaturation likely proceeds through the more complex routes B and/or C, which might operate in a complementary rather than mutually exclusive fashion.",
+        "page": 1782,
+        "section": "Searching for Biosynthetic Pathways"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The involvement of paths B and/or C is suggested. Deuterium labeling experiments can provide insights into the mechanism.",
+        "gap": "Need to understand the specific steps and intermediates involved in paths B and C, particularly regarding stereochemistry and hydrogen abstraction/addition.",
+        "decision": "To investigate the desaturation with deuterium-labeled substrates (1a-5-d, 2a-1,1,4-d3, cis-1a-3,4-d2) or in D2O-enriched medium."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 17,
+        "ee_percent": 94,
+        "observation": "Biotransformation of 1a-5-d gave a mixture of labeled and unlabeled products (3a-5-d/3a = 60:40). This suggests a non-negligible fraction of product formed through path B, where no ADH-catalyzed oxidations occur. Partial loss of deuterium at C(5) rationalized by redox-based site-selective de-epimerization involving ADH/KR."
+      },
+      "evidence": {
+        "text_span": "First, all biotransformations of deuterated substrates gave 3a with ee values very similar to that achieved in the biotransformation of unlabeled substrate 1a, while the conversions were always lower (18−43%). It is important to emphasize that the deuterium-retention experiments provide qualitative, but not quantitative, information on the relative contribution of the competing pathways, likely due to kinetic isotopic effects. These effects operate on alcohol oxidation, ERmediated desaturation/saturation, and KR-mediated reduction; hence the overall conversion of deuterated substrates is not proportional to the individual fluxes through path B or C. The C(5)-deuterated whisky lactone (1a-5-d) gave a mixture of labeled and unlabeled products (3a-5-d/3a = 60:40, quantified by 1H 1H NMR, see Supporting Information). Since only the direct desaturation of I to II intermediates would preserve the initial D-labeling in the final product, this result suggests that a non-negligible fraction of product has been formed through path B, in which no ADH-catalyzed oxidations occur. While the partial loss of deuterium at C(5) can be rationalized by a redox-based site-selective de-epimerization: the (3RS,4S) stereoisomers of I-4-d are first oxidized to the keto carboxylates (3RS)-IV by ADH and then reduced back to the (4R)-configured hydroxy acids by a keto reductases (KR).27d Then, the resulting (3RS,4R)-I epimers re-enter path B, accounting for the formation of a mixture of unlabeled and D-labeled products (Figures 4 and 7A).",
+        "page": 1782,
+        "section": "Searching for Biosynthetic Pathways",
+        "image_refs": [
+          "0d993ee0f16468a1030e3561468a1030e356159e52f2ce164da57a5739abe926096712f97f6cc.jpg",
+          "b9cd9e0391710dfdf371eed0a87492a23172cea05f07c6769d5defcf160246da.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Deuterium labeling with 1a-5-d suggested involvement of path B and de-epimerization. Further evidence for the stereoconvergent sequence of path C is needed.",
+        "gap": "Need to investigate if a complete loss of D-labeling occurs via a stereoablative enantioconvergent sequence (path C).",
+        "decision": "To conduct biotransformation with trideuterated diol 2a-1,1,4-d3 and in D2O-enriched medium."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 16,
+        "ee_percent": 96,
+        "observation": "Trideuterated diol 2a-1,1,4-d3 yielded a mixture of C(5) deuterium labeled and unlabeled lactones (3a-5-d/3a = 70:30). Biotransformation in H2O/D2O medium resulted in partial deuteration at C(5) (8-10% D-incorporation) and C(3) (6-8% D-incorporation). These results support the involvement of KR and ADH activities in de-epimerization and/or the stereoconvergent sequence of path C."
+      },
+      "evidence": {
+        "text_span": "Similarly to 1a-5-d, the trideuterated diol 2a-1,1,4-d3 yielded a mixture of C(5) deuterium labeled and unlabeled lactones (3a-5-d/3a = 70:30, by 1H NMR). When the biotransformation was conducted in a mixed H2O/D2O medium (80:20 and 68:32, Figure 6A), the product was partially deuterated at C(5) (8−10% D-incorporation determined by 1H NMR, detected by 2H NMR 2H, C(5)D δ = 4.82 ppm, Figure 6B). All together these results further support our hypothesis regarding the involvement of KR and ADH activities either in the C(4)-selective deepimerization process of I and/or in the stereoconvergent sequence of path C (Figure 4).",
+        "page": 1783,
+        "section": "Searching for Biosynthetic Pathways",
+        "image_refs": [
+          "0d993ee0f16468a1030e356159e52f2ce164da57a5739abe926096712f97f6cc.jpg",
+          "e7f28970a66e13340a8e6769ed0d805f55aefa681.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Deuterium incorporation at C(3) was observed in D2O experiments, suggesting desaturation/saturation equilibrium. The stereochemistry of elimination in ER-catalyzed desaturations is typically anti.",
+        "gap": "Need to understand the origin of unlabeled 3a from cis-1a-3,4-d2 and the E/Z isomerization of intermediates.",
+        "decision": "To dehydrogenate optically pure cis-1a-3,4-d2 and analyze the product for deuterium content."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 18,
+        "ee_percent": 94,
+        "observation": "Dehydrogenation of cis-1a-3,4-d2 afforded an almost equimolar mixture of deuterated and nondeuterated products (3a-3-d/3a = 44:56). This suggests that E-configured alpha,beta-unsaturated intermediates (II and/or V) isomerize to Z isomers through a saturation/desaturation cycle, or an unusual syn elimination occurs."
+      },
+      "references": [
+        "11",
+        "12",
+        "29"
+      ],
+      "evidence": {
+        "text_span": "Quite unexpectedly, however, deuterium incorporation (6−8% by 1H NMR) also occurred at C(3) (detected by 2H NMR, 2H C(3)D δ = 5.81 ppm, Figure 6B). Initially, we suspected that this could be ascribable to the OH−-catalyzed α-deprotonation of 1a or I species, but control experiments in D2O showed that these compounds are not chemically enolizable at the pH of biotransformation (by 1H NMR, Figure S1). Thus, we concluded that the pairs of intermediates I/II and/or IV/V must be involved in a desaturation/saturation equilibrium mediated very likely by enzymes with ER activity, in which D+ incorporation at the α position, i.e., C(2), occurs by quenching the enolate intermediate with D2O (second step of the C=C double-bond reduction mechanism, Figure 1A). The dehydrogenation of the optically pure whisky lactone labeled at C(3) and C(4) (cis-1a-3,4-d2, 60% de, 98% ee) unexpectedly afforded an almost equimolar mixture of deuterated and nondeuterated products (3a-3-d/3a = 44:56,, by 1H NMR, Figure 6C). The formation of nondeuterated 3a could in principle arise from a syn elimination of D2, but such a stereochemical outcome would contradict the widely accepted mechanism of ER-catalyzed desaturations, which typically proceed through an anti-stereospecific elimination pathway (Figure 1A).11,12 Thus, if the ERs present in R. erythropolis desaturate carbonyl compounds with such a mechanism, the monodeuterated Z isomers of II and V intermediates (HD elimination) can be obtained only from the C(2)−C(3) gauche conformers of I and IV intermediates. Both monolabeled Z isomers can subsequently be transformed into the monodeuterated lactone 3a-3-d (Figure 7C). Conversely, the E isomers are obtained from intermediates I and IV adopting the anti conformation, but in this case the desaturation leads to the complete loss of the initial labeling (−D ).29 ( −D2) Since both E diastereoisomers (II and V) cannot undergo ring-closure and are not accumulated during the biotransformation, they must necessarily isomerize to Z through a new saturation/desaturation cycle (Figure 7C). This finding indicates that the formation of the unlabeled lactone 3a from the optically pure cis-1a-3,4-d2 is possible only if the α,β-unsaturated intermediates (II and/or V) with E configuration isomerize to the corresponding Z isomers, unless we contemplate a desaturation with a reaction mechanism based on an unlike syn elimination.11b",
+        "page": 1783,
+        "section": "Searching for Biosynthetic Pathways",
+        "image_refs": [
+          "0d993ee0f16468a1030e356159e52f2ce164da57a5739abe926096712f97f6cc.jpg",
+          "d3931e000c987a5916fe338e4b2eb1b995ef952e9f2baa29927c91e774d18b50.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Proposed intermediates (I, II, IV, V) were not directly isolated. Their existence needs further validation.",
+        "gap": "Need to confirm that the proposed intermediates are indeed involved in the biotransformation pathway.",
+        "decision": "To generate intermediates in situ via hydrolysis of their ester precursors (5a-7a) and test their biotransformation to 3a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=C(C)C(O)CC",
+          "CCCC(=O)C(C)=CC(=O)OCC",
+          "CCCC(=O)CC(C)C(=O)OC(C)C"
+        ],
+        "product_smiles": [
+          "CCCC1=C(C)C(C)OC1=O"
+        ],
+        "catalyst": "Rhodococcus erythropolis",
+        "solvent": "unspecified",
+        "temperature": "26 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Biotransformation of 5a (ethyl ester of (E)-III) to 3a (14% conversion) confirms II and III as intermediates and E->Z isomerization. Biotransformation of 6a (ethyl ester of (E)-V) to 3a (higher conversion) supports path C. Biotransformation of 7a (keto i-propyl ester) to 3a (80% in 2 days) confirms IV as an intermediate."
+      },
+      "references": [
+        "21",
+        "30",
+        "31"
+      ],
+      "evidence": {
+        "text_span": "Hence, to further validate the two proposed pathways, we decided to generate in situ the intermediates via hydrolysis of their ester precursors (5a−7a, for their preparation see Schemes S1 and S10 of the Supporting Information), relying on the well-known high hydrolase activity of Rhodococcus erythropolis toward esters (Figure 8).21 The ethyl ester of (E)-III, i.e., 5a (E > 99%, by 1H NMR)), was biotransformed to 3a with a conversion of 14%. This result confirms that II and III are indeed intermediates of both paths and that the E→Z isomerization must occur, as 5a is clearly not geometrically suitable for lactonization. Similarly, the biotransformation of 6a (ethyl ester of intermediate (E)-V) provided further evidence for path C. In this case, we observed a significantly higher conversion than that achieved with 5a, likely because substrates like 6a, with double activating groups, are usually well accepted by ERs.30 To test the existence of intermediate IV, the keto i-propyl ester 7a was subjected to the same biotransformation conditions,31 and after only 2 days almost 80% of product was detected in the reaction mixture (Figure 8).",
+        "page": 1784,
+        "section": "Validation of Proposed Intermediates",
+        "image_refs": [
+          "15ca48f9aaa01ec0f6cccf21ce06ee223dab2746d64fc650b439c2134c9f0e0c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The C(4) de-epimerization process is crucial for the high enantioselectivity observed. Further experimental proof is needed.",
+        "gap": "Need to confirm the C(4) de-epimerization process experimentally.",
+        "decision": "To submit a sample of whisky lactone (1a) enantiomerically enriched in (4RS,5S)-epimers to biotransformation and monitor the (5R)/(5S) ratio over time."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC[C@@H]1OC(=O)C[C@H]1C"
+        ],
+        "product_smiles": [
+          "CCCC1=C(C)C(C)OC1=O"
+        ],
+        "catalyst": "R. erythropolis",
+        "solvent": "unspecified",
+        "temperature": "26 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 34,
+        "observation": "Dehydrogenated lactone 3a was isolated in a similar yield (34% vs 43%) and with the same ee as from racemic mixture. Chiral GC monitoring showed a progressive increase in (5R) stereoisomers, confirming the C(4) de-epimerization process."
+      },
+      "evidence": {
+        "text_span": "Lastly, by submitting a sample of whisky lactone enantiomerically enriched in the (4RS,5S)-epimers (75:25, for its preparation see Supporting Information) we furnished an additional proof for the C(4) de-epimerization process, since the dehydrogenated lactone was isolated in a yield quite similar to that obtained using the racemic mixture (34% vs 43%) and with the same ee (Figure 8). Indeed, only if the (3RS,4S) epimers of I (enantiomerically enriched syn and anti diastereoisomers) are converted into the (3RS,4R)-epimers is it possible to achieve similar yields; otherwise, in the absence of (3RS,4S) (3RS,4R) de-epimerization, we should obtain 3a in a much lower yield or with a much lower ee value. In this regard, the reaction monitored by chiral GC shows clearly a progressive increase in the (5R) stereoisomers (Figure 9). For example, after 5 days and a conversion of 50%, the combined ratio of 1a and 3a (5R) stereoisomers more than doubled, shifting from the initial 25:75 to 58:42.",
+        "page": 1784,
+        "section": "Validation of Proposed Intermediates",
+        "image_refs": [
+          "15ca48f9aaa01ec0f6cccf21ce06ee223dab2746d64fc650b439c2134c9f0e0c.jpg",
+          "3ce71eb8d3cc5e2c2092457fd397e0dd0ac62a1e4584c1de894300c789011de.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "The dynamic enantioconvergent desaturation method is established for Quercus lactones. To demonstrate its synthetic utility, it can be applied to a relevant natural product intermediate.",
+        "gap": "Need to identify a suitable natural product target where this method can provide a concise and stereoselective synthesis of a key intermediate.",
+        "decision": "To apply the method to the preparation of aldehyde 8, a key intermediate in the total synthesis of forskolin, as reported by Ikegami et al."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Retrosynthetic analysis of (±)-forskolin identified aldehyde 8 as a key intermediate. Substrate 1q was designed as a precursor for 8, obtained in six steps from commercially available prenyl alcohol."
+      },
+      "references": [
+        "34",
+        "35",
+        "36"
+      ],
+      "evidence": {
+        "text_span": "In the final stage of this work, we show the synthetic utility of the dynamic enantioconvergent desaturation of 4,5-disubstituted γ-lactones in the preparation of key intermediate 8 (Figure 11A). This aldehyde has previously been reported by Ikegami et al. in the total synthesis of racemic forskolin.34 Forskolin is a complex natural product that has long attracted interest as a synthetic target34,35 due to its unique and biologically promising profile, especially in anticancer therapy.36 According to our retrosynthetic analysis (Scheme S5), substrate 1q was obtained in six steps, starting from the commercially available prenyl alcohol.",
+        "page": 1785,
+        "section": "Formal Synthesis of Forskolin",
+        "image_refs": [
+          "292e181a256a260dfdfb0919662b238f0ea30fd7c42b0234022a731bdcdf2e2d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Substrate 1q was prepared as a precursor for forskolin intermediate 8. The optimized biotransformation conditions for Quercus-like lactones should be applicable.",
+        "gap": "Need to perform the biodesaturation of 1q and convert the product to aldehyde 8.",
+        "decision": "To biodesaturate 1q in a bioreactor and then convert the resulting 3q to aldehyde (-)-8 via a two-step sequence."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(C)(C)CC1CC(C)C(=O)O1"
+        ],
+        "product_smiles": [
+          "C=CC(C)(C)CC1CC(C)=CC(=O)O1"
+        ],
+        "catalyst": "R. erythropolis DSM 44534",
+        "solvent": "unspecified",
+        "temperature": "26 °C",
+        "scale": "bioreactor",
+        "stoichiometry": {
+          "substrate": "0.33 g L^-1"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 33,
+        "ee_percent": 99,
+        "observation": "Biodesaturation of 1q gave dehydrogenated lactone 3q in 33% yield with >99% ee. This was followed by a two-step sequence (regioselective dihydroxylation using Upjohn protocol and oxidative cleavage with sodium periodate) to convert 3q into aldehyde (-)-8 in 71% overall yield."
+      },
+      "references": [
+        "37"
+      ],
+      "evidence": {
+        "text_span": "Biodesaturation of 1q in a bioreactor gave the dehydrogenated lactone 3q in 33% yield after chromatographic purification, with a high enantioselectivity (ee > 99%), consistent with that achieved in the biotransformation of similar Quercus-like lactones (Figure 11B). A subsequent two-step sequence converted 3q into aldehyde (−)-8 in 71% overall yield. The sequence comprised a regioselective dihydroxylation of the terminal alkene of 3q using the Upjohn protocol,37 followed by oxidative cleavage of the diol intermediate with sodium periodate (Figure 11B).",
+        "page": 1785,
+        "section": "Formal Synthesis of Forskolin",
+        "image_refs": [
+          "a86516b352b7ea74d94bf0fb369381531d611d821f9451937a1fac4d8358d054.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "GC-MS",
+      "chiral GC",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 23.43,
+        "unit": "%",
+        "interpretation": "Calculated from 33% yield of 3q and 71% overall yield for conversion of 3q to (-)-8."
+      }
+    },
+    "comparison_to_prior": "The new synthesis of forskolin key intermediate 8 offers several advantages over the previous route: it employs a significantly shorter sequence (eight vs ten steps), it avoids the use of protecting groups, the starting material is very cheap (prenyl alcohol vs 2,2-dimethylglutaric acid), and it delivers the product with a high enantioselectivity.",
+    "significance": "The R. erythropolis-catalyzed dynamic enantioconvergent desaturation of 4,5-disubstituted gamma-lactones provides a greener and highly stereoselective method. It showcases unique biocatalytic features like site-selective de-epimerization and dynamic E/Z isomerization, establishing a rare example of biocatalytic late-stage stereochemical editing applied to a complex terpenoid scaffold, as demonstrated by the synthesis of a forskolin precursor."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.5c19136",
+      "pmcid": "PMC12814362",
+      "title": "Dynamic Enantioconvergent Desaturation of 4,5-Disubstituted γ-Lactones in Whole Cells of &lt;i&gt;Rhodococcus erythropolis&lt;/i&gt;.",
+      "authors": "Cancellieri MC, Boratyński F, Serra S, Hernik D, Gatti FG.",
+      "journal": "J Am Chem Soc",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12814362?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/41e9e4dd-87d6-4543-a824-248739e06084.zip",
+      "parsed_at": "2026-05-11T06:41:33.985482+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 28,
+    "parseable": 26,
+    "canonicalized": 9,
+    "invalid": 2,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1C(R)OC(=O)C1",
+      "C[C@@H]1C(R)=COC1=O"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

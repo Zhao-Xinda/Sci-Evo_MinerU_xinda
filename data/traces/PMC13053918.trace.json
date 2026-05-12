@@ -1,0 +1,639 @@
+{
+  "trace_id": "TS-PMC13053918",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "bulbiferamide A",
+    "smiles": "CC(C)CC1NC(=O)C(CCCNC(=N)N)NC(=O)C(C)CCCC(n2c(=O)ccc3ccccc32)NC(=O)C(CC(C)C)NC1=O",
+    "natural_product_class": "noncanonical cyclic peptide",
+    "structural_features": {
+      "key_motifs": [
+        "N-acylindole linkage",
+        "ureido functionality"
+      ]
+    },
+    "motivation": "Chagas disease is a neglected tropical disease with limited effective treatments. Bulbiferamide A (3) is a novel cyclic peptide with a rare N-acylindole linkage, exhibiting potent trypanocidal effects against T. cruzi epimastigotes (IC50 = 4.1 μM) and negligible cytotoxicity toward mammalian cells. Its superior selectivity compared to existing drugs makes it an ideal lead compound, but its synthesis is challenging due to the N-acylindole linkage.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Igarashi and Agarwal",
+        "year": 2023,
+        "doi": "10.1021/acs.jnatprod.2c01083",
+        "key_strategy": "Isolation and structural elucidation from marine obligate bacteria"
+      },
+      {
+        "lead_author": "Parkinson and Agarwal",
+        "year": 2024,
+        "doi": "10.1021/acs.orglett.4c03648",
+        "key_strategy": "Enzymatic generation of N-acylindole linkage (15-atom macrocycle) using BulbE-terminal thioesterase (TE) domain"
+      },
+      {
+        "lead_author": "Matsuda and Wakimoto",
+        "year": 2025,
+        "doi": "10.1039/D4SC07839J",
+        "key_strategy": "Enzymatic N-acylindole synthesis using BulbE-TE, improved with SNAC at thioester site"
+      },
+      {
+        "lead_author": "Chekan et al.",
+        "year": 2025,
+        "doi": "10.1021/acs.orglett.5c01561",
+        "key_strategy": "Enzymatic macrocyclization via N-acylindole linkage formation in RiPPs using ThiF-like enzymes"
+      },
+      {
+        "lead_author": "Levin and coworkers",
+        "year": 2022,
+        "doi": "10.1126/science.abo4282",
+        "key_strategy": "Photochemical scaffold hopping strategy using quinoline N-oxide to generate N-acylindole"
+      },
+      {
+        "lead_author": "Brimble and coworkers",
+        "year": 2016,
+        "doi": "10.1021/acs.joc.6b01369",
+        "key_strategy": "Total synthesis of psychrophilin E (23) via N-acylation of tryptophan derivative with an anhydride, followed by amide-coupling-mediated macrocyclization"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Develop a general and scalable synthetic method for constructing the N-acylindole linkage and establish a supply route for bulbiferamide A (3) and its analogues, overcoming limitations of enzymatic methods (scalability, ring size)."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "N-acylindole linkage",
+        "named_strategy": "Larock macrocyclization",
+        "reasoning": "The N-acylindole linkage is labile and difficult to form under conventional amide coupling conditions due to the low nucleophilicity of the indole nitrogen. Larock macrocyclization, a Pd(0)-catalyzed regioselective cyclization, is known to be effective for constructing biaryl motifs under mild conditions and has been successfully applied to other strained cyclic peptides containing indole frameworks. This strategy involves forming an N-acylated aniline derivative first, which is more nucleophilic, and then cyclizing it to the N-acylindole.",
+        "alternatives_considered": [
+          {
+            "strategy": "Conventional amide coupling (DIC, DCC, EDCI, HATU, COMU, DMT-MM, CDI) or acid chloride formation (POCl3)",
+            "rejected_because": "These methods failed to yield the desired N-acylindole linkage, with only trace amounts observed in some cases. The indole nitrogen's low nucleophilicity, due to its lone pair contributing to aromaticity, prevents effective nucleophilic attack on activated esters or acid chlorides."
+          }
+        ]
+      },
+      {
+        "bond_description": "Ureido cap",
+        "reasoning": "The N-acylindole linkage is unstable toward nucleophilic functionalities like amines. Introducing a ureido cap at an early stage after N-acylindole formation is crucial to mask the amine functionality and mitigate instability, preventing N,N-acyl transfer and cleavage of the N-acylindole linkage, as suggested by Parkinson and Agarwal."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "32",
+        "smiles": "CC[Si](C#CCC[C@@H](NC(=O)OC(C)(C)C)C(=O)O)(CC)CC",
+        "role": "alkyne fragment",
+        "comes_from": "readily available and inexpensive amino acid fragments"
+      },
+      {
+        "fragment_id": "33",
+        "smiles": "Nc1ccccc1Br",
+        "role": "2-bromoaniline fragment",
+        "comes_from": "readily available and inexpensive amino acid fragments"
+      },
+      {
+        "fragment_id": "34",
+        "smiles": "CC(C)C[C@@H](NC(=O)OC(C)(C)C)C(=O)O",
+        "role": "Boc-leucine",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "36",
+        "smiles": "",
+        "role": "Boc-ornithine",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "38",
+        "smiles": "CC(C)C[C@H](NC(=O)OC(C)(C)C)C(=O)O",
+        "role": "Boc-isoleucine",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "45",
+        "smiles": "",
+        "role": "ureido-containing fragment",
+        "comes_from": "unspecified"
+      }
+    ],
+    "rationale": "The synthesis of bulbiferamide A (3) hinges on constructing the labile N-acylindole linkage under mild conditions and then stabilizing it with a ureido cap. The proposed strategy involves preparing an N-acylated aniline derivative (more nucleophilic than indole) and then using a Pd(0)-catalyzed regioselective Larock macrocyclization to form the N-acylindole linkage. This approach avoids the direct cyclization of the indole nitrogen, which has proven unsuccessful with conventional methods due to its low nucleophilicity and the high ring strain of the macrocycle. The Larock cyclization is anticipated to proceed under mild, weakly basic conditions, preventing degradation of the sensitive N-acylindole. Subsequent ureido capping will protect the linkage from N,N-acyl transfer. This strategy is also expected to be general and scalable, addressing the limitations of prior enzymatic syntheses."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Bulbiferamide A (3) is a potent antitrypanosomal agent with a unique N-acylindole linkage. Prior enzymatic methods for similar linkages were limited in scope and scalability. Conventional amide coupling for N-acylindole formation is known to be difficult due to the low nucleophilicity of the indole nitrogen.",
+        "gap": "A general and scalable chemical synthetic method for constructing the N-acylindole linkage within oligomeric cyclic peptides, especially for bulbiferamide A (3), is lacking.",
+        "decision": "To overcome the challenge of N-acylindole formation, we will employ a Pd(0)-catalyzed regioselective Larock macrocyclization. This strategy involves first preparing an N-acylated aniline derivative (27) and then cyclizing it to the N-acylindole (26). This approach leverages the higher nucleophilicity of aniline and the mild conditions of Larock cyclization. After forming the N-acylindole, an early ureido capping (28) will be used to stabilize the labile linkage."
+      },
+      "evidence": {
+        "text_span": "We aimed to develop a general and scalable synthetic method for constructing the N‑acylindole linkage and to establish a supply route for bulbiferamide A (3), which exhibits potent inhibitory activity against T. cruzi epimastigotes, the causative parasite of Chagas disease (IC50 = 4.1 μM) (Figure 3) [28]. Initially, the construction of N‑acylindole linkage 25 from the linear peptide 24 was attempted under conventional amide coupling conditions (Figure 3A). Various standard coupling reagents, including N,N′‑diisopropylcarbodiimide (DIC), N,N′-dicyclohexylcarbodiimide (DCC), 1-(3-dimethylaminopropyl)-3-ethylcarbodiimide hydrochloride (EDCI), hexafluorophosphate azabenzotriazole tetramethyl uronium (HATU), 1-[(1-(cyano-2-ethoxy-2-oxoethylideneaminooxy)- dimethylamino-morpholino)] uronium hexafluorophosphate (COMU), 4-(4,6-dimethoxy-1,3,5-triazin-2-yl)-4-methyl morpholinium chloride (DMT‑MM), and carbonyldiimidazole (CDI), were examined for the synthesis of N‑acylindole linkage 25. However, none of these conditions afforded the desired product, and only trace amounts (<5%) of 25 were observed when HATU was employed. In addition, cyclization was attempted by generating the acid chloride of precursor 24 using POCl3, but this condition also failed to yield the desired cyclized product 25 (for further details, see Supporting Information). The lack of progress in the cyclization reaction is presumed to arise from the markedly weak nucleophilicity of the indole nitrogen, whose lone pair contributes to aromaticity and is delocalized within the π‑conjugated system. Indeed, in most of the conditions tested, the reaction was found to stall at the activated ester stage. These observations clearly indicate that although the carboxylic acid of linear peptide 24 can be activated by amide coupling reagents, subsequent nucleophilic attack by the indole nitrogen does not proceed.\n\nBased on these preliminary investigations, we sought to establish a general synthetic route to N‑acylindole linkage 26 (Figure 3B). Since the intrinsic electronic properties of the indole nitrogen cannot be altered, we reasoned that instead of constructing the N─C bond between the indole and the carbonyl group at a late stage, it would be more effective to first prepare an N‑acylated aniline derivative 27 and subsequently employ a Pd(0)‑catalyzed regioselective Larock macrocyclization to assemble the N‑acylindole linkage 26 [55–61]. A key feature of this strategy is the use of an aniline derivative, which is more nucleophilic than the indole nitrogen, to readily construct the N‑acyl framework at an early stage of the synthesis. Furthermore, by applying this approach to diverse substrates, it was anticipated that a general synthetic method for cyclic peptides bearing the N‑acylindole linkage could be established.\n\nThe retrosynthetic analysis of bulbiferamide A (3) is shown in Figure 3C. A critical aspect in the synthesis of bulbiferamide A (3) is the construction of the labile N‑acylindole linkage under mild conditions. Following its formation, it is essential to mask the amine functionality at an early stage with a ureido cap to mitigate instability. Indeed, Parkinson and Agarwal have suggested that when a free amine is present in the substrate, N,N‑acyl transfer may occur, leading to cleavage of the N‑acylindole linkage [47]. Accordingly, after the construction of the unstable N‑acylindole linkage 29, stabilization was planned by early conjugation with compound 28 containing a ureido moiety, thereby enabling the total synthesis of bulbiferamide A (3).",
+        "page": 3,
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "04039b65299854aa00ebc89057444c13b7096019bfd71e0da3de79dc925c2feb.jpg",
+          "bf28423aaf56ebaafd8ac69cbfcd13c7843568667081bd03439c634cfc37e8f4.jpg",
+          "84c2d3c08b9a2c4eec28deb7bd16b9aab12176d61a39e36d045c7db91fd2b77d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The target is to form the N-acylindole linkage 25 from linear peptide 24.",
+        "gap": "How to achieve cyclization given the low nucleophilicity of the indole nitrogen?",
+        "decision": "Attempt conventional amide coupling conditions with various reagents (DIC, DCC, EDCI, HATU, COMU, DMT-MM, CDI) and acid chloride formation (POCl3)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C)[C@H](NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CCCNC(=O)OCc1ccccc1)NC(=O)[C@H](Cc1c[nH]c2ccccc12)NC(=O)OC(C)(C)C)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC[C@H](C)[C@H](NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CCCNC(=O)OCc1ccccc1)NC(=O)[C@H](Cc1c[nH]c2ccccc12)NC(=O)OC(C)(C)C)C(=O)n1cc(C(N)=O)c2ccccc21"
+        ],
+        "named_reaction": "amide coupling",
+        "reagents": [
+          "DIC",
+          "DCC",
+          "EDCI",
+          "HATU",
+          "COMU",
+          "DMT-MM",
+          "CDI",
+          "POCl3"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 5,
+        "failure_mode": "no_reaction",
+        "observation": "None of the conditions afforded the desired product, and only trace amounts (<5%) of 25 were observed when HATU was employed. Acid chloride formation with POCl3 also failed. The reaction stalled at the activated ester stage due to the weak nucleophilicity of the indole nitrogen."
+      },
+      "evidence": {
+        "text_span": "Initially, the construction of N‑acylindole linkage 25 from the linear peptide 24 was attempted under conventional amide coupling conditions (Figure 3A). Various standard coupling reagents, including N,N′‑diisopropylcarbodiimide (DIC), N,N′-dicyclohexylcarbodiimide (DCC), 1-(3-dimethylaminopropyl)-3-ethylcarbodiimide hydrochloride (EDCI), hexafluorophosphate azabenzotriazole tetramethyl uronium (HATU), 1-[(1-(cyano-2-ethoxy-2-oxoethylideneaminooxy)- dimethylamino-morpholino)] uronium hexafluorophosphate (COMU), 4-(4,6-dimethoxy-1,3,5-triazin-2-yl)-4-methyl morpholinium chloride (DMT‑MM), and carbonyldiimidazole (CDI), were examined for the synthesis of N‑acylindole linkage 25. However, none of these conditions afforded the desired product, and only trace amounts (<5%) of 25 were observed when HATU was employed. In addition, cyclization was attempted by generating the acid chloride of precursor 24 using POCl3, but this condition also failed to yield the desired cyclized product 25 (for further details, see Supporting Information). The lack of progress in the cyclization reaction is presumed to arise from the markedly weak nucleophilicity of the indole nitrogen, whose lone pair contributes to aromaticity and is delocalized within the π‑conjugated system. Indeed, in most of the conditions tested, the reaction was found to stall at the activated ester stage. These observations clearly indicate that although the carboxylic acid of linear peptide 24 can be activated by amide coupling reagents, subsequent nucleophilic attack by the indole nitrogen does not proceed.",
+        "page": 3,
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "04039b65299854aa00ebc89057444c13b7096019bfd71e0da3de79dc925c2feb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Conventional amide coupling failed to form the N-acylindole linkage due to the low nucleophilicity of the aniline derivative 33.",
+        "gap": "How to effectively couple Boc-leucine (34) with 2-bromoaniline (33)?",
+        "decision": "Activate Boc-leucine (34) as its acid chloride using POCl3, then introduce 2-bromoaniline (33). This should enhance reactivity and overcome the low nucleophilicity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Nc1ccccc1Br",
+          "CC(C)C[C@@H](NC(=O)OC(C)(C)C)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)C[C@@H](Nc1ccccc1Br)C(=O)NC(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "POCl3",
+          "pyridine"
+        ],
+        "named_reaction": "amide coupling"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "The desired coupling product 35 was obtained in 78% yield."
+      },
+      "evidence": {
+        "text_span": "The total synthesis of bulbiferamide A (3) commenced with the amide coupling of 2‑bromoaniline (33) and Boc (tert-butoxycarbonyl)‑leucine (34) (Scheme 1). Due to the low nucleophilicity of aniline derivative 33, no coupling occurred under HATU conditions. Although EDCI/DMAP (4-dimethylaminopyridine) promoted the reaction, the desired product 35 was obtained in less than 20% yield. After extensive investigation, the optimal method was identified as activation of Boc‑leucine (34) as its acid chloride using POCl3, followed by introduction of 2‑bromoaniline (33). The resulting coupling product 35 was subsequently converted to cyclization precursor 31 through sequential Boc deprotection with TFA (trifluoroacetic acid) and amide couplings mediated by HATU, introducing Boc‑ornithine (36), Boc‑isoleucine (38), and alkyne fragment (32).",
+        "page": 4,
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "8a32a610005b681c3d184d2e7331f220338978569cd1a713699a717a7933dba2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Product 35 has been successfully synthesized.",
+        "gap": "How to extend the peptide chain to form the Larock cyclization precursor 31?",
+        "decision": "Sequentially deprotect Boc group from 35 with TFA, then perform amide couplings mediated by HATU to introduce Boc-ornithine (36), Boc-isoleucine (38), and alkyne fragment (32)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@@H](Nc1ccccc1Br)C(=O)NC(=O)OC(C)(C)C",
+          "",
+          "CC(C)C[C@H](NC(=O)OC(C)(C)C)C(=O)O",
+          "CC[Si](C#CCC[C@@H](NC(=O)OC(C)(C)C)C(=O)O)(CC)CC"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TFA",
+          "HATU"
+        ],
+        "named_reaction": "amide coupling"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Cyclization precursor 31 was successfully synthesized. The text mentions 84% yield for the coupling of 35 with 36, and 99% for the coupling of 39 with 32, implying successful overall conversion to 31."
+      },
+      "evidence": {
+        "text_span": "The resulting coupling product 35 was subsequently converted to cyclization precursor 31 through sequential Boc deprotection with TFA (trifluoroacetic acid) and amide couplings mediated by HATU, introducing Boc‑ornithine (36), Boc‑isoleucine (38), and alkyne fragment (32).",
+        "page": 4,
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "73ab40c3adefbe167e28da9a3443535c92e068ff297f5d9089ebffd07d40969a.jpg",
+          "8a32a10005b681c3d184d2e7331f220338978569cd1a713699a717a7933dba2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Cyclization precursor 31 is ready. The goal is to form the N-acylindole linkage 41 via Larock macrocyclization.",
+        "gap": "What are the optimal ligand and base conditions for the Pd(0)-catalyzed Larock macrocyclization?",
+        "decision": "Screen various bulky, electron-rich ligands (PPh3, PCy3, dppe, dppf) with Pd(OAc)2 (0.5 equiv) and organic bases."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)C[C@@H](NC(=O)OC(C)(C)C)NC(=O)[C@H](C)NC(=O)[C@H](C)NC(=O)[C@H](CCCNC(=O)OCc1ccccc1)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](Cc1c[nH]c2ccccc12)N(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "named_reaction": "Larock macrocyclization",
+        "reagents": [
+          "Pd(OAc)2",
+          "PPh3",
+          "PCy3",
+          "dppe",
+          "DIPEA",
+          "Et3N",
+          "DBU"
+        ],
+        "solvent": "DMF",
+        "temperature": "100 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 17,
+        "failure_mode": "low_yield",
+        "observation": "Initial trials with PPh3 and PCy3 afforded 41 in low yields (26% and 17%, respectively), with substantial unreacted precursor 31. Dppe gave 28% yield with dehalogenated byproducts. DBU resulted in substrate decomposition and no product formation. Et3N gave 44% yield, inferior to DIPEA."
+      },
+      "evidence": {
+        "text_span": "Construction of the N‑acylindole linkage 41 was then examined (table in Scheme 1). In general, Larock macrocyclization benefits from bulky, electron‑rich ligands. Accordingly, Pd(OAc)2 (0.5 equiv) was employed with organic bases, and various ligands were screened. Initial trials with PPh3 and PCy3 (1 equiv each) afforded the desired N‑acylindole linkage 41, but in low yields of 26% and 17%, respectively, with substantial amounts of unreacted precursor 31 remaining (entries 1–2). Use of dppe [1,2-bis(diphenylphosphino)ethane] (0.5 equiv) gave 28% yield, accompanied by dehalogenated byproducts (entry 3). In contrast, dppf [1,1′-bis(diphenylphosphino)ferrocene] (0.5 equiv) improved the yield to 40% (entry 4).\n\nFurther ligand screening revealed that the combination of tBu3P·HBF4 with Pd(OAc)2 afforded only 19% yield (entry 5), whereas use of the Pd(tBu3P)2 complex increased the yield to 49% (entry 6). The lower yield with tBu3P·HBF4 is presumed to result from inhibition by proton sources present in the reaction medium.\n\nScreening of bases revealed that Et3N afforded 44% yield, which was inferior to N,N‑diisopropylethylamine (DIPEA) (entry 7). Use of 1,8-diazabicyclo[5.4.0]undecane-7-ene (DBU) resulted in substrate decomposition and no product formation (entry 8). Additional inorganic bases and solvents were also examined, but entry 6 provided the most favorable outcome (for further details, see Supporting Information).",
+        "page": 4,
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "6d445b0ac4c3dbe80cf98827aabb1886a5b870469412942042930bf48a0e822f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 5,
+      "thought": {
+        "background": "Previous attempts at Larock macrocyclization yielded low product amounts or decomposition.",
+        "gap": "How to improve the yield and selectivity of the Larock macrocyclization?",
+        "decision": "Switch to Pd(tBu3P)2 complex as the catalyst and DIPEA as the base. This combination showed improved yields in initial screening."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)C[C@@H](NC(=O)OC(C)(C)C)NC(=O)[C@H](C)NC(=O)[C@H](C)NC(=O)[C@H](CCCNC(=O)OCc1ccccc1)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](Cc1c[nH]c2ccccc12)N(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "named_reaction": "Larock macrocyclization",
+        "catalyst": "Pd(tBu3P)2",
+        "reagents": [
+          "DIPEA"
+        ],
+        "solvent": "DMF",
+        "temperature": "100 °C",
+        "scale": "5 g"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 38,
+        "observation": "The Pd(tBu3P)2 complex increased the yield to 49% (entry 6). Remarkably, Larock macrocyclization proceeded on a 5 g scale with Pd(tBu3P)2 reduced to 10 mol%, still affording 41 in 38% yield. This approach enabled gram-scale supply of the N-acylindole linkage."
+      },
+      "evidence": {
+        "text_span": "Further ligand screening revealed that the combination of tBu3P·HBF4 with Pd(OAc)2 afforded only 19% yield (entry 5), whereas use of the Pd(tBu3P)2 complex increased the yield to 49% (entry 6). The lower yield with tBu3P·HBF4 is presumed to result from inhibition by proton sources present in the reaction medium. Remarkably, Larock macrocyclization proceeded on a 5 g scale with Pd(tBu3P)2 reduced to 10 mol%, still affording 41 in 38% yield (entry 6). Whereas previously reported enzymatic methods employing E*. coli cultures suffered from scalability issues, this approach enabled gram‑scale supply of the N‑acylindole linkage [47, 48, 50].",
+        "page": 4,
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "6d445b0ac4c3dbe80cf9827aabb1886a5b870469412942042930bf48a0e822f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The N-acylindole linkage 41 has been successfully formed. The Cbz group on the ornithine side chain needs to be removed to allow for guanidine formation.",
+        "gap": "How to selectively deprotect the Cbz group without affecting the N-acylindole linkage?",
+        "decision": "Perform Cbz deprotection using Pd/C and H2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@@H](NC(=O)OC(C)C)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CCCCNC(=O)OCc1ccccc1)NC(=O)[C@@H](NC(=O)[C@H](Cc1c[nH]c2ccccc12)N(C)C(=O)[C@H](CC(C)C)NC(=O)[C@@H](NC(=O)OC(C)C)C(C)C)C(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)C[C@@H](NC(=O)OC(C)C)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CCCCN)NC(=O)[C@@H](NC(=O)[C@H](Cc1c[nH]c2ccccc12)N(C)C(=O)[C@H](CC(C)C)NC(=O)[C@@H](NC(=O)OC(C)C)C(C)C)C(C)C"
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "Pd/C",
+        "named_reaction": "Cbz deprotection"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Amine 42 was successfully obtained."
+      },
+      "evidence": {
+        "text_span": "The obtained cyclized product 41 was handled with care due to concerns about potential instability arising from N─C bond cleavage of the N‑acylindole linkage. Compound 41 was subjected to Cbz (benzyloxycarbonyl) deprotection with Pd/C and H2 to afford amine 42, which was subsequently converted to compound 44 by introduction of a guanidine moiety (Scheme 2).",
+        "page": 4,
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "d4a755845835234fa85dcc7342d72a2995b8c440aa1cb2d5769c7a14e2e7cd58.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amine 42 is available. The next step is to introduce a guanidine moiety to form compound 44.",
+        "gap": "How to efficiently introduce the guanidine moiety?",
+        "decision": "React amine 42 with a Cbz-protected guanidinylating reagent (43) in the presence of DIPEA."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@@H](NC(=O)OC(C)C)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CCCCN)NC(=O)[C@@H](NC(=O)[C@H](Cc1c[nH]c2ccccc12)N(C)C(=O)[C@H](CC(C)C)NC(=O)[C@@H](NC(=O)OC(C)C)C(C)C)C(C)C",
+          "NC(=NC(=O)OCc1ccccc1)SC(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)C[C@@H](NC(=O)OC(C)C)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CCCCNC(=NNC(=O)OCc1ccccc1)NC(=O)OCc1ccccc1)NC(=O)[C@@H](NC(=O)[C@H](Cc1c[nH]c2ccccc12)N(C)C(=O)[C@H](CC(C)C)NC(=O)[C@@H](NC(=O)OC(C)C)C(C)C)C(C)C"
+        ],
+        "reagents": [
+          "DIPEA"
+        ],
+        "named_reaction": "guanidine formation"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Compound 44 was obtained in 80% yield."
+      },
+      "evidence": {
+        "text_span": "Compound 41 was subjected to Cbz (benzyloxycarbonyl) deprotection with Pd/C and H2 to afford amine 42, which was subsequently converted to compound 44 by introduction of a guanidine moiety (Scheme 2).",
+        "page": 4,
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "d4a755845835234fa85dcc7342d72a2995b8c440aa1cb2d5769c7a14e2e7cd58.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 44 is protected with a Boc group that needs to be removed.",
+        "gap": "How to remove the Boc group from 44 without cleaving the N-acylindole linkage?",
+        "decision": "Attempt Boc deprotection using HCl in DCM (2.0 M)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@@H](NC(=O)OC(C)C)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CCCCNC(=NNC(=O)OCc1ccccc1)NC(=O)OCc1ccccc1)NC(=O)[C@@H](NC(=O)[C@H](Cc1c[nH]c2ccccc12)N(C)C(=O)[C@H](CC(C)C)NC(=O)[C@@H](NC(=O)OC(C)C)C(C)C)C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "DCM"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Treatment with HCl in DCM (2.0 M) resulted only in substrate decomposition, likely due to cleavage of the N-acylindole linkage."
+      },
+      "evidence": {
+        "text_span": "Removal of the Boc group from 44 under acidic conditions was then investigated. Treatment with HCl in DCM (dichloromethane) (2.0 M) resulted only in substrate decomposition, likely due to cleavage of the N‑acylindole linkage.",
+        "page": 4,
+        "section": "2 Results and Discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "Boc deprotection with HCl in DCM led to decomposition of the N-acylindole linkage.",
+        "gap": "How to remove the Boc group under milder acidic conditions?",
+        "decision": "Screen alternative conditions for Boc removal, specifically using TFA/DCM (1:9)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@@H](NC(=O)OC(C)C)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CCCCNC(=NNC(=O)OCc1ccccc1)NC(=O)OCc1ccccc1)NC(=O)[C@@H](NC(=O)[C@H](Cc1c[nH]c2ccccc12)N(C)C(=O)[C@H](CC(C)C)NC(=O)[C@@H](NC(=O)OC(C)C)C(C)C)C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "DCM"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Boc removal proceeded smoothly without decomposition when TFA/DCM (1:9) was employed. Following TES (triethylsilyl) and Boc deprotection with TFA, compound 44 was subsequently coupled to the ureido‑containing fragment 45 using HATU, thereby furnishing the protected bulbiferamide A (46) in a quantity of 1.5 g."
+      },
+      "evidence": {
+        "text_span": "Screening of alternative conditions revealed that Boc removal proceeded smoothly without decomposition when TFA/DCM (1:9) was employed. Following TES (triethylsilyl) and Boc deprotection with TFA, compound 44 was subsequently coupled to the ureido‑containing fragment 45 using HATU, thereby furnishing the protected bulbiferamide A (46) in a quantity of 1.5 g.",
+        "page": 4,
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "d4a755845835234fa85dcc7342d72a2995b8c440aa1cb2d5769c7a14e2e7cd58.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Boc and TES deprotections on compound 44 were successful.",
+        "gap": "How to couple the deprotected compound 44 with the ureido-containing fragment 45 to form protected bulbiferamide A (46)?",
+        "decision": "Perform amide coupling using HATU."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@@H](NC(=O)OC(C)C)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](CCCCNC(=NNC(=O)OCc1ccccc1)NC(=O)OCc1ccccc1)NC(=O)[C@@H](NC(=O)[C@H](Cc1c[nH]c2ccccc12)N(C)C(=O)[C@H](CC(C)C)NC(=O)[C@@H](NC(=O)OC(C)C)C(C)C)C(C)C",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TFA",
+          "HATU"
+        ],
+        "named_reaction": "amide coupling"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "scale": "1.5 g",
+        "observation": "Protected bulbiferamide A (46) was furnished in 1.5 g quantity. The ureido-capped protected bulbiferamide A (46) was found to be a stable solid, storable at ambient temperature."
+      },
+      "evidence": {
+        "text_span": "Following TES (triethylsilyl) and Boc deprotection with TFA, compound 44 was subsequently coupled to the ureido‑containing fragment 45 using HATU, thereby furnishing the protected bulbiferamide A (46) in a quantity of 1.5 g. The ureido‑capped protected bulbiferamide A (46) was found to be a stable solid, storable at ambient temperature.",
+        "page": 4,
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "d4a755845835234fa85dcc7342d72a2995b8c440aa1cb2d5769c7a14e2e7cd58.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Protected bulbiferamide A (46) has been synthesized.",
+        "gap": "How to remove the remaining protecting groups (benzyl ester and two Cbz groups) to obtain the final target, bulbiferamide A (3)?",
+        "decision": "Perform hydrogenolysis using Pd/C and H2 in the presence of acetic acid."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)CC1NC(=O)C(CCCNC(=N)N)NC(=O)C(C)CCCC(n2c(=O)ccc3ccccc32)NC(=O)C(CC(C)C)NC1=O"
+        ],
+        "reagents": [
+          "H2",
+          "acetic acid"
+        ],
+        "catalyst": "Pd/C",
+        "named_reaction": "hydrogenolysis"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "Bulbiferamide A (3) was furnished in 72% yield, completing its total synthesis with the N-acylindole linkage intact."
+      },
+      "evidence": {
+        "text_span": "Finally, removal of the benzyl ester and two Cbz groups from 46 under Pd/C, H2 in the presence of acetic acid furnished bulbiferamide A (3), thereby completing its total synthesis with the N‑acylindole linkage intact.",
+        "page": 4,
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "d4a755845835234fa85dcc7342d72a2995b8c440aa1cb2d5769c7a14e2e7cd58.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 12,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence of reactions to synthesize bulbiferamide A (3)."
+      },
+      "Total Steps": {
+        "value": 12,
+        "unit": "steps",
+        "interpretation": "Total number of distinct chemical transformations or critical steps in the synthesis."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly reported failed attempts during the synthesis."
+      }
+    },
+    "significance": "The developed scalable and general synthetic method for N-acylindole linkages enabled gram-scale supply of bulbiferamide A (3), a potent antitrypanosomal agent with favorable selectivity. This strategy also allowed for the synthesis of analogues with diverse ring sizes, different linkers, and various indole derivatives, which were previously inaccessible by enzymatic methods. This establishes a foundation for future synthesis of noncanonical cyclic peptides and broader access to N-acylindole linkages."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.202526149",
+      "pmcid": "PMC13053918",
+      "title": "Scalable Access to N‑Acylindole Linkages: Enabling the Synthesis of Antitrypanosomal Noncanonical Cyclic Peptides for Chagas Disease.",
+      "authors": "Zhang J, Nakamura H.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC13053918?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/b7186810-b86b-4d0c-abcb-ab0e7971287d.zip",
+      "parsed_at": "2026-05-07T14:33:51.856130+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 35,
+    "parseable": 24,
+    "canonicalized": 20,
+    "invalid": 11,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C(O)[C@H](NC(=O)OC(C)(C)C)CCCNHC(=O)OCC1=CC=CC=C1",
+      "CC(C)C[C@H](NC(=O)N[C@H](C(=O)O)C(C)C)C(=O)OC[C@H](Cc1ccccc1)OBn",
+      "O=C(O)[C@H](NC(=O)OC(C)(C)C)CCCNHC(=O)OCC1=CC=CC=C1",
+      "CC(C)C[C@H](NC(=O)[C@H](CCCNC(=O)OCc1ccccc1)NC(=O)[C@H](C)N1C(=O)c2ccccc2Br)NC(=O)OC(C)(C)C",
+      "CC(C)C[C@H](NC(=O)[C@H](CCCNC(=O)OCc1ccccc1)NC(=O)[C@H](C)N1C(=O)c2ccccc2Br)NC(=O)OC(C)(C)C",
+      "CC(C)C[C@H](NC(=O)[C@H](CCCNC(=O)OCc1ccccc1)NC(=O)[C@H](C)N1C(=O)c2ccccc2Br)NC(=O)OC(C)(C)C",
+      "CC(C)C[C@H](NC(=O)N[C@H](C(=O)O)C(C)C)C(=O)OC[C@H](Cc1ccccc1)OBn",
+      "CC(C)C[C@H](NC(=O)N[C@H](C(=O)OC[C@H](Cc1ccccc1)OBn)Cc1ccccc1)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](Cc2c[nH]c3ccccc23)N(C(=O)[C@H](CC(C)C)NC(=O)[C@H](C(C)C)NC(=O)[C@H](CCCCNC(=NNC(=O)OCc1ccccc1)NC(=O)OCc1ccccc1)NC(=O)[C@H](C(C)C)NC(=O)O)C",
+      "CC(C)C[C@H](NC(=O)N[C@H](C(=O)OC[C@H](Cc1ccccc1)OBn)Cc1ccccc1)NC(=O)[C@H](CC(C)C)NC(=O)[C@H](Cc2c[nH]c3ccccc23)N(C(=O)[C@H](CC(C)C)NC(=O)[C@H](C(C)C)NC(=O)[C@H](CCCCNC(=NNC(=O)OCc1ccccc1)NC(=O)OCc1ccccc1)NC(=O)[C@H](C(C)C)NC(=O)O)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

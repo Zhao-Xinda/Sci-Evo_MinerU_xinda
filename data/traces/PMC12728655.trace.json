@@ -1,0 +1,719 @@
+{
+  "trace_id": "TS-PMC12728655",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Myxopyronin 8",
+    "smiles": "CC=CC(=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O)C(C)C(F)(F)F",
+    "natural_product_class": "alpha-pyrone antibiotic",
+    "structural_features": {
+      "molecular_weight": 503.5,
+      "stereocenters": 2,
+      "ring_systems": "alpha-pyrone",
+      "key_motifs": [
+        "alpha-pyrone",
+        "diene",
+        "carbamate"
+      ]
+    },
+    "motivation": "The rise of multidrug-resistant pathogens necessitates new antibiotics. Myxopyronins inhibit RNA polymerase at a distinct binding site. This study aims to engineer an artificial myxopyronin derivative with enhanced metabolic stability via mutasynthesis, specifically a trifluoromethyl-modified analog, to address the global antimicrobial-resistance crisis.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Panek",
+        "year": 1998,
+        "doi": "10.1021/jo971999j",
+        "key_strategy": "Racemic total synthesis of (±)-Myxopyronin A and B"
+      },
+      {
+        "lead_author": "Doundoulakis",
+        "year": 2004,
+        "doi": "10.1016/j.bmcl.2004.09.029",
+        "key_strategy": "Synthesis and biological evaluation of Myxopyronin B analogs"
+      },
+      {
+        "lead_author": "Lira",
+        "year": 2007,
+        "doi": "10.1016/j.bmcl.2007.10.060",
+        "key_strategy": "Syntheses of novel myxopyronin B analogs"
+      },
+      {
+        "lead_author": "Rentsch and Kalesse",
+        "year": 2012,
+        "doi": "10.1002/anie.201206002",
+        "key_strategy": "Enantioselective total synthesis of corallopyronin A and myxopyronin B"
+      },
+      {
+        "lead_author": "Ebright",
+        "year": 2013,
+        "doi": "WO2013142812A1",
+        "key_strategy": "Total synthesis of sidechain-fluorinated myxopyronin derivatives (including trifluoromethyl analog)"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Produce a trifluoromethyl-modified analog of Myxopyronin A (8) via mutasynthesis, demonstrate potent antimicrobial activity against Gram-positive pathogens including M. tuberculosis, and show favorable in vitro ADMET properties, particularly enhanced metabolic stability."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [],
+    "fragments": [],
+    "rationale": "The strategy is mutasynthesis, which involves feeding engineered microorganisms with synthetic precursors (mutasynthons) to produce novel derivatives. This approach avoids the high number of steps, costly reagents, and low yields often associated with total synthesis of complex natural products like myxopyronins. The key idea is to introduce mutations in the biosynthetic machinery to allow for the incorporation of artificial precursors at specific points in the Western chain biosynthesis."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Myxopyronins A (1) and B (2) are promising alpha-pyrone antibiotics that inhibit bacterial RNA polymerase at a unique 'switch region'. Total synthesis of these compounds and their derivatives is often lengthy and inefficient. Mutasynthesis offers an alternative by combining synthetic precursors with engineered microorganisms.",
+        "gap": "Previous mutasynthesis attempts in the native producer M. fulvus Mx f50 were unsuccessful due to low production yields and instability of beta-keto SNAC mutasynthons. A more robust system is needed to generate novel derivatives.",
+        "decision": "To overcome limitations of previous mutasynthesis, chose to utilize the heterologous expression system M. xanthus DK1622ΔmchA-tet, which yields Myxopyronin A at high titers, and to introduce mutations at an earlier stage of Western chain biosynthesis to allow for simpler and more stable mutasynthons."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Identified M. xanthus DK1622ΔmchA-tet as a suitable heterologous host for enhanced NP production."
+      },
+      "evidence": {
+        "text_span": "In an initial mutasynthesis attempt, supplementation with modified β-keto SNACs in the ΔmxnK mutant strain of the wild-type producer M. fulvus Mx f50 did not yield novel derivatives. To improve the chances of generating new compounds, we opted to employ the heterologous host M. xanthus DK1622 ΔmchA-tet::pHSU-mxn43 as this strain had previously demonstrated significantly enhanced NP production. Furthermore, to overcome the instability of β-keto SNACs, we aimed to introduce mutations at an earlier stage of Western chain biosynthesis. This approach would enable feeding experiments with simpler and more stable mutasynthons, potentially increasing the efficiency of derivative production.",
+        "section": "Analog Design, Generation of Mutant Strains and Substrate Synthesis"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "The cocrystal structure of Myxopyronin A (1) with the RNAP 'switch region' shows a predominance of nonpolar regions in the binding site. Previous SAR studies focused on Eastern chain modifications, which often led to activity loss.",
+        "gap": "The impact of Western chain modifications on bioactivity and ADMET properties is less explored. Specifically, how different substituents, especially hydrophobic ones, affect binding affinity and metabolic stability needs investigation.",
+        "decision": "To design novel derivatives of 1, chose to focus on modifications in the Western portion of the molecule, guided by the molecular lipophilicity potential (MLP) map of the binding site, expecting that introducing primarily hydrophobic modifications would optimize interactions. Specifically, planned to modify the methylation pattern and introduce substituents like trifluoromethyl, propargyl, and various (hetero)cycles."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Designed a library of artificial derivatives (5-19) with varied Western chain modifications, including a trifluoromethyl group (8), propargyl group (9), and various five- and six-membered (hetero)cycles (10-19)."
+      },
+      "evidence": {
+        "text_span": "To design novel derivatives of 1, we used the cocrystal structure of the “switch region” of Thermus thermophilus RNAP as a blueprint (Figure 2A). Mapping the molecular lipophilicity potential (MLP) of the binding site surface revealed the predominance of nonpolar regions, indicating the necessity for introducing primarily hydrophobic modifications to optimize interactions. We intended to modify the methylation pattern of the diene to investigate the minimum structural requirements necessary for condensation reactions during biosynthesis and sustaining biological activity (5−7) (Figure 2B). Given that MYX B (2) has a very short half-life of only 3 min in human liver microsomes,23 we selected a range of substituents, including trifluoromethyl (8) previously reported by Ebright et al.,23 propargyl (9) and various five- and six-membered (hetero)cycles (10−19), to assess their impact on the ADMET properties of exemplified derivatives.",
+        "section": "Analog Design, Generation of Mutant Strains and Substrate Synthesis",
+        "image_refs": [
+          "a1c97d12a50f7bda84244870665166b18daa7beeceae05e0b198088ede21de14.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "The MYX biosynthetic pathway involves two distinct multimodular PKS assembly lines (Western and Eastern chains) and a stand-alone KS enzyme for alpha-pyrone ring formation. Mutasynthesis requires targeted mutations in the biosynthetic machinery to accept artificial precursors.",
+        "gap": "To enable mutasynthesis with simpler and more stable mutasynthons, specific carrier protein (CP) domains in the Western chain PKS (MxnK megasynthase) need to be inactivated to allow feeding at earlier stages.",
+        "decision": "To enable mutasynthesis in the heterologous producer, chose to perform site-directed mutagenesis to introduce a serine-to-alanine substitution at the CP active site in the first and fourth modules of the myxopyronin MxnK megasynthase, creating CP-1WS91A and CP-4WS91A mutant strains."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Generated M. xanthus DK1622 ΔmchA-tet::pHSU-mxn43-ACP1 (CP-1WS91A) and M. xanthus DK1622 ΔmchA-tet::pHSU-mxn43-ACP4 (CP-4WS91A) mutant strains."
+      },
+      "evidence": {
+        "text_span": "To enable mutasynthesis in the heterologous producer, we performed site-directed mutagenesis to introduce a serine-to-alanine substitution at the CP active site in the first and fourth modules of the myxopyronin MxnK megasynthase. To achieve this two synthetic DNA fragments were chemically synthesized with the respective single-nucleotide substitutions. These fragments were flanked by homology regions for recombination and included a chloramphenicol resistance gene for selection, imbedded by restriction sites for later removal. Following recombining in E. coli, mutated CP domains were inserted to replace native sequences in the mxnK gene. This resulted in the generation of the M. xanthus DK1622 ΔmchA-tet::pHSU-mxn43-ACP1 (CP−1WS91A) and M. xanthus DK1622 ΔmchA-tet::pHSU-mxn43-ACP4 (CP−4WS91A) mutant strains, respectively (Table S2−S4, Figure S1).",
+        "section": "Analog Design, Generation of Mutant Strains and Substrate Synthesis"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Mutasynthesis requires feeding mutasynthons to the engineered strains. SNAC esters are common precursors, but thiophenols and pantetheine intermediates have also been reported to be efficiently accepted by PKS machinery.",
+        "gap": "The optimal form of mutasynthon (SNAC ester, thiophenol, or pantetheine) for efficient incorporation into the M. xanthus DK1622 CP-1WS91A mutant needs to be determined.",
+        "decision": "To generate a small library of mutasynthons for the CP-1WS91A mutant, chose to synthesize native mimics (20, 21) and artificial mimics (22-33) as SNAC esters, and additionally prepare thiophenols (34-36) and pantetheine derivatives (37-39) to assess their integration efficiency."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "reagents": [
+          "SNAC/HSPh",
+          "DIPEA",
+          "EDC·HCl",
+          "DMAP",
+          "HClaq. (1M)"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C-rt",
+        "time": "on"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Synthesized mutasynthons (20-39) as SNAC esters, thiophenols, and pantetheine derivatives. For example, 20 (R=nPr) was obtained in 72% yield, 21 (R=nBu) in 95% yield, 22 (R=CF3-nPr) in 65% yield, 34 (R=Pr) in 98% yield, and 37 (R=nPr) in 24% yield (2 steps).",
+        "yield_percent": 72
+      },
+      "evidence": {
+        "text_span": "To generate a small library of mutasynthons suitable for the supplementation of the starter unit in the CP−1WS91A mutant strain, native mimics 20 and 21, along with artificial mimics (22−33), were synthesized as SNAC esters (Figure 3).32 This synthesis was achieved either through direct coupling using acid chlorides (Condition A) or via Steglich esterification of the corresponding carboxylic acids (Condition B). It has been previously reported that in certain cases, thiophenols33,34 and even full-length pantetheine intermediates35,36 are more efficiently accepted by the PKS machinery compared to SNAC esters. To assess the integration efficiency of these compounds in our system, we synthesized thiophenols (34− 36), as well as pantetheine derivatives (37−39) to supplement them into the culture medium for further evaluation.",
+        "section": "Analog Design, Generation of Mutant Strains and Substrate Synthesis",
+        "image_refs": [
+          "28cde550f516dc54050c005631d3a253d60916cf0429801cc1adea2faf885ab9f6.jpg",
+          "5d7450df0a5ff6bae4f92b79add1aea05e109cb98849f0f1b59dbce9cd6d3aa1.jpg",
+          "63a23ddfedb4939d1ee2513c930bd439c9eed7e20da0ff43abe358dc16e5cb95.jpg",
+          "29bf72e6c2a61eb29033b1fc54fa5804961d639d888ef502d518fa15154384a9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Mutasynthesis with the CP-4WS91A mutant requires specific mutasynthons for the fourth module of the Western chain. Previous work by Rentsch and Kalesse on Myxopyronin B total synthesis provides a basis for synthesizing these precursors.",
+        "gap": "A diverse set of mutasynthons with various side chains needs to be synthesized to evaluate substrate acceptance and flexibility of the CP-4WS91A mutant.",
+        "decision": "To generate mutasynthons for the CP-4WS91A mutant, chose to build on Rentsch and Kalesse’s work, synthesizing native SNAC precursors (40, 41), modified SNAC esters (42-47), thiophenol (48), and pantetheine (49). The key step for introducing side chains would be a carbocupration-mediated syn-selective addition to ethyl but-2-ynoate, followed by diene formation via reduction and Wittig olefination, and finally saponification and thioesterification."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC#CC(=O)OCC"
+        ],
+        "product_smiles": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "reagents": [
+          "R''MX",
+          "CuBr.SMe2",
+          "NH4Cl",
+          "DIBALH",
+          "MnO2",
+          "B/C",
+          "NaOH",
+          "SNAC/HSPh/A",
+          "EDC·HCl",
+          "DMAP",
+          "DIPEA",
+          "HClaq. (1M)"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Synthesized mutasynthons (40-49) for CP-4WS91A mutant supplementation. Carbocupration proceeded with complete stereocontrol, yielding (E)-alkenes. Diene formation was achieved via reduction and Wittig olefination. For example, 40 (R=nPr, R=Me, R=Me) was obtained in 47% (4 steps), 42 (R=CF3-nPr, R=Me, R=Me) in 41% (4 steps), 48 (R=nPr, R=Me, R=Me) in 39% (4 steps), and 49 (R=nPr, R=Me, R=Me) in 22% (5 steps).",
+        "yield_percent": 47,
+        "stereochemistry_required": true,
+        "dr": "E,E > 99%"
+      },
+      "evidence": {
+        "text_span": "Building on Rentsch and Kalesse’s work on the total synthesis of 2, we synthesized a targeted set of mutasynthons for in vivo testing with the CP−4WS91A mutant strain (Figure 4). This set includes both native SNAC precursors 40 and 41, and modified SNAC esters (42−47). Additionally, we prepared thiophenol 48 and a pantetheine 49 to evaluate and compare their efficiency with module 1 mimics. To introduce a variety of side chains, we envisioned a carbocupration-mediated syn-selective addition to ethyl but-2-ynoate.37−39 The conjugate addition of various nucleophiles to ethyl but-2-ynoate proceeded with complete stereocontrol, yielding the corresponding (E)-alkenes (40a−44a) exclusively. The second double bond was introduced via two complementary synthetic approaches. In the first method, the ester group was reduced with diisobutylaluminum hydride (DI-BALH) to yield an alcohol intermediate, which subsequently underwent in situ allylic oxidation mediated by manganese dioxide (MnO2) and Wittig olefination, leading to the formation of dienoates (40b−44b).40 Alternatively, direct access to ethyl dienoates (45b−47b) was achieved by using the commercially available α,β-unsaturated aldehyde trans-2-hexenal as starting material. For all compounds except diene 44b (E/E > 90%)), exclusively the E/E-isomer was detected by NMR spectroscopy. Saponification of the ethyl dienoates (40b−47b) followed by Steglich esterification of the corresponding carboxylic acids (40c−47c), gave rise to the desired SNAC esters (40−47), thiophenol 48 and acetal 49a. The latter was deprotected under acid conditions to yield pantetheine 49.",
+        "section": "Analog Design, Generation of Mutant Strains and Substrate Synthesis",
+        "image_refs": [
+          "862ccfd2c04775833bececa3a175c63a3fea5838db2cc0ef45f1cb205307be0a.jpg",
+          "380d233c4c312bda550b58add4e3f67d9f13a68666534417166c143eec15ee4f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The CP-1WS91A mutant is designed to accept mutasynthons for the first module of the Western chain. It is crucial to confirm that the engineered strain can take up and incorporate synthetic mutasynthons to restore myxopyronin production.",
+        "gap": "The efficiency of different thiol ester forms (SNAC, thiophenol, pantetheine) in restoring Myxopyronin A production in the CP-1WS91A mutant needs to be evaluated.",
+        "decision": "To confirm production restoration and assess integration efficiency, chose to supplement the CP-1WS91A mutant cultures with native mutasynthon 20 (SNAC ester), thiophenol 34, and pantetheine 37, and analyze production via HPLC-MS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCC(C)C=C(C)C(=O)c1oc(C(C)CCC=CNC(=O)OC)cc1O"
+        ],
+        "reagents": [
+          "20",
+          "34",
+          "37"
+        ],
+        "scale": "small-scale cultures",
+        "stoichiometry": {
+          "20": "1 mM"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Successfully restored production of Myxopyronin A (1) in the CP-1WS91A mutant when supplemented with 20, albeit at lower levels than wild-type. Thiophenol 34 and pantetheine 37 also yielded detectable, but lower, production levels.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "To confirm that synthetic mutasynthon SNAC esters can be taken up and incorporated by the M. xanthus DK1622 CP−1WS91A mutant to restore the myxopyronin production, we initially supplied 20, corresponding to the native MYX A (1) first-module intermediate. The respective mutasynthon 20 was added to the cultures after 2 days of incubation, reaching a final concentration of 1 mM. The production cultures were subsequently harvested after a total cultivation period of 7 days and analyzed using HPLC-MS (see Supporting Information for details). We successfully restored the production of 1, albeit at lower levels compared to the wildtype strain M. fulvus Mx f50 and the overexpression mutant strain M. xanthus DK1622 cultivated in parallel (Figure 5). To assess the integration efficiency of 20, we additionally supplemented the culture broth with thiophenol (34) and pantetheine (37), which yielded detectable but comparatively lower production levels.",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs",
+        "image_refs": [
+          "e184aba6ce296f437bc96aaee5586a2c20eb4e37775d99ead50031d7446f525e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The CP-4WS91A mutant is designed to accept mutasynthons for the fourth module of the Western chain. Similar to the CP-1WS91A mutant, it's important to confirm its ability to restore Myxopyronin A production and evaluate the efficiency of different mutasynthon forms.",
+        "gap": "The integration efficiency of SNAC ester 40, thiophenol 48, and pantetheine 49 in the CP-4WS91A mutant needs to be assessed.",
+        "decision": "To evaluate production restoration and integration efficiency in the CP-4WS91A mutant, chose to supplement cultures with mutasynthon 40 (SNAC ester), thiophenol 48, and pantetheine 49."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCC(C)C=C(C)C(=O)c1oc(C(C)CCC=CNC(=O)OC)cc1O"
+        ],
+        "reagents": [
+          "40",
+          "48",
+          "49"
+        ],
+        "scale": "small-scale cultures"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Restoration of Myxopyronin A (1) was achieved with mutasynthon 40, but with lower efficiency compared to SNAC 20 in the CP-1WS91A mutant. Pantetheine 49 supported detectable production levels.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "Comparable experiments incorporating module four intermediate 40 into the M. xanthus DK1622 CP−4WS91A mutant demonstrated restoration of 1. However, the restoration was achieved with lower efficiency relative to SNAC 20. Further investigations revealed that supplementation with the corresponding thiophenol 48 exhibited toxicity to the strain at the tested concentrations and diminished the MYX A production completely. In contrast, supplementation with pantetheine 49 supported detectable production levels 1.",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs",
+        "image_refs": [
+          "e184aba6ce296f437bc96aaee5586a2c20eb4e37775d99ead50031d7446f525e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Thiophenol 48 was tested as a mutasynthon for the CP-4WS91A mutant to restore Myxopyronin A production.",
+        "gap": "The effect of thiophenol 48 on the M. xanthus DK1622 CP-4WS91A mutant strain and its ability to produce Myxopyronin A needs to be determined.",
+        "decision": "Supplemented the CP-4WS91A mutant with thiophenol 48 to assess its integration efficiency."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCC(C)C=C(C)C(=O)c1oc(C(C)CCC=CNC(=O)OC)cc1O"
+        ],
+        "reagents": [
+          "48"
+        ],
+        "scale": "small-scale cultures"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "toxicity",
+        "observation": "Supplementation with thiophenol 48 exhibited toxicity to the strain at the tested concentrations and completely diminished Myxopyronin A production."
+      },
+      "evidence": {
+        "text_span": "Further investigations revealed that supplementation with the corresponding thiophenol 48 exhibited toxicity to the strain at the tested concentrations and diminished the MYX A production completely.",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The CP-1WS91A mutant successfully incorporated native mutasynthon 20. Now, the substrate flexibility of this mutant needs to be evaluated by introducing artificial mutasynthons.",
+        "gap": "Determine which artificial SNAC-based mutasynthons (22-33) are accepted by the CP-1WS91A mutant to produce novel derivatives, especially the trifluoromethyl analog 8.",
+        "decision": "To evaluate substrate flexibility, chose to introduce SNAC-based mutasynthons (22-33) into the CP-1WS91A mutant, focusing on the trifluoromethyl building block 22 for derivative 8."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC=CC(=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O)C(C)C(F)(F)F",
+          "C#CCCC(C=CC)=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O",
+          "CC=CC1=CC2C(=O)CCCCCC1C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C2=O",
+          "CC=CC(=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O)c1ccoc1"
+        ],
+        "reagents": [
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29",
+          "30",
+          "31",
+          "32",
+          "33"
+        ],
+        "scale": "small-scale cultures"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Derivative 8 (trifluoromethyl analog) was produced, albeit at slightly lower levels compared to Myxopyronin A. Derivative 9 (terminal alkyne) and 10 (cyclohexyl analog) were also produced. Five-membered heterocyclic precursors (27-33) were well-accepted for analogs 13-19.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "After restoring MYX A (1) production, we evaluated substrate flexibility by introducing the superior SNAC-based mutasynthons (22−34) into the CP−1WS91A mutant (Figure 6). Besides the incorporation of butyl building block 21 for MYX B (2) production, we explored the introduction of a trifluoromethyl group to enhance metabolic stability. Encouragingly, derivative 8 was produced, albeit at slightly lower levels compared to MYX A, when the mutant strain was supplemented with 22. Building on this, we sought to introduce a terminal alkyne motif by feeding the mutant strain with the mutasynthon 23. The obtained MYX derivative 9 could subsequently be modified via copper-catalyzed azide−alkyne cycloaddition (CuAAC) or other 1,3-dipolar cycloaddition reactions.41 43 These modifications would yield elongated COR-like structures, possibly with enhanced interactions with the adjacent lipophilic region of RNAP. Lastly, we attempted to incorporate a larger substituent by utilizing the cyclohexyl precursor (24), which resulted in production levels of 10 comparable to those of analog 9.",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs",
+        "image_refs": [
+          "821b40f5357b4d749be5b208fbb3ab5355c31d8afae495f25daaa31f6e4f869c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The CP-1WS91A mutant showed flexibility in accepting various SNAC-based mutasynthons. However, the acceptance of larger, aromatic precursors needs to be tested.",
+        "gap": "Determine if six-membered (hetero)aromatic precursors (phenyl-SNAC 25, nicotinic acid-SNAC 26) are accepted by the CP-1WS91A mutant for analog production.",
+        "decision": "Chose to challenge the mutasynthesis platform by feeding six-membered (hetero)aromatic precursors 25 and 26 to the CP-1WS91A mutant."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC=CC(=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O)c1ccccc1",
+          "CC=CC(=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O)c1ccncc1"
+        ],
+        "reagents": [
+          "25",
+          "26"
+        ],
+        "scale": "small-scale cultures"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "For six-membered (hetero)aromatics, this significant structural modification resulted in the complete abolishment of production for analogs 11 and 12 when fed with phenyl-SNAC (25) or nicotinic acid-SNAC (26)."
+      },
+      "evidence": {
+        "text_span": "Moreover, we challenged our mutasynthesis platform by transitioning from alkyl precursors to aromatic ones. For six-membered (hetero)aromatics, this significant structural modification resulted in the complete abolishment of production for analogs 11 and 12 when fed with phenyl-SNAC (25) or nicotinic acid-SNAC (26).",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The CP-4WS91A mutant is designed to accept mutasynthons for the fourth module. The importance of methyl groups in substrate recognition by the KS domain is known.",
+        "gap": "Investigate the substrate specificity of the CP-4WS91A mutant by altering the methylation pattern of the mutasynthons (45-47) and assess the impact on Myxopyronin production.",
+        "decision": "To investigate substrate specificity, chose to alter the methylation pattern using mimics (45-47) and supply mutasynthons (42-44) to the CP-4WS91A mutant."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC=CC(=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O)C(C)C(F)(F)F",
+          "C#CCCC(C=CC)=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O",
+          "CC=CC1=CC2C(=O)CCCCCC1C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C2=O"
+        ],
+        "reagents": [
+          "41",
+          "42",
+          "43",
+          "44",
+          "45",
+          "46",
+          "47"
+        ],
+        "scale": "small-scale cultures"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Production of Myxopyronin (8-10) was restored when mutasynthons (42-44) were supplied. This underscores the importance of both methyl groups in substrate recognition by the KS domain.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "Next, we investigated the substrate specificity of the CP−4WS91A mutant by altering the methylation pattern using mimics (45−47) (Figure 6 and Figure S2, Table S5). The removal of a single methyl group at either the α- or δ-position, or both, resulted in a complete loss of production of MYX (5−7). However, production of MYX (8−10) was restored when mutasynthons (42−44) were supplied, underscoring the importance of both methyl groups in substrate recognition by the KS domain of the trans-AT PKS.26,44,45 This observation aligns with the known substrate specificity of KS domains, which generally prefer substrates sharing similar structural characteristics around the thioester α- to γ- region.44,46−48 Additionally, those KS domains demonstrate flexibility in accommodating even more complex substrates with variations at the δ-position, as exemplified in COR (3 and 4) biosynthesis.",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs",
+        "image_refs": [
+          "821b40f5357b4d749be5b208fbb3ab5355c31d8afae495f25daaa31f6e4f869c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The CP-4WS91A mutant was tested for substrate specificity by altering the methylation pattern of mutasynthons.",
+        "gap": "Determine if mutasynthons with altered methylation patterns (45-47) are accepted by the CP-4WS91A mutant for Myxopyronin production.",
+        "decision": "Supplied mutasynthons 45-47, which have altered methylation patterns, to the CP-4WS91A mutant."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC=CC(C)=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O"
+        ],
+        "reagents": [
+          "45",
+          "46",
+          "47"
+        ],
+        "scale": "small-scale cultures"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The removal of a single methyl group at either the α- or δ-position, or both, resulted in a complete loss of production of MYX (5-7)."
+      },
+      "evidence": {
+        "text_span": "The removal of a single methyl group at either the α- or δ-position, or both, resulted in a complete loss of production of MYX (5−7).",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Furan analog 14 was successfully produced in small-scale mutasynthesis. For further evaluation, scale-up fermentation is required.",
+        "gap": "The stability of furan analog 14 during large-scale fermentation and isolation needs to be assessed.",
+        "decision": "Attempted large-scale production of furan analog 14 using the most efficient starter unit (SNAC 28)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCC(C(=O)S)c1ccoc1"
+        ],
+        "product_smiles": [
+          "CC=CC(=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O)c1ccoc1"
+        ],
+        "reagents": [
+          "28"
+        ],
+        "scale": "large-scale fermentation"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "The furan analog 14 proved highly susceptible to rapid decomposition during large-scale fermentation and isolation, even with efforts to exclude light. Consequently, further experimentation was discontinued.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "We initially attempted the large-scale production of furan analog 14. However, it quickly became apparent that the compound is highly susceptible to rapid decomposition. This instability is most likely attributed to the conjugated system present in both the Western chain and the α-pyrone core. Even efforts to exclude light during fermentation and isolation did not prevent its degradation; consequently, we decided to discontinue further experimentation.",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Terminal alkyne derivative 9 and cyclohexyl analog 10 were successfully produced in small-scale mutasynthesis. For further evaluation, scale-up fermentation is required.",
+        "gap": "The production of 9 and 10 needs to be scaled up from small- to large-scale cultures.",
+        "decision": "Attempted to transition the production of 9 and 10 from small- to large-scale cultures."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#CCCC(CCC)C(=O)S",
+          "CCCC(C(=O)S)C1CCCCC1"
+        ],
+        "product_smiles": [
+          "C#CCCC(C=CC)=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O",
+          "CC=CC1=CC2C(=O)CCCCCC1C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C2=O"
+        ],
+        "reagents": [
+          "23",
+          "24"
+        ],
+        "scale": "large-scale cultures"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "scale_limited",
+        "observation": "Transitioning the production of 9 and 10 from small- to large-scale proved unsuccessful.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "While transitioning the production of 9 and 10 from small- to large-scale proved unsuccessful, 8 demonstrated comparable production titers in 1L cultures in shaking flasks.",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The trifluoromethyl-modified NP 8 showed promising small-scale production. For comprehensive evaluation, larger quantities are needed.",
+        "gap": "Optimize production conditions for analog 8 to achieve sufficient quantities for structure elucidation and bioactivity assessments, especially considering the sensitivity of myxobacteria to cultivation parameters.",
+        "decision": "To enhance the supply of analog 8, chose to conduct preliminary screening in 1L cultivations using a Parallel Bioreactor System, adapting conditions from COR A production (30 °C, 20% pO2) and varying pH control, feeding strategies, oxygenation levels, and temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCC(C(=O)S)C(C)C(F)(F)F"
+        ],
+        "product_smiles": [
+          "CC=CC(=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O)C(C)C(F)(F)F"
+        ],
+        "reagents": [
+          "22"
+        ],
+        "solvent": "culture medium",
+        "temperature": "15-35 °C",
+        "atmosphere": "20-45% pO2",
+        "scale": "1L cultivations",
+        "stoichiometry": {
+          "22": "single batch addition or progressive feeding"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Optimized bioreactor conditions significantly increased production of analog 8. Optimal production was observed at 25 °C and 30% oxygenation, yielding a 50% increase compared to conventional cultivation. Progressive feeding also improved yield.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "To enhance the supply of analog 8, we conducted a preliminary screening in 1L cultivations, utilizing a Parallel Bioreactor System (Table S6). By adapting bioreactor conditions for COR A (3) (temperature (T) maintained at 30 °C and partial pressure of oxygen (pO2) at 20%),51 we first evaluated the impact on pH, and feeding strategies—either a single batch addition after 48 h or a progressive approach with SNAC 22 added at 24, 48, 72, and 96 h postinoculation (Figure 7A). Compared to conventional fermentation in shaking flasks, bioreactor-mediated production initially yielded only one-sixth of 8 under pH-controlled conditions with a single-batch addition of the mutasynthon. However, progressive addition of 22 under the same conditions increased production of 8 by one-third. In the absence of pH-controlled conditions, production of NP 8 decreased significantly. Based on these results, we aimed to optimize the oxygenation level near the previously tested pO2 value of 20% (Figure 7B). Oxygenation at 15% resulted in a production profile similar to that observed at 20%, while 30% oxygenation yielded the highest production of the trifluoromethyl derivative 8, exhibiting a 50% increase compared to conventional cultivation. In contrast, at 45% oxygenation, a slight but not significant decrease in production was observed. Finally, we varied the temperature in 5 °C increments while maintaining pO2 at 30% (Figure 7C). Interestingly, even at 15 °C, the production of 8 exceeded that observed under the initial bioreactor conditions. At 20 °C, production levels were comparable to those achieved with shaking flask fermentation. Optimal production was observed at 25 °C, underscoring the distinction between the conditions required for favoring NP synthesis and the optimal growth temperature range of M. xanthus, typically 34−36 °C. This finding is further supported by the drastic decrease in analog 8 production at 35 °C, despite substantial M. xanthus growth, as indicated by a high carbon dioxide transfer rate.",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs",
+        "image_refs": [
+          "d9c613562ebe6ee84b93f11f7b72ba5cbff1d460fb0c0a506c7b4ddbbb2816d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "Optimized bioreactor conditions for analog 8 production were identified in 1L cultivations.",
+        "gap": "Scale up the production of analog 8 to obtain sufficient quantities for full structural assignment and bioactivity evaluation.",
+        "decision": "To obtain sufficient material, chose to conduct a large-scale fermentation (10L) of M. xanthus DK1622 CP-1WS91A mutant supplemented with 22, followed by extraction and purification."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCC(C(=O)S)C(C)C(F)(F)F"
+        ],
+        "product_smiles": [
+          "CC=CC(=CC1C(=O)C(C(C)CC=CNC(=O)OC)=CC(O)=C(O)C1=O)C(C)C(F)(F)F"
+        ],
+        "reagents": [
+          "22"
+        ],
+        "solvent": "methanol",
+        "scale": "10L",
+        "stoichiometry": {
+          "22": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": null,
+        "observation": "Obtained 3.5 mg of the desired trifluoromethyl analog 8 after extraction with methanol and ethyl acetate, followed by purification via Sephadex LH-20 chromatography and preparative HPLC."
+      },
+      "evidence": {
+        "text_span": "After optimization of this process, we conducted a large-scale fermentation (10L) of M. xanthus DK1622 CP−1WS91A mutant supplemented with 22. Following extractions with methanol and ethyl acetate and sample were concentrated, the crude material underwent purification via Sephadex LH-20 chromatography, and preparative high-performance liquid chromatography (HPLC) to yield 3.5 mg of the desired trifluoromethyl analog 8. Structural assignment of 8 was performed with a combination of 1D and 2D NMR experiments as well as high resolution mass spectrometry (HRMS) (Figures S3−S5 and Table S7).",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The trifluoromethyl analog 8 was successfully produced and isolated.",
+        "gap": "The structure of analog 8 needs to be fully assigned to confirm its identity.",
+        "decision": "To assign the structure of 8, chose to use a combination of 1D and 2D NMR experiments and high-resolution mass spectrometry (HRMS)."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Structural assignment of 8 was performed with 1D and 2D NMR experiments and HRMS, confirming its identity.",
+        "characterization": [
+          "1H NMR",
+          "13C NMR",
+          "2D NMR",
+          "HRMS"
+        ]
+      },
+      "evidence": {
+        "text_span": "Structural assignment of 8 was performed with a combination of 1D and 2D NMR experiments as well as high resolution mass spectrometry (HRMS) (Figures S3−S5 and Table S7).",
+        "section": "Probing Mutasynthon Acceptance and Isolation of Analogs"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "other"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 0.07,
+        "unit": "%",
+        "interpretation": "Yield after extraction and purification from mutasynthesis, which is lower than total synthesis but represents a proof-of-concept for analog generation."
+      }
+    },
+    "comparison_to_prior": "The trifluoromethyl-modified analog 8 demonstrated sustained potency against Gram-positive S. aureus wild-type and antibiotic-resistant strains, and enhanced potency against M. tuberculosis wild-type and rifampin-resistant strains compared to Myxopyronin A (1). It also showed significantly increased half-life in murine and human liver microsomes, indicating enhanced metabolic stability, consistent with previous reports for the latter. This contrasts with Myxopyronin B (2) which has a very short half-life.",
+    "significance": "The mutasynthetic approach successfully produced a trifluoromethyl-modified myxopyronin analog (8) with potent antimicrobial activity against antibiotic-resistant Gram-positive pathogens, including M. tuberculosis, and favorable in vitro ADMET properties, particularly enhanced metabolic stability. This highlights a promising pathway for developing optimized alpha-pyrone antibiotics and demonstrates the potential of hybrid synthetic-biosynthetic strategies for accessing natural product analogs that are otherwise difficult to obtain."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.5c00950",
+      "pmcid": "PMC12728655",
+      "title": "Engineering an Artificial Myxopyronin Derivative with Enhanced Metabolic Stability via Mutasynthesis.",
+      "authors": "Kiefer AF, Voltz A, Scherzer D, Reberšek R, Kany AM, Prosser G, Neuber M, Reiling N, Hirsch AKH, Müller R.",
+      "journal": "JACS Au",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12728655?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/f3e6f941-446d-4fed-a299-33eebb832d8f.zip",
+      "parsed_at": "2026-05-11T06:40:31.569312+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 40,
+    "parseable": 25,
+    "canonicalized": 25,
+    "invalid": 15,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C(R)X",
+      "O=C(R)SCCNC(C)=O",
+      "O=C(R)SC1=CC=CC=C1",
+      "O=C(R)SCCNCCC(=O)C(O)C(C)(C)CO",
+      "CCOC(=O)C(=CH)C(R)",
+      "CCOC(=O)C=C(R)C=C(R)R",
+      "OC(=O)C=C(R)C=C(R)R",
+      "RC(=O)C=C(R)C=C(R)R",
+      "O=C(S)C(R)CC(R)",
+      "O=C(S)C(R)=CC(R)=CC(R)"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

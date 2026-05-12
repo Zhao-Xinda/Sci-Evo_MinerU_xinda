@@ -1,0 +1,431 @@
+{
+  "trace_id": "TS-PMC12706376",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "cyclopamine",
+    "smiles": "C[C@H]1[C@H]2NC[C@H](C)[C@@H]2O[C@H]1C=C[C@]1(C)[C@H](C)CC[C@@H]2[C@@H]1CC[C@]1(C)[C@@H]3C[C@@H](O)CC=C3CC[C@@H]21",
+    "natural_product_class": "Veratrum alkaloid",
+    "structural_features": {
+      "ring_systems": "hexacyclic",
+      "key_motifs": [
+        "C-nor-D-homo framework",
+        "spirofused tetrahydrofuran E-ring",
+        "fused piperidine F-ring"
+      ]
+    },
+    "motivation": "Cyclopamine is a Veratrum alkaloid with an intricate polycyclic framework and dense stereochemistry, making it a challenging target in total synthesis. It is also known for its teratogenic effects by inhibiting the hedgehog signaling pathway, which plays a critical role in embryonic development.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Giannis",
+        "year": 2009,
+        "doi": "10.1002/anie.200902520",
+        "key_strategy": "biomimetic Wagner–Meerwein-type rearrangement from an androstane framework"
+      },
+      {
+        "lead_author": "Baran",
+        "year": 2023,
+        "doi": "10.1021/jacs.3c09085",
+        "key_strategy": "convergent coupling of two complex fragments, Tsuji–Trost reaction for spirocyclic E-ring, and ring-closing metathesis for D-ring"
+      },
+      {
+        "lead_author": "Zhu/Gao",
+        "year": 2023,
+        "doi": "10.1021/jacs.3c10362",
+        "key_strategy": "convergent coupling, photoinduced excited-state Nazarov cyclization for C-ring, synthesis via veratramine"
+      },
+      {
+        "lead_author": "Liu/Qin",
+        "year": 2024,
+        "doi": "10.1038/s41467-024-49748-2",
+        "key_strategy": "divergent semisynthetic approach via Wagner–Meerwein-type rearrangement and late-stage biscyclization"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Achieve a convergent and efficient synthesis of cyclopamine, showcasing modern synthetic methods and retrosynthetic logic."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C15–C16 bond",
+        "named_strategy": "Convergent Coupling",
+        "reasoning": "This disconnection allows for the modular synthesis of two similarly complex fragments (ABC-ring and EF-ring) which are then coupled. This is a key feature of convergent synthesis, aiming for efficiency.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "D-ring closure",
+        "named_strategy": "Ring-Closing Metathesis (RCM)",
+        "reasoning": "RCM is a powerful method for forming carbon-carbon double bonds and closing rings, offering a strategic way to construct the D-ring late in the synthesis.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Spirocyclic E-ring formation",
+        "named_strategy": "Tsuji–Trost reaction",
+        "reasoning": "The Tsuji–Trost reaction is suitable for forming carbon-carbon bonds, particularly in the context of spirocycle formation, which is a challenging structural feature of cyclopamine.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "ABC-fragment",
+        "smiles": "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21",
+        "role": "left-hand fragment (A, B, C rings)",
+        "comes_from": "(S)-Wieland–Miescher ketone"
+      },
+      {
+        "fragment_id": "EF-fragment",
+        "smiles": "C=C(C)C(=O)C[C@@H]1NC[C@@H](C)C[C@@H]1O",
+        "role": "right-hand fragment (E, F rings)",
+        "comes_from": "tert-butylsiloxyfuran"
+      }
+    ],
+    "rationale": "The Baran group's strategy for cyclopamine (6) relies on a retrosynthetic cut through the D-ring, enabling a convergent coupling of two similarly complex fragments between C15–C16. Key disconnection steps include a Tsuji–Trost reaction to form the spirocyclic E-ring, and a ring-closing metathesis for closing the D-ring. This approach aims for efficiency and modularity in assembling the complex polycyclic core."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "ABC-fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of the left-hand fragment (A, B, C rings) starts from commercially available (S)-Wieland–Miescher ketone (34).",
+        "gap": "How to transform (S)-Wieland–Miescher ketone into intermediate 35 with the correct protecting groups, double bond isomerization, and reduction.",
+        "decision": "To access 35, several protecting group manipulations were carried out, the double bond isomerized to position C5–C6, and a reduction was performed, all in an optimized three-step, scalable sequence."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C(=O)CCC2C(=O)C=CC21"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "named_reaction": null,
+        "reagents": [],
+        "solvent": "unspecified",
+        "time": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 46,
+        "observation": "Intermediate 35 was obtained in 46% yield over three steps."
+      },
+      "evidence": {
+        "text_span": "To access 35, several protecting group manipulations were carried out, the double bond isomerized to position C5–C6, and a reduction was performed, all in an optimized three-step, scalable sequence.",
+        "image_refs": [
+          "6e7fbe305a23107ea20e27279664caa4b46d59ee69260f72e4f485a5f2442ce2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "ABC-fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 35 has been synthesized. The next goal is to form ring C and the substituted cyclopentenone motif 37.",
+        "gap": "How to achieve alkylation with phosphonate reagent 36 and subsequent Horner–Wadsworth–Emmons (HWE) reaction, followed by an enolate alkylation to forge the desired motif.",
+        "decision": "Alkylation with phosphonate reagent 36 and subsequent Horner–Wadsworth–Emmons (HWE) reaction formed ring C, followed by an enolate alkylation to forge substituted cyclopentenone motif 37. The authors report the reaction to favor the desired diastereomer and could further enrich the desired isomer by recrystallization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "named_reaction": "Horner–Wadsworth–Emmons (HWE) reaction",
+        "reagents": [
+          "CCOC(=O)C=C[P](=O)(OC)OC"
+        ],
+        "solvent": "unspecified",
+        "time": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 40,
+        "regio_selectivity": "desired diastereomer favored",
+        "observation": "Compound 37 was obtained in 40% yield. The reaction favored the desired diastereomer, which could be further enriched by recrystallization."
+      },
+      "evidence": {
+        "text_span": "Alkylation with phosphonate reagent 36 and subsequent Horner–Wadsworth–Emmons (HWE) reaction formed ring C, followed by an enolate alkylation to forge substituted cyclopentenone motif 37. The authors report the reaction to favor the desired diastereomer and could further enrich the desired isomer by recrystallization.",
+        "image_refs": [
+          "6e7fbe305a23107ea20e27279664caa4b46d59ee69260f72e4f485a5f2442ce2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "ABC-fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The cyclopentenone motif 37 has been formed. The next steps involve installing the exo-methylene group and converting the ester moiety to an iodide leaving group to prepare fragment 38 for coupling.",
+        "gap": "How to perform a 1,4-reduction, Wittig reaction, and ester reduction/Appel reaction sequence efficiently.",
+        "decision": "Final steps for this fragment included a 1,4- reduction of the enone motif via a copper hydride species, a Wittig reaction to install the exo-methylene group and an ester reduction/Appel reaction sequence to convert the ester moiety to an iodide leaving group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "named_reaction": "Wittig reaction",
+        "reagents": [],
+        "solvent": "unspecified",
+        "time": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 39,
+        "observation": "Fragment 38 was obtained in 39% yield over three steps."
+      },
+      "evidence": {
+        "text_span": "Final steps for this fragment included a 1,4- reduction of the enone motif via a copper hydride species, a Wittig reaction to install the exo-methylene group and an ester reduction/Appel reaction sequence to convert the ester moiety to an iodide leaving group.",
+        "image_refs": [
+          "6e7fbe305a23107ea20e27279664caa4b46d59ee69260f72e4f485a5f2442ce2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "EF-fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The right-hand fragment (E/F-ring) needs to be synthesized from tert-butylsiloxyfuran 39.",
+        "gap": "How to obtain butanolide 40 with high enantiomeric excess using asymmetric allylic alkylation and aza-Michael reaction.",
+        "decision": "Commencing via an asymmetric allylic alkylation and an aza-Michael reaction, butanolide 40 was obtained in 38% yield and an enantiomeric excess of greater than 97%."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "named_reaction": "aza-Michael reaction",
+        "reagents": [],
+        "solvent": "unspecified",
+        "time": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 38,
+        "ee_percent": 97,
+        "observation": "Butanolide 40 was obtained in 38% yield and >97% ee."
+      },
+      "evidence": {
+        "text_span": "Commencing via an asymmetric allylic alkylation and an aza-Michael reaction, butanolide 40 was obtained in 38% yield and an enantiomeric excess of greater than 97%.",
+        "image_refs": [
+          "6e7fbe305a23107ea20e27279664caa4b46d59ee69260f72e4f485a5f2442ce2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "EF-fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Butanolide 40 has been synthesized. The next step is to form fused compound 41.",
+        "gap": "How to perform a halocyclization and subsequent dehalogenation to arrive at fused compound 41, and to do so faster than previously reported methods.",
+        "decision": "A halocyclization and subsequent dehalogenation was performed to arrive at fused compound 41. Notably, similar compounds had been synthesized before, but the Baran group provided a faster access to this molecule."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "named_reaction": null,
+        "reagents": [],
+        "solvent": "unspecified",
+        "time": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 37,
+        "observation": "Fused compound 41 was obtained in 37% yield over two steps. This method provided faster access compared to prior syntheses."
+      },
+      "evidence": {
+        "text_span": "A halocyclization and subsequent dehalogenation was performed to arrive at fused compound 41. Notably, similar compounds had been synthesized before, but the Baran group provided a faster access to this molecule.",
+        "image_refs": [
+          "6e7fbe305a23107ea20e27279664caa4b46d59ee69260f72e4f485a5f2442ce2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "EF-fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Fused compound 41 has been synthesized. The next goal is to prepare fragment 42 for convergent coupling.",
+        "gap": "How to achieve diastereoselective methylation, followed by addition of isopropenyllithium to the lactone, opening of the hemiketal, and protecting group installation on the hydroxy group.",
+        "decision": "Methylation of 41 by enolate alkylation was diasteroselective. In the next steps, addition of isopropenyllithium to the lactone moiety led to a hemiketal, which was then opened and a protecting group on the hydroxy group was installed, furnishing fragment 42."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "named_reaction": null,
+        "reagents": [],
+        "solvent": "unspecified",
+        "time": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "Fragment 42 was obtained in 62% yield over three steps. Methylation was diastereoselective."
+      },
+      "evidence": {
+        "text_span": "Methylation of 41 by enolate alkylation was diasteroselective. In the next steps, addition of isopropenyllithium to the lactone moiety led to a hemiketal, which was then opened and a protecting group on the hydroxy group was installed, furnishing fragment 42.",
+        "image_refs": [
+          "6e7fbe305a23107ea20e27279664caa4b46d59ee69260f72e4f485a5f2442ce2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Both ABC-fragment 38 and EF-fragment 42 are ready for coupling.",
+        "gap": "How to achieve the convergent coupling of these two fragments and prepare the advanced intermediate 43 for the key cyclization reactions.",
+        "decision": "Key convergent coupling of this total synthesis was performed by lithium–halogen exchange in the ABC-fragment 38 followed by 1,2-addition to the ketone moiety in the F-ring fragment 42. Protection group manipulations allowed for the union of both fragments to advanced intermediate 43 in three steps in 42%."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21",
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "named_reaction": null,
+        "reagents": [],
+        "solvent": "unspecified",
+        "time": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 42,
+        "observation": "Advanced intermediate 43 was obtained in 42% yield over three steps, uniting the two fragments."
+      },
+      "evidence": {
+        "text_span": "Key convergent coupling of this total synthesis was performed by lithium–halogen exchange in the ABC-fragment 38 followed by 1,2-addition to the ketone moiety in the F-ring fragment 42. Protection group manipulations allowed for the union of both fragments to advanced intermediate 43 in three steps in 42%, setting the stage for the key cyclization reactions in this sequence.",
+        "image_refs": [
+          "6e7fbe305a23107ea20e27279664caa4b46d59ee69260f72e4f485a5f2442ce2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Advanced intermediate 43 is ready for the key cyclization reactions.",
+        "gap": "How to form the spirocyclic E-ring and close the D-ring, followed by global deprotection to furnish cyclopamine (6).",
+        "decision": "First, an alkoxide Tsuji–Trost reaction forged the spirocyclic E-ring, then a ring-closing metathesis closed the D-ring. Finally, global deprotection furnished cyclopamine (6) in 49% over three steps."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C(=O)CCC2C(COC(=O)c3ccccc3)C=CC21"
+        ],
+        "product_smiles": [
+          "C[C@H]1[C@H]2NC[C@H](C)[C@@H]2O[C@H]1C=C[C@]1(C)[C@H](C)CC[C@@H]2[C@@H]1CC[C@]1(C)[C@@H]3C[C@@H](O)CC=C3CC[C@@H]21"
+        ],
+        "named_reaction": "Tsuji-Trost reaction, RCM",
+        "reagents": [],
+        "solvent": "unspecified",
+        "time": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 49,
+        "observation": "Cyclopamine (6) was furnished in 49% yield over three steps."
+      },
+      "evidence": {
+        "text_span": "First, an alkoxide Tsuji–Trost reaction forged the spirocyclic E-ring, then a ring-closing metathesis closed the D-ring. Finally, global deprotection furnished cyclopamine (6) in 49% over three steps.",
+        "image_refs": [
+          "6e7fbe305a23107ea20e27279664caa4b46d59ee69260f72e4f485a5f2442ce2.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [],
+    "metrics": {
+      "Overall Yield": {
+        "value": 1.4,
+        "unit": "%",
+        "interpretation": "Calculated from the product of yields of the longest linear sequence steps."
+      },
+      "Longest Linear Steps": {
+        "value": 16,
+        "unit": "steps",
+        "interpretation": "The number of steps in the longest linear sequence."
+      },
+      "Total Steps": {
+        "value": 22,
+        "unit": "steps",
+        "interpretation": "The total number of synthetic steps, including convergent routes."
+      }
+    },
+    "comparison_to_prior": "The Baran group achieved a convergent synthesis of cyclopamine in 16 steps in the LLS (total steps: 22, overall yield 1.4%) and provided the first total synthesis of this molecule (in comparison to the Giannis group, who achieved the first synthesis of cyclopamine in a semisynthetic fashion).",
+    "significance": "This synthesis represents the first total synthesis of cyclopamine, showcasing a highly convergent and efficient approach using modern synthetic methodologies like Tsuji–Trost reaction and RCM for rapid assembly of the challenging core."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.3762/bjoc.21.206",
+      "pmcid": "PMC12706376",
+      "title": "Recent advancements in the synthesis of &lt;i&gt;Veratrum&lt;/i&gt; alkaloids.",
+      "authors": "Mögel M, Berger D, Heretsch P.",
+      "journal": "Beilstein J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12706376?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/63142458-35b5-4e6f-990d-f408e19ee13c.zip",
+      "parsed_at": "2026-05-07T14:30:19.119383+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 20,
+    "parseable": 19,
+    "canonicalized": 19,
+    "invalid": 1,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C1C=CC(OTBS)O1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

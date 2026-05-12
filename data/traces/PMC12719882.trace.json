@@ -1,0 +1,954 @@
+{
+  "trace_id": "TS-PMC12719882",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "asperdinones B, C, D, E and terezine D",
+    "smiles": "C=C(C)C/C=C/c1cccc2[nH]cc(C[C@H]3NC(=O)[C@@H](C)NC3=O)c12",
+    "natural_product_class": "indole alkaloid",
+    "structural_features": {
+      "key_motifs": [
+        "prenylated indole",
+        "benzodiazepine-2,5-dione",
+        "diketopiperazine"
+      ]
+    },
+    "motivation": "Total synthesis of new members of prenylated indole alkaloids exhibiting α-glucosidase activity. The asperdinones are among the rare tryptophan-derived indole alkaloids which appear to have undergone epimerization due to genetic alteration of specific gene clusters that code for a (3R) configuration. Terezine D exhibited modest in vitro antifungal activity. The isolation of terezine D (6) and more recently, the (3R)-configured asperdinones as new members of this small subfamily of 7-prenyltryptophans with appended benzodiazepine-2,5-dione and diketopiperazine units piqued our interest.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Bock",
+        "year": 1987,
+        "key_strategy": "condensation of isatoic anhydride and L-tryptophan"
+      },
+      {
+        "lead_author": "Caballero",
+        "year": 1998,
+        "key_strategy": "synthesis from tryptophan and L-alanine"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "No epimerization observed during Negishi coupling or subsequent steps."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-3 indole to amino acid unit",
+        "named_strategy": "Negishi cross-coupling",
+        "reasoning": "This strategy allows for the introduction of the (R)- or (S)-2-aminopropionate (alanine) unit at C-3 of a prenylindole. Related Negishi cross-coupling reactions have been reported for bromoindoles and 3-iodo-N-Boc-7-methylindole in excellent yields. This protocol should be applicable to all the C4–C7- substituted indoles as well as to the corresponding allylindoles.",
+        "alternatives_considered": [
+          {
+            "strategy": "Direct prenylation of tryptophan derivatives (Approach A)",
+            "rejected_because": "Methods for chemical synthesis of prenyltryptophans are scarce and often lead to mixtures or low yields. For example, direct prenylation of tryptophan ethyl ester with prenyl alcohol gave only 4% yield of the 7-prenyl isomer. Buchwald's C-6 prenylation conditions for 6-bromoindole failed for 7-iodo-1H-indol-3-yl propanoate, recovering only starting material. C-H activation protocol led to modest yield (37%) and an inseparable mixture of olefin isomers after dehydration."
+          }
+        ]
+      },
+      {
+        "bond_description": "Prenyl group installation on indole",
+        "named_strategy": "Grubbs olefin cross-metathesis",
+        "reasoning": "In the case of allylindoles, a Grubbs olefin cross-metathesis reaction with 2-butene would indirectly introduce the prenyl appendage. This was considered a more reliable route to prenylindoles compared to direct prenylation or Suzuki coupling which yielded inseparable mixtures.",
+        "alternatives_considered": [
+          {
+            "strategy": "Pd-catalyzed Suzuki coupling of 3,3-dimethyl-1-butene-3-pinacol boronate with bromoindoles",
+            "rejected_because": "Consistently obtained inseparable mixtures of the desired prenylindole and reverse indole products."
+          },
+          {
+            "strategy": "Prenylation of bromocarbazole derivatives using Pd2(dba)3",
+            "rejected_because": "Although it avoided isomeric reverse prenylated adducts, the starting material was recovered intact, resulting in modest yields."
+          }
+        ]
+      }
+    ],
+    "rationale": "The synthesis considered two basic approaches: (A) regioselective installation of a prenyl group on tryptophan, mimicking biosynthesis, and (B) starting with a prenylindole and introducing an amino acid unit at C-3 via Negishi cross-coupling. Approach A faced challenges with regioselectivity and functional group compatibility, leading to low yields or inseparable mixtures. Approach B, particularly using allylindoles followed by Grubbs metathesis, proved more effective for preparing prenylindoles. The Negishi cross-coupling was chosen for C-3 functionalization, with careful consideration of protecting groups to avoid issues with prenyl group stability under acidic conditions."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The known methyl (2S)-((tert-butoxycarbonyl)amino)-3-(7-iodo-1H-indol-3-yl)propanoate (7) was available. Buchwald's group had achieved C-6 prenylation of 6-bromoindole in 94% yield using CPhos-Pd-G3.",
+        "gap": "How to achieve C-7 prenylation of the iodoindole derivative 7.",
+        "decision": "To achieve C-7 prenylation, the reported Buchwald conditions (CPhos-Pd-G3 as palladium pre-catalyst) were chosen, expecting a high yield based on the precedent."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C=C(C)CBr"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "CPhos-Pd-G3"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Under the same reported conditions only the unreacted starting material was recovered."
+      },
+      "evidence": {
+        "text_span": "Adopting approach A, we considered prenylation of the known methyl (2S)-((tert-butoxycarbonyl)amino)-3-(7-iodo-1H-indol-3-yl)propanoate (7) [30] with prenylzinc bromide using a catalytic system reported by Buchwald. In that study, Buchwald’s group achieved the C-6 prenylation of 6-bromoindole in 94% yield using CPhos-Pd-G3 as the palladium pre-catalyst (Scheme 1) [31]. However, under the same reported conditions only the unreacted starting material was recovered.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "C-7 allylation of 7 was reported via a Stille coupling protocol.",
+        "gap": "To synthesize the C-7 allylated product 8.",
+        "decision": "To synthesize 8, the reported Stille coupling protocol was used."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C=C[CH2][Sn]([CH2]CCC)([CH2]CCC)[CH2]CCC"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd(PPh3)4"
+        ],
+        "solvent": "PhMe",
+        "temperature": "120 C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "C-7 allylation of 7 was reported via a Stille coupling protocol to give 8."
+      },
+      "evidence": {
+        "text_span": "In an isolated example, C-7 allylation of 7 was reported via a Stille coupling protocol to give 8 (Scheme 1) [32].",
+        "image_refs": [
+          "239695f9cfacbc3c14894957342f996f3ecbec13f0065400884682fdd30e19b9.jpg",
+          "8d27f12b9b01c5d813256becce4e3175b0c5e35d9684b7dd3cc37bf00b0b33e5.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "An alternative approach to C-7 functionalization of Nα-Boc-tryptophan methyl ester was a C-H activation protocol.",
+        "gap": "To synthesize the 7-(3-keto-1-butyl)-alkylated product 11 from N1-Piv-Nα-Boc-tryptophan methyl ester (10).",
+        "decision": "To synthesize 11, a C-H activation protocol using but-3-en-2-one (MVK) in the presence of [RhCp*Cl2]2 catalyst according to Ma et al. was chosen."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C=CC(C)=O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "[RhCp*Cl2]2",
+          "AgSbF6",
+          "Cu(OAc)2"
+        ],
+        "solvent": "tert-AmOH",
+        "temperature": "80 °C",
+        "time": "48 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 37,
+        "observation": "Treatment of N1-Piv-Nα-Boc-tryptophan methyl ester (10) with but-3-en-2-one (MVK) in the presence of [RhCp*Cl2]2 catalyst according to Ma et al. [34] led to the 7-(3-keto-1-butyl)-alkylated product 11 in 37% yield."
+      },
+      "evidence": {
+        "text_span": "As an alternative approach to C-7 functionalization of Nα-Boctryptophan methyl ester, we chose a CH activation protocol [33]. Treatment of N1-Piv-Nα-Boc-tryptophan methyl ester (10) with but-3-en-2-one (MVK) in the presence of [RhCp*Cl2]2 catalyst according to Ma et al. [34] led to the 7-(3-keto-1- butyl)-alkylated product 11 in 37% yield (Scheme 2).",
+        "image_refs": [
+          "47fc3b5425d2503e47b068c73650465afe85bd4d1ff.jpg",
+          "6a686ecc08f52d69408b9719cde31ecef176fe33521992c06be36fd05fe06a41.jpg",
+          "f93280f1019a951e9b7494573484341337cc518615a8e8bb5e74b33244cd22a6.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Product 11 was obtained in modest yield. The next step was to transform it to the corresponding tertiary alcohol 12.",
+        "gap": "To transform 11 to the corresponding tertiary alcohol 12.",
+        "decision": "To transform 11 to 12, MeMgBr was used in THF at -78 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MeMgBr"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "Product 11 was transformed to the corresponding tertiary alcohol 12."
+      },
+      "evidence": {
+        "text_span": "Despite the modest yield, product 11 was transformed to the corresponding tertiary alcohol 12.",
+        "image_refs": [
+          "9a990ce9611e66472e4b5bb2dc48afd7e4df3b239585a7b0da5deed1ad4ed8d2.jpg",
+          "3e156ec68fec6bad37b01939eea38825d778d588e2006f55160b080cd42b8d98.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Tertiary alcohol 12 was obtained. The next step was to remove the N-Piv group and perform dehydration to obtain the prenylated indole.",
+        "gap": "To obtain the prenylated indole from 12 via deprotection and dehydration.",
+        "decision": "To achieve deprotection and dehydration, the N-Piv group was removed with Et3N in MeOH, followed by dehydration with Burgess reagent in THF. This was expected to yield the desired olefin."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Et3N",
+          "Burgess reagent"
+        ],
+        "solvent": "MeOH, THF",
+        "temperature": "65 °C, rt",
+        "time": "40 h, 12 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Removal of the N-Piv group and dehydration with the Burgess reagent led to an inseparable mixture of olefins slightly in favor of the exo-olefin isomer. Dehydration in the presence of the N-pivaloyl group led to the same mixture of isomers. Numerous conditions to change the ratio were not successful."
+      },
+      "evidence": {
+        "text_span": "Removal of the N-Piv group and dehydration with the Burgess reagent [35] led to an inseparable mixture of olefins slightly in favor of the exo-olefin isomer. Dehydration in the presence of the N-pivaloyl group led to the same mixture of isomers. Numerous conditions to change the ratio were not successful [36] (Supporting Information File 1, Table S1).",
+        "image_refs": [
+          "f7c1dd8d9b8d10215923aace549f31810253d826a311e3ec376d31d8199624e8.jpg",
+          "b7037bf4b86da16525bb585c30fde15752d8e00b84b1ef50888d245297bb41da.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempts at direct prenylation and C-H activation of tryptophan derivatives were problematic. An alternative was to use prenylindoles as starting materials and introduce the amino acid unit later.",
+        "gap": "To access 4-prenylindole via Pd-catalyzed Suzuki coupling of 3,3-dimethyl-1-butene-3-pinacol boronate with bromoindoles.",
+        "decision": "To synthesize 4-prenylindole, a Pd-catalyzed Suzuki coupling protocol (Pd(PPh3)4, toluene, NaOH, 90 °C, 12 h) was adopted, based on reported high yields."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Brc1ccc2[nH]cc(Br)c2c1",
+          "C=C(C)B(OC(C)(C)C)OC(C)(C)C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "Pd(PPh3)4",
+          "NaOH"
+        ],
+        "solvent": "toluene",
+        "temperature": "90 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Despite the relatively simple protocol and the reported high yield of 4-prenylindole, we consistently obtained inseparable mixtures of the desired prenylindole and the reverse indole products. Mixtures of prenylated compounds have been observed under the same conditions with 4-tert-butylbromobenzene."
+      },
+      "evidence": {
+        "text_span": "To access 4-prenylindole, we adopted a Pd-catalyzed Suzuki coupling of 3,3-dimethyl-1-butene-3-pinacol boronate with bromoindoles [52]. Unfortunately, despite the relatively simple protocol (Pd(PPh3)4, toluene, NaOH, 90 °C, 12 h) and the reported high yield of 4-prenylindole, we consistently obtained inseparable mixtures of the desired prenylindole and the reverse indole products. Mixtures of prenylated compounds have been observed under the same conditions with 4-tert-butylbromobenzene [53].",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "The Suzuki coupling for prenylindole synthesis resulted in inseparable mixtures.",
+        "gap": "To find a method for prenylindole synthesis that avoids isomeric byproducts and provides reasonable yields.",
+        "decision": "A prenylation method used by Knölker for bromocarbazole derivatives using Pd2(dba)3 was adopted, expecting to avoid isomeric reverse prenylated adducts."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Brc1ccc2[nH]cc(Br)c2c1",
+          "C=C(C)C"
+        ],
+        "product_smiles": [
+          "C=C(C)Cc1ccc2[nH]cc(Br)c2c1",
+          "C=C(C)Cc1ccc2c(Br)c[nH]c2c1",
+          "C=C(C)Cc1ccc2[nH]cc(Br)c2c1",
+          "C=C(C)Cc1ccc2[nH]cc(Br)c2c1"
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "t-Bu3P",
+          "CsF"
+        ],
+        "solvent": "DMF",
+        "temperature": "80 °C",
+        "time": "4 d"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "This led to the corresponding prenylindoles 14–17 without forming the isomeric reverse prenylated adducts, although the starting material was recovered intact resulting in modest yields of the coupling products."
+      },
+      "evidence": {
+        "text_span": "We therefore adopted a prenylation method used by Knölker for bromocarbazole derivatives using Pd2(dba)3 [54]. Pleasingly, this led to the corresponding prenylindoles 14–17 without forming the isomeric reverse prenylated adducts, although the starting material was recovered intact resulting in modest yields of the coupling products (Scheme 3).",
+        "image_refs": [
+          "8fbd424ca6e1aece59467d8a54ac616f699c87bc75e69f2bdf5f1aa45181870d.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Direct prenylation methods had limitations. Allylindoles could be precursors to prenylindoles via Grubbs metathesis.",
+        "gap": "To synthesize allylindoles 18–21 from corresponding bromoindoles.",
+        "decision": "To synthesize allylindoles 18–21, a Stille coupling of the corresponding bromoindoles with allyltributyltin was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Brc1ccc2[nH]cc(Br)c2c1",
+          "C=C[CH2][Sn]([CH2]CCC)([CH2]CCC)[CH2]CCC"
+        ],
+        "product_smiles": [
+          "C=CCc1ccc2[nH]cc(Br)c2c1",
+          "C=CCc1ccc2c(Br)c[nH]c2c1",
+          "C=CCc1ccc2[nH]cc(Br)c2c1",
+          "C=CCc1ccc2[nH]cc(Br)c2c1"
+        ],
+        "reagents": [
+          "[PdCl2]",
+          "PPh3"
+        ],
+        "solvent": "DMF",
+        "temperature": "120 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The synthesis of allylindoles 18–21 was realized in excellent yields via a Stille coupling of the corresponding bromoindoles."
+      },
+      "evidence": {
+        "text_span": "The synthesis of allylindoles 18–21 was realized in excellent yields via a Stille coupling of the corresponding bromoindoles (Scheme 3) [43,55].",
+        "image_refs": [
+          "8fbd424ca6e1aece59467d8a54ac616f699c87bc75e69f2bdf5f1aa45181870d.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Allylindoles 18–21 were synthesized in excellent yields. These could be converted to prenylindoles via Grubbs metathesis.",
+        "gap": "To convert allylindoles 18–21 to the corresponding prenylindoles 14–17.",
+        "decision": "To convert allylindoles to prenylindoles, Grubbs cross-coupling with 2-butene was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc2[nH]cc(Br)c2c1",
+          "C=CCc1ccc2c(Br)c[nH]c2c1",
+          "C=CCc1ccc2[nH]cc(Br)c2c1",
+          "C=CCc1ccc2[nH]cc(Br)c2c1",
+          "C=CC"
+        ],
+        "product_smiles": [
+          "C=C(C)Cc1ccc2[nH]cc(Br)c2c1",
+          "C=C(C)Cc1ccc2c(Br)c[nH]c2c1",
+          "C=C(C)Cc1ccc2[nH]cc(Br)c2c1",
+          "C=C(C)Cc1ccc2[nH]cc(Br)c2c1"
+        ],
+        "named_reaction": "Grubbs II",
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "Grubbs cross-coupling afforded the corresponding prenylindoles 14–17 in excellent yields."
+      },
+      "evidence": {
+        "text_span": "Grubbs cross-coupling [56] afforded the corresponding prenylindoles 14–17 in excellent yields.",
+        "image_refs": [
+          "8fbd424ca6e1aece59467d8a54ac616f699c87bc75e69f2bdf5f1aa45181870d.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The stability of prenylindoles under acidic conditions was a concern for subsequent steps involving amino acid coupling.",
+        "gap": "To test the stability of prenylindoles under acidic conditions.",
+        "decision": "N-acetyl-5-prenyl-1H-indole (22) was treated with HCl in dioxane and TFA in dichloromethane as test substrates."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)CCc1ccc2ccn(C(C)=O)c2c1"
+        ],
+        "product_smiles": [
+          "CC(=O)n1ccc2ccc(CCC(C)Cl)cc21"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "dioxane",
+        "temperature": "0 °C-rt",
+        "time": "ca. 3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "Treatment of N-acetyl-5-prenyl-1H-indole (22) with HCl in dioxane led to Markovnikov hydrochlorination of the prenyl group."
+      },
+      "evidence": {
+        "text_span": "Prior to initiating a synthesis toward our intended target molecules 1–4 (Figure 1), we tested the stability of prenylindoles under acidic conditions. Not surprisingly, treatment of N-acetyl-5-prenyl-1H-indole (22) as a test substrate with HCl in dioxane or TFA in dichloromethane led to Markovnikov hydrochlorination and hydrotrifluoroacetylation of the prenyl group, respectively (Scheme 4) [57,58].",
+        "image_refs": [
+          "2589e25a5b33c4ae42225375e6bd98637608bcc8bcf9ef9310996f0dd2df5684.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The stability of prenylindoles under acidic conditions was a concern for subsequent steps involving amino acid coupling.",
+        "gap": "To test the stability of prenylindoles under acidic conditions.",
+        "decision": "N-acetyl-5-prenyl-1H-indole (22) was treated with TFA in dichloromethane as a test substrate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)CCc1ccc2ccn(C(C)=O)c2c1"
+        ],
+        "product_smiles": [
+          "CC(=O)n1ccc2ccc(CCC(C)OC(=O)C(F)(F)F)cc21"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C-rt",
+        "time": "ca. 5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "Treatment of N-acetyl-5-prenyl-1H-indole (22) with TFA in dichloromethane led to hydrotrifluoroacetylation of the prenyl group."
+      },
+      "evidence": {
+        "text_span": "Prior to initiating a synthesis toward our intended target molecules 1–4 (Figure 1), we tested the stability of prenylindoles under acidic conditions. Not surprisingly, treatment of N-acetyl-5-prenyl-1H-indole (22) as a test substrate with HCl in dioxane or TFA in dichloromethane led to Markovnikov hydrochlorination and hydrotrifluoroacetylation of the prenyl group, respectively (Scheme 4) [57,58].",
+        "image_refs": [
+          "2589e25a5b33c4ae42225375e6bd98637608bcc8bcf9ef9310996f0dd2df5684.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The instability of prenylindoles under acidic conditions necessitated a protecting group strategy for the amino acid reagent that could be removed under non-acidic conditions.",
+        "gap": "To prepare iodo N-Fmoc-D-alanyl anthranilamide methyl ester 29 from D-serine.",
+        "decision": "The paper states that 29 was prepared from D-serine, implying a known or standard synthetic route."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C[C@@H](O)CO"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@H](CI)NC(=O)c1ccccc1NC(=O)OCC1C=Cc2ccccc21"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Iodo N-Fmoc-D-alanyl anthranilamide methyl ester 29 was prepared from D-serine."
+      },
+      "evidence": {
+        "text_span": "This result required the use of an N-protecting group in the iodozinc amino acid reagent that could be removed under nonacidic conditions after the cross-coupling reaction. To this end, we prepared iodo N-Fmoc-D-alanyl anthranilamide methyl ester 29 from D-serine.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Prenylindoles 14–17 were synthesized. For Negishi coupling, these need to be iodinated at C-3 and N-acetylated.",
+        "gap": "To convert prenylindoles 14–17 to the corresponding iodoindoles 25–28.",
+        "decision": "To convert prenylindoles to iodoindoles, treatment with iodine and KOH followed by acetylation was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCc1cccc2cc[nH]c12"
+        ],
+        "product_smiles": [
+          "CC(=O)n1c(I)cc2cccc(CC=C(C)C)c21"
+        ],
+        "reagents": [
+          "I2",
+          "KOH",
+          "AcCl",
+          "NaOH",
+          "TBAHS"
+        ],
+        "solvent": "DMF, CH2Cl2",
+        "temperature": "rt",
+        "time": "90 min, 2-4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73.5,
+        "observation": "Treatment of prenylindoles 14–17 with iodine and KOH followed by acetylation afforded the corresponding iodoindoles 25–28 in 68–79% yields."
+      },
+      "evidence": {
+        "text_span": "Treatment of prenylindoles 14–17 with iodine and KOH followed by acetylation afforded the corresponding iodoindoles 25–28 in 68–79% yields (Scheme 5).",
+        "image_refs": [
+          "a84c5179d8d1d3603e0b587d1a60e44e98059b0203473dee81592c2ca71e6301.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Iodoindoles 25–28 and the organozinc reagent from 29 were prepared. The next step was the key Negishi cross-coupling.",
+        "gap": "To synthesize adducts 30–33 via Negishi cross-coupling of iodoindoles 25–28 with the organozinc reagent prepared from 29.",
+        "decision": "Negishi cross-coupling according to Jackson et al. was performed using the organozinc reagent prepared from 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)n1c(I)cc2cccc(CC=C(C)C)c21",
+          "COC(=O)[C@@H](CI)NC(=O)c1ccccc1NC(=O)OCC1C=Cc2ccccc21"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@H](C[C@@H]1C=CN(C(C)=O)c2c(CCC=C(C)C)cccc21)NC(=O)c1ccccc1NC(=O)OCC1C=Cc2ccccc21"
+        ],
+        "reagents": [
+          "Zn",
+          "1,2-dibromoethane",
+          "TMSCl",
+          "Pd2(dba)3",
+          "SPhos"
+        ],
+        "solvent": "DMF",
+        "temperature": "60 °C-rt, rt",
+        "time": "30 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48.5,
+        "observation": "Negishi cross-coupling according to Jackson et al. [39] with the organozinc reagent prepared from 29 gave the adducts 30–33 in 42–55% yields."
+      },
+      "evidence": {
+        "text_span": "Negishi cross-coupling according to Jackson et al. [39] with the organozinc reagent prepared from 29 gave the adducts 30–33 in 42–55% yields.",
+        "image_refs": [
+          "a84c5179d8d1d3603e0b587d1a60e44e98059b0203473dee81592c2ca71e6301.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Adducts 30–33 were obtained. The final steps involved deprotection and cyclization to form the asperdinones.",
+        "gap": "To convert adducts 30–33 to asperdinones 1–4.",
+        "decision": "Removal of the Fmoc and N-acetyl groups with piperidine was performed, followed by heating with acetic acid for cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@H](C[C@@H]1C=CN(C(C)=O)c2c(CCC=C(C)C)cccc21)NC(=O)c1ccccc1NC(=O)OCC1C=Cc2ccccc21"
+        ],
+        "product_smiles": [
+          "CCC=C(C)c1ccc2[nH]cc(CC(C)NC(=O)c3ccccc3C(N)=O)c2c1"
+        ],
+        "reagents": [
+          "piperidine",
+          "AcOH"
+        ],
+        "solvent": "ACN, DCM",
+        "temperature": "rt, 120 °C",
+        "time": "2-4 h, 6-7 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 14,
+        "observation": "Removal of the Fmoc and N-acetyl groups with piperidine gave the corresponding anthranilamides, which upon heating with acetic acid afforded asperdinones 1–4 in an average overall yield of 14% via the allylation/cross metathesis route and 7% via the direct prenylation route. In all cases, spectroscopic and analytical data were in accordance with the literature."
+      },
+      "evidence": {
+        "text_span": "Removal of the Fmoc and N-acetyl groups with piperidine gave the corresponding anthranilamides, which upon heating with acetic acid [59] afforded asperdinones 1–4 in an average overall yield of 14% via the allylation/cross metathesis route and 7% via the direct prenylation route. In all cases, spectroscopic and analytical data were in accordance with the literature.",
+        "image_refs": [
+          "a84c5179d8d1d3603e0b587d1a60e44e98059b0203473dee81592c2ca71e6301.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The moderate yield in the Negishi cross-coupling reactions with reagent 29 was noted. A similar coupling using the organozinc reagent prepared from iodo N-Boc-D-alanyl methyl ester (S)-35 was to be tested.",
+        "gap": "To synthesize 36 from 34 and (S)-35 via Negishi coupling.",
+        "decision": "A similar coupling using the organozinc reagent prepared from iodo N-Boc-D-alanyl methyl ester (S)-35 with 4-allylindole (34) under the same conditions was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1cccc2c1c(I)cn2C(=O)OC(C)(C)C",
+          "COC(=O)[C@H](CCI)NC(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "C=CCc1cccc2c1c(C[C@H](NC(=O)OC(C)(C)C)C(=O)OC)cn2C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "Zn",
+          "TMSCl",
+          "Br(CH2)2Br",
+          "Pd2(dba)3",
+          "SPhos"
+        ],
+        "solvent": "DMF",
+        "temperature": "60 °C-rt, 35 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "A similar coupling using the organozinc reagent prepared from iodo N-Boc-D-alanyl methyl ester (S)-35 with 4-allylindole under the same conditions afforded a significantly improved yield of 65%."
+      },
+      "evidence": {
+        "text_span": "In contrast, a similar coupling using the organozinc reagent prepared from iodo N-Boc-D-alanyl methyl ester (S)-35 with 4-allylindole under the same conditions afforded a significantly improved yield of 65% .",
+        "image_refs": [
+          "4fb097beefbf029b47f947184cdd052f9113de0eb825a7050032b8e4daf5d6d.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The moderate yield in the Negishi cross-coupling reactions with reagent 29 was attributed to side reactions.",
+        "gap": "To understand the nature of the side reactions occurring during the Negishi cross-coupling with reagent 29.",
+        "decision": "The cross-coupling of 3-iodo-6-prenyl-N-acetylindole (27) with 1 equivalent of reagent 29 was performed to analyze byproducts."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)CCc1ccc2c(c1)cc(I)n2C(C)=O",
+          "COC(=O)[C@@H](CI)NC(=O)c1ccccc1NC(=O)OCC1C=Cc2ccccc21"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@H](Cc1cn(C(C)=O)c2cc(CCC=C(C)C)ccc12)NC(=O)c1ccccc1NC(=O)OCC1C=Cc2ccccc21",
+          "COC(=O)[C@H](C)NC(=O)c1ccccc1NC(=O)OCC1C=Cc2ccccc21",
+          "C=C(NC(=O)c1ccccc1NC(=O)OCC1C=Cc2ccccc21)C(=O)OC"
+        ],
+        "named_reaction": "Negishi cross-coupling",
+        "reagents": [
+          "Zn",
+          "TMSCl",
+          "Br(CH2)2Br",
+          "Pd2(dba)3",
+          "SPhos"
+        ],
+        "solvent": "DMF",
+        "temperature": "60 °C-rt, rt",
+        "time": "30 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Using 1 equivalent of reagent 29, the cross-coupling of 3-iodo-6-prenyl-N-acetylindole (27) led to the adduct 32 in 52% yield accompanied by the reduced product 37 in 30% and the dehydro product 38 in 10% yield. Control experiments revealed that the iodozinc reagent from 29 was unaffected in the presence of the Pd catalyst. It follows that elimination and reduction must occur after Pd insertion and formation of a pallado–zinc intermediate which undergoes β-elimination and proton transfer."
+      },
+      "evidence": {
+        "text_span": "Importantly, it was observed that reduction and β-elimination of the organozinc reagent prepared from 29 took place during the cross-coupling reaction, thereby affecting the yield (Scheme 7) [60]. For example, using 1 equivalent of reagent 29, the crosscoupling of 3-iodo-6-prenyl-N-acetylindole (27) led to the adduct 32 in 52% yield accompanied by the reduced product 37 in 30% and the dehydro product 38 in 10% yield. Control experiments revealed that the iodozinc reagent from 29 was unaffected in the presence of the Pd catalyst. It follows that elimination and reduction must occur after Pd insertion and formation of a pallado–zinc intermediate which undergoes β-elimination and proton transfer.",
+        "image_refs": [
+          "6b81f51863f81921dc174204618e74145dc955080ab71286031f9890a1600983.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Negishi cross-coupling with N-Boc reagent 35 showed improved yields. This approach was applied to the synthesis of terezine D (6) and ent-asperdinone E (43).",
+        "gap": "To synthesize 40 from 3-iodoindole 39 and the iodozinc reagent prepared from N-Boc-L-alanine methyl ester ((R)-35).",
+        "decision": "Treatment of 3-iodoindole 39 with the iodozinc reagent prepared from N-Boc-L-alanine methyl ester ((R)-35) under Negishi coupling conditions was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1cccc2c(I)cn(C(=O)OC(C)(C)C)c12",
+          "COC(=O)[C@@H](CCI)NC(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "C=CCc1ccc2c([C@H](CC(=O)OC)NC(=O)OC(C)(C)C)c[nH]c2c1"
+        ],
+        "reagents": [
+          "Zn",
+          "TMSCl",
+          "Br(CH2)2Br",
+          "Pd2(dba)3",
+          "SPhos"
+        ],
+        "solvent": "DMF",
+        "temperature": "60 °C-rt, 40 °C",
+        "time": "30 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Treatment of 3-iodoindole 39 with the iodozinc reagent prepared from N-Boc-L-alanine methyl ester ((R)-35) under Negishi coupling conditions afforded 40 in excellent yield."
+      },
+      "evidence": {
+        "text_span": "Treatment of 3-iodoindole 39 with the iodozinc reagent prepared from N-Boc-L-alanine methyl ester ((R)-35) under Negishi coupling conditions afforded 40 in excellent yield.",
+        "image_refs": [
+          "fe2e0c49ddffeba68e542e56df473b93c645ad6e3990590c2d0caaaed4266460.jpg",
+          "1bf40746c20a13a61ae5856fad0e262fec81cc2a8f87c86a23549b175c4714b5.jpg",
+          "c3eac9a29bccabd47a25844c41e773138a61127a23ca7a33e129a341989e261b.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 40 was obtained in excellent yield. The next steps were deprotection and amide formation.",
+        "gap": "To convert 40 to 41 via cleavage of the N-Boc group and amide formation with Fmoc-L-alanine.",
+        "decision": "Cleavage of the N-Boc group with TFA in DCM was performed, followed by amide formation with Fmoc-L-alanine, Et3N, HOBt, and EDC·HCl in DCM."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc2c([C@H](CC(=O)OC)NC(=O)OC(C)(C)C)c[nH]c2c1",
+          "C[C@H](NC(=O)OCC1c2ccccc2-c2ccccc21)C(=O)O"
+        ],
+        "product_smiles": [
+          "C=CCc1cccc2c(C[C@H](NC(=O)[C@H](C)NC(=O)OCC3c4ccccc4-c4ccccc43)C(=O)OC)c[nH]c12"
+        ],
+        "reagents": [
+          "TFA",
+          "Fmoc-Ala-OH",
+          "Et3N",
+          "HOBt",
+          "EDC·HCl"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "1.5 h, 12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Cleavage of the N-Boc group and amide formation with Fmoc-L-alanine gave 41."
+      },
+      "evidence": {
+        "text_span": "Cleavage of the N-Boc group and amide formation with FmocL-alanine gave 41.",
+        "image_refs": [
+          "7a0c2893d76d31d8199624e8.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 41 was obtained. The next steps were cross-metathesis and deprotection to yield terezine D (6).",
+        "gap": "To convert 41 to terezine D (6).",
+        "decision": "Compound 41 was subjected to a cross-metathesis reaction with Grubbs II catalyst, followed by deprotection with piperidine."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1cccc2c(C[C@H](NC(=O)[C@H](C)NC(=O)OCC3c4ccccc4-c4ccccc43)C(=O)OC)c[nH]c12",
+          "CC=C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Grubbs II",
+        "reagents": [
+          "Grubbs II",
+          "piperidine"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "12 h, 12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Compound 41 was subjected to a cross-metathesis reaction with the Grubbs II catalyst, then deprotection to give terezine D (6) in 44% overall yield."
+      },
+      "evidence": {
+        "text_span": "Cleavage of the N-Boc group and amide formation with FmocL-alanine gave 41 which was subjected to a cross-metathesis reaction with the Grubbs II catalyst, then deprotection to give terezine D (6) in 44% overall yield.",
+        "image_refs": [
+          "3085a75948953d9e57a7432f9bf8f362baf3a8a12f2a996377a838d96a8ff95a.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Negishi cross-coupling with N-Boc reagent 35 was successful for terezine D. This protocol could be applied to ent-asperdinone E.",
+        "gap": "To synthesize ent-asperdinone E (43) using the same protocol.",
+        "decision": "The same protocol was applied, starting from 40, involving KOH deprotection, TFA deprotection, reaction with isatoic anhydride, and cyclization with AcOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc2c([C@H](CC(=O)OC)NC(=O)OC(C)(C)C)c[nH]c2c1",
+          "O=c1[nH]c(=O)c2ccccc2[nH]1"
+        ],
+        "product_smiles": [
+          "CC(C)=CCc1ccc2c(C[C@H]3NC(c4ccccc4)C(=O)NC3=O)c[nH]c2c1"
+        ],
+        "reagents": [
+          "KOH",
+          "TFA",
+          "isatoic anhydride",
+          "EtN",
+          "AcOH"
+        ],
+        "solvent": "MeOH, DCM, H2O",
+        "temperature": "rt, rt, 120 °C",
+        "time": "2 h, 1.5 h, 12 h, 8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 13,
+        "observation": "Application of the same protocol using isatoic anhydride led to ent-asperdinone E (43) in 13% overall yield."
+      },
+      "evidence": {
+        "text_span": "Application of the same protocol using isatoic anhydride led to ent-asperdinone E (43) in 13% overall yield.",
+        "image_refs": [
+          "adec3d32d2783e1f66bfe1e589cdb9e515ebe1f10695ceb340dc501b9fafe4e4.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "spectroscopic",
+      "analytical"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 14,
+        "unit": "%",
+        "interpretation": "Average yield for asperdinones 1-4 via allylation/cross metathesis route"
+      },
+      "Overall Yield (direct prenylation)": {
+        "value": 7,
+        "unit": "%",
+        "interpretation": "Average yield for asperdinones 1-4 via direct prenylation route"
+      },
+      "Overall Yield (terezine D)": {
+        "value": 44,
+        "unit": "%",
+        "interpretation": "Overall yield for terezine D (6)"
+      },
+      "Overall Yield (ent-asperdinone E)": {
+        "value": 13,
+        "unit": "%",
+        "interpretation": "Overall yield for ent-asperdinone E (43)"
+      }
+    },
+    "significance": "The total synthesis of asperdinones 1–4 and terezine D (6) was accomplished, members of a new class of prenylated 3-indolyl-2,5-benzodiazepine-1,4-diones and diketopiperazine alkaloids, respectively, through Negishi cross-coupling and related C–H functionalization strategies. Importantly, no epimerization was observed during the Negishi coupling or throughout the subsequent steps. Insights into the reactivity and stability of the iodozinc N-Fmoc-D-alanyl anthranilamide reagent derived from 29 were explored and validated. The work raises questions about alternative biochemical pathways for prenylated tryptophans."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.3762/bjoc.21.210",
+      "pmcid": "PMC12719882",
+      "title": "Total synthesis of asperdinones B, C, D, E and terezine D.",
+      "authors": "Devarajappa R, Hanessian S.",
+      "journal": "Beilstein J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12719882?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/7dd1f7b0-e473-47ff-ad1a-a668ccf091c3.zip",
+      "parsed_at": "2026-05-11T06:39:05.724493+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 69,
+    "parseable": 59,
+    "canonicalized": 57,
+    "invalid": 10,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC(=O)[C@H](Cc1c[nH]c2c1cc(I)cc2)NHC(=O)OC(C)(C)C",
+      "COC(=O)[C@H](Cc1c[nH]c2c1cc(I)cc2)NHC(=O)OC(C)(C)C",
+      "COC(=O)[C@H](Cc1c[nH]c2c1cccc2CC=C)NHBoc",
+      "COC(=O)[C@H](Cc1cn(C(=O)C(C)(C)C)c2ccccc12)NHBoc",
+      "COC(=O)[C@H](Cc1cn(C(=O)C(C)(C)C)c2ccccc12CC(=O)C)NHC(=O)OC(C)(C)C",
+      "COC(=O)[C@H](Cc1cn(C(=O)C(C)(C)C)c2ccccc12CC(=O)C)NHC(=O)OC(C)(C)C",
+      "CC(C)(O)CCc1cccc2c1nc(C[C@H](NC(=O)OC(C)(C)C)C(=O)OC)c2N(C(=O)C(C)(C)C)C",
+      "CC(C)(O)CCc1cccc2c1nc(C[C@H](NC(=O)OC(C)(C)C)C(=O)OC)c2N(C(=O)C(C)(C)C)C",
+      "COC(=O)[C@H](Cc1c[nH]c2c1cccc2CCC=C(C)C",
+      "CC(=C/C)c1cccc2c1[nH]c2C[C@H]1NC(=O)[C@@H](C)NC1=O"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

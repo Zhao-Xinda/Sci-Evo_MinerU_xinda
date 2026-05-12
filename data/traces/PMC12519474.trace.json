@@ -1,0 +1,841 @@
+{
+  "trace_id": "TS-PMC12519474",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Jaspine B",
+    "smiles": "CCCCCCCCCCCCCC[C@@H]1OC[C@@H](N)[C@H]1O",
+    "natural_product_class": "sphingolipid",
+    "structural_features": {
+      "key_motifs": [
+        "tetrahydrofuran",
+        "amino alcohol"
+      ]
+    },
+    "motivation": "Natural products are invaluable sources of structurally diverse and biologically active compounds. Jaspine B is a natural sphingolipid of significant biological interest. Chemical synthesis is crucial to access these compounds in sufficient amounts for research and development, especially given their limited natural availability. This work aims to develop a fully integrated continuous flow system for its synthesis, leveraging the advantages of flow chemistry for efficiency, selectivity, and scalability.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Lopatka",
+        "year": 2021,
+        "doi": "10.3390/catal11121513",
+        "key_strategy": "Pd-catalyzed carbonylative cyclization of N-Cbz-protected aminodiol 4 to bicyclic lactone 5 under continuous flow conditions."
+      },
+      {
+        "lead_author": "Datta",
+        "year": 2017,
+        "doi": "10.1055/s-0036-1588600",
+        "key_strategy": "Total synthesis and structure-activity relationship studies of Jaspine B."
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Achieve a fully integrated continuous flow system for the synthesis of jaspine B with comparable or improved yields relative to batch processes, demonstrating scalability and efficiency."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [],
+    "fragments": [
+      {
+        "fragment_id": "N-Cbz-5",
+        "smiles": "CN(C(=O)OCc1ccccc1)[C@@H]1COC(=O)[C@H]2CO[C@@H]21",
+        "role": "key intermediate",
+        "comes_from": "Pd-catalyzed carbonylative cyclization of N-Cbz-protected aminodiol 4"
+      }
+    ],
+    "rationale": "The synthesis of Jaspine B proceeds from the key intermediate N-Cbz-protected bicyclic aminolactone 5, which was previously prepared under continuous flow conditions. The strategy involves a sequence of transformations: DiBAl-H reduction of the lactone to a lactol, Wittig olefination to introduce the long alkyl chain, transfer hydrogenation of the newly formed C=C double bond, and finally, carbamate deprotection to reveal the amine. The overarching goal is to adapt all these steps to a continuous flow system for improved efficiency and scalability."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "N-Cbz-5",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The key intermediate N-Cbz-5 was successfully prepared on a large scale via Pd-catalyzed carbonylative cyclization in continuous flow. Batch studies for the DiBAl-H reduction of N-Cbz-5 showed that 1.7 equiv of DiBAl-H and a low temperature of -78 °C were essential to achieve complete conversion and suppress over-reduction to alcohol N-Cbz-7.",
+        "gap": "Translating the batch DiBAl-H reduction conditions to a continuous flow system, especially maintaining low temperatures and preventing heterogeneity, while optimizing for yield and selectivity.",
+        "decision": "To optimize the flow reduction, a setup was designed where solutions of N-Cbz-5 and DiBAl-H in CH2Cl2 are precooled and combined in a T-mixer, then passed through a coil reactor. Methanol is introduced to quench excess DiBAl-H, and the mixture is collected into a tartrate solution for workup. Initial experiments will be conducted at -30 °C, as published studies suggest flow reductions may not require temperatures as low as batch processes and to avoid heterogeneity issues at -78 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CN(C(=O)OCc1ccccc1)[C@@H]1COC(=O)[C@H]2CO[C@@H]21"
+        ],
+        "product_smiles": [
+          "O=C(N[C@@H]1COC[C@H]2OC(O)C12)OCc1ccccc1",
+          "O=C(N[C@@H]1COC[C@H]2OC(CCO)[C@H](O)C12)OCc1ccccc1"
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "-30 °C",
+        "time": "5 min",
+        "stoichiometry": {
+          "DIBAL-H": "2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 61,
+        "failure_mode": "side_product_dominant",
+        "observation": "Full conversion of N-Cbz-5 was observed, but only 61% yield of the desired lactol N-Cbz-6 was obtained due to the formation of over-reduced alcohol N-Cbz-7. The formation of alcohol N-Cbz-7 was confirmed by 1H NMR."
+      },
+      "evidence": {
+        "text_span": "The initial flow reduction experiment at −30 °C with a 5 min residence time resulted in full conversion of N-Cbz-5 but afforded only 61% yield of product due to the formation of over-reduced alcohol N-Cbz-7 (Table 1, Entry 1). The formation of alcohol N-Cbz-7 was confirmed by 1H NMR of the crude reaction mixture by comparison to known spectral data.25",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "N-Cbz-5",
+      "action": "revision",
+      "revises_step_id": 1,
+      "thought": {
+        "background": "The previous attempt at -30 °C resulted in over-reduction. Lowering the temperature and extending residence time might suppress byproduct formation.",
+        "gap": "Determine if lower temperature and longer residence time can improve selectivity and conversion.",
+        "decision": "To reduce over-reduction, the reaction temperature was lowered to -40 °C and residence time extended to 13.3 min."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CN(C(=O)OCc1ccccc1)[C@@H]1COC(=O)[C@H]2CO[C@@H]21"
+        ],
+        "product_smiles": [
+          "O=C(N[C@@H]1COC[C@H]2OC(O)C12)OCc1ccccc1"
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "-40 °C",
+        "time": "13.3 min",
+        "stoichiometry": {
+          "DIBAL-H": "2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Lowering the reaction temperature to -40 °C and extending the residence time to 13.3 min did not suppress byproduct formation or improve conversion. The conversion was incomplete."
+      },
+      "evidence": {
+        "text_span": "Lowering the reaction temperature to −40 °C and extending the residence time to 13.3 min did not suppress byproduct formation or improve conversion (Entry 2).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "N-Cbz-5",
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Previous attempts at -30 °C and -40 °C resulted in over-reduction or incomplete conversion. Further lowering the temperature and extending residence time might be beneficial.",
+        "gap": "Find conditions that minimize over-reduction while achieving complete conversion.",
+        "decision": "To further minimize over-reduction, the temperature was lowered to -45 °C and residence time extended to 20 min."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CN(C(=O)OCc1ccccc1)[C@@H]1COC(=O)[C@H]2CO[C@@H]21"
+        ],
+        "product_smiles": [
+          "O=C(N[C@@H]1COC[C@H]2OC(O)C12)OCc1ccccc1"
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "-45 °C",
+        "time": "20 min",
+        "stoichiometry": {
+          "DIBAL-H": "2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 58,
+        "failure_mode": "no_reaction",
+        "observation": "At -45 °C and 20 min, over-reduction was minimized, but complete conversion was still not achieved, resulting in a 58% yield."
+      },
+      "evidence": {
+        "text_span": "At −45 °C and 20 min, over-reduction was minimized, though complete conversion was still not achieved (Entry 3).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "N-Cbz-5",
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "Previous attempts showed that lower temperatures help minimize over-reduction, but complete conversion was still an issue. Increasing the amount of DiBAl-H might achieve full conversion.",
+        "gap": "Determine the optimal stoichiometry of DiBAl-H to achieve full conversion without significant over-reduction at -45 °C.",
+        "decision": "To achieve full conversion, the flow rate was increased to 5 mL/min, residence time reduced to 1 min, and the amount of DiBAl-H was varied (4, 3, and 2 equiv) at -45 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CN(C(=O)OCc1ccccc1)[C@@H]1COC(=O)[C@H]2CO[C@@H]21"
+        ],
+        "product_smiles": [
+          "O=C(N[C@@H]1COC[C@H]2OC(O)C12)OCc1ccccc1"
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "-45 °C",
+        "time": "1 min",
+        "stoichiometry": {
+          "DIBAL-H": "4 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Full conversion was achieved with 4 equiv of DiBAl-H, but the yield was not reported, implying over-reduction was still an issue."
+      },
+      "evidence": {
+        "text_span": "Subsequent experiments at −45 °C with a flow rate of 5 mL/min using 2, 3, or 4 equiv of DiBAl-H resulted in full conversion of the substrate (Entries 4−6).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "N-Cbz-5",
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "Full conversion was achieved with 4 equiv of DiBAl-H, but over-reduction was likely still present. Reducing the stoichiometry might improve selectivity.",
+        "gap": "Determine if 3 equiv of DiBAl-H can achieve full conversion with better selectivity.",
+        "decision": "The amount of DiBAl-H was reduced to 3 equiv while maintaining the high flow rate and low temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CN(C(=O)OCc1ccccc1)[C@@H]1COC(=O)[C@H]2CO[C@@H]21"
+        ],
+        "product_smiles": [
+          "O=C(N[C@@H]1COC[C@H]2OC(O)C12)OCc1ccccc1"
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "-45 °C",
+        "time": "1 min",
+        "stoichiometry": {
+          "DIBAL-H": "3 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 50,
+        "failure_mode": "side_product_dominant",
+        "observation": "Full conversion was achieved, but the yield was only 50%, indicating significant over-reduction or other side reactions."
+      },
+      "evidence": {
+        "text_span": "Subsequent experiments at −45 °C with a flow rate of 5 mL/min using 2, 3, or 4 equiv of DiBAl-H resulted in full conversion of the substrate (Entries 4−6). Notably, only the experiment with 2 equiv of DiBAl-H completely suppressed the formation of the over-reduced alcohol 7 (Entry 6).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "N-Cbz-5",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous attempts with 4 and 3 equiv of DiBAl-H resulted in full conversion but likely suffered from over-reduction. The goal is to achieve full conversion while completely suppressing over-reduction.",
+        "gap": "Identify the minimal amount of DiBAl-H that provides full conversion without over-reduction.",
+        "decision": "The amount of DiBAl-H was further reduced to 2 equiv, maintaining the high flow rate and low temperature, to achieve selective reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CN(C(=O)OCc1ccccc1)[C@@H]1COC(=O)[C@H]2CO[C@@H]21"
+        ],
+        "product_smiles": [
+          "O=C(N[C@@H]1COC[C@H]2OC(O)C12)OCc1ccccc1"
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "-45 °C",
+        "time": "1 min",
+        "stoichiometry": {
+          "DIBAL-H": "2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Full conversion was achieved, and importantly, the formation of the over-reduced alcohol N-Cbz-7 was completely suppressed. The isolated yield was 65%."
+      },
+      "evidence": {
+        "text_span": "Subsequent experiments at −45 °C with a flow rate of 5 mL/min using 2, 3, or 4 equiv of DiBAl-H resulted in full conversion of the substrate (Entries 4−6). Notably, only the experiment with 2 equiv of DiBAl-H completely suppressed the formation of the over-reduced alcohol 7 (Entry 6).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "N-Cbz-5",
+      "action": "scale_up",
+      "thought": {
+        "background": "The optimized conditions (2 equiv DiBAl-H, -45 °C, high flow rate, 1 min residence time) successfully achieved full conversion and suppressed over-reduction in small-scale flow experiments.",
+        "gap": "Verify the reproducibility and efficiency of the optimized conditions on a larger scale.",
+        "decision": "The optimized conditions were applied in a larger-scale experiment using enlarged injection coils (4.6 mL for N-Cbz-5 and 5.0 mL for DiBAl-H) to produce more of the lactol N-Cbz-6."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CN(C(=O)OCc1ccccc1)[C@@H]1COC(=O)[C@H]2CO[C@@H]21"
+        ],
+        "product_smiles": [
+          "O=C(N[C@@H]1COC[C@H]2OC(O)C12)OCc1ccccc1"
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "-45 °C",
+        "time": "1 min",
+        "scale": "0.64 g (2.3 mmol) of N-Cbz-5",
+        "stoichiometry": {
+          "DIBAL-H": "2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "Full conversion was achieved within 1 min residence time. The isolated yield was 67%, which was slightly lower than the corresponding batch reaction but comparable to the previous small-scale flow experiment (65%). The product N-Cbz-6 was obtained as a white solid.",
+        "regio_selectivity": "complete suppression of over-reduced alcohol"
+      },
+      "evidence": {
+        "text_span": "Finally, the optimized conditions (2 equiv of DiBAl-H at −45 °C, high flow rate) were applied in a larger-scale experiment (Table 1, Entry 7), using injection coils of 4.6 mL for N-Cbz-5 and 5.0 mL for DiBAl-H. Full conversion was achieved within 1 min of the residence time. The crude reaction mixture was collected into a saturated aqueous solution of potassium−sodium tartrate to facilitate workup. However, the isolated yield (67%) was slightly lower than that obtained in the corresponding batch reaction.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The lactol N-Cbz-6 was successfully synthesized. The next step is Wittig olefination to introduce the long alkyl chain. Batch conditions for Wittig olefination of N-Cbz-6 used 4 equiv of ylide and a prolonged reaction time, yielding 81% of carbamate 8.",
+        "gap": "Adapt the Wittig olefination to a continuous flow system, considering the challenges of ylide generation and solubility, and optimize for full conversion and yield.",
+        "decision": "A basic flow setup was employed. The ylide was generated ex situ at -78 °C using n-BuLi and used as a solution. Solutions of lactol N-Cbz-6 (0.085 M) and ylide (0.34 M) in THF were introduced at equal flow rates (0.3 mL/min), combined, and passed through a reactor coil. Initial flow experiments were conducted at 70 °C with a 28.3 min residence time."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(N[C@@H]1COC[C@H]2OC(O)C12)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCC=CC1O[C@H]2O[C@@H]3CCO[C@@H]3[C@@H]2NC1=O"
+        ],
+        "reagents": [
+          "CCCCCCCCCCCC=P(c1ccccc1)(c1ccccc1)c1ccccc1"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "70 °C",
+        "time": "28.3 min",
+        "stoichiometry": {
+          "ylide": "4 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The initial flow experiment at 70 °C with a 28.3 min residence time did not result in full conversion of lactol N-Cbz-6."
+      },
+      "evidence": {
+        "text_span": "Initial flow experiment at 70 °C employing a reaction time of 28.3 min did not result in full conversion of lactol N-Cbz-6 (Table 2, Entry 1).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "The previous Wittig olefination attempt at 70 °C did not achieve full conversion.",
+        "gap": "Determine if a higher reaction temperature can improve conversion.",
+        "decision": "The reaction temperature was increased to 90 °C while maintaining the same residence time."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(N[C@@H]1COC[C@H]2OC(O)C12)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCC=CC1O[C@H]2O[C@@H]3CCO[C@@H]3[C@@H]2NC1=O"
+        ],
+        "reagents": [
+          "CCCCCCCCCCCC=P(c1ccccc1)(c1ccccc1)c1ccccc1"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "90 °C",
+        "time": "28.3 min",
+        "stoichiometry": {
+          "ylide": "4 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Increasing the reaction temperature to 90 °C did not provide full conversion of the substrate."
+      },
+      "evidence": {
+        "text_span": "Similarly, the reaction at a higher temperature (90 °C) did not provide full conversion of the substrate (Table 2, Entry 2).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous Wittig olefination attempts at 70 °C and 90 °C with 28.3 min residence time did not achieve full conversion. Extending the reaction time might be necessary.",
+        "gap": "Determine if a longer residence time can achieve full conversion at 90 °C.",
+        "decision": "The reaction time was extended to 50 min by increasing the reactor volume to 30 mL, while maintaining the temperature at 90 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(N[C@@H]1COC[C@H]2OC(O)C12)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCC=CC1O[C@H]2O[C@@H]3CCO[C@@H]3[C@@H]2NC1=O"
+        ],
+        "reagents": [
+          "CCCCCCCCCCCC=P(c1ccccc1)(c1ccccc1)c1ccccc1"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "90 °C",
+        "time": "50 min",
+        "stoichiometry": {
+          "ylide": "4 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Full conversion was achieved, and the product 8 was isolated in an 87% yield."
+      },
+      "evidence": {
+        "text_span": "Extending the reaction time to 50 min by increasing the reactor volume to 30 mL resulted in full conversion, with the product isolated in an 87% yield (Table 2, Entry 3).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Full conversion and good yield (87%) were achieved for Wittig olefination at 90 °C with 50 min residence time. Exploring lower temperatures might be beneficial for process stability.",
+        "gap": "Determine if full conversion can be maintained at a lower temperature (70 °C) with the optimized residence time.",
+        "decision": "The reaction was repeated at 70 °C with a 50 min residence time."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(N[C@@H]1COC[C@H]2OC(O)C12)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCC=CC1O[C@H]2O[C@@H]3CCO[C@@H]3[C@@H]2NC1=O"
+        ],
+        "reagents": [
+          "CCCCCCCCCCCC=P(c1ccccc1)(c1ccccc1)c1ccccc1"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "70 °C",
+        "time": "50 min",
+        "stoichiometry": {
+          "ylide": "4 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 87,
+        "failure_mode": "other",
+        "observation": "Same results (87% yield) were obtained at a lower reaction temperature, but this experiment was accompanied by pressure buildup in the flow system due to precipitate formation within the reaction coil, making it unsuitable for continuous flow."
+      },
+      "evidence": {
+        "text_span": "Same results were also obtained at a lower reaction temperature (Table 2, Entry 4); however, this experiment was accompanied by pressure buildup in the flow system due to precipitate formation within the reaction coil.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Wittig olefination successfully produced alkene 8. The next step is hydrogenation of the C=C double bond. Batch hydrogenation using H2 gas and Pd/C gave quantitative yield, but H2 gas is difficult to handle in flow. Transfer hydrogenation is a suitable alternative.",
+        "gap": "Identify an effective transfer hydrogenation catalyst and conditions compatible with flow systems, avoiding issues like backpressure.",
+        "decision": "Preliminary batch experiments were conducted using formic acid/triethylamine as the hydrogen donor. Pd/C was initially tested as a catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCC/C=C/C1C(=O)C2NC(CO2)OC1N"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCC1C(=O)C2NC(CO2)OC1N"
+        ],
+        "reagents": [
+          "HCOOH",
+          "Et3N",
+          "Pd/C"
+        ],
+        "solvent": "CO",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "scope_limited",
+        "observation": "Complete conversion was achieved within 1 h. However, Pd/C proved unsuitable for flow application due to excessive backpressure observed across the catalyst-packed column."
+      },
+      "evidence": {
+        "text_span": "Palladium immobilized on carbon (Pd/C) achieved complete conversion within 1 h (Table 3, Entry 1); however, it proved unsuitable for our flow application due to excessive backpressure observed across the catalyst-packed column.32",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "Pd/C was effective for transfer hydrogenation in batch but caused backpressure in flow. Alternative heterogeneous catalysts are needed.",
+        "gap": "Find a heterogeneous palladium catalyst suitable for flow conditions that provides full conversion.",
+        "decision": "Alternative heterogeneous catalysts, including palladium encapsulated in a polyurea matrix (Pd EnCat 30NP) and palladium immobilized on a polymer support (Pd(0)2@UBPS), were evaluated in batch experiments."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCC/C=C/C1C(=O)C2NC(CO2)OC1N"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCC1C(=O)C2NC(CO2)OC1N"
+        ],
+        "reagents": [
+          "HCOOH",
+          "Et3N",
+          "Pd EnCat 30NP"
+        ],
+        "solvent": "CO",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "scope_limited",
+        "observation": "Pd EnCat 30NP facilitated full conversion but required an extended reaction time (16 h), which is not ideal for flow efficiency."
+      },
+      "evidence": {
+        "text_span": "Consequently, alternative heterogeneous catalysts were evaluated,33 including palladium encapsulated in a polyurea matrix (Pd EnCat 30NP)34 and palladium immobilized on a polymer support (Pd(0)2@UBPS)35,36 (Table 3, Entries 2 and 3). Both systems facilitated full conversion but required extended reaction times.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "Both Pd EnCat 30NP and Pd(0)2@UBPS achieved full conversion but required long reaction times in methanol. Increasing the reaction temperature might improve efficiency.",
+        "gap": "Optimize the reaction time for Pd(0)2@UBPS by using a solvent that allows higher temperatures.",
+        "decision": "The polymer-supported Pd catalyst (Pd(0)2@UBPS) was tested in ethanol, which allows operation at a higher reflux temperature, to reduce the batch reaction time."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCC/C=C/C1C(=O)C2NC(CO2)OC1N"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCC1C(=O)C2NC(CO2)OC1N"
+        ],
+        "reagents": [
+          "HCOOH",
+          "Et3N",
+          "Pd(0)2@UBPS"
+        ],
+        "solvent": "CCO",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Full conversion was achieved, and the batch reaction time was reduced to 2 h. Ethanol was also advantageous for downstream compatibility with the subsequent hydrolysis step."
+      },
+      "evidence": {
+        "text_span": "To improve efficiency, the polymer-supported Pd catalyst (Pd(0)2@UBPS) was tested in a reaction using ethanol, allowing operation at a higher reflux temperature and reducing the batch reaction time to 2 h (Entry 4). Ethanol was also advantageous for downstream compatibility as it is the solvent employed in the subsequent hydrolysis step.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimized transfer hydrogenation conditions using Pd(0)2@UBPS in ethanol achieved full conversion in batch. These conditions are now ready for implementation in a continuous flow setup.",
+        "gap": "Translate the optimized transfer hydrogenation to a continuous flow system and confirm its efficiency.",
+        "decision": "A solution of alkene 8, formic acid, and triethylamine in ethanol was pumped at 0.4 mL/min through a stainless-steel column packed with Pd(0)2@UBPS catalyst. The output stream was collected over 30 min."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCC/C=C/C1C(=O)C2NC(CO2)OC1N"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "HCOOH",
+          "Et3N",
+          "Pd(0)2@UBPS"
+        ],
+        "solvent": "CCO",
+        "temperature": "85 °C",
+        "time": "30 min collection",
+        "atmosphere": "unspecified",
+        "stoichiometry": {
+          "HCOOH": "10 equiv",
+          "Et3N": "10 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Carbamate 9 was isolated by extraction in quantitative yield, as confirmed by NMR analysis. The flow system successfully performed the transfer hydrogenation."
+      },
+      "evidence": {
+        "text_span": "A solution of alkene 8, formic acid, and triethylamine in ethanol was introduced into the system via an injection coil and pumped at a flow rate of 0.4 mL/min. The reaction mixture was passed through a stainless-steel column 10 cm length, 4.5 mm internal diameter) packed with Pd(0)2UBPS catalyst (305 mg, 2.085 wt %). The output stream was collected over 30 min, and carbamate 7 was isolated by extraction in quantitative yield, as confirmed by NMR analysis.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The transfer hydrogenation to produce carbamate 9 was successful in flow. The final step is carbamate hydrolysis to yield Jaspine B. The goal is to integrate this step into a continuous, telescoped flow sequence.",
+        "gap": "Optimize the hydrolysis conditions for continuous flow and integrate it with the preceding hydrogenation step.",
+        "decision": "A control batch experiment was performed to confirm the compatibility of optimized carbamate hydrolysis conditions with the preceding transfer hydrogenation step. A 1 M aqueous KOH solution was used to reflux the filtered hydrogenation reaction mixture."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCC1C(=O)C2NC(CO2)OC1N"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KOH"
+        ],
+        "solvent": "H2O",
+        "temperature": "reflux",
+        "stoichiometry": {
+          "KOH": "1 M aq. solution"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Full conversion of carbamate 9 was achieved in the hydrolysis step, confirming compatibility. Based on these results, a continuous flow system integrating both steps was constructed."
+      },
+      "evidence": {
+        "text_span": "To streamline the overall transformation, we aimed to integrate the transfer hydrogenation and carbamate hydrolysis into a continuous, telescoped flow sequence. Therefore, a control batch experiment was performed to confirm the compatibility of the optimized carbamate hydrolysis conditions with the preceding transfer hydrogenation step. Thus, a simple batch experiment provided a full conversion of 9 in the hydrolysis step. It was achieved by refluxing the reaction mixture consisting of a 1 M aqueous KOH solution and a filtered hydrogenation reaction mixture.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The hydrogenation step was optimized in flow, and batch hydrolysis was successful. A two-stage flow system was designed, combining hydrogenation and hydrolysis. The hydrogenation part remained unchanged, but the flow rate was reduced to allow sufficient residence time for hydrolysis.",
+        "gap": "Optimize the KOH concentration and temperature for the integrated flow hydrolysis step to achieve full conversion.",
+        "decision": "Initially, a 1 M aqueous KOH solution was introduced into the coil reactor, and the temperature was maintained at 85 °C (same as hydrogenation)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCC1C(=O)C2NC(CO2)OC1N"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KOH"
+        ],
+        "solvent": "H2O",
+        "temperature": "85 °C",
+        "stoichiometry": {
+          "KOH": "1 M aq. solution"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Under these conditions, full conversion of carbamate 9 was not achieved."
+      },
+      "evidence": {
+        "text_span": "Initially, a 1 M aqueous KOH solution was introduced into the coil reactor, and the temperature was maintained at the same level as that during the hydrogenation step (Table 4, Entry 1). Under these conditions, full conversion of carbamate 9 was not achieved.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 17,
+      "thought": {
+        "background": "The previous attempt at 85 °C with 1 M KOH did not achieve full conversion in the integrated flow hydrolysis.",
+        "gap": "Determine if increasing the temperature can improve conversion.",
+        "decision": "The temperature was increased to 95 °C while maintaining 1 M KOH concentration."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCC1C(=O)C2NC(CO2)OC1N"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KOH"
+        ],
+        "solvent": "H2O",
+        "temperature": "95 °C",
+        "stoichiometry": {
+          "KOH": "1 M aq. solution"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Increasing the temperature to 95 °C did not result in full conversion."
+      },
+      "evidence": {
+        "text_span": "Neither increasing the temperature to 95 °C nor increasing the KOH concentration to 2 M resulted in full conversion (Table 4, Entries 2 and 3).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 18,
+      "thought": {
+        "background": "Increasing the temperature to 95 °C with 1 M KOH did not achieve full conversion. Increasing the KOH concentration might be necessary.",
+        "gap": "Determine if increasing the KOH concentration to 2 M can achieve full conversion at 95 °C.",
+        "decision": "The KOH concentration was increased to 2 M while maintaining the temperature at 95 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCC1C(=O)C2NC(CO2)OC1N"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KOH"
+        ],
+        "solvent": "H2O",
+        "temperature": "95 °C",
+        "stoichiometry": {
+          "KOH": "2 M aq. solution"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Increasing the KOH concentration to 2 M did not result in full conversion."
+      },
+      "evidence": {
+        "text_span": "Neither increasing the temperature to 95 °C nor increasing the KOH concentration to 2 M resulted in full conversion (Table 4, Entries 2 and 3).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous attempts at 95 °C with 1 M and 2 M KOH did not achieve full conversion in the integrated flow hydrolysis. A higher concentration of base is likely required.",
+        "gap": "Identify the optimal KOH concentration to achieve complete hydrolysis in the integrated flow system.",
+        "decision": "The KOH concentration was further increased to 2.5 M at 95 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCC1C(=O)C2NC(CO2)OC1N"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KOH"
+        ],
+        "solvent": "H2O",
+        "temperature": "95 °C",
+        "stoichiometry": {
+          "KOH": "2.5 M aq. solution"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Complete conversion was finally achieved by increasing the KOH concentration to 2.5 M, affording jaspine B (1) in 65% isolated yield over two continuous steps. This yield is comparable to the 67% yield obtained in the corresponding batch sequence."
+      },
+      "evidence": {
+        "text_span": "Complete conversion was finally achieved by increasing the KOH concentration to 2.5 M, affording jaspine B (1) in 65% isolated yield over two continuous steps (Table 4, Entry 4). This yield is comparable to the 67% yield obtained in the corresponding batch sequence.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "IR",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 65,
+        "unit": "%",
+        "interpretation": "Yield for the final two continuous steps (hydrogenation and hydrolysis)."
+      }
+    },
+    "significance": "This work successfully completed the total synthesis of jaspine B using a fully continuous flow approach, demonstrating the potential of flow chemistry for complex natural product synthesis. It achieved comparable yields to batch processes while offering advantages in reaction control, reduced processing times, and scalability. The study highlights general strategies for the scalable preparation of other structurally complex and medicinally relevant molecules."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.joc.5c01799",
+      "pmcid": "PMC12519474",
+      "title": "Continuous Flow Techniques in the Total Synthesis of Jaspine B: Part II.",
+      "authors": "Gurský M, Trnovcová D, Lopatka P, Markovič M, Koóš P, Ley SV, Gracza T.",
+      "journal": "J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12519474?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/9f0e0610-730a-4d4c-81c7-f8aca9925997.zip",
+      "parsed_at": "2026-05-11T06:29:19.392196+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 43,
+    "parseable": 37,
+    "canonicalized": 36,
+    "invalid": 6,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CCCCCCCCCCCCCCC1C(OC2COC(N2)C1=O",
+      "N[C@@H]1C[C@H](O)[C@H](O)CCCCCCCCCCCCCC",
+      "N[C@@H]1C[C@H](O)[C@H](O)CCCCCCCCCCCCCC",
+      "N[C@@H]1C[C@H](O)[C@H](O)CCCCCCCCCCCCCC",
+      "N[C@@H]1C[C@H](O)[C@H](O)CCCCCCCCCCCCCC",
+      "N[C@@H]1C[C@H](O)[C@H](O)CCCCCCCCCCCCCC"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

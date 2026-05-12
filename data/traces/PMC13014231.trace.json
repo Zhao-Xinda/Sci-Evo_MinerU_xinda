@@ -1,0 +1,1164 @@
+{
+  "trace_id": "TS-PMC13014231",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-Biotin",
+    "smiles": "O=C(O)CC[C@@H]1CSC2C(=O)NC(=O)N[C@@H]21",
+    "natural_product_class": "vitamin",
+    "structural_features": {
+      "stereocenters": 3,
+      "ring_systems": "bicyclic ureido framework",
+      "key_motifs": [
+        "sulfur-containing bicyclic ureido framework",
+        "carboxybutyl side chain"
+      ]
+    },
+    "motivation": "Essential coenzyme role in metabolic cycle, high global demand (over 600 tons/year) for pharmaceuticals, nutraceuticals, animal feed, cosmetics, personal care, and beverages. Structurally intriguing framework with three contiguous all-cis stereocenters.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Kögl",
+        "year": 1936,
+        "key_strategy": "Isolation from egg yolk"
+      },
+      {
+        "lead_author": "Wehrli",
+        "key_strategy": "Stereoselective synthesis of lactones",
+        "doi": "WO2004094367"
+      },
+      {
+        "lead_author": "Tonyonaka",
+        "year": 1975,
+        "key_strategy": "Synthesis of optically active lactones",
+        "doi": "US3876656"
+      },
+      {
+        "lead_author": "Yang",
+        "year": 2018,
+        "key_strategy": "Method for recovering dextroamine",
+        "doi": "CN109456206"
+      },
+      {
+        "lead_author": "Deroose",
+        "year": 1995,
+        "key_strategy": "Novel enantioselective syntheses"
+      },
+      {
+        "lead_author": "Bonrath",
+        "year": 2009,
+        "key_strategy": "Chiral auxiliary-controlled desymmetrization of cyclic anhydride (Roche's lactone 2 as key chiral building block)"
+      }
+    ],
+    "success_criteria": {
+      "yield_target_percent": 43,
+      "lls_target": 13,
+      "stereochemistry_required": true,
+      "free_text": "Total residence time of 121.5 min, 99% purity, stable operation for 4h with productivity of 0.686 g/h."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-N bonds of the ureido ring",
+        "named_strategy": "Ring-closing",
+        "reasoning": "Final step to form the bicyclic ureido framework from a diamine precursor."
+      },
+      {
+        "bond_description": "C-N bonds of the N,N-dibenzyl protecting groups",
+        "named_strategy": "Debenzylation/Ring-opening",
+        "reasoning": "Removal of protecting groups and opening of the ureido ring to reveal the diamine for subsequent ring-closing."
+      },
+      {
+        "bond_description": "C-C bond between the thiolactone and the side chain",
+        "named_strategy": "Fukuyama cross-coupling",
+        "reasoning": "Efficient and stereoselective installation of the carboxybutyl side chain onto the bicyclic core."
+      },
+      {
+        "bond_description": "C-S bond of the lactone",
+        "named_strategy": "Thiolactonization",
+        "reasoning": "Conversion of the lactone to a thiolactone, which is a suitable substrate for Fukuyama coupling."
+      },
+      {
+        "bond_description": "C-O bond of the lactone",
+        "named_strategy": "Acid-lactonization",
+        "reasoning": "Formation of the key chiral building block, (3aS, 6aR)-lactone (Roche’s lactone 2), from a hydroxy acid intermediate."
+      },
+      {
+        "bond_description": "Ester bond of the hemiester",
+        "named_strategy": "Chemoselective reduction",
+        "reasoning": "Reduction of the ester group in the hemiester to a primary alcohol, leading to the hydroxy acid precursor for lactonization."
+      },
+      {
+        "bond_description": "C-O bond of the cyclic anhydride",
+        "named_strategy": "Asymmetric alcoholysis",
+        "reasoning": "Chiral auxiliary-controlled desymmetrization of meso-cyclic anhydride 4 to introduce chirality and form the hemiester."
+      },
+      {
+        "bond_description": "C-O bond of the dicarboxylic acid",
+        "named_strategy": "Dehydration",
+        "reasoning": "Formation of the meso-cyclic anhydride 4 from commercially available meso-cyclic acid 3."
+      }
+    ],
+    "rationale": "The synthesis leverages a fully integrated continuous-flow regime to overcome limitations of batch processes. Key strategies include a pseudocatalytic closed-loop cycle for chiral auxiliary-controlled desymmetrization of meso-cyclic anhydride 4 to (3aS, 6aR)-lactone 2, a Pd-catalyzed Fukuyama coupling for rapid side-chain assembly, and a final one-flow debenzylation/ring-opening and ring-closing sequence. The pseudocatalytic strategy with a custom-designed chiral auxiliary (S)-DBPOL 5c allows for efficient recovery and recycling, enabling multiple equivalents of chiral product per molecule of auxiliary. The entire process is telescoped into 13 steps with in-line purification and separation modules to minimize manual handling and maximize efficiency."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Commercially available meso-cyclic acid 3 needs to be converted to meso-cyclic anhydride 4. Previous industrial batch protocols used azeotropic distillation with toluene in a Dean-Stark apparatus, which is incompatible with flow conditions.",
+        "gap": "Develop a flow-compatible method for the dehydration of meso-cyclic acid 3 to meso-cyclic anhydride 4.",
+        "decision": "To achieve dehydration under flow conditions, attempted to use acetic anhydride as an in-situ water trap."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)C1C(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "reagents": [
+          "acetic anhydride"
+        ],
+        "solvent": "toluene",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "reactor_clogging",
+        "observation": "Treatment of a suspension of 3 in toluene (0.11 M) with a solution of acetic anhydride in toluene (0.5 M) resulted in reactor clogging."
+      },
+      "evidence": {
+        "text_span": "However, treatment of a suspension of 3 in toluene (0.11 M) with a solution of acetic anhydride in toluene (0.5 M) resulted in reactor clogging.",
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 1,
+      "thought": {
+        "background": "The previous attempt with acetic anhydride failed due to reactor clogging.",
+        "gap": "A new strategy is needed for dehydration under flow conditions.",
+        "decision": "To achieve dehydration, a molecular-sieve based protocol was developed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)C1C(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "reagents": [
+          "4Å molecular sieves"
+        ],
+        "solvent": "THF",
+        "temperature": "170 °C",
+        "time": "5 min",
+        "atmosphere": "21 bar"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "76% conversion was achieved. Brown-colored impurities were evidently formed in THF."
+      },
+      "evidence": {
+        "text_span": "Subsequently, a molecular-sieve based protocol was developed that successfully achieved the dehydration of 3 in flow (Table 1). ... 0.11 M THF solution of 3. ... 76",
+        "page": 3,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Dehydration with 4Å molecular sieves in THF gave 76% conversion but formed brown impurities.",
+        "gap": "Improve conversion and reduce impurities.",
+        "decision": "To improve conversion, the residence time was extended to 8 min in THF."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)C1C(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "reagents": [
+          "4Å molecular sieves"
+        ],
+        "solvent": "THF",
+        "temperature": "170 °C",
+        "time": "8 min",
+        "atmosphere": "21 bar"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "observation": "Conversion increased marginally to 79%."
+      },
+      "evidence": {
+        "text_span": "Because brown-colored impurities were evidently formed in THF and the conversion increased only marginally even when the residence time was extended to 8 min.",
+        "page": 3,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "Dehydration in THF showed limited improvement with extended residence time and formed impurities.",
+        "gap": "Find a more effective solvent for dehydration.",
+        "decision": "To improve conversion and reduce impurities, MeCN was tested as a solvent."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)C1C(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "reagents": [
+          "4Å molecular sieves"
+        ],
+        "solvent": "MeCN",
+        "temperature": "170 °C",
+        "time": "5 min",
+        "atmosphere": "21 bar"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "90% conversion was achieved, better than THF."
+      },
+      "evidence": {
+        "text_span": "affording better conversion than when THF was used as the solvent (entries 1−3). ... 90",
+        "page": 3,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "Dehydration in MeCN at 170 °C for 5 min gave 90% conversion.",
+        "gap": "Further optimize reaction conditions for higher conversion and yield.",
+        "decision": "To improve conversion, the residence time was extended to 8 min in MeCN."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)C1C(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "reagents": [
+          "4Å molecular sieves"
+        ],
+        "solvent": "MeCN",
+        "temperature": "170 °C",
+        "time": "8 min",
+        "atmosphere": "21 bar"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "The desired meso-cyclic anhydride 4 was obtained in 97% conversion and 93% isolated yield."
+      },
+      "evidence": {
+        "text_span": "The desired meso-cyclic anhydride 4 was obtained in 97% conversion and 93% isolated yield (entry 4).",
+        "page": 3,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Optimized dehydration in MeCN at 170 °C for 8 min gave 93% isolated yield.",
+        "gap": "Investigate if higher concentration can improve space-time yield.",
+        "decision": "To increase space-time yield, the concentration of 3 was increased to 0.5 M."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)C1C(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "reagents": [
+          "4Å molecular sieves"
+        ],
+        "solvent": "MeCN",
+        "temperature": "170 °C",
+        "time": "8 min",
+        "atmosphere": "21 bar"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "reactor_clogging",
+        "observation": "Increasing the concentration of 3 to 0.5 M resulted in reactor clogging."
+      },
+      "evidence": {
+        "text_span": "Increasing the concentration of 3 to 0.5 M resulted in reactor clogging (entry 8).",
+        "page": 3,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "The conventional batch process for asymmetric alcoholysis of cyclic anhydride uses (S)-1,1-diphenyl-1,2-propanediol ((S)-DPOL, 5a) as a chiral auxiliary. However, its modest water solubility limits recovery to below 90%.",
+        "gap": "Improve chiral auxiliary recovery for a more efficient and sustainable process under flow conditions.",
+        "decision": "To improve auxiliary recovery and enable closed-loop recycling, designed a series of (S)-1,1-di(biphenyl)-1,2-propanediol analogues ((S)-DBPOLs, 5b−5g) with reduced aqueous solubility by replacing phenyl groups with bulkier, more hydrophobic biphenyl substituents."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Computational predictions (ChemBioDraw Ultra 14.0) supported the design, giving Log P values of 6.20−9.68 for (S)-DBPOLs, compared to 2.85 for 5a, consistent with markedly lower aqueous solubility."
+      },
+      "evidence": {
+        "text_span": "To improve auxiliary recovery and enable closed-loop recycling, we designed a series of (S)-1,1-di(biphenyl)-1,2-propanediol analogues ((S)-DBPOLs, 5b−5g) by replacing the phenyl groups of (S)-DPOL (5a) with bulkier and more hydrophobic biphenyl substituents (Figure 1). This structural modification was expected to substantially reduce water solubility through increased hydrophobic surface area and steric hindrance. Computational predictions using ChemBioDraw Ultra 14.0 supported this design rationale, giving Log P values of 6.20−9.68 for the (S)-DBPOLs, compared to 2.85 for 5a, consistent with markedly lower aqueous solubility.",
+        "page": 4,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A library of (S)-DBPOLs (5b-5g) was synthesized and computational predictions suggested improved water insolubility.",
+        "gap": "Identify the most effective (S)-DBPOL auxiliary for asymmetric alcoholysis of meso-cyclic anhydride 4 under batch conditions.",
+        "decision": "To identify the best auxiliary, screened (S)-DBPOLs 5b-5g in asymmetric alcoholysis of 4 with tributylamine (n-Bu3N) as base."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(O)(C(=O)OC1(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1)c1ccccc1-c1ccccc1.CCCCN(CCCC)CCCC"
+        ],
+        "reagents": [
+          "5c",
+          "tributylamine"
+        ],
+        "solvent": "toluene",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "dr": ">99:1",
+        "observation": "(S)-DBPOL 5c proved to be the most effective auxiliary, and toluene was identified as the optimal solvent, giving the alcoholysis product 6c in 88% yield and >99:1 dr. Auxiliary 5c was also found to be readily recoverable after the subsequent reduction step due to its high solubility in toluene and low solubility in water."
+      },
+      "evidence": {
+        "text_span": "Among these, (S)-DBPOL 5c proved to be the most effective auxiliary, and toluene was identified as the optimal solvent, giving the alcoholysis product 6c in 88% yield and >99:1 dr. Auxiliary 5c was also found to be readily recoverable after the subsequent reduction step due to its high solubility in toluene and low solubility in water.",
+        "page": 4,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimized batch conditions for asymmetric alcoholysis of 4 using 5c in toluene gave 88% yield and >99:1 dr.",
+        "gap": "Translate the optimized batch conditions to a continuous-flow setup.",
+        "decision": "To adapt the system to flow, two toluene solutions (one with 4, one with 5c and n-Bu3N) were pumped into a PTFE coil reactor (Reactor II) at 25 °C with a residence time of 6 min."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(O)(C(=O)OC1(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1)c1ccccc1-c1ccccc1.CCCCN(CCCC)CCCC"
+        ],
+        "reagents": [
+          "5c",
+          "tributylamine"
+        ],
+        "solvent": "toluene",
+        "temperature": "25 °C",
+        "time": "6 min",
+        "stoichiometry": {
+          "4": "1.0 equiv",
+          "5c": "1.0 equiv",
+          "n-Bu3N": "1.0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "dr": ">99:1",
+        "observation": "The (4S,5R)-hemiester salt 6c was obtained in 60% yield and >99:1 dr."
+      },
+      "evidence": {
+        "text_span": "In the initial flow experiment, two toluene solutions, one containing anhydride 4 and the other containing auxiliary 5c and n-Bu3N., were simultaneously pumped into a PTFE coil reactor (Reactor II) at 25 °C with a residence time of 6 min, affording the (4S,5R)-hemiester salt 6c in 60% yield and >99:1 dr (entry 1).",
+        "page": 4,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "Initial flow alcoholysis gave 60% yield.",
+        "gap": "Improve the yield of the flow alcoholysis.",
+        "decision": "To improve yield, the residence time was extended to 10 min."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(O)(C(=O)OC1(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1)c1ccccc1-c1ccccc1.CCCCN(CCCC)CCCC"
+        ],
+        "reagents": [
+          "5c",
+          "tributylamine"
+        ],
+        "solvent": "toluene",
+        "temperature": "25 °C",
+        "time": "10 min",
+        "stoichiometry": {
+          "4": "1.0 equiv",
+          "5c": "1.0 equiv",
+          "n-Bu3N": "1.0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "dr": ">99:1",
+        "observation": "Yield increased to 77%."
+      },
+      "evidence": {
+        "text_span": "Further optimization revealed that adjusting the molar ratio of 4:5c:n-Bu3N from 1:1:1 to 1:1.1:1.5 and extending the residence time from 6 to 10 min enabled complete conversion of 4, providing 6c in 98% yield and 99:1 dr (entries 2−4).",
+        "page": 4,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 10,
+      "thought": {
+        "background": "Flow alcoholysis gave 77% yield with 1:1:1 ratio and 10 min residence time.",
+        "gap": "Further improve the yield and conversion.",
+        "decision": "To improve yield, the molar ratio of n-Bu3N was increased to 1.3 equiv."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(O)(C(=O)OC1(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1)c1ccccc1-c1ccccc1.CCCCN(CCCC)CCCC"
+        ],
+        "reagents": [
+          "5c",
+          "tributylamine"
+        ],
+        "solvent": "toluene",
+        "temperature": "25 °C",
+        "time": "10 min",
+        "stoichiometry": {
+          "4": "1.0 equiv",
+          "5c": "1.0 equiv",
+          "n-Bu3N": "1.3 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "dr": ">99:1",
+        "observation": "Yield increased to 86%."
+      },
+      "evidence": {
+        "text_span": "Further optimization revealed that adjusting the molar ratio of 4:5c:n-Bu3N from 1:1:1 to 1:1.1:1.5 and extending the residence time from 6 to 10 min enabled complete conversion of 4, providing 6c in 98% yield and 99:1 dr (entries 2−4).",
+        "page": 4,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "Flow alcoholysis gave 86% yield with 1:1:1.3 ratio and 10 min residence time.",
+        "gap": "Achieve complete conversion and higher yield.",
+        "decision": "To achieve complete conversion, the molar ratio of 5c and n-Bu3N was further adjusted to 1:1.1:1.5."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(O)(C(=O)OC1(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1)c1ccccc1-c1ccccc1.CCCCN(CCCC)CCCC"
+        ],
+        "reagents": [
+          "5c",
+          "tributylamine"
+        ],
+        "solvent": "toluene",
+        "temperature": "25 °C",
+        "time": "10 min",
+        "stoichiometry": {
+          "4": "1.0 equiv",
+          "5c": "1.1 equiv",
+          "n-Bu3N": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "dr": "99:1",
+        "observation": "Complete conversion of 4 was achieved, providing 6c in 98% yield and 99:1 dr."
+      },
+      "evidence": {
+        "text_span": "Further optimization revealed that adjusting the molar ratio of 4:5c:n-Bu3N from 1:1:1 to 1:1.1:1.5 and extending the residence time from 6 to 10 min enabled complete conversion of 4, providing 6c in 98% yield and 99:1 dr (entries 2−4).",
+        "page": 4,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Optimized flow alcoholysis gave 98% yield.",
+        "gap": "Investigate if higher substrate concentration can improve space-time yield.",
+        "decision": "To enhance space-time yield, attempted to use a 0.2 M suspension of 4 in toluene."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1OC(=O)C2C1N(Cc1ccccc1)C(=O)N2Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(O)(C(=O)OC1(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1)c1ccccc1-c1ccccc1.CCCCN(CCCC)CCCC"
+        ],
+        "reagents": [
+          "5c",
+          "tributylamine"
+        ],
+        "solvent": "toluene",
+        "temperature": "25 °C",
+        "time": "10 min",
+        "stoichiometry": {
+          "4": "1.0 equiv",
+          "5c": "1.1 equiv",
+          "n-Bu3N": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "reactor_clogging",
+        "observation": "Higher substrate concentrations led to reactor clogging."
+      },
+      "evidence": {
+        "text_span": "whereas higher substrate concentrations enhanced the space-time yield but led to reactor clogging (entry 7).",
+        "page": 4,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The alcoholysis of 4 to 6c was optimized to 98% yield in flow.",
+        "gap": "Telescope the alcoholysis with chemoselective reduction to produce alcohol 7 in a continuous-flow sequence.",
+        "decision": "To produce alcohol 7, the outflow from Reactor II (containing 6c) was merged with a stock solution of LiBH4 (1.9 equiv) via a T-mixer, followed by in-line gas-liquid separation and reduction in Reactor III at 60 °C for 10 min under 8.0 bar back pressure."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(O)(C(=O)OC1(C(=O)O)N(Cc2ccccc2)C(=O)N1Cc1ccccc1)c1ccccc1-c1ccccc1.CCCCN(CCCC)CCCC"
+        ],
+        "product_smiles": [
+          "[Li][O]C(=O)C1CN(Cc2ccccc2)N(Cc2ccccc2)C1O"
+        ],
+        "reagents": [
+          "LiBH4"
+        ],
+        "solvent": "toluene",
+        "temperature": "60 °C",
+        "time": "10 min",
+        "atmosphere": "8.0 bar",
+        "stoichiometry": {
+          "LiBH4": "1.9 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "dr": "99:1",
+        "observation": "This telescoped two-step flow process furnished 7 in 94% yield and 99:1 dr, along with quantitative recovery of 5c and n-Bu3N."
+      },
+      "evidence": {
+        "text_span": "The process was initiated by merging the outflow from Reactor II with a stock solution of LiBH4 (1.9 equiv) via a T-mixer. Efficient removal of hydrogen byproduct through an in-line tubular gas−liquid separator was essential to ensure stable residence-time control. The reduction proceeded to completion within 10 min in a PTFE coil reactor (Reactor III) at 60 °C under 8.0 bar back pressure. Following aqueous quenching, the resulting emulsified toluene stream was directed through a short glass column packed with Celite and SiO2 to scavenge boron-containing residues. The subsequent gravity-based liquid−liquid separation afforded a clear aqueous phase containing (4S,5R)-lithium hydroxymethyl carboxylate 7 and an organic phase containing the recovered auxiliary 5c and n-Bu3N.. This telescoped two-step flow process furnished 7 in 94% yield and 99:1 dr, along with quantitative recovery of 5c and n-Bu3N..",
+        "page": 5,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The two-step alcoholysis/reduction sequence successfully produced alcohol 7 with quantitative recovery of the chiral auxiliary 5c and base n-Bu3N.",
+        "gap": "Integrate the acid-lactonization step into a continuous-flow pseudocatalytic cycle under closed-loop control for streamlined synthesis of lactone 2.",
+        "decision": "To establish a continuous-flow pseudocatalytic cycle, the aqueous stream of crude intermediate 7 was mixed with 1.5 M aqueous HCl, and lactonization was performed in PTFE Reactor IV at 80 °C with a residence time of 5 min under 10 bar back-pressure. The auxiliary 5c and n-Bu3N were continuously recycled."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "[Li][O]C(=O)C1CN(Cc2ccccc2)N(Cc2ccccc2)C1O"
+        ],
+        "product_smiles": [
+          "CC1OC(=O)N(Cc2ccccc2)N(Cc2ccccc2)C1=O"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "aqueous",
+        "temperature": "80 °C",
+        "time": "5 min",
+        "atmosphere": "10 bar"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "ee_percent": 98,
+        "observation": "The desired (3aS, 6aR)-lactone 2 was delivered in 89% overall yield and >98% ee over three steps with a total residence time of 25 min. The mixture of auxiliary 5c and n-Bu3N was recovered in nearly quantitative yield and continuously recycled for reuse."
+      },
+      "evidence": {
+        "text_span": "The aqueous stream of crude intermediate 7 from Reactor III, after quenching with water and in-line liquid/liquid separation, was mixed with 1.5 M aqueous HCl at a T-mixer, and the lactonization step was performed in PTFE Reactor IV at 80 °C with a residence time of 5 min under 10 bar back-pressure. After passing through a column packed with Celite and SiO2 to facilitate phase separation, the final toluene stream exiting the in-line extractor delivered the desired (3aS, 6aR)-lactone 2 in 89% overall yield and >98% ee over three steps with a total residence time of 25 min. The mixture of auxiliary 5c and n-Bu3N (1:1.36 molar ratio) was recovered in nearly quantitative yield and continuously recycled for reuse, without the need for further addition of either component (Table 3, Pass 1).",
+        "page": 5,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The continuous-flow synthesis of lactone 2 was successfully established.",
+        "gap": "Develop a robust continuous-flow strategy for the key intermediate (3aS, 6aR)-thiolactone 8.",
+        "decision": "To synthesize thiolactone 8, attempted to translate the batch protocol using inexpensive potassium ethylxanthate to flow conditions (160 °C, 10 bar back-pressure, 20 min residence time)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1OC(=O)N(Cc2ccccc2)N(Cc2ccccc2)C1=O"
+        ],
+        "product_smiles": [
+          "O=C1SC[C@H]2[C@@H]1C(=O)N(Cc1ccccc1)N2Cc1ccccc1"
+        ],
+        "reagents": [
+          "potassium ethylxanthate"
+        ],
+        "temperature": "160 °C",
+        "time": "20 min",
+        "atmosphere": "10 bar"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Only 30% conversion of 2 was observed."
+      },
+      "evidence": {
+        "text_span": "Although the batch synthesis of 8 using inexpensive potassium ethylxanthate is known to afford high yields,37,38 preliminary attempts to translate this protocol to flow conditions 160 °C, 10 bar back-pressure and 20 min of residence time) resulted in only 30% conversion of 2 (Supplementary Table S7, entry 1).",
+        "page": 5,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Thiolactonization with potassium ethylxanthate in flow resulted in low conversion (30%).",
+        "gap": "Find an alternative and more efficient thiolactonization strategy for flow conditions.",
+        "decision": "To achieve complete thiolactonization, used potassium thioacetate (KSAc) as an alternative reagent, which is a well-established strategy in industrial biotin production."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1OC(=O)N(Cc2ccccc2)N(Cc2ccccc2)C1=O"
+        ],
+        "product_smiles": [
+          "O=C1SC[C@H]2[C@@H]1C(=O)N(Cc1ccccc1)N2Cc1ccccc1"
+        ],
+        "reagents": [
+          "KSAc"
+        ],
+        "solvent": "DMF",
+        "temperature": "150 °C",
+        "time": "20 min",
+        "atmosphere": "10 bar",
+        "stoichiometry": {
+          "KSAc": "1.2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "Initial flow tests gave incomplete conversion (72%) when a 0.0912 M toluene solution of 2 (1.0 equiv) was treated with a 0.24 M solution of KSAc in dry DMF (1.2 equiv) at 150 °C for a residence time of 20 min and under 10 bar back pressure."
+      },
+      "evidence": {
+        "text_span": "Initial flow tests gave incomplete conversion when a 0.0912 M toluene solution of 2 (1.0 equiv) was treated with a 0.24 M solution of KSAc in dry DMF (1.2 equiv) at 150 °C for a residence time of 20 min and under 10 bar back pressure (Table 4, entry 1).",
+        "page": 6,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 17,
+      "thought": {
+        "background": "Thiolactonization with KSAc gave 72% conversion at 150 °C for 20 min.",
+        "gap": "Improve conversion and reduce reaction time.",
+        "decision": "To improve conversion, the temperature was increased to 170 °C and back-pressure to 20 bar, and KSAc stoichiometry to 1.3 equiv, with residence time of 8 min."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1OC(=O)N(Cc2ccccc2)N(Cc2ccccc2)C1=O"
+        ],
+        "product_smiles": [
+          "O=C1SC[C@H]2[C@@H]1C(=O)N(Cc1ccccc1)N2Cc1ccccc1"
+        ],
+        "reagents": [
+          "KSAc"
+        ],
+        "solvent": "DMF",
+        "temperature": "170 °C",
+        "time": "8 min",
+        "atmosphere": "20 bar",
+        "stoichiometry": {
+          "KSAc": "1.3 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "99% conversion of 2 to 8 was achieved within a residence time of only 8 min. Thiolactonization product 8 was isolated in 92% yield and 99% purity after recrystallization from iso-PrOH."
+      },
+      "evidence": {
+        "text_span": "Further optimization revealed that operating at 170 °C and 20 bar back-pressure with 1.3 equiv of KSAc afforded 99% conversion of 2 to 8 within a residence time of only 8 min (entries 2−11). Under these optimized conditions, thiolactonization product 8 was isolated in 92% yield and 99% purity after recrystallization from iso-PrOH.",
+        "page": 6,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Thiolactone 8 was successfully synthesized in flow.",
+        "gap": "Install the biotin side chain via palladium-catalyzed Fukuyama cross-coupling between thiolactone 8 and organozinc 10.",
+        "decision": "To achieve the coupling, organozinc reagent 10 was prepared in situ from ethyl 5-bromovalerate 9 with active zinc powder in dry DMF under flow conditions (Reactor VI, 240 °C, 8 min residence time, 10 bar). Five homogeneous palladium catalysts were evaluated."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1[C@@H]2S[C@@H]2N(Cc2ccccc2)C(=O)N1Cc1ccccc1",
+          "CCOC(=O)CCCBr"
+        ],
+        "product_smiles": [
+          "CCOC(=O)CCCC[C](O)C1S[C@@H]2C(=O)N(Cc3ccccc3)C([C@@H]3[CH]C3)N(Cc3ccccc3)C12"
+        ],
+        "reagents": [
+          "PdCl2(PPh3)2"
+        ],
+        "catalyst": "PdCl2(PPh3)2",
+        "solvent": "DMF",
+        "temperature": "130 °C",
+        "time": "15 min"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Initial screening with PdCl2(PPh3)2 (1.0 mol%) led to no conversion, and unreacted 8 was recovered almost quantitatively."
+      },
+      "evidence": {
+        "text_span": "Initial screening with PdCl2(PPh3)2 (1.0 mol%) led to no conversion, and unreacted 8 was recovered almost quantitative after 15 min at 130 °C under flow conditions.",
+        "page": 6,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 19,
+      "thought": {
+        "background": "PdCl2(PPh3)2 showed no activity in the Fukuyama coupling.",
+        "gap": "Find an effective palladium catalyst for the Fukuyama cross-coupling.",
+        "decision": "To achieve the coupling, evaluated other palladium catalysts: Pd2(dba)3, Pd(PtBu3)2, and Pd(TFA)2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1[C@@H]2S[C@@H]2N(Cc2ccccc2)C(=O)N1Cc1ccccc1",
+          "CCOC(=O)CCCBr"
+        ],
+        "product_smiles": [
+          "CCOC(=O)CCCC[C](O)C1S[C@@H]2C(=O)N(Cc3ccccc3)C([C@@H]3[CH]C3)N(Cc3ccccc3)C12"
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "Pd(PtBu3)2",
+          "Pd(TFA)2"
+        ],
+        "catalyst": "Pd2(dba)3, Pd(PtBu3)2, Pd(TFA)2",
+        "solvent": "DMF",
+        "temperature": "130 °C",
+        "time": "15 min"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "These three palladium catalysts exhibited partial conversion of 8 under identical conditions."
+      },
+      "evidence": {
+        "text_span": "Three other palladium catalysts, (Pd2(dba)3, Pd(PtBu3)2, and Pd(TFA)2), exhibithed partial conversion of 8 under identical conditions.",
+        "page": 6,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 20,
+      "thought": {
+        "background": "Several palladium catalysts showed no or partial conversion in the Fukuyama coupling.",
+        "gap": "Identify a highly effective and robust catalyst for complete conversion.",
+        "decision": "To achieve complete conversion, evaluated Pd(OAc)2 as a catalyst for the Fukuyama cross-coupling."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1[C@@H]2S[C@@H]2N(Cc2ccccc2)C(=O)N1Cc1ccccc1",
+          "CCOC(=O)CCCBr"
+        ],
+        "product_smiles": [
+          "CCOC(=O)CCCC[C](O)C1S[C@@H]2C(=O)N(Cc3ccccc3)C([C@@H]3[CH]C3)N(Cc3ccccc3)C12"
+        ],
+        "reagents": [
+          "Pd(OAc)2"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "solvent": "DMF/toluene",
+        "temperature": "130 °C",
+        "time": "15 min",
+        "stoichiometry": {
+          "Pd(OAc)2": "1.0 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Pd(OAc)2 proved to be the most effective and robust catalyst for this coupling, achieving complete conversion of 8 to 11 within 15 min."
+      },
+      "evidence": {
+        "text_span": "Remarkably, Pd(OAc)2 proved to be the most effictive and robust catalyst for this coupling, achiveiving complete conversion of 8 to 11 within 15 min (Supplementary Table S9).",
+        "page": 6,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Fukuyama cross-coupling of thiolactone 8 to hydroxy ester 11 was successfully optimized.",
+        "gap": "Complete the side-chain construction through a series of telescoped transformations, starting with dehydration of 11 to 12.",
+        "decision": "To obtain 12, the outlet from Reactor VII (containing 11) was combined with aqueous HCl (6.0 M) and introduced into PTFE Reactor VIII for dehydration at 95 °C with a 7.5 min residence time."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)CCCC[C](O)C1S[C@@H]2C(=O)N(Cc3ccccc3)C([C@@H]3[CH]C3)N(Cc3ccccc3)C12"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C=CC[C@H]1S[C@@H]2C(=O)N(Cc3ccccc3)C(=O)N1Cc1ccccc12"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "aqueous",
+        "temperature": "95 °C",
+        "time": "7.5 min"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The desired olefin 12 was afforded as a clear, nearly colorless toluene solution after passing through an activated carbon column and an in-line liquid−liquid gravity separator."
+      },
+      "evidence": {
+        "text_span": "Following the successful Fukuyama cross-coupling, the subsequent flow operations were designed to complete the side-chain construction through a series of telescoped transformations. The outlet from Reactor VII was combined with aqueous HCl (6.0 M), and the resulting mixture was introduced into PTFE Reactor VIII for dehydration at 95 °C with a 7.5 min residence time to obtain 12 (Supplementary Table S10). The crude dark-brown stream exiting Reactor VIII was passed through a PTFE column packed with activated carbon to scavenge colored impurities and undesired byproducts. The purified flow was subsequently directed through an in-line liquid−liquid gravity separator to remove the aqueous waste, affording the desired olefin 12 as a clear, nearly colorless toluene solution (Supplementary Figure S2).",
+        "page": 7,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Olefin 12 was obtained from the dehydration step.",
+        "gap": "Perform asymmetric hydrogenation of 12 to 13.",
+        "decision": "To obtain 13, the toluene solution of 12 was fed into Reactor IX containing a 7.5% Pd/C catalyst, where asymmetric hydrogenation proceeded smoothly within 2.0 min at 130 °C and 40 bar."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=CC[C@H]1S[C@@H]2C(=O)N(Cc3ccccc3)C(=O)N1Cc1ccccc12"
+        ],
+        "product_smiles": [
+          "CCOC(=O)CCC[C@H]1S[C@@H]2C(=O)N(Cc3ccccc3)C(=O)N1Cc1ccccc12"
+        ],
+        "catalyst": "Pd/C",
+        "reagents": [
+          "H2"
+        ],
+        "solvent": "toluene",
+        "temperature": "130 °C",
+        "time": "2.0 min",
+        "atmosphere": "40 bar"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Complete conversion of 12 to 13 was achieved."
+      },
+      "evidence": {
+        "text_span": "This toluene solution was then fed into Reactor IX containing a 7.5% Pd/C catalyst, where asymmetric hydrogenation proceeded smoothly within 2.0 min at 130 °C and 40 bar, affording complete conversion of 12 to 13 (Supplementary Table S11).",
+        "page": 7,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ester 13 was obtained from asymmetric hydrogenation.",
+        "gap": "Perform saponification of ester 13.",
+        "decision": "To achieve saponification, the product stream (containing 13) was combined with 5.0 M aqueous NaOH in a static mixer and pumped into PTFE Reactor X. Saponification was accomplished at 100 °C and 19 bar, achieving full conversion within 10 min of residence time."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)CCC[C@H]1S[C@@H]2C(=O)N(Cc3ccccc3)C(=O)N1Cc1ccccc12"
+        ],
+        "product_smiles": [
+          "O=C(O)CCC[C@H]1S[C@@H]2C(=O)N(Cc3ccccc3)C(=O)N1Cc1ccccc12"
+        ],
+        "reagents": [
+          "NaOH"
+        ],
+        "solvent": "aqueous",
+        "temperature": "100 °C",
+        "time": "10 min",
+        "atmosphere": "19 bar"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Full conversion was achieved."
+      },
+      "evidence": {
+        "text_span": "The product stream was collected into a gas/liquid separator to release residual H2, and the resulting solution of ester 13 was subsequently combined with 5.0 M aqueous NaOH in a static mixer and pumped into PTFE Reactor X. Saponification was accomplished at 100 °C and 19 bar, achieving full conversion within 10 min of residence time (Supplementary Table S12).",
+        "page": 7,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Saponification of 13 was completed.",
+        "gap": "Acidify the resulting mixture to yield carboxylic acid 14.",
+        "decision": "To yield carboxylic acid 14, in-line acidification of the resulting mixture with 6.0 M aqueous HCl to pH = 2 was carried out at 0 °C in PTFE Reactor XI with a 4 min residence time."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)CCC[C@H]1S[C@@H]2C(=O)N(Cc3ccccc3)C(=O)N1Cc1ccccc12"
+        ],
+        "product_smiles": [
+          "O=C(O)CCC[C@H]1S[C@@H]2C(=O)N(Cc3ccccc3)C(=O)N1Cc1ccccc12"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "aqueous",
+        "temperature": "0 °C",
+        "time": "4 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79.7,
+        "observation": "This five-step process efficiently converted 8 into (+)-N,N-dibenzylbiotin 14 in 79.7% overall isolated yield in a total residence time of 40 min."
+      },
+      "evidence": {
+        "text_span": "In-line acidification of the resulting mixture with 6.0 M aqueous HCl to pH = 2 was carried out at 0 °C in PTFE Reactor XI with a 4 min residence time. This five-step process efficiently converted 8 into (+)-N,N-dibenzylbiotin 14 in 79.7% overall isolated yield in a total residence time of 40 min.",
+        "page": 7,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "(+)-N,N-dibenzylbiotin 14 was obtained.",
+        "gap": "Perform debenzylation/ring-opening of 14 to generate the diamine·2HBr salt 15.",
+        "decision": "To generate 15, 14 was subjected to cascade debenzylation/ring-opening using 47% aqueous HBr under flow conditions in PEEK Reactor XII at 190 °C and 20 bar with a residence time of 20 min."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)CCC1S[C@@H]2CN(Cc3ccccc3)[C@H]2C(=O)N1Cc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "HBr"
+        ],
+        "solvent": "aqueous",
+        "temperature": "190 °C",
+        "time": "20 min",
+        "atmosphere": "20 bar"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "99% conversion was afforded after systematic optimization of temperature, pressure, and residence time."
+      },
+      "evidence": {
+        "text_span": "It began with the cascade debenzylation/ring-opening of 14 using 47% aqueous HBr under flow conditions to generate the diamine·2HBr salt 15. This reaction was conducted in PEEK Reactor XII at 190 °C and 20 bar with a residence time of 20 min, affording 99% conversion after systematic optimization of temperature, pressure, and residence time (Supplementary Table S13).",
+        "page": 7,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diamine·2HBr salt 15 was obtained from debenzylation/ring-opening.",
+        "gap": "Perform ring-closing to synthesize (+)-biotin 1.",
+        "decision": "To synthesize 1, crude 15 was dissolved in 5% aqueous KOH, premixed with a toluene solution of triphosgene (BTC, 0.5 M) in a PTFE coil reactor at room temperature, and subsequently directed into PTFE Reactor XIII for ring-closing at 70 °C and 20 bar (residence time 14 min, pH 10−11)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "O=C(O)CCC1NC(=O)[C@@H]2NC[C@H]2S1"
+        ],
+        "reagents": [
+          "KOH",
+          "triphosgene"
+        ],
+        "solvent": "aqueous KOH/toluene",
+        "temperature": "70 °C",
+        "time": "14 min",
+        "atmosphere": "20 bar"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "observation": "The telescoped three-step sequence delivered (+)-biotin 1 in 71.0% isolated yield and 99% purity within a total residence time of 34 min."
+      },
+      "evidence": {
+        "text_span": "Following gravity-based liquid−liquid separation and in-line vacuum evaporation for HBr recovery, the crude 15 was dissolved in 5% aqueous KOH owing to its limited solubility in water. The resulting stream was premixed with a toluene solution of triphosgene (BTC, 0.5 M) in PTFE coil reactor at room temperature, and subsequently directed into PTFE Reactor XIII for ring-closing at 70 °C and 20 bar (residence time 14 min, pH 10−11). The telescoped three-step sequence delivered (+)-biotin 1 in 71.0% isolated yield and 99% purity within a total residence time of 34 min.",
+        "page": 7,
+        "section": "2. RESULTS AND DISCUSSION"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 43,
+        "unit": "percent",
+        "interpretation": "Overall yield for the 13-step synthesis of (+)-biotin 1 from meso-cyclic acid 3."
+      },
+      "Longest Linear Steps": {
+        "value": 13,
+        "unit": "steps",
+        "interpretation": "Total number of steps in the continuous-flow synthesis."
+      },
+      "Total Steps": {
+        "value": 13,
+        "unit": "steps",
+        "interpretation": "Total number of steps in the continuous-flow synthesis."
+      },
+      "Failed Attempts Count": {
+        "value": 3,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly reported failed attempts during method development."
+      }
+    },
+    "significance": "This work establishes a new paradigm in asymmetric flow chemistry by integrating closed-loop recycling of a chiral auxiliary with unified reaction-separation modules, transforming multistep synthesis into a seamless and sustainable platform for complex molecule production. It represents the first example of the multistep continuous-flow synthesis of (+)-biotin and a benchmark case of multistep continuous-flow synthesis with respect to the number of integrated chemical transformations. The process delivers (+)-biotin in 43% overall yield and 99% purity within a total residence time of 121.5 min and maintains steady-state operation for over 4h with a stable productivity of 0.686 g/h."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.5c01570",
+      "pmcid": "PMC13014231",
+      "title": "Flow Chemistry Enabled Asymmetric Total Synthesis of (+)-Biotin through Pseudocatalytic Strategy.",
+      "authors": "Zheng X, Gao L, Zhang Y, Wu J, Cheng D, Wan L, Chen F.",
+      "journal": "JACS Au",
+      "year": 2026,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC13014231?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/9334d59c-beb9-490c-acfe-0a443f730147.zip",
+      "parsed_at": "2026-05-07T14:32:38.894516+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 56,
+    "parseable": 54,
+    "canonicalized": 39,
+    "invalid": 2,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "N[C@H]1[C@H](S[C@H]2[C@H]1N)CCC(=O)O.Br.Br",
+      "N[C@H]1[C@H](S[C@H]2[C@H]1N)CCC(=O)O.Br.Br"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

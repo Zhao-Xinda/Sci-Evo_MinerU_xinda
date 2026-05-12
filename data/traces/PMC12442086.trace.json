@@ -1,0 +1,438 @@
+{
+  "trace_id": "TS-PMC12442086",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Phentolamine",
+    "smiles": "Cc1ccc(N(Cc2ccncn2)c2cccc(O)c2)cc1",
+    "natural_product_class": "unspecified",
+    "structural_features": {
+      "molecular_weight": 317.38,
+      "stereocenters": 0,
+      "ring_systems": "3",
+      "key_motifs": [
+        "diarylamine",
+        "imidazole"
+      ]
+    },
+    "motivation": "Phentolamine, the active ingredient in Regitine, is a reversible, nonselective α-adrenergic receptor antagonist used in the treatment of hypertensive emergencies and certain cases of pheochromocytoma. It is also used in the treatment of dermal necrosis caused by the extravasation of vasoconstrictors such as norepinephrine and in dental procedures to accelerate the reversal of local anesthesia.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "The synthesis of Phentolamine was achieved with an overall efficiency of 49% from the diarylamine intermediate 3w."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "N-C bond formation (diarylamine)",
+        "named_strategy": "Meinwald-type rearrangement / photochemical deformylation",
+        "reasoning": "The core diarylamine structure is formed via a novel metal-free one-pot strategy involving imine formation, oxidative rearrangement, and light-induced deformylation. This is the key step of the synthesis, avoiding transition metals."
+      },
+      {
+        "bond_description": "O-C bond cleavage (demethylation)",
+        "reasoning": "The methoxy group on the aryl ring of 3w needs to be removed to introduce the hydroxyl group present in Phentolamine."
+      },
+      {
+        "bond_description": "N-C bond formation (alkylation)",
+        "reasoning": "The imidazole moiety is introduced via N-alkylation of the secondary amine with a commercially available chloromethylimidazole derivative."
+      }
+    ],
+    "rationale": "The synthesis of Phentolamine leverages a newly developed metal-free one-pot method for diarylamine formation, which is then followed by established demethylation and N-alkylation steps. This strategy aims to provide an efficient and environmentally friendly route to the target molecule."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Diarylamines are important compounds in pharmaceuticals, but their synthesis often relies on transition-metal-catalyzed reactions with associated toxicity and purification challenges. There is a need for metal-free, environmentally friendly methods using readily available starting materials.",
+        "gap": "Existing metal-free methods for diarylamine synthesis often suffer from limited availability of starting materials. A general protocol from simple aromatic aldehydes and amines is desired.",
+        "decision": "To address the need for a metal-free, green, and scalable synthesis of diarylamines, we will develop a one-pot strategy combining imine formation, an oxidative rearrangement (Meinwald-type), and a light-induced deformylation. This will be applied as a key step in the synthesis of Phentolamine."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Proposed a three-step one-pot strategy for diarylamine synthesis from aromatic aldehydes and anilines."
+      },
+      "evidence": {
+        "text_span": "The strategies outlined in Scheme 1c involve three steps: imine formation, oxidation/Meinwald rearrangement, and photochemical deformylation reaction. This sequential process is carried out in a single flask, eliminating the need for the difficult isolation of intermediates.",
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The general strategy involves imine formation, followed by oxidation and Meinwald rearrangement to form an N,N-disubstituted formamide, and finally photochemical deformylation to yield the diarylamine. Initial optimization is needed for the model reaction of aniline and benzaldehyde to N,N-diphenylformamide.",
+        "gap": "The optimal oxidizing agent and fluorinated solvent for the oxidative rearrangement step need to be identified. Also, the conditions for the light-induced deformylation (light source, solvent, concentration) require optimization.",
+        "decision": "To identify optimal conditions, we will screen different oxidants (UHP vs H2O2) and fluorinated solvents (HFIP vs TFE) for the oxidative rearrangement, and then optimize light source (UV-C, UV-B, UV-A), solvent (MeOH, i-PrOH, EtOH, THF, MeCN), and concentration for the photochemical deformylation. The model reaction will be benzaldehyde and aniline to N,N-diphenylformamide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccccc1",
+          "Nc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=CN(c1ccccc1)c1ccccc1"
+        ],
+        "reagents": [
+          "UHP"
+        ],
+        "solvent": "HFIP",
+        "temperature": "60 °C, then 45 °C",
+        "time": "2.5 h, then overnight"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 38,
+        "observation": "Using UHP and HFIP for the oxidative rearrangement, followed by UV-C irradiation in MeOH, yielded N,N-diphenylformamide in 38% yield. This was better than H2O2 (25% yield)."
+      },
+      "evidence": {
+        "text_span": "The research commenced by optimizing the conditions for the transformation of in situ-generated aldimine from aniline and benzaldehyde into N,N-diphenylformamide. The main emphasis was placed on the identification of the optimal oxidizing agent: either H2O2 (30% v/v) or UHP (urea-hydrogen peroxide), (Table 1, entry 1 vs 2) and fluorinated solvent: HFIP (1,1,1,3,3,3-hexafluoroispropanol) or TFE (2,2,2-trifluoroethanol) (Table 1, entry 1 vs 3).",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "1b48487742e9c339c8a34bcae595e16d81975088971748de9eca9c23f89312c2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Initial optimization showed UHP and HFIP were effective for formamide formation. Now, the deformylation step needs optimization.",
+        "gap": "The optimal light source for the deformylation of N,N-diphenylformamide needs to be determined.",
+        "decision": "To find the best light source, we will test UV-B and UV-A irradiation for the deformylation step."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=CN(c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "solvent": "MeCN",
+        "atmosphere": "argon"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 0,
+        "failure_mode": "no_reaction",
+        "observation": "UV-B and UV-A irradiation resulted in no product formation."
+      },
+      "evidence": {
+        "text_span": "Subsequently, the optimization of conditions for the light-induced deformylation of N,N-diphenylformamide was investigated, including the selection of the optimal source of light, solvent, and concentration (Table 1, entries 4−12). ... Table 1, entry 11: UHP, HFIP, UV-B, MeCN, 0% yield. Table 1, entry 12: UHP, HFIP, UV-A, MeCN, 0% yield.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "UV-B and UV-A irradiation were ineffective for deformylation. UV-C showed some promise in earlier experiments.",
+        "gap": "The optimal solvent and concentration for UV-C induced deformylation need to be determined.",
+        "decision": "To optimize the deformylation, we will test various solvents (i-PrOH, EtOH, THF, MeCN) and concentrations under UV-C irradiation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=CN(c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "solvent": "MeCN",
+        "atmosphere": "argon"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 43,
+        "observation": "MeCN was found to be the optimal solvent for UV-C induced deformylation, giving 43% yield for diphenylamine 3a. Other solvents (i-PrOH, EtOH, THF) gave 34-38% yield. Concentration also played a role, with 0.06 mmol/mL being optimal."
+      },
+      "evidence": {
+        "text_span": "Subsequently, the optimization of conditions for the light-induced deformylation of N,N-diphenylformamide was investigated, including the selection of the optimal source of light, solvent, and concentration (Table 1, entries 4−12). ... Table 1, entry 7: UHP, HFIP, UV-C, MeCN, 43% yield.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimal conditions for the one-pot synthesis of diphenylamine (3a) have been established: imine formation (aniline + benzaldehyde in HFIP at 60°C), oxidative rearrangement (UHP at 45°C), and photochemical deformylation (UV-C in degassed MeCN).",
+        "gap": "The generality of this protocol needs to be explored by testing various substituted aldehydes as coupling partners with anilines.",
+        "decision": "To demonstrate the scope of the reaction, we will apply the optimized one-pot protocol to a range of substituted aromatic aldehydes (1b-s) with aniline (2a)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C=O)cc1",
+          "Nc1ccccc1"
+        ],
+        "product_smiles": [
+          "COc1ccc(Nc2ccccc2)cc1"
+        ],
+        "reagents": [
+          "UHP"
+        ],
+        "solvent": "HFIP, MeCN",
+        "temperature": "60 °C, then 45 °C",
+        "time": "overnight, then overnight, then 3-6 h",
+        "atmosphere": "argon"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "observation": "The reaction was successful for 4-methoxybenzaldehyde (1b) and aniline (2a), yielding 3b in 57%. The system tolerated various aliphatic and halogenated substituted rings, as well as electron-rich and some electron-poor rings. Extended aryl systems and heterocyclic compounds also worked."
+      },
+      "evidence": {
+        "text_span": "We next began to explore the generality of the protocol by testing various substituted aldehydes 1b−s as coupling partners with anilines (Table 2). In general, the system tolerates aliphatic substituted rings at all positions 3c−e, 3k, 3m, and 3n. Similar success was achieved with halogenated rings 3g and 3h, which can be challenging to synthesize using transition metal catalysis. Additionally, the scope encompassed substrates featuring both electron-rich rings 3b, 3l, 3o, and 3s and relatively electron-poor ones 3i and 3j, although substrates with electron-deficient rings led to desired products with a low yield.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "c70ee9797899ba2193b1f70f800c7a52.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The protocol showed good generality with various substituted aldehydes. Now, the scope with substituted anilines needs to be investigated.",
+        "gap": "The reactivity of variously substituted anilines as coupling partners with benzaldehyde 1a needs to be explored.",
+        "decision": "To assess the scope with anilines, we will attempt the reaction with various substituted anilines and benzaldehyde 1a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccccc1",
+          "Nc1ccc(F)cc1"
+        ],
+        "product_smiles": [
+          "Fc1ccc(Nc2ccccc2)cc1"
+        ],
+        "reagents": [
+          "UHP"
+        ],
+        "solvent": "HFIP, MeCN",
+        "temperature": "60 °C, then 45 °C",
+        "time": "overnight, then overnight, then 3-6 h",
+        "atmosphere": "argon"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Except for examples 3x-z, the protocol was unsuccessful with variously substituted anilines. Decomposition and hydrolysis products of aldimines were observed."
+      },
+      "evidence": {
+        "text_span": "In further studies, we explored the reactivity of variously substituted anilines as coupling partners with benzaldehyde 1a. However, regardless of the type and position of the substituent in the ring, the protocol was unsuccessful (see the SI). Except for examples 3x-z, in most cases, we observed decomposition and hydrolysis products of aldimines.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The developed protocol is effective for synthesizing diarylamines from aromatic aldehydes and anilines, with some limitations regarding substituted anilines. The scalability of the process is important for potential industrial applications.",
+        "gap": "The scalability of the one-pot reaction needs to be demonstrated, particularly for the photoinduced deformylation step.",
+        "decision": "To demonstrate scalability, we will perform the reaction on a 10.0 mmol scale, utilizing a continuous flow setup for the photoinduced deformylation after filtration of UHP residues."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C=O)cc1",
+          "Nc1ccccc1"
+        ],
+        "product_smiles": [
+          "COc1ccc(Nc2ccccc2)cc1"
+        ],
+        "reagents": [
+          "UHP"
+        ],
+        "solvent": "HFIP, MeCN",
+        "temperature": "60 °C, then 45 °C",
+        "time": "24 h, then 48 h, then 3 days",
+        "scale": "10.0 mmol"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "observation": "The reaction maintained efficiency on a 10-fold scale-up (10.0 mmol), yielding 3b in 57%. The photoinduced deformylation was successfully carried out in a continuous flow. Solvents (HFIP and MeCN) were also recovered and reused."
+      },
+      "evidence": {
+        "text_span": "The process is highly scalable, maintaining efficiency with a 10-fold increase in the amount of the starting material (Scheme 3). To achieve this scalability, the photoinduced deformylation reaction was carried out in a continuous flow after filtration of solid UHP residues from the diethyl ether solution. In addition, it was demonstrated that the solvents (HFIP and MeCN) can be almost completely recovered by simple distillation and reused for subsequent reaction cycles, which is a significant advantage for potential industrial applications.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "f472eebfb028a7f62f4d319abe74da2f6dd18b575e89d53711ec10b684180879.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The developed diarylamine synthesis method is robust and scalable. To further demonstrate its utility, it will be applied to the total synthesis of a known pharmaceutical compound, Phentolamine.",
+        "gap": "The specific diarylamine precursor (3w) for Phentolamine needs to be synthesized using the developed method, and then converted to Phentolamine through subsequent steps.",
+        "decision": "To synthesize Phentolamine, we will first prepare diarylamine 3w from 3-methoxybenzaldehyde (1w) and p-toluidine (2w) using the optimized one-pot protocol. Then, 3w will be demethylated and N-alkylated with 2-(chloromethyl)-1H-imidazole hydrochloride."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cccc(C=O)c1",
+          "Cc1ccc(N)cc1"
+        ],
+        "product_smiles": [
+          "COc1cccc(Nc2ccc(C)cc2)c1"
+        ],
+        "reagents": [
+          "UHP"
+        ],
+        "solvent": "HFIP, MeCN",
+        "temperature": "60 °C, then 45 °C",
+        "time": "overnight, then overnight, then 3-6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 43,
+        "observation": "The diarylamine precursor 3w was successfully obtained from 3-methoxybenzaldehyde (1w) and p-toluidine (2w) in 43% yield using the developed one-pot method."
+      },
+      "evidence": {
+        "text_span": "The suitable precursor 3w for the synthesis of Phentolamine was obtained from 3-methoxybenzaldehyde 1w and p-toluidine 2w.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "5984ddc5d656f1d3aaafca7d5381a55011ef6207f50e4053030b3b5fbbc2fa05.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diarylamine 3w has been synthesized. The next step in the total synthesis of Phentolamine is demethylation of the methoxy group.",
+        "gap": "The methoxy group on 3w needs to be converted to a hydroxyl group.",
+        "decision": "To achieve demethylation, 3w will be treated with BBr3 in DCM."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cccc(Nc2ccc(C)cc2)c1"
+        ],
+        "product_smiles": [
+          "Cc1ccc(Nc2cccc(O)c2)cc1"
+        ],
+        "reagents": [
+          "BBr3"
+        ],
+        "solvent": "DCM"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Demethylation of 3w was successful, yielding compound 4 in 87% yield."
+      },
+      "evidence": {
+        "text_span": "The synthesized diarylamine 3w was subjected to demethylation followed by N-alkylation with commercially available 2-(chloromethyl)-1H-imidazole hydrochloride according to the literature procedure.5 This process afforded Phentolamine with an efficiency of 49% (Scheme 4).",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "5984ddc5d656f1d3aaafca7d5381a55011ef6207f50e4053030b3b5fbbc2fa05.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 4, with the hydroxyl group, is ready for the final N-alkylation step to form Phentolamine.",
+        "gap": "The imidazole moiety needs to be attached to the nitrogen of compound 4.",
+        "decision": "To complete the synthesis, compound 4 will undergo N-alkylation with commercially available 2-(chloromethyl)-1H-imidazole hydrochloride in toluene."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1ccc(Nc2cccc(O)c2)cc1"
+        ],
+        "product_smiles": [
+          "Cc1ccc(N(Cc2ccncn2)c2cccc(O)c2)cc1"
+        ],
+        "reagents": [
+          "ClC[N+]1=C(N)NCC1.[Cl-]"
+        ],
+        "solvent": "toluene"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 49,
+        "observation": "N-alkylation of compound 4 with 2-(chloromethyl)-1H-imidazole hydrochloride successfully yielded Phentolamine with an efficiency of 49%."
+      },
+      "evidence": {
+        "text_span": "The synthesized diarylamine 3w was subjected to demethylation followed by N-alkylation with commercially available 2-(chloromethyl)-1H-imidazole hydrochloride according to the literature procedure.5 This process afforded Phentolamine with an efficiency of 49% (Scheme 4).",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "5984ddc5d656f1d3aaafca7d5381a55011ef6207f50e4053030b3b5fbbc2fa05.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 49,
+        "unit": "%",
+        "interpretation": "Overall yield for the synthesis of Phentolamine from 3w."
+      }
+    },
+    "significance": "The developed metal-free, one-pot synthesis of diarylamines from readily available starting materials is environmentally friendly and scalable. Its application in the total synthesis of Phentolamine demonstrates its utility for preparing active pharmaceutical ingredients, offering a sustainable alternative to existing methods."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.joc.5c01253",
+      "pmcid": "PMC12442086",
+      "title": "One-Pot Metal-Free Synthesis of Diarylamines from Aromatic Aldehydes and Anilines.",
+      "authors": "Szcześniak P, Furman B.",
+      "journal": "J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12442086?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/85645c76-f4ee-445a-8e5b-05519e748465.zip",
+      "parsed_at": "2026-05-11T06:29:48.577790+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 24,
+    "parseable": 22,
+    "canonicalized": 8,
+    "invalid": 2,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "HN(c1ccccc1)c1ccccc1",
+      "HN(c1ccccc1)c1ccccc1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

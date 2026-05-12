@@ -1,0 +1,620 @@
+{
+  "trace_id": "TS-PMC13097244",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Isoriccardin C",
+    "smiles": "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC",
+    "natural_product_class": "cyclic bis(bibenzyl)",
+    "structural_features": {
+      "ring_systems": "18-membered macrocycle",
+      "key_motifs": [
+        "biphenyl",
+        "macrocycle"
+      ]
+    },
+    "motivation": "Isoriccardin C exhibits antimicrobial (antibacterial and antifungal) properties as well as potential antitumoral/cytotoxic activity. Existing syntheses are linear, lack versatility, and require many protection-deprotection steps. A more concise and versatile strategy based on catalytic transformations, particularly for macrocyclization, is desired.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Speicher",
+        "year": 2010,
+        "doi": "10.1002/ejoc.201000900",
+        "key_strategy": "Wittig reaction for macrocyclization (12 steps)"
+      },
+      {
+        "lead_author": "Marx",
+        "year": 2021,
+        "doi": "10.1002/ejoc.202100001",
+        "key_strategy": "C-H activation/alkene addition for macrocyclization, requiring a chiral sulfoxide auxiliary (16 steps)"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "A concise, nine-step total synthesis with minimal reliance on protecting groups and a modular nature for structural analogues. Improved overall yield and efficiency compared to prior syntheses."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming the 18-membered macrocycle",
+        "named_strategy": "Palladium-catalyzed C-H activation/macrocyclization",
+        "reasoning": "This is the pivotal step to assemble the macrocyclic structure, leveraging a hydroxyl-directed C-H alkenylation to avoid external directing groups."
+      },
+      {
+        "bond_description": "C-O bond",
+        "named_strategy": "Ullmann coupling",
+        "reasoning": "To install the 'd' ring and form one of the biaryl ether linkages."
+      },
+      {
+        "bond_description": "C=C bond",
+        "named_strategy": "Wittig olefination",
+        "reasoning": "To connect the 'b' and 'c' rings and introduce the alkene functionality."
+      },
+      {
+        "bond_description": "C-C bond",
+        "named_strategy": "Suzuki-Miyaura cross-coupling",
+        "reasoning": "To join the 'a' and 'b' arene units, forming a biaryl linkage."
+      }
+    ],
+    "rationale": "The strategy focuses on sequentially building the four aromatic rings using established C-C and C-O bond-forming processes (Suzuki, Wittig, Ullmann) and culminates in a novel palladium-catalyzed intramolecular C-H alkenylation for macrocyclization. This approach aims for conciseness and minimal protecting group use by leveraging a native hydroxyl directing group."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Starting from commercially available 3-hydroxy-4-iodobenzaldehyde.",
+        "gap": "The hydroxyl group needs protection before further reactions.",
+        "decision": "To protect the hydroxyl group, chose tetrahydropyranyl (THP) ether formation, expecting good yield and stability."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccc(O)c(I)c1"
+        ],
+        "product_smiles": [
+          "O=Cc1ccc(OP2OCCCCO2)c(I)c1"
+        ],
+        "reagents": [
+          "DHP",
+          "PPTS"
+        ],
+        "solvent": "DCM",
+        "temperature": "35 °C",
+        "time": "22 h",
+        "stoichiometry": {
+          "DHP": "3.0 equiv",
+          "PPTS": "2.5 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Protection of 3-hydroxy-4-iodobenzaldehyde as the tetrahydropyranyl ether (1) was efficient."
+      },
+      "evidence": {
+        "text_span": "The synthesis started with commercially available 3-hydroxy-4-iodobenzaldehyde (Scheme 1). This compound was protected as the tetrahydropyranyl ether (1, 87% yield)",
+        "image_refs": [
+          "791ddd2aaae29a3030ad21cd3bf52b8b58b937590d3d4042e314327a25a781e5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 1 is a protected iodobenzaldehyde.",
+        "gap": "A biaryl unit needs to be formed.",
+        "decision": "To form the biaryl unit, chose Suzuki coupling with (2-methoxyphenyl)boronic acid, expecting an efficient coupling."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccc(OP2OCCCCO2)c(I)c1",
+          "COc1ccccc1B(O)O"
+        ],
+        "product_smiles": [
+          "COc1ccccc1-c1cc(C=O)ccc1OP1OCCCCO1"
+        ],
+        "reagents": [
+          "K3PO4"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "ligand": "SPhos",
+        "solvent": "PhMe/H2O",
+        "temperature": "90 °C",
+        "time": "2.5 h",
+        "stoichiometry": {
+          "Pd(OAc)2": "2.5 mol%",
+          "SPhos": "5.0 mol%",
+          "K3PO4": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "The Suzuki coupling was efficient, providing the biaryl product (2) in excellent yield."
+      },
+      "evidence": {
+        "text_span": "and used for a Suzuki coupling with (2-methoxyphenyl)boronic acid, which is also commercially available. The reaction was efficient, and the coupling product was obtained in an excellent 92% yield. This biaryl product (2)",
+        "image_refs": [
+          "791ddd2aaae29a3030ad21cd3bf52b8b58b937590d3d4042e314327a25a781e5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 2 is a biaryl aldehyde.",
+        "gap": "An alkene needs to be introduced to connect the 'b' and 'c' rings.",
+        "decision": "To introduce the alkene, chose Wittig reaction with commercially available phosphonium salt S1, expecting the formation of the desired alkene."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccccc1-c1cc(C=O)ccc1OP1OCCCCO1",
+          "BrC[P+](c1ccccc1)(c1ccccc1)c1ccc(Br)cc1"
+        ],
+        "product_smiles": [
+          "COc1ccccc1-c1ccc(OP2OCCCCO2)c(C=Cc2ccc(Br)cc2)c1"
+        ],
+        "reagents": [
+          "K2CO3",
+          "18-crown-6"
+        ],
+        "solvent": "DCM",
+        "temperature": "reflux",
+        "time": "0.5 h",
+        "stoichiometry": {
+          "K2CO3": "10 equiv",
+          "18-crown-6": "10 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "regio_selectivity": "1:1.6 E:Z mixture",
+        "observation": "The Wittig reaction proceeded in excellent yield, but produced a mixture of E:Z isomers. 18-crown-6 ether was necessary for solubilization."
+      },
+      "evidence": {
+        "text_span": "was then submitted to a Wittig reaction with commercially available phosphonium salt S1, leading to a 1:1.6 E:Z mixture in excellent 87% yield. The 18-crown-6 ether was necessary to solubilize the base in dichloromethane.",
+        "image_refs": [
+          "791ddd2aaae29a3030ad21cd3bf52b8b58b937590d3d4042e314327a25a781e5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 3 contains an alkene that needs to be reduced to an alkane.",
+        "gap": "Catalytic hydrogenation might lead to undesired side reactions.",
+        "decision": "To reduce the double bond, initially considered catalytic hydrogenation, expecting a straightforward reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccccc1-c1ccc(OP2OCCCCO2)c(C=Cc2ccc(Br)cc2)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "Pd/C",
+        "solvent": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Catalytic hydrogenation led to loss of the bromine atom."
+      },
+      "evidence": {
+        "text_span": "These conditions were chosen since catalytic hydrogenation led to loss of the bromine atom.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "Catalytic hydrogenation failed due to debromination.",
+        "gap": "A selective method for double bond reduction is needed that preserves the bromine atom.",
+        "decision": "To selectively hydrogenate the double bond, chose in situ-generated diimide from tosylhydrizide and sodium acetate, expecting to avoid debromination."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccccc1-c1ccc(OP2OCCCCO2)c(C=Cc2ccc(Br)cc2)c1"
+        ],
+        "product_smiles": [
+          "COc1ccccc1-c1ccc(OP2OCCCCO2)c(CCCc2ccc(Br)cc2)c1"
+        ],
+        "reagents": [
+          "TsNHNH2",
+          "NaOAc"
+        ],
+        "solvent": "THF",
+        "temperature": "reflux",
+        "time": "4 days",
+        "stoichiometry": {
+          "TsNHNH2": "10 equiv",
+          "NaOAc": "10 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Hydrogenation of the double bond was successfully achieved using in situ-generated diimide, preserving the bromine atom."
+      },
+      "evidence": {
+        "text_span": "Hydrogenation of the double bond was successfully achieved using in situ-generated diimide from tosylhydrizide and sodium acetate under reflux in THF (4, 78% yield). These conditions were chosen since catalytic hydrogenation led to loss of the bromine atom.",
+        "image_refs": [
+          "791ddd2aaae29a3030ad21cd3bf52b8b58b937590d3d4042e314327a25a781e5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 4 contains a bromine atom and a THP-protected phenol.",
+        "gap": "The 'd' ring needs to be installed via an ether linkage.",
+        "decision": "To install the 'd' ring, chose Ullmann coupling with phenol S2, expecting to form the biaryl ether."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccccc1-c1ccc(OP2OCCCCO2)c(CCCc2ccc(Br)cc2)c1",
+          "COc1ccc(C=O)cc1O"
+        ],
+        "product_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3OP3OCCCCO3)cc2)ccc1OC"
+        ],
+        "catalyst": "Cu2O",
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "pyridine",
+        "temperature": "140 °C",
+        "time": "23 h",
+        "stoichiometry": {
+          "Cu2O": "0.55 equiv",
+          "K2CO3": "2.0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "Ullmann coupling proceeded to give the desired product in moderate yield."
+      },
+      "evidence": {
+        "text_span": "The next step was the Ullman coupling reaction, which was carried out by treatment of compound 4 with phenol S2 (prepared in just one step from inexpensive isovanillin; see the Supporting Information) using copper(I) oxide in pyridine at 140 °C, which led to the corresponding product in 66% yield.",
+        "image_refs": [
+          "791ddd2aaae29a3030ad21cd3bf52b8b58b937590d3d4042e314327a25a781e5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 5 contains a THP protecting group.",
+        "gap": "The THP group needs to be removed to reveal the hydroxyl group for the subsequent macrocyclization.",
+        "decision": "To deprotect the THP group, chose mild acid-catalyzed methanolysis, expecting high yield and selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3OP3OCCCCO3)cc2)ccc1OC"
+        ],
+        "product_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC"
+        ],
+        "reagents": [
+          "PPTS"
+        ],
+        "solvent": "MeOH/THF",
+        "temperature": "rt",
+        "time": "17 h",
+        "stoichiometry": {
+          "PPTS": "20 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Removal of the THP protecting group was successful, yielding the key cyclization precursor 6."
+      },
+      "evidence": {
+        "text_span": "Removal of the THP protecting group through mild acid-catalyzed methanolysis at room temperature produced the key cyclization precursor 6 in 91% yield.",
+        "image_refs": [
+          "791ddd2aaae29a3030ad21cd3bf52b8b58b937590d3d4042e314327a25a781e5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 6 is the acyclic precursor for macrocyclization.",
+        "gap": "The macrocyclization needs to be optimized to achieve a good yield.",
+        "decision": "To perform the macrocyclization, initially tested conditions similar to intermolecular C-H olefination, expecting the reaction to proceed under high dilution."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC"
+        ],
+        "product_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "ligand": "Boc-L-Ile-OH",
+        "reagents": [
+          "Cu(OAc)2",
+          "Cs2CO3"
+        ],
+        "solvent": "tert-amyl alcohol",
+        "temperature": "60 °C",
+        "time": "4 h",
+        "atmosphere": "air",
+        "stoichiometry": {
+          "Pd(OAc)2": "20 mol%",
+          "Boc-L-Ile-OH": "40 mol%",
+          "Cu(OAc)2": "1 equiv",
+          "Cs2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 19,
+        "failure_mode": "low_yield",
+        "observation": "The desired product 7 was obtained in only 19% yield. Longer reaction times led to decomposition."
+      },
+      "evidence": {
+        "text_span": "The macrocyclization reaction was initially tested using conditions similar to those optimized for the intermolecular addition of ortho-aryl phenols to olefins but under high dilution to avoid intermolecular processes. Using 20 mol% of palladium acetate, Boc-protected leucine, and 1 equiv of copper acetate in tert-amyl alcohol under air led to the desired product 7 in 19% yield (after 4 h at 60 °C, Table 1). ... Longer reaction times (16 h) ensured full conversion; however, the desired product was not detected, suggesting instability of both the product and the starting material under these reaction conditions.",
+        "image_refs": [
+          "ad5715478281f073cbda373cfb373c1ace146ab2ab08019c68342da3301a5269.jpg",
+          "791ddd2aaae29a3030ad21cd3bf52b8b58b937590d3d4042e314327a25a781e5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Initial macrocyclization conditions gave low yield and decomposition with longer reaction times.",
+        "gap": "Decomposition might be due to high temperature or oxidative environment.",
+        "decision": "To mitigate decomposition, attempted to lower the temperature, expecting improved yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC"
+        ],
+        "product_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "ligand": "Boc-L-Ile-OH",
+        "reagents": [
+          "Cu(OAc)2",
+          "Cs2CO3"
+        ],
+        "solvent": "tert-amyl alcohol",
+        "temperature": "rt",
+        "time": "26 h",
+        "atmosphere": "air",
+        "stoichiometry": {
+          "Pd(OAc)2": "20 mol%",
+          "Boc-L-Ile-OH": "40 mol%",
+          "Cu(OAc)2": "1 equiv",
+          "Cs2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 14,
+        "failure_mode": "low_yield",
+        "observation": "Lowering the temperature slightly improved results, but the product was still formed in only 14% yield."
+      },
+      "evidence": {
+        "text_span": "Attempts to mitigate decomposition by lowering the temperature slightly improved the results, but the product was still formed in only 14% yield.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Low yield and decomposition observed in macrocyclization attempts.",
+        "gap": "Oxidative environment might be contributing to degradation.",
+        "decision": "To improve yield and reduce degradation, tested decreasing the amount of copper salt and lowering the temperature further, expecting to reduce oxidative processes."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC"
+        ],
+        "product_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "ligand": "Boc-L-Ile-OH",
+        "reagents": [
+          "Cu(OAc)2",
+          "Cs2CO3"
+        ],
+        "solvent": "tert-amyl alcohol",
+        "temperature": "45 °C",
+        "time": "17 h",
+        "atmosphere": "air",
+        "stoichiometry": {
+          "Pd(OAc)2": "20 mol%",
+          "Boc-L-Ile-OH": "40 mol%",
+          "Cu(OAc)2": "0.5 equiv",
+          "Cs2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 25,
+        "failure_mode": "low_yield",
+        "observation": "Decreasing copper salt and temperature increased yield to 25% (internal standard), but still not optimal."
+      },
+      "evidence": {
+        "text_span": "Assuming that the oxidative environment was responsible for the degradation, we tested the reaction by decreasing the amount of copper salt to 0.5 equiv and conducting it at 45 °C instead of 60 °C; these conditions made it possible to increase the yield up to 25% (determined by internal standard).",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "Previous attempts at macrocyclization suffered from low yield and decomposition, likely due to an oxidative environment.",
+        "gap": "The presence of air (oxygen) seems to be detrimental.",
+        "decision": "To prevent oxidative degradation and improve yield, chose to conduct the reaction under an argon atmosphere with 1.0 equiv of copper salt, expecting optimal results."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC"
+        ],
+        "product_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "ligand": "Boc-L-Ile-OH",
+        "reagents": [
+          "Cu(OAc)2",
+          "Cs2CO3"
+        ],
+        "solvent": "tert-amyl alcohol",
+        "temperature": "60 °C",
+        "time": "6 h",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "Pd(OAc)2": "20 mol%",
+          "Boc-L-Ile-OH": "40 mol%",
+          "Cu(OAc)2": "1.0 equiv",
+          "Cs2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 30,
+        "observation": "The optimal results were obtained by employing an argon atmosphere to exclude air, which prevented oxidative degradation, yielding 30% isolated product."
+      },
+      "evidence": {
+        "text_span": "The optimal results were obtained by employing an argon atmosphere to exclude air, which prevented oxidative degradation. Using 1.0 equiv of copper salt under these conditions provided the product in 30% isolated yield.",
+        "image_refs": [
+          "ad5715478281f073cbda373cfb373c1ace146ab2ab08019c68342da3301a5269.jpg",
+          "791ddd2aaae29a3030ad21cd3bf52b8b58b937590d3d4042e314327a25a781e5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The macrocyclized product 7 is obtained.",
+        "gap": "The final target, isoriccardin C, requires hydrogenation of the alkene and O-demethylation.",
+        "decision": "To obtain isoriccardin C, chose a two-step sequence: hydrogenation with Pd/C and O-demethylation with boron tribromide, expecting to complete the synthesis."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC"
+        ],
+        "product_smiles": [
+          "C=Cc1cc(Oc2ccc(CCCc3cc(-c4ccccc4OC)ccc3O)cc2)ccc1OC"
+        ],
+        "reagents": [
+          "H2",
+          "BBr3"
+        ],
+        "catalyst": "Pd/C",
+        "solvent": "DCM/MeOH",
+        "temperature": "0 °C to rt",
+        "stoichiometry": {
+          "Pd/C": "30 mol%",
+          "BBr3": "10 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "Hydrogenation and O-demethylation successfully yielded isoriccardin C."
+      },
+      "evidence": {
+        "text_span": "With the cyclized product 7 in hand, hydrogenation using Pd/C and a balloon of H2 in a 1:1 mixture of dichloromethane and methanol, followed by O-demethylation under standard conditions with boron tribromide, gave isoriccardin C (8) in 55% yield (combined yield for both steps).",
+        "image_refs": [
+          "791ddd2aaae29a3030ad21cd3bf52b8b58b937590d3d4042e314327a25a781e5.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 5.4,
+        "unit": "%",
+        "interpretation": "Overall yield from commercial materials for Isoriccardin C."
+      },
+      "Longest Linear Steps": {
+        "value": 9,
+        "unit": "steps",
+        "interpretation": "Longest linear sequence of steps for Isoriccardin C."
+      }
+    },
+    "significance": "The developed route represents the shortest total synthesis of isoriccardin C (9 linear steps) to date, leveraging an atom-economical intramolecular Pd(II)-catalyzed olefination directed by a native phenolic hydroxyl group. This approach minimizes protecting group reliance and offers a modular platform for analogues."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.6c00911",
+      "pmcid": "PMC13097244",
+      "title": "Total Synthesis of Isoriccardin C and Isoriccardin D Based on a Hydroxyl-Directed Palladium-Catalyzed Intramolecular C-H Alkenylation.",
+      "authors": "Losada P, Mascareñas JL, Gulías M.",
+      "journal": "Org Lett",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC13097244?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/4157a61c-1c7f-4e4f-89e9-c4f6ad077051.zip",
+      "parsed_at": "2026-05-07T14:33:39.757512+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 28,
+    "parseable": 27,
+    "canonicalized": 26,
+    "invalid": 1,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

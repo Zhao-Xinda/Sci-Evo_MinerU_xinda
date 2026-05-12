@@ -1,0 +1,1187 @@
+{
+  "trace_id": "TS-PMC13080434",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Phenol-Heteroaryl Biaryl (General)",
+    "smiles": "Oc1ccccc1-c1cccnc1",
+    "natural_product_class": "unspecified",
+    "structural_features": {
+      "key_motifs": [
+        "phenol",
+        "N-heteroarene",
+        "biaryl"
+      ]
+    },
+    "motivation": "Phenols and N-heteroarenes are prevalent in medicinal chemistry. Forming C-C biaryl bonds between them is challenging due to competitive SNAr reactions and often requires transition metals and prefunctionalized substrates. This work aims to develop a sustainable, transition-metal-free photocatalytic method for C-C coupling.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Li",
+        "year": 2022,
+        "doi": "10.1039/d1cc07127k",
+        "key_strategy": "Redox-neutral C(sp2)–H arylation of phenols with arylbromides via electron donor–acceptor excitation, affording ortho-functionalization."
+      },
+      {
+        "lead_author": "Tan",
+        "year": 2022,
+        "doi": "10.1039/d2cc01212j",
+        "key_strategy": "Direct arylation of N-heterocycles enabled by photoredox catalysis, requiring iridium catalysts and long reaction times, affording ortho-functionalization."
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Develop a photochemical, transition-metal-free C-C coupling of phenols and halogenated azines with an organic dye photocatalyst and base, achieving moderate to high yields, shorter reaction times, and functionalizing ortho-, meta-, and para-positions of phenols, while avoiding competitive SNAr reactivity."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C(sp2)-C(sp2) bond between phenol and heteroaryl halide",
+        "named_strategy": "Photocatalytic Cross-Coupling",
+        "reasoning": "This disconnection directly addresses the challenge of forming biaryl bonds between phenols and N-heteroarenes. The strategy involves concurrent oxidation of the phenol component to a phenoxyl radical and reduction of the azine component to a heteroaryl radical, followed by radical cross-coupling. This avoids prefunctionalization and transition metals.",
+        "alternatives_considered": [
+          {
+            "strategy": "Suzuki-Miyaura coupling",
+            "rejected_because": "Requires transition metals (Pd, Ni), prefunctionalized substrates (halides, triflates, organoborons), phenol protection, and can lead to metal impurities."
+          },
+          {
+            "strategy": "SNAr (SNAr of C-O bond)",
+            "rejected_because": "Leads to C-O coupling, which is a common competitive pathway and not the desired C-C bond formation."
+          },
+          {
+            "strategy": "Functional group interconversion or aryne chemistry",
+            "rejected_because": "Utilizes lengthy syntheses and unstable precursors."
+          }
+        ]
+      }
+    ],
+    "rationale": "The strategy leverages the intrinsic radical reactivity of phenols (low oxidation potentials) and the ability to generate aryl radicals from aryl halides via photoredox. By using an organic dye photocatalyst, the method aims for sustainability and avoids expensive transition metals. The redox-neutral conditions and concurrent radical generation are designed to overcome mismatched redox properties and chemoselectivity issues, particularly the competitive SNAr reaction."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Phenols and N-heterocycles are important motifs in medicinal chemistry, often found conjoined via biaryl bonds in drugs like MRTX1133 (1) and sotorasib (2). Traditional methods for forming these C-C bonds, such as Suzuki-Miyaura coupling, rely on transition metals and prefunctionalized substrates, and often face challenges like competitive C-O coupling (SNAr) and metal impurity removal. Recent work has explored photocatalytic approaches for phenol oxidation and aryl radical generation.",
+        "gap": "A sustainable, transition-metal-free method for C-C cross-coupling of phenols and heteroaryl halides that overcomes competitive SNAr reactivity and allows for diverse regioselectivity is needed.",
+        "decision": "To address the need for sustainable C-C coupling, we will investigate a photochemical strategy that couples phenols with heteroaryl halides under redox-neutral conditions using an organic dye photocatalyst and base, expecting to generate complementary radicals that cross-couple efficiently."
+      },
+      "evidence": {
+        "text_span": "Developing sustainable methods for $\\mathsf { C } ( \\mathsf { s p } ^ { 2 } ) \\mathrm { - } \\mathsf { C } ( \\mathsf { s p } ^ { 2 } )$ bond formation that avoid transition-metals and prefunctionalized substrates remains a central goal in synthetic chemistry. Phenols and $N$ -heteroarenes (azines) are abundantly available, yet their crosscoupling is hindered by mismatched redox properties and chemoselectivity issues. Herein, we report a photochemical strategy that couples phenols with heteroaryl halides under redox-neutral conditions using an organic dye photocatalyst and base.",
+        "section": "ABSTRACT"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Previous work from our lab showed photochemical oxidative phenol coupling using an acridinium dye photocatalyst. Other studies generated aryl radicals from aryl halides via photoredox. Redox-neutral strategies for C-C cross-coupling of phenols with aryl bromides have been reported, but often with limitations (e.g., specific electron-poor aryl bromides, expensive iridium catalysts, long reaction times, ortho-functionalization only).",
+        "gap": "A unified strategy that combines phenol oxidation and heteroaryl halide reduction under mild, sustainable conditions to form C-C bonds with broader scope and regioselectivity is missing.",
+        "decision": "We propose a dual photocatalytic manifold where concurrent oxidation of the phenol and reduction of the heteroaryl halide generates complementary radicals. This redox-neutral approach, using an organic dye photocatalyst, is expected to enable efficient C-C cross-coupling and overcome limitations of prior methods.",
+        "alternatives_considered": [
+          {
+            "strategy": "Li (2022) conditions (EDA)",
+            "rejected_because": "Disclosed base-mediated cross-coupling of phenols and electron-poor aryl bromides to afford only ortho-functionalization of phenols."
+          },
+          {
+            "strategy": "Tan (2022) conditions (Ir)",
+            "rejected_because": "Requires halogenated solvents, expensive iridium-based photocatalysts, long reaction times (up to 168 h), and only achieved ortho-functionalization of phenols."
+          }
+        ]
+      },
+      "evidence": {
+        "text_span": "This current work introduces a photochemical, transitionmetal-free C C coupling of phenols and halogenated azines (Scheme 1E) [44]. Using only an organic dye photocatalyst and base, the reaction generates phenoxyl and heteroaryl radicals via concurrent oxidation of phenols and reduction of azines, which then undergo radical cross-coupling mechanisms. This redoxneutral method operates with chloro-, bromo-, and iodo-azines along with those bearing electron-withdrawing groups, delivers shorter reaction times (3–16 h) than prior approaches [38, 39], and effectively functionalizes the ortho-, meta-, and para-positions of phenols.",
+        "section": "1 Introduction"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carbazole-based photocatalysts like 3DPA2FBN are promising due to their versatile redox potentials and cost-effectiveness compared to iridium catalysts. The redox profile of 3DPA2FBN (oxidation potential +1.24V vs. SCE for phenol, reduction potential -1.60V vs. SCE for heteroaryl halides) should enable the desired radical generation.",
+        "gap": "Optimal reaction parameters (catalyst loading, base, solvent, stoichiometry, temperature, time) need to be identified for efficient C-C coupling and minimal byproduct formation.",
+        "decision": "We will use 2,3,6-trimethylphenol (5A) and 3-fluoro-4-iodopicolinonitrile (6a) as model substrates and 3DPA2FBN as the photocatalyst. Reaction parameters will be modulated to evaluate yield and selectivity, expecting to achieve high conversion to the cross-coupled product 7A with minimal protodehalogenation and phenol dimerization.",
+        "alternatives_considered": [
+          {
+            "strategy": "Iridium photocatalysts",
+            "rejected_because": "Expensive and less sustainable than organic dyes."
+          }
+        ]
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "N#Cc1nccc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)c(C)c1.N#Cc1nccc(I)c1F>>Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "3 h",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "regio_selectivity": "9.6:1 para:meta (LCAP%)",
+        "observation": "Under optimized conditions, cross-coupled product 7A was obtained in 92% (UV area percent) with minimal byproduct formation (3% dehalo, 0% dimer). Both para- and meta-isomers were detected, with the para-position favored 9.6:1 by LCMS. Isolation by column chromatography afforded 7A in 91% yield with a 3.2:1 para:meta ratio by 19F{1H}-NMR."
+      },
+      "evidence": {
+        "text_span": "Using 2,3,6-trimethylphenol (5A) and 3-fluoro-4- iodopicolinonitrile (6a), reaction parameters were modulated to evaluate yield and selectivity (Scheme 2A). The main byproducts observed during optimization were protodehalogenation of the heteroaryl halide (dehalo) and phenol dimerization (dimer). Under the optimized conditions with a 1.5:1 phenol:pyridine ratio, cross-coupled dimer 7A was obtained in $9 2 \\%$ (UV area percent) with minimal byproduct formation (entry 1). Both paraand meta-isomers were detected, with the para-position favored 9.6:1 by LCMS. Isolation by column chromatography afforded 7A in $9 1 \\%$ yield with a 3.2:1 para:meta (p:m) ratio by $^ { 1 9 } \\mathrm { F } \\{ ^ { 1 } \\mathrm { H } \\}$ -NMR.",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "af6434b9394b32802bd7f5a66c59e5dc4a4da0b4e6bef69c0c7b121133746b8e.jpg",
+          "12c7dd221886ecbb46498a1cd90f41052d8d36bf27ea6091bdb163122e0229d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The optimized conditions for the model reaction (phenol 5A and pyridine 6a) included Na2CO3 as a base.",
+        "gap": "The role of the base in the reaction mechanism needs to be understood. Is it critical for reactivity or just for pH control?",
+        "decision": "We will run the reaction without Na2CO3 to determine its necessity, expecting a decrease in reactivity if it plays a crucial role.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "N#Cc1nccc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)c(C)c1.N#Cc1nccc(I)c1F>>Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O",
+        "catalyst": "3DPA2FBN",
+        "reagents": [],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "3 h",
+        "atmosphere": "Ar"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 10,
+        "failure_mode": "low_yield",
+        "observation": "In the absence of Na2CO3, 6a was poorly consumed and conversion to 7a was low (10%). This indicates the base is critical for reactivity."
+      },
+      "evidence": {
+        "text_span": "The presence of base is critical for reactivity: In its absence 6a was poorly consumed and conversion to 7a was low $( 1 0\\% )$ (entry 2).",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "12c7dd221886ecbb46498a1cd90f41052d8d36bf27ea6091bdb163122e0229d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The reaction is proposed to be photocatalytic, involving an organic dye photocatalyst.",
+        "gap": "Is the photocatalyst truly essential, or can the reaction proceed without it, perhaps via an EDA complex?",
+        "decision": "We will run the reaction without 3DPA2FBN to confirm its role, expecting a significant drop in yield if it is the primary driver of reactivity.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "N#Cc1nccc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)c(C)c1.N#Cc1nccc(I)c1F>>Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "3 h",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 43,
+        "failure_mode": "low_yield",
+        "observation": "Considerable product formation was observed without photocatalyst present (43%) alongside a lower p:m ratio (7.6:1). This suggests a reactive EDA complex between the phenol and heteroaryl halide, but the yield is significantly lower than with the photocatalyst."
+      },
+      "evidence": {
+        "text_span": "Considerable product formation was observed without photocatalyst present $( 4 3\\% )$ alongside a lower p:m ratio (7.6:1). This result suggests a reactive EDA complex between the phenol and heteroaryl halide, potentially through π-π stacking [16, 26, 27, 38] or halogen-bonding [49].",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "12c7dd221886ecbb46498a1cd90f41052d8d36bf27ea6091bdb163122e0229d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The reaction is proposed to involve radical intermediates, which are typically sensitive to oxygen.",
+        "gap": "Is an inert atmosphere necessary for the reaction, or can it proceed under air?",
+        "decision": "We will run the reaction under air to test the sensitivity to oxygen, expecting product formation to be suppressed if radicals are involved.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "N#Cc1nccc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)c(C)c1.N#Cc1nccc(I)c1F>>Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "3 h",
+        "atmosphere": "air",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 0,
+        "failure_mode": "side_product_dominant",
+        "observation": "Under air, product formation is completely suppressed and phenol dimerization predominates with negligible pyridine consumption, aligning with competitive reduction of O2."
+      },
+      "evidence": {
+        "text_span": "Under air, product formation is completely suppressed and phenol dimerization predominates with negligible pyridine consumption, aligning with competitive reduction of $\\mathrm { O } _ { 2 }$ (entry 4).",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "12c7dd221886ecbb46498a1cd90f41052d8d36bf27ea6091bdb163122e0229d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The reaction is described as 'photocatalytic' and uses a 427 nm Kessil light source.",
+        "gap": "Is light irradiation truly necessary for the transformation, or can it proceed thermally?",
+        "decision": "We will run the reaction in the absence of blue light to confirm its photochemical nature, expecting no reaction if light is essential.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "N#Cc1nccc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)c(C)c1.N#Cc1nccc(I)c1F>>Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "3 h",
+        "atmosphere": "Ar"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 0,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction occurred in the absence of blue light, confirming that the transformation is not a two-electron process and requires light."
+      },
+      "evidence": {
+        "text_span": "No reaction occurred in the absence of blue light, confirming that the transformation is not a two-electron process (entry 5).",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "12c7dd221886ecbb46498a1cd90f41052d8d36bf27ea6091bdb163122e0229d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The proposed mechanism involves radical intermediates. Radical scavengers like TEMPO should inhibit the reaction if radicals are involved.",
+        "gap": "Can the radical intermediates be trapped, and how does their presence affect the reaction outcome?",
+        "decision": "We will add TEMPO (3 equiv) to the reaction mixture to test for radical involvement, expecting a decrease in product yield and an increase in phenol dimerization if radicals are key intermediates.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "N#Cc1nccc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)c(C)c1.N#Cc1nccc(I)c1F>>Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3",
+          "TEMPO"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "3 h",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv",
+          "TEMPO": "3 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 41,
+        "failure_mode": "side_product_dominant",
+        "observation": "TEMPO lowered the yield of 7a (41%) and promoted phenol dimerization (9%). Incomplete suppression suggests a solvent-caged radical pair, consistent with inability to trap either radical."
+      },
+      "evidence": {
+        "text_span": "TEMPO and 4-acetamido-TEMPO (4-ACT) lower the yield of 7a and promote phenol dimerization (entries 6–7). Incomplete suppression suggests a solvent-caged radical pair, consistent with our inability to trap either radical.",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "12c7dd221886ecbb46498a1cd90f41052d8d36bf27ea6091bdb163122e0229d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The proposed mechanism involves radical intermediates. Radical scavengers like 4-acetamido-TEMPO (4-ACT) should inhibit the reaction if radicals are involved.",
+        "gap": "Can the radical intermediates be trapped, and how does their presence affect the reaction outcome?",
+        "decision": "We will add 4-ACT (3 equiv) to the reaction mixture to test for radical involvement, expecting a decrease in product yield and an increase in phenol dimerization if radicals are key intermediates.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "N#Cc1nccc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)c(C)c1.N#Cc1nccc(I)c1F>>Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3",
+          "O=C(C)Nc1ccc(N(O)C(C)(C)C)cc1"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "3 h",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv",
+          "O=C(C)Nc1ccc(N(O)C(C)(C)C)cc1": "3 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 30,
+        "failure_mode": "side_product_dominant",
+        "observation": "4-ACT lowered the yield of 7a (30%) and promoted phenol dimerization (10%). Incomplete suppression suggests a solvent-caged radical pair, consistent with inability to trap either radical."
+      },
+      "evidence": {
+        "text_span": "TEMPO and 4-acetamido-TEMPO (4-ACT) lower the yield of 7a and promote phenol dimerization (entries 6–7). Incomplete suppression suggests a solvent-caged radical pair, consistent with our inability to trap either radical.",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "12c7dd221886ecbb46498a1cd90f41052d8d36bf27ea6091bdb163122e0229d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Prior work by Tan (2022) reported direct arylation of N-heterocycles using iridium photocatalysis.",
+        "gap": "How does our organic dye photocatalytic system compare in efficiency and selectivity to existing methods?",
+        "decision": "We will benchmark our system against Tan's conditions using our model substrates, expecting our system to be kinetically more favorable.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "N#Cc1nccc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)c(C)c1.N#Cc1nccc(I)c1F>>Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O",
+        "catalyst": "[Ir(ppy)2(dtbbpy)]PF6",
+        "reagents": [
+          "unspecified"
+        ],
+        "solvent": "1,2-DCE",
+        "temperature": "unspecified",
+        "time": "3 h",
+        "atmosphere": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 4,
+        "failure_mode": "low_yield",
+        "observation": "Tan's 2022 conditions showed substantially lower reactivity (4% yield of 7a) after 3 h of irradiation compared to our optimized conditions. This indicates our system is kinetically more favorable."
+      },
+      "evidence": {
+        "text_span": "To benchmark our system, we evaluated the Li [38] and Tan [39] conditions, both of which showed substantially lower/no reactivity after 3 h of irradiation (entries 8–9).",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "12c7dd221886ecbb46498a1cd90f41052d8d36bf27ea6091bdb163122e0229d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Prior work by Li (2022) reported C(sp2)–H arylation of phenols via electron donor–acceptor (EDA) excitation.",
+        "gap": "How does our organic dye photocatalytic system compare in efficiency and selectivity to existing methods, particularly those relying on EDA complexes?",
+        "decision": "We will benchmark our system against Li's conditions using our model substrates, expecting our system to be kinetically more favorable and avoid competitive SNAr.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "N#Cc1nccc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)c(C)c1.N#Cc1nccc(I)c1F>>Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O",
+        "catalyst": "unspecified",
+        "reagents": [
+          "unspecified"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "3 h",
+        "atmosphere": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 0,
+        "failure_mode": "side_product_dominant",
+        "observation": "Li's 2022 conditions showed no reactivity (0% yield of 7a) after 3 h of irradiation. Instead, SNAr of the fluorine in 6a was observed (17%) alongside protodehalogenation of this C-O product (73%). This indicates our system is kinetically more favorable and avoids competitive SNAr."
+      },
+      "evidence": {
+        "text_span": "To benchmark our system, we evaluated the Li [38] and Tan [39] conditions, both of which showed substantially lower/no reactivity after 3 h of irradiation (entries 8–9). For the EDA conditions [38], $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ of the fluorine in 6a was observed $( 1 7\\% )$ alongside protodehalogenation of this C O product $( 7 3\\% )$ (see Supporting Information). These results indicate that our system is kinetically more favorable likely because it leverages both reactivity pathways concurrently and avoids competitive $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ .",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "12c7dd221886ecbb46498a1cd90f41052d8d36bf27ea6091bdb163122e0229d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The photochemical reaction proceeds at 35 °C. SNAr reactions are typically favored at higher temperatures.",
+        "gap": "What is the selectivity of the reaction under purely thermal conditions, and how does it compare to the photochemical conditions?",
+        "decision": "We will run the reaction under harsher thermal conditions (80 °C) without light to determine if SNAr becomes dominant, expecting C-O bond formation.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "N#Cc1nccc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(C)c(Oc2cc(C#N)ncc2I)c1"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)c(C)c1.N#Cc1nccc(I)c1F>>Cc1cc(C)c(C)c(Oc2cc(C#N)ncc2I)c1",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "80 °C",
+        "time": "48 h",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 44,
+        "failure_mode": "wrong_regiochemistry",
+        "observation": "Under harsher thermal conditions (80 °C), the reaction proceeds exclusively via SNAr, forging the C-O bond in 44% yield. This confirms that the photochemical reaction under blue light irradiation exhibits high selectivity for C-C bond formation."
+      },
+      "evidence": {
+        "text_span": "Under harsher thermal conditions $\\mathrm { (80^\\circ C) }$ , the reaction proceeds exclusively via $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ , forging the C O bond in $4 4 \\%$ yield (Scheme 2B). Because the photochemical reaction remains below $8 0 ^ { \\circ } \\mathrm { C }$ , pyridine 6a exhibits high selectivity for C C bond formation under blue light irradiation.",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "8103469c44cacf544fa6e57c168078a15863d192d1e92048cf2c8607d431ca24.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimized conditions for the model reaction (phenol 5A and pyridine 6a) showed high efficiency and C-C selectivity. Now, the scope of the reaction needs to be explored with various heteroaryl halides.",
+        "gap": "Can the method be applied to different types of heteroaryl halides (iodides, bromides, chlorides) and how does the choice of photocatalyst (3DPA2FBN vs. Ir(ppy)3) affect the outcome?",
+        "decision": "We will test the optimized conditions with heteroaryl iodides (6a, 6c'), bromides (6b), and chlorides (6d), comparing 3DPA2FBN with Ir(ppy)3. We expect 3DPA2FBN to be more effective due to its higher oxidation potential.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Oc1ccc(F)cc1F",
+          "N#Cc1cncc(Br)c1"
+        ],
+        "product_smiles": [
+          "N#Cc1cncc(-c2cc(F)cc(F)c2O)c1"
+        ],
+        "rxn_smiles": "Oc1ccc(F)cc1F.N#Cc1cncc(Br)c1>>N#Cc1cncc(-c2cc(F)cc(F)c2O)c1",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "3 h",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "regio_selectivity": ">20:1 para:meta",
+        "observation": "2,6-Difluorophenol (5B) was para-functionalized with 3-cyano-5-bromopyridine (6b) in 60% yield (>20:1 p:m) with the 3DPA2FBN conditions. The use of Ir(ppy)3 generally resulted in low-yielding reactions, likely due to its lower oxidation potential (+0.77V vs. SCE) making phenol oxidation inefficient."
+      },
+      "evidence": {
+        "text_span": "Under optimized conditions, we achieve productive $\\mathrm { C-C }$ coupling across heteroaryl iodides (6a, 6c′), bromides (6b), and even chlorides (6d). Although the regioselectivity is fixed for a given pairing, yields vary. 2,6-Difluorophenol (5B) was parafunctionalized with 3-cyano-5-bromopyridine (6b) in $6 0 \\%$ yield ${ \\mathrm { \\Omega } } ^ { \\left( { \\mathrm { > } 2 0 : 1 } \\right. }$ p:m) with the 3DPA2FBN conditions, but no yield was observed with $\\operatorname { Ir } ( { \\mathsf { ppy } } ) _ { 3 }$ . The use of $\\operatorname { Ir } ( { \\mathsf { ppy } } ) _ { 3 }$ generally results in low-yielding reactions, likely because its lower oxidation potential $( + 0 . 7 7 \\mathrm { V }$ vs. SCE) [51] renders phenol oxidation inefficient.",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "2bf9bb471999949c5c06a284667e04522141d77d0d7093c4d55e0627d0cfb2da.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The model reaction showed good C-C selectivity. However, SNAr is a known competitive pathway, especially with certain halides.",
+        "gap": "How can we control the selectivity between C-C coupling and SNAr, particularly when SNAr is favored?",
+        "decision": "We will investigate the reactivity of chloro-quinoline (6c) and iodo-quinoline (6c') with phenols. We expect that installing less SNAr-prone and more readily reduced halides (like iodide) can circumvent SNAr reactivity and favor C-C coupling.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Oc1ccccc1",
+          "FC(F)(F)c1cc2ccccc2c(Cl)n1"
+        ],
+        "product_smiles": [
+          "FC(F)(F)c1cc2ccccc2c(Oc2ccccc2)n1"
+        ],
+        "rxn_smiles": "Oc1ccccc1.FC(F)(F)c1cc2ccccc2c(Cl)n1>>FC(F)(F)c1cc2ccccc2c(Oc2ccccc2)n1",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "3 h",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 49,
+        "observation": "With chloro-quinoline (6c), SNAr was selective, yielding 49% of the C-O coupled product (7c). This confirms that if SNAr can occur below 35 °C, it will predominate."
+      },
+      "evidence": {
+        "text_span": "If $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ can occur below $3 5 ^ { \\circ } \\mathrm { C }$ , then C O coupling will predominate (7c).",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "2bf9bb471999949c5c06a284667e04522141d77d0d7093c4d55e0627d0cfb2da.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "Chloro-quinoline (6c) led to SNAr (C-O coupling). To favor C-C coupling, halides less prone to SNAr and more readily reduced are needed.",
+        "gap": "Can changing the halide from chlorine to iodine in the quinoline derivative shift the selectivity from SNAr to C-C coupling?",
+        "decision": "We will use iodo-quinoline (6c') instead of chloro-quinoline (6c) with phenols, expecting to observe C-C selective coupling due to the iodide's lower SNAr propensity and easier reduction.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Oc1ccccc1",
+          "FC(F)(F)c1cc2ccccc2c(I)n1"
+        ],
+        "product_smiles": [
+          "Oc1ccccc1-c1nc(C(F)(F)F)cc2ccccc12"
+        ],
+        "rxn_smiles": "Oc1ccccc1.FC(F)(F)c1cc2ccccc2c(I)n1>>Oc1ccccc1-c1nc(C(F)(F)F)cc2ccccc12",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "3 h",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 50,
+        "observation": "Iodo-quinoline (6c') showed C-C selective coupling, yielding 50% of the desired product (7c'). This demonstrates that installing heteroaryl bromides or iodides can circumvent SNAr reactivity as these halides are less prone to SNAr and are more readily reduced."
+      },
+      "evidence": {
+        "text_span": "Installing heteroaryl bromides or iodides can circumvent this reactivity as these halides are less prone to $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ and are more readily reduced, as seen with chloro-quinoline 6c $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ selective) versus iodo-quinoline ${ \\bf 6 0 ^ { \\prime } }$ (C C selective).",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "2bf9bb471999949c5c06a284667e04522141d77d0d7093c4d55e0627d0cfb2da.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The reaction can achieve C-C coupling with various heteroaryl halides. 2-Pyridyl radicals are known to exhibit a strong preference for meta-type coupling.",
+        "gap": "Can this method be used to achieve meta-functionalization of phenols, which is challenging with transition-metal-catalyzed processes?",
+        "decision": "We will test 2-chloro-3-cyanopyridine (6d) with phenols under Ir(ppy)3 catalysis, expecting to observe meta-selective products.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)cc1C",
+          "N#Cc1ccnc(Cl)c1"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(O)c(-c2cncc(C#N)c2)c1C"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)cc1C.N#Cc1ccnc(Cl)c1>>Cc1cc(C)c(O)c(-c2cncc(C#N)c2)c1C",
+        "catalyst": "Ir(ppy)3",
+        "reagents": [
+          "NaF"
+        ],
+        "solvent": "DMSO",
+        "temperature": "35 °C",
+        "time": "16 h",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "NaF": "5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 40,
+        "regio_selectivity": "2.6:1 meta:para",
+        "observation": "2-chloro-3-cyanopyridine (6d) afforded the meta-selective product 7d in 40% yield (2.6:1 m:p) from corresponding pyridyl radical under Ir(ppy)3 catalysis. This demonstrates direct meta-functionalization, which is challenging by other methods."
+      },
+      "evidence": {
+        "text_span": "2-Pyridyl radicals exhibit a strong preference for meta-type coupling $( 7 \\mathbf { c } ^ { \\prime } }$ , 7d, 7e), enabling access to motifs that are notoriously challenging in transition-metal-catalyzed processes [52]. Equivalents to the meta-functionalization of phenols/phenol ethers have gained momentum through transient para-blocking [53, 54] and migration of the substituents [55, 56]. In contrast, this method delivers direct meta-functionalization. For example, 2-chloro-3- cyanopyridine (6d) afforded the meta-selective products 7d $4 0 \\%$ , $2 . 6 { : } 1 \\ \\mathrm { m } { : } \\mathrm { p } .$ ) and 7e $1 4 \\%$ , 3.7:1 m:p) from corresponding pyridyl radical under $\\operatorname { Ir } ( { \\mathsf { ppy } } ) _ { 3 }$ catalysis.",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "2bf9bb471999949c5c06a284667e04522141d77d0d7093c4d55e0627d0cfb2da.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The model reaction (phenol 5A and pyridine 6a) showed good yield and regioselectivity. Scalability is an important aspect for synthetic utility.",
+        "gap": "Can the reaction be scaled up to gram quantities while maintaining efficiency and selectivity?",
+        "decision": "We will perform a gram-scale reaction (2 g, 8 mmol) of phenol 5A and pyridine 6a, expecting to obtain the product in good yield and potentially improved regioselectivity.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "N#Cc1nccc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O"
+        ],
+        "rxn_smiles": "Cc1cc(C)c(O)c(C)c1.N#Cc1nccc(I)c1F>>Cc1cc(C)c(-c2nccc(C#N)c2F)c(C)c1O",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "4 h",
+        "atmosphere": "Ar",
+        "scale": "2 g (8 mmol)",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "regio_selectivity": "5.0:1 para:meta",
+        "observation": "The model reaction proved readily scalable (2 g, 8 mmol) furnishing 7a in 75% yield (1.54 g isolated) after just 4 h with an improved p:m ratio (5.0:1). This scalability is notable as related systems require up to 48 h on a 6 mmol scale."
+      },
+      "evidence": {
+        "text_span": "The model reaction proved readily scalable $\\left( 2 \\mathrm { ~ g } , \\mathrm { ~ } 8 \\mathrm { ~ m m o l } \\right)$ ) furnishing 7a in $7 5 \\%$ yield $ { \\mathrm { 1.54 ~ g } }$ isolated) after just $^ \\textrm { \\scriptsize 4h }$ with an improved p:m ratio (5.0:1) (Scheme 3B). This scalability is notable as related systems require up to $4 8 \\mathrm { ~ h ~ }$ on a 6 mmol scale [38].",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "119f8e36d126684c2e9d85cb3bb221f88e102aadb60d48b435e0b9333a5f6881.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The reaction produces both para- and meta-isomers. Unambiguous confirmation of the regioisomer structure is crucial.",
+        "gap": "How can the structure of the minor meta-isomer be definitively confirmed?",
+        "decision": "We will obtain a single-crystal X-ray structure of the minor meta-isomer 7a' to unambiguously confirm its regioisomer and twisted biaryl bond.",
+        "alternatives_considered": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Crystallization enabled us to obtain the single-crystal X-ray structure of minor meta-isomer 7a' (CCDC 2501832), unambiguously confirming the regioisomer and its twisted biaryl bond (-50.9°)."
+      },
+      "evidence": {
+        "text_span": "Crystallization enabled us to obtain the single-crystal X-ray structure of minor meta-isomer $\\mathbf { 7a^\\prime }$ (CCDC 2501832) [57], unambiguously confirming the regioisomer and its twisted biaryl bond $\\left( - 5 0 . 9^\\circ \\right)$ (Scheme 3C).",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "80a79e3030a6f5216af2eeb8d2cce07bd1364409a01e41673aaca4907a7efa8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Prior methods for phenol-heteroarene coupling exclusively yielded ortho-functionalization. Our method has shown some para-selectivity with 2,3,6-trimethylphenol (5A).",
+        "gap": "Can we achieve para-selective coupling with other phenols, and what factors influence ortho vs. para selectivity?",
+        "decision": "We will test 3,5-dimethylphenol (5d') with 6a to investigate para-selective coupling, expecting to favor the para-position over the ortho-position.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(C)cc(O)c1",
+          "N#Cc1cncc(I)c1F"
+        ],
+        "product_smiles": [
+          "Cc1cc(O)c(C)c(-c2cncc(F)c2C#N)c1",
+          "Cc1cc(O)c(C)c(-c2cncc(F)c2C#N)c1"
+        ],
+        "rxn_smiles": "Cc1cc(C)cc(O)c1.N#Cc1cncc(I)c1F>>Cc1cc(O)c(C)c(-c2cncc(F)c2C#N)c1.Cc1cc(O)c(C)c(-c2cncc(F)c2C#N)c1",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "2 h",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 37,
+        "regio_selectivity": "3.6:1 para:ortho",
+        "observation": "The method enabled para-selective coupling of 3,5-dimethylphenol (5d') with 6a, favoring the para- over the ortho-position in a 3.6:1 p:o ratio with 37% overall yield. This behavior, however, is limited for 2-pyridyl radicals."
+      },
+      "evidence": {
+        "text_span": "While prior methods disclose exclusively ortho-functionalization across all substrates [38, 39], the work herein enabled para-selective coupling of 3,5-dimethylphenol $( 5 \\mathbf { d } ^ { \\prime } )$ with 6a, favoring the para- over the ortho-position in a 3.6:1 p:o ratio with $3 7 \\%$ overall yield (Scheme 3D). This behavior however is limited for 2-pyridyl radicals as evidenced above with the synthesis of $\\mathbf { 7 } \\mathbf { c } ^ { \\prime }$ (2.1:1 o:p).",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "def90de637051343c957a1ca2042e34512a09acaa67a7f60253abc854ecfe4ec.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Radical polarity plays a central role in governing radical reactivity and selectivity. The phenoxyl radical of 5a has an electrophilicity of 1.77 eV, suggesting it acts as a nucleophilic partner.",
+        "gap": "How does the electrophilicity of the heteroaryl radical precursor influence the cross-coupling efficiency and selectivity versus phenol homocoupling?",
+        "decision": "We will select a suite of radical precursors spanning a range of electrophilicities and accessible reduction potentials, expecting that increasing radical electrophilicity will enhance cross-coupling between the phenol and the corresponding radical, while more nucleophilic radicals will favor phenol dimerization.",
+        "alternatives_considered": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Increasing radical electrophilicity enhances cross-coupling between the phenol and the corresponding radical whereas the phenol tends to dimerize in the presence of more nucleophilic radicals. The phenoxyl radical of 5a has an electrophilicity of 1.77 eV. Conceptually, this phenoxyl radical acts as the nucleophilic partner requiring a more electrophilic heteroaryl radical for efficient coupling."
+      },
+      "evidence": {
+        "text_span": "Radical polarity plays a central role in governing radical reactivity and selectivity, a principle that underlies numerous synthetic transformations [58, 59]. Guided by these insights, we selected a suite of radical precursors spanning a range of electrophilicities and accessible reduction potentials (Scheme 4). These precursors were activated through diazo precursors [60], aryl sulfonium salts [61], and other related platforms [62, 63]. Increasing radical electrophilicity enhances cross-coupling between the phenol and the corresponding radical whereas the phenol tends to dimerize in the presence of more nucleophilic radicals. The phenoxyl radical of 5a has an electrophilicity of 1.77 eV. Conceptually, this phenoxyl radical acts as the nucleophilic partner requiring a more electrophilic heteroaryl radical for efficient coupling.",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "2c9721eb6911ca445cd161e5b7f71e218a74691378c32afeffb3be0cfdad0846.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Stern-Volmer analysis showed strong quenching by pyridine and minimal quenching by phenol, suggesting an oxidative quenching cycle for 3DPA2FBN. UV-Vis analysis indicated EDA complex formation between phenol and pyridine. Reactivity without photocatalyst also occurred, suggesting direct pyridine reduction or EDA excitation.",
+        "gap": "What are the precise mechanistic pathways (radical-phenoxyl, radical-phenolate, or radical-phenol) and how do they influence regioselectivity?",
+        "decision": "We propose a reaction mechanism involving electron donor-acceptor complexation and a photocatalytic cycle. DFT calculations will be performed to evaluate the feasibility and regiochemical outcomes of pyridyl radical addition to phenol, phenolate, and phenoxyl radical intermediates, expecting to identify the dominant pathway(s).",
+        "alternatives_considered": [
+          {
+            "strategy": "Phenoxyl radical addition to heteroaryl halide",
+            "rejected_because": "Unlikely based on Stern-Volmer quenching experiments."
+          }
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "DFT calculations for the pyridyl radical 6a' addition to phenol 5a, phenolate 5a', and phenoxyl radical 5a'' showed that cross-coupling of pyridyl radical 6a' and phenoxyl radical 5a'' (radical-phenoxyl pathway) favors para-addition by ~23 kcal/mol. The radical-phenolate pathway also favors the para-position by 7.2 kcal/mol. Interestingly, pyridyl radical coupling to a neutral phenol (radical-phenol) favors meta-coupling by 1.2 kcal/mol. Given the base equilibrium and excess phenol, all three pathways are expected to exist, with radical-phenoxyl coupling likely dominant (70%) and radical-phenol coupling contributing significantly (30%) to the meta product."
+      },
+      "evidence": {
+        "text_span": "Given the experimental evidence, we propose the reaction mechanism shown in Scheme 5A. Stern-Volmer analysis of the photocatalyst in MeCN reveals strong-quenching by pyridine and minimal quenching by phenol, with base having little effect– likely due to solubility limitations (Scheme 5B). Consistent with an oxidative quenching cycle (3DPA2FBN∙+/3DPA2FBN* = – 1.60 V vs. SCE; 3DPA2FBN∙+/3DPA2FBN = +1.24 V vs. SCE) [45], the pyridyl radical ${ \\bf 6 a ^ { \\prime } }$ is generated via reduction, followed by phenolate $\\mathbf { 5 a ^ { \\prime } }$ oxidation to form the phenoxyl radical $\\pmb { 5 } \\mathbf { a } ^ { \\prime \\prime }$ . Cross-coupling of these radicals may then proceed through radical-phenoxyl, radical-phenolate, or radical-phenol pathways. UV-Vis analysis of phenol 5a and pyridine 6a in the basic reaction media shows a slight bathochromic shift and color change in a 1:1 mixture, suggesting EDA complex formation (Scheme 5C), albeit not definitive [64]. While 6a could be directly excited at $4 2 7 \\mathrm { n m }$ , the complex absorbs more strongly at this wavelength. The 5a phenolate absorbs only below $3 3 0 \\ \\mathrm { n m }$ , ruling out excited-state phenolate chemistry. Reactivity without photocatalyst thus arises from either EDA excitation or direct pyridine reduction. Quantum yield measurements indicate chain propagation in both the photocatalytic $\\Phi = 3 . 1 \\dot { }$ ) and EDA $\\mathbf { \\bar { \\phi } } ( \\Phi = 1 . 9 ) ,$ ) processes, likely contributing to their high efficiency [65]. Even in low-yield EDA systems, chain mechanisms have been proposed [38]. After radical addition, oxidation of radical-phenol or radical-phenolate intermediates may proceed via pyridine reduction to initiate the chain. Iodide released post-reduction may generate iodine radicals (I∙) that can perform hydrogen atom transfer (HAT) or phenol oxidation in a chain-like manner [37, 66]. Supporting studies include Tan’s radical-phenol coupling mechanism [39] and Li’s radical-phenolate and radical-phenoxyl proposals [38]. We propose that all three pathways may operate concurrently in our system and we subsequently evaluated their feasibility and influence on regiochemical outcomes through computational analysis. DFT calculations (see Supporting Information for full computational details) of the pyridyl radical addition lend evidence toward the observed regioselectivity (Scheme 5D). Cross-coupling of pyridyl radical ${ \\bf 6 a ^ { \\prime } }$ and phenoxyl radical ${ \\pmb 5 } { \\pmb u } ^ { \\prime \\prime }$ (radical-phenoxyl pathway) favors para-addition by ${ \\sim } 2 3 \\mathrm { kcal/mol }$ via an essentially barrierless transformation. The radical-phenolate pathway also favors the para-position by 7.2 kcal/mol. Interestingly, pyridyl radical coupling to a neutral phenol (radical-phenol) favors meta-coupling by 1.2 kcal/mol. Alternative mechanisms such as phenoxyl radical addition to the heteroaryl halide are unlikely based on Stern-Volmer quenching experiments. Given the base equilibrium and excess phenol present, neutral phenols, phenolates, and phenoxyl radicals are all expected to exist in solution, giving rise to the observed regioselectivity spectrum for both of the conditions. However, the radical-phenol coupling must contribute to a significant portion (roughly $3 0 \\%$ ) of the reaction outcome to account for the amount of meta product generated (7a, 3.2:1 p:m). As phenol dimerization also occurs, which indicates the presence of the phenoxyl radical, we hypothesize that the dominant pathway is likely the radical-phenoxyl coupling (roughly $7 0 \\%$ ).",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "984532a87dc22e5587429417fcf22b53dbe78ec693bcd0cda74da8f87e40f5e2.jpg",
+          "e7495600b99b649dcf34884a5473dad4c93a1c25a55d740e1b54b1fa6b981fc1.jpg",
+          "a20b312365d2f241c2805d821776cf75fba5332955173b3487ebe5c8f9fb4a1.jpg",
+          "24cf407deb5084ce9cdf94e1d51387d019906516a0ebc3c236e5f6e5d5b52bdb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "high_throughput_experimentation",
+      "thought": {
+        "background": "Mechanistic insights from DFT and experimental observations suggest a complex interplay of factors influencing reactivity and selectivity. A systematic exploration of broader chemical space is needed to understand the scope and limitations.",
+        "gap": "How can we efficiently explore a diverse range of commercially available phenols and heteroaryl halides to map the chemical space and identify optimal pairings?",
+        "decision": "We will use substrate clustering (UMAP) to select diverse phenols (12) and heteroaryl halides (8) from commercially available options. A 96-well HTE format will be used to rapidly survey the chemical landscape, using LCMS with an internal standard for product formation, expecting to identify productive C-C coupling and competitive SNAr reactions.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Oc1ccccc1",
+          ""
+        ],
+        "product_smiles": [
+          "Oc1ccccc1-c1ccccn1"
+        ],
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN/H2O",
+        "temperature": "35 °C",
+        "time": "unspecified",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The curated set of 12 phenols (5f–q) and eight heteroaryl halides (6a, 6c, 6k–p) was evaluated in a 96-well HTE format. Product formation was observed across the plate using LCMS. Phenols in the same clusters and pyridines in the same cluster performed similarly, reinforcing that clustering captures underlying similarities. All phenols showed some product formation, demonstrating tolerance to electronic and steric effects. Only half of the tested heteroaryl halides (6a, 6c, 6o, 6p) formed appreciable amounts of C-C coupling. Heteroarenes 6l and 6m underwent selective SNAr."
+      },
+      "evidence": {
+        "text_span": "Together, these mechanistic insights motivated a systematic exploration of the broader chemical space. Data science has recently flourished in synthetic chemistry, particularly in the selection of robust substrate scope and thereby accelerating the development of innovative synthesis [67]. The recent chemical literature has also emphasized the minimization of redundancy in substrate scope and reduction of associated resource burden [68]. We therefore sought to explore the breadth of chemical space accessible by this transformation in respect to both phenol and heteroaryl halide, focusing primarily on six-membered azine rings. We then gathered the top 1250 commercially available substrates for both classes, limited molecular weight to below 250 Da, and ranked them by number of vendors (see Supporting Information for search specifics). Using this collection, physicochemical descriptors for each substrate were generated from associated SMILES strings with RDKit [69]. Descriptors with missing values or high correlations (assessed via Pearson correlation) were dropped. Uniform Manifold Approximation and Projection (UMAP) [70] was employed to visualize the agglomerative clustering $( \\mathrm { k } = 1 7 )$ ) of the substrates. To ensure coverage of chemical diversity, 12 phenols (5f–q) were selected from distinct clusters (Figure 2A). Figure 2B shows the heteroaryl halide chemical space from which we selected two heteroarenes for our initial scope (6a, 6c) and six additional substrates (6k–p). Four of the substrates reported by Tan and coworkers [39] occupy clusters 2 and 11 (gray), while our selections probe further chemical space. To rapidly survey the chemical landscape of our system, we evaluated the curated set of 12 phenols (5f–q) and eight heteroaryl halides (6a, 6c, 6k–p) in a 96-well HTE format [71] (Figure 2C). This approach circumvents the labor-intensive purification and characterization otherwise required for each reaction. For operational simplicity, we used $1 . 0 \\ \\mathrm { M }$ aqueous ${ \\bf Na } _ { 2 } { \\bf C O } _ { 3 }$ as the base and conducted the reactions in a Lumidox LED photoreactor (see Supporting Information). Product formation was observed across the plate using LCMS with an internal standard. Several reactions produced complex mixtures of multiple regioisomers, disubstitution, or combinations of $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ and C C coupling. Notably, phenols in the same clusters (5g/5h, 5j/5i) and pyridines in the same cluster $( { \\bf 6c } / { \\bf 60 } / { \\bf 6p } )$ performed similarly, reinforcing that the clustering captures the underlying similarities of the substrates. The average performance of each substrate for C C coupling is shown in Figure 2D. All of the phenols demonstrated some product formation across the tested heteroarenes with a great tolerance to varying electronic and steric effects, enabled by the high oxidation potential of 3DPA2FBN∙+/3DPA2FBN $\\mathrm { (+1.24 ~ V }$ vs. SCE). Phenols 5o, 5p, and 5q suffered from low yields likely due to their poor solubility in the reaction mixture. Only half of the tested heteroaryl halides (6a, 6c, 6o, 6p) formed appreciable amounts of the desired C C coupling. After isolation on benchscale (0.1 mmol), it was discovered that heteroarenes 6l and 6m were undergoing selective $\\mathrm { \\bf S } _ { \\mathrm { N } } \\mathrm { \\bf A r }$ .",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "3b7129f4c9eb854ac6431b1a370885b98d0d751ff1c79248658d1b1f241eba19.jpg",
+          "366d696b0a172a0eea8d7b749420383d3f82decc072accffc78bd249eaa19077.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "HTE screening identified that heteroarenes 6l and 6m were undergoing selective SNAr. This is a competitive pathway that needs to be overcome to achieve C-C coupling.",
+        "gap": "Can halide swapping (e.g., from chloride to iodide) in these heteroarenes favor C-C coupling over SNAr?",
+        "decision": "We will explore halide swapping for 6l and 6m. Specifically, for pyrimidine analogues, we will compare bromo- and iodo-derivatives, expecting the iodide to favor C-C product formation.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN/H2O",
+        "temperature": "35 °C",
+        "time": "unspecified",
+        "atmosphere": "Ar",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Halide swapping was explored to favor C-C coupling over SNAr for 6l (7t, 7u) and 6m (7v, 7w). For drometrizole (5q), SNAr was observed for the chloride and bromide pyrimidine derivatives. With the iodide, no C-H functionalization of the phenolic backbone was observed; instead, coupling occurred at C4 of the benzotriazole ring to form 7w' in 46% yield."
+      },
+      "evidence": {
+        "text_span": "Halide swapping was explored to favor C C coupling over the previously observed $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ of 6l (7t, 7u) and 6m (7v, 7w). The iodo-quinazoline derivative was difficult to access due to hydrolysis, but bromo- and iodo-pyrimidine analogues delivered C C product $( 7 \\mathbf { v } ^ { \\prime } )$ in $3 1 \\%$ and $6 5 \\%$ yield, respectively, albeit with some $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ . For drometrizole (5q), $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ was observed for the chloride and bromide pyrimidine derivatives. With the iodide, no C H functionalization of the phenolic backbone was observed; instead, coupling occurred at C4 of the benzotriazole ring to form $\\mathbf { 7 } \\mathbf { w } ^ { \\prime }$ in $4 6 \\%$ yield (Figure 2E).",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "366d696b0a172a0eea8d7b749420383d3f82decc072accffc78bd249eaa19077.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The method has shown broad substrate scope with commercially available phenols and heteroaryl halides. Its utility in late-stage functionalization of complex molecules is important.",
+        "gap": "Can this method be successfully applied to late-stage functionalization of pharmaceuticals and natural products, which often contain sensitive functional groups?",
+        "decision": "We will test biologically relevant heteroaryl halides (haloxyfop-methyl, 6q) and phenolic compounds (5s–5w) with the optimized conditions, using NaHCO3 for base-sensitive compounds, expecting to furnish C-C cross-coupling products in moderate yields.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Oc1ccccc1",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "3-16 h",
+        "atmosphere": "Ar",
+        "scale": "0.10 mmol",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 42,
+        "regio_selectivity": "7.1:1 para:meta",
+        "observation": "Selective C-C coupling of naphthol 5r and the heteroaryl chloride in haloxyfop-methyl (6q) afforded 7x in 42% yield (7.1:1 p:m). The morphinan alkaloid sinomenine (5s) was preferentially para-functionalized in 40% yield (8.2:1 p:m). An analogue of the antibiotic levofloxacin (5t) was difunctionalized at the para- and ipso-fluoro-positions in 23% overall yield. The approved phenolic drugs niclosamide (5u) and ezetimibe (5v) were both ortho-functionalized in moderate yields with pyrimidine 6p. The bioactive glucoside (–)-bergenin (5w) underwent SNAr or C-C coupling depending on the halide of 5-(trifluoromethyl)pyrimidine."
+      },
+      "evidence": {
+        "text_span": "After applying this method to a diverse range of commercially available substrates, the scope was examined in the late-stage functionalization of pharmaceuticals and natural products. Using biologically relevant heteroaryl halides (haloxyfop-methyl, 6q) and phenolic compounds 5s–5w, we were able to furnish C C cross-coupling products in moderate yields (Scheme 6A). The weaker base ${ \\mathrm { NaHCO } } _ { 3 }$ was utilized instead of $\\mathrm { Na } _ { 2 } \\mathrm { CO } _ { 3 }$ for certain base-sensitive compounds. Selective C C coupling of naphthol 5r and the heteroaryl chloride in haloxyfop-methyl (6q) afforded $\\mathbf { 7x }$ in $4 2 \\%$ yield (7.1:1 p:m). The morphinan alkaloid sinomenine (5s) was preferentially para-functionalized in $4 0 \\%$ yield $( 8 . 2 { : } 1 \\ \\mathrm { p } { : } \\mathrm { m } )$ ). An analogue of the antibiotic levofloxacin (5t) was difunctionalized at the para- and ipso-fluoro-positions in $2 3 \\%$ overall yield. This $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ mirrors previous findings on pyridination [26] and amination [27, 28, 75]. The approved phenolic drugs niclosamide (5u) and ezetimibe (5v) were both ortho-functionalized in moderate yields with pyrimidine 6p. The bioactive glucoside (–)-bergenin (5w) underwent $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ or C C coupling depending on the halide of 5-(trifluoromethyl)pyrimidine.",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "f86920302c3ef75c69a6327ebfd5865b1d78e651a74124dd0e3f7c3874ffb4a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The method has proven effective for late-stage functionalization. Now, its application in total synthesis of complex natural products and bioactive compounds needs to be demonstrated.",
+        "gap": "Can this method be integrated into multi-step syntheses to efficiently construct key biaryl bonds in natural products and pharmaceuticals, reducing step count and improving yields?",
+        "decision": "We will apply the method to the synthesis of ortho-periplanpyrazine A (7zd), JPC-2997 (7zf), and LJI308 (3), expecting to achieve efficient C-C coupling and improve upon existing synthetic routes.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Oc1ccccc1O",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "3DPA2FBN",
+        "reagents": [
+          "Na2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "35 °C",
+        "time": "unspecified",
+        "atmosphere": "Ar",
+        "scale": "0.10 mmol",
+        "stoichiometry": {
+          "3DPA2FBN": "3 mol%",
+          "Na2CO3": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 37,
+        "observation": "ortho-Periplanpyrazine A (7zd) was obtained in a single step in 37% yield. Cross-coupling of 5x and 6s established the key biaryl bond in JPC-2997 (7zf) in 74% yield, and subsequent reductive amination furnished JPC-2997 in 50% overall yield over two steps, halving the step count and improving yield. Selective C-C coupling of the iodide in dihalide 6u gave the LJI308 intermediate (7zg) in 56% yield, and a Suzuki-Miyaura coupling completed the synthesis of LJI308 (3) in 37% overall yield over two steps, nearly doubling reported yield while reducing step count."
+      },
+      "evidence": {
+        "text_span": "The synthetic utility of this method was secured across the total synthesis of several natural products and bioactive compounds (Scheme 6B). ortho-Periplanpyrazine A (7zd), a previously unknown derivative of periplanpyrazine A [76], was obtained in a single step in $3 7 \\%$ yield. Cross-coupling of 5x and 6s established the key biaryl bond in JPC-2997 (7zf) [77] in $7 4 \\%$ yield. Subsequent reductive amination with tert-butylamine furnished JPC-2997 (7zf) in $5 0 \\%$ overall yield over two steps, halving the step count and improving yield from prior work [77]. Selective C C coupling of the iodide in dihalide 6u gave the LJI308 intermediate (7zg) in $5 6 \\%$ yield and a Suzuki-Miyaura coupling completed the synthesis of potent RSK inhibitor LJI308 (3) [11] in $3 7 \\%$ overall yield over two steps, nearly doubling reported yield while reducing step count [78].",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "55eb5be5d34838dcb4d344e3608808e9e4dd769bc61321903869286909979e2e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "A broad substrate set revealed a continuum of C-C versus SNAr selectivity. Machine learning (ML) has emerged as a powerful tool for reaction prediction.",
+        "gap": "Can an ML model be developed to predict product outcomes (C-C vs. SNAr) for a given phenol/heteroaryl halide pairing, thereby guiding future synthetic efforts?",
+        "decision": "We will compile a dataset of 137 reactions and use selected molecular descriptors (oxidation potential, electrophilicity, pKa, reduction potential, Fukui index) to train a logistic regression model. This model is expected to predict selectivity with high accuracy and guide the exploration of new chemical space.",
+        "alternatives_considered": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A five-feature logistic regression model trained with 80% of the data achieved 86% accuracy (18/21) on the test set. Cross-validation confirmed robustness (accuracy: 0.89 ± 0.09). Heteroaryl properties (global electrophilicity, radical electrophilicity, reduction potential) were dominant influences. Phenol global electrophilicity and pKa correlated negatively with C-C selectivity. The model performed well on external validation cases, including substrates beyond the trained chemical space."
+      },
+      "evidence": {
+        "text_span": "ML has recently emerged as a powerful tool in organic synthesis, enabling advances in reaction prediction and planning [79–82]. After exploring a broad substrate set and observing a continuum of $\\mathrm { C-C }$ versus $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ selectivity, a ML model was developed to predict product outcomes for a given phenol/heteroaryl halide pairing for the standard (3DPA2FBN/MeCN) conditions (Scheme 7a). A dataset of 137 reactions from both HTE-scale $( 0 . 1 \\mu \\mathrm { mol } )$ and bench-scale $\\mathrm { ( > 0 . 1 \\ m m o l ) }$ ) using these conditions was then compiled. Selected molecular descriptors from Rowan Scientific online platform and DFT were chosen to reflect key mechanistic features [83–89]. Oxidation potential, global and radical electrophilicity, and $\\mathsf { p } K _ { a }$ were selected for phenols, whereas reduction potential, global and radical electrophilicity, and the positive Fukui index were selected for heteroaryl halides (Scheme 7B). After removing zero yield cases, a five feature logistic regression model trained with $8 0 \\%$ of the data gave the most reliable performance among the algorithms tested (see Supporting Information). Scheme 7B visualizes the binary confusion matrix for the model, which achieved $8 6 \\%$ accuracy (18/21) on the test set. Crossvalidation confirmed the model was both robust and reliable, with a low standard deviation for the training set (accuracy: $0 . 8 9 \\pm 0 . 0 9 _ { , }$ ). The table in Scheme 7B lists the top five descriptors and their corresponding coefficients, highlighting the dominant influence of heteroaryl properties on model performance. Global electrophilicity of the heteroarene strongly tracks with $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r } _ { \\mathrm { i } }$ , while higher radical electrophilicity and lower reduction potential (more easily reduced) favor C C coupling. The lower radical electrophilicity for 2-pyridyl radicals [58] may influence their regioselectivity, driving toward more meta-functionalization. Phenol global electrophilicity and $\\mathsf { p } K _ { a }$ both correlate negatively with C C selectivity. The three misclassified cases correspond to low-yielding reactions $< 5 \\%$ conversion) (see Supporting Information). Additional validation cases were run under standard benchscale conditions (Scheme 7C). The chloro (6w) and iodo (6w′) variants of a 1H-pyrrolo[2,3-b]pyridine analogue provided the $\\mathrm { S } _ { \\mathrm { N } } \\mathrm { A r }$ adduct 7zh in $3 6 \\%$ and $4 3 \\%$ yield, with the ML model correctly predicting this selectivity ( $7 0 \\%$ and $6 0 \\%$ probability). To probe reactivity beyond the six-membered heterocycles tested throughout this study, a five-membered heterocycle (6x) was examined, affording the C C product 7zi in $7 7 \\%$ yield (2.6:1 p:m), which the model also correctly predicted $9 9 \\%$ probability). The phenol-thiazole scaffold accessed here appears in biologically relevant compounds, including natural product tridentatol C (8) [90] and nasturlexin B (9) [91] as well as recently reported TPST2 inhibitor 10 [92] (Scheme 7D). Overall, the model performed well on the test set and external validation cases, including substrates beyond the trained chemical space, while remaining computationally inexpensive.",
+        "section": "2 Results and Discussion",
+        "image_refs": [
+          "3bfd20486517ac1d299c6d327c81563577440cf2a5b489eebf7926687ac4cbee.jpg",
+          "e38162f128983be7b2a2b66aadd4bb36953c9e42af5a01867567ca1b656b242b.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "19F{1H}-NMR",
+      "LCMS",
+      "X-ray crystallography",
+      "UV-Vis",
+      "DFT"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 91,
+        "unit": "%",
+        "interpretation": "Highest isolated yield achieved for model reaction 7A."
+      },
+      "Longest Linear Steps": {
+        "value": 1,
+        "unit": "steps",
+        "interpretation": "The C-C coupling itself is a single step. Total syntheses demonstrated were 1-2 steps for the key C-C bond formation."
+      },
+      "Total Steps": {
+        "value": 26,
+        "unit": "steps",
+        "interpretation": "Total steps in the execution trace, including failed attempts and characterization."
+      },
+      "Failed Attempts Count": {
+        "value": 8,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly described failed attempts or conditions that led to significantly lower yields/undesired products."
+      }
+    },
+    "significance": "This work introduces a sustainable, transition-metal-free photocatalytic method for C(sp2)-C(sp2) coupling of phenols and heteroaryl halides, overcoming competitive SNAr reactivity. It achieves moderate to high yields (up to 91%), is scalable to multigram quantities, and enables late-stage functionalization of pharmaceuticals and natural products. The method allows for diverse regioselectivity (ortho-, meta-, and para-functionalization) and can be used to synthesize complex motifs like azabenzofurans and C4-functionalized benzotriazoles. The integration of mechanistic studies (DFT, Stern-Volmer, UV-Vis), UMAP-guided substrate selection, HTE, and machine learning for reaction prediction represents a significant advance in synthetic methodology and reaction discovery."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.8222003",
+      "pmcid": "PMC13080434",
+      "title": "Photocatalytic Cross-Coupling of Phenols and Heteroaryl Halides With Machine Learning-Guided Reaction Prediction.",
+      "authors": "Carson MC, Wu A, Duggal KB, Rotella ME, Kozlowski MC.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC13080434?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/1fe06b40-c6be-480d-85a8-f8c3d6d06fa9.zip",
+      "parsed_at": "2026-05-11T06:45:42.509511+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 62,
+    "parseable": 54,
+    "canonicalized": 35,
+    "invalid": 8,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "N1=CC=C(X)C=C1",
+      "Oc1ccc(SCF3)cc1",
+      "Clc1nc2ccc([N+](=O)[O-])cc2n1",
+      "O=N(=O)c1ccc2nc(Oc3ccc(SCF3)cc3)ccc2c1",
+      "COc(=O)C(C)Oc1ccc(C(F)(F)F)cn1",
+      "COc(=O)C(C)Oc1ccc(C(F)(F)F)cn1",
+      "Ic1cncn1",
+      "Oc1ccccc1Oc1cncn1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,813 @@
+{
+  "trace_id": "TS-PMC12224407",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-Bedaquiline",
+    "smiles": "COc1nc2cc(Br)ccc2c2c1C(O)(c1cccc(N(C)C)c1)C(c1ccccc1)C2",
+    "natural_product_class": "unspecified",
+    "structural_features": {
+      "stereocenters": 2,
+      "key_motifs": [
+        "quinoline",
+        "diarylethanol"
+      ]
+    },
+    "motivation": "(-)-Bedaquiline (BDQ) is a crucial antitubercular agent, but existing synthetic methods suffer from low yield, excessive additives, and lack of generality for analogues. There is an urgent need for catalytic and unified strategies with precise stereochemical control, especially for forging vicinal stereocenters and addressing the low reactivity of substrates.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Shibasaki",
+        "year": 2010,
+        "doi": "10.1021/ja102000k",
+        "key_strategy": "enantioselective proton migration"
+      },
+      {
+        "lead_author": "Chandrasekhar",
+        "year": 2011,
+        "doi": "10.1002/ejoc.201001590",
+        "key_strategy": "Sharpless asymmetric epoxidation"
+      },
+      {
+        "lead_author": "Aggarwal",
+        "year": 2023,
+        "doi": "10.1021/acs.orglett.3c01500",
+        "key_strategy": "sulfur ylide-mediated asymmetric epoxidation"
+      },
+      {
+        "lead_author": "Naicker",
+        "year": 2020,
+        "doi": "10.1021/acsomega.9b04240",
+        "key_strategy": "diastereoselective modification of industrial route using chiral base"
+      },
+      {
+        "lead_author": "Zhang",
+        "year": 2022,
+        "doi": "10.1007/s11426-022-1399-x",
+        "key_strategy": "industrial route based on non-covalent interactions and bimetallic activation"
+      }
+    ],
+    "success_criteria": {
+      "yield_target_percent": 34,
+      "stereochemistry_required": true,
+      "free_text": "Achieve high stereocontrol for vicinal stereocenters (1S,2R) and develop a general method for BDQ-type architectures."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-N bond (amine formation)",
+        "reasoning": "Final step to install the dimethylamine group, common in BDQ synthesis."
+      },
+      {
+        "bond_description": "C-C bond (oxidative cleavage)",
+        "reasoning": "Cleavage of the homoallyl alcohol to an aldehyde, followed by reductive amination."
+      },
+      {
+        "bond_description": "C-C bond (allylation)",
+        "named_strategy": "diastereoselective allylation",
+        "reasoning": "Formation of the quaternary stereocenter and the homoallyl alcohol scaffold from an alpha-chiral ketone."
+      },
+      {
+        "bond_description": "C-O bond (oxidation)",
+        "reasoning": "Oxidation of the secondary alcohol to an alpha-chiral ketone."
+      },
+      {
+        "bond_description": "C-O bond (reduction)",
+        "named_strategy": "Dynamic Kinetic Resolution-Asymmetric Transfer Hydrogenation (DKR-ATH)",
+        "reasoning": "Formation of the secondary alcohol with high stereocontrol from a racemic ketone."
+      },
+      {
+        "bond_description": "C-C bond (aroylation)",
+        "reasoning": "Formation of the racemic ketone from a quinoline fragment and a naphthoyl building block."
+      }
+    ],
+    "rationale": "The strategy focuses on building the crucial chiral scaffold 5a with two adjacent stereocenters. This is achieved by a sequence involving aroylation to form racemic ketone 8a, followed by a Rh-catalyzed DKR-ATH to generate chiral alcohol 7a with high stereocontrol. Oxidation of 7a yields alpha-chiral ketone 6a, which then undergoes TADDOL-mediated diastereoselective allylation to construct the quaternary stereocenter, forming homoallyl alcohol 5a. The synthesis is completed by oxidative cleavage and reductive amination."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "(-)-BDQ (1) is a 1-ethanamine-1,2-diaryl-2-quinolylethanol framework with two adjacent stereocenters (1S,2R), one being a sterically hindered oxa-quaternary center. Prior syntheses suffer from low yield and lack of stereocontrol.",
+        "gap": "An efficient and stereocontrolled route to the vicinal stereocenters of (-)-BDQ is needed.",
+        "decision": "To synthesize (-)-BDQ, we will disconnect it into homoallyl alcohol 5a, which can be formed by diastereoselective allylation of alpha-chiral ketone 6a. Ketone 6a will come from oxidation of chiral alcohol 7a, which will be formed by DKR-ATH of racemic ketone 8a. Ketone 8a will be formed by aroylation of quinoline 9a and a naphthoyl building block."
+      },
+      "evidence": {
+        "text_span": "From a retrosynthetic perspective (Fig. 2), (–)-BDQ (1) can be synthesized through oxidative cleavage and reductive amination of homoallyl alcohol 5a. The crucial chiral scaffold 5a can be established via diastereoselective allylation of $\\pmb { \\alpha }$ -chiral ketone 6a. To achieve efficient access to this key structure, we devised a DKR-ATH followed by oxidation of the resultant chiral alcohol 7a starting from the racemic ketone 8a. This intermediate can be traced back to the quinoline 9a and naphthoyl building block through an aroylation reaction. A critical aspect for the successful implementation of this synthetic route lies in achieving high stereocontrol during the generation of secondary alcohol 7a.",
+        "image_refs": [
+          "9a030210bee4ea3744ff00d19a237cc83e2e2049305d690ad04e72edf04011dd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The aroylation reaction is a key step to form the racemic ketone 8a. LiHMDS is a common base for such reactions.",
+        "gap": "Optimize the aroylation reaction to achieve high yield of 8a and avoid side products.",
+        "decision": "To form 8a, we will investigate the aroylation reaction between quinoline fragment 9a and various naphthoyl electrophiles using LiHMDS as the base."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc(Cc2ccccc2)cc2cc(Br)ccc12",
+          "c1cc[nH]c1"
+        ],
+        "product_smiles": [
+          "COc1nc(C(C(=O)c2cccc3ccccc23)c2ccccc2)cc2cc(Br)ccc12"
+        ],
+        "reagents": [
+          "LiHMDS"
+        ],
+        "temperature": "80 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "Naphthoyl pyrrole 10d exhibited relatively superior performance, affording 8a with 45% yield. No debrominated byproduct was detected."
+      },
+      "evidence": {
+        "text_span": "Based on this synthetic design, we initially investigated the aroylation reaction between quinoline fragment 9a (ref. 12) and various naphthoyl electrophiles using LiHMDS as the base.13 Upon evaluating multiple electrophiles, naphthoyl pyrrole 10d exhibited relatively superior performance, affording 8a with $4 5 \\%$ yield (Tables 1, entries 1–5, S1 and S2†). Additionally, the LC-MS analysis did not detect any debrominated byproduct, thereby demonstrating the practicality of utilizing silyl amide bases in this transformation.",
+        "page": 3,
+        "section": "Results and discussion",
+        "image_refs": [
+          "099635893fcfd6b6175aa241034f0998068936c7fcfc1e2fc0e0442a27971cab.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "LiHMDS gave 45% yield. Other silyl amide bases might improve the yield.",
+        "gap": "Explore other silyl amide bases to improve the yield of 8a.",
+        "decision": "To improve the yield, we will investigate NaHMDS and KHMDS as bases for the aroylation reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc(Cc2ccccc2)cc2cc(Br)ccc12",
+          "c1cc[nH]c1"
+        ],
+        "product_smiles": [
+          "COc1nc(C(C(=O)c2cccc3ccccc23)c2ccccc2)cc2cc(Br)ccc12"
+        ],
+        "reagents": [
+          "NaHMDS"
+        ],
+        "temperature": "80 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 10,
+        "failure_mode": "side_product_dominant",
+        "observation": "A significant byproduct 8a' was obtained, and the yield of 8a was <10%."
+      },
+      "evidence": {
+        "text_span": "This outcome has prompted us to further investigate various silyl amide bases (Table 1, entries 6–7). A signicant byproduct $\\mathbf { 8 } \\mathbf { a } ^ { \\prime }$ was obtained when NaHMDS or KHMDS was used as the base.",
+        "page": 3,
+        "section": "Results and discussion",
+        "image_refs": [
+          "099635893fcfd6b6175aa241034f0998068936c7fcfc1e2fc0e0442a27971cab.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "NaHMDS resulted in a significant byproduct. KHMDS might also lead to similar issues.",
+        "gap": "Explore KHMDS as a base, but anticipate similar issues to NaHMDS.",
+        "decision": "To further investigate silyl amide bases, we will try KHMDS for the aroylation reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc(Cc2ccccc2)cc2cc(Br)ccc12",
+          "c1cc[nH]c1"
+        ],
+        "product_smiles": [
+          "COc1nc(C(C(=O)c2cccc3ccccc23)c2ccccc2)cc2cc(Br)ccc12"
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "temperature": "80 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 10,
+        "failure_mode": "side_product_dominant",
+        "observation": "A significant byproduct 8a' was obtained, and the yield of 8a was <10%."
+      },
+      "evidence": {
+        "text_span": "This outcome has prompted us to further investigate various silyl amide bases (Table 1, entries 6–7). A signicant byproduct $\\mathbf { 8 } \\mathbf { a } ^ { \\prime }$ was obtained when NaHMDS or KHMDS was used as the base.",
+        "page": 3,
+        "section": "Results and discussion",
+        "image_refs": [
+          "099635893fcfd6b6178dcd84dcff99165d7316c89e79188855a36a8f24fabe4735f6a9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "NaHMDS and KHMDS led to significant byproduct formation (8a') due to higher temperature and increased basicity promoting cyclization. LiHMDS gave 45% yield.",
+        "gap": "Improve the yield of 8a while suppressing byproduct formation.",
+        "decision": "To improve the yield of 8a, we will optimize the reaction conditions using LiHMDS, focusing on temperature, additives, and mole ratio. We will lower the temperature to 50 °C and use 1.2 equivalents of 10d."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc(Cc2ccccc2)cc2cc(Br)ccc12",
+          "c1cc[nH]c1"
+        ],
+        "product_smiles": [
+          "COc1nc(C(C(=O)c2cccc3ccccc23)c2ccccc2)cc2cc(Br)ccc12"
+        ],
+        "reagents": [
+          "LiHMDS"
+        ],
+        "temperature": "50 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Through extensive optimization involving temperature, additives, mole ratio, etc., the yield of 8a can be improved to 91% by employing LiHMDS as the base with 1.2 equivalents of 10d at a temperature of 50 °C."
+      },
+      "evidence": {
+        "text_span": "Through extensive optimization involving temperature, additives, mole ratio, etc., the yield of 8a can be improved to $9 1 \\%$ by employing LiHMDS as the base with 1.2 equivalents of 10d at a temperature of $5 0 ~ ^ { \\circ } \\mathrm { C }$ (Table 1, entry 8).",
+        "page": 3,
+        "section": "Results and discussion",
+        "image_refs": [
+          "099635893fcfd6b6175aa241034f0998068936c7fcfc1e2fc0e0442a27971cab.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Racemic ketone 8a is now available in high yield. The next step is the DKR-ATH to form chiral alcohol 7a. Racemization of (R)-8a occurs quickly in the presence of triethylamine, which is promising for DKR.",
+        "gap": "Identify suitable catalysts and conditions for the DKR-ATH of sterically hindered N-hetero-1,2,2-triarylethanones, which is an unreported transformation.",
+        "decision": "To achieve the DKR-ATH, we will screen Noyori–Ikariya type catalysts and ligands, using an azeotropic mixture of HCOOH/Et3N as the hydrogen donor in ethyl acetate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc(C(C(=O)c2cccc3ccccc23)c2ccccc2)cc2cc(Br)ccc12"
+        ],
+        "product_smiles": [
+          "COc1cc(Br)c2ncccc2c1[C@H](c1ccccc1)[C@H](O)c1cccc2ccccc12"
+        ],
+        "catalyst": "Cl[Rh]([C@H](N)c1ccccc1)([C@H](N)c1ccccc1)S(=O)(=O)c1ccc(C)cc1.C1=CC=C(C=C1)[Rh]C1=CC=CC=C1",
+        "reagents": [
+          "HCOOH",
+          "Et3N"
+        ],
+        "solvent": "EtOAc",
+        "temperature": "60 °C",
+        "time": "24h"
+      },
+      "outcome": {
+        "valid": true,
+        "ee_percent": 90,
+        "dr": "80:20",
+        "observation": "Catalyst (R,R)-cat. 5a exhibited 90% ee and 80:20 dr, but with limited conversion (17%). SCXRD confirmed (1S,2R) configuration for 7a."
+      },
+      "evidence": {
+        "text_span": "Aer an extensive screening of chiral catalysts and ligands (Tables S3–S7†), ve Noyori–Ikariya type catalysts were identied as capable of this challenging transformation, while maintaining the integrity of the bromo group in 8a (Table 2, entries 1–5). Among them, the tethered rhodium catalyst ${ \\bigl ( } R , R { \\bigr ) } .$ -cat. 5a (ref. 20) exhibited the highest level of stereoselectivity $9 0 \\%$ ee and 80 : 20 dr) in ethyl acetate (EA) utilizing an azeotropic mixture $\\left( \\mathbf { H C O O H:Et_3N } = \\right.$ $\\mathrm { Et } _ { 3 } \\mathbf { N } =$ 3 : 2) as the hydrogen donor at a temperature of $6 0 ~ ^ { \\circ } \\mathrm { C }$ , albeit with limited conversion (Table 2, entry 5). The single-crystal Xray diffraction (SCXRD) analysis of 7a conrmed the absolute conguration as (1S,2R), which could be directly used in the asymmetric synthesis of (–)-BDQ.",
+        "page": 3,
+        "section": "Results and discussion",
+        "image_refs": [
+          "8ff5c9d20f074ff7f421df7db34f7d4e61c341b42283b0881a5f029d361bbc0b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The DKR-ATH with HCOOH/Et3N showed limited conversion. Hydrogen donor and solvent are critical for reactivity.",
+        "gap": "Improve the conversion efficiency of the DKR-ATH.",
+        "decision": "To enhance conversion, we will investigate other azeotropic mixtures of HCOOH/Et3N, HCOONa, and HCOONH4 as hydrogen donors."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc(C(C(=O)c2cccc3ccccc23)c2ccccc2)cc2cc(Br)ccc12"
+        ],
+        "product_smiles": [
+          "COc1cc(Br)c2ncccc2c1[C@H](c1ccccc1)[C@H](O)c1cccc2ccccc12"
+        ],
+        "catalyst": "Cl[Rh]([C@H](N)c1ccccc1)([C@H](N)c1ccccc1)S(=O)(=O)c1ccc(C)cc1.C1=CC=C(C=C1)[Rh]C1=CC=CC=C1",
+        "reagents": [
+          "HCOOH",
+          "Et3N"
+        ],
+        "solvent": "EA",
+        "temperature": "60 °C",
+        "time": "24h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Four azeotropic mixtures with varying ratios resulted in lower observed conversion rates (<5%). Reactivity using HCOONa or HCOONH4 was also very poor (<5% conv.)."
+      },
+      "evidence": {
+        "text_span": "To further enhance the conversion efficiency, we conducted an investigation into the impact of hydrogen donors and solvents on the reaction.21 Four azeotropic mixtures with varying ratios were screened using EA as the solvent, resulting in lower observed conversion rates (Table 2, entries 6–10). The reactivity using HCOONa or $\\mathrm { { H C O O N H _ { 4 } } }$ as the hydrogen donor was also found to be very poor (Table 2, entries 11–12, $< 5 \\%$ conv.).",
+        "page": 3,
+        "section": "Results and discussion",
+        "image_refs": [
+          "8ff5c9d20f074ff7f421df7db34f7d4e61c341b42283b0881a5f029d361bbc0b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 7,
+      "thought": {
+        "background": "Previous hydrogen donors (HCOOH/Et3N, HCOONa, HCOONH4) resulted in low conversion. A different hydrogen donor might improve reactivity.",
+        "gap": "Find a hydrogen donor that facilitates higher conversion in the DKR-ATH.",
+        "decision": "To improve conversion, we will try HCOOK as the hydrogen donor in EA solvent."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc(C(C(=O)c2cccc3ccccc23)c2ccccc2)cc2cc(Br)ccc12"
+        ],
+        "product_smiles": [
+          "COc1cc(Br)c2ncccc2c1[C@H](c1ccccc1)[C@H](O)c1cccc2ccccc12"
+        ],
+        "catalyst": "Cl[Rh]([C@H](N)c1ccccc1)([C@H](N)c1ccccc1)S(=O)(=O)c1ccc(C)cc1.C1=CC=C(C=C1)[Rh]C1=CC=CC=C1",
+        "reagents": [
+          "HCOOK"
+        ],
+        "solvent": "EA",
+        "temperature": "60 °C",
+        "time": "24h"
+      },
+      "outcome": {
+        "valid": true,
+        "ee_percent": 91,
+        "dr": "82:18",
+        "observation": "Utilization of HCOOK as a hydrogen donor facilitated a smooth reaction yielding 7a with over 98% conversion, 91% ee and 82:18 dr."
+      },
+      "evidence": {
+        "text_span": "To our great delight, the utilization of HCOOK as a hydrogen donor facilitated a smooth reaction yielding 7a with over $9 8 \\%$ conversion, $9 1 \\%$ ee and 82 : 18 dr with EA as the solvent (Table 2, entry 13).",
+        "page": 3,
+        "section": "Results and discussion",
+        "image_refs": [
+          "8ff5c9d20f074ff7f421df7db34f7d4e61c341b42283b0881a5f029d361bbc0b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "DKR-ATH with HCOOK in EA gave good conversion and stereoselectivity. Further optimization of the catalyst could improve stereoselectivity.",
+        "gap": "Improve the enantioselectivity and diastereoselectivity of the DKR-ATH.",
+        "decision": "To improve stereoselectivity, we will test derivatives of (R,R)-cat. 5a, specifically (R,R)-cat. 5g, as the catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc(C(C(=O)c2cccc3ccccc23)c2ccccc2)cc2cc(Br)ccc12"
+        ],
+        "product_smiles": [
+          "COc1cc(Br)c2ncccc2c1[C@H](c1ccccc1)[C@H](O)c1cccc2ccccc12"
+        ],
+        "catalyst": "Cl[Rh]([C@H](N)c1cccc(C(F)(F)F)c1)([C@H](N)c1cccc(C(F)(F)F)c1)S(=O)(=O)c1ccc(C)cc1.C1=CC=C(C=C1)[Rh]C1=CC=CC=C1",
+        "reagents": [
+          "HCOOK"
+        ],
+        "solvent": "EA",
+        "temperature": "60 °C",
+        "time": "24h"
+      },
+      "outcome": {
+        "valid": true,
+        "ee_percent": 96,
+        "dr": "88:12",
+        "observation": "(R,R)-cat. 5g exhibited the highest performance with a remarkable 96% ee and 88:12 dr."
+      },
+      "evidence": {
+        "text_span": "Various derivatives of $^ { ( R , R ) }$ -cat. 5a were also tested to improve the stereoselectivity, and it was found that $^ { ( R , R ) }$ -cat. 5g exhibited the highest performance with a remarkable $9 6 \\%$ ee and 88 : 12 dr (Table 2, entry 18 and Table S5†).",
+        "page": 3,
+        "section": "Results and discussion",
+        "image_refs": [
+          "8ff5c9d20f074ff7f421df7db34f7d4e61c341b42283b0881a5f029d361bbc0b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Chiral alcohol 7a is now available with high ee and dr. The next step is to oxidize it to the alpha-chiral ketone 6a without compromising stereoselectivity.",
+        "gap": "Identify an efficient oxidant for converting 7a to 6a while maintaining stereochemical integrity.",
+        "decision": "To obtain 6a, we will use Dess–Martin periodinane (DMP) as the oxidant."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(Br)c2ncccc2c1[C@H](c1ccccc1)[C@H](O)c1cccc2ccccc12"
+        ],
+        "product_smiles": [
+          "COc1cc(Br)c2ncccc2c1[C@@H](C(=O)c1cccc2ccccc12)c1ccccc1"
+        ],
+        "reagents": [
+          "Dess–Martin periodinane"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "ee_percent": 96,
+        "observation": "Chiral ketone 6a was efficiently obtained using Dess–Martin periodinane (DMP) as the oxidant, without compromising enantioselectivity (93% yield, 96% ee)."
+      },
+      "evidence": {
+        "text_span": "With the abundant key intermediate 7a in hand, chiral ketone 6a can be efficiently obtained using Dess–Martin periodinane (DMP) as the oxidant, without compromising enantioselectivity $9 3 \\%$ yield, $9 6 \\%$ ee). The SCXRD analysis of compound 6a further conrmed its $\\left( R \\right)$ -conguration (Fig. S1†).",
+        "page": 4,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alpha-chiral ketone 6a is ready for diastereoselective allylation to form the quaternary stereocenter. Chandrasekhar's work used allylzinc bromide.",
+        "gap": "Achieve high yield and selectivity for the desired diastereomer in the allylation of 6a.",
+        "decision": "To construct the quaternary stereocenter, we will attempt diastereoselective allylation of 6a using allylzinc bromide as a nucleophile."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc2cc(Br)ccc2cc1C(C(=O)c1cccc2ccccc12)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C=CCC(O)(c1cccc2ccccc12)C(c1ccccc1)c1cc2ccc(Br)cc2nc1OC"
+        ],
+        "reagents": [
+          "allylzinc bromide"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 32,
+        "dr": "47:53",
+        "observation": "The allylation product was delivered with the desired diastereomer as the minor isomer (47:53 dr) and a relatively low yield (32%)."
+      },
+      "evidence": {
+        "text_span": "In accordance with Chandrasekhar's work,9 the allylation product can be delivered with the desired diastereomer as the minor isomer by employing allylzinc bromide as a nucleophile (Table 3, entry 1).",
+        "page": 4,
+        "section": "Results and discussion",
+        "image_refs": [
+          "a8943cc1c0b8fe198c85114ba0dd1c3842ff0e7e15daf14400b96ffe34fea2dc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Allylzinc bromide gave low yield and poor diastereoselectivity. Ligands and other allylation reagents might improve the outcome.",
+        "gap": "Improve the yield and selectivity of the allylation reaction.",
+        "decision": "To enhance yield and selectivity, we will screen diverse ligands and commercially available allylation reagents, starting with allylzinc reagent with bisoxazoline ligand L8."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc2cc(Br)ccc2cc1C(C(=O)c1cccc2ccccc12)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C=CCC(O)(c1cccc2ccccc12)C(c1ccccc1)c1cc2ccc(Br)cc2nc1OC"
+        ],
+        "reagents": [
+          "allylzinc bromide"
+        ],
+        "ligand": "C1C(OC(=N1)CC2=NC(O2)C3=CC=CC=C3)C4=CC=CC=C4",
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 38,
+        "dr": "52:48",
+        "failure_mode": "low_yield",
+        "observation": "The allylzinc reagent with bisoxazoline ligand L8 exhibited a relatively low yield (38%) and suboptimal diastereoselectivity (52:48 dr)."
+      },
+      "evidence": {
+        "text_span": "The allylzinc reagent with bisoxazoline ligand L8 exhibited a relatively low yield $( 3 8 \\% )$ and suboptimal diastereoselectivity (52 : 48 dr).",
+        "page": 4,
+        "section": "Results and discussion",
+        "image_refs": [
+          "a8943cc1c0b8fe198c85114ba0dd1c3842ff0e7e15daf14400b96ffe34fea2dc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "Allylzinc bromide with L8 gave low yield and poor dr. TADDOL-type ligands are known for controlling reactivity and diastereoselectivity.",
+        "gap": "Improve the diastereoselectivity and yield of the allylation reaction.",
+        "decision": "To improve selectivity, we will try TADDOL-type ligand L9a with allylmagnesium chloride as the nucleophile."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc2cc(Br)ccc2cc1C(C(=O)c1cccc2ccccc12)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C=CCC(O)(c1cccc2ccccc12)C(c1ccccc1)c1cc2ccc(Br)cc2nc1OC"
+        ],
+        "reagents": [
+          "allylmagnesium chloride"
+        ],
+        "ligand": "CC(C)(O[C@@H]1[C@H](O[C@@H](C1)C(O)(C2=CC=CC=C2)C3=CC=CC=C3)C(O)(C4=CC=CC=C4)C5=CC=CC=C5)C",
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 34,
+        "dr": "65:35",
+        "observation": "Employing TADDOL-type ligand L9a and allylmagnesium chloride, the allylation product was obtained in a 65:35 dr (desired diastereomer 5a as the major isomer) with 34% yield."
+      },
+      "evidence": {
+        "text_span": "Conversely, when employing TADDOL-type ligand L9a as the ligand and allylmagnesium chloride as the nucleophile, the allylation product was obtained in a 65 : 35 dr (desired diastereomer 5a as the major isomer) despite still yielding at a lower level (Table 3, entry 3).",
+        "page": 4,
+        "section": "Results and discussion",
+        "image_refs": [
+          "a893cc1c0b8fe198c85114ba0dd1c3842ff0e7e15daf14400b96ffe34fea2dc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Allylation with L9a in THF gave 65:35 dr. Other dihydroxy ligands might be more effective.",
+        "gap": "Explore other dihydroxy ligands to improve allylation selectivity and yield.",
+        "decision": "To improve the allylation, we will investigate SPINEL, H8BINOL, and BINOL ligands (L10–L12) with allylmagnesium chloride."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc2cc(Br)ccc2cc1C(C(=O)c1cccc2ccccc12)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C=CCC(O)(c1cccc2ccccc12)C(c1ccccc1)c1cc2ccc(Br)cc2nc1OC"
+        ],
+        "reagents": [
+          "allylmagnesium chloride"
+        ],
+        "ligand": "C1=CC=C2C(C(O)(O)C3=CC=CC=C3C2)=C1",
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "None of the ligands (L10–L12) yielded the desired products."
+      },
+      "evidence": {
+        "text_span": "Subsequently, we explored other dihydroxy ligands such as SPINEL, H8BINOL, and BINOL ligands (L10–L12) in conjunction with allylmagnesium chloride as the nucleophile; however, none of them yielded the desired products (Table 3, entries 5 and 6).",
+        "page": 4,
+        "section": "Results and discussion",
+        "image_refs": [
+          "a8943cc1c0b8fe198c85114ba0dd1c3842ff0e7e15daf14400b96ffe34fea2dc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "Allylation with L9a in THF gave 65:35 dr. Stereochemical outcome can be influenced by counterions, solvents, and temperature.",
+        "gap": "Improve the diastereoselectivity of the allylation reaction with L9a.",
+        "decision": "To improve dr, we will investigate different reaction parameters, specifically changing the solvent to dichloromethane (DCM) with allylmagnesium chloride."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc2cc(Br)ccc2cc1C(C(=O)c1cccc2ccccc12)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C=CCC(O)(c1cccc2ccccc12)C(c1ccccc1)c1cc2ccc(Br)cc2nc1OC"
+        ],
+        "reagents": [
+          "allylmagnesium chloride"
+        ],
+        "ligand": "CC(C)(O[C@@H]1[C@H](O[C@@H](C1)C(O)(C2=CC=CC=C2)C3=CC=CC=C3)C(O)(C4=CC=CC=C4)C5=CC=CC=C5)C",
+        "solvent": "DCM"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 33,
+        "dr": "82:18",
+        "observation": "Using dichloromethane (DCM) as the solvent, the allylation product was obtained with 82:18 dr."
+      },
+      "evidence": {
+        "text_span": "To our great satisfaction, the allylation product was obtained with 89 : 11 dr using dichloromethane (DCM) as the solvent and allylmagnesium chloride $\\left( 2 . 0 \\textbf { M } \\right.$ in THF) as the nucleophile (Table 3, entry 12).",
+        "page": 4,
+        "section": "Results and discussion",
+        "image_refs": [
+          "a8943cc1c0b8fe198c85114ba0dd1c3842ff0e7e15daf14400b96ffe34fea2dc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Allylation with L9a in DCM gave 82:18 dr. Other TADDOL-type ligands might be more effective.",
+        "gap": "Explore other TADDOL-type ligands (L9b, L9c) to improve allylation selectivity and yield.",
+        "decision": "To improve the allylation, we will investigate L9b and L9c as ligands with allylmagnesium chloride in DCM."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc2cc(Br)ccc2cc1C(C(=O)c1cccc2ccccc12)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C=CCC(O)(c1cccc2ccccc12)C(c1ccccc1)c1cc2ccc(Br)cc2nc1OC"
+        ],
+        "reagents": [
+          "allylmagnesium chloride"
+        ],
+        "ligand": "CC(C)(O[C@@H]1[C@H](O[C@@H](C1)C(O)(C2=CC=CC=C2)C3=CC=CC=C3)C(O)(C4=CC=CC=C4)C5=CC=CC=C5)C",
+        "solvent": "DCM"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The reaction failed to occur when L9b and L9c were used as ligands, attributed to steric hindrance."
+      },
+      "evidence": {
+        "text_span": "Unexpectedly, the reaction failed to occur when L9b and L9c were used as ligands, which could be attributed to steric hindrance causing inhibition of reactivity by the ligands (Table 3, entries 13 and 14).",
+        "page": 4,
+        "section": "Results and discussion",
+        "image_refs": [
+          "a8943cc1c0b8fe198c85114ba0dd1c3842ff0e7e15daf14400b96ffe34fea2dc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 15,
+      "thought": {
+        "background": "Allylation with L9a in DCM gave 82:18 dr. The dosage of nucleophile and ligand can significantly impact the outcome.",
+        "gap": "Further improve the yield and diastereoselectivity of the allylation reaction with L9a in DCM.",
+        "decision": "To optimize the allylation, we will investigate the impact of nucleophile and ligand dosage, using L9a (3 equiv.) and allylmagnesium chloride (9 equiv.) in DCM."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1nc2cc(Br)ccc2cc1C(C(=O)c1cccc2ccccc12)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C=CCC(O)(c1cccc2ccccc12)C(c1ccccc1)c1cc2ccc(Br)cc2nc1OC"
+        ],
+        "reagents": [
+          "allylmagnesium chloride"
+        ],
+        "ligand": "CC(C)(O[C@@H]1[C@H](O[C@@H](C1)C(O)(C2=CC=CC=C2)C3=CC=CC=C3)C(O)(C4=CC=CC=C4)C5=CC=CC=C5)C",
+        "solvent": "DCM"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "dr": "91:9",
+        "observation": "The optimal reaction conditions were determined to be using L9a as the ligand (3 equiv.), DCM as the solvent, and allylmagnesium chloride (9 equiv.) as the nucleophile, resulting in a desired isomer yield of 86% with 91:9 dr."
+      },
+      "evidence": {
+        "text_span": "Finally, the optimal reaction conditions were determined to be using L9a as the ligand (3 equiv.), DCM as the solvent, and allylmagnesium chloride (9 equiv.) as the nucleophile, resulting in a desired isomer yield of $8 6 \\%$ with 91 : 9 dr.",
+        "page": 4,
+        "section": "Results and discussion",
+        "image_refs": [
+          "a8943cc1c0b8fe198c85114ba0dd1c3842ff0e7e15daf14400b96ffe34fea2dc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Key functionalized homoallyl alcohol 5a is successfully constructed with desired adjacent stereocenters. The next steps are oxidative cleavage and reductive amination to complete the synthesis of (-)-BDQ.",
+        "gap": "Efficiently convert homoallyl alcohol 5a to (-)-BDQ.",
+        "decision": "To complete the synthesis, we will perform oxidative cleavage of 5a using K2OsO4•H2O/NaIO4 to form an intermediate aldehyde, followed by direct reductive amination with dimethylamine and Na(OAc)3BH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(c1ccccc1)(c1ccccc1)C1C(OC)=Nc2ccc(Br)cc2C1O"
+        ],
+        "product_smiles": [
+          "COC1=Nc2ccc(Br)cc2C(O)C1C(CN(C)C)(c1ccccc1)c1ccccc1"
+        ],
+        "reagents": [
+          "K2OsO4•H2O",
+          "NaIO4",
+          "2,6-lutidine",
+          "dimethylamine",
+          "NaBH(OAc)3",
+          "CH3CO2H"
+        ],
+        "solvent": "1,4-dioxane, H2O, THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "The oxidative cleavage of 5a followed by reductive amination yielded the final product in 58% yield over two steps."
+      },
+      "evidence": {
+        "text_span": "The oxidative cleavage of 5a using ${ \\bf K } _ { 2 } { \\bf O } s { \\bf O } _ { 4 } \\cdot { \\bf H } _ { 2 } { \\bf O } / { \\bf N a I O } _ { 4 }$ resulted in the formation of an intermediate aldehyde. Without undergoing purication, the crude product was directly subjected to treatment with dimethylamine and $\\mathrm { N a } ( \\mathrm { O A c } ) _ { 3 } \\mathrm { B H }$ to obtain the nal product in $5 8 \\%$ yield over two steps.",
+        "page": 5,
+        "section": "Results and discussion",
+        "image_refs": [
+          "4ba61f3799a01c207e075ecd67952114b28b43eb4333e64e56a4f2b7600708a0.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "HPLC"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 34,
+        "unit": "%",
+        "interpretation": "Highest overall yield compared to previously reported methods."
+      },
+      "Longest Linear Steps": {
+        "value": 6,
+        "unit": "steps",
+        "interpretation": "Concise synthesis."
+      },
+      "stereochemistry_control": {
+        "value": "96% ee",
+        "unit": "ee",
+        "interpretation": "High enantioselectivity for (-)-BDQ."
+      }
+    },
+    "comparison_to_prior": "This synthetic route achieves the highest overall yields (34% for (-)-BDQ and 18% for (-)-sudapyridine) compared to all previously reported methods. It also provides highly stereoselective synthesis (96% ee for (-)-BDQ and 94% ee for (-)-sudapyridine) for the first time using this strategy.",
+    "significance": "The developed strategy provides a versatile and generalizable approach for synthesizing BDQ-type architectures, which are of significant interest for medicinal and process chemists. The DKR-ATH and TADDOL-mediated allylation are practical transformations, and the reaction conditions are convenient, highlighting its utility in drug discovery."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5sc03865k",
+      "pmcid": "PMC12224407",
+      "title": "Catalytic enantioselective total synthesis of antitubercular agents (-)-bedaquiline and (-)-sudapyridine enabled by dynamic kinetic resolution-asymmetric transfer hydrogenation.",
+      "authors": "Han J, Zhang D, Tao Y, Tang P, Chen FE.",
+      "journal": "Chem Sci",
+      "year": 2025,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC12224407?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/feb9c6d8-bf51-45f3-a242-f7103452ccb6.zip",
+      "parsed_at": "2026-05-11T06:22:53.682950+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 39,
+    "parseable": 39,
+    "canonicalized": 26,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

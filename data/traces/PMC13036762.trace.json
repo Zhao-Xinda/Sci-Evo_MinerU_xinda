@@ -1,0 +1,628 @@
+{
+  "trace_id": "TS-PMC13036762",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "6-epi-Hypersampsone R",
+    "smiles": "C=C(C)CCC1(C)C(C=C(C)C)C(=O)C2C(c3ccccc3)=C(O)C(C)C(=O)C21",
+    "natural_product_class": "polycyclic polyprenylated acylphloroglucinol (PPAP)",
+    "structural_features": {
+      "molecular_weight": 530.69,
+      "stereocenters": 4,
+      "ring_systems": "bicyclo[3.3.1]nonane",
+      "key_motifs": [
+        "bicyclo[3.3.1]nonane-2,8-dione core",
+        "prenyl group",
+        "isobutenyl group",
+        "benzoyl group"
+      ]
+    },
+    "motivation": "Hypersampsone R possesses a rare bicyclo[3.3.1]nonane-2,8-dione core and four stereocenters, including one quaternary stereocenter. The bioactivity of this natural product is unknown, but PPAPs exhibit a breadth of bioactivities. No prior syntheses of hypersampsone R or 6-epi-hypersampsone R have been reported.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Achieve the total synthesis of hypersampsone R or its epimer, 6-epi-hypersampsone R, through a desymmetrization strategy."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond formation via conjugate addition/acylation",
+        "named_strategy": null,
+        "reasoning": "To install the final two carbon-carbon bonds and the benzoyl group.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond formation via conjugate addition",
+        "named_strategy": null,
+        "reasoning": "To install the isobutenyl group at C6 and desymmetrize dienone 6, establishing three stereocenters.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond formation via bridgehead alkylation",
+        "named_strategy": null,
+        "reasoning": "To install the prenyl group at C1 via bridgehead lithiation and in situ prenylation.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Intramolecular aldol reaction",
+        "named_strategy": null,
+        "reasoning": "To form the bicyclic alcohol 7 from aldehyde 8.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond formation via alkylation and Stork-Danheiser sequence",
+        "named_strategy": "Stork-Danheiser alkylation",
+        "reasoning": "To access aldehyde 8 from vinylogous ester 9.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-O bond formation via enol ether formation",
+        "named_strategy": null,
+        "reasoning": "To convert dimedone (10) into vinylogous ester 9.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "dimedone",
+        "smiles": "CC1(C)CC(=O)CC(=O)C1",
+        "role": "starting_material",
+        "comes_from": "commercial"
+      }
+    ],
+    "rationale": "The strategy focuses on constructing a key achiral bicyclic intermediate (4) that allows for late-stage functionalization. This symmetry-guided approach simplifies core construction and enables a general route to various analogues. The synthesis proceeds through a desymmetrization step and a one-pot conjugate addition/acylation to form the final C-C bonds."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dimedone (10) is a commercially available starting material.",
+        "gap": "Need to convert dimedone into vinylogous ester 9.",
+        "decision": "To form vinylogous ester 9, chose p-TsOH and MeOH under reflux, expecting an 84% yield based on prior work."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)CC(=O)CC(=O)C1"
+        ],
+        "product_smiles": [
+          "COC1=CC(=O)CC(C)(C)C1"
+        ],
+        "named_reaction": null,
+        "reagents": [
+          "p-TsOH",
+          "MeOH"
+        ],
+        "solvent": "MeOH",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Vinylogous ester 9 was produced in 84% yield on a 100 g scale."
+      },
+      "revises_step_id": null,
+      "references": [
+        "5"
+      ],
+      "evidence": {
+        "text_span": "We began our forward synthesis by converting dimedone into vinylogous ester 9, which proceeded in 84% yield on 100 g scale (Scheme 2).5",
+        "section": "Forward Synthesis of Key Intermediate 4 and Subsequent Bridgehead Prenylation"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Vinylogous ester 9 is available. The retrosynthesis calls for an alkylation and Stork-Danheiser sequence to form aldehyde 8, which requires a terminal alkyne functional handle.",
+        "gap": "Need to introduce a terminal alkyne to vinylogous ester 9 to form compound 11.",
+        "decision": "To introduce the alkyne, chose LDA at -78 °C followed by propargyl bromide, expecting an 88% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC(=O)CC(C)(C)C1"
+        ],
+        "product_smiles": [
+          "C#CCC1C(=O)C=C(OC)CC1(C)C"
+        ],
+        "named_reaction": null,
+        "reagents": [
+          "LDA",
+          "propargyl bromide"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to 23 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Alkyne 11 was constructed in 88% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "After preliminary investigations of the ideal aldehyde precursor, we concluded that a terminal alkyne was the optimal functional handle and constructed alkyne 11 in 88% yield.",
+        "section": "Forward Synthesis of Key Intermediate 4 and Subsequent Bridgehead Prenylation"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkyne 11 is available. The next step is to form aldehyde 8 via Stork-Danheiser transposition and Ru-catalyzed anti-Markovnikov alkyne hydration.",
+        "gap": "Need to perform the Stork-Danheiser transposition and alkyne hydration.",
+        "decision": "To form aldehyde 8, chose Stork-Danheiser transposition followed by Ru-catalyzed anti-Markovnikov alkyne hydration, expecting a 95% yield on a multigram scale."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#CCC1C(=O)C=C(OC)CC1(C)C"
+        ],
+        "product_smiles": [
+          "CC1(C)C=CC(=O)CC1CCC=O"
+        ],
+        "named_reaction": "Stork-Danheiser transposition",
+        "reagents": [
+          "Ru-catalyst"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Aldehyde 8 was produced in 95% yield on a multigram scale."
+      },
+      "revises_step_id": null,
+      "references": [
+        "6",
+        "7"
+      ],
+      "evidence": {
+        "text_span": "Compound 11 was then subjected to Stork−Danheiser transposition followed by a Ru-catalyzed anti-Markovnikov alkyne hydration to produce aldehyde 8 in 95% yield on a multigram scale.6,7",
+        "section": "Forward Synthesis of Key Intermediate 4 and Subsequent Bridgehead Prenylation"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 8 is available. The retrosynthesis calls for an intramolecular aldol reaction to form bicyclic alcohol 7.",
+        "gap": "Need to perform the intramolecular aldol reaction.",
+        "decision": "To form bicyclic alcohol 7, chose an acid-promoted intramolecular aldol reaction, expecting a 90% yield as a single diastereomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C=CC(=O)CC1CCC=O"
+        ],
+        "product_smiles": [
+          "CC1(C)C2C(=O)C=C[C@H]1[C@@H]2O"
+        ],
+        "named_reaction": "intramolecular aldol reaction",
+        "reagents": [
+          "p-TsOH"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "35 °C",
+        "time": "68 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "dr": "single diastereomer",
+        "observation": "Bicycle 7 was produced as a single diastereomer in 90% yield. 8 g of bicycle 7 was obtained without silica gel flash chromatography."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Aldehyde 8 underwent an acid-promoted intramolecular aldol reaction to produce bicycle 7 as a single diastereomer in 90% yield.",
+        "section": "Forward Synthesis of Key Intermediate 4 and Subsequent Bridgehead Prenylation"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bicyclic alcohol 7 is available. The retrosynthesis calls for oxidation and desaturation to form dienone 4.",
+        "gap": "Need to oxidize alcohol 7 and desaturate the resulting ketone-derived enolate.",
+        "decision": "To form dienone 4, chose Dess-Martin periodinane for oxidation and Mukaiyama's reagent for desaturation, expecting a 52% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C2C(=O)C=C[C@H]1[C@@H]2O"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)C2C=CC(=O)C1C2"
+        ],
+        "named_reaction": null,
+        "reagents": [
+          "Dess-Martin periodinane",
+          "Mukaiyama's reagent"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "25 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 52,
+        "observation": "Dienone 4 was produced in 52% yield. This step was achieved on a gram scale."
+      },
+      "revises_step_id": null,
+      "references": [
+        "8"
+      ],
+      "evidence": {
+        "text_span": "Oxidation of alcohol 7 with Dess-Martin periodinane and desaturation of the resulting ketone-derived enolate with Mukaiyama’s reagent produced dienone 4 in 52% yield.8",
+        "section": "Forward Synthesis of Key Intermediate 4 and Subsequent Bridgehead Prenylation"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Key intermediate 4 is available. The retrosynthesis calls for bridgehead prenylation to form bicycle 6.",
+        "gap": "Need to perform bridgehead prenylation on dienone 4, despite concerns about the quaternary center.",
+        "decision": "To form bicycle 6, chose standard alkylation conditions with LDA and prenyl bromide, expecting a 63% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C(=O)C2C=CC(=O)C1C2"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC1(C)C(=O)C2C=CC(=O)C1C2"
+        ],
+        "named_reaction": null,
+        "reagents": [
+          "LDA",
+          "prenyl bromide"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to 23 °C",
+        "time": "21 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "observation": "Bridgehead prenylation afforded bicycle 6 in 63% yield."
+      },
+      "revises_step_id": null,
+      "references": [
+        "9"
+      ],
+      "evidence": {
+        "text_span": "To our delight, treatment of bisenone 4 with LDA at −78 °C followed by prenyl bromide resulted in bridgehead prenylation affording bicycle 6 in 63% yield (Scheme 2).9",
+        "section": "Forward Synthesis of Key Intermediate 4 and Subsequent Bridgehead Prenylation"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Prenylated bicycle 6 is available. The retrosynthesis calls for desymmetrization via asymmetric conjugate addition to install the isobutenyl group at C6, establishing three stereocenters.",
+        "gap": "Need to find conditions for an enantioselective and monoselective conjugate addition.",
+        "decision": "To achieve desymmetrization, adopted reaction conditions from Nakao and co-workers using Rh-catalyzed conjugate addition with (S)-MonoPhos and a hydroxy organosilane, expecting the desired product 5 as a single diastereomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC12CC=CC(=O)C1C=CC2=O"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC12CC(C=C(C)C)C(=O)C1C=CC2=O",
+          "CC(C)=CCC12CC=CC(=O)C1C=CC2=O"
+        ],
+        "named_reaction": null,
+        "reagents": [
+          "[Rh(cod)OH]2",
+          "(S)-MonoPhos",
+          "CC(C)=C[Si](C)(C)Cc1ccccc1O"
+        ],
+        "catalyst": "[Rh(cod)OH]2",
+        "ligand": "(S)-MonoPhos",
+        "solvent": "THF",
+        "temperature": "23 °C",
+        "time": "20 h",
+        "stoichiometry": {
+          "[Rh(cod)OH]2": "4.0 mol %",
+          "(S)-MonoPhos": "8.8 mol %",
+          "CC(C)=C[Si](C)(C)Cc1ccccc1O": "3 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 21,
+        "ee_percent": 0,
+        "dr": "single diastereomer",
+        "failure_mode": "no_reaction",
+        "observation": "Desired product 5 was obtained as a single diastereomer in low yield (21% NMR yield) and no enantioselectivity. Monoenone 13 was also detected (11% NMR yield). This suggests background reactivity not involving the chiral ligand."
+      },
+      "revises_step_id": null,
+      "references": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "evidence": {
+        "text_span": "Adopting their reaction conditions for our desymmetrization led to the formation of the desired product (i.e., 5) as a single diastereomer albeit in low yields (Table 1, entry 1). When the reaction was performed with a slight excess of ligand, we observed limited catalytic turnover with a 21% NMR yield of desired conjugate addition product 5. However, this reaction was not enantioselective, suggesting that there is background reactivity that does not involve the chiral ligand in product formation.",
+        "section": "Desymmetrization of Prenylated Bicycle 6 via Rh-Catalyzed Conjugate Addition"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The previous attempt at Rh-catalyzed asymmetric conjugate addition showed low yield and no enantioselectivity, suggesting background reactivity.",
+        "gap": "Need to counter the background reactivity and improve enantioselectivity.",
+        "decision": "To improve enantioselectivity, increased the ligand loading to 16.0 mol %."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC12CC=CC(=O)C1C=CC2=O"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC12CC(C=C(C)C)C(=O)C1C=CC2=O",
+          "CC(C)=CCC12CC=CC(=O)C1C=CC2=O"
+        ],
+        "named_reaction": null,
+        "reagents": [
+          "[Rh(cod)OH]2",
+          "(S)-MonoPhos",
+          "CC(C)=C[Si](C)(C)Cc1ccccc1O"
+        ],
+        "catalyst": "[Rh(cod)OH]2",
+        "ligand": "(S)-MonoPhos",
+        "solvent": "THF",
+        "temperature": "23 °C",
+        "time": "20 h",
+        "stoichiometry": {
+          "[Rh(cod)OH]2": "4.0 mol %",
+          "(S)-MonoPhos": "16.0 mol %",
+          "CC(C)=C[Si](C)(C)Cc1ccccc1O": "3 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 8,
+        "ee_percent": 50,
+        "failure_mode": "low_yield",
+        "observation": "Increased enantioselectivity (50% ee) but diminished NMR yield (8%) and no catalytic turnover. Monoenone 13 was detected (3% NMR yield). Other phosphoramidite and monodentate ligands also failed to improve yield or enantioselectivity."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Increasing the ligand loading to counter this background reactivity led to greater enantioselectivity, although with a diminished NMR yield of only 8% and no catalytic turnover (entry 2). In both experiments, we also detected the formation of monoenone 13, possibly resulting from insertion of a rhodium−hydride complex into the olefin. This competing pathway offers another explanation for the low yields observed in these reactions. Unfortunately, other phosphoramidite and monodentate ligands did not increase the yield or enantioselectivity of the desired product.",
+        "section": "Desymmetrization of Prenylated Bicycle 6 via Rh-Catalyzed Conjugate Addition"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Rh-catalyzed asymmetric conjugate addition failed to provide satisfactory results for desymmetrization.",
+        "gap": "Need an alternative desymmetrization method.",
+        "decision": "To achieve desymmetrization, decided to pursue conjugate reduction and subsequent alkylation of the dienone, followed by conjugate addition to the monoenone and benzoylation."
+      },
+      "revises_step_id": 7,
+      "references": [],
+      "evidence": {
+        "text_span": "Given these results, we decided to pursue alternative desymmetrization methods. We proposed that conjugate reduction and subsequent alkylation of the dienone followed by conjugate addition to the monoenone and benzoylation would allow us to complete the total synthesis of hypersampsone R.",
+        "section": "Desymmetrization of Prenylated Bicycle 6 (top) and Asymmetric Noyori Reduction of Bicycle 6 (bottom)"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "An alternative desymmetrization strategy involves conjugate reduction and alkylation. Dienone 6 is available.",
+        "gap": "Need to perform a single 1,4-conjugate reduction and subsequent alkylation to form diprenylated bicycle 14.",
+        "decision": "To form 14, chose L-selectride for reduction, followed by prenyl bromide and TBAI for alkylation, expecting desired product 14 as a single diastereomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC1C(=O)C=CC2C=CC(=O)C(C)C21C"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC[C@@H]1C(=O)C=CC2C=CC(=O)C(C)C21C",
+          "CC(C)=CCC1C(=O)C=CC2C=CC(=O)C(C)C21C"
+        ],
+        "named_reaction": null,
+        "reagents": [
+          "L-selectride",
+          "HMPA",
+          "TBAI",
+          "prenyl bromide"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 19,
+        "dr": "single diastereomer",
+        "failure_mode": "side_product_dominant",
+        "observation": "Desired product 14 was obtained as a single diastereomer in 19% yield. However, the major product was reduced bicycle 13, isolated in 29% yield. HMPA was necessary to prevent rearranged bicycle formation."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "We first attempted alkylation via a Li enolate generated from a single 1,4-conjugate reduction of dienone 6 (Scheme 3, top). Upon subjecting dienone 6 to L-selectride followed by prenyl bromide and TBAI, desired product 14 was obtained as a single diastereomer in 19% yield. Unfortunately, the major product was reduced bicycle 13, which was isolated in 29% yield. Importantly, compound 13 was then subjected to standard alkylation conditions to produce more of desired diprenylated bicycle 14 in 25% yield. The addition of HMPA to these reactions was necessary to prevent the formation of a rearranged bicycle (Supporting Information).",
+        "section": "Desymmetrization of Prenylated Bicycle 6 (top) and Asymmetric Noyori Reduction of Bicycle 6 (bottom)"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Mono-reduced bicycle 13 was a major byproduct in the previous attempt. If 13 could be obtained enantioselectively, it could be further alkylated.",
+        "gap": "Need to access compound 13 enantioselectively.",
+        "decision": "To access 13 enantioselectively, chose Noyori reduction conditions, expecting selective 1,4-reduction over 1,2-reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC1C(=O)C=CC2C=CC(=O)C(C)C21C"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC1C(=O)C=CC2C=CC(=O)C(C)C21C"
+        ],
+        "named_reaction": "Noyori reduction",
+        "reagents": [
+          "RuCl2[(S)-DM-SEGPHOS]",
+          "[(S)-DAIPEN]",
+          "HCOOH",
+          "Et3N"
+        ],
+        "catalyst": "RuCl2[(S)-DM-SEGPHOS][(S)-DAIPEN]",
+        "solvent": "THF",
+        "temperature": "28 °C",
+        "time": "20 h",
+        "stoichiometry": {
+          "RuCl2[(S)-DM-SEGPHOS][(S)-DAIPEN]": "1 mol%",
+          "HCOOH": "2.0 equiv",
+          "Et3N": "2.0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "ee_percent": 82,
+        "observation": "Mono-reduced bicycle 13 was produced in 67% NMR yield and 82% ee via selective 1,4-reduction."
+      },
+      "revises_step_id": null,
+      "references": [
+        "14"
+      ],
+      "evidence": {
+        "text_span": "Subjecting bicycle 6 to Noyori reduction conditions led to selective 1,4-reduction over 1,2-reduction, producing monoreduced bicycle 13 in 67% NMR yield and 82% ee14 (Scheme 3, bottom).",
+        "section": "Desymmetrization of Prenylated Bicycle 6 (top) and Asymmetric Noyori Reduction of Bicycle 6 (bottom)"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diprenylated bicycle 14 is available (from step 10, or by alkylation of 13). The final step is to install the remaining appendages via a tandem conjugate addition/acylation strategy.",
+        "gap": "Need to perform the one-pot conjugate addition/acylation with an alkenyl nucleophile.",
+        "decision": "To form the final product, chose stoichiometric copper iodide in combination with isobutenylmagnesium bromide and benzoyl cyanide, expecting the natural product hypersampsone R."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC1(C)C(C=C(C)C)C(=O)C2C(C)C=CC(=O)C21"
+        ],
+        "product_smiles": [
+          "C=C(C)CCC1(C)C(C=C(C)C)C(=O)C2C(c3ccccc3)=C(O)C(C)C(=O)C21"
+        ],
+        "named_reaction": null,
+        "reagents": [
+          "CuI",
+          "Me2C=CMgBr",
+          "BzCN"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "1 h",
+        "stoichiometry": {
+          "CuI": "1 equiv",
+          "Me2C=CMgBr": "2.2 equiv",
+          "BzCN": "4 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 40,
+        "observation": "The transformation proceeded in 40% yield, forming two carbon-carbon bonds in one step. However, NMR analysis revealed that the product was 6-epi-hypersampsone R (3), not hypersampsone R (2), due to nucleophilic approach from the top face of the bicycle."
+      },
+      "revises_step_id": null,
+      "references": [
+        "15"
+      ],
+      "evidence": {
+        "text_span": "To our delight, by using stoichiometric copper iodide in combination with isobutenylmagnesium bromide, the transformation proceeded in 40% yield, forming two carbon−carbon bonds in one step (Scheme 4). However, our experimental 1H NMR spectrum did not match the reported spectrum of natural hypersampsone R.4 Following detailed NMR analysis, we concluded that we had synthesized the C6 epimer of hypersampsone R (i.e., 3). Given the bridged nature of the bicyclo[3.3.1]nonane core, nucleophiles are more likely to approach from the top face of the bicycle (as drawn) rather than from the more hindered endocyclic face, resulting in the formation of the C6 epimer.",
+        "section": "Tandem Conjugate Addition/Acylation Strategy to Construct the Final Two Carbon−Carbon Bonds in 6-epi-Hypersampsone R"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield not explicitly stated, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "The total synthesis was accomplished in 10 steps."
+      },
+      "Total Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "The total synthesis was accomplished in 10 steps."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Two failed attempts were reported during the desymmetrization strategy."
+      }
+    },
+    "comparison_to_prior": "This is the first total synthesis of 6-epi-hypersampsone R. The authors note that their product is the C6 epimer of natural hypersampsone R, which has not been synthesized before.",
+    "significance": "The first total synthesis of 6-epi-hypersampsone R was achieved in 10 steps. The strategy involved a robust seven-step synthesis of a key bicyclic intermediate, followed by desymmetrization and peripheral functionalization. A one-pot conjugate addition/acylation strategy was employed to construct the final two carbon-carbon bonds. This general strategy of core synthesis, desymmetrization, and functionalization may provide a platform for synthesizing other structurally related PPAPs."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.6c00436",
+      "pmcid": "PMC13036762",
+      "title": "Synthesis of 6-&lt;i&gt;epi&lt;/i&gt;-Hypersampsone R by a Desymmetrization Strategy.",
+      "authors": "Tariq M, Butcher TW, Virgil SC, Stoltz BM.",
+      "journal": "Org Lett",
+      "year": 2026,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC13036762?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/64d7ae81-a02f-4bc7-9d6a-f702ff0952db.zip",
+      "parsed_at": "2026-05-11T06:44:53.081837+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 27,
+    "parseable": 27,
+    "canonicalized": 21,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

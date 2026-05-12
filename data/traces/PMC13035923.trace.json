@@ -1,0 +1,981 @@
+{
+  "trace_id": "TS-PMC13035923",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Sterically hindered aryl C-glycosides",
+    "smiles": "",
+    "natural_product_class": "C-glycosides",
+    "structural_features": {
+      "molecular_weight": 666.73,
+      "stereocenters": 5,
+      "ring_systems": "aryl, pyranose",
+      "key_motifs": [
+        "aryl C-glycoside"
+      ]
+    },
+    "motivation": "Sterically hindered aryl C-glycosides are biologically important, yet their stereoselective synthesis remains challenging due to severe anomeric congestion. They are prevalent in numerous bioactive natural products and clinically relevant glycomimetics.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Zhu",
+        "year": 2017,
+        "doi": "10.1021/jacs.7b09422",
+        "key_strategy": "Pd-catalyzed stereospecific cross-coupling reactions between α- and β-anomers of glycosyl stannanes and aryl halides"
+      },
+      {
+        "lead_author": "Zhu",
+        "year": 2016,
+        "doi": "10.1021/jacs.6b08690",
+        "key_strategy": "Pd-catalyzed stereospecific cross-coupling reactions of anomeric stannanes for the synthesis of C-aryl glycosides"
+      },
+      {
+        "lead_author": "Yi",
+        "year": 2018,
+        "doi": "10.1021/acs.orglett.8b02000",
+        "key_strategy": "Stereoretentive intramolecular glycosyl cross-coupling"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Efficient and robust access to structurally demanding aryl C-glycosides with precise stereocontrol over the anomeric configuration of both α- and β-anomers derived from various saccharides. High chemoselectivity and broad functional group tolerance."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C1-C(aryl) bond of the C-glycoside",
+        "named_strategy": "Stille cross-coupling",
+        "reasoning": "Transition metal-catalyzed glycosyl cross-coupling (GCC) via stereospecific transmetalation of glycosyl anions has shown promise for constructing aryl C-glycosides. The stereoretentive nature of these transformations ensures precise anomeric control. The challenge lies in applying this to sterically hindered aryl electrophiles."
+      }
+    ],
+    "rationale": "The strategy focuses on a ligand-enabled, stereospecific Pd-catalyzed glycosyl cross-coupling using glycosyl stannanes and sterically bulky aryl electrophiles. The key is to design ligands that possess electron-withdrawing properties to facilitate transmetalation and suitable steric effects to aid reductive elimination without hindering oxidative addition with bulky electrophiles."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Aryl C-glycosides are important glycomimetics with diverse biological activities. Existing methods for C-glycosylation include Friedel-Crafts type reactions, radical glycosyl cross-coupling, and transition metal-catalyzed glycosyl cross-coupling. Our previous work on Pd-catalyzed cross-coupling of glycosyl stannanes showed high stereospecificity.",
+        "gap": "The application of sterically hindered aryl electrophiles in intermolecular glycosyl cross-coupling remains highly challenging, often leading to diminished reactivity or complete inertness. Controlling anomeric stereochemistry for sterically hindered aryl C-glycosides is particularly demanding.",
+        "decision": "To develop a next-generation stereospecific glycosyl cross-coupling platform using glycosyl stannanes to access sterically demanding structures. This requires rational ligand design to overcome the challenges of hindered aryl electrophiles."
+      },
+      "evidence": {
+        "text_span": "Motivated by unresolved synthetic challenges and the notable bioactivity of sterically hindered aryl C-glycosides, and guided by the high selectivity and reliability achieved in our preliminary work59,60, we aimed to develop a next-generation stereospecific glycosyl crosscoupling platform using glycosyl stannanes to access these sterically demanding structures.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Transition metal-catalyzed cross-coupling reactions are highly dependent on ligand steric and electronic effects. Electron-deficient phosphine ligands are known to enhance reactivity by generating more electrophilic Pd(II) species, facilitating transmetalation with low nucleophilicity glycosyl stannanes.",
+        "gap": "For sterically hindered aryl electrophiles, the optimal balance of electronic and steric properties in the ligand is unknown. Excessive steric hindrance might impede oxidative addition, while insufficient electron-withdrawing character might not facilitate transmetalation.",
+        "decision": "To achieve efficient synthesis of sterically hindered aryl C-glycosides, an effective ligand should possess: (i) electron-withdrawing properties to create more electrophilic Pd(II) species, facilitating transmetalation; and (ii) suitable steric effects, where bulkiness aids reductive elimination but avoids hindering oxidative addition with bulky electrophiles and subsequent transmetalation."
+      },
+      "evidence": {
+        "text_span": "The key to achieving efficient synthesis of sterically hindered aryl C-glycosides lies in the rational design of ligands tailored for these challenging aryl electrophiles. Such an effective ligand should possess: (i) electron-withdrawing properties to create more electrophilic Pd(II) species, thereby facilitating transmetalation in the presence of bulky aryl electrophiles; and (ii) suitable steric effects, where bulkiness aids reductive elimination but excessive steric hindrance may hinder oxidative addition with bulky electrophiles and the subsequent transmetalation of Pd(II) species bearing hindered aryl groups.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "JackiePhos L1 is a known optimal ligand for stereospecific Stille glycosyl C(sp3)-C(sp2) couplings of aryl electrophiles.",
+        "gap": "Its effectiveness for sterically hindered aryl electrophiles is unknown.",
+        "decision": "Test JackiePhos L1 as a model ligand for the reaction of (2,3,4,6-tetra-O-benzyl-β-D-glucopyranosyl)tributylstannane 16 and methyl 2-bromobenzoate 14a under previously reported Stille glycosyl cross-coupling conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1ccccc1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "CC(C)P(C1=CC(OC)=C(C(C)C)C(OC)=C1C(C)C)C2=CC(C(F)(F)F)=CC(C(F)(F)F)=C2",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "14a": "1.0 equiv",
+          "16": "1.5 equiv",
+          "Pd2(dba)3": "2.5 mol%",
+          "ligand": "10.0 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 15,
+        "observation": "JackiePhos L1 proved less effective for the title reaction, affording only 15% of coupling product 17."
+      },
+      "evidence": {
+        "text_span": "JackiePhos L1, a biarylmonophosphine ligand featuring strongly electron-withdrawing Pbound 3,5-bis(trifluoromethyl)phenyl groups, has been widely used as an optimal ligand for stereospecific Stille glycosyl C(sp3)-C(sp2) couplings of aryl electrophiles 59-61,64,70,73 . However, it proved less effective for the title reaction, affording only 15% of coupling product 17.",
+        "page": 3,
+        "image_refs": [
+          "58c2b94e270d831b79732975fcd337423fc691d434e69d6c93eccb015e65275f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Electron-deficient phosphine ligands are crucial for Stille C-C couplings. Electron-donating ligands might not be suitable.",
+        "gap": "Confirm if electron-donating ligands are indeed ineffective for this challenging reaction.",
+        "decision": "Substitute the P-bound electron-withdrawing (3,5-bis(trifluoromethyl)phenyl) groups in L1 with electron-donating cyclohexyl substituents, as in BrettPhos L2, and test its reactivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1ccccc1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "CC(C)P(C1=CC(OC)=C(C(C)C)C(OC)=C1C(C)C)C2=CC(C(C)C)=CC(C(C)C)=C2",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "14a": "1.0 equiv",
+          "16": "1.5 equiv",
+          "Pd2(dba)3": "2.5 mol%",
+          "ligand": "10.0 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200 mol%"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Substituting the P-bound electron-withdrawing groups with electron-donating cyclohexyl substituents (BrettPhos L2) completely abolished reactivity."
+      },
+      "evidence": {
+        "text_span": "As anticipated, substituting the P-bound electron-withdrawing (3,5- bis(trifluoromethyl)phenyl) groups in L1 with electron-donating cyclohexyl substituents, as in BrettPhos L2, completely abolished reactivity.",
+        "page": 3,
+        "image_refs": [
+          "58c2b94e270d831b79732975fcd337423fc691d434e69d6c93eccb015e65275f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Electron-deficient phosphine ligands are important. Tris(3,5-bis(trifluoromethyl)phenyl)phosphine L3 is an electron-deficient ligand.",
+        "gap": "Evaluate the performance of L3 in the model reaction.",
+        "decision": "Test Tris(3,5-bis(trifluoromethyl)phenyl)phosphine L3 in the reaction of 16 and 14a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1ccccc1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "P(C1=CC(C(F)(F)F)=CC(C(F)(F)F)=C1)(C2=CC(C(F)(F)F)=CC(C(F)(F)F)=C2)C3=CC(C(F)(F)F)=CC(C(F)(F)F)=C3",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "14a": "1.0 equiv",
+          "16": "1.5 equiv",
+          "Pd2(dba)3": "2.5 mol%",
+          "ligand": "10.0 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 21,
+        "observation": "Tris(3,5-bis(trifluoromethyl)phenyl)phosphine L3 delivered product 17 in 21% yield but with extensive formation of byproducts via β-O elimination (17-1, 79%) and β-H elimination (17-2, 49%)."
+      },
+      "evidence": {
+        "text_span": "Tris(3,5-bis(trifluoromethyl)phenyl)phosphine L3 delivered product 17 in 21% yield but with extensive formation of byproducts via β-O elimination (17-1, 79%) and β- H elimination (17-2, 49%).",
+        "page": 3,
+        "image_refs": [
+          "58c2b94e270d831b79732975fcd337423fc691d434e69d6c93eccb015e65275f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "JackiePhos L1 gave low yield (15%) and L3 gave 21% yield with significant byproduct formation. Transmetalation is the rate-limiting step for bulky aryl electrophiles. More electrophilic and less sterically demanding Pd(II) intermediates are needed.",
+        "gap": "How to design ligands that maintain electron-withdrawing character but reduce steric hindrance and improve transmetalation efficiency, while suppressing elimination byproducts?",
+        "decision": "Systematically modify the 'lower' aryl ring B of the biaryl backbone by varying substituents at the 2', 4', and 6' positions, while maintaining electron-withdrawing substituents on the phosphorus atom and removing the two methoxy groups on the 'upper' aryl ring A (as in L4)."
+      },
+      "evidence": {
+        "text_span": "Recognizing that transmetalation is the rate-limiting step in Stille glycosyl C(sp3)-C(sp2) cross-coupling reactions59 particularly for bulky aryl electrophiles, we hypothesized that more electrophilic and less sterically demanding Pd(II) intermediates would facilitate critica transmetalation step. Maintaining electron-withdrawing substituents on the phosphorus atom while removing the two methoxy groups on the “upper” aryl ring A of the biaryl backbone, we systematically modified the “lower” aryl ring B by varying substituents at the 2′, 4′, and 6′ positions (see Fig. 2 for numbering).",
+        "page": 3
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "L1 gave 15% yield. Removing methoxy groups from the 'upper' aryl ring A might improve reactivity.",
+        "gap": "Quantify the effect of removing methoxy groups from ring A.",
+        "decision": "Test ligand L4 (analogue of L1 lacking two methoxy groups on ring A) in the model reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1ccccc1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "CC(C)P(C1=CC(OC)=C(C(C)C)C(OC)=C1C(C)C)C2=CC(C(F)(F)F)=CC(C(F)(F)F)=C2",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "14a": "1.0 equiv",
+          "16": "1.5 equiv",
+          "Pd2(dba)3": "2.5 mol%",
+          "ligand": "10.0 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 24,
+        "observation": "L4 provided only a modest yield improvement (15% vs. 24%) compared to L1."
+      },
+      "evidence": {
+        "text_span": "Compared to JackiePhos L1, its analogue L4 (lacking the two methoxy groups on the “upper” aryl ring A) provided only a modest yield improvement (15% vs. 24%).",
+        "page": 3,
+        "image_refs": [
+          "58c2b94e270d831b79732975fcd337423fc691d434e69d6c93eccb015e65275f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Reducing steric hindrance on the 'lower' aryl ring B might improve reactivity.",
+        "gap": "Quantify the effect of reducing steric hindrance on ring B.",
+        "decision": "Design ligand L5 with hydrogen atoms at the 2', 4', and 6' positions of the 'lower' aryl ring B to reduce steric hindrance, and test it in the model reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1ccccc1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "P(C1=CC(OC)=C(C(C)C)C(OC)=C1C(C)C)C2=CC(C(F)(F)F)=CC(C(F)(F)F)=C2",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "14a": "1.0 equiv",
+          "16": "1.5 equiv",
+          "Pd2(dba)3": "2.5 mol%",
+          "ligand": "10.0 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "This modification led to a notable increase in the yield of 17 to 62%, compared to 24% obtained with L4."
+      },
+      "evidence": {
+        "text_span": "To advance this objective, we designed a ligand, L5, bearing hydrogen atoms at the 2’, 4’, and 6’ positions of the “lower” aryl ring B to reduce the steric hindrance. This modification led to a notable increase in the yield of 17 to 62%, compare to 24% obtained with L4.",
+        "page": 3,
+        "image_refs": [
+          "58c2b94e270d831b79732975fcd337423fc691d434e69d6c93eccb015e65275f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "An electron-rich 'lower' aryl ring might strengthen coordination to the Pd(II) center. Alkoxy groups are electron-donating.",
+        "gap": "Evaluate the effect of introducing alkoxy groups at the 2' and 6' positions of the 'lower' aryl ring B.",
+        "decision": "Test ligands L6 (methoxy), L7 (cyclohexyloxy), and L8 (isopropoxy) in the model reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1ccccc1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "P(C1=CC(OC)=C(OC)C(OC)=C1C(C)C)C2=CC(C(F)(F)F)=CC(C(F)(F)F)=C2",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "14a": "1.0 equiv",
+          "16": "1.5 equiv",
+          "Pd2(dba)3": "2.5 mol%",
+          "ligand": "10.0 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "When 2' and 6' substituent groups were replaced with alkoxy groups, such as methoxy L6, cyclohexyloxy L7, and isopropoxy L8, the yields improved to 70%, 39%, and 46%, respectively, compared to L4."
+      },
+      "evidence": {
+        "text_span": "When 2' and 6' substituent groups were replaced with alkoxy groups, such as methoxy L6, cyclohexyloxy L7, and isopropoxy L8, the yields improved to 70%, 39%, and 46%, respectively, compared to L4.",
+        "page": 3,
+        "image_refs": [
+          "58c2b94e270d831b79732975fcd337423fc691d434e69d6c93eccb015e65275f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Methoxy groups on ring A of JackiePhos L1 were previously considered critical for catalyst stability. However, L4 (without these methoxy groups) showed modest improvement over L1. Ligands L5-L8 showed improved yields.",
+        "gap": "Re-evaluate the importance of methoxy groups on ring A in combination with the improved 'lower' aryl ring B modifications.",
+        "decision": "Test ligands L9-L12, which feature an 'upper' aryl ring A and ring C identical to JackiePhos L1, and compare their performance with L5, L6, L7 (which lack methoxy groups on ring A)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1ccccc1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "P(C1=CC(OC)=C(C(C)C)C(OC)=C1C(C)C)C2=CC(C(F)(F)F)=CC(C(F)(F)F)=C2",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "14a": "1.0 equiv",
+          "16": "1.5 equiv",
+          "Pd2(dba)3": "2.5 mol%",
+          "ligand": "10.0 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Ligands L9-L12 showed improved yields ranging from 66% to 82%, along with a significant reduction in β-H elimination. Comparing ligand pairs L5 vs. L9, L6 vs. L10, and L7 vs. L11 further established that while methoxy groups on ring A are not strictly necessary, their presence consistently enhances catalytic performance. This effect is particularly pronounced when R1 is i-Pr, with the yield increasing significantly from 46% to 73% (L7 vs L11)."
+      },
+      "evidence": {
+        "text_span": "This conclusion also extends to ligands L9-L12, which feature an “upper” aryl ring A and ring C identical to JackiePhos L1. These ligands showed improved yields ranging from 66% to 82%, along with a significant reduction in β- H elimination. Comparing ligand pairs L5 vs. L9, L6 vs. L10, and L7 vs. L11 further established that while methoxy groups on ring A are not strictly necessary, their presence consistently enhances catalytic performance. This effect is particularly pronounced when R1 is i-Pr, with the yield increasing significantly from 46% to 73%, likely due to the C3 methoxy substituent acting as a flexible coordination site that stabilizes the electrophilic and the sterically hindered aryl-Pd (II) center B, even when o-bound Pd(II) intermediates are disfavored sterically.",
+        "page": 3,
+        "image_refs": [
+          "58c2b94e270d831b79732975fcd337423fc691d434e69d6c93eccb015e65275f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ligands L10 and L11 showed optimal performance in the model reaction.",
+        "gap": "Confirm the broad applicability and stereocontrol of these ligands across a wider range of sterically hindered aryl electrophiles and glycosyl stannanes.",
+        "decision": "Evaluate the performance of L10 and L11 in the cross-coupling of various sterically hindered aryl bromides and iodides, including ortho-substituted arenes and heterocycles, with glycosyl stannanes."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1ccccc1Br",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "P(C1=CC(OC)=C(OC(C)C)C(OC)=C1C(C)C)C2=CC(C(F)(F)F)=CC(C(F)(F)F)=C2",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "14": "1.0 equiv",
+          "16": "1.5 equiv",
+          "Pd2(dba)3": "2.5 mol%",
+          "ligand": "10.0 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "A broad array of sterically hindered aryl bromides and iodides, including ortho-substituted arenes and heterocycles, underwent smooth coupling with L10 or L11, delivering the desired C-glycosides in good to excellent yields with exclusive anomeric control. L1 afforded low yields or failed to promote product formation altogether. Ortho-substituents such as ester 18, methyl 21-27, 2-ethoxy-2-oxoethyl 28, hydroxymethyl 29, isopropyl 30, benzo 31, phenyl 32, phenoxy 33, benzyloxy 34, acetoxy 35, hydroxy 36, acetylamino 37, benzoyl 38, formyl 39, cyano 40, and nitro groups 41 were all well tolerated. Fully unprotected glycosyl stannanes could be efficiently coupled to deliver products 42–44 in 60% yield using L10 or L11, while L1 gave only 12% yield."
+      },
+      "evidence": {
+        "text_span": "As shown in Fig. 6a broad array of sterically hindered aryl bromides and iodides, including ortho-substituted arenes and heterocycles, underwent smooth coupling with L10 or L11, delivering the desired C-glycosides in good to excellent yields with exclusive anomeric control. In stark contrast, L1 afforded low yields or failed to promote product formation altogether. We systematically probed the impact of steric and electronic substituents using ortho-substituted aryl halides as a representative platform. ortho-Substituents such as ester 18, methyl 21-27, 2-ethoxy-2-oxoethyl 28, hydroxymethyl 29, isopropyl 30, benzo 31, phenyl 32, phenoxy 33, benzyloxy 34, acetoxy 35, hydroxy 36, acetylamino 37, benzoyl 38, formyl 39, cyano 40, and nitro groups 41 were all well tolerated, affording the corresponding Cglycosides in moderate to excellent yields. Notably, several substrates that were unreactive or less reactive using L1 as ligand, including those bearing hydroxymethyl, isopropyl, phenyl, benzyloxy, acetylamino, benzoyl, cyano, and nitro groups, exhibiting markedly enhanced reactivity with L10 and L11. The transformation demonstrates broad functional group compatibility, including tolerance toward acidic phenolic hydroxyl, hydroxymethyl, acetamido, and formyl groups. Even in the context of more sterically congested 1,5-disubstituted aryl halides, fully unprotected glycosyl stannanes could be efficiently coupled to deliver products 42–44 in 60% yield using L10 or L11, while L1 gave only 12% yield under otherwise identical conditions.",
+        "page": 5,
+        "image_refs": [
+          "0d68f7bb326c19df1c723b90153508af981f037566b58ac340b86314e0751c3f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimal ligands L10 and L11 showed broad scope with various aryl electrophiles.",
+        "gap": "Confirm the broad applicability and stereocontrol of these ligands with diverse glycosyl stannanes.",
+        "decision": "Explore the substrate scope of glycosyl stannanes using sterically demanding electrophiles such as ethyl 2-bromobenzoate 14a and ethyl 4-bromo-3-methylbenzoate 14e as representative models."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1ccccc1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "COc1ccc(P(c2cc(C(F)(F)F)cc(C(F)(F)F)c2)c2c(OC)c(OC)ccc2P(c2cc(C(F)(F)F)cc(C(F)(F)F)c2)c2ccc(OC)cc2)c(OC)c1",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "14": "1.0 equiv",
+          "45": "1.5 equiv",
+          "Pd2(dba)3": "2.5 mol%",
+          "L10": "10.0 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "A broad range of (un)protected glycosyl stannanes efficiently participated in the cross-coupling, delivering the corresponding sterically hindered aryl C-glycosides in moderate to excellent yields while consistently maintaining exclusive anomeric selectivity for either the β- or α-isomer. Glucosyl stannanes bearing common groups (OBn, OPiv, OLev, OBz, and OTIPS) exhibited excellent compatibility (63%-93% yield). Fully disarmed peracetylated and perbenzoylated 2-deoxy-D-glucosyl stannanes reacted smoothly (79% and 72% yield). Structurally diverse glycosyl stannanes derived from D-galactose 51, 2-deoxy-D-glucose (52, 53), D-mannose 54, reversed D-galactose 55, reversed D-mannose 56, L-rhamnose 57 underwent efficient cross-coupling. Both optically pure α- and β-isomers (e.g., 52 and 53) were reliably yielded with complete stereocontrol. Unprotected or partially unprotected aryl C-glycosylation was achieved (59–62) in good yields and with high stereoselectivity. Oligosaccharide stannanes 63 and 64 were also viable coupling partners (67% and 60% yields)."
+      },
+      "evidence": {
+        "text_span": "As shown in Fig. 7, a broad range of (un)protected glycosyl stannanes efficiently participated in the cross-coupling, delivering the corresponding sterically hindered aryl C-glycosides in moderate to excellent yields while consistently maintaining exclusive anomeric selectivity for either the β- or α-isomer. Glucosyl stannanes bearing common groups (OBn, OPiv, OLev, OBz, and OTIPS) exhibited excellent compatibility under the standard conditions with ligand L10, affording products 20 and 47-48 in isolated yields of 63%-93%. Fully disarmed peracetylated and perbenzoylated 2-deoxy-D-glucosyl stannanes smoothly reacted to afford the corresponding products 49 and 50 in 79% and 72% yield, respectively. Moreover, structurally diverse glycosyl stannanes derived from a series of monosaccharides, including D-galactose 51, 2-deoxy-D-glucose (52, 53), D-mannose 54, reversed D-galactose 5564 , reversed D-mannose 56, L-rhamnose 57, underwent efficient cross-coupling to furnish the desired hindered aryl C-glycoside. Notably, achieving both optically pure αα and β-isomers under a single set of conditions remains rare in c-glycosylation38,59,60,64. The second-generation glycosyl cross-coupling platform reliably yielded both α- and β-isomers (for example, 52 and 53) with complete stereocontrol even in the presence of sterically hindered aryl electrophiles. The ability to access both optically pure α- and β−2-deoxy aryl C-glycosides (52 and 53) highlights the advantage of this method in overcoming the longstanding reliance on C2-neighbouring group participation for stereocontrol in C-glycosylation reactions. Furthermore, unprotected or partially unprotected aryl C-glycosylation has historically posed a formidable challenge due to difficulties in achieving both high chemo- and stereoselectivity42,53,59,60. Encouragingly, the indentified ligands, in combination with hindered aryl electrophiles, enabled efficient coupling of unprotected glycosyl stannanes to deliver partially and fully unprotected aryl C-glycosides (59–62) in good yields and with high stereoselectivity. The successful synthesis of fully unprotected, sterically hindered aryl C-glycosides 61 and 62 provides compelling evidence that transition metalcatalyzed glycosyl cross-coupling via glycosyl nucleophiles remains the most robust and arguably the only general strategy for accessing both optically pure anomers, irrespective of the sugar structure or the steric and electronic properties of the aryl coupling partner. Significantly, oligosaccharide stannanes 63 and 64 were also viable coupling partners without modification of the standard conditions, delivering aryl C-disaccharides in 67% and 60% yields, respectively. Anomeric configurations were assigned by analysis of 1H NMR spectra of the crude reaction mixtures, based on the characteristic 3J(HH) coupling constants of the H1 proton. These signals typically appeared at 3.81 − 5.25 ppm range (CDCl3)), with J values of 8.80 - 9.40 Hz for 1,2-trans isomers and 4.20 - 6.20 Hz for 1,2- cis isomers.",
+        "page": 6,
+        "image_refs": [
+          "2ee5487aa11f1baa91b00d723f10c410bd691365ece1a31d51534d2d237a36d2.jpg",
+          "45.jpg",
+          "14.jpg",
+          "e2fb9bfa52d7a3c892e6db4c8cccd466df934209187f76226a4b3ea0f6f4539a.jpg",
+          "7806ed1a4cee472a1ac3f6613f138beab997c579c63306aabe12e8225876f61b.jpg",
+          "46.jpg",
+          "b130a9c9512b99f7ed4fd14c71588023eecee14e5045f6ba6515b664377dcd40.jpg",
+          "9907992ac5f71c8f832110e709ad591f940a6bec80846c7426b854a22a9a827b.jpg",
+          "17.jpg",
+          "7de6860ed3a72b258c0ae4edd1bd4b892dfe8b8740366ed75f2c3687626271f1.jpg",
+          "47a.jpg",
+          "47b.jpg",
+          "47c.jpg",
+          "511513d07e32799f10b7ebe2589cf1f02ce2b6e589c6701f960432a6f575c3e8.jpg",
+          "48.jpg",
+          "e8e5ebf67bddd5dee2e7899bd6b8cd658d164414a567c1201fa51a14ff1fef5c.jpg",
+          "49.jpg",
+          "50.jpg",
+          "c0f7eaa0bf1c2000af31f202f776460710e0c09b228a98ae6172e4e36b3d582f.jpg",
+          "51.jpg",
+          "053ba0c6c3caf56b0ce0a83697dcee1cdf4006a3da0b1d1b4dd8436623aa637a.jpg",
+          "52.jpg",
+          "f0bd7ddb27defecacdb5bf3acf38108cc71d4282a46fed12477d86332edcd7c7.jpg",
+          "53.jpg",
+          "48760b2a4d4c5c7456b237bc0721fc3733ebfd94205051e33abaddb882d492f9.jpg",
+          "54.jpg",
+          "d82097e1193ae4e7e9c72bea86192820cf662d592252e2b239959ee9d083d412.jpg",
+          "55.jpg",
+          "bf41e65adaade83170bc50bfbc081e1d3e3a63da88f7bd2623663afcadbff3a4.jpg",
+          "56.jpg",
+          "e0d5847ede914be6941794454192eb0e8a44c43e20463c25fb3db79f52c2ca3c.jpg",
+          "57.jpg",
+          "0e729654a89fd111d0ac9f9dea92c7c31a94b580b1598a797db38ca88ad55893.jpg",
+          "58.jpg",
+          "682aa1dcef5351274cae9053485e22f5615946eaec7f0bbbfcc2fe9cff88ae97.jpg",
+          "59.jpg",
+          "1d00583566a9d788581b733e18a9f8a4190bc9f3243fb5039947a1785eec738b.jpg",
+          "60.jpg",
+          "006a5ce7cac3ca6ba4627778b439db611833a90e996293bbce6fc7bf04d0a6d6.jpg",
+          "61.jpg",
+          "f0e474b90b2f217b29738ecdf0e834677e91e7163986e06e2fe2499719c32bc.jpg",
+          "62.jpg",
+          "feb14d0a958c8e63e06eb58181757ef737bc42ba240b79e0584f37e2ac8b233b.jpg",
+          "63.jpg",
+          "be14adaad396a5268fc2cf5f0961390e038db926950d040402f3fe7bc428c31305.jpg",
+          "64.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The developed glycosyl cross-coupling platform shows high chemo- and stereoselectivity and compatibility with sterically hindered substrates.",
+        "gap": "Demonstrate the utility of this method for late-stage glycodiversification of bioactive molecules and approved drugs.",
+        "decision": "Apply the strategy to synthesize aryl C-glycosylated pharmaceutical derivatives, including Gemfibrozil 67, Clofibrate 68, Fenofibrate 69, Isoxepac 70, Flurbiprofen (71 and 72), Naproxen 73, and Xanthotoxin 74, using fully unprotected D-glucosyl stannanes."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(CCCCC(C)(C)C(=O)O)cc(C)c1O[C@@H]1O[C@@H](O)[C@H](O)[C@@H](O)[C@@H]1O",
+          "Cc1cc(CCCCC(C)(C)C(=O)O)cc(C)c1O[C@@H]1O[C@@H](O)[C@H](O)[C@@H](O)[C@@H]1O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C(C)(C)Oc1ccc(Cl)c(O[C@@H]2O[C@@H](O)[C@H](O)[C@@H](O)[C@@H]2O)c1"
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "COc1ccc(P(c2cc(C(F)(F)F)cc(C(F)(F)F)c2)c2c(OC)c(OC)ccc2P(c2cc(C(F)(F)F)cc(C(F)(F)F)c2)c2ccc(OC)cc2)c(OC)c1",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "65": "1.0 equiv",
+          "18": "2.0 equiv",
+          "Pd2(dba)3": "2.5 mol%",
+          "L10": "10.0 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A series of aryl C-glycosylated pharmaceutical derivatives were synthesized via a concise and highly selective sequence. The reaction displayed remarkable chemoselectivity in halogenated substrates (e.g., 68, 69, 71, 72), with no erosion of stereochemical integrity even in structurally complex molecules such as Naproxen 73. Electron-rich and sterically hindered substrates (e.g., 68–70, 74) underwent efficient glycosylation under standard conditions. Glycosylation patterns could be precisely modulated by tuning the site of halogenation."
+      },
+      "evidence": {
+        "text_span": "Using this method, a series of aryl c-glycosylated pharmaceutical derivatives, including Gemfibrozil 67, Clofibrate 68, Fenofibrate 69, Isoxepac 70, Flurbiprofen (71 and 72), Naproxen 73, and Xanthotoxin 74, were synthesized via a concise and highly selective sequence. Key to this process was the regioselective C–H halogenation (bromination or iodination) of aryl scaffolds85–87, followed by palladium-catalyzed glycosyl cross-coupling with full unproteced glycosyl stannane 18. The reaction displayed remarkable chemoselectivity in halogenated substrates (e.g., 68, 69, 71, 72), with no erosion of stereochemical integrity even in structurally complex molecules such as Naproxen 73. Notably, electron-rich and sterically hindered substrates (e.g., 68–70, 74) typically challenging for crosscoupling reactions underwent efficient glycosylation under standard conditions. As anticipated, by tuning the site of halogenation, glycosylation patterns could be precisely modulated, enabling programmable, site-selective late-stage glycodiversification.",
+        "page": 7,
+        "image_refs": [
+          "ebe19a6bbbb53c84f47bb9a72d7bf34acae8bdbf8d57d78184c0fe51a6ca47f4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Fused cyclic aryl C-glycosides are valuable but underexplored due to steric congestion. Previous intramolecular methods required additional manipulations and high catalyst loading.",
+        "gap": "Develop a direct and highly stereospecific one-step synthesis of fused cyclic aryl C-glycosides using the new platform.",
+        "decision": "Utilize the efficient Stille glycosylation of glycosyl stannanes 77 bearing a free C2-OH group and bulky aryl halides 14-1 containing an ortho-ester substituent, enabling simultaneous formation of C-C glycosidic and C-O bonds in a single operation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1ccccc1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "COc1ccc(P(c2ccc(OC)c(OC)c2C(F)(F)F)c2ccc(OC)c(OC)c2C(F)(F)F)c(OC)c1",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "77": "1.5-2.0 equiv",
+          "14-1": "1.0 equiv",
+          "Pd2(dba)3": "2.5-5 mol%",
+          "L10": "10-20 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "observation": "A variety of common glycosyl stannanes coupled smoothly with methyl 2-bromobenzoate 14a, affording the desired fused cyclic aryl C-glycosides 79–83 in isolated yields of 29-57%. Other sterically hindered aryl halides 14–1, featuring substituents such as chloro 84, aldehyde 85, naphthyl 86, ester 87, and methyl 88, were also well tolerated. Anomeric selectivity was governed by stereoretentive transmetalation, with α-anomeric stannanes affording exclusively the α-product and β-anomeric stannanes yielding the β-product."
+      },
+      "evidence": {
+        "text_span": "As shown in Fig. 9a, a variety of common glycosyl stannanes coupled smoothly with methyl 2-bromobenzoate 14a, affording the desired fused cyclic aryl C-glycosides 79–83 in isolated yields of 29-57%. Moreover, other sterically hindered aryl halides 14–1, featuring substituents such as chloro 84, aldehyde 85, naphthyl 86, ester 87, and methyl 88, were also well tolerated under the optimized conditions, delivering the corresponding products in moderate yields. Notably, the anomeric selectivity of all annulated C-glycosides is governed by stereoretentive transmetalation, with α-anomeric stannanes affording exclusively the α-product and β-anomeric stannanes yielding the β-product.",
+        "page": 7,
+        "image_refs": [
+          "b7729acb48731deacc5669f21a0edaf803efaeaa588a36ae63a495aadfff7372.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enavogliflozin 7 is a next-generation SGLT2 inhibitor with a highly sterically hindered aryl C-glycosidic bond. Previous synthesis was multi-step, used reactive reagents, and yielded only the β-anomer.",
+        "gap": "Develop a streamlined route to Enavogliflozin and its α-anomer using the new glycosyl cross-coupling platform.",
+        "decision": "Directly couple sterically hindered aryl bromides with fully unprotected glycosyl stannane 18 and its α-anomer 18-α in a single step."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1C(O)C(O)C(O)C(c2ccc(C3CC3)cc2)C1c1ccc(Cl)cc1",
+          "O=C1C(O)C(O)C(O)C(c2ccc(C3CC3)cc2)C1c1ccc(Cl)cc1"
+        ],
+        "product_smiles": [
+          "O=C1C(O)C(O)C(O)C(c2ccc(C3CC3)cc2)C1c1ccc(Cl)cc1"
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "L10",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "aryl bromide": "1.0 equiv",
+          "18 or 18-α": "1.5-2.0 equiv",
+          "Pd2(dba)3": "2.5-5 mol%",
+          "L10": "10-20 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "The direct coupling of sterically hindered aryl bromides with fully unprotected glycosyl stannane 18 and its α-anomer 18-α in a single step delivered the corresponding β- and α-anomers in 96% and 68% yield, respectively, with excellent stereoselectivity."
+      },
+      "evidence": {
+        "text_span": "In contrast, our approach enables the direct coupling of sterically hindered aryl bromides with fully unprotected glycosyl stannane 18 and its α-anomer 18-α in a single step, delivering the corresponding β- and α-anomers in 96% and 68% yield, respectively, with excellent stereoselectivity (Fig. 9b).",
+        "page": 8,
+        "image_refs": [
+          "b7729acb48731deacc5669f21a0edaf803efaeaa588a36ae63a495aadfff7372.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Chrysin 8-C-β-D-glucosides are natural flavone aryl C-glycosides with pronounced steric hindrance and an electron-rich aromatic core. This represents a challenging target for the new glycosyl Stille cross-coupling conditions.",
+        "gap": "Demonstrate the robustness of the next-generation glycosyl Stille cross-coupling conditions for this complex natural product.",
+        "decision": "Synthesize Chrysin 8-C-β-D-glucoside 93 via methylation of Apigenin 89, regioselective bromination at C-8 to give 91, followed by intermolecular Stille coupling of 91 with C2-OH unprotected β-D-glucosyl stannane 45n under standard conditions, and final global debenzylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC(=O)c3cc(OC)c(OC)c(Br)c3C2=O)cc1",
+          "COc1ccc(C2=CC(=O)c3cc(OC)c(OC)c(Br)c3C2=O)cc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "L10",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "91": "1.0 equiv",
+          "45n": "1.5-2.0 equiv",
+          "Pd2(dba)3": "2.5-5 mol%",
+          "L10": "10-20 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 13,
+        "observation": "Intermolecular Stille coupling of 91 with C2-OH unprotected β-D-glucosyl stannane 45n proceeded under standard conditions, furnishing 92 in 13% yield but with exclusive anomeric control. The low yield observed for the cross-coupling of substrate 91 arises from its combined steric hindrance and electron-rich character, which hinders both oxidative addition and transmetalation."
+      },
+      "evidence": {
+        "text_span": "Subsequent intermolecular Stille coupling of 91 with C2-OH unprotected β- D-glucosyl stannane 45n proceeded under standard conditions, furnishing 92 in 13% yield but with exclusive anomeric control. The low yield observed for the cross-coupling of substrate 91 arises from its combined steric hindrance and electron-rich character, which hinders both oxidative addition and transmetalation.",
+        "page": 8,
+        "image_refs": [
+          "b7729acb48731deacc5669f21a0edaf803efaeaa588a36ae63a495aadfff7372.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The Stille coupling of 91 gave a low yield (13%) due to steric hindrance and electron-rich character.",
+        "gap": "Can increasing palladium loading improve the yield?",
+        "decision": "Increase the palladium loading in the Stille coupling of 91."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC(=O)c3cc(OC)c(OC)c(Br)c3C2=O)cc1",
+          "COc1ccc(C2=CC(=O)c3cc(OC)c(OC)c(Br)c3C2=O)cc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "L10",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "91": "1.0 equiv",
+          "45n": "1.5-2.0 equiv",
+          "Pd2(dba)3": ">2.5-5 mol%",
+          "L10": "10-20 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200%"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Increasing the palladium loading does not improve the yield and instead leads to significant β-OBn elimination from glycosyl copper intermediates, indicating that these intermediates cannot efficiently undergo transmetalation and that steric hindrance in transmetalation likely represents the rate-limiting factor."
+      },
+      "evidence": {
+        "text_span": "Increasing the palladium loading does not improve the yield and instead leads to significant β- OBn elimination from glycosyl copper intermediates, indicating that these intermediates cannot efficiently undergo transmetalation and that steric hindrance in transmetalation likely represents the rate-limiting factor.",
+        "page": 8
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The new ligands (L10 and L11) showed superior performance for sterically hindered substrates compared to L1.",
+        "gap": "Confirm that these second-generation ligands are also effective for non-hindered substrates, justifying their general replacement of first-generation ligands.",
+        "decision": "Test the coupling of model substrate 16 with bromobenzene (a non-hindered substrate) under identical conditions with L1, L10, and L11."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "Brc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "CuCl",
+          "KF"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "ligand": "L1, L10, or L11",
+        "solvent": "1,4-dioxane",
+        "temperature": "110 °C",
+        "time": "48 h",
+        "atmosphere": "N2",
+        "stoichiometry": {
+          "16": "1.5-2.0 equiv",
+          "bromobenzene": "1.0 equiv",
+          "Pd2(dba)3": "2.5-5 mol%",
+          "ligand": "10-20 mol%",
+          "CuCl": "300 mol%",
+          "KF": "200%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Coupling of model substrate 16 with bromobenzene under identical conditions afforded the product in 80%, 76%, and 80% yields with L1, L10, and L11, respectively. This demonstrates that the second-generation ligands are broadly effective for both sterically hindered and unhindered systems."
+      },
+      "evidence": {
+        "text_span": "As shown in Fig. 10d, coupling of model substrate 16 with bromobenzene under identical conditions afforded the product in 80%, 76%, and 80% yields with L1, L10, and L11, respectively. These results demonstrate that the second-generation ligands are broadly effective for both sterically hindered and unhindered systems, thereby justifying their replacement of the first-generation Stille glycosyl crosscoupling reactions35,36.",
+        "page": 9,
+        "image_refs": [
+          "f628441a743f7c6748b441931c90c484378803c68391feba3f9b08574924098.jpg",
+          "8163367ea3fd42edebd46326223eb34c94ad181a344f11e9f9a30e6b6a74945f.jpg",
+          "76297ae7b38b3e58474c0d3116af1bb0198eb3f1c26368a3599af24be6a77c35.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for the total synthesis is not explicitly stated, but individual steps show good to excellent yields for the C-glycosylation."
+      },
+      "Longest Linear Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Not explicitly stated for the overall synthesis of a specific target, but the Enavogliflozin synthesis was reduced to 1 step from 5."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Not explicitly stated for the overall synthesis of a specific target."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "count",
+        "interpretation": "Two explicit failed attempts were reported during ligand optimization and one during the synthesis of Chrysin 8-C-β-D-glucoside."
+      }
+    },
+    "significance": "The developed ligand-enabled glycosyl Stille cross-coupling protocol provides a highly efficient and stereospecific method for synthesizing sterically hindered aryl C-glycosides, overcoming a long-standing challenge. It offers broad applicability, accommodating diverse (un)protected sugars and sterically demanding aryl partners with consistently high chemo- and stereoselectivity. The mechanistic insights gained from computational and crystallographic studies inform rational ligand design, expanding the scope of Pd-catalyzed cross-couplings and enabling glycomimetic drug discovery."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s41467-026-69859-2",
+      "pmcid": "PMC13035923",
+      "title": "Ligand-enabled next-generation glycosyl Stille cross-coupling for the stereospecific synthesis of sterically hindered aryl C-glycosides.",
+      "authors": "Yang B, Chen S, Han Y, Zhu B, Sang J, Zhu W, Li Y, Zhu F.",
+      "journal": "Nat Commun",
+      "year": 2026,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC13035923?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/10245d1b-3148-4b35-ad8c-f95d6a6e7a88.zip",
+      "parsed_at": "2026-05-11T06:43:37.002027+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 46,
+    "parseable": 21,
+    "canonicalized": 20,
+    "invalid": 25,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC(=O)c1ccccc1C[C@@H]2O[C@H](COBn)[C@@H](OBn)[C@H](OBn)[C@H]2OBn",
+      "CC(C)C[Sn](C(C)C)C(C)C.COC1C(OBn)C(OBn)C(OBn)OC1",
+      "COC(=O)C1=CC=CC=C1C2OC(OBn)C(OBn)C(OBn)C2",
+      "CC(C)C[Sn](C(C)C)C(C)C.COC1C(OBn)C(OBn)C(OBn)OC1",
+      "COC(=O)C1=CC=CC=C1C2OC(OBn)C(OBn)C(OBn)C2",
+      "CC(C)C[Sn](C(C)C)C(C)C.COC1C(OBn)C(OBn)C(OBn)OC1",
+      "COC(=O)C1=CC=CC=C1C2OC(OBn)C(OBn)C(OBn)C2",
+      "CC(C)C[Sn](C(C)C)C(C)C.COC1C(OBn)C(OBn)C(OBn)OC1",
+      "COC(=O)C1=CC=CC=C1C2OC(OBn)C(OBn)C(OBn)C2",
+      "CC(C)C[Sn](C(C)C)C(C)C.COC1C(OBn)C(OBn)C(OBn)OC1"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "Sterically hindered aryl C-glycosides",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

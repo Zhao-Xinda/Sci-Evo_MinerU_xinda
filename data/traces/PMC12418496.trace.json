@@ -1,0 +1,695 @@
+{
+  "trace_id": "TS-PMC12418496",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Leptosphin C",
+    "smiles": "CC1C(=O)C=C2C=C3C(C(C)C4C(=O)C(C)(C)C34)C21",
+    "natural_product_class": "diterpene",
+    "structural_features": {
+      "molecular_weight": 300.44,
+      "stereocenters": 10,
+      "ring_systems": "tetracyclic ABCD-ring skeleton",
+      "key_motifs": [
+        "cis-anti-cis-5,5,5-tricyclic (BCD) ring system",
+        "six-membered (A) ring angularly fused into the B ring",
+        "quaternary carbon at C14"
+      ]
+    },
+    "motivation": "Cyclopianes show a variety of biological activities such as antibacterial, anti-inflammatory, and anticancer activities. Due to their low natural abundance and their unique array of structural features with diverse biological activities, a considerably large amount of synthetic efforts on these natural products have been reported.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Tu",
+        "year": 2016,
+        "key_strategy": "intramolecular [2+2] cycloaddition and semipinacol-type rearrangement for C ring formation and a Grignard addition followed by aldol cyclization to construct the B ring"
+      },
+      {
+        "lead_author": "Snyder",
+        "year": 2019,
+        "key_strategy": "quaternary-center-guided strategy, which involved Baran’s reductive coupling, that intercepted Heck and reductive Heck reactions to establish the D, B, and A ring, respectively"
+      },
+      {
+        "lead_author": "Zhai",
+        "year": 2020,
+        "key_strategy": "Van Leusen reaction, the Nicholas/Pauson−Khand (PK) cascade reaction for the construction of the BC ring system, and Danheiser annulation followed by aldol cyclization for A ring formation"
+      },
+      {
+        "lead_author": "Lee",
+        "year": 2020,
+        "key_strategy": "trimethylenemethan (TMM) diyl-medicated cycloaddition, in which the BCD ring was established in a single step"
+      },
+      {
+        "lead_author": "Hao",
+        "year": 2024,
+        "key_strategy": "PK reaction for the construction of the BC ring. After Sonogashira cross-coupling, the D ring was established through 3,3-rearrangement followed by Nazarov cyclization"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Achieve an asymmetric total synthesis of leptosphin C (1) through a diastereo-/enantioselective HPESW reaction and establish the tetracyclic cyclopiane core rapidly."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond formation for AB ring system",
+        "named_strategy": "Hajos−Parrish−Eder−Sauer−Wiechert (HPESW) reaction",
+        "reasoning": "To construct the AB ring system with continuous stereogenic centers.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond formation for CD ring system",
+        "named_strategy": "Pauson−Khand (PK) reaction",
+        "reasoning": "To establish the CD ring system with the quaternary carbon at C14.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "2",
+        "smiles": "C[Si](C)(C)C#CCC1C(=O)CCC1=O",
+        "role": "1,3-diketone",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "3",
+        "smiles": "CC=CC(C)=O",
+        "role": "enone",
+        "comes_from": "commercial"
+      }
+    ],
+    "rationale": "The synthetic strategy involved a diastereo-/enantioselective HPESW reaction between 1,3-diketone 2 and enone 3, which should provide 7S-methyl HPESW ketone 5 in one pot. After installation of the geminal dimethyl alkenyl side chain to the B ring, PK reaction of 6 would establish the tetracyclic core of 7 with the quaternary carbon center in the D ring. Finally, 7 would be further elaborated to leptosphin C (1)."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "The HPESW reaction is a known method for forming 5,6-bicyclic ring systems with continuous stereogenic centers. DFT calculations suggest that the desired product 8a (leading to 7S-methyl HPESW ketone 5) is thermodynamically more favorable.",
+        "gap": "Identifying an asymmetric catalytic system capable of facilitating both the enantioselective Michael addition and the diastereoselective intramolecular aldol cyclization, while managing potential chirality mismatch.",
+        "decision": "To investigate the feasibility of this strategy, we first studied the effects of the stereogenic center of 4 in the intramolecular aldol cyclization step using DFT calculations. The cyclization product (8a), which can lead to the desired 7S-methyl HPESW ketone 5, is more favorable under substrate control, and its diastereoselectivity could possibly be enhanced under thermodynamic conditions."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "DFT calculations showed TS1 is more favorable than TS2 by 6.36 kcal/mol, leading to 8a, which is 1.24 kcal/mol more favorable than 8b. This suggests the desired product 8a is thermodynamically favored."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "To investigate the feasibility of this strategy, we first studied the effects of the stereogenic center of 4 in the intramolecular aldol cyclization step using DFT calculations. As shown in Scheme 1A, transition state TS1 is more favorable than transition state TS2 with an energy difference of 6.36 kcal/mol (all energies are relative to intermediate 4), due to an eclipsed conformation between the methyl group and the 1,3-diketone moiety in TS2. Moreover, TS1 could lead to the desired product 8a, which is the thermodynamic product, with an energy difference of 1.24 kcal/mol that is more favorable than that of 8b. These results indicated that the cyclization product (8a), which can lead to the desired 7S-methyl HPESW ketone 5, is more favorable under substrate control, and its diastereoselectivity could possibly be enhanced under thermodynamic conditions.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "DFT calculations indicated that the desired diastereomer is thermodynamically favored.",
+        "gap": "Achieving high diastereo- and enantioselectivity in the HPESW reaction using a suitable catalyst.",
+        "decision": "To screen various chiral amino acid and cinchona derivatives as catalysts for the HPESW reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[Si](C)(C)C#CCC1C(=O)CCC1=O",
+          "CC=CC(C)=O"
+        ],
+        "product_smiles": [
+          "C[C@@]12CC=CC(=O)[C@H]1[C@H](CC#C[Si](C)(C)C)C(=O)CC2"
+        ],
+        "reagents": [],
+        "catalyst": "cat1−cat4",
+        "solvent": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Using cat1−cat4 as the catalyst generally resulted in low diastereoselectivity, with 5 obtained only as the minor diastereomeric product, indicating a mismatch scenario of chirality between the catalyst and the stereochemistry of intermediate 4 during the intramolecular aldol cyclization step."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Following the theoretical study, the diastereo- and enantioselectivity of the HPESW reaction were studied using various chiral amino acid23−27 and cinchona derivatives28−30 as the catalyst (Scheme 1B). Unfortunately, using cat1−cat4 as the catalyst generally resulted in low diastereoselectivity, with 5 obtained only as the minor diastereomeric product, indicating a mismatch scenario of chirality between the catalyst and the stereochemistry of intermediate 4 during the intramolecular aldol cyclization step.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Previous attempts with various catalysts (cat1-cat4) resulted in low diastereoselectivity due to chirality mismatch.",
+        "gap": "Finding a catalyst and conditions that provide high diastereo- and enantioselectivity for the HPESW reaction.",
+        "decision": "To test cat5, a cinchona-derived catalyst, and systematically investigate catalyst loading, solvent, additives, and reaction temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[Si](C)(C)C#CCC1C(=O)CCC1=O",
+          "CC=CC(C)=O"
+        ],
+        "product_smiles": [
+          "C[C@@]12CC=CC(=O)[C@H]1[C@H](CC#C[Si](C)(C)C)C(=O)CC2"
+        ],
+        "catalyst": "C=C[C@@H]1CN2C[C@H](C)[C@@H]([C@H](NC(=S)N[C@@H]3CCCC[C@H]3N)C4=C(OC)C=CC5=NC=CC=C45)C2C1",
+        "reagents": [
+          "Et3N"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 to 50 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "ee_percent": 90,
+        "dr": "19:1",
+        "observation": "Cat5 provided the desired cyclized product 5 as the major diastereomer. Optimized conditions afforded 5 in 76% yield, 90% ee, and a dr of 19:1. X-ray crystallography confirmed the structure of 5."
+      },
+      "revises_step_id": 2,
+      "references": [],
+      "evidence": {
+        "text_span": "Gratifyingly, cat5 provided the desired cyclized product 5 as the major diastereomer. After a systematic investigation of the effects of catalyst loading, solvent, additives, and reaction temperature, the reaction condition was successfully optimized using 20 mol % of cat5 with 40 mol % of Et3N in DMF from 0 to 50 °C, which afforded 5 in 76% yield, 90% ee, and a dr of 19:1. Preliminary equilibration studies showed that both cat5 and Et3N at high reaction temperature are important for achieving the high diastereoselectivity of 5, indicating the equilibration of the intramolecular aldol cyclization step. Detailed mechanistic studies are still ongoing. The structure of compound 5 was fully characterized by X-ray crystallography.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "HPESW ketone 5 was successfully synthesized with high yield and stereoselectivity.",
+        "gap": "Introducing the C9-methyl group and protecting the C2-ketone selectively.",
+        "decision": "To attempt methyl cuprate addition for C9-methyl introduction, and if unsuccessful, to selectively protect the C2-ketone as a 1,3-dithinolane."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@]12CC=CC(=O)[C@H]1[C@H](CC#C[Si](C)(C)C)C(=O)CC2"
+        ],
+        "product_smiles": [
+          "CC(C)[C@@H]1CC[C@@H]2C(=CC3CCS[C@@H]32)[C@@H](C#C[Si](C)(C)C)C1=O"
+        ],
+        "reagents": [
+          "1,2-ethanedithiol"
+        ],
+        "catalyst": "BF3.OEt2",
+        "solvent": "MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Methyl cuprate addition to 5 was unsuccessful due to steric hindrance. The C2-ketone was selectively protected as 1,3-dithinolane 9 in 90% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "With 5 in hand, C9-methyl was introduced by methyl cuprate addition. Unfortunately, the C6-ketone became inactive toward a variety of nucleophilic reagents due to the steric hindrance of the C9-methyl. Because of this, the C2-ketone was selectively protected as 1,3-dithinolane with 1,2-ethanethiol and BF3·OEt2 in MeOH, yielding dithiolane 9 in 90% yield.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C2-ketone of 5 was protected as dithiolane 9.",
+        "gap": "Introducing the geminal dimethyl alkenyl side chain at C6.",
+        "decision": "To perform Wittig olefination of 9 with (methoxymethyl)-triphenylphosphonium chloride, followed by acid hydrolysis, to obtain aldehyde 10. Then, another Wittig olefination to install the dimethyl alkenyl side chain."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H]1CC[C@@H]2C(=CC3CCS[C@@H]32)[C@@H](C#C[Si](C)(C)C)C1=O"
+        ],
+        "product_smiles": [
+          "C=C(C)C#C[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "reagents": [
+          "(methoxymethyl)triphenylphosphonium chloride",
+          "t-BuOK",
+          "Me2CHPPh3+I-",
+          "TBAF"
+        ],
+        "solvent": "THF",
+        "atmosphere": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Wittig olefination of 9 followed by acid hydrolysis provided aldehyde 10 in 70% yield as a single diastereomer. Subsequent Wittig olefination installed the dimethyl alkenyl side chain at C6, completing the synthesis of PK cyclization precursor 6 in 95% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Wittig olefination of 9 with (methoxymethyl)-triphenylphosphonium chloride and t-BuOK, followed by acid hydrolysis, provided aldehyde 10 in 70% yield as a single diastereomer. Subsequent Wittig olefination installed the dimethyl alkenyl side chain at C6, completing the synthesis of PK cyclization precursor 6.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "PK cyclization precursor 6 was synthesized.",
+        "gap": "Performing an intramolecular Pauson-Khand (PK) reaction of geminal dimethyl alkene with terminal alkyne to establish the tetracyclic core.",
+        "decision": "To attempt the PK reaction using Rh-catalyzed conditions, inspired by Yang's work."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)C#C[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "product_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "catalyst": "Rh(CO)2Cl2",
+        "reagents": [
+          "CO"
+        ],
+        "solvent": "1,2-dichloroethane",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "This condition resulted in only trace amounts of the desired product along with several unidentifiable side-products."
+      },
+      "revises_step_id": null,
+      "references": [
+        "31"
+      ],
+      "evidence": {
+        "text_span": "According to the literature, the intramolecular PK reaction of geminal dimethyl alkene with terminal alkyne has not been reported. Inspired by Yang’s work on Rh-catalyzed PK reaction for establishing the quaternary carbon of the α-dimethyl cyclopentenone,31 cyclization precursor 6 was treated with Rh(CO)2Cl2/CO in 1,2-dichloroethane at 60 °C. However, this condition resulted in only trace amounts of the desired product along with several unidentifiable side-products.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Rh-catalyzed PK reaction failed to yield the desired product.",
+        "gap": "Finding suitable conditions for the intramolecular PK reaction.",
+        "decision": "To try PdCl2/LiCl with tetramethyl thiourea as an alternative catalyst system for the PK reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)C#C[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "product_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "catalyst": "PdCl2",
+        "reagents": [
+          "LiCl",
+          "tetramethyl thiourea"
+        ],
+        "atmosphere": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "This condition resulted in no reaction, and slow decomposition of 9 was observed at high reaction temperatures. These results indicated that the Rh and Pd catalysts may have interactions with the dithiane moiety of 6, causing side reactions or decomposition of the substrate."
+      },
+      "revises_step_id": null,
+      "references": [
+        "31"
+      ],
+      "evidence": {
+        "text_span": "Switching to PdCl2/LiCl with tetramethyl thiourea31 resulted in no reaction, and slow decomposition of 9 was observed at high reaction temperatures. These results indicated that the Rh and Pd catalysts may have interactions with the dithiane moiety of 6, causing side reactions or decomposition of the substrate.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Rh- and Pd-catalyzed PK reactions failed, possibly due to interaction with the dithiane moiety.",
+        "gap": "Identifying a suitable catalyst and conditions for the intramolecular PK reaction to form the tetracyclic core.",
+        "decision": "To systematically survey different catalysts and conditions, focusing on Co2(CO)8/NMO."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)C#C[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "product_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "catalyst": "Co2(CO)8",
+        "reagents": [
+          "NMO"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "The PK reaction was successfully optimized with Co2(CO)8/NMO in CH2Cl2 at 0 °C to rt, affording the ABCD tetracyclic ring system of 7 in 60% yield. The structure of 7 was unambiguously characterized by X-ray crystallography."
+      },
+      "revises_step_id": 7,
+      "references": [
+        "25",
+        "32",
+        "33",
+        "34",
+        "35",
+        "36"
+      ],
+      "evidence": {
+        "text_span": "After a systematic survey of different catalysts and conditions,25,32−36 we successfully optimized the PK reaction with Co(CO)8/NMO in CH2Cl2 at 0 °C to rt, which afforded the ABCD tetracyclic ring system of 7 in 60% yield. The structures of 7 were unambiguously characterized by X-ray crystallography. Starting from HPESW ketone 5, we successfully established the tetracyclic cyclopiane core in only four steps with 36% overall yield.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The tetracyclic cyclopiane core 7 was established.",
+        "gap": "Introducing the C13-hydroxyl group and protecting it as a TES ether, while deprotecting the 1,3-dithinolane.",
+        "decision": "To perform methyl cuprate addition to 7, followed by in situ reduction of the C13-ketone using lithium tri-tert-butoxyaluminum hydride (LTBA) to obtain alcohol 11. Then, deprotect the dithiolane and protect the C13-hydroxyl as a TES ether."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "product_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "reagents": [
+          "MeLi",
+          "CuI",
+          "LiAl(Ot-Bu)3H",
+          "MeI",
+          "imidazole"
+        ],
+        "catalyst": "unspecified",
+        "solvent": "THF",
+        "temperature": "-20 °C to rt",
+        "atmosphere": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Methyl cuprate addition of 7 followed by in situ reduction of the C13-ketone using LTBA provided alcohol 11 in 90% yield as a single diastereomer. Deprotection of the 1,3-dithinolane and protection of the C13-hydroxyl as a TES ether resulted in enone 12 in 65% yield over two steps."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "After establishing the cyclopiane skeleton, methyl cuprate addition of 7 followed by in situ reduction of the C13-ketone using lithium tri-tert-butoxyaluminum hydride (LTBA) provided alcohol 11 in 90% yield as a single diastereomer (Scheme 2). Deprotection of the 1,3-dithinolane and protection of the C13-hydroxyl as a TES ether resulted in enone 12.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Enone 12 was synthesized.",
+        "gap": "Installing the C9-methyl group.",
+        "decision": "To attempt C9-methyl installation through various 1,4-addition conditions, including different cuprate and Ni-catalyzed nucleophilic additions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "unspecified",
+        "atmosphere": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Attempts to install the C9-methyl through various 1,4-addition conditions, including different cuprate and Ni-catalyzed nucleophilic additions, were unsuccessful. Preliminary conformational analysis suggested the convex face of 12 was highly shielded, preventing nucleophilic attack and cis-fused AB ring formation."
+      },
+      "revises_step_id": null,
+      "references": [
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42"
+      ],
+      "evidence": {
+        "text_span": "Unfortunately, attempts to install the C9-methyl through various 1,4-addition conditions, including different cuprate and Ni-catalyzed nucleophilic additions,37−42 were unsuccessful. According to the preliminary conformational analysis (inset in Scheme 2), the convex face (top face) of 12 was highly shielded by the C4-methyl and the CD bicyclic ring system, preventing the attack of the nucleophile (Nu−) from the top face and the formation of the cis-fused AB ring system.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Direct 1,4-addition for C9-methyl installation failed due to steric hindrance.",
+        "gap": "Finding an alternative strategy to install the C9-methyl group.",
+        "decision": "To switch to a cyclopropane formation/ring-opening strategy."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "product_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "reagents": [
+          "LiAl(Ot-Bu)3H",
+          "ZnEt2",
+          "CH2I2"
+        ],
+        "solvent": "CH2Cl2",
+        "atmosphere": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "dr": "9:1",
+        "observation": "LTBA reduction of enone 12, followed by the hydroxyl-directed Simmons−Smith reaction, afforded cyclopropane 13 in 82% yield over two steps with a dr of 9:1."
+      },
+      "revises_step_id": 10,
+      "references": [
+        "31",
+        "43",
+        "44"
+      ],
+      "evidence": {
+        "text_span": "We then switched our attention to the cyclopropane formation/ring-opening strategy.31,43,44 LTBA reduction of enone 12, followed by the hydroxyl-directed Simmons−Smith reaction, afforded cyclopropane 13 in 82% yield over two steps with a dr of 9:1.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cyclopropane 13 was synthesized.",
+        "gap": "Oxidizing the C2-hydroxyl to a ketone and determining the stereochemistry of C13-hydroxyl.",
+        "decision": "To perform Ley-Griffith oxidation of the C2-hydroxyl to obtain ketone 14. The stereochemistry of C13-hydroxyl will be determined by X-ray crystallography of compound 15, prepared from 14 via desilylation and acylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "product_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "reagents": [
+          "TPAP",
+          "NMO"
+        ],
+        "solvent": "CH2Cl2",
+        "atmosphere": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Ley-Griffith oxidation of the C2-hydroxyl provided ketone 14 in 95% yield. The stereochemistry of C13-hydroxyl was determined by X-ray crystallography of compound 15, which was prepared from ketone 14 via desilylation and acylation of the C13-hydroxyl (94% yield)."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Ley-Griffith oxidation of the C2-hydroxyl provided ketone 14. The stereochemistry of C13-hydroxyl was determined by X-ray crystallography of compound 15, which was prepared from ketone 14 via desilylation and acylation of the C13-hydroxyl.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ketone 14 was obtained, and the stereochemistry of C13-hydroxyl was confirmed.",
+        "gap": "Installing the C9-methyl group via cyclopropane ring-opening.",
+        "decision": "To perform cyclopropane ring-opening of ketone 14 under Birch reduction conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "product_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "reagents": [
+          "Li",
+          "NH3"
+        ],
+        "temperature": "-78 °C",
+        "atmosphere": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Cyclopropane ring-opening of ketone 14 under Birch reduction conditions successfully installed the C9-methyl, resulting in 16 in 70% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Cyclopropane ring-opening of ketone 14 under Birch reduction conditions successfully installed the C9-methyl, resulting in 16.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 16 with the C9-methyl group was obtained.",
+        "gap": "Converting the C2-ketone to an alkene.",
+        "decision": "To treat 16 with NaBH4 in THF and in situ addition of DIAD/PPh3 to convert the C2-ketone to the alkene of 17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "product_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "reagents": [
+          "NaBH4",
+          "DIAD",
+          "PPh3"
+        ],
+        "solvent": "THF",
+        "atmosphere": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "regio_selectivity": "6:1 regioisomeric mixture",
+        "observation": "Treatment with NaBH4 in THF and in situ addition of DIAD/PPh3 converted the C2-ketone to the alkene of 17 as a 6:1 regioisomeric mixture, which is not separable by silica gel column chromatography. The yield was 55%."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Treatment with NaBH4 in THF and in situ addition of DIAD/PPh3 converted the C2-ketone to the alkene of 17 as a 6:1 regioisomeric mixture, which is not separable by silica gel column chromatography.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkene 17 was obtained as a regioisomeric mixture.",
+        "gap": "Installing the enone moiety in the A ring to complete the synthesis of leptosphin C.",
+        "decision": "To perform m-CPBA epoxidation of 17, followed by epoxide ring-opening with LAH, in situ desilylation with TBAF, and IBX oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)[C@H]1C(=O)[C@H](C(C)C)CC[C@@H]2C1=CC1CCS[C@@H]12"
+        ],
+        "product_smiles": [
+          "CC1C(=O)C=C2C=C3C(C(C)C4C(=O)C(C)(C)C34)C21"
+        ],
+        "reagents": [
+          "mCPBA",
+          "LAH",
+          "TBAF",
+          "IBX"
+        ],
+        "solvent": "CH2Cl2, THF, DMSO",
+        "atmosphere": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "m-CPBA epoxidation of 17, followed by epoxide ring-opening with LAH, in situ desilylation with TBAF, and IBX oxidation, installed the enone moiety in the A ring, affording leptosphin C (1) in 55% yield over three steps. The NMR data of synthetic leptosphin C (1) matched those reported in the literature."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Finally, m-CPBA epoxidation of 17, followed by epoxide ring-opening with LAH, in situ desilylation with TBAF, and IBX oxidation, installed the enone moiety in the A ring, affording leptosphin C (1) in 55% yield over three steps. The NMR data of synthetic leptosphin C (1) matched those reported in the literature (Tables S1 and S2).",
+        "section": "main text"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "X-ray crystallography",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 2.74,
+        "unit": "%",
+        "interpretation": "Overall yield for the total synthesis."
+      },
+      "Total Steps": {
+        "value": 16,
+        "unit": "steps",
+        "interpretation": "Total number of steps from readily available substrates."
+      },
+      "Failed Attempts Count": {
+        "value": 3,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly reported failed attempts."
+      }
+    },
+    "significance": "A concise enantioselective total synthesis of leptosphine C (1) has been achieved. The synthetic strategy features an unprecedented diastereo-/enantioselective Hajos−Parrish−Eder−Sauer−Wiechert (HPESW) reaction for construction of the AB ring system with continuous stereogenic centers and an uncommon Pauson−Khand (PK) reaction of geminal dimethyl alkenyl side chains for establishing the CD ring system with the quaternary carbon at C14. The total synthesis was achieved in 16 steps from readily available substrates with 2.74% overall yield. Preliminary cytotoxic activity studies showed moderate activities against human lung adenocarcinoma cells (A549), promyelocytic leukemia cells (HL-60), and mouse macrophage cells (RAW264.7)."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.5c03236",
+      "pmcid": "PMC12418496",
+      "title": "Asymmetric Total Synthesis of Leptosphin C.",
+      "authors": "Sun L, Lian C, Zhao J, Chen X, Han W, Li Z, Lee CS.",
+      "journal": "Org Lett",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12418496?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/9fc17f4d-02a5-4bce-8bfd-cdb86688d99e.zip",
+      "parsed_at": "2026-05-11T06:26:12.355814+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 33,
+    "parseable": 32,
+    "canonicalized": 29,
+    "invalid": 1,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

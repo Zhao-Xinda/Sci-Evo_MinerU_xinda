@@ -1,0 +1,451 @@
+{
+  "trace_id": "TS-PMC11667730",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Prunolactone A",
+    "smiles": "COC(=O)C=C[C@@H]1C[C@H](O)OC(=O)[C@H]1OC1OC(=O)C2=C(O)C(O)=C(C)C21",
+    "natural_product_class": "isocoumarin",
+    "structural_features": {
+      "ring_systems": "6/6/6/6/6 spiropentacyclic skeleton",
+      "key_motifs": [
+        "isocoumarin",
+        "spiropentacyclic"
+      ]
+    },
+    "motivation": "Prunolactones are a set of seven structurally unprecedented isocoumarins with a densely functionalized 6/6/6/6/6 spiropentacyclic skeleton, isolated from the endophytic fungus Phomopsis prunorum. Some compounds possess proangiogenic activity. The synthesis aims to access these complex natural products via a biomimetic Diels-Alder reaction.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "First total synthesis of prunolactone A and its (3'R)-epimer. The synthesis should feature in situ generation of a reactive 3,4-bis(methylene)isocoumarin intermediate, its biomimetic Diels-Alder reactions with scytolide and (8R)-scytolide, and a Mitsunobu reaction allowing access to stereochemically pure scytolide."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bonds forming the spiropentacyclic core",
+        "named_strategy": "Diels-Alder reaction",
+        "reasoning": "Prunolactones A, C, D, and E are postulated to be derived from a single Diels-Alder reaction between scytolide (6) and 3,4-bis(methylene)isocoumarin A. This biomimetic approach leverages the natural biosynthetic pathway.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-I bond in 3-iodomethyl derivative 12",
+        "named_strategy": "Elimination",
+        "reasoning": "The 3,4-bis(methylene)isocoumarin synthon (A) is highly reactive and unstable. It can be generated in situ from a precursor like 3-iodomethyl derivative 12 via elimination.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bonds forming the isocoumarin derivative B",
+        "named_strategy": "Pd black-catalyzed tandem cross-coupling/allylic isomerization",
+        "reasoning": "Isocoumarin derivative B can be constructed from (E)-2-tributylstannylbut-2-ene-1,4-diol (7) and an aryl halide coupling partner (8) using a palladium-catalyzed reaction.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-O bond at C8 of scytolide",
+        "named_strategy": "Mitsunobu reaction",
+        "reasoning": "To obtain stereochemically pure scytolide (6), a Mitsunobu reaction can be used to invert the configuration at C8 from (8R)-scytolide (13).",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The synthesis is designed to be biomimetic, mimicking the natural formation of prunolactones via a Diels-Alder reaction. The key challenge is the in situ generation of the unstable 3,4-bis(methylene)isocoumarin intermediate. The strategy also addresses the need for stereochemically pure scytolide, a crucial dienophile, through a Mitsunobu inversion. The overall approach is convergent, bringing together two complex fragments (isocoumarin precursor and scytolide) in the final Diels-Alder step."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The aryl halide coupling partner 8 is needed for the construction of the isocoumarin derivative B. It is obtained from commercially available 2,4-dimethoxy-3-methylbenzaldehyde.",
+        "gap": "Conversion of 2,4-dimethoxy-3-methylbenzaldehyde to methyl 6-iodo-2,4-dimethoxy-3-methylbenzoate (8).",
+        "decision": "To obtain 8, 2,4-dimethoxy-3-methylbenzaldehyde will be subjected to C6 iodination, followed by standard oxidation and esterification."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(C=O)c(C)c(OC)c1"
+        ],
+        "product_smiles": [
+          "COC(=O)c1c(OC)cc(OC)c(C)c1I"
+        ],
+        "reagents": [
+          "iodination reagents",
+          "oxidation reagents",
+          "esterification reagents"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "observation": "Methyl 6-iodo-2,4-dimethoxy-3-methylbenzoate (8) was obtained in 48% overall yield over three steps."
+      },
+      "evidence": {
+        "text_span": "As regard to suitable coupling partners, (E)-2-tributylstannylbut-2-ene-1,4-diol 7 was prepared by the hydrostannylation of but-2-yne-1,4-diol,6 while the aryl halide coupling partner 8 was obtained in three steps from the commercially available 2,4-dimethoxy-3-methylbenzaldehyde. This compound was subjected to C6 iodination furnishing the known8 6-iodo-2,4- dimethoxy-3-methylbenzaldehyde, which was further converted to methyl 6-iodo-2,4-dimethoxy-3-methylbenzoate 8 via standard oxidation and esterification (see the SI) in 48% overall yield.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The isocoumarin derivative B is envisioned to be constructed via Pd black-catalyzed tandem cross-coupling/allylic isomerization using (E)-2-tributylstannylbut-2-ene-1,4-diol (7) and aryl halide 8.",
+        "gap": "Identify optimal conditions for the cross-coupling and allylic isomerization to form 9, 10a, and 10b.",
+        "decision": "Screen various conditions, including Pd black loading, amount of diol 7, and Li salt additives, to achieve the desired products."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1c(OC)cc(OC)c(C)c1I"
+        ],
+        "product_smiles": [
+          "COc1cc2c(c(C)c1OC)C(C=CO)OC2=O",
+          "COc1cc2c(c(C)c1OC)C(CO)OC2=O",
+          "COc1c(C)c2c(c(O)c1OC)C(=O)OC2CO"
+        ],
+        "reagents": [
+          "Pd black",
+          "LiI",
+          "LiCl"
+        ],
+        "solvent": "DMF",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": null,
+        "observation": "Initial attempts with 2% Pd black gave low yield of 9 (30%). Increasing Pd black to 4% and diol 7 to 2.5 equiv, with Li salts, improved the reaction. LiI gave a mixture of 9 (32%) and 10a (34%). LiCl accelerated allylic isomerization and caused partial demethylation of the C8 methoxy group, leading to a mixture of 10a and 10b."
+      },
+      "evidence": {
+        "text_span": "While the protocol using just 2% Pd black (entry 1) led to a low yield of coupling product 9 (30%), we also observed some degree of rearrangement of 9 into 10a under these conditions. Hence, in order to accelerate the process, we increased the amount of diol 7 to 2.5 equiv as well as the loading of Pd black to 4%, and we used Li salts as additives.6,9−11 The data in entries 2, 3, and 4 show apparent influence of the Li salts on the reaction outcome. While the addition of LiI (entry 4) gave rise to a mixture of 9 and 10a in a good overall yield (32 and 34%, respectively), the use of LiCl accelerated the allylic isomerization but also effected partial demethylation of the C8 methoxy group (entry 3). The data in entry 3 show that using the combination of 4% of Pd black/5 eq of freshly dried LiCl enabled us to execute both cross-coupling and allylic isomerization in one step, together with the partial deprotection of the C8 methoxyl.",
+        "section": "main text",
+        "image_refs": [
+          "62ccfc6d1130d8a7fd14122b1d58f2a676bde7da77a17e85ff08f4f9a97fc5ff.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The pyranone 9 can be rearranged into isocoumarin 10a. This is useful as the mixture of 9, 10a, and 10b from the previous step can be further processed.",
+        "gap": "Convert remaining pyranone 9 to isocoumarin 10a.",
+        "decision": "Use Pd(PPh3)4 to catalyze the rearrangement of 9 to 10a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc2c(c(C)c1OC)C(C=CO)OC2=O"
+        ],
+        "product_smiles": [
+          "COc1cc2c(c(C)c1OC)C(CO)OC2=O"
+        ],
+        "catalyst": "Pd(PPh3)4",
+        "solvent": "MeOH",
+        "temperature": "35 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Pyranone 9 was smoothly rearranged into isocoumarin 10a in high yield (94%)."
+      },
+      "evidence": {
+        "text_span": "Hence, the mixture of 10a and 10b was treated with BBr3 to yield completely deprotected pyranone 11 (Scheme 2), corresponding to projected synthon B (Scheme 1).",
+        "section": "main text",
+        "image_refs": [
+          "62ccfc6d1130d8a7fd14122b1d58f2a676bde7da77a17e85ff08f4f9a97fc5ff.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The prunolactones are reported to have limited stability in MeOH solution, suggesting that harsh deprotection conditions should be avoided in the final step. Therefore, the methoxy groups should be deprotected earlier.",
+        "gap": "Deprotect both methoxy groups in the mixture of 10a and 10b to yield the completely deprotected pyranone 11 (synthon B).",
+        "decision": "Treat the mixture of 10a and 10b with BBr3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc2c(c(C)c1OC)C(CO)OC2=O",
+          "COc1c(C)c2c(c(O)c1OC)C(=O)OC2CO"
+        ],
+        "product_smiles": [
+          "C=C1c2c(O)c(O)cc(C)c2C(=O)OC1CO"
+        ],
+        "reagents": [
+          "BBr3"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "-78 °C -> 25 °C",
+        "time": "48 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "Completely deprotected pyranone 11 was obtained in 74% yield."
+      },
+      "evidence": {
+        "text_span": "Hence, the mixture of 10a and 10b was treated with BBr3 to yield completely deprotected pyranone 11 (Scheme 2), corresponding to projected synthon B (Scheme 1).",
+        "section": "main text",
+        "image_refs": [
+          "7adbbe4a02bb6a84e4cdcc6004edb8e7f1554d0e0db05593363beb4ffc4b3d04.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Synthon A, the 3,4-bis(methylene)isocoumarin intermediate, is highly reactive and unstable. It needs to be generated in situ from a precursor. Synthon B (11) has a hydroxymethyl group that can be converted to a leaving group.",
+        "gap": "Convert the primary OH group in 11 to a good leaving group, such as iodine, to furnish 3-iodomethyl derivative 12, a precursor of synthon A.",
+        "decision": "Replace the primary OH group in 11 with iodine using I2 and Ph3P."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1c2c(O)c(O)cc(C)c2C(=O)OC1CO"
+        ],
+        "product_smiles": [
+          "C=C1c2c(O)c(O)cc(C)c2C(=O)OC1CI"
+        ],
+        "reagents": [
+          "I2",
+          "P(c1ccccc1)(c1ccccc1)c1ccccc1"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "The 3-iodomethyl derivative 12 was obtained in 81% yield."
+      },
+      "evidence": {
+        "text_span": "The primary OH group in 11 was smoothly replaced with iodine to furnish 3-iodomethyl derivative 12, a precursor of synthon A.",
+        "section": "main text",
+        "image_refs": [
+          "7adbbe4a02bb6a84e4cdcc6004edb8e7f1554d0e0db05593363beb4ffc4b3d04.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Milzarek and Gulder reported a 9-step synthesis of scytolide (6) from shikimic acid, but the last step involved oxidation to an unstable ketone and reduction to afford inseparable mixtures of scytolide (6) with its (8R)-epimer (13) in a 5:1 ratio.",
+        "gap": "Reproduce the reported synthesis of scytolide (6) from (8R)-scytolide (13) with good yield and stereoselectivity.",
+        "decision": "Attempt the reported procedure involving Dess-Martin oxidation followed by NaBH(OAc)3 reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1O[C@H]2C(C(=O)OC)=CC[C@H](O)[C@@H]2OC1=O"
+        ],
+        "product_smiles": [
+          "C=C1O[C@H]2C(C(=O)OC)=CC[C@@H](O)[C@@H]2OC1=O",
+          "C=C1O[C@H]2C(C(=O)OC)=CC[C@H](O)[C@@H]2OC1=O"
+        ],
+        "reagents": [
+          "Dess-Martin periodinane",
+          "NaBH(OAc)3"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "This procedure gave a ratio of just 2:1 (scytolide:epimer) with a total yield of 52%, which is worse than the reported 5:1 ratio and 90% yield. Other reduction agents also provided no improvement."
+      },
+      "evidence": {
+        "text_span": "Milzarek and Gulder5 reported a 9 step synthesis of the natural product from shikimic acid,12 but the last step involved inversion of configuration at C8 via oxidation to an unstable ketone, and its reduction to afford inseparable mixtures of scytolide (6) with the starting compound, its (8R)-epimer (13), in a 5:1 ratio in 90% overall yield (Scheme 3). Since in our hands this procedure gave a ratio of just 2:1 with a total yield of 52%, and the application of other reduction agents provided no improvement (see Table S1 in the SI), we sought access to stereochemically pure 6.13",
+        "section": "main text",
+        "image_refs": [
+          "bb1fc5efba93df63d29921f53f9fee5be968258fb8473bb88bf6b830a4c9dda2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "The previous attempt to synthesize scytolide (6) from (8R)-scytolide (13) resulted in inseparable mixtures and low yield. Stereochemically pure scytolide (6) is crucial for the Diels-Alder reaction.",
+        "gap": "Develop a method to access stereochemically pure scytolide (6).",
+        "decision": "Employ a Mitsunobu reaction to effect inversion of configuration at C8 of (8R)-scytolide (13), followed by recyclization of any ring-opened product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1O[C@H]2C(C(=O)OC)=CC[C@H](O)[C@@H]2OC1=O"
+        ],
+        "product_smiles": [
+          "C=C1O[C@H]2C(C(=O)OC)=CC[C@@H](O)[C@@H]2OC1=O"
+        ],
+        "reagents": [
+          "PhCO2H",
+          "P(c1ccccc1)(c1ccccc1)c1ccccc1",
+          "DEAD",
+          "Na2CO3",
+          "K2CO3"
+        ],
+        "solvent": "THF, MeOH, MeCN"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "A Mitsunobu reaction effected inversion of configuration at C8 and delivered scytolide (6) in equilibrium with hydroxy ester 14. The latter was easily recyclized to scytolide (6) by K2CO3/MeCN to give a stereochemically pure product in 61% yield over two steps. The physical data were in agreement with literature, with X-ray and ECD analyses confirming identity."
+      },
+      "evidence": {
+        "text_span": "To our delight, a Mitsunobu reaction effected inversion of configuration at C8 and delivered scytolide (6) in equilibrium with the hydroxy ester 14, formed via base-mediated lactone ring opening. The latter was easily recyclized to scytolide (6) by K2CO3/MeCN to give a stereochemically pure product in 61% yield over two steps (Scheme 3), the physical data of which were in complete agreement with the literature, with the exception of optical rotation. While the existing reports give negative [α]D values for scytolide (6), namely −37.7° (c 0.26, MeOH, temperature not given),14 −63.2° (c 0.30, MeOH, 25 °C),15 and −30.6° (c 0.11, CHCl3, 20 °C),5 we repeatedly recorded the value of +38.0° (c 0.11, CHCl3, 25 °C), +40.0° (c 0.50, MeCN, 25 °C), and +38.5° (c 0.26, MeOH, 25 °C). To exclude any doubts, X-ray and ECD analyses (see the SI) unequivocally confirmed the identity of our product as a scytolide (6).",
+        "section": "main text",
+        "image_refs": [
+          "bb1fc5efba93df63d29921f53f9fee5be968258fb8473bb88bf6b830a4c9dda2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The 3-iodomethyl derivative 12 (precursor to synthon A) and stereochemically pure scytolide (6) are now available. The crucial Diels-Alder reaction between the in situ generated 3,4-bis(methylene)isocoumarin (15) and scytolide (6) needs to be optimized.",
+        "gap": "Identify optimal conditions (base, equivalents of scytolide, temperature, time) for the Diels-Alder reaction to form prunolactone A (1).",
+        "decision": "Screen various aliphatic tertiary amines as bases to trigger the elimination of 12 and trap the intermediate 15 with scytolide (6)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1c2c(O)c(O)cc(C)c2C(=O)OC1CI",
+          "C=C1O[C@H]2C(C(=O)OC)=CC[C@@H](O)[C@@H]2OC1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)C=C[C@@H]1C[C@H](O)OC(=O)[C@H]1OC1OC(=O)C2=C(O)C(O)=C(C)C21"
+        ],
+        "reagents": [
+          "DABCO",
+          "DIPEA",
+          "Et3N",
+          "DBU",
+          "pyridine"
+        ],
+        "solvent": "THF",
+        "temperature": "25 °C, 50 °C",
+        "time": "24 h, 48 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "observation": "Aliphatic tertiary amines (DABCO, DIPEA, Et3N) were effective, giving comparable yields (55-59%) with recovered scytolide (66-72%). DBU gave a low yield (15%) and a mixture of products. Pyridine as an additive gave only traces, but as a solvent, it gave 57% yield. The best conditions were 3.0 equiv of scytolide (6) and 10 equiv of Et3N in THF at 50 °C for 24 h, yielding 59% of prunolactone A (1)."
+      },
+      "evidence": {
+        "text_span": "The stage was thus set for the crucial DA reaction. Screening of the reaction conditions (Table 2) identified aliphatic tertiary amines as the bases of choice to trigger the elimination of 12. The putative intermediate 15 (synthon A, Scheme 1) was then trapped in a DA reaction with a surplus of 6 (1.5 or 3.0 equiv) to afford a single product. The compound was assigned the structure of prunolactone A (1), based on 2D spectra and comparison of its 13C spectrum with those of prunolactones A, C, D, and E. DABCO (entry 2), DIPEA (entry 4), and Et3N (entry 6) gave comparable yields (55−59%) together with recovered scytolide (66−72%), while a stronger base (DBU) afforded a mixture of products with just 15% 1 (entry 7). With 10 equiv of pyridine (entry 9), mere traces of the product were detected. The yield of 57% was obtained only when pyridine was employed as the solvent (entry 11).",
+        "section": "main text",
+        "image_refs": [
+          "601ffa30ffc8d45901ffb07c3448e36fa921b234036932e10bd933cd5b836da5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Diels-Alder reaction conditions for prunolactone A (1) have been optimized. The synthesis of the unnatural (3'R)-epimer (16) is also desired.",
+        "gap": "Synthesize the (3'R)-epimer of prunolactone A (16) using (8R)-scytolide (13) under optimized Diels-Alder conditions.",
+        "decision": "Apply the optimized conditions (3.0 equiv of (8R)-scytolide (13) and 10 equiv of Et3N in THF at 50 °C for 24 h) to the reaction of 12 with (8R)-scytolide (13)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1c2c(O)c(O)cc(C)c2C(=O)OC1CI",
+          "C=C1O[C@H]2C(C(=O)OC)=CC[C@H](O)[C@@H]2OC1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)C=C[C@@H]1C[C@H](O)OC(=O)[C@H]1OC1OC(=O)C2=C(O)C(O)=C(C)C21"
+        ],
+        "reagents": [
+          "Et3N"
+        ],
+        "solvent": "THF",
+        "temperature": "50 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "The unnatural (3'R)-epimer of prunolactone A (16) was constructed under optimized conditions with 61% yield. Comparison of 13C NMR spectra confirmed the structure."
+      },
+      "evidence": {
+        "text_span": "Similarly, using (8R)- scytolide (13) bearing the “natural” configuration of shikimic acid, the unnatural (3′R)- epimer of prunolactone A (16) was constructed under optimized conditions with 61% yield. Comparison of the 13C NMR spectrum of (3′R)-prunolactone A with that of prunolactone A revealed a significant difference of the chemical shifts of their C3′ carbons (63.40 and 68.81 ppm, respectively), while those of the spiro carbons were nearly the same (76.20 and 76.23 ppm, respectively).",
+        "section": "main text",
+        "image_refs": [
+          "601ffa30ffc8d45901ffb07c3448e36fa921b234036932e10bd933cd5b836da5.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation",
+      "circular_dichroism"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 11,
+        "unit": "%",
+        "interpretation": "Overall yield for Prunolactone A from shikimic acid."
+      },
+      "Longest Linear Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "Longest linear sequence for Prunolactone A."
+      }
+    },
+    "significance": "The first total synthesis of the natural isocoumarin prunolactone A and its unnatural (3'R)-epimer. The synthesis features the in situ generation of a reactive 3,4-bis(methylene)isocoumarin intermediate and its biomimetic Diels-Alder reactions. It also provides a method for accessing stereochemically pure scytolide. DFT calculations support the selectivity of the Diels-Alder reaction. The synthesis is convergent and efficient, providing access to these complex natural products."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.4c04378",
+      "pmcid": "PMC11667730",
+      "title": "Vicinal Bis(methylene) Heterocyclic Diene in Natural Product Synthesis: A Convergent Biomimetic Total Synthesis of Prunolactone A.",
+      "authors": "Kadaník M, Frantsuzova E, Matouš P, Nováková L, Kuneš J, Bonsignore M, Andris E, Růžičková Z, Pour M.",
+      "journal": "Org Lett",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11667730?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/55ae5699-a036-4e15-b8cb-2af75535d84f.zip",
+      "parsed_at": "2026-05-11T06:36:31.511774+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 26,
+    "parseable": 25,
+    "canonicalized": 25,
+    "invalid": 1,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "OCCC(Sn(CCCC)(CCCC)CCCC)C=CO"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

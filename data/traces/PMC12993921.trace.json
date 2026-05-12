@@ -1,0 +1,619 @@
+{
+  "trace_id": "TS-PMC12993921",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-Malbrancheamide B",
+    "smiles": "CC1(C)Cc2[nH]c3cc(Cl)ccc3c2[C@]2(C)C3C(CCC4CCN(C=N4)C3O)CC12",
+    "natural_product_class": "prenylated indole alkaloid",
+    "structural_features": {
+      "stereocenters": 8,
+      "ring_systems": "hexacyclic",
+      "key_motifs": [
+        "diazabicyclo[2.2.2]octane",
+        "tetrahydrocarbazole",
+        "diketopiperazine"
+      ]
+    },
+    "motivation": "Complex structure, numerous biological activities (calmodulin inhibitor, vasorelaxant).",
+    "prior_syntheses": [
+      {
+        "lead_author": "Williams",
+        "year": "2008",
+        "doi": "10.1021/jo800091w",
+        "key_strategy": "Biomimetic intramolecular Diels-Alder cycloadditions"
+      },
+      {
+        "lead_author": "Scheerer",
+        "year": "2013",
+        "doi": "10.1021/jo400091w",
+        "key_strategy": "Enantioselective synthesis using domino reaction sequence"
+      },
+      {
+        "lead_author": "Simpkins",
+        "year": "2009",
+        "doi": "10.1021/ja900091w",
+        "key_strategy": "Cationic cyclization route"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Asymmetric total synthesis of (+)-Malbrancheamide B."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-O bond of the oxo group",
+        "reasoning": "Proposed as the last step to accomplish the total synthesis."
+      },
+      {
+        "bond_description": "Quaternary center next to the indole unit and diketopiperazine bridge",
+        "named_strategy": "radical bicyclization or consecutive radical and cationic cyclizations",
+        "reasoning": "Leads to diketopiperazine 8."
+      },
+      {
+        "bond_description": "Amide bonds of diketopiperazine",
+        "named_strategy": "retro-cyclocondensation",
+        "reasoning": "Leads to amino acid derivatives 5 and 11."
+      },
+      {
+        "bond_description": "C-C bond of chlorotryptophan",
+        "reasoning": "Chlorotryptophan 5 can be traced to chloroindole 9 and serine ester 10, mimicking biosynthesis."
+      },
+      {
+        "bond_description": "C-C bond of 2-prenylproline ester",
+        "named_strategy": "Seebach’s “self-regeneration of stereocenters (SRS)” methodology",
+        "reasoning": "2-Prenylproline ester 11 will be approached from D-proline 6 and prenyl bromide 7."
+      }
+    ],
+    "rationale": "A bioinspired direct approach relying on peptide assembly using chlorotryptophan 5, proline 6 and prenyl bromide 7 to achieve a direct access to prenylated diketopiperazine precursor 8, which was envisaged to provide the natural product 1 by an oxidative bicyclization or consecutive cyclization reactions."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "N-Boc-L-serine methyl ester 10 is a commercial starting material.",
+        "gap": "Need to transform 10 into a suitable intermediate for coupling with chloroindole 9.",
+        "decision": "To prepare sulfamidate 12, chose treatment with thionyl chloride followed by oxidation with sodium periodate and ruthenium(III) chloride, in analogy to Zervosen et al."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(NC(=O)OC(C)(C)C)C(C)O"
+        ],
+        "product_smiles": [
+          "COC(=O)C1OS(=O)(=O)OC1NC(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "SOCl2",
+          "pyridine",
+          "RuCl3.H2O",
+          "NaIO4"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-42 to 23 °C",
+        "time": "15 h",
+        "stoichiometry": {
+          "RuCl3.H2O": "0.5 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "Sulfamidate 12 was formed."
+      },
+      "evidence": {
+        "text_span": "The synthesis commenced with commercial N-Boc-L-serine methyl ester 10, which was transformed into sulfamidate 12 by treatment with thionyl chloride in the presence of pyridine, followed by oxidation with sodium periodate and a catalytic amount of ruthenium(III) chloride in analogy to Zervosen et al. (Scheme 2).",
+        "image_refs": [
+          "48d0f4685d61176d2643ec3172e8e260a4bbf738d6a6d8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Sulfamidate 12 is prepared. Chloroindole 9 is available.",
+        "gap": "Need to couple 12 and 9 to form chlorotryptophan methyl ester 13.",
+        "decision": "To achieve the coupling, chose metalation of chloroindole 9 at nitrogen according to Piersanti and co-workers, followed by treatment of the resulting indolylcopper intermediate with 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1OS(=O)(=O)OC1NC(=O)OC(C)(C)C",
+          "Clc1ccc2[nH]ccc2c1"
+        ],
+        "product_smiles": [
+          "COC(=O)C(Cc1c[nH]c2cc(Cl)ccc12)NC(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "MeMgCl",
+          "CuCl"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 to 23 °C",
+        "time": "3.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 37,
+        "observation": "Chlorotryptophan methyl ester 13 was obtained in moderate yield, consistent with literature."
+      },
+      "evidence": {
+        "text_span": "Chloroindole 9 was metalated at nitrogen according to the method developed by Piersanti and coworkers27 and the resulting indolylcopper intermediate was treated with 12 leading to chlorotryptophan methyl ester 13. The moderate yield is in line with those observed by Piersanti et al.;27 however, this approach is the most straightforward and general to obtain substituted tryptophans.",
+        "image_refs": [
+          "48d0f4685d61176d2643ec3172e8e260a4bbf738d6a6d8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Chlorotryptophan methyl ester 13 is synthesized.",
+        "gap": "Need to convert the methyl ester to the corresponding carboxylic acid 5 for peptide coupling.",
+        "decision": "To achieve this, chose saponification of the methyl ester with lithium hydroxide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(Cc1c[nH]c2cc(Cl)ccc12)NC(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)NC(Cc1c[nH]c2cc(Cl)ccc12)C(=O)O"
+        ],
+        "reagents": [
+          "LiOH"
+        ],
+        "solvent": "THF, H2O",
+        "temperature": "23 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "N-Boc amino acid 5 was obtained."
+      },
+      "evidence": {
+        "text_span": "Saponification of the methyl ester with lithium hydroxide provided the N-Boc amino acid 5.",
+        "image_refs": [
+          "48d0f4685d61176d2643ec3172e8e260a4bbf738d6a6d8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "N-Boc amino acid 5 is prepared. The second amino acid building block, α-prenyl proline methyl ester 11, is available from D-proline using Seebach’s SRS strategy.",
+        "gap": "Need to couple 5 and 11 to form dipeptide 14.",
+        "decision": "To perform the peptide coupling, chose N-ethoxycarbonyl-2-ethoxy-1,2-dihydroquinoline (EEDQ) as coupling agent in the absence of base to prevent epimerization at the tryptophan unit."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NC(Cc1c[nH]c2cc(Cl)ccc12)C(=O)O",
+          "COC(=O)[C@@H]1N[C@H]2C=C(C)CC[C@H]21"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@H]1[C@@H](C=C(C)C)CCCN1C(=O)[C@@H](Cc1c[nH]c2cc(Cl)ccc12)NC(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "EEDQ"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "23 °C",
+        "time": "17 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Dipeptide 14 was obtained as a single diastereomer in good yield."
+      },
+      "evidence": {
+        "text_span": "The subsequent peptide coupling was conducted using Nethoxycarbonyl-2-ethoxy-1,2-dihydroquinoline (EEDQ) as coupling agent in the absence of base, to prevent epimerization at the tryptophan unit, affording dipeptide 14 as a single diastereomer in good yield.",
+        "image_refs": [
+          "0221c6ad8285e5dbf78680d663fdad6c3752203bfd27de1c32057a1560560566.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dipeptide 14 is synthesized.",
+        "gap": "Need to cyclize dipeptide 14 to form diketopiperazine 8a.",
+        "decision": "To achieve this, chose thermal cyclization at high temperature on silica gel under strictly inert conditions, as this method is practical and prevents side reactions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@H]1[C@@H](C=C(C)C)CCCN1C(=O)[C@@H](Cc1c[nH]c2cc(Cl)ccc12)NC(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CC1=CC[C@@]2(C)C[C@H](Cc3c[nH]c4cc(Cl)ccc34)C(=O)N(CCC1)C2=O"
+        ],
+        "reagents": [],
+        "solvent": "silica gel",
+        "temperature": "190 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Diketopiperazine 8a was obtained in very good yield as a single diastereomer."
+      },
+      "evidence": {
+        "text_span": "The thermal cyclization of dipeptide 14 at high temperature on silica gel under strictly inert conditions provided diketopiperazine 8a in very good yield as a single diastereomer. This method is practical since absorbing the dipeptide at silica gel prevents substrate diffusion, side reactions and allows a very simple purification.23",
+        "image_refs": [
+          "0221c6ad8285e5dbf78680d663fdad6c3752203bfd27de1c32057a1560560566.jpg",
+          "e8f6e2ce5db9440c13b31bf98866e15dc8fce190142f752a0d0734e470f19206.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Diketopiperazine 8a is synthesized. Protection of both the amide and the indole nitrogen atoms in 8a is necessary for the next step.",
+        "gap": "Standard MOM protection conditions with NaH gave low yield.",
+        "decision": "Attempted standard MOM protection with NaH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC[C@@]2(C)C[C@H](Cc3c[nH]c4cc(Cl)ccc34)C(=O)N(CCC1)C2=O"
+        ],
+        "product_smiles": [
+          "COCn1cc(C[C@H]2C[C@]3(C)CC=C(C)CCCN(C2=O)C3=O)c2ccc(Cl)cc21"
+        ],
+        "reagents": [
+          "NaH",
+          "MOMBr"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 27,
+        "failure_mode": "low_yield",
+        "observation": "Standard conditions with NaH gave only 27% yield."
+      },
+      "evidence": {
+        "text_span": "Protection of both the amide and the indole nitrogen atoms in 8a was necessary at this point (vide infra), the methoxymethyl (MOM) group was chosen because of its stability under basic conditions required in the next step. In the event, twofold MOM protection of DKP 8a was not trivial; standard conditions with NaH24 gave only 27% yield (not shown).",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "Standard MOM protection of 8a with NaH resulted in low yield.",
+        "gap": "Need a more efficient method for twofold MOM protection.",
+        "decision": "To improve the yield, chose to introduce a substoichiometric amount of a soluble base such as potassium bis(trimethylsilyl)amide (KHMDS) in tetrahydrofuran (THF)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC[C@@]2(C)C[C@H](Cc3c[nH]c4cc(Cl)ccc34)C(=O)N(CCC1)C2=O"
+        ],
+        "product_smiles": [
+          "COCn1cc(C[C@H]2C[C@]3(C)CC=C(C)CCCN(C2=O)C3=O)c2ccc(Cl)cc21"
+        ],
+        "reagents": [
+          "KHMDS",
+          "NaH",
+          "MOMBr"
+        ],
+        "solvent": "THF",
+        "temperature": "0 to 23 °C",
+        "time": "2 h",
+        "stoichiometry": {
+          "KHMDS": "28 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "Twofold MOM protection of DKP 8a was significantly improved, providing a very good yield of 8b."
+      },
+      "evidence": {
+        "text_span": "However, introducing a substoichiometric amount of a soluble base such as potassium bis(trimethylsilyl)- amide (KHMDS) in tetrahydrofuran (THF) facilitated the protection significantly, providing a very good yield of 8b.",
+        "image_refs": [
+          "e8f6e2ce5db9440c13b31bf98866e15dc8fce190142f752a0d0734e470f19206.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bis(MOM)-protected diketopiperazine 8b is synthesized.",
+        "gap": "Need to perform the crucial oxidative bridge-forming cyclization to form bridged DKP 15.",
+        "decision": "To achieve this, chose a ferrocenium ion-mediated oxidative cyclization (Condition A), reasoning that the DKP enolate precursor may be thermally rather robust."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC[C@@H]1OC2(CC(=O)N1C1CCCC1)CC(C)=C2C[C@@H]1C=CN(COC)c2cc(Cl)ccc21"
+        ],
+        "reagents": [
+          "NaHMDS",
+          "Cp2FePF6"
+        ],
+        "solvent": "DME",
+        "temperature": "-78 °C, then 100 °C",
+        "time": "30 min, then 45 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Bridged DKP 15 was obtained essentially as a single syn-diastereomer."
+      },
+      "evidence": {
+        "text_span": "The crucial oxidative bridge-forming cyclization was performed by two methods. Reasoning that the DKP enolate precursor may be thermally rather robust, under condition A) a ferrocenium ion-mediated oxidative cyclization was leveraged to form the diazabicyclo[2.2.2]octane ring system. Diketopiperazine 8b was deprotonated at low temperature and subsequently heated to 100 °C and ferrocenium hexafluorophosphate was added to trigger the cyclization. This proved indeed highly practical and provided bridged DKP 15 essentially as a single syn-diastereomer.",
+        "image_refs": [
+          "e8f6e2ce5db9440c13b31bf98866e15dc8fce190142f752a0d0734e470f19206.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Bis(MOM)-protected diketopiperazine 8b is synthesized. An alternative method for oxidative bridge-forming cyclization is available.",
+        "gap": "The TEMPO-intercepted cyclization (Condition B) was less efficient.",
+        "decision": "Attempted TEMPO-intercepted cyclization (Condition B), inspired by a previous total synthesis of asperparaline C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC[C@@H]1OC2(CC(=O)N1C1CCCC1)CC(C)=C2C[C@@H]1C=CN(COC)c2cc(Cl)ccc21"
+        ],
+        "reagents": [
+          "n-BuLi",
+          "TEMPO",
+          "Cp2FePF6"
+        ],
+        "solvent": "DME",
+        "temperature": "-78 °C, then -40 °C, then 100 °C",
+        "time": "1.5 h, then 15 min, then 1.5 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 44,
+        "failure_mode": "low_yield",
+        "observation": "The TEMPO-intercepted cyclization was much less efficient, providing 15 in moderate 44% yield, though still as a single syn-diastereomer."
+      },
+      "evidence": {
+        "text_span": "In contrast a 2,2,6,6- tetramethylpiperidin-1-oxyl (TEMPO)-intercepted cyclization (condition B)), which was inspired by a previous total synthesis of the bridged DKP unit in asperparaline C (4),24 was much less efficient. Single-electron oxidation of the lithium enolate of 8b at low temperature in the presence of TEMPO results in the formation of an extremely labile adduct, which decays on slow warming. To facilitate the cyclization, the reaction mixture was transferred to a preheated bath triggering the radical cyclization and hydrogen atom transfer. The isopropenyl-substituted bridged DKP 15 was isolated in moderate 44% yield, but also as a single syn-diastereomer.",
+        "image_refs": [
+          "e8f6e2ce5db9440c13b31bf98866e15dc8fce190142f752a0d0734e470f19206.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Bridged diketopiperazine 15 is synthesized. An intramolecular Friedel-Crafts-type cyclization is envisaged to form the malbrancheamide skeleton.",
+        "gap": "Direct subjection of 15 to aqueous HCl for cationic cyclization and MOM deprotection provided an unexpected outcome.",
+        "decision": "Attempted direct cyclization and deprotection of 15 with aqueous HCl."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC[C@@H]1OC2(CC(=O)N1C1CCCC1)CC(C)=C2C[C@@H]1C=CN(COC)c2cc(Cl)ccc21"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "aqueous",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "An inseparable 1:1 mixture of the desired cyclization product 17 and indole aminomethylation product 23 was isolated."
+      },
+      "evidence": {
+        "text_span": "At this stage an intramolecular Friedel−Crafts-type cyclization was envisaged to take place providing the complete malbrancheamide skeleton. However, the basic conditions of the reaction favored deprotonation to isopropenyl diazabicyclo[2.2.2]octandione 15. Under the previously established cyclization conditions24 TEMPO couples with the initial DKP radical at low temperature. Heating the labile adduct also triggers the cyclization via syn-TS; however, this proved to be less effective (not shown). To complete the total synthesis, compound 15 was initially subjected to aqueous HCl to initiate the crucial cationic cyclization and concomitant MOM deprotection (Scheme 2). However, this provided an unexpected outcome (vide infra, Scheme 4).",
+        "image_refs": [
+          "fc95c2d7e913819caeab7a473e2a126d5873cfa763600d72c52f142d10f4d29b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 10,
+      "thought": {
+        "background": "Direct cyclization and deprotection of 15 with aqueous HCl led to an inseparable mixture of products.",
+        "gap": "Need to selectively deprotect the MOM groups before cyclization to avoid side reactions.",
+        "decision": "To achieve selective MOM deprotection, chose reaction with triethylsilyl triflate (TESOTf) using 2,2'-bipyridine as a formaldehyde scavenger, followed by basic workup to remove lactam protection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC[C@@H]1OC2(CC(=O)N1C1CCCC1)CC(C)=C2C[C@@H]1C=CN(COC)c2cc(Cl)ccc21"
+        ],
+        "product_smiles": [
+          "Cc1cc(CO)n2c1C(C[C@H]1CCCN3C(=O)N(C)[C@H]3[C@H]1O)=C1C=CC(Cl)=C2C1"
+        ],
+        "reagents": [
+          "TESOTf",
+          "2,2'-bipyridine",
+          "NaHCO3"
+        ],
+        "solvent": "CH2Cl2/CH3CN",
+        "temperature": "0 °C, then 23 °C",
+        "time": "4 h, then 21.5 h, then 7 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "The MOM groups were removed, and the lactam was deprotected, yielding bridged diketopiperazine 16. The hydroxymethyl group at the indole unit was resistant to removal."
+      },
+      "evidence": {
+        "text_span": "Therefore, initial MOM deprotection was mandatory, which was not trivial. After much experimentation (see the SI), reaction with triethylsilyl triflate using 2,2'- bipyridine as a formaldehyde scavenger proved optimal.30 The resulting mixture was subjected to basic conditions leading to slow, but complete lactam deprotection after resubjection of the reaction mixture to aqueous NaHCO3 solution, but the hydroxymethyl group at the indole unit was resistant to removal. Bridged diketopiperazine 16 subsequently cyclized in the presence of hydrochloric acid giving oxomalbrancheamide B 17 in 52% yield; 13% of starting material (s.m.) was recovered under the conditions.",
+        "image_refs": [
+          "ffe33dee38331bc318eaa90918e8bb6b826f596876ae66f8104e77e99c87f118.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bridged diketopiperazine 16, with MOM groups removed and lactam deprotected, is synthesized. The hydroxymethyl group at the indole unit remains.",
+        "gap": "Need to cyclize 16 to form oxomalbrancheamide B 17 and remove the remaining hydroxymethyl group.",
+        "decision": "To achieve this, chose to subject 16 to hydrochloric acid."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(CO)n2c1C(C[C@H]1CCCN3C(=O)N(C)[C@H]3[C@H]1O)=C1C=CC(Cl)=C2C1"
+        ],
+        "product_smiles": [
+          "CC1(C)Cc2[nH]c3cc(Cl)ccc3c2[C@]2(C)C3C(CCC4CCN(C=N4)C3O)CC12"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "DME",
+        "temperature": "65 °C",
+        "time": "5.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 52,
+        "observation": "Oxomalbrancheamide B 17 was obtained. The remaining hydroxymethyl group was also removed under the cyclization conditions. 13% of starting material was recovered."
+      },
+      "evidence": {
+        "text_span": "Bridged diketopiperazine 16 subsequently cyclized in the presence of hydrochloric acid giving oxomalbrancheamide B 17 in 52% yield; 13% of starting material (s.m.) was recovered under the conditions. Gratifyingly, the remaining hydroxymethyl group was also removed under the cyclization conditions.",
+        "image_refs": [
+          "ffe33dee38331bc318eaa90918e8bb6b826f596876ae66f8104e77e99c87f118.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Oxomalbrancheamide B 17 is synthesized.",
+        "gap": "Need to reduce the oxo group to complete the total synthesis of malbrancheamide B (1).",
+        "decision": "To achieve this, chose DIBAL-H reduction according to literature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)Cc2[nH]c3cc(Cl)ccc3c2[C@]2(C)C3C(CCC4CCN(C=N4)C3O)CC12"
+        ],
+        "product_smiles": [
+          "CC1(C)Cc2[nH]c3cc(Cl)ccc3c2[C@]2(C)C3C(CCC4CCN(C=N4)C3O)CC12"
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "toluene",
+        "temperature": "23 °C",
+        "time": "5.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 36,
+        "observation": "Malbrancheamide B (1) was obtained."
+      },
+      "evidence": {
+        "text_span": "A final diisobutylaluminum hydride (DIBAL-H) reduction according to the literature18b provided malbrancheamide B (1) after 10 steps in 1.2% overall yield.",
+        "image_refs": [
+          "ccc4a75323375e4f8311a388e9614f620d3c05bd4f002ae5d82e78cfa3c6c1e3.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "NMR",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 1.2,
+        "unit": "%",
+        "interpretation": "Overall yield for the 10-step synthesis."
+      },
+      "Total Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps."
+      }
+    },
+    "comparison_to_prior": "The total synthesis converged with Simpkins’s and Scheerer’s total syntheses after only nine steps.",
+    "significance": "An asymmetric bioinspired total synthesis of 1 has been achieved over 10 steps in 1.2% overall yield. Key steps include biomimetic dipeptide assembly, diketopiperazine formation, diastereoselective oxidative radical cyclization, and intramolecular Friedel-Crafts-type cyclization. This blueprint will serve to approach other relevant bridged indolodiketopiperazine alkaloids and their biological investigation."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.6c00246",
+      "pmcid": "PMC12993921",
+      "title": "Total Synthesis of (+)-Malbrancheamide B Employing a Bioinspired Strategy.",
+      "authors": "Bosi MA, Pohl R, Jahn U.",
+      "journal": "Org Lett",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12993921?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/fa7a6859-921d-4240-8578-ac2dd23cf3ac.zip",
+      "parsed_at": "2026-05-07T15:41:15.651255+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 30,
+    "parseable": 26,
+    "canonicalized": 26,
+    "invalid": 4,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)=CCC[C@@]12CCCN1C(=O)[C@H](CC3=C(N(COC)C4=CC=C(Cl)C=C43)C=C3)N(COC)C2=O",
+      "CC(C)=CCC[C@@]12CCCN1C(=O)[C@H](CC3=C(N(COC)C4=CC=C(Cl)C=C43)C=C3)N(COC)C2=O",
+      "CC1(C)[C@@H]2C[C@H]3N(C(=O)C4=N3C[C@@H](C)C4)O2C5=C(C=C(Cl)C=C5)N1",
+      "CC1(C)[C@@H]2C[C@H]3N(C(=O)C4=N3C[C@@H](C)C4)O2C5=C(C=C(Cl)C=C5)N1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

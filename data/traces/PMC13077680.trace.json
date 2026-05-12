@@ -1,0 +1,742 @@
+{
+  "trace_id": "TS-PMC13077680",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "tropolone-L-Phe-OtBu (14)",
+    "smiles": "CC(=O)c1cc(C(=O)NC(Cc2ccccc2)C(=O)OC(C)(C)C)cc(O)c1O",
+    "natural_product_class": "tropolone-peptide hybrid",
+    "structural_features": {
+      "key_motifs": [
+        "tropolone",
+        "peptide"
+      ]
+    },
+    "motivation": "To synthesize a complementary class of derivatives that possess three-dimensionally complex structures to overcome the inherent planar structure of tropolones, which leads to competitive affinity with plasma proteins and limits antimalarial activity. The goal is to improve antimalarial potency and address biological limitations.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Sennari",
+        "year": 2014,
+        "doi": "10.1039/C4CC03490A",
+        "key_strategy": "Concise total synthesis route of puberulic acid (1)"
+      },
+      {
+        "lead_author": "Saito",
+        "year": 2021,
+        "doi": "10.1248/cpb.69.564",
+        "key_strategy": "Synthesis of amide derivatives of puberulic acid"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Achieve antimalarial potency exceeding puberulic acid and artemisinin, and demonstrate improved activity in protein-rich media by mitigating non-specific plasma protein binding."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "Amide bond between tropolone carboxylic acid and amino acid",
+        "named_strategy": "Peptide coupling",
+        "reasoning": "This disconnection allows for modular diversification of the peptide component. The paper explores both traditional solution-phase and liquid-phase peptide synthesis (LPPS) approaches for this coupling."
+      },
+      {
+        "bond_description": "Benzyl ether protecting groups on the tropolone core",
+        "reasoning": "These protecting groups are necessary to prevent side reactions during peptide coupling and are removed at a later stage via hydrogenolysis."
+      },
+      {
+        "bond_description": "Ester protecting group on the C-terminus of the amino acid",
+        "reasoning": "This protecting group is used to protect the carboxylic acid during peptide coupling and is removed at a later stage."
+      }
+    ],
+    "rationale": "The strategy aims to overcome the challenges of tropolone derivatization by leveraging liquid-phase peptide synthesis (LPPS) with a soluble hydrophobic tag. This approach is expected to streamline condensation, deprotection, and purification steps, enabling the rapid and systematic generation of tropolone-peptide hybrid (TPH) derivatives. The hydrophobic tag facilitates purification by solidification/decantation, avoiding time-consuming chromatographic methods. The peptide component is introduced to impart three-dimensional complexity, which is hypothesized to mitigate non-specific plasma protein binding observed with planar tropolones."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Puberulic acid (1) shows antimalarial activity but has limitations due to its planar structure and toxicity. Previous SAR studies revealed that the C4 carboxylic acid is amenable to functionalization, but the tropone ring's oxygen array is largely intolerant of modification.",
+        "gap": "How to synthesize three-dimensionally complex derivatives of tropolones to improve their biological profile and overcome issues like plasma protein binding.",
+        "decision": "To address the challenges of tropolone derivatization, a liquid-phase peptide synthesis (LPPS) strategy leveraging a soluble hydrophobic tag auxiliary will be explored. This is expected to enable practical tropolone derivatization and systematic manipulation of peptide hybrid compounds."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Decision made to pursue LPPS with a hydrophobic tag."
+      },
+      "evidence": {
+        "text_span": "To circumvent these issues and with our recent success for the systematic manipulation of peptide natural products,14 we envisioned liquid-phase peptide synthesis (LPPS)15 leveraging a soluble hydrophobic tag auxiliary to enable practical tropolone derivatization. Peptides, with their inherently three-dimensional, conformationally rich architectures, represent a fundamentally different chemical space from planar tropolone scaffolds and, thus, hold considerable promise as next-generation antimalarial leads.16 Their structural complexity offers high target selectivity and tunable physicochemical properties that would be advantageous to address current challenges surrounding biological limitations of tropolones through modular diversification in residue-level editing.17 Herein, we report the synthesis of tropolone−peptide hybrid (TPH) analogues through LPPS and evaluation of their antimalarial activities.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Puberulic acid (1) is available through an established route. Direct amidation of 1 was not effective due to purification challenges.",
+        "gap": "How to prepare carboxylic acid 5, a key intermediate for amidation, from puberulic acid (1).",
+        "decision": "To prepare carboxylic acid 5, puberulic acid (1) will be subjected to benzylation conditions, followed by hydrolysis of the corresponding benzyl ester. This is an alternative approach to direct amidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "BnBr",
+          "K2CO3",
+          "H2O"
+        ],
+        "named_reaction": "Benzylation and hydrolysis",
+        "references": [
+          "10"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Carboxylic acid 5 was obtained on a multigram scale.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "Akin to our previous synthesis of amide derivatives,10 1 was first subjected to the benzylation conditions, which was followed by hydrolysis of the corresponding benzyl ester, providing carboxylic acid 5 on a multigram scale.",
+        "section": "Scheme 1A"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carboxylic acid 5 is available. The goal is to form an amide with H-Gly-OBn.",
+        "gap": "How to perform the condensation reaction effectively.",
+        "decision": "Condensation of 5 with H-Gly-OBn will be performed using PyBOP in the presence of Hünig’s base."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "NCC(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PyBOP",
+          "iPr2NEt"
+        ],
+        "solvent": "THF",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "The corresponding amide was obtained in 70% yield."
+      },
+      "evidence": {
+        "text_span": "Condensation of 5 with H-Gly-OBn using PyBOP in the presence of Hünig’s base gave the corresponding amide in 70% yield.",
+        "section": "Scheme 1A"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The amide from step 3 is formed. Global deprotection is required to obtain the final TPH.",
+        "gap": "How to deprotect the benzyl groups and the benzyl ester without degradation.",
+        "decision": "Global deprotection will be attempted using a membrane-supported palladium catalyst (Pd/iO-brane) under hydrogenolysis conditions, as this method had worked previously."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "O=C(O)CNC(=O)C1=CC(O)=C(O)C(=O)C1=O"
+        ],
+        "reagents": [
+          "Pd/iO-brane"
+        ],
+        "solvent": "MeOH",
+        "atmosphere": "H2 (1 atm)",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Only a trace amount of desired 6 was obtained after purification due to non-specific decomposition. The mono-N-acyl amino acid functionality in 6, in combination with the palladium metal, was assumed to cause undesired reactivities."
+      },
+      "evidence": {
+        "text_span": "Global deprotection using a membrane-supported palladium catalyst (Pd/iO-brane) under hydrogenolysis conditions19 that had worked previously provided only a trace amount of desired 6 after purification by a reverse-phase (RP) column due to non-specific decomposition. We assumed that the mono-N-acyl amino acid functionality in 6, in combination with the palladium metal, caused undesired reactivities in this case.",
+        "section": "Scheme 1A"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "Global deprotection of the benzyl-protected tropolone-glycine benzyl ester failed due to decomposition.",
+        "gap": "How to achieve deprotection without decomposition, possibly by changing the protecting group strategy or deprotection sequence.",
+        "decision": "To gain more insights into preparing TPHs, the synthesis of tertiary amide derivatives will be explored, specifically using C-protected prolines with different protecting groups (benzyl ester and tert-butyl ester) to evaluate stepwise deprotection."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Decision made to explore tertiary amide derivatives and stepwise deprotection."
+      },
+      "evidence": {
+        "text_span": "To gain more insights into preparing TPHs, we thought to synthesize tertiary amide derivatives.",
+        "section": "Scheme 1A"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carboxylic acid 5 is available. The goal is to condense it with C-protected prolines.",
+        "gap": "How to perform the condensation with different proline protecting groups (Bn and tBu).",
+        "decision": "Carboxylic acid 5 will be subjected to condensation conditions with H-L-Pro-OBn and H-L-Pro-OtBu using PyBOP and Hünig’s base."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "O=C(OCCc1ccccc1)[C@@H]1CCCN1",
+          "CC(C)(C)OC(=O)[C@@H]1CCCN1"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "PyBOP",
+          "iPr2NEt"
+        ],
+        "solvent": "THF",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "Benzyl ester 7a was obtained in 64% yield and tert-butyl ester 7b in 97% yield."
+      },
+      "evidence": {
+        "text_span": "In this regard, carboxylic acid 5 was subjected to the condensation conditions with C-protected prolines affording benzyl ester 7a in 64% yield and tert-butyl ester 7b in 97% yield, respectively.",
+        "section": "Scheme 1A"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Tertiary amide 7a (benzyl ester) is formed. Global deprotection is needed.",
+        "gap": "How to deprotect 7a without decomposition.",
+        "decision": "Attempt global removal of benzyl groups in 7a using hydrogenolysis with Pd/iO-brane."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "O=C1C(=O)C(O)=C(O)C=C1C(=O)N1CCC[C@H]1C(=O)O"
+        ],
+        "reagents": [
+          "Pd/iO-brane"
+        ],
+        "solvent": "MeOH",
+        "atmosphere": "H2 (1 atm)",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Global removal of the benzyl groups in 7a resulted in a complex mixture."
+      },
+      "evidence": {
+        "text_span": "While global removal of the benzyl groups in 7a resulted in a complex mixture, we were pleased to find that stepwise deprotection of 7b proved to be effective.",
+        "section": "Scheme 1A"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 7,
+      "thought": {
+        "background": "Global deprotection of 7a failed. Stepwise deprotection of 7b (tert-butyl ester) seems promising.",
+        "gap": "How to successfully deprotect 7b.",
+        "decision": "Stepwise deprotection of 7b will be attempted. First, hydrogenolysis using Pd/iO-brane to remove benzyl groups, followed by TFA treatment to remove the tert-butyl ester."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Stepwise deprotection strategy for 7b was effective."
+      },
+      "evidence": {
+        "text_span": "While global removal of the benzyl groups in 7a resulted in a complex mixture, we were pleased to find that stepwise deprotection of 7b proved to be effective. Thus, hydrogenolysis using Pd/iO-brane worked in an acceptable yield to provide 9 (49% by RP column), and subsequent treatment with TFA gave rise to desired 8 quantitatively.",
+        "section": "Scheme 1A"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tertiary amide 7b is available. Stepwise deprotection is planned.",
+        "gap": "How to selectively remove the benzyl protecting groups.",
+        "decision": "Hydrogenolysis using Pd/iO-brane will be used to remove the benzyl groups from 7b, yielding 9."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)[C@@H]1CCCN1C(=O)C1=CC(O)=C(O)C(=O)C1=O"
+        ],
+        "reagents": [
+          "Pd/iO-brane"
+        ],
+        "solvent": "MeOH",
+        "atmosphere": "H2 (1 atm)",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 49,
+        "observation": "Compound 9 was obtained in 49% yield after RP column purification."
+      },
+      "evidence": {
+        "text_span": "Thus, hydrogenolysis using Pd/iO-brane worked in an acceptable yield to provide 9 (49% by RP column)",
+        "section": "Scheme 1A"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 9 is available. The final deprotection step is to remove the tert-butyl ester.",
+        "gap": "How to remove the tert-butyl ester selectively.",
+        "decision": "Compound 9 will be treated with TFA to remove the tert-butyl ester, yielding 8."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)[C@@H]1CCCN1C(=O)C1=CC(O)=C(O)C(=O)C1=O"
+        ],
+        "product_smiles": [
+          "O=C1C(=O)C(O)=C(O)C=C1C(=O)N1CCC[C@H]1C(=O)O"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "DCM",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Desired compound 8 was obtained quantitatively."
+      },
+      "evidence": {
+        "text_span": "and subsequent treatment with TFA gave rise to desired 8 quantitatively.",
+        "section": "Scheme 1A"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The stepwise deprotection strategy worked for tertiary amides. Now, apply an analogous sequence to prepare secondary amide derivatives.",
+        "gap": "How to condense carboxylic acid 5 with Gly, L-Phe, and L-Val tert-butyl esters.",
+        "decision": "Condensation of 5 with H-Gly-O'Bu, H-L-Phe-O'Bu, and H-L-Val-O'Bu will be performed using PyBOP and Hünig’s base."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(C)(C)OC(=O)CN",
+          "CC(C)(C)OC(=O)[C@@H](N)Cc1ccccc1",
+          "CC(C)[C@H](N)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "reagents": [
+          "PyBOP",
+          "iPr2NEt"
+        ],
+        "solvent": "THF",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Amides 10-12 were obtained in 89% to >99% yields."
+      },
+      "evidence": {
+        "text_span": "After condensation of 5 with Gly, L-Phe, and L-Val (from 89 to >99% yields)",
+        "section": "Scheme 1B"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amides 10-12 are available. The next step is to cleave the benzyl groups.",
+        "gap": "How to cleave the benzyl groups in amides 10-12.",
+        "decision": "Cleavage of the benzyl groups will be performed by hydrogenolysis using Pd/iO-brane."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "CC(=O)c1cc(C(=O)NC(C)C(=O)OC(C)(C)C)cc(O)c1O",
+          "CC(=O)c1cc(C(=O)NC(Cc2ccccc2)C(=O)OC(C)(C)C)cc(O)c1O",
+          "CC(=O)c1cc(C(=O)NC(C(=O)OC(C)(C)C)C(C)C)cc(O)c1O"
+        ],
+        "reagents": [
+          "Pd/iO-brane"
+        ],
+        "solvent": "MeOH",
+        "atmosphere": "H2 (1 atm)",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 31,
+        "observation": "Tropolones 13-15 were obtained in unsatisfactory but synthetically useful yields (13-31%)."
+      },
+      "evidence": {
+        "text_span": "cleavage of the benzyl groups in amides 10−12 by the established hydrogenolysis afforded tropolones 13−15 in unsatisfactory but synthetically useful yields (13−31%).",
+        "section": "Scheme 1B"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tropolones 13-15 are available. The final deprotection step is to remove the tert-butyl groups.",
+        "gap": "How to remove the tert-butyl groups selectively.",
+        "decision": "The tert-butyl groups in 13-15 will be removed by treatment with TFA."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)c1cc(C(=O)NC(C)C(=O)OC(C)(C)C)cc(O)c1O",
+          "CC(=O)c1cc(C(=O)NC(Cc2ccccc2)C(=O)OC(C)(C)C)cc(O)c1O",
+          "CC(=O)c1cc(C(=O)NC(C(=O)OC(C)(C)C)C(C)C)cc(O)c1O"
+        ],
+        "product_smiles": [
+          "CC(=O)c1cc(C(=O)NC(C)C(=O)O)cc(O)c1O",
+          "CC(=O)c1cc(C(=O)NC(Cc2ccccc2)C(=O)O)cc(O)c1O",
+          "CC(=O)c1cc(C(=O)NC(C(=O)O)C(C)C)cc(O)c1O"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "DCM",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "TPHs 6, 16, and 17 were furnished in excellent yields (quantitatively)."
+      },
+      "evidence": {
+        "text_span": "Ultimately, the tert-butyl groups in 13−15 were removed by treatment with TFA, furnishing TPHs 6, 16, and 17 in excellent yields.",
+        "section": "Scheme 1B"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "The solution-phase synthesis of TPHs faced intrinsic challenges related to chelation, resulting in low deprotection yields and requiring time-consuming RP column purification.",
+        "gap": "How to facilitate SAR studies by developing a more practical and rapid method for TPH generation.",
+        "decision": "Turn attention to the LPPS protocol to enable practical and rapid generation of TPH derivatives, leveraging soluble hydrophobic tagging strategies to streamline synthesis and purification."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Decision made to implement LPPS strategy."
+      },
+      "evidence": {
+        "text_span": "As shown, although we were able to manipulate several tropolone−peptides, the process represented intrinsic challenges associated with the chelate ability that resulted in low-yielding deprotection and required purification by a time-consuming RP column. In order to facilitate a SAR study, we turned our attention to the LPPS protocol21 to enable the practical and rapid generation of TPH derivatives.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The LPPS approach requires a TAG-supported amine intermediate. TAG-OH is available.",
+        "gap": "How to prepare TAG-supported amines (18) from TAG-OH and Fmoc amino acids.",
+        "decision": "TAG-OH will be condensed with a Fmoc amino acid, followed by deprotection of the N-terminus using piperidine, providing the corresponding TAG-supported amines (18)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCOc1cc(CO)cc(OCCCCO)c1OCCCCCCCCCCC",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Fmoc-AA-OH",
+          "DCC",
+          "DMAP",
+          "piperidine"
+        ],
+        "solvent": "DCM",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": null,
+        "observation": "TAG-supported amines (18) were prepared. Purification was done by solidification protocol."
+      },
+      "evidence": {
+        "text_span": "First, TAG−OH was condensed with a Fmoc amino acid (AA), which was followed by deprotection of the N terminus, providing the corresponding TAG-supported amines (i.e., 18, step 1). These products after steps 1 and 2 were purified by our solidification protocol in LPPS (see the Supporting Information for details; an asterisk after the percentage shows the isolated yield by the solidification protocol).",
+        "section": "Scheme 2A"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "TAG-supported amines (18) and carboxylic acid 5 are available.",
+        "gap": "How to couple amine 18 with carboxylic acid 5.",
+        "decision": "Condensation of amine 18 with carboxylic acid 5 will be performed using PyBOP in the presence of Hünig’s base, affording coupled products (19)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PyBOP",
+          "iPr2NEt"
+        ],
+        "solvent": "THF",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": null,
+        "observation": "Coupled products (19) were obtained. Purification was done by solidification protocol."
+      },
+      "evidence": {
+        "text_span": "Next, the condensation of amine 18 with carboxylic acid 5 afforded the coupled products (i.e., 19, step 2). These products after steps 1 and 2 were purified by our solidification protocol in LPPS (see the Supporting Information for details; an asterisk after the percentage shows the isolated yield by the solidification protocol).",
+        "section": "Scheme 2A"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Coupled products (19) are available. The final steps are global deprotection and TAG removal.",
+        "gap": "How to remove the benzyl groups and the TAG carrier.",
+        "decision": "Hydrogenolysis of the benzyl groups will be performed using Pearlman’s catalyst, followed by cleavage of the TAG carrier by treating with TFA. The products will be purified by solidification/decantation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd(OH)2/C",
+          "TFA"
+        ],
+        "solvent": "THF",
+        "atmosphere": "H2 (1 atm)",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "Desired tropolone-peptides (20-32) were furnished. For D-Val, 20 was obtained in 64% overall yield over five steps without RP column chromatography."
+      },
+      "evidence": {
+        "text_span": "Finally, hydrogenolysis of the benzyl groups using the Pearlman’s catalyst,24 in which the products were briefly purified by a solidification/decantation procedure, and, subsequently, the TAG carrier was cleaved by treating with TFA. After the reaction, the TAG residue was removed by solidification and filtration to furnish the desired tropolone−peptides (20−32, step 3). ... In direct comparison to our solution-phase synthesis of L-Val bearing tropolone 17 (described in Scheme 1B, 29% overall yield), D-Val was employed for the LPPS sequence, producing 20 in overall 64% yield (over five chemical steps) without RP column chromatography.",
+        "section": "Scheme 2A"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The LPPS strategy has been established for single amino acid TPHs. The next goal is to synthesize a dipeptide analogue.",
+        "gap": "How to extend the LPPS strategy to a dipeptide.",
+        "decision": "A dipeptide analogue (33) will be synthesized by iterative condensation and deprotection steps, followed by amidation with tropolone 5, and finally global cleavage of benzyl groups and TAG removal."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCOc1cc(CO)cc(OCCCCO)c1OCCCCCCCCCCC",
+          "N[C@H](Cc1ccccc1)C(=O)O",
+          "CC(C)C[C@H](C(=O)O)N(C)C",
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)C[C@H](NC(=O)[C@H](C)N(C)C(=O)C1=CC(=O)C(O)=C(O)C1)C(=O)O"
+        ],
+        "reagents": [
+          "Fmoc-L-Phe-OH",
+          "DCC",
+          "DMAP",
+          "piperidine",
+          "Fmoc-N-Me-L-Leu-OH",
+          "PyBOP",
+          "iPr2NEt",
+          "H2",
+          "Pd(OH)2/C",
+          "TFA"
+        ],
+        "outcome": {
+          "valid": true,
+          "yield_percent": 29,
+          "observation": "Dipeptide analogue 33 was obtained in 29% overall yield through the seven-step sequence without RP column chromatography."
+        },
+        "evidence": {
+          "text_span": "To test further utility of the approach, we next sought to synthesize a dipeptide analogue (Scheme 2B). In this regard, condensation of the TAG carrier with Phe and subsequent deprotection provided TAG-supported amine. Iterative condensation and deprotection, followed by amidation with tropolone 5 afforded the corresponding coupled products. Lastly, global cleavage of the benzyl groups and TAG removal gave rise to desired TPH 33 in 29% overall yield through the seven-step sequence without RP column chromatography.",
+          "section": "Scheme 2B"
+        }
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "A library of TPH derivatives has been synthesized using the LPPS strategy.",
+        "gap": "How to evaluate the antimalarial activity of these TPHs and understand their structure-activity relationships (SARs).",
+        "decision": "The synthesized TPH derivatives will be evaluated for their in vitro antimalarial activity against the PfK1 strain. Key structural features like amino acid residues, stereochemistry, and N-methylation will be analyzed for their impact on potency."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Tropolone-L-Phe-OtBu (14) exhibited remarkable potency (IC50 = 27.2 nM), surpassing synthetic puberulic acid (1) and artemisinin. N-methylated Leu analogue 22 showed improved potency. Hydrophobic AA residues were critical for function. Dipeptide 33 showed weak activity. The absolute configuration of the isopropyl substituent significantly influenced potency (17 vs 20)."
+      },
+      "evidence": {
+        "text_span": "The LPPS strategy described above enabled a comprehensive investigation of SARs of TPH analogues. A library of 22 synthesized derivatives was evaluated for their in vitro antimalarial activity against the PfK1 strain (Table 1).25 Analogues incorporating neutral amino acid residues (highlighted in yellow) exhibited moderate IC50 values. Notably, a comparison of 17 (L-Val) and 20 (D-Val) revealed that the absolute configuration of the isopropyl substituent significantly influences potency, suggesting that the 3D conformation of these derivatives is recognized by the biological target. N-Methylated Leu analogue 22 displayed an order-of-magnitude improvement in potency compared to corresponding secondary amide 21, underscoring the contribution of conformational restriction on activity. In contrast, introduction of acidic (highlighted in red) or basic (lowlighted in blue) polar residues (26−28) attenuated antimalarial activity, indicating that hydrophobic AA residues are critical for function. Within the hydrophobic aromatic series (highlighted in green), tropolone-L-Phe-Ot Bu (14) exhibited remarkable potency with an IC50 of 27.2 nM, surpassing both synthetic puberulic acid (1) and the clinically used antimalarial drug artemisinin. Interestingly, N-methylation of the related derivative diminished potency (16 vs 29), further emphasizing the importance of stereochemical and conformational features in ligand recognition. Dipeptide analogue 33 showed only weak activity, suggesting steric limitations in the corresponding affinity pocket that restrict derivatization at this position.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Planar tropolones suffer from non-specific plasma protein binding, which reduces their in vivo efficacy.",
+        "gap": "How to confirm if the three-dimensional TPHs mitigate this issue.",
+        "decision": "Several TPHs will be evaluated against the chloroquine-sensitive P. falciparum FCR-3 strain in the presence and absence of human serum albumin (HSA) to assess the impact of 3D structure on plasma protein binding."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The most potent TPH derivative 14 retained submicromolar potency regardless of HSA addition (ΔIC50 = 0.130 μM), while planar ketone analogue 3 showed a >2 orders of magnitude decrease in potency with HSA. This supports the hypothesis that 3D peptide architectures mitigate detrimental plasma protein binding."
+      },
+      "evidence": {
+        "text_span": "To further probe the influence of three-dimensional structural elements on tropolone-based scaffolds, we evaluated several TPHs against the chloroquine-sensitive P. falciparum FCR-3 strain in the presence and absence of human serum albumin (HSA).26 As a benchmark, planar ketone analogue 3 had an IC50 of 0.0504 μM, but its potency decreased by more than 2 orders of magnitude upon HSA addition (IC50 = 5.50 μM; Table S1 of the Supporting Information). In striking contrast, the most potent TPH derivative 14 retained submicromolar potency regardless of the HSA additive (ΔIC50 = 0.130 μM). These findings support our hypothesis that introducing stereochemical and conformational complexity into the tropolone core mitigates non-specific plasma protein binding inherent to the planar framework, thereby demonstrating the utility of peptide hybrid derivatization for improving antimalarial candidate profiles.",
+        "section": "Main Text"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "29-64",
+        "unit": "%",
+        "interpretation": "Overall yield for LPPS ranged from 29% (dipeptide 33) to 64% (monopeptide 20). Solution-phase synthesis yields were lower (e.g., 29% for 17)."
+      },
+      "Longest Linear Steps": {
+        "value": 7,
+        "unit": "steps",
+        "interpretation": "For dipeptide 33 via LPPS."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "unspecified",
+        "interpretation": "unspecified"
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "count",
+        "interpretation": "Two failed attempts were explicitly described for deprotection strategies in solution-phase synthesis."
+      }
+    },
+    "significance": "The LPPS platform enabled rapid, modular, and systematic construction of TPH analogues, overcoming challenges of intrinsic reactivity and chelation properties of α-tropolones. Tropolone-L-Phe-OtBu (14) emerged as a lead with superior antimalarial potency compared to puberulic acid and artemisinin, and demonstrated remarkable activity in protein-rich media, validating the design principle that 3D peptide architectures mitigate detrimental plasma protein binding."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.6c00703",
+      "pmcid": "PMC13077680",
+      "title": "Liquid-Phase Peptide Synthesis of Tropolone-Peptide Hybrid Antimalarials.",
+      "authors": "Sennari G, Nakajima A, Nakahara H, Saito R, Ishiyama A, Hokari R, Iwatsuki M, Hirose T, Sunazuka T.",
+      "journal": "Org Lett",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC13077680?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/337ed270-158c-42cc-a24d-c34609bd1737.zip",
+      "parsed_at": "2026-05-11T06:44:47.368152+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 51,
+    "parseable": 26,
+    "canonicalized": 26,
+    "invalid": 25,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C(O)c1cc(O)c(O)c(O)c1=O",
+      "O=C1C=CC(C(=O)O)=C(OBn)C1=OBn",
+      "O=C1C=CC(C(=O)O)=C(OBn)C1=OBn",
+      "O=C(NCC(=O)OCC1=CC=CC=C1)C2=CC(OBn)=C(OBn)C(=O)C2=O",
+      "O=C(NCC(=O)OCC1=CC=CC=C1)C2=CC(OBn)=C(OBn)C(=O)C2=O",
+      "O=C1C=CC(C(=O)O)=C(OBn)C1=OBn",
+      "O=C(N1CCC[C@H]1C(=O)OBn)C1=CC(OBn)=C(OBn)C(=O)C1=O",
+      "O=C(N1CCC[C@H]1C(=O)OC(C)(C)C)C1=CC(OBn)=C(OBn)C(=O)C1=O",
+      "O=C(N1CCC[C@H]1C(=O)OBn)C1=CC(OBn)=C(OBn)C(=O)C1=O",
+      "O=C(N1CCC[C@H]1C(=O)OC(C)(C)C)C1=CC(OBn)=C(OBn)C(=O)C1=O"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

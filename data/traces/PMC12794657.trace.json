@@ -1,0 +1,317 @@
+{
+  "trace_id": "TS-PMC12794657",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-finerenone",
+    "smiles": "CCOC(=O)C1=C(C)NC(C)=C(C(N)=O)[C@@H]1c1ccc(CN)cc1OC",
+    "natural_product_class": "dihydronaphthyridine core",
+    "structural_features": {
+      "key_motifs": [
+        "dihydronaphthyridine core",
+        "axially chiral biaryl structure"
+      ]
+    },
+    "motivation": "Non-steroidal mineralocorticoid receptor antagonist under investigation for chronic kidney disease (CKD) associated with type 2 diabetes. Its rare dihydronaphthyridine core presents a unique synthetic challenge, and high enantiopurity is critical for clinical studies.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "yield_target_percent": "high",
+      "stereochemistry_required": true,
+      "free_text": "Efficient and scalable synthesis with high enantioselectivity."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming the dihydronaphthyridine ring",
+        "named_strategy": "formal [4+2] cycloaddition",
+        "reasoning": "A direct cycloaddition between 2-pyridone derivative 179 and a 1,3-dicarbonyl compound was initially considered to construct the dihydronaphthyridine core in a single step."
+      },
+      {
+        "bond_description": "C-H bond in the biaryl system",
+        "named_strategy": "asymmetric hydrogen atom transfer (HAT)",
+        "reasoning": "To achieve high enantioselectivity, the authors envisioned an asymmetric HAT strategy on the racemic biaryl intermediate 181, leveraging its atropisomeric nature for dynamic kinetic resolution."
+      }
+    ],
+    "rationale": "The initial direct formal [4+2] cycloaddition yielded low enantioselectivity, necessitating a revised strategy. The revised approach focused on forming the dihydronaphthyridine core first, then achieving enantioselectivity through an asymmetric HAT on the resulting atropisomeric intermediate via dynamic kinetic resolution."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The target molecule, (-)-finerenone, features a rare dihydronaphthyridine core and requires high enantiopurity for clinical studies.",
+        "gap": "An efficient and stereoselective method to construct the dihydronaphthyridine scaffold is needed.",
+        "decision": "To construct the bicyclic intermediate, a 2-pyridone derivative 178 was transformed over four steps."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(N)[nH]c(=O)c1"
+        ],
+        "product_smiles": [
+          "CCOc1cc(C(O)c2ccc(OC)c(C#N)c2)c(N)c(C)n1"
+        ],
+        "reagents": [],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 31,
+        "observation": "Bicyclic intermediate 179 was obtained in 31% yield over four steps."
+      },
+      "evidence": {
+        "text_span": "Starting from the 2-pyridone derivative 178, the authors synthesized the bicyclic intermediate 179 in four steps with an overall yield of 31%.",
+        "image_refs": [
+          "bb3f79cef738eac5dfac0f6733b1dadc67201a0d487da8c2e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Bicyclic intermediate 179 was successfully synthesized.",
+        "gap": "A concise and enantioselective route to (-)-finerenone is required.",
+        "decision": "To construct (-)-finerenone in a single step, a formal [4+2] cycloaddition between 179 and a 1,3-dicarbonyl compound, catalyzed by chiral phosphoric acid (R)-TRIP, was attempted."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOc1cc(C(O)c2ccc(OC)c(C#N)c2)c(N)c(C)n1",
+          "CC(=O)CC(N)=O"
+        ],
+        "product_smiles": [
+          "CCOC1=NC(C)=C(N)C(C(N)=O)C(C)=C1Nc1ccc(OC)c(C#N)c1"
+        ],
+        "catalyst": "CC(C)C1=CC(C(C)C)=CC2=C1C(O[P](O)(O[C]3=C(C(C)C)C=C(C(C)C)C=C3C4=CC=CC=C4)O)=C(C(C)C)C5=CC=CC=C52",
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 19,
+        "ee_percent": 15,
+        "failure_mode": "low_yield",
+        "observation": "This approach delivered the target compound in only 19% yield and a low 15% ee."
+      },
+      "evidence": {
+        "text_span": "Initially, they attempted a formal [4+2] cycloaddition between 179 and a 1,3-dicarbonyl compound, catalyzed by the chiral phosphoric acid (R)-TRIP, aiming to construct (−)-finerenone in a single step. However, this approach delivered the target compound in only 19% yield and a low 15% ee (Scheme 25).",
+        "image_refs": [
+          "bb3f79cef738eac5dfac0f675384588a557ca5463b1dadc67201a0d487da8c2e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "The direct asymmetric cycloaddition failed to provide sufficient enantioselectivity and yield.",
+        "gap": "A new strategy is needed to achieve high enantiopurity, which is critical for clinical studies.",
+        "decision": "To overcome the limitations, the authors decided to perform a formal [4+2] cycloaddition followed by in-situ oxidation to form intermediate 181, and then pursue asymmetric hydrogenation on this intermediate."
+      },
+      "revises_step_id": 2,
+      "evidence": {
+        "text_span": "Given that high enantiopurity is critical for subsequent clinical studies, the authors needed to revise their strategy. Instead of pursuing a direct asymmetric cyclization, they performed a formal [4+2] cycloaddition between 179 and the dicarbonyl compound, followed by in-situ oxidation of the resulting intermediate 180 to afford compound 181 in a one-pot sequence.",
+        "image_refs": [
+          "bb3f79cef738eac5dfac0f6733b1dadc67201a0d487da8c2e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The previous direct cycloaddition attempt yielded low enantioselectivity. A revised strategy involves forming intermediate 181 first.",
+        "gap": "Intermediate 181 needs to be synthesized efficiently.",
+        "decision": "To synthesize 181, a formal [4+2] cycloaddition between 179 and the dicarbonyl compound was performed, followed by in-situ oxidation of the resulting intermediate 180 in a one-pot sequence."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOc1cc(C(O)c2ccc(OC)c(C#N)c2)c(N)c(C)n1",
+          "CC(=O)CC(N)=O"
+        ],
+        "product_smiles": [
+          "CCOc1nc(C)c(N)c(C(N)=O)c(C)c1=Nc1ccc(OC)c(C#N)c1"
+        ],
+        "reagents": [
+          "HNO3"
+        ],
+        "named_reaction": "formal [4+2] cycloaddition, in-situ oxidation",
+        "observation": "Compound 181 was obtained in 57% yield.",
+        "time": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "observation": "Compound 181 was obtained in 57% yield via a one-pot sequence."
+      },
+      "evidence": {
+        "text_span": "Instead of pursuing a direct asymmetric cyclization, they performed a formal [4+2] cycloaddition between 179 and the dicarbonyl compound, followed by in-situ oxidation of the resulting intermediate 180 to afford compound 181 in a one-pot sequence. At this step, the key challenge was to obtain (−)-finerenone with high enantioselectivity through asymmetric hydrogenation of intermediate 181 (Scheme 25).",
+        "image_refs": [
+          "bb3f79cef738eac5dfac0f675384588a557ca5463b1dadc67201a0d487da8c2e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Intermediate 181 was synthesized, and it exists as a racemic mixture of atropisomers due to steric hindrance.",
+        "gap": "How to achieve high enantioselectivity in the hydrogenation of 181?",
+        "decision": "The authors hypothesized that the two atropisomers would exhibit different reactivity and selectivity under catalytic conditions, enabling a dynamic kinetic resolution process for selective formation of optically enriched finerenone."
+      },
+      "evidence": {
+        "text_span": "During attempts to reduce intermediate 181 via asymmetric hydrogen atom transfer (HAT), the authors found that 181 exists as a racemic mixture, with chirality originating from its axially chiral biaryl structure. Owing to the steric hindrance introduced by substituents, 181 exists as a pair of atropisomers, which inspired a new strategy for achieving asymmetric hydrogenation. The authors proposed that the two atropisomers exhibit different reactivity and selectivity under catalytic conditions, enabling a process of kinetic resolution. More importantly, they envisioned that this inherent resolution could be transformed into a dynamic kinetic resolution, thereby allowing for the selective formation of optically enriched finerenone.",
+        "image_refs": [
+          "7392ef9ee88cd57f041170c59d7460ede85fe5789a61fe006b994713fb3eef0d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 181 is a racemic mixture of atropisomers. Dynamic kinetic resolution is hypothesized to achieve enantioselectivity.",
+        "gap": "Demonstrate the feasibility of dynamic kinetic resolution for asymmetric hydrogenation of 181.",
+        "decision": "To obtain (+)-finerenone, asymmetric hydrogen atom transfer (HAT) was performed on 181 using a chiral (R)-phosphoric acid catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOc1nc(C)c(N)c(C(N)=O)c(C)c1=Nc1ccc(OC)c(C#N)c1",
+          "C=C1NC(C)=C(C(=O)OCC)CC1C(=O)OCC"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1=C(C)NC(C)=C(C(N)=O)[C@H]1c1ccc(CN)cc1OC"
+        ],
+        "catalyst": "O=P(O)(Oc1c(C2=Cc3ccccc3C=C2)c2ccccc2c1)Oc1c(C2=Cc3ccccc3C=C2)c2ccccc2c1",
+        "temperature": "40 °C",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 42,
+        "ee_percent": 94,
+        "observation": "(+)-finerenone was obtained in 42% yield with 94% ee."
+      },
+      "evidence": {
+        "text_span": "Subsequent experiments confirmed this hypothesis: by employing chiral phosphoric acids of different configurations as catalysts, the authors successfully obtained (+)-finerenone in 42% yield with 94% ee, and (−)-finerenone in 67–82% yield with 94:6 er, respectively (Scheme 26).",
+        "image_refs": [
+          "7392ef9ee88cd57f041170c59d7460ede85fe5789a61fe006b994713fb3eef0d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dynamic kinetic resolution was successful for (+)-finerenone. Now, the synthesis of (-)-finerenone is needed.",
+        "gap": "Achieve high enantioselectivity for (-)-finerenone.",
+        "decision": "To obtain (-)-finerenone, asymmetric hydrogen atom transfer (HAT) was performed on 181 using a chiral (S)-phosphoric acid catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOc1nc(C)c(N)c(C(N)=O)c(C)c1=Nc1ccc(OC)c(C#N)c1",
+          "C=C1NC(C)=C(C(=O)OCC)CC1C(=O)OCC"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1=C(C)NC(C)=C(C(N)=O)[C@@H]1c1ccc(CN)cc1OC",
+          "CCOC(=O)C1=C(C)NC(C)=C(C(N)=O)C1c1ccc(CN)cc1OC"
+        ],
+        "catalyst": "O=P(O)(Oc1c(C2=Cc3ccccc3C=C2)c2ccccc2c1)Oc1c(C2=Cc3ccccc3C=C2)c2ccccc2c1",
+        "temperature": "100 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "ee_percent": 94,
+        "observation": "(-)-finerenone was obtained in 82% yield with 94:6 er (94% ee)."
+      },
+      "evidence": {
+        "text_span": "Subsequent experiments confirmed this hypothesis: by employing chiral phosphoric acids of different configurations as catalysts, the authors successfully obtained (+)-finerenone in 42% yield with 94% ee, and (−)-finerenone in 67–82% yield with 94:6 er, respectively (Scheme 26).",
+        "image_refs": [
+          "7392ef9ee88cd57f041170c59d7460ede85fe5789a61fe006b994713fb3eef0d.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "The overall yield for the synthesis of (-)-finerenone is not explicitly stated as a single value, but the final step yielded 82%."
+      },
+      "Longest Linear Steps": {
+        "value": 6,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence to (-)-finerenone is 6 steps."
+      },
+      "Total Steps": {
+        "value": 7,
+        "unit": "steps",
+        "interpretation": "The total number of steps including the failed attempt and revision is 7."
+      },
+      "Failed Attempts Count": {
+        "value": 1,
+        "unit": "count",
+        "interpretation": "One failed attempt was reported."
+      }
+    },
+    "significance": "This concise and enantioselective synthesis of (-)-finerenone, a non-steroidal mineralocorticoid receptor antagonist, is highly significant given its ongoing phase III clinical trials. The development of an asymmetric hydrogen atom transfer (HAT) strategy leveraging dynamic kinetic resolution of atropisomers is a notable methodological advance for constructing the rare dihydronaphthyridine core with high enantiopurity, which is critical for pharmaceutical applications."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.3762/bjoc.22.4",
+      "pmcid": "PMC12794657",
+      "title": "Total synthesis of natural products based on hydrogenation of aromatic rings.",
+      "authors": "Wu H, Qi X.",
+      "journal": "Beilstein J Org Chem",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12794657?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/bef1af1b-1989-47db-9d58-026d0b18ea9f.zip",
+      "parsed_at": "2026-05-07T14:30:26.360217+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 16,
+    "parseable": 16,
+    "canonicalized": 16,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

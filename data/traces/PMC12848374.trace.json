@@ -1,0 +1,183 @@
+{
+  "trace_id": "TS-PMC12848374",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-indolizidine 201",
+    "smiles": "C[C@@H]1CCCN2CCC[C@@H]12",
+    "natural_product_class": "alkaloid",
+    "structural_features": {
+      "ring_systems": "fused 5/6-membered azacycle",
+      "key_motifs": [
+        "indolizidine"
+      ]
+    },
+    "motivation": "Indolizidine alkaloids feature a 5/6-membered fused azacycle system as the core skeleton and are widely present among a multitude of marine and terrestrial living beings, illustrating numerous distinctive biological activities. A major synthetic challenge is the construction of an α-tertiary or quaternary chiral center on the fused N-heterocycle framework.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Yu, Yuan",
+        "year": 2022,
+        "doi": "10.1021/jacs.2c04007",
+        "key_strategy": "photoexcited Cu/BOX-catalyzed kinetic resolution of alkenes"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Achieve a more concise synthesis with improved yield and enantioselectivity compared to previous routes."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond at α-position of N-Bz-pyrrolidine",
+        "named_strategy": "Ni-catalyzed enantioselective C(sp3)–H alkylation",
+        "reasoning": "This strategy allows for the direct construction of the chiral center at the α-position of the pyrrolidine ring, streamlining the synthesis and avoiding the need for stoichiometric chiral synthons or pre-existing stereocenters."
+      }
+    ],
+    "rationale": "The strategy focuses on a photoredox nickel-catalyzed enantioselective α-C(sp3)–H alkylation of N-Bz-pyrrolidine, followed by ring closure to form the indolizidine core. This approach aims to simplify the synthesis by directly forming the key chiral center and the fused ring system in fewer steps."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous syntheses of indolizidine alkaloids, such as Yu and Yuan's 2022 synthesis of (-)-indolizidine 201, involved multiple steps (8 steps, 27% yield) and relied on kinetic resolution of alkenes.",
+        "gap": "A more concise and efficient method for constructing the α-tertiary or quaternary chiral center on the fused N-heterocycle framework is needed.",
+        "decision": "To achieve a more streamlined synthesis, we chose a photoredox nickel-catalyzed enantioselective α-C(sp3)–H alkylation of N-Bz-pyrrolidine 45 with an in situ prepared N-hydrophthalimide (NHPI) ester, utilizing chiral BOX ligand L2. This is expected to directly form the chiral center and allow for subsequent ring closure."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(c1ccccc1)N1[CH]CCC1"
+        ],
+        "product_smiles": [
+          "O=C(CCC[C@H]1CCCN1C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "reagents": [
+          "Bz(CH2)3CO2H",
+          "DCC",
+          "NHPI",
+          "NiBr2.DME",
+          "NaHCO3",
+          "Ir[dFCF3ppy]2(dtbbpy)PF6"
+        ],
+        "ligand": "CC1=CC(C(C2(C(O[C@@](C(C3=CC(C)=CC(C)=C3)(C4=CC=CC=C4)C5=CC=CC=C5)N=C2C6=CC=CC=C6)C7=CC(C)=CC(C)=C7)C8(C(O[C@@](C(C9=CC=CC=C9)(C%10=CC=CC=C%10)C%11=CC=CC=C%11)N=C8C%12=CC=CC=C%12)C%13=CC=CC=C%13))C=C1",
+        "temperature": "unspecified",
+        "time": "unspecified",
+        "atmosphere": "unspecified",
+        "stoichiometry": {},
+        "catalyst": "NiBr2.DME"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "The α-C(sp3)–H alkylation of N-Bz-pyrrolidine 45 with in situ prepared N-hydrophthalimide (NHPI) ester was successful, yielding compound 46 in 64% yield."
+      },
+      "evidence": {
+        "text_span": "Drawing from previous studies,32 in 2024, the Huo group demonstrated a photoredox nickel-catalyzed enantioselective α-C(sp3)–H alkylation of N-Bzpyrrolidine 45 with in situ prepared N-hydrophthalimide (NHPI) ester utilizing chiral BOX ligand L2, and the (−)-indolizidine 201 36 was obtained in 59% yield over 3 steps with additional acidic deprotection and diastereoselective reductive amination of the corresponding compound 46 to construct the 5/6- membered fused ring (Scheme 3c).33",
+        "image_refs": [
+          "9c6b1454ffb4dd750560886ecb7f819290e2b6b9800518e43a6812ab2c1d40d6.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 46, obtained from the previous alkylation step, contains the necessary carbon skeleton for the indolizidine core.",
+        "gap": "The 5/6-membered fused ring system needs to be constructed, and the protecting groups need to be removed to yield the final natural product.",
+        "decision": "To construct the fused ring and deprotect, we will perform acidic deprotection followed by diastereoselective reductive amination of compound 46."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(CCC[C@H]1CCCN1C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C[C@@H]1CCCN2CCC[C@@H]12"
+        ],
+        "reagents": [
+          "HCl",
+          "K2CO3",
+          "Pd/C",
+          "H2"
+        ],
+        "solvent": "dioxane",
+        "temperature": "unspecified",
+        "time": "unspecified",
+        "atmosphere": "unspecified",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Acidic deprotection and diastereoselective reductive amination of compound 46 successfully constructed the 5/6-membered fused ring, yielding (-)-indolizidine 201 in 92% yield for this step."
+      },
+      "evidence": {
+        "text_span": "Drawing from previous studies,32 in 2024, the Huo group demonstrated a photoredox nickel-catalyzed enantioselective α-C(sp3)–H alkylation of N-Bzpyrrolidine 45 with in situ prepared N-hydrophthalimide (NHPI) ester utilizing chiral BOX ligand L2, and the (−)-indolizidine 201 36 was obtained in 59% yield over 3 steps with additional acidic deprotection and diastereoselective reductive amination of the corresponding compound 46 to construct the 5/6- membered fused ring (Scheme 3c).33",
+        "image_refs": [
+          "9c6b1454ffb4dd750560886ecb7f819290e2b6b9800518e43a6812ab2c1d40d6.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [],
+    "metrics": {
+      "Overall Yield": {
+        "value": 59,
+        "unit": "%",
+        "interpretation": "Overall yield for the 3-step synthesis."
+      },
+      "Total Steps": {
+        "value": 3,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps."
+      }
+    },
+    "comparison_to_prior": "The synthesis achieved (-)-indolizidine 201 in 59% yield over 3 steps, which is more concise and efficient than the previous 8-step approach by Yu and Yuan (27% yield).",
+    "significance": "This synthesis demonstrates the power of photoredox nickel-catalyzed enantioselective C–H alkylation for the rapid and efficient construction of complex natural products, particularly those with challenging chiral centers on fused N-heterocycle frameworks. The improved conciseness and yield represent a significant advancement in the synthesis of indolizidine alkaloids."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5sc08653a",
+      "pmcid": "PMC12848374",
+      "title": "Enantioselective C-H functionalization: logic and applications in the total synthesis of natural products.",
+      "authors": "Qian PF, Shi BF.",
+      "journal": "Chem Sci",
+      "year": 2026,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC12848374?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/ca41407f-09f1-424c-bc7b-f31d4c1a818a.zip",
+      "parsed_at": "2026-05-07T14:32:48.779140+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 5,
+    "parseable": 5,
+    "canonicalized": 5,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

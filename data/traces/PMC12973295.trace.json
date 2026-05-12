@@ -1,0 +1,1594 @@
+{
+  "trace_id": "TS-PMC12973295",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "enteropeptin A",
+    "smiles": "CSCC[C@H](N)C(=O)N[C@H](CCCCN)C(=O)NCC(=O)N(C)CC(C)(C)SCCC(=O)N[C@H](C)C(=O)N1CCC[C@H]1C(=O)N1CCC[C@H]1C(=O)N[C@@H](CO)[C@@H](O)C(=O)O",
+    "natural_product_class": "sactipeptide",
+    "structural_features": {
+      "key_motifs": [
+        "thioaminoketal",
+        "thiomorpholine ring"
+      ]
+    },
+    "motivation": "Sactipeptides are a class of natural product peptides with remarkable antibiotic properties. Enteropeptins A-C are Type 4 sactipeptides containing an unusual six-membered thiomorpholine ring with a thioaminoketal formed between neighboring cysteine and N-methylornithine residues. The synthesis aims to develop a unified strategy for these sactipeptides.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "First total synthesis of a sactipeptide, unified synthesis of enteropeptins A-C, stereochemical assignment of the thioaminoketal."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "thiomorpholine ring formation",
+        "named_strategy": "Markovnikov hydrothiolation",
+        "reasoning": "This reaction was inspired by pioneering work in the area of chiral Brønsted acid catalysis and was found to be essential for α-selective thiolation of dehydroamino acids. It forms the carbon-sulfur bond found in sactipeptides.",
+        "alternatives_considered": [
+          {
+            "strategy": "Late-stage Markovnikov hydrothiolation of an 8-mer peptide containing a dehydroamino acid and a cysteine residue.",
+            "rejected_because": "Unsuccessful due to catalyst inactivation by the complex peptide starting material and unfavorable geometric constraints for 7-endo trig cyclization."
+          },
+          {
+            "strategy": "Annulation reaction between a methyl ester of a dehydroamino acid and a cysteine with an unprotected amine.",
+            "rejected_because": "Unsuccessful due to lack of reactivity (amine deprotonating the dithiophosphoric acid catalyst) and instability of thioaminoketal under basic conditions for amidative cyclization."
+          }
+        ]
+      },
+      {
+        "bond_description": "peptide bond formation",
+        "named_strategy": "Amidative coupling",
+        "reasoning": "Used to assemble peptide fragments, allowing for a modular and unified synthesis of enteropeptins through sequential coupling of different N- and C-terminal peptide fragments."
+      }
+    ],
+    "rationale": "The initial strategy involved late-stage cyclization, which proved unsuccessful. The second strategy focused on thiomorpholine annulation, also with limited success. The third and ultimately successful strategy involved early-stage formation of the thiomorpholine ring via Markovnikov hydrothiolation, followed by amidative coupling of N- and C-terminal peptide fragments. This modular approach allowed for a unified synthesis of enteropeptins A-C."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Synthesis of the N-terminal tripeptide fragment of enteropeptin A.",
+        "gap": "Need to synthesize the dipeptide 20 for subsequent amidation.",
+        "decision": "To synthesize dipeptide 20, coupled Boc-Lys(Cbz)-OH (18) and glycine methyl ester hydrochloride salt (19) using EDC, HOBt, DIPEA, expecting formation of the amide bond."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N[C@@H](CCCCNC(=O)OCc1ccccc1)C(=O)O",
+          "COC(=O)CN.Cl"
+        ],
+        "product_smiles": [
+          "COC(=O)CNC(=O)[C@H](CCCCNC(=O)OCc1ccccc1)NC(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "EDC",
+          "HOBt",
+          "DIPEA"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "Dipeptide 20 was obtained in 56% yield as a white solid."
+      },
+      "evidence": {
+        "text_span": "Dipeptide 16. A 250 mL flame-dried round-bottom flask equipped with a magnetic stir bar was charged with Boc-Lys(Cbz)−OH (18, 2.00 g, 5.30 mmol, 1.0 equiv) and HOBt (0.70 g, 5.30 mmol, 1.0 equiv). The reaction vessel was evacuated and backfilled with nitrogen gas three times. Anhydrous CH2Cl2 (40 mL) was added to the reaction. Then, the reaction vessel was cooled to 0 °C followed by the addition of EDC (0.90 mL, 5.30 mmol, 1.0 equiv). The reaction mixture was kept at this temperature for 30 min. At this point, glycine methyl ester hydrochloride salt (19, 0.70 g, 5.30 mmol, 1.0 equiv) was added as a solid followed by the dropwise addition of Hünig’s base (iPr2NEt, 2.30 mL, 13.2 mmol, 2.5 equiv). The reaction mixture was left to warm to room temperature. After 16 h, the reaction mixture was quenched with 1 M HCl (20 mL), and then extracted with CH2Cl2 (3 × 50 mL). The combined organic layer was washed with brine and dried over with anhydrous Na2SO4, filtered and concentrated under reduced pressure. The resulting crude mixture was purified by silica gel column chromatography (50−90% EtOAc in Hexanes) to provide dipeptide 20 (1.35 g, 56% yield) as a white solid.",
+        "section": "EXPERIMENTAL SECTION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dipeptide 20 was synthesized.",
+        "gap": "Need to remove the N-terminal Boc group to obtain dipeptide 16.",
+        "decision": "To remove the Boc group, treated dipeptide 20 with trifluoroacetic acid, expecting deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)CNC(=O)[C@H](CCCCNC(=O)OCc1ccccc1)NC(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)CNC(=O)[C@@H](N)CCCCNC(=O)OCc1ccccc1"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "Dipeptide 16 was obtained in 83% yield as a white solid."
+      },
+      "evidence": {
+        "text_span": "Dipeptide 16. A 500 mL flame-dried round-bottom flask equipped with a magnetic stir bar was charged with Boc-Lys(Z)-Gly-OMe (20, 10.4 g, 23 mmol, 1.0 equiv). The reaction vessel was evacuated and backfilled with nitrogen gas three times. Anhydrous CH2Cl2 (100 mL) was introduced via cannula followed by the addition of trifluoroacetic acid (100 mL). After 1 h, the reaction mixture was concentrated under reduced pressure. The resulting solution was further basified with saturated NaHCO3 (150 mL), extracted with EtOAc (200 mL x 3), and washed with brine (100 mL). The combined organic layer was dried over Na2SO4 and concentrated under reduced pressure to afford dipeptide 16 as a white solid (6.7 g, 83% yield).",
+        "section": "EXPERIMENTAL SECTION"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dipeptide 16 was obtained.",
+        "gap": "Need to couple Cbz-Met-OH (15) with dipeptide 16 to form tripeptide 17.",
+        "decision": "To form tripeptide 17, converted Cbz-Met-OH (15) to its N-hydroxysuccinimide (NHS) ester with DCC and NHS, then subjected it to amidation with dipeptide 16, expecting the formation of the tripeptide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CSCC[C@H](NC(=O)OCc1ccccc1)C(=O)O",
+          "COC(=O)CNC(=O)[C@@H](N)CCCCNC(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NHS",
+          "DCC",
+          "NaHCO3"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Tripeptide 17 was obtained in 73% yield as a white solid."
+      },
+      "evidence": {
+        "text_span": "Tripeptide 17. A 500 mL flame-dried round-bottom flask equipped with a magnetic stir bar was charged with Z-Met-OH (15, 2.83 g, 10 mmol, 1.0 equiv) and N-hydroxysuccinimide (1.38 g, 12 mmol, 1.2 equiv). The reaction vessel was evacuated and backfilled with nitrogen gas three times. Anhydrous THF (60 mL) was introduced via cannula. Then, the reaction vessel was cooled to 0 °C and followed by the addition of DCC (2.16 g, 10.5 mmol, 1.05 equiv) as a solid. The reaction mixture was kept at this temperature for 30 min and slowly warmed to room temperature. After 16 h, the reaction mixture was filtered through a fritted glass funnel to remove DCU. The filtrate was concentrated under reduced pressure and used directly in the next step without further purification.\nThe crude residue was then charged with H-Lys(Z)-Gly-OMe (16, 3.51 g, 10 mmol, 1.0 equiv). The reaction vessel was evacuated and backfilled with nitrogen gas three times. Anhydrous THF (60 mL) was introduced via cannula. Then, the reaction mixture was cooled to 0 °C and followed by the addition of NaHCO3 (3.36 g, 40 mmol, 4 equiv) dissolved in water (60 mL). After 30 min, the reaction was slowly warmed to room temperature and stirred for 16h. The reaction mixture was then washed with 1 M HCl (100 mL), extracted with EtOAc (200 mL x 3) and washed with brine (100mL). The combined organic layer was dried over Na2SO4 and concentrated under reduced pressure. The resulting crude residue was purified by crystallization using EtOAc to afford the tripeptide 17 as a white solid (4.50 g, 73% yield).",
+        "section": "EXPERIMENTAL SECTION"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tripeptide 17 was synthesized.",
+        "gap": "Need to convert the methyl ester of 17 to a carboxylic acid 21.",
+        "decision": "To obtain carboxylic acid 21, subjected the methyl ester of 17 to basic saponification with sodium hydroxide, expecting hydrolysis."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CSCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCCCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCC(=O)O"
+        ],
+        "reagents": [
+          "NaOH"
+        ],
+        "solvent": "MeOH",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Carboxylic acid 21 was afforded in 94% yield as a white solid."
+      },
+      "evidence": {
+        "text_span": "Acid 21. A 250 mL round-bottom flask equipped with a magnetic stir bar was charged with tripeptide 17 (0.92 g, 1.5 mmol, 1.0 equiv). Methanol (40 mL) was added to the reaction vessel followed by the addition of sodium hydroxide (0.24 g, 6 mmol, 4.0 equiv) in deionized water (20 mL). After 1h, the reaction mixture was acidified with 1 M HCl, extracted with EtOAc (80 mL x 4), and washed with brine (50 mL). The combined organic layers were dried over Na2SO4 and concentrated under reduced pressure. The crude residue was purified by silica gel column chromatography (1% to 6% MeOH in CH2Cl2) to afford acid 21 as a white solid (0.85 g, 94% yield).",
+        "section": "EXPERIMENTAL SECTION"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carboxylic acid 21 was obtained.",
+        "gap": "Need to couple acid 21 with (±)-aminophosphonate 22 to form phosphonate 23.",
+        "decision": "To form phosphonate 23, coupled acid 21 with (±)-aminophosphonate 22 using EDC, HOBt, and Hünig’s base, expecting amide bond formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CSCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCCCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCC(=O)O",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "EDC",
+          "HOBt",
+          "DIPEA"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "Phosphonate 23 was afforded in 66% yield as a 1:1 mixture of diastereomers."
+      },
+      "evidence": {
+        "text_span": "Phosphonate 23. A 250 mL flame-dried round-bottom flask equipped with a magnetic stir bar was charged with acid 21 (0.85 g, 1.4 mmol, 1.0 equiv) and HOBt (283 mg, 2.1 mmol, 1.5 equiv). The reaction vessel was evacuated and backfilled with nitrogen gas three times. At this point, the reaction vessel was cooled to 0 °C, and CH2Cl2 (20 mL) was added to the reaction vessel followed by the addition of EDC (0.36 mL, 2.07 mmol, 1.5 equiv). The reaction mixture was kept at this temperature for 30 min. Then, amine 22 (0.5 g, 2.1 mmol, 1.5 equiv) was added as a solution in dichloromethane (10 mL) followed by the dropwise addition of Hünig’s base (iPr2NEt, 0.6 mL, 3.5 mmol, 2.5 equiv). The reaction mixture was left to slowly warm to room temperature. After 16 h, the solution was washed with 10 wt % citric acid (20 mL), extracted with dichloromethane (50 mL x 3) and washed with brine (50 mL). The combined organic layers were dried over Na2SO4 and concentrated in vacuo. The crude residue was purified by silica gel column chromatography (1% to 5% MeOH in CH2Cl2) to afford phosphonate 23 as a white solid (760 mg, 66% yield) as a 1:1 mixture of diastereomers.",
+        "section": "EXPERIMENTAL SECTION"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Phosphonate 23 was obtained.",
+        "gap": "Need to perform a Horner-Wadsworth-Emmons (HWE) reaction with aldehyde 24 to form the dehydroamino acid 25.",
+        "decision": "To form dehydroamino acid 25, subjected phosphonate 23 to HWE reaction with aldehyde 24 using tetramethylguanidine as base, expecting exclusive formation of the Z-dehydroamino acid."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CN(C=O)C(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "tetramethylguanidine"
+        ],
+        "solvent": "ClCCl"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Tetrapeptide 25 was obtained in 89% yield as a white solid with exclusive formation of the Z-dehydroamino acid."
+      },
+      "evidence": {
+        "text_span": "Tetrapeptide 25. A flame-dried round-bottom flask was charged with phosphonate 23 (4.9 g, 6 mmol, 1.0 equiv). The reaction vessel was evacuated and backfilled with nitrogen gas and this process was repeated three times. Anhydrous CH2Cl2 (60 mL) was introduced via cannula. Then, tetramethylguanidine (1.9 mL, 15 mmol, 2.5 equiv) was added to the reaction mixture, followed by the addition of aldehyde 24 (1.6 g, 7.2 mmol, 1.2 equiv) in 60 mL CH2Cl2. After 15 min, reaction mixture was quenched with 1 M HCl (20 mL) and the reaction mixture was then extracted with CH2Cl2 (2 × 80 mL). The combined organic layer was washed with brine and dried over with anhydrous Na2SO4, filtered, and concentrated under reduced pressure. The resulting crude mixture was purified by silica gel column chromatography (80% EtOAc in Hexanes) to provide the tetrapeptide 25 (4.9 g, 89% yield) as a white solid.",
+        "section": "EXPERIMENTAL SECTION"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetrapeptide 25 was obtained.",
+        "gap": "Need to remove the tert-butyl ester of 25 to furnish carboxylic acid 26.",
+        "decision": "To obtain carboxylic acid 26, removed the tert-butyl ester of 25 with ZnBr2, expecting deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "ZnBr2"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Carboxylic acid 26 was furnished in 70% yield as a white solid."
+      },
+      "evidence": {
+        "text_span": "Acid 26. A flame-dried round-bottom flask was charged with tetrapeptide 25 (4.6 g, 5 mmol, 1.0 equiv). The reaction vessel was evacuated and backfilled with nitrogen gas and this process was repeated three times. Anhydrous CH2Cl2 (50 mL) was introduced via cannula. Then, zinc bromide (11.2 g, 50 mmol, 10.0 equiv) was added to the reaction mixture and the reaction was left stirring for 16h. After 16 h, the reaction was quenched with 1 M HCl (50 mL) and the reaction mixture was then extracted with CH2Cl2 (6 × 80 mL). The combined organic layer was washed with brine and dried over with anhydrous sodium sulfate, filtered, and concentrated under reduced pressure. The resulting crude mixture was purified by silica gel column chromatography (1−4% MeOH in CH2Cl2) to provide the acid 26 (3.0 g, 70% yield) as a white solid.",
+        "section": "EXPERIMENTAL SECTION"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C-terminal fragment of enteropeptin A was prepared starting with commercially available Fmoc-Pro-Pro-OH (27).",
+        "gap": "Need to couple Fmoc-Pro-Pro-OH (27) with H-Ser(tBu)-OtBu hydrochloride salt (28) to produce tripeptide 29.",
+        "decision": "To produce tripeptide 29, coupled Fmoc-Pro-Pro-OH (27) with H-Ser(tBu)-OtBu hydrochloride salt (28) using EDC, HOAt, and DIPEA, expecting amide bond formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(C)(C)COC[C@@H](CN)C(=O)OC(C)(C)C.Cl"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "EDC",
+          "HOAt",
+          "DIPEA"
+        ],
+        "solvent": "DMF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Tripeptide 29 was produced in 81% yield."
+      },
+      "evidence": {
+        "text_span": "The C-terminal fragment of enteropeptin A was prepared starting with commercially available Fmoc-protected double proline (Fmoc-Pro-Pro-OH, 27) which was coupled to H-Ser(tBu)-OtBu hydrochloride salt (28) to produce tripeptide 29 (Scheme 4).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tripeptide 29 was obtained.",
+        "gap": "Need to deprotect the Fmoc group to produce amine 30.",
+        "decision": "To produce amine 30, performed Fmoc deprotection using piperidine, expecting smooth deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)(C)COC[C@H](NC(=O)[C@@H]1CCCN1C(=O)[C@H]1CCCN1)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "piperidine"
+        ],
+        "solvent": "DMF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "Amine 30 was produced in 75% yield. The moderate yield was proposed to be due to the water solubility of the amine product."
+      },
+      "evidence": {
+        "text_span": "Fmoc deprotection occurred smoothly to produce amine 30 in 75% yield. The moderate yield for this deprotection step was proposed to be due to the water solubility of the amine product.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tripeptide 29 was obtained.",
+        "gap": "Need to couple Fmoc-Cys(Mmt)-OH (31) to the deprotected tripeptide to form tetrapeptide 32.",
+        "decision": "To produce tetrapeptide 32, subjected Fmoc-protected tripeptide 29 to one equivalent of DBU for Fmoc deprotection, then added Fmoc-Cys(Mmt)-OH (31), HOAt, and EDC directly to the reaction, expecting a one-pot deprotection-coupling approach."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DBU",
+          "HOAt",
+          "EDC"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "observation": "Tetrapeptide 32 was produced in 79% yield directly from 29."
+      },
+      "evidence": {
+        "text_span": "Therefore, we next examined the one pot deprotection coupling approach utilized in Boger’s synthesis of streptide.35 Fmoc-protected tripeptide 29 was subjected to one equivalent of 1,8-diazabicycloundec-7-ene (DBU) in dichloromethane at 0 °C for 90 min. After complete consumption of the starting material was determined by TLC analysis, Fmoc-Cys(Mmt)−OH (31), HOAt and EDC were added directly to the reaction to produce tetrapeptide 32 in 79% yield directly from 29.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetrapeptide 32 was obtained.",
+        "gap": "Need to unveil the N-terminal amine to afford tetrapeptide 33.",
+        "decision": "To afford tetrapeptide 33, treated 32 with DBU, expecting Fmoc deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "observation": "Tetrapeptide 33 was afforded in quantitative yield as a white foam."
+      },
+      "evidence": {
+        "text_span": "Treatment of 32 with DBU in dichloromethane unveiled the N-terminal amine to afford tetrapeptide 33 in quantitative yield.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carboxylic acid 26 and tetrapeptide 33 were obtained.",
+        "gap": "Need to couple the two peptide fragments 26 and 33 to afford octapeptide 34.",
+        "decision": "To afford octapeptide 34, coupled the two peptide fragments 26 and 33 using EDC, HOAt, and Hünig’s base, expecting amide bond formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "EDC",
+          "HOAt",
+          "DIPEA"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 50,
+        "observation": "Octapeptide 34 was afforded in 50% yield as a white solid."
+      },
+      "evidence": {
+        "text_span": "Octapeptide 34. A flame-dried 50 mL round-bottom flask was charged with carboxylic acid 26 (800.0 mg, 0.93 mmol, 1.0 equiv) and N-hydroxysuccinimide (160.0 mg, 1.39 mmol, 1.5 equiv). The reaction vessel was evacuated and backfilled with nitrogen gas, and this process was repeated three times. Anhydrous CH2Cl2 (8 mL) was added, and the resulting mixture was cooled to 0 °C. Then, N,N′ dicyclohexylcarbodiimide (286.9 mg, 1.39 mmol, 1.5 equiv) was added as a solid. The reaction mixture was stirred under an ice bath for 1 h. Next, amine 33 (729.6 mg, 0.93 mmol, 1.0 equiv) in CH2Cl2 (7 mL) was added and the reaction mixture was allowed to warm slowly to room temperature and stirred for overnight. On complete consumption of all the starting material as indicated by TLC, the reaction mixture was quenched by adding brine and extracted with CH2Cl2 (3 × 25 mL). The combined organic layer was washed brine, and then dried over anhydrous Na2SO4, filtered, and concentrated in vacuo. The crude mixture was purified by silica gel column chromatography (0% to 5% MeOH in CH2Cl2) to afford octapeptide 34 (760.0 mg, 50% yield) as a white solid.",
+        "section": "EXPERIMENTAL SECTION"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Octapeptide 34 was obtained.",
+        "gap": "Need to selectively deprotect the 4-methoxytrityl group to afford thiol 35.",
+        "decision": "To afford thiol 35, selectively deprotected the 4-methoxytrityl group of 34 with 2% TFA and 2% triisopropylsilane (TIPS) in CH2Cl2, expecting deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TFA",
+          "triisopropylsilane"
+        ],
+        "solvent": "ClCCl"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Thiol 35 was afforded in 78% yield as a white solid."
+      },
+      "evidence": {
+        "text_span": "The two peptide fragments 26 and 33 were coupled using EDC, HOAt and Hünig’s base to afford octapeptide 34 containing the enteropeptin A sequence. The 4-methoxytrityl group was selectively deprotected with 2% TFA and 2% triisopropylsilane (TIPS) in CH2Cl2 to afford thiol 35 in 78% yield (Scheme 2).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Thiol 35 was obtained, and the key step of the synthesis was to attempt the cyclization.",
+        "gap": "Need to cyclize thiol 35 to form the thiomorpholine ring.",
+        "decision": "To form the thiomorpholine ring, subjected thiol 35 to dithiophosphoric acid (dtPa) 36 and acetonitrile at room temperature, expecting cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O=P(S)(S)c1ccccc1-c1ccccc1"
+        ],
+        "solvent": "CC#N",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction was observed."
+      },
+      "evidence": {
+        "text_span": "With thiol 35 in hand, we were poised to attempt the key step of our synthesis. Thiol 35 was subjected to dithiophosphoric acid (dtPa) 36 and acetonitrile at room temperature which resulted in no reaction (Table 1).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempt at cyclization of thiol 35 failed at room temperature in acetonitrile.",
+        "gap": "Need to find conditions that enable Markovnikov hydrothiolation for thiol 35.",
+        "decision": "To enable Markovnikov hydrothiolation, subjected thiol 35 to dtPa 36 (10 mol %) and fluorobenzene at 90 °C, as trisubstituted Dhaas previously required these conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O=P(S)(S)c1ccccc1-c1ccccc1"
+        ],
+        "solvent": "PhF",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No observable formation of thiomorpholine 37 was observed."
+      },
+      "evidence": {
+        "text_span": "Previously, we found that trisubstituted Dhaas required fluorobenzene at elevated temperature to enable Markovnikov hydrothiolation.18 Subjecting thiol 35 to dtPa 36 (10 mol %) and fluorobenzene at 90 °C also resulted in no observable formation of thiomorpholine 37.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempts at cyclization of thiol 35 failed.",
+        "gap": "Need to find more forcing conditions for cyclization.",
+        "decision": "To induce cyclization, subjected thiol 35 to microwave irradiation (MWI, 150 °C) with catalyst 36 in trifluorotoluene, expecting reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O=P(S)(S)c1ccccc1-c1ccccc1"
+        ],
+        "solvent": "CF3Ph",
+        "temperature": "150 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "complex_mixture",
+        "observation": "Resulted in a complex mixture."
+      },
+      "evidence": {
+        "text_span": "Thiol 35 was then subjected to microwave irradiation (MWI, 150 °C) with catalyst 36 in trifluorotoluene and resulted in a complex mixture.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempts at cyclization of thiol 35 failed, and catalyst inactivation by the peptide was suspected.",
+        "gap": "Need to overcome catalyst inactivation to achieve cyclization.",
+        "decision": "To overcome catalyst inactivation, increased the catalyst loading to 50 mol %, expecting to drive the reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O=P(S)(S)c1ccccc1-c1ccccc1"
+        ],
+        "solvent": "PhF",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "complex_mixture",
+        "observation": "Resulted in a complex mixture without any trace of the desired product."
+      },
+      "evidence": {
+        "text_span": "At this point, we suspected that the peptide containing multiple Lewis basic amides could be inactivating the catalyst. Increasing the catalyst loading to 50 mol % also resulted in a complex mixture without any trace of the desired product (Table 1).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "The first-generation approach involving late-stage cyclization of octapeptide 35 failed due to catalyst inactivation and unfavorable cyclization geometry.",
+        "gap": "Need a new strategy to form the thiomorpholine ring, potentially using smaller peptides to avoid catalyst deactivation and simplify analysis.",
+        "decision": "To overcome the limitations of the first-generation approach, envisioned a second-generation approach where the thiomorpholine ring (38) would be formed by annulation of dehydroamino acid 39 with cysteine 40 containing an unprotected amine and thiol, expecting intermolecular hydrothiolation followed by spontaneous cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A new strategy was proposed focusing on thiomorpholine annulation with smaller peptides."
+      },
+      "evidence": {
+        "text_span": "In the second-generation approach, the thiomorpholine ring (38) was envisioned to be formed by annulation of dehydroamino acid 39 with cysteine 40 containing an unprotected amine and thiol (Scheme 5). The intermolecular hydrothiolation would occur to form the thioaminoketal 41, and under these conditions spontaneous cyclization of the amine onto the methyl ester of the Dhaa would form the thiomorpholine in a single step. In this approach, smaller peptides were used as model substrates for the annulation reaction which simplified the analysis of the reaction and limited the number of amides in the starting materials to avoid catalyst deactivation.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "A second-generation approach involving thiomorpholine annulation was envisioned.",
+        "gap": "Need to achieve the annulation reaction between Dhaa 42 and Cys 43.",
+        "decision": "To achieve annulation, subjected Dhaa 42 and Cys 43 to dtPa 36 in fluorobenzene at 90 °C, expecting intermolecular hydrothiolation and cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(=CN(C)CC(C)N(C)C(=O)OCc1ccccc1)NC(=O)CN1C(=O)c2ccccc2C1=O",
+          "COC(=O)[C@@H](N)CS"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O=P(S)(S)c1ccccc1-c1ccccc1"
+        ],
+        "solvent": "PhF",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction was observed."
+      },
+      "evidence": {
+        "text_span": "Dhaa 42 and Cys 43 were subjected to dtPa 36 in fluorobenzene at 90 °C and resulted in no reaction (Scheme 6).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempt at annulation between Dhaa 42 and Cys 43 failed, suspected due to amine deprotonating the catalyst.",
+        "gap": "Need to prevent amine deprotonation of the catalyst to enable annulation.",
+        "decision": "To prevent deprotonation, attempted the reaction with the hydrochloride acid salt of cysteine (44), where the amine is already protonated, expecting improved reactivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(=CN(C)CC(C)N(C)C(=O)OCc1ccccc1)NC(=O)CN1C(=O)c2ccccc2C1=O",
+          "COC(=O)[C@@H](N)CS.Cl"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O=P(S)(S)c1ccccc1-c1ccccc1"
+        ],
+        "solvent": "PhF",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The Cys hydrochloride salt 44 was completely insoluble in PhF even at higher temperature, and no reaction was observed."
+      },
+      "evidence": {
+        "text_span": "We suspected the lack of reactivity in this reaction was due to the amine deprotonating the dithiophosphoric acid catalyst preventing it from activating the Dhaa. As such, we then experimented with the hydrochloride acid salt of cysteine where the amine is already protonated. The Cys hydrochloride salt 44 was completely insoluble in PhF even at higher temperature, and no reaction was observed.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempt with Cys hydrochloride salt failed due to insolubility.",
+        "gap": "Need a soluble protonated cysteine salt for the annulation reaction.",
+        "decision": "To achieve annulation, attempted the reaction between Dhaa 42 and Cys trifluoroacetic acid salt 45, which had improved solubility in PhF, expecting reactivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(=CN(C)CC(C)N(C)C(=O)OCc1ccccc1)NC(=O)CN1C(=O)c2ccccc2C1=O",
+          "COC(=O)[C@@H](N)CS.OC(F)(F)F"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O=P(S)(S)c1ccccc1-c1ccccc1"
+        ],
+        "solvent": "PhF",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction was observed."
+      },
+      "evidence": {
+        "text_span": "The reaction was then attempted between Dhaa 42 and Cys trifluoroacetic acid salt 45, which had improved solubility in PhF, but still no reaction was observed.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Attempts at annulation with Dhaa 42 and various cysteine salts failed.",
+        "gap": "Need an alternative Dhaa substrate for thiomorpholine annulation.",
+        "decision": "To achieve annulation, examined a dehydroamino acid containing an N-terminal acetyl group (46) as an alternative substrate, expecting improved reactivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(=CN(C)CC(C)N(C)C(=O)OCc1ccccc1)NC(C)=O",
+          "COC(=O)[C@@H](N)CS"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O=P(S)(S)c1ccccc1-c1ccccc1"
+        ],
+        "solvent": "PhF",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Dhaa 46 also did not react with cysteine 43 or its protonated salts 44 or 45 under hydrothiolation conditions."
+      },
+      "evidence": {
+        "text_span": "A dehydroamino acid containing an N-terminal acetyl group (46) was examined as alternative substrate for thiomorpholine annulation. Dhaa 46 was obtained in 92% yield by a HWE reaction with aldehyde 24 and phosphonoglycine 47 (Scheme 7). Dhaa 46 also did not react with cysteine 43 or its protonated salts 44 or 45 under hydrothiolation conditions.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous attempts at direct annulation failed.",
+        "gap": "Need to form the thiomorpholine ring in a stepwise manner.",
+        "decision": "To form the thiomorpholine ring, examined the stepwise formation by intermolecular Markovnikov hydrothiolation of Dhaa 46 with Fmoc-Cys-OMe (48), expecting to form thioaminoketal 49."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(=CCCCN(C)C(=O)OCc1ccccc1)NC(C)=O",
+          "COC(=O)C(CS)NC(=O)OCC1c2ccccc2-c2ccccc21"
+        ],
+        "product_smiles": [
+          "COC(=O)C(S[C@H](NC(=O)OCC1c2ccccc2-c2ccccc21)C(=O)OC)C(CCCN(C)C(=O)OCc1ccccc1)NC(C)=O"
+        ],
+        "reagents": [
+          "O=P(S)(S)c1ccccc1-c1ccccc1"
+        ],
+        "solvent": "PhF",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "Thioaminoketal 49 was afforded as a 1.2:1 ratio of diastereomers (D:L) with slight preference for the D-thioaminoketal diastereomer. The diastereomers were easily separated."
+      },
+      "evidence": {
+        "text_span": "Undeterred by these results, we next examined the stepwise formation of the thiomorpholine ring by intermolecular Markovnikov hydrothiolation with a Fmoc-protected cysteine followed by a proposed amine deprotection and spontaneous amidative cyclization to form the six-membered ring. Dhaa 46 was subjected to Markovnikov hydrothiolation with Fmoc-Cys-OMe (48) to afford thioaminoketal 49 as a 1.2:1 ratio of diastereomers (D:L). The reaction occurred with slight preference for the D-thioaminoketal diastereomer which is found in the enteropeptins. Fortunately, the diastereomers (L-49 and D-49) were easily separated by silica gel chromatography.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "D-49, the desired diastereomer of thioaminoketal 49, was obtained.",
+        "gap": "Need to remove the Fmoc group to form amine D-50 for subsequent amidative cyclization.",
+        "decision": "To form amine D-50, removed the Fmoc group from D-49 using piperidine, expecting deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(S[C@H](NC(=O)OCC1c2ccccc2-c2ccccc21)C(=O)OC)C(CCCN(C)C(=O)OCc1ccccc1)NC(C)=O"
+        ],
+        "product_smiles": [
+          "COC(=O)C(S[C@H](N)C(=O)OC)C(CCCN(C)C(=O)OCc1ccccc1)NC(C)=O"
+        ],
+        "reagents": [
+          "piperidine"
+        ],
+        "solvent": "ClCCl"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "Amine D-50 was formed in 61% yield as a pale-yellow oil."
+      },
+      "evidence": {
+        "text_span": "Using D-49 which contained the correct stereochemical configuration, the Fmoc group was removed using piperidine to form amine D-50 in 61% yield.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Amine D-50 was obtained, and the next step was amidative cyclization.",
+        "gap": "Need to find conditions for amidative cyclization between the amine and the methyl ester to form thiomorpholine 51.",
+        "decision": "To form thiomorpholine 51, examined various acidic conditions (TFA, BF3.OEt2, AlCl3, MgBr2), expecting cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C[C@H](N)S[C@@H](CCCNC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C[C@H](NC(C)=O)S[C@@H](CCCNC(C)=O)C(=O)OC"
+        ],
+        "reagents": [
+          "TFA",
+          "BF3.OEt2",
+          "AlCl3",
+          "MgBr2"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Under acidic conditions, none of the desired product was observed."
+      },
+      "evidence": {
+        "text_span": "With amine D-50 in hand, we then examined different conditions for amidative cyclization between the amine and the methyl ester to form thiomorpholine 51 (Table 2). Under acidic conditions, none of the desired product was observed. This was consistently observed using both Bro̷nsted acid catalysts, such as trifluoroacetic acid, or Lewis acids (Table 2, entry 1−4).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Amidative cyclization failed under acidic conditions.",
+        "gap": "Need to find suitable basic conditions for amidative cyclization.",
+        "decision": "To form thiomorpholine 51, examined basic conditions (DBU, KOtBu), expecting cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C[C@H](N)S[C@@H](CCCNC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C[C@H](NC(C)=O)S[C@@H](CCCNC(C)=O)C(=O)OC"
+        ],
+        "reagents": [
+          "DBU",
+          "KOtBu"
+        ],
+        "solvent": "CH3CN",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Under bases like DBU or KOtBu, extensive decomposition of the starting material was observed."
+      },
+      "evidence": {
+        "text_span": "Meanwhile under basic conditions, D-50 was not stable likely due to fragmentation of the thioaminoketal. Previous work by Malins have shown that thioaminoketal containing peptides are not stable to basic conditions.16 Under bases like DBU or KOtBu, extensive decomposition of the starting material was observed.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amidative cyclization failed under various acidic and strong basic conditions.",
+        "gap": "Need to find milder basic conditions for amidative cyclization.",
+        "decision": "To form thiomorpholine 51, subjected D-50 to potassium carbonate in methanol (K2CO3/MeOH), expecting cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C[C@H](N)S[C@@H](CCCNC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C[C@H](NC(C)=O)S[C@@H](CCCNC(C)=O)C(=O)OC",
+          "CNC(=O)C(CCCN(C)CC(=O)Oc1ccccc1)(OC)C(=O)OC"
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "MeOH",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 10,
+        "observation": "Formation of desired thiomorpholine 51 was obtained in 10% yield with the formation of a major byproduct, aminoketal 52."
+      },
+      "evidence": {
+        "text_span": "When D-50 was subjected to potassium carbonate in methanol (K2CO3/MeOH) formation of desired thiomorpholine 51 was obtained in 10% yield with the formation of a major byproduct, aminoketal 52.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 28,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Amidative cyclization with K2CO3/MeOH gave low yield and a byproduct.",
+        "gap": "Need to improve the yield and prevent byproduct formation by using aprotic solvents.",
+        "decision": "To improve the reaction, examined polar aprotic solvents such as THF or DMF, which cannot form the aminoketal byproduct, expecting better yield and selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C[C@H](N)S[C@@H](CCCNC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C[C@H](NC(C)=O)S[C@@H](CCCNC(C)=O)C(=O)OC"
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "THF",
+        "temperature": "70 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "These conditions did not form the desired product."
+      },
+      "evidence": {
+        "text_span": "We then examined polar aprotic solvents such as THF or DMF which cannot form the aminoketal byproduct. Unfortunately, these conditions did not form the desired product.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 29,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 19,
+      "thought": {
+        "background": "The second-generation approach involving thiomorpholine annulation and subsequent amidative cyclization proved difficult to optimize.",
+        "gap": "Need a more effective strategy for thiomorpholine ring formation, potentially by performing cyclization on simpler peptides earlier in the synthesis.",
+        "decision": "To overcome the difficulties, revisited the initial strategy to form the peptide bond first followed by thiol cyclization, but planned to investigate thiol cyclization on simpler peptides early in the synthesis, targeting the central GOC tripeptide sequence common to all enteropeptins."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A third-generation strategy was adopted, focusing on early-stage cyclization of simpler peptides."
+      },
+      "evidence": {
+        "text_span": "Given the difficulty in optimization of the amidative cyclization, we revisited our initial strategy to form the peptide bond first followed by thiol cyclization. However, rather than performing the cyclization at the stage of the full-length peptide, we planned to investigate the thiol cyclization on simpler peptides early in the synthesis. Realizing that our previous unsuccessful attempts at intramolecular hydrothiolation could have been due to catalyst inactivation by the complex peptide starting material, we wondered if a shorter peptide could be amenable to thiol cyclization. Moreover, an early stage cyclization strategy would allow for a modular and unified synthesis of the enteropeptins through sequential coupling of different N- and C-terminal peptide fragments. Thus, we targeted cyclization of the central GOC tripeptide sequence which is common to all enteropeptins.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 30,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The third-generation strategy involves early-stage cyclization.",
+        "gap": "Need to convert methyl ester 42 to acid 53.",
+        "decision": "To obtain acid 53, converted methyl ester 42 to acid 53 by a modified Krapcho demethylation using lithium iodide, expecting demethylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(=CCN(C)CC(=O)OCc1ccccc1)NC(=O)CN1C(=O)c2ccccc2C1=O"
+        ],
+        "product_smiles": [
+          "CN(CC=C(NC(=O)CN1C(=O)c2ccccc2C1=O)C(=O)O)CC(=O)OCc1ccccc1"
+        ],
+        "reagents": [
+          "LiI"
+        ],
+        "solvent": "EtOAc",
+        "temperature": "100 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "Acid 53 was obtained in 56% yield."
+      },
+      "evidence": {
+        "text_span": "Methyl ester 42 was converted to acid 53 by a modified Krapcho demethylation using lithium iodide40 followed by EDC coupling with S-trityl L-cysteine methyl ester (54) to afford tripeptide 55 in 34% yield over two steps.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 31,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acid 53 was obtained.",
+        "gap": "Need to couple acid 53 with S-trityl L-cysteine methyl ester (54) to afford tripeptide 55.",
+        "decision": "To afford tripeptide 55, coupled acid 53 with S-trityl L-cysteine methyl ester (54) using EDC, expecting amide bond formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CN(CC=C(NC(=O)CN1C(=O)c2ccccc2C1=O)C(=O)O)CC(=O)OCc1ccccc1",
+          "COC(=O)C(N)CSCC(c1ccccc1)(c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "COC(=O)C(CSCC(c1ccccc1)(c1ccccc1)c1ccccc1)NC(=O)C(=CCN(C)CC(=O)OCc1ccccc1)NC(=O)CN1C(=O)c2ccccc2C1=O"
+        ],
+        "reagents": [
+          "EDC",
+          "HOAt",
+          "DIPEA"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "Tripeptide 55 was afforded in 61% yield."
+      },
+      "evidence": {
+        "text_span": "Methyl ester 42 was converted to acid 53 by a modified Krapcho demethylation using lithium iodide40 followed by EDC coupling with S-trityl L-cysteine methyl ester (54) to afford tripeptide 55 in 34% yield over two steps.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 32,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tripeptide 55 was obtained.",
+        "gap": "Need to remove the trityl group to unveil thiol 56.",
+        "decision": "To unveil thiol 56, removed the trityl group from 55 using TFA and triisopropylsilane, expecting deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(CSCC(c1ccccc1)(c1ccccc1)c1ccccc1)NC(=O)C(=CCN(C)CC(=O)OCc1ccccc1)NC(=O)CN1C(=O)c2ccccc2C1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)C(CSC)NC(=O)C(=CCN(C)CC(=O)OCc1ccccc1)NC(=O)CN1C(=O)c2ccccc2C1=O"
+        ],
+        "reagents": [
+          "TFA",
+          "triisopropylsilane"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Thiol 56 was unveiled in 92% yield."
+      },
+      "evidence": {
+        "text_span": "The trityl group was removed using TFA and triisopropylsilane to unveil thiol 56 in 92% yield.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 33,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Thiol 56 was obtained.",
+        "gap": "Need to form thiomorpholine 57 via Markovnikov hydrothiolation.",
+        "decision": "To form thiomorpholine 57, subjected thiol 56 to microwave irradiation in the presence of dithiophosphoric acid 36 as catalyst and trifluorotoluene at 150 °C, expecting cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(CSC)NC(=O)C(=CCN(C)CC(=O)OCc1ccccc1)NC(=O)CN1C(=O)c2ccccc2C1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)C1SC(CCN(C)CC(=O)OCc2ccccc2)C(=O)NC1C(=O)CN1C(=O)c2ccccc2C1=O"
+        ],
+        "reagents": [
+          "O=P(S)(S)OC1=CC=CC=C1C2=CC=CC=C2O"
+        ],
+        "solvent": "CF3Ph",
+        "temperature": "150 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "Thiomorpholine 57 was formed in 61% yield. However, the reaction occurred to give exclusively the incorrect stereoisomer (L-thioaminoketal)."
+      },
+      "evidence": {
+        "text_span": "Thiol 56 was subjected to microwave irradiation in the presence of dithiophosphoric acid 36 as catalyst and trifluorotoluene at 150 °C to form thiomorpholine 57 in 61% yield (Scheme 8). Unfortunately, the reaction occurred to give exclusively the incorrect stereoisomer as the cyclization resulted in formation of the L-thioaminoketal while the enteropeptins possess the opposite D-configuration.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 34,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The previous cyclization yielded the incorrect L-stereoisomer.",
+        "gap": "Need to synthesize the D-thioaminoketal and then epimerize to the desired L-configuration of cysteine.",
+        "decision": "To synthesize enteropeptin A, started the synthesis using D-cysteine (ent-54) to form tripeptide ent-55, expecting to obtain the D-thioaminoketal after cyclization and then epimerize it."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CN(CC=C(NC(=O)CN1C(=O)c2ccccc2C1=O)C(=O)O)CC(=O)OCc1ccccc1",
+          "COC(=O)[C@@H](N)CSCc1ccccc1"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@H](CSCc1ccccc1)NC(=O)[C@H](NC(=O)C(Cc1ccccc1)NC(=O)OCc1ccccc1)C(=O)O"
+        ],
+        "reagents": [
+          "EDC",
+          "HOAt",
+          "DIPEA"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "Tripeptide ent-55 was obtained in 61% yield."
+      },
+      "evidence": {
+        "text_span": "Executing this strategy, acid 53 was subjected to EDC coupling with D-cysteine ent-54 to afford tripeptide ent-55.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 35,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tripeptide ent-55 was obtained.",
+        "gap": "Need to deprotect the thiol to produce ent-56.",
+        "decision": "To produce ent-56, performed thiol deprotection on ent-55, expecting deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@H](CSCc1ccccc1)NC(=O)[C@H](NC(=O)C(Cc1ccccc1)NC(=O)OCc1ccccc1)C(=O)O"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@H](CS)NC(=O)[C@H](NC(=O)C(Cc1ccccc1)NC(=O)OCc1ccccc1)C(=O)O"
+        ],
+        "reagents": [
+          "TFA",
+          "TIS"
+        ],
+        "solvent": "ClCCl"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Thiol ent-56 was produced in 92% yield."
+      },
+      "evidence": {
+        "text_span": "Thiol deprotection produces ent-56 which is subjected to dithiophosphoric acid catalyzed Markovnikov hydrothiolation to afford the D-thioaminoketal.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 36,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Thiol ent-56 was obtained.",
+        "gap": "Need to form the D-thioaminoketal and then epimerize the α-carbon to the desired L-configuration of cysteine.",
+        "decision": "To form the D-thioaminoketal and epimerize, subjected ent-56 to dithiophosphoric acid catalyzed Markovnikov hydrothiolation, followed by epimerization of the α-carbon with DBU, expecting to afford 58 as a mixture favoring the desired L configuration."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@H](CS)NC(=O)[C@H](NC(=O)C(Cc1ccccc1)NC(=O)OCc1ccccc1)C(=O)O"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@H](CS)NC(=O)[C@H](NC(=O)C(Cc1ccccc1)NC(=O)OCc1ccccc1)C(=O)O"
+        ],
+        "reagents": [
+          "O=P(S)(S)OC1=CC=CC=C1C2=CC=CC=C2O",
+          "DBU"
+        ],
+        "solvent": "PhCF3",
+        "temperature": "150 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "dr": "1.5:1",
+        "observation": "Epimerization of the α-carbon with DBU occurred in 72% yield to afford 58 as a 1.5:1 mixture of diastereomers favoring the desired L configuration of cysteine."
+      },
+      "evidence": {
+        "text_span": "Thiol deprotection produces ent-56 which is subjected to dithiophosphoric acid catalyzed Markovnikov hydrothiolation to afford the D-thioaminoketal. Epimerization of the α-carbon with DBU occurred in 72% yield to afford 58 as a 1.5:1 mixture of diastereomers favoring the desired L configuration of cysteine.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 37,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 58 was obtained.",
+        "gap": "Need to demethylate the methyl ester of 58 to afford acid 59.",
+        "decision": "To afford acid 59, performed Krapcho demethylation on 58, expecting demethylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C[C@H]1SC[C@H](NC(=O)CN(C(=O)c2ccccc2)c2ccccc2)C(=O)N1CCN(C)CC(=O)Oc1ccccc1"
+        ],
+        "product_smiles": [
+          "CN(CCN1C(=O)[C@@H](NC(=O)CN(C(=O)c2ccccc2)c2ccccc2)CS[C@@H]1CC(=O)O)CC(=O)Oc1ccccc1"
+        ],
+        "reagents": [
+          "LiI"
+        ],
+        "solvent": "EtOAc",
+        "temperature": "100 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Acid 59 was afforded."
+      },
+      "evidence": {
+        "text_span": "Krapcho demethylation resulted in demethylation of the methyl ester of 58 to afford acid 59.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 38,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acid 59 and dipeptide 30 were obtained.",
+        "gap": "Need to couple the C-terminal acid of 59 with dipeptide 30 to afford hexapeptide 60.",
+        "decision": "To afford hexapeptide 60, coupled the C-terminal acid of 59 with dipeptide 30 using EDC, HOAt, and DIPEA, expecting amide bond formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(NC(Cc1ccccc1)C(=O)N[C@H](C(=O)O)C(=O)N[C@@H](CS)C(=O)O)OCc1ccccc1",
+          "CC(C)(C)COC[C@H](NC(=O)[C@@H]1CCCN1C(=O)[C@H]1CCCN1)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "EDC",
+          "HOAt",
+          "DIPEA"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Hexapeptide 60 was afforded in 76% yield over two steps."
+      },
+      "evidence": {
+        "text_span": "The C-terminal acid of 59 was coupled with dipeptide 30 to afford hexapeptide 60 in 76% yield over two steps.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 39,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 60 was obtained.",
+        "gap": "Need to perform phthaloyl deprotection to afford amine 61.",
+        "decision": "To afford amine 61, subjected compound 60 to phthaloyl deprotection with ethylenediamine, expecting deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "ethylenediamine"
+        ],
+        "solvent": "MeOH",
+        "temperature": "40 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Amine 61 was afforded."
+      },
+      "evidence": {
+        "text_span": "Compound 60 was subjected to phthaloyl deprotection with ethylenediamine to afford amine 61.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 40,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amine 61 and dipeptide 62 were obtained.",
+        "gap": "Need to couple the N-terminal amine of 61 with dipeptide 62 to afford octapeptide 63.",
+        "decision": "To afford octapeptide 63, coupled the N-terminal amine of 61 with dipeptide 62 using EDC, HOAt, and DIPEA, expecting amide bond formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(C)(C)OC(=O)NCCC[C@H](NC(=O)C[C@H](CS)NC(=O)C(Cc1ccccc1)NC(=O)OCc1ccccc1)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)NCCC[C@H](NC(=O)C[C@H](CS)NC(=O)C(Cc1ccccc1)NC(=O)OCc1ccccc1)C(=O)O"
+        ],
+        "reagents": [
+          "EDC",
+          "HOAt",
+          "DIPEA"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 53,
+        "observation": "Octapeptide 63 was afforded in 53% yield."
+      },
+      "evidence": {
+        "text_span": "The N-terminal amine of 61 was coupled with the dipeptide 62 to afford the octapeptide 63 containing the enteropeptin A sequence.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 41,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Octapeptide 63 was obtained.",
+        "gap": "Need to perform global deprotection to produce enteropeptin A (4a).",
+        "decision": "To produce enteropeptin A (4a), performed global deprotection on 63 using trimethylsilyl bromide in trifluoroacetic acid, with thioanisole as a scavenger, expecting deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NCCC[C@H](NC(=O)C[C@H](CS)NC(=O)C(Cc1ccccc1)NC(=O)OCc1ccccc1)C(=O)O"
+        ],
+        "product_smiles": [
+          "CSCC[C@H](N)C(=O)N[C@H](CCCCN)C(=O)NCC(=O)N(C)CC(C)(C)SCCC(=O)N[C@H](C)C(=O)N1CCC[C@H]1C(=O)N1CCC[C@H]1C(=O)N[C@@H](CO)[C@@H](O)C(=O)O"
+        ],
+        "reagents": [
+          "TMSBr",
+          "TFA",
+          "thioanisole"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Enteropeptin A (4a) was produced in 81% yield. Thioanisole proved essential to scavenge the highly reactive carbocation."
+      },
+      "evidence": {
+        "text_span": "Global deprotection was accomplished using trimethylsilyl bromide in trifluoroacetic acid to produce enteropeptin A (4a).41,42 Thioanisole proved essential to scavenge the highly reactive carbocation in the deprotection step to prevent undesired benzylation of the methionine thioether. This work constitutes a 14-step total synthesis of enteropeptin A and the first total synthesis of a sactipeptide.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 42,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carboxylic acid 59 was obtained.",
+        "gap": "Need to couple carboxylic acid 59 with double proline 64 to incorporate the C-terminus of enteropeptin B.",
+        "decision": "To incorporate the C-terminus of enteropeptin B, coupled carboxylic acid 59 with double proline 64 using EDC, HOAt, and DIPEA, expecting amide bond formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CN(CCN1C(=O)[C@@H](NC(=O)CN(C(=O)c2ccccc2)c2ccccc2)CS[C@@H]1CC(=O)O)CC(=O)Oc1ccccc1",
+          "CC(C)OC(=O)N1CCC[C@H]1C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)OC(=O)N1CCC[C@H]1C(=O)N[C@H]1SC[C@H](NC(=O)CN(C(=O)c2ccccc2)c2ccccc2)C(=O)N1CCN(C)CC(=O)Oc1ccccc1"
+        ],
+        "reagents": [
+          "EDC",
+          "HOAt",
+          "DIPEA"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Compound 65 was obtained in 76% yield."
+      },
+      "evidence": {
+        "text_span": "Carboxylic acid 59 was coupled to double proline 64 which allowed for incorporation of the C-terminus of enteropeptin B.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 43,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 65 was obtained.",
+        "gap": "Need to perform aminolysis of the phthalimide to afford amine 66.",
+        "decision": "To afford amine 66, performed aminolysis of the phthalimide 65 with ethylenediamine, expecting smooth deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)OC(=O)N1CCC[C@H]1C(=O)N[C@H]1SC[C@H](NC(=O)CN(C(=O)c2ccccc2)c2ccccc2)C(=O)N1CCN(C)CC(=O)Oc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)OC(=O)N1CCC[C@H]1C(=O)N[C@H]1SC[C@H](NC(=O)CN)C(=O)N1CCN(C)CC(=O)Oc1ccccc1"
+        ],
+        "reagents": [
+          "ethylenediamine"
+        ],
+        "solvent": "MeOH",
+        "temperature": "40 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Amine 66 was afforded smoothly."
+      },
+      "evidence": {
+        "text_span": "Aminolysis of the phthalimide 65 with ethylenediamine occurred smoothly to afford amine 66.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 44,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amine 66 and N-terminal dipeptide 62 were obtained.",
+        "gap": "Need to couple amine 66 with N-terminal dipeptide 62 to afford a heptapeptide containing the enteropeptin B sequence, then perform global deprotection.",
+        "decision": "To synthesize enteropeptin B (4b), coupled amine 66 with N-terminal dipeptide 62 using EDC, HOAt, and DIPEA, then subjected the heptapeptide to global deprotection with TMSBr, TFA, and thioanisole, expecting the final product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)OC(=O)N1CCC[C@H]1C(=O)N[C@H]1SC[C@H](NC(=O)CN)C(=O)N1CCN(C)CC(=O)Oc1ccccc1",
+          "CCSC[C@H](NC(=O)[C@H](O)CCCCNC(=O)OC(C)(C)C)C(=O)O"
+        ],
+        "product_smiles": [
+          "CCSC[C@H](N)C(=O)N[C@H](CCCCN)C(=O)N[C@H]1SC[C@H](NC(=O)CN)C(=O)N1CCN(C)C"
+        ],
+        "reagents": [
+          "EDC",
+          "HOAt",
+          "DIPEA",
+          "TMSBr",
+          "TFA",
+          "thioanisole"
+        ],
+        "solvent": "DMF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "observation": "A heptapeptide containing the enteropeptin B sequence was afforded in 54% yield over two steps, and then subjected to global deprotection to complete the total synthesis of enteropeptin B (4b)."
+      },
+      "evidence": {
+        "text_span": "Coupling with the N-terminal dipeptide (62) afforded a heptapeptide containing the enteropeptin B sequence in 54% yield over two steps. The heptapeptide was subjected to global deprotection to complete the total synthesis of enteropeptin B (4b).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 45,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Phthalimide 60 was obtained.",
+        "gap": "Need to treat phthalimide 60 with ethylenediamine to afford amine 61, then couple it with N-terminal tripeptide 67 to synthesize enteropeptin C (4c).",
+        "decision": "To synthesize enteropeptin C (4c), treated phthalimide 60 with ethylenediamine to afford amine 61, then coupled it with N-terminal tripeptide 67 using EDC, HOAt, and DIPEA, and finally subjected the resulting nonapeptide to global deprotection with TMSBr, expecting the final product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CCSC[C@H](NC(=O)[C@H](CCCNC(=O)OC(C)(C)C)NC(=O)[C@H](C)O)C(=O)O"
+        ],
+        "product_smiles": [
+          "CCSC[C@H](NC(=O)[C@H](CCCNC(=O)OC(C)(C)C)NC(=O)[C@H](C)O)C(=O)N[C@@H](CO)C(=O)N1CCC[C@H]1C(=O)N1CCC[C@H]1C(=O)N[C@@H](CO)C(=O)O"
+        ],
+        "reagents": [
+          "ethylenediamine",
+          "EDC",
+          "HOAt",
+          "DIPEA",
+          "TMSBr"
+        ],
+        "solvent": "DMF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Enteropeptin C (4c) was afforded in 80% yield."
+      },
+      "evidence": {
+        "text_span": "Phthalimide 60 was treated with ethylenediamine to afford amine 61 which was then coupled to the N-terminal tripeptide 67 using EDC, HOAt and DIPEA. The resulting nonapeptide was subjected to global deprotection with TMSBr to afford 4c in 80% yield (Scheme 10).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "FTIR"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for enteropeptin A is 14 steps, but overall yield is not explicitly stated."
+      },
+      "Longest Linear Steps": {
+        "value": 14,
+        "unit": "steps",
+        "interpretation": "The total synthesis of enteropeptin A was accomplished in 14 steps."
+      }
+    },
+    "significance": "The unified total synthesis of the enteropeptin sactipeptides was accomplished through early stage formation of the thiomorpholine ring and amidative coupling of peptides. This modular strategy enabled the unified synthesis of enteropeptins A-C. This work constitutes the first total synthesis of a sactipeptide and assigned the stereochemical configuration of the thioaminoketal to be D-configured."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.joc.5c03063",
+      "pmcid": "PMC12973295",
+      "title": "Evolution of a Strategy for the Unified Synthesis of Enteropeptin Sactipeptides.",
+      "authors": "Saha S, Zhang Y, Cheng Y, Ting CP.",
+      "journal": "J Org Chem",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12973295?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/0d8e5eb8-cccd-4245-855a-c23b9092b452.zip",
+      "parsed_at": "2026-05-11T06:44:22.132777+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 107,
+    "parseable": 69,
+    "canonicalized": 54,
+    "invalid": 38,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CSCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCCCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCC(=O)OMe",
+      "CSCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCCCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCC(=O)OMe",
+      "N[C@@H](C(=O)OtBu)P(=O)(OMe)OMe",
+      "CSCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCCCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCC(=O)N[C@@H](C(=O)OtBu)P(=O)(OMe)OMe",
+      "CSCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCCCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCC(=O)N[C@@H](C(=O)OtBu)P(=O)(OMe)OMe",
+      "CSCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCCCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCC(=O)N[C@@H](C(=O)OtBu)P(=O)(C=C(N(C)C(=O)OCc1ccccc1)OR)OMe",
+      "CSCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCCCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCC(=O)N[C@@H](C(=O)OtBu)P(=O)(C=C(N(C)C(=O)OCc1ccccc1)OR)OMe",
+      "CSCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCCCC[C@H](NC(=O)OCc1ccccc1)C(=O)NCC(=O)N[C@@H](C(=O)OtBu)P(=O)(C=C(N(C)C(=O)OCc1ccccc1)O)OMe",
+      "O=C(O)[C@@H]1N(C(=O)[C@H]2CCCN2C(=O)Cc3c4ccccc4c(c3)C4=CC=CC=C4)CCC1",
+      "CC(C)(C)OC(=O)[C@H](COCC(C)(C)C)NC(=O)[C@@H]1CCCN1C(=O)[C@H]2CCCN2C(=O)Cc3c4ccccc4c(c3)C5=CC=CC=C5"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

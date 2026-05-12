@@ -1,0 +1,270 @@
+{
+  "trace_id": "TS-PMC12479983",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "epi-stieleriacine C",
+    "smiles": "CCCCCCCCCCC(=O)N[C@@H](Cc1ccc(O)c(C)c1)C(=O)O",
+    "natural_product_class": "N-acyl tyrosine",
+    "structural_features": {
+      "molecular_weight": 433.6,
+      "stereocenters": 1,
+      "ring_systems": "aromatic",
+      "key_motifs": [
+        "N-acyl amino acid",
+        "tyrosine derivative",
+        "fatty acid amide"
+      ]
+    },
+    "motivation": "To complement future biosynthetic studies on stieleriacine/kyonggic acid biosynthesis and circumvent the labor-intensive process of isolation from natural sources, and to determine the absolute structure of stieleriacine C.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Synthesis of a small, yet representative library of NAA derivatives featuring the stieleriacine core structure, including the first synthesis of stieleriacine derivative C. Confirmation of identity by NMR and comparison of optical rotation to natural product."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "amide bond between fatty acid and amino acid",
+        "named_strategy": "Amide bond formation",
+        "reasoning": "N-acyl tyrosines are formed by the ligation of a fatty acid and an amino acid. This is a common disconnection for N-acyl amino acids."
+      },
+      {
+        "bond_description": "ester bond in methyl ester of amino acid",
+        "named_strategy": "Ester hydrolysis",
+        "reasoning": "The methyl ester is used as a protecting group for the carboxylic acid during amide bond formation and is subsequently removed."
+      }
+    ],
+    "rationale": "The synthesis strategy involves a two-step approach: first, N-acylation of commercially available or synthesized amino acid methyl esters with various fatty acids, followed by saponification of the methyl ester to yield the free carboxylic acid. This modular approach allows for the generation of a library of N-acyl tyrosine derivatives."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "N-acylation of amino acids is a key step in the biosynthesis and synthesis of N-acyl tyrosines. Two different coupling methods were considered for activating fatty acids.",
+        "gap": "Efficient and high-yielding methods for N-acylation, especially for unsaturated fatty acids, need to be applied.",
+        "decision": "To synthesize amides, a one-pot procedure using CDI for lauric acid and coupling reagents for unsaturated fatty acids will be used. This is expected to yield the desired N-acylated amino acid methyl esters."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H](N)Cc1ccc(O)cc1",
+          "COC(=O)[C@@H](N)Cc1ccc(OC)cc1",
+          "COC(=O)[C@@H](N)Cc1ccc(O)c(C)c1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCC(=O)N[C@H](Cc1ccc(O)cc1)C(=O)OC",
+          "",
+          "",
+          "CCCCCCCCCCCC(=O)N[C@H](Cc1ccc(OC)cc1)C(=O)OC",
+          "",
+          "",
+          "CCCCCCCCCCCC(=O)NC(Cc1ccc(O)c(C)c1)C(=O)OC",
+          "",
+          ""
+        ],
+        "reagents": [
+          "lauric acid",
+          "E-dodec-2-enoic acid",
+          "E-hexadec-2-enoic acid",
+          "1,1'-Carbonyldiimidazole (CDI)",
+          "HBTU",
+          "DIPEA"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "r.t.",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": "60-94",
+        "observation": "Amides 18–20 were obtained in 60–91% yield, amides 24–26 in 82–94% yield, and amides 31–33 in 72–94% yield."
+      },
+      "evidence": {
+        "text_span": "The first method followed a one-pot procedure described by Johansson et al.31, utilizing 1,1′-Carbonyldiimidazole (CDI) to activate lauric acid. The second method employed coupling reagents for activating unsaturated fatty acids during the coupling step. Using H-Tyr-OMe*HCl as the starting material afforded amides 18–20 in 60–91% yield, whereas H-Tyr(Me)-OMe*HCl gave amides 24–26 in 82–94% yield. Employing H-Tyr(3-Me)-OMe*HCl furnished amides 31–33 in 72–94% yield.",
+        "section": "Synthesis of N-acyl tyrosine derivatives and epi-stieleriacine C",
+        "image_refs": [
+          "df28b0b5d099fd203612b0a6a8e421072d18c20c0a9e9ea3b2e1f9b4fab49289.jpg",
+          "997f28a9af616e968ee2ccb46014d603137c1d89c4d7eee9f931e1e11bcc50e6.jpg",
+          "6df2dbfaec504d6e95a9ee019eaea80272deb6579977c588ac1efb32156cd0bb.jpg",
+          "eb19e4af91175ee2c7f7bf6486e67143d250cb91115c4eebcca8e9e891be1882.jpg",
+          "8255234d8fe44ad289253e710f00ced153ce899d5c782a0514d71866379175c7.jpg",
+          "e6664d6fb63dd94c718fa5cab06602beebea6e06ae5d30da30d6113fb9fd2663.jpg",
+          "e4f2b9ea6ca1f45cd5de33aa0195407fabd352b5184ee6aa9666deb5aa9e28d3.jpg",
+          "ac8432a99e24383faa924c3e6d00a30429555f37d031284a652c2e6ce34bc2ce.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The N-acylated amino acid methyl esters have been successfully synthesized. The next step is to deprotect the carboxylic acid.",
+        "gap": "Find a suitable method for saponification of the methyl esters.",
+        "decision": "Saponification will be performed using LiOH in a mixture of THF, MeOH, and H2O. This is expected to yield the free N-acyl amino acids."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCC(=O)N[C@H](Cc1ccc(O)cc1)C(=O)OC",
+          "",
+          "",
+          "CCCCCCCCCCCC(=O)N[C@H](Cc1ccc(OC)cc1)C(=O)OC",
+          "",
+          "",
+          "CCCCCCCCCCCC(=O)NC(Cc1ccc(O)c(C)c1)C(=O)OC",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCC(=O)N[C@H](Cc1ccc(O)cc1)C(=O)O",
+          "",
+          "",
+          "CCCCCCCCCCCC(=O)N[C@H](Cc1ccc(OC)cc1)C(=O)O",
+          "",
+          "",
+          "CCCCCCCCCCCC(=O)NC(Cc1ccc(O)c(C)c1)C(=O)O",
+          "",
+          ""
+        ],
+        "reagents": [
+          "LiOH"
+        ],
+        "solvent": "THF, MeOH, H2O"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": "moderate to quantitative",
+        "observation": "Saponification achieved nearly quantitative yields for 21–23 and 27–29, while only moderate yields were obtained for 33–35."
+      },
+      "evidence": {
+        "text_span": "The resulting amides were directly subjected to saponification, achieving nearly quantitative yields of 21–23 and 27–29, while only moderate yields were obtained for 33–35 for yet unknown reasons.",
+        "section": "Synthesis of N-acyl tyrosine derivatives and epi-stieleriacine C",
+        "image_refs": [
+          "df28b0b5d099fd203612b0a6a8e421072d18c20c0a9e9ea3b2e1f9b4fab49289.jpg",
+          "997f28a9af616e968ee2ccb46014d603137c1d89c4d7eee9f931e1e11bcc50e6.jpg",
+          "6df2dbfaec504d6e95a9ee019eaea80272deb6579977c588ac1efb32156cd0bb.jpg",
+          "eb19e4af91175ee2c7f7bf6486e67143d250cb91115c4eebcca8e9e891be1882.jpg",
+          "8255234d8fe44ad289253e710f00ced153ce899d5c782a0514d71866379175c7.jpg",
+          "e6664d6fb63dd94c718fa5cab06602beebea6e06ae5d30da30d6113fb9fd2663.jpg",
+          "e4f2b9ea6ca1f45cd5de33aa0195407fabd352b5184ee6aa9666deb5aa9e28d3.jpg",
+          "ac8432a99e24383faa924c3e6d00a30429555f37d031284a652c2e6ce34bc2ce.jpg",
+          "e49c34911406412b7c6b91132a94e2a3ac759325372f84e438a61a5eccd5a6d1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The synthesis of saturated N-acyl tyrosine derivatives was successful.",
+        "gap": "The natural products stieleriacines A and B contain a 2,3-dehydrotyrosine core structure. A method to introduce this double bond is needed.",
+        "decision": "Attempt to synthesize dehydrotyrosine-derivatives from the synthesized N-acyl tyrosine derivatives or other precursors using various synthetic procedures."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCC(=O)N[C@H](Cc1ccc(O)cc1)C(=O)O",
+          "",
+          "",
+          "CCCCCCCCCCCC(=O)N[C@H](Cc1ccc(OC)cc1)C(=O)O",
+          "",
+          "",
+          "CCCCCCCCCCCC(=O)NC(Cc1ccc(O)c(C)c1)C(=O)O",
+          "",
+          ""
+        ],
+        "product_smiles": [],
+        "reagents": [],
+        "solvent": "",
+        "temperature": "",
+        "time": ""
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Any attempt to synthesize dehydrotyrosine-derivatives including e.g. stieleriacines A and B from these and other precursors failed despite several different synthetic procedures tested."
+      },
+      "references": [
+        "32"
+      ],
+      "evidence": {
+        "text_span": "However, any attempt to synthesize dehydrotyrosine-derivatives including e.g. stieleriacines A and B from these and other precursors failed despite several different synthetic procedures tested32.",
+        "section": "Synthesis of N-acyl tyrosine derivatives and epi-stieleriacine C"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield for the target compound is not explicitly stated, but individual steps had good to moderate yields."
+      }
+    },
+    "comparison_to_prior": "Comparison of NMR data for isolated stieleriacine C with synthetic product 34 and related derivatives revealed strong agreement in chemical shifts (1H, 13C) and coupling patterns, confirming the identity of the isolated compound. However, a significant discrepancy was observed in the optical rotation values between isolated stieleriacine C ([α]D21 = -28 (c = 1 in MeOH)) and the synthesized compound ([α]D20 = +28.3 (c = 0.15 in MeOH)), suggesting an inverted stereocenter at C-2 for the natural product, and thus the synthesis of epi-stieleriacine C. Comparison of analytical data of kyonggic acid C with synthetic product 18 also showed strong agreement in NMR data. Optical rotation values of kyonggic acid derivatives and related synthetic compounds were almost exclusively positive, supporting the conclusion that natural stieleriacine C is likely composed of a D-amino acid, while kyonggic acids are composed of L-amino acids.",
+    "significance": "The total synthesis of epi-stieleriacine C allowed for the determination of the absolute structure of stieleriacine C, revealing an unusual D-amino acid configuration. This synthesis also provided a dedicated compound library that can be used as internal standards for quantification in future enzymatic and ecological assays, complementing biosynthetic studies."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s42004-025-01654-4",
+      "pmcid": "PMC12479983",
+      "title": "Investigations into the biosynthesis of stieleriacines and related N-acyl tyrosines by comparative genomics, knock-out studies and total synthesis of epi-stieleriacine C.",
+      "authors": "Sauer M, Staack M, Balluff S, Jogler C, Kallscheuer N, Beemelmanns C.",
+      "journal": "Commun Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12479983?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/6fb6b5fa-89a6-4c65-9d2a-beefa19a6d32.zip",
+      "parsed_at": "2026-05-11T06:28:56.670022+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 40,
+    "parseable": 16,
+    "canonicalized": 15,
+    "invalid": 24,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC(=O)C(Cc1ccc(O)cc1)NC(=O)C=CC9H19",
+      "COC(=O)C(Cc1ccc(O)cc1)NC(=O)C=CC13H27",
+      "COC(=O)[C@H](NC(=O)C=CC9H19)CC1=CC=C(OC)C=C1",
+      "COC(=O)C(Cc1ccc(OC)cc1)NC(=O)C=CC13H27",
+      "COC(=O)C(Cc1ccc(O)c(C)c1)NC(=O)C=CC9H19",
+      "COC(=O)C(Cc1ccc(O)c(C)c1)NC(=O)C=CC13H27",
+      "COC(=O)C(Cc1ccc(O)cc1)NC(=O)C=CC9H19",
+      "COC(=O)C(Cc1ccc(O)cc1)NC(=O)C=CC13H27",
+      "COC(=O)[C@H](NC(=O)C=CC9H19)CC1=CC=C(OC)C=C1",
+      "COC(=O)C(Cc1ccc(OC)cc1)NC(=O)C=CC13H27"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,750 @@
+{
+  "trace_id": "TS-PMC12604028",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-Disorazole Z1's Lateral Chain (Isomer 2)",
+    "smiles": "",
+    "natural_product_class": "polyketide",
+    "structural_features": {
+      "molecular_weight": 694.0,
+      "stereocenters": 4,
+      "ring_systems": "none",
+      "key_motifs": [
+        "chiral quaternary carbon center",
+        "vicinal chiral alcohols",
+        "ester"
+      ]
+    },
+    "motivation": "The lateral chain of (+)-disorazole Z1 contains a challenging chiral all-carbon quaternary center with two vicinal chiral hydroxy groups. Its synthesis is crucial for the total synthesis of (+)-disorazole Z1, a highly potent cytotoxic natural product with pharmaceutical applications.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Schinzer",
+        "year": 2025,
+        "doi": "10.1002/chem.202501452",
+        "key_strategy": "Two consecutive aldol steps with a lactone intermediate"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Achieve stereoselective synthesis of the natural lateral chain precursor 2 and non-natural precursor 3, with confirmed stereochemistry by X-ray crystallography."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond adjacent to the ester carbonyl and the quaternary center",
+        "named_strategy": "Aldol reaction",
+        "reasoning": "The chiral quaternary carbon center is formed via a second aldol reaction with a lactone, as the rigid ring system allows better control over stereochemical outcome.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond forming the lactone ring",
+        "named_strategy": "Lactonization",
+        "reasoning": "Lactone intermediates are advantageous for controlling stereoselectivity in consecutive aldol steps.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The strategy involves two consecutive aldol steps, with a lactone intermediate being key to controlling the stereochemistry of the chiral quaternary carbon center. The initial aldol reaction forms a β-hydroxy carbonyl, which is then cyclized to a δ-lactone. A second aldol reaction on this lactone creates the quaternary center. Subsequent protecting group manipulations and functional group transformations lead to the target lateral chain."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Chiral quaternary carbon centers are challenging to synthesize due to steric repulsion and instability. (+)-Disorazole Z1's lateral chain contains such a center with vicinal stereocenters.",
+        "gap": "Developing a stereoselective and reliable method for constructing this complex chiral triad.",
+        "decision": "To synthesize the lateral chain, we chose a strategy involving two consecutive aldol steps, utilizing a lactone intermediate to control the stereochemical outcome, based on previous work by Crimmins et al. and Brückner et al."
+      },
+      "evidence": {
+        "text_span": "Recently, we described the synthesis of the lateral chain of $\\left( + \\right)$ -disorazole Z1 via two consecutive aldol steps.11 We started our strategy according to Crimmins et al. and prepared Npropionyl-thiazolidinethione 4 by the use of readily available (S)-phenylalanine.13 This compound was used also in this study as the starting material for all first aldol steps described in scheme 1−3. The chiral quaternary carbon center was created by a second aldol reaction with a lactone because the stereochemical outcome of this reaction could be better controlled by the rigid ring system. Brückner’s findings on aldol additions with boron enolates of $\\delta$ -lactones were applied in this study.14",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The first aldol step is to combine N-propionyl-thiazolidinethione 4 with a TBS-protected propanal 5.",
+        "gap": "Need to form the non-Evans syn aldol product.",
+        "decision": "To achieve the non-Evans syn aldol product 6, we chose to react compound 4 with tert-butyldimethylsilyl (TBS)-protected propanal 5 using TiCl4 and DIPEA, expecting a good yield and diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC(=O)N1CCS[C@H]1Cc1ccccc1",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TiCl4",
+          "DIPEA"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "observation": "Non-Evans syn aldol product 6 was obtained."
+      },
+      "evidence": {
+        "text_span": "As a first approach, we combined compound 4 with a tertbutyldimethylsilyl (TBS)-protected propanal 5 to get a non-Evans syn aldol product 6.11",
+        "image_refs": [
+          "0f3e2e67e8316e11367be329eac6a2d667f502024506e2730c072e2ce08a5bea.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "After the first aldol step, the secondary alcohol of 6 needs protection, and the primary TBS ether needs to be cleaved for lactone formation.",
+        "gap": "Need to form the lactone 7 efficiently and reliably.",
+        "decision": "We attempted an accidental one-pot procedure involving TBS triflate without a base at -78 °C in dichloromethane, expecting in situ ring closure via auxiliary cleavage upon warm-up, triggered by air humidity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBSOTf"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C to room temperature",
+        "time": "2 h",
+        "atmosphere": "air humidity"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 70,
+        "failure_mode": "scope_limited",
+        "observation": "The procedure was variable in yield and sensitive to air humidity. Upscaling to 5 mmol led to lower conversions and yield (54%). Partly, the secondary TBS ether of 7 was also cleaved. High polarity of the β-hydroxy-δ-lactone led to recovery issues."
+      },
+      "evidence": {
+        "text_span": "Accidentally added TBS triflate without a base at $- 7 8 \\ ^ { \\circ } \\mathrm { C }$ in dichloromethane yielded the TBS-protected $\\delta \\cdot$ lactone 7 during warm-up to room temperature within $^ { 2 \\mathrm { ~ h ~ } }$ (Scheme 1). This surprising phenomenon was studied by small-scale experiments, which showed that the air humidity triggered the reaction. It is repeatable but variable in terms of the yield. An open flask during the thawing phase is necessary to provide air humidity. We believe that TBS triflate is attacked by the $\\beta \\mathrm { . }$ - hydroxy group of 6 generating an oxonium ion as the reactive intermediate. Thus, a Bronsted acid would be available, which needs traces of water provided by air humidity to hydrolyze the primary TBS ether, followed by in situ ring closure via auxiliary cleavage. Attempts to add 1 equiv of water at $- 7 8 \\ ^ { \\circ } \\mathrm { C }$ accelerated the reaction; however, partly the secondary TBS ether of 7 was also cleaved. A similar effect was observed when air humidity was used for a longer time. Due to the high polarity of the $\\beta$ -hydroxy-δ-lactone, most of it could not be recovered during the workup. This procedure is fast and economical; however, careful observation of the color change of the solvent is necessary to stop the reaction at the optimal point. In addition, upscaling attempts to 5 mmol led to lower conversions and yield $( 5 4 \\% )$ . Therefore, it was replaced by a more reliable one.",
+        "image_refs": [
+          "0f3e2e67e8316e11367be329eac6a2d667f502024506e2730c072e2ce08a5bea.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "The accidental one-pot lactonization was unreliable and not scalable.",
+        "gap": "Need a more robust and reproducible method for lactone formation.",
+        "decision": "To obtain lactone 7 reliably, we chose a more solid approach involving p-toluenesulfonic acid monohydrate for intramolecular lactonization, followed by in situ protection of the β-hydroxy group with TBSCl/imidazole. This method is slower but more straightforward and reproducible."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "p-TsOH.H2O",
+          "TBSCl",
+          "imidazole"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C to r.t.",
+        "time": "23 h (lactonization), 25 h (protection)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Solid crystalline products were obtained in about 80% yield. This method was more reliable."
+      },
+      "evidence": {
+        "text_span": "Since the accidentally observed one-pot procedure described above (Scheme 1) was not so reliable, we switched to a more solid approach, which takes more time $( 4 8 \\mathrm { ~ h } )$ but worked more straightforward without surveillance.11 Now the chiral $\\alpha$ - methyl-$\\beta$ -TBS-ether-δ-methyl-lactones 14 and 15 were formed by an intramolecular lactonization with $p$ -toluenesulfonic acid monohydrate and subsequent in situ protection of the $\\beta$ - hydroxy group with TBSCl/imidazole. Solid crystalline products were obtained in about $8 0 \\%$ yield.",
+        "image_refs": [
+          "9e59730d881af962126417fee9eb2b8601e610cafa782cc71a9103b45345a94e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactone 7 is available. The next step is to form the chiral quaternary center via a second aldol reaction.",
+        "gap": "Need to apply Brückner's method for aldol additions with boron enolates of δ-lactones to our TBS-protected lactone 7.",
+        "decision": "To form the chiral quaternary center, we chose to react lactone 7 with crotonaldehyde, adjusting Brückner's method by reducing the boron reagent (1.5->1.1 equiv) and basic reagent (1.6->1.3 equiv), expecting product 8 with good stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Bu2BOTf",
+          "Et3N",
+          "crotonaldehyde"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "time": "4.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "dr": ">=99:1",
+        "observation": "Product 8 with the chiral quaternary center in the α-position was obtained in crystalline form. X-ray crystallography confirmed the (R)-configuration, similar to the non-natural isomer 3."
+      },
+      "evidence": {
+        "text_span": "The chiral lactone 7 obtained as described above was treated with crotonaldehyde based on Brückner et al.’s model study. Although this approach could probably lead to isomer 3, we performed this second aldol step to check whether their method was applicable for our purpose. As they used methylsubstituted lactones, we adjusted their method to our TBSprotected lactone 7 by reducing the boron reagent (1.5−1.1 equiv) and the basic reagent (1.6−1.3 equiv), respectively.14 Product 8 with the chiral quaternary center in the $\\alpha$ -position was obtained in $8 1 \\%$ yield $\\begin{array} { r } { \\left( \\mathrm { d r } \\geq 9 9 { : } 1 \\right) } \\end{array}$ ) in crystalline form. The absolute structure was proven by X-ray crystallography (Figure 2), revealing that the chiral quaternary center had an (R)- configuration like the non-natural isomer 3. However, we recognized that the desired stereochemical triad in 8 was also generated with the disubstituted $\\alpha$ -methyl-$\\beta$ -TBS-protected lactone 7.",
+        "image_refs": [
+          "0f3e2e67e8316e11367be329eac6a2d667f502024506e2730c072e6c1207.jpg",
+          "0f3e2e67e8316e11367be329eac6a2d667f502024506e2730c072e2ce08a5bea.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactone 8 has the desired (R)-configuration for the non-natural isomer 3. The hydroxyl group needs protection before ring opening.",
+        "gap": "Need to protect the hydroxyl group of 8.",
+        "decision": "To protect the hydroxyl group, we chose to react lactone 8 with chloro(methoxy)methane (MOMCl) and DIPEA, expecting to form MOM-protected lactone 9."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MOMCl",
+          "DIPEA"
+        ],
+        "solvent": "DCM",
+        "temperature": "30 °C",
+        "time": "7.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Chiral lactone 9 was obtained."
+      },
+      "evidence": {
+        "text_span": "After protection with chloro(methoxy)methane (MOMCl), chiral lactone 9 was opened to obtain the final non-natural isomer 3 in $6 8 \\%$ yield over two steps.",
+        "image_refs": [
+          "0f3e2e67e8316e11367be329eac6a2d667f502024506e2730c072e2ce08a5bea.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "MOM-protected lactone 9 needs to be opened and esterified to form the final non-natural isomer 3. A mild method is required to avoid cleavage of protecting groups.",
+        "gap": "Need a reliable method for transesterification of the lactone ring.",
+        "decision": "To open the lactone and esterify, we developed a mild method using KOH to open the lactone, followed by in situ esterification with trimethylsilyl diazomethane (TMSCHN2). The reaction environment was neutralized with camphersulfonic acid (CSA) to prevent reverse reaction and acidification."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KOH",
+          "CSA",
+          "TMSCHN2"
+        ],
+        "solvent": "MeOH/THF/Et2O",
+        "temperature": "r.t.",
+        "time": "41 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "The procedure was successful, predominantly achieving compound 3. The disadvantage is the use of excess trimethylsilyl diazomethane."
+      },
+      "evidence": {
+        "text_span": "For transesterification of 9, a mild method was required to avoid the cleavage of the protecting groups. Hence, we developed a reliable method based on known and often used reagents like potassium hydroxide (KOH) to open the lactone, followed by in situ esterification with trimethylsilyl diazomethane $\\mathrm { ( TMSSCH } _ { 2 } \\mathrm { N } _ { 2 } \\mathrm { ) }$ ) (Scheme 1).11 The procedure was successful between $0 ~ ^ { \\circ } \\mathrm { C }$ and room temperature in a dry organic solvent mixture (THF/ methanol 3:1) that dissolves KOH and further reagents. Furthermore, the basic reaction environment was almost neutralized in situ with a calculated quantity of water-free camphersulfonic acid (CSA), avoiding acidification. In this way, traces of the product were sacrificed to prevent a reverse reaction. In addition, diethyl ether was added to change the polarity, and potassium sulfonate precipitated. Finally, the resulting carboxylic acid was immediately esterified with trimethylsilyl diazomethane in a suitable solvent mixture as described before.15 It should be pointed out that the disadvantage of this method is the use of trimethylsilyl diazomethane in excess.",
+        "image_refs": [
+          "0f3e2e67e8316e11367be329eac6a2d667f502024506e2730c072e2ce08a5bea.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "To synthesize isomer 2 (natural product), the configuration of the quaternary center needs to be inverted compared to isomer 3. This requires changing the sequence of aldehydes in the aldol steps.",
+        "gap": "Need to prepare precursors for the allylic part of isomer 2, using a TBS-protected β-hydroxybutanal for the first aldol step, which will lead to a trisubstituted lactone.",
+        "decision": "To achieve the non-Evans syn aldol products, we chose to perform the first aldol reaction by coupling (S)-N-propionyl-thiazolidinethione 4 with either TBS-protected (S)-β-hydroxybutanal 10 or (R)-β-hydroxybutanal 11, expecting yields around 80% with good diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC(=O)N1C(=S)SC[C@H]1Cc1ccccc1",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "TiCl4",
+          "DIPEA"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "dr": ">95:5",
+        "observation": "Aldol products 12 (81%) and 13 (79%) were obtained. Compound 13 crystallized, allowing X-ray confirmation of its absolute stereochemistry."
+      },
+      "evidence": {
+        "text_span": "Thus, the first aldol reaction shown in Scheme 2 was performed by coupling (S)-N-propionyl-thiazolidinethione 4 with either TBS-protected (S) $\\boldsymbol { \\cdot } \\beta$ -hydroxybutanal 10 or $( R ) \\ – \\beta .$ - hydroxybutanal 11 to achieve the non-Evans syn aldol products 12 and 13 with yields around $8 0 \\%$ $\\mathrm { d r } > 9 5 { : } 5 ,$ ) in both cases.13 Interestingly, compound 13 crystallized and could be analyzed by X-ray diffraction to confirm its absolute stereochemistry; the other diastereomer 12 remained oily.",
+        "image_refs": [
+          "9e59730d881af962126417fee9eb2b8601e610cafa782cc71a9103b45345a94e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldol products 12 and 13 need to be converted into lactones 14 and 15, respectively, using the reliable lactonization method.",
+        "gap": "Need to form the chiral α-methyl-β-TBS-ether-δ-methyl-lactones 14 and 15.",
+        "decision": "To form the lactones, we chose to use p-toluenesulfonic acid monohydrate for intramolecular lactonization, followed by in situ protection of the β-hydroxy group with TBSCl/imidazole, expecting solid crystalline products."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "p-TsOH.H2O",
+          "TBSCl",
+          "imidazole"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C to r.t.",
+        "time": "23 h (lactonization), 25 h (protection)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Lactones 14 (81%) and 15 (80%) were obtained as solid crystalline products. Only lactone 14 formed single crystals suitable for X-ray diffraction."
+      },
+      "evidence": {
+        "text_span": "Now the chiral $\\alpha$ - methyl-$\\beta$ -TBS-ether-δ-methyl-lactones 14 and 15 were formed by an intramolecular lactonization with $p$ -toluenesulfonic acid monohydrate and subsequent in situ protection of the $\\beta$ - hydroxy group with TBSCl/imidazole. Solid crystalline products were obtained in about $8 0 \\%$ yield. However, only lactone 14 formed single crystals suitable for X-ray diffraction analysis. For this reason, unambiguous confirmation of the absolute configuration was possible only for compounds 13 and 14 (Figures S2 and S3).",
+        "image_refs": [
+          "9e59730d881af962126417fee9eb2b8601e610cafa782cc71a9103b45345a94e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactones 14 and 15 are available. The second aldol step is needed to form the quaternary center, using a PMB-protected propanal 16.",
+        "gap": "Need to perform the second aldol step via a boron enolate with lactones 14 and 15.",
+        "decision": "To achieve compounds 17 and 18, we chose to treat lactones 14 and 15 with PMB-protected propanal 16 using our adjusted boron enolate method, expecting good yields and diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "",
+          "COc1ccc(P(OC)OCCCC=O)cc1"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "Bu2BOTf",
+          "Et3N"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "time": "4.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "dr": "86:14",
+        "observation": "Compounds 17 (78%, dr=86:14) and 18 (64%, dr=80:20) were obtained. Structures were confirmed by X-ray crystallography after deprotection to diols 20 and 21. Lactone 17 represented a potential key intermediate for the total synthesis of (+)-disorazole Z1."
+      },
+      "evidence": {
+        "text_span": "In order to perform the second aldol step via a boron enolate, we treated lactones 14 and 15 with a paramethoxybenzyl (PMB) protected propanal 16 according to our adjusted method. In this way, we could achieve compounds 17 and 18 with $78 \\%$ $\\mathrm { ' } \\mathrm { d r } = 8 6 { : } 1 4 \\mathrm { ) }$ ) and $6 4 \\%$ (dr $= 8 0 { : } 2 0 { \\overset { \\cdot } { , } }$ ) yield, respectively. The structures could be confirmed by X-ray crystallography after deprotection of aldol products 17 and 18 with tetra-butylammonium fluoride (TBAF) to gain two crystalline diols 20 and 21 (Figure 3a,b). X-ray diffraction analyses revealed the relative configurations of the achieved stereochemistry and especially the chiral quaternary carbon centers. The correct stereochemistry of compounds 20 and 21 could be determined by the use of compounds 13 and 14 whose absolute configuration was known. Lactone 17 represented a potential key intermediate for the total synthesis of $\\left( + \\right)$ -disorazole Z1. However, lactone 18 seemed to be useless for our aim.",
+        "image_refs": [
+          "9e59730d881af962126417fee9eb2b8601e610cafa782cc71a9103b45345a94e.jpg",
+          "c17c227c6cbc332c14e539c84a7306e6004f76a6ef06c30e293fa547bc1a1249.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactone 17 is a key intermediate for the natural isomer 2. It needs to be protected with TES and then ring-opened and esterified.",
+        "gap": "Need to protect the hydroxyl group of 17 with TES and then perform the mild lactone transesterification.",
+        "decision": "To protect and then open/esterify, we chose to react lactone 17 with triethylsilyl (TES) triflate and DIPEA, followed by our mild lactone transesterification method (KOH, CSA, TMSCHN2), expecting to preserve the labile TES protecting group and methyl ester."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TESOTf",
+          "DIPEA",
+          "KOH",
+          "CSA",
+          "TMSCHN2"
+        ],
+        "solvent": "DCM, MeOH/THF/Et2O",
+        "temperature": "-78 °C, r.t.",
+        "time": "2 h (protection), 41 h (transesterification)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "Compound 22 was predominantly achieved in 60% yield over two steps. The labile TES protecting group was preserved."
+      },
+      "evidence": {
+        "text_span": "Next, lactone 17 was protected with triethylsilyl (TES) triflate and diisopropylethylamine (DIPEA), followed by ring opening and esterification as described above (Scheme 1). In this case, we could observe that even the labile TES protecting group was preserved, predominantly achieving compound 22 with $6 0 \\%$ yield over two steps.",
+        "image_refs": [
+          "9e59730d881af962126417fee9eb2b8601e610cafa782cc71a9103b45345a94e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 22 is an intermediate for isomer 2. A Zaytsev elimination of the δ-hydroxy group is needed to form the double bond.",
+        "gap": "Need to perform a Zaytsev elimination on 22 without affecting the sensitive TES group and methyl ester.",
+        "decision": "We attempted Zaytsev elimination using various reagents, including Burgess reagent, POCl3 in pyridine, p-TsCl, and DBU with heating, expecting to form the desired alkene."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Burgess reagent",
+          "POCl3",
+          "pyridine",
+          "p-TsCl",
+          "DBU"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Burgess reagent led to ring closing. POCl3 only replaced the hydroxy group with chloride. p-TsCl resulted in a highly unstable compound. Basic conditions (workup or DBU) led to starting material 22 or ring closing. Only traces of elimination products were observed. The methyl ester blocked the elimination process due to a strong neighboring group effect."
+      },
+      "evidence": {
+        "text_span": "Now, a Zaytsev elimination of the $\\delta$ -hydroxy group of 22 leading to 2 had limited possibilities,16 as both the sensitive TES group and the methyl ester had to tolerate harsh conditions. Furthermore, mild alternatives like the Burgess reagent led to ring closing. Phosphoryl chloride $\\left( \\mathrm { P O C l } _ { 3 } \\right)$ in pyridine only replaced the hydroxy group with chloride.17 Additional attempts to form a leaving group with paratoluenesulfonyl chloride $\\left( p \\mathrm { -T s C l } \\right)$ resulted in a highly unstable compound.18 Depending on the workup procedure, basic conditions led to starting material 22, and acidic conditions gave rise to ring closing. Hence, any kind of further elimination reactions with bases like sodium hydride were obsolete. Even avoiding a workup by the addition of diazabicycloundecene (DBU) and subsequent heating led predominantly to the formation of the chloride or ring closure. Only traces of elimination products could be observed. As a consequence, we assumed that the methyl ester blocked the elimination process due to a strong neighboring group effect.19 Thus, we had to change the strategy.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "The direct Zaytsev elimination failed due to sensitivity of protecting groups and neighboring group effects.",
+        "gap": "Need an alternative strategy to form the desired (S)-configuration of the quaternary carbon center and the alkene.",
+        "decision": "We chose to try a different sequence: use lactone 15 (from (R)-β-hydroxybutanal 11) in the second aldol step with crotonaldehyde, hoping for the same stereochemical outcome as compound 18, and then invert the β-position stereocenter via Mitsunobu reaction if needed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C=CC=O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Bu2BOTf",
+          "Et3N",
+          "crotonaldehyde"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "time": "4.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "dr": "80:20",
+        "observation": "Aldol addition was successful, yielding compound 19 (54%, dr=80:20). X-ray analysis of crystalline 19 revealed a structure similar to lactone 8, indicating that an unsaturated aldehyde did not lead to the desired stereochemical outcome for the quaternary center."
+      },
+      "evidence": {
+        "text_span": "In a second attempt to form isomer 2 with the desired (S)- configuration of the quaternary carbon center, we wanted to exploit the effect of lactone 15 by adding crotonaldehyde, as shown in Scheme 2, hoping for the same stereochemical outcome that we obtained for compound 18. We speculated that this time the quaternary center would have the desired stereochemical outcome; only the resulting stereocenter in the $\\beta$ -position would have to be inverted using a Mitsunobu reaction. Indeed, the aldol addition could be performed successfully with a yield of $5 4 \\%$ $\\mathrm { ' } \\mathrm { d r } = 8 0 { : } 2 0 \\mathrm { ' }$ ). Compound 19 crystallized and was accessible to X-ray structure analysis (Figure 4). The analysis revealed a structure similar to that of lactone 8. Obviously, in our case, the usage of an unsaturated aldehyde did not lead to the same stereochemical outcome as a saturated aldehyde.",
+        "image_refs": [
+          "9e59730d881af962126417fee9eb2b8601e610cafa782cc71a9103b45345a94e.jpg",
+          "65a0548ed70e8b6173fb4875142ed283d9e6445a528fe2651b19554dd54e0e61.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "The previous attempt with lactone 15 and crotonaldehyde did not yield the desired stereochemistry for isomer 2.",
+        "gap": "Need a successful route to the natural lateral chain 2, which was previously achieved in the total synthesis of (+)-disorazole Z1.",
+        "decision": "We returned to the strategy that proved successful in the total synthesis: using lactone 7 (from (S)-butanal 10) and reacting it with PMB-protected aldehyde 16 to form lactone 23, followed by TES protection, ring opening, esterification, DMP oxidation, Wittig reaction, and Grubbs II catalyzed isomerization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COc1ccc(P(OC)OCCCC=O)cc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Bu2BOTf",
+          "Et3N",
+          "TESOTf",
+          "DIPEA"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "time": "4.5 h (aldol), 2 h (protection)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "Lactone 23 was formed as the TES-protected compound over two steps (55% yield). No crystalline products were obtained after the second aldol step, so the stereochemistry of 23 was assumed based on lactone 8."
+      },
+      "evidence": {
+        "text_span": "Therefore, we returned to a less atom economic strategy (Scheme 3), which was already shown to be the most successful route for the total synthesis of $\\left( + \\right)$ -disorazole Z1.11 Lactone 7 generated according to the reliable method shown in Scheme 2 was reacted with the PMB-protected aldehyde 16 forming lactone 23 as the TES-protected compound over two steps. Then, our mild lactone transesterification method was also applied here, followed by a DMP oxidation and a Wittig reaction to form a terminal alkene 24. Finally, terminal alkene 24 was isomerized to the final compound 2 with an $E/Z$ ratio of 12:1 according to Hanessian et al. using Grubbs II reagent.20 This method had to be adjusted to our intermediate by reducing the temperature from 60 to $5 5 ~ ^ { \\circ } \\mathrm { C }$ because the conversion stopped at $6 0 ~ ^ { \\circ } \\mathrm { C! }$ In addition, it should be mentioned here that normal lab-grade methanol is in fact sufficient, and the addition of 1 equiv of triethylamine ensures complete transformation of the Grubbs II reagent to the necessary isomerization catalyst without any interaction with our substrate.21 Side products were not observed either. Unfortunately, in this third approach, no crystalline products could be obtained after the second aldol step; even a diol derived from 23 did not crystallize. Therefore, the correct stereochemistry of compound 23 was not clear at that point. We made this assumption based on the structure of lactone 8. This assumption was proved with the help of compound 22 when the terminal alkene 24 was treated with mercury(II) acetate to hydrate the double bond via an oxymercuration reaction which generated an inseparable mixture of compounds 25 and 22 with an R/S ratio of 3:1 of the newly formed $\\delta$ -hydroxy group in $2 5 \\%$ yield.22 A comparison of the $^ { 1 3 } \\mathrm { C } \\{ ^ { 1 } \\mathrm { H } \\}$ - NMR spectrum of mixture 25/22 with compound 22, whose structure was proven by X-ray crystallography of diol 20 (Scheme 2), confirmed that we had obtained the desired isomer 2. Indeed, later on, it was also proven by the successful total synthesis of 1. 11",
+        "image_refs": [
+          "f2d3dad64c3fc5b4e264cf35157858d0e3472c142803954cb01adb04bb1c81ea.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactone 23 needs to be converted to the terminal alkene 24.",
+        "gap": "Need to perform lactone transesterification, DMP oxidation, and Wittig reaction.",
+        "decision": "To form terminal alkene 24, we chose to apply our mild lactone transesterification method (KOH, CSA, TMSCHN2) to 23, followed by DMP oxidation and a Wittig reaction (n-BuLi, MePPh3Br)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KOH",
+          "CSA",
+          "TMSCHN2",
+          "DMP",
+          "NaHCO3",
+          "n-BuLi",
+          "MePPh3Br"
+        ],
+        "solvent": "MeOH/THF/Et2O, THF",
+        "temperature": "r.t., -78 °C to r.t.",
+        "time": "23 h (transesterification), 6.5 h (Wittig)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Terminal alkene 24 was formed in 82% yield over two steps (DMP oxidation and Wittig reaction)."
+      },
+      "evidence": {
+        "text_span": "Then, our mild lactone transesterification method was also applied here, followed by a DMP oxidation and a Wittig reaction to form a terminal alkene 24.",
+        "image_refs": [
+          "6a757f6e9dd9896b5abb1c15721af7425281878c422fe0edc3621f26fa52aed2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Terminal alkene 24 needs to be isomerized to the final compound 2 with the correct E/Z ratio.",
+        "gap": "Need to isomerize the terminal alkene to the internal alkene.",
+        "decision": "To isomerize terminal alkene 24, we chose to use Grubbs II reagent, adjusting the temperature from 60 to 55 °C and adding 1 equiv of triethylamine to ensure complete transformation of the catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Grubbs II",
+          "Et3N"
+        ],
+        "solvent": "MeOH",
+        "temperature": "55 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "regio_selectivity": "E/Z = 12:1",
+        "observation": "Compound 2 was obtained with an E/Z ratio of 12:1. The temperature adjustment was crucial for conversion."
+      },
+      "evidence": {
+        "text_span": "Finally, terminal alkene 24 was isomerized to the final compound 2 with an $E/Z$ ratio of 12:1 according to Hanessian et al. using Grubbs II reagent.20 This method had to be adjusted to our intermediate by reducing the temperature from 60 to $5 5 ~ ^ { \\circ } \\mathrm { C }$ because the conversion stopped at $6 0 ~ ^ { \\circ } \\mathrm { C! }$ In addition, it should be mentioned here that normal lab-grade methanol is in fact sufficient, and the addition of 1 equiv of triethylamine ensures complete transformation of the Grubbs II reagent to the necessary isomerization catalyst without any interaction with our substrate.21 Side products were not observed either.",
+        "image_refs": [
+          "6a757f6e9dd9896b5abb1c157121af7425281878c422fe0edc3621f26fa52aed2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The stereochemistry of compound 23 was assumed based on lactone 8, but direct crystallographic evidence was lacking.",
+        "gap": "Need to confirm the correct stereochemistry of compound 2, especially the quaternary center.",
+        "decision": "To confirm the stereochemistry, we chose to treat terminal alkene 24 with mercury(II) acetate to hydrate the double bond via an oxymercuration reaction, expecting to form a mixture of 25 and 22. Comparison of the 13C NMR spectrum of this mixture with compound 22 (whose structure was proven by X-ray of diol 20) would confirm the stereochemistry of 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "Hg(OAc)2",
+          "NaBH4"
+        ],
+        "solvent": "water/THF",
+        "temperature": "r.t.",
+        "time": "21 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 25,
+        "dr": "3:1 (R/S)",
+        "observation": "An inseparable mixture of compounds 25 and 22 was generated with an R/S ratio of 3:1 of the newly formed δ-hydroxy group. Comparison of the 13C NMR spectrum confirmed that the desired isomer 2 had been obtained. This was further proven by the successful total synthesis of (+)-disorazole Z1."
+      },
+      "evidence": {
+        "text_span": "This assumption was proved with the help of compound 22 when the terminal alkene 24 was treated with mercury(II) acetate to hydrate the double bond via an oxymercuration reaction which generated an inseparable mixture of compounds 25 and 22 with an R/S ratio of 3:1 of the newly formed $\\delta$ -hydroxy group in $2 5 \\%$ yield.22 A comparison of the $^ { 1 3 } \\mathrm { C } \\{ ^ { 1 } \\mathrm { H } \\}$ - NMR spectrum of mixture 25/22 with compound 22, whose structure was proven by X-ray crystallography of diol 20 (Scheme 2), confirmed that we had obtained the desired isomer 2. Indeed, later on, it was also proven by the successful total synthesis of 1. 11",
+        "image_refs": [
+          "6a757f6e9dd9896b5abb1c15721af7425281878c422fe0edc3621f26fa52aed2.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "X-ray crystallography"
+    ],
+    "metrics": {},
+    "significance": "This work provides detailed insights into the stereoselective synthesis of chiral acyclic α-quaternary-β,β'-hydroxy esters, which are challenging motifs in natural products. It demonstrates the utility of lactone intermediates in controlling stereochemistry during consecutive aldol reactions and offers refined procedures for lactonization and transesterification. The findings are crucial for the total synthesis of (+)-disorazole Z1 and are applicable to other complex natural products."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.joc.5c01789",
+      "pmcid": "PMC12604028",
+      "title": "Development of a Stereoselective Synthesis of Isomers of (+)-Disorazole Z1's Lateral Chain.",
+      "authors": "Bauer TJ, Köhler P, Spieß O, Schinzer D.",
+      "journal": "J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12604028?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/19f61429-f856-4126-bab8-7bf4acb54ea2.zip",
+      "parsed_at": "2026-05-11T06:33:52.340590+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 45,
+    "parseable": 5,
+    "canonicalized": 5,
+    "invalid": 40,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "C/C=C/[C@H](OSi(C)(C)C(C)(C)C)[C@@](C)(OC(=O)OC)[C@H](OSi(CC)(CC)CC)CCCCOP(OC)C1=CC=C(OC)C=C1",
+      "O=CCCCOSi(C)(C)C(C)(C)C",
+      "O=C(C(C)C(O)CCCCOSi(C)(C)C(C)(C)C)N1CCS[C@H]1CC2=CC=CC=C2",
+      "O=C(C(C)C(O)CCCCOSi(C)(C)C(C)(C)C)N1CCS[C@H]1CC2=CC=CC=C2",
+      "O=C1OCC[C@H](OSi(C)(C)C(C)(C)C)[C@@H]1C",
+      "O=C(C(C)C(O)CCCCOSi(C)(C)C(C)(C)C)N1CCS[C@H]1CC2=CC=CC=C2",
+      "O=C1OCC[C@H](OSi(C)(C)C(C)(C)C)[C@@H]1C",
+      "O=C1OCC[C@H](OSi(C)(C)C(C)(C)C)[C@@H]1C",
+      "O=C1OCC[C@H](OSi(C)(C)C(C)(C)C)[C@@](C)(C=CC)C1O",
+      "O=C1OCC[C@H](OSi(C)(C)C(C)(C)C)[C@@](C)(C=CC)C1O"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "(+)-Disorazole Z1's Lateral Chain (Isomer 2)",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

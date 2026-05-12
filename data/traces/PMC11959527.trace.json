@@ -1,0 +1,570 @@
+{
+  "trace_id": "TS-PMC11959527",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Nervione",
+    "smiles": "",
+    "natural_product_class": "benzofuran-derivatized natural product",
+    "structural_features": {
+      "key_motifs": [
+        "benzofuran",
+        "alpha-hydroxy ketone"
+      ]
+    },
+    "motivation": "Nervione, a benzofuran-derivatized natural product newly identified in Nervilia concolor, was first isolated recently. Traditionally, N. concolor has been utilized in Chinese medicine to treat a variety of ailments. Despite the extensive use of nervione in traditional medicine, its bioactive properties have not been thoroughly explored. The relative configuration of nervione was determined using computational methods, specifically DFT-NMR chemical shift calculations paired with DP4+ probability analysis. However, its absolute configuration was initially inferred by comparing its electronic circular dichroism (ECD) spectrum with those of previously reported compounds. This method, reliant on comparative analysis, still lacks direct experimental validation, underscoring the ongoing challenge of conclusively determining nervione’s structure. Consequently, nervione merits further investigation through total synthesis to fully understand its structure and biological activities. Herein, we report the first total synthesis and the corrected structural assignment of this natural product, nervione.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Asymmetric total synthesis of optically active nervione in both (+) and (-) forms, and structural reassignment of nervione's absolute configuration."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming the lactone ring and C-O bond of the furan ring",
+        "named_strategy": "Lewis acid-mediated diastereoselective reduction and directed cyclization",
+        "reasoning": "To establish the stereochemistry at C-3 of nervione (1) and form the lactone ring."
+      },
+      {
+        "bond_description": "C-C bond between the benzofuran and the propanoyl group",
+        "named_strategy": "Directed ortho-metalation",
+        "reasoning": "To incorporate the alpha-hydroxy ketone moiety through the reaction of Weinreb amide 3 with intermediate 4."
+      },
+      {
+        "bond_description": "C-O bond of the carbamate and C-C bond of the benzofuran",
+        "named_strategy": "Snieckus-Fries rearrangement",
+        "reasoning": "To introduce the carboxamide group at the desired position."
+      },
+      {
+        "bond_description": "C-O bond of the furan ring",
+        "named_strategy": "Cu(I)-catalyzed intramolecular hydroalkoxylation",
+        "reasoning": "To form the benzofuran ring from an alkyne-substituted resorcinol derivative."
+      },
+      {
+        "bond_description": "C-I bond of 2-iodoresorcinol",
+        "named_strategy": "Sonogashira coupling",
+        "reasoning": "To introduce the alkyne group onto the resorcinol core."
+      },
+      {
+        "bond_description": "C-H bond of resorcinol",
+        "named_strategy": "Iodination",
+        "reasoning": "To functionalize commercially available resorcinol for subsequent coupling reactions."
+      }
+    ],
+    "rationale": "The retrosynthetic strategy involves a late-stage, Lewis acid-mediated diastereoselective reduction of intermediate 2, which is pivotal for establishing the stereochemistry at the C-3 of nervione (1). The stereoinduction is anticipated to be influenced by the alpha-hydroxy ketone moiety, which is incorporated through the reaction of Weinreb amide 3 with intermediate 4 via directed ortho-metalation. Intermediate 4 is accessible through ortho-directed strategies coupled with furan formation, a protocol established in our previous work. Consequently, commercially available resorcinol was selected as the starting point for our synthesis pathway."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Commercially available resorcinol is the starting material.",
+        "gap": "How to introduce an iodine atom at the ortho position of resorcinol for subsequent coupling reactions.",
+        "decision": "To convert resorcinol to 2-iodoresorcinol (7) using established procedures."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Oc1cccc(O)c1"
+        ],
+        "product_smiles": [
+          "Oc1cccc(O)c1I"
+        ],
+        "reagents": [
+          "I2",
+          "NaHCO3"
+        ],
+        "solvent": "H2O",
+        "temperature": "0 °C to rt",
+        "time": "30 min",
+        "stoichiometry": {
+          "resorcinol": "5.0 mmol",
+          "I2": "5.5 mmol",
+          "NaHCO3": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "2-Iodobenzene-1,3-diol (7) was obtained as a white solid."
+      },
+      "evidence": {
+        "text_span": "Accordingly, resorcinol was initially converted to 2- iodoresorcinol (7) through established procedures,9 achieving a 75% yield (Scheme 2).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "2-Iodoresorcinol (7) has been synthesized.",
+        "gap": "How to introduce an alkyne group onto the iodoresorcinol.",
+        "decision": "To perform Sonogashira coupling of 7 with triisopropylsilylacetylene."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Oc1cccc(O)c1I"
+        ],
+        "product_smiles": [
+          "CC(C)[Si](C#Cc1cccc(O)c1O)(C(C)C)C(C)C"
+        ],
+        "reagents": [
+          "triisopropylsilylacetylene",
+          "Pd(PPh3)2Cl2",
+          "CuI",
+          "Et3N"
+        ],
+        "solvent": "1,4-dioxane",
+        "temperature": "60 °C",
+        "time": "2 h",
+        "stoichiometry": {
+          "2-iodobenzene-1,3-diol 7": "4.0 mmol",
+          "Pd(PPh3)2Cl2": "0.2 mmol",
+          "CuI": "0.4 mmol",
+          "Et3N": "12 mmol",
+          "triisopropylsilyl acetylene": "8.0 mmol"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Coupling adduct 8 was obtained as a pale yellow solid."
+      },
+      "evidence": {
+        "text_span": "Compound 7 then underwent Sonogashira coupling with triisopropylsilylacetylene, yielding coupling adduct 8 in 78% yield.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The alkyne-substituted resorcinol derivative 8 has been synthesized.",
+        "gap": "How to cyclize 8 into the benzofuran core.",
+        "decision": "To cyclize 8 into benzofuran 9 through Cu(I)-catalyzed intramolecular hydroalkoxylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[Si](C#Cc1cccc(O)c1O)(C(C)C)C(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)[Si](c1coc2c(O)cccc12)(C(C)C)C(C)C"
+        ],
+        "reagents": [
+          "CuCl",
+          "Cs2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "80 °C",
+        "time": "15 h",
+        "stoichiometry": {
+          "2-((triisopropylsilyl)ethynyl)benzene-1,3-diol 8": "2.5 mmol",
+          "CuCl": "0.125 mmol",
+          "Cs2CO3": "0.125 mmol"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Benzofuran 9 was obtained as a white solid."
+      },
+      "evidence": {
+        "text_span": "This intermediate was subsequently cyclized into benzofuran 9 through Cu(I)-catalyzed intramolecular hydroalkoxylation,10 affording a high 94% yield.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Benzofuran 9 has been synthesized.",
+        "gap": "How to introduce a carbamate group onto the phenolic hydroxyl group of 9.",
+        "decision": "To treat 9 with N,N-diethylchloroformamide under basic conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[Si](c1coc2c(O)cccc12)(C(C)C)C(C)C"
+        ],
+        "product_smiles": [
+          "CCN(CC)C(=O)Oc1cccc2c([Si](C(C)C)(C(C)C)C(C)C)coc12"
+        ],
+        "reagents": [
+          "N,N-diethylchloroformamide",
+          "K2CO3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "reflux",
+        "time": "19 h",
+        "stoichiometry": {
+          "2-(triisopropylsilyl)benzofuran-4-ol 9": "2.0 mmol",
+          "K2CO3": "3.0 mmol",
+          "diethylcarbamyl chloride": "3.0 mmol"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Carbamate 10 was obtained as a white solid."
+      },
+      "evidence": {
+        "text_span": "The reaction sequence proceeded with the treatment of 9 with N,N-diethylchloroformamide under basic conditions in refluxing acetonitrile, forming carbamate 10.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The carbamate 16 (TMS analog) was prepared.",
+        "gap": "To perform a Fries rearrangement on the carbamate.",
+        "decision": "To expose the TMS analog 16 to standard rearrangement conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[N+](CC)(CC)C(=O)Oc1c([Si](C)(C)C)oc2ccccc12"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "LDA"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to rt"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Exposure of the TMS analog 16 to standard rearrangement conditions resulted in a mixture of ring-opening products."
+      },
+      "evidence": {
+        "text_span": "As shown in Scheme 3, exposure of the TMS analog 16 to standard rearrangement conditions resulted in a mixture of ring-opening products,12 underscoring the importance of the steric effect afforded by the TIPS group and LiTMP base.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 5,
+      "thought": {
+        "background": "Standard Fries rearrangement conditions on the TMS analog 16 led to undesired ring-opening products.",
+        "gap": "How to achieve the Fries rearrangement without ring opening, considering the steric hindrance of the TIPS group and the choice of base.",
+        "decision": "To use LiTMP as the base and leverage the steric hindrance of the TIPS group at the C-2 position to suppress undesired ring opening of the furan during deprotonation of 10."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCN(CC)C(=O)Oc1cccc2c([Si](C(C)C)(C(C)C)C(C)C)coc12"
+        ],
+        "product_smiles": [
+          "CCN(CC)C(=O)c1cc2c([Si](C(C)C)(C(C)C)C(C)C)coc2cc1O"
+        ],
+        "reagents": [
+          "LiTMP"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to -20 °C",
+        "time": "1 h at -78 °C, then 4 h at -20 °C",
+        "stoichiometry": {
+          "2-(triisopropylsilyl)benzofuran-4-yl diethylcarbamate 10": "1.5 mmol",
+          "LiTMP": "5.25 mmol"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "The desired Fries product 11 was obtained in excellent yield. The choice of LiTMP as the base and the steric hindrance provided by the TIPS group at the C-2 position were critical in suppressing undesired ring opening of the furan."
+      },
+      "evidence": {
+        "text_span": "Deprotonation of 10 using lithium tetramethylpiperidide (LiTMP) in tetrahydrofuran (THF) at −78 °C led to the formation of the desired Fries product 11. The choice of LiTMP as the base and the steric hindrance provided by the TIPS group at the C-2 position were critical in suppressing undesired ring opening of the furan, a process typically initiated by deprotonation at the 3-position of the benzofuran.11 This tactically modified Snieckus−Fries rearrangement significantly enhanced the efficiency of the transformation, achieving an excellent 95% yield for product 11.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Fries product 11 has been synthesized.",
+        "gap": "How to methylate the phenolic hydroxyl group of 11.",
+        "decision": "To perform methylation of the phenolic hydroxyl group using methyl iodide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCN(CC)C(=O)c1cc2c([Si](C(C)C)(C(C)C)C(C)C)coc2cc1O"
+        ],
+        "product_smiles": [
+          "CCN(CC)C(=O)c1cc2c([Si](C(C)C)(C(C)C)C(C)C)coc2cc1OC"
+        ],
+        "reagents": [
+          "MeI",
+          "K2CO3"
+        ],
+        "solvent": "acetone",
+        "temperature": "reflux",
+        "time": "20 h",
+        "stoichiometry": {
+          "N,N-diethyl-4-hydroxy-2-(triisopropylsilyl)benzofuran-5-carboxamide 11": "1.0 mmol",
+          "K2CO3": "1.2 mmol",
+          "MeI": "1.2 mmol"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "N,N-diethyl-4-methoxy-2-(triisopropylsilyl)benzofuran-5-carboxamide (12) was obtained as a white solid."
+      },
+      "evidence": {
+        "text_span": "Further synthetic elaboration included methylation of the phenolic hydroxyl group using methyl iodide.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Benzofuran 12 has been synthesized.",
+        "gap": "How to introduce the propanoyl group via nucleophilic addition to an aldehyde.",
+        "decision": "To attempt nucleophilic addition of lithiated 12 to aldehyde (R)-17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCN(CC)C(=O)c1cc2c([Si](C(C)C)(C(C)C)C(C)C)coc2cc1OC",
+          "CC(C=O)O[Si](C)(C)C(C)(C)C"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuLi",
+          "TMEDA"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "1 h, then 2 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "The nucleophilic addition of lithiated 12 to aldehyde (R)-17 resulted in unsatisfactory substrate-controlled diastereoselectivity, yielding a mixture of diastereomers 18 and 19 in a 3:1 ratio."
+      },
+      "evidence": {
+        "text_span": "An attempt was also made to achieve the nucleophilic addition of lithiated 12 to aldehyde (R)-17; however, the unsatisfactory substrate-controlled diastereoselectivity, yielding a mixture of diastereomers 18 and 19 in a 3:1 ratio, hindered the subsequent steps in the synthesis (Scheme 4).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "Nucleophilic addition to aldehyde (R)-17 resulted in poor diastereoselectivity.",
+        "gap": "How to introduce the propanoyl group with better stereocontrol and avoid side reactions.",
+        "decision": "To react the aryl lithium species from 12 with Weinreb amide (R)-3 instead of aldehyde (R)-17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCN(CC)C(=O)c1cc2c([Si](C(C)C)(C(C)C)C(C)C)coc2cc1OC",
+          "CON(C)C(=O)C(C)O[Si](C)(C)C(C)(C)C"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuLi",
+          "TMEDA",
+          "(R)-3"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "1 h, then 2 h",
+        "stoichiometry": {
+          "N,N-diethyl-4-methoxy-2-(triisopropylsilyl)benzofuran-5-carboxamide 12": "0.5 mmol",
+          "TMEDA": "0.79 mmol",
+          "t-BuLi": "0.75 mmol",
+          "(R)-2-((tert-butyldimethylsilyl)oxy)-N-methoxy-N-methylpropanamide ((R)-3)": "0.75 mmol"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 42,
+        "observation": "Intermediate 13 was afforded in moderate yield. The reduced yield can be attributed to a competing nucleophilic aromatic substitution (SNAr) of t-BuLi at the benzofuran 12, leading to the formation of a side product, 4-(tert-butyl)-N,N-diethyl-2-(triisopropylsilyl)benzofuran-5-carboxamide (14)."
+      },
+      "evidence": {
+        "text_span": "Directed ortho-metalation of benzofuran 12 was then achieved using t-BuLi and N,N,N′,N′-tetramethylethylenediamine (TMEDA) in THF at −78 °C, yielding an aryl lithium species. This species was subsequently reacted with Weinreb amide (R)-3 to afford intermediate 13 in moderate yield. The reduced yield can be attributed to a competing nucleophilic aromatic substitution (SNAr) of t-BuLi at the benzofuran 12, leading to the formation of a side product, 4-(tert-butyl)-N,N-diethyl-2-(triisopropylsilyl)benzofuran-5-carboxamide (14) (also see Supporting Information).13",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 13, containing the TBS and TIPS protecting groups, has been synthesized.",
+        "gap": "How to selectively deprotect the silyl groups to obtain the alpha-hydroxy ketone intermediate 2.",
+        "decision": "To perform silyl deprotection with TBAF."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCOC(=O)c1c(C(=O)C(C)O)cc2ccoc2c1OC"
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "30 min",
+        "stoichiometry": {
+          "(R)-6-(2-((tert-butyldimethylsilyl)oxy)propanoyl)-N,N-diethyl-4-methoxy-2-(triisopropylsilyl)benzofuran-5-carboxamide 13": "0.15 mmol",
+          "TBAF": "0.225 mmol"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "(R)-N,N-diethyl-6-(2-hydroxypropanoyl)-4-methoxybenzofuran-5-carboxamide (2) was obtained as a colorless sticky oil."
+      },
+      "evidence": {
+        "text_span": "Upon silyl deprotection with TBAF, the resultant compound aligned with the planned intermediate 2 from our retrosynthetic analysis.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 2, an alpha-hydroxy ketone, is ready for reduction.",
+        "gap": "How to achieve a highly diastereoselective reduction of the ketone to form the desired stereochemistry for nervione.",
+        "decision": "To evaluate various Lewis acid-mediated chelated and nonchelated reducing conditions, focusing on SnCl4/BH3·py in DCM."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)c1c(C(=O)C(C)O)cc2ccoc2c1OC"
+        ],
+        "product_smiles": [
+          "COc1c2c(cc3ccoc13)[C@@H](C(C)O)OC2=O"
+        ],
+        "reagents": [
+          "SnCl4",
+          "BH3·py",
+          "KOAc"
+        ],
+        "solvent": "CH2Cl2, o-xylene",
+        "temperature": "-78 °C, then 130 °C",
+        "time": "15 min, then 4 h",
+        "stoichiometry": {
+          "(R)-N,N-diethyl-6-(2-hydroxypropanoyl)-4-methoxybenzofuran-5-carboxamide 2": "0.05 mmol",
+          "SnCl4": "0.075 mmol",
+          "BH3·py": "0.075 mmol",
+          "KOAc": "0.5 mmol"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "dr": ">20:1",
+        "observation": "The desired (+)-nervione was obtained with high diastereoselectivity and yield. The reaction solvent (dichloromethane) and the borane carrier, pyridine, played a crucial role in achieving the high level of diastereoselectivity observed."
+      },
+      "evidence": {
+        "text_span": "A significant improvement was achieved with the use of tin tetrachloride, where the desired (+)-nervione ([α]D23 = +76.2) product predominated, achieving a diastereoselectivity ratio exceeding 20:1 (entry 6) in 93% yield. Notably, the reaction solvent (dichloromethane) and the borane carrier, pyridine, which may also function as a base facilitating the coordination of the hydroxy group to the tin center, played a crucial role in achieving the high level of diastereoselectivity observed (entries 7−10; see Supporting Information for further details).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation",
+      "circular_dichroism"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated for the entire synthesis, but individual steps show high yields."
+      },
+      "Longest Linear Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "The total synthesis was achieved in 10 steps from commercially available resorcinol."
+      },
+      "Total Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "The total synthesis was achieved in 10 steps from commercially available resorcinol."
+      }
+    },
+    "comparison_to_prior": "The 1H and 13C NMR spectra of both synthesized (+)-nervione and (-)-nervione are consistent with those of the natural product isolated from N. concolor. X-ray crystallographic analysis unambiguously confirmed the absolute configurations of (+)-nervione and (-)-nervione. Detailed analysis reveals that the CD spectrum of (-)-nervione exhibits a positive Cotton effect near 210 nm, in agreement with the properties of the natural product nervione reported by Duong et al. Contrarily, Duong et al. initially suggested their isolated structure as (+)-nervione. Given that the optical configuration has been unequivocally established through X-ray crystallography in this study, we have reassigned the natural product nervione to the (-)-nervione configuration.",
+    "significance": "This study successfully demonstrated the asymmetric total synthesis of nervione in both its optically active (+) and (-) forms, highlighting the molecular feasibility and stereochemical adaptability of the synthetic methodology. A significant achievement was the resolution of discrepancies in the CD spectra between the synthesized nervione and its naturally isolated counterpart, leading to the reassignment of the absolute configuration of naturally occurring nervione from (3S, 8R) to (3R, 8S). The developed techniques are expected to promote further investigations into the biological properties of nervione and similar compounds."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.joc.5c00258",
+      "pmcid": "PMC11959527",
+      "title": "Asymmetric Total Synthesis and Structural Reassignment of Nervione.",
+      "authors": "Phakdeeyothin K, Li JL, Hong YT, Chein RJ.",
+      "journal": "J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11959527?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/ab19ed8a-e6d7-494a-8d7b-052225b33451.zip",
+      "parsed_at": "2026-05-11T06:20:06.600785+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 26,
+    "parseable": 20,
+    "canonicalized": 20,
+    "invalid": 6,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(O)[C@@H]1C(=O)Oc2c1c(OC)c1occc12",
+      "CC[C@@H](O[Si](C)(C)C(C)(C)C)[C@H](O)c1cc2c(o1[Si](C(C)C)(C(C)C)C(C)C)cc(OC)c2C(=O)N(CC)CC",
+      "CC[C@@H](O[Si](C)(C)C(C)(C)C)[C@@H](O)c1cc2c(o1[Si](C(C)C)(C(C)C)C(C)C)cc(OC)c2C(=O)N(CC)CC",
+      "CC[C@@H](OSi(C)(C)C(C)(C)C)C(=O)c1c(OC)c2ccc(O2)C(=O)N(CC)CC",
+      "CC(C)(C)c1ccc2oc(Si(C(C)C)(C(C)C)C(C)C)cc2c1C(=O)N(CC)CC",
+      "CC[C@@H](OSi(C)(C)C(C)(C)C)C(=O)c1c(OC)c2ccc(O2)C(=O)N(CC)CC"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "Nervione",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

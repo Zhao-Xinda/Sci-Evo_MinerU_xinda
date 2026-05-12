@@ -1,0 +1,931 @@
+{
+  "trace_id": "TS-PMC11290413",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "simonsol F",
+    "smiles": "C=CCCC1C=CC(=O)C(C2Oc3cc(CC=C)cc(O)c32)C1",
+    "natural_product_class": "neolignan",
+    "structural_features": {
+      "molecular_weight": 400.47,
+      "stereocenters": 4,
+      "ring_systems": "tetrahydrodibenzofuran",
+      "key_motifs": [
+        "allyl",
+        "phenol",
+        "enone",
+        "tetrahydrodibenzofuran"
+      ]
+    },
+    "motivation": "First total synthesis of simonsol F, exploration of biological activity and biosynthesis of Illicium natural products, and potential as a source of new neuroprotective compounds due to structural resemblance to galantamine alkaloids.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Total synthesis of simonsol F (3) and other Illicium-derived neolignans, biological evaluation for neurotrophic properties, and re-evaluation of biosynthesis."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming the spirocyclic system",
+        "named_strategy": "dearomatizing spirocyclization",
+        "reasoning": "To construct the core [4.3.0] tetrahydrodibenzofuran ring system from a biaryl precursor."
+      },
+      {
+        "bond_description": "C-C bond forming the enone system",
+        "named_strategy": "phosphonium ylide-mediated cascade reaction",
+        "reasoning": "To introduce the methylene group and form the enone system, involving ring-opening, conjugate addition, and methylenation."
+      },
+      {
+        "bond_description": "C-C bond between two aryl rings",
+        "named_strategy": "Suzuki-Miyaura cross-coupling",
+        "reasoning": "To connect two aryl fragments, forming the biaryl precursor."
+      }
+    ],
+    "rationale": "The synthesis plan aimed to construct the core [4.3.0] tetrahydrodibenzofuran ring system using a phosphonium ylide-mediated cascade reaction. This cascade was envisioned to proceed from a hemiacetal intermediate, which itself would be derived from a dearomatizing spirocyclization of a biaryl. The biaryl precursor was to be formed via Suzuki-Miyaura cross-coupling of appropriate aryl halides and boronic acids. This strategy was chosen to efficiently build the complex polycyclic structure and allow for the introduction of necessary functionalities."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Starting from 4-methoxyallylbenzene (23).",
+        "gap": "Need to introduce a boronic acid group ortho to the methoxy group and then deprotect the methyl ether to get boronic acid 24.",
+        "decision": "To introduce the boronic acid, chose ortho-lithiation followed by quenching with trimethylborate and transesterification with pinacol. To deprotect the methyl ether, chose boron trichloride dimethylsulfide complex, expecting to obtain boronic acid 24 and dimer 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc(OC)cc1"
+        ],
+        "product_smiles": [
+          "C=CCc1ccc(O)c(B(O)O)c1",
+          "C=CCc1ccc2c(c1)OB(c1ccc(CC=C)c(O)c1)OB2O"
+        ],
+        "reagents": [
+          "sBuLi",
+          "B(OMe)3",
+          "pinacol",
+          "BCl3.SMe2"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to r.t., then 80 °C",
+        "time": "1 h, then 16 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 47,
+        "observation": "Boronic acid 24 and dimer 25 were obtained in a combined yield of 47% over three steps."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "The synthesis of simonsol C (2) (Scheme 2) began with the preparation of boronic acid 24 through ortho-lithiation of 23 followed by quenching with trimethylborate and transesterication with pinacol. Subsequent treatment with boron trichloride dimethylsulde complex effected cleavage of the methyl ether and pinacol ester and gave the boronic acid 24 and dimer 25 in a combined yield of 47% over three steps.",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Boronic acid 24 and dimer 25 mixture is available.",
+        "gap": "Need to couple this mixture with bromide 26 to form biaryl 27.",
+        "decision": "To form the biaryl, chose Suzuki-Miyaura cross-coupling with bromide 26, expecting to obtain biaryl 27."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc(O)c(B(O)O)c1",
+          "C=CCc1ccc2c(c1)OB(c1ccc(CC=C)c(O)c1)OB2O",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd(PPh3)4",
+          "Na2CO3"
+        ],
+        "solvent": "THF",
+        "temperature": "r.t.",
+        "time": "1.5 h",
+        "stoichiometry": {
+          "Pd(PPh3)4": "8 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "Biaryl 27 was obtained in 93% yield."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Suzuki–Miyaura cross-coupling of this mixture with bromide 26 then gave biaryl 27 which was brominated to afford intermediate 28 from which acetal 29 was prepared by reaction with bromine and ethyl vinyl ether.",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Biaryl 27 is available.",
+        "gap": "Need to brominate biaryl 27 to afford intermediate 28.",
+        "decision": "To brominate, chose DBDMH and iPrMgCl, expecting to obtain intermediate 28."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DBDMH",
+          "iPrMgCl"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to r.t.",
+        "time": "1.5 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "Intermediate 28 was obtained in 86% yield."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Suzuki–Miyaura cross-coupling of this mixture with bromide 26 then gave biaryl 27 which was brominated to afford intermediate 28 from which acetal 29 was prepared by reaction with bromine and ethyl vinyl ether.",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 28 is available.",
+        "gap": "Need to prepare acetal 29 from 28.",
+        "decision": "To prepare acetal 29, chose reaction with bromine and ethyl vinyl ether, expecting to obtain acetal 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "ethyl vinyl ether",
+          "Br2",
+          "Hünig's base"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C to r.t.",
+        "time": "2.5 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Acetal 29 was prepared in 96% yield."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Suzuki–Miyaura cross-coupling of this mixture with bromide 26 then gave biaryl 27 which was brominated to afford intermediate 28 from which acetal 29 was prepared by reaction with bromine and ethyl vinyl ether.",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acetal 29 is available.",
+        "gap": "Need to perform silyl ether cleavage and spirocyclization to afford dienone 30.",
+        "decision": "To achieve this, chose treatment with cesium fluoride, expecting to obtain dienone 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C=CCc1cc(Br)c2c(c1)C(=O)C=CCC(OCC)C2"
+        ],
+        "reagents": [
+          "CsF",
+          "Na2SO4"
+        ],
+        "solvent": "DMF",
+        "temperature": "130 °C",
+        "time": "1 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Dienone 30 was obtained in 94% yield, and its structure was confirmed by X-ray analysis."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "A dilute solution of 29 was then treated with cesium uoride, which resulted in silyl ether cleavage and spirocyclization to afford dienone 30, the structure of which was conrmed by X-ray analysis.",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dienone 30 is available.",
+        "gap": "Need to hydrolyze 30 to the corresponding hemiacetal 33, which is required for the cascade reaction.",
+        "decision": "To achieve this, chose treatment of 30 with aqueous hydrochloric acid, expecting to obtain hemiacetal 33."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1cc(Br)c2c(c1)C(=O)C=CCC(OCC)C2"
+        ],
+        "product_smiles": [
+          "C=CCc1cc2c(cc1Br)C(O)COC21C=CC=CC1=O",
+          "C=Cc1cc(Br)c2c(c1)C1C3C=CC(=O)C1(O2)C3(O)O",
+          "O=C1CC[C@@H]2O[C@@H]3[C@H](O)c4ccc(Br)c(c4)[C@@H]3O[C@H]2C1"
+        ],
+        "reagents": [
+          "HCl aq."
+        ],
+        "solvent": "1,4-dioxane",
+        "temperature": "80 °C",
+        "time": "10.5 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 28,
+        "observation": "Hemiacetal 33 was obtained in 28% yield, along with enone 32 (6%) and inseparable ketone diastereomers 31 (50%). Hemiacetal 33 was not the major product but was available after chromatography."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Following some experimentation, we found that treatment of 30 with aqueous hydrochloric acid gave 28% of the desired hemiacetal 33 along with enone 32 (6%) and inseparable ketone diastereomers 31 (50%) which had arisen through post hydrolysis oxa-1,4- addition reactions. While hemiacetal 33 was not obtained as the major product it was available following chromatography",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Hemiacetal 33 is available.",
+        "gap": "Need to perform the planned cascade reaction to obtain tricyclic intermediate 34.",
+        "decision": "To achieve this, chose treatment of 33 with methylenetriphenylphosphorane, expecting to obtain tricyclic intermediate 34."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1cc2c(cc1Br)C(O)COC21C=CC=CC1=O"
+        ],
+        "product_smiles": [
+          "C=CCc1cc(Br)c2c(c1)[C@@H]1CC(CC=C)C=CC(=O)[C@H]2O1"
+        ],
+        "reagents": [
+          "MePPh3Br",
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "1 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Tricyclic intermediate 34 was obtained in an excellent 90% isolated yield, and its structure was confirmed by X-ray crystallography."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "To this end 33 was treated with methylenetriphenylphosphorane and the desired tricyclic intermediate 34 was obtained in an excellent 90% isolated yield and the structure of this material was conrmed by X-ray crystallography (Scheme 2C).",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "Hydrolysis of acetal 30 yielded hemiacetal 33 as a minor product, along with enone 32 and ketone diastereomers 31. The cascade reaction works well with pure 33.",
+        "gap": "Need a more viable synthesis of simonsol C (2) by recycling or progressing the other hydrolysis products 31 and 32.",
+        "decision": "Reasoned that the by-products 31 and 32, which arose through conjugate addition, might undergo β-elimination reactions under the basic conditions of the cascade reaction. Decided to treat the mixture of 31, 32, and 33 with the phosphonium ylide, expecting a convergent process to yield product 34."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1cc2c(cc1Br)C(O)COC21C=CC=CC1=O",
+          "C=Cc1cc(Br)c2c(c1)C1C3C=CC(=O)C1(O2)C3(O)O",
+          "O=C1CC[C@@H]2O[C@@H]3[C@H](O)c4ccc(Br)c(c4)[C@@H]3O[C@H]2C1"
+        ],
+        "product_smiles": [
+          "C=CCc1cc(Br)c2c(c1)[C@@H]1CC(CC=C)C=CC(=O)[C@H]2O1"
+        ],
+        "reagents": [
+          "MePPh3Br",
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "1 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "observation": "When a mixture of 31, 32, and 33 was treated with the phosphonium ylide, product 34 was isolated in 57% yield. This convergent process is believed to occur via deprotonation and ring-opening for 33, β-elimination/ring-opening for 32, and deprotonation/ring-opening followed by alkoxyphosphorane elimination for 31."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Fortunately, this proved to be the case, and when a mixture of 31, 32 and 33 were treated with the phosphonium ylide we were delighted to isolate product 34 in 57% yield. We believe that this convergent process occurs as shown in Scheme 1B. It is likely that dienone 33 and enone 32 converge to give aldehyde 36 through deprotonation and ring-opening in the case of 33 and β-elimination/ring-opening in the case of 32. Subsequent conjugate addition of 36 and methylenation then gives product 34 aer work up. In the case of the inseparable ketone diastereoisomers 31, deprotonation results in ring-opening to give alkoxide 37 which then forms alkoxyphosphorane intermediate 38 (ref. 37) aer alkoxide addition to the phosphonium salt. Elimination of this intermediate to generate 39 may then proceed by an E1cB mechanism resulting in the generation of methyldiphenylphosphine oxide and benzene.",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tricyclic intermediate 34 is available.",
+        "gap": "Need to perform the final Suzuki-Miyaura coupling to access simonsol C (2). This is expected to be challenging due to the free hydroxyl group, allyl group isomerization, and post-coupling reactions.",
+        "decision": "After numerous experiments, chose Buchwald's third generation palladacycle XPhos Pd G3 for the cross-coupling, expecting an efficient reaction to yield simonsol C (2)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1cc(Br)c2c(c1)[C@@H]1CC(CC=C)C=CC(=O)[C@H]2O1"
+        ],
+        "product_smiles": [
+          "C=CCc1ccc(C2=C3CC4(C=CC)CC=CC(=O)C4C3OC2)c(O)c1"
+        ],
+        "reagents": [
+          "XPhos Pd G3",
+          "K3PO4"
+        ],
+        "solvent": "THF",
+        "temperature": "50 °C",
+        "time": "1.3 h",
+        "stoichiometry": {
+          "XPhos Pd G3": "10 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "An efficient cross-coupling was realized using Buchwald's third generation palladacycle XPhos Pd G3, which gave simonsol C (2) in a 72% isolated yield. The structure was confirmed by X-ray crystallography."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "With a viable cascade sequence now developed we examined the Suzuki–Miyaura coupling reaction to access simonsol C (2). As expected, this proved challenging and was complicated by: (a) the free hydroxyl group present within the boronic acid; (b) isomerization of the allyl groups; and (c) additional reactions of the natural product which occurred post cross-coupling (vide infra). Aer numerous experiments, in which a wide range of palladium pre-catalysts were examined, an efficient crosscoupling was realized using Buchwald's third generation palladacycle XPhos Pd G3 (ref. 38) which gave simonsol C (2) in a 72% isolated yield. The structure of our synthetic material was conrmed by X-ray crystallography (Scheme 2C).",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Need to synthesize simonsol F (3).",
+        "gap": "Need to prepare biaryl 40 by Suzuki-Miyaura coupling of an appropriate aryl halide and a mixture of boronic acids 24 and 25.",
+        "decision": "To prepare biaryl 40, chose Suzuki-Miyaura coupling of the appropriate aryl halide and a mixture of boronic acids 24 and 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc(-c2ccc(O[Si](OC(C)C)(C(C)C)C(C)C)cc2Br)c(O)c1",
+          "C=CCc1ccc(O)c(B(O)O)c1",
+          "C=CCc1ccc2c(c1)OB(c1ccc(CC=C)c(O)c1)OB2O"
+        ],
+        "product_smiles": [
+          "C=CCc1ccc(-c2ccc(O[Si](OC(C)C)(C(C)C)C(C)C)cc2Br)c(O)c1"
+        ],
+        "reagents": [
+          "Pd(PPh3)4",
+          "Na2CO3"
+        ],
+        "solvent": "toluene:ethanol",
+        "temperature": "85 °C",
+        "time": "4 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Biaryl 40 was prepared in 88% yield."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "To this end biaryl 40 was prepared by Suzuki–Miyaura coupling of the appropriate aryl halide and a mixture of boronic acids 24 and 25 (see ESI†).",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Biaryl 40 is available.",
+        "gap": "Need to perform bromoacetalization to give 41.",
+        "decision": "To achieve this, chose reaction with ethyl vinyl ether and bromine, expecting to obtain 41."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc(-c2ccc(O[Si](OC(C)C)(C(C)C)C(C)C)cc2Br)c(O)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "ethyl vinyl ether",
+          "Br2",
+          "Hünig's base"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C to r.t.",
+        "time": "2.5 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "Bromoacetalization gave 41 in 93% yield."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "The biaryl then underwent bromoacetalization to give 41 followed by desilylation and spirocyclization to give an inconsequential mixture of bromodienone diastereoisomers 42, whose structures were conrmed by X-ray crystallography (Scheme 3C).",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bromoacetal 41 is available.",
+        "gap": "Need to perform desilylation and spirocyclization to give bromodienone diastereoisomers 42.",
+        "decision": "To achieve this, chose treatment with CsF, expecting to obtain 42."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C=Cc1ccc2c(c1)OC(OCC)CC1C(=O)C(Br)=CC=C21"
+        ],
+        "reagents": [
+          "CsF",
+          "Na2SO4"
+        ],
+        "solvent": "DMF",
+        "temperature": "130 °C",
+        "time": "1 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Desilylation and spirocyclization gave an inconsequential mixture of bromodienone diastereoisomers 42 in 96% yield, whose structures were confirmed by X-ray crystallography."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "The biaryl then underwent bromoacetalization to give 41 followed by desilylation and spirocyclization to give an inconsequential mixture of bromodienone diastereoisomers 42, whose structures were conrmed by X-ray crystallography (Scheme 3C).",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Bromodienone diastereoisomers 42 are available.",
+        "gap": "Need to progress 42 through acetal hydrolysis to obtain hemiacetal 45 for the cascade reaction.",
+        "decision": "Attempted various hydrolysis conditions, expecting to obtain hemiacetal 45."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1ccc2c(c1)OC(OCC)CC1C(=O)C(Br)=CC=C21"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "observation": "A range of conditions were examined, all of which gave intractable mixtures of debrominated material. This proved to be extremely challenging."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Unfortunately, progressing either the single dienone isomers or the mixture through the required acetal hydrolysis proved to be extremely challenging. A range of conditions were examined, all of which gave intractable mixtures of debrominated material.",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "Acetal hydrolysis of 42 to 45 failed, yielding intractable mixtures.",
+        "gap": "Need to find an alternative sequence to obtain hemiacetal 45.",
+        "decision": "Decided to explore Suzuki-Miyaura cross-coupling prior to hydrolysis of the cyclic acetal. Initial experiments showed efficient coupling of separate diastereoisomers of 42 with boronic acid ester 43. Then developed a more efficient method for cross-coupling of the mixture, expecting to obtain 44 as a mixture of diastereoisomers."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1ccc2c(c1)OC(OCC)CC1C(=O)C(Br)=CC=C21",
+          "C=CCc1ccc(OC)c(B2OC(C)(C)C(C)(C)O2)c1"
+        ],
+        "product_smiles": [
+          "C=CCc1ccc2c(c1)CC(OCC)C1(O2)C(=O)C=CC=C1c1cc(CC=C)ccc1OC"
+        ],
+        "reagents": [
+          "Pd(PPh3)4",
+          "Na2CO3"
+        ],
+        "solvent": "toluene:ethanol",
+        "temperature": "85 °C",
+        "time": "4 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Cross-coupling of the mixture of 42 with boronic acid ester 43 gave 44 as a mixture of diastereoisomers in excellent yield (88%)."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "As a result, we were forced to explore Suzuki–Miyaura crosscoupling prior to hydrolysis of the cyclic acetal. In our initial experiments we established that separate diastereoisomers of 42 underwent efficient coupling with boronic acid ester 43 (not depicted) before developing a more efficient method for crosscoupling of the mixture (Scheme 3A) which gave 44 as a mixture of diastereoisomers in excellent yield.",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Mixture 44 is available.",
+        "gap": "Need to develop hydrolysis conditions to obtain hemiacetal 45 for deployment in the cascade reaction.",
+        "decision": "Attempted acid-catalyzed hydrolysis using camphorsulfonic acid, expecting to obtain hemiacetal 45 as the major product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc2c(c1)CC(OCC)C1(O2)C(=O)C=CC=C1c1cc(CC=C)ccc1OC"
+        ],
+        "product_smiles": [
+          "C=CCCc1ccc2c(c1CC=C)C1CC(C3C=CC(OC)=CC=C3CC=C)=CC(=O)C1O2"
+        ],
+        "reagents": [
+          "CSA",
+          "H2O"
+        ],
+        "solvent": "1,4-dioxane",
+        "temperature": "85 °C",
+        "time": "10.5 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "Acid-catalyzed hydrolysis using camphorsulfonic acid gave hemiacetal 45 as the major product in an acceptable yield of 66%."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "We now had to develop hydrolysis conditions to obtain hemiacetal 45 for deployment in the cascade reaction. In this instance, when mixture 45 was heated with aqueous hydrochloric acid under the conditions used for the synthesis of simonsol C (2) a complex mixture of products was obtained. However, acid-catalyzed hydrolysis using camphorsulfonic acid gave hemiacetal 45 as the major product in an acceptable yield of 66%.",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Hemiacetal 45 is available.",
+        "gap": "Need to perform the cascade reaction to obtain methyl-protected simonsol F (47).",
+        "decision": "To achieve this, chose treatment of 45 with methylenetriphenylphosphorane, expecting a smooth reaction to yield 47."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCCc1ccc2c(c1CC=C)C1CC(C3C=CC(OC)=CC=C3CC=C)=CC(=O)C1O2"
+        ],
+        "product_smiles": [
+          "C=CCCc1ccc(OC)c(C2=CC(=O)C3Oc4ccc(CCC=C)c(CC=C)c4C3C2)c1"
+        ],
+        "reagents": [
+          "MePPh3Br",
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "0.5 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "Treatment of the mixture with methylenetriphenylphosphorane proceeded smoothly to give methyl-protected simonsol F (47) in 67% yield, establishing this sequence as a general method for the construction of functionalized tetrahydrodibenzofurans."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Treatment of this mixture with methylenetriphenylphosphorane again proceeded smoothly to give methyl-protected simonsol F (47) establishing this sequence as a general method for the construction of functionalized tetrahydrodibenzofurans.",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Methyl-protected simonsol F (47) is available.",
+        "gap": "Need to demethylate 47 to obtain simonsol F (3). This is expected to be challenging due to the sensitive allyl groups and the reactivity of the natural product post deprotection.",
+        "decision": "After considerable experimentation, identified demethylation conditions involving treatment of 47 with BCl3 at 0 °C for 5.5 hours, expecting to obtain simonsol F (3)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCCc1ccc(OC)c(C2=CC(=O)C3Oc4ccc(CCC=C)c(CC=C)c4C3C2)c1"
+        ],
+        "product_smiles": [
+          "C=CCCC1C=CC(=O)C(C2Oc3cc(CC=C)cc(O)c32)C1"
+        ],
+        "reagents": [
+          "BCl3"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C",
+        "time": "5.5 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Demethylation conditions involving treatment of 47 with BCl3 at 0 °C for 5.5 hours gave simonsol F (3) in an excellent isolated yield of 85%. The structure of the natural product was confirmed by X-ray crystallography."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "As with simonsol C (2) the nal step of the synthesis proved to be challenging as a result of the sensitive allyl groups and the reactivity of the natural product post deprotection. Aer considerable experimentation we identied demethylation conditions that involved treatment of 48 with BCl3 at 0 °C for 5.5 hours which gave simonsol F (3) in an excellent isolated yield of 85% (Scheme 3A). The structure of the natural product was conrmed by X-ray crystallography (Scheme 3C).",
+        "section": "Total synthesis of simonsol C (2) and simonsol F (3)"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Simonsol F (3) is available and known to be thermally unstable. The hypothesis is that dienone intermediates serve as biosynthetic branch points, and retro conjugate addition could provide evidence for biosynthesis and isomerization pathways.",
+        "gap": "Need to explore the innate reactivity of simonsol F (3) and its potential to isomerize into other natural products.",
+        "decision": "To investigate isomerization, chose to heat simonsol F (3) in toluene at 100 °C, expecting to observe conversion into fargenin (4), macranthol (6), and benzofuran 48."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCCC1C=CC(=O)C(C2Oc3cc(CC=C)cc(O)c32)C1"
+        ],
+        "product_smiles": [
+          "",
+          "C=CCCC1C=CC(=O)C(C2Oc3cc(CC=C)cc(O)c32)C1",
+          "C=CCc1ccc2oc3c(c2c1)C(=O)CC1Oc2c(CC=C)cccc2C31C=C"
+        ],
+        "reagents": [],
+        "solvent": "toluene-d8",
+        "temperature": "100 °C",
+        "time": "228 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 29,
+        "observation": "When simonsol F (3) was heated in toluene at 100 °C, it was converted into fargenin (4, 29%), macranthol (6, 15%), and benzofuran 48 (23%). This provides compelling evidence for intermediate 11 and divergent reactivity associated with the cross-conjugated dienone moiety."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Gratifyingly this reasoning proved to be correct, and we discovered that when simonsol F (3) was heated in toluene at 100 °C, it was converted into the pentacyclic natural product fargenin (4, 29%), the triaryl natural product macranthol (6, 15%) and benzofuran 48 (23%) (Scheme 3A). This remarkable series of transformations provides compelling evidence for intermediate 11 and the divergent reactivity associated with the cross-conjugated dienone moiety.",
+        "section": "Synthesis of fargenin (4), macranthol (6), simonsinol (5), and honokiol (14) through natural product isomerization"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Simonsol G (1) was prepared using the cascade strategy.",
+        "gap": "Need to convert simonsol G (1) into honokiol (14) under mild basic conditions.",
+        "decision": "To achieve this, chose treatment with K3PO4 in 1,4-dioxane at 85 °C, expecting conversion to honokiol (14)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1ccc2c(c1)CC1OC(C2=O)C1C=C"
+        ],
+        "product_smiles": [
+          "C=CCCc1ccc(-c2ccc(CC=C)cc2O)cc1O"
+        ],
+        "reagents": [
+          "K3PO4"
+        ],
+        "solvent": "1,4-dioxane",
+        "temperature": "85 °C",
+        "time": "40 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Simonsol G (1) was converted into honokiol (14) in 70% yield under mild basic conditions."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "In agreement with the results described above we discovered that simonsol G (1), which was prepared using our cascade strategy (see ESI† for the synthesis), could be converted into honokiol (18) under mild basic conditions.",
+        "section": "Synthesis of fargenin (4), macranthol (6), simonsinol (5), and honokiol (14) through natural product isomerization"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Simonsol C (2) is available.",
+        "gap": "Need to convert simonsol C (2) into simonsinol (5).",
+        "decision": "To achieve this, chose treatment with K3PO4 in THF at 80 °C, expecting conversion to simonsinol (5)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1ccc(C2=C3C(=O)C4OC(C3C=C2)C4C=C)c(O)c1"
+        ],
+        "product_smiles": [
+          "C=CCCc1ccc(-c2cc(CCC=C)c(O)cc2-c2ccc(CC=C)cc2O)cc1O"
+        ],
+        "reagents": [
+          "K3PO4"
+        ],
+        "solvent": "THF",
+        "temperature": "80 °C",
+        "time": "7 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Simonsol C (2) was converted into simonsinol (5) in 91% yield."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Similarly, simonsol C (2) and simonsol F (3) were converted into simonsinol (5) and macranthol (6) respectively.",
+        "section": "Synthesis of fargenin (4), macranthol (6), simonsinol (5), and honokiol (14) through natural product isomerization"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Simonsinol (5) is available.",
+        "gap": "Need to permethylate simonsinol (5) to give ether 52 for comparison with literature compound.",
+        "decision": "To achieve this, chose treatment with MeI and K2CO3 in acetone at 55 °C, expecting permethylation to 52."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCCc1ccc(-c2cc(CCC=C)c(O)cc2-c2ccc(CC=C)cc2O)cc1O"
+        ],
+        "product_smiles": [
+          "C=CCCc1ccc(-c2cc(CCC=C)c(OC)cc2-c2ccc(CC=C)cc2OC)cc1OC"
+        ],
+        "reagents": [
+          "MeI",
+          "K2CO3"
+        ],
+        "solvent": "acetone",
+        "temperature": "55 °C",
+        "time": "24 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Permethylation of simonsinol (5) gave ether 52 in 99% yield."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "In the case of simoninsol (5), permethylation to give ether 52 was carried out for comparison with the literature compound derived from natural simonsinol (5).",
+        "section": "Synthesis of fargenin (4), macranthol (6), simonsinol (5), and honokiol (14) through natural product isomerization"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Simonsol F (3) is available.",
+        "gap": "Need to convert simonsol F (3) into macranthol (6).",
+        "decision": "To achieve this, chose treatment with DMSO-d6 at 85 °C, expecting conversion to macranthol (6)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCCC1C=CC(=O)C(C2Oc3cc(CC=C)cc(O)c32)C1"
+        ],
+        "product_smiles": [
+          "C=CCCc1ccc(-c2cc(CCC=C)c(O)cc2-c2ccc(CC=C)cc2O)cc1O"
+        ],
+        "reagents": [],
+        "solvent": "DMSO-d6",
+        "temperature": "85 °C",
+        "time": "16 h",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Simonsol F (3) was converted into macranthol (6) in 90% yield."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Similarly, simonsol C (2) and simonsol F (3) were converted into simonsinol (5) and macranthol (6) respectively.",
+        "section": "Synthesis of fargenin (4), macranthol (6), simonsinol (5), and honokiol (14) through natural product isomerization"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for simonsol F is not explicitly stated as a single value, but individual step yields are high."
+      },
+      "Longest Linear Steps": {
+        "value": 7,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence to simonsol F (3) is 7 steps (from 23 to 3)."
+      },
+      "Total Steps": {
+        "value": 17,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps reported for simonsol F (3) and related compounds."
+      },
+      "Failed Attempts Count": {
+        "value": 1,
+        "unit": "attempts",
+        "interpretation": "One explicitly reported failed attempt during the synthesis of simonsol F (3)."
+      }
+    },
+    "significance": "The total synthesis of simonsol F (3) and other Illicium-derived neolignans, along with their biological evaluation, provides new insights into their neurotrophic properties and potential as therapeutic agents. The discovery of natural product isomerization reactions and the proposed alternative biosynthesis of honokiol (14), simonsinol (5), and macranthol (6) from a single common precursor (chavicol (7)) significantly advances the understanding of this class of natural products. The finding that simonsol C (2) and simonsol F (3) promote axonal growth, and the identification of the enone-containing tetrahydrodibenzofuran ring system as crucial for this activity, highlights their potential for neurodevelopmental and neurodegenerative disease research."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d4sc03232b",
+      "pmcid": "PMC11290413",
+      "title": "Total synthesis, biological evaluation and biosynthetic re-evaluation of <i>Illicium</i>-derived neolignans.",
+      "authors": "Arnold RE, Saska J, Mesquita-Ribeiro R, Dajas-Bailador F, Taylor L, Lewis W, Argent S, Shao H, Houk KN, Denton RM.",
+      "journal": "Chem Sci",
+      "year": 2024,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC11290413?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/4b9a6265-ee9e-4a2c-914a-65c18609bd6a.zip",
+      "parsed_at": "2026-05-11T06:35:50.007370+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 57,
+    "parseable": 46,
+    "canonicalized": 46,
+    "invalid": 11,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "BrC1=CC=C(OTIPS)C=C1",
+      "C=CCC1=CC=C(O)C(C2=CC=C(OTi(C(C)C)(C(C)C)C(C)C)C=C2)=C1",
+      "C=CCC1=CC=C(O)C(C2=CC=C(OTi(C(C)C)(C(C)C)C(C)C)C=C2)=C1",
+      "C=CCC1=CC(Br)=C(O)C(C2=CC=C(OTi(C(C)C)(C(C)C)C(C)C)C=C2)=C1",
+      "C=CCC1=CC(Br)=C(O)C(C2=CC=C(OTi(C(C)C)(C(C)C)C(C)C)C=C2)=C1",
+      "CCOC(CBr)Oc1c(Br)cc(CC=C)cc1-c1ccc(OTIPS)cc1",
+      "CCOC(CBr)Oc1c(Br)cc(CC=C)cc1-c1ccc(OTIPS)cc1",
+      "CCOC(CBr)C1=CC=C(C=C1)C2=CC(Br)=C(OTIPS)C=C2CC=C",
+      "CCOC(CBr)C1=CC=C(C=C1)C2=CC(Br)=C(OTIPS)C=C2CC=C",
+      "C=CCC1=CC2=C(C=C1)C1(C)C3=C(C=CC(C=C)=C3)OC1C1=C(OC21)C=C(C=C)C=C1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

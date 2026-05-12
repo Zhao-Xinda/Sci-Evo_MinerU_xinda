@@ -1,0 +1,634 @@
+{
+  "trace_id": "TS-PMC13022725",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Erythromycin A",
+    "smiles": "CC[C@H]1OC(=O)[C@H](C)[C@@H](O[C@H]2C[C@@H](N(C)C)[C@H](O)[C@H](C)O2)[C@H](C)[C@@H](O[C@@H]2O[C@H](C)[C@@H](OC)[C@@H](C)C2=O)[C@H](C)[C@@H](O)[C@@H](C)C(=O)[C@H](C)[C@@H](O)C[C@@H]1C",
+    "natural_product_class": "macrolide antibiotic",
+    "structural_features": {
+      "key_motifs": [
+        "macrolactone",
+        "desosamine sugar",
+        "cladinose sugar"
+      ]
+    },
+    "motivation": "The synthesis of bioactive compounds with differential, and ideally enhanced, activities presents persistent and growing challenges for the field of organic synthesis. Site-selective modification of natural products can deliver analogs without the need for lengthy de novo syntheses. Erythromycin A was selected as a target given its accessibility and the importance of macrolide antibiotics in modern medicine. Site-selective oxidation of secondary alcohols resident in erythromycin A could introduce particularly auspicious, positionally non-native carbonyl groups capable of undergoing a vast lexicon of further derivatizations to alter and enhance bioactive properties.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Myers",
+        "year": 2016,
+        "key_strategy": "total synthesis-based platform to access a vast new array of macrolide antibiotics"
+      },
+      {
+        "lead_author": "Miller",
+        "key_strategy": "two different group transfer strategies on erythromycin A to access acylated and deoxygenated derivatives"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Develop complementary systems for the oxidation of secondary alcohols on erythromycin A, clarithromycin, and azithromycin using a newly designed azaadamantyl oxoammonium catalyst, wherein different hydroxyl groups show disparate reactivities under the same conditions. Generate a suite of oxidized macrolide antibiotics and derivatives with antimicrobial activity, including against CA-MRSA and MRSA(mph(C))."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [],
+    "rationale": "The strategy focuses on site-selective oxidation of existing hydroxyl groups on the macrolide scaffold, rather than de novo synthesis. This approach leverages the complex structure of natural products and aims to introduce new carbonyl functionalities for further diversification. The key challenge is achieving selectivity among multiple similar hydroxyl groups."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Erythromycin A and related macrolide derivatives are widely administered antibiotics. While potent, erythromycin A undergoes rapid, acid-catalyzed degradation. Analogs like clarithromycin and azithromycin address this, but resistance remains a growing problem. Prior work by the Miller group showed site-selective acylation and P(III)-transfer on erythromycin A, with C2' hydroxyl being most reactive, followed by C4'' and C11. However, C11 functionalization was limited.",
+        "gap": "New and efficient site-selective reactions are needed to expand chemical space beyond classical macrolide derivatizations. Achieving selective reactivity at a single desired position is complicated by the presence of multiple iterations of similar reactive functional groups. Specifically, site-selective oxidation of secondary alcohols on erythromycin A could introduce valuable carbonyl groups for further derivatization.",
+        "decision": "To address the need for new site-selective reactions, the authors decided to explore oxoammonium-catalyzed oxidation of secondary alcohols on erythromycin A, inspired by their previous work on meso-diol desymmetrization using peptide-embedded aminoxyls. This approach aims to introduce positionally non-native carbonyl groups."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Literature review confirmed the importance of macrolide antibiotics, the challenges of their degradation and resistance, and the potential of site-selective modifications. Previous work by the group demonstrated some site-selectivity but also highlighted limitations in functionalizing certain positions like C11."
+      },
+      "evidence": {
+        "text_span": "Previously, our group demonstrated two different group transfer strategies on erythromycin A to access acylated and deoxygenated derivatives. With acyl transfer catalysis, it was found that, in the absence of a chiral catalyst, the C2′ hydroxyl group (blue, desosamine) was the most reactive followed by the C4′′ hydroxyl group (purple, cladinose) and the C11 hydroxyl group (green) on the macrolide, which were selectively modified using peptide based catalysts.26,27 A similar order of reactivity was seen with phosphoramidite transfer; however, in a notable limitation, no catalyst was identified that could functionalize the C11 hydroxyl group with this strategy.28 Taken together, these studies reveal the potential, and underscore the challenges, associated with site-selective modification and installation of functional groups that can be leveraged for new reactivity and diversification of bioactive scaffolds. Site-selective oxidation of secondary alcohols resident in erythromycin A could introduce particularly auspicious, positionally non-native carbonyl groups capable of undergoing a vast lexicon of further derivatizations to alter and enhance bioactive properties.",
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "The group had previously developed a peptide-embedded aminoxyl for desymmetrative oxidative lactonization of meso-diols (P1, Figure 1A). This work culminated in the broadly selective desymmetrization of 25 meso-diols, likely facilitated by noncovalent interactions. However, simple aminoxyls or peptide-embedded variants did not result in appreciable alcohol oxidation of erythromycin A.",
+        "gap": "The lack of oxidation with existing aminoxyl catalysts on erythromycin A suggested increased steric demand associated with oxidizing secondary hydroxyl groups within the complex macrolide framework. Seminal work by Iwabuchi and co-workers showed that decreasing steric bulk near the reactive oxoammonium site improves the yield of secondary alcohol oxidations.",
+        "decision": "To address the steric hindrance, a new, less sterically hindered demethylated oxoammonium ion precursor, HAzc-OMe, was envisioned and designed. This catalyst would be synthesized and then explored for site-selective oxidation of erythromycin A."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The hypothesis led to the design of HAzc-OMe, a less sterically hindered aminoxyl catalyst, to overcome the limitations observed with previous catalysts in oxidizing secondary alcohols on erythromycin A."
+      },
+      "evidence": {
+        "text_span": "With mCPBA as our terminal oxidant, we then turned our attention to oxidations with other aminoxyl-based catalysts, in analogy to our prior findings for meso-diol desymmetrization with an aminoxyl platform.29 Unfortunately, neither simple aminoxyls such as ACT or Azc-OMe, nor peptide-embedded variants resulted in appreciable levels of alcohol oxidation. We hypothesized that this could be due to the increased steric demand associated with oxidizing secondary hydroxyl groups, as opposed to primary alcohols, especially when embedded within the complex molecular framework presented by erythromycin A.29,31 Notably, seminal work from Iwabuchi and co-workers showed that decreasing steric bulk near the reactive oxoammonium site improves the yield of secondary alcohol oxidations (Figure 1B).30 To address this issue, a new, less sterically hindered demethylated oxoammonium ion precursor was envisioned (HAzc-OMe) and synthesized in 9 steps with 14% overall yield (see Supporting Information for full synthesis).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A new, less sterically hindered demethylated oxoammonium ion precursor, HAzc-OMe, was designed and synthesized. However, HAzc-OMe was prone to degradation during purification, saponification, and peptide couplings.",
+        "gap": "A method was needed to protect the aminoxyl to allow for facile isolation and stability during subsequent steps, while still enabling in situ generation of the active species.",
+        "decision": "To protect HAzc-OMe, its O-methyl hydroxylamine derivative (HAzc(OMe)-OMe) was synthesized. This protecting group was expected to be stable to hydrolysis and couplings, and could be deprotected in situ using mCPBA to access the reactive aminoxyl."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C12CC3CC(C3C1)N(O[O])C2"
+        ],
+        "product_smiles": [
+          "COC(=O)C12CC3CC(C3C1)N(OC)C2"
+        ],
+        "reagents": [
+          "FeSO4",
+          "H2O2"
+        ],
+        "solvent": "DMSO"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 50,
+        "observation": "The O-methyl hydroxylamine derivative HAzc(OMe)-OMe was successfully synthesized in 50% yield. This derivative allowed for facile isolation and was stable to hydrolysis and subsequent couplings."
+      },
+      "evidence": {
+        "text_span": "Accordingly, we found that protection of the aminoxyl as its O-methyl hydroxylamine (HAzc(OMe)-OMe) derivative could be easily achieved with FeSO4 and H2O2 in DMSO (50% yield, Scheme 1). The O-methyl hydroxylamine could then be deprotected in situ using mCPBA to access the reactive species.32 This protecting group allowed for facile isolation of the methyl ester and was stable to both hydrolysis and subsequent couplings to access a variety of new catalysts.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "5d035c89101b9cdc9cfee922bf9f67317fb3f50c1f47c614dc32d82ec35c0ccf.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "HAzc(OMe)-OMe was successfully synthesized and could be deprotected in situ to generate the active aminoxyl. Initial oxidant screening with 4-acetamido-TEMPO (ACT) showed that many common reagents led to rapid decomposition of erythromycin A (1). Peroxide-based oxidants, particularly mCPBA, provided cleaner reaction profiles, inducing quantitative in situ conversion of the tertiary amine to the N-oxide 2. However, with 2 as starting material, efficient or selective alcohol oxidation was not observed with ACT, only degradation or indiscriminate alcohol oxidations.",
+        "gap": "The goal was to achieve site-selective alcohol oxidation of erythromycin A (1) using the newly designed HAzc(OMe)-OMe catalyst. The conditions needed to be optimized to achieve good reactivity and site specificity.",
+        "decision": "To optimize the oxidation, erythromycin A (1) was subjected to oxidation with HAzc(OMe)-OMe and mCPBA. Conditions, including the identity and equivalents of base and oxidant, were screened to improve the ratio of N-oxide 2 to the desired monooxidation product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H]1OC(=O)[C@H](C)[C@@H](O[C@H]2C[C@@H](N(C)C)[C@H](O)[C@H](C)O2)[C@H](C)[C@@H](O[C@@H]2O[C@H](C)[C@@H](OC)[C@@H](C)C2=O)[C@H](C)[C@@H](O)[C@@H](C)C(=O)[C@H](C)[C@@H](O)C[C@@H]1C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "mCPBA",
+          "Na2HPO4"
+        ],
+        "catalyst": "COC(=O)C12CN(OC)C3C(C1)C(C2)C3",
+        "solvent": "ClCCl",
+        "temperature": "rt",
+        "time": "24 hr",
+        "stoichiometry": {
+          "mCPBA": "10 equiv.",
+          "Na2HPO4": "10 equiv.",
+          "COC(=O)C12CN(OC)C3C(C1)C(C2)C3": "40 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 13,
+        "observation": "Good reactivity and excellent site specificity were observed, with only one oxidation product detected. Dibasic sodium phosphate provided the best ratio of N-oxide to product (50:50). The reaction reached maximum conversion by 24 hr. The product was isolated in 13% yield as analytically pure material, with both N-oxidation and C11-OH oxidation occurring in a single operational step.",
+        "regio_selectivity": "C11-OH oxidation"
+      },
+      "evidence": {
+        "text_span": "With HAzc(OMe)-OMe in hand, we explored the oxidation of 1. Gratifyingly, both good reactivity and excellent site specificity were observed, with only one oxidation product detected by both crude 1H NMR and UPLC-MS. Conditions were then screened to improve the observed ratio of N-oxide 2 (formed quantitatively in situ) to product. The identity of the base was found to have a marked effect with dibasic sodium phosphate providing the best ratio of N-oxide to product (50:50, Figure 2A, Entries 1−6). The equivalents of peroxide and base were also found to have a drastic impact; three equivalents of each showed no detectable conversion, while reactivity was recovered but to a diminished extent with five equivalents (Entries 7 and 8). Conversion was found to reach a maximum by 24 hr, and the conditions from Entry 10 were used moving forward (Entries 9 and 10; see Supporting Information for full screening data). ... Isolations of pure products were achieved using preparative reversed phase column chromatography, which resulted in loss of material. Even so, excellent reproducibility was achieved such that reactions that reached a ratio of approximately 50:50 2 to 5′ could deliver product in 13% isolated yield as analytically pure material in one step from commercially available erythromycin A, with both the N.-oxidation and C11-OH oxidation occurring in a single operational step.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "239fa9d1de0a9e16f40638b9d3eac0c8a0a537de3f3a9f2dd11c83867642d046.jpg",
+          "91233e7c3efe9aca4e65e9fb32321cbc77e08a5f8333d793f746f003886c5e09.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The oxidation of erythromycin A (1) with HAzc(OMe)-OMe and mCPBA yielded a single major product (5').",
+        "gap": "The exact site of oxidation and the structure of the product needed to be determined.",
+        "decision": "To determine the structure, mass spectrometry fragmentation, two-dimensional NMR studies, and 13C NMR analysis were performed. Crystallization efforts were also pursued to obtain a solid-state structure via single crystal X-ray crystallography."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Mass spectrometry excluded the cladinose sugar hydroxyl group. 2D NMR indicated the desosamine hydroxyl group remained unaltered. 13C NMR analysis showed two carbonyls were not present on the macrolide core, suggesting disruption of the hydrogen bond between C11 hydroxyl and C9 ketone, shifting equilibrium toward hemiketal isomers. Calculated 13C NMR shifts supported the dominant species being either C9,C12-hemiketal (5') or C6,C9-hemiketal (5''). X-ray crystallography confirmed the solid-state structure as 5'.",
+        "regio_selectivity": "C11-OH oxidation"
+      },
+      "evidence": {
+        "text_span": "Efforts were then undertaken to determine the site of oxidation. The hydroxyl group on the cladinose sugar (purple) was excluded on the basis of mass spectrometry fragmentation, and two-dimensional NMR studies indicated that the desosamine hydroxyl group (blue) also remained unaltered. However, based on 13C NMR analysis, two carbonyls were not present on the macrolide core.33 It has been well documented that disruption of the hydrogen bond between the C11 hydroxyl group and the native C9 ketone shifts the equilibrium toward the hemiketal isomers, which indicated a possible explanation of what was observed via NMR.27,34 13C NMR shifts were calculated and gave strong support to the dominant species in solution being either of the two possible hemiketal isomers (C9,C12-hemiketal 5′ versus C6,C9-hemiketal 5′′; see Supporting Information for details).35 Crystallization efforts proved fruitful, and the solid state structure was confirmed to be 5′ via single crystal X-ray crystallography. While definitive corroboration that the same hemiketal is dominant in solution has been elusive, it is certainly plausible since the equilibration between 5′ and 5′′ only shows one isomer by 1H and 13C NMR (Figure 2B).",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "674f0bd2eab2df4d676a1f070d1806517bcb79aad4de2f19feb1c1aefdf3ec95.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The HAzc(OMe)-OMe catalyzed oxidation of erythromycin A (1) yielded the C11-oxidized N-oxide product (5'). The next step was to explore the scope of this oxidation with other macrolides, specifically clarithromycin (6) and azithromycin (9).",
+        "gap": "It was unknown if the optimized conditions for erythromycin A would translate to other macrolides, or if different selectivities or conditions would be required.",
+        "decision": "To investigate the generality of the method, clarithromycin (6) was subjected to the optimized HAzc(OMe)-OMe oxidation conditions. The outcome would inform further strategies for other macrolides."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CO[C@H]1[C@H](O)C[C@H](O[C@@H]2[C@H](C)[C@H](OC)[C@@H](C)OC(=O)[C@H](C)[C@@H](O[C@H]3C[C@@H](N(C)C)[C@H](O)[C@H](C)O3)[C@H](C)OC(C)(C)CC(=O)[C@@H]2C)O[C@H]1C"
+        ],
+        "product_smiles": [
+          "CO[C@H]1[C@H](O)C[C@H](O[C@@H]2[C@H](C)[C@H](OC)[C@@H](C)OC(=O)[C@H](C)[C@@H](O[C@H]3C[C@@H]([N+](C)(C)[O-])[C@H](O)[C@H](C)O3)[C@H](C)OC(C)(C)CC(=O)[C@@H]2C)O[C@H]1C"
+        ],
+        "reagents": [
+          "mCPBA"
+        ],
+        "catalyst": "COC(=O)C12CN(OC)C3C(C1)C(C2)C3",
+        "solvent": "ClCCl",
+        "temperature": "rt",
+        "time": "24 hr",
+        "stoichiometry": {
+          "mCPBA": "10 equiv.",
+          "Na2HPO4": "10 equiv.",
+          "COC(=O)C12CN(OC)C3C(C1)C(C2)C3": "40 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A striking divergence was observed. Upon exposure to catalytic HAzc(OMe)-OMe and mCPBA, only amine N-oxidation to generate product 7 was observed, with no detectable alcohol oxidation at any site. This indicates a complete change in selectivity compared to erythromycin A.",
+        "regio_selectivity": "N-oxidation only"
+      },
+      "evidence": {
+        "text_span": "A striking divergence was observed when we applied the findings above to different macrolides. For example, when we applied our optimized conditions to clarithromycin, 6  differing only by methylation of the C6 hydroxyl group  we observed a total divergence in reactivity (Figure 3A). Upon exposure to catalytic HAzc(OMe)-OMe and mCPBA, only amine N-oxidation to generate product 7 was observed with no detectable alcohol oxidation at any site.",
+        "section": "Site-Selective Oxidation of Clarithromycin and Azithromycin",
+        "image_refs": [
+          "428eb9b9586895d8be276e0aa2f38c60e0e949981948fd7f5574748ba5b36c0f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The HAzc(OMe)-OMe catalyzed oxidation of clarithromycin (6) only yielded the N-oxide (7), with no alcohol oxidation. This indicated that the previous conditions were not suitable for achieving alcohol oxidation on clarithromycin.",
+        "gap": "A different strategy was needed to achieve site-selective alcohol oxidation on clarithromycin (6). The authors recalled that DMP rapidly consumed erythromycin A to yield a complex mixture of overoxidation products, but perhaps it could be selective on the N-oxide of clarithromycin.",
+        "decision": "To achieve alcohol oxidation on clarithromycin, a two-step process was devised: first, N-oxidation of 6 with mCPBA to generate 7, followed by oxidation of 7 with DMP."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CO[C@H]1[C@H](O)C[C@H](O[C@@H]2[C@H](C)[C@H](OC)[C@@H](C)OC(=O)[C@H](C)[C@@H](O[C@H]3C[C@@H](N(C)C)[C@H](O)[C@H](C)O3)[C@H](C)OC(C)(C)CC(=O)[C@@H]2C)O[C@H]1C"
+        ],
+        "product_smiles": [
+          "CO[C@H]1[C@H](C=O)C[C@H](O[C@@H]2[C@H](C)[C@H](OC)[C@@H](C)OC(=O)[C@H](C)[C@@H](O[C@H]3C[C@@H]([N+](C)(C)[O-])[C@H](O)[C@H](C)O3)[C@H](C)OC(C)(C)CC(=O)[C@@H]2C)O[C@H]1C"
+        ],
+        "reagents": [
+          "mCPBA",
+          "DMP"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "rt",
+        "time": "30 min (mCPBA), 24 hr (DMP)",
+        "stoichiometry": {
+          "mCPBA": "2.0 equiv.",
+          "DMP": "4.0 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 26,
+        "observation": "This two-step protocol resulted in a highly site-selective monooxidation. The site of oxidation was at the C4'' hydroxyl group on the cladinose sugar (purple), yielding C4''-keto-clarithromycin N-oxide (8). This was a different site of oxidation compared to erythromycin A.",
+        "regio_selectivity": "C4''-OH oxidation"
+      },
+      "evidence": {
+        "text_span": "Yet, with only mCPBA to generate 7 followed by DMP, which rapidly consumes erythromycin A to yield a complex mixture of overoxidation products (vide supra), we now observed a highly site-selective monooxidation. To our surprise, this site of oxidation was no longer at C11 on the macrolide (green) but instead at the C4′′ hydroxyl group on the cladinose sugar (purple) to give C4′′-keto-clarithromycin N-oxide, 8.",
+        "section": "Site-Selective Oxidation of Clarithromycin and Azithromycin",
+        "image_refs": [
+          "428eb9b9586895d8be276e0aa2f38c60e0e949981948fd7f5574748ba5b36c0f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The HAzc(OMe)-OMe catalyzed oxidation worked for erythromycin A (1) but not for clarithromycin (6). A different strategy involving mCPBA then DMP worked for clarithromycin. The next macrolide to investigate was azithromycin (9).",
+        "gap": "It was unknown if either of the previously successful conditions (HAzc(OMe)-OMe/mCPBA or mCPBA/DMP) would work for azithromycin (9).",
+        "decision": "Azithromycin (9) was subjected to the HAzc(OMe)-OMe oxidation protocol and also to mCPBA alone to see if N-oxidation or alcohol oxidation would occur."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CO[C@H]1O[C@@H](O[C@H]2O[C@@H](C)[C@H](O)[C@H](O[C@@H]3C(=O)O[C@H](C)[C@@H](C)[C@H](O)[C@H](O)[C@@H](C)CN(C)C[C@@H](C)[C@H](O)[C@@H]3C)[C@H]2C)C[C@@H](C)[C@@H]1O"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "mCPBA"
+        ],
+        "catalyst": "COC(=O)C12CN(OC)C3C(C1)C(C2)C3",
+        "solvent": "ClCCl",
+        "temperature": "rt",
+        "time": "unspecified",
+        "stoichiometry": {
+          "mCPBA": "unspecified",
+          "COC(=O)C12CN(OC)C3C(C1)C(C2)C3": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "The HAzc(OMe)-OMe oxidation protocol led only to degradation. Exposure to mCPBA alone also led to degradation.",
+        "regio_selectivity": "unspecified"
+      },
+      "evidence": {
+        "text_span": "With azithromycin, 9, yet another divergent outcome was observed. In this case, the HAzc(OMe)-OMe oxidation protocol led only to degradation, as did exposure to mCPBA alone (Figure 3A).",
+        "section": "Site-Selective Oxidation of Clarithromycin and Azithromycin",
+        "image_refs": [
+          "c34641ba587aefe5a9a73049725c4b9d517a905d0b268056884.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "Neither HAzc(OMe)-OMe/mCPBA nor mCPBA alone yielded desired products with azithromycin (9); both led to degradation.",
+        "gap": "A different oxidant or set of conditions was needed to achieve site-selective oxidation of azithromycin (9).",
+        "decision": "Given that DMP was successful in the second step of clarithromycin oxidation, it was decided to directly apply DMP-mediated oxidation to azithromycin (9)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CO[C@H]1O[C@@H](O[C@H]2O[C@@H](C)[C@H](O)[C@H](O[C@@H]3C(=O)O[C@H](C)[C@@H](C)[C@H](O)[C@H](O)[C@@H](C)CN(C)C[C@@H](C)[C@H](O)[C@@H]3C)[C@H]2C)C[C@@H](C)[C@@H]1O"
+        ],
+        "product_smiles": [
+          "CO[C@H]1O[C@@H](O[C@H]2O[C@@H](C)[C@H](O)[C@H](O[C@@H]3C(=O)O[C@H](C)[C@@H](C)[C@H](O)[C@H](O)[C@@H](C)CN(C)C[C@@H](C)[C@H](O)[C@@H]3C)[C@H]2C)C[C@@H](C)C1=O"
+        ],
+        "reagents": [
+          "DMP"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "rt",
+        "time": "24 hr",
+        "stoichiometry": {
+          "DMP": "4.0 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "DMP-mediated oxidation led to clean conversion to the C4''-keto-azithromycin (10), complementary to the formation of 8. This demonstrated that three superficially related macrolides required three distinct protocols yielding three distinct outcomes.",
+        "regio_selectivity": "C4''-OH oxidation"
+      },
+      "evidence": {
+        "text_span": "However, DMP-mediated oxidation led to clean conversion to the C4′′-keto-azithromycin, 10, complementary to the formation of 8.15 It is therefore notable that site-selective oxidations of three superficially related macrolides required the development of three distinct protocols yielding three distinct outcomes, highlighting the complexity of site-selective oxidations.",
+        "section": "Site-Selective Oxidation of Clarithromycin and Azithromycin",
+        "image_refs": [
+          "c34641ba587aefe5a9a73049725c4b9d517a905d0b268056884.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C11-oxidized N-oxide product (5') of erythromycin A was successfully synthesized. This product contains both an N-oxide and a C11 carbonyl (in hemiketal form).",
+        "gap": "To explore the chemical versatility of the carbonyl group and generate new analogs, methods were needed to selectively reduce the N-oxide and to further oxidize the macrolide.",
+        "decision": "To reduce the amine N-oxide, Raney Ni was chosen. To further oxidize the macrolide, DMP was selected, given its previous use in other macrolide oxidations."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Raney Ni"
+        ],
+        "solvent": "CCO",
+        "stoichiometry": {
+          "Raney Ni": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Reduction of the amine N-oxide in 5' was successfully achieved using Raney Ni, affording the carbonyl derivative 11 in 89% yield.",
+        "regio_selectivity": "N-oxide reduction"
+      },
+      "evidence": {
+        "text_span": "Reduction of the amine N-oxide could be achieved using Raney Ni to afford carbonyl derivative 11 (Figure 4A).41",
+        "section": "Analogs of Oxidized Macrolides",
+        "image_refs": [
+          "50be8373836911329c14de70921b44747e9b92f63231f03d77d45d9b604d3493.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C11-oxidized N-oxide product (5') was available. While DMP caused overoxidation of erythromycin N-oxide (2), it was hypothesized that the isolated 5' might behave differently due to the pre-existing C11 oxidation.",
+        "gap": "A method was needed to achieve further oxidation of 5' in a controlled manner.",
+        "decision": "DMP was chosen to attempt further oxidation of isolated 5'."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DMP"
+        ],
+        "solvent": "ClCCl",
+        "stoichiometry": {
+          "DMP": "4.0 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "observation": "Further oxidation of isolated 5' with DMP provided clean access to the double oxidation product 12 in 48% yield.",
+        "regio_selectivity": "C4''-OH oxidation"
+      },
+      "evidence": {
+        "text_span": "With regards to controlled further oxidation, we found that, while DMP-mediated oxidation of erythromycin N-oxide, 2, led to a mixture of products (Table 1), further oxidation of isolated 5′ with DMP provided clean access to the double oxidation product 12, which could also be readily deprotected using the Raney Ni procedure to give 13.",
+        "section": "Analogs of Oxidized Macrolides",
+        "image_refs": [
+          "50be8373836911329c14de70921b44747e9b92f63231f03d77d45d9b604d3493.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The double oxidation product 12 (C11-oxidized, C4''-oxidized, N-oxide) was synthesized.",
+        "gap": "To obtain the neutral, double-oxidized macrolide, the N-oxide of 12 needed to be reduced.",
+        "decision": "The Raney Ni procedure, previously successful for reducing the N-oxide of 5' to 11, was applied to 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Raney Ni"
+        ],
+        "solvent": "CCO",
+        "stoichiometry": {
+          "Raney Ni": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 47,
+        "observation": "The double oxidation product 12 was readily deprotected using the Raney Ni procedure to give 13 in 47% yield.",
+        "regio_selectivity": "N-oxide reduction"
+      },
+      "evidence": {
+        "text_span": "further oxidation of isolated 5′ with DMP provided clean access to the double oxidation product 12, which could also be readily deprotected using the Raney Ni procedure to give 13.",
+        "section": "Analogs of Oxidized Macrolides",
+        "image_refs": [
+          "50be8373836911329c14de70921b44747e9b92f63231f03d77d45d9b604d3493.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C11-oxidized N-oxide product (5') was available. The carbonyl group at C11 (in hemiketal form) offered opportunities for further derivatization.",
+        "gap": "A method was needed to convert the C11 carbonyl into an oxime, which could then be further reduced.",
+        "decision": "Condensation of 5' with hydroxylamine was chosen to form the C9 oxime (14)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NH2OH.HCl",
+          "pyridine"
+        ],
+        "stoichiometry": {
+          "NH2OH.HCl": "10.0 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The putative C9 oxime 14 was prepared following condensation of 5' with hydroxylamine. The yield was not specified, but it was moved into the subsequent reduction.",
+        "regio_selectivity": "C9 oxime formation"
+      },
+      "evidence": {
+        "text_span": "The putative C9 oxime 14 is prepared following condensation of 5′ with hydroxylamine before being moved into the subsequent reduction with Raney Ni under an atmosphere of H2 to cleanly provide 15 via elimination to access the dialkyl furanone erythromycin derivative, as confirmed by X-ray crystallography.",
+        "section": "Analogs of Oxidized Macrolides",
+        "image_refs": [
+          "50be8373836911329c14de70921b44747e9b92f63231f03d77d45d9b604d3493.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C9 oxime 14 was formed from 5'.",
+        "gap": "The oxime needed to be reduced to form a new analog, and the N-oxide also needed to be reduced.",
+        "decision": "Reduction of 14 with Raney Ni under a hydrogen atmosphere was chosen to achieve both the oxime reduction and N-oxide reduction, aiming for the dialkyl furanone erythromycin derivative (15)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Raney Ni",
+          "H2"
+        ],
+        "solvent": "CO",
+        "stoichiometry": {
+          "Raney Ni": "unspecified",
+          "H2": "atmosphere"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 25,
+        "observation": "Reduction of 14 with Raney Ni under an atmosphere of H2 cleanly provided 15 via elimination to access the dialkyl furanone erythromycin derivative in 25% yield. The structure was confirmed by X-ray crystallography.",
+        "regio_selectivity": "Oxime reduction and N-oxide reduction"
+      },
+      "evidence": {
+        "text_span": "The putative C9 oxime 14 is prepared following condensation of 5′ with hydroxylamine before being moved into the subsequent reduction with Raney Ni under an atmosphere of H2 to cleanly provide 15 via elimination to access the dialkyl furanone erythromycin derivative, as confirmed by X-ray crystallography.",
+        "section": "Analogs of Oxidized Macrolides",
+        "image_refs": [
+          "50be8373836911329c14de70921b44747e9b92f63231f03d77d45d9b604d3493.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C4''-keto-clarithromycin N-oxide (8) was synthesized from clarithromycin (6).",
+        "gap": "To obtain the neutral C4''-keto-clarithromycin analog, the N-oxide of 8 needed to be reduced.",
+        "decision": "The Raney Ni deprotection procedure, previously successful for reducing N-oxides, was applied to 8."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@@H]1[C@H](O)[C@@H](C)[C@H](O)[C@@H](C)[C@@H](O[C@@H]2O[C@@H](C)[C@H](O[C@@H]3O[C@@H](C)[C@H](C(C)=O)[C@H](OC)[C@H]3C)[C@H](O)[C@H]2C)[C@H](C)OC(=O)[C@H]1C[N+](C)(C)[O-]"
+        ],
+        "product_smiles": [
+          "CC[C@@H]1[C@H](O)[C@@H](C)[C@H](O)[C@@H](C)[C@@H](O[C@@H]2O[C@@H](C)[C@H](O[C@@H]3O[C@@H](C)[C@H](C(C)=O)[C@H](OC)[C@H]3C)[C@H](O)[C@H]2C)[C@H](C)OC(=O)[C@H]1C[C@H](C)N(C)C"
+        ],
+        "reagents": [
+          "Raney Ni"
+        ],
+        "solvent": "CO",
+        "stoichiometry": {
+          "Raney Ni": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 26,
+        "observation": "C4''-keto-clarithromycin (16) was accessible from 8 using the Raney Ni deprotection procedure in 26% yield.",
+        "regio_selectivity": "N-oxide reduction"
+      },
+      "evidence": {
+        "text_span": "Additionally, C4′′-keto-clarithromycin 16 was also accessible from 8 using the Raney Ni deprotection procedure (Figure 4B).",
+        "section": "Analogs of Oxidized Macrolides",
+        "image_refs": [
+          "d5b03193ed9eaa57b8d4759271e06acbada0bde56ad4ab4a80b186021f920ceb.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "UPLC-MS",
+      "X-ray crystallography"
+    ],
+    "metrics": {},
+    "significance": "The study successfully demonstrated site-selective oxidations of erythromycin A, clarithromycin, and azithromycin using different catalyst-substrate and reagent-substrate interactions. The newly installed carbonyl groups allowed for the synthesis of a suite of analogs with broad-spectrum antibiotic activity. Notably, three of the synthesized compounds showed inhibition of strains resistant to erythromycin A, clarithromycin, and azithromycin (CA-MRSA and MRSA(mph(C))), highlighting the utility of site-selective functionalization campaigns for addressing antibiotic resistance."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acscentsci.5c02343",
+      "pmcid": "PMC13022725",
+      "title": "Site-Divergent Oxidations within Venerable Macrolide Antibiotic Scaffolds Unveil Compounds with Broad Spectrum and Anti-MRSA Activities.",
+      "authors": "Langner OC, Mercado BQ, Krajewski SM, Lin S, Miller SJ.",
+      "journal": "ACS Cent Sci",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC13022725?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/0d0313b5-347c-4e2d-8662-f63e973b018f.zip",
+      "parsed_at": "2026-05-11T06:43:25.349473+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 24,
+    "parseable": 13,
+    "canonicalized": 11,
+    "invalid": 11,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1(C)O[C@@H](C)[C@@H](O[C@H]2[C@H](O)[C@@H](C)[N+](C)(C)[O-][C@@H]2C)O[C@@H](C)[C@@H]1O[C@H]1[C@H](C)O[C@@H](C)[C@@H](O[C@H]2C(=O)O[C@H](C)[C@@H](O[C@H]3C[C@@H](C)[C@@H](O)[C@H](C)O3)[C@@H](C)[C@@H](O)[C@@H](C)[C@@H](C(=O))[C@@H]2C)O1",
+      "CC1(C)O[C@@H](C)[C@@H](O[C@H]2[C@H](O)[C@@H](C)[N+](C)(C)[O-][C@@H]2C)O[C@@H](C)[C@@H]1O[C@H]1[C@H](C)O[C@@H](C)[C@@H](O[C@H]2C(=O)O[C@H](C)[C@@H](O[C@H]3C[C@@H](C)[C@@H](O)[C@H](C)O3)[C@@H](C)[C@@H](O)[C@@H](C)[C@@H](C(=O))[C@@H]2C)O1",
+      "CC1(C)O[C@@H](C)[C@H](O)[C@@H](C)C(=O)O[C@H](C)[C@@H](O)[C@H](C)O[C@H]2[C@@H](O)[C@H](N(C)C)[C@@H](C)O[C@@H]2C[C@@H](C)O[C@@H]3C[C@@H](OC)[C@@H](O)[C@H](C)O3",
+      "CC1(C)O[C@@H](C)[C@@H](O[C@H]2[C@H](O)[C@@H](C)[N+](C)(C)[O-][C@@H]2C)O[C@@H](C)[C@@H](O[C@H]1[C@H](C)O[C@@H](C)[C@@H](O[C@H]2C(=O)O[C@H](C)[C@@H](O[C@H]3C[C@@H](C)[C@@H](O)[C@H](C)O3)[C@@H](C)[C@@H](O)[C@@H](C)[C@@H](C(=O))[C@@H]2C)O1",
+      "CC1(C)O[C@@H](C)[C@H](O)[C@@H](C)C(=O)O[C@H](C)[C@@H](O)[C@H](C)O[C@H]2[C@@H](O)[C@H]([N+](C)(C)[O-])[C@@H](C)O[C@@H]2C[C@@H](C)O[C@@H]3C[C@@H](OC)[C@H](C(=O))[C@H](C)O3",
+      "CC1(C)O[C@@H](C)[C@H](O)[C@@H](C)C(=O)O[C@H](C)[C@@H](O)[C@H](C)O[C@H]2[C@@H](O)[C@H]([N+](C)(C)[O-])[C@@H](C)O[C@@H]2C[C@@H](C)O[C@@H]3C[C@@H](OC)[C@H](C(=O))[C@H](C)O3",
+      "CC1(C)O[C@@H](C)[C@H](O)[C@@H](C)C(=O)O[C@H](C)[C@@H](O)[C@H](C)O[C@H]2[C@@H](O)[C@H](N(C)C)[C@@H](C)O[C@@H]2C[C@@H](C)O[C@@H]3C[C@@H](OC)[C@H](C(=O))[C@H](C)O3",
+      "CC1(C)O[C@@H](C)[C@@H](O[C@H]2[C@H](O)[C@@H](C)[N+](C)(C)[O-][C@@H]2C)O[C@@H](C)[C@@H](O[C@H]1[C@H](C)O[C@@H](C)[C@@H](O[C@H]2C(=O)O[C@H](C)[C@@H](O[C@H]3C[C@@H](C)[C@@H](O)[C@H](C)O3)[C@@H](C)[C@@H](O)[C@@H](C)[C@@H](C(=O))[C@@H]2C)O1",
+      "CC1(C)O[C@@H](C)[C@H](O)[C@@H](C)C(=O)O[C@H](C)[C@@H](O)[C@H](C)O[C@H]2[C@@H](O)[C@H]([N+](C)(C)[O-])[C@@H](C)O[C@@H]2C[C@@H](C)O[C@@H]3C[C@@H](OC)[C@@H](O)[C@H](C)O3",
+      "CC1(C)O[C@@H](C)[C@H](O)[C@@H](C)C(=O)O[C@H](C)[C@@H](O)[C@H](C)O[C@H]2[C@@H](O)[C@H]([N+](C)(C)[O-])[C@@H](C)O[C@@H]2C[C@@H](C)O[C@@H]3C[C@@H](OC)[C@@H](O)[C@H](C)O3"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

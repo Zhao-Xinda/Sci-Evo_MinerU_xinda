@@ -1,0 +1,1353 @@
+{
+  "trace_id": "TS-PMC11369162",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-Zygadenine",
+    "smiles": "C[C@H]1CC[C@@H]2N(C1)C[C@@H]1[C@H]([C@@H](O)[C@H](O)[C@]3(O)[C@H]1C[C@@]14O[C@@]5(O)[C@@H](CC[C@@H]31)[C@]4(C)CC[C@@H]5O)[C@]2(C)O",
+    "natural_product_class": "steroidal alkaloid",
+    "structural_features": {
+      "molecular_weight": 495.7,
+      "stereocenters": 19,
+      "ring_systems": "hexacyclic C-nor-D-homo steroid skeleton",
+      "key_motifs": [
+        "steroidal alkaloid",
+        "C-nor-D-homo steroid skeleton",
+        "multiple hydroxyl groups"
+      ]
+    },
+    "motivation": "Highly intricate natural product with complex structural and stereochemical characteristics, diverse pharmacological activities, and a highly oxidized cevanine subtype, presenting opportunities for strategic innovation in accessing Veratrum alkaloids.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Guo",
+        "year": 2023,
+        "doi": "10.1021/jacs.3c08000",
+        "key_strategy": "intramolecular Diels-Alder reaction/radical cyclization followed by redox manipulations"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Divergent and enantioselective total synthesis of zygadenine, germine, protoverine, and the alkamine of veramadine A."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C6-C7 alkene functionalization",
+        "named_strategy": "Neighboring-group participation",
+        "reasoning": "To achieve regio- and stereoselective installation of C6 and/or C7 hydroxyl groups, leveraging the C9-OH group for control.",
+        "alternatives_considered": [
+          {
+            "strategy": "Direct dihydroxylation with OsO4",
+            "rejected_because": "Resulted in incorrect stereochemistry at C6 and C7 due to steric hindrance on the α surface."
+          },
+          {
+            "strategy": "Woodward cis-hydroxylation (AgOAc, I2)",
+            "rejected_because": "Led to a side reaction involving nucleophilic attack of C9-OH on the iodonium intermediate, yielding undesired product."
+          }
+        ]
+      },
+      {
+        "bond_description": "C3-C4 oxidation state installation",
+        "named_strategy": "Elimination/dihydroxylation",
+        "reasoning": "To introduce the C3 and C4 oxidation states, initially planned before C6-C7 functionalization, but later revised.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [],
+    "rationale": "The strategy aimed for a divergent synthesis from a common intermediate (7) to access multiple highly oxidized Veratrum alkaloids. The key was to address the challenges of chemo-, regio-, and stereoselectivity in late-stage transformations, particularly the functionalization of the Δ6,7-alkene and the C3-C4 oxidation states. A neighboring-group participation strategy using C9-OH was developed to control stereochemistry at C7, and the sequence of functionalization was modified to perform C3-C4 oxidation before C6-C7 functionalization to overcome conformational constraints."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The target molecules (zygadenine, germine, protoverine, and veramadine A alkamine) are highly oxidized members of the cevanine subgroup, characterized by multiple hydroxyl groups. The hexacyclic carbon skeleton was previously constructed via intramolecular Diels-Alder reaction and radical cyclization, leading to intermediate 8 (or its C3-keto precursor 11).",
+        "gap": "How to introduce the C6 and C7 hydroxyl groups with correct regio- and stereochemistry on the Δ6,7-alkene moiety within the cis-decahydronaphthalene framework of 8.",
+        "decision": "To introduce C6 and C7 hydroxyl groups, chose direct dihydroxylation of 8 with OsO4, expecting cis-dihydroxylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1CC[C@H]2CC3(O)O[C@H]2[C@H](C=C2OC4(C)[C@H]2[C@@H]3C(=O)N2C[C@H](C)C[C@H]24)C1"
+        ],
+        "product_smiles": [
+          "COC1CC[C@H]2CC(O)C3(O)O[C@H]2[C@H](C=C2OC4(C)[C@H]2[C@@H]3C(=O)N2C[C@H](C)C[C@H]24)C1"
+        ],
+        "reagents": [
+          "OsO4",
+          "pyridine"
+        ],
+        "temperature": "0 % to rt",
+        "time": "overnight"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 85,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "Resulted in diol 9 with incorrect stereochemistry at C6 and C7, likely due to significant steric hindrance on the α surface in the AB-ring system."
+      },
+      "evidence": {
+        "text_span": "Initially, a direct oxidation strategy was employed (Fig. 3a). However, dihydroxylation of 8 with OsO4 resulted in diol 9 with incorrect stereochemistry at C6 and C7, likely due to significant steric hindrance on the α surface in the AB-ring system.",
+        "image_refs": [
+          "379bb65b3f1ea784957b5dc947269fea4c4f29635c9539b444926f7289bf02a2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Direct dihydroxylation of 8 with OsO4 failed to give the correct stereochemistry at C6 and C7.",
+        "gap": "How to achieve correct stereochemistry for C6 and C7 hydroxyl groups.",
+        "decision": "To introduce C6 and C7 hydroxyl groups, chose Woodward cis-hydroxylation conditions (AgOAc, I2) on 8, expecting cis-dihydroxylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1CC[C@H]2CC3(O)O[C@H]2[C@H](C=C2OC4(C)[C@H]2[C@@H]3C(=O)N2C[C@H](C)C[C@H]24)C1"
+        ],
+        "product_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "reagents": [
+          "AgOAc",
+          "I2",
+          "AcOH"
+        ],
+        "time": "overnight"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 70,
+        "failure_mode": "side_product_dominant",
+        "observation": "Revealed a side reaction involving the nucleophilic attack of the C9-OH on the iodonium intermediate, yielding the undesired product 10."
+      },
+      "evidence": {
+        "text_span": "Evaluating Woodward cis-hydroxylation conditions (AgOAc, I2) on 8 revealed a side reaction involving the nucleophilic attack of the C9-OH on the iodonium intermediate32, yielding the undesired product 10.",
+        "image_refs": [
+          "379bb65b3f1ea784957b5dc947269fea4c4f29635c9539b444926f7289bf02a2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Previous attempts at direct dihydroxylation of the Δ6,7-alkene failed due to steric hindrance or side reactions involving C9-OH.",
+        "gap": "How to achieve regio- and stereoselective functionalization of the Δ6,7-alkene.",
+        "decision": "To functionalize the Δ6,7-alkene, chose a neighboring-group participation strategy leveraging the C9-OH group, expecting to control stereochemistry and regioselectivity."
+      },
+      "revises_step_id": 2,
+      "evidence": {
+        "text_span": "These initial endeavors sparked the investigation of a neighboring-group participation strategy by leveraging the C9-OH group (Fig. 3b).",
+        "image_refs": [
+          "379bb65b3f1ea784957b5dc947269fea4c4f29635c9539b444926f7289bf02a2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 11 contains a C3 carbonyl group and a Δ6,7-alkene. The neighboring-group participation strategy requires a C9-OH.",
+        "gap": "How to reduce the C3 carbonyl group stereoselectively.",
+        "decision": "To reduce the C3 carbonyl group, chose NaBH4, expecting it to approach from the convex face to give a single isomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "product_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "DCM/MeOH=1:4",
+        "temperature": "0 %",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Reduction of 11 by NaBH4, which approached the C3 carbonyl group from the convex face, gave 12 in 82% yield as a single isomer."
+      },
+      "evidence": {
+        "text_span": "Reduction of 11 by NaBH4, which approached the C3 carbonyl group from the convex face, gave 12 in 82% yield as a single isomer.",
+        "image_refs": [
+          "379bb65b3f1ea784957b5dc947269fea4c4f29635c9539b444926f7289bf02a2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 12 has a C3-OH and a C9-OH. For the neighboring-group participation strategy, the C3-OH needs protection and the C9-OH needs to be benzoylated.",
+        "gap": "How to selectively protect C3-OH and benzoylate C9-OH, especially given the steric hindrance around C9-OH.",
+        "decision": "To protect C3-OH and benzoylate C9-OH, chose protection of C3-OH with TBS, followed by benzoylation of C9-OH using NaHMDS and Bz2O in a one-pot procedure, expecting high efficiency despite steric hindrance."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "product_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "reagents": [
+          "NaHMDS",
+          "TBSCl",
+          "Bz2O"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Protection of the C3-OH in 12 using TBS, followed by benzoylation of the C9-OH in a one-pot procedure, provided 13 in 80% yield. This method exhibited remarkable efficiency for the acylation of the C9-OH, representing a rare example of benzoylation on a tertiary hydroxyl group despite the considerable steric hinderance."
+      },
+      "evidence": {
+        "text_span": "Protection of the C3-OH in 12 using TBS, followed by benzoylation of the C9-OH in a one-pot procedure, provided 13 in 80% yield. Notably, this method (NaHMDS <Bz2O>) exhibited remarkable efficiency for the acylation of the C9-OH, representing a rare example of benzoylation on a tertiary hydroxyl group despite the considerable steric hinderance.",
+        "image_refs": [
+          "379bb65b3f1ea784957b5dc947269fea4c4f29635c9539b444926f7289bf02a2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 13 has a benzoylated C9-OH and a Δ6,7-alkene. The neighboring-group participation strategy involves treatment with IBr.",
+        "gap": "How to form the orthoester and achieve selective deprotection of the C14, C15-benzylidene acetal.",
+        "decision": "To functionalize the Δ6,7-alkene, chose treatment of 13 with IBr, expecting a cascade event via oxocarbenium intermediate A, engaging the neighboring oxygen at C14 to form the orthoester and selectively deprotect the C14, C15-benzylidene acetal."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "product_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "reagents": [
+          "IBr"
+        ],
+        "solvent": "MeCN",
+        "temperature": "28 °C",
+        "time": "2 h",
+        "stoichiometry": {
+          "buffer (pH=7)": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Treatment of 13 with IBr afforded orthoester 14 in 85% yield. This cascade event proceeded via oxocarbenium intermediate A, which engaged the neighboring oxygen at the C14 position to form the orthoester, leading to the selective deprotection of the C14, C15-benzylidene acetal. This successfully attained the correct oxidation level and configuration at C7."
+      },
+      "evidence": {
+        "text_span": "Treatment of 13 with IBr afforded orthoester 14 in 85% yield. This cascade event proceeded via oxocarbenium intermediate A, which engaged the neighboring oxygen at the C14 position to form the orthoester, leading to the selective deprotection of the C14, C15-benzylidene acetal. With the correct oxidation level and configuration at C7 successfully attained, we employed radical",
+        "image_refs": [
+          "379bb65b3f1ea784957b5dc947269fea4c4f29635c9539b444926f7289bf02a2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 14 has a C6 iodide and a TBS protecting group. The next step is to remove these groups.",
+        "gap": "How to dehalogenate the C6 iodide and deprotect the TBS group.",
+        "decision": "To remove the C6 iodide and TBS group, chose radical dehalogenation with AIBN and nBu3SnH, followed by TBAF treatment, expecting to yield 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "product_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "reagents": [
+          "AIBN",
+          "nBu3SnH",
+          "TBAF"
+        ],
+        "solvent": "benzene, THF",
+        "temperature": "reflux, rt",
+        "time": "1 h, 2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Radical dehalogenation of the C-6 iodide and deprotected the TBS group to yield 15."
+      },
+      "evidence": {
+        "text_span": "dehalogenation of the C-6 iodide and deprotected the TBS group to yield 15.",
+        "image_refs": [
+          "379bb65b3f1ea784957b5dc947269fea4c4f29635c9539b444926f7289bf02a2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 15 has a C3-OH. The goal is to introduce the C4 oxidation state via elimination/dihydroxylation.",
+        "gap": "How to achieve elimination of the C3-OH to form a Δ3,4-alkene.",
+        "decision": "To form the Δ3,4-alkene, chose tosylation of the C3-OH in 15, followed by treatment with tBuOK, expecting elimination."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "product_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "reagents": [
+          "TsCl",
+          "pyridine",
+          "tBuOK"
+        ],
+        "temperature": "rt",
+        "time": "5 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 90,
+        "failure_mode": "no_reaction",
+        "observation": "After tosylation of the C3-OH, the elimination did not occur upon treatment with tBuOK, resulting in the recovery of tosylate 16."
+      },
+      "evidence": {
+        "text_span": "We then examined the elimination/dihydroxylation strategy for introducing the C4 oxidation state. However, after tosylation of the C3-OH, the elimination did not occur upon treatment with tBuOK, resulting in the recovery of tosylate 16.",
+        "image_refs": [
+          "379bb65b3f1ea784957b5dc947269fea4c4f29635c9539b444926f7289bf02a2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Elimination of C3-OTs in 16 failed, likely due to conformational constraints from the orthoester structure in the B-ring, preventing the A-ring from adopting the necessary twist-boat conformation for trans-coplanar elimination.",
+        "gap": "How to enable the elimination reaction to form the Δ3,4-alkene.",
+        "decision": "To enable elimination, chose to protect the C9-OH with a Boc group (yielding 20), then treat with IBr (to afford 21), and subsequently attempt to deprotect the C9-OH to release conformational constraints in the AB system."
+      },
+      "revises_step_id": 8,
+      "evidence": {
+        "text_span": "This experimental observation prompted a careful assessment of the mechanism underlying the elimination of C3-OTs. The elimination in substrate 18 to form the Δ3,4-alkene could be realized, as communicated in our former publication31. A plausible explanation is that the elimination reaction to form the Δ3,4-alkene requires C3–OTs and C4-β-H to be trans-coplanar, necessitating the A-ring to adopt a twist-boat conformation (B, Fig. 3c). This conformation can occur in substrate 18. However, in substrate 16, the B-ring conformation was locked by the orthoester structure, adding extra conformational constraints in the AB ring system, and making it difficult to achieve the necessary conformation in the A-ring for the trans-elimination. Therefore, we opted to protect the C9–OH with a Boc group, yielding intermediate 20, which was then treated with IBr to afford 21 in 80% yield (Fig. 3d).",
+        "image_refs": [
+          "c558256f798ca6ede3433e3592cddd444ce771a976e074becdfa8964a99b5481.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C9-OH needs to be protected to allow for subsequent steps. A Boc group was chosen.",
+        "gap": "How to protect the C9-OH with a Boc group.",
+        "decision": "To protect the C9-OH, chose NaHMDS and Boc2O, expecting to yield intermediate 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1C[C@@H]2N(C1)C(=O)[C@H]1[C@H]3C(=C[C@@H]4CC(=O)CC[C@H]5CC1(O)O[C@H]54)OC32C"
+        ],
+        "product_smiles": [
+          "CC1CCC2(C)C(CC=C3CC(C)C(OC(=O)OC(C)(C)C)C3O[Si](C)(C)C(C)(C)C)C2C1"
+        ],
+        "reagents": [
+          "NaHMDS",
+          "TBSCl",
+          "Boc2O"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Protected the C9–OH with a Boc group, yielding intermediate 20."
+      },
+      "evidence": {
+        "text_span": "Therefore, we opted to protect the C9–OH with a Boc group, yielding intermediate 20, which was then treated with IBr to afford 21 in 80% yield (Fig. 3d).",
+        "image_refs": [
+          "c558256f798ca6ede3433e3592cddd444ce771a976e074becdfa8964a99b5481.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 20 has a Boc-protected C9-OH and a Δ6,7-alkene. The neighboring-group participation strategy involves treatment with IBr.",
+        "gap": "How to form the orthoester and achieve selective deprotection of the C14, C15-benzylidene acetal with the Boc group in place.",
+        "decision": "To functionalize the Δ6,7-alkene, chose treatment of 20 with IBr, expecting to afford 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CCC2(C)C(CC=C3CC(C)C(OC(=O)OC(C)(C)C)C3O[Si](C)(C)C(C)(C)C)C2C1"
+        ],
+        "product_smiles": [
+          "CC1CCC2(C)C(C1)C2CC1CC(C)C(OC(=O)OC(C)(C)C)C1O[Si](C)(C)C(C)(C)C"
+        ],
+        "reagents": [
+          "IBr"
+        ],
+        "solvent": "MeCN",
+        "temperature": "28 °C",
+        "time": "2 h",
+        "stoichiometry": {
+          "buffer (pH=7)": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Intermediate 20 was treated with IBr to afford 21 in 80% yield."
+      },
+      "evidence": {
+        "text_span": "Therefore, we opted to protect the C9–OH with a Boc group, yielding intermediate 20, which was then treated with IBr to afford 21 in 80% yield (Fig. 3d).",
+        "image_refs": [
+          "c558256f798ca6ede3433e3592cddd444ce771a976e074becdfa8964a99b5481.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 21 has a Boc-protected C9-OH. The goal was to deprotect C9-OH to release conformational constraints for subsequent elimination.",
+        "gap": "How to remove the carbonate group (Boc) via alkaline hydrolysis.",
+        "decision": "To deprotect the C9-OH, chose alkaline hydrolysis of the carbonate group in 21, expecting to yield 22 or the corresponding epoxide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CCC2(C)C(C1)C2CC1CC(C)C(OC(=O)OC(C)(C)C)C1O[Si](C)(C)C(C)(C)C"
+        ],
+        "product_smiles": [
+          "CC1CCC2(C)C(C1)C2CC1CC(C)C(O)C1O[Si](C)(C)C(C)(C)C"
+        ],
+        "reagents": [],
+        "named_reaction": "alkaline hydrolysis"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Removing the carbonate group via alkaline hydrolysis proved challenging. Instead of obtaining 22 or the corresponding epoxide, we observed the recovery of starting material 21, indicating significant steric hinderance near the carbonate, likely due to the A-ring and the benzylidene acetal on C14,C15-diol."
+      },
+      "evidence": {
+        "text_span": "We then attempted to deprotect the C9–OH to release the conformational constraint in the AB system to ensure the elimination reaction. However, removing the carbonate group via alkaline hydrolysis proved challenging. Instead of obtaining 22 or the corresponding epoxide, we observed the recovery of starting material 21, indicating significant steric hinderance near the carbonate, likely due to the A-ring and the benzylidene acetal on C14,C15-diol.",
+        "image_refs": [
+          "c558256f798ca6ede3433e3592cddd444ce771a976e074becdfa8964a99b5481.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Previous attempts to achieve elimination of C3-OH and functionalize the Δ6,7-alkene were hindered by conformational constraints and steric hindrance.",
+        "gap": "How to successfully implement the elimination/dihydroxylation of the C3-C4 position and the neighboring-group participation reaction.",
+        "decision": "To overcome previous challenges, chose to modify the reaction sequence so that the neighboring-group participation reaction occurred after the elimination/dihydroxylation of the C3-C4 position."
+      },
+      "revises_step_id": 12,
+      "evidence": {
+        "text_span": "Subsequently, the reaction sequence was modified so that the neighboring-group participation reaction occurred after the elimination/dihydroxylation of the C3-C4 position (Fig. 4).",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 12 has a C3-OH. The goal is to form the Δ3,4-alkene via elimination.",
+        "gap": "How to achieve regio-selective elimination of the C3-OH to form the Δ3,4-alkene without forming byproducts.",
+        "decision": "To form the Δ3,4-alkene, chose tosylation of C3-OH in 12 and treatment with tBuOK, optimizing conditions by controlling reaction temperature to -25 °C and adding tBuOK solid slowly in batches, expecting to obtain 23 regio-selectively."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "TsCl",
+          "pyridine",
+          "tBuOK"
+        ],
+        "solvent": "toluene, DMSO",
+        "temperature": "50 °C, -78 °C to -25 °C",
+        "time": "2 h, 30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Compound 12 underwent the elimination of the C3-OH through tosylation and treatment with tBuOK, leading to the formation of the Δ3,4-alkene product. After screening conditions, we were able to regio-selectively obtain the desired Δ3,4-alkene product (23) in 80% isolated yield by controlling the reaction temperature to -25 °C and adding tBuOK solid slowly in batches."
+      },
+      "evidence": {
+        "text_span": "Initially, compound 12 underwent the elimination of the C3-OH through tosylation and treatment with tBuOK, leading to the formation of the Δ3,4-alkene product in 20% yield, which was contaminated by Δ2,3-alkene and Δ4,5-alkene byproduct. After screening conditions, we were able to regio-selectively obtain the desired Δ3,4-alkene product (23) in 80% isolated yield by controlling the reaction temperature to -25 °C and adding tBuOK solid slowly in batches.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 23 contains a Δ3,4-alkene and a Δ6,7-alkene. The goal is to achieve regio- and facial-selective dihydroxylation of the Δ3,4-alkene.",
+        "gap": "How to selectively dihydroxylate the Δ3,4-alkene without affecting the Δ6,7-alkene and avoiding byproducts.",
+        "decision": "To dihydroxylate the Δ3,4-alkene, chose OsO4/pyridine treatment, optimizing by dropwise addition of OsO4 solution at low temperature, expecting to obtain regio-selective product 24."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "OsO4",
+          "pyridine"
+        ],
+        "solvent": "THF",
+        "temperature": "-40 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "observation": "Under OsO4/pyridine treatment, the desired product 21 was obtained in only 13% yield, along with byproducts from dihydroxylation of the Δ6,7-alkene and both the Δ3,4-alkene and Δ6,7-alkene. After careful optimization, the regioselective product 24 was obtained in 57% yield (80% brsm) by dropwisely adding the OsO4 solution at low temperature."
+      },
+      "evidence": {
+        "text_span": "Next, we attempted the regio- and facial-selective dihydroxylation of the Δ3,4-alkene of 23. Under OsO4/pyridine treatment, the desired product 21 was obtained in only 13% yield, along with byproducts from dihydroxylation of the Δ6,7-alkene and both the Δ3,4-alkene and Δ6,7-alkene. After careful optimization, the regioselective product 24 was obtained in 57% yield (80% brsm) by dropwisely adding the OsO4 solution at low temperature.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 24 has two hydroxyl groups at C3 and C4. The goal is to selectively protect one of them.",
+        "gap": "How to achieve mono-protection of the diol to obtain separable regioisomers.",
+        "decision": "To mono-protect the diol, chose TBSCl with imidazole and DMAP, expecting to obtain separable regioisomers 25a and 25b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C",
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "TBSCl",
+          "imidazole",
+          "DMAP"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "overnight"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "regio_selectivity": "25a/25b = 3:5",
+        "observation": "Mono-protection with TBS provided separable regioisomers 25a and 25b in 31% and 51% yields, respectively, with the undesired regioisomer (25a) being recyclable."
+      },
+      "evidence": {
+        "text_span": "Mono-protection with TBS provided separable regioisomers 25a and 25b in 31% and 51% yields, respectively, with the undesired regioisomer (25a) being recyclable.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 25b has a C3-OH. The goal is to install a BOM protecting group on the C3-OH to form the late-stage common intermediate 7.",
+        "gap": "How to efficiently install the BOM protecting group.",
+        "decision": "To install the BOM protecting group, chose BOMCl with DIPEA and TBAI, expecting high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "BOMCl",
+          "DIPEA",
+          "TBAI"
+        ],
+        "solvent": "DCE",
+        "temperature": "80 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "Intermediate 25b was further converted to 7, the late-stage common intermediate for our total synthesis endeavor, by installing a BOM protecting group on the C3–OH."
+      },
+      "evidence": {
+        "text_span": "Intermediate 25b was further converted to 7, the late-stage common intermediate for our total synthesis endeavor, by installing a BOM protecting group on the C3–OH.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 7 is the common intermediate for divergent syntheses. For (-)-zygadenine (1), the C6-C7 alkene needs to be hydrogenated and the C4-OH deprotected.",
+        "gap": "How to achieve hydrogenation of the C6-C7 alkene and deprotection of C4-OH in a one-pot fashion.",
+        "decision": "To synthesize (-)-zygadenine, chose hydrogenation of the C6-C7 alkene with Pd/C and H2, followed by deprotection of C4-OH via TBAF treatment in a one-pot fashion, expecting to yield intermediate 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "Pd/C",
+          "Et3N",
+          "H2",
+          "TBAF"
+        ],
+        "solvent": "EtOAc, THF",
+        "temperature": "rt, 70 °C",
+        "time": "20 h, 5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "For the synthesis of (–)-zygadenine (1), the C6‒C7 alkene was hydrogenated, and the C4–OH was deprotected via TBAF treatment in a one-pot fashion, resulting in the intermediate 26."
+      },
+      "evidence": {
+        "text_span": "For the synthesis of (–)-zygadenine (1), the C6‒C7 alkene was hydrogenated, and the C4–OH was deprotected via TBAF treatment in a one-pot fashion, resulting in the intermediate 26, which could be directed towards (–)-1 using identical reaction sequences in our previous publication31.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 26 is ready for conversion to (-)-zygadenine (1).",
+        "gap": "How to complete the synthesis of (-)-zygadenine (1) from 26.",
+        "decision": "To synthesize (-)-zygadenine, chose to use identical reaction sequences as in our previous publication (ref 31), expecting to yield (-)-zygadenine (1)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          ""
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "Intermediate 26 could be directed towards (–)-1 using identical reaction sequences in our previous publication31."
+      },
+      "evidence": {
+        "text_span": "resulting in the intermediate 26, which could be directed towards (–)-1 using identical reaction sequences in our previous publication31.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 7 is the common intermediate for divergent syntheses. For the alkamine of veramadine A (4), a benzoyl group needs to be introduced to the C9-OH.",
+        "gap": "How to efficiently introduce a benzoyl group to the C9-OH.",
+        "decision": "To introduce a benzoyl group to C9-OH, chose NaHMDS and Bz2O, expecting to give 27."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "NaHMDS",
+          "Bz2O"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "A benzoyl group was introduced to the C9-OH to give 27."
+      },
+      "evidence": {
+        "text_span": "A benzoyl group was introduced to the C9-OH to give 27, and subsequent IBr treatment afforded orthoester 28 in 56% yield.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 27 has a benzoylated C9-OH and a Δ6,7-alkene. The neighboring-group participation strategy involves treatment with IBr.",
+        "gap": "How to form the orthoester and achieve selective deprotection of the C14, C15-benzylidene acetal.",
+        "decision": "To functionalize the Δ6,7-alkene, chose IBr treatment of 27, expecting to afford orthoester 28."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "IBr"
+        ],
+        "solvent": "MeCN",
+        "temperature": "28 °C",
+        "time": "2 h",
+        "stoichiometry": {
+          "buffer (pH=7)": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "Subsequent IBr treatment afforded orthoester 28 in 56% yield."
+      },
+      "evidence": {
+        "text_span": "A benzoyl group was introduced to the C9-OH to give 27, and subsequent IBr treatment afforded orthoester 28 in 56% yield.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 28 has a C15-OH. The goal is to convert it to a xanthate for radical defunctionalization.",
+        "gap": "How to convert the C15-OH to the corresponding xanthate.",
+        "decision": "To convert C15-OH to xanthate, chose NaHMDS, CS2, and MeI, expecting to yield 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "NaHMDS",
+          "CS2",
+          "MeI"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "10 min, 30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "Conversion of the C15–OH to the corresponding xanthate 29."
+      },
+      "evidence": {
+        "text_span": "Conversion of the C15–OH to the corresponding xanthate 29 was followed by radical defunctionalization to adjust the oxidation levels at C6 and C15, and one-pot TBAF treatment afforded alcohol 30.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 29 is a xanthate. The goal is to achieve radical defunctionalization at C6 and C15 and deprotect the TBS group.",
+        "gap": "How to perform radical defunctionalization and one-pot TBS deprotection.",
+        "decision": "To achieve defunctionalization and deprotection, chose radical defunctionalization with AIBN and nBu3SnH, followed by one-pot TBAF treatment, expecting to afford alcohol 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "AIBN",
+          "nBu3SnH",
+          "TBAF"
+        ],
+        "solvent": "benzene, THF",
+        "temperature": "reflux",
+        "time": "1.5 h, 3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "observation": "Radical defunctionalization to adjust the oxidation levels at C6 and C15, and one-pot TBAF treatment afforded alcohol 30."
+      },
+      "evidence": {
+        "text_span": "Conversion of the C15–OH to the corresponding xanthate 29 was followed by radical defunctionalization to adjust the oxidation levels at C6 and C15, and one-pot TBAF treatment afforded alcohol 30.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 30 has a C4-OH group. The goal is to oxidize it to a ketone.",
+        "gap": "How to efficiently oxidize the C4-OH to a ketone.",
+        "decision": "To oxidize C4-OH to a ketone, chose DMP with NaHCO3, expecting to give 31."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "DMP",
+          "NaHCO3"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "15 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "The C4-OH group was then oxidized to a ketone to give 31 in 84% yield."
+      },
+      "evidence": {
+        "text_span": "The C4-OH group was then oxidized to a ketone to give 31 in 84% yield.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 31 has a C4-ketone and various protecting groups. The goal is to globally deprotect and form a hemiketal for protection during subsequent reduction.",
+        "gap": "How to achieve global deprotection and hemiketal formation.",
+        "decision": "To achieve global deprotection and hemiketal formation, chose palladium-catalyzed hydrogenation, expecting to release the C9-OH and form the hemiketal (32) to protect the C4-ketone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "Pd(OH)2/C",
+          "H2"
+        ],
+        "solvent": "MeOH",
+        "temperature": "rt",
+        "time": "5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Global deprotection via palladium-catalyzed hydrogenation released the C9-OH to form the hemiketal (32), serving as protection of the C4-ketone during iridium-catalyzed silane-reduction."
+      },
+      "evidence": {
+        "text_span": "The C4-OH group was then oxidized to a ketone to give 31 in 84% yield. k Pd(OH)2/C, MeOH, H2 (1 atm), rt, 5 h. l Et2SiH2, [Ir(COE)2Cl]2, toluene, reflux, 3 h then MeCN, HF (40% aq.), rt, overnight, 62% (2 steps).",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 32 is a hemiketal. The goal is to perform iridium-catalyzed silane-reduction and then deprotect silyl groups.",
+        "gap": "How to achieve the reduction and subsequent deprotection in a single sequence.",
+        "decision": "To achieve reduction and deprotection, chose iridium-catalyzed silane-reduction with [Ir(COE)2Cl]2 and Et2SiH2, followed by hydrofluoric acid treatment in the same reaction flask, expecting to isolate the alkamine of veramadine A (4)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "product_smiles": [
+          "CC(C)C1CCC2C(C1)C2C(C)C1OC(c2ccccc2)OC2C(C3C(C)C(O)C(O)C(O)C3(C)C)ON(C(=O)C1C)C2C"
+        ],
+        "reagents": [
+          "Et2SiH2",
+          "[Ir(COE)2Cl]2",
+          "HF (40% aq.)"
+        ],
+        "solvent": "toluene, MeCN",
+        "temperature": "reflux, rt",
+        "time": "3 h, overnight"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "Silylation of the hydroxyl groups occurred during this final transformation; therefore, hydrofluoric acid treatment was performed in the same reaction flask after the reduction, leading to the isolation of the alkamine of veramadine A (4) in 62% yield over two steps."
+      },
+      "evidence": {
+        "text_span": "Notably, silylation of the hydroxyl groups occurred during this final transformation; therefore, hydrofluoric acid treatment was performed in the same reaction flask after the reduction, leading to the isolation of the alkamine of veramadine A (4) in 62% yield over two steps.",
+        "image_refs": [
+          "e0c012144998ee3d21dd70e3b59bba2f787ec3142f8659aa23f9356ff51ce4d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 28 has a C6-iodide and a C15-OH. For germine (2), the C6-iodide needs radical dehalogenation, the C15-OH needs BOM protection, and the TBS group needs deprotection.",
+        "gap": "How to achieve these transformations in a one-pot fashion.",
+        "decision": "To synthesize germine, chose radical dehalogenation of the iodide in 28 with nBu3SnH and AIBN, followed by BOM protection of C15-OH with BOMCl, TBAI, and DIPEA, and then TBAF treatment in a one-pot fashion, expecting to yield 33."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "nBu3SnH",
+          "AIBN",
+          "BOMCl",
+          "TBAI",
+          "DIPEA",
+          "TBAF"
+        ],
+        "solvent": "benzene, DCE, THF",
+        "temperature": "reflux, 80 °C, reflux",
+        "time": "1.5 h, 2 h, 3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Radical dehalogenation of the iodide in 28 was followed by protecting the C15-OH group with a BOM group, and TBAF treatment was performed in a one-pot fashion to yield 33."
+      },
+      "evidence": {
+        "text_span": "To access germine (2), radical dehalogenation of the iodide in 28 was followed by protecting the C15-OH group with a BOM group, and TBAF treatment was performed in a one-pot fashion to yield 33 (Fig. 5).",
+        "image_refs": [
+          "1a4b6d84dff4772fdd11744e9d0bb56500bca2b95710dec81bc017b8bceb0853.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 28,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 33 has a C4-OH group. The goal is to oxidize it to a ketone.",
+        "gap": "How to efficiently oxidize the C4-OH to a ketone.",
+        "decision": "To oxidize C4-OH to a ketone, chose DMP with NaHCO3, expecting to deliver ketone 34."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DMP",
+          "NaHCO3"
+        ],
+        "solvent": "DCM",
+        "temperature": "30 °C",
+        "time": "13 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "This was followed by DMP oxidation of the C4-OH group to deliver ketone 34."
+      },
+      "evidence": {
+        "text_span": "This was followed by DMP oxidation of the C4-OH group to deliver ketone 34.",
+        "image_refs": [
+          "1a4b6d84dff4772fdd11744e9d0bb56500bca2b95710dec81bc017b8bceb0853.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 29,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 34 is a ketone with various protecting groups. The goal is to achieve global deprotection and final amide reduction to yield (-)-germine (2).",
+        "gap": "How to perform sequential global deprotection and amide reduction.",
+        "decision": "To synthesize (-)-germine, chose sequential global deprotection with Pd(OH)2/C and H2, followed by amide reduction with [Ir(COE)2Cl]2 and Et2SiH2, and then HF treatment, expecting to afford (-)-germine (2)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd(OH)2/C",
+          "H2",
+          "Et2SiH2",
+          "[Ir(COE)2Cl]2",
+          "HF (40% aq.)"
+        ],
+        "solvent": "MeOH, toluene, MeCN",
+        "temperature": "rt, reflux, rt",
+        "time": "5 h, 3 h, overnight"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "Sequential global deprotection and final amide reduction then afforded (–)-germine (2) in 45% yield over two steps."
+      },
+      "evidence": {
+        "text_span": "Sequential global deprotection and final amide reduction then afforded (–)-germine (2) in 45% yield over two steps.",
+        "image_refs": [
+          "1a4b6d84dff4772fdd11744e9d0bb56500bca2b95710dec81bc017b8bceb0853.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 30,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 28 has a C6-iodide. For protoverine (3), the C6-iodide needs to be transformed to a TEMPO group.",
+        "gap": "How to transform the C6-iodide to a TEMPO group.",
+        "decision": "To transform C6-iodide to a TEMPO group, chose Boger’s protocol with TEMPO and nBu3SnH, expecting to yield 35."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TEMPO",
+          "nBu3SnH"
+        ],
+        "solvent": "toluene",
+        "temperature": "reflux",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "The elaboration of 28 to protoverine (3) commenced with the transformation of C6-I to a TEMPO group, resulting in 35 using Boger’s protocol34."
+      },
+      "evidence": {
+        "text_span": "The elaboration of 28 to protoverine (3) commenced with the transformation of C6-I to a TEMPO group, resulting in 35 using Boger’s protocol34.",
+        "image_refs": [
+          "1a4b6d84dff4772fdd11744e9d0bb56500bca2b95710dec81bc017b8bceb0853.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 31,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 35 has a TEMPO group at C6. The goal is to produce a C6 ketone.",
+        "gap": "How to convert the TEMPO group to a C6 ketone.",
+        "decision": "To produce a C6 ketone, chose peroxy acid oxidation with UHP, Na2CO3, and TFAA, expecting to yield 36."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "UHP",
+          "Na2CO3",
+          "TFAA"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 %",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Subsequent peroxy acid oxidation produced the C6 ketone 36."
+      },
+      "evidence": {
+        "text_span": "Subsequent peroxy acid oxidation produced the C6 ketone 36, which was then reduced by NaBH4 to introduce the β-C6-OH group, yielding 37.",
+        "image_refs": [
+          "1a4b6d84dff4772fdd11744e9d0bb56500bca2b95710dec81bc017b8bceb0853.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 32,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 36 is a C6 ketone. The goal is to reduce it to introduce a β-C6-OH group.",
+        "gap": "How to stereoselectively reduce the C6 ketone to a β-C6-OH group.",
+        "decision": "To reduce the C6 ketone, chose NaBH4, expecting to introduce the β-C6-OH group and yield 37."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "The C6 ketone 36 was then reduced by NaBH4 to introduce the β-C6-OH group, yielding 37."
+      },
+      "evidence": {
+        "text_span": "Subsequent peroxy acid oxidation produced the C6 ketone 36, which was then reduced by NaBH4 to introduce the β-C6-OH group, yielding 37.",
+        "image_refs": [
+          "1a4b6d84dff4772fdd11744e9d0bb56500bca2b95710dec81bc017b8bceb0853.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 33,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 37 has C6 and C15 hydroxyl groups and a TBS-protected C4-OH. The goal is to protect C6 and C15 hydroxyl groups with BOM and deprotect the TBS-protected C4-OH.",
+        "gap": "How to achieve BOM protection and TBS deprotection in a single sequence.",
+        "decision": "To protect C6 and C15 hydroxyl groups and deprotect C4-OH, chose BOM protection with BOMCl, TBAI, and DIPEA, followed by desilylation with TBAF, expecting to form 38."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "BOMCl",
+          "TBAI",
+          "DIPEA",
+          "TBAF"
+        ],
+        "solvent": "DCE, THF",
+        "temperature": "80 °C, reflux",
+        "time": "2 h, 3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Intermediate 37 underwent BOM protection of both the C6 and C15 hydroxyl groups, followed by desilylation of the TBS-protected C4–OH group, leading to the formation of 38."
+      },
+      "evidence": {
+        "text_span": "Intermediate 37 underwent BOM protection of both the C6 and C15 hydroxyl groups, followed by desilylation of the TBS-protected C4–OH group, leading to the formation of 38.",
+        "image_refs": [
+          "1a4b6d84dff4772fdd11744e9d0bb56500bca2b95710dec81bc017b8bceb0853.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 34,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 38 has a C4-OH group. The goal is to oxidize it to a ketone.",
+        "gap": "How to efficiently oxidize the C4-OH to a ketone.",
+        "decision": "To oxidize C4-OH to a ketone, chose DMP with NaHCO3, expecting to result in ketone 39."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DMP",
+          "NaHCO3"
+        ],
+        "solvent": "DCM",
+        "temperature": "30 °C",
+        "time": "14 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "A subsequent DMP oxidation step resulted in ketone 39 in 78% yield."
+      },
+      "evidence": {
+        "text_span": "A subsequent DMP oxidation step resulted in ketone 39 in 78% yield.",
+        "image_refs": [
+          "1a4b6d84dff4772fdd11744e9d0bb56500bca2b95710dec81bc017b8bceb0853.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 35,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 39 is a ketone with various protecting groups. The goal is to achieve global deprotection and amide reduction to yield (-)-protoverine (3).",
+        "gap": "How to perform sequential global deprotection and amide reduction.",
+        "decision": "To synthesize (-)-protoverine, chose the same global deprotection and amide reduction sequence as for 4, expecting to culminate in the total synthesis of (-)-protoverine (3)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd(OH)2/C",
+          "H2",
+          "Et2SiH2",
+          "[Ir(COE)2Cl]2",
+          "HF (40% aq.)"
+        ],
+        "solvent": "MeOH, toluene, MeCN",
+        "temperature": "rt, reflux, rt",
+        "time": "5 h, 3 h, overnight"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 53,
+        "observation": "The final steps involved the same global deprotection and amide reduction sequence as previously utilized for 4, culminating in the total synthesis of (–)-protoverine (3)."
+      },
+      "evidence": {
+        "text_span": "The final steps involved the same global deprotection and amide reduction sequence as previously utilized for 4, culminating in the total synthesis of (–)-protoverine (3).",
+        "image_refs": [
+          "1a4b6d84dff4772fdd11744e9d0bb56500bca2b95710dec81bc017b8bceb0853.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "X-ray crystallography"
+    ],
+    "metrics": {},
+    "significance": "Successfully developed a divergent approach for the syntheses of (–)-zygadenine (1), (–)-germine (2), (–)-protoverine (3) and the alkamine of veramadine A (4). Overcame challenges in chemo-, regio- and stereoselectivity during late-stage transformations, especially redox sequences, within a complex and highly oxidized framework. The functionalization of the C6-C7 alkene using neighboring-group participation (C9-OBz) after the introduction of the protected C4-OH proved to be an essential tactic. This strategy provides a pathway to access other important Veratrum alkaloids and opportunities for pharmacological exploration."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s41467-024-52134-7",
+      "pmcid": "PMC11369162",
+      "title": "Divergent syntheses of complex Veratrum alkaloids.",
+      "authors": "Guo Y, Fang R, Jiao Y, Liu J, Lu JT, Luo T.",
+      "journal": "Nat Commun",
+      "year": 2024,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC11369162?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/fad34635-3f9c-4a95-909e-b8638416b560.zip",
+      "parsed_at": "2026-05-11T06:36:15.537453+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 66,
+    "parseable": 46,
+    "canonicalized": 46,
+    "invalid": 20,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1CCC2(C(C3C(C4C(C5C(N6C(CC(C6)C(C)C)C(C5O)C(C4O)C(C3O)C2)C)C)C)C)C",
+      "CC1CCC2(C(C3C(C4C(C5C(N6C(CC(C6)C(C)C)C(C5O)C(C4O)C(C3O)C2)C)C)C)C)C",
+      "CC(C)C[C@H]1CN(C(=O)C2=C(C)C[C@H]3[C@@H]4[C@H](C[C@H]5[C@@H]6[C@H](C[C@H](C[C@@H]6OC(C)(C)O5)O)C(C)(C)O[Si](C)(C)C(C)(C)C)C[C@@H]3C2)C1",
+      "CC(C)C[C@H]1CN(C(=O)C2=C(C)C[C@H]3[C@@H]4[C@H](C[C@H]5[C@@H]6[C@H](C[C@H](C[C@@H]6OC(C)(C)O5)O)C(C)(C)O[Si](C)(C)C(C)(C)C)C[C@@H]3C2)C1",
+      "CC(C)C[C@H]1CN(C(=O)C2=C(C)C[C@H]3[C@@H]4[C@H](C[C@H]5[C@@H]6[C@H](C[C@H](C[C@@H]6OC(C)(C)O5)O)C(C)(C)O[Si](C)(C)C(C)(C)C)C[C@@H]3C2)C1",
+      "CC(C)C[C@H]1CN(C(=O)C2=C(C)C[C@H]3[C@@H]4[C@H](C[C@H]5[C@@H]6[C@H](C[C@H](C[C@@H]6OC(C)(C)O5)O)C(C)(C)O[Si](C)(C)C(C)(C)C)C[C@@H]3C2)C1",
+      "CC(C)C[C@H]1CN(C(=O)C2=C(C)C[C@H]3[C@@H]4[C@H](C[C@H]5[C@@H]6[C@H](C[C@H](C[C@@H]6OC(C)(C)O5)O)C(C)(C)O[Si](C)(C)C(C)(C)C)C[C@@H]3C2)C1",
+      "CC(C)C[C@H]1CN(C(=O)C2=C(C)C[C@H]3[C@@H]4[C@H](C[C@H]5[C@@H]6[C@H](C[C@H](C[C@@H]6OC(C)(C)O5)O)C(C)(C)O[Si](C)(C)C(C)(C)C)C[C@@H]3C2)C1",
+      "CC(C)C[C@H]1CN(C(=O)C2=C(C)C[C@H]3[C@@H]4[C@H](C[C@H]5[C@@H]6[C@H](C[C@H](C[C@@H]6OC(C)(C)O5)O)C(C)(C)O[Si](C)(C)C(C)(C)C)C[C@@H]3C2)C1",
+      "CC(C)C[C@H]1CN(C(=O)C2=C(C)C[C@H]3[C@@H]4[C@H](C[C@H]5[C@@H]6[C@H](C[C@H](C[C@@H]6OC(C)(C)O5)O)C(C)(C)O[Si](C)(C)C(C)(C)C)C[C@@H]3C2)C1"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "(-)-Zygadenine",
+        "smiles": "C[C@H]1CC[C@@H]2N(C1)C[C@@H]1[C@H]([C@@H](O)[C@H](O)[C@]3(O)[C@H]1C[C@@]14O[C@@]5(O)[C@@H](CC[C@@H]31)[C@]4(C)CC[C@@H]5O)[C@]2(C)O"
+      }
+    ]
+  }
+}

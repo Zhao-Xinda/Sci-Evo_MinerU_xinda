@@ -1,0 +1,942 @@
+{
+  "trace_id": "TS-PMC11937961",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Taiwaniadduct J",
+    "smiles": "",
+    "natural_product_class": "tetraterpenoid",
+    "structural_features": {
+      "key_motifs": [
+        "abeo-abietane",
+        "trans-decalin",
+        "cyclohexene",
+        "cyclobutane"
+      ]
+    },
+    "motivation": "Taiwaniaquinoids are a class of tetraterpenoids with impressive biological activities. Taiwaniadduct J (1) is the most complex congener, but its limited availability in Nature has impeded further biological evaluation. An efficient method for synthesizing these complex taiwaniadducts and their derivatives is needed.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "First enantioselective total synthesis of Taiwaniadduct J, I, and L. Confirmation of absolute configuration of Taiwaniadduct J via X-ray analysis."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "[4+2] cycloaddition between trans-ozic acid methyl ester (diene) and p-benzoquinone of abeo-abietane (dienophile)",
+        "named_strategy": "Diels-Alder reaction",
+        "reasoning": "Biomimetic approach, inspired by the proposed biosynthesis of taiwaniadduct J from taiwaniadduct I via a photoinduced [2+2]-cycloaddition, and taiwaniadduct I from an intermolecular Diels-Alder reaction between trans-ozic acid and a hypothetical abeo-abietane monomer. This reaction sets vicinal all-carbon quaternary stereogenic centers.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "[2+2] cycloaddition to form cyclobutane ring",
+        "named_strategy": "[2+2]-cycloaddition",
+        "reasoning": "Biomimetic approach, inspired by the proposed biosynthesis of taiwaniadduct J from taiwaniadduct I through a photoinduced [2+2]-cycloaddition reaction. This reaction constructs congested cyclobutane with three contiguous quaternary stereogenic centers.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "trans-ozic acid methyl ester (20)",
+        "smiles": "C=CC1C(C)C(OC)C2C(C)C(C=C)C(C)(C=C)C12",
+        "role": "diene precursor",
+        "comes_from": "de novo synthesis"
+      },
+      {
+        "fragment_id": "p-benzoquinone derivative (35)",
+        "smiles": "COc1c(C)c(CC[C@H]2C[C@@H](C)C3(C)CC[C@@H](C(=O)C(=O)O)C23)c(C)c(OC)c1C",
+        "role": "dienophile precursor",
+        "comes_from": "de novo synthesis"
+      }
+    ],
+    "rationale": "The synthesis is bioinspired, leveraging pericyclic reactions (Diels-Alder and [2+2] cycloaddition) to construct the complex molecular architecture and multiple quaternary centers. The strategy involves the synthesis of two key fragments: trans-ozic acid methyl ester (20) and a p-benzoquinone derivative (35) from an abeo-abietane scaffold. These fragments are then coupled via a Diels-Alder reaction, followed by a photoinduced [2+2]-cycloaddition to form the final target."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "trans-ozic acid methyl ester (20)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of trans-ozic acid (4) or its methyl ester (20) is a key part of the overall strategy. Commercially available 2E,6E-farnesyl acetate (10) is a suitable starting material.",
+        "gap": "Need to selectively oxidize 2E,6E-farnesyl acetate (10) to allylic alcohol 11.",
+        "decision": "To obtain allylic alcohol 11, a site-selective allylic oxidation of 2E,6E-farnesyl acetate (10) was performed using SeO2/t-BuOOH followed by NaBH4 reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)OC1C2C(C)=CCC(C)C2C(C)=CCC1(C)C"
+        ],
+        "product_smiles": [
+          "CC(=O)OC1C2C(C)=CCC(CO)C2C(C)=CCC1(C)C"
+        ],
+        "reagents": [
+          "SeO2",
+          "t-BuOOH",
+          "NaBH4"
+        ],
+        "solvent": "CH2Cl2, MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 52,
+        "observation": "Allylic alcohol 11 was obtained in 52% yield based on recovered starting materials. A mixture of products was formed, presumably due to overoxidation at the other allylic position."
+      },
+      "evidence": {
+        "text_span": "Our efforts began with identifying a practical synthesis of trans-ozic acid (4) sharing a trans-decalin system and an abeoabietane diterpenoid scaffold, either 5 or 5′ (Figure 1). Toward the catalytic asymmetric synthesis of trans-ozic acid (4), Cp2TiCl2-catalyzed extended epoxy-ene-type cyclization was explored (Scheme 2). A site-selective allylic oxidation of commercially available 2E,6E-farnesyl acetate (10) (transtrans-) delivered required allylic alcohol 11 in 52% yield based on recovered starting materials (brsm).14",
+        "section": "main text",
+        "image_refs": [
+          "96f48d39a012442aed88cdd9d1b235e0b94493ad417bbafce14cb44c974a8fd1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "trans-ozic acid methyl ester (20)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Allylic alcohol 11 was obtained in the previous step.",
+        "gap": "Need to introduce an epoxide with high enantioselectivity.",
+        "decision": "A catalytic asymmetric Sharpless allylic epoxidation was performed to afford epoxy alcohol 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)OC1C2C(C)=CCC(CO)C2C(C)=CCC1(C)C"
+        ],
+        "product_smiles": [
+          "CC(=O)OC1C2CC(OC(C)=CCC1(C)C)C(CO)C=C2C"
+        ],
+        "reagents": [
+          "(+)-DET",
+          "Ti(Oi-Pr)4",
+          "TBHP"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-30 °C",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "ee_percent": 94,
+        "observation": "Epoxy alcohol 12 was obtained in 95% yield with 94% ee."
+      },
+      "evidence": {
+        "text_span": "A catalytic asymmetric Sharpless allylic epoxidation afforded epoxy alcohol 12 in 95% yield with 94% ee (Scheme 2).15",
+        "section": "main text",
+        "image_refs": [
+          "96f48d39a012442aed88cdd9d1b235e0b94493ad417bbafce14cb44c974a8fd1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "trans-ozic acid methyl ester (20)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Epoxy alcohol 12 was obtained in the previous step.",
+        "gap": "Need to convert the alcohol to a carboxylic acid and then methylate it.",
+        "decision": "DMP oxidation of alcohol 12 to aldehyde 13, followed by Pinnick oxidation and methylation of the resultant carboxylic acid, was performed to give 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)OC1C2CC(OC(C)=CCC1(C)C)C(CO)C=C2C"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C=C(C)C2CC1OC(C)=CCC(C)(C)C2OC(C)=O"
+        ],
+        "reagents": [
+          "DMP",
+          "NaClO2",
+          "KH2PO4",
+          "2-Methyl-2-butene",
+          "K2CO3",
+          "Me2SO4"
+        ],
+        "solvent": "unspecified",
+        "temperature": "25 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Compound 14 was obtained in 77% yield over 3 steps."
+      },
+      "evidence": {
+        "text_span": "Dess-Martin periodinane (DMP) oxidation of alcohol 12 (see, aldehyde 13) followed by a Pinnick oxidation16 and methylation of the resultant carboxylic acid gave 14 in 77% yield over 3 steps.",
+        "section": "main text",
+        "image_refs": [
+          "96f48d39a012442aed88cdd9d1b235e0b94493ad417bbafce14cb44c974a8fd1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "trans-ozic acid methyl ester (20)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 14 was obtained in the previous step.",
+        "gap": "Need to construct the trans-decalin system with five consecutive stereogenic centers, including two all-carbon quaternary centers.",
+        "decision": "A Cp2TiCl2-catalyzed epoxy-ene-type cyclization was performed to furnish the trans-decalin product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C=C(C)C2CC1OC(C)=CCC(C)(C)C2OC(C)=O"
+        ],
+        "product_smiles": [
+          "C=CC1(C)C(OC(C)=O)C(C)C2C(OC)C(C)C(O)C21"
+        ],
+        "reagents": [
+          "Cp2TiCl2",
+          "Mn",
+          "2,4,6-Collidine",
+          "TMSCl"
+        ],
+        "solvent": "THF",
+        "temperature": "25 °C",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "The trans-decalin product was obtained in 58% yield. This process involved two C-C bond-forming events, leading to the construction of five consecutive stereogenic centers, two of which are all-carbon quaternary stereogenic centers."
+      },
+      "evidence": {
+        "text_span": "At this stage, a Cp2TiCl2-catalyzed29 epoxyene-type cyclization furnished trans-decalin product in 58% yield. Impressively, in this process, two C−C bond-forming (76% yield for each C-C bond formation) events led to the construction of five consecutive stereogenic centers, where two of them are all-carbon quaternary stereogenic centers.17",
+        "section": "main text",
+        "image_refs": [
+          "96f48d39a012442aed88cdd9d1b235e0b94493ad417bbafce14cb44c974a8fd1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "trans-ozic acid methyl ester (20)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The trans-decalin product (15) with a secondary alcohol was obtained.",
+        "gap": "Need to remove the secondary alcohol.",
+        "decision": "The secondary alcohol was removed in a two-step protocol: xanthate formation followed by reductive removal of xanthate using n-tributyltin hydride in the presence of catalytic AIBN."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1(C)C(OC(C)=O)C(C)C2C(OC)C(C)C(O)C21"
+        ],
+        "product_smiles": [
+          "C=CC1(C)C(OC(C)=O)C(C)C2C(OC)C(C)C(SC(=S)OC)C21"
+        ],
+        "reagents": [
+          "NaH",
+          "CS2",
+          "MeI",
+          "AIBN",
+          "nBu3SnH"
+        ],
+        "solvent": "THF, PhMe",
+        "temperature": "25 °C, 110 °C",
+        "time": "4 h, 8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Compound 16 (xanthate) and then 17 (after reductive removal) were formed in 73% yield over 2 steps."
+      },
+      "evidence": {
+        "text_span": "Later, secondary alcohol was removed in a two-step protocol to form compound 16 in 73% yield over 2 steps, namely xanthate formation of secondary alcohol followed by reductive removal of xanthate using n-tributyltin hydride in the presence of catalytic AIBN.",
+        "section": "main text",
+        "image_refs": [
+          "96f48d39a012442aed88cdd9d1b235e0b94493ad417bbafce14cb44c974a8fd1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "trans-ozic acid methyl ester (20)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 17 was obtained in the previous step.",
+        "gap": "Need to deprotect the acetate group.",
+        "decision": "Deprotection of acetate was performed using K2CO3 in MeOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1(C)C(OC(C)=O)C(C)C2C(OC)C(C)C(SC(=S)OC)C21"
+        ],
+        "product_smiles": [
+          "C=CC1(C)C(O)C(C)C2C(OC)C(C)C(O)C21"
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "MeOH",
+        "time": "3 h",
+        "temperature": "25 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Homoallylic alcohol 17 was obtained in 96% yield."
+      },
+      "evidence": {
+        "text_span": "Deprotection of acetate gave homoallylic alcohol 17 in 96% yield.",
+        "section": "main text",
+        "image_refs": [
+          "96f48d39a012442aed88cdd9d1b235e0b94493ad417bbafce14cb44c974a8fd1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "trans-ozic acid methyl ester (20)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Homoallylic alcohol 17 was obtained.",
+        "gap": "Need to perform one-carbon homologation of the trans-decalin system.",
+        "decision": "One-carbon homologation was carried out via a two-step protocol: DMP oxidation followed by Wittig olefination concomitant with hydrolysis of the resultant methyl vinyl ether using dilute hydrochloric acid."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1(C)C(O)C(C)C2C(OC)C(C)C(O)C21"
+        ],
+        "product_smiles": [
+          "C=CC1C(C)C2C(OC)C(C)C(C=O)C2C1(C)C=C"
+        ],
+        "reagents": [
+          "DMP",
+          "LiHMDS",
+          "MeOCH2PPh3Cl",
+          "HCl"
+        ],
+        "solvent": "CH2Cl2",
+        "time": "3 h",
+        "temperature": "25 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "observation": "Compound 18 was obtained in 71% overall yield."
+      },
+      "evidence": {
+        "text_span": "Next, one-carbon homologation of the trans-decalin system was carried out via a two-step protocol in an overall yield of 71%, viz. DMP oxidation followed by Wittig olefination concomitant with hydrolysis of the resultant methyl vinyl ether using dilute hydrochloric acid.18",
+        "section": "main text",
+        "image_refs": [
+          "96f48d39a012442aed88cdd9d1b235e0b94493ad417bbafce14cb44c974a8fd1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "trans-ozic acid methyl ester (20)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 18 was obtained.",
+        "gap": "Need to extend the carbon chain using Wittig reactions.",
+        "decision": "A Wittig reaction with stabilized Wittig reagent (MeCHO, PPh3) was performed to obtain 19."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(C)C2C(OC)C(C)C(C=O)C2C1(C)C=C"
+        ],
+        "product_smiles": [
+          "C=CC1C(C)C2C(OC)C(C)C(C=CC=O)C2C1(C)C=C"
+        ],
+        "reagents": [
+          "MeCHO",
+          "PPh3"
+        ],
+        "solvent": "PhMe",
+        "temperature": "110 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Compound 19 was obtained in 92% yield."
+      },
+      "evidence": {
+        "text_span": "Finally, two consecutive Wittig reactions [the first one with stabilized Wittig to obtain 19 in 92% yield and a second methyl Wittig to obtain 20 in 75% yield] completed the synthesis of trans-ozic acid methyl ester 20 (Scheme 2).",
+        "section": "main text",
+        "image_refs": [
+          "96f48d39a012442aed88cdd9d1b235e0b94493ad417bbafce14cb44c974a8fd1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "trans-ozic acid methyl ester (20)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 19 was obtained.",
+        "gap": "Need to complete the synthesis of trans-ozic acid methyl ester (20) by introducing the final methyl group.",
+        "decision": "A second methyl Wittig reaction (Ph3PCH3Br, t-BuOK) was performed to obtain 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(C)C2C(OC)C(C)C(C=CC=O)C2C1(C)C=C"
+        ],
+        "product_smiles": [
+          "C=CC1C(C)C(OC)C2C(C)C(C=C)C(C)(C=C)C12"
+        ],
+        "reagents": [
+          "Ph3PCH3Br",
+          "t-BuOK"
+        ],
+        "solvent": "THF",
+        "temperature": "0-25 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "trans-Ozic acid methyl ester 20 was obtained in 75% yield, completing its synthesis."
+      },
+      "evidence": {
+        "text_span": "Finally, two consecutive Wittig reactions [the first one with stabilized Wittig to obtain 19 in 92% yield and a second methyl Wittig to obtain 20 in 75% yield] completed the synthesis of trans-ozic acid methyl ester 20 (Scheme 2).",
+        "section": "main text",
+        "image_refs": [
+          "96f48d39a012442aed88cdd9d1b235e0b94493ad417bbafce14cb44c974a8fd1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "p-benzoquinone derivative (35)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of the abeo-abietane scaffold is required. Enantiopure epoxy-ether 21 is a suitable starting material.",
+        "gap": "Need to prepare enantioenriched diene 23 from 21.",
+        "decision": "Diene 23 was prepared from literature-known diene 21 by a reaction with 9-BBN followed by a Suzuki coupling reaction with iodoarene 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CCC[C@@H](C2OC2(C)C)C1COCc1ccccc1",
+          "COc1c(C)c(C)c(OC)c(OC)c1I"
+        ],
+        "product_smiles": [
+          "COc1c(C)c(OC)c(CCC2C(C)=CCC[C@H]2C2OC2(C)C)c(OC)c1C"
+        ],
+        "reagents": [
+          "9-BBN",
+          "Pd(dppf)Cl2.CH2Cl2",
+          "NaOH"
+        ],
+        "solvent": "THF",
+        "temperature": "0 to 25 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Enantioenriched diene 23 was prepared in 76% yield on a greater than 10 g scale."
+      },
+      "evidence": {
+        "text_span": "We imagined accessing a highly functionalized abietane scaffold starting from enantiopure epoxy-ether 21 (Scheme 3). As per the protocol reported by Tanis et al.28 and Baran et al.,24 enantioenriched diene 23 was prepared in 76% yield from a literature-known diene 21 by a reaction with 9-BBN followed by a Suzuki coupling reaction with iodoarene 22 on greater than 10 g scale (Scheme 3).",
+        "section": "main text",
+        "image_refs": [
+          "44872701af1fe783ffeb2c335474e04b40d64ce763e1e078c1637e32ab1d68fb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "p-benzoquinone derivative (35)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diene 23 was obtained in the previous step.",
+        "gap": "Need to cyclize diene 23 to form the abietane core.",
+        "decision": "A BF3·OEt2-promoted polyene cyclization was performed to afford functionalized abietane core 25 and tetrasubstituted cyclohexene 24."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1c(C)c(OC)c(CCC2C(C)=CCC[C@H]2C2OC2(C)C)c(OC)c1C"
+        ],
+        "product_smiles": [
+          "COc1c(C)c(CC[C@H]2C[C@@H](O)C3(C)CC[C@H](COCc4ccccc4)C23)c(C)c(OC)c1C",
+          "COc1c(C)c(CC[C@H]2C[C@@H](O)C3(C)CC[C@@H](COCc4ccccc4)C23)c(C)c(OC)c1C"
+        ],
+        "reagents": [
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Functionalized abietane core 25 was obtained in 46% yield, along with tetrasubstituted cyclohexene 24 in 36% yield (total 82%)."
+      },
+      "evidence": {
+        "text_span": "Next, a BF3·OEt2-promoted polyene cyclization afforded functionalized abietane core 25 having four consecutive stereogenic centers in 46% yield along with tetrasubstituted cyclohexene 24 in 36% yield (Scheme 4).",
+        "section": "main text",
+        "image_refs": [
+          "44872701af1fe783ffeb2c335474e04b40d64ce763e1e078c1637e32ab1d68fb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": "p-benzoquinone derivative (35)",
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "The cyclization of diene 23 yielded both the desired abietane core 25 and the tetrasubstituted cyclohexene 24.",
+        "gap": "Need to convert the undesired cyclohexene 24 into the desired abietane core 25 to improve overall yield.",
+        "decision": "The BF3·OEt2-promoted cyclization of 24 was carried out to afford the required abietane core 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1c(C)c(CC[C@H]2C[C@@H](O)C3(C)CC[C@H](COCc4ccccc4)C23)c(C)c(OC)c1C"
+        ],
+        "product_smiles": [
+          "COc1c(C)c(CC[C@H]2C[C@@H](O)C3(C)CC[C@@H](COCc4ccccc4)C23)c(C)c(OC)c1C"
+        ],
+        "reagents": [
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Cyclization of 24 afforded the required abietane core 25 in 81% yield."
+      },
+      "evidence": {
+        "text_span": "Gratifyingly, BF3·OEt2-promoted cyclization of 24 could be carried out to afford the required abietane core 25 in 81% yield (see SI for details).",
+        "section": "main text",
+        "image_refs": [
+          "44872701af1fe783ffeb2c335474e04b40d64ce763e1e078c1637e32ab1d68fb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "p-benzoquinone derivative (35)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Functionalized abietane core 25 was obtained.",
+        "gap": "Need to debenzylate the benzyl ether and remove both hydroxyl groups to obtain carbotricyclic core 27.",
+        "decision": "Debenzylation of benzyl ether of 25 was performed, followed by removal of both hydroxyl groups via xanthate formation and reductive removal under Barton-McCombie conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1c(C)c(CC[C@H]2C[C@@H](O)C3(C)CC[C@@H](COCc4ccccc4)C23)c(C)c(OC)c1C"
+        ],
+        "product_smiles": [
+          "COc1c(C)c(CC[C@H]2C[C@@H](C)C3(C)CC[C@@H](C)C23)c(C)c(OC)c1C"
+        ],
+        "reagents": [
+          "Pd/C (10 mol%)",
+          "H2",
+          "NaH",
+          "CS2",
+          "MeI",
+          "AIBN",
+          "nBu3SnH"
+        ],
+        "solvent": "MeOH, THF, PhMe",
+        "temperature": "25 °C, 110 °C",
+        "time": "5 h, 8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "Carbotricyclic core 27 was furnished in 74% yield over 3 steps."
+      },
+      "evidence": {
+        "text_span": "Later, debenzylation of benzyl ether of 25 followed by the removal of both hydroxyl groups (via xanthate formation followed by reductive removal of xanthate under Barton-McCombie condition) furnished carbotricyclic core 27 in 74% yield over 3 steps (Scheme 4).",
+        "section": "main text",
+        "image_refs": [
+          "44872701af1fe783ffeb2c335474e04b40d64ce763e1e078c1637e32ab1d68fb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": "p-benzoquinone derivative (35)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carbotricyclic core 27 was obtained.",
+        "gap": "Need to perform benzylic oxidation and convert to a diazoketone, then ring contract to the abeo-abietane core.",
+        "decision": "Benzylic oxidation of 27 followed by reaction with p-ABSA gave diazoketone 29. A base-promoted ring contraction via decomposition of diazoketone afforded abeo-abietane core 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1c(C)c(CC[C@H]2C[C@@H](C)C3(C)CC[C@@H](C)C23)c(C)c(OC)c1C"
+        ],
+        "product_smiles": [
+          "COc1c(C)c(CC[C@H]2C[C@@H](C)C3(C)CC[C@@H](C(=O)OCc4ccccc4)C23)c(C)c(OC)c1C"
+        ],
+        "reagents": [
+          "CrO3",
+          "3,5-dimethyl-pyrazole",
+          "p-ABSA",
+          "BnOH",
+          "2,4,6-collidine"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-15 °C, 180 °C",
+        "time": "2 h, 50 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Abeo-abietane core 30 was obtained in 70% yield."
+      },
+      "evidence": {
+        "text_span": "Next, following a protocol reported by Li et al.,8 benzylic oxidation of compound 27 followed by a reaction with p-ABSA gave diazoketone 29. A base-promoted ring contraction via the decomposition of diazoketone afforded abeo-abietane core 30 in 70% yield (Scheme 4).",
+        "section": "main text",
+        "image_refs": [
+          "44872701af1fe783ffeb2c335474e04b40d64ce763e1e078c1637e32ab1d68fb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "p-benzoquinone derivative (35)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Abeo-abietane core 30 was obtained.",
+        "gap": "Need to convert the ester to an aldehyde and then to a formate.",
+        "decision": "LiAlH4 reduction of 30, followed by DMP oxidation to aldehyde 32, and Bayer-Villiger oxidation, furnished formate 33."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1c(C)c(CC[C@H]2C[C@@H](C)C3(C)CC[C@@H](C(=O)OCc4ccccc4)C23)c(C)c(OC)c1C"
+        ],
+        "product_smiles": [
+          "COc1c(C)c(CC[C@H]2C[C@@H](C)C3(C)CC[C@@H](C(=O)O)C23)c(C)c(OC)c1C"
+        ],
+        "reagents": [
+          "LiAlH4",
+          "DMP",
+          "m-CPBA",
+          "NaHCO3"
+        ],
+        "solvent": "THF, CH2Cl2",
+        "temperature": "0-25 °C",
+        "time": "18 h, 2 h, 8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "Formate 33 was obtained in 72% yield over these steps."
+      },
+      "evidence": {
+        "text_span": "Further, LiAlH4 reduction, followed by DMP oxidation (see aldehyde 32) and Bayer-Villiger oxidation, furnished formate 33.",
+        "section": "main text",
+        "image_refs": [
+          "44872701af1fe783ffeb2c335474e04b40d64ce763e1e078c1637e32ab1d68fb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "p-benzoquinone derivative (35)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Formate 33 was obtained.",
+        "gap": "Need to saponify the formate and then perform oxidative dearomatization to obtain the p-benzoquinone derivative 35.",
+        "decision": "Saponification of formate 33 to secondary alcohol 34 was performed, followed by oxidative dearomatization with ceric(IV) ammonium nitrate (CAN) to afford p-benzoquinone derivative 35."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1c(C)c(CC[C@H]2C[C@@H](C)C3(C)CC[C@@H](C(=O)O)C23)c(C)c(OC)c1C"
+        ],
+        "product_smiles": [
+          "COc1c(C)c(CC[C@H]2C[C@@H](C)C3(C)CC[C@@H](C(=O)C(=O)O)C23)c(C)c(OC)c1C"
+        ],
+        "reagents": [
+          "K2CO3",
+          "CAN"
+        ],
+        "solvent": "MeOH:CHCl3, CH3CN:H2O",
+        "temperature": "25 °C",
+        "time": "3 h, 3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "p-Benzoquinone derivative 35 was obtained in a synthetically useful yield of 91%."
+      },
+      "evidence": {
+        "text_span": "Later, saponification of formate 33 (see secondary alcohol 34) followed by an oxidative dearomatization with ceric(IV) ammonium nitrate (CAN) afforded p-benzoquinone derivative 35 in a synthetically useful yield (Scheme 3).",
+        "section": "main text",
+        "image_refs": [
+          "44872701af1fe783ffeb2c335474e04b40d64ce763e1e078c1637e32ab1d68fb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Both trans-ozic acid methyl ester (20) and p-benzoquinone derivative (35) were synthesized.",
+        "gap": "Need to couple these two fragments via an endo-selective Diels-Alder reaction.",
+        "decision": "An exhaustive optimization led to the use of 20 mol% Eu(fod)3 to efficiently connect fragments 35 and 20 through an endo-selective Diels-Alder reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(C)C(OC)C2C(C)C(C=C)C(C)(C=C)C12",
+          "COc1c(C)c(CC[C@H]2C[C@@H](C)C3(C)CC[C@@H](C(=O)C(=O)O)C23)c(C)c(OC)c1C"
+        ],
+        "product_smiles": [
+          "C=C1C[C@@H]2C[C@@H]3C[C@@H]4C[C@@H]5C(=O)C(OC)=C(C)C(=O)[C@@]5(C)[C@@H]4C[C@@H]3[C@@H](C(=O)OC)[C@@H](C)[C@H]3C=C[C@@H]1[C@]2(C)CC3.COC1=C(C(C)C)C(=O)C2C(CCC2(C)C)C(C)(C)C1=O",
+          "C=C1C[C@@H]2C[C@@H]3C[C@@H]4C[C@@H]5C(=O)C(OC)=C(C)C(=O)[C@@]5(C)[C@@H]4C[C@@H]3[C@@H](C(=O)OC)[C@@H](C)[C@H]3C=C[C@@H]1[C@]2(C)CC3.COC1=C(C(C)C)C(=O)C2C(CCC2(C)C)C(C)(C)C1=O"
+        ],
+        "catalyst": "Eu(fod)3",
+        "stoichiometry": {
+          "Eu(fod)3": "20 mol%"
+        },
+        "temperature": "110 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "regio_selectivity": "2:3 (36:37)",
+        "observation": "Only one pair of regioisomers, 36 and 37, was obtained in 72% yield with a ratio of 2:3. The angular methyl group completely controls the regioselectivity."
+      },
+      "evidence": {
+        "text_span": "Next, we shifted our attention to the first chemical synthesis of the most complex (+) -taiwaniadduct J (1) via two consecutive pericyclic reactions, i.e. [4 + 2] .- and [2 + 2] - cycloaddition triggered by light. Therefore, fragment coupling reactions of abeo-abietane 35 and trans-ozic acid methyl ester 20 were influenced by Lewis acids. Following an exhaustive optimization, we were pleased to find that 20 mol % of Eu(fod)3 could efficiently connect fragments 35 and 20 through an endo-selective Diels−Alder reaction to afford only one pair of regioisomers, i.e., 36 and 37 (Scheme 4). Delightfully, the angular methyl group completely controls the regioselectivity in this beautiful transformation to set the vicinal all-carbon quaternary stereogenic centers in the newly generated cyclohexene scaffold (see Scheme 1).",
+        "section": "main text",
+        "image_refs": [
+          "3424c5a2f7db755d3a0244055a374963bf91a30358bd94235269e40da736c5c4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A mixture of regioisomers 36 and 37 was obtained from the Diels-Alder reaction.",
+        "gap": "The regioisomers were inseparable by column chromatography. Need to separate them.",
+        "decision": "The mixture of 36 and 37 was oxidized with DMP to furnish 38 and 39, which could then be separated by column chromatography."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1C[C@@H]2C[C@@H]3C[C@@H]4C[C@@H]5C(=O)C(OC)=C(C)C(=O)[C@@]5(C)[C@@H]4C[C@@H]3[C@@H](C(=O)OC)[C@@H](C)[C@H]3C=C[C@@H]1[C@]2(C)CC3.COC1=C(C(C)C)C(=O)C2C(CCC2(C)C)C(C)(C)C1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)C1(C)CCC2CC(C(C)C(C)CC3C4C(C(=O)C5C6CCC5(C)CC6(C)C)=C(OC)C(=O)C34C)=C(C)C(=O)C2(C)C1(C)C",
+          "C=C(C1CC(C)(C)C(C(=O)OC)C1C)C1CC1(C)C(=O)C1=CC(C)(C)CC(C(=O)C2CC2(C)C(=O)C2C3C(C)(C)CC23C)=C1OC"
+        ],
+        "reagents": [
+          "DMP"
+        ],
+        "solvent": "CHCl2",
+        "temperature": "25 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Ketones 38 and 39 were obtained in 92% yield and were separable by column chromatography."
+      },
+      "evidence": {
+        "text_span": "Since the regioisomers, i.e., 36 and 37, were inseparable in column chromatography, these mixtures were oxidized with DMP to furnish 38 and 39, where both these ketones were separated in column chromatography.",
+        "section": "main text",
+        "image_refs": [
+          "81c98a8ee34ce0d3a05847a5e179cd0b1b11d4b1bf0dc15b5cf1dc0d7850ea6d.jpg",
+          "35fa78cbc5b924f5d33233005a1890ad84bedeb92084faece3ed64a2a8931148.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cycloadducts 38 and 39 were separated.",
+        "gap": "Need to demethylate these cycloadducts to complete the synthesis of taiwaniadducts I (2) and L (3).",
+        "decision": "Demethylation of cycloadducts 38 and 39 was performed in the presence of LiI."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1(C)CCC2CC(C(C)C(C)CC3C4C(C(=O)C5C6CCC5(C)CC6(C)C)=C(OC)C(=O)C34C)=C(C)C(=O)C2(C)C1(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiI",
+          "2,4,6-Collidine"
+        ],
+        "temperature": "150 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "Taiwaniadduct I (2) was obtained in 86% yield. All characterization data matched isolation data."
+      },
+      "evidence": {
+        "text_span": "The demethylation of cycloadducts (38 and 39) in the presence of LiI completed the first total synthesis of taiwaniadducts I (2) and L (3). All the characterization data are suitably matched with isolation data (see Supporting Information).",
+        "section": "main text",
+        "image_refs": [
+          "0cdd4702d1c9b8bfd7d27128991135df1db6d069a559b91302985916a24ac9c1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cycloadducts 38 and 39 were separated.",
+        "gap": "Need to demethylate these cycloadducts to complete the synthesis of taiwaniadducts I (2) and L (3).",
+        "decision": "Demethylation of cycloadducts 38 and 39 was performed in the presence of LiI."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C1CC(C)(C)C(C(=O)OC)C1C)C1CC1(C)C(=O)C1=CC(C)(C)CC(C(=O)C2CC2(C)C(=O)C2C3C(C)(C)CC23C)=C1OC"
+        ],
+        "product_smiles": [
+          "CC1CC(C(C)C(C)C2=C3CC(C)(C(=O)C4C5CC(C)(C)C5CCC4(C)C)C(=O)C3=C(O)C2=O)=CC1=O"
+        ],
+        "reagents": [
+          "LiI",
+          "2,4,6-Collidine"
+        ],
+        "temperature": "150 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Taiwaniadduct L (3) was obtained in 89% yield. All characterization data matched isolation data."
+      },
+      "evidence": {
+        "text_span": "The demethylation of cycloadducts (38 and 39) in the presence of LiI completed the first total synthesis of taiwaniadducts I (2) and L (3). All the characterization data are suitably matched with isolation data (see Supporting Information).",
+        "section": "main text",
+        "image_refs": [
+          "065aca32c2c566c7bbf0787b2d48d2db1efbebde4ee017daf9e8ea46582bf828.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cycloadduct 38 was obtained.",
+        "gap": "Need to convert 38 to taiwaniadduct J (1) via a [2+2]-cycloaddition.",
+        "decision": "Irradiation with light was used to smoothly convert compound 38 to taiwaniadduct J (1) through a [2+2]-cycloaddition."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1(C)CCC2CC(C(C)C(C)CC3C4C(C(=O)C5C6CCC5(C)CC6(C)C)=C(OC)C(=O)C34C)=C(C)C(=O)C2(C)C1(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "hv",
+        "solvent": "Et2O",
+        "temperature": "25 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "Taiwaniadduct J (1) was smoothly converted in 93% yield. The synthetic product's characterization data were in good agreement with the isolation sample. Single crystal X-ray analysis unequivocally proved all bond connections and established all stereogenic centers."
+      },
+      "evidence": {
+        "text_span": "Finally, irradiation with light, through [2 + 2] -cycloaddition compound 38, was smoothly converted to the architecturally complex naturally occurring tetraterpenoid, (+) -taiwaniadduct J (1), having congested cyclobutane with three contiguous quaternary stereogenic centers. The synthetic (+) -1 has all characterization data that are in good agreement with the isolation sample. Moreover, the single crystal X-ray analysis of (+) -taiwaniadduct J (1) unequivocally proved all the bond connections as well as established all stereogenic centers. So, through a unified strategy utilizing a pericyclic reaction, we have synthesized three complex natural products, taiwaniadduct I, J, and L.",
+        "section": "main text",
+        "image_refs": [
+          "e25df2d6b0f59c3c7a21d188d4a1e3d6180b6475da66f100547d6a50bd82f54.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield not explicitly stated for Taiwaniadduct J, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 23,
+        "unit": "steps",
+        "interpretation": "The longest linear synthesis of taiwaniadducts I, J, and L from commercially available geranyl acetate is 23 steps."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Total steps not explicitly stated, but the longest linear sequence is 23 steps."
+      },
+      "Failed Attempts Count": {
+        "value": 0,
+        "unit": "count",
+        "interpretation": "No explicitly failed attempts were reported, only optimization leading to successful conditions."
+      }
+    },
+    "comparison_to_prior": "This is the first enantioselective total synthesis of taiwaniadducts I, J, and L. The characterization data for the synthetic products (1, 2, and 3) were in good agreement with the isolation samples.",
+    "significance": "This work represents the first enantioselective total synthesis of the structurally unique tetraterpenoid (+)-taiwaniadduct J, as well as the first total syntheses of (-)-taiwaniadducts I and L. It demonstrates the elegant application of pericyclic reactions (Diels-Alder and [2+2] cycloaddition) to construct multiple quaternary centers, including congested cyclobutane with three contiguous quaternary stereogenic centers. The absolute configuration of (+)-taiwaniadduct J was confirmed by X-ray analysis. The bioinspired approach highlights the sustainability of pericyclic reactions in complex molecule synthesis."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.4c01276",
+      "pmcid": "PMC11937961",
+      "title": "Enantioselective Total Synthesis of Taiwaniadducts I, J, and L.",
+      "authors": "Jana D, Khatua A, Kundu S, Noskar S, Nandy M, Bisai A.",
+      "journal": "JACS Au",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC11937961?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/7e0fe042-92ab-4c59-a6c6-3c54b2fb8646.zip",
+      "parsed_at": "2026-05-11T06:20:48.321484+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 50,
+    "parseable": 47,
+    "canonicalized": 47,
+    "invalid": 3,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1(C)C2CCC(C)(C)C2(C)[C@@H]1[C@H](O)[C@@H]3C(=O)C4=C(OC)C(=O)[C@@]5(C)C(C)=C[C@@H](C)[C@@]5(C)[C@@H]4[C@@H](C=C)C6CC[C@@](C)(C(=O)OC)[C@H](C)[C@@H]6C",
+      "CC1(C)C[C@@H]2[C@@H](C)[C@@H]3C(=O)C4=C(O)C(=O)[C@H](C(C)(C)C=C(C)C[C@H]5C[C@@H]6C(=C)C[C@@H](C(O)=O)[C@H](C)C6(C)CC5)C4(C)C3(C)CC2",
+      "CC1(C)C2CCC(C)(C)C2(C)[C@@H]1[C@H](O)[C@@H]3C(=O)C4=C(OC)C(=O)[C@@]5(C)C(C)=C[C@@H](C)[C@@]5(C)[C@@H]4[C@@H](C=C)C6CC[C@@](C)(C(=O)OC)[C@H](C)[C@@H]6C"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "Taiwaniadduct J",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

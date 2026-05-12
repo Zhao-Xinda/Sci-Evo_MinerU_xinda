@@ -1,0 +1,504 @@
+{
+  "trace_id": "TS-PMC11417510",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "bicyclomahanimbine",
+    "smiles": "Cc1cc2c(c3[nH]c4ccccc4c13)[C@@H]1CC(C)(C)C[C@@H]3[C@@H]1CC3(C)O2",
+    "natural_product_class": "monoterpenoid pyrano-[3,2-a]-carbazole alkaloid",
+    "structural_features": {
+      "ring_systems": "hexacyclic heptane [3,2,0] core",
+      "key_motifs": [
+        "carbazole",
+        "pyrano-[3,2-a]-carbazole",
+        "bicyclo[3.2.0]heptane"
+      ]
+    },
+    "motivation": "Bicyclomahanimbine is a hexacyclic heptane [3,2,0] core carbazole alkaloid with potential pharmacological properties. Previous syntheses were time-consuming and low-yielding. The authors aim to develop a more efficient and sustainable synthesis using photoredox chemistry.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Knölker",
+        "year": 2013,
+        "doi": "10.1002/chem.201302400",
+        "key_strategy": "Sunlight irradiation of mahanimbine for 26.5 days"
+      },
+      {
+        "lead_author": "Tan",
+        "year": 2017,
+        "doi": "10.1016/j.tet.2017.06.046",
+        "key_strategy": "FeCl3-catalyzed conversion of mahanimbine"
+      }
+    ],
+    "success_criteria": {
+      "yield_target_percent": 45,
+      "free_text": "Expediting the synthesis within a significantly shortened timeframe and improving atom economics and environmental impact."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bonds forming the bicyclo[3.2.0]heptane system",
+        "named_strategy": "Formal [2+2]-cycloaddition",
+        "reasoning": "Inspired by biosynthetic pathways and aiming for a sustainable approach using photoredox catalysis.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-O bond forming the 2H-chromene ring",
+        "named_strategy": "Base-mediated cascade pyran-ring annulation",
+        "reasoning": "To construct the 2H-chromene ring on mahanimbine from 2-hydroxy-3-methylcarbazole and citral, improving upon Lewis-acid mediated cyclization.",
+        "alternatives_considered": [
+          {
+            "strategy": "Lewis-acid mediated cyclization using Ti(OiPr)4",
+            "rejected_because": "Only 74% yield reported previously."
+          }
+        ]
+      },
+      {
+        "bond_description": "C-N bond forming the carbazole motif",
+        "named_strategy": "Electrochemical C-N bond formation",
+        "reasoning": "Sustainable and cost-effective method to craft the carbazole motif from a biphenyl precursor.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond between two aryl rings",
+        "named_strategy": "Suzuki-Miyaura coupling",
+        "reasoning": "Established method for C-C bond formation.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The overall strategy is divergent, using mahanimbine as a precursor for various pyrano-[3,2-a]-carbazole alkaloids. The synthesis of bicyclomahanimbine specifically focuses on a formal [2+2]-cycloaddition from mahanimbine. The synthesis of mahanimbine itself starts from commercially available 4-bromo-2-methylanisole, building the carbazole core via Suzuki-Miyaura coupling and electrochemical C-N bond formation, followed by pyran annulation with citral."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis begins with commercially available 4-bromo-2-methylanisole (13).",
+        "gap": "How to convert 4-bromo-2-methylanisole into a boronic acid for Suzuki coupling.",
+        "decision": "To form the boronic acid, 4-bromo-2-methylanisole (13) was treated with nBuLi for metal-halogen exchange, followed by quenching with B(OMe)3 and acidic work-up, expecting 4-methoxy-m-tolyl boronic acid (11)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(Br)c(C)c1"
+        ],
+        "product_smiles": [
+          "COc1ccc(B(O)O)c(C)c1"
+        ],
+        "reagents": [
+          "nBuLi",
+          "B(OMe)3",
+          "HCl"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 - 25 °C",
+        "time": "10 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "4-methoxy-m-tolyl boronic acid (11) was obtained."
+      },
+      "evidence": {
+        "text_span": "Our experimental approach commenced by treating 4- bromo-2-methylanisole (13) with n BuLi for metal-halogen exchange, followed by quenching of the generated aryl lithium species with B (OMe) 3 and subsequent acidic work-up. This process yielded 4-methoxy m -tolyl boronic acid (11), which underwent a Pd(0)-catalyzed Suzuki–Miyaura coupling22 with readily available 2-bromonitrobenzene (12) to form compound (10).",
+        "image_refs": [
+          "76c793fe5dbb398eea68706e173b54721d85e0613bbebd9a8fedebc9437d7d73.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "4-methoxy-m-tolyl boronic acid (11) was successfully synthesized.",
+        "gap": "How to form the C-C bond between the boronic acid and 2-bromonitrobenzene.",
+        "decision": "To form the C-C bond, 4-methoxy-m-tolyl boronic acid (11) was subjected to a Pd(0)-catalyzed Suzuki–Miyaura coupling with 2-bromonitrobenzene (12), expecting compound (10)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(B(O)O)c(C)c1",
+          "O=[N+]([O-])c1ccccc1Br"
+        ],
+        "product_smiles": [
+          "COc1ccc(-c2ccccc2[N+](=O)[O-])c(C)c1"
+        ],
+        "named_reaction": "Suzuki-Miyaura coupling",
+        "reagents": [
+          "Pd(PPh3)4",
+          "K2CO3"
+        ],
+        "solvent": "PhCH3:EtOH:H2O (3:1:1)",
+        "temperature": "80 °C",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "Compound (10) was formed."
+      },
+      "evidence": {
+        "text_span": "This process yielded 4-methoxy m -tolyl boronic acid (11), which underwent a Pd(0)-catalyzed Suzuki–Miyaura coupling22 with readily available 2-bromonitrobenzene (12) to form compound (10).",
+        "image_refs": [
+          "76c793fe5dbb398eea68706e173b54721d85e0613bbebd9a8fedebc9437d7d73.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound (10) with a nitro group was successfully synthesized.",
+        "gap": "How to reduce the nitro group to an amino group.",
+        "decision": "To reduce the nitro group, compound (10) was treated with Pd/C-occluded H2, expecting amino compound (14)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(-c2ccccc2[N+](=O)[O-])c(C)c1"
+        ],
+        "product_smiles": [
+          "COc1ccc(-c2ccccc2N)c(C)c1"
+        ],
+        "reagents": [
+          "Pd-C",
+          "H2"
+        ],
+        "solvent": "MeOH",
+        "temperature": "25 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "The nitro group on (10) was fully reduced to an amino group, yielding compound (14)."
+      },
+      "evidence": {
+        "text_span": "Aer forming the C–C bond, the nitro group on (10) was fully reduced to an amino group with Pd/C-occluded H 2 (Scheme 2).",
+        "image_refs": [
+          "76c793fe5dbb398eea68706e173b54721d85e0613bbebd9a8fedebc9437d7d73.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound (14) with an amino group was obtained.",
+        "gap": "How to construct the carbazole scaffold via electrochemical oxidation.",
+        "decision": "To construct the carbazole scaffold, compound (14) was subjected to electrochemical oxidation using a constant potential protocol, expecting carbazole formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(-c2ccccc2N)c(C)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "named_reaction": "electrochemical oxidation"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "This approach was unsuccessful, likely due to susceptibility towards side reactions."
+      },
+      "evidence": {
+        "text_span": "Subsequently, we attempted electrochemical oxidation to construct the carbazole scaffold from compound (14). Due to their susceptibility towards side reactions,23 we implemented a constant potential protocol. However, this approach was unsuccessful.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "Direct electrochemical oxidation of compound (14) failed.",
+        "gap": "How to enable successful electrochemical C-N bond formation for the carbazole scaffold.",
+        "decision": "To facilitate the dehydrogenative electrochemical reaction, the amino group of compound (14) was protected with an acetyl group, forming compound (15), expecting successful cyclization to carbazole (16)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(-c2ccccc2N)c(C)c1"
+        ],
+        "product_smiles": [
+          "COc1ccc(-c2ccccc2NC(C)=O)c(C)c1"
+        ],
+        "reagents": [
+          "Ac2O",
+          "Et3N",
+          "DMAP"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C - 25 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Protection of the amino group with an acetyl group was successful, yielding compound (15)."
+      },
+      "evidence": {
+        "text_span": "Notably, when the amino group was protected with an acetyl group (as in 15), the desired C–N bond formation (see, carbazole 16) occurred with a yield of 73% (r : r = 3 : 1) (Scheme 3) [for detailed optimization, see the ESI† for details].",
+        "image_refs": [
+          "76c793fe5dbb398eea68706e173b54721d85e0613bbebd9a8fedebc9437d7d73.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The amino group of compound (14) was protected as an acetyl group, yielding compound (15).",
+        "gap": "How to achieve the desired C-N bond formation to construct the carbazole scaffold.",
+        "decision": "To construct the carbazole scaffold, compound (15) was subjected to dehydrogenative electrochemical reaction, expecting carbazole (16)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(-c2ccccc2NC(C)=O)c(C)c1"
+        ],
+        "product_smiles": [
+          "COc1cc2c3ccccc3n(C(C)=O)c2cc1C"
+        ],
+        "reagents": [
+          "EtONa"
+        ],
+        "solvent": "HFIP",
+        "temperature": "25 °C",
+        "time": "9 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "regio_selectivity": "3:1",
+        "observation": "Desired C–N bond formation occurred, yielding carbazole (16)."
+      },
+      "evidence": {
+        "text_span": "Notably, when the amino group was protected with an acetyl group (as in 15), the desired C–N bond formation (see, carbazole 16) occurred with a yield of 73% (r : r = 3 : 1) (Scheme 3) [for detailed optimization, see the ESI† for details].",
+        "image_refs": [
+          "0af0788554404fe2c46b7d26010e67552b33b70709000b41b7a06ccd4f6f3c45.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carbazole (16) with an acetyl group and a methoxy group was obtained.",
+        "gap": "How to remove the acetyl protecting group and cleave the phenolic ether to obtain 2-hydroxy-3-methylcarbazole (9).",
+        "decision": "To obtain the biological carbazole precursor, carbazole (16) was subjected to alkaline hydrolysis of the amide, followed by phenolic ether cleavage using BBr3, expecting 2-hydroxy-3-methylcarbazole (9)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc2c3ccccc3n(C(C)=O)c2cc1C"
+        ],
+        "product_smiles": [
+          "Cc1cc(O)cc2ccc3c(c12)CN3"
+        ],
+        "reagents": [
+          "K2CO3",
+          "BBr3"
+        ],
+        "solvent": "MeOH:CH2Cl2 then CH2Cl2",
+        "temperature": "25 °C",
+        "time": "3 h then 30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "2-hydroxy-3-methylcarbazole (9) was obtained."
+      },
+      "evidence": {
+        "text_span": "Having ample quantities of carbazole (16) available, we proceeded with alkaline hydrolysis of amide followed by phenolic ether cleavage using BBr 3 . These set of reactions provided the biological carbazole precursor, 2-hydroxy-3- methylcarbazole (9).",
+        "image_refs": [
+          "73041fc1afac16ab2b9ed8b7025d78b4c0cceeb6b9e8e2276ace7542becf4150.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "2-hydroxy-3-methylcarbazole (9) was obtained.",
+        "gap": "How to construct the 2H-chromene motif to form mahanimbine (1).",
+        "decision": "To construct the 2H-chromene motif, 2-hydroxy-3-methylcarbazole (9) was reacted with citral (8) in pyridine under reflux conditions, expecting mahanimbine (1)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1cc(O)cc2ccc3c(c12)CN3",
+          "CC(C)=CCC/C(C)=C/C=O"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC[C@H]1C=Cc2cc3ccc4c(c3c(C)c2O1)CN4"
+        ],
+        "reagents": [
+          "citral (8)"
+        ],
+        "solvent": "pyridine",
+        "temperature": "110 °C",
+        "time": "10 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Mahanimbine (1) was obtained with an impressive yield."
+      },
+      "evidence": {
+        "text_span": "Aer exhaustive optimization, we found that reuxing the phenolic compound (9) in pyridine solvent in the presence of 10 equiv. citral (8) yielded mahanimbine (1) with an impressive yield of 76% (Scheme 4).",
+        "image_refs": [
+          "73041fc1afac16ab2b9ed8b7025d78b4c0cceeb6b9e8e2276ace7542becf4150.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Mahanimbine (1) was synthesized. Previous attempts to convert mahanimbine to bicyclomahanimbine (2) were low yielding or time-consuming.",
+        "gap": "How to expedite the synthesis of bicyclomahanimbine (2) from mahanimbine (1) with improved yield.",
+        "decision": "To synthesize bicyclomahanimbine (2), mahanimbine (1) was subjected to a formal [2+2]-cycloaddition under visible light irradiation without a catalyst, expecting the product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC[C@@H]1Nc2cccc3ccc(c(C)c23)O1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "solvent": "Et2O",
+        "named_reaction": "formal [2+2]-cycloaddition",
+        "temperature": "unspecified",
+        "time": "3 d"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction was observed under these conditions."
+      },
+      "evidence": {
+        "text_span": "Entry 3: — Et2O 500 W Na-lamp 3 d NR",
+        "image_refs": [
+          "76f4fef72c89b03945bdfd3e907dbdba2fa06f6363bbf4993e8df457603975f5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "Direct visible light irradiation of mahanimbine (1) without a catalyst failed to produce bicyclomahanimbine (2).",
+        "gap": "How to achieve the formal [2+2]-cycloaddition with improved yield and reduced time.",
+        "decision": "To synthesize bicyclomahanimbine (2), mahanimbine (1) was subjected to a formal [2+2]-cycloaddition using Cu(OTf)2 as a catalyst under visible light irradiation, expecting the product with high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC[C@@H]1Nc2cccc3ccc(c(C)c23)O1"
+        ],
+        "product_smiles": [
+          "Cc1cc2c(c3[nH]c4ccccc4c13)[C@@H]1CC(C)(C)C[C@@H]3[C@@H]1CC3(C)O2"
+        ],
+        "catalyst": "Cu(OTf)2",
+        "solvent": "Et2O",
+        "named_reaction": "formal [2+2]-cycloaddition",
+        "temperature": "unspecified",
+        "time": "10 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Bicyclomahanimbine (2) was obtained with a high yield in a significantly shortened timeframe."
+      },
+      "evidence": {
+        "text_span": "The most successful approach involved using Cu(OTf) 2 as a catalyst (10 mol%) in diethyl ether solvent under the irradiation of a 500 W Na-lamp, achieving a maximum yield of 87%.",
+        "image_refs": [
+          "76f4fef72c89b03945bdfd3e907dbdba2fa06f6363bbf4993e8df457603975f5.jpg",
+          "0b74d5b61d547c9335ff24b543b9ab67bb271e331b2c39ca9b6f498cf4d1b57c.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for bicyclomahanimbine is not explicitly stated, but individual step yields are high."
+      },
+      "Longest Linear Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "Number of steps in the longest linear sequence to bicyclomahanimbine."
+      },
+      "Total Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "Total number of distinct chemical transformations performed."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly reported failed attempts."
+      }
+    },
+    "comparison_to_prior": "The synthesis of bicyclomahanimbine achieved an 87% yield in 10 hours, significantly improving upon previous methods which yielded 45% after 26.5 days (Knölker group) or 42% (Tan group).",
+    "significance": "This work demonstrates a highly efficient and sustainable total synthesis of bicyclomahanimbine using photoredox catalysis, addressing the drawbacks of previous reports regarding reaction time and yield. The use of Cu(OTf)2 in the key [2+2]-cycloaddition is a significant advancement."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d4ra05863a",
+      "pmcid": "PMC11417510",
+      "title": "Total synthesis of bicyclomahanimbine by Cu(ii)-promoted photoredox process.",
+      "authors": "Dangar S, Roy T, Noskar S, Bisai A.",
+      "journal": "RSC Adv",
+      "year": 2024,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC11417510?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/42bb36a6-c824-4cdb-afda-28705d56a2b8.zip",
+      "parsed_at": "2026-05-11T06:34:36.592180+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 23,
+    "parseable": 21,
+    "canonicalized": 16,
+    "invalid": 2,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

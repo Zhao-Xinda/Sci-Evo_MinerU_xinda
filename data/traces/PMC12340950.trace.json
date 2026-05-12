@@ -1,0 +1,915 @@
+{
+  "trace_id": "TS-PMC12340950",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Thermorubin",
+    "smiles": "COC(=O)c1cc2c(oc1=O)C(=O)C(Cc1ccc(O)c(O)c1C(=O)C(O)C(O)C(=O)O)c1c(OC)c(OC)c(O)c(O)c1-2",
+    "natural_product_class": "polyketide",
+    "structural_features": {
+      "ring_systems": "tetracyclic",
+      "key_motifs": [
+        "pyrone",
+        "isochromene",
+        "naphthalene",
+        "salicylate"
+      ]
+    },
+    "motivation": "New antibiotics are desperately needed to fight the growing threat of antimicrobial resistance. Thermorubin, a forgotten natural product, is one such candidate, as it binds to a novel site on the ribosome and uniquely disrupts both elongation and termination during protein synthesis.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Johnson",
+        "year": 1986,
+        "doi": "10.1021/jo00370a030",
+        "key_strategy": "construction of the CD ring system"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "A synthetic route to make thermorubin and study its derivatives."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "E ring salicylate extension from tetracyclic core",
+        "reasoning": "Simplifies the target to the core tetracycle."
+      },
+      {
+        "bond_description": "ABCD core from masked symmetrical phthalide (6) and Michael acceptors (5 or 7)",
+        "named_strategy": "formal [4+2] cycloaddition",
+        "reasoning": "The masked symmetrical phthalide (6) can act twice as a nucleophilic donor with appropriate Michael acceptors in sequential [4+2] cycloadditions to form the ABCD core."
+      }
+    ],
+    "rationale": "The core ring system (4) could thus be disconnected in one of two stages: either implementing annulation of the unsaturated ketone 5 with phthalide 6, creating the AB system followed by connection of the D ring; or annulation of the phthalide 6 with the methyl ester pyrone 7, creating the BCD system followed by a second annulation to form the A-ring."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "The authors are exploring annulation methods for the synthesis of thermorubin.",
+        "gap": "The use of pyrones of type 7 as Michael acceptors in formal [4+2] cycloaddition reactions was unknown at the time and potentially complicated by regioselectivity issues. All precedented Staunton-Weinreb annulation conditions act upon cyclic Michael acceptors, and require a leaving group on the Michael acceptor beta to the activating carbonyl.",
+        "decision": "To test Staunton-Weinreb annulation conditions using 3-methoxy pyrone 8 as the Michael acceptor with isophthalate 6."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Both starting materials were recovered. This lack of reactivity is attributed to the external ester and aromatic character of 8, which reduced its reactivity compared to pyrones from previous studies."
+      },
+      "evidence": {
+        "text_span": "Initial examination of the literature showed the reaction of nucleophilic donors (such as 6) with various unsaturated ketones as Michael acceptors (such as 5) to be strongly precedented. However, while we have subsequently detailed its use,17 pyrones of type 7 as Michael acceptors in formal [4 + 2] cycloaddition reactions were unknown at the time and potentially complicated by regioselectivity issues. Practically, the symmetrical intermediate 6 could be used as drawn in a Staunton−Weinreb approach18−20 where deprotonation of a benzylic position initiates its activity as a nucleophile for reaction with 5 or 7 (or their derivatives) in a Michael addition sense, followed by a Dieckmann condensation and aromatization. Alternatively, the benzylic positions of 6 could be activated with functional groups to enhance their acidity and enable other reactions—such as a Hauser-type21,22 annulation—to be pursued. As all precedented Staunton−Weinreb annulation conditions act upon cyclic Michael acceptors,23 reaction was not attempted on the unsaturated ketone 5 or its derivatives. Additionally, all Staunton−Weinreb annulations require a leaving group on the Michael acceptor β to the activating carbonyl, meaning 7 would need to be modified to successfully reachieve aromaticity using this annulation.\nThus, testing annulation conditions utilizing 3-methoxy pyrone 818,24 818,24 (Scheme 1) as the Michael acceptor was the initial focus. Despite precedent, the use of pyrone 8 as a Michael acceptor with isophthalate 625,26 625,26 was unsuccessful, with both starting materials recovered. We attribute this lack of reactivity to the external ester and aromatic character of 8, which reduced its reactivity compared to pyrones from previous studies, such as in the synthesis of toralactone.18",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "4d2026bef11e390131dcd9da78802fc820d37a740f80cb4278ab3ccc8b541913.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 1,
+      "thought": {
+        "background": "Staunton-Weinreb annulation with pyrone 8 failed due to its reduced reactivity.",
+        "gap": "A suitably activated nucleophilic donor is needed for annulation.",
+        "decision": "To shift focus to the Hauser-Kraus annulation, which uses electron-withdrawing groups to facilitate reactivity. The plan is to install a sulfoxide functionality on phthalide 6."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The Hauser-Kraus annulation strategy was pursued."
+      },
+      "evidence": {
+        "text_span": "This lack of reactivity in the Staunton−Weinreb-type annulation with 8 caused us to shift focus to the Hauser− Kraus annulation, where electron-withdrawing groups—such as SOPh, SO2Ph, CN, and halogens in the benzylic position of 6 and related isobenzofuranones—help facilitate reactivity. With the phthalide 6 already constructed, direct installation of the sulfoxide functionality (12, Scheme 2) as an electron-withdrawing group was attempted using base and methylbenzenesulfinate,27 but these conditions were ineffective. Similarly, treatment of 6 with base and diphenyldisulfide28,29 failed to produce 11 directly. However, a longer sequence30 eventually proved successful.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The Hauser-Kraus annulation requires an activated phthalide. Direct installation of a sulfoxide on 6 was attempted.",
+        "gap": "Direct sulfoxide installation on 6 was unsuccessful.",
+        "decision": "Attempted direct installation of sulfoxide functionality (12) using base and methylbenzenesulfinate, and treatment of 6 with base and diphenyldisulfide to produce 11 directly."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1c(C)cc(C)c(C(=O)OC)c1OC"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "base",
+          "methylbenzenesulfinate"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "These conditions were ineffective. Similarly, treatment of 6 with base and diphenyldisulfide failed to produce 11 directly."
+      },
+      "evidence": {
+        "text_span": "With the phthalide 6 already constructed, direct installation of the sulfoxide functionality (12, Scheme 2) as an electron-withdrawing group was attempted using base and methylbenzenesulfinate,27 but these conditions were ineffective. Similarly, treatment of 6 with base and diphenyldisulfide28,29 failed to produce 11 directly.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Direct sulfoxide installation on 6 failed. A longer sequence is needed to synthesize the activated phthalide 12.",
+        "gap": "Need to synthesize monosulfoxide 12 from 6.",
+        "decision": "To perform radical bromination of 6 to 10, followed by SN2 displacement with thiophenol to 11, and then oxidation to 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1c(C)cc(C)c(C(=O)OC)c1OC"
+        ],
+        "product_smiles": [
+          "COC(=O)c1c(C)cc(CBr)c(C(=O)OC)c1OC"
+        ],
+        "reagents": [
+          "NBS",
+          "benzoyl peroxide"
+        ],
+        "solvent": "CCl4",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Radical bromination of symmetrical isophthalate 6 provided a difficult-to-purify mixture of the desired monobromide (10) and polybrominated byproducts. This mixture was carried forward through an SN2 displacement with thiophenol to give another mixture containing the desired thioether 11. After oxidation of thioether 11 to sulfoxide 12 with sodium periodate, the mixture was successfully separated, yielding sulfoxide 12 in a 32% yield over three steps.",
+        "yield_percent": 32
+      },
+      "evidence": {
+        "text_span": "Radical bromination of symmetrical isophthalate 6 provided a difficult-to-purify mixture of the desired monobromide (10) and polybrominated byproducts. This mixture was carried forward through an SN2 displacement with thiophenol to give another mixture containing the desired thioether 11. After oxidation of thioether 11 to sulfoxide 12 with sodium periodate, the mixture was successfully separated, yielding sulfoxide 12 in a 32% yield over three steps.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "8cae589d5f217823e9c9a8b5bc1e0ed24810d465db2cae77d2d7d6f51b704078.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Monosulfoxide 12 was successfully synthesized. Now, the AB ring system needs to be formed.",
+        "gap": "Need to perform annulation of 12 with an unsaturated ketone synthon.",
+        "decision": "To use a protected alcohol (13) in lieu of an ester to overcome potential tautomerization issues and apply Hauser-type annulation conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(=O)C=CCCCOCc1ccccc1"
+        ],
+        "product_smiles": [
+          "COC(=O)c1cc2c(CCCCOCc3ccccc3)cc(C(C)=O)c(O)c2c(C(=O)OC)c1C"
+        ],
+        "reagents": [
+          "iPr2NH",
+          "nBuLi"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 39,
+        "observation": "The slow addition of 13 to 12 resulted in the annulated product 14 in 39% yield."
+      },
+      "evidence": {
+        "text_span": "General reaction procedures based on the seminal work of Hauser and colleagues32 (Scheme 3) called for a slight excess of the Michael acceptor to be added slowly to a cold solution of the nucleophilic donor premixed with base. When applied to this system, the slow addition of 13 to 12 resulted in the annulated product 14 in 39% yield.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "90e0c0c989ee3484c35d8e8810bd4141c8cc9a0119c78ffed9c5958426faf12b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The AB ring (14) was successfully formed.",
+        "gap": "Need to methylate the phenol of 14 to advance the synthesis.",
+        "decision": "To methylate the phenol of 14 to give 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1cc2c(CCCCOCc3ccccc3)cc(C(C)=O)c(O)c2c(C(=O)OC)c1C"
+        ],
+        "product_smiles": [
+          "COC(=O)c1cc2c(CCCCOCc3ccccc3)cc(C(C)=O)c(OC)c2c(C(=O)OC)c1C"
+        ],
+        "reagents": [
+          "K2CO3",
+          "CH3I"
+        ],
+        "solvent": "acetone",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Methylation of the phenol of 14 proceeded in 88% yield to give 15."
+      },
+      "evidence": {
+        "text_span": "Methylation of the phenol of 14 proceeded in 88% yield to give 15.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "90e0c0c989ee3484c35d8e8810bd4141c8cc9a0119c78ffed9c5958426faf12b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The AB ring (15) was successfully formed and methylated.",
+        "gap": "The bicycle (15) could not be further propagated. Protection of the external ketone as the dioxolane (16) is needed to temper acidity and enable subsequent annulations.",
+        "decision": "To protect the external ketone of 15 as the dioxolane (16)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1cc2c(CCCCOCc3ccccc3)cc(C(C)=O)c(OC)c2c(C(=O)OC)c1C"
+        ],
+        "product_smiles": [
+          "COC(=O)c1c(C)c(C(=O)OC)c2oc(=O)c(C)c(CCCCOCc3ccccc3)c2c1OC"
+        ],
+        "reagents": [
+          "HO(CH2)2OH",
+          "p-TsOH·H2O"
+        ],
+        "solvent": "PhH",
+        "temperature": "Δ"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "The protected intermediate could only be generated in a 1:8 ratio relative to the starting material, likely due to steric interference from the neighboring groups."
+      },
+      "evidence": {
+        "text_span": "Despite this initial success in producing the AB ring of thermorubin, bicycle (15) could not be further propagated. When attempting to protect the external ketone as the dioxolane (16)—a conversion needed to temper the acidity of the position α to the ketone and enable subsequent annulations at the benzylic site—the protected intermediate could only be generated in a 1:8 ratio relative to the starting material, likely due to steric interference from the neighboring groups.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "90e0c0c989ee3484c35d8e8810bd4141c8cc9a0119c78ffed9c5958426faf12b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Protection of the external ketone of 15 failed. An alternative strategy is needed to activate the benzylic site for subsequent annulations.",
+        "gap": "Need a regioselective method to brominate the benzylic methyl group of 15.",
+        "decision": "To brominate the benzylic methyl group (17) of 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1cc2c(CCCCOCc3ccccc3)cc(C(C)=O)c(OC)c2c(C(=O)OC)c1C"
+        ],
+        "product_smiles": [
+          "COC(=O)c1c(C)c(Br)cc2c(CCCCOCc3ccccc3)cc(C(C)=O)c(OC)c12"
+        ],
+        "reagents": [
+          "NBS",
+          "AIBN"
+        ],
+        "solvent": "CCl4",
+        "temperature": "Δ"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "wrong_regiochemistry",
+        "observation": "Due to a lack of directing groups and the presence of an additional benzylic carbon, bromination was not regioselective. Instead, an inseparable mixture of differentially brominated materials was generated."
+      },
+      "evidence": {
+        "text_span": "An alternative strategy sought to brominate the benzylic methyl group (17), but due to a lack of directing groups and the presence of an additional benzylic carbon, bromination was not regioselective. Instead, an inseparable mixture of differentially brominated materials was generated.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "90e0c0c989ee3484c35d8e8810bd4141c8cc9a0119c78ffed9c5958426faf12b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "The AB ring system (15) could not be advanced toward the thermorubin core.",
+        "gap": "Need a successful annulation strategy to form the BCD system.",
+        "decision": "To pursue annulation of a phthalide, such as 12, with the methyl ester pyrone moiety (7), which would allow for direct annulation of the intact D ring pyrone to the symmetric B-ring phthalide."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The strategy of annulating phthalide 12 with pyrone 7 was pursued, building on previous success with a model system."
+      },
+      "evidence": {
+        "text_span": "Because the completed AB ring system could not be advanced toward the thermorubin core, annulation of a phthalide, such as 12, with the methyl ester pyrone moiety (7)17 was the next logical approach. If successful, this would allow for direct annulation of the intact D ring pyrone to the symmetric B-ring phthalide, forming the BCD system. As Hauser−Kraus-type reactions using fully unsaturated33 pyrones as regioselective Michael acceptors had not been reported, we created chemistry that enabled this annulation,17 using a model system to demonstrate the utility of a wide variety of 6- carboxypyrones, such as 7, in annulation reactions.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The strategy is to annulate monosulfoxide 12 with pyrone 7 to form the BCD system.",
+        "gap": "Need to perform the annulation reaction.",
+        "decision": "To use monosulfoxide 12 with pyrone 7 under previously established conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1cc(OC)c(C(=O)OC)c(CS(=O)c2ccccc2)c1C",
+          "COC(=O)c1ccoc(=O)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 33,
+        "observation": "Furnishing 19 in a 33% yield."
+      },
+      "evidence": {
+        "text_span": "Initial efforts focused on using monosulfoxide 12 (Scheme 4) with pyrone 7 under the previously established conditions,17 furnishing 19 in a 33% yield.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "bffb7f59048cd956cb3ec381aeb0ac186f31f89b0ec1a68cbf44e789f6814d85.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The annulated material 19 was obtained.",
+        "gap": "Need to protect the phenol of 19 to enable further reactions.",
+        "decision": "To protect 19 as the silyl ether (21)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DIPEA",
+          "TBSCl"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "The annulated material was protected as the silyl ether (21) in 95% yield."
+      },
+      "evidence": {
+        "text_span": "The annulated material was protected as the silyl ether (21). Several attempts were made to activate the C7 benzylic position of 21 to carry this material forward through A-ring formation.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "bffb7f59048cd956cb3ec381aeb0ac186f31f89b0ec1a68cbf44e789f6814d85.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The silyl ether 21 was obtained. Activation of the C7 benzylic position is needed for A-ring formation.",
+        "gap": "Need a regioselective method to activate the C7 benzylic position of 21.",
+        "decision": "To attempt halogenation, sulfonylation (23), and sulfinylation (24) of 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "wrong_regiochemistry",
+        "observation": "Conditions identical to those applied to the symmetrical phthalide resulted in nonregioselective halogenation, yielding electrophilic aromatic substitution products that were inseparable from 22. Direct sulfonylation (23) and sulfinylation (24) likewise failed although carbanion generation from the addition of LDA was apparent by a bright color change, suggesting methyl benzenesulfinate and diphenyldisulfide are insufficient electrophiles for this material."
+      },
+      "evidence": {
+        "text_span": "Several attempts were made to activate the C7 benzylic position of 21 to carry this material forward through A-ring formation. Conditions identical to those applied to the symmetrical phthalide resulted in nonregioselective halogenation, yielding electrophilic aromatic substitution products34 that were inseparable from 22. Direct sulfonylation27 (23) and sulfinylation28,29 (24) likewise failed although carbanion generation from the addition of LDA was apparent by a bright color change, suggesting methyl benzenesulfinate and diphenyldisulfide are insufficient electrophiles for this material.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "bffb7f59048cd956cb3ec381aeb0ac186f31f89b0ec1a68cbf44e789f6814d85.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "Activation and advancement of 21 were not possible.",
+        "gap": "Need a different strategy for the B-ring to enable A-ring formation.",
+        "decision": "To shift focus to the synthesis and use of a disulfoxide B-ring (18)."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The synthesis and use of a disulfoxide B-ring (18) was pursued."
+      },
+      "evidence": {
+        "text_span": "With the activation and advancement of 21 not possible, our focus shifted to the synthesis and use of a disulfoxide B-ring (18).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "A disulfoxide B-ring (18) is needed. Modification of monosulfoxide 12 was considered.",
+        "gap": "Need to synthesize disulfoxide 18.",
+        "decision": "To attempt modification of 12 to 25 via bromination, and symmetric dibromination of 6 to 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1c(C)cc(C)c(C(=O)OC)c1OC"
+        ],
+        "product_smiles": [
+          "",
+          "COC(=O)c1c(C)cc(C(Br)Br)c(C(=O)OC)c1OC"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "wrong_regiochemistry",
+        "observation": "Modification of the previously generated monosulfoxide material 12 resulted in nonregioselective bromination rather than 25. Symmetric dibromination of the initial phthalide 6 was also attempted, but use of two or more equivalents of the brominating agent resulted predominantly in dibromination at a single benzylic position (26). The differentially brominated products were inseparable, and this approach was abandoned."
+      },
+      "evidence": {
+        "text_span": "Modification of the previously generated monosulfoxide material 12 (Scheme 5) was initially attempted but resulted in nonregioselective bromination rather than 25. Symmetric dibromination of the initial phthalide 6 was also attempted, but use of two or more equivalents of the brominating agent resulted predominantly in dibromination at a single benzylic position (26). The differentially brominated products were inseparable, and this approach was abandoned.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "7074c987ec74284dac08d86fefead2ee538d44777acb1e80474ed61011a40ad8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "Direct bromination of 6 and 12 to form disulfoxide 18 failed due to regioselectivity issues.",
+        "gap": "Need an alternative route to install functional handles for the disulfoxide B-ring.",
+        "decision": "To install functional handles on the diketone prior to cyclization, which could then be converted to the disulfoxide after formation of the phenol."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A new route involving functionalizing the diketone prior to cyclization was pursued."
+      },
+      "evidence": {
+        "text_span": "To circumvent this problem, we sought to install functional handles on the diketone (Scheme 6) prior to cyclization, which could then be converted to the disulfoxide after formation of the phenol.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A new route to disulfoxide 18 involves functionalizing the diketone prior to cyclization.",
+        "gap": "Need to synthesize dithiophenylether acetylacetone (30).",
+        "decision": "To dibrominate ethyl diacetoacetate (27) to 28, followed by decarboxylation to 29, and then displacement of bromides with thiophenol to 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C(C(C)=O)C(C)=O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C(C(=O)CBr)C(=O)CBr"
+        ],
+        "reagents": [
+          "Br2"
+        ],
+        "solvent": "Et2O"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Dibromination of ethyl diacetoacetate (27) to give 28 proceeded in 98% yield."
+      },
+      "evidence": {
+        "text_span": "Initial work produced 30 via 1,5-dicholoro acetylacetone,35,36 but dibromination37,38 of ethyl diacetoacetate (27) to give 28 followed by decarboxylation produced a dihalogen (29) more reliably. Subsequent displacement of the bromides on 29 with thiophenol resulted in dithiophenylether acetylacetone (30) in the best overall yield.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "0c9bd2e84d10d80e0ab4c98ebc484d3300fbdad112063907891fb12655c2abff.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 28 was synthesized.",
+        "gap": "Need to decarboxylate 28 to 29.",
+        "decision": "To decarboxylate 28 using concentrated H2SO4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C(C(=O)CBr)C(=O)CBr"
+        ],
+        "product_smiles": [
+          "O=C(CBr)CC(=O)CBr"
+        ],
+        "reagents": [
+          "H2SO4"
+        ],
+        "temperature": "85 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Decarboxylation produced a dihalogen (29) more reliably in 76% yield."
+      },
+      "evidence": {
+        "text_span": "Initial work produced 30 via 1,5-dicholoro acetylacetone,35,36 but dibromination37,38 of ethyl diacetoacetate (27) to give 28 followed by decarboxylation produced a dihalogen (29) more reliably. Subsequent displacement of the bromides on 29 with thiophenol resulted in dithiophenylether acetylacetone (30) in the best overall yield.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "0c9bd2e84d10d80e0ab4c98ebc484d3300fbdad112063907891fb12655c2abff.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 29 was synthesized.",
+        "gap": "Need to displace the bromides on 29 with thiophenol to form 30.",
+        "decision": "To perform SN2 displacement of bromides on 29 with thiophenol using DBU."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(CBr)CC(=O)CBr"
+        ],
+        "product_smiles": [
+          "O=C(CSCc1ccccc1)CC(=O)CSCc1ccccc1"
+        ],
+        "reagents": [
+          "thiophenol",
+          "DBU"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Subsequent displacement of the bromides on 29 with thiophenol resulted in dithiophenylether acetylacetone (30) in the best overall yield (77%)."
+      },
+      "evidence": {
+        "text_span": "Subsequent displacement of the bromides on 29 with thiophenol resulted in dithiophenylether acetylacetone (30) in the best overall yield.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "0c9bd2e84d10d80e0ab4c98ebc484d3300fbdad112063907891fb12655c2abff.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dithiophenylether acetylacetone (30) was synthesized. Now, cyclization to construct the activated B-ring (18) is needed.",
+        "gap": "Need to cyclize 30 with 31 to form 32.",
+        "decision": "To cyclize 30 with 31 using sodium methoxide generated from Na in methanol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)CC(=O)CC(=O)OC",
+          "O=C(CSCc1ccccc1)CC(=O)CSCc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Na"
+        ],
+        "solvent": "CH3OH",
+        "time": "3.5 days"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 40,
+        "observation": "Product formation was the highest with a slight excess of base (entry 10, 56% yield based on the recovered starting material) being optimal compared to an equimolar amount (entry 9). The reaction yielded 32 in 40% yield (56% brsm)."
+      },
+      "evidence": {
+        "text_span": "In initially anhydrous conditions using sodium to generate methoxide, product formation was the highest with a slight excess of base (entry 10, 56% yield based on the recovered starting material) being optimal compared to an equimolar amount (entry 9). Other reaction conditions were attempted using different solvents and bases (entries 11−14) but, with the exception of triethyl amine, were not as highyielding as the sodium-mediated or sodium hydroxidemediated reactions. Synthesis of diphenylsulfoxide 18 (Scheme 7) proceeded using reaction conditions established with earlier systems. Phenol 32 was methylated under basic conditions,26 giving 33 in a 99% yield.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "fd40a2d562865366ebf5c5cd55bbd85bb4d4d669c0dbc351949731c4150e9ff9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Phenol 32 was synthesized.",
+        "gap": "Need to methylate 32 to form 33.",
+        "decision": "To methylate phenol 32 under basic conditions using K2CO3 and CH3I."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "K2CO3",
+          "CH3I"
+        ],
+        "solvent": "acetone",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Phenol 32 was methylated under basic conditions, giving 33 in a 99% yield."
+      },
+      "evidence": {
+        "text_span": "Phenol 32 was methylated under basic conditions,26 giving 33 in a 99% yield.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "fceed24f4ab0b3f5fa093690004b4152bdbfb7e138e6909924641d49d2b5b8d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 33 was synthesized.",
+        "gap": "Need to oxidize the thioether moieties of 33 to form the symmetric disulfoxide 18.",
+        "decision": "To oxidize 33 using sodium periodate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaIO4"
+        ],
+        "solvent": "CH3OH, H2O"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Oxidation of the thioether moieties of 33 proceeded in a high yield with 2.5 equivalencies of sodium periodate to obtain the symmetric disulfoxide 18 (87% yield)."
+      },
+      "evidence": {
+        "text_span": "Oxidation of the thioether moieties of 33 proceeded in a high yield with 2.5 equivalencies of sodium periodate to obtain the symmetric disulfoxide 18.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "fceed24f4ab0b3f5fa093690004b4152bdbfb7e138e6909924641d49d2b5b8d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The symmetric disulfoxide 18 was synthesized. Now, the BCD ring system needs to be formed by annulation with pyrone 7.",
+        "gap": "Need to optimize the annulation conditions for 18 with pyrone 7.",
+        "decision": "To optimize the annulation of 18 with pyrone 7 using varying equivalents of base and pyrone, and reaction times."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC(=O)c1ccoc(=O)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 32,
+        "observation": "The best results were obtained (entry 7) when 4 equiv of base and 2.4 equiv of pyrone were used, giving a 32% yield. Four equivalents of base are likely required because the other methylene is a fourth basic center that must be deprotonated during the reaction. Despite the additional equivalency of base and reports of multiple additions with other systems, no diannulated material was observed."
+      },
+      "evidence": {
+        "text_span": "As per our earlier findings,17 it was clear that the [4 + 2] cycloaddition of 18 (Table 2) with pyrone 7 would require optimization. Application of the previously optimized conditions17 only produced 20 in a 19% yield (entry 1). Using less equivalencies of base with a slight excess of pyrone resulted in lower yields (entries 2−3), which tracks with the proposed mechanism.17 Extended reaction times (entry 4) did not improve yields, but increasing the amount of pyrone 7 appeared to help product formation slightly (entries 5 and 6). The best results were obtained (entry 7) when 4 equiv of base and 2.4 equiv of pyrone were used, giving a 32% yield. Four equivalents of base are likely required because the other methylene is a fourth basic center that must be deprotonated during the reaction. Despite the additional equivalency of base and reports of multiple additions with other systems,28 no diannulated material was observed. We believe this is because the disulfoxide benzylic positions in this system are conjugated, whereas in previous studies, the two sulfoxides were borne on separate aromatic systems.28",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "be5ac9b08e6b498654b7b5b24caf1187255485869759fd3bd9c262b4a5d1417b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The BCD tricycle 20 was formed. Now, the A-ring needs to be installed.",
+        "gap": "Need a suitable protecting group for the central phenol of 20 that enables subsequent annulation.",
+        "decision": "To protect the phenol of 20 with para-methoxy benzyl (PMB) using PMBCl."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "K2CO3",
+          "NaI",
+          "DMAP",
+          "PMBCl"
+        ],
+        "solvent": "DMF",
+        "temperature": "70 °C to 85 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Surprisingly, treatment of 20 with PMBCl resulted in electrophilic aromatic substitution (35) rather than the intended alkylation of the phenol, presumably due to steric hindrance disfavoring the phenolate as a nucleophile."
+      },
+      "evidence": {
+        "text_span": "Toward installing the A-ring on 20 (Scheme 8), we investigated protecting groups for the central phenol that would enable a subsequent annulation. Initially, para-methoxy benzyl (PMB) was selected as a sufficiently robust, orthogonal protecting group, but surprisingly, treatment of 20 with PMBCl resulted in electrophilic aromatic substitution (35) rather than the intended alkylation of the phenol, presumably due to steric hindrance disfavoring the phenolate as a nucleophile.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "bdd78eb9ed93e5d95de9f7251b5b33ea8eb9db78b7fd83d7750524c08ecf2919.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 23,
+      "thought": {
+        "background": "PMB protection of 20 failed due to electrophilic aromatic substitution.",
+        "gap": "Need a different protecting group for the phenol of 20 that is sterically less hindered.",
+        "decision": "To silylate the phenol of 20 to form 36, based on earlier success with 19."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 21,
+        "observation": "The phenol was silylated (36), albeit in a lower yield (21%), presumably because of the same gearing effect from the phenylsulfoxide hindering reaction at the phenol."
+      },
+      "evidence": {
+        "text_span": "Based on our earlier success with 19, we instead silylated the phenol (36), albeit in a lower yield, presumably because of the same gearing effect from the phenylsulfoxide hindering reaction at the phenol.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "bdd78eb9ed93e5d95de9f7251b5b33ea8eb9db78b7fd83d7750524c08ecf2919.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The silylated phenol 36 was obtained. Now, annulation with 13 is needed to install the A-ring.",
+        "gap": "Need to successfully annulate 36 with 13.",
+        "decision": "To react 36 with 13 under annulation conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "LiHMDS"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Reaction of 36 with 13 did not produce an isolable amount of 37, despite repeated attempts. However, masses consistent with both the desired product 37 and its desilylated counterpart 38 could be detected in the reaction mixture."
+      },
+      "evidence": {
+        "text_span": "While successful at masking the phenol, reaction of 36 with 13 did not produce an isolable amount of 37, despite repeated attempts. However, masses consistent with both the desired product 37 and its desilylated counterpart 38 could be detected in the reaction mixture.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "bdd78eb9ed93e5d95de9f7251b5b33ea8eb9db78b7fd83d7750524c08ecf2919.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 8.9,
+        "unit": "%",
+        "interpretation": "Yield for the BCD ring system over seven linear steps."
+      },
+      "Longest Linear Steps": {
+        "value": 7,
+        "unit": "steps",
+        "interpretation": "Longest linear sequence for the BCD ring system."
+      },
+      "Total Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "Total steps for the BCD ring system."
+      }
+    },
+    "significance": "This work expands the available chemistry for synthesizing highly functionalized, planar aromatic molecules by completing annulations toward the total synthesis of thermorubin. The optimization of a Michael acceptor pyrone—6-methoxy-2-pyrone carboxylate (7)—in a Hauser-type annulation was the key step that enabled formation of the BCD ring of thermorubin. This study demonstrates how a novel, symmetric synthon strategy—leveraging annulation with an intact pyrone D ring—enables construction of the majority of the thermorubin core."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.joc.5c01129",
+      "pmcid": "PMC12340950",
+      "title": "Annulation Methods toward the Total Synthesis of Thermorubin: Construction of the AB and BCD Ring Systems.",
+      "authors": "Kohanov ZA, Lowell AN.",
+      "journal": "J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12340950?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/ce8c4777-6822-4f64-b806-98871db4e57b.zip",
+      "parsed_at": "2026-05-11T06:24:59.448990+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 49,
+    "parseable": 25,
+    "canonicalized": 19,
+    "invalid": 24,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC(=O)c1c(OC)c(C(=O)OC)c(C)cc1CS(=O)Ph",
+      "COC(=O)c1c(OC)c(C(=O)OC)c(C)cc1CS(=O)Ph",
+      "COC(=O)C1=C(C)C2=C(C(=O)OC)C(OC)=C(O)C2=C1C(=O)OC=C1",
+      "COC(=O)C1=C(C)C2=C(C(=O)OC)C(OC)=C(O)C2=C1C(=O)OC=C1",
+      "COC(=O)C1=C(C)C2=C(C(=O)OC)C(OC)=C(OSi(C)(C)C(C)(C)C)C2=C1C(=O)OC=C1",
+      "COC(=O)C1=C(C)C2=C(C(=O)OC)C(OC)=C(OSi(C)(C)C(C)(C)C)C2=C1C(=O)OC=C1",
+      "COC(=O)C1=C(C(Br)C)C2=C(C(=O)OC)C(OC)=C(OSi(C)(C)C(C)(C)C)C2=C1C(=O)OC=C1",
+      "COC(=O)C1=C(C(S(=O)c2ccccc2)C)C2=C(C(=O)OC)C(OC)=C(OSi(C)(C)C(C)(C)C)C2=C1C(=O)OC=C1",
+      "COC(=O)C1=C(C(Sc2ccccc2)C)C2=C(C(=O)OC)C(OC)=C(OSi(C)(C)C(C)(C)C)C2=C1C(=O)OC=C1",
+      "COC(=O)c1c(OC)c(C(=O)OC)c(CSPh)cc1C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

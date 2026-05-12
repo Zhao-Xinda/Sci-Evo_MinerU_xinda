@@ -1,0 +1,778 @@
+{
+  "trace_id": "TS-PMC10830567",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "alstovenine",
+    "smiles": "C=C1C=C2C[C@H]3[C@@H](CN4CC[C@@H]([C@H]3O)[C@H](C(=O)OC)C4)Cn3c1ccc(OC)[nH]cc32",
+    "natural_product_class": "indole alkaloid",
+    "structural_features": {
+      "stereocenters": 5,
+      "key_motifs": [
+        "yohimbine skeleton",
+        "pentacyclic"
+      ]
+    },
+    "motivation": "Stereoisomeric polycyclic natural products are important for drug discovery-based screening campaigns due to the close correlation of stereochemistry with diversified bioactivities. Alstovenine (3) and its C3-epimer venenatine (4) display contrasting activity on central nervous system (CNS) by enhancing or inhibiting the analgesic effects of morphine, respectively. The high degrees of stereochemical information embedded in these molecules could not be fully explored for biomedical applications.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Sarpong",
+        "year": 2013,
+        "doi": "10.1038/nchem.1530",
+        "key_strategy": "divergent approach in racemic form"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Enantioselective, divergent and collective synthesis of all four stereoisomeric subfamilies of yohimbine alkaloids."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C3-N bond cleavage/recyclization",
+        "named_strategy": "C3-epimerization",
+        "reasoning": "To achieve the desired C3-stereochemistry for alstovenine from an epiallo-type intermediate, leveraging thermodynamic preference."
+      },
+      {
+        "bond_description": "Pictet-Spengler cyclization and amidation",
+        "named_strategy": "Bioinspired coupling",
+        "reasoning": "To rapidly construct the entire pentacyclic skeleton with complete control of all five stereogenic centers through enantioselective kinetic resolution of an achiral, easily accessible synthetic surrogate (pyrone dimer 7) and tryptamine 5."
+      }
+    ],
+    "rationale": "The overall strategy involves a bioinspired coupling to rapidly construct the pentacyclic skeleton with initial epiallo stereochemistry, followed by stereochemical diversification through orchestrated tackling of thermodynamic and kinetic preferences to access all four stereoisomeric subfamilies. The epiallo skeleton was chosen as the starting point due to favorable C3-epimerization under thermodynamic control and the possibility of using the alkene to direct stereochemistry adjustment at C16 and C20. The use of an achiral pyrone dimer as a secologanin surrogate, combined with enantioselective kinetic resolution, bypasses the need for a chiral precursor."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The pyrone dimer 7 is envisioned as an achiral 10-carbon building block, similar in functionality to secologanin. It can be made in a single step.",
+        "gap": "Need to synthesize the pyrone dimer 7 from 2-pyrone 9.",
+        "decision": "To obtain the pyrone dimer 7, chose photo-dimerization of 2-pyrone 9 using thioxanthone as a photo-sensitizer, expecting increased structural complexity with four new stereogenic centers."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1C=CCO1"
+        ],
+        "product_smiles": [
+          "O=C1OC=CC2C1C1C=COC(=O)C21"
+        ],
+        "reagents": [
+          "thioxanthone"
+        ],
+        "catalyst": "thioxanthone",
+        "solvent": "MTBE",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 50,
+        "observation": "Pyrone dimer 7 was prepared by following a previously established protocol for the photo-dimerization of 2-pyrone 9 using thioxanthone (2 mol%) as the photo-sensitizer. This single step dimerization significantly increases the structural complexity by doubling the number of atoms, incorporating two new chemical bonds, and converting the flat monomer to a three-dimensional (3D) dimeric skeleton with four stereogenic centers."
+      },
+      "evidence": {
+        "text_span": "The known pyrone dimer 7 was prepared by following a previously established protocol25 for the photo-dimerization of 2-pyrone 9 using thioxanthone (2 mol%) as the photo-sensitizer (Fig. 2). This single step dimerization significantly increases the structural complexity by doubling the number of atoms, incorporating two new chemical bonds, and converting the flat monomer to a three-dimensional (3D) dimeric skeleton with four stereogenic centers.",
+        "section": "Results",
+        "image_refs": [
+          "d12615ecf1a5458c0d1b2705edb72c7a225d2376bce771becdee9bdd5f29a425.jpg",
+          "4c569cdbc95762799c29e388a06d85fd56c1273e6b7740b15d12f8b45f0e0291.jpg",
+          "9b245e56c62b36b98e955c415fc1535dca00b80de711d1536cc117b4dcd4a58d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Pyrone dimer 7 is available.",
+        "gap": "Need to perform Pictet-Spengler cyclization with tryptamine 5a.",
+        "decision": "To achieve Pictet-Spengler cyclization, attempted direct harnessing of the enol moiety of 7 with tryptamine 5a under various acidic conditions, expecting cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1OC=CC2C1C1C=COC(=O)C21",
+          "NCCc1c[nH]c2ccccc12"
+        ],
+        "product_smiles": [],
+        "reagents": [],
+        "solvent": "various",
+        "atmosphere": "acidic conditions"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Initial attempts on direct harnessing the enol moiety of 7 for Pictet-Spengler cyclization with tryptamine 5a, under a variety of acidic conditions, were not successful."
+      },
+      "evidence": {
+        "text_span": "Our initial attempts on direct harnessing the enol moiety of 7 for Pictet-Spengler cyclization with tryptamine 5a, under a variety of acidic conditions, were not successful.",
+        "section": "Results"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Direct Pictet-Spengler cyclization with 7 failed.",
+        "gap": "Need a suitable substrate for Pictet-Spengler/amidation cascade.",
+        "decision": "To enable the Pictet-Spengler/amidation cascade, chose to ring-open 7 in the presence of K2CO3 in methanol to release aldehyde 10, expecting it to be a suitable substrate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1OC=CC2C1C1C=COC(=O)C21"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(=O)OC2C=CC1C2C=O"
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Aldehyde 10 was released, which turned out to be a suitable substrate for the Pictet-Spengler/amidation cascade."
+      },
+      "evidence": {
+        "text_span": "Thus, 7 was ring-opened in the presence K2CO3 in methanol to release the aldehyde 10, which turned out to be a suitable substrate for the Pictet-Spengler/amidation cascade.",
+        "section": "Results",
+        "image_refs": [
+          "9c53bf95e04890256c9ded57c13e744b654e638deb6fdee0259e31d411976692.jpg",
+          "597fdfa0ad31d4476a3c5827eaa67030167a3383d24517c3d656468a61cc18a9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 10 is available. The Pictet-Spengler/amidation cascade is the key step for skeleton construction.",
+        "gap": "Need to establish the racemic Pictet-Spengler/amidation cascade and understand its diastereoselectivity.",
+        "decision": "To explore the cascade, performed a racemic synthesis using trifluoroacetic acid (TFA) as the acid with 10 and tryptamine 5a, expecting to observe the major product rac-8a and understand the C3-diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(=O)OC2C=CC1C2C=O",
+          "NCCc1c[nH]c2ccccc12"
+        ],
+        "product_smiles": [
+          "",
+          "COC(=O)C1(C2C=CC(C)O2)C[C@@H]2Nc3ccccc3NC(=O)[C@H]2C1"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "DCE",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "dr": "2.5:1",
+        "observation": "rac-8a was observed as the major product (70% yield based on 5a), accompanying by the C3-diastereomeric (C3-α) Pictet-Spengler product 11a as the minor product (20% yield) without further amidation. The diastereoselectivity (C3) of the racemic Pictet-Spengler cyclization was about 2.5:1, and only the major diastereomer (C3-β) engaged in the subsequent amidation. The COOMe group played a critical role in directing the selectivities and preventing 11a toward further amidation due to steric hindrance. The stereochemistry of 8a corresponds to the epiallo type yohimbine alkaloids."
+      },
+      "evidence": {
+        "text_span": "In a racemic synthesis using trifluoroacetic acid (TFA) as the acid, rac-8a was observed as the major product, accompanying by the C3-diastereomeric (C3-α) Pictet-Spengler product 11a as the minor product without further amidation. These results indicated that the diastereoselectivity (C3) of the racemic Pictet-Spengler cyclization was about 2.5:1, and only the major diastereomer (C3-β) engaged in the subsequent amidation with COa . The COOMe group played a critical role in directing the selectivities of this transformation by dictating the facial selectivity of the Pictet-Spengler cyclization and preventing 11a toward further amidation due to steric hindrance (Fig. 2). The stereochemistry of 8a corresponds to the epiallo type yohimbine alkaloids (Fig. 1).",
+        "section": "Results",
+        "image_refs": [
+          "499a2ef57cfa59152ad46b991d132a413ebc548cd7abbd939a1c7cad054404cb.jpg",
+          "14081cd0a34ef3d3b6f783f97a8876c7d7fc774378103d4e960cb61b1d4a8ba5.jpg",
+          "c98728895d7291cdd18436b7e58af9d7bd23ba7fc8470159c72eb4a70c8072c7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The racemic Pictet-Spengler/amidation cascade is established. The goal is enantioselective synthesis.",
+        "gap": "Need to achieve enantioselective control of the Pictet-Spengler/amidation cascade.",
+        "decision": "To achieve enantioselective synthesis of 8a, applied chiral phosphoric acid catalysis (catalyst II) in a kinetic resolution of racemic 10, expecting C3-β selectivity in an enantioselective manner."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(=O)OC2C=CC1C2C=O",
+          "NCCc1c[nH]c2ccccc12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC31"
+        ],
+        "catalyst": "O=P1(Oc2c(C3=CC=C(X)C=C3)cccc2-c2cccc(O1)c2)O",
+        "solvent": "dioxane",
+        "temperature": "10 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "ee_percent": 95,
+        "observation": "The best results were obtained using catalyst II (10 mol%) in dioxane at 10 °C, affording 8a in 70% yield and 95% ee. The absolute stereochemistry of 8a was confirmed by X-ray crystallographic analysis."
+      },
+      "evidence": {
+        "text_span": "The best results were obtained using catalyst II (10 mol%) in dioxane at 10 °C, affording 8a in 70% yield and 95% ee. The absolute stereochemistry of 8a was confirmed by X-ray crystallographic analysis.",
+        "section": "Results",
+        "image_refs": [
+          "499a2ef57cfa59152ad46b991d132a413ebc548cd7abbd939a1c7cad054404cb.jpg",
+          "237fd2d974e0f20790b1b312f5b54f8a792282ac4278beb4316fb568f36a2115.jpg",
+          "c98728895d7291cdd18436b7e58af9d7bd23ba7fc8470159c72eb4a70c8072c7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enantioselective synthesis of 8a is successful. Need to demonstrate substrate scope.",
+        "gap": "Need to synthesize 8b using a different tryptamine derivative.",
+        "decision": "To test the tolerance of structural variation, used 5b (methoxy-substituted tryptamine) as the substrate under identical conditions, expecting similar enantioselectivity and yield for 8b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(=O)OC2C=CC1C2C=O",
+          "COc1ccc2[nH]cc(CCN)c2c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "O=P1(Oc2c(C3=CC=C(X)C=C3)cccc2-c2cccc(O1)c2)",
+        "solvent": "dioxane",
+        "temperature": "10 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "ee_percent": 91,
+        "observation": "The use of 5b as the substrate under identical conditions led to the synthesis of 8b in 80% yield and 91% ee, indicating the tolerance of the structural variation of the tryptamine part."
+      },
+      "evidence": {
+        "text_span": "The use of 5b as the substrate under identical conditions led to the synthesis of 8b in 80% yield and 91% ee, indicating the tolerance of the structural variation of the tryptamine part.",
+        "section": "Results"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 8b is available. The goal is to synthesize venenatine (4).",
+        "gap": "Need to reduce the alkene and the amide in 8b.",
+        "decision": "To synthesize venenatine (4), chose hydrogenation of the alkene in 8b followed by amide reduction using borane dimethyl sulfide (BH3.DMS), expecting to complete the total synthesis."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd/C",
+          "H2",
+          "BH3.DMS"
+        ],
+        "solvent": "MeOH/CH2Cl2, THF",
+        "temperature": "rt, 0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "observation": "Hydrogenation of the alkene in 8b produced 12 (80% yield), which then underwent amide reduction using borane dimethyl sulfide (BH3.DMS) (74% yield) to complete the total synthesis of venenatine (4) in total 5 steps from 2-pyrone 9 and tryptamine 5b."
+      },
+      "evidence": {
+        "text_span": "From 8b, hydrogenation of the alkene produced 12, which underwent amide reduction using borane dimethyl sulfide (BH3.DMS) to complete the total synthesis of venenatine (4) in total 5 steps from 2-pyrone 9 and tryptamine 5b.",
+        "section": "Results",
+        "image_refs": [
+          "9c9dbd0b96bb165309d76cf55a76bd36d997fb8a9db8e12c4b244847cb33231f.jpg",
+          "fc7c05871d8f57e184c68a237285ac5d2e1ab91c0f777bfcafdddcbd9bf9217e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 8b is available. The goal is to synthesize alstovenine (3), which requires C3-epimerization of 8b.",
+        "gap": "Need a method for C3-epimerization.",
+        "decision": "To achieve C3-epimerization, attempted using acetic acid (AcOH), which was previously used for C3 epimerization in yohimbine alkaloid synthesis, expecting epimerization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "AcOH"
+        ],
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Acetic acid (AcOH) was previously used for the epimerization of C3 in the context of yohimbine alkaloid synthesis, however, with substrate 8b, it only led to a complex mixture."
+      },
+      "evidence": {
+        "text_span": "Acetic acid (AcOH) was previously used8,3 1 for the epimerization of C3 in the context of yohimbine alkaloid synthesis, however, with substrate 8b, it only led to a complex mixture.",
+        "section": "Results"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Acetic acid failed for C3-epimerization. Other Lewis acids might work.",
+        "gap": "Need a suitable Lewis acid for C3-epimerization.",
+        "decision": "To achieve C3-epimerization, tested trimethylsilyl iodide (TMSI) as a Lewis acid, expecting conversion of 8b to 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC(=O)C(C=C[C@H]1[C@@H]2CC3=C(N)c4c(cccc4OC)CCN(C[C@H]31)C2=O)CO"
+        ],
+        "reagents": [
+          "TMSI"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 32,
+        "failure_mode": "side_product_dominant",
+        "observation": "Trimethylsilyl iodide (TMSI) facilitated the conversion of 8b to 13 in 32% yield, accompanying by several unknown side products."
+      },
+      "evidence": {
+        "text_span": "Among several Lewis acids tested, trimethylsilyl iodide (TMSI) facilitated the conversion of 8b to 13 in 32% yield, accompanying by several unknown side products.",
+        "section": "Results"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "TMSI gave low yield and side products. Other Si-I type reagents might be more effective.",
+        "gap": "Need a more efficient condition for direct C3-epimerization.",
+        "decision": "To improve the C3-epimerization, examined other Si-I type reagents, leading to the identification of I2/PhSiH3 as a suitable reaction condition, expecting higher yield and selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC(=O)C(C=C[C@H]1[C@@H]2CC3=C(N)c4c(cccc4OC)CCN(C[C@H]31)C2=O)CO"
+        ],
+        "reagents": [
+          "I2",
+          "PhSiH3"
+        ],
+        "solvent": "DCE",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "The identification of I2/PhSiH3 as a suitable reaction condition for the direct C3-epimerization. Stoichiometric amount of I2/PhSiH3 gave synthetically useful yield (70% yield), presumably due to the presence of the free hydroxy group and its interaction with the reactive species."
+      },
+      "evidence": {
+        "text_span": "This result promoted us to examine other Si-I type reagents, and finally led to the identification of I2/PhSiH3 as a suitable reaction condition for the direct C3-epimerization. While the reagents could mechanistically be used catalytic, stoichiometric amount of I2/PhSiH3 gave synthetic useful yield, presumably due to the presence of the free hydroxy group and its interaction with the reactive species.",
+        "section": "Results",
+        "image_refs": [
+          "9c9dbd0b96bb165309d76cf55a76bd36d997fb8a9db8e12c4b244847cb33231f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 13 is available from C3-epimerization of 8b. The goal is to synthesize alstovenine (3).",
+        "gap": "Need to reduce the alkene and the amide in 13.",
+        "decision": "To synthesize alstovenine (3), chose alkene hydrogenation and amide reduction from 13, expecting to complete the synthesis."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(C=C[C@H]1[C@@H]2CC3=C(N)c4c(cccc4OC)CCN(C[C@H]31)C2=O)CO"
+        ],
+        "product_smiles": [
+          "C=C1C=C2C[C@H]3[C@@H](CN4CC[C@@H]([C@H]3O)[C@H](C(=O)OC)C4)Cn3c1ccc(OC)[nH]cc32"
+        ],
+        "reagents": [
+          "Pd/C",
+          "H2",
+          "BH3.DMS"
+        ],
+        "solvent": "MeOH/CH2Cl2, THF",
+        "temperature": "rt, 0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "Alstovenine (3) was made in additional two steps from 13 involving of alkene hydrogenation and amide reduction (66% yield over 2 steps)."
+      },
+      "evidence": {
+        "text_span": "Beneficial from this newly developed protocol for direct C3-epimerization, alstovenine (3) was made in additional two steps from 13 involving of alkene hydrogenation and amide reduction.",
+        "section": "Results",
+        "image_refs": [
+          "51389314a7349ef4e7ef2a553495b413013f2f8fb98ecd0553091922c44deafc.jpg",
+          "cdb9796c4657eb6d55919600299f76a719fdc3a3da74cfac0be04e57b28129d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 8a is available. The goal is to adjust C20 stereochemistry for yohimbine, β-yohimbine, and pseudoyohimbine.",
+        "gap": "Need to achieve alkene relocation followed by stereospecific reduction with desired C20 stereochemistry.",
+        "decision": "To adjust C20 stereochemistry, attempted alkene isomerization in the presence of DBU to deliver α,β-unsaturated amide 17, followed by stereospecific hydrogenation, expecting desired C20 stereochemistry."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC31"
+        ],
+        "product_smiles": [
+          "COC(=O)C1(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC31"
+        ],
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "THF",
+        "temperature": "50 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 95,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "Alkene isomerization in the presence of DBU delivered α,β-unsaturated amide 17 (95% yield), which underwent stereospecific hydrogenation, however the stereochemistry at C20 was unchanged (18). Transition state C should lead to the formation of the desired stereochemistry at C20, but it was disfavored due to the presence of C16-ester at axial direction, posing notable steric hindrance."
+      },
+      "evidence": {
+        "text_span": "Alkene isomerization in the presence 1,8-diazabicyclo[5.4.0]undec-7-ene (DBU) delivered α,β-unsaturated amide 17, which underwent stereospecific hydrogenation, however the stereochemistry at C20 was unchanged (18). As shown in Fig. 4, transition state C should lead to the formation of the desired stereochemistry at C20, but it was disfavored due to the presence of C16-ester at axial direction, posing notable steric hindrance.",
+        "section": "Results",
+        "image_refs": [
+          "cf88da0e841fc6fb525f088b59f35279f20a8536f77da3769df3e1a9840575d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "Alkene isomerization and hydrogenation did not yield the desired C20 stereochemistry due to steric hindrance from the C16-ester. C16-epimerization is required prior to hydrogenation.",
+        "gap": "Need a method to achieve both alkene relocation and C16-epimerization.",
+        "decision": "To achieve both alkene relocation and C16-epimerization, chose treatment of 8a with K2CO3 in methanol at 15 °C, expecting to afford 15 with the correct C16 stereochemistry for subsequent hydrogenation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC31"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "MeOH",
+        "temperature": "15 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Both the alkene relocation and C16-epimerization could be achieved by the treatment of 8a with K2CO3 in methanol at 15 °C, affording 15 in 80% yield. The temperature had a notable effect on this transformation: at 0 °C, no C16-epimerization; at room temperature, partial decomposition observed."
+      },
+      "evidence": {
+        "text_span": "Gratifyingly, both the alkene relocation and C16- epimerization could be achieved by the treatment of 8a with K2CO3 in methanol at 15 °C, affording 15 in 80% yield. Of note, the temperature had a notable effect on this transformation: at 0 °C, no C16-epimerization; at room temperature, partial decomposition observed.",
+        "section": "Results",
+        "image_refs": [
+          "cf88da0e841fc6fb525f088b59f35279f20a8536f77da3769df3e1a9840575d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 15, with relocated alkene and epimerized C16, is available. This subtle change should render the alkene hydrogenation to occur with complete opposite selectivity.",
+        "gap": "Need to perform alkene hydrogenation to achieve the desired C20-stereochemistry.",
+        "decision": "To achieve the desired C20-stereochemistry, performed alkene hydrogenation of 15 using Pt/Al2O3 and H2, expecting complete opposite selectivity (via transition state D)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "Pt/Al2O3",
+        "solvent": "EtOH/THF",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "As expected, this subtle change rendered the alkene hydrogenation to occur with complete opposite selectivity (via D), furnishing 16 with desired C20-stereochemistry (87% yield)."
+      },
+      "evidence": {
+        "text_span": "As expected, this subtle change rendered the alkene hydrogenation to occur with complete opposite selectivity (via D), furnishing 16 with desired C20-stereochemistry.",
+        "section": "Results",
+        "image_refs": [
+          "cf88da0e841fc6fb525f088b59f35279f20a8536f77da3769df3e1a9840575d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 16, with desired C20-stereochemistry, is available. The goal is to synthesize 17-epi-pseudoyohimbine (19).",
+        "gap": "Need to reduce the amide in 16.",
+        "decision": "To synthesize 17-epi-pseudoyohimbine (19), chose amide reduction of 16 using BH3.DMS, expecting to obtain the target."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "reagents": [
+          "BH3 DMS"
+        ],
+        "solvent": "THF",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "From 16, amide reduction delivered 17-epi-pseudoyohimbine (19) (60% yield)."
+      },
+      "evidence": {
+        "text_span": "From 16, amide reduction delivered 17- epi-pseudoyohimbine (19).",
+        "section": "Results",
+        "image_refs": [
+          "cf88da0e841fc6fb525f088b59f35279f20a8536f77da3769df3e1a9840575d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "17-epi-pseudoyohimbine (19) is available. The goal is to synthesize pseudoyohimbine (2).",
+        "gap": "Need to adjust the stereochemistry at C17.",
+        "decision": "To adjust C17 stereochemistry, chose a 2-step redox sequence involving Swern oxidation followed by reduction with lithium tri-sec-butylborohydride (L-selectride), expecting to produce pseudoyohimbine (2)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "reagents": [
+          "DMSO",
+          "Ac2O",
+          "L-selectride"
+        ],
+        "solvent": "THF",
+        "temperature": "rt, -78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "The stereochemistry at C17 could be further adjusted by a 2-step redox sequence involving Swern oxidation followed by reduction with lithium tri-sec-butylborohydride (L-selectride), ultimately producing pseudoyohimbine (2) (62% yield over 2 steps). The structure of 2 was confirmed by X-ray crystallographic analysis."
+      },
+      "evidence": {
+        "text_span": "The stereochemistry at C17 could be further adjusted by a 2-step redox sequence involving Swern oxidation followed by reduction with lithium tri-sec-butylborohydride (L-selectride), ultimately producing pseudoyohimbine (2). The 1 H-NMR data of 2 was in reasonable agreement with the reported one8 , but inconsistencies were observed, particularly for the COOMe (3.78 vs 3.92). We could not find the 13 C-NMR data for further comparation, and finally confirmed the structure of 2 by X-ray crystallographic analysis.",
+        "section": "Results",
+        "image_refs": [
+          "cf88da0e841fc6fb525f088b59f35279f20a8536f77da3769df3e1a9840575d2.jpg",
+          "50fd90e8319050428db61cacbf83b2fb9e7576bf5a6618d584b1d122edb782a2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 16 is available. The goal is to synthesize yohimbine (1a) and β-yohimbine (1b), which requires C3-epimerization of 16.",
+        "gap": "Need to perform C3-epimerization on 16.",
+        "decision": "To achieve C3-epimerization, applied the newly developed I2/PhSiH3 condition to substrate 16, expecting to produce 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "reagents": [
+          "I2",
+          "PhSiH3"
+        ],
+        "solvent": "DCE",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "The newly developed I2/PhSiH3 condition was well applicable to substrate 16, producing 20 in 88% yield."
+      },
+      "evidence": {
+        "text_span": "We were pleased to find that our newly developed I2/PhSiH3 condition was well applicable to substrate 16, producing 20 in 88% yield,",
+        "section": "Results",
+        "image_refs": [
+          "cf88da0e841fc6fb525f088b59f35279f20a8536f77da3769df3e1a9840575d2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 20 is available. The goal is to synthesize β-yohimbine (1b).",
+        "gap": "Need to reduce the amide in 20.",
+        "decision": "To synthesize β-yohimbine (1b), chose amide reduction of 20 using BH3 DMS, expecting to afford the target."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "reagents": [
+          "BH3 DMS"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "Intermediate 20 underwent amide reduction to afford β-yohimbine (1b) (74% yield)."
+      },
+      "evidence": {
+        "text_span": "which underwent amide reduction to afford β-yohimbine (1b).",
+        "section": "Results",
+        "image_refs": [
+          "cf88da0e841fc6fb525f088b59f35279f20a8536f77da3769df3e1a9840575d2.jpg",
+          "d497999352a5d21b559d550f19df13034d5816d21f29bba191821a25d1b79aca.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "β-yohimbine (1b) is available. The goal is to synthesize yohimbine (1a).",
+        "gap": "Need to adjust the C17-stereochemistry of β-yohimbine (1b) to obtain yohimbine (1a).",
+        "decision": "To synthesize yohimbine (1a), chose a known redox protocol for C17-stereochemistry adjustment by the group of Qin, expecting to convert 1b to 1a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(O)C2CC3c4[nH]c5ccccc5c4CN3C3C2OC13"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C[C@@H]2CN(C)[C@@H](CC3CC4C(C(=O)OC)C(O)C5c6[nH]ccc6C=CC5CN4C3)C2CC1O"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Following a known redox protocol for C17-stereochemistry adjustment by the group of Qin, yohimbine (1a) could be then made."
+      },
+      "evidence": {
+        "text_span": "Following a known redox protocol for C17- stereochemistry adjustment by the group of Qin7 , yohimbine (1a) could be then made.",
+        "section": "Results",
+        "references": [
+          "7"
+        ],
+        "image_refs": [
+          "d49799934d5816d21f29bba191821a25d1b79aca.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "X-ray crystallography",
+      "1H NMR"
+    ],
+    "metrics": {},
+    "significance": "This work demonstrates a collective total synthesis of stereoisomeric yohimbine alkaloids, featuring a bioinspired coupling for rapid pentacyclic skeleton construction via catalytic enantioselective Pictet-Spengler/amidation cascade, and controllable late-stage adjustment of stereochemistry at C3, C16, C17, and C20. This approach provides a general synthetic platform for accessing stereoisomeric yohimbine natural products and analogs, which are important for drug discovery due to their diverse bioactivities and historical use in CNS disorders."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s41467-024-45140-2",
+      "pmcid": "PMC10830567",
+      "title": "Collective total synthesis of stereoisomeric yohimbine alkaloids.",
+      "authors": "Tang M, Lu H, Zu L.",
+      "journal": "Nat Commun",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC10830567?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/88d6c786-a95c-450b-af02-c2f3afc1524d.zip",
+      "parsed_at": "2026-05-11T06:31:38.947358+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 42,
+    "parseable": 35,
+    "canonicalized": 32,
+    "invalid": 7,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC(=O)C1(C[C@@H]2N3C4=C(C=C(X)C=C4)NC3[C@H]2C1)C1C=CC(O1)C(O)C",
+      "COC1=CC=C2C(NC3=C2C=C1)=C4C[C@@H]5C[C@H](O)[C@H]6[C@H](C(=O)OC)[C@@H](O4)N56",
+      "COC1=CC=C2C(NC3=C2C=C1)=C4C[C@@H]5C[C@H](O)[C@H]6[C@H](C(=O)OC)[C@@H](O4)N56",
+      "COC1=CC=C2C(NC3=C2C=C1)=C4C[C@@H]5C[C@H](O)[C@H]6[C@H](C(=O)OC)[C@@H](O4)N56",
+      "COC1=CC=C2C(NC3=C2C=C1)=C4C[C@@H]5C[C@H](O)[C@H]6[C@H](C(=O)OC)[C@@H](O4)N56",
+      "COC1=CC=C2C(NC3=C2C=C1)=C4C[C@@H]5C[C@H](O)[C@H]6[C@H](C(=O)OC)[C@@H](O4)N56",
+      "COC1=CC=C2C(NC3=C2C=C1)=C4C[C@@H]5C[C@H](O)[C@H]6[C@H](C(=O)OC)[C@@H](O4)N56"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

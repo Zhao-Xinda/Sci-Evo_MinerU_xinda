@@ -1,0 +1,818 @@
+{
+  "trace_id": "TS-PMC12458055",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Anhydro-dc-Tetracyclic Saxitoxin (26)",
+    "smiles": "N=C(N)N1C(=O)C2C1CC1C(C(O)CO)N=C(N)N12",
+    "natural_product_class": "alkaloid",
+    "structural_features": {
+      "stereocenters": 4,
+      "ring_systems": "tetracyclic",
+      "key_motifs": [
+        "guanidine",
+        "urea",
+        "tetrahydropurine"
+      ]
+    },
+    "motivation": "To investigate how C5 modification would affect STX activity toward NaVs, specifically designing a tetracyclic analog with a fused five-membered ring spanning C5-C6 to conformationally constrain the C13 hydroxyl group into its bioactive orientation, potentially enhancing binding affinity.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Synthesis of the target molecule (26) and evaluation of its NaV-inhibitory activity to understand structure-activity relationships."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C12 alkene ozonolysis",
+        "reasoning": "Final step to introduce the C12 carbonyl, leading to the target structure."
+      },
+      {
+        "bond_description": "MOM deprotection and guanidine formation",
+        "reasoning": "Late-stage functional group interconversion to reveal the active guanidine moieties."
+      },
+      {
+        "bond_description": "Benzyl deprotection",
+        "reasoning": "Removal of protecting groups to reveal the core structure."
+      },
+      {
+        "bond_description": "C13-OH elimination",
+        "reasoning": "Formation of the C12 alkene from a C13 hydroxyl group."
+      },
+      {
+        "bond_description": "C13-OH formation via ozonolysis and reduction",
+        "reasoning": "Introduction of the C13 hydroxyl group and stereocenter."
+      },
+      {
+        "bond_description": "Ti(III)-mediated radical cyclization",
+        "named_strategy": "radical cyclization",
+        "reasoning": "Key step to form the tetracyclic core and establish the C5 quaternary center, addressing the challenge of forming this center by conventional methods."
+      },
+      {
+        "bond_description": "C6-carbonyl reduction",
+        "reasoning": "Preparation for radical cyclization."
+      },
+      {
+        "bond_description": "Alkyne formation via Bestmann-Ohira reaction",
+        "reasoning": "Introduction of the radical acceptor for the cyclization."
+      },
+      {
+        "bond_description": "Oxodealkenylative cleavage of cycloheptene ring",
+        "reasoning": "Cleavage of the seven-membered ring to introduce functionality for subsequent steps."
+      },
+      {
+        "bond_description": "Intramolecular [5+2]-type photocycloaddition",
+        "named_strategy": "photocycloaddition",
+        "reasoning": "Formation of the cycloheptene ring and two adjacent quaternary centers at C4 and C5 in a single step."
+      },
+      {
+        "bond_description": "N-alkylation and hydrolytic cleavage",
+        "reasoning": "Initial functionalization of the xanthine core."
+      }
+    ],
+    "rationale": "The retrosynthesis aimed to construct the tetracyclic core and the challenging C5 quaternary center using a novel photoinduced radical cycloaddition. This approach was chosen over conventional methods due to prohibitive ring strain. Subsequent steps involved functional group transformations and a Ti(III)-mediated radical cyclization to complete the complex architecture."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The starting material is 7-benzyl-8-bromoxanthine (12). The goal is to introduce the vinylcyclopropane moiety and protect the N1 position.",
+        "gap": "How to achieve sequential N3-alkylation, N1-benzylation, and hydrolytic cleavage of the C8-Br bond in a one-pot fashion.",
+        "decision": "To synthesize the photocycloaddition substrate 11, chose sequential N3-alkylation with iodide 13, N1-benzylation, and hydrolytic cleavage of the C8-Br bond, expecting to obtain 11 as a Z/E mixture."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cn1c(=O)n(Cc2ccccc2)c(=O)c2c1[nH]c(=O)n2C",
+          "C=C(C)C1CC1"
+        ],
+        "product_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "reagents": [
+          "K2CO3",
+          "BnBr",
+          "KOH"
+        ],
+        "solvent": "DMF",
+        "temperature": "95 °C",
+        "time": "15 h, then 8 h, then 18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "Afforded the photocycloaddition substrate 11 as a 1:1 mixture of inseparable Z/E olefin configurational isomers."
+      },
+      "evidence": {
+        "text_span": "Our synthesis commenced with the $N ^ { 3 }$ -alkylation of 7- benzyl-8-bromoxanthine $( 1 2 )^ { 2 0 }$ using iodide 13, followed by sequential $N ^ { 1 }$ -benzylation and hydrolytic cleavage of the $\\subset 8 -$ Br bond in a one-pot fashion (Scheme 1). This afforded the photocycloaddition substrate 11 as a 1:1 mixture of inseparable $Z/E$ olefin configurational isomers in $45\\%$ yield.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Substrate 11 is ready for photocycloaddition. The goal is to form product 14.",
+        "gap": "Finding optimal conditions for the intramolecular [2+2] cycloaddition.",
+        "decision": "To achieve photocycloaddition, chose irradiation of 11 at 300 nm in toluene at room temperature, expecting product 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "solvent": "toluene",
+        "temperature": "rt",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 70,
+        "failure_mode": "side_product_dominant",
+        "observation": "Yielded product 14 as a 3.5:1 mixture of inseparable diastereomers in 70% yield. While successful, the diastereomeric mixture was not ideal for subsequent steps, indicating a need for better selectivity or a different product."
+      },
+      "evidence": {
+        "text_span": "Irradiation of 11 at $3 0 0 ~ \\mathrm { n m }$ in toluene at room temperature promoted an intramolecular $[ 2 + 2 ]$ cycloaddition, yielding product 14 as a 3.5:1 mixture of inseparable diastereomers in $70\\%$ yield (Table 1, entry 1).",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "4d4d20b19f082a1e8c05583c1132ed2a6a0dde13ea2905605b4c841136749dcb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The previous attempt yielded 14 as a diastereomeric mixture. The goal is to improve selectivity or obtain a single, more useful product.",
+        "gap": "How to control the outcome of the photocycloaddition to get a single, identifiable product.",
+        "decision": "To improve the reaction, chose DCM as solvent, expecting a comparable yield but potentially better selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 68,
+        "failure_mode": "side_product_dominant",
+        "observation": "Slowed the reaction but maintained a comparable yield of 14 (68%), still as a mixture of diastereomers. Did not solve the selectivity issue."
+      },
+      "evidence": {
+        "text_span": "While DCM as solvent slowed the reaction but maintained a comparable yield of 14 (entry 2)",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "4d4d20b19f082a1e8c05583c1132ed2a6a0dde13ea2905605b4c841136749dcb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempts yielded diastereomeric mixtures of 14. The goal is to find conditions that lead to a single, identifiable product.",
+        "gap": "How to completely suppress the formation of 14 and potentially direct the reaction towards a different, more useful product.",
+        "decision": "To alter the reaction outcome, chose acetone as solvent, expecting a different reaction pathway or suppression."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "solvent": "acetone",
+        "temperature": "rt",
+        "time": "12 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Completely suppressed the transformation (no reaction)."
+      },
+      "evidence": {
+        "text_span": "acetone completely suppressed the transformation (entry 3).",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "4d4d20b19f082a1e8c05583c1132ed2a6a0dde13ea2905605b4c841136749dcb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Previous photocycloaddition attempts either gave mixtures or no reaction. The goal is to obtain a single, identifiable product from the photocycloaddition.",
+        "gap": "How to direct the photocycloaddition towards a single, characterizable product, potentially through a different mechanism.",
+        "decision": "To achieve a single product, chose xanthone as a photosensitizer, expecting a different reaction pathway leading to 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "xanthone",
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "10 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "observation": "Isolated 15 as the only identifiable product, unambiguously characterized by X-ray crystallography; full conversion was achieved using 0.5 equiv of xanthone, affording 15 in 48% isolated yield."
+      },
+      "evidence": {
+        "text_span": "Notably, when xanthone was employed as a photosensitizer, we isolated 15 as the only identifiable product, which was unambiguously characterized by X-ray crystallography; full conversion was achieved using 0.5 equiv of xanthone, affording 15 in $4 8\\%$ isolated yield (entry 4).",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "4d4d20b19f082a1e8c05583c1132ed2a6a0dde13ea2905605b4c841136749dcb.jpg",
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Xanthone successfully sensitized the reaction to product 15. The goal is to explore other photosensitizers.",
+        "gap": "Whether other photosensitizers could also lead to 15, potentially with better yield.",
+        "decision": "To explore alternative photosensitizers, chose benzophenone, expecting a similar outcome to xanthone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "benzophenone",
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "10 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 10,
+        "failure_mode": "low_yield",
+        "observation": "Resulted in only a 10% yield of 15, significantly lower than with xanthone."
+      },
+      "evidence": {
+        "text_span": "In contrast, substitution with benzophenone as the photosensitizer resulted in only a $1 0\\%$ yield of 15 (entry 5).",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "4d4d20b19f082a1e8c05583c1132ed2a6a0dde13ea2905605b4c841136749dcb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 15 was successfully obtained via xanthone-sensitized photocycloaddition. The next step is to cleave the seven-membered carbocycle.",
+        "gap": "How to perform oxodealkenylative cleavage of the seven-membered carbocycle in 15 to introduce a carbonyl group.",
+        "decision": "To cleave the carbocycle, chose ozonolysis followed by treatment with ferrous sulfate and TEMPO, expecting to form a carbonyl compound."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC(=O)C1c2c([nH]c(=O)n2C)N(C)C(=O)N(Cc2ccccc2)C1C(C)(C)ON"
+        ],
+        "reagents": [
+          "FeSO4.7H2O",
+          "TEMPO"
+        ],
+        "solvent": "MeOH",
+        "temperature": "-78 °C to rt",
+        "time": "20 min, then 2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 35,
+        "observation": "The only isolable product was compound 16, obtained in a moderate 35% yield. This suggested an unusual selectivity where a less-stable primary radical was generated and trapped by TEMPO."
+      },
+      "evidence": {
+        "text_span": "We next investigated the oxodealkenylative cleavage of the seven-membered carbocycle in 15 via ozonolysis, followed by treatment with ferrous sulfate and TEMPO.21 Interestingly, the only isolable product was compound 16, which was obtained in a moderate $3 5\\%$ yield.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 16 was obtained. The next step is to reduce the methyl ester and protect the resulting alcohol.",
+        "gap": "How to convert the methyl ester to an alcohol and then protect it as a TBDPS ether.",
+        "decision": "To achieve this, chose DIBAL reduction of the methyl ester, followed by protection with TBDPSCl and imidazole, expecting to obtain 17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1c2c([nH]c(=O)n2C)N(C)C(=O)N(Cc2ccccc2)C1C(C)(C)ON"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DIBAL",
+          "TBDPSCl",
+          "imidazole"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C to 0 °C",
+        "time": "30 min, then 30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 37,
+        "observation": "The methyl ester of 16 was then reduced with DIBAL and protected as the TBDPS ether to give 17. The yield for the two steps is 52% for reduction and 72% for protection, resulting in an overall yield of 37.44% for 17 from 16."
+      },
+      "evidence": {
+        "text_span": "The methyl ester of 16 was then reduced with DIBAL and protected as the TBDPS ether to give 17.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 17 is ready. The next step is to convert the TEMPO moiety to an aldehyde and then to an alkyne.",
+        "gap": "How to oxidize the TEMPO moiety to an aldehyde and then perform a Bestmann-Ohira reaction to form the alkyne.",
+        "decision": "To introduce the alkyne, chose mCPBA oxidation of the TEMPO moiety, followed by a Bestmann-Ohira reaction, expecting to furnish alkyne 18."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "mCPBA",
+          "Bestmann-Ohira reagent",
+          "K2CO3"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C to rt",
+        "time": "30 min, then 5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "observation": "Oxidation of the TEMPO moiety to the corresponding aldehyde, followed by a Bestmann−Ohira reaction, furnished alkyne 18 in 69% yield over two steps."
+      },
+      "evidence": {
+        "text_span": "Oxidation of the TEMPO moiety to the corresponding aldehyde, followed by a Bestmann−Ohira reaction, furnished alkyne 18 in $6 9\\%$ yield over two steps.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkyne 18 was successfully synthesized. The next step is to reduce the C6-carbonyl group.",
+        "gap": "How to selectively reduce the C6-carbonyl group to a hydroxyl group to form the hemiaminal.",
+        "decision": "To reduce the C6-carbonyl, chose LiBH4, expecting to give hemiaminal 19."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiBH4"
+        ],
+        "solvent": "THF/MeOH",
+        "temperature": "0 °C",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Subsequent reduction of the C6-carbonyl group with LiBH4 gave hemiaminal 19 in 88% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent reduction of the C6-carbonyl group with $\\mathrm { L i B H } _ { 4 }$ gave hemiaminal 19 in $8 8\\%$ yield.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Hemiaminal 19 was obtained. The goal is to perform a radical cyclization to form the tetracyclic intermediate.",
+        "gap": "How to achieve homolytic C-O bond cleavage at C6 and promote radical formation while avoiding carbocation formation.",
+        "decision": "To facilitate radical cyclization, chose Ti(III) as a single-electron reductant (Cp*TiCl3, TESCl, Zn), expecting it to coordinate to and weaken the C-O bond while promoting radical formation, leading to tetracyclic intermediate 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Cp*TiCl3",
+          "TESCl",
+          "Zn"
+        ],
+        "solvent": "THF",
+        "temperature": "55 °C",
+        "time": "15 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "This Ti(III)-mediated radical cyclization proceeded smoothly to deliver tetracyclic intermediate 20 in 72% yield."
+      },
+      "evidence": {
+        "text_span": "This Ti(III)-mediated radical cyclization proceeded smoothly to deliver tetracyclic intermediate 20 in $7 2\\%$ yield.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetracyclic intermediate 20 was obtained. The next step is to introduce the C13 hydroxyl group with the desired stereochemistry.",
+        "gap": "How to perform ozonolysis and reduction to form the C13 hydroxyl group, and separate epimers.",
+        "decision": "To introduce the C13-OH, chose ozonolysis of 20 under -95 °C followed by NaBH4 reduction, expecting to produce separable epimers 21a and 21b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O3",
+          "NaBH4"
+        ],
+        "solvent": "DCM",
+        "temperature": "-95 °C to 0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "observation": "Ozonolysis of 20 under -95 °C followed by NaBH4 reduction produced separable epimers 21a and 21b in 17% and 54% yield, respectively, with 21b being the major epimer with the desired stereogenic center at C13. Total yield 71%."
+      },
+      "evidence": {
+        "text_span": "Ozonolysis of 20 under $- 9 5 ~ ^ { \\circ } \\mathrm { C }$ follow by ${ \\mathrm { N a B H } } _ { 4 }$ reduction produced separable epimers 21a and 21b in $1 7\\%$ and $5 4\\%$ yield, respectively, whereas the major epimer 21b bore the desired stereogenic center at C13.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Major epimer 21b was obtained. The goal is to protect the C13-OH, deprotect TBDPS, and eliminate the resulting primary alcohol to form the C12 alkene.",
+        "gap": "How to perform MOM protection, TBDPS deprotection, mesylation, and DBU-NaI elimination in a sequence.",
+        "decision": "To form the C12 alkene, chose MOM protection of C13-OH, in situ TBDPS deprotection, and elimination of the resulting primary alcohol via mesylation/DBU-NaI treatment, expecting to afford 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MOMBr",
+          "TBAI",
+          "TBAF",
+          "MsCl",
+          "NEt3",
+          "DBU",
+          "NaI"
+        ],
+        "solvent": "DCE",
+        "temperature": "60 °C to rt to 0 °C to 100 °C",
+        "time": "2 h, then 30 min, then 2 h, then 18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Subsequent MOM protection of the C13-OH, in situ TBDPS deprotection, and elimination of the resulting primary alcohol via mesylation/DBU-NaI treatment afforded 22 in 73% yield over three steps."
+      },
+      "evidence": {
+        "text_span": "Subsequent MOM protection of the C13-OH, in situ TBDPS deprotection, and elimination of the resulting primary alcohol via mesylation/ DBU-NaI treatment afforded 22 in $7 3\\%$ yield over three steps; the structure of 22 was confirmed by X-ray crystallography analysis.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 22 was obtained. The next step is to remove the benzyl protecting groups.",
+        "gap": "How to selectively deprotect the benzyl groups without affecting other functionalities.",
+        "decision": "To remove benzyl groups, chose Li/DTBBP, expecting to furnish 23."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "reagents": [
+          "DTBBP",
+          "Li"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "The removal of benzyl groups was achieved using Li/DTBBP, furnishing 23 in 73% yield."
+      },
+      "evidence": {
+        "text_span": "The removal of benzyl groups was achieved using Li/ DTBBP, furnishing 23 in $7 3\\%$ yield.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 23 was obtained. The next step is to functionalize the urea moieties and form the diguanidine.",
+        "gap": "How to perform O-alkylation of both ureas and aminolysis to form diguanidine 24.",
+        "decision": "To form the diguanidine, chose O-alkylation of both ureas with MeOTf/TTBP, followed by aminolysis with EtCOONH4/NH3, expecting to form 24."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "product_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "reagents": [
+          "MeOTf",
+          "TTBP",
+          "EtCOONH4",
+          "NH3"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt to 65 °C",
+        "time": "24 h, then 36 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Final-stage transformations included O-alkylation of both ureas and aminolysis to form diguanidine 24."
+      },
+      "evidence": {
+        "text_span": "Final-stage trans- formations included O-alkylation of both ureas and aminolysis to form diguanidine 24",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diguanidine 24 was formed. The next step is to deprotect the MOM group.",
+        "gap": "How to selectively remove the MOM protecting group.",
+        "decision": "To deprotect the MOM group, chose MOM deprotection, expecting to give 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "product_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "observation": "Subjected to the MOM deprotection to give 25 in 54% yield over two steps (from 23 to 25)."
+      },
+      "evidence": {
+        "text_span": "which was subjected to the MOM deprotection to give 25 in $5 4\\%$ yield over two steps.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 25 was obtained. The final step is to introduce the C12 carbonyl group.",
+        "gap": "How to perform ozonolysis of the C12 alkene to form the carbonyl.",
+        "decision": "To introduce the C12 carbonyl, chose ozonolysis of the C12 alkene in 25, expecting to afford 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "product_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "reagents": [
+          "O3",
+          "Me2S"
+        ],
+        "solvent": "MeOH",
+        "temperature": "-95 °C to rt",
+        "time": "10 min, then 2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Ozonolysis of the C12 alkene in 25 afforded 26 in 87% yield."
+      },
+      "evidence": {
+        "text_span": "Ozonolysis of the C12 alkene in 25 afforded 26 in $8 7\\%$ yield.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 20 was obtained. An alternative route to 26 is desired.",
+        "gap": "How to perform a one-pot ozonolysis/MOM-deprotection from 20 to directly provide 26.",
+        "decision": "To simplify the synthesis, chose a one-pot ozonolysis/MOM-deprotection from 20, expecting to directly provide 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(=CCn1c(=O)n(C)c2c(=O)n(Cc3ccccc3)c(=O)n(C)c21)C1CC1"
+        ],
+        "reagents": [
+          "O3",
+          "Me2S",
+          "TFA"
+        ],
+        "solvent": "MeOH",
+        "temperature": "-95 °C to rt",
+        "time": "10 min, then 2 h, then 12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 43,
+        "observation": "The crude product of 24 could alternatively undergo one-pot ozonolysis/MOM-deprotection to directly provide 26 in 43% yield over 2 steps (from 20 to 26)."
+      },
+      "evidence": {
+        "text_span": "Notably, the crude product of 24 could alternatively undergo one-pot ozonolysis/MOM-deprotection to directly provide 26.",
+        "section": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition",
+        "image_refs": [
+          "7081a4c991a8ba8b808cdd3d9bb1a16546c4d289664a444efd3dd45c497b8650.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated for the entire synthesis, but individual step yields are provided."
+      },
+      "Total Steps": {
+        "value": 16,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps reported."
+      },
+      "Failed Attempts Count": {
+        "value": 3,
+        "unit": "count",
+        "interpretation": "Number of explicitly reported failed attempts or suboptimal conditions."
+      }
+    },
+    "comparison_to_prior": "Analog 26 exhibited IC25 values of 7.9 μM for the resting state and 1.3 μM for the half-inactivated state against hNaV1.4. For comparison, synthetic (±)-dcSTX (1b) displayed significantly higher potency, with IC25 values of 0.049 μM in the resting state and 0.014 μM in the half-inactivated state. Analog 25 showed even lower potency (>30 μM and 19 μM respectively).",
+    "significance": "This work introduces a new chemotype of saxitoxin, offering a foundation for future optimization efforts, despite the lower potency of the synthesized analog compared to dc-saxitoxin. It expands the structure-activity relationship understanding of saxitoxin and establishes a new synthetic platform for its future modification. The photoinduced cycloaddition is a key novel transformation."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.5c01028",
+      "pmcid": "PMC12458055",
+      "title": "Synthesis of Anhydro-dc-Tetracyclic Saxitoxin Via a Photoinduced Cycloaddition.",
+      "authors": "Fang R, Jiao Y, Xia T, Liu J, Luo T.",
+      "journal": "JACS Au",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC12458055?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/50d63912-30e1-4780-a8e8-2e5de6bcd3b0.zip",
+      "parsed_at": "2026-05-11T06:27:52.828590+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 37,
+    "parseable": 19,
+    "canonicalized": 19,
+    "invalid": 18,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C1N(Cc2ccccc2)C(=O)N3C4C(C(C(C3)N(Cc3ccccc3)C(=O)N4C(=O)C5CC5)NC)C",
+      "O=C1N(Cc2ccccc2)C(=O)N3C4C(C(C(C3)N(Cc3ccccc3)C(=O)N4C(=O)C5CC5)NC)C",
+      "O=C1N(Cc2ccccc2)C(=O)N2C3C(C(C(C2)N(Cc2ccccc2)C(=O)N3C(=O)C4CC4)NC)C",
+      "O=C1N(Cc2ccccc2)C(=O)N2C3C(C(C(C2)N(Cc2ccccc2)C(=O)N3C(=O)C4CC4)NC)C",
+      "O=C1N(Cc2ccccc2)C(=O)N2C3C(C(C(C2)N(Cc2ccccc2)C(=O)N3C(=O)C4CC4)NC)C",
+      "CC(C)(C)C(C1=CC=CC=C1)(C2=CC=CC=C2)OC[C@@H]3C#C[C@@H]4N(CC5=CC=CC=C5)C(=O)N(C)C5=C4N(C)C(=O)N5",
+      "CC(C)(C)C(C1=CC=CC=C1)(C2=CC=CC=C2)OC[C@@H]3C#C[C@@H]4N(CC5=CC=CC=C5)C(=O)N(C)C5=C4N(C)C(=O)N5",
+      "CC(C)(C)C(C1=CC=CC=C1)(C2=CC=CC=C2)OC[C@@H]3C#C[C@@H]4N(CC5=CC=CC=C5)C(=O)N(C)C5=C4N(C)C(=O)N5",
+      "CC(C)(C)C(C1=CC=CC=C1)(C2=CC=CC=C2)OC[C@@H]3C#C[C@@H]4N(CC5=CC=CC=C5)C(=O)N(C)C5=C4N(C)C(=O)N5",
+      "CC(C)(C)C(C1=CC=CC=C1)(C2=CC=CC=C2)OC[C@@H]3[C@H](O)C#C[C@@H]4N(CC5=CC=CC=C5)C(=O)N(C)C5=C4N(C)C(=O)N5"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

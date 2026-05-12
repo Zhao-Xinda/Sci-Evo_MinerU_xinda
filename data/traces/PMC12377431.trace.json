@@ -1,0 +1,763 @@
+{
+  "trace_id": "TS-PMC12377431",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "1-Hydroxytaxuspine C",
+    "smiles": "",
+    "natural_product_class": "taxane diterpenoid",
+    "structural_features": {
+      "key_motifs": [
+        "C1-hydroxylated (3,11)-cyclotaxane scaffold",
+        "C4(20)-exomethylene moiety",
+        "C13-oxo group",
+        "C2-acetate",
+        "C9-acetate",
+        "C10-acetate",
+        "cinnamoyl side chain at C5"
+      ]
+    },
+    "motivation": "1-Hydroxytaxuspine C is a prominent (3,11)-cyclotaxane scaffold and exhibits remarkable bioactivity as an MDR modulator. No synthesis of C1-functionalized cyclotaxanes has been published to date. Establishing a semisynthetic access to these structures enables structure-activity relationship (SAR) studies and potential medicinal applications.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Shi et al.",
+        "year": 1999,
+        "key_strategy": "Isolation from Japanese yew (Taxus cuspidata)"
+      },
+      {
+        "lead_author": "Kosugi et al.",
+        "year": 2000,
+        "key_strategy": "Isolation (named as 3,11-cyclotaxinine NN-2)"
+      }
+    ],
+    "success_criteria": {
+      "scale_target": "gram-scale access to the (3,11)-cyclotaxane scaffold",
+      "free_text": "First synthetic access to C1-hydroxylated cyclotaxanes."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C3-C11 transannular bond formation",
+        "named_strategy": "Photocyclization",
+        "reasoning": "Biosynthetic approach via transannular Michael addition was not feasible due to required functionalization at C3. Photocyclization of enone 19 was inspired by literature-known photocyclizations of similar structures and previous reports on taxane photocyclizations.",
+        "alternatives_considered": [
+          {
+            "strategy": "Biomimetic approach (transannular Michael addition)",
+            "rejected_because": "Not feasible due to required functionalization at C3."
+          }
+        ]
+      },
+      {
+        "bond_description": "C1-C2 carbonate cleavage and C2-acetylation",
+        "named_strategy": "Nucleophilic opening of carbonate",
+        "reasoning": "Attempted hydrolytic or reductive conditions for carbonate cleavage failed, leading to complex mixtures. Nucleophilic opening with organolithium reagents is well precedented in literature for C2-esterification products on taxanoid structures.",
+        "alternatives_considered": [
+          {
+            "strategy": "Hydrolytic carbonate cleavage",
+            "rejected_because": "Failed to provide C2-OH and led to complex mixtures."
+          },
+          {
+            "strategy": "Reductive carbonate cleavage",
+            "rejected_because": "Failed to provide C2-OH and led to complex mixtures."
+          }
+        ]
+      },
+      {
+        "bond_description": "Oxetane ring cleavage to exomethylene",
+        "named_strategy": "Lewis acid-catalyzed oxetane opening followed by Corey-Winter elimination",
+        "reasoning": "Screening literature on d-secotaxanes showed Lewis acidic conditions as promising for oxetane ring cleavage. Subsequent Corey-Winter elimination forms the desired exomethylene moiety.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C7-defunctionalization",
+        "named_strategy": "Elimination-hydrogenation sequence",
+        "reasoning": "Provides a significantly improved access to 7-deoxytaxanes compared to earlier procedures based on radical deoxygenation, which often suffer from radical rearrangements.",
+        "alternatives_considered": [
+          {
+            "strategy": "Radical deoxygenation",
+            "rejected_because": "Often suffers from radical rearrangements."
+          }
+        ]
+      }
+    ],
+    "rationale": "The synthesis is a semisynthetic approach starting from commercially available 10-deacetylbaccatin III (2), which is abundant and used in large-scale Taxol production. The strategy focuses on orchestrating functional group interconversions with a minimal amount of protecting groups. Key steps include C7-defunctionalization, oxetane ring cleavage to form the exomethylene, C9-C10 trans-diol formation, and a late-stage photochemical C3-C11 transannular bond formation. The C1-C2 carbonate is strategically opened to install the C2-acetate and simultaneously deprotect C5."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The starting material is 10-deacetylbaccatin III (2). The first step is to acetylate the C10-hydroxyl group to obtain baccatin III (6).",
+        "gap": "How to selectively acetylate C10?",
+        "decision": "To acetylate 10-deacetylbaccatin III (2) to baccatin III (6), a known procedure involving acetic anhydride and cerium(III) chloride in THF will be used, expecting selective acetylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(=O)OC1C(O)C(O)C2(C)OC(=O)C3(C)C(OC(=O)c4ccccc4)C(O)C(O)C(C4(C)COC(O)C4)C3C(=O)C12"
+        ],
+        "reagents": [
+          "Ac2O",
+          "CeCl3"
+        ],
+        "solvent": "THF",
+        "atmosphere": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Acetylation following a known procedure gave baccatin III (6)."
+      },
+      "evidence": {
+        "text_span": "Acetylation following a known procedure[31] gave baccatin III (6).",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Baccatin III (6) has been obtained. The next goal is C7-defunctionalization.",
+        "gap": "How to remove the C7-hydroxyl group efficiently and selectively?",
+        "decision": "To achieve C7-defunctionalization, a modified elimination–hydrogenation sequence will be employed, starting with triflation of the C7-hydroxyl group of 6."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)OC1C(O)C(O)C2(C)OC(=O)C3(C)C(OC(=O)c4ccccc4)C(O)C(O)C(C4(C)COC(O)C4)C3C(=O)C12"
+        ],
+        "product_smiles": [
+          "CC1(C2C(O)C(O)C(OC(=O)c3ccccc3)C3(C)C(=O)OC4(C)C(O)C(O)C(OS(=O)(=O)C(F)(F)F)C4C(=O)C23)COC(O)C1"
+        ],
+        "reagents": [
+          "Tf2O"
+        ],
+        "solvent": "DCM",
+        "catalyst": "pyridine",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "C7-Defunctionalization was accomplished via a modified elimination–hydrogenation sequence."
+      },
+      "evidence": {
+        "text_span": "C7-Defunctionalization was accomplished via a modified elimination–hydrogenation sequence,[32] delivering literature-known[33] 7-deoxy-baccatin III (9).",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C7-hydroxyl group of 6 has been triflated (7). The next step in the elimination-hydrogenation sequence is the elimination.",
+        "gap": "How to perform the elimination to form the C7-exocyclic double bond?",
+        "decision": "To perform the elimination, DBU will be used in THF under reflux conditions, expecting the formation of the C7-exocyclic double bond (8)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C2C(O)C(O)C(OC(=O)c3ccccc3)C3(C)C(=O)OC4(C)C(O)C(O)C(OS(=O)(=O)C(F)(F)F)C4C(=O)C23)COC(O)C1"
+        ],
+        "product_smiles": [
+          "C=C1C(OC(C)=O)C2C(=O)C3C(C4(C)COC(O)C4)C(O)C(O)C(OC(=O)c4ccccc4)C3(C)C(=O)OC2(C)C1O"
+        ],
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "THF",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "C7-Defunctionalization was accomplished via a modified elimination–hydrogenation sequence."
+      },
+      "evidence": {
+        "text_span": "C7-Defunctionalization was accomplished via a modified elimination–hydrogenation sequence,[32] delivering literature-known[33] 7-deoxy-baccatin III (9).",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C7-exocyclic double bond (8) has been formed. The final step in the C7-defunctionalization sequence is hydrogenation.",
+        "gap": "How to hydrogenate the double bond to obtain 7-deoxy-baccatin III (9)?",
+        "decision": "To hydrogenate the double bond, palladium on carbon (Pd/C) with hydrogen gas in methanol at room temperature will be used, expecting the formation of 7-deoxy-baccatin III (9)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1C(OC(C)=O)C2C(=O)C3C(C4(C)COC(O)C4)C(O)C(O)C(OC(=O)c4ccccc4)C3(C)C(=O)OC2(C)C1O"
+        ],
+        "product_smiles": [
+          "CC(=O)OC1C(C)C(O)C2(C)OC(=O)C3(C)C(OC(=O)c4ccccc4)C(O)C(O)C(C4(C)COC(O)C4)C3C(=O)C12"
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "Pd/C",
+        "solvent": "MeOH",
+        "atmosphere": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "C7-Defunctionalization was accomplished via a modified elimination–hydrogenation sequence, delivering literature-known 7-deoxy-baccatin III (9)."
+      },
+      "evidence": {
+        "text_span": "C7-Defunctionalization was accomplished via a modified elimination–hydrogenation sequence,[32] delivering literature-known[33] 7-deoxy-baccatin III (9).",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "7-deoxy-baccatin III (9) has been obtained. The next step is to protect the allylic alcohol.",
+        "gap": "How to selectively protect the allylic alcohol as a silyl ether?",
+        "decision": "To protect the allylic alcohol, TESCl and imidazole in DMF at 35 °C will be used, expecting the formation of silyl ether 10 in good yield over the 5-step sequence."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)OC1C(C)C(O)C2(C)OC(=O)C3(C)C(OC(=O)c4ccccc4)C(O)C(O)C(C4(C)COC(O)C4)C3C(=O)C12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TESCl",
+          "imidazole"
+        ],
+        "solvent": "DMF",
+        "temperature": "35 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "Protection of the allylic alcohol gave silyl ether 10 in a remarkable yield of 61% over a 5-step sequence with a single purification. All steps up to this point were conducted on decagram-scale."
+      },
+      "evidence": {
+        "text_span": "Protection of the allylic alcohol gave silyl ether 10 in a remarkable yield of 61% over a 5-step sequence with a single purification. Compound 10 was",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Silyl ether 10 has been obtained. The next step is to remove the C2-benzoate.",
+        "gap": "How to selectively remove the C2-benzoate without affecting other functional groups?",
+        "decision": "To remove the C2-benzoate, Red-Al will be used in THF at -15 °C, expecting the formation of diol 11."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Red-Al"
+        ],
+        "solvent": "THF",
+        "temperature": "-15 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Compound 10 was treated with Red-Al to remove the C2-benzoate yielding diol 11."
+      },
+      "evidence": {
+        "text_span": "Compound 10 was treated with Red-Al[35] to remove the C2-benzoate yielding diol 11, which was subsequently protected as a C1–C2 carbonate with triphosgene.[36] Up to this point, all steps were conducted on decagram-scale.",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diol 11 has been obtained. It needs to be protected as a C1-C2 carbonate.",
+        "gap": "How to form the C1-C2 carbonate from diol 11?",
+        "decision": "To protect diol 11 as a C1-C2 carbonate, triphosgene and pyridine in DCM will be used, starting at -78 °C and warming to 0 °C, expecting the formation of carbonate 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "triphosgene"
+        ],
+        "solvent": "DCM",
+        "catalyst": "pyridine",
+        "temperature": "-78 °C to 0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Diol 11 was subsequently protected as a C1–C2 carbonate with triphosgene, yielding 87%. All steps up to this point were conducted on decagram-scale."
+      },
+      "evidence": {
+        "text_span": "yielding diol 11, which was subsequently protected as a C1–C2 carbonate with triphosgene.[36] Up to this point, all steps were conducted on decagram-scale.",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carbonate 12 has been formed. The next goal is to transform the oxetane moiety into the desired exomethylene motif.",
+        "gap": "How to open the oxetane d-ring?",
+        "decision": "To open the oxetane d-ring, TiCl4 in DCM at 36 °C will be used, based on literature screening for Lewis acidic conditions, expecting the formation of diol 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TiCl4"
+        ],
+        "solvent": "DCM",
+        "temperature": "36 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "Opening of the oxetane d-ring was realized with TiCl4, yielding 74%. This transformation was found to be highly temperature sensitive."
+      },
+      "evidence": {
+        "text_span": "After careful optimization, opening of the oxetane d-ring was realized with $\\mathrm { Ti C l } _ { 4 }$ . [39] In line with literature,[37,39–42] this transformation was found to be highly temperature sensitive (cf. Supporting Information).",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The oxetane d-ring has been opened, yielding diol 13. The next step is to convert this diol to a thiocarbonate and then perform a Corey-Winter elimination to form the exomethylene.",
+        "gap": "How to efficiently convert the diol to the exomethylene?",
+        "decision": "To convert diol 13 to a thiocarbonate, TCDI in toluene under reflux will be used, followed by Corey–Winter elimination with P(OMe)3 under reflux, expecting the formation of 14 containing the desired exomethylene moiety."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TCDI",
+          "P(OMe)3"
+        ],
+        "solvent": "PhMe",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Conversion of the newly formed diol 13 to a thiocarbonate with TCDI (89%) and subsequent Corey–Winter elimination (87%) delivered 14 containing the desired exomethylene moiety. The overall yield for these two steps is 77%."
+      },
+      "evidence": {
+        "text_span": "Conversion of the newly formed diol 13 to a thiocarbonate with TCDI and subsequent Corey– Winter elimination[39,43,44] delivered 14 containing the desired exomethylene moiety.",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 14, containing the exomethylene moiety, has been obtained. The next step is deacetylation of the C10-acetate.",
+        "gap": "How to selectively deacetylate the C10-acetate?",
+        "decision": "To deacetylate the C10-acetate, K2CO3 in MeOH at room temperature will be used, expecting the formation of α-hydroxy ketone 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "MeOH",
+        "atmosphere": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Deacetylation of the C10-acetate with K2CO3 in MeOH provided α-hydroxy ketone 15 in 81% yield."
+      },
+      "evidence": {
+        "text_span": "Deacetylation of the C10-acetate with $\\mathrm { K } _ { 2 } { \\mathrm { C O } } _ { 3 }$ in MeOH provided $\\alpha$ -hydroxy ketone 15, which was diastereoselectively reduced to trans-diol 16 with sodium amalgam by adapting a procedure developed by the Baran group, following their seminal report on C9 reduction of taxanoid structures to the corresponding C9–C10 trans-diol derivatives.[45]",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "α-hydroxy ketone 15 has been obtained. The next step is to diastereoselectively reduce it to the trans-diol 16.",
+        "gap": "How to achieve diastereoselective reduction of the C9-ketone to a C9-C10 trans-diol?",
+        "decision": "To diastereoselectively reduce α-hydroxy ketone 15, sodium amalgam in MeOH at room temperature will be used, adapting a procedure by the Baran group, expecting the formation of trans-diol 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Na(Hg)"
+        ],
+        "solvent": "MeOH",
+        "atmosphere": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "α-hydroxy ketone 15 was diastereoselectively reduced to trans-diol 16 with sodium amalgam. The temporary deacetylation at C10 was necessary to prevent an otherwise occurring deacetoxylation when attempting the direct reduction of compound 14 with sodium amalgam, leading to the respective C10-methylene derivative."
+      },
+      "evidence": {
+        "text_span": "Deacetylation of the C10-acetate with $\\mathrm { K } _ { 2 } { \\mathrm { C O } } _ { 3 }$ in MeOH provided $\\alpha$ -hydroxy ketone 15, which was diastereoselectively reduced to trans-diol 16 with sodium amalgam by adapting a procedure developed by the Baran group, following their seminal report on C9 reduction of taxanoid structures to the corresponding C9–C10 trans-diol derivatives.[45] Subsequent bisacetylation delivered triacetate 17. The temporary deacetylation at C10 was necessary to prevent an otherwise occurring deacetoxylation when attempting the direct reduction of compound 14 with sodium amalgam, leading to the respective C10-methylene derivative.",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Trans-diol 16 has been obtained. The next step is bisacetylation to form triacetate 17.",
+        "gap": "How to acetylate the two hydroxyl groups of 16?",
+        "decision": "To acetylate trans-diol 16, Ac2O and DMAP in pyridine/THF at 60 °C will be used, expecting the formation of triacetate 17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Ac2O"
+        ],
+        "catalyst": "DMAP",
+        "solvent": "pyridine, THF",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "Subsequent bisacetylation delivered triacetate 17 in 83% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent bisacetylation delivered triacetate 17.",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Triacetate 17 has been obtained. The next steps are desilylation and allylic oxidation to form enone 18.",
+        "gap": "How to remove the silyl protecting group and then perform allylic oxidation?",
+        "decision": "To desilylate 17, TBAF in THF at room temperature will be used, followed by allylic oxidation with MnO2 in DCM at room temperature, expecting the formation of enone 18. All steps up to this point are carried out on gram-scale."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBAF",
+          "MnO2"
+        ],
+        "solvent": "THF, DCM",
+        "atmosphere": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Desilylation of 17 with TBAF and subsequent allylic oxidation with MnO2 gave enone 18 in 96% yield. All steps up to this point were carried out on gram-scale."
+      },
+      "evidence": {
+        "text_span": "Desilylation of 17 with TBAF and subsequent allylic oxidation with $\\mathbf { M n O } _ { 2 }$ gave enone 18, with all steps up to this point being carried out on gram-scale.",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Enone 18 has been obtained. The C2-acetate needs to be installed, which requires cleavage of the C1-C2 carbonate.",
+        "gap": "How to cleave the C1-C2 carbonate to liberate the C2-hydroxyl group for acetylation?",
+        "decision": "To cleave the C1-C2 carbonate, hydrolytic conditions will be attempted, expecting to liberate the C2-hydroxyl group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "complex_mixture",
+        "observation": "Attempted carbonate cleavage under hydrolytic conditions failed to provide C2-OH and led to complex mixtures."
+      },
+      "evidence": {
+        "text_span": "However, attempted carbonate cleavage under hydrolytic or reductive conditions failed to provide C2-OH and led to complex mixtures.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Enone 18 has been obtained. The C2-acetate needs to be installed, which requires cleavage of the C1-C2 carbonate. Hydrolytic conditions failed.",
+        "gap": "How to cleave the C1-C2 carbonate to liberate the C2-hydroxyl group for acetylation?",
+        "decision": "To cleave the C1-C2 carbonate, reductive conditions will be attempted, expecting to liberate the C2-hydroxyl group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "complex_mixture",
+        "observation": "Attempted carbonate cleavage under reductive conditions failed to provide C2-OH and led to complex mixtures."
+      },
+      "evidence": {
+        "text_span": "However, attempted carbonate cleavage under hydrolytic or reductive conditions failed to provide C2-OH and led to complex mixtures.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "Attempted carbonate cleavage under hydrolytic and reductive conditions failed, leading to complex mixtures. A different strategy is needed to install the C2-acetate.",
+        "gap": "How to cleave the C1-C2 carbonate and install the C2-acetate, while also addressing potential deacetylation at C5?",
+        "decision": "To cleave the carbonate and install the C2-acetate, a nucleophilic approach employing methyllithium will be performed, followed by reacetylation. This is expected to cleave the carbonate and simultaneously address C5-deacetylation, yielding allylic alcohol 19."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A nucleophilic approach employing methyllithium was performed. This successfully led to cleavage of the carbonate, accompanied by partial deacetylation of the various C2/C5/C9/C10-acetates and the obtained mixture was directly submitted to reacetylation conditions. As the C5-hydroxyl group proved to be rather unreactive, allylic alcohol 19 could be obtained, combining carbonate cleavage toward the C2-acetate and simultaneous C5-deacetylation in a single step."
+      },
+      "evidence": {
+        "text_span": "As opening of a C1–C2 carbonate on taxanoid structures with organolithium reagents to the corresponding C2-esterification product is well precedented in literature,[36,46] a nucleophilic approach employing methyllithium was performed. This successfully led to cleavage of the carbonate, accompanied by partial deacetylation of the various C2/C5/C9/C10-acetates and the obtained mixture was directly submitted to reacetylation conditions. As the C5-hydroxyl group proved to be rather unreactive, allylic alcohol 19 could be obtained, combining carbonate cleavage toward the C2-acetate and simultaneous C5-deacetylation in a single step.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Allylic alcohol 19, with the correct acetylation pattern, has been obtained.",
+        "gap": "How to form the C3-C11 transannular bond?",
+        "decision": "To form the C3-C11 transannular bond, compound 19 will be submitted to photocyclization conditions, irradiating at 254 nm under thorough exclusion of oxygen, expecting the formation of (3,11)-cyclotaxane scaffold 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(OC(C)=O)C(O)C2(C)C(C)=C3C(=O)C(C)C(OC(C)=O)CC3(OC(C)=O)C2(C)C1O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "solvent": "MeCN",
+        "temperature": "r.t.",
+        "time": "18 min",
+        "atmosphere": "thorough exclusion of oxygen"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "Irradiation at 254 nm under thorough exclusion of oxygen cleanly provided (3,11)-cyclotaxane scaffold 20 with 1.04 g of product being obtained in a single batch, demonstrating the scalability of this approach. No other reactivity besides the desired C3–C11 transannular bond formation was observed, with compound 20 being the only obtained product."
+      },
+      "evidence": {
+        "text_span": "With the correct acetylation pattern in place, compound 19 was submitted to photocyclization conditions. Irradiation at $2 5 4 ~ \\mathrm { n m }$ under thorough exclusion of oxygen cleanly provided (3,11)-cyclotaxane scaffold 20 with $1 . 0 4 \\ \\mathrm { g }$ o f product being obtained in a single batch, demonstrating the scalability of this approach. Notably, no other reactivity besides the desired C3–C11 transannular bond formation was observed, with compound 20 being the only obtained product.",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa7329f2c8e2a.jpg",
+          "6d6febf610dee96243f05f32940d7c35c03307b4cb2a7a6ae857fa5de398c14e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "(3,11)-cyclotaxane scaffold 20 has been obtained. The final step is acylation at C5 with cinnamoyl chloride to yield 1-hydroxytaxuspine C (1).",
+        "gap": "How to selectively acylate C5 with cinnamoyl chloride?",
+        "decision": "To acylate at C5, cinnamoyl chloride, DMAP in toluene under reflux will be used, expecting the formation of 1-hydroxytaxuspine C (1)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "CinnCl"
+        ],
+        "catalyst": "DMAP",
+        "solvent": "PhMe",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Acylation at C5 with cinnamoyl chloride delivered the corresponding natural product 1-hydroxytaxuspine C (1) in 89% yield."
+      },
+      "evidence": {
+        "text_span": "Finally, acylation at C5 with cinnamoyl chloride delivered the corresponding natural product 1-hydroxytaxuspine C (1) in an overall yield of $7 . 5 \\%$ over 17 steps.",
+        "image_refs": [
+          "6d7c24b222c979dbd62738417ca0cf124ab6aa792a304c884f59d278e457a661.jpg",
+          "2d64402544153255b838e821f38f48621b860edf1765db7f6156a7329f2c8e2a.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 7.5,
+        "unit": "%",
+        "interpretation": "Overall yield for the 17-step synthesis."
+      },
+      "Total Steps": {
+        "value": 17,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps from 10-DAB (2) to 1-hydroxytaxuspine C (1)."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly mentioned failed attempts in the synthesis."
+      }
+    },
+    "significance": "This work provides the first synthetic access to C1-hydroxylated cyclotaxanes, expanding the chemical space for SAR studies. It also demonstrates a gram-scale, semisynthetic access to the (3,11)-cyclotaxane framework, enabling further chemical and pharmaceutical investigation of these intriguing molecules. The approach is scalable and robust, starting from cheap and abundant 10-deacetylbaccatin III."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.202506245",
+      "pmcid": "PMC12377431",
+      "title": "Gram-Scale Access to (3,11)-Cyclotaxanes-Synthesis of 1-Hydroxytaxuspine C.",
+      "authors": "Schoch P, Krivolapova Y, Schneider F, Pan L, Gaich T.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12377431?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/192c9524-e732-4b46-b054-697e091ba8d9.zip",
+      "parsed_at": "2026-05-11T06:25:15.189840+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 35,
+    "parseable": 9,
+    "canonicalized": 9,
+    "invalid": 26,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC12C(C(C(C(C(C(C(C1(C)C)C(=O)C3(C2C(=CC(OC(=O)C=Cc4ccccc4)C3(C)C)OC(=O)C)O)OC(=O)C)O)C)OC(=O)C",
+      "CC1=C(C[C@@H]2[C@H]3[C@@H](C(=O)[C@H]4[C@H]([C@H](C[C@@H]5[C@H]4OC(O5)C(C)(C)C(=O)O)OC(=O)C6=CC=CC=C6)OC(=O)C)C(C)(C)[C@@H]2O)C(C)(C)O)O",
+      "CC12C(C(=O)C3C(C(C(C(C3(C(=O)O2)C)OC(=O)C4=CC=CC=C4)O)O)C5(COC(C5)O)C)C(C(C1OSi(CC)(CC)CC)C)OC(=O)C",
+      "CC12C(C(=O)C3C(C(C(C(C3(C(=O)O2)C)OC(=O)C4=CC=CC=C4)O)O)C5(COC(C5)O)C)C(C(C1OSi(CC)(CC)CC)C)OC(=O)C",
+      "CC12C(C(=O)C3C(C(C(C(C3(C(=O)O2)C)OC(=O)C4=CC=CC=C4)O)O)C5(COC(C5)O)C)C(C(C1OSi(CC)(CC)CC)C)O",
+      "CC12C(C(=O)C3C(C(C(C(C3(C(=O)O2)C)OC(=O)C4=CC=CC=C4)O)O)C5(COC(C5)O)C)C(C(C1OSi(CC)(CC)CC)C)O",
+      "CC12C(C(=O)C3C(C(C(C(C3(C(=O)O2)C)OC(=O)C4=CC=CC=C4)O)O)C5(COC(C5)O)C)C(C(C1OSi(CC)(CC)CC)C)OC(=O)C",
+      "CC12C(C(=O)C3C(C(C(C(C3(C(=O)O2)C)OC(=O)C4=CC=CC=C4)O)O)C5(COC(C5)O)C)C(C(C1OSi(CC)(CC)CC)C)OC(=O)C",
+      "CC12C(C(=O)C3C(C(C(C(C3(C(=O)O2)C)OC(=O)C4=CC=CC=C4)O)O)C5(COC(C5)O)C)C(C(C1OSi(CC)(CC)CC)C)OC(=O)C",
+      "CC12C(C(=O)C3C(C(C(C(C3(C(=O)O2)C)OC(=O)C4=CC=CC=C4)O)O)C5(COC(C5)O)C)C(C(C1OSi(CC)(CC)CC)C)OC(=O)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "1-Hydroxytaxuspine C",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

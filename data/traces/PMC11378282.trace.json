@@ -1,0 +1,831 @@
+{
+  "trace_id": "TS-PMC11378282",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Scabrolide B",
+    "smiles": "C=C(C)[C@H]1CC(=O)C2=C[C@H]3[C@H](OC(=O)[C@@H]3C1)[C@H](O)C2",
+    "natural_product_class": "norcembranoid",
+    "structural_features": {
+      "molecular_weight": 346.4,
+      "stereocenters": 9,
+      "ring_systems": "6-7-5 carbotricyclic skeleton",
+      "key_motifs": [
+        "alpha,beta-unsaturated ketone",
+        "gamma-lactone"
+      ]
+    },
+    "motivation": "Scabrolide B was initially misassigned and later revised by computational prediction and X-ray diffraction. The synthesis aims to confirm the revised structure and explore its transformation into other related natural products.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Confirmation of the revised structure of scabrolide B and successful transformation into sinuscalide C, ineleganolide, and horiolide."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C4-C5 bond formation to form the central cycloheptene ring",
+        "named_strategy": "intramolecular enolate alkenylation",
+        "reasoning": "This strategy was chosen to form the congested central cycloheptene ring at the bridgehead enone site, which was challenging due to the strained nature of the product and the presence of two equally accessible C-H acidic sites flanking the C3 carbonyl group. This approach was necessary after previous attempts with RCM failed.",
+        "alternatives_considered": [
+          {
+            "strategy": "Ring-closing metathesis (RCM) of diene 11 to form 12, followed by hydroxy-directed oxidation",
+            "rejected_because": "Attempts at selective (hydroxy-directed) oxidation of one or the other double bond of the resulting 1,3-diene 12 met with failure."
+          },
+          {
+            "strategy": "Ring-closing metathesis (RCM) of beta,gamma-unsaturated ketone 13 to form 14",
+            "rejected_because": "Could not be engaged in RCM even under forcing conditions; poor conversions into complex mixtures were observed, which contained no 14 but traces of an isomeric cycloheptene."
+          }
+        ]
+      },
+      {
+        "bond_description": "C-C bond formation between lactone C and enone D",
+        "named_strategy": "Mukaiyama-Michael addition",
+        "reasoning": "This reaction was chosen to readily access the cyclization precursor B, building on previous work showing good results with lanthanum-catalyzed Mukaiyama-Michael additions to carvone derivatives."
+      }
+    ],
+    "rationale": "The synthesis of scabrolide B required a conceptually new approach due to the structural differences from scabrolide A. The key challenge was the formation of the congested central cycloheptene ring, which was addressed by an intramolecular enolate alkenylation. The precursor for this cyclization was envisioned to be formed via a lanthanide-catalyzed Mukaiyama-Michael addition. The dissonant 1,4-oxygenation pattern was planned to be installed by allylic rearrangement/oxidation of the enone, followed by suprafacial 1,3-transposition."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The target molecule, scabrolide B, has a 6-7-5 carbotricyclic skeleton, which is different from scabrolide A. The initial plan to adapt the scabrolide A synthesis route proved unsuccessful.",
+        "gap": "A new strategy is needed to form the central seven-membered ring and install the correct oxygenation pattern.",
+        "decision": "To build the cyclohexenone fragment, an asymmetric rhodium-catalyzed 1,4-addition of boronate 16 to cyclohexenone (15) was adapted from the literature, expecting to obtain 17 with high enantiomeric purity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1C=CCCCC1",
+          "C=C(C)B1OC(C)(C)C(C)(C)O1"
+        ],
+        "product_smiles": [
+          "C=C(C)C1CCCC(=O)C1"
+        ],
+        "reagents": [
+          "[Rh(cod)Cl]2",
+          "O1COC2=CC(P(C3=CC(C(C)(C)C)=C(OC)C(C(C)(C)C)=C3)C4=CC(C(C)(C)C)=C(OC)C(C(C)(C)C)=C4)=C(C1)C2C5=C6C(OC(O6)C5)=CC(P(C7=CC(C(C)(C)C)=C(OC)C(C(C)(C)C)=C7)C8=CC(C(C)(C)C)=C(OC)C(C(C)(C)C)=C8)=C9C(OC(O9)C5)=C9",
+          "CCN(C(C)C)C(C)C",
+          "OCC(CO)CO"
+        ],
+        "solvent": "hexanes/MeOH/H2O",
+        "temperature": "70°C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "ee_percent": 94,
+        "observation": "Compound 17 was obtained with excellent optical purity on gram scale."
+      },
+      "references": [
+        "36",
+        "37",
+        "38"
+      ],
+      "evidence": {
+        "text_span": "To this end, an asymmetric rhodiumcatalyzed 1,4-addition of commercial boronate 16 to cyclohexenone (15) was adapted from the literature,36,37 which furnished 17 with excellent optical purity (94% ee) on gram scale.38",
+        "section": "Preparation of the Building Blocks"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The cyclohexenone fragment 17 was successfully synthesized.",
+        "gap": "The next step is to convert 17 into the silyl enol ether 18, which is a precursor for the Saegusa-type oxidation.",
+        "decision": "To form the silyl enol ether 18, deprotonation with bulky LiTMP followed by a TMSCl quench was chosen, expecting to obtain 18 as the major isomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)C1CCCC(=O)C1"
+        ],
+        "product_smiles": [
+          "C=C(C)C1CCC=C(O[Si](C)(C)C)C1"
+        ],
+        "reagents": [
+          "LiN(C(C)C)C(C)C",
+          "Cl[Si](C)(C)C"
+        ],
+        "solvent": "THF",
+        "temperature": "-78°C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Silyl enol ether 18 was obtained as the major isomer (rr >= 5:1)."
+      },
+      "evidence": {
+        "text_span": "Subsequent deprotonation with bulky LiTMP followed by a TMSCl quench gave silyl enol ether 18 as the major isomer (rr >= 5:1).",
+        "section": "Preparation of the Building Blocks"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Silyl enol ether 18 was obtained as the major isomer.",
+        "gap": "The silyl enol ether 18 needs to be oxidized to form (R)-norcarvone (19) via a Saegusa-type oxidation.",
+        "decision": "To perform the Saegusa-type oxidation, Pd2(dba)3 as catalyst in the absence of any extra ligand and diallyl carbonate as the terminal oxidant were chosen, expecting to obtain 19 in good quantities."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)C1CCC=C(O[Si](C)(C)C)C1"
+        ],
+        "product_smiles": [
+          "C=C(C)[C@@H]1C=CC(=O)CC1"
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "O=C(OCC=C)OCC=C"
+        ],
+        "solvent": "MeCN"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "Good quantities of analytically pure 19 were secured after short-path distillation."
+      },
+      "references": [
+        "39",
+        "40"
+      ],
+      "evidence": {
+        "text_span": "The subsequent Saegusa-type oxidation worked best with Pd2(dba)3 as the catalyst in the absence of any extra ligand and diallyl carbonate as the terminal oxidant.39,40 A short-path distillation allowed the resulting product to be separated from (coeluting) dba, thus securing good quantities of analytically pure 19.",
+        "section": "Preparation of the Building Blocks"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The lactone fragment 21 is needed for the Michael addition. (R)-linalool is a known starting material.",
+        "gap": "A scalable route to lactone 21 from (R)-linalool is required.",
+        "decision": "To prepare lactone 21, the previously described 9-step synthesis from (R)-linalool was followed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](C)OCC=C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Lactone 21 was prepared from (R)-linalool as previously described."
+      },
+      "references": [
+        "1",
+        "41"
+      ],
+      "evidence": {
+        "text_span": "Lactone 21 was prepared from (R)-linalool as previously described.1,41",
+        "section": "Preparation of the Building Blocks"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactone 21 with a TBS protecting group was synthesized.",
+        "gap": "The bulky TBS group at the tertiary C8-OH position is incompatible with the envisaged end game, so it needs to be swapped to a TMS ether.",
+        "decision": "To swap the protecting group, 21 was treated with HF*py followed by TMSOTf and Et3N, expecting to obtain 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "HF.C5H5N",
+          "CF3S(=O)(=O)O[Si](C)(C)C",
+          "CCN(CC)CC"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "The TBS group was swapped to a TMS ether, yielding 22."
+      },
+      "references": [
+        "42"
+      ],
+      "evidence": {
+        "text_span": "Because we had to learn at a later stage of the project that the bulky silyl ether at the tertiary C8−OH position thwarted the envisaged end game but a protecting group was needed, the TBS group was swapped to a TMS ether prior to ozonolytic cleavage of the double bond in 22.42",
+        "section": "Preparation of the Building Blocks"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactone 22 with a TMS protecting group was obtained.",
+        "gap": "The double bond in 22 needs to be cleaved, and the resulting aldehyde converted to the Z-configured alkenyl iodide 23.",
+        "decision": "To achieve this, ozonolytic cleavage of the double bond in 22 was performed, followed by Stork-Zhao olefination of the resulting aldehyde, expecting to obtain 23 in good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O=O=O",
+          "P(c1ccccc1)(c1ccccc1)c1ccccc1",
+          "I[P+](c1ccccc1)(c1ccccc1)c1ccccc1C=O",
+          "[Na+].[N-]([Si](C)(C)C)[Si](C)(C)C"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78°C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "observation": "The required Z-configured alkenyl iodide 23 was obtained in good yield."
+      },
+      "references": [
+        "43",
+        "44"
+      ],
+      "evidence": {
+        "text_span": "The resulting aldehyde was instantly subjected to Stork−Zhao olefination to give the required Z-configured alkenyl iodide 23 in good yield.43,44",
+        "section": "Preparation of the Building Blocks"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Both building blocks, (R)-norcarvone (19) and alkenyl iodide 23, are available.",
+        "gap": "These fragments need to be coupled via a Mukaiyama-Michael addition.",
+        "decision": "To couple 19 and 23, a lanthanide-catalyzed Mukaiyama-Michael addition using La(OTf)3 was chosen, expecting to form the fragile adduct 24."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)[C@@H]1C=CC(=O)CC1",
+          ""
+        ],
+        "product_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CC1=C(C)C"
+        ],
+        "reagents": [
+          "La(OTf)3",
+          "TMP",
+          "CF3S(=O)(=O)O[Si](C(C)C)(C(C)C)C(C)C"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Fragile 24 was obtained. The conjugate addition proceeded via axial attack of the nucleophile."
+      },
+      "references": [
+        "25",
+        "45",
+        "46",
+        "47"
+      ],
+      "evidence": {
+        "text_span": "In fact, the silyl ketene acetal generated in situ from 23 under soft enolization conditions reacted with 19 in the presence of La(OTf)3 to give fragile 24, which was briefly exposed to TBAF at −78 °C to entail selective cleavage of the silyl enol ether without harming the labile −OTMS group; after some optimization,47 the desired product 25 was obtained in 70% yield. As one might expect, the conjugate addition proceeded via axial attack of the nucleophile that transiently formed onto the lowestenergy conformer of 19.",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The fragile Mukaiyama-Michael adduct 24 was obtained.",
+        "gap": "The silyl enol ether in 24 needs to be selectively cleaved to form ketone 25 without affecting the labile -OTMS group.",
+        "decision": "To achieve selective cleavage, 24 was briefly exposed to TBAF at -78 °C, expecting to obtain 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CC1=C(C)C"
+        ],
+        "product_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "reagents": [
+          "[F-].CCCC[N+](CCCC)(CCCC)CCCC"
+        ],
+        "solvent": "THF",
+        "temperature": "-78°C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "The desired product 25 was obtained in 70% yield. The critically important configuration of the newly formed stereocenters was confirmed by X-ray diffraction analysis."
+      },
+      "references": [
+        "47",
+        "48"
+      ],
+      "evidence": {
+        "text_span": "In fact, the silyl ketene acetal generated in situ from 23 under soft enolization conditions reacted with 19 in the presence of La(OTf)3 to give fragile 24, which was briefly exposed to TBAF at −78 °C to entail selective cleavage of the silyl enol ether without harming the labile −OTMS group; after some optimization,47 the desired product 25 was obtained in 70% yield. As one might expect, the conjugate addition proceeded via axial attack of the nucleophile that transiently formed onto the lowestenergy conformer of 19. The critically important configuration of the newly formed stereocenters at the overcrowded C12−C13 bond was inferred from a set of characteristic NOEs and JH,H coupling constants12 and confirmed by X-ray diffraction analysis (Figure 2).",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Ketone 25 is available for the intramolecular alkenylation to form the central seven-membered ring.",
+        "gap": "The choice of base and solvent is critical for this challenging cyclization.",
+        "decision": "To perform the intramolecular alkenylation, common procedures for palladium-catalyzed enolate alkenylations were considered, including the use of tBuOK or TBAF, expecting to form the desired ring."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "CC(C)(C)[O-].[K+]",
+          "[F-].CCCC[N+](CCCC)(CCCC)CCCC"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "The use of tBuOK or TBAF caused dehydrohalogenation with formation of alkyne 26, sorting these procedures out as nonviable."
+      },
+      "references": [
+        "28",
+        "31",
+        "50",
+        "51"
+      ],
+      "evidence": {
+        "text_span": "This included the use of tBuOK or TBAF,28,31,50,51 which caused dehydrohalogenation with formation of alkyne 26; K2CO3 in MeOH (with or without Bu4NBr) also failed.31b−",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempts with tBuOK or TBAF for the intramolecular alkenylation failed.",
+        "gap": "A different base and solvent combination is needed for the cyclization of 25.",
+        "decision": "To perform the intramolecular alkenylation, K2CO3 in MeOH (with or without Bu4NBr) was tried, expecting to form the desired ring."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "[K+].[K+].[O-]C([O-])=O",
+          "CCCC[N+](CCCC)(CCCC)CCCC.[Br-]"
+        ],
+        "solvent": "MeOH"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "K2CO3 in MeOH (with or without Bu4NBr) also failed."
+      },
+      "references": [
+        "31b"
+      ],
+      "evidence": {
+        "text_span": "This included the use of tBuOK or TBAF,28,31,50,51 which caused dehydrohalogenation with formation of alkyne 26; K2CO3 in MeOH (with or without Bu4NBr) also failed.31b−",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "Previous attempts at intramolecular alkenylation of 25 failed due to dehydrohalogenation or no reaction.",
+        "gap": "A more suitable base and solvent system is required to achieve the challenging cyclization.",
+        "decision": "To achieve the cyclization, PhOH/tBuOK was tried, expecting to form the desired product, even if in low yield, as an encouraging first hit."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "product_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "reagents": [
+          "c1ccccc1O",
+          "CC(C)(C)[O-].[K+]"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 20,
+        "observation": "A first hit was obtained with PhOH/tBuOK, although 28 was only one of several products formed in low yield (<= 20%). This result was deemed encouraging."
+      },
+      "references": [
+        "52",
+        "53"
+      ],
+      "evidence": {
+        "text_span": "A first hit was obtained with PhOH/tBuOK,52,53 although 28 was only one of several products formed in low yield (<= 20%). However, this result was deemed encouraging.",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The intramolecular alkenylation of 25 was partially successful with PhOH/tBuOK, but with low yield and side products.",
+        "gap": "Optimization of the cyclization conditions is needed to improve yield and selectivity for the congested tricyclic enone 28.",
+        "decision": "To optimize the cyclization, sterically hindered 2,6-diisopropylphenol (27) in combination with tBuOK and Pd(PPh3)4 in toluene at 60 °C was chosen, expecting to form 28 in respectable yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "product_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C",
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "reagents": [
+          "Cc1cc(C)c(O)c(C)c1",
+          "CC(C)(C)[O-].[K+]",
+          "P(c1ccccc1)(c1ccccc1)c1ccccc1.[Pd]"
+        ],
+        "solvent": "Cc1ccccc1",
+        "temperature": "60°C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "The congested tricyclic enone 28 was formed in respectable yield (~60%) together with dimeric side product 29 (29%) formed by a second, intermolecular alkenylation."
+      },
+      "evidence": {
+        "text_span": "Upon careful optimization, it was found that sterically hindered 2,6- diisopropylphenol (27) (3.5 equiv) in combination with tBuOK (3 equiv) in toluene (2 mM) at 60 °C was an adequate promoter in combination with Pd(PPh3)4 as catalyst. Under these conditions, the congested tricyclic enone 28 was formed in respectable yield (~60%) together with dimeric side product 29 (29%) formed by a second, now intermolecular alkenylation at the vinylogous C6 of 28.",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Tricyclic enone 28 was obtained, albeit with a dimeric side product.",
+        "gap": "The next step is allylic gamma-oxidation of 28 to install the oxygenation pattern. Standard oxidants need to be evaluated.",
+        "decision": "To perform the allylic oxidation, several standard oxidants were considered, expecting to effect the transformation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Several standard oxidants failed to effect this seemingly straightforward transformation."
+      },
+      "evidence": {
+        "text_span": "Since separation required HPLC, it was best to engage crude 28 in allylic γ- oxidation. While several standard oxidants failed to effect this seemingly straightforward transformation, the method used by the Sarlah group in their total synthesis of scabrolide A (1) proved to be viable.",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "Standard oxidants failed for the allylic gamma-oxidation of 28.",
+        "gap": "A more effective method is needed for the allylic rearrangement/oxidation.",
+        "decision": "To achieve the allylic rearrangement/oxidation, the method used by the Sarlah group (O2, P(OMe)3, DBU in MeCN) was chosen, expecting to form 30 as a single diastereomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "product_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "reagents": [
+          "O=O",
+          "P(OC)(OC)OC",
+          "N1=C2N(CCC1)CCCC2"
+        ],
+        "solvent": "MeCN"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 39,
+        "observation": "Allylic rearrangement/oxidation resulted in the formation of 30 as a single diastereomer without affecting the olefin branching off the cyclohexane ring."
+      },
+      "references": [
+        "3",
+        "54"
+      ],
+      "evidence": {
+        "text_span": "Thus, stirring of a solution of crude 28 in MeCN under an O2 atmosphere in the presence of P(OMe)3 and DBU resulted in allylic rearrangement/oxidation with formation of 30 as a single diastereomer without affecting the olefin branching off the cyclohexane ring.",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 30 was obtained as a single diastereomer.",
+        "gap": "The next step is the oxidative transposition of the allylic alcohol into the desired 1,4-diketone. Sarlah and co-workers used PCC for this.",
+        "decision": "To perform the oxidative transposition, PCC was used, expecting to convert 30 into the 1,4-diketone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "[O-][Cr](=O)(=O)Cl.c1cc[nH+]cc1"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "PCC failed in our case for the oxidative transposition."
+      },
+      "references": [
+        "3"
+      ],
+      "evidence": {
+        "text_span": "For the then necessary oxidative transposition of the allylic alcohol into the desired 1,4-diketone, Sarlah and co-workers had used PCC,3 which failed in our case.",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 15,
+      "thought": {
+        "background": "PCC failed for the oxidative transposition of 30.",
+        "gap": "A stepwise procedure is needed to achieve the oxidative transposition.",
+        "decision": "To achieve the oxidative transposition, a stepwise procedure was adopted, commencing with a suprafacial 1,3-allylic rearrangement of 30 into 31 catalyzed by MeReO3, expecting concomitant cleavage of the tertiary -OTMS ether and potentially a small crop of 3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "product_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C",
+          "C=C(C)[C@H]1CC(=O)C2=C[C@H]3[C@H](OC(=O)[C@@H]3C1)[C@H](O)C2"
+        ],
+        "reagents": [
+          "C[Re](=O)(=O)=O"
+        ],
+        "solvent": "Cc1ccccc1",
+        "temperature": "60°C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 52,
+        "observation": "Suprafacial 1,3-allylic rearrangement of 30 into 31 occurred, catalyzed by MeReO3, which led to concomitant cleavage of the tertiary -OTMS ether and also afforded a first small crop of 3."
+      },
+      "references": [
+        "55",
+        "56"
+      ],
+      "evidence": {
+        "text_span": "Therefore we had to resort to a stepwise procedure, commencing with a suprafacial 1,3-allylic rearrangement of 30 into 31 catalyzed by MeReO3, which led to concomitant cleavage of the tertiary −OTMS ether (and also afforded a first small crop of 3).55,56",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 31 was obtained from the allylic rearrangement.",
+        "gap": "The final step to complete the total synthesis of scabrolide B is the oxidation of 31 to the targeted compound (-)-3.",
+        "decision": "To oxidize 31, MnO2 was chosen, expecting to yield (-)-3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "product_smiles": [
+          "C=C(C)[C@H]1CC(=O)C2=C[C@H]3[C@H](OC(=O)[C@@H]3C1)[C@H](O)C2"
+        ],
+        "reagents": [
+          "O=[Mn]=O"
+        ],
+        "solvent": "ClCCl"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 51,
+        "observation": "Compound 31 was oxidized with MnO2 to give the targeted compound (-)-3. The analytical and spectral data were in full accord with authentic scabrolide B, and X-ray structure analysis confirmed it."
+      },
+      "evidence": {
+        "text_span": "Finally, 31 was oxidized with MnO2 to give the targeted compound (−)-3. The analytical and spectral data of the synthetic material were in full accord with those of authentic scabrolide B (“sinuscalide D”);17,18 an X-ray structure analysis excluded any doubt (Figure 3).",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Scabrolide B (3) was successfully synthesized.",
+        "gap": "Scabrolide B needs to be transformed into sinuscalide C (4).",
+        "decision": "To transform 3 into 4, Burgess reagent was used, expecting to obtain sinuscalide C in good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)[C@H]1CC(=O)C2=C[C@H]3[C@H](OC(=O)[C@@H]3C1)[C@H](O)C2"
+        ],
+        "product_smiles": [
+          "C=C[C@H](O[Si](C)(C)C)[C@H]1C(=O)O[C@@H]1C=C[C@@H]1CC(=O)CCC1=C(C)C"
+        ],
+        "reagents": [
+          "O=S(=O)(N=[N+]=[N-])OC(C)(C)C"
+        ],
+        "solvent": "Cc1ccccc1",
+        "temperature": "60°C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "Sinuscalide C (4) was afforded in good yield, and its data matched the literature."
+      },
+      "references": [
+        "18",
+        "57"
+      ],
+      "evidence": {
+        "text_span": "Treatment of 3 with Burgess reagent57 afforded sinuscalide C (4) in good yield, the data of which also nicely matched the literature.18",
+        "section": "Completion of the Total Synthesis"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Scabrolide B (3) was successfully synthesized.",
+        "gap": "An attempt to transform synthetic 3 into ineleganolide (6) is desired, inspired by previous observations of epimerization under basic conditions.",
+        "decision": "To transform 3 into 6, a solution of 3 in Et3N/MeOH/MeCN at 60 °C was stirred, expecting to trigger a cascade comprising an oxa-Michael addition and epimerization of the C12 stereocenter."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)[C@H]1CC(=O)C2=C[C@H]3[C@H](OC(=O)[C@@H]3C1)[C@H](O)C2"
+        ],
+        "product_smiles": [
+          "C=C(C)[C@H]1CC(=O)[C@H]2O[C@H]3[C@@H]4OC(=O)[C@@H]5O[C@@](C)(C(=O)[C@H](C1)[C@H]32)[C@@H]45"
+        ],
+        "reagents": [
+          "CCN(CC)CC"
+        ],
+        "solvent": "MeOH/MeCN",
+        "temperature": "60°C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A cascade comprising an oxa-Michael addition and epimerization of the C12 stereocenter was triggered, forming ineleganolide (6). The reaction was stopped at incomplete conversion due to 6 being metastable, and unreacted 3 was recovered. The recorded data matched literature."
+      },
+      "references": [
+        "1",
+        "20",
+        "22",
+        "58",
+        "59"
+      ],
+      "evidence": {
+        "text_span": "Indeed, stirring of a solution of 3 in Et3N/MeOH/MeCN at 60 °C triggered a cascade comprising an oxa-Michael addition of the C8−OH group onto the enone with formation of the signature tetrahydrofuran ring of ineleganolide (6) and epimerization of the C12 stereocenter; this observation has potential biosynthetic implications.58 Somewhat unfortunately, 6 turned out to be only metastable under the chosen conditions (see below); therefore, the reaction was stopped at incomplete conversion, and unreacted 3 was recovered. While the net yield of ineleganolide (6) per round was low,59 the recorded data matched nicely.20,22",
+        "section": "Syntheses of Ineleganolide and Horiolide"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ineleganolide (6) was formed from 3 but was metastable under the reaction conditions.",
+        "gap": "The reaction needs to be continued to observe the formation of horiolide (34) from 6.",
+        "decision": "To observe the formation of horiolide, the reaction was left stirring, expecting a new product to emerge at the expense of 6."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)[C@H]1CC(=O)[C@H]2O[C@H]3[C@@H]4OC(=O)[C@@H]5O[C@@](C)(C(=O)[C@H](C1)[C@H]32)[C@@H]45"
+        ],
+        "product_smiles": [
+          "C=C(C)C1CCC2C(=O)C3C(OC(=O)C12)C3(O)C(C)=O"
+        ],
+        "reagents": [
+          "CCN(CC)CC"
+        ],
+        "solvent": "MeOH/MeCN"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 25,
+        "observation": "A new product slowly emerged at the expense of 6, which was identified as horiolide (34). Its formation implies a retro-oxa-Michael cleavage of the ether ring of 6, followed by a retro-aldol reaction to 33, and then an intramolecular Michael addition to form the new C5-C9 bond."
+      },
+      "references": [
+        "7",
+        "60",
+        "61",
+        "62"
+      ],
+      "evidence": {
+        "text_span": "When the reaction was left stirring, a new product slowly emerged at the expense of 6, which was identified as horiolide (34).60 Its formation implies that the ether ring of 6 can be cleaved in a retro-oxa-Michael fashion under the chosen conditions but the resulting compound 32 does not revert to 3 by epimerization of C12;61 rather, it adopts a conformation that allows the C7−C8 σ orbital to overlap with the C6−O π* orbital. The ensuing retro-aldol reaction affords 33, which instantly succumbs to a proximity-driven intramolecular Michael addition to form the new C5−C9 bond.62 The involved course of this step mirrors the proposed biosynthetic pathway.7",
+        "section": "Syntheses of Ineleganolide and Horiolide"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Longest Linear Steps": {
+        "value": 19,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence in the total synthesis of scabrolide B."
+      }
+    },
+    "significance": "This work describes the first total synthesis of scabrolide B, confirming its revised structure. It also demonstrates its transformation into sinuscalide C, ineleganolide, and horiolide, providing potential biosynthetic insights. The key intramolecular alkenylation to form the congested seven-membered ring is a significant methodological advance."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.4c09467",
+      "pmcid": "PMC11378282",
+      "title": "Total Synthesis of the Norcembranoid Scabrolide B and Its Transformation into Sinuscalide C, Ineleganolide, and Horiolide.",
+      "authors": "Lin DS, Späth G, Meng Z, Wieske LHE, Farès C, Fürstner A.",
+      "journal": "J Am Chem Soc",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11378282?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/5060a901-f897-4ff6-8b27-11d72c9a63e9.zip",
+      "parsed_at": "2026-05-11T06:34:47.388242+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 45,
+    "parseable": 35,
+    "canonicalized": 34,
+    "invalid": 10,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(=C)[C@H]1[C@@H](C(=O)O1)[C@H](C)OSi(C)(C)C(C)(C)C",
+      "CC(=C)[C@H]1[C@@H](C(=O)O1)[C@H](C)OSi(C)(C)C(C)(C)C",
+      "CC(=C)[C@H]1[C@@H](C(=O)O1)[C@H](C)OSi(C)(C)C",
+      "CC(=C)[C@H]1[C@@H](C(=O)O1)[C@H](C)OSi(C)(C)C",
+      "C/C=C/I.[C@H]1([C@@H](C(=O)O1)[C@H](C)OSi(C)(C)C)",
+      "C/C=C/I.[C@H]1([C@@H](C(=O)O1)[C@H](C)OSi(C)(C)C)"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,571 @@
+{
+  "trace_id": "TS-PMC13000467",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "rufinamide",
+    "smiles": "NC(=O)c1cn(Cc2c(F)cccc2F)nn1",
+    "natural_product_class": "unspecified",
+    "structural_features": {
+      "molecular_weight": 238.19,
+      "stereocenters": 0,
+      "key_motifs": [
+        "triazole",
+        "fluorobenzene"
+      ]
+    },
+    "motivation": "Epilepsy is a common neurological disorder, and existing diagnostic methods lack specificity. Radiotracer-based PET offers a non-invasive strategy for localizing epileptic foci. Rufinamide is an FDA-approved anti-epileptic drug, and its radiolabeled form, [18F]rufinamide, could serve as a novel PET probe for imaging epileptic brain regions due to its potent antiepileptogenic effects and favorable pharmacokinetic properties.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Gouverneur",
+        "year": 2017,
+        "doi": "10.1021/jacs.7b03007",
+        "key_strategy": "Cu-mediated [18F]fluorination of boronic ester precursor"
+      }
+    ],
+    "success_criteria": {
+      "yield_target_percent": 20,
+      "stereochemistry_required": false,
+      "free_text": "Radiochemical purity > 95%, total synthesis time < 40 min, brain uptake in PET imaging."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-N bond of triazole ring",
+        "named_strategy": "Click Chemistry (CuAAC)",
+        "reasoning": "To form the triazole ring efficiently and regioselectively from an azide and an alkyne, avoiding the issues of the amidation step in Route 1.",
+        "alternatives_considered": [
+          {
+            "strategy": "Amidation of methyl ester",
+            "rejected_because": "Slow reaction, low conversion efficiency, and low radiochemical yield due to the short half-life of 18F."
+          }
+        ]
+      },
+      {
+        "bond_description": "C-F bond (aromatic)",
+        "named_strategy": "Nucleophilic Aromatic Substitution (SNAr)",
+        "reasoning": "To introduce the 18F radionuclide into the aromatic ring, replacing a nitro or fluoro group.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "azide_intermediate",
+        "smiles": "",
+        "role": "intermediate",
+        "comes_from": "SNAr radiolabelling"
+      },
+      {
+        "fragment_id": "propiolamide",
+        "smiles": "C#CC(N)=O",
+        "role": "building_block",
+        "comes_from": "commercial"
+      }
+    ],
+    "rationale": "The strategy involves a two-step sequence: first, SNAr radiolabelling to introduce 18F and form an azide intermediate, followed by a copper-catalyzed azide-alkyne cycloaddition (CuAAC click chemistry) with propiolamide to form the triazole ring. This approach aims to improve radiochemical yield and reduce total synthesis time compared to a previous amidation-based route."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Rufinamide is an effective anti-epileptic drug. Prior work by Gouverneur et al. (2017) reported Cu-mediated [18F]fluorination of a boronic ester precursor of [18F]rufinamide, yielding 17-19% RCC.",
+        "gap": "The existing methods for [18F]rufinamide synthesis have limitations in terms of radiochemical yield and complexity, hindering clinical accessibility for PET imaging.",
+        "decision": "To develop a more efficient and accessible radiosynthesis of [18F]rufinamide for PET imaging, exploring alternative synthetic routes."
+      },
+      "evidence": {
+        "text_span": "Gouverneur et al.28 (2017) reported Cu-mediated [18F]fluorination of various boronic ester-containing heterocyclic compounds, including the boronic ester precursor of [18F]rufinamide. This study focuses on the core synthetic strategy with radiochemical conversion (RCC), which yielded 17–19% (n = 3)) for [18F]rufinamide. The present study utilizes a modular azide–alkyne cycloaddition strategy.",
+        "section": "1. Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A general synthesis procedure for rufinamide precursors was adopted from literature with slight modifications.",
+        "gap": "Need to synthesize the azide intermediate (2a-b) from the corresponding benzyl bromide (1a-b).",
+        "decision": "To synthesize azide 2a-b by reacting 2-nitro/fluoro-6-fluorobenzyl bromide 1a-b with sodium azide in DMF at room temperature overnight, expecting a yellow oily intermediate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=[N+]([O-])c1cccc(F)c1CBr",
+          "Fc1cccc(F)c1CBr"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "sodium azide"
+        ],
+        "solvent": "DMF",
+        "temperature": "room temperature",
+        "time": "overnight",
+        "stoichiometry": {
+          "sodium azide": "1.1 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Afforded the corresponding azide 2a–b as a yellow oily intermediate."
+      },
+      "evidence": {
+        "text_span": "In dry DMF (10 mL), a solution of 2-nitro/fluoro-6-fluorobenzyl bromide 1a–b (500 mg, 2.13 mmole, 1 eq.) and sodium azide (153 mg, 2.35 mmole, 1.1 eq.) was stirred at room temperature overnight. After the reaction was completed, the solution was diluted with cold water and extracted with ethyl acetate. The ethyl acetate layer was washed with brine, dried over anhydrous sodium sulphate, and concentrated under reduced pressure to afford the corresponding azide 2a–b as a yellow oily intermediate.",
+        "section": "2.2.1 General synthesis",
+        "image_refs": [
+          "3b91d670d8d970bc9f46eeea8227b1da8426dd4de49309303167e3d053bf7905.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Azide intermediates 2a-b were successfully synthesized.",
+        "gap": "Need to form the triazole ring by reacting the azide with methyl propiolate.",
+        "decision": "To perform a click reaction between compound 2a-b and methyl propiolate 3, catalyzed by copper sulfate pentahydrate and sodium ascorbate in DMF at room temperature, expecting the formation of the desired triazole ring (4a-b)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "COC(=O)c1cn(Cc2c(F)cccc2[N+](=O)[O-])nn1",
+          "COC(=O)c1cn(Cc2c(F)cccc2F)nn1"
+        ],
+        "reagents": [
+          "methyl propiolate",
+          "copper sulfate pentahydrate",
+          "sodium ascorbate"
+        ],
+        "solvent": "DMF",
+        "temperature": "room temperature",
+        "stoichiometry": {
+          "methyl propiolate": "1 eq.",
+          "copper sulfate pentahydrate": "0.2 eq.",
+          "sodium ascorbate": "0.4 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "Crude product obtained, purified by column chromatography to obtain 4a (83% yield, off-white) and 4b (82% yield, white solid)."
+      },
+      "evidence": {
+        "text_span": "Subsequently, compound 2a–b (550 mg, 2.85 mmole, 1.2 eq.) was resuspended in dry DMF (5 mL) and methyl propiolate 3 (470 mg, 2.38 mmole, 1 eq.) was added to the reaction before the addition of copper sulfate pentahydrate (118 mg, 0.47 mmole, 0.2 eq.) and sodium ascorbate (188 mg, 0.95 mmole, 0.4 eq.) for the formation of the desired triazole ring. The reaction mixture was stirred at room temperature, and TLC was used to monitor the reaction progress. After the reaction was complete, the mixture was poured into ice water, and the precipitate was collected. It was washed with a small amount of cold ethyl acetate to afford the crude product, which was purified again by column chromatography (ethyl acetate : hexane, 3 : 2) to obtain the purified product (Schemes 1 and 2).",
+        "section": "2.2.1 General synthesis",
+        "image_refs": [
+          "3b91d670d8d970bc9f46eeea8227b1da8426dd4de49309303167e3d053bf7905.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Methyl-1-(2,6-difluorobenzyl)-1H-1,2,3-triazole-4-carboxylate (4b) was synthesized.",
+        "gap": "Need to convert the ester group of 4b to an amide to obtain rufinamide (5).",
+        "decision": "To treat compound 4b with 25% aqueous methanolic ammonia at 65 °C for 12 hours, expecting the formation of rufinamide (5)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1cn(Cc2c(F)cccc2F)nn1"
+        ],
+        "product_smiles": [
+          "NC(=O)c1cn(Cc2c(F)cccc2F)nn1"
+        ],
+        "reagents": [
+          "NH3"
+        ],
+        "solvent": "MeOH",
+        "temperature": "65 °C",
+        "time": "12 hours"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 40,
+        "observation": "Crude rufinamide (5) obtained, purified by silica gel column chromatography to yield 40% of the purified compound."
+      },
+      "evidence": {
+        "text_span": "Route 1: the compound 4b (100 mg, 0.395 mmol) was treated with 25% aqueous methanolic ammonia (5 mL) at 65 °C for 12 hours to convert the ester group to an amide, yielding crude rufinamide (5) (Scheme 1). The crude was purified by silica gel column chromatography using dichloromethane (DCM) with 1 to 5% of methanol (MeOH) as a mobile phase to obtain the purified compound 5 with 40% yield.",
+        "section": "2.2.4 Synthesis of rufinamide (standard) (5)",
+        "image_refs": [
+          "3b91d670d8d970bc9f46eeea8227b1da8426dd4de49309303167e3d053bf7905.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "An alternative route for rufinamide (5) synthesis is desired to improve efficiency.",
+        "gap": "Need to directly form the amide via click chemistry.",
+        "decision": "To perform a click reaction between compound 2b and propiolamide, catalyzed by sodium ascorbate and copper sulfate pentahydrate under microwave conditions at 50 °C, expecting direct formation of rufinamide (5)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C#CC(N)=O"
+        ],
+        "product_smiles": [
+          "NC(=O)c1cn(Cc2c(F)cccc2F)nn1"
+        ],
+        "reagents": [
+          "propiolamide",
+          "sodium ascorbate",
+          "copper sulfate pentahydrate"
+        ],
+        "solvent": "DMF",
+        "temperature": "50 °C",
+        "named_reaction": "Click Chemistry",
+        "stoichiometry": {
+          "propiolamide": "1 eq.",
+          "sodium ascorbate": "0.4 eq.",
+          "copper sulfate pentahydrate": "0.2 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Crude product obtained, purified by silica gel column chromatography to yield 70% of compound 5 as a white solid."
+      },
+      "evidence": {
+        "text_span": "Route 2: in a round-bottom flask, compound 2b (120 mg, 0.7 mmole, 1.2 eq.) was dissolved in dry DMF (2 mL), and propiolamide (50 mg, 0.6 mmole, 1 eq.) was added. After that, sodium ascorbate (47 mg, 0.24 mmole, 0.4 eq.) and copper sulfate pentahydrate (0.30 mg, 0.12 mmole, 0.2 eq.) were sequentially added to the reaction mixture to perform the click reaction in microwave conditions at 50 °C (Scheme 2). After the reaction was complete, the crude mixture was poured into ice. The precipitate obtained was washed with a small amount of cold ethyl acetate to afford the crude product, which was then purified by silica gel column chromatography using DCM with 1–5% MeOH as the mobile phase to obtain compound 5 with 70% yield as a white solid.",
+        "section": "2.2.4 Synthesis of rufinamide (standard) (5)",
+        "image_refs": [
+          "404ff34dd91c3f97ca01c521d9ec543cd63576093f0060dce45b9d59acbbaad.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The F-18 complex [(Krypt222)K+]18F- was prepared.",
+        "gap": "Need to radiolabel precursor 4a via SNAr reaction.",
+        "decision": "To react precursor 4a with the F-18 complex in anhydrous DMSO under various temperatures (80-150 °C) and times (3-20 minutes) using both conventional and microwave heating, expecting the formation of [18F]triazole ester (6)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1cn(Cc2c(F)cccc2[N+](=O)[O-])nn1"
+        ],
+        "product_smiles": [
+          "COC(=O)c1cn(Cc2c(F)cccc2[18F])nn1"
+        ],
+        "reagents": [
+          "[(Krypt222)K+]18F-"
+        ],
+        "solvent": "DMSO",
+        "temperature": "80-150 °C",
+        "time": "3-20 minutes"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Microwave heating at 120 °C for 20 minutes yielded the highest radiochemical conversion (RCC) of 51.8 ± 8.5%. Conventional thermal conditions resulted in an RCC of 20.7 ± 0.6%. The radiolabelled crude mixture was purified over a preconditioned SepPak C18 cartridge, and the 18F-intermediate (6) was eluted with methanol."
+      },
+      "evidence": {
+        "text_span": "The active F-18 complex [(Krypt222)K+]18F- was prepared with Kryptofix and potassium carbonate, then dried azeotropically in anhydrous acetonitrile at 80 °C. Precursor 4a (5.0 mg) dissolved in 100 μL of anhydrous DMSO was added to the dried complex (activity range: 0.37–3.7 GBq). The reaction conditions were systematically optimized over a range of temperatures (80–150 °C) and times (3–20 minutes) using both conventional and microwave heating. Progress was monitored by silica TLC (methanol : water, 9 : 1) and quantified using a radio-TLC scanner. Microwave heating at 120 °C for 20 minutes yielded the highest radiochemical conversion (RCC) of 51.8 ± 8.5%, whereas conventional thermal conditions resulted in an RCC of 20.7 ± 0.6% (Fig. 1). The radiolabelled crude mixture was purified over a preconditioned SepPak C18 cartridge. The crude mixture dilute with 1 mL of water and load onto a C-18 cartridge, again washed with 20 mL of water to remove unreacted free 18F-fluoride. The 18F-intermediate (6) was eluted with methanol and confirmed by rTLC scanner (Fig. 2).",
+        "section": "3.1.1 Route 1: SNAr radiolabelling followed by amidation",
+        "image_refs": [
+          "3b91d670d8d970bc9f46eeea8227b1da8426dd4de49309303167e3d053bf7905.jpg",
+          "730ea8d1baa9e546d4c050bbca8f05bc478530c955785570951006c475bbb1d5.jpg",
+          "2554db31abea25e0c858648cffbea6e701b2d5884eeb22482d7cc1215c5ac6c1.jpg",
+          "d8614cded47a241d8e0c4bdad8961f92b4fc899ec87f352324556b237e19a08c.jpg",
+          "6bee74d268c24999ebc05d65663d2302fe267cb2668a52ab7e0dd987354fdcf7.jpg",
+          "492ca623d39fd2e9ec8a9debf2a09c03846bfe989f0a1e8c6ca4446295c62978.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The 18F-intermediate (6) was successfully synthesized.",
+        "gap": "Need to convert the ester group of 6 to an amide to obtain [18F]rufinamide (7).",
+        "decision": "To treat intermediate (6) with 25% aqueous ammonia solution at 65 °C for 20 minutes in a sealed pressure tube, expecting amide formation to yield crude [18F]rufinamide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1cn(Cc2c(F)cccc2[18F])nn1"
+        ],
+        "product_smiles": [
+          "NC(=O)c1cn(Cc2c(F)cccc2[18F])nn1"
+        ],
+        "reagents": [
+          "NH3"
+        ],
+        "temperature": "65 °C",
+        "time": "20 minutes"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 10,
+        "failure_mode": "low_yield",
+        "observation": "The amidation step is naturally slow and results in low conversion efficiency in a radiosynthetic process, leading to a decay-corrected radiochemical yield (RCY) of ~10 ± 3%. This low yield made purification difficult."
+      },
+      "evidence": {
+        "text_span": "The intermediate (6) was subsequently treated with 25% aqueous ammonia solution (1.0 mL) at 65 °C for 20 minutes in a sealed pressure tube to effect amide formation, yielding crude [18F]rufinamide. A second SepPak C18 Plus cartridge was used for initial clean-up, with the product eluted in 0.5 mL ethanol, followed by final purification via semi-preparative reverse-phase HPLC (Phenomenex Luna, 5 μm, C18(2), 100 Å, 250 × 10 mm; mobile phase: water 1% TFA : acetonitrile, 50 : 50 v/v). The overall synthesis time was approximately 60 minutes, with a decay-corrected radiochemical yield (RCY) of ~10 ± 3% (100–150 MBq). The rTLC analysis in methanol and water (9 : 1) confirmed the identity of the final product, with a retention factor (Rf) of 0.275 for compound 5 (Fig. 2). Although [18F]rufinamide was successfully produced using this route, several practical issues were identified. The amidation step is naturally slow and results in low conversion efficiency in a radiosynthetic process, where the short half-life of 18F (t1/2 = 109.8 min)) puts tight limits on total production time. The low radiochemical yield made purification difficult, making this method less suitable for routine production.",
+        "section": "3.1.1 Route 1: SNAr radiolabelling followed by amidation",
+        "image_refs": [
+          "3b91d670d8d970bc9f46eeea8227b1da8426dd4de49309303167e3d053bf7905.jpg",
+          "d8614cded47a241d8e0c4bdad8961f92b4fc899ec87f352324556b237e19a08c.jpg",
+          "6bee74d268c24999ebc05d65663d2302fe267cb2668a52ab7e0dd987354fdcf7.jpg",
+          "492ca623d39fd2e9ec8a9debf2a09c03846bfe989f0a1e8c6ca4446295c62978.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 7,
+      "thought": {
+        "background": "Route 1 (SNAr followed by amidation) resulted in low radiochemical yield and was inefficient due to the slow amidation step and short half-life of 18F.",
+        "gap": "Need an alternative strategy to improve radiochemical yield and reduce total synthesis time.",
+        "decision": "To develop an alternative two-step sequence (Route 2) that removes the amidation step, instead coupling a radiolabelled azide intermediate (8) with propiolamide via copper-catalyzed azide–alkyne cycloaddition (CuAAC click chemistry)."
+      },
+      "evidence": {
+        "text_span": "To overcome issues of route 1, an alternative two-step sequence was developed that remove the amidation step entirely, instead coupling radiolabelled azide intermediate 8 with propiolamide via copper-catalysed azide–alkyne cycloaddition (CuAAC click chemistry) (Scheme 2).",
+        "section": "3.1.2 Route 2: SNAr radiolabelling followed by click chemistry",
+        "image_refs": [
+          "404ff34dd91c3f97ca01c521d9ec543cd63576093f0060dce45b9d59acbbaad.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "azide_intermediate",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The F-18 complex [(Krypt222)K+]18F- was prepared.",
+        "gap": "Need to radiolabel precursor 2a via SNAr reaction to form the azide intermediate (8).",
+        "decision": "To perform the SNAr step with precursor 2a in anhydrous DMSO at 120 °C for 20 minutes under microwave irradiation, expecting the formation of 18F-labelled azide intermediate (8)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "[(Krypt222)K+]18F-"
+        ],
+        "solvent": "DMSO",
+        "temperature": "120 °C",
+        "time": "20 minutes",
+        "atmosphere": "microwave irradiation"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "18F-labelled azide intermediate (8) was afforded. The crude mixture was purified, and the RCC was found to be 50 ± 8.5%."
+      },
+      "evidence": {
+        "text_span": "The SNAr step was carried out with identical conditions to route 1, using precursor 2a (5.0 mg) in anhydrous DMSO (100 μL) at 120 °C for 20 minutes at 100 W under microwave irradiation, affording 18F-labelled azide intermediate 8. The crude mixture was loaded onto a SepPak C18 Plus cartridge, washed with 20 mL of water to remove free [18F]fluoride, and the trapped intermediate was eluted with dry DMF with minimum volume (~500 μL). The radiolabelling was confirmed by rTLC and RCC was calculated. The RCC was found 50 ± 8.5% (Scheme 3).",
+        "section": "3.1.2 Route 2: SNAr radiolabelling followed by click chemistry",
+        "image_refs": [
+          "c3e9f90f1df0c0b48c9d54e5a3dbbf296bcb22e9a3c840ff58e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The 18F-labelled azide intermediate (8) was successfully isolated.",
+        "gap": "Need to perform the click reaction with propiolamide to form [18F]rufinamide.",
+        "decision": "To react the isolated [18F]azide with propiolamide, copper sulfate pentahydrate, and sodium ascorbate under microwave conditions at 50 °C for 10 minutes, expecting complete consumption of the azide and formation of the 1,2,3-triazole scaffold ([18F]rufinamide)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C#CC(N)=O"
+        ],
+        "product_smiles": [
+          "NC(=O)c1cn(Cc2c(F)cccc2[18F])nn1"
+        ],
+        "reagents": [
+          "propiolamide",
+          "copper sulfate pentahydrate",
+          "sodium ascorbate"
+        ],
+        "temperature": "50 °C",
+        "time": "10 minutes",
+        "atmosphere": "microwave conditions",
+        "named_reaction": "CuAAC Click Chemistry",
+        "stoichiometry": {
+          "propiolamide": "1 eq.",
+          "copper sulfate pentahydrate": "0.2 eq.",
+          "sodium ascorbate": "0.4 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 20,
+        "observation": "Complete consumption of the azide and formation of the 1,2,3-triazole scaffold was observed. The product precipitated upon cooling. This route afforded a substantially improved decay-corrected radiochemical yield (RCY) of ~20 ± 5% with a radiochemical purity > 95%, and the total synthesis time was reduced to approximately 40 minutes."
+      },
+      "evidence": {
+        "text_span": "After elution, the click reaction was carried out directly on the isolated [18F]azide by adding propiolamide (1 eq.), copper sulfate pentahydrate (0.2 eq.), and sodium ascorbate (0.4 eq.). The reaction was performed under microwave conditions at 50 °C for 10 minutes at 100 W. Complete consumption of the azide and formation of the 1,2,3-triazole scaffold, consistent with CuAAC regioselectivity reported in the literature, was indicated by the precipitation of the product upon cooling. This precipitate was collected on a 0.22 μm membrane filter, washed with 10 mL of water to remove other impurities, and [18F]rufinamide was recovered by elution with warm ethanol. In this methodological approach, a minor limitation was also observed, the challenging solubility of the precipitated product during hot chemistry within a limited time scale. The dissolution of the precipitate in hot chemistry conditions requires a larger volume of warm ethanol for the collection of [18F]rufinamide. The route-2 afforded a substantially improved decay-corrected radiochemical yield (RCY) of ~20 ± 5% (250–400 MBq) with a radiochemical purity > 95%, and the total synthesis time was reduced to approximately 40 minutes, a meaningful efficiency gain in 18F-radiochemistry. The rTLC analysis confirmed the radiolabelling distinct retention factors for the [18F]-azide intermediate (Rf := : 0.426), free 18F-fluoride (Rf) = 0.04), and the final [18F]rufinamide product Rf = 0.265 (Fig. 3).",
+        "section": "3.1.2 Route 2: SNAr radiolabelling followed by click chemistry",
+        "image_refs": [
+          "c3e9f90f1df0c0b48c9d54e5a3dbbf296bcb22e9a3c840ff58e.jpg",
+          "9a762ed407a5c1dc3142831ba706358ce99b0c4c5deceb92feac515d0e60a8f.jpg",
+          "817913ac7096dab81621895e8f6d51c715bfd993d0baa896c57cbf9027b8bded.jpg",
+          "c5c35ada18fe669c3d1a315ce847fe76091bd2a0d61ae6d19c44e5f995aba3b5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "[18F]Rufinamide was synthesized via Route 2.",
+        "gap": "Need to confirm the identity and purity of the radiolabeled product and assess its physicochemical properties.",
+        "decision": "To characterize [18F]rufinamide using radio-HPLC (rHPLC) and radio-TLC (rTLC), measure its distribution coefficient (log D7.4) and percentage of plasma protein binding (%PPB)."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "rHPLC and rTLC confirmed the identity of [18F]rufinamide. The log D7.4 value was 0.72 ± 0.03 (lipophilic). The %PPB in human serum was 82.5 ± 2.1%, and in albumin, it was 76.6 ± 1.1%."
+      },
+      "evidence": {
+        "text_span": "The radiolabelling was characterized by radio-HPLC (rHPLC) and radio-TLC (rTLC). The mobile phase was used methanol and water (9 : 1) for rTLC, and acetonitrile with water-TFA 1% (90 : 10) for rHPLC, respectively. The radio scanner TLC data of [18F]azide, along with [18F]free fluoride, show retention factors (Rf) 0.426 & 0.04, respectively, whereas the final compound [18F]rufinamide has an Rf = 0.265 (Fig. 3). The HPLC UV spectra of cold rufinamide indicate tR = 3.6 min. The labelled [18F]rufinamide UV peak shows tR = 3.8 min along with a radiation peak, which appears at 3.8 minutes, indicating the successful synthesis of [18F]rufinamide (Fig. 4). ... The distribution coefficient (log D7.4) indicates the lipophilicity of a compound. ... The log D7.4 value is 0.72 ± 0.03 (lipophilic range; see SI document). The percentage of plasma protein binding (%PPB) was evaluated in albumin and freshly prepared human serum. The percentage of PPB in human serum is 82.5 ± 2.1% (n = 3), whereas in albumin, it is 76.6 ± 1.1% (n = 3)).",
+        "section": "3.2 Quality control and analytical characterisation",
+        "image_refs": [
+          "9a762ed407a5c1dc3142831ba706358ce99b0c4c5deceb92feac515d0e60a8f.jpg",
+          "817913ac7096dab81621895e8f6d51c715bfd993d0baa896c57cbf9027b8bded.jpg",
+          "c5c35ada18fe669c3d1a315ce847fe76091bd2a0d61ae6d19c44e5f995aba3b5.jpg",
+          "4338b0925f92ff86d4f97181e602aaa8a7ef21ac9dd73a83b011da8cd3fbb0eb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "[18F]Rufinamide was successfully synthesized and characterized in vitro.",
+        "gap": "Need to evaluate the in vivo behavior of [18F]rufinamide, particularly its brain uptake and biodistribution.",
+        "decision": "To perform PET/CT imaging and biodistribution studies in normal Wistar rats after intravenous injection of [18F]rufinamide."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "PET/CT images showed brain uptake of 1.5 ± 0.5 SUV at 5 min, decreasing to 0.14 SUV at 120 min. Predominant hepatic retention (5.8 SUV at 5 min) and hepatobiliary elimination were observed, with renal excretion and accumulation in the urinary bladder. This indicates [18F]rufinamide crosses the blood–brain barrier."
+      },
+      "evidence": {
+        "text_span": "After an in vitro study and quality assurance of the radiolabelled drug, an in vivo experiment was performed by injecting ~13.69 MBq (3.7 MBq gram−1 ) in isotonic NaCl solution (0.9%) through the intravenous route through tail, and PET/CT imaging procedures were performed to acquire the imaging data. ... The PET/CT images showed that the majority of the administered [18F]rufinamide activity was retained in the liver, with limited uptake in the brain. Based on SUV analysis, the brain shows an uptake of 1.5 ± 0.5 SUV, whereas the liver showed 5.8 SUV immediately after injection (5 min). Brain uptake gradually decreased over time, reaching 0.14 SUV at 120 min (see SI). The PET/CT data further indicated predominant hepatic retention at 5 min post-injection. Hepatic SUV declined over the following 120 min to 2.54 ± 0.5 (Fig. 5), followed by increased intestinal activity (see SI). These findings suggest preferential hepatobiliary elimination of [18F]rufinamide. In addition, renal excretion was also observed, as the radiotracer passed through the kidneys and accumulated in the urinary bladder. Accordingly, bladder SUV increased progressively from 5 min to 120 min (Fig. 5). ... The observed brain uptake indicates that [18F]rufinamide is able to cross the blood–brain barrier and is suitable for further evaluation as a PET imaging tracer.",
+        "section": "3.3 PET imaging",
+        "image_refs": [
+          "80f120e27fe4e7939186151fb913ff4c8cea9328229891d912888fc81b7d3fa6.jpg",
+          "704bd7f251bf26bff1d8c53a88dd14d093c7b77ea286e7a99ba6ef0a55f1da7f.jpg",
+          "7c24e0ded356c9a50b422add533b756d83e272d5095f5dc13aaa5651c11e8064.jpg",
+          "0480f1071737f285bbc0af4841b2320aed9771adc0a0c950ab9e63267f7a1326.jpg",
+          "0dbe2e239aa70b97a0ce7b1f16335caf61a12cb3d703b8ad53e5297fd88b8f51.jpg",
+          "0c55891d3025c35b1e2673e47fc4e1fd2cf9bff3531c8f3d1fa0223545c07ffd.jpg",
+          "6f7dad1d9cb7b91fbe90eb2571d50b874fe7991f1f7e13649a9b5d9d0cdaf376.jpg",
+          "35ba26f7bf2e01f0a5de5199c2410d3267d3eaf022b0a223460dad3817bcc9d4.jpg",
+          "90a471d60830bbff5b967095cf7fe865c637e019db7fd7436a2852a4521a417a.jpg",
+          "14d00ce29eed3d101c774d015a940cb8c7ef114f1eaf4a435ae599771e5486e4.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "LC-MS",
+      "ESI + APCI",
+      "rTLC",
+      "rHPLC",
+      "specific_rotation",
+      "other"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 20,
+        "unit": "%",
+        "interpretation": "Decay-corrected radiochemical yield for [18F]rufinamide via Route 2."
+      },
+      "Total Steps": {
+        "value": 2,
+        "unit": "steps",
+        "interpretation": "Total steps for the radiosynthesis of [18F]rufinamide (Route 2)."
+      },
+      "Longest Linear Steps": {
+        "value": 2,
+        "unit": "steps",
+        "interpretation": "Longest linear sequence for the radiosynthesis of [18F]rufinamide (Route 2)."
+      },
+      "Failed Attempts Count": {
+        "value": 1,
+        "unit": "attempts",
+        "interpretation": "One major failed attempt (Route 1) was reported due to low yield."
+      }
+    },
+    "comparison_to_prior": "The developed Route 2 (SNAr followed by click chemistry) achieved a substantially improved decay-corrected radiochemical yield (~20 ± 5%) and reduced total synthesis time (40 minutes) compared to Route 1 (~10 ± 3% yield, 60 minutes) and prior literature (17-19% RCC by Gouverneur et al.).",
+    "significance": "[18F]Rufinamide was successfully synthesized with improved efficiency and purity. In vivo PET/CT studies confirmed its ability to cross the blood–brain barrier and showed favorable pharmacokinetic properties (lipophilic, brain uptake, renal clearance). These findings support its potential as a novel PET probe for non-invasive imaging of epileptic brain regions, offering a more specific diagnostic tool than currently available tracers like [18F]FDG."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5ra09547f",
+      "pmcid": "PMC13000467",
+      "title": "Synthesis of [&lt;sup&gt;18&lt;/sup&gt;F]rufinamide as a radiotracer for epileptic brain imaging.",
+      "authors": "Pandey V, Faheem M, Gambhir S, Dixit M.",
+      "journal": "RSC Adv",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC13000467?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/7015c136-d1bd-4d56-8e52-f693237cc356.zip",
+      "parsed_at": "2026-05-11T06:44:56.472247+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 25,
+    "parseable": 16,
+    "canonicalized": 16,
+    "invalid": 9,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "N=[N+]=[N-]CC1=C(F)C=CC=C1F",
+      "N=[N+]=[N-]CC1=C(F)C=CC=C1[N+](=O)[O-]",
+      "N=[N+]=[N-]CC1=C(F)C=CC=C1F",
+      "N=[N+]=[N-]CC1=C(F)C=CC=C1[N+](=O)[O-]",
+      "N=[N+]=[N-]CC1=C(F)C=CC=C1F",
+      "N=[N+]=[N-]CC1=C(F)C=CC=C1F",
+      "N=[N+]=[N-]CC1=C(F)C=CC=C1[N+](=O)[O-]",
+      "N=[N+]=[N-]CC1=C(F)C=CC=C1[18F]",
+      "N=[N+]=[N-]CC1=C(F)C=CC=C1[18F]"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

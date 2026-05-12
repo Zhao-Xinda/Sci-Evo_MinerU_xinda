@@ -1,0 +1,1127 @@
+{
+  "trace_id": "TS-PMC12538396",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-Passifetilactone A",
+    "smiles": "CCCCCCCC/C=C\\CCCC[C@@H]1CC=CC(=O)O1",
+    "natural_product_class": "alpha-pyrone",
+    "structural_features": {
+      "molecular_weight": 306.47,
+      "stereocenters": 1,
+      "ring_systems": "pyrone",
+      "key_motifs": [
+        "alpha-pyrone",
+        "Z-olefin"
+      ]
+    },
+    "motivation": "Intriguing biological activities and structural features of pyrone-derived natural products, and as part of our ongoing efforts in the stereoselective total synthesis of natural products.",
+    "prior_syntheses": [
+      {
+        "lead_author": "López-Mendoza",
+        "year": 2025,
+        "doi": "10.1021/acs.joc.5b00000",
+        "key_strategy": "TEMPO-cation- and NaClO2-mediated oxa-Ferrier rearrangement of glycals"
+      },
+      {
+        "lead_author": "Fernandes",
+        "year": 2025,
+        "doi": "10.1039/d5ob00000a",
+        "key_strategy": "Keck allylation, Sharpless kinetic resolution (SKR), and ring-closing metathesis (RCM)"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Enantio- and diastereoselective total synthesis of passifetilactones A–C."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming to attach the side chain to the pyrone ring",
+        "named_strategy": "Wittig olefination",
+        "reasoning": "To introduce the Z-olefin moiety in the alkyl side chain at a late stage to avoid sensitivity issues during earlier transformations."
+      },
+      {
+        "bond_description": "C-O bond in the pyrone ring",
+        "named_strategy": "Ir-catalyzed dynamic kinetic intramolecular redox isomerization",
+        "reasoning": "To access the delta-hydroxy-alpha-pyrone framework with high stereoselectivity."
+      },
+      {
+        "bond_description": "C-C and C-O bonds in the furan ring",
+        "named_strategy": "NBS-mediated Achmatowicz rearrangement",
+        "reasoning": "To construct the alpha-hydroxy-delta-pyrone core from a furan precursor."
+      },
+      {
+        "bond_description": "C-O bond in the furan-derived alcohol",
+        "named_strategy": "Corey–Bakshi–Shibata (CBS) reduction",
+        "reasoning": "To introduce the desired chirality [(S)] enantioselectively."
+      },
+      {
+        "bond_description": "C-C bond between furan and side chain",
+        "named_strategy": "Grignard reaction",
+        "reasoning": "To attach the side chain to furfural."
+      }
+    ],
+    "rationale": "The strategy leverages a unified synthetic approach that originates from simple furan-based building blocks. Key transformations include CBS reduction to access chiral furan-derived alcohol, NBS-mediated Achmatowicz rearrangement to construct the alpha-hydroxy–d-pyrone core, followed by a highly stereoselective, iridium-catalyzed dynamic kinetic intramolecular redox isomerization to access the d-hydroxy-alpha-pyrone framework. For Passifetilactone A, the Wittig olefination was strategically moved to a later stage to avoid issues with the Z-olefin moiety's sensitivity."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Commercially available furfural (14) is a suitable starting material.",
+        "gap": "Need to attach the pentadecyl side chain to furfural.",
+        "decision": "To attach the side chain, chose a Grignard reaction with pentadecylmagnesium bromide (15a), expecting the formation of secondary alcohol 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccco1",
+          "CCCCCCCCCCCCCCCBr"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCCC(=O)c1ccco1"
+        ],
+        "reagents": [
+          "Mg"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "The secondary alcohol 16 was obtained as an amorphous white solid."
+      },
+      "evidence": {
+        "text_span": "Starting from commercially available furfural (14), a Grignard reaction with freshly prepared pentadecylmagnesium bromide (15a) in THF afforded the secondary alcohol 16 in 89% yield.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Secondary alcohol 16 was obtained.",
+        "gap": "Need to oxidize the alcohol to a ketone to prepare for enantioselective reduction.",
+        "decision": "To oxidize 16, chose Dess–Martin periodinane (DMP) with NaHCO3, expecting the corresponding ketone 17a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCCC(=O)c1ccco1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCCC(=O)c1ccco1"
+        ],
+        "reagents": [
+          "Dess-Martin periodinane",
+          "NaHCO3"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "The corresponding ketone 17a was obtained as an amorphous white solid."
+      },
+      "evidence": {
+        "text_span": "Oxidation of 16 using Dess–Martin periodinane (DMP)7 provided the corresponding ketone intermediate 17a.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ketone 17a was obtained.",
+        "gap": "Need to introduce chirality enantioselectively.",
+        "decision": "To introduce the desired chirality [(S)], chose CBS reduction of ketone 17a using (R)-(+)-CBS catalyst and borane dimethylsulfide, expecting (S)-furyl alcohol 18a with high enantiomeric ratio."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCCC(=O)c1ccco1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCCC(=O)c1ccco1"
+        ],
+        "reagents": [
+          "(R)-2-methyl-CBS-oxazaborolidine",
+          "BH3.SMe2"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "ee_percent": 92,
+        "observation": "(S)-furyl alcohol 18a was furnished with an enantiomeric ratio (er) of 96 : 4, as determined by chiral HPLC."
+      },
+      "evidence": {
+        "text_span": "The desired chirality [(S)] was then introduced via CBS reduction8 of ketone 17a using (R)-(+)-CBS catalyst, furnishing alcohol 18a with an enantiomeric ratio (er) of 96 : 4, as determined by chiral HPLC.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "(S)-furyl alcohol 18a was obtained.",
+        "gap": "Need to construct the alpha-hydroxy-delta-pyrone core.",
+        "decision": "To construct the core, chose NBS-mediated Achmatowicz rearrangement, expecting alpha-hydroxy-d-pyrone 19a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCCC(=O)c1ccco1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCC[C@H]1C=CC(=O)CO1"
+        ],
+        "reagents": [
+          "NBS",
+          "NaHCO3",
+          "NaOAc.3H2O"
+        ],
+        "solvent": "THF/H2O",
+        "temperature": "0 °C",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "dr": "3:1",
+        "observation": "The alpha-hydroxy-d-pyrone 19a was cleanly delivered in 90% isolated yield (dr = 3 : 1)."
+      },
+      "evidence": {
+        "text_span": "With sufficient quantities of (S)-furyl alcohol 18a in hand, we proceeded with an NBS-mediated Achmatowicz rearrangement,10,11 which cleanly delivered the alpha-hydroxy-d-pyrone 19a in 90% isolated yield (dr = 3 : 1).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alpha-hydroxy-d-pyrone 19a was obtained.",
+        "gap": "Need to access the delta-hydroxy-alpha-pyrone framework.",
+        "decision": "To access the framework, chose an iridium-catalyzed dynamic kinetic intramolecular redox isomerization, expecting (+)-passifetilactone B (2)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCC[C@H]1C=CC(=O)CO1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCC[C@H]1C=CC(=O)CO1"
+        ],
+        "catalyst": "[Ir(COD)Cl]2",
+        "reagents": [
+          "2,6-dichlorobenzoic acid"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "rt",
+        "time": "18 h",
+        "atmosphere": "N2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "Efficiently yielding (+)-passifetilactone B (2) in five linear steps with an overall yield of 54% (first total synthesis) and exclusive substrate-controlled diastereoselectivity. The spectroscopic and spectrometric data of 2 were consistent with the reported values. The observed optical rotation matched the reported sign, though with a slightly higher magnitude."
+      },
+      "evidence": {
+        "text_span": "Subsequently, an iridium-catalyzed dynamic kinetic intramolecular redox isomerization, developed by Guo and Tang,12 was performed on 19a, efficiently yielding (+)-passifetilactone B (2) in five linear steps with an overall yield of 54% (first total synthesis) and exclusive substrate-controlled diastereoselectivity. The spectroscopic and spectrometric data of 2 were consistent with the reported values.3,5 The observed optical rotation {this work: [alpha]D25 = +14.6, c = 2.0, in MeOH; lit (isolation):3 : [alpha]D21 = +8.0 (c = 0.1, MeOH)}, matched the reported sign, though with a slightly higher magnitude (Scheme 3).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "(+)-Passifetilactone B (2) was obtained.",
+        "gap": "Need to synthesize (+)-passifetilactone C (3) from 2 via reductive dehydroxylation.",
+        "decision": "To achieve reductive dehydroxylation, initial strategies involving Barton–McCombie deoxygenation and BF3·Et2O-mediated Et3SiH reduction of 2 were attempted."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCC[C@H]1C=CC(=O)CO1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaH",
+          "CS2",
+          "MeI",
+          "Bu3SnH",
+          "AIBN",
+          "Et3SiH",
+          "BF3.OEt2"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C-rt",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Initial strategies involving Barton–McCombie deoxygenation and BF3·Et2O-mediated Et3SiH reduction of 2 proved ineffective."
+      },
+      "evidence": {
+        "text_span": "Initial strategies involving Barton–McCombie deoxygenation13 and BF3·Et2O-mediated Et3SiH reduction of 2 proved ineffective.14",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous dehydroxylation attempts failed.",
+        "gap": "Still need to synthesize (+)-passifetilactone C (3) from 2 via reductive dehydroxylation.",
+        "decision": "To achieve dehydroxylation, chose Pd(PPh3)4-catalyzed reductive dehydroxylation of acetate 20 (obtained from 2, through acetylation)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCCC1OC(=O)C=C[C@@H]1OC(C)=O"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCC[C@H]1C=CC(=O)CO1"
+        ],
+        "catalyst": "Pd(PPh3)4",
+        "reagents": [
+          "HCO2NH4",
+          "Et3N"
+        ],
+        "solvent": "THF",
+        "temperature": "reflux",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Afforded the undesired doubly conjugated pyrone 20a."
+      },
+      "evidence": {
+        "text_span": "Pd(PPh3)4-catalyzed reductive dehydroxylation15 of acetate 20 (obtained from 2, through acetylation) afforded the undesired doubly conjugated pyrone 20a.9",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "Direct reductive dehydroxylation attempts failed.",
+        "gap": "Need an effective route to (+)-passifetilactone C (3) from 2.",
+        "decision": "To synthesize (+)-passifetilactone C (3), chose to follow the sequence reported by López-Mendoza and Sartillo-Piscil, involving acetylation, zinc-mediated elimination, and DBU-mediated double bond transposition."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "This revised strategy was successful."
+      },
+      "evidence": {
+        "text_span": "Hence, we followed the sequence reported by López-Mendoza and Sartillo-Piscil (during their synthesis of unnatural (-)- isomer of passifetilactone C)4 in which the free hydroxyl group of compound 2 was converted into its corresponding acetate 20. A subsequent zinc-mediated elimination furnished the double bond–isomerized intermediate 21. Finally, DBU-mediated double bond trans position of compound 21 smoothly led to the formal total synthesis of passifetilactone C (3) with overall yield of 37% (Scheme 3).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "(+)-Passifetilactone B (2) was obtained.",
+        "gap": "Need to convert the free hydroxyl group of compound 2 into its corresponding acetate.",
+        "decision": "To convert the hydroxyl group, chose acetylation with acetic anhydride (Ac2O) in the presence of pyridine and DMAP, expecting acetate 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCC[C@H]1C=CC(=O)CO1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCCC1OC(=O)C=C[C@@H]1OC(C)=O"
+        ],
+        "reagents": [
+          "pyridine",
+          "DMAP",
+          "Ac2O"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "20 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "The desired product 20 was obtained as an amorphous white solid."
+      },
+      "evidence": {
+        "text_span": "in which the free hydroxyl group of compound 2 was converted into its corresponding acetate 20.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acetate 20 was obtained.",
+        "gap": "Need to perform a zinc-mediated elimination to furnish a double bond-isomerized intermediate.",
+        "decision": "To achieve elimination, chose zinc powder with aqueous NH4Cl in THF, expecting intermediate 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCCC1OC(=O)C=C[C@@H]1OC(C)=O"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCC[C@H]1C=CC(=O)CO1"
+        ],
+        "reagents": [
+          "Zn",
+          "NH4Cl"
+        ],
+        "solvent": "THF",
+        "temperature": "rt",
+        "time": "overnight"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "The double bond–isomerized intermediate 21 was furnished as an amorphous white solid."
+      },
+      "evidence": {
+        "text_span": "A subsequent zinc-mediated elimination furnished the double bond–isomerized intermediate 21.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 21 was obtained.",
+        "gap": "Need to perform double bond transposition to obtain (+)-passifetilactone C (3).",
+        "decision": "To achieve double bond transposition, chose DBU in THF, expecting (+)-passifetilactone C (3)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCC[C@H]1C=CC(=O)CO1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCC[C@H]1C=CC(=O)CO1"
+        ],
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "THF",
+        "temperature": "rt",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "DBU-mediated double bond transposition of compound 21 smoothly led to the formal total synthesis of passifetilactone C (3) with overall yield of 37%. Spectroscopic and spectrometric data of 3 was in agreement with the literature. The observed optical rotation matched the reported sign, though with a slightly higher magnitude."
+      },
+      "evidence": {
+        "text_span": "Finally, DBU-mediated double bond trans position of compound 21 smoothly led to the formal total synthesis of passifetilactone C (3) with overall yield of 37% (Scheme 3).4 Spectroscopic and spectrometric data of 3 was in agreement with the literature. The observed optical rotation {this work: [alpha]D25 = +18.4, c = 0.5, in CHCl3; lit (isolation3 and first synthesis):5 : [alpha]D21 = +2.0 c = 0.1, MeOH); lit (first synthesis):5 : [alpha]D21 = +2.4 (c = 0.1, MeOH)}, matched the reported sign, though with a slightly higher magnitude (Scheme 3).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Successfully synthesized (+)-passifetilactones B (2) and C (3).",
+        "gap": "Need to synthesize (+)-passifetilactone A (1), which features a Z-olefin moiety in its alkyl side chain.",
+        "decision": "Initially, hypothesized a strategy similar to that used for 2 and 3, relying on alkenyl bromide 26 and furfural (14) building blocks, involving Grignard addition."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "This initial strategy was explored."
+      },
+      "evidence": {
+        "text_span": "Having successfully accomplished the total synthesis of (+)-passifetilactones B (2) and C (3), we next set out to synthesize (+)-passifetilactone A (1), which features a Z-olefin moiety in its alkyl side chain (Scheme 4). Initially, we employed a strategy similar to that used for the synthesis of 2 and 3, relying on alkenyl bromide 26 and furfural (14) building blocks (entry a, Scheme 4).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Starting from 1,8-octanediol (22).",
+        "gap": "Need to prepare alkenyl bromide 26 for Grignard reaction.",
+        "decision": "To prepare 26, chose monoprotection with TBSCl, followed by DMP oxidation to aldehyde 23."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "OCCCCCCCCO"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[Si](C)(C)OCCCCCCCCC=O"
+        ],
+        "reagents": [
+          "NaH",
+          "TBSCl",
+          "DMP",
+          "NaHCO3"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C-rt",
+        "time": "15 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Aldehyde 23 was furnished as a yellow liquid."
+      },
+      "evidence": {
+        "text_span": "To this end, the Z-olefin-containing bromide intermediate 26 was synthesized from 1,8-octanediol (22) via monoprotection with TBSCl, followed by Dess–Martin periodinane (DMP) oxidation to furnish aldehyde 23.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 23 was obtained.",
+        "gap": "Need to introduce the Z-olefin moiety.",
+        "decision": "To introduce the Z-olefin, chose Wittig olefination with freshly prepared phosphonium salt 24 and n-BuLi, expecting alkenyl-tethered TBS ether 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)[Si](C)(C)OCCCCCCCCC=O"
+        ],
+        "product_smiles": [
+          "CCC/C=C/CCCCCO[Si](C)(C)C(C)(C)C"
+        ],
+        "reagents": [
+          "Br[P+](c1ccccc1)(c1ccccc1)c1ccccc1.CCCCCCC",
+          "n-BuLi"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "The alkenyl-tethered TBS ether 25 was obtained as a yellow liquid."
+      },
+      "evidence": {
+        "text_span": "A subsequent Wittig olefination with freshly prepared phosphonium salt 24 provided the alkenyl-tethered TBS ether 25.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkenyl-tethered TBS ether 25 was obtained.",
+        "gap": "Need to convert 25 into alkenyl bromide 26.",
+        "decision": "To convert 25, chose deprotection of the TBS group with TBAF, followed by treatment with CBr4 and triphenylphosphine (TPP), expecting alkenyl bromide 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC/C=C/CCCCCO[Si](C)(C)C(C)(C)C"
+        ],
+        "product_smiles": [
+          "CCC/C=C/CCCCBr"
+        ],
+        "reagents": [
+          "TBAF",
+          "CBr4",
+          "PPh3"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C-rt",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "The desired alkenyl bromide 26 was furnished as a colourless liquid."
+      },
+      "evidence": {
+        "text_span": "Deprotection of the TBS group followed by treatment with CBr4 and triphenylphosphine (TPP) furnished the desired alkenyl bromide 26.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Alkenyl bromide 26 was obtained.",
+        "gap": "Need to couple 26 with furfural (14) to form the furan-derived alcohol.",
+        "decision": "To couple, chose Grignard addition of 26 to furfural (14)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccco1",
+          "CCC/C=C/CCCCBr"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Mg",
+          "I2"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Several attempts at Grignard addition to furfural (14) were unsuccessful."
+      },
+      "evidence": {
+        "text_span": "However, several attempts at Grignard addition to furfural (14) were unsuccessful, prompting us to revise our approach and avoid the Grignard step altogether (entry a, Scheme 4).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Grignard addition with alkenyl bromide 26 failed.",
+        "gap": "Need an alternative strategy to synthesize (+)-passifetilactone A (1) that avoids the problematic Grignard step.",
+        "decision": "To revise the strategy, chose 1,9-nonanediol (28) as the precursor and aimed to couple the aldehyde fragment 31 with furan (32) instead of furfural."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "This revised strategy was pursued."
+      },
+      "evidence": {
+        "text_span": "However, several attempts at Grignard addition to furfural (14) were unsuccessful, prompting us to revise our approach and avoid the Grignard step altogether (entry a, Scheme 4). For this revised strategy, we selected 1,9-nonanediol (28) as the precursor, which was converted into the alkenyl-tethered TBS ether 30 using a synthetic sequence analogous to that employed for intermediate 25 (entry a, Scheme 4), involving TBS protection, oxidation, and Wittig olefination (28 -> 29 -> 30).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Starting from 1,9-nonanediol (28).",
+        "gap": "Need to prepare aldehyde 31 for coupling with furan.",
+        "decision": "To prepare 31, chose TBS protection, oxidation to aldehyde 29, Wittig olefination to 30, followed by deprotection of the TBS group and DMP oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "OCCCCCCCCCCO"
+        ],
+        "product_smiles": [
+          "CC(C)=CCCCCCC=O"
+        ],
+        "reagents": [
+          "NaH",
+          "TBSCl",
+          "DMP",
+          "NaHCO3",
+          "Br[P+](c1ccccc1)(c1ccccc1)c1ccccc1.CCCCCCC",
+          "n-BuLi",
+          "TBAF"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C-rt",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "The desired aldehyde fragment 31 was furnished as a yellow liquid."
+      },
+      "evidence": {
+        "text_span": "Subsequent deprotection of the TBS group of 30 using TBAF in THF, followed by DMP oxidation, furnished the desired aldehyde fragment 31.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 31 was obtained.",
+        "gap": "Need to couple 31 with furan (32) to form the secondary alcohol.",
+        "decision": "To couple, chose reaction of furan (32) with n-BuLi, followed by addition of aldehyde 31, expecting secondary alcohol 27."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCCCCCC=O",
+          "c1ccoc1"
+        ],
+        "product_smiles": [
+          "CC(C)=CCCCCCCC(O)c1ccoc1"
+        ],
+        "reagents": [
+          "n-BuLi"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C - 0 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "The secondary alcohol 27 was afforded as a yellow liquid."
+      },
+      "evidence": {
+        "text_span": "This aldehyde 31 was then coupled with furan (32) to afford the secondary alcohol 27 in 88% yield.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Racemic alcohol 27 was obtained.",
+        "gap": "Need to transform 27 into the chiral alcohol (S)-18b.",
+        "decision": "To transform, chose DMP oxidation to ketone 17b, followed by CBS reduction, expecting (S)-18b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCCCCCCC(O)c1ccoc1"
+        ],
+        "product_smiles": [
+          "CC(C)=CCCCCCC[C@@H](C)O"
+        ],
+        "reagents": [
+          "DMP",
+          "NaHCO3",
+          "(R)-2-methyl-CBS-oxazaborolidine",
+          "BH3.SMe2"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "ee_percent": 88,
+        "observation": "The chiral alcohol (S)-18b (er = 94 : 6) was obtained as a colorless oil."
+      },
+      "evidence": {
+        "text_span": "The racemic alcohol 27 was transformed into the chiral alcohol (S)- 18b (er = 94 : 6) via DMP oxidation to ketone 17b, followed by CBS reduction (entry b, Scheme 4).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Chiral alcohol (S)-18b was obtained.",
+        "gap": "Need to perform the key NBS-mediated Achmatowicz rearrangement.",
+        "decision": "To perform the rearrangement, chose NBS, NaHCO3, and NaOAc·3H2O in THF/H2O, expecting product 19b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCCCCCC[C@@H](C)O"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC[C@@H]1C=COC1=O"
+        ],
+        "reagents": [
+          "NBS",
+          "NaHCO3",
+          "NaOAc.3H2O"
+        ],
+        "solvent": "THF/H2O",
+        "temperature": "0 °C",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 18,
+        "failure_mode": "decomposition",
+        "observation": "The reaction delivered the desired product 19b in only 18% isolated yield, with significant decomposition observed across multiple trials. The low efficiency is likely due to the sensitivity of the Z-olefin moiety in the substrate 18b under the conditions employed."
+      },
+      "evidence": {
+        "text_span": "Next, we attempted the key NBS-mediated Achmatowicz rearrangement on intermediate 18b. Unfortunately, the reaction delivered the desired product 19b in only 18% isolated yield, with significant decomposition observed across multiple trials. The low efficiency is likely due to the sensitivity of the Z-olefin moiety in the substrate 18b under the conditions employed (entry b, Scheme 4).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 21,
+      "thought": {
+        "background": "NBS-mediated Achmatowicz rearrangement on 18b failed due to Z-olefin sensitivity.",
+        "gap": "Need to complete the synthesis of (+)-passifetilactone A (1) by avoiding the Z-olefin sensitivity during the Achmatowicz rearrangement.",
+        "decision": "To address these challenges, chose to modify the synthetic sequence by performing the NBS-mediated Achmatowicz rearrangement prior to the Wittig olefination."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "This revised strategy was pursued."
+      },
+      "evidence": {
+        "text_span": "To address these challenges, we slightly modified the synthetic sequence by performing the NBS-mediated Achmatowicz rearrangement prior to the Wittig olefination (Scheme 5).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 29 (obtained from 1,9-nonanediol) was available.",
+        "gap": "Need to couple 29 with furan (32) to form alcohol 36.",
+        "decision": "To couple, chose reaction of furan (32) with n-BuLi, followed by addition of aldehyde 29, expecting alcohol 36."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccoc1",
+          "CC(C)(C)[Si](C)(C)SOCCCCCCCC=O"
+        ],
+        "product_smiles": [
+          "CCC(C)C(O)c1ccoc1"
+        ],
+        "reagents": [
+          "n-BuLi"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C - 0 °C",
+        "time": "7 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Alcohol 36 was afforded as a yellow liquid."
+      },
+      "evidence": {
+        "text_span": "Accordingly, aldehyde 29 (obtained from 1,9-nonanediol; see entry b, Scheme 4) was coupled with furan (32) to afford alcohol 36,",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alcohol 36 was obtained.",
+        "gap": "Need to oxidize 36 to ketone 37 and then perform CBS reduction to obtain chiral alcohol (S)-38.",
+        "decision": "To obtain (S)-38, chose DMP oxidation to ketone 37, followed by CBS reduction with (R)-(+)-CBS and BH3.DMS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC(C)C(O)c1ccoc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DMP",
+          "NaHCO3",
+          "(R)-2-methyl-CBS-oxazaborolidine",
+          "BH3.SMe2"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C",
+        "time": "40 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "ee_percent": 98,
+        "observation": "The hydroxylalkyl-tethered furan (S)-38 (er = 99 : 1) was obtained as a colorless oil."
+      },
+      "evidence": {
+        "text_span": "which was then subjected to DMP oxidation (to give 37), followed by CBS reduction to yield the hydroxylalkyl-tethered furan (S)-38 (Scheme 5).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Hydroxylalkyl-tethered furan (S)-38 was obtained.",
+        "gap": "Need to perform the NBS-mediated Achmatowicz rearrangement.",
+        "decision": "To perform the rearrangement, chose NBS, NaHCO3, and NaOAc·3H2O in THF/H2O, expecting alpha-hydroxy-d-pyrone 39."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NBS",
+          "NaHCO3",
+          "NaOAc.3H2O"
+        ],
+        "solvent": "THF/H2O",
+        "temperature": "0 °C",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "The NBS-mediated Achmatowicz rearrangement of 38 proceeded smoothly, delivering the alpha-hydroxy-d-pyrone 39 in 88% yield."
+      },
+      "evidence": {
+        "text_span": "Pleasingly, the NBS-mediated Achmatowicz rearrangement of 38 proceeded smoothly, delivering the alpha-hydroxy-d-pyrone 39 in 88% yield.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alpha-hydroxy-d-pyrone 39 was obtained.",
+        "gap": "Need to isomerize 39 to compound 40.",
+        "decision": "To isomerize, chose Ir-catalyzed dynamic kinetic isomerization, expecting compound 40."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "[Ir(COD)Cl]2",
+        "reagents": [
+          "2,6-dichlorobenzoic acid"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "rt",
+        "time": "18 h",
+        "atmosphere": "N2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Subsequent Ir-catalyzed dynamic kinetic isomerization of 39 furnished compound 40 in good yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent Ir-catalyzed dynamic kinetic isomerization of 39 furnished compound 40 in good yield.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 40 was obtained.",
+        "gap": "Need to convert 40 into pyrone 42.",
+        "decision": "To convert, chose sequential transformations (as used for (+)-passifetilactone C in Scheme 3) involving O-acylation, Zn-mediated elimination, and DBU-assisted double bond transposition, expecting pyrone 42."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pyridine",
+          "DMAP",
+          "Ac2O",
+          "Zn",
+          "NH4Cl",
+          "DBU"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "20 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Pyrone 42 was afforded as a yellow liquid."
+      },
+      "evidence": {
+        "text_span": "This was then subjected to a sequential transformations (as used for (+)-passifetilactone C in Scheme 3) involving O-acylation, Zn-mediated elimination, and DBU-assisted double bond trans position (40 -> 41 -> 42) to afford pyrone 42.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 28,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Pyrone 42 was obtained.",
+        "gap": "Need to convert 42 into aldehyde intermediate 43.",
+        "decision": "To convert, chose deprotection of the TBS group with pTSA·H2O, followed by PCC oxidation, expecting aldehyde intermediate 43."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(=O)CCCC[C@H]1OC(=O)C=C[C@@H]1O"
+        ],
+        "reagents": [
+          "p-TsOH",
+          "PCC"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "The aldehyde intermediate 43 was provided as a pale-yellow solid."
+      },
+      "evidence": {
+        "text_span": "Deprotection of the TBS group in 42, followed by PCC oxidation, provided the aldehyde intermediate 43.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 29,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde intermediate 43 was obtained.",
+        "gap": "Need to introduce the Z-olefin moiety to obtain (+)-passifetilactone A (1).",
+        "decision": "To introduce the Z-olefin, chose KHMDS-mediated Wittig olefination of 43 using phosphonium salt 24, expecting (+)-passifetilactone A (1)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)CCCC[C@H]1OC(=O)C=C[C@@H]1O",
+          "Br[P+](c1ccccc1)(c1ccccc1)c1ccccc1.CCCCCCC"
+        ],
+        "product_smiles": [
+          "CCCCCCCC/C=C\\CCCC[C@@H]1CC=CC(=O)O1"
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "The target compound, passifetilactone A (1), was delivered as a white solid. 1H, 13C NMR, and HRMS data of 1 is in full agreement with the literature. Whereas, the optical rotation data was found to be low in magnitude, and with same sign."
+      },
+      "evidence": {
+        "text_span": "Finally, KHMDS-mediated Wittig olefination of 43 using phosphonium salt 24 delivered the target compound, passifetilactone A (1), in 55% yield (12% overall yield). 1H, 13C NMR, and HRMS data of 1 is in full agreement with the literature. Whereas, the optical rotation {this work: [alpha]D25 = +0.3 c = 0.7, MeOH); lit (isolation):3 : [alpha]D21 = +6.0 c = 0.1, MeOH); lit (first synthesis):5 : Delta[alpha]D21 = +6.3 (c = 0.1, MeOH)} , data was found to be low in magnitude, and with same sign (Scheme 5).9",
+        "section": "Results and discussion"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "specific_rotation",
+      "HPLC"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 12,
+        "unit": "%",
+        "interpretation": "Overall yield for (+)-passifetilactone A"
+      },
+      "Longest Linear Steps": {
+        "value": 13,
+        "unit": "steps",
+        "interpretation": "Longest linear sequence for (+)-passifetilactone A"
+      },
+      "Total Steps": {
+        "value": 13,
+        "unit": "steps",
+        "interpretation": "Total steps for (+)-passifetilactone A"
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Number of failed attempts during the synthesis of passifetilactones"
+      }
+    },
+    "comparison_to_prior": "The observed optical rotation for (+)-passifetilactone A was lower in magnitude compared to literature values, but with the same sign. For (+)-passifetilactone B and C, the observed optical rotations matched the reported sign, though with slightly higher magnitudes.",
+    "significance": "The unified synthetic strategy leverages high-yielding and operationally simple transformations, providing efficient access to these natural products and laying a foundation for future medicinal chemistry exploration of passifetilactones and related bioactive natural products."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5ra06982c",
+      "pmcid": "PMC12538396",
+      "title": "Achmatowicz rearrangement-enabled unified total syntheses of (+)-passifetilactones A-C.",
+      "authors": "Verma AK, Jeddi D, Kontham R.",
+      "journal": "RSC Adv",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12538396?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/0672c611-e24c-40bb-bdb1-8c9d32999875.zip",
+      "parsed_at": "2026-05-11T06:30:08.461459+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 56,
+    "parseable": 46,
+    "canonicalized": 39,
+    "invalid": 10,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)(C)OSi(C)(C)CCCCCC[C@@H](O)C1=COC=C1",
+      "CC(C)(C)OSi(C)(C)CCCCCC[C@@H](O)C1=COC=C1",
+      "CC(C)(C)OSi(C)(C)CCCC[C@H]1OC(=O)C=C[C@@H]1O",
+      "CC(C)(C)OSi(C)(C)CCCC[C@H]1OC(=O)C=C[C@@H]1O",
+      "CC(C)(C)OSi(C)(C)CCCC[C@H]1OC(=O)C=C[C@H](O)[C@@H]1O",
+      "CC(C)(C)OSi(C)(C)CCCC[C@H]1OC(=O)C=C[C@H](O)[C@@H]1O",
+      "CC(C)(C)OSi(C)(C)CCCC[C@H]1OC(=O)C=C[C@@H]1O",
+      "CC(C)(C)OSi(C)(C)CCCC[C@H]1OC(=O)C=C[C@@H]1O"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

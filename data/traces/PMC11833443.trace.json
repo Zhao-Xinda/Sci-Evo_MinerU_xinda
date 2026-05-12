@@ -1,0 +1,472 @@
+{
+  "trace_id": "TS-PMC11833443",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Ethyl (3S,4R,5R,6S)-3,4,5,6-tetrahydroxycyclohex-1-ene-1-carboxylate (anti-17)",
+    "smiles": "CCOC(=O)C=C1C[C@@H](O)[C@H](O)[C@@H](O)C1O",
+    "natural_product_class": "carbasugar",
+    "structural_features": {
+      "stereocenters": 4,
+      "ring_systems": "cyclohexene",
+      "key_motifs": [
+        "cyclohexene",
+        "ester",
+        "polyhydroxylated"
+      ]
+    },
+    "motivation": "Carbasugars are a diverse group of carbohydrate mimetics with intriguing biological activities. The precise synthesis of polyhydroxylated carbasugars remains a compelling and complex challenge due to structural intricacy, ring size and strain, functional group characteristics, stereochemical control, selection of synthetic approaches, and absence of straightforward synthetic pathways. This work aims to improve upon previous inefficient syntheses of pericosine derivatives.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Stevenson",
+        "key_strategy": "biocatalytic oxidation of benzene derivatives"
+      },
+      {
+        "lead_author": "Hou",
+        "year": 2014,
+        "doi": "10.1039/c3ra45871g",
+        "key_strategy": "ring-closing metathesis (RCM) protocol"
+      },
+      {
+        "lead_author": "Banachowicz",
+        "year": 2019,
+        "doi": "10.1039/C9RA02002K",
+        "key_strategy": "intramolecular seleno-Michael/aldol reaction starting from D-pentose, using benzyl protecting groups"
+      }
+    ],
+    "success_criteria": {
+      "yield_target_percent": 40,
+      "stereochemistry_required": true,
+      "free_text": "Achieve excellent diastereoselectivity (up to 19:1) and reduce the number of purification steps."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming the cyclohexene ring",
+        "named_strategy": "tandem seleno-Michael/aldol reaction",
+        "reasoning": "This reaction forms the carbasugar core and has been successfully applied in previous work, though with limitations."
+      },
+      {
+        "bond_description": "C-Se bond",
+        "reasoning": "The selenium nucleophile is introduced to facilitate the cyclization and is subsequently eliminated."
+      },
+      {
+        "bond_description": "C-O bond of primary alcohol",
+        "reasoning": "The primary hydroxyl group needs to be selectively deprotected and oxidized to an aldehyde for the aldol reaction."
+      },
+      {
+        "bond_description": "C-C bond of the alpha,beta-unsaturated ester",
+        "named_strategy": "Wittig reaction",
+        "reasoning": "This reaction extends the carbon chain from the D-aldopentose to form the unsaturated ester precursor."
+      }
+    ],
+    "rationale": "The strategy involves a tandem seleno-Michael/aldol reaction to form the carbasugar core, followed by oxidation and elimination of the selenium nucleophile. A key revision from previous work is the use of labile TMS protecting groups to enhance efficiency, reduce synthetic steps, improve diastereoselective control, and minimize chromatography. The synthesis starts from readily available D-aldopentoses, which are converted to alpha,beta-unsaturated esters via Wittig reaction, then protected with TMS groups, selectively deprotected and oxidized to aldehydes, and finally cyclized and deprotected to yield the carbasugars."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Previous syntheses of carbasugars using intramolecular seleno-Michael/aldol reactions suffered from moderate or poor diastereoselectivity, lengthy substrate preparation, and harsh deprotection conditions for OBn ethers.",
+        "gap": "A more efficient and selective method for carbasugar synthesis is needed, particularly one that addresses the issues of protecting group manipulation and diastereoselectivity.",
+        "decision": "To improve the synthesis, we will explore an orthogonal protection group approach, initially considering bulky protecting groups (Tr or TBDPS) for the primary alcohol and acetyl esters for secondary alcohols, followed by a tandem seleno-Michael/aldol cyclization."
+      },
+      "evidence": {
+        "text_span": "Based on our retrosynthetic analysis (Scheme 2), we planned to prepare the carbasugar core according to the tandem seleno-Michael/aldol reaction protocol connected with oxidation and elimination of the selenium nucleophile. We have successfully achieved this transformation for several carbasugar molecules.23,28,29 The previously described protocols suffered from only moderate or poor diastereoselectivity, long substrate preparation, and harsh conditions for deprotection of the OBn ethers in the presence of the double bond. Our initial strategy involved the application of an orthogonal protection group approach. As a model system for this optimisation, we chose the D-arabinose derivative (6), because it was the only crystalline material of the series. The installation of the bulky protective group (PG1) was successfully achieved for both Tr or TBDPS, but later we found that only acetyl ester was able to the fully attach to remaining hydroxyl group (PG2).",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "An orthogonal protection strategy was attempted using bulky protecting groups (Tr or TBDPS) for the primary alcohol and acetyl esters for secondary alcohols.",
+        "gap": "The next step, deprotection of the bulky primary ether, needs to proceed without issues.",
+        "decision": "Proceed with deprotection of the bulky primary ether, expecting a clean product."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Deprotection of the bulky primary ether provided a complex mixture of isomers due to migration of the secondary acetyl ester to the primary alcohol."
+      },
+      "evidence": {
+        "text_span": "Unfortunately, we found that the next step, the deprotection of the bulky primary ether, provided a complex mixture of the isomers as a result of the migration of secondary acetyl ester to the primary alcohol.",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "The initial orthogonal protection strategy failed due to acetyl ester migration during primary ether deprotection.",
+        "gap": "A more stable and selectively removable protecting group strategy is needed that avoids ester migration.",
+        "decision": "To overcome the migration issue, we decided to install labile TMS groups on each hydroxyl moiety, hoping for selective primary hydroxyl deprotection later."
+      },
+      "evidence": {
+        "text_span": "Thus, we revised our strategy and decided to install labile TMS groups on each of the hydroxyl moieties, with the hope that the primary hydroxy component could be selectively deprotected later.",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "reaction": {
+        "substrate_smiles": [
+          "O=C[C@H](O)[C@@H](O)[C@H](O)CO"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C=C[C@H](O)[C@H](O)[C@H](O)CO"
+        ],
+        "reagents": [
+          "(ethoxycarbonylmethylene)-triphenylphosphorane"
+        ],
+        "solvent": "dioxane/DMF",
+        "temperature": "80 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "The Wittig reaction of D-aldopentoses with ethyl (triphenylphosphoranylidene)acetate successfully yielded E'-unsaturated Wittig products (5–8) with good yields. Some oxo-Michael side products were observed, particularly for D-ribo (7) and D-lyxo (8) derivatives."
+      },
+      "evidence": {
+        "text_span": "Starting from other commercially available monosaccharides, the reaction of pure D-aldopentoses (1–4) with ethyl (triphenylphosphoranylidene)acetate resulted mainly in E'-unsaturated Wittig products (5–8) with yields ranging from 50% to 83%. Most of those transformations suffered from oxo-Michael side products, which were particularly visible for the D-ribo (7) and D-lyxo (8) derivatives, which significantly decreased the reaction yields (Scheme 3).",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=C[C@H](O)[C@H](O)[C@H](O)CO"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C=C[C@H](O[Si](C)(C)C)[C@H](O[Si](C)(C)C)[C@@H](CO[Si](C)(C)C)O[Si](C)(C)C"
+        ],
+        "reagents": [
+          "TMSCl",
+          "imidazole"
+        ],
+        "solvent": "THF",
+        "temperature": "50 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The quadruple protection with TMS groups was successfully accomplished. The crude products (9–12) were sufficiently pure by TLC, despite instability preventing further purification."
+      },
+      "evidence": {
+        "text_span": "Adapting our revised concept of the formation of the derivatives (9–12), we subjected the Wittig reaction's product (5–8) to the mixture of trimethylsilyl chloride (TMSCl) and imidazole, which successfully accomplished the quadruple protection. Purification of compounds 9–12 was not possible due to the instability of the o-TMS group however, they were all sufficiently pure by TLC with only one major spot being observed.",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The per-O-silylated derivative (10) was prepared and ready for Swern oxidation.",
+        "gap": "The Swern oxidation needs to achieve complete deprotection of the primary hydroxyl group and full oxidation to the aldehyde.",
+        "decision": "Apply standard Swern conditions (-78 °C, 30 min) to the per-O-silylated derivative, expecting complete deprotection and oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=C[C@H](O[Si](C)(C)C)[C@H](O[Si](C)(C)C)[C@@H](CO[Si](C)(C)C)O[Si](C)(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "oxalyl chloride",
+          "DMSO"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Subjecting the per-O-silylated derivative directly to Swern conditions (typically -78 °C, 30 min) initially did not lead to complete deprotection of the primary hydroxyl group and also did not fully oxidise."
+      },
+      "evidence": {
+        "text_span": "However, subjecting the per-O-silylated derivative directly to Swern conditions (typically −78 °C, 30 min) initially did not lead to complete deprotection of the primary hydroxyl group and also did not fully oxidise.",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "The initial Swern oxidation attempt on the per-O-silylated derivative failed to achieve complete deprotection and oxidation within 30 minutes.",
+        "gap": "The reaction conditions need to be optimized to ensure full conversion.",
+        "decision": "Extend the reaction time for the Swern oxidation from 30 minutes to 3 hours to ensure complete deprotection and oxidation."
+      },
+      "evidence": {
+        "text_span": "The extension of the initial time from 30 minutes to 3 hours fortunately solved this problem, resulting in only one major product after oxidation (only one major spot in the TLC; other analyses were not possible due to the instability of the molecule).",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=C[C@H](O[Si](C)(C)C)[C@H](O[Si](C)(C)C)[C@@H](CO[Si](C)(C)C)O[Si](C)(C)C"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C=C[C@H](O[Si](C)(C)C)[C@H](O[Si](C)(C)C)[C@@H](C=O)O[Si](C)(C)C"
+        ],
+        "reagents": [
+          "oxalyl chloride",
+          "DMSO",
+          "Et3N"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The selective primary TMS deprotection followed by Swern oxidation conditions gave almost quantitatively pure aldehydes (13–16). The products were viscous yellow oils and were used immediately due to instability."
+      },
+      "evidence": {
+        "text_span": "Then, the crude per-O-silylated olefin (9–12) was added to the activated DMSO/oxalyl chloride mixture at −78 °C. The selective primary TMS deprotection followed by the Swern oxidation conditions gave almost quantitatively pure aldehydes 13–16.30,31",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=C[C@H](O[Si](C)(C)C)[C@H](O[Si](C)(C)C)[C@@H](C=O)O[Si](C)(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Se",
+          "nBuLi"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to rt",
+        "time": "1.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The crucial cyclization was achieved by the seleno-Michael/aldol reaction, forming unstable selenides (Int 1–4)."
+      },
+      "evidence": {
+        "text_span": "The crucial cyclization was achieved by the seleno-Michael/aldol reaction with the oxidation/elimination process. Per-O-silylated aldehydes 13–16 were added to n-BuSeLi (generated in situ from Se0 and nBuLi) at −78 °C.30,31 After complete substrate consumption, we treated the reaction mixture with excess H2O2 in the presence of pyridine. The oxidation–elimination process of unstable selenide (Int 1–4) provides the desired protected 5a-carbasugar derivatives (Int 5–8).",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCOC(=O)C=C1C[C@H](O[Si](C)(C)C)[C@@H](O[Si](C)(C)C)C1O[Si](C)(C)C"
+        ],
+        "reagents": [
+          "H2O2",
+          "pyridine"
+        ],
+        "solvent": "THF",
+        "temperature": "40 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The oxidation-elimination process of the unstable selenides (Int 1–4) provided the desired protected 5a-carbasugar derivatives (Int 5–8). Aqueous work-up gave a complex mixture of partially protected products."
+      },
+      "evidence": {
+        "text_span": "After complete substrate consumption, we treated the reaction mixture with excess H2O2 in the presence of pyridine. The oxidation–elimination process of unstable selenide (Int 1–4) provides the desired protected 5a-carbasugar derivatives (Int 5–8). Aqueous work-up gave a complex mixture of partially protected products.",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The protected carbasugar derivatives (Int 5–8) were obtained, but a final deprotection step is needed.",
+        "gap": "A method for complete deprotection of the TMS groups is required.",
+        "decision": "Attempt deprotection using commercially available TBAF solution in THF, expecting complete removal of TMS groups."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=C1C[C@H](O[Si](C)(C)C)[C@@H](O[Si](C)(C)C)C1O[Si](C)(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "The commercially available TBAF solution in THF gave only partial deprotection of the TMS groups."
+      },
+      "evidence": {
+        "text_span": "The commercially available TBAF solution in THF gave only partial deprotection of the TMS groups.",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "TBAF failed to achieve complete deprotection of the TMS groups.",
+        "gap": "A more effective reagent for complete TMS deprotection is needed.",
+        "decision": "Use Olah reagent (HF·Py) for complete deprotection of the TMS groups."
+      },
+      "evidence": {
+        "text_span": "Therefore, a crude mixture of the cyclic product was dissolved in THF and treated with an excess of the Olah reagent (HF·Py).",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=C1C[C@H](O[Si](C)(C)C)[C@@H](O[Si](C)(C)C)C1O[Si](C)(C)C"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C=C1C[C@@H](O)[C@H](O)[C@@H](O)C1O"
+        ],
+        "reagents": [
+          "HF.Py"
+        ],
+        "solvent": "THF",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 40,
+        "dr": "92:8",
+        "observation": "The deprotected products (17–20) were obtained as diastereoisomeric mixtures with very good or excellent selectivity. The lowest selectivity was observed with 19 (from D-ribose). The products were purified by column chromatography or crystallization. For D-xylose, anti-17 was obtained in 39.7% yield with 92:8 anti:syn ratio."
+      },
+      "evidence": {
+        "text_span": "The commercially available TBAF solution in THF gave only partial deprotection of the TMS groups. The deprotected products were purified by column chromatography or crystallisation. It is noteworthy that chromatographic purification was not needed in all cases until the last step. As presented in Table 1, products 17–20 were obtained as diastereoisomeric mixtures with very good or excellent selectivity. The lowest selectivity was observed with 19 (Table 1, entry 3) and is correlated with the cis-conformation of all hydroxyl groups from the monosaccharide. The diastereomeric ratio was determined by 1H-NMR analysis and the main pure isomers were isolated by column chromatography. ... The crude mixture was purified by column chromatography (chloroform/MeOH 4 : 1 to 3 : 1) to obtain ethyl (3S,4R,5R,6S)- 3,4,5,6-tetrahydroxycyclohex-1-ene-1-carboxylate (anti-17) as a colourless syrup (0.141 g, 0.54 mmol, 39.7%);",
+        "section": "2 Results"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The final product anti-17 was obtained.",
+        "gap": "Confirm the structure and stereochemistry of anti-17.",
+        "decision": "Characterize anti-17 using 1H NMR, 13C NMR, and HRMS."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The structure of anti-17 was confirmed by 1H NMR, 13C NMR, and HRMS data."
+      },
+      "evidence": {
+        "text_span": "1H NMR (600 MHz, CD3OD) d 6.56–6.53 (m, 1H), 4.39 (ddd, J = 7.3, 2.7, 1.3 Hz, 1H), 4.26–4.20 (m, 2H), 4.17 (dt, J = 8.1, 2.3 Hz, 1H), 3.50 (dd, J = 10.4, 7.4 Hz, 1H), 3.37 (dd, J = 10.3, 8.2 Hz, 1H), 1.30 (t, J = 7.1 Hz, 3H); 13C NMR (151 MHz, CD3OD) d 167.7, 140.7, 133.6, 77.0, 76.4, 72.6, 72.4, 61.9, 14.4; HRMS (ESI): calcd for C9H14NaO6 [M+Na]+ 241.0683, found 241.0681;",
+        "section": "4.9 Ethyl (3S,4R,5R,6S)-3,4,5,6-tetrahydroxycyclohex-1-ene-1-carboxylate (from D-xylose) (17)"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "specific_rotation",
+      "2D NMR"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 40,
+        "unit": "%",
+        "interpretation": "Overall yield for the synthesis of anti-17 from D-xylose."
+      },
+      "Total Steps": {
+        "value": 5,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly reported failed attempts that required revision."
+      }
+    },
+    "comparison_to_prior": "The use of TMS groups significantly increased selectivity compared to benzyl ethers. For D-xylose, the anti/syn ratio improved from 4:1 (Bn protected) to 10:1 (TMS protected). For D-lyxose, the improvement was even more dramatic, from 3:1 (Bn) to 20:1 (TMS). The methodology also resulted in shorter reaction times and reduced purification steps.",
+    "significance": "This improved methodology provides a versatile and efficient route to polyhydroxylated cyclohex-1-ene carboxylated esters (carbasugars) from commercially available monosaccharides. It achieves high diastereoselectivity (up to 19:1) and is scalable to gram quantities, offering a significant advancement over previous methods by addressing issues of protecting group manipulation and selectivity."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5ra00322a",
+      "pmcid": "PMC11833443",
+      "title": "General strategy for the synthesis of unsaturated carbasugars <i>via</i> a diastereoselective <i>seleno</i>-Michael/aldol reaction.",
+      "authors": "Banachowicz P, Buda S.",
+      "journal": "RSC Adv",
+      "year": 2025,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC11833443?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/d24ae673-c6c6-4cc7-894b-07cdfa33fcfe.zip",
+      "parsed_at": "2026-05-11T06:37:43.967068+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 17,
+    "parseable": 13,
+    "canonicalized": 10,
+    "invalid": 4,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CCOC(=O)C=C1C(O[Si](C)(C)C)[C@H](O[Si](C)(C)C)[C@@H](O[Si](C)(C)C)[C@H](SeCCCC)C1",
+      "CCOC(=O)C=C1C(O[Si](C)(C)C)[C@H](O[Si](C)(C)C)[C@@H](O[Si](C)(C)C)[C@H](SeCCCC)C1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

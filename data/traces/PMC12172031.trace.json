@@ -1,0 +1,514 @@
+{
+  "trace_id": "TS-PMC12172031",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Rhodocorane L",
+    "smiles": "CC1=C(O)C(=O)C2(C)C3CCC(C)(C3)C2C(=O)C1O",
+    "natural_product_class": "acorane-type terpenoid",
+    "structural_features": {
+      "stereocenters": 6,
+      "ring_systems": "tricyclic",
+      "key_motifs": [
+        "spiro[4.5] bicycle",
+        "1,3-diketone"
+      ]
+    },
+    "motivation": "Rhodocorane L is a unique tricyclic scaffold containing a spiro[4.5] bicycle with antifungal activity. It presents a challenge in setting the all-carbon spirocyclic quaternary centers and contains six contiguous stereocenters. The synthesis aims to utilize a catalyst-controlled asymmetric dearomative spirocyclization.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Tambar",
+        "year": 2024,
+        "doi": "10.1021/acs.orglett.4c03456",
+        "key_strategy": "Synthesis of rhodocoranes I and J, which have a gamma-lactone, leading to fundamentally different synthetic strategies."
+      }
+    ],
+    "success_criteria": {
+      "lls_target": "17 steps",
+      "stereochemistry_required": true,
+      "free_text": "The spectral data, including optical rotation, should be consistent with what was reported by Sandargo and coworkers for rhodocorane L, confirming its structure and stereochemical assignment."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C10-C12 bond formation",
+        "named_strategy": "intramolecular aldol",
+        "reasoning": "To form the bridging tricyclic system of rhodocorane L from a spirocyclic intermediate."
+      },
+      {
+        "bond_description": "Spirocyclic quaternary center formation",
+        "named_strategy": "gold-catalyzed dearomative spirocyclization",
+        "reasoning": "To reliably set the challenging quaternary spirocyclic center via catalyst control, taking advantage of the high oxidation state of the 1,3-diketone target."
+      },
+      {
+        "bond_description": "Installation of pendant stereocenters on alkyne tether",
+        "named_strategy": "Evans' auxiliary strategy",
+        "reasoning": "To reliably set the required stereocenters early in the synthesis."
+      },
+      {
+        "bond_description": "Formation of alpha,beta-unsaturated acyl oxazolidinone",
+        "named_strategy": "Horner-Wadsworth-Emmons reaction",
+        "reasoning": "To prepare the conjugate acceptor for diastereoselective aryl cuprate addition."
+      }
+    ],
+    "rationale": "The retrosynthetic analysis targets key spirocyclic intermediate 5, which is a plausible precursor to rhodatin as well. The major difficulty in synthesizing this intermediate is setting the quaternary spirocyclic center. Inspired by Zhao and co-workers, a gold-catalyzed dearomative spirocyclization method was chosen to reliably set this quaternary stereocenter via catalyst control. This method is particularly suitable for the highly oxidized 1,3-diketone target. The pendant stereocenters decorating the final ring are installed early using Evans' auxiliary strategy. Subsequent intramolecular aldol and redox manipulations are planned to complete the synthesis of rhodocorane L."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The target molecule rhodocorane L contains a spiro[4.5] bicyclic core. A key intermediate for this core is an alpha,beta-unsaturated acyl oxazolidinone.",
+        "gap": "How to synthesize the required conjugate acceptor for diastereoselective aryl cuprate addition.",
+        "decision": "To synthesize conjugate acceptor 8, a Horner-Wadsworth-Emmons reaction between phosphonate 9 and aldehyde 10 was chosen, expecting to form the desired alpha,beta-unsaturated system."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[Si](C#CCC=O)(C(C)C)C(C)C",
+          "CCO[PH](=O)CC(=O)N1C[C@@H](C)OC1=O"
+        ],
+        "product_smiles": [
+          "CC(C)[Si](C#CCC=CC(=O)N1C[C@@H](C)OC1=O)(C(C)C)C(C)C"
+        ],
+        "named_reaction": "Horner-Wadsworth-Emmons reaction",
+        "reagents": [
+          "i-Pr2NEt",
+          "LiCl"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "The reaction proceeded to give the desired conjugate acceptor 8."
+      },
+      "evidence": {
+        "text_span": "The required conjugate acceptor 8 for the diastereoselective aryl cuprate addition was made by the Horner−Wadsworth−Emmons reaction of phosphonate 9, a known compound prepared in two steps from commercial material,18 and the previously reported aldehyde 10, also available in two steps.19",
+        "section": "Initial steps in the synthesis of rhodocorane L are shown in Scheme 1.",
+        "image_refs": [
+          "8061d4b0be8e9a088b6804a190ff62e38945382a117271cd2e4724df21888eee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aryl cuprate addition into unsaturated acyl oxazolidinones is known to be diastereoselective and proceeds in good yields, even with 2,6-ortho substitution at the aryl cuprate.",
+        "gap": "How to perform the diastereoselective aryl cuprate addition with a 2,6-bisalkoxy aryl bromide and ensure differential protection for subsequent monodeprotection.",
+        "decision": "To facilitate a subsequent monodeprotection, the bisphenol was differentially protected as monomethyl mono-MOM aryl bromide 13, which was used as the precursor to the aryl cuprate. This aryl bromide 13 could be made by MOM protection of bromide 12. The resulting cuprate addition product 14 was expected to exhibit slow rotation at 25 °C about the benzylic bond due to increased sterics."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(C)cc(Br)c1O"
+        ],
+        "product_smiles": [
+          "COCOc1c(Br)cc(C)cc1OC"
+        ],
+        "reagents": [
+          "MOMCl",
+          "NaH"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "MOM protection of bromide 12 successfully yielded monomethyl mono-MOM aryl bromide 13."
+      },
+      "evidence": {
+        "text_span": "To facilitate a subsequent monodeprotection, the bisphenol was differentially protected as monomethyl mono-MOM aryl bromide 13, which was used as the precursor to the aryl cuprate. This aryl bromide 13 could be made by MOM protection of bromide 12, a known compound prepared in three steps from orcinol.22",
+        "section": "Initial steps in the synthesis of rhodocorane L are shown in Scheme 1.",
+        "image_refs": [
+          "2ffddcd3d7f85b62ee78430d8de46e009d8229060f16b4af2af0cc8aee0a25eb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aryl cuprate addition into unsaturated acyl oxazolidinones is known to be diastereoselective and proceeds in good yields, even with 2,6-ortho substitution at the aryl cuprate. This is the first example of this type of cuprate addition with a 2,6-bisalkoxy aryl bromide.",
+        "gap": "How to perform the diastereoselective aryl cuprate addition using the prepared aryl bromide 13 and conjugate acceptor 8.",
+        "decision": "To perform the aryl cuprate addition using CuBr·SMe2, expecting a diastereoselective addition and a slight increase in yield with MOM groups."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[Si](C#CCC=CC(=O)N1C[C@@H](C)OC1=O)(C(C)C)C(C)C",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "CuBr·SMe2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 49,
+        "observation": "The cuprate addition product 14 was obtained. It exhibited slow rotation at 25 °C about the benzylic bond due to the increased sterics, as seen previously in the literature. Increasing the temperature to 60 °C led to sharpened, interpretable peaks."
+      },
+      "evidence": {
+        "text_span": "Aryl cuprate addition into unsaturated acyl oxazolidinones is known to be diastereoselective and proceeds in good yields, even with 2,6-ortho substitution at the aryl cuprate.20,21 To our knowledge, this is the first example of this type of cuprate addition with a 2,6-bisalkoxy aryl bromide. A slight increase in the yield was observed with an increasing number of methoxymethyl (MOM) groups replacing the methyl-protecting groups. [...] The resulting cuprate addition product 14 exhibited slow rotation at 25 °C about the benzylic bond due to the increased sterics, as seen previously in the literature.23 Increasing the temperature to 60 °C led to sharpened, interpretable peaks.",
+        "section": "Initial steps in the synthesis of rhodocorane L are shown in Scheme 1.",
+        "image_refs": [
+          "8061d4b0be8e9a088b6804a190ff62e38945382a117271cd2e4724df21888eee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The cuprate addition product 14 has one of the required stereocenters installed.",
+        "gap": "How to install the second required stereocenter via enolate alkylation.",
+        "decision": "To perform enolate alkylation using MeI on compound 14 to give compound 7."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaHMDS",
+          "MeI"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Enolate alkylation successfully gave compound 7. All intermediates from compound 7 to compound 6, which have similar sterics, exhibited two rotamers at 25 °C."
+      },
+      "evidence": {
+        "text_span": "Enolate alkylation using MeI gave compound 7. All intermediates from compound 7 to compound 6, which have similar sterics, exhibited two rotamers at 25 °C.",
+        "section": "Initial steps in the synthesis of rhodocorane L are shown in Scheme 1.",
+        "image_refs": [
+          "8061d4b0be8e9a088b6804a190ff62e38945382a117271cd2e4724df21888eee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 7 has the two required stereocenters installed.",
+        "gap": "How to remove the protecting groups and auxiliary to prepare phenol 6 for gold-catalyzed spirocyclization.",
+        "decision": "To perform a series of four steps: TIPS alkyne deprotection using TBAF, auxiliary displacement with LiSEt to give the thioester, reduction of the thioester to alcohol using LiAlH4, and MOM-protected phenol deprotection under acidic conditions to give phenol 6."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C#CC[C@@H](C)C[C@@H](Cc1cc(O)c(C)cc1O)C(C)O"
+        ],
+        "reagents": [
+          "TBAF",
+          "LiSEt",
+          "LiAlH4",
+          "AcCl",
+          "MeOH"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": null,
+        "observation": "The protecting groups and auxiliary were successfully removed in four steps to give phenol 6. Individual yields were 66% (TBAF), 83% (LiSEt), quantitative (LiAlH4), and quantitative (AcCl, MeOH)."
+      },
+      "evidence": {
+        "text_span": "With the two required stereocenters installed in intermediate 7, the protecting groups and auxiliary could be removed in a series of four steps to give phenol 6. The TIPS alkyne of compound 7 was deprotected using TBAF. Due to the high steric hindrance near the N-acyl carbonyl, the auxiliary was first displaced with LiSEt to give the thioester, which was then reduced to the alcohol using LiAlH4. The MOM-protected phenol could then be smoothly deprotected under acidic conditions to give phenol 6, ready for gold-catalyzed spirocyclization.",
+        "section": "Initial steps in the synthesis of rhodocorane L are shown in Scheme 1.",
+        "image_refs": [
+          "8061d4b0be8e9a088b6804a190ff62e38945382a117271cd2e4724df21888eee.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Phenol 6 is ready for gold-catalyzed spirocyclization. The goal is to set the quaternary spirocyclic center with high diastereoselectivity.",
+        "gap": "How to achieve catalyst-controlled asymmetric dearomative spirocyclization.",
+        "decision": "To use 1 mol % chiral gold catalyst 15, developed by the Zhang group, with NaBArF4 in CH2Cl2 at -40 °C, expecting smooth spirocyclization with high diastereomeric ratio at C5."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#CC[C@@H](C)C[C@@H](Cc1cc(O)c(C)cc1O)C(C)O"
+        ],
+        "product_smiles": [
+          "C=C1c2cc(C)cc(OC)c2[C@@H](C)[C@H]1CCO"
+        ],
+        "catalyst": "COc1ccc2cc(C(=O)N(C(C)C)C(C)C)c3ccccc3c2c1C1=CC=CC=C1P(C1CC2CC(C1)C(C2)C1)C1CC2CC(C1)C(C2)C1.Cl[Au]",
+        "reagents": [
+          "NaBArF4"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-40 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "dr": "15:1",
+        "observation": "Spirocyclization of phenol 6 proceeded smoothly to give key spirocyclic intermediate 5 in 61% isolated yield and 15:1 diastereomeric ratio (dr) at C5. This effectively sets a quaternary center by catalyst control."
+      },
+      "evidence": {
+        "text_span": "Using 1 mol % gold catalyst 15, developed by the Zhang group,9 spirocyclization of phenol 6 proceeded smoothly at −40 °C to give key spirocyclic intermediate 5 in 61% isolated yield and 15:1 diastereomeric ratio (dr) at C5. At −40 °C, the two rotamers of phenol 6 can interconvert, with a calculated half-life of about 4 min based on a ΔG‡ of 16 kcal/mol. The diastereoselectivity is as expected compared to a similar system demonstrated by Zhao et al. with no pendant stereocenters on the alkyne tether, which gave a 14:1 enantiomeric ratio (er) under the same reaction conditions (see Figure S2).9 This contrasts with the use of the corresponding achiral gold catalyst (WangPhosAuCl),15 which, at room temperature, produced spirocycle 5 with a 67% yield and 1:1 dr at C5. Gold-catalyzed spirocyclization of compound 6 effectively sets a quaternary center by catalyst control, controlling the facial selectivity of the spirocyclization in a similar but more complex system than demonstrated by the Zhang group,9 with stereocenters decorating the alkyne tether.",
+        "section": "Initial steps in the synthesis of rhodocorane L are shown in Scheme 1.",
+        "image_refs": [
+          "8061d4b0be8e9a088b6804a190ff62e38945382a117271cd2e4724df21888eee.jpg",
+          "f1f9420d09c16f276a298638a83a80450f547819447318f0ab904bc57a624929.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Spirocycle 5 has a pendant alcohol at C12.",
+        "gap": "How to convert the alcohol to an aldehyde for the subsequent intramolecular aldol reaction.",
+        "decision": "To oxidize the pendant alcohol at C12 of spirocycle 5 to the aldehyde using Swern oxidation to give aldehyde 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1c2cc(C)cc(OC)c2[C@@H](C)[C@H]1CCO"
+        ],
+        "product_smiles": [
+          "C=C1CCC2(C)C(=O)C=C(C)C=C(O)C2C1C(C)C=O"
+        ],
+        "named_reaction": "Swern oxidation",
+        "reagents": [
+          "unspecified"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The pendant alcohol was oxidized to aldehyde 16."
+      },
+      "evidence": {
+        "text_span": "The pendant alcohol at C12 of spirocycle 5 was oxidized to the aldehyde using Swern oxidation to give aldehyde 16.",
+        "section": "Completion of the synthesis is presented in Scheme 2.",
+        "image_refs": [
+          "29d315ea1e050c3e271171e04f34fffbc140ef5d808813d36cc91f9fc623d1ea.jpg",
+          "05fe44b3e10107623c5bee83a01550ed0a6c898a411bc0a47fbd8ffbc95bb38.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 16 is prepared.",
+        "gap": "How to perform the intramolecular aldol reaction to form the third ring and set the stereochemistry at C12.",
+        "decision": "To treat aldehyde 16 with TMSOTf to induce intramolecular aldol, expecting a 2:1 dr at C12 of the desired equatorial alcohol 4 and the undesired axial alcohol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1CCC2(C)C(=O)C=C(C)C=C(O)C2C1C(C)C=O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TMSOTf"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "dr": "2:1",
+        "observation": "Aldehyde 16 smoothly underwent intramolecular aldol to give a 2:1 dr at C12 of the desired equatorial alcohol 4 and the undesired axial alcohol. The yield is for two steps (oxidation and aldol)."
+      },
+      "evidence": {
+        "text_span": "Upon treatment with TMSOTf, aldehyde 16 smoothly underwent intramolecular aldol to give a 2:1 dr at C12 of the desired equatorial alcohol 4 and the undesired axial alcohol. These two diastereomers were separated by chromatography, and their configurations were assigned by proton NMR analysis and nuclear Overhauser effect spectroscopy (NOESY) experiments (see the Supporting Information for details of the structural assignments).",
+        "section": "Completion of the synthesis is presented in Scheme 2.",
+        "image_refs": [
+          "8c6ea5bee537a481d72fc3006b50354c70a5b6bebba0d17a05fdf228af3109c9.jpg",
+          "d981834664376e9840a03135e7baf8dec575fb6cce54ad3c9b18caf3bd59c7e9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The desired aldol product 4 (equatorial alcohol) was obtained.",
+        "gap": "How to protect the alcohol and chemo- and diastereoselectively reduce the exocyclic alkene.",
+        "decision": "To TES-protect the alcohol of 4, then chemo- and diastereoselectively reduce the exocyclic alkene using diimide to give enone 20 with the correct configuration at the methyl-bearing stereogenic center."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC[Si](CC)(CC)Oc1cc2c(cc1C)C(=O)C1C(C2=O)C(C)C(C)C1(C)C"
+        ],
+        "reagents": [
+          "unspecified TES-protecting agent",
+          "diimide"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The alcohol was TES-protected, and the exocyclic alkene was chemo- and diastereoselectively reduced using diimide to give enone 20 with the correct configuration."
+      },
+      "evidence": {
+        "text_span": "The alcohol of the desired aldol product 4 was triethylsilyl (TES)-protected, and the exocyclic alkene was then chemo- and diastereoselectively reduced using diimide to give enone 20 with the correct configuration at the methyl-bearing stereogenic center.",
+        "section": "Completion of the synthesis is presented in Scheme 2.",
+        "image_refs": [
+          "e1ccd5e6e4da77d976654ef75e2f4f804d7c0d99519252c9f6a89529f8fcaf87.jpg",
+          "d51998e8beec0f4132230f1bb0344edb8e3081c71f321fde0a0eb05ad27ba441.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enone 20 is prepared.",
+        "gap": "How to introduce the epoxide functionality.",
+        "decision": "To perform nucleophilic epoxidation of enone 20 using H2O2 and NaOH in MeOH, expecting a single diastereomer from reaction on the less hindered front face of the enone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[Si](CC)(CC)Oc1cc2c(cc1C)C(=O)C1C(C2=O)C(C)C(C)C1(C)C"
+        ],
+        "product_smiles": [
+          "CC1=C(O)C(=O)C2(C)C3CCC(C)(C3)C2C(=O)C1O"
+        ],
+        "reagents": [
+          "H2O2",
+          "NaOH"
+        ],
+        "solvent": "MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 36,
+        "observation": "Nucleophilic epoxidation of enone 20 gave epoxide 21 as a single diastereomer, presumably from reaction on the less hindered front face of the enone."
+      },
+      "evidence": {
+        "text_span": "Nucleophilic epoxidation of enone 20 gave epoxide 21 as a single diastereomer, presumably from reaction on the less hindered front face of the enone.",
+        "section": "Completion of the synthesis is presented in Scheme 2.",
+        "image_refs": [
+          "3c2c9754a4727578cbc555b4c34b57dcb74f35fc9d49c596e5ca14982c70104e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Epoxide 21 is prepared.",
+        "gap": "How to remove the TES-protecting group and open the epoxide to yield rhodocorane L (diosphenol 1).",
+        "decision": "To treat epoxide 21 with dilute sulfuric acid in acetic acid, expecting removal of the TES-protecting group and opening of the epoxide to give diosphenol 1."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=C(O)C(=O)C2(C)C3CCC(C)(C3)C2C(=O)C1O"
+        ],
+        "product_smiles": [
+          "CC1=C(O)C(=O)C2(C)C3CCC(C)(C3)C2C(=O)C1O"
+        ],
+        "reagents": [
+          "H2SO4"
+        ],
+        "solvent": "AcOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 18,
+        "observation": "The epoxide 21 was treated with dilute sulfuric acid in acetic acid, which removed the TES-protecting group and opened the epoxide to give diosphenol 1. The spectral data, including optical rotation, was consistent with what was reported by Sandargo and coworkers for rhodocorane L, confirming its structure and stereochemical assignment."
+      },
+      "evidence": {
+        "text_span": "The epoxide 21 was treated with dilute sulfuric acid in acetic acid, which removed the TES-protecting group and opened the epoxide to give diosphenol 1. The spectral data, including optical rotation, was consistent with what was reported by Sandargo and coworkers for rhodocorane L,3 confirming its structure and stereochemical assignment.",
+        "section": "Completion of the synthesis is presented in Scheme 2.",
+        "image_refs": [
+          "3a83f400889f967bd68d68647046fbb4fe0130444ce7aa47b52fd8dac6ff1019.jpg",
+          "6b0fd6aca55b6ffe7314179dfb0832478f666851948cf90a82241dd519f2a599.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "NOESY",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Longest Linear Steps": {
+        "value": 17,
+        "unit": "steps",
+        "interpretation": "The total synthesis of rhodocorane L was achieved in a 17-step longest linear sequence from commercial material."
+      }
+    },
+    "significance": "This work reports the first total synthesis of rhodocorane L, a complex acorane-type terpenoid. It demonstrates the successful application of a catalyst-controlled asymmetric dearomative spirocyclization in total synthesis, which is a significant advancement in setting challenging quaternary stereocenters. This lays the foundation for the synthesis of other complex spirocyclic natural products like rhodatin."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.5c01802",
+      "pmcid": "PMC12172031",
+      "title": "Synthesis of Rhodocorane L Using Gold-Catalyzed Dearomative Spirocyclization.",
+      "authors": "Shimizu EA, Rychnovsky SD.",
+      "journal": "Org Lett",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC12172031?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/190ef10f-636b-4f47-ab65-f15afb16724c.zip",
+      "parsed_at": "2026-05-11T06:22:18.010607+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 25,
+    "parseable": 18,
+    "canonicalized": 13,
+    "invalid": 7,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "BrMgC1=CC(OMOC)=C(OC)C=C1C",
+      "CC1=CC(OMOC)=C(C[C@H](CC#C[Si](C(C)C)(C(C)C)C(C)C)C(=O)N2C[C@@H](C)OC2=O)C=C1OC",
+      "CC1=CC(OMOC)=C(C[C@H](CC#C[Si](C(C)C)(C(C)C)C(C)C)C(=O)N2C[C@@H](C)OC2=O)C=C1OC",
+      "CC1=CC(OMOC)=C(C[C@H](C[C@H](C)C#C[Si](C(C)C)(C(C)C)C(C)C)C(=O)N2C[C@@H](C)OC2=O)C=C1OC",
+      "CC1=CC(OMOC)=C(C[C@H](C[C@H](C)C#C[Si](C(C)C)(C(C)C)C(C)C)C(=O)N2C[C@@H](C)OC2=O",
+      "CC1=CC(O)C2C(=O)C3(C)C(C=C)C2C1=O",
+      "CC1=CC(O)C2C(=O)C3(C)C(C=C)C2C1=O"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

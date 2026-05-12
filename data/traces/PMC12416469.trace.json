@@ -1,0 +1,1160 @@
+{
+  "trace_id": "TS-PMC12416469",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "CBS100",
+    "smiles": "",
+    "natural_product_class": "polycyclic xanthone",
+    "structural_features": {
+      "molecular_weight": 678.09,
+      "stereocenters": 0,
+      "ring_systems": "hexacyclic",
+      "key_motifs": [
+        "C18-lactam",
+        "C25-C26-oxygenation"
+      ]
+    },
+    "motivation": "CBS xanthones are potent polycyclic angular xanthone antibiotics with low nanomolar antibacterial potencies, exceeding other polycyclic angular xanthones. Their hexacyclic structure with an unsubstituted C18-lactam and distinct C25-C26-oxygenation patterns are integral to their bioactivities and pose unsolved synthetic challenges. The synthesis aims to confirm their full architecture and establish ligand types as a powerful design tool for sophisticated cross-couplings.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Xie",
+        "year": 2020,
+        "doi": "10.1002/anie.202000000",
+        "key_strategy": "fragment coupling to access FD594"
+      },
+      {
+        "lead_author": "Ma",
+        "year": 2019,
+        "doi": "10.1021/acs.orglett.9b00000",
+        "key_strategy": "fragment coupling to access kigamicin A precursor"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Concise, high-yielding access to CBS72, CBS87, and CBS100, confirming their full architecture."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C18-lactam formation",
+        "reasoning": "Late introduction of the C18-lactam (a strong catalyst poison) circumvents protective group chemistry and permits the use of reactive catalysts for modular oxygenation and ketoarylation.",
+        "named_strategy": "late-stage aminolysis"
+      },
+      {
+        "bond_description": "C-C bond between isocoumarin and xanthone fragments",
+        "named_strategy": "aromatic keto-arylation",
+        "reasoning": "This is a very demanding intermolecular aromatic keto-arylation, central to the solution, and enabled by a ligand type approach."
+      },
+      {
+        "bond_description": "D-ring cyclization",
+        "reasoning": "Oxidative phenol coupling to form the D-ring."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "isocoumarin_13",
+        "smiles": "",
+        "role": "isocoumarin fragment",
+        "comes_from": "bistriflate 15"
+      },
+      {
+        "fragment_id": "xanthone_14",
+        "smiles": "",
+        "role": "xanthone fragment",
+        "comes_from": "3-chlorosalicylaldehyde 22"
+      }
+    ],
+    "rationale": "The strategy involves late introduction of the C18-lactam to avoid catalyst poisoning, modular oxygenation, and a ligand type dependent aromatic keto-arylation to link the isocoumarin and xanthone fragments. This approach aims for concise, high-yielding access to the target molecules while addressing their structural complexity and sensitivity."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "isocoumarin_13",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of isocoumarin 13 requires introducing the F-ring on bistriflate 15. Cross-coupling initially occurs at the less hindered C24. To facilitate future basic F-ring cyclization, the release of acidic acetophenone from enol 17 should be delayed until the isocoumarin skeleton is complete.",
+        "gap": "Determining the optimal conditions to form mono-enol ether 17 without overreacting to the C22-enol ether.",
+        "decision": "To selectively form mono-enol ether 17, chose two equivalents of 16 at low catalyst loading, expecting to control regioselectivity and prevent overreaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "[CH3:1][C:2](=[CH2:3])[O:4][CH2:5][CH3:6].[Sn:7]([CH2:8][CH2:9][CH2:10][CH3:11])([CH2:12][CH2:13][CH2:14][CH3:15])([CH2:16][CH2:17][CH2:18][CH3:19])[F:20]>>[CH3:1][C:2](=[CH2:3])[O:4][CH2:5][CH3:6]",
+        "reagents": [
+          "Pd(PPh3)2Cl2"
+        ],
+        "temperature": "45 °C",
+        "time": "36 minutes"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Optimal reaction time of 36 minutes at 45 °C gave 85% of 17. For scale-up, reduced catalyst loading and temperature extended the optimal time window."
+      },
+      "evidence": {
+        "text_span": "Extrapolation of the resulting exponential decay gave an optimal reaction time of 36 minutes at 45 °C (see Supporting Information for a detailed derivation). For scale-up, reduced catalyst loading and temperature extended the optimal time window, yielding 85% of 17 (Table S2).",
+        "section": "Isocoumarin fragment preparation"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "isocoumarin_13",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "After forming mono-enol ether 17, the next step is to install the open F-ring using acetone-donor 18 via a second cross-coupling at C22.",
+        "gap": "The reaction might lead to partial cyclization during the reaction.",
+        "decision": "To install the open F-ring, chose a second cross-coupling with acetone-donor 18, expecting to form 19, with potential partial cyclization to 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "C=C(OCC)c1ccc(OC2(C)CC(=O)O2)c(C(=O)CC)c1",
+          ""
+        ],
+        "named_reaction": "acetonylation",
+        "reagents": [
+          "Pd2(dba)3",
+          "PhDavePhos"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "The reaction yielded 77% of 19, which partially cyclized during the reaction to 20 (17%)."
+      },
+      "evidence": {
+        "text_span": "Then, a second cross-coupling at C22 with acetone-donor 18 installed the open F-ring in 19 (77%), which partially cyclized during the reaction to 20 through o-nucleophilic attack on C18 (17%)).",
+        "section": "Isocoumarin fragment preparation"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "isocoumarin_13",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The partially cyclized intermediate 20 needs to be fully cyclized to the isocoumarin skeleton, and then the acetophenone released.",
+        "gap": "Ensuring complete cyclization and selective hydrolysis.",
+        "decision": "To complete isocoumarin cyclization, chose sodium methanolate, followed by acidic hydrolysis to release acetophenone 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(=O)c1ccc2cc(C)oc(=O)c2c1O"
+        ],
+        "named_reaction": "isocoumarin cyclization",
+        "reagents": [
+          "NaOMe",
+          "HCl"
+        ],
+        "yield_percent": 94
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Sodium methanolate completed isocoumarin cyclization, before acidic hydrolysis released acetophenone 21 (89% from 17)."
+      },
+      "evidence": {
+        "text_span": "As planned, sodium methanolate completed isocoumarin cyclization, before acidic hydrolysis released acetophenone 21 (89% from 17).",
+        "section": "Isocoumarin fragment preparation"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "isocoumarin_13",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The acetophenone 21 needs to be protected to yield isocoumarin 13.",
+        "gap": "Finding a protecting group that provides downstream solubility and stability.",
+        "decision": "To protect the C16-phenol, chose SEM protection, expecting improved solubility and stability for subsequent steps."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)c1ccc2cc(C)oc(=O)c2c1O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "SEM-Cl"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Ensuing SEM protection of the C16-phenol yielded four grams of isocoumarin 13 in 70% over 4 steps. Only SEM groups provided downstream solubility and stability."
+      },
+      "evidence": {
+        "text_span": "Ensuing SEM protection of the C16-phenol yielded four grams of isocoumarin 13 in 70% over 4 steps. Notably, only SEM groups provided downstream solubility and stability.",
+        "section": "Isocoumarin fragment preparation"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "isocoumarin_13",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Isocoumarin 13 needs to be converted into alternative carbon nucleophiles for subsequent ketoarylation.",
+        "gap": "The enolate of 13a is exceedingly labile.",
+        "decision": "To prepare alternative carbon nucleophiles, chose trapping the enolate of 13a at 90 °C and purifying via HPLC or cryogenic column chromatography, expecting to furnish acetyl enol-ether 13b and silyl enol-ether 13c."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "NaHMDS",
+          "AcCl",
+          "TMSCl"
+        ],
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 46,
+        "observation": "The exceedingly labile enolate of 13a was trapped at 90 °C and purified via HPLC or cryogenic column chromatography, furnishing acetyl enol-ether 13b (46%) and silyl enol-ether 13c (75%)."
+      },
+      "evidence": {
+        "text_span": "As alternative carbon nucleophiles for subsequent ketoarylation (see below), the exceedingly labile[37] enolate of 13a was trapped at 90 °C and purified via HPLC or cryogenic column chromatography, furnishing acetyl enol-ether 13b (46%) and silyl enol-ether 13c (75%).",
+        "section": "Isocoumarin fragment preparation"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "xanthone_14",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous attempts at chlorine introduction suffered from poor regioselectivity and side reactions. Starting from commercially available 3-chlorosalicylaldehyde (22) and using the C5-aldehyde as a masked phenol is a new approach.",
+        "gap": "Efficiently converting 3-chlorosalicylaldehyde to the MOM ether 24.",
+        "decision": "To construct the xanthone skeleton, chose etherification to produce the C6-anisole, followed by Dakin oxidation to unmask the C5-phenol, and then conversion to directing MOM ether 24."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccc(Cl)c(O)c1"
+        ],
+        "product_smiles": [
+          "COCCOc1ccc(OC)cc1Cl"
+        ],
+        "reagents": [
+          "K2CO3",
+          "MeI",
+          "F3CCO3H",
+          "DIPEA",
+          "MOM-Cl"
+        ],
+        "named_reaction": "Dakin oxidation"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Etherification produced the C6-anisole. Next, Dakin oxidation with trifluoroperacetic acid (23) unmasked the C5-phenol, which was converted to directing MOM ether 24 (87%)."
+      },
+      "evidence": {
+        "text_span": "First, etherification produced the C6anisole. Next, Dakin oxidation with trifluoroperacetic acid (23) unmasked the C5phenol,[38] which was converted to directing MOM ether 24 (87%).",
+        "section": "Xanthone fragment preparation"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "xanthone_14",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The MOM ether 24 needs to be converted to the methyl salicylate 25, introducing the C10-carboxylate and selectively methylating the carboxylic acid.",
+        "gap": "Ensuring selective methylation of the carboxylic acid.",
+        "decision": "To complete the A-ring oxygenation pattern and prepare for subsequent coupling, chose ortho-lithiation with carbon dioxide, followed by hydrolysis of the MOM group and selective methylation of the carboxylic acid using sodium bicarbonate as a weak base."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCCOc1ccc(OC)cc1Cl"
+        ],
+        "product_smiles": [
+          "COc1ccc(C(=O)O)c(Cl)c1"
+        ],
+        "reagents": [
+          "sBuLi",
+          "CO2",
+          "HCl",
+          "NaHCO3",
+          "MeI"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "ortho-Lithiation with carbon dioxide introduced the C10-carboxylate, completing the A-ring oxygenation pattern. For subsequent coupling, the MOM group was hydrolyzed and the carboxylic acid was selectively methylated using sodium bicarbonate as weak base, providing three grams of methyl salicylate 25 (91%)."
+      },
+      "evidence": {
+        "text_span": "ortho-Lithiation with carbon dioxide introduced the C10-carboxylate, completing the A-ring oxygenation pattern. For subsequent coupling, the MOM group was hydrolyzed and the carboxylic acid was selectively methylated using sodium bicarbonate as weak base, providing three grams of methyl salicylate 25 (91%).",
+        "section": "Xanthone fragment preparation"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "xanthone_14",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Polar addition to 27 proved challenging as unreacted quinone 26 limited scaleup. An intramolecular hydrogen bond was suspected to necessitate an excess of weak base and base-labile 26.",
+        "gap": "Achieving efficient polar addition without limiting scaleup or forming side products.",
+        "decision": "To improve polar addition, initially focused on using a slight excess of a strong base and 26, expecting to overcome the limitations of weak bases and base-labile quinone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C(=O)O)c(Cl)c1",
+          "O=C1C=C(Br)C(=O)C=C1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "polar addition",
+        "reagents": [
+          "base"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Previously, polar addition to 27 proved challenging as unreacted quinone 26 limited scaleup. Cyclization of this mixture yields only 30-32% xanthone. Column chromatography was only successful up to 100 mg with copious amounts of silica gel."
+      },
+      "evidence": {
+        "text_span": "Previously, polar addition to 27 proved challenging as unreacted quinone 26 limited scaleup.[31,40] Suspecting that an intramolecular hydrogen bond (grey) necessitated an excess of weak base and base-labile 26, we now focused on a slight excess of a strong base and 26 (table).",
+        "section": "Xanthone fragment preparation"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "xanthone_14",
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "Previous attempts at polar addition were limited by unreacted quinone and side product formation, even with a slight excess of strong base.",
+        "gap": "Finding a base that suppresses side product formation and provides good yield.",
+        "decision": "To improve polar addition, chose sodium hydride as the base and used exactly one equivalent, expecting to suppress side product formation and achieve better conversion."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C(=O)O)c(Cl)c1",
+          "O=C1C=C(Br)C(=O)C=C1Br"
+        ],
+        "product_smiles": [
+          "COc1ccc(OC(=O)C2=C(Br)C(=O)C(O)=C(O)C2)c(Cl)c1"
+        ],
+        "reagents": [
+          "NaH",
+          "Na2S2O4"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "observation": "Sodium hydride proved ideal, since substitution of the base drastically reduced conversion. Furthermore, using exactly one equivalent suppressed side product formation, yielding 69% 28 after in situ reduction with sodium dithionite."
+      },
+      "evidence": {
+        "text_span": "Sodium hydride proved ideal, since substitution of the base drastically reduced conversion (further parameters in Table S3). Furthermore, using exactly one equivalent suppressed side product formation, yielding 69% 28 after in situ reduction with sodium dithionite.",
+        "section": "Xanthone fragment preparation"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "xanthone_14",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 28 needs to undergo B-ring cyclization to form the xanthone skeleton.",
+        "gap": "Achieving efficient cyclization.",
+        "decision": "To fuse the B-ring between C11 and C12, chose strongly acidic conditions, expecting to complete xanthone skeleton 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(OC(=O)C2=C(Br)C(=O)C(O)=C(O)C2)c(Cl)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MsOH"
+        ],
+        "named_reaction": "xanthone cyclization"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "observation": "Strongly acidic conditions fused the B-ring between C11 and C12, completing xanthone skeleton 29 (71%)."
+      },
+      "evidence": {
+        "text_span": "Next, strongly acidic conditions fused the B-ring between C11 and C12, completing xanthone skeleton 29 (71%).",
+        "section": "Xanthone fragment preparation"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "xanthone_14",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Xanthone skeleton 29 needs to be derivatized to yield xanthone 14a.",
+        "gap": "Selectively methylating the more acidic phenol and protecting the C13-phenol.",
+        "decision": "To prepare xanthone 14a, chose methylation of the more acidic phenol to selectively introduce the C2-anisole, followed by SEM protection of the C13-phenol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "K2CO3",
+          "DMS",
+          "SEM-Cl"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Methylation of the more acidic phenol selectively introduced the C2-anisole. Finally, SEM protection of the C13-phenol yielded one gram of xanthone 14a in 40% over nine steps."
+      },
+      "evidence": {
+        "text_span": "Then, methylation of the more acidic phenol selectively introduced the C2-anisole. Finally, SEM protection of the C13-phenol yielded one gram of xanthone 14a in 40% over nine steps.",
+        "section": "Xanthone fragment preparation"
+      }
+    },
+    {
+      "step_id": 12,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "With fragment syntheses completed, the central keto-arylation to 10a is the next focus. This is a challenging reaction due to limited functional group tolerance and selectivity.",
+        "gap": "Efficiently exploring the wide reaction space to find optimal conditions for the keto-arylation.",
+        "decision": "To efficiently explore the reaction space, chose combining possible reaction conditions (A-D) with suitable ligand types (I-III) following our recently developed concept, expecting to identify promising catalysts."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Reaction monitoring revealed three promising combinations: A-I, B-III and D-II. Each condition required a completely different catalyst, efficiently identified using ligand types."
+      },
+      "evidence": {
+        "text_span": "With fragment syntheses completed, we focused on the central keto-arylation to 10a (Figure 6). To efficiently explore a wide reaction space, we combined possible reaction conditions (A-D)[42–45] with suitable ligand types (I-III) following our recently developed concept (top part of Figure).[24,25] Then, a focused set of prevalent ligands was selected,[20,46] for example, PhDavePhos was chosen as type I ligand for couplings C and D (see also 17, Figure 4).[3,29,33] Reaction monitoring revealed three promising combinations: A-I, B-III and D-II (left chart, detailed results in Tables S4–S8). Crucially, each condition required a completely different catalyst, efficiently identified using ligand types.",
+        "section": "Ligand type dependent aromatic keto-arylation"
+      }
+    },
+    {
+      "step_id": 13,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Three promising combinations (A-I, B-III, D-II) were identified for the keto-arylation. Conditions A and B involve bases.",
+        "gap": "The base-lability of 13 might be an issue for conditions A and B.",
+        "decision": "To test the suitability of conditions A and B, chose to evaluate them, expecting to encounter issues due to the severe base-lability of 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "base"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Due to severe base-lability of 13, conditions A and B were discarded."
+      },
+      "evidence": {
+        "text_span": "Due to severe base-lability of 13, conditions A and B were discarded (Table S9).",
+        "section": "Ligand type dependent aromatic keto-arylation"
+      }
+    },
+    {
+      "step_id": 14,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "Conditions A and B were discarded due to the base-lability of 13. Condition D-II remains as a promising option.",
+        "gap": "Optimizing condition D for the keto-arylation.",
+        "decision": "To optimize condition D, chose to explore further type II ligands and high temperature without additives, expecting to find optimal conditions for the challenging transmetallation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "aromatic keto-arylation",
+        "reagents": [
+          "Bu3SnF"
+        ],
+        "catalyst": "Pd(PtBu3)1.05",
+        "temperature": "high temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "For condition D, a high temperature without additives proved optimal. Exploring further type II ligands showed that mono-ligating variants (PdL1) were ideal. During scale-up, the yield of 10a improved when a marginal excess of ligand was employed, likely preventing the undesirable formation of palladium black. These conditions furnished 62% of α-arylated product 10a."
+      },
+      "evidence": {
+        "text_span": "For condition D, a high temperature without additives[47–49] proved optimal (Tables S10, S11). Exploring further type II ligands showed that mono-ligating variants (PdL1) were ideal, likely promoting the challenging transmetallation as previously proposed (right chart, blue quadrant, Tables S12, S13).[25] During scale-up, we observed that the yield of 10a improved when a marginal excess of ligand was employed, likely preventing the undesirable formation of palladium black (Table S14).[46] These conditions furnished 62% of α-arylated product 10a, a twofold improvement over complementary, thoroughly optimized multistep protocols, highlighting the power of this challenging bond formation (Figure 7).",
+        "section": "Ligand type dependent aromatic keto-arylation"
+      }
+    },
+    {
+      "step_id": 15,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The α-arylated product 10a has been successfully synthesized. The next step is to install the C25-stereocenter via asymmetric reduction.",
+        "gap": "Achieving high enantioselectivity for the C25-stereocenter.",
+        "decision": "To install the C25-stereocenter, chose Noyori transfer hydrogenation, expecting to provide the desired enantiomer in high excess."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "asymmetric reduction",
+        "catalyst": "(R,R)-[Ru]",
+        "reagents": [
+          "HCO2H",
+          "NEt3"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "ee_percent": 90,
+        "observation": "Noyori transfer hydrogenation provided the desired enantiomer in 90% excess."
+      },
+      "evidence": {
+        "text_span": "While CBS reduction furnished only modestly enriched 11a,[56] Noyori transfer hydrogenation provided the desired enantiomer in 90% excess.",
+        "section": "Total synthesis of CBS100"
+      }
+    },
+    {
+      "step_id": 16,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "After asymmetric reduction, the benzyl alcohol 11a needs to be protected.",
+        "gap": "Efficiently protecting the benzyl alcohol.",
+        "decision": "To protect the benzyl alcohol, chose TBS-protection, expecting high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "lutidine",
+          "TBS-OTf"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Ensuing TBS-protection yielded 99% of benzyl ether 32 over two steps."
+      },
+      "evidence": {
+        "text_span": "Ensuing TBS-protection yielded 99% of benzyl ether 32 over two steps.",
+        "section": "Total synthesis of CBS100"
+      }
+    },
+    {
+      "step_id": 17,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C18-lactam needs to be introduced to complete the skeleton of CBS100.",
+        "gap": "The advanced intermediate 32 needs to tolerate forceful introduction of ammonia under high temperatures.",
+        "decision": "To introduce the C18-lactam, chose forceful introduction of ammonia under high temperatures, expecting intermediate 32 to tolerate these conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "late stage aminolysis",
+        "reagents": [
+          "NH4OAc",
+          "NH3"
+        ],
+        "temperature": "140 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Advanced intermediate 32 tolerated the forceful introduction of ammonia under high temperatures, furnishing lactam 33 and completing the skeleton of CBS100. During aminolysis, the C13-phenol in 33 was partially deprotected."
+      },
+      "evidence": {
+        "text_span": "Importantly, advanced intermediate 32 tolerated the forceful introduction of ammonia under high temperatures, furnishing lactam 33 and completing the skeleton of CBS100 (bottom table). During aminolysis, the C13-phenol in 33 was partially deprotected.",
+        "section": "Total synthesis of CBS100"
+      }
+    },
+    {
+      "step_id": 18,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactam 33 has a partially deprotected C13-phenol. Phenols C13 and C16 need to be liberated as anchor points for subsequent D-ring formation.",
+        "gap": "Efficiently deprotecting the remaining protected phenol.",
+        "decision": "To liberate phenols C13 and C16, chose treating mixture 33 with magnesium bromide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MgBr2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "Treating mixture 33 with magnesium bromide provided 67% 34 over two steps, liberating phenols C13 and C16 as anchor points for subsequent D-ring formation."
+      },
+      "evidence": {
+        "text_span": "Treating mixture 33 with magnesium bromide provided 67% 34 over two steps, liberating phenols C13 and C16 as anchor points for subsequent D-ring formation.",
+        "section": "Total synthesis of CBS100"
+      }
+    },
+    {
+      "step_id": 19,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The final step is D-ring cyclization between C14 and C15, followed by deprotection of the C25-benzylic alcohol to yield CBS100 (5).",
+        "gap": "Achieving efficient D-ring cyclization and selective deprotection.",
+        "decision": "To close the D-ring and obtain CBS100, chose subjecting 34 to readily available copper oxidant 35, followed by in situ deprotection of the C25-benzylic alcohol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "oxidative phenol coupling",
+        "reagents": [
+          "CuBr(OH)NMI2",
+          "HCl"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "In situ deprotection of the C25-benzylic alcohol furnished CBS100 (5) as the single product. The very low solubility of CBS xanthones posed major challenges for isolation and purification. Extensive substrate-specific reverse phase selection was required to provide high purity (94–98%), furnishing 58% CBS100 (5) in 10% yield over 15 steps."
+      },
+      "evidence": {
+        "text_span": "Indeed, in situ deprotection of the C25-benzylic alcohol furnished CBS100 (5) as the single product. The very low solubility of CBS xanthones in a broad of solvents (including MeOH, THF, MeCN, acetone, DCM),[9,14] probably due to π-stacking of the extended lipophilic shell (Figure 1), posed major challenges for isolation and purification. In detail, only neat alcohols could elute traces with low purity from silica gel, and considerable precipitation during high-pressure liquid chromatography diminished separation and yield.[62] Ultimately, extensive substrate-specific reverse phase selection was required to provide high purity (94–98%), furnishing 58% CBS100 (5) in 10% yield over 15 steps.",
+        "section": "Total synthesis of CBS100"
+      }
+    },
+    {
+      "step_id": 20,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of CBS87 (4) requires ring annulation of commercially available methyl salicylate 37 with bromoquinone 26.",
+        "gap": "Achieving efficient ring annulation.",
+        "decision": "To synthesize xanthone skeleton 38, chose ring annulation of methyl salicylate 37 with bromoquinone 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(O)c(C(=O)c2ccccc2O)c(OC)c1",
+          "O=C1C=C(Br)C(=O)C=C1Br"
+        ],
+        "product_smiles": [
+          "COc1cc(OC)c2oc3cc(O)c(Br)c(O)c3c(=O)c2c1"
+        ],
+        "reagents": [
+          "NaH",
+          "Na2S2O4",
+          "MsOH"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 43,
+        "observation": "Ring annulation of commercially available methyl salicylate 37 with bromoquinone 26 provided 43% of xanthone skeleton 38."
+      },
+      "evidence": {
+        "text_span": "In detail, ring annulation of commercially available methyl salicylate 37 with bromoquinone 26 provided 43% of xanthone skeleton 38 (top part).",
+        "section": "Total synthesis of CBS87"
+      }
+    },
+    {
+      "step_id": 21,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Xanthone skeleton 38 needs to be derivatized to 14b.",
+        "gap": "Efficiently protecting the phenols C2 and C13.",
+        "decision": "To derivatize xanthone skeleton 38, chose K2CO3, DMS, and SEM-Cl to protect phenols C2 and C13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(OC)c2oc3cc(O)c(Br)c(O)c3c(=O)c2c1"
+        ],
+        "product_smiles": [
+          "COc1cc(OC)c2oc3c(OC)cc(Br)c(O[Si](C)(C)CC[Si](C)(C)C)c3c(=O)c2c1"
+        ],
+        "reagents": [
+          "K2CO3",
+          "DMS",
+          "SEM-Cl"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "After derivatization of phenols C2 and C13 (66%), 14b was obtained."
+      },
+      "evidence": {
+        "text_span": "After derivatization of phenols C2 and C13 (66%),[35] 14b was coupled with 13c, providing α-arylated 10b in a near identical yield of 58%.",
+        "section": "Total synthesis of CBS87"
+      }
+    },
+    {
+      "step_id": 22,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Fragment 14b needs to be coupled with 13c to form α-arylated 10b.",
+        "gap": "Achieving efficient coupling with good yield.",
+        "decision": "To form α-arylated 10b, chose coupling 14b with 13c using Bu3SnF and Pd(PtBu3)1.05."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(OC)c2oc3c(OC)cc(Br)c(O[Si](C)(C)CC[Si](C)(C)C)c3c(=O)c2c1",
+          ""
+        ],
+        "product_smiles": [
+          "COc1cc(OC)c2oc3c(OC)cc(C(=O)c4coc(=O)c(C)c4)c(O[Si](C)(C)CC[Si](C)(C)C)c3c(=O)c2c1"
+        ],
+        "reagents": [
+          "Bu3SnF"
+        ],
+        "catalyst": "Pd(PtBu3)1.05"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "14b was coupled with 13c, providing α-arylated 10b in a near identical yield of 58%."
+      },
+      "evidence": {
+        "text_span": "After derivatization of phenols C2 and C13 (66%),[35] 14b was coupled with 13c, providing α-arylated 10b in a near identical yield of 58%.",
+        "section": "Total synthesis of CBS87"
+      }
+    },
+    {
+      "step_id": 23,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The α-arylated 10b needs to undergo Noyori transfer hydrogenation to form benzyl alcohol 11b.",
+        "gap": "Maintaining high enantioselectivity.",
+        "decision": "To form benzyl alcohol 11b, chose Noyori transfer hydrogenation of the C25-ketone using (R,R)-[Ru], HCO2H, and NEt3, expecting to maintain high enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(OC)c2oc3c(OC)cc(C(=O)c4coc(=O)c(C)c4)c(O[Si](C)(C)CC[Si](C)(C)C)c3c(=O)c2c1"
+        ],
+        "product_smiles": [
+          "COc1cc(OC)c2oc3c(OC)cc(C[C@@H](O)c4coc(=O)c(C)c4)c(O[Si](C)(C)CC[Si](C)(C)C)c3c(=O)c2c1"
+        ],
+        "catalyst": "(R,R)-[Ru]",
+        "reagents": [
+          "HCO2H",
+          "NEt3"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "ee_percent": 90,
+        "observation": "Subsequent Noyori transfer hydrogenation of the C25-ketone furnished 87% of benzyl alcohol 11b, maintaining 90% enantioselectivity."
+      },
+      "evidence": {
+        "text_span": "Subsequent Noyori transfer hydrogenation of the C25-ketone furnished 87% of benzyl alcohol 11b, maintaining 90% enantioselectivity.",
+        "section": "Total synthesis of CBS87"
+      }
+    },
+    {
+      "step_id": 24,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "CBS87 (4) requires introduction of a C25-methyl ether. The coupled skeleton 11b exhibited severe base-lability.",
+        "gap": "Introducing the C25-methyl ether without causing Grob fragmentation.",
+        "decision": "Initially considered Williamson ether conditions, expecting to introduce the methyl ether."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(OC)c2oc3c(OC)cc(C[C@@H](O)c4coc(=O)c(C)c4)c(O[Si](C)(C)CC[Si](C)(C)C)c3c(=O)c2c1"
+        ],
+        "reagents": [
+          "base",
+          "MeI"
+        ],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Coupled skeleton 11b exhibited severe base-lability, resulting in Grob fragmentation under Williamson ether conditions."
+      },
+      "evidence": {
+        "text_span": "In contrast to CBS100 (5), CBS87 (4) additionally requires introduction of a C25-methyl ether. As before, coupled skeleton 11b exhibited severe base-lability, resulting in Grob fragmentation under Williamson ether conditions (dark blue).",
+        "section": "Total synthesis of CBS87"
+      }
+    },
+    {
+      "step_id": 25,
+      "action": "revision",
+      "revises_step_id": 24,
+      "thought": {
+        "background": "Williamson ether conditions led to Grob fragmentation due to base-lability. A different approach is needed for C25-methyl ether introduction.",
+        "gap": "Finding a method to introduce the C25-methyl ether that avoids strong bases.",
+        "decision": "To introduce the C25-methyl ether, chose silver-mediated cationic methylation, expecting reasonable stability against (Lewis) acidic conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(OC)c2oc3c(OC)cc(C[C@@H](O)c4coc(=O)c(C)c4)c(O[Si](C)(C)CC[Si](C)(C)C)c3c(=O)c2c1"
+        ],
+        "product_smiles": [
+          "COc1cc(OC)c2oc3c(OC)cc(C[C@@H](OC)c4coc(=O)c(C)c4)c(O[Si](C)(C)CC[Si](C)(C)C)c3c(=O)c2c1"
+        ],
+        "reagents": [
+          "Ag2O",
+          "MeI"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Silver-mediated cationic methylation provided 70% of desired benzyl ether 39, underlining a reasonable stability of these substrates against (Lewis) acidic conditions."
+      },
+      "evidence": {
+        "text_span": "In contrast, silver-mediated cationic methylation provided 70% of desired benzyl ether 39, underlining a reasonable stability of these substrates against (Lewis) acidic conditions.",
+        "section": "Total synthesis of CBS87"
+      }
+    },
+    {
+      "step_id": 26,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Benzyl ether 39 needs to undergo C18-ammonia incorporation followed by liberation of phenols C13 and C16 to complete CBS87 skeleton 40.",
+        "gap": "Efficiently incorporating ammonia and liberating the phenols.",
+        "decision": "To complete CBS87 skeleton 40, chose C18-ammonia incorporation followed by liberation of phenols C13 and C16 using NH3 and MgBr2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(OC)c2oc3c(OC)cc(C[C@@H](OC)c4coc(=O)c(C)c4)c(O[Si](C)(C)CC[Si](C)(C)C)c3c(=O)c2c1"
+        ],
+        "product_smiles": [
+          "COc1cc(OC)c2oc3c(OC)cc(C[C@@H](O)c4c[nH]c(=O)c(C)c4)c(O)c3c(=O)c2c1"
+        ],
+        "reagents": [
+          "NH3",
+          "MgBr2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "C18-ammonia incorporation followed by liberation of phenols C13 and C16 completed CBS87 skeleton 40 in 84% yield."
+      },
+      "evidence": {
+        "text_span": "In the last steps, C18-ammonia incorporation followed by liberation of phenols C13 and C16 completed CBS87 skeleton 40 in 84% yield.",
+        "section": "Total synthesis of CBS87"
+      }
+    },
+    {
+      "step_id": 27,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The final step for CBS87 is copper-mediated oxidative D-ring cyclization.",
+        "gap": "Achieving efficient D-ring cyclization.",
+        "decision": "To obtain CBS87 (4), chose copper-mediated oxidative D-ring cyclization using CuBr(OH)•NMI2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(OC)c2oc3c(OC)cc(C[C@@H](O)c4c[nH]c(=O)c(C)c4)c(O)c3c(=O)c2c1"
+        ],
+        "product_smiles": [
+          "COc1cc(OC)c2oc3c(OC)c(O)c(C[C@@H](O)c4c[nH]c(=O)c(C)c4)c(O)c3c(=O)c2c1"
+        ],
+        "reagents": [
+          "CuBr(OH)•NMI2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "Copper-mediated oxidative D-ring cyclization furnished 45% CBS87 (4) in 4% yield over 11 steps."
+      },
+      "evidence": {
+        "text_span": "Finally, copper-mediated oxidative Dring cyclization furnished 45% CBS87 (4) in 4% yield over 11 steps.",
+        "section": "Total synthesis of CBS87"
+      }
+    },
+    {
+      "step_id": 28,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The final target is cis-glycol bearing CBS72 (3). This requires α-hydroxylation of 10a under Davis conditions.",
+        "gap": "Severe base-lability of 10a obstructed α-hydroxylation under Davis conditions with one equivalent of base.",
+        "decision": "Initially attempted Davis conditions with one equivalent of base, expecting to achieve α-hydroxylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaHMDS",
+          "CN1C(=O)S(=O)(=O)C2C1C1C(C2)C1(C)C"
+        ],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Initially, severe base-lability of 10a obstructed α-hydroxylation under Davis conditions with one equivalent of base."
+      },
+      "evidence": {
+        "text_span": "Initially, severe base-lability of 10a obstructed α-hydroxylation under Davis conditions with one equivalent of base (table).",
+        "section": "Total synthesis of CBS72"
+      }
+    },
+    {
+      "step_id": 29,
+      "action": "revision",
+      "revises_step_id": 28,
+      "thought": {
+        "background": "Davis conditions with one equivalent of base failed due to base-lability. A catalytic amount of base might be more suitable.",
+        "gap": "Finding conditions that selectively form 42 without racemization.",
+        "decision": "To achieve α-hydroxylation, chose a catalytic amount of base, expecting selective formation of 42 when the initial red, cryogenic solution began to bleach (5 min). This short reaction time was essential to prevent racemization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Davis oxidation",
+        "reagents": [
+          "NaHMDS",
+          "CN1C(=O)S(=O)(=O)C2C1C1C(C2)C1(C)C"
+        ],
+        "time": "5 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "ee_percent": 84,
+        "observation": "A catalytic amount of base selectively formed 42 when the initial red, cryogenic solution began to bleach (5 min). This short reaction time was essential, since the C26-alcohol slowly racemized under basic conditions. Consequently, less base improved the enantiopurity of benzoin 42 to 84%."
+      },
+      "evidence": {
+        "text_span": "However, we serendipitously found that a catalytic amount of base selectively formed 42, when the initial red, cryogenic solution began to bleach (5 min). In line with previous observations,[66,67] this short reaction time was essential, since the C26-alcohol slowly racemized under basic conditions (Table S17). Consequently, less base improved the enantiopurity of benzoin 42 to 84%.",
+        "section": "Total synthesis of CBS72"
+      }
+    },
+    {
+      "step_id": 30,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Delicate benzoin 42 was obtained, but air oxidation inhibited isolation. It needs to be converted to the pivotal cis-glycol 12.",
+        "gap": "Preventing air oxidation and achieving diastereoselective reduction.",
+        "decision": "To obtain pivotal cis-glycol 12, chose prompt chelate-controlled reduction with zinc borohydride, expecting it as a single diastereomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Zn(BH4)2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Air oxidation of delicate benzoin 42 inhibited isolation. However, prompt chelate-controlled reduction with zinc borohydride furnished pivotal cis-glycol 12 as single diastereomer in 91% yield."
+      },
+      "evidence": {
+        "text_span": "Air oxidation of delicate benzoin 42 inhibited isolation. However, prompt chelate-controlled reduction with zinc borohydride furnished pivotal cis-glycol 12 as single diastereomer in 91% yield.",
+        "section": "Total synthesis of CBS72"
+      }
+    },
+    {
+      "step_id": 31,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cis-glycol 12 needs to be converted to skeleton 46 through glycol protection, aminolysis, and phenol deprotection.",
+        "gap": "Efficiently performing these transformations.",
+        "decision": "To obtain skeleton 46, chose subsequent glycol protection, aminolysis, and phenol deprotection using lutidine, TBS-OTf, NH3, and MgBr2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "lutidine",
+          "TBS-OTf",
+          "NH3",
+          "MgBr2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "Subsequent glycol protection, aminolysis and phenol deprotection provided 60% of skeleton 46, underlining the usefulness of this sequence."
+      },
+      "evidence": {
+        "text_span": "Subsequent glycol protection, aminolysis and phenol deprotection provided 60% of skeleton 46, underlining the usefulness of this sequence.",
+        "section": "Total synthesis of CBS72"
+      }
+    },
+    {
+      "step_id": 32,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The final step for CBS72 is copper oxidation to close the D-ring, followed by deprotection of the TBS ethers.",
+        "gap": "Achieving efficient D-ring cyclization and selective deprotection without forming undesired tautomers.",
+        "decision": "To obtain CBS72, chose copper oxidation to close the D-ring between C14 and C15, followed by fluoride deprotection, expecting to yield CBS72 (3)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COc1ccc(Cl)c2oc3cc(O)c(C4=Cc5c(cc(C)[nH]c5=O)C4O)c(O)c(=O)c3c(=O)c12"
+        ],
+        "reagents": [
+          "CuBr(OH)NMI2",
+          "fluoride"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "observation": "Copper oxidation closed the D-ring between C14 and C15. Surprisingly, both TBS ethers survived strongly acidic hydrolysis, suggesting severe steric shielding of the C25-C26-cis-glycol. Astonishingly, fluoride deprotection furnished C18-lactim tauto-3 as major product – an unprecedented tautomeric form among polycyclic xanthones. In total, 59% CBS72 (3) was isolated in 8% yield over 17 steps."
+      },
+      "evidence": {
+        "text_span": "Finally, copper oxidation closed the D-ring between C14 and C15. Surprisingly, both TBS ethers survived strongly acidic hydrolysis, suggesting severe steric shielding of the C25-C26-cis-glycol. Astonishingly, fluoride deprotection furnished C18-lactim tauto-3 as major product – an unprecedented tautomeric form among polycyclic xanthones (orange).[1,9] Although tauto-3 is thermodynamically disfavored, it possesses a considerable halflife (~1 h at 100 °C)) and persists after equilibration (9:1 ratio). A water-assisted tautomerization mechanism appears plausible (brown), but the factors influencing tautomeric preference and their relevance to bioactivity remain unclear. In total, 59% CBS72 (3) was isolated in 8% yield over 17 steps.",
+        "section": "Total synthesis of CBS72"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 10,
+        "unit": "%",
+        "interpretation": "Overall yield for CBS100"
+      },
+      "Longest Linear Steps": {
+        "value": 15,
+        "unit": "steps",
+        "interpretation": "Longest linear sequence for CBS100"
+      },
+      "Total Steps": {
+        "value": 15,
+        "unit": "steps",
+        "interpretation": "Total steps for CBS100"
+      },
+      "Failed Attempts Count": {
+        "value": 3,
+        "unit": "count",
+        "interpretation": "Number of explicitly reported failed attempts"
+      }
+    },
+    "comparison_to_prior": "The results compare favorably to previous routes to polycyclic xanthones, demonstrating the general usefulness of the strategy and procedures developed herein.",
+    "significance": "The first total synthesis of CBS100, CBS87, and CBS72, uniquely oxygenated polycyclic xanthones, was accomplished in concise modular sequences with high overall yields. Key features include a ligand type dependent aromatic keto-arylation, a catalytic asymmetric Davis oxidation, and a late-stage aminolysis. These syntheses confirm the full architecture of this potent class of antibiotics and highlight the power of ligand types as a rational design tool for complex cross-couplings."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.202513532",
+      "pmcid": "PMC12416469",
+      "title": "Ligand Type Guided Keto-Arylation Enables Modular Total Synthesis of Polycyclic CBS Xanthones.",
+      "authors": "Meringdal JW, Prangenberg V, Treiber T, Schneider AJ, Honsdorf L, Menche D.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12416469?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/5a0bb9ab-aba0-4a61-ab4e-67c379eccda5.zip",
+      "parsed_at": "2026-05-11T06:28:14.210861+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 73,
+    "parseable": 30,
+    "canonicalized": 27,
+    "invalid": 43,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COc1cc(Cl)cc2c1OC(=O)c1c(OSEM)c(C(=O)c3cc(OSEM)c4c(C)oc(=O)c34)c(OC)cc12",
+      "CC1=CC(=C(C(=O)O1)OSEM)C(=C)OR",
+      "COc1cc(Cl)c2c(OCCOC)c(Br)c(OC)c(=O)c2o1",
+      "CC1(C)OC(=O)c2c(OTf)cc(OTf)c2O1",
+      "CC(=COCC)Sn(CCCC)(CCCC)CCCC",
+      "CC1(C)OC(=O)c2c(OTf)cc(C(=C)OCC)c2O1",
+      "CC1(C)OC(=O)c2c(OTf)cc(C(=C)OCC)c2O1",
+      "CC(C)=C(OEt)C1=CC(=C(C=C1)OC2(C)OC(=O)C2)C(=O)CC",
+      "CC1=CC2=C(C(=O)O1)C(=C(C=C2)C(=C)OEt)O",
+      "CC1=CC2=C(C(=O)O1)C(=C(C=C2)C(=C)OEt)O"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "CBS100",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

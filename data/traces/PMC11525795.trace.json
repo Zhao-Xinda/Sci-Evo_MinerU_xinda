@@ -1,0 +1,319 @@
+{
+  "trace_id": "TS-PMC11525795",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "methyl 1,5,8-trimethoxy-1H-isochromene-3-carboxylate",
+    "smiles": "COC(=O)C1=Cc2c(OC)ccc(OC)c2OC1OC",
+    "natural_product_class": "isochromene derivative",
+    "structural_features": {
+      "molecular_weight": 294.29,
+      "stereocenters": 1,
+      "ring_systems": "isochromene",
+      "key_motifs": [
+        "isochromene",
+        "ester",
+        "methoxy"
+      ]
+    },
+    "motivation": "The isochromene motif is frequently observed in natural products sometimes showing interesting biological properties such as antibacterial, antifungal, antitumoral or antimicrobial activity. The target compound is a known compound for antitumor activity against breast cancer.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Nardangeli",
+        "year": 2021,
+        "doi": "10.1055/a-1560-0970",
+        "key_strategy": "palladium-catalyzed annulation of 2-alkynylbenzaldehydes"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Achieve the total synthesis of methyl 1,5,8-trimethoxy-1H-isochromene-3-carboxylate 10 using the developed heterogeneous gold-catalyzed cyclization/hydroalkoxylation as a key step."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [],
+    "fragments": [],
+    "rationale": "The total synthesis of methyl 1,5,8-trimethoxy-1H-isochromene-3-carboxylate 10 was planned using the developed tandem cyclisation/hydroalkoxylation reaction as the key step. The precursor propiolate 9 was envisioned to be synthesized from 2-iodo-3,6-dimethoxybenzaldehyde 8, which in turn would be derived from 2,5-dimethoxybenzaldehyde 7. Protection of the aldehyde was deemed necessary to avoid side reactions during subsequent steps."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The starting material is 2,5-dimethoxybenzaldehyde 7. The goal is to protect the aldehyde group to prevent interference in subsequent reactions.",
+        "gap": "Need to find a suitable protecting group and reaction conditions for the aldehyde.",
+        "decision": "To protect the aldehyde, chose acetalization with 1,3-propanediol and trimethyl orthoformate (MeO)3CH, catalyzed by TBATB."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C=O)c(OC)c1"
+        ],
+        "product_smiles": [
+          "CCCOC(O)c1ccc(OC)cc1OC"
+        ],
+        "reagents": [
+          "1,3-propanediol",
+          "(MeO)3CH",
+          "TBATB"
+        ],
+        "solvent": "unspecified",
+        "temperature": "rt",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Protection of aldehyde 7 was performed, which led to the formation of the corresponding acetal."
+      },
+      "evidence": {
+        "text_span": "First, protection of aldehyde 7 was performed, which led to the formation of the corresponding acetal",
+        "image_refs": [
+          "e2271027c9eec3ee7ad6a9a346488f213b19f39df352fcc8ff255a3a8ad0b000.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The protected aldehyde is available. The next step is to introduce an iodine atom ortho to the aldehyde for Sonogashira coupling.",
+        "gap": "Need to perform ortho-lithiation and subsequent iodination.",
+        "decision": "To introduce iodine, chose ortho-lithiation with nBuLi followed by reaction with 1,2-diiodoethane."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCOC(O)c1ccc(OC)cc1OC"
+        ],
+        "product_smiles": [
+          "CCCOC(O)c1cc(OC)cc(OC)c1I"
+        ],
+        "reagents": [
+          "nBuLi",
+          "1,2-diiodoethane"
+        ],
+        "solvent": "benzene/hexane",
+        "temperature": "-10 °C to rt",
+        "time": "overnight"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 33,
+        "observation": "ortho-lithiation was followed by reaction with 1,2-diiodoethane to give the 2-iodo-3,6-dimethoxybenzaldehyde 8 in 33% yield over three steps."
+      },
+      "evidence": {
+        "text_span": "then ortho-lithiation was followed by reaction with 1,2-diiodoethane to give the 2-iodo-3,6-dimethoxybenzaldehyde 8 in 33% yield over three steps.",
+        "image_refs": [
+          "e2271027c9eec3ee7ad6a9a346488f213b19f39df352fcc8ff255a3a8ad0b000.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The iodinated protected aldehyde 8 is available. The goal is to introduce the alkyne moiety via Sonogashira coupling.",
+        "gap": "Need to perform Sonogashira coupling with trimethylsilylacetylene and then deprotect the TMS group.",
+        "decision": "To introduce the alkyne, chose Sonogashira coupling with TMS-acetylene, followed by TMS removal with K2CO3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCOC(O)c1cc(OC)cc(OC)c1I"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "trimethylsilylacetylene",
+          "Pd(PPh3)2",
+          "CuI",
+          "K2CO3"
+        ],
+        "solvent": "toluene/Et3N, MeOH",
+        "temperature": "rt",
+        "time": "overnight, 2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Halogenated benzaldehyde 8 was then used in the Sonogashira coupling reaction with TMS-acetylene, followed by TMS removal to give the terminal alkyne."
+      },
+      "evidence": {
+        "text_span": "Halogenated benzaldehyde 8 was then used in the Sonogashira coupling reaction with TMS-acetylene, followed by TMS removal to give the terminal alkyne.",
+        "image_refs": [
+          "e2271027c9eec3ee7ad6a9a346488f213b19f39df352fcc8ff255a3a8ad0b000.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The terminal alkyne with the protected aldehyde is available. The goal is to introduce the methyl chloroformate group.",
+        "gap": "Need to deprotonate the terminal alkyne and react it with methyl chloroformate.",
+        "decision": "Attempted deprotonation of the terminal alkyne with nBuLi with the aldehyde unprotected."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "nBuLi"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Deprotonation of this alkyne with nBuLi was firstly performed with unprotected aldehyde as previously reported but unfortunately in our hands, the reaction did not lead to the desired product."
+      },
+      "evidence": {
+        "text_span": "Deprotonation of this alkyne with nBuLi was firstly performed with unprotected aldehyde as previously reported but unfortunately in our hands, the reaction did not lead to the desired product.",
+        "image_refs": [
+          "e2271027c9eec3ee7ad6a9a346488f213b19f39df352fcc8ff255a3a8ad0b000.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "The previous attempt to deprotonate the alkyne with an unprotected aldehyde failed.",
+        "gap": "The aldehyde needs to be protected before deprotonation and reaction with methyl chloroformate.",
+        "decision": "To ensure successful reaction, the aldehyde was protected by acetalization before deprotonation of the terminal alkyne with nBuLi and subsequent reaction with methyl chloroformate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCCOC(O)c1cc(OC)cc(OC)c1C#CCOC(=O)OC"
+        ],
+        "reagents": [
+          "nBuLi",
+          "methyl chloroformate"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to rt",
+        "time": "1 h, 1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 11,
+        "observation": "Acetal was then subjected to deprotonation of the terminal alkyne with nBuLi, followed by reaction with methyl chloroformate proceeding smoothly to the target propiolate 9 in 11% yield over five steps."
+      },
+      "evidence": {
+        "text_span": "Acetal was then subjected to deprotonation of the terminal alkyne with nBuLi, followed by reaction with methyl chloroformate proceeding smoothly to the target propiolate 9 in 11% yield over five steps.",
+        "image_refs": [
+          "e2271027c9eec3ee7ad6a9a346488f213b19f39df352fcc8ff255a3a8ad0b000.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The propiolate 9 with the protected aldehyde is available. The final step is the key tandem cyclisation/hydroalkoxylation reaction and deprotection of the aldehyde.",
+        "gap": "Need to perform the cyclisation/hydroalkoxylation and then deprotect the aldehyde to obtain the target molecule.",
+        "decision": "To synthesize the target, chose the tandem cyclisation/hydroalkoxylation reaction catalyzed by Au NPs/TiO2, followed by deprotection of the acetal with HCl."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCOC(O)c1cc(OC)cc(OC)c1C#CCOC(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=Cc2c(OC)ccc(OC)c2OC1OC"
+        ],
+        "catalyst": "Au NPs/TiO2",
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "MeOH, THF",
+        "temperature": "70 °C, 0 °C to rt",
+        "time": "3 h, 4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "dr": "2:1 (6-endo:5-exo)",
+        "observation": "After 3 h, full conversion of starting material 9 was observed and the reaction led to formation of target product 10 in 75% yield. In contrast to the previous results, the reaction was not exclusively 6-endo selective, 6-endo and 5-exo cyclisation products being formed in the ratio 2:1."
+      },
+      "evidence": {
+        "text_span": "The last step in our total synthesis was the tandem cyclisation/hydroalkoxylation reaction catalysed by Au NPs supported on TiO2. After 3 h, full conversion of starting material 9 was observed and the reaction led to formation of target product 10 in 75% yield. In contrast to the previous results, the reaction was not exclusively 6-endo selective, 6-endo and 5-exo cyclisation products being formed in the ratio 2:1.",
+        "image_refs": [
+          "09e18d93bc6a9eb1a697de5ad7b302bcd0b4a8bcb72405fe8003eb1a27548901.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "GC-MS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 11,
+        "unit": "%",
+        "interpretation": "Overall yield for the total synthesis of 10 over 5 steps (including the final cyclization/hydroalkoxylation)."
+      }
+    },
+    "significance": "The total synthesis of methyl 1,5,8-trimethoxy-1H-isochromene-3-carboxylate 10, a known compound for antitumor activity, was successfully achieved using the developed heterogeneous gold-catalyzed cyclisation/hydroalkoxylation as a key step. This demonstrates the practical potential of the catalytic system for the synthesis of bioactive molecules."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s42004-024-01336-7",
+      "pmcid": "PMC11525795",
+      "title": "Small gold nanoparticles for tandem cyclization/reduction and cyclization/hydroalkoxylation reactions.",
+      "authors": "Plevová K, Michelet V, Antoniotti S.",
+      "journal": "Commun Chem",
+      "year": 2024,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC11525795?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/ec9db1d0-2995-4751-8bf8-c2dcf1970d45.zip",
+      "parsed_at": "2026-05-11T06:35:06.746447+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 13,
+    "parseable": 9,
+    "canonicalized": 9,
+    "invalid": 4,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COc1cc(OC)c(C#CH)c(C(OCCC)O)c1",
+      "COc1cc(OC)c(C#CH)c(C=O)c1",
+      "COc1cc(OC)c(C#CH)c(C(OCCC)O)c1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

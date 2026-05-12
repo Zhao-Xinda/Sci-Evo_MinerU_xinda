@@ -1,0 +1,214 @@
+{
+  "trace_id": "TS-PMC12915889",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Polyrhacitide A",
+    "smiles": "CCCCCCCC[C@@H](O)C[C@@H](O)C[C@@H](O)C[C@H]1CCC(=O)O1",
+    "natural_product_class": "polyketide",
+    "structural_features": {
+      "key_motifs": [
+        "bicyclic lactone",
+        "polyol"
+      ]
+    },
+    "motivation": "Polyrhacitides A and B are newly identified bicyclic polyketide lactones isolated from the Chinese medicinal ant Polyrhacis lamellidens, traditionally used to treat rheumatoid arthritis and hepatitis. Their complex structure and biological activity make them attractive synthetic targets.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Mohapatra",
+        "year": 2010,
+        "doi": "10.1021/ol102590c",
+        "key_strategy": "iodine-catalyzed cyclization to form THP ring, sequential iodo-lactonization to secure syn-1,3 polyol array and bicyclic ring system"
+      },
+      {
+        "lead_author": "Ghosh",
+        "year": 2010,
+        "doi": "10.1016/j.tetlet.2010.02.019",
+        "key_strategy": "chiral pool synthesis from L-malic acid, hydroxyl-directed stereoselective reduction, ring-closing metathesis, intramolecular oxa-Michael addition"
+      },
+      {
+        "lead_author": "Yadav",
+        "year": 2011,
+        "doi": "10.1002/ejoc.201100490",
+        "key_strategy": "iterative five-step synthesis (olefinic oxidation, modified Wittig–Horner, Evans mixed acetal oxa-Michael, allylation, chelation-controlled syn-reduction), followed by lactonization"
+      },
+      {
+        "lead_author": "Kumaraswamy",
+        "year": 2012,
+        "doi": "10.1016/j.tet.2012.02.030",
+        "key_strategy": "organocatalytic asymmetric epoxidation, ring-opening with lithium acetylide, Lindlar hydrogenation, ring-closing metathesis, oxa-Michael reaction"
+      },
+      {
+        "lead_author": "Reddy",
+        "year": 2016,
+        "doi": "10.1039/C5OB02290A",
+        "key_strategy": "Prins cyclization cascade for dioxabicyclo[3.3.1]nonan-3-one framework"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Achieve the total synthesis of polyrhacitide A with high stereoselectivity."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-O bond forming the lactone ring",
+        "named_strategy": "Lactonization",
+        "reasoning": "The bicyclic lactone core can be formed by intramolecular lactonization of a seco acid precursor."
+      },
+      {
+        "bond_description": "C-C bond forming the tetrahydropyran ring",
+        "named_strategy": "Prins cyclization",
+        "reasoning": "Prins cyclization is a powerful method for constructing oxygen-containing cyclic structures with high stereocontrol."
+      }
+    ],
+    "rationale": "The synthesis of polyrhacitide A by Reddy and colleagues leverages a novel cascade strategy based on Prins cyclization to construct the dioxabicyclo[3.3.1]nonan-3-one framework. This approach is chosen for its efficiency and ability to establish the complex bicyclic core with stereochemical control."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Previous syntheses of similar bicyclic lactones have employed various strategies including oxa-Michael additions, tandem isomerization, and ring-closing metathesis.",
+        "gap": "A novel and efficient cascade strategy for the dioxabicyclo[3.3.1]nonan-3-one framework is desired.",
+        "decision": "To address the challenge of constructing the bicyclic core, a Prins cyclization cascade strategy will be explored, expecting to provide a stereoselective and efficient route."
+      },
+      "evidence": {
+        "text_span": "In 2016, B. V. S. Reddy28 and colleagues published a meticulous exploration of the stereoselective total synthesis of polyrhacitide A. Their work pioneered an innovative cascade strategy based on Prins cyclization for synthesizing the dioxabicyclo[3.3.1]nonan-3-one framework.",
+        "section": "6.7 Synthesis of polyrhacitide A"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Prins cyclization involves the condensation of an alkene with an aldehyde or ketone in the presence of a Lewis or Brønsted acid to form oxygen-containing cyclic structures.",
+        "gap": "The stereochemical outcome of the Prins cyclization can be influenced by substituents.",
+        "decision": "To investigate the Prins cyclization, the reaction between benzaldehyde and (R)-3-hydroxyhex-5-enoic acid will be performed using TMSOTf as a catalyst, expecting to yield the anticipated bicyclic lactone and to understand the influence of substituents on stereochemistry."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccccc1",
+          "C=CC[C@H](O)CC(=O)O"
+        ],
+        "product_smiles": [
+          "O=C1OC[C@H](c2ccccc2)OC2CC12",
+          "O=C1OC[C@H](c2ccccc2)OC2CC12"
+        ],
+        "reagents": [
+          "TMSOTf"
+        ],
+        "solvent": "DCM",
+        "temperature": "-15 °C to 40 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The reaction efficiently yielded the anticipated bicyclic lactone 149/150. The versatility of this methodology was further substantiated through trials with a variety of aliphatic and aromatic aldehydes. Products derived from 2-halo- and 2-nitro-substituted aryl aldehydes exhibited stereochemical variation at the C8 position. Reactions involving 2-methylbenzaldehyde and other aliphatic aldehydes resulted in the trans-isomer rather than the anticipated cis-isomer.",
+        "yield_percent": 50
+      },
+      "evidence": {
+        "text_span": "Initially, the authors explored the reaction between benzaldehyde and (R)-3-hydroxyhex-5-enoic acid (148), catalyzed by 10 mol% trimethylsilyl triflate (TMSOTf) within a temperature range of −15 °C to 40 °C in a dichloromethane solvent system (Scheme 15). This reaction efficiently yielded the anticipated bicyclic lactone 149/150. The versatility of this methodology was further substantiated through trials with a variety of aliphatic and aromatic aldehydes. Notably, products derived from 2-halo- and 2-nitro-substituted aryl aldehydes exhibited stereochemical variation at the C8 position, an outcome likely influenced by the electronic characteristics of the substituents on the aromatic ring. Interestingly, reactions involving 2-methylbenzaldehyde and other aliphatic aldehydes resulted in the trans-isomer rather than the anticipated cis-isomer, as confirmed by nOe analyses.",
+        "page": 15,
+        "section": "6.7 Synthesis of polyrhacitide A",
+        "image_refs": [
+          "e8242144bffc3094e729ca6cec547971ae57b433627c47074f467ea02bbed9f4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Prins cyclization cascade has been shown to efficiently form the bicyclic lactone core, with stereochemical outcomes influenced by substituents.",
+        "gap": "The overall synthesis of polyrhacitide A requires the preparation of specific starting materials and a final deprotection step.",
+        "decision": "To complete the total synthesis of polyrhacitide A, (S)-3-hydroxyhex-5-enoic acid and the chiral aldehyde coupling partner will be prepared, followed by the Prins cyclization and a final deprotection, expecting to yield the target molecule."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C=CCC(O)CC(=O)O"
+        ],
+        "product_smiles": [
+          "CCCCCCCC(O)CC(O)CC1OC2OC(=O)C=CC12"
+        ],
+        "reagents": [
+          "TMSOTf",
+          "HF/Py"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 30,
+        "observation": "The target bicyclic lactone emerged in 50% yield after the Prins cyclization. A final, comprehensive deprotection step then afforded the desired polyrhacitide A in an overall yield of 60%."
+      },
+      "evidence": {
+        "text_span": "Subsequently, the authors adeptly applied this synthetic protocol to the total synthesis of polyrhacitide A (Scheme 17). The requisite (S)-3-hydroxyhex-5-enoic acid (154) was synthesized from L-aspartic acid following a documented procedure,29 while the chiral aldehyde coupling partner 148 was prepared via a known multi-step sequence.30 Upon treatment of these two reactants with 10% TMSOTf, the target bicyclic lactone emerged in 50% yield. A final, comprehensive deprotection step then afforded the desired polyrhacitide A in an overall yield of 60%.",
+        "page": 15,
+        "section": "6.7 Synthesis of polyrhacitide A",
+        "image_refs": [
+          "e402319a907a2e61291fafc5cd7d12fc2355a5513e938fbb32cf75388aca90f3.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [],
+    "metrics": {
+      "Overall Yield": {
+        "value": 60,
+        "unit": "%",
+        "interpretation": "Overall yield for the total synthesis of polyrhacitide A."
+      }
+    },
+    "significance": "This work showcases a methodologically robust approach, delineating the profound influence of substituents on stereochemical outcomes, and represents a significant advancement in the stereoselective synthesis of complex bicyclic cores."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5ra07728a",
+      "pmcid": "PMC12915889",
+      "title": "2,6-Dioxabicyclo[3.3.1]nonan-3-ones: from natural product treasure troves to synthetic triumphs.",
+      "authors": "Choudhury UM, Das PP, Mohapatra DK.",
+      "journal": "RSC Adv",
+      "year": 2026,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC12915889?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/e25b060d-c03a-42ed-a7e9-e4b7eab24327.zip",
+      "parsed_at": "2026-05-07T14:32:52.276907+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 8,
+    "parseable": 7,
+    "canonicalized": 5,
+    "invalid": 1,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CCCCCCCC[CH](O[Si](C(C)(C)C)(C6H5)C6H5)C[CH](O[Si](C(C)(C)C)(C6H5)C6H5)CCC=O"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

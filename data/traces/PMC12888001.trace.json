@@ -1,0 +1,753 @@
+{
+  "trace_id": "TS-PMC12888001",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(5'R,8'R)-L-trans-hexahydrobenzofuran-A2E (9a)",
+    "smiles": "",
+    "natural_product_class": "bisretinoid",
+    "structural_features": {
+      "stereocenters": 4,
+      "key_motifs": [
+        "hexahydrobenzofuran",
+        "pyridinium",
+        "polyene"
+      ]
+    },
+    "motivation": "Synthesis of enantiopure oxidized photoproducts of pyridinium bisretinoid A2E, which accumulate in ocular lipofuscin and are implicated in eye diseases. The specific target 9a is a mono-hexahydrobenzofuran derivative.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Ren",
+        "year": 1997,
+        "doi": "10.1021/ja963831t",
+        "key_strategy": "Total synthesis of A2E (6)"
+      },
+      {
+        "lead_author": "Sicre",
+        "year": 2005,
+        "doi": "10.1021/ol052300c",
+        "key_strategy": "Convergent stereoselective synthesis of A2E"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Enantiopure synthesis of hexahydrobenzofuran derivatives of A2E, with full spectroscopic characterization and confirmation of stereochemistry."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C double bond formation via Horner-Wadsworth-Emmons (HWE) reaction",
+        "named_strategy": "Horner-Wadsworth-Emmons reaction",
+        "reasoning": "Reliable method for constructing polyene fragments with high stereoselectivity, as established in prior work on carotenoids."
+      },
+      {
+        "bond_description": "Formation of hexahydrobenzofuran from cyclohexene oxide",
+        "reasoning": "Acid-catalyzed rearrangement of cyclohexene oxides to hexahydrobenzofurans is a known transformation, and is proposed to occur biogenetically in vivo."
+      },
+      {
+        "bond_description": "Pyridinium salt formation",
+        "reasoning": "Alkylation of pyridine with iodoethanol is a standard method to form the pyridinium core of A2E derivatives."
+      }
+    ],
+    "rationale": "The synthesis of enantiopure 9a involves a stepwise approach. First, the shorter arm (S) of the pyridine ring is constructed using HWE condensation, followed by acid-catalyzed rearrangement to form the hexahydrobenzofuran. Then, the longer arm (L) is built using a second HWE condensation, which is found to lead to in situ rearrangement to the hexahydrobenzofuran. Finally, the pyridine is alkylated to form the pyridinium salt."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Oxidized photoproducts of A2E, including mono- and bishexahydrobenzofurans, have been isolated from lipofuscin in RPE cells. Their structures were partially characterized, but no diastereo- and enantioselective synthesis has been reported.",
+        "gap": "A method for the enantioselective synthesis of these complex molecules, particularly controlling the stereochemistry of the hexahydrobenzofuran ring, is needed.",
+        "decision": "The authors decided to target the enantiopure synthesis of these compounds, building upon their previous work on hexahydrobenzofuran-containing polyenes and using Horner-Wadsworth-Emmons (HWE) condensation as a key step."
+      },
+      "evidence": {
+        "text_span": "Although the small quantities of these compounds precluded further structural studies, larger amounts where obtained upon treating solutions of synthetic A2E (6)29 in MeOH with 2 equiv of meta-chloroperoxybenzoic acid (MCPBA) for 12 h at ambient temperature in the dark.26 1H NMR and UV spectroscopic characterization of the main components of the reaction mixture confirmed the presence of the 5,8,5′,8′-bishexahydrobenzofuran 10 (Figure 1C) (first named 5,8,5′,8′-bis-furanoid oxide, or bis-furan-A2E or bf-A2E25 or bis-oxo-A2E26), the 5,8- and 5′,8′-hexahydrobenzofurans 8 and 9 (Figure 1C)24 at the shorter (S) or long (L) arms of A2E (also called monofuran-A2E, mf-A2E-1 and mf-A2E-2, respectively, or monooxo-A2E),11,23,26 and the bisoxygenated 5,8-monoperoxy-A2E 11 (first named oxo-A2E-1) (Figure 1C).11,23 The hexahydrobenzofurans were proposed to be generated upon rearrangement under acidic conditions of the corresponding cyclohexene oxides, which would be preferentially formed, as occurs with the bisoxygenated analogue 11 (Figure 1C), by oxidation at the most electron-rich endocyclic double bond (C5=C6 and/or C5′=C6′ as indicated in Figure 1C). Since lipofuscin accumulates within the RPE cells in lysosomes, which are more acidic than the surrounding cytoplasm,30 it was anticipated25 that these hexahydrobenzofurans would be generated from the rearrangement of the first formed cyclohexene oxides promoted by small amounts of acid.31 Despite the limited and incomplete spectroscopic characterization of these (bis)hexahydrobenzofurans (Figure 1C),25,26 and their comparison with the racemates obtained from the oxidation of A2E (6) with MCPBA, no diastereo- and enantioselective synthesis of these compounds has been reported, and therefore we targeted them as an extension of our work on enantiopure hexahydrobenzofuran-containing polyenes.32,33",
+        "page": 3,
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "The target molecules have multiple stereocenters and double bonds. Previous work on carotenoids with similar motifs has shown that 5,6-cyclohexene oxides can rearrange to 5,8-hexahydrobenzofurans under acidic conditions.",
+        "gap": "How to control the stereochemistry of the newly formed hexahydrobenzofuran ring and the polyene geometry.",
+        "decision": "The strategy involves generating enantiopure 5,6-cyclohexene oxides (12-14) as precursors, which would then rearrange to the hexahydrobenzofurans (8-10) under acid-promoted conditions. These precursors would be formed by pyridine alkylation of intermediates (15-17), which in turn would be built via stepwise or double HWE condensation of pyridinecarbaldehydes (20, 21) with cyclohexene oxide dienylphosphonates (18, 19). Enantiopure 18 is available from Sharpless asymmetric epoxidation.",
+        "revises_step_id": null
+      },
+      "evidence": {
+        "text_span": "Given the stereochemical complexity of the target compounds with six/seven stereogenic double bonds and the presence of two stereocenters in the monohexahydrobenzofurans-A2E (8,9) and four stereocenters in the bishexahydrobenzofuran-A2E (10), a total of 4 and 16 stereoisomers sharing the all-trans geometry of the double bonds are possible for these compounds. Being the absolute and relative configurations of the stereocenters unknown due do the minute amounts isolated from human retinal lipofuscin,24−26 we selected a single enantiomer of the putative biogenetic precursors 5,6-cyclohexene oxides 12−14 (Scheme 1) and directed our efforts to explore the generation of the second stereocenter, as previously demonstrated for carotenoids containing that motif.32−35 Based on these precedents, we considered feasible that the 5,8-(bis)hexahydrobenzofurans 8, 9 and 10 would be generated by the acid-promoted rearrangement of the corresponding enantiopure A2E-related 5,6-cyclohexene oxides 12−14 and the latter by pyridine alkylation of precursors 15−17. The longer and shorter conjugated arms of these bis-unsaturated pyridines would result from the stepwise condensation reaction33 of pyridine-carbaldehyde 20 with cyclohexene oxide dienylphosphonates 18 and 19 as complementary partners to reach 15 and 16, or by the double condensation reaction of 21 with 18 to construct 17 (Scheme 1). Enantiopure 18 has been previously prepared33 using a sequence that included as key step an enantioselective Sharpless asymmetric epoxidation of a precursor allylic alcohol.36",
+        "page": 4,
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The mono-oxidized A2E in the shorter arm (8) was chosen as the initial target. The HWE condensation is a reliable method for polyene construction.",
+        "gap": "Synthesis of the required 2-alkenylisonicotinaldehyde 20.",
+        "decision": "Synthesize 20 via Suzuki-Miyaura cross-coupling of commercial 2-bromoisonicotinaldehyde 25 with alkenylboronate 24. Alkenylboronate 24 would be prepared from protected (E)-3-iodo-2-methylpropenol 22 and bis(pinacolato)diboron 23.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C=CI)CO[Si](C)(C)C(C)(C)C",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KOAc"
+        ],
+        "catalyst": "Pd(dppf)Cl2-CH2Cl2",
+        "solvent": "DMSO",
+        "temperature": "80 °C",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Alkenylboronate 24 was formed in 78% yield."
+      },
+      "evidence": {
+        "text_span": "Alkenylboronate 24 was previously formed in 78% yield upon heating, at 80 °C in DMSO solution, protected (E)-3-iodo-2-methylpropenol 22 with bis(pinacolato)diboron 23 under catalysis of Pd(dppf)-Cl2·CH2Cl2 in the presence of KOAc.46",
+        "page": 4,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkenylboronate 24 is available.",
+        "gap": "Synthesize 2-alkenylisonicotinaldehyde 20.",
+        "decision": "Perform Suzuki-Miyaura cross-coupling of 24 with commercial 2-bromoisonicotinaldehyde 25.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "O=Cc1cc(Br)ccn1"
+        ],
+        "product_smiles": [
+          "CC(=Cc1ccnc(C=O)c1)CO[Si](C)(C)C(C)(C)C"
+        ],
+        "reagents": [
+          "Na2CO3"
+        ],
+        "catalyst": "Pd(OAc)2, PPh3",
+        "solvent": "1,4-dioxane",
+        "temperature": "95 °C",
+        "time": "10h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Aldehyde 20 was generated in 96% yield."
+      },
+      "evidence": {
+        "text_span": "The required 2-alkenylisonicotinaldehyde 20 was generated in 96% yield by Suzuki−Miyaura cross-coupling reaction43−45 of commercial 2-bromoisonicotinaldehyde 25 with alkenylboronate 24 promoted by Pd(OAc)2 and PPh3 with Na2CO3 as base in dioxane at 95 °C (Scheme 2).",
+        "page": 4,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 20 is available. The first HWE condensation is needed to build the shorter arm.",
+        "gap": "Achieve high stereoselectivity in the HWE condensation.",
+        "decision": "Use NaHMDS as base for the HWE condensation of 20 with C15 phosphonate 18, with an excess of the phosphonate anion.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=Cc1ccnc(C=O)c1)CO[Si](C)(C)C(C)(C)C",
+          "CCOP(=O)(C=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C)OCC"
+        ],
+        "product_smiles": [
+          "CC(=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C)CO[Si](C)(C)C(C)(C)C"
+        ],
+        "reagents": [
+          "NaHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-30 to 25 °C",
+        "time": "21h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "regio_selectivity": "complete E isomer",
+        "observation": "The trienylcyclohexene oxide fragment 26 was obtained with complete stereoselectivity as the E isomer in 83% yield."
+      },
+      "evidence": {
+        "text_span": "For the HWE condensation 37−42 of aldehyde 20 and C15 phosphonate 1833−36,47 1833−36,47 an excess (1.7 mol equivalents) of the anion generated using NaHMDS (1.6 mol equivalents) as base provided the trienylcyclohexene oxide fragment on the shorter arm of 26 with complete stereoselectivity as E isomer in 83% yield (Scheme 2).",
+        "page": 4,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "HWE condensation of 20 and 18 was attempted.",
+        "gap": "Achieve high stereoselectivity (E isomer).",
+        "decision": "Initial attempt used classical phosphonate anion generation conditions (KOtBu, THF, rt).",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=Cc1ccnc(C=O)c1)CO[Si](C)(C)C(C)(C)C",
+          "CCOP(=O)(C=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C)OCC"
+        ],
+        "product_smiles": [
+          "CC(=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C)CO[Si](C)(C)C(C)(C)C"
+        ],
+        "reagents": [
+          "KOtBu"
+        ],
+        "solvent": "THF",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": false,
+        "dr": "3:1 trans/cis",
+        "failure_mode": "low_yield",
+        "observation": "A 3:1 trans/cis isomer ratio was obtained, which is not ideal for stereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Under the classical phosphonate anion generation conditions (KOtBu, THF, rt) used previously for the synthesis of related carotenoids,34,35,49 a 3:1 trans/cis isomer ratio was obtained (see Supporting Information).",
+        "page": 4,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 26, containing the protected allylic alcohol and cyclohexene oxide, is available.",
+        "gap": "Deprotect the allylic alcohol and induce the rearrangement to the hexahydrobenzofuran.",
+        "decision": "Deprotect the allylic alcohol under acidic conditions, expecting a concomitant rearrangement of the cyclohexene oxide to the hexahydrobenzofuran.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C)CO[Si](C)(C)C(C)(C)C"
+        ],
+        "product_smiles": [
+          "CC(=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C)CO"
+        ],
+        "reagents": [
+          "HCO2H",
+          "H2O"
+        ],
+        "solvent": "CH3CN",
+        "temperature": "0 °C",
+        "time": "15h"
+      },
+      "outcome": {
+        "valid": true,
+        "dr": "5:1",
+        "observation": "Deprotection was accompanied by rearrangement to hexahydrobenzofuran 27 (R configuration at C8) as major stereoisomer (5:1 dr) in excellent yields."
+      },
+      "evidence": {
+        "text_span": "Deprotection of the allylic alcohol under acidic conditions32 was accompanied by the rearrangement of the C5,C8-alkenylcyclohexene oxide fragment to the hexahydrobenzofuran of R configuration at C8 (27, Scheme 2) as major stereoisomer (5:1 dr) in excellent yields.48",
+        "page": 4,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Allylic alcohol 27 is available.",
+        "gap": "Oxidize the allylic alcohol to the corresponding aldehyde for the next HWE condensation.",
+        "decision": "Use MnO2 for the oxidation of 27 to C2-methylpropenal-substituted pyridine 28.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C)CO"
+        ],
+        "product_smiles": [
+          "CC(C=O)=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C"
+        ],
+        "reagents": [
+          "MnO2",
+          "Na2CO3"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "25 °C",
+        "time": "5h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Oxidation afforded the C2-methylpropenal-substituted pyridine 28 in 80% combined yield."
+      },
+      "evidence": {
+        "text_span": "Oxidation of the allylic alcohol 27 using MnO2 afforded the C2-methylpropenal-substituted pyridine 28 in 80% combined yield, which was subjected to the second HWE condensation.37−42",
+        "page": 4,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Enal 28 is available. The second HWE condensation is needed to build the longer arm.",
+        "gap": "Achieve good yield for the second HWE condensation.",
+        "decision": "Attempt the HWE condensation using NaHMDS as base under the same conditions as for 26.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C=O)=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C",
+          "CCOP(=O)(C=C[C@@H](C)C=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C)OCC"
+        ],
+        "product_smiles": [
+          "CC(C=O)=CC=CC(C)=CC=CC(C)=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C"
+        ],
+        "reagents": [
+          "NaHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-30 to 25 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 27,
+        "failure_mode": "low_yield",
+        "observation": "Compound 29 was obtained in low yields (27% at most)."
+      },
+      "evidence": {
+        "text_span": "This step required optimization, since the use of NaHMDS as a base under the same conditions used for 26 (Scheme 2) afforded compound 29 incorporating the additional unsaturated fragment, but in low yields (27% at most).",
+        "page": 4,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "The second HWE condensation of 28 was low yielding.",
+        "gap": "Improve the yield of the HWE condensation.",
+        "decision": "Add DMPU to the reaction media to increase the yield.",
+        "revises_step_id": 9
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C=O)=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C",
+          "CCOP(=O)(C=C[C@@H](C)C=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C)OCC"
+        ],
+        "product_smiles": [
+          "CC(C=O)=CC=CC(C)=CC=CC(C)=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C"
+        ],
+        "reagents": [
+          "NaHMDS",
+          "DMPU"
+        ],
+        "solvent": "THF",
+        "temperature": "-30 to 25 °C",
+        "time": "23h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "regio_selectivity": "all-trans",
+        "observation": "Addition of DMPU increased the yield to 73% and afforded stereoselectively the thermodynamically favored all-trans isomer of the pentaene branch present in 29."
+      },
+      "evidence": {
+        "text_span": "Fortunately, addition of DMPU to the reaction media increased the yield to 73% and afforded stereoselectively the thermodynamically favored50 all-trans isomer of the pentaene branch present in 29.",
+        "page": 4,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Bis-polyenic pyridine 29 is synthesized.",
+        "gap": "Confirm the structure and stereochemistry, especially the C8 configuration of the hexahydrobenzofuran.",
+        "decision": "Perform HPLC purification and analyze 1H NMR spectra, comparing H7 and H8 chemical shifts and NOE correlations with known carotenoids.",
+        "revises_step_id": null
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Full characterization confirmed the structure of 29. 1H NMR data showed consistency with the 8R stereoisomer (ΔδH7-H8 ≈ 0.02 ppm, broad singlet for H7). NOE correlations between the methyl group at C5 and C8-H further supported the R configuration at C8."
+      },
+      "evidence": {
+        "text_span": "After HPLC purification (Chiralpak IA column, 25 × 1 cm; heptane/CH2Cl2/EtOH/Et2NH 70:30:1:0.1 v/v/v/v), full characterization confirmed the structure of the bis-polyenic pyridine 29. As discussed in the case of carotenoids with bishexahydrobenzofuran skeletons,33 structural confirmation of the C8 configuration in 29 and synthetic precursors (Scheme 2) rested on the chemical shift values for H7 and H8 of the hexahydrobenzofuran ring,25 which appear in the δ ≈ 5.0−5.3 ppm region of the 1H NMR spectra. To compare the data with those previously reported for bishexahydrobenzofuran-A2E (vide infra),26 the 1H NMR spectra were acquired in C6D6, and the data correlated with those of related carotenoids. In these more conjugated (bis)hexahydrobenzofuran-containing carotenoids it has been shown that the chemical shift differences of H7 and H8 for the trans diastereomers of 8R relative configuration are very small (ΔδH7-H8 ≈ 0.02 ppm) and the signal for H7 appears as a broad singlet. In contrast, those for the 8S diastereomer show larger chemical shift differences (ΔδH7-H8 ≈ 0.15−0.22 ppm) and noticeable coupling constants (JH7-H8 > 1.4 Hz).33−35 Based on these precedents, the 1H NMR data for the major disubstituted pyridine 29 (and also for pyridinium salt 8a, vide infra) showed full consistency with those of the 8R stereoisomer, given the small chemical shift differences noted for H7 and H8 (Δδ values of 5.22 and 5.15 ppm, respectively, in CD2Cl2 solutions).26 The R configuration of the newly formed C8 stereocenter in 27 was further supported by the NOE correlations observed between the methyl group at C5 and C8-H.",
+        "page": 4,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bis-polyenic pyridine 29 is available and characterized.",
+        "gap": "Form the pyridinium salt, which is the final target 8a.",
+        "decision": "Alkylate 29 with 2-iodoethanol (30) in nitromethane at 80 °C, similar to reported conditions for A2E.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C=O)=CC=CC(C)=CC=CC(C)=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C"
+        ],
+        "product_smiles": [
+          "CC(C=CC=C(C)C=C[N+]1(CCO)C=CC=C1)=CC=CC(C)=CC=C[C@@H](C)C=C[C@@H](C)C=C[C@]1(C)[C@H](C)CCCC1(C)C.[I-]"
+        ],
+        "reagents": [
+          "ICCO"
+        ],
+        "solvent": "CH3NO2",
+        "temperature": "80 °C",
+        "time": "20h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "(5R,8R)-S-trans-hexahydrobenzofuran-A2E (8a) was obtained in 67% yield. Spectroscopic data confirmed the formation of the hydroxyethylpyridinium ion."
+      },
+      "evidence": {
+        "text_span": "Lastly, alkylation of the pyridine was carried out under similar conditions to those reported for A2E (6),29,51 namely heating 29 with 2-iodoethanol (30) in nitromethane but at 80 °C instead of 100 °C for 20 h, and (5R,8R)-S-trans-hexahydrobenzofuran-A2E (8a, Scheme 2) was obtained in 67% yield. The spectroscopic data of 8a followed the same trends described above for the disubstituted pyridines and confirmed the formation of the hydroxyethylpyridinium ion,26 thus complementing the limited characterization data reported for the racemate.25,26",
+        "page": 5,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A similar approach to 8a is planned for the synthesis of 9a, but with the hexahydrobenzofuran motif in the longer pentaenyl arm.",
+        "gap": "Perform the first HWE condensation with reversed order of phosphonates, using trienylphosphonate 19 and C2-substituted pyridine-2-carbaldehyde 20.",
+        "decision": "Use NaHMDS at -30 °C for the HWE condensation of 19 and 20.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOP(=O)(C=CC(C)C1CCC(C)CC1C)OCC",
+          "CC(C)(C)[Si](C)(C)OCC(C=O)C=C1C=CC=NC1"
+        ],
+        "product_smiles": [
+          "CC1CCC(C(C)C=CC=CC(C=C2C=CC=NC2)CO[Si](C)(C)C(C)(C)C)C(C)C1",
+          "CC1CCC(C(C)C=CC=CC(C=C2C=CC=NC2)CO[Si](C)(C)C(C)(C)C)C(C)C1"
+        ],
+        "reagents": [
+          "NaHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-30 to 25 °C",
+        "time": "23h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "dr": "3:1 E/Z",
+        "observation": "The HWE condensation took place with a 3:1 E/Z diastereoselectivity of the newly formed olefin on the tetraene fragment. Geometric isomers 31 and 32 were separated by column chromatography."
+      },
+      "evidence": {
+        "text_span": "The first HWE condensation reaction37−42 of the anion of trienylphosphonate 19 generated using NaHMDS at −30 °C with C2-substituted pyridine-2-carbaldehyde 20 took place in this case with a 3:1 E/Z diastereoselectivity of the newly formed olefin on the tetraene fragment.52−54 The geometric isomers 31 and 32 could be easily separated by column chromatography.",
+        "page": 5,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 31 is available.",
+        "gap": "Deprotect the allylic alcohol.",
+        "decision": "Deprotect 31 using formic acid.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CCC(C(C)C=CC=CC(C=C2C=CC=NC2)CO[Si](C)(C)C(C)(C)C)C(C)C1"
+        ],
+        "product_smiles": [
+          "CC1CCC(C(C)C=CC=CC(C=C2C=CC=NC2)CO)C(C)C1"
+        ],
+        "reagents": [
+          "HCO2H",
+          "H2O"
+        ],
+        "solvent": "CH3CN",
+        "temperature": "0 °C",
+        "time": "15h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Deprotection of the allylic alcohol of 31 yielded 33 in 89% yield."
+      },
+      "evidence": {
+        "text_span": "Following the deprotection of the allylic alcohol of 31 (HCO2H, 89% yield)",
+        "page": 5,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 33 is available.",
+        "gap": "Oxidize the allylic alcohol to the enal for the next HWE condensation.",
+        "decision": "Oxidize 33 with MnO2 and Na2CO3.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CCC(C(C)C=CC=CC(C=C2C=CC=NC2)CO)C(C)C1"
+        ],
+        "product_smiles": [
+          "CC1CCC(C(C)C=CC=CC(C=O)C=C2C=CC=NC2)C(C)C1"
+        ],
+        "reagents": [
+          "MnO2",
+          "Na2CO3"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "25 °C",
+        "time": "15h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Oxidation afforded enal 34 in 94% yield."
+      },
+      "evidence": {
+        "text_span": "oxidation of 33 with MnO2 and Na2CO3 afforded enal 34 in 94% yield (Scheme 3A).",
+        "page": 5,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enal 34 is available. The second HWE condensation is needed to build the longer arm.",
+        "gap": "Achieve high yield and stereoselectivity, and observe the rearrangement to hexahydrobenzofuran.",
+        "decision": "Perform HWE condensation of 34 with enantiopure cyclohexene oxide pentadienylphosphonate 18 using NaHMDS and DMPU, under conditions similar to 26.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CCOP(=O)(C=CC(C)C1CCC2C(C)(C)OC12C)OCC"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaHMDS",
+          "DMPU"
+        ],
+        "solvent": "THF",
+        "temperature": "-30 to 25 °C",
+        "time": "22h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "dr": "50:50",
+        "observation": "The second HWE condensation afforded the thermodynamically favored all-trans isomer in excellent yield (92%). However, the hexahydrobenzofuran skeleton was already present, and a 50:50 mixture of diastereomers at the new stereocenter at C8 was isolated. This indicates an unselective rearrangement under basic conditions."
+      },
+      "evidence": {
+        "text_span": "The second HWE condensation reaction of 34 with the anion of the enantiopure cyclohexene oxide pentadienylphosphonate 1833−36,47 1833−36,47 generated using NaHMDS as a base and DMPU, under the same conditions described for the formation of 26 (Scheme 2), afforded the thermodynamically favored50 all-trans isomer of the newly formed unsaturated branch in excellent yield (92%). However, the NMR data analysis confirmed that the hexahydrobenzofuran skeleton was already present, and in contrast to the epoxytrienyl chain at C4, the rearrangement of the cyclohexene oxide fragment on the epoxytetraenyl chain at C2 of the pyridine ring had taken place under the basic reaction conditions. Moreover, a 50:50 mixture of diastereomers at the new stereocenter at C8 with polyene fragments of all-trans geometry was isolated (Scheme 3A).55",
+        "page": 5,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Diastereomers 35a and 35b are available.",
+        "gap": "Separate and characterize the diastereomers, confirming their stereochemistry.",
+        "decision": "Separate by HPLC and characterize spectroscopically. Use 1H NMR data (ΔδH7'-H8' and coupling constants) and NOE effects to assign configurations.",
+        "revises_step_id": null
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Diastereomers 35a and 35b were separated by HPLC and spectroscopically characterized. 1H NMR data for 9a (L-trans) showed small ΔδH7'-H8' (0.07 ppm) and a broad singlet for H7', consistent with 8'R. For 9b (L-cis), ΔδH7'-H8' was larger (5.35 and 5.10 ppm) with a measurable coupling constant (JH7'-H8' = 1.9 Hz), consistent with 8'S. NOE effect between C5' methyl and C8'-H confirmed the 8'R configuration for 9a."
+      },
+      "evidence": {
+        "text_span": "Diastereomers 35a and 35b were separated by HPLC under the same conditions and spectroscopically characterized. Each compound was converted (Scheme 3A) as described above into the corresponding pyridinium salts, namely (5′R,8′R)-L-trans- and (5′R,8′S)-L-cis-hexahydrobenzofuran-A2E (9a and 9b, respectively). 1H NMR data of 9a and 9b showed full consistency with those of the 8′R and 8′S epimers, since as indicated for the smaller branch hexahydrobenzofuran 8a (Scheme 2), the ΔδH7′-H8′ for the formed diastereomer L-trans 9a is very small (around 0.07 ppm in this case) and the signal for H7′ appears as a broad singlet, whereas chemical shift values for H7′ and H8′ on the L-cis epimer 9b were different (δ ≈ 5.35 and 5.10 ppm, respectively) and a measurable coupling constant was clearly noted in the latter signal (JH7′-H8′ = 1.9 Hz)).32−35 In the case of the 8′R diastereomer 9a the configuration of the newly formed C8′ stereocenter was further confirmed by the NOE effect observed between the methyl group at C5′ and the hydrogen at C8′ (Scheme 3).56,57",
+        "page": 5,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diastereomer 35a is available and characterized.",
+        "gap": "Form the pyridinium salt 9a.",
+        "decision": "Alkylate 35a with 2-iodoethanol (30) in nitromethane at 80 °C.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "ICCO"
+        ],
+        "solvent": "CH3NO2",
+        "temperature": "80 °C",
+        "time": "18h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "Pyridinium salt 9a was obtained in 55% yield."
+      },
+      "evidence": {
+        "text_span": "Each compound was converted (Scheme 3A) as described above into the corresponding pyridinium salts, namely (5′R,8′R)-L-trans- and (5′R,8′S)-L-cis-hexahydrobenzofuran-A2E (9a and 9b, respectively).",
+        "page": 5,
+        "section": "Synthetic Studies"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diastereomer 35b is available and characterized.",
+        "gap": "Form the pyridinium salt 9b.",
+        "decision": "Alkylate 35b with 2-iodoethanol (30) in nitromethane at 80 °C.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "ICCO"
+        ],
+        "solvent": "CH3NO2",
+        "temperature": "80 °C",
+        "time": "18h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "Pyridinium salt 9b was obtained in 62% yield."
+      },
+      "evidence": {
+        "text_span": "Each compound was converted (Scheme 3A) as described above into the corresponding pyridinium salts, namely (5′R,8′R)-L-trans- and (5′R,8′S)-L-cis-hexahydrobenzofuran-A2E (9a and 9b, respectively).",
+        "page": 5,
+        "section": "Synthetic Studies"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "UV",
+      "HPLC",
+      "NOE",
+      "TEM"
+    ],
+    "metrics": {},
+    "significance": "The total synthesis of enantiopure pyridinium bisretinoids with hexahydrobenzofuran structures provides access to these important ocular lipofuscin components. The study elucidates the stereoselective formation of these compounds and their aggregation behavior, which is crucial for understanding their role in age-related macular degeneration. The computational studies provide mechanistic insights into the rearrangement processes."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.joc.5c02843",
+      "pmcid": "PMC12888001",
+      "title": "Enantiopure Pyridinium Bisretinoids of Ocular Lipofuscin with Hexahydrobenzofuran Structure: Total Synthesis and Structure-Dependent Aggregated Morphology.",
+      "authors": "Vidal B, Rodríguez R, Peña-Gallego A, Álvarez R, Martínez C, de Lera ÁR.",
+      "journal": "J Org Chem",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12888001?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/2c8e3aa8-1ff4-4746-8a18-f696e2befb3f.zip",
+      "parsed_at": "2026-05-07T14:32:59.271819+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 40,
+    "parseable": 30,
+    "canonicalized": 23,
+    "invalid": 10,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1(C)C2CCC(C(C)C=CC=CC(C=C3C=CC=N(CCO)C3)C=CC=CC(C)C4CCC(C)(C)C5(C)O4)C2(C)O1",
+      "B1(OB(OC(C)(C)C)OC(C)(C)C)OB(OC(C)(C)C)OC(C)(C)C",
+      "CC(C=CB1OC(C)(C)C)CO[Si](C)(C)C(C)(C)C",
+      "CC(C=CB1OC(C)(C)C)CO[Si](C)(C)C(C)(C)C",
+      "CC1CCC(C(C)C=CC=CC(C=C2C=CC=NC2)C=O)",
+      "CC1(C)C2CCC(C(C)C=CC=CC(C=C3C=CC=NC3)C=CC=CC(C)C4CCC(C)(C)C5(C)O4)C2(C)O1",
+      "CC1(C)C2CCC(C(C)C=CC=CC(C=C3C=CC=NC3)C=CC=CC(C)C4CCC(C)(C)C5(C)O4)C2(C)O1",
+      "CC1(C)C2CCC(C(C)C=CC=CC(C=C3C=CC=N(CCO)C3)C=CC=CC(C)C4CCC(C)(C)C5(C)O4)C2(C)O1",
+      "CC1(C)C2CCC(C(C)C=CC=CC(C=C3C=CC=NC3)C=CC=CC(C)C4CCC(C)(C)C5(C)O4)C2(C)O1",
+      "CC1(C)C2CCC(C(C)C=CC=CC(C=C3C=CC=N(CCO)C3)C=CC=CC(C)C4CCC(C)(C)C5(C)O4)C2(C)O1"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "(5'R,8'R)-L-trans-hexahydrobenzofuran-A2E (9a)",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      },
+      {
+        "field": "target.smiles",
+        "name": "(5'R,8'R)-L-trans-hexahydrobenzofuran-A2E (9a)",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

@@ -1,0 +1,935 @@
+{
+  "trace_id": "TS-PMC12311780",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(±) involucrasin C",
+    "smiles": "C[C@@]1(O)Cc2ccc(O)c(CC(=O)c3cc(O)ccc3O)c2C1",
+    "natural_product_class": "polyketides",
+    "structural_features": {
+      "molecular_weight": 342.36,
+      "stereocenters": 2,
+      "ring_systems": "indane, benzene",
+      "key_motifs": [
+        "indane scaffold",
+        "tertiary alcohol",
+        "chalcone"
+      ]
+    },
+    "motivation": "Natural products and their derivatives have been a pivotal source of therapeutic agents. Involucrasin C is an indane-based natural product known to exhibit mild in vitro cytotoxicity towards cancer cells and anti-inflammatory properties. The synthesis of indane-based scaffolds with tertiary alcohol groups is important for developing pharmaceuticals with better metabolic stability.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Z. Yang",
+        "year": 2022,
+        "doi": "10.3390/molecules27113789",
+        "key_strategy": "Isolation from Shuteria involucrata"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "First total synthesis of (±) involucrasin C, demonstrating high diastereoselectivity and scalability."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming the five-membered ring",
+        "named_strategy": "Intramolecular cyclization",
+        "reasoning": "This disconnection allows for the stereoselective construction of the five-membered carbon framework bearing a tertiary alcohol and phenolic groups, which is the core of the target molecule. It is achieved via Lewis acid-promoted intramolecular cyclization of an ortho-prenylated chalcone."
+      },
+      {
+        "bond_description": "C-C bond between chalcone and prenylated aldehyde",
+        "named_strategy": "Aldol condensation",
+        "reasoning": "This disconnection simplifies the chalcone precursor into a prenylated aldehyde and an acetophenone derivative, which are readily accessible."
+      },
+      {
+        "bond_description": "C-C bond forming the prenyl moiety",
+        "named_strategy": "Suzuki cross-coupling",
+        "reasoning": "This disconnection allows for the introduction of the prenyl moiety onto the aromatic ring via a well-established cross-coupling reaction from a boronic ester."
+      },
+      {
+        "bond_description": "C-B bond",
+        "named_strategy": "Miyaura borylation",
+        "reasoning": "This disconnection allows for the formation of the boronic ester from an aryl bromide, preparing it for Suzuki cross-coupling."
+      },
+      {
+        "bond_description": "C-Br bond",
+        "named_strategy": "Regioselective bromination",
+        "reasoning": "This disconnection simplifies the aryl bromide to isovanillin, which is a commercially available starting material, after demethylation and benzylation."
+      }
+    ],
+    "rationale": "The retrosynthetic analysis of (±) involucrasin C envisioned a linear sequence starting from commercially available isovanillin. The key steps involve regioselective bromination, demethylation, and benzylation to form an aryl bromide. This is followed by Miyaura borylation and Suzuki cross-coupling to introduce the prenyl group, yielding a prenylated aldehyde. An aldol condensation with an acetophenone derivative forms the chalcone intermediate. The crucial step is a Lewis acid-promoted intramolecular cyclization to form the indane core with high diastereoselectivity. Finally, debenzylation reveals the phenolic groups to yield the natural product."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Indane-based natural products are known for their biological activities, including anti-cancer and anti-inflammatory properties. Previous work by the authors focused on intramolecular cyclization of ortho-prenylated chalcones using Lewis acids to synthesize renifolin F and antiarone K, where InCl3·4H2O was effective but produced a byproduct.",
+        "gap": "The previous methodology with InCl3·4H2O (1 equiv.) resulted in a significant amount of an undesired alkene byproduct (2a'). There is a need to optimize the reaction conditions to selectively obtain the target tertiary alcohol (2a) while minimizing byproduct formation.",
+        "decision": "To optimize the reaction conditions for the intramolecular cyclization, we will select 1a as a model substrate and screen various Lewis acid loadings, alternative Lewis acids, and solvent systems to suppress competing side reactions and minimize byproduct formation."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Identified the need for optimization to improve selectivity for the tertiary alcohol product over the alkene byproduct."
+      },
+      "evidence": {
+        "text_span": "Our recent study focused on the total syntheses of renifolin F and antiarone K.13 We employed ortho-prenylated chalcones as substrates and treated them with Lewis acids to achieve intramolecular cyclization. Among the various Lewis acids tested, InCl3·4H2O (1 equiv.) proved particularly effective, directly yielding the core scaffolds of these natural products along with the byproduct 2a'. This study presents efforts to optimize the methodology for selectively obtaining the target tertiary alcohol while minimizing the formation of the alkene byproduct. We focused on the reaction parameters such as Lewis acid loading, alternative Lewis acid and solvent system to suppress competing side reaction and minimize the formation of undesired byproduct.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous work showed InCl3·4H2O (1 equiv.) in DCM yielded 2a with 2a' as a byproduct.",
+        "gap": "The yield of the desired product 2a was moderate (66%), and a significant amount of byproduct 2a' (25%) was formed.",
+        "decision": "To improve the yield of 2a and suppress 2a', we will increase the Lewis acid loading to 2 equivalents of InCl3·4H2O in DCM at 0 °C to room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC=C(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "InCl3.4H2O"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt",
+        "time": "15 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "Increasing InCl3·4H2O to 2 equivalents significantly improved the yield of 2a to 93% with no detectable 2a' byproduct."
+      },
+      "evidence": {
+        "text_span": "Initially, we attempted to obtain the desired product 2a using InCl3·4H2O (1 equiv.) and DCM as the solvent at 0 °C to room temperature, which resulted in 66% yield of 2a, along with 25% of 2a' (Table 1, entry 1) in 24 h. To further enhance the yield of 2a, we increased the Lewis acid to 2 equiv. in the same reaction conditions as before used,13 we obtained our desired diastereomer 2a in 93% yield after 15 h with no detectable 2a' by-product.",
+        "page": 2,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "InCl3·4H2O (2 equiv.) in DCM gave excellent yield. We are exploring alternative solvents.",
+        "gap": "Need to determine if other solvents are suitable for the cyclization reaction.",
+        "decision": "To screen alternative solvents, we will test THF with InCl3·4H2O (2 equiv.)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC=C(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "InCl3.4H2O"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Reaction in THF gave only a trace amount of product 2a."
+      },
+      "evidence": {
+        "text_span": "Subsequent reaction optimization involved screening various solvents, with DCM emerging as the most suitable for this reaction (Table 1, entries 1–8). ... InCl3·4H2O (2) THF Trace",
+        "page": 2,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "InCl3·4H2O (2 equiv.) in DCM gave excellent yield. THF was not suitable. We are exploring alternative solvents.",
+        "gap": "Need to determine if other solvents are suitable for the cyclization reaction.",
+        "decision": "To screen alternative solvents, we will test CH3CN with InCl3·4H2O (2 equiv.)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC=C(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "InCl3.4H2O"
+        ],
+        "solvent": "CC#N",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No product 2a was detected in CH3CN."
+      },
+      "evidence": {
+        "text_span": "Subsequent reaction optimization involved screening various solvents, with DCM emerging as the most suitable for this reaction (Table 1, entries 1–8). ... InCl3·4H2O (2) CH3CN ND",
+        "page": 2,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "InCl3·4H2O (2 equiv.) in DCM gave excellent yield. THF and CH3CN were not suitable. We are exploring alternative solvents.",
+        "gap": "Need to determine if other solvents are suitable for the cyclization reaction.",
+        "decision": "To screen alternative solvents, we will test DMF with InCl3·4H2O (2 equiv.)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC=C(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "InCl3.4H2O"
+        ],
+        "solvent": "CN(C)C=O",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No product 2a was detected in DMF."
+      },
+      "evidence": {
+        "text_span": "Subsequent reaction optimization involved screening various solvents, with DCM emerging as the most suitable for this reaction (Table 1, entries 1–8). ... InCl3·4H2O (2) DMF ND",
+        "page": 2,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "InCl3·4H2O (2 equiv.) in DCM gave excellent yield. THF, CH3CN, and DMF were not suitable. We are exploring alternative solvents.",
+        "gap": "Need to determine if other solvents are suitable for the cyclization reaction.",
+        "decision": "To screen alternative solvents, we will test Dioxane with InCl3·4H2O (2 equiv.)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC=C(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "InCl3.4H2O"
+        ],
+        "solvent": "C1COCCO1",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No product 2a was detected in Dioxane."
+      },
+      "evidence": {
+        "text_span": "Subsequent reaction optimization involved screening various solvents, with DCM emerging as the most suitable for this reaction (Table 1, entries 1–8). ... InCl3·4H2O (2) Dioxane ND",
+        "page": 2,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "DCM was identified as the most suitable solvent. We are now exploring alternative Lewis acids.",
+        "gap": "Need to find alternative, potentially cheaper, Lewis acids that can achieve similar or better results than InCl3·4H2O.",
+        "decision": "To explore alternative catalysts, we will test ZnCl2 (2 equiv.) in DCM."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC=C(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "ZnCl2"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "ZnCl2 in DCM gave the desired product 2a with a 75% yield, which is lower than InCl3·4H2O but still effective."
+      },
+      "evidence": {
+        "text_span": "We then explored alternative catalysts, replacing InCl3·4H2O with ZnCl2, BF3·Et2O, Zn(OTf)2, and B(C6F5)3 (Table 1, entries 3, 11–13). Among them, only ZnCl2 in DCM gave the desired product with a 75% yield (Table 1, entry 3).",
+        "page": 2,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "ZnCl2 in DCM gave a 75% yield. We are looking for ways to improve this yield.",
+        "gap": "The yield with ZnCl2 is lower than with InCl3·4H2O. Need to find conditions to enhance the yield with ZnCl2.",
+        "decision": "To improve the yield with ZnCl2, we will add a small amount of water to the DCM solvent system (DCM:H2O 99:1)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC=C(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "ZnCl2"
+        ],
+        "solvent": "ClCCl:O",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "The addition of water to DCM significantly increased the yield of 2a to 90% when using ZnCl2."
+      },
+      "evidence": {
+        "text_span": "Surprisingly, the addition of water (1:99) with DCM and DCE increased the yield of the desired product to 90% and 82%, respectively (Table 1, entries 4 & 10).",
+        "page": 2,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "ZnCl2 in DCM:H2O gave a 90% yield. We are exploring other solvent systems with water.",
+        "gap": "Need to determine if DCE:H2O is also effective with ZnCl2.",
+        "decision": "To further explore solvent systems, we will test DCE:H2O (99:1) with ZnCl2 (2 equiv.)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC=C(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "ZnCl2"
+        ],
+        "solvent": "ClCCCl:O",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "DCE:H2O also increased the yield to 82% with ZnCl2, confirming the beneficial effect of water."
+      },
+      "evidence": {
+        "text_span": "Surprisingly, the addition of water (1:99) with DCM and DCE increased the yield of the desired product to 90% and 82%, respectively (Table 1, entries 4 & 10).",
+        "page": 2,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "InCl3·4H2O and ZnCl2 showed good results. We are exploring other Lewis acids.",
+        "gap": "Need to determine if other Lewis acids are effective for this cyclization.",
+        "decision": "To screen alternative catalysts, we will test BF3·Et2O (2 equiv.) in THF."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC=C(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "FB(F)F.CCOCC"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 50,
+        "failure_mode": "low_yield",
+        "observation": "BF3·Et2O in THF gave a lower yield of 50% for 2a, along with 20% of byproduct 2a'."
+      },
+      "evidence": {
+        "text_span": "In contrast, BF3·Et2O (2 equiv.) in THF produced 2a in a lower yield of 50%, along with 20% of byproduct 2a' (Table 1, entry 11).",
+        "page": 2,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "InCl3·4H2O and ZnCl2 showed good results. BF3·Et2O was less effective. We are exploring other Lewis acids.",
+        "gap": "Need to determine if other Lewis acids are effective for this cyclization.",
+        "decision": "To screen alternative catalysts, we will test Zn(OTf)2 (2 equiv.) in CH3CN."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC=C(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "Zn(OTf)2"
+        ],
+        "solvent": "CC#N",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No product 2a was detected with Zn(OTf)2 in CH3CN."
+      },
+      "evidence": {
+        "text_span": "We then explored alternative catalysts, replacing InCl3·4H2O with ZnCl2, BF3·Et2O, Zn(OTf)2, and B(C6F5)3 (Table 1, entries 3, 11–13). Among them, only ZnCl2 in DCM gave the desired product with a 75% yield (Table 1, entry 3). ... Zn(OTf)2(2) CH3CN ND",
+        "page": 2,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "InCl3·4H2O and ZnCl2 showed good results. BF3·Et2O and Zn(OTf)2 were less effective. We are exploring other Lewis acids.",
+        "gap": "Need to determine if other Lewis acids are effective for this cyclization.",
+        "decision": "To screen alternative catalysts, we will test B(C6F5)3 (2 equiv.) in CH3CN."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC=C(C(=O)c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "B(C6F5)3"
+        ],
+        "solvent": "CC#N",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No product 2a was detected with B(C6F5)3 in CH3CN."
+      },
+      "evidence": {
+        "text_span": "We then explored alternative catalysts, replacing InCl3·4H2O with ZnCl2, BF3·Et2O, Zn(OTf)2, and B(C6F5)3 (Table 1, entries 3, 11–13). Among them, only ZnCl2 in DCM gave the desired product with a 75% yield (Table 1, entry 3). ... B(C6F5)3(2) CH3CN ND",
+        "page": 2,
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimized conditions for intramolecular cyclization were established using InCl3·4H2O (2 equiv.) in DCM or ZnCl2 (2 equiv.) in DCM:H2O (99:1).",
+        "gap": "Need to demonstrate the broad applicability of this methodology by synthesizing various involucrasin C derivatives with different substituents on the aromatic rings.",
+        "decision": "To explore the substrate scope, we will apply the optimized conditions to a variety of ortho-prenylated chalcones (1) with different R1 and R2 substituents."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C(=O)C=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COc1ccc(C(=O)C2CC2C(O)c2ccccc2)cc1"
+        ],
+        "reagents": [
+          "InCl3.4H2O"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A variety of R1 substituents (electron-rich, electron-deficient, electron-neutral) and R2 functional groups (methoxy, benzyloxy, hydroxy, halogen, phenyl, isobutyl) were efficiently converted into the desired products (2) in good to excellent yields, demonstrating broad functional group tolerance."
+      },
+      "evidence": {
+        "text_span": "With the optimized reaction conditions established (Table 1, entry 2), we turned our attention to exploring the synthesis of involucrasin C derivatives by varying the substrate scope on the aromatic ring. As illustrated in Scheme 1, a variety of R1 substituents on the aromatic ring, including electron-rich (2b, 2c, 2m–2p), electron-deficient (2d), and electron-neutral (2a, 2e–2l) groups, were efficiently converted into the desired products (2) under the standard conditions, achieving good to excellent yields. The reaction demonstrated broad tolerance for various functional groups R2 on the other aromatic benzene ring. For example, methoxy-substituted derivatives (2c, 2e, 2f, 2g, 2j) showed high yields, indicating that electron-donating groups are well accommodated. Similarly, benzyloxy-substituted derivatives (2m, λ2o–2p) were produced efficiently, further underscoring the reaction's versatility. Hydroxy (2f) and halogen (2h–2i, 2n) substituents were also well tolerated, highlighting the reliability of the reaction conditions. Additionally, R2 substituents such as phenyl and isobutyl (2k–2l) also afforded good to excellent yields.",
+        "page": 2,
+        "section": "Results and discussion",
+        "image_refs": [
+          "285f1900895036af94b6b30e3060a5f3a460a28712b57b75ac036eefc72523fc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The intramolecular cyclization methodology showed broad substrate scope and good yields. We need to further investigate its diastereoselectivity, especially with a cinnamyl moiety to introduce a third chiral center.",
+        "gap": "The diastereoselectivity of the reaction needs to be confirmed with substrates that can form multiple chiral centers.",
+        "decision": "To investigate diastereoselectivity, we will use substrate 3a, where the two methyl groups are replaced by hydrogen and a phenyl group, and apply the optimized conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "InCl3.4H2O"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt",
+        "time": "15-24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "The transformation proceeded with excellent diastereoselectivity, affording a single diastereomer (4a). The relative configuration was confirmed by X-ray crystallography. The methodology proved reliable across various substrates (4a-4d) with good yields (73-80%) and complete diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "To further investigate the diastereoselectivity of our methodology, we evaluated the reaction conditions using substrate 3a, where the two methyl groups were replaced by hydrogen and a phenyl group. Remarkably, the transformation proceeded with excellent diastereoselectivity, affording a single diastereomer under the optimized conditions. The relative configuration of compound 4a was unambiguously determined by X-ray crystallography (Scheme 2), confirming the selective outcome. This high level of diastereocontrol suggests that the steric effects of the phenyl substituents play a crucial role in directing the reaction pathway. Notably, the methodology proved to be reliable across various substrates, delivering 4a (75%), 4b (80%), 4c (77%), and 4d (73%) in good yields while maintaining complete diastereoselectivity.",
+        "page": 3,
+        "section": "Results and discussion",
+        "image_refs": [
+          "a6eb6ef23ad959589db33371b66d24f0c953b802a29158e9a433c84d42c07d04.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "The optimized intramolecular cyclization conditions showed good yields and diastereoselectivity on a small scale.",
+        "gap": "Need to demonstrate the practical applicability and scalability of the established protocol.",
+        "decision": "To demonstrate scalability, a gram-scale experiment will be performed using substrate 1a (1.0 g) following standard reaction conditions (InCl3·4H2O, DCM)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)c1ccccc1CC(=O)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1CC(Cc2ccccc2C(=O)c2ccccc2)c2ccccc21"
+        ],
+        "reagents": [
+          "InCl3.4H2O"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt",
+        "scale": "1.0 g (3.6231 mmol)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "The desired product 2a was isolated with a good yield of 84% on a gram scale, demonstrating the scalability of the protocol."
+      },
+      "evidence": {
+        "text_span": "To demonstrate the practical applicability and significance of the established protocol, a gram-scale experiment was performed utilizing substrate 1a (1.0 g, 3.6231 mmol) following standard reaction conditions (Scheme 3a). The desired product 2a was isolated with a good yield of 84%.",
+        "page": 3,
+        "section": "Results and discussion",
+        "image_refs": [
+          "aa99e47bc541a1d40eaf6b9d6bc29acfe319cd1695088fd7cca0aa73cb3f36b1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The initial optimization (Table 1, entry 1) showed that 2a' was formed as a byproduct when using 1 equiv. of InCl3·4H2O. The optimized conditions (2 equiv. InCl3·4H2O) eliminated this byproduct.",
+        "gap": "Need to investigate if the alkene byproduct 2a' can be converted into the desired tertiary alcohol 2a under the optimized conditions.",
+        "decision": "To investigate the conversion of 2a' to 2a, we will use 2a' as a starting material with 1 equiv. of InCl3·4H2O in DCM or ZnCl2 (1 equiv.) in DCM:H2O (99:1)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1c2ccccc2C1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "InCl3.4H2O"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "The minor alkene product 2a' was efficiently converted into the desired tertiary alcohol 2a with an 86% yield, indicating that 2a' is an intermediate that can be further reacted to form 2a."
+      },
+      "evidence": {
+        "text_span": "To investigate the conversion of 2a' to 2a, we used 1 equiv. of InCl3·4H2O under the same reaction conditions. The study demonstrated that the reaction progressed efficiently, leading to the formation of the expected product 2a with an 86% yield τ*ΔznCl2 (1 equiv.), DCM : H O (99 : 1)). This result indicates that the minor alkene product 2a' of reaction 1a was converted into the desired tertiary alcohol (Scheme 3b).",
+        "page": 3,
+        "section": "Results and discussion",
+        "image_refs": [
+          "aa99e47bc541a1d40eaf6b9d6bc29acfe319cd1695088fd7cca0aa73cb3f36b1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "The intramolecular cyclization methodology is robust and diastereoselective. We now need to apply it to the total synthesis of (±) involucrasin C.",
+        "gap": "Need a detailed retrosynthetic plan to access (±) involucrasin C from commercially available starting materials, incorporating the developed cyclization strategy.",
+        "decision": "To achieve the total synthesis, we will envision a retrosynthetic approach where the indane core is formed via intramolecular cyclization of intermediate 1p, which is derived from an aldol condensation of prenylated aldehyde 10. Aldehyde 10 will be synthesized from isovanillin 5 through a sequence of regioselective bromination, demethylation, benzylation, Miyaura borylation, and Suzuki cross-coupling."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A comprehensive retrosynthetic plan was developed, outlining the key disconnections and synthetic transformations required for the total synthesis of (±) involucrasin C."
+      },
+      "evidence": {
+        "text_span": "Scheme 5 outlines our retrosynthetic approach toward the total synthesis of (±) involucrasin C. We envisioned that the stereoselective construction of the five-membered carbon framework bearing a tertiary alcohol (carbinol carbon) and phenolic groups could be achieved via an intramolecular cyclization, followed by debenzylation of the intermediate 1p. The key intermediate 1p is accessible through an aldol condensation of prenylated aldehyde 10. The latter, in turn, is derived from commercially available isovanillin 5 by a sequence of regioselective bromination, demethylation, benzylation, Miyaura borylation, and Suzuki cross-coupling to install the prenyl moiety.",
+        "page": 3,
+        "section": "Application to first total synthesis of (±) involucrasin C",
+        "image_refs": [
+          "ab45b94297baa18204ee199c4e3ad958f0774ac42dbc4e74430aab36561350e6.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The retrosynthetic plan starts with isovanillin (5). The first steps involve regioselective bromination, demethylation, and benzylation to form aryl bromide 8.",
+        "gap": "Need to synthesize aryl bromide 8 from isovanillin (5) using established protocols.",
+        "decision": "To obtain aryl bromide 8, we will follow a previously reported protocol for regioselective bromination, demethylation, and benzylation of isovanillin (5)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(C=O)ccc1O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "named_reaction": "Regioselective bromination, demethylation, benzylation"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Aryl bromide 8 was successfully obtained from isovanillin (5) via a previously reported protocol, setting the stage for further elaboration."
+      },
+      "evidence": {
+        "text_span": "The synthesis commenced with commercially available and inexpensive isovanillin (5), which underwent regioselective bromination, followed by demethylation and benzylation to afford aryl bromide 8 via a previously reported protocol. This intermediate set the stage for further elaboration.",
+        "page": 3,
+        "section": "Application to first total synthesis of (±) involucrasin C",
+        "references": [
+          "13",
+          "19"
+        ],
+        "image_refs": [
+          "81f4422b5759ea435ec013f2a6416560afe5d65ffa8d87aaaf5fe83c4f291fad.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aryl bromide 8 has been synthesized. The next step in the retrosynthesis is Miyaura borylation to form boronic ester 9.",
+        "gap": "Need to convert aryl bromide 8 into boronic ester 9.",
+        "decision": "To obtain boronic ester 9, we will perform Pd-catalyzed Miyaura borylation of 8 using PdCl2(PPh3)2, KOAc, and B2Pin2 in 1,4-Dioxane."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PdCl2(PPh3)2",
+          "KOAc",
+          "B2Pin2"
+        ],
+        "solvent": "C1CCOCCO1",
+        "time": "12 h",
+        "temperature": "95-100 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Boronic ester 9 was furnished in 77% yield via Pd-catalyzed Miyaura borylation of 8."
+      },
+      "evidence": {
+        "text_span": "Pd-catalyzed Miyaura borylation of 8 furnished boronic ester 9, which underwent Suzuki cross-coupling with prenyl bromide to deliver prenylated aldehyde 10 in 70% yield.",
+        "page": 3,
+        "section": "Application to first total synthesis of (±) involucrasin C",
+        "image_refs": [
+          "81f4422b5759ea435ec013f2a6416560afe5d65ffa8d87aaaf5fe83c4f291fad.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Boronic ester 9 has been synthesized. The next step is Suzuki cross-coupling with prenyl bromide to deliver prenylated aldehyde 10.",
+        "gap": "Need to introduce the prenyl moiety onto boronic ester 9.",
+        "decision": "To obtain prenylated aldehyde 10, we will perform Suzuki cross-coupling of 9 with prenyl bromide using Pd2(dba)3 and K2CO3 in Toluene."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "K2CO3",
+          "prenyl bromide"
+        ],
+        "solvent": "Cc1ccccc1",
+        "time": "13 h",
+        "temperature": "110 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Prenylated aldehyde 10 was delivered in 70% yield via Suzuki cross-coupling."
+      },
+      "evidence": {
+        "text_span": "Pd-catalyzed Miyaura borylation of 8 furnished boronic ester 9, which underwent Suzuki cross-coupling with prenyl bromide to deliver prenylated aldehyde 10 in 70% yield.",
+        "page": 3,
+        "section": "Application to first total synthesis of (±) involucrasin C",
+        "references": [
+          "13",
+          "19"
+        ],
+        "image_refs": [
+          "81f4422b5759ea435ec013f2a6416560afe5d65ffa8d87aaaf5fe83c4f291fad.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Prenylated aldehyde 10 has been synthesized. The next step is aldol condensation with acetophenone derivative 11 to afford chalcone 1p.",
+        "gap": "Need to form the chalcone intermediate 1p.",
+        "decision": "To obtain chalcone 1p, we will perform an aldol condensation between 10 and acetophenone derivative 11 under mild basic conditions (NaOH in EtOH:THF with sonication)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaOH"
+        ],
+        "solvent": "CCO:C1CCOC1",
+        "time": "1 h",
+        "temperature": "35 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Chalcone 1p was afforded in 92% yield via aldol condensation."
+      },
+      "evidence": {
+        "text_span": "An aldol condensation between 10 and acetophenone derivative 11 proceeded efficiently under mild basic conditions to afford chalcone 1p in 92% yield.",
+        "page": 3,
+        "section": "Application to first total synthesis of (±) involucrasin C",
+        "image_refs": [
+          "81f4422b5759ea435ec013f2a6416560afe5d65ffa8d87aaaf5fe83c4f291fad.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Chalcone 1p has been synthesized. The key step is the Lewis acid-promoted intramolecular cyclization to form tertiary alcohol 2p.",
+        "gap": "Need to cyclize 1p to form the indane core with high diastereoselectivity.",
+        "decision": "To obtain tertiary alcohol 2p, we will apply the optimized Lewis acid-promoted intramolecular cyclization conditions using InCl3·4H2O in DCM."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "InCl3.4H2O"
+        ],
+        "solvent": "ClCCl",
+        "time": "24 h",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Tertiary alcohol 2p was provided with high diastereoselectivity in 82% yield via Lewis acid-promoted intramolecular cyclization."
+      },
+      "evidence": {
+        "text_span": "Subsequent Lewis acid-promoted intramolecular cyclization of 1p using InCl3·4H2O provided tertiary alcohol 2p with high diastereoselectivity in 82% yield.",
+        "page": 3,
+        "section": "Application to first total synthesis of (±) involucrasin C",
+        "image_refs": [
+          "81f4422b5759ea435ec013f2a6416560afe5d65ffa8d87aaaf5fe83c4f291fad.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tertiary alcohol 2p, containing the indane core, has been synthesized. The final step is debenzylation to reveal the phenolic groups and obtain (±) involucrasin C.",
+        "gap": "Need to remove the benzyl protecting groups from 2p.",
+        "decision": "To obtain (±) involucrasin C, we will perform debenzylation of 2p via catalytic hydrogenation using H2 balloon and Pd/C in MeOH:EtOAc."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C[C@@]1(O)Cc2ccc(O)c(CC(=O)c3cc(O)ccc3O)c2C1"
+        ],
+        "reagents": [
+          "H2",
+          "Pd/C"
+        ],
+        "solvent": "CO:CCOC(=O)C",
+        "time": "4 h",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "The natural product (±) involucrasin C was furnished in 90% yield after debenzylation."
+      },
+      "evidence": {
+        "text_span": "Finally, debenzylation of 2p via catalytic hydrogenation (H2 balloon, Pd/C) furnished the natural product (±) involucrasin C in 90% yield.13 This concise and efficient synthetic route highlights regioselective functionalization, cross-coupling, and stereoselective cyclization to access the complex polyphenolic core of the target molecule.",
+        "page": 3,
+        "section": "Application to first total synthesis of (±) involucrasin C",
+        "references": [
+          "13"
+        ],
+        "image_refs": [
+          "81f4422b5759ea435ec013f2a6416560afe5d65ffa8d87aaaf5fe83c4f291fad.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 26,
+        "unit": "%",
+        "interpretation": "Overall yield for the 8-step total synthesis."
+      },
+      "Longest Linear Steps": {
+        "value": 8,
+        "unit": "steps",
+        "interpretation": "Number of steps in the longest linear sequence."
+      }
+    },
+    "significance": "This work presents the first total synthesis of (±) involucrasin C, demonstrating a practical and scalable methodology for the intramolecular cyclization of prenylated chalcones. The method exhibits broad substrate scope, high diastereoselectivity, and functional group tolerance, making it valuable for synthesizing natural product derivatives with tertiary alcohols. The successful application to a complex natural product highlights its synthetic utility."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5ra04830c",
+      "pmcid": "PMC12311780",
+      "title": "Lewis acid-promoted intramolecular cyclization of &lt;i&gt;ortho&lt;/i&gt;-prenylated chalcones: application to first total synthesis of (±) involucrasin C and its novel analogues.",
+      "authors": "Ahamad J, Khatua RR, Khan FA.",
+      "journal": "RSC Adv",
+      "year": 2025,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC12311780?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/7c7e5a59-9b02-404b-b5fa-8971f5e44f2c.zip",
+      "parsed_at": "2026-05-11T06:24:26.067733+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 44,
+    "parseable": 31,
+    "canonicalized": 29,
+    "invalid": 13,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C(C=C(C1=CC=CC=C1)C=C2C=CC=CC2)C3=CC=C(R2)C=C3",
+      "O=C(C1=CC=C(R2)C=C1)C2C(C3=CC=CC=C3)C(O)C4=CC=CC=C42",
+      "O=Cc1cc(OBn)ccc1Br",
+      "O=Cc1cc(OBn)ccc1Br",
+      "O=Cc1cc(OBn)ccc1B(O)(O)",
+      "O=Cc1cc(OBn)ccc1B(O)(O)",
+      "O=Cc1c(CC=C(C)C)c(OBn)ccc1OBn",
+      "O=Cc1c(CC=C(C)C)c(OBn)ccc1OBn",
+      "O=C(C)c1cc(OBn)ccc1OBn",
+      "O=C(C=Cc1c(CC=C(C)C)c(OBn)ccc1OBn)c1cc(OBn)ccc1OBn"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

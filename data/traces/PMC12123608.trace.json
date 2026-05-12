@@ -1,0 +1,690 @@
+{
+  "trace_id": "TS-PMC12123608",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-Illisimonin A",
+    "smiles": "CC12C[C@@H](O)OC1C1(O)C2C(=O)C1(C)O",
+    "natural_product_class": "sesquiterpene",
+    "structural_features": {
+      "stereocenters": 7,
+      "ring_systems": "5/5/5/5/5 pentacyclic scaffold",
+      "key_motifs": [
+        "trans-pentalene",
+        "norbornane",
+        "all-carbon quaternary centers"
+      ]
+    },
+    "motivation": "Illisimonin A possesses a unique cage-like 5/5/5/5/5 pentacyclic scaffold containing a trans-pentalene and a norbornane, two highly strained and challenging structural motifs. It also contains seven contiguous fully substituted stereocenters, including three all-carbon quaternary centers, two of which are adjacent. It has neuroprotective effects against oxygen-glucose deprivation-induced cell injury in SH-SY5Y cells (EC50 = ~28 μM), warranting further investigation. The isolation yield is extremely low (~0.000004%).",
+    "prior_syntheses": [
+      {
+        "lead_author": "Rychnovsky",
+        "year": 2019,
+        "doi": "10.1021/jacs.9b07007",
+        "key_strategy": "Silyl ether-templated Diels–Alder reaction, semipinacol rearrangement, and iron-catalyzed C−H oxidation. Revised the absolute configuration of the natural product."
+      },
+      {
+        "lead_author": "Kalesse",
+        "year": 2023,
+        "doi": "10.1021/jacs.3c00040",
+        "key_strategy": "Tandem Nazarov-ene cyclization and reductive ketone-epoxide ring closure. Similar to Rychnovsky, employed semipinacol rearrangement and C-H oxidation."
+      },
+      {
+        "lead_author": "Yang",
+        "year": 2023,
+        "doi": "10.1002/anie.202306367",
+        "key_strategy": "Intramolecular Heck reaction to install C5 all-carbon quaternary center, Mukaiyama hydration, retro-Dieckmann reaction, and intramolecular aldol reaction to forge C6−C10 linkage."
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Asymmetric total synthesis of (-)-illisimonin A."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [],
+    "fragments": [
+      {
+        "fragment_id": "22",
+        "smiles": "CC1=CC2C3C(=O)C=C(C)C(C1)C23",
+        "role": "starting point",
+        "comes_from": "(S)-carvone"
+      }
+    ],
+    "rationale": "The synthesis exploits a pattern recognition strategy to identify a 5,6-fused bicyclic intermediate 22 derived from (S)-carvone in two steps as the starting point. This approach bypasses the problems involved in directly forming the highly strained trans-pentalene motif. The enone functionality in the six-membered ring of 22 is utilized to functionalize C5 (all-carbon quaternary center) and C7 (ketone oxidation level), which would then cyclize with the hydroxyl group at C14 to form acetal 23. The five-membered ring of 23 is functionalized by selective oxidations at C1 and C4 and building an all-carbon quaternary center at C9, orchestrated by five sequential olefin transposition reactions. An intramolecular aldol cyclization similar to Yang’s synthesis is planned to forge the C6−C10 linkage from an α-keto-γ-butyrolactone 24."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The starting material (S)-carvone (21) is a readily available chiral pool precursor. The target intermediate 22 is a 5,6-fused bicyclic compound.",
+        "gap": "How to efficiently convert (S)-carvone to the desired bicyclic intermediate 22 with the correct stereochemistry.",
+        "decision": "To form the bicyclic intermediate 22, a previously established procedure involving stereoselective α-allylation and ring-closing metathesis followed by one-pot epimerization will be used."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)[C@@H]1C=C(C)C(=O)CC1",
+          "C=CCBr"
+        ],
+        "product_smiles": [
+          "CC1=CC2C3C(=O)C=C(C)C(C1)C23"
+        ],
+        "reagents": [
+          "LDA",
+          "DMPU",
+          "Grubbs II catalyst",
+          "DBU"
+        ],
+        "solvent": "THF",
+        "named_reaction": "α-allylation, ring-closing metathesis, epimerization"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "Compound 22 was prepared from (S)-carvone (21) in two steps, namely, stereoselective α-allylation and ring closing metathesis followed by a one-pot epimerization."
+      },
+      "evidence": {
+        "text_span": "As shown in Scheme 1, following our previously established procedure,16 compound 22 was prepared from (S)-carvone (21) in two steps, namely, stereoselective α-allylation and ring closing metathesis followed by a one-pot epimerization.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "b3004e1d7fea8bff833597c7d8cd007cfb360a9d14c9299c6d2b862033a9649d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 22 contains an enone functionality. The goal is to oxidize C7.",
+        "gap": "How to selectively oxidize C7 using the enone functionality.",
+        "decision": "To oxidize C7, selective nucleophilic enone epoxidation with H2O2 and NaOH will be employed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC2C3C(=O)C=C(C)C(C1)C23"
+        ],
+        "product_smiles": [
+          "CC1=CC2C3C=C(C)C(C1)C23"
+        ],
+        "reagents": [
+          "H2O2",
+          "NaOH"
+        ],
+        "solvent": "MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Epoxide 25 was obtained as a single stereoisomer."
+      },
+      "evidence": {
+        "text_span": "To oxidize C7, selective nucleophilic enone epoxidation with H2O2 and NaOH gave 25 in 77% yield as a single stereoisomer.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "b3004e1d7fea8bff833597c7d8cd007cfb360a9d14c9299c6d2b862033a9649d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 25 has an epoxide and a ketone. The goal is to add a C14 carbon and form an aldehyde.",
+        "gap": "How to perform a one-carbon homologation of the ketone while managing the instability of the resulting enol ether and epoxide.",
+        "decision": "A one-carbon Wittig homologation of the ketone will be used to afford an enol ether, followed by hydrolysis and epoxide ring opening during aqueous quench and workup to provide aldehyde 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC2C3C=C(C)C(C1)C23"
+        ],
+        "product_smiles": [
+          "CC1=CC2C3C(=O)C=C(C)C(C1)C23"
+        ],
+        "reagents": [
+          "COC[PH+](C1=CC=CC=C1)(C2=CC=CC=C2)C3=CC=CC=C3.[Cl-]",
+          "t-BuOK"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "An enol ether was formed, which was especially unstable due to the existence of the epoxide and underwent hydrolysis and epoxide ring opening during aqueous quench and workup to provide aldehyde 26."
+      },
+      "evidence": {
+        "text_span": "To add the C14 carbon, a one-carbon Wittig homologation of the ketone was used to afford an enolether, which was especially unstable due to the existence of the epoxide and underwent hydrolysis and epoxide ring opening during aqueous quench and workup to provide aldehyde 26 in 91% yield.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "b3004e1d7fea8bff833597c7d8cd007cfb360a9d14c9299c6d2b862033a9649d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 26 has an aldehyde and an enone. The goal is to install the C5 all-carbon quaternary center stereoselectively and reduce the aldehyde.",
+        "gap": "How to achieve stereoselective α-methylation and subsequent aldehyde reduction in a single pot.",
+        "decision": "Deconjugative α-methylation with MeI and tBuOK will be employed, expecting methylation from the less hindered convex face. O-methylation at the C7 secondary alcohol is also anticipated. A subsequent aldehyde reduction in the same pot will furnish 27."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC2C3C(=O)C=C(C)C(C1)C23"
+        ],
+        "product_smiles": [
+          "CO[C@H]1CC(C(C)(C)O)=C[C@H]2CC(C)=C[C@H]12"
+        ],
+        "reagents": [
+          "t-BuOK",
+          "MeI",
+          "NaBH4"
+        ],
+        "solvent": "THF/DMF, MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "The α-methylation occurred from the less hindered convex face. O-methylation at the C7 secondary alcohol also took place. Subsequent aldehyde reduction furnished 27."
+      },
+      "evidence": {
+        "text_span": "To install the C5 all-carbon quaternary center in a stereoselective manner, deconjugative α-methylation with MeI and tBuOK was employed. The α-methylation occurred from the less hindered convex face. Meanwhile, O-methylation at the C7 secondary alcohol also took place to give a methyl ether. A subsequent aldehyde reduction in the same pot furnished 27 in 72% yield.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "b3004e1d7fea8bff833597c7d8cd007cfb360a9d14c9299c6d2b862033a9649d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 27 has an exomethylene group and a primary alcohol. The goal is to adjust the oxidation level of C7 and form the first bridged ring system with the desired stereoconfiguration at C6.",
+        "gap": "How to achieve a redox-neutral and atom-economic exomethylene isomerization to generate an enol ether, which can then react with the C14 primary alcohol to form an acetal at C7.",
+        "decision": "A tandem process using Crabtree catalyst in refluxing THF will be attempted to achieve olefin transposition and acetal formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CO[C@H]1CC(C(C)(C)O)=C[C@H]2CC(C)=C[C@H]12"
+        ],
+        "product_smiles": [
+          "CO[C@H]1OC2(C)C3C=C(C)CC3[C@H](C)C12"
+        ],
+        "reagents": [
+          "Crabtree catalyst"
+        ],
+        "solvent": "THF",
+        "temperature": "reflux",
+        "stoichiometry": {
+          "Crabtree catalyst": "3 mol %"
+        },
+        "named_reaction": "olefin transposition, acetal formation"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "This highly efficient olefin transposition not only adjusted the oxidation level of C7 but also formed the first bridged ring system with the desired stereoconfiguration at C6. Compound 28 was produced in 65% yield on gram scale."
+      },
+      "evidence": {
+        "text_span": "This tandem process was achieved by treating 27 with the Crabtree catalyst (3 mol %) in refluxing THF.17 This highly efficient olefin transposition not only adjusted the oxidation level of C7 but also formed the first bridged ring system with the desired stereoconfiguration at C6. Compound 28 was produced in 65% yield on gram scale.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "4a62d779b20310ac8c6c534e8ce7df766ab85e9c3419e92fc3c8ecd786d4e5b2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 28 contains a cyclopentene ring. The goal is to functionalize this ring, specifically to introduce an allylic alcohol.",
+        "gap": "How to selectively oxidize the cyclopentene ring to an allylic alcohol.",
+        "decision": "Noting that 28 was slowly oxidized to an allylic alcohol under air, presumably via a Schenck singlet oxygen ene reaction, the process will be accelerated by irradiating 28 in the presence of oxygen and a catalytic amount of tetraphenylporphyrin (TPP). The newly formed peroxide will then be quenched with PMe3, followed by one-pot acetate formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CO[C@H]1OC2(C)C3C=C(C)CC3[C@H](C)C12"
+        ],
+        "product_smiles": [
+          "CO[C@H]1OC2(C)C3C(C)=C[C@H](OC(C)=O)C3C2C1C"
+        ],
+        "reagents": [
+          "O2",
+          "TPP",
+          "PMe3",
+          "Ac2O",
+          "DMAP",
+          "Et3N"
+        ],
+        "solvent": "CH2Cl2",
+        "atmosphere": "oxygen",
+        "named_reaction": "Schenck singlet oxygen ene reaction, acetate formation"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Allylic acetate 29 was obtained in 89% yield. This second olefin transposition is strategically important for our synthesis."
+      },
+      "evidence": {
+        "text_span": "While we were struggling with various unfruitful explorations, we noted that 28 was slowly oxidized to an allylic alcohol under air, presumably via a Schenck singlet oxygen ene reaction. We then decided to accelerate this process and irradiated (427 nm) 28 in the presence of oxygen and a catalytic amount of tetraphenylporphyrin (TPP). To our delight, after the newly formed peroxide was quenched with PMe3, followed by a one-pot acetate formation, allylic acetate 29 was obtained in 89% yield. This second olefin transposition is strategically important for our synthesis because it enabled a subsequent Ireland-Claisen rearrangement (29 to 30, the third olefin transposition) to install the C9 all-carbon quaternary center and the requisite carboxylic acid in 93% yield.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "4a62d779b20310ac8c6c534e8ce7df766ab85e9c3419e92fc3c8ecd786d4e5b2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 29 is an allylic acetate. The goal is to install the C9 all-carbon quaternary center and a carboxylic acid.",
+        "gap": "How to achieve this transformation stereoselectively.",
+        "decision": "An Ireland-Claisen rearrangement will be used to install the C9 all-carbon quaternary center and the requisite carboxylic acid."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CO[C@H]1OC2(C)C3C(C)=C[C@H](OC(C)=O)C3C2C1C"
+        ],
+        "product_smiles": [
+          "CO[C@H]1OC2(C)C3C(C)=C[C@H](CC(=O)O)C3C2C1C"
+        ],
+        "reagents": [
+          "KHMDS",
+          "TMSCl"
+        ],
+        "solvent": "toluene",
+        "named_reaction": "Ireland-Claisen rearrangement"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "The Ireland-Claisen rearrangement (the third olefin transposition) successfully installed the C9 all-carbon quaternary center and the requisite carboxylic acid."
+      },
+      "evidence": {
+        "text_span": "This second olefin transposition is strategically important for our synthesis because it enabled a subsequent Ireland-Claisen rearrangement (29 to 30, the third olefin transposition) to install the C9 all-carbon quaternary center and the requisite carboxylic acid in 93% yield.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "4a62d779b20310ac8c6c534e8ce7df766ab85e9c3419e92fc3c8ecd786d4e5b2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 30 contains a carboxylic acid. The goal is to introduce the C1 oxygen functionality via lactonization.",
+        "gap": "How to achieve oxidative lactonization and simultaneously migrate the olefin to a more reactive position.",
+        "decision": "A palladium-catalyzed oxidative lactonization developed by Larock and co-workers will be used. This is expected to migrate the olefin from C1−C2 to C2−C3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CO[C@H]1OC2(C)C3C(C)=C[C@H](CC(=O)O)C3C2C1C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd(OAc)2",
+          "O2",
+          "NaOAc"
+        ],
+        "solvent": "DMSO",
+        "named_reaction": "Pd-catalyzed oxidative lactonization"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "Lactone product 31 was produced in a 68% yield. This palladium-catalyzed cyclization further migrated the olefin (the fourth olefin transposition) from C1−C2 to C2−C3 as a consequence of a selective β-hydride elimination. This transposition renders the C4 position more reactive due to its allylic nature and opens an opportunity for direct allylic C−H hydroxylation reactions to install the missing tertiary alcohol."
+      },
+      "evidence": {
+        "text_span": "The carboxylic acid was then used as a handle to introduce the C1 oxygen functionality via a palladium-catalyzed oxidative lactonization developed by Larock and co-workers.18 Lactone product 31 was produced in a 68% yield. This palladium-catalyzed cyclization further migrated the olefin (the fourth olefin transposition) from C1−C2 to C2−C3 as a consequence of a selective β-hydride elimination. This transposition renders the C4 position more reactive due to its allylic nature and opens an opportunity for direct allylic C−H hydroxylation reactions to install the missing tertiary alcohol.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "cb5a75a8c678fc263baf93e67081b820891448ab0f3f97d4887aec64815b4cf7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 31 has an olefin at C2-C3, making C4 allylic. The goal is to install a tertiary alcohol at C4.",
+        "gap": "How to achieve direct allylic C−H hydroxylation at the C4 position.",
+        "decision": "Direct allylic C−H hydroxylation will be attempted."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "scope_limited",
+        "observation": "We were unable to achieve such direct C−H hydroxylation, presumably due to the severe steric hindrance at this bis neopentyl position."
+      },
+      "evidence": {
+        "text_span": "Unfortunately, we were unable to achieve such direct C−H hydroxylation, presumably due to the severe steric hindrance at this bis neopentyl position.",
+        "section": "Scheme 1"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "Direct C−H hydroxylation at C4 failed due to steric hindrance. The olefin is currently at C2-C3. The goal is to make C4 more accessible for functionalization.",
+        "gap": "How to achieve a thermodynamically controlled positional olefin isomerization to convert the disubstituted C2−C3 olefin to the more stable trisubstituted C3−C4 olefin, given the steric hindrance.",
+        "decision": "After unfruitful attempts with transition-metal-catalyzed double bond isomerizations, the recently developed photochemical positional alkene isomerization developed by Wendlandt and co-workers will be explored. Specifically, a decatungstate-mediated hydrogen atom abstraction will be used to generate an allylic radical, aiming for a thermodynamic isomerization from 31 to 32. Further optimization will involve a combination of NaDT, TripSH, and light (370 nm) in a mixture of acetone/MeCN."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Na4W10O32",
+          "TripSH"
+        ],
+        "solvent": "acetone/MeCN",
+        "temperature": "unspecified",
+        "atmosphere": "unspecified",
+        "named_reaction": "photochemical positional alkene isomerization"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "The desired product 32 was obtained with the Wendlandt conditions but at low conversion (~20%). Further optimization led to photochemical isomerization conditions similar to those used by Xu and co-workers. Eventually, with a combination of NaDT, TripSH, and light (370 nm) in a mixture of acetone/MeCN, the desired product 32 could be obtained in 45% yield after three cycles of isomerization, realizing the fifth olefin transposition in our synthesis."
+      },
+      "evidence": {
+        "text_span": "We then envisioned a thermodynamically controlled positional olefin isomerization (the fifth olefin transposition) to convert the disubstituted C2−C3 olefin to the more stable trisubstituted C3−C4 olefin. This seemingly straightforward isomerization turned out to be very challenging, again due to steric hindrance. After unfruitful attempts with transition-metal-catalyzed double bond isomerizations, we took course to the recently developed photochemical positional alkene isomerization developed by Wendlandt and co-workers.19 While in the Wendlandt case a contrathermodynamic isomerization was achieved with the cooperative effect of decatungstate and cobaloxime catalysts, we believed that, if we could hijack the decatungstate-mediated hydrogen atom abstraction part of their catalytic process to generate an allylic radical, a thermodynamic isomerization from 31 to 32 might be achieved. To our delight, the desired product 32 was obtained with the Wendlandt conditions but at low conversion (~20%). We further learned that the cobaloxime co-catalyst was not necessary in our case since we were trying to realize a thermodynamic isomerization. Further optimization led us to photochemical isomerization conditions similar to the one used by Xu and co-workers in their functional-group translocation chemistry.20 Eventually, with a combination of NaDT, TripSH, and light 370 nm) in a mixture of acetone/ MeCN, the desired product 32 could be obtained in 45% yield after three cycles of isomerization, realizing the fifth olefin transposition in our synthesis.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "cb5a75a8c678fc263baf93e67081b820891448ab0f3f97d4887aec64815b4cf7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 32 has the olefin in the correct position (C3-C4). The goal is to install the desired hydroxyl group at C4 and then perform a translactonization.",
+        "gap": "How to achieve selective hydroxylation at C4 and subsequent lactonization in a one-pot process.",
+        "decision": "Compound 32 will be subjected to a Co-catalyzed Mukaiyama hydration to install the desired hydroxyl group at C4. A subsequent one-pot thermal translactonization will then be performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Co(acac)2",
+          "O2",
+          "PhSiH3"
+        ],
+        "solvent": "THF, toluene",
+        "temperature": "140 °C",
+        "named_reaction": "Mukaiyama hydration, translactonization"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "The desired product 33 was obtained in 67% yield."
+      },
+      "evidence": {
+        "text_span": "With the olefin in the right position, compound 32 was subjected to a Co-catalyzed Mukaiyama hydration21 to install the desired hydroxyl group at C4. A subsequent one-pot thermal translactonization produced 33 in 67% yield.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "cb5a75a8c678fc263baf93e67081b820891448ab0f3f97d4887aec64815b4cf7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 33 has a free tertiary alcohol. This alcohol is expected to complicate the proposed aldol cyclization.",
+        "gap": "How to protect the tertiary alcohol to avoid interference in subsequent steps.",
+        "decision": "The free tertiary alcohol of 33 will be protected as a benzyl ether."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Ag2O",
+          "TBAI",
+          "BnBr"
+        ],
+        "solvent": "neat"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Compound 34 was obtained in a 91% yield."
+      },
+      "evidence": {
+        "text_span": "At this stage, the free tertiary alcohol of 33 was protected as a benzyl ether, because it did complicate the proposed aldol cyclization. Compound 34 was obtained in a 91% yield.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "cb5a75a8c678fc263baf93e67081b820891448ab0f3f97d4887aec64815b4cf7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 34 has a protected tertiary alcohol and an acetal. The goal is to oxidize C10 and hydrolyze the acetal to a hemiacetal.",
+        "gap": "How to achieve selective oxidation at C10 and acetal hydrolysis in a controlled manner.",
+        "decision": "The C10 oxidation will be achieved with a combination of MoOPH α-hydroxylation and Jones oxidation. The latter will also hydrolyze the acetal to the desired hemiacetal."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiHMDS",
+          "MoOPH",
+          "CrO3",
+          "H2SO4"
+        ],
+        "solvent": "THF, acetone",
+        "named_reaction": "α-hydroxylation, Jones oxidation"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "observation": "The C10 oxidation was achieved, and the acetal was hydrolyzed to the desired hemiacetal to give compound 35."
+      },
+      "evidence": {
+        "text_span": "The subsequent C10 oxidation was achieved with a combination of the MoOPH α-hydroxylation and Jones oxidation. The latter also hydrolyzed the acetal to the desired hemiacetal to give compound 35.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "f43ad2a421ccb195b3d380d9ee07cbafe8e907bc7489dab3184a20999af2d1ba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 35 is a hemiacetal. The goal is to forge the C6−C10 linkage to close the cage-like ring system.",
+        "gap": "How to achieve this cyclization efficiently and stereoselectively.",
+        "decision": "TBD-mediated aldol cyclization will be used to forge the C6−C10 linkage and convert 35 to 36."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBD"
+        ],
+        "solvent": "THF",
+        "named_reaction": "aldol cyclization"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "TBD-mediated aldol cyclization successfully forged the C6−C10 linkage and converted 35 to 36 in a 61% yield."
+      },
+      "evidence": {
+        "text_span": "TBD-mediated aldol cyclization was next used to forge the C6−C10 linkage and convert 35 to 36 in a 61% yield.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "f43ad2a421ccb195b3d380d9ee07cbafe8e907bc7489dab3184a20999af2d1ba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 36 is the penultimate precursor to (-)-illisimonin A, with a benzyl protecting group.",
+        "gap": "How to remove the benzyl protecting group to complete the total synthesis.",
+        "decision": "The final removal of the benzyl group will be performed using Pd/C and H2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC12C[C@@H](O)OC1C1(O)C2C(=O)C1(C)O"
+        ],
+        "reagents": [
+          "Pd/C",
+          "H2"
+        ],
+        "solvent": "MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "The final removal of the benzyl group advanced 36 to (−)-illisimonin A (1) and completed our 16-step total synthesis."
+      },
+      "evidence": {
+        "text_span": "The final removal of the benzyl group with Pd/C and H2 advanced 36 to (−)-illisimonin A (1) and completed our 16- step total synthesis.",
+        "section": "Scheme 1",
+        "image_refs": [
+          "f43ad2a421ccb195b3d380d9ee07cbafe8e907bc7489dab3184a20999af2d1ba.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield from (S)-carvone to (-)-illisimonin A is not explicitly stated as a single value, but the synthesis is 16 steps."
+      },
+      "Longest Linear Steps": {
+        "value": 16,
+        "unit": "steps",
+        "interpretation": "The synthesis is 16 steps from (S)-carvone."
+      },
+      "Total Steps": {
+        "value": 16,
+        "unit": "steps",
+        "interpretation": "The synthesis is 16 steps from (S)-carvone."
+      },
+      "Failed Attempts Count": {
+        "value": 1,
+        "unit": "count",
+        "interpretation": "One explicitly mentioned failed attempt (direct C-H hydroxylation)."
+      }
+    },
+    "significance": "The total synthesis of (−)-illisimonin A was achieved in 16 steps from (S)-carvone. The synthesis features a pattern recognition strategy, five sequential olefin transposition reactions, a tandem Mukaiyama hydration-translactonization, and an intramolecular aldol cyclization. This work provides a concise and efficient route to a complex natural product with neurotrophic activity, addressing significant synthetic challenges posed by its unique cage-like pentacyclic scaffold and multiple contiguous stereocenters."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.5c05409",
+      "pmcid": "PMC12123608",
+      "title": "Total Synthesis of (-)-Illisimonin A Enabled by Pattern Recognition and Olefin Transposition.",
+      "authors": "Xu B, Zhang Z, Dai M.",
+      "journal": "J Am Chem Soc",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12123608?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/d0e68800-9c7f-4c9b-89ce-d081c96292f9.zip",
+      "parsed_at": "2026-05-11T06:22:30.610276+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 33,
+    "parseable": 19,
+    "canonicalized": 18,
+    "invalid": 14,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1(OC(=O)C[C@@H]2[C@H]3C=C[C@H]4[C@]2(C)C(OC(C)C4)OC)C",
+      "CC1(OC(=O)C[C@@H]2[C@H]3C=C[C@H]4[C@]2(C)C(OC(C)C4)OC)C",
+      "CC1(OC(=O)C[C@@H]2[C@H]3C=C[C@H]4[C@]2(C)C(OC(C)C4)OC)C",
+      "CC1(OC(=O)C[C@@H]2[C@H]3CC=C[C@H]4[C@]2(C)C(OC(C)C4)OC)C",
+      "CC1(OC(=O)C[C@@H]2[C@H]3CC=C[C@H]4[C@]2(C)C(OC(C)C4)OC)C",
+      "CC1(OC(=O)C[C@@H]2[C@H]3C[C@H](O)[C@H]4[C@]2(C)C(OC(C)C4)OC)C",
+      "CC1(OC(=O)C[C@@H]2[C@H]3C[C@H](O)[C@H]4[C@]2(C)C(OC(C)C4)OC)C",
+      "CC1(C2C(C(C(=O)C3(O2)C(C(C(O3)C)OC)C)C)OBn)C",
+      "CC1(C2C(C(C(=O)C3(O2)C(C(C(O3)C)OC)C)C)OBn)C",
+      "CC1(C2C(C(C(=O)C3(O2)C(C(C(O3)C)O)C)C)OBn)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

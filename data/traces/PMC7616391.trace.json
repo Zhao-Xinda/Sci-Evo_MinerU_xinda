@@ -1,0 +1,1080 @@
+{
+  "trace_id": "TS-PMC7616391",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "ganoapplanin",
+    "smiles": "COC1C(O)C(C2(O)CC(C)(C)C(=O)O2)OC2c3ccc(O)cc3C(=O)Oc3ccc(O)cc3C21",
+    "natural_product_class": "Ganoderma meroterpenoid",
+    "structural_features": {
+      "stereocenters": 5,
+      "ring_systems": "6/6/6/6 tetracyclic system",
+      "key_motifs": [
+        "spiro bisacetal",
+        "tetra-ortho substituted biaryl"
+      ]
+    },
+    "motivation": "Ganoapplanin (7) features five contiguous stereocenters, two of which are quaternary, and an unprecedented spiro bisacetal skeleton. It inhibits T-type voltage-gated calcium channels (IC50 = 36.6 μM), showing potential as a lead compound for the development of novel therapeutics against neurodegenerative diseases.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "First total synthesis of ganoapplanin (7)."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C3-C3a biaryl bond and C1-C2 bond",
+        "named_strategy": "radical addition/aldol reaction cascade",
+        "reasoning": "To fuse the two fragments (quinone monoacetal 14 and aldehyde 15) and simultaneously install the crucial biaryl bond and C1-C2 bond in a single operation. This strategy was inspired by the proposed biosynthesis and related work by Utimoto, Inoue, and Li.",
+        "alternatives_considered": [
+          {
+            "strategy": "intramolecular 1,4-addition of 14 via metal/halogen exchange (t-BuLi or Turbo Grignard)",
+            "rejected_because": "only led to decomposition"
+          },
+          {
+            "strategy": "stepwise process involving isolation of the 1,4-addition product and subsequent generation of boron enolate V in the presence of either dibutylboron triflate (n-Bu2BOTf) or dicyclohexylboron triflate (c-Hex2BOTf)",
+            "rejected_because": "ineffective to afford 13"
+          },
+          {
+            "strategy": "performing the radical addition/aldol sequence in the presence of the C4a oxygen functionality",
+            "rejected_because": "failed and only the 1,4-addition product was formed"
+          },
+          {
+            "strategy": "transition metal-catalyzed cross-coupling reactions for C3-C3a bond formation",
+            "rejected_because": "similar issues observed with C4a oxygen functionality"
+          }
+        ]
+      },
+      {
+        "bond_description": "lactone moiety and C4a oxygen functionality",
+        "named_strategy": "late-stage oxidation",
+        "reasoning": "To install these functionalities at a later stage, as a free C4a position was found to be key for the fragment coupling and removal of the lactone function was critical to achieve selective C4a oxidation."
+      },
+      {
+        "bond_description": "bicyclic terpenoid fragment",
+        "named_strategy": "titanium(IV)-mediated iodolactonization",
+        "reasoning": "To construct the three contiguous stereocenters, two of which are quaternary, in a diastereoselective manner."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "14",
+        "smiles": "",
+        "role": "aromatic fragment",
+        "comes_from": "quinone monoacetal"
+      },
+      {
+        "fragment_id": "15",
+        "smiles": "",
+        "role": "terpenoid fragment",
+        "comes_from": "aldehyde"
+      }
+    ],
+    "rationale": "The synthetic approach is based on the convergent coupling of a readily available aromatic polyketide scaffold with a bicyclic terpenoid fragment. The key step is a highly effective two-component coupling strategy involving an intramolecular 6-exo-trig radical addition of a quinone monoacetal followed by an intermolecular aldol reaction to install the crucial biaryl bond. Late-stage oxidation sequences are used for the remaining oxygen functionalities and the spiro bisacetal structure."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of the southern fragment begins with a one-pot Nozaki–Hiyama–Kishi (NHK) reaction.",
+        "gap": "To form the corresponding secondary alcohol and protect it in situ.",
+        "decision": "To perform a one-pot NHK reaction between aldehyde 17 and vinyl iodide 18, followed by in situ TBS protection, expecting TBS ether 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)CCC(C=O)C(=O)OC",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NiCl2",
+          "CrCl2",
+          "TBSCl",
+          "imidazole",
+          "DMAP"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 to 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "observation": "TBS ether 16 was formed."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "The sequence started with a one-pot Nozaki−Hiyama−Kishi (NHK) reaction between aldehyde 1732,33 and vinyl iodide 1834,35 to form the corresponding secondary alcohol, which was protected in situ to give TBS ether 16.",
+        "section": "unspecified",
+        "image_refs": [
+          "db66c2944d7e9d3a1409811f7911499618ca9230de95849b4d0d03e8f8c5e96b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "TBS ether 16 is available.",
+        "gap": "To construct the bicyclic lactone 19 with high diastereoselectivity.",
+        "decision": "To treat 16 with Ti(Ot-Bu)4, CuO, and excess iodine under Taguchi's conditions, expecting bicyclic lactone 19 as a single diastereomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Ti(Ot-Bu)4",
+          "CuO",
+          "I2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "Bicyclic lactone 19 was furnished as a single diastereomer in up to 61% yield on decagram scale. The excellent diastereoselectivity is attributed to a chair-like transition state and stereoelectronic effects."
+      },
+      "references": [
+        "29",
+        "30"
+      ],
+      "evidence": {
+        "text_span": "Treatment of 16 with Ti(Ot-Bu)4, CuO and excess iodine, conditions previously reported by Taguchi,29,30 furnished bicyclic lactone 19 as a single diastereomer in up to 61% yield on decagram scale. The excellent diastereoselectivity has previously been attributed to a chairlike transition state and stereoelectronic effects favoring an orthogonal alignment of the alkene and the allylic substituent (OTBS) for the 5-exo-trig cyclization of lll to lV.",
+        "section": "unspecified",
+        "image_refs": [
+          "db66c2944d7e9d3a1409811f7911499618ca9230de95849b4d0d03e8f8c5e96b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactone 19 is available.",
+        "gap": "To remove the methylester and prepare for allylation.",
+        "decision": "To employ Krapcho conditions (LiCl, H2O, DMSO, 150 °C) to remove the methylester, expecting intermediate 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiCl",
+          "H2O"
+        ],
+        "solvent": "DMSO",
+        "temperature": "150 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Methylester was removed to yield 20."
+      },
+      "evidence": {
+        "text_span": "Conversion to the aldehyde was achieved by removing the methylester by employing Krapcho conditions (LiCl, H2O, DMSO, 150 °C ), followed by allylation of the lactone and subsequent ozonolysis to yield aldehyde 15.",
+        "section": "unspecified",
+        "image_refs": [
+          "db66c2944d7e9d3a1409811f7911499618ca9230de95849b4d0d03e8f8c5e96b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 20 is available.",
+        "gap": "To allylate the lactone.",
+        "decision": "To allylate the lactone using allyl iodide and LHMDS, expecting intermediate 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "allyl iodide",
+          "LHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Allylation of the lactone was successful, yielding 21."
+      },
+      "evidence": {
+        "text_span": "Conversion to the aldehyde was achieved by removing the methylester by employing Krapcho conditions (LiCl, H2O, DMSO, 150 °C ), followed by allylation of the lactone and subsequent ozonolysis to yield aldehyde 15.",
+        "section": "unspecified",
+        "image_refs": [
+          "db66c2944d7e9d3a1409811f7911499618ca9230de95849b4d0d03e8f8c5e96b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 21 is available.",
+        "gap": "To convert the allylated lactone to aldehyde 15.",
+        "decision": "To perform ozonolysis followed by PPh3 workup, expecting aldehyde 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O3",
+          "PPh3"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C then 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Aldehyde 15 was obtained."
+      },
+      "evidence": {
+        "text_span": "Conversion to the aldehyde was achieved by removing the methylester by employing Krapcho conditions (LiCl, H2O, DMSO, 150 °C ), followed by allylation of the lactone and subsequent ozonolysis to yield aldehyde 15.",
+        "section": "unspecified",
+        "image_refs": [
+          "db66c2944d7e9d3a1409811f7911499618ca9230de95849b4d0d03e8f8c5e96b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The aromatic fragment synthesis starts with phenol 22.",
+        "gap": "To protect the phenol as its MOM ether and form the ester, then reduce the ester to a benzylic alcohol.",
+        "decision": "To perform a one-pot MOM protection and ester formation, followed by DIBAL-H reduction, expecting benzylic alcohol 23."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)c1c(O)cccc1I"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MOMBr",
+          "NaH",
+          "DIBAL-H"
+        ],
+        "solvent": "DMF, CH2Cl2",
+        "temperature": "0 °C to 23 °C, then -78 to 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "observation": "Benzylic alcohol 23 was afforded."
+      },
+      "references": [
+        "36",
+        "37"
+      ],
+      "evidence": {
+        "text_span": "For this purpose, phenol 2236,37 was initially protected as its methoxymethyl (MOM) ether with concomitant ester formation. The ester group was reduced by treatment with DIBAL-H to afford benzylic alcohol 23.",
+        "section": "unspecified",
+        "image_refs": [
+          "afc93f063f535ba9eaec3f6aa7d15d6231bdbdbacf52de5fed582d108041b276.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Benzylic alcohol 23 is available.",
+        "gap": "To convert the benzylic alcohol to a benzyl bromide.",
+        "decision": "To expose 23 to a one-pot mesylation/bromination protocol, expecting benzyl bromide 24."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MsCl",
+          "NEt3",
+          "KBr"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C to 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Benzyl bromide 24 was yielded."
+      },
+      "evidence": {
+        "text_span": "Exposure of 23 to a one-pot mesylation/bromination protocol yielded benzyl bromide 24",
+        "section": "unspecified",
+        "image_refs": [
+          "afc93f063f535ba9eaec3f6aa7d15d6231bdbdbacf52de5fed582d108041b276.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Benzyl bromide 24 is available.",
+        "gap": "To introduce the hydroquinone moiety.",
+        "decision": "To treat 24 with excess 1,4-hydroquinone in the presence of potassium carbonate, expecting benzyl ether 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "1,4-hydroquinone",
+          "K2CO3"
+        ],
+        "solvent": "acetone",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "observation": "Benzyl ether 25 was furnished."
+      },
+      "evidence": {
+        "text_span": "which was then subsequently treated with excess 1,4-hydroquinone in the presence of potassium carbonate to furnish benzyl ether 25.",
+        "section": "unspecified",
+        "image_refs": [
+          "afc93f063f535ba9eaec3f6aa7d15d6231bdbdbacf52de5fed582d108041b276.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Benzyl ether 25 is available.",
+        "gap": "To perform oxidative dearomatization to obtain quinone monoacetal 14.",
+        "decision": "To use phenyliodine-(III) diacetate (PIDA) for oxidative dearomatization, expecting quinone monoacetal 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PIDA"
+        ],
+        "solvent": "MeOH",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Quinone monoacetal 14 was obtained in 82% yield."
+      },
+      "references": [
+        "38"
+      ],
+      "evidence": {
+        "text_span": "Eventually, oxidative dearomatization using phenyliodine-(III) diacetate (PIDA) gave quinone monoacetal 14 in 82% yield.38",
+        "section": "unspecified",
+        "image_refs": [
+          "e35fad7172b01581ca0db43db2df49ed0743a011516ee191c0e4412ed95f11a7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Fragments 14 and 15 are available. The goal is to fuse them via an intramolecular 1,4-addition/aldol reaction cascade.",
+        "gap": "To achieve the intramolecular 1,4-addition and subsequent aldol reaction.",
+        "decision": "To attempt metalation of 14 via metal/halogen exchange employing either t-BuLi or Turbo Grignard (i-PrMgCl•LiCl)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "t-BuLi",
+          "i-PrMgCl•LiCl"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Metalation of 14 only led to decomposition."
+      },
+      "evidence": {
+        "text_span": "Initially, we investigated the intramolecular 1,4-addition of 14. We found that metalation of 14 via metal/halogen exchange employing either t-BuLi or Turbo Grignard (i-PrMgCl•LiCl) only led to decomposition.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Metalation failed. An alternative approach for 1,4-addition is needed.",
+        "gap": "To initiate the 1,4-addition and then perform the aldol reaction.",
+        "decision": "To treat 14 with azobis-(isobutyronitrile) (AIBN) and tributyltin hydride (n-Bu3SnH) at elevated temperatures to initiate the 1,4-addition, followed by deprotonation with LDA, KHMDS, or LHMDS at -78 °C and addition of aldehyde 15 for the aldol reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "AIBN",
+          "n-Bu3SnH",
+          "LDA",
+          "KHMDS",
+          "LHMDS"
+        ],
+        "temperature": "elevated temperatures, then -78 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Efforts to achieve the subsequent aldol reaction by deprotonation with either LDA, KHMDS, or LHMDS at -78 °C followed by the addition of aldehyde 15 failed to yield the desired aldol-product."
+      },
+      "evidence": {
+        "text_span": "However, treating 14 with azobis-(isobutyronitrile) (AIBN) and tributyltin hydride (n-Bu3SnH) at elevated temperatures successfully initiated the intended 1,4-addition. Unfortunately, efforts to achieve the subsequent aldol reaction by deprotonation with either LDA, KHMDS, or LHMDS at −78 °C followed by the addition of aldehyde 15 failed to yield the desired aldol-product (see the Supporting Information for details).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "Previous attempts at the 1,4-addition/aldol cascade failed to yield the desired product.",
+        "gap": "To find a one-pot procedure that effectively combines the radical 1,4-addition and the aldol reaction.",
+        "decision": "To focus on a one-pot procedure and investigate radical initiation with triethyl borane and oxygen in the presence of tributyltin hydride, expecting to induce both the intramolecular radical 1,4-addition and the intermolecular aldol reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A successful one-pot procedure was discovered."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "We then focused on a one-pot procedure to realize the radical 1,4-addition/aldol reaction cascade. Eventually, we discovered that radical initiation with triethyl borane and oxygen39 in the presence of tributyltin hydride induced the intramolecular radical 1,4- addition40 of 14 and also promoted the intermolecular aldol reaction with aldehyde 15 to provide 13 as an inconsequential mixture of diastereomers in 81% yield.26,27,41",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A one-pot radical 1,4-addition/aldol reaction cascade is being developed.",
+        "gap": "To successfully fuse fragments 14 and 15.",
+        "decision": "To use triethyl borane and oxygen as radical initiators in the presence of tributyltin hydride to induce the intramolecular radical 1,4-addition of 14 and promote the intermolecular aldol reaction with aldehyde 15, expecting intermediate 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Et3B",
+          "O2",
+          "n-Bu3SnH"
+        ],
+        "solvent": "toluene",
+        "temperature": "-50 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Intermediate 13 was provided as an inconsequential mixture of diastereomers in 81% yield. Triethyl borane played a dual role: radical initiation and formation of boron enolate. The presence of both reagents was critical."
+      },
+      "references": [
+        "26",
+        "27",
+        "39",
+        "40",
+        "41"
+      ],
+      "evidence": {
+        "text_span": "Eventually, we discovered that radical initiation with triethyl borane and oxygen39 in the presence of tributyltin hydride induced the intramolecular radical 1,4- addition40 of 14 and also promoted the intermolecular aldol reaction with aldehyde 15 to provide 13 as an inconsequential mixture of diastereomers in 81% yield.26,27,41 Triethyl borane plays a dual role in this process: (1) radical initiation to enable the 6-exo-trig cyclization of aryl radical V and (2) formation of boron enolate V to promote the aldol reaction with 15. This sequence facilitated the convergent fusion of both fragments in high yields, establishing the crucial C3−C3a bond and the C1−C2 bond in a single step. It is important to note that the presence of both reagents, triethyl borane and tributyltin hydride, was critical for the reaction as the desired reactivity was not observed in the absence of either reagent.",
+        "section": "unspecified",
+        "image_refs": [
+          "e35fad7172b01581ca0db43db2df49ed0743a011516ee191c0e4412ed95f11a7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The radical 1,4-addition/aldol reaction cascade was successful in forming 13.",
+        "gap": "To perform the sequence in the presence of the C4a oxygen functionality.",
+        "decision": "To attempt the radical 1,4-addition/aldol reaction cascade with the C4a oxygen functionality present."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "Et3B",
+          "O2",
+          "n-Bu3SnH"
+        ],
+        "solvent": "toluene",
+        "temperature": "-50 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Attempts to perform the sequence in the presence of the C4a oxygen functionality failed and only the 1,4-addition product was formed."
+      },
+      "evidence": {
+        "text_span": "Surprisingly, attempts to perform the sequence in the presence of the C4a oxygen functionality failed and only the 1,4-addition product was formed (see the Supporting Information for details).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 13 is available. The C4a oxygen functionality needs to be installed later.",
+        "gap": "To aromatize 13 and form phenol 26.",
+        "decision": "To oxidize secondary alcohol 13 with Dess-Martin periodinane (DMP) to the ketone, followed by treatment with DBU and then p-toluenesulfonic acid (p-TsOH) for aromatization, expecting phenol 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC1=C[C@H]2O[C@H](C3=C(C)C(C)C(C)C3)Cc3cc(OC(OC)OC)ccc3[C@H]3OC(=O)[C@H]3C[C@@H](O)[C@H]2C1=O"
+        ],
+        "reagents": [
+          "DMP",
+          "DBU",
+          "p-TsOH"
+        ],
+        "solvent": "CH2Cl2, toluene",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 49,
+        "observation": "Phenol 26 was obtained in around 54% yield (reported as 49% in scheme). The process was initially unreliable, but DBU treatment improved reproducibility, likely through epimerization."
+      },
+      "evidence": {
+        "text_span": "To this end, secondary alcohol 13 was first oxidized with Dess−Martin periodinane (DMP) to the ketone, followed by treatment with p- toluenesulfonic acid (p-TsOH) to give 26 in around 54% yield, although this process proved to be unreliable and difficult to reproduce. We found that exposure of the ketone to 1,8-diazabicyclo[5.4.0]undec-7-ene (DBU) leads to the formation of an inconsequential mixture of diastereomers, which upon treatment with p-TsOH undergoes smooth aromatization. Contrary to our initial expectations, the 1H NMR spectra of the 1,3-diketones obtained after DMP oxidation, as well as DBU treatment did not indicate any enol form. While this step clearly facilitates the acid-catalyzed aromatization, the exact role of DBU, presumably only epimerization, remains uncertain.",
+        "section": "unspecified",
+        "image_refs": [
+          "2048cb6c655d8856f45f71a493694a4d1566679ded30032876824fe6563951a7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Phenol 26 is available.",
+        "gap": "To debenzylate 26 to alcohol 27.",
+        "decision": "To treat 26 with Pearlman's catalyst under 50 bar hydrogen pressure, expecting alcohol 27."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=C[C@H]2O[C@H](C3=C(C)C(C)C(C)C3)Cc3cc(OC(OC)OC)ccc3[C@H]3OC(=O)[C@H]3C[C@@H](O)[C@H]2C1=O"
+        ],
+        "product_smiles": [
+          "COC1=C[C@H]2O[C@H](C3=C(C)C(C)C(C)C3)Cc3cc(OC(OC)OC)ccc3[C@H]3OC(=O)[C@H]3C[C@@H](O)[C@H]2C1=O"
+        ],
+        "reagents": [
+          "Pd(OH)2/C",
+          "H2"
+        ],
+        "solvent": "THF",
+        "temperature": "23 °C",
+        "atmosphere": "50 bar H2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 53,
+        "observation": "Debenzylation was affected, yielding alcohol 27."
+      },
+      "evidence": {
+        "text_span": "Debenzylation of 26 to alcohol 27 was affected by treatment with Pearlma’s catalyst under 50 bar hydrogen pressure.",
+        "section": "unspecified",
+        "image_refs": [
+          "2048cb6c655d8856f45f71a493694a4d1566679ded30032876824fe6563951a7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Neopentylic alcohol 27 is available. Protection of the phenol is required to prevent decomposition during oxidation.",
+        "gap": "To oxidize alcohol 27 to the corresponding aldehyde 28.",
+        "decision": "To perform chemoselective acetylation of the phenol with acetic anhydride and triethylamine, followed by oxidation with DMP, expecting aldehyde 28."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=C[C@H]2O[C@H](C3=C(C)C(C)C(C)C3)Cc3cc(OC(OC)OC)ccc3[C@H]3OC(=O)[C@H]3C[C@@H](O)[C@H]2C1=O"
+        ],
+        "product_smiles": [
+          "COC1=C[C@H]2O[C@H](C3=C(C)C(C)C(C)C3)Cc3cc(OC(OC)OC)ccc3[C@H]3OC(=O)[C@H]3C[C@@H](O)[C@H]2C1=O"
+        ],
+        "reagents": [
+          "Ac2O",
+          "NEt3",
+          "DMP"
+        ],
+        "solvent": "THF, CH2Cl2",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Chemoselective acetylation (98%) and subsequent oxidation (99%) yielded aldehyde 28."
+      },
+      "evidence": {
+        "text_span": "Oxidation of the resulting neopentylic alcohol 27 to the corresponding aldehyde was found to require protection of the phenol to prevent significant decomposition. Chemoselective acetylation of the phenol was achieved by treatment with acetic anhydride and triethylamine. Exposure to DMP yielded aldehyde 28",
+        "section": "unspecified",
+        "image_refs": [
+          "2048cb6c655d8856f45f71a493694a4d1566679ded30032876824fe6563951a7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 28 is available.",
+        "gap": "To convert 28 to phenol 12 through sequential deprotections.",
+        "decision": "To perform sequential deprotections with bromotrimethylsilane (TMSBr) and hydrogen fluoride pyridine, expecting phenol 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=C[C@H]2O[C@H](C3=C(C)C(C)C(C)C3)Cc3cc(OC(OC)OC)ccc3[C@H]3OC(=O)[C@H]3C[C@@H](O)[C@H]2C1=O"
+        ],
+        "product_smiles": [
+          "COC1=C[C@H]2O[C@H](C3=C(C)C(C)C(C)C3)Cc3cc(OC(OC)OC)ccc3[C@H]3OC(=O)[C@H]3C[C@@H](O)[C@H]2C1=O"
+        ],
+        "reagents": [
+          "TMSBr",
+          "HF-pyridine"
+        ],
+        "solvent": "CH2Cl2, THF",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "Phenol 12 was obtained (74% for TMSBr, 81% for HF-pyridine, overall 60%)."
+      },
+      "evidence": {
+        "text_span": "which was converted to phenol 12 through sequential deprotections with bromotrimethylsilane (TMSBr) and hydrogen fluoride pyridine, respectively.",
+        "section": "unspecified",
+        "image_refs": [
+          "2048cb6c655d8856f45f71a493694a4d1566679ded30032876824fe6563951a7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Phenol 12 is available. The missing oxygen functionality at C4a needs to be installed.",
+        "gap": "To achieve selective C4a oxidation.",
+        "decision": "To oxidize 12 with phenyliodine bis(trifluoroacetate) (PIFA) in an aqueous mixture of acetone and acetonitrile, expecting quinone 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=C[C@H]2O[C@H](C3=C(C)C(C)C(C)C3)Cc3cc(OC(OC)OC)ccc3[C@H]3OC(=O)[C@H]3C[C@@H](O)[C@H]2C1=O"
+        ],
+        "product_smiles": [
+          "COC1=C[C@H]2O[C@H](C3=C(C)C(C)C(C)C3)Cc3cc(OC(OC)OC)ccc3[C@H]3OC(=O)[C@H]3C[C@@H](O)[C@H]2C1=O"
+        ],
+        "reagents": [
+          "PIFA"
+        ],
+        "solvent": "acetone, MeCN, H2O",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Smooth oxidation to give quinone 29 was observed. The presence of an electron-rich aromatic system was crucial, as no C4a oxidation could be achieved in the presence of the lactone at C7a."
+      },
+      "evidence": {
+        "text_span": "After several failed attempts, we found that oxidation of 12 with phenyliodine bis(trifluoroacetate) (PIFA) in an aqueous mixture of acetone and acetonitrile led to smooth oxidation to give quinone 29. The presence of an electron-rich aromatic system proved to be crucial for this oxidation, as no C4a oxidation could be achieved in the presence of the lactone at C7a.",
+        "section": "unspecified",
+        "image_refs": [
+          "2048cb6c655d8856f45f71a493694a4d1566679ded300328768244fe6563951a7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Quinone 29 is available.",
+        "gap": "To convert 29 to its hydroquinone VII and then form the spiro bisacetal 11.",
+        "decision": "To use sodium dithionite for conversion to hydroquinone VII, followed by immediate treatment with p-TsOH and trimethyl orthoformate in methanol to form spiro bisacetal 11."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=C[C@H]2O[C@H](C3=C(C)C(C)C(C)C3)Cc3cc(OC(OC)OC)ccc3[C@H]3OC(=O)[C@H]3C[C@@H](O)[C@H]2C1=O"
+        ],
+        "product_smiles": [
+          "COC1C(O)CC2(Oc3cc(OC(C)=O)ccc3C2O)OC2CC(C)(C)C(=O)OC21"
+        ],
+        "reagents": [
+          "Na2S2O4",
+          "p-TsOH",
+          "CH(OMe)3"
+        ],
+        "solvent": "EtOAc, H2O, MeOH",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 20,
+        "observation": "Conversion to hydroquinone VII (unstable intermediate) and subsequent spiro bisacetal formation yielded 11 as a single diastereomer. The excellent diastereoselectivity is believed to be due to anomeric stabilization."
+      },
+      "evidence": {
+        "text_span": "The conversion of 29 to its hydroquinone VII was accomplished using sodium dithionite, resulting in the formation of an unstable intermediate, presumably hemiacetal VIII. Immediate treatment with p-TsOH and trimethyl orthoformate in methanol formed spiro bisacetal 11 as a single diastereomer. We believe that the excellent diastereoselectivity is a result of anomeric stabilization, as observed in the single crystal X-ray structure of ganoapplanin (7) (see the Supporting Information for details).",
+        "section": "unspecified",
+        "image_refs": [
+          "eb8605fa5740c558ba55c1309058833f26a44967a129964fc8bc92cf8bc1b2d1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Spiro bisacetal 11 is available. The final steps require benzylic oxidation.",
+        "gap": "To protect phenol 11 to enable benzylic oxidation.",
+        "decision": "To convert phenol 11 into its acetyl ester 30 using acetic anhydride and triethylamine, expecting acetyl ester 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1C(O)CC2(Oc3cc(OC(C)=O)ccc3C2O)OC2CC(C)(C)C(=O)OC21"
+        ],
+        "product_smiles": [
+          "COC1C(O)CC2(Oc3cc(OC(C)=O)ccc3C2OC(C)=O)OC2CC(C)(C)C(=O)OC21"
+        ],
+        "reagents": [
+          "Ac2O",
+          "NEt3"
+        ],
+        "solvent": "THF",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Acetyl ester 30 was formed."
+      },
+      "evidence": {
+        "text_span": "Given the scarcity of reports on benzylic oxidations in the presence of unprotected phenols, we decided to convert phenol 11 into its acetyl ester 30. Initial attempts to realize the oxidation of the benzylic position using standard conditions such as Jones reagent, 2,3-dichloro-5,6-dicyano-1,4- benzoquinone (DDQ) and MeOH or DDQ and tert-butyl hydroperoxide (TBHP) resulted in decomposition. However, employing a copper(l) mediated oxidation protocol in the presence of TBHP42 allowed for the formation of lactone 31 in 47% yield. Subsequent deacetylation was then affected by treatment with potassium carbonate in methanol to give ganoapplanin (7).",
+        "section": "unspecified",
+        "image_refs": [
+          "eb8605fa5740c558ba55c1309058833f26a44967a129964fc8bc92cf8bc1b2d1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Acetyl ester 30 is available. Benzylic oxidation is required.",
+        "gap": "To oxidize the benzylic position.",
+        "decision": "To attempt benzylic oxidation using standard conditions such as Jones reagent, DDQ and MeOH, or DDQ and TBHP."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1C(O)CC2(Oc3cc(OC(C)=O)ccc3C2OC(C)=O)OC2CC(C)(C)C(=O)OC21"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "Jones reagent",
+          "DDQ",
+          "MeOH",
+          "TBHP"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Initial attempts to realize the oxidation of the benzylic position using standard conditions such as Jones reagent, DDQ and MeOH or DDQ and TBHP resulted in decomposition."
+      },
+      "evidence": {
+        "text_span": "Initial attempts to realize the oxidation of the benzylic position using standard conditions such as Jones reagent, 2,3-dichloro-5,6-dicyano-1,4- benzoquinone (DDQ) and MeOH or DDQ and tert-butyl hydroperoxide (TBHP) resulted in decomposition.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 22,
+      "thought": {
+        "background": "Standard benzylic oxidation conditions failed for acetyl ester 30.",
+        "gap": "To find an effective method for benzylic oxidation.",
+        "decision": "To employ a copper(I) mediated oxidation protocol in the presence of TBHP, expecting the formation of lactone 31."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A copper(I) mediated oxidation protocol was successful."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "However, employing a copper(l) mediated oxidation protocol in the presence of TBHP42 allowed for the formation of lactone 31 in 47% yield.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acetyl ester 30 is available. Benzylic oxidation is required.",
+        "gap": "To oxidize the benzylic position to form lactone 31.",
+        "decision": "To employ a copper(I) mediated oxidation protocol in the presence of TBHP, expecting lactone 31."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1C(O)CC2(Oc3cc(OC(C)=O)ccc3C2OC(C)=O)OC2CC(C)(C)C(=O)OC21"
+        ],
+        "product_smiles": [
+          "COC1C(O)CC2(Oc3cc(OC(C)=O)ccc3C2=O)OC2CC(C)(C)C(=O)OC21"
+        ],
+        "reagents": [
+          "CuCl",
+          "TBHP"
+        ],
+        "solvent": "t-BuOH",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 47,
+        "observation": "Lactone 31 was formed in 47% yield."
+      },
+      "references": [
+        "42"
+      ],
+      "evidence": {
+        "text_span": "However, employing a copper(l) mediated oxidation protocol in the presence of TBHP42 allowed for the formation of lactone 31 in 47% yield.",
+        "section": "unspecified",
+        "image_refs": [
+          "eb8605fa5740c55c1309058833f26a44967a129964fc8bc92cf8bc1b2d1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactone 31 is available.",
+        "gap": "To deacetylate 31 to obtain ganoapplanin (7).",
+        "decision": "To treat 31 with potassium carbonate in methanol for deacetylation, expecting ganoapplanin (7)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1C(O)CC2(Oc3cc(OC(C)=O)ccc3C2=O)OC2CC(C)(C)C(=O)OC21"
+        ],
+        "product_smiles": [
+          "COC1C(O)C(C2(O)CC(C)(C)C(=O)O2)OC2c3ccc(O)cc3C(=O)Oc3ccc(O)cc3C21"
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "MeOH",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Deacetylation yielded ganoapplanin (7). The spectroscopic data for synthetic 7 were in full agreement with those reported in the literature."
+      },
+      "references": [
+        "8"
+      ],
+      "evidence": {
+        "text_span": "Subsequent deacetylation was then affected by treatment with potassium carbonate in methanol to give ganoapplanin (7). The choice of the employed protecting group proved to be crucial, as earlier attempts using benzyl protecting groups on the phenols failed to give 7 due to unsuccessful deprotections. The spectroscopic data for synthetic 7 were in full agreement with those reported in the literature.8",
+        "section": "unspecified",
+        "image_refs": [
+          "eb8605fa5740c558ba55c1309058833f26a44967a129964fc8bc92cf8bc1b2d1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The final deacetylation step to ganoapplanin (7) is being optimized.",
+        "gap": "To successfully deprotect the phenols.",
+        "decision": "To use benzyl protecting groups on the phenols in earlier attempts."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [],
+        "reagents": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "incompatible_protecting_group",
+        "observation": "Earlier attempts using benzyl protecting groups on the phenols failed to give 7 due to unsuccessful deprotections."
+      },
+      "evidence": {
+        "text_span": "The choice of the employed protecting group proved to be crucial, as earlier attempts using benzyl protecting groups on the phenols failed to give 7 due to unsuccessful deprotections.",
+        "section": "unspecified"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "HRMS",
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated, but individual yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 15,
+        "unit": "steps",
+        "interpretation": "Calculated from the provided scheme and text."
+      },
+      "Total Steps": {
+        "value": 25,
+        "unit": "steps",
+        "interpretation": "Total number of successful synthetic steps."
+      },
+      "Failed Attempts Count": {
+        "value": 4,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly mentioned failed attempts."
+      }
+    },
+    "comparison_to_prior": "The synthesis of ganoapplanin (7) has not been achieved so far.",
+    "significance": "First total synthesis of the dimeric Ganoderma meroterpenoid ganoapplanin (7). The synthesis features a diastereoselective, titanium(IV)-mediated iodolactonization for the bicyclic terpenoid fragment and a highly efficient two-component radical 1,4-addition/aldol reaction sequence for fragment fusion. Two late-stage oxidations facilitated the installation of the characteristic spiro bisacetal and lactone moieties. The developed key sequence is expected to facilitate the synthesis of structurally related natural products."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.4c08291",
+      "pmcid": "PMC7616391",
+      "title": "Total Synthesis of Ganoapplanin Enabled by a Radical Addition/Aldol Reaction Cascade.",
+      "authors": "Müller N, Kováč O, Rode A, Atzl D, Magauer T.",
+      "journal": "J Am Chem Soc",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC7616391?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/7f979ed2-838e-4f8c-a91a-e032bf41c2b1.zip",
+      "parsed_at": "2026-05-11T06:44:32.497150+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 49,
+    "parseable": 21,
+    "canonicalized": 21,
+    "invalid": 28,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC1=CC(=O)C=CC1OC(I)C2=CC=CC=C2OMOC",
+      "O=CC1(C(=O)OC2)C2C(OTBS)C1C(COBn)C2",
+      "COC(=O)C(=C)COBn",
+      "COC(=O)C1(C(=C(COBn)C(=O)OC)C2)C2C(OTBS)C1",
+      "COC(=O)C1(C(=C(COBn)C(=O)OC)C2)C2C(OTBS)C1",
+      "COC(=O)C1(C(=O)OC2)C2C(OTBS)C1C(COBn)C2",
+      "COC(=O)C1(C(=O)OC2)C2C(OTBS)C1C(COBn)C2",
+      "O=CC1(C(=O)OC2)C2C(OTBS)C1C(COBn)C2",
+      "O=CC1(C(=O)OC2)C2C(OTBS)C1C(COBn)C2",
+      "C=CC1(C(=O)OC2)C2C(OTBS)C1C(COBn)C2"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

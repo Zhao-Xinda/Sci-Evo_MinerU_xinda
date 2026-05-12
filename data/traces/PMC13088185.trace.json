@@ -1,0 +1,898 @@
+{
+  "trace_id": "TS-PMC13088185",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Ussuriedine",
+    "smiles": "CC1C(O)CC2C(CC3C=CN4CC(C)(C)CC4C32)C1C",
+    "natural_product_class": "steroidal alkaloid",
+    "structural_features": {
+      "molecular_weight": 425.66,
+      "stereocenters": 10,
+      "ring_systems": "heptacyclic",
+      "key_motifs": [
+        "octahydro-3,6-methanoquinolizine",
+        "cevanine core"
+      ]
+    },
+    "motivation": "Ussuriedine features an unprecedented octahydro-3,6-methanoquinolizine framework. Its biosynthetic origins have not been established, and until now, no chemical synthesis has been reported. The underlying chemical logic of the endgame, which connects the peripheral methyl and benzylic carbons, provides a mechanistic basis for a hypothesis on how nature might create ussuriedine’s complex framework and underscores the power of chemical synthesis to inform natural product biosynthesis.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Total synthesis of ussuriedine, matching spectral data, melting point, and optical rotation of the natural sample."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C18-C27 bond",
+        "named_strategy": "Stevens Rearrangement",
+        "reasoning": "To forge the defining C-C bond of ussuriedine, inspired by its potential biomimetic implications.",
+        "alternatives_considered": [
+          {
+            "strategy": "Late-stage transannular addition of the piperidine nitrogen of 4 to the benzylic ketone (Scheme 2, path A)",
+            "rejected_because": "Although this approach offers a direct route to 1, we aimed for a more ambitious solution, one that transformed a heilonine-type precursor into the ussuriedine framework."
+          },
+          {
+            "strategy": "Introduction of the hydroxyl in 1 from a putative iminium species 3 via a site-selective oxidation of 5 at the benzylic C18 carbon (Scheme 2, path B)",
+            "rejected_because": "Given the stated concerns regarding Bredt’s rule, this oxidation had the potential to prove problematic."
+          }
+        ]
+      },
+      {
+        "bond_description": "CDE rings",
+        "named_strategy": "[2+2+2] Cyclotrimerization",
+        "reasoning": "To form three C-C bonds and three rings in a single step, offering a point of convergence for the decalin and piperidine fragments.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-N bond",
+        "named_strategy": "Reductive Amination",
+        "reasoning": "To couple the decalin and piperidine fragments.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "decalin_fragment",
+        "smiles": "",
+        "role": "decalin (AB rings) coupling partner",
+        "comes_from": "synthesis"
+      },
+      {
+        "fragment_id": "piperidine_fragment",
+        "smiles": "C#C[C@H](C)[C@@H]1CC[C@H](COCC2CCCO2)CN1",
+        "role": "piperidine (F ring) coupling partner",
+        "comes_from": "synthesis"
+      }
+    ],
+    "rationale": "The synthesis was designed to probe the possible biogenesis of ussuriedine's unique aza-tricyclic framework, inspired by its structural similarity to heilonine and its isolation artifact. A key strategy was the late-stage Stevens rearrangement to form the G ring, which also provided a mechanistic basis for a biosynthetic hypothesis. The hexacyclic cevanine skeleton was assembled convergently using a [2+2+2] cyclotrimerization of two complex fragments."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "decalin_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A streamlined refinement of a previous route to a similar unit was available.",
+        "gap": "Need to prepare the decalin coupling partner (propargyl aldehyde 17) containing all carbon units for the cyclotrimerization with excellent enantio- and diastereocontrol.",
+        "decision": "To prepare cyclic ketal 12 from ethyl vinyl ketone in 9 steps and 17% overall yield, followed by deprotection to enone 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)CCC2(C)OC3CCC(C)(C)C3=CC2C1"
+        ],
+        "product_smiles": [
+          "C#CC(C)C1C=C2C(CCC2(C)C)OC1(C)C"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C to rt",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "observation": "Deprotection of cyclic ketal 12 gave enone 13 quantitatively."
+      },
+      "evidence": {
+        "text_span": "After deprotection, the C6 hydroxy group was installed on enone 13 via initial formation of the dienol acetate, which simultaneously masked the propargyl alcohol as an acetate, followed by epoxidation in buffered dioxane. Treatment of the resulting γ-hydroxy enone 14 with in situgenerated HI induced deconjugative isomerization of the enone double bond revealing the 1,4-diketone, the direct reduction of which with borohydride gave diol 15 as a single diastereomer. The hydroxy groups were protected as TBS ethers, and the propargyl alcohol was unmasked in the same vessel using methanolic K2CO3. Finally, Dess−Martin periodinane oxidation delivered the fully elaborated coupling partner, propargyl aldehyde 17.",
+        "image_refs": [
+          "d72ecdeb66d1c8e200750506d6297c5c287c8f46c1169ae7c23f752890212bbb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "decalin_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enone 13 was obtained from ketal 12.",
+        "gap": "Need to install the C6 hydroxy group and mask the propargyl alcohol.",
+        "decision": "To form the dienol acetate, followed by epoxidation to give γ-hydroxy enone 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#CC(C)C1C=C2C(CCC2(C)C)OC1(C)C"
+        ],
+        "product_smiles": [
+          "C#CC(C)C1C=C2C(CCC2(C)C)OC1(C)C"
+        ],
+        "reagents": [
+          "NaI",
+          "TMSCl",
+          "Ac2O",
+          "mCPBA"
+        ],
+        "solvent": "1,4-dioxane",
+        "temperature": "0 °C to rt",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "γ-hydroxy enone 14 was obtained in 84% yield over 2 steps."
+      },
+      "evidence": {
+        "text_span": "After deprotection, the C6 hydroxy group was installed on enone 13 via initial formation of the dienol acetate, which simultaneously masked the propargyl alcohol as an acetate, followed by epoxidation in buffered dioxane. Treatment of the resulting γ-hydroxy enone 14 with in situgenerated HI induced deconjugative isomerization of the enone double bond revealing the 1,4-diketone, the direct reduction of which with borohydride gave diol 15 as a single diastereomer. The hydroxy groups were protected as TBS ethers, and the propargyl alcohol was unmasked in the same vessel using methanolic K2CO3. Finally, Dess−Martin periodinane oxidation delivered the fully elaborated coupling partner, propargyl aldehyde 17.",
+        "image_refs": [
+          "d72ecdeb66d1c8e200750506d6297c5c287c8f46c1169ae7c23f752890212bbb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "decalin_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "γ-hydroxy enone 14 was obtained.",
+        "gap": "Need to reduce the enone to a diol with high diastereoselectivity.",
+        "decision": "To treat 14 with in situ-generated HI to induce deconjugative isomerization, followed by direct reduction with borohydride to give diol 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#CC(C)C1C=C2C(CCC2(C)C)OC1(C)C"
+        ],
+        "product_smiles": [
+          "C#CC(C)C1C=C2C(CCC2(C)C)OC1(C)C"
+        ],
+        "reagents": [
+          "NaI",
+          "TMSCl",
+          "NaBH4"
+        ],
+        "solvent": "MeCN, MeOH",
+        "temperature": "0 °C",
+        "time": "1 h, 10 min, 50 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "Diol 15 was obtained as a single diastereomer in 74% yield."
+      },
+      "evidence": {
+        "text_span": "Treatment of the resulting γ-hydroxy enone 14 with in situgenerated HI induced deconjugative isomerization of the enone double bond revealing the 1,4-diketone, the direct reduction of which with borohydride gave diol 15 as a single diastereomer. The hydroxy groups were protected as TBS ethers, and the propargyl alcohol was unmasked in the same vessel using methanolic K2CO3. Finally, Dess−Martin periodinane oxidation delivered the fully elaborated coupling partner, propargyl aldehyde 17.",
+        "image_refs": [
+          "d72ecdeb66d1c8e200750506d6297c5c287c8f46c1169ae7c23f752890212bbb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "decalin_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diol 15 was obtained.",
+        "gap": "Need to protect the hydroxy groups and unmask the propargyl alcohol.",
+        "decision": "To protect the hydroxy groups as TBS ethers and then unmask the propargyl alcohol using methanolic K2CO3 to give 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#CC(C)C1C=C2C(CCC2(C)C)OC1(C)C"
+        ],
+        "product_smiles": [
+          "C#CC(C)C1C=C2C(CCC2(C)C)OC1(C)C"
+        ],
+        "reagents": [
+          "TBSOTf",
+          "2,6-lutidine",
+          "K2CO3"
+        ],
+        "solvent": "CH2Cl2, MeOH",
+        "temperature": "0 °C to rt",
+        "time": "12 h, 6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Compound 16 was obtained in 98% yield."
+      },
+      "evidence": {
+        "text_span": "The hydroxy groups were protected as TBS ethers, and the propargyl alcohol was unmasked in the same vessel using methanolic K2CO3. Finally, Dess−Martin periodinane oxidation delivered the fully elaborated coupling partner, propargyl aldehyde 17.",
+        "image_refs": [
+          "d72ecdeb66d1c8e200750506d6297c5c287c8f46c1169ae7c23f752890212bbb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "decalin_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 16 was obtained.",
+        "gap": "Need to oxidize the alcohol to an aldehyde to complete the decalin coupling partner.",
+        "decision": "To use Dess-Martin periodinane oxidation to deliver propargyl aldehyde 17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#CC(C)C1C=C2C(CCC2(C)C)OC1(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DMP"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "rt",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "Propargyl aldehyde 17 was obtained in 93% yield."
+      },
+      "evidence": {
+        "text_span": "Finally, Dess−Martin periodinane oxidation delivered the fully elaborated coupling partner, propargyl aldehyde 17.",
+        "image_refs": [
+          "d72ecdeb66d1c8e200750506d6297c5c287c8f46c1169ae7c23f752890212bbb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "piperidine_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Piperidone 18 is readily available.",
+        "gap": "Need to convert the secondary lactam in 18 to a ketone surrogate and force the 3-butynyl unit into an axial orientation.",
+        "decision": "To perform N-benzoylation of 18 to give 19."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#C[C@@H](C)[C@H]1CCCN(F)C1=O"
+        ],
+        "product_smiles": [
+          "C#C[C@@H]1[C@H](C)CCCC(=O)N1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "BzCl",
+          "Et3N",
+          "DMAP"
+        ],
+        "solvent": "MeCN",
+        "temperature": "90 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Compound 19 was obtained in 95% yield."
+      },
+      "evidence": {
+        "text_span": "To this end, the secondary lactam in 18 was converted to ketone surrogate 19 via N.-benzoylation, which forced the 3-butynyl unit into an axial orientation to avoid A1,3 strain.",
+        "image_refs": [
+          "36e5aee14f0a297d2da2d6053c54f492ceeb5331e290b910c8f367c45d50f39a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "piperidine_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 19 was obtained.",
+        "gap": "Need to stereoselectively install an axially disposed hydroxymethyl unit.",
+        "decision": "To treat the titanium enolate 20 (generated from 19, TiCl4, DIPEA) with gaseous formaldehyde at -78 °C to give 21 as a single diastereomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#C[C@@H]1[C@H](C)CCCC(=O)N1C(=O)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C#C[C@@H]1[C@H](C)CC[C@H](CO)C(=O)N1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "TiCl4",
+          "DIPEA",
+          "CH2O (g)"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C, -78 °C",
+        "time": "10 min, 1 h, 10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Compound 21 was obtained as a single diastereomer in 91% yield. High selectivity was observed due to steric and electronic preference for axial addition to formaldehyde."
+      },
+      "evidence": {
+        "text_span": "The titanium enolate 20 (19, TiCl4, DIPEA, CH2Cl2, 0 °C, 1 h)) was then treated with gaseous formaldehyde at -78 °C, giving 21 as a single diastereomer.22 The high selectivity observed for the reaction reflects steric and electronic preference for axial addition to formaldehyde, away from the axially oriented 2-butynyl side chain.",
+        "image_refs": [
+          "36e5aee14f0a297d2da2d6053c54f492ceeb5331e290b910c8f367c45d50f39a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "piperidine_fragment",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Trans-carbinol 21 was obtained.",
+        "gap": "Need to epimerize the hydroxymethyl fragment to the cis-carbinol 22.",
+        "decision": "To treat a 0.1 M solution of trans-carbinol 21 with excess DBU for prolonged reaction times."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#C[C@@H]1[C@H](C)CC[C@H](CO)C(=O)N1C(=O)c1ccccc1"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C",
+        "time": "prolonged"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Prolonged reaction times resulted in a complex mixture that included the vinylidene product arising via β-elimination of water."
+      },
+      "evidence": {
+        "text_span": "On the other hand, prolonged reaction times resulted in a complex mixture that included the vinylidene product arising via β.-elimination of water.",
+        "image_refs": [
+          "36e5aee14f0a297d2da2d6053c54f492ceeb5331e290b910c8f367c45d50f39a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "piperidine_fragment",
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "Prolonged DBU treatment led to decomposition.",
+        "gap": "Need to epimerize 21 to 22 efficiently while avoiding side reactions.",
+        "decision": "To treat a 0.1 M solution of trans-carbinol 21 with excess DBU for 6 h, separating the epimers chromatographically, and resubmitting recovered 21 to the same conditions for multiple cycles."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#C[C@@H]1[C@H](C)CC[C@H](CO)C(=O)N1C(=O)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C#C[C@@H]1[C@H](C)CC[C@@H](CO)C(=O)N1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "A 1:1 mixture of 21 and 22 was cleanly furnished. After three cycles of separation and resubmission, cis-carbinol 22 was obtained in 81% yield."
+      },
+      "evidence": {
+        "text_span": "Remarkably, treatment of a 0.1 M solution of trans-carbinol 21 in cold dichloromethane with excess DBU for 6 h cleanly furnished a 1:1 mixture of 21 and 22 in good yield. On the other hand, prolonged reaction times resulted in a complex mixture that included the vinylidene product arising via β.-elimination of water. The two epimers were readily separated chromatographically, and recovered 21 was resubjected to the same conditions, furnishing cis-carbinol 22 in 81% yield after three cycles.",
+        "image_refs": [
+          "36e5aee14f0a297d2da2d6053c54f492ceeb5331e290b910c8f367c45d50f39a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "piperidine_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cis-carbinol 22 was obtained.",
+        "gap": "Need to protect the primary alcohol.",
+        "decision": "To protect the primary alcohol as its THP ether using DHP and PPTS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#C[C@@H]1[C@H](C)CC[C@@H](CO)C(=O)N1C(=O)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C#C[C@@H](C)CC1[C@H](COCC2CCCO2)CCCC(=O)N1C(=O)c1ccccc1"
+        ],
+        "reagents": [
+          "DHP",
+          "PPTS"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "rt",
+        "time": "48 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "observation": "The THP ether 23 was obtained quantitatively."
+      },
+      "evidence": {
+        "text_span": "The primary alcohol in 22 was then protected as its THP ether followed by hydrazine-mediated cleavage of the benzamide to yield secondary lactam 24.",
+        "image_refs": [
+          "36e5aee14f0a297d2da2d6053c54f492ceeb5331e290b910c8f367c45d50f39a.jpg",
+          "4ff45a93e832c0c38a6b5177c8187456c5a8b00da69f30e082f89a1a7e20b10.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "piperidine_fragment",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "THP ether 23 was obtained.",
+        "gap": "Need to cleave the benzamide to yield secondary lactam 24.",
+        "decision": "To use methanolic hydrazine for benzamide cleavage."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#C[C@@H](C)CC1[C@H](COCC2CCCO2)CCCC(=O)N1C(=O)c1ccccc1"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "N2H4.H2O"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Initial attempts to cleave the benzamide in 23 with methanolic hydrazine resulted in partial reduction of the alkyne unit. This side reaction was attributed to trace diimide formation from hydrazine."
+      },
+      "evidence": {
+        "text_span": "Initial attempts to cleave the benzamide in 23 with methanolic hydrazine resulted in partial reduction of the alkyne unit. This side reaction was attributed to trace diimide formation from hydrazine.",
+        "image_refs": [
+          "4ff45a93e832c0c38a6b5177c8187456c5a8b00da69f30e082f89a1a7e20b10.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": "piperidine_fragment",
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "Methanolic hydrazine caused alkyne reduction.",
+        "gap": "Need to cleave the benzamide without reducing the alkyne.",
+        "decision": "To add excess propargyl alcohol as a diimide scavenger during the hydrazine-mediated cleavage of the benzamide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#C[C@@H](C)CC1[C@H](COCC2CCCO2)CCCC(=O)N1C(=O)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C#C[C@@H](C)CC1NC(=O)CCC[C@H]1COCC1CCCO1"
+        ],
+        "reagents": [
+          "N2H4.H2O",
+          "propargyl alcohol"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "Secondary lactam 24 was obtained in 93% yield, circumventing the alkyne reduction issue."
+      },
+      "evidence": {
+        "text_span": "Addition of excess propargyl alcohol as a diimide scavenger circumvented this issue.",
+        "image_refs": [
+          "4ff45a93e832c0c38a6b5177c8187456c5a8b00da69f30e082f89a1a7e20b10.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "piperidine_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Secondary lactam 24 was obtained.",
+        "gap": "Need to reduce the lactam to the piperidine.",
+        "decision": "To reduce lactam 24 with LiAlH4 to deliver piperidine 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#C[C@@H](C)CC1NC(=O)CCC[C@H]1COCC1CCCO1"
+        ],
+        "product_smiles": [
+          "C#C[C@@H](C)CC1[C@H](COCC2CCCO2)CCCN1C"
+        ],
+        "reagents": [
+          "LiAlH4"
+        ],
+        "solvent": "THF",
+        "temperature": "70 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "observation": "Piperidine 25 was obtained quantitatively."
+      },
+      "evidence": {
+        "text_span": "Finally, reduction of lactam 24 delivered piperidine 25, setting the stage for fragment union.",
+        "image_refs": [
+          "4ff45a93e832c0c38a6b5177c8187456c5a8b00da69f30e082f89a1a7e20b10.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Propargyl aldehyde 17 (decalin fragment) and piperidine 25 (piperidine fragment) were synthesized.",
+        "gap": "Need to couple the two building blocks.",
+        "decision": "To perform a reductive amination between 17 and 25 using sodium triacetoxyborohydride."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C#C[C@H](C)[C@@H]1CC[C@H](COCC2CCCO2)CN1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaBH(OAc)3"
+        ],
+        "solvent": "DCE",
+        "temperature": "rt",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "observation": "Triyne 26 was obtained in 63% yield (85% brsm)."
+      },
+      "evidence": {
+        "text_span": "The two building blocks were brought together via a reductive amination: treatment of a 1:1 solution of 17 and 25 in dichloroethane with sodium triacetoxyborohydride gave triyne 26 within 10 min in 63% yield (85% brsm), setting the stage for the cycloisomerization reaction (Scheme 5).",
+        "image_refs": [
+          "d273a27ca13f3f1d12a1343a8927fd901b3c7e50646ba516bbb428812e88654e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Triyne 26 was obtained.",
+        "gap": "Need to form the CDE rings of the natural product via cycloisomerization.",
+        "decision": "To perform an intramolecular [2+2+2] cyclization using RhCl(PPh3)3 catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "RhCl(PPh3)3",
+        "solvent": "EtOH",
+        "temperature": "60 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Hexacycle 27 was obtained in 85% yield. The reaction proceeded despite the presence of a free amine."
+      },
+      "evidence": {
+        "text_span": "Despite the presence of a free amine, which we feared might deactivate the catalyst, amine-triyne 26 underwent the pivotal [2+2+2] cyclization, forging the CDE rings of the natural product and delivering hexacycle 27 in just two steps from its constituent fragments.",
+        "image_refs": [
+          "d273a27ca13f3f1d12a1343a8927fd901b3c7e50646ba516bbb428812e88654e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Hexacycle 27 was obtained.",
+        "gap": "Need to convert the protected primary alcohol of 27 into a tosylate for the Stevens rearrangement.",
+        "decision": "To perform Me2AlCl-mediated chemoselective acetal cleavage followed by sulfonylation to give tosylate 28."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Me2AlCl",
+          "TsCl",
+          "NMI",
+          "Et3N"
+        ],
+        "solvent": "CH2Cl2, MeCN",
+        "temperature": "0 °C to rt",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Tosylate 28 was obtained in 95% yield over 2 steps."
+      },
+      "evidence": {
+        "text_span": "In preparation for the Stevens, the protected primary alcohol of 27 was converted into tosylate 28 by a two-step sequence: Me2AlCl-mediated chemoselective acetal cleavage followed by sulfonylation (cf. Scheme 2, 10).",
+        "image_refs": [
+          "c137fbbf3591fcdba6a1a8195e106cba1b4203e4d8190c90564f7ae654bbf9dd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tosylate 28 was obtained.",
+        "gap": "Need to effect intramolecular N-alkylation to form azetidinium salt 29.",
+        "decision": "To heat a dilute solution of 28 in MeCN."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C[C@H]1[C@H]2C=CC3=C[C@H]2[C@H](CC[C@@H](CO[Si](C)(C)C(C)(C)C)C3)C[N+]12C[C@H]1C[C@H]2C1.Cc1ccc(S(=O)(=O)O)cc1"
+        ],
+        "solvent": "MeCN",
+        "temperature": "90 °C",
+        "time": "13 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": null,
+        "observation": "Intramolecular N-alkylation smoothly effected, giving azetidinium salt 29 in ca. 60% conversion. Prolonged heating resulted in apparent epimerization at C25. The α-epimer did not cyclize under the reaction conditions."
+      },
+      "evidence": {
+        "text_span": "A solvent screen and reaction conditions optimization showed that heating a dilute solution of 28 in MeCN for 13 h smoothly effected intramolecular Nalkylation, giving the azetidinium salt 29 in ca. 60% conversion. Intriguingly, prolonged heating resulted in apparent epimerization at C25, likely arising from opening of the azetidinium unit by tosylate attack at C26, affording the diastereomeric tosylate. Two key observations proved decisive in improving the reaction: (a) dilution of the reaction mixture (to 0.0017M) increased conversion to ca. 70% while suppressing “epimerization” and minimizing intermolecular reactions; and (b) the α- epimer did not cyclize under the reaction conditions thereby corroborating the initial mechanistic hypothesis for azetidinium formation.",
+        "image_refs": [
+          "c137fbbf3591fcdba6a1a8195e106cba1b4203e4d8190c90564f7ae654bbf9dd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A mixture of azetidinium salt 29 and residual tosylate 28 was obtained from the previous step (partial conversion).",
+        "gap": "Need to perform the [1,2]-Stevens rearrangement to form the aza-undecane 30.",
+        "decision": "To dissolve the mixture in cold THF and treat it with KHMDS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C[C@H]1[C@H]2C=CC3=C[C@H]2[C@H](CC[C@@H](CO[Si](C)(C)C(C)(C)C)C3)C[N+]12C[C@H]1C[C@H]2C1.Cc1ccc(S(=O)(=O)O)cc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to 0 °C",
+        "time": "20 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "Aza-undecane 30 was smoothly furnished in 68% yield (over 2 steps from 28), with recovery of unreacted tosylate 28. The Stevens rearrangement confirmed the stereoelectronic preference for selective scission of the C27-N bond over the C26-N bond and facile coupling of the resulting primary radical intermediate with the benzylic radical."
+      },
+      "evidence": {
+        "text_span": "The optimal strategy, then, was to stop the reaction at partial conversion and attempt the Stevens rearrangement on the mixture of 29 and residual 28. To our delight, dissolving this mixture in cold THF and treating it with KHMDS (2 equiv) smoothly furnished the aza-undecane 30, with recovery of unreacted tosylate 28. The successful outcome of the Stevens confirms the stereoelectronic preference for selective scission of the C27-N bond over the C26−N bond—a point of concern noted at the outset of this work—and the facile coupling of the resulting primary radical intermediate with the benzylic radical.",
+        "image_refs": [
+          "c137fbbf3591fcdba6a1a8195e106cba1b4203e4d8190c90564f7ae654bbf9dd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Aza-undecane 30 was obtained.",
+        "gap": "Need to chemoselectively oxidize C18 to hemiaminal 32.",
+        "decision": "To examine various oxidants (DDQ, Pb(OAc)4, DIAD, Polonovski reaction protocols on the N-oxide of 30)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "DDQ",
+          "Pb(OAc)4",
+          "DIAD",
+          "Polonovski reaction protocols"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "complex_mixture",
+        "observation": "The many oxidants examined gave either recovered starting material or a complex mixture of products, which called into question the feasibility of generating the anti-Bredt intermediate 31."
+      },
+      "evidence": {
+        "text_span": "The many oxidants examined (e.g., DDQ, Pb(OAc)4, DIAD; as well as several Polonovski reaction protocols on the N-oxide of 30) gave either recovered starting material or a complex mixture of products, which called into question the feasibility of generating the anti-Bredt intermediate 31.",
+        "image_refs": [
+          "9daadbbca8fcd659dcf6149493fba0c0ed603e91eef96e0d5ae6a34a14bdcf2c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 19,
+      "thought": {
+        "background": "Previous oxidation attempts failed.",
+        "gap": "Need a chemoselective oxidation method for C18 to hemiaminal 32.",
+        "decision": "To employ the protocol of Cvengros for α-acetoxylation of α-C-H bonds in Tröger’s base analogues, expecting to form 31 which would then hydrolyze to 32."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd(OAc)2",
+          "KOAc",
+          "NBS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "50 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "The situation improved, revealing a new, slightly more polar spot by TLC. No acetate was detected, presumably because it is too labile and undergoes hydrolysis during isolation, likely through the intermediacy of 31. Hemiaminal 32 was obtained in 68% yield."
+      },
+      "evidence": {
+        "text_span": "Only upon employing the protocol of Cvengros24 did the situation improve, revealing a new, slightly more polar spot by TLC. His method describes the α-acetoxylation of α-C-H bonds in Tröger’s base analogues. In our case, however, no acetate was detected, presumably because it is too labile and undergoes hydrolysis during isolation, likely through the intermediacy of 31.",
+        "image_refs": [
+          "9daadbbca8fcd659dcf6149493fba0c0ed603e91eef96e0d5ae6a34a14bdcf2c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Hemiaminal 32 was obtained.",
+        "gap": "Need to desilylate 32 to yield the desired target, ussuriedine (1).",
+        "decision": "To use TfOH for desilylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC1C(O)CC2C(CC3C=CN4CC(C)(C)CC4C32)C1C"
+        ],
+        "reagents": [
+          "TfOH"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C to -40 °C",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Ussuriedine (1) was obtained in 94% yield. The spectral data, melting point, and optical rotation of the synthetic sample matched the reported values."
+      },
+      "evidence": {
+        "text_span": "Finally, desilylation of 32 with TfOH yielded the desired target, ussuriedine (1). The spectral data, melting point, and optical rotation of the synthetic sample matched the reported values, confirming that the synthetic journey had reached its target.",
+        "image_refs": [
+          "9daadbbca8fcd659dcf6149493fba0c0ed603e91eef96e0d5ae6a34a14bdcf2c.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "spectral_data",
+      "melting_point",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield not explicitly stated, but 23 linear steps from ethyl vinyl ketone."
+      },
+      "Longest Linear Steps": {
+        "value": 23,
+        "unit": "steps",
+        "interpretation": "Total linear steps from ethyl vinyl ketone."
+      }
+    },
+    "significance": "The total synthesis of ussuriedine not only provides access to an intricate natural product but also implicates the involvement of a Stevens rearrangement in natural product biosynthesis, serving as a platform for interrogating unconventional strategies and their implications to biosynthetic hypotheses."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.6c00926",
+      "pmcid": "PMC13088185",
+      "title": "Total Synthesis of Ussuriedine via a Late-Stage Stevens Rearrangement: Implications for Biosynthesis.",
+      "authors": "Baidilov D, Cassaidy KJ, Shin YJ, Rawal VH.",
+      "journal": "J Am Chem Soc",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC13088185?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/c8a6d728-181b-486b-a1e7-5ccd6727c9e8.zip",
+      "parsed_at": "2026-05-07T14:33:48.183573+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 44,
+    "parseable": 29,
+    "canonicalized": 29,
+    "invalid": 15,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1CC[C@H]2[C@H](C)[C@@](C#C)([C@@H](OSi(C)(C)C(C)(C)C)C[C@@H]2C1)CC#CC=O",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1CC[C@H]2[C@H](C)[C@@](C#C)([C@@H](OSi(C)(C)C(C)(C)C)C[C@@H]2C1)CC#CC=O",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1CC[C@H]2[C@H](C)[C@@](C#C)([C@@H](OSi(C)(C)C(C)(C)C)C[C@@H]2C1)CC#CC=O",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1CC[C@H]2[C@H](C)[C@@](C#C)([C@@H](OSi(C)(C)C(C)(C)C)C[C@@H]2C1)C[C@@H](C#C)[C@@H]3CC[C@H](COCC4CCCO4)CN3",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1CC[C@H]2[C@H](C)[C@@](C#C)([C@@H](OSi(C)(C)C(C)(C)C)C[C@@H]2C1)C[C@@H](C#C)[C@@H]3CC[C@H](COCC4CCCO4)CN3",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1CC[C@H]2[C@H](C)[C@@](C#C)([C@@H](OSi(C)(C)C(C)(C)C)C[C@@H]2C1)C[C@@H]3C=C[C@H]4CC[C@H](COCC5CCCO5)CN43",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1CC[C@H]2[C@H](C)[C@@](C#C)([C@@H](OSi(C)(C)C(C)(C)C)C[C@@H]2C1)C[C@@H]3C=C[C@H]4CC[C@H](COCC5CCCO5)CN43",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1CC[C@H]2[C@@H]3C=C(C=C[C@@H]3[C@H](C)N(CCOTs)C2)C1",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1CC[C@H]2[C@@H]3C=C(C=C[C@@H]3[C@H](C)N(CCOTs)C2)C1",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1CC[C@H]2[C@@H]3C=C(C=C[C@@H]3[C@H](C)N(CCOTs)C2)C1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

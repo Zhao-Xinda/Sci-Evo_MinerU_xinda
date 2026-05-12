@@ -1,0 +1,906 @@
+{
+  "trace_id": "TS-PMC12186531",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-Cassine",
+    "smiles": "CC(=O)CCCCCCCCCC[C@@H]1C[C@@H](O)[C@@H](C)CN1",
+    "natural_product_class": "piperidine alkaloid",
+    "structural_features": {
+      "key_motifs": [
+        "piperidine ring",
+        "long aliphatic chain"
+      ]
+    },
+    "motivation": "(-)-Cassine, a piperidine alkaloid, was first isolated from plants of the Cassia and Senna genera. Discovered in 1964 by R. J. Higuet, and with its absolute stereochemistry determined by W. Y. Rice two years later, (-)-cassine has been widely studied for its biological activities, including anti-inflammatory, antibacterial, and anticancer properties. As a result, (-)-cassine and other 2,3,6-trisubstituted piperidine alkaloids have become important synthetic targets in organic chemistry.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Momose",
+        "year": 1993,
+        "key_strategy": "asymmetric synthesis starting from a meso diacetate already containing the piperidine ring, with asymmetry generated after a lipase-catalyzed hydrolysis"
+      },
+      {
+        "lead_author": "Meyer",
+        "year": 1997,
+        "key_strategy": "enantiomerically pure β-hydroxyester obtained by lipase-catalyzed kinetic resolution, involving formation of a 2-oxazolidinone and its conversion to a key piperidin-3-ol"
+      },
+      {
+        "lead_author": "Hirota",
+        "year": 2003,
+        "key_strategy": "19-step linear synthesis starting from 1,5-hexadiyne, featuring a diastereoselective PdCl2-catalyzed cyclization"
+      },
+      {
+        "lead_author": "Herdeis",
+        "year": 2006,
+        "key_strategy": "L-rhamnose as starting material, involving a HWE [3+2]-cycloaddition process"
+      },
+      {
+        "lead_author": "Kim",
+        "year": 2007,
+        "key_strategy": "short synthesis via asymmetric aminohydroxylation reaction"
+      },
+      {
+        "lead_author": "Huang",
+        "year": 2010,
+        "key_strategy": "reductive alkylation of lactams starting from D-glutamic acid"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "The synthesis should be asymmetric and highly diastereoselective in key steps, avoiding long linear approaches and allowing access to synthetic analogues."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond between the piperidine ring and the long aliphatic chain",
+        "named_strategy": "Wittig reaction",
+        "reasoning": "Installation of the long aliphatic chain could be performed by a Wittig reaction, followed by a Wacker oxidation and a final deprotection/reduction step."
+      },
+      {
+        "bond_description": "C-N bond to form the piperidine ring",
+        "named_strategy": "N-H insertion reaction",
+        "reasoning": "The piperidine core of (-)-cassine could be accessed through an N-H insertion reaction using an α,β-unsaturated diazoketone. The key cyclization to highly functionalized intermediate 9 will depend on a cis-selective N−H insertion reaction."
+      },
+      {
+        "bond_description": "C-C bond to form the α,β-unsaturated diazoketone",
+        "named_strategy": "Horner–Wadsworth–Emmons (HWE) reaction",
+        "reasoning": "The α,β-unsaturated diazoketone intermediate could be synthesized by our already established HWE protocol, using amino aldehyde 5 and novel methylated olefination reagent 1."
+      }
+    ],
+    "rationale": "The strategy leverages the group's expertise in α,β-unsaturated diazoketones as versatile building blocks. The proposed route aims for high diastereoselectivity and a divergent approach to allow for the synthesis of cassine derivatives."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Our research group developed two olefination reagents that allowed the selective synthesis of a wide range of α,β-unsaturated diazoketones, both with E and Z stereochemistry, with good yields, through a single Horner−Wadsworth−Emmons reaction (HWE). Because they are highly functionalized building blocks, containing a double bond and a carbonyl and a diazo group, the potential of α,β-unsaturated diazoketones in the synthesis of various alkaloids has been widely explored by our group over the years.",
+        "gap": "How to synthesize the piperidine core of (-)-cassine and install the long aliphatic chain in a stereoselective manner.",
+        "decision": "To synthesize (-)-cassine, we envisaged that the piperidine core could be accessed through an N-H insertion reaction using the α,β-unsaturated diazoketone 6. This intermediate could be synthesized by our established HWE protocol, using amino aldehyde 5 and novel methylated olefination reagent 1. Next, the key cyclization to highly functionalized intermediate 9 will depend on a cis-selective N−H insertion reaction. Luche reduction followed by benzylation would provide allylic ether 24. Finally, installation of the long aliphatic chain could be performed by a Wittig reaction, followed by a Wacker oxidation and a final deprotection/reduction step."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Retrosynthetic route proposed."
+      },
+      "evidence": {
+        "text_span": "Based on our previous experience on the total synthesis of nojirimycin skeletons,9 we envisaged that the piperidine core of $( - )$ -cassine could be accessed through an $\\mathrm { N-H }$ insertion reaction using the $\\alpha { , } \beta$ -unsaturated diazoketone 6 (Scheme 1).\nIn turn, this intermediate could be synthesized by our already established HWE protocol, using amino aldehyde 5 and novel methylated olefination reagent 1. Next, the key cyclization to highly functionalized intermediate 9 will depend on a cis-selective N−H insertion reaction. Luche reduction followed by benzylation would provide allylic ether 24. Finally, installation of the long aliphatic chain could be performed by a Wittig reaction, followed by a Wacker oxidation and a final deprotection/reduction step.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The synthesis of the novel diazophosphonate 1 is crucial for the HWE reaction.",
+        "gap": "The existing approach for synthesizing diazophosphonates using diazomethane might not be efficient for diazoethane.",
+        "decision": "To synthesize diazophosphonate 1, we attempted a similar approach developed by our research group, reacting diphenyl(2-chloro-2-oxoethyl)phosphonate and diazoethane, expecting a straightforward substitution."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "diazoethane"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 12,
+        "failure_mode": "low_yield",
+        "observation": "This reaction proved to be inefficient when diazomethane was replaced with diazoethane, providing the desired diazophosphonate 1 in only 12% yield along with a complex mixture of other products. The use of CaO as a chloride ion scavenger, distilled diazoethane, attempts to carry out larger scales, and reactions at lower temperatures also failed."
+      },
+      "evidence": {
+        "text_span": "First, we focused our efforts on the synthesis of the novel diazophosphonate 1. Following a similar approach developed by our research group,8a this olefination reagent could be easily obtained from the reaction between diphenyl(2-chloro-2- oxoethyl)phosphonate and diazoethane. However, this reaction proved to be inefficient when diazomethane was replaced with diazoethane, providing the desired diazophosphonate 1 in only $1 2\\%$ yield along with a complex mixture of other products. The use of CaO as a chloride ion scavenger,10 distilled diazoethane, attempts to carry out larger scales, and reactions at lower temperatures also failed.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "The direct synthesis of diazophosphonate 1 from diphenyl(2-chloro-2-oxoethyl)phosphonate and diazoethane was inefficient.",
+        "gap": "A more effective method for alkylating the diazophosphonate is needed.",
+        "decision": "Given these results, we decided to investigate a different strategy, promoting an alkylation of the already known diazophosphonate 2 using methyl iodide in the presence of a strong base."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A new strategy for synthesizing diazophosphonate 1 was proposed."
+      },
+      "evidence": {
+        "text_span": "Given these results, we decided to investigate a different strategy, promoting an alkylation of the already known diazophosphonate 2 using methyl iodide in the presence of a strong base.11 The results obtained are summarized in Table 1.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Alkylation of diazophosphonate 2 with methyl iodide is being explored.",
+        "gap": "Finding an effective base and reaction conditions for the alkylation.",
+        "decision": "To alkylate diazophosphonate 2, we used t-BuOK as the base at -72 °C for 1 hour, expecting the alkylation to proceed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KOtBu",
+          "CI"
+        ],
+        "solvent": "THF",
+        "temperature": "-72 °C",
+        "time": "1 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No consumption of the starting material was observed with the use of t-BuOK as the base at -72 °C, for 1 h (entry 1)."
+      },
+      "evidence": {
+        "text_span": "No consumption of the starting material was observed with the use of t-BuOK as the base at $- 7 2 ^ { \\circ } \\mathrm { C } ,$ , for $^ { 1 \\mathrm { h } }$ (entry 1).",
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "t-BuOK at -72 °C did not lead to alkylation.",
+        "gap": "The reaction temperature might be too low.",
+        "decision": "By increasing the temperature to 0 °C, after 60 min, the alkylated product was obtained in 34% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KOtBu",
+          "CI"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 34,
+        "observation": "Alkylated product obtained in 34% yield by increasing temperature."
+      },
+      "evidence": {
+        "text_span": "By increasing the temperature to $0 \\ { } ^ { \\circ } { \bf C } ,$ after 60 min, the alkylated product was obtained in $3 4 \\%$ yield.",
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "t-BuOK showed some success at 0 °C, but yield was moderate.",
+        "gap": "Exploring other bases for better yield and selectivity.",
+        "decision": "To alkylate diazophosphonate 2, we used NaH as the base at 0 °C, expecting a similar or better outcome than t-BuOK."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaH",
+          "CI"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "1 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "The use of NaH (entry 2) exhibited a similar profile at -72 °C, but at 0 °C, it provided a complex mixture of products."
+      },
+      "evidence": {
+        "text_span": "The use of NaH (entry 2) exhibited a similar profile at $- 7 2 ^ { \\circ } \\mathrm { C } ,$ , but at $0 \\ ^ { \\circ } \\mathrm { C } ,$ it provided a complex mixture of products.",
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "t-BuOK and NaH showed limitations in the alkylation of diazophosphonate 2.",
+        "gap": "Need a more effective base for higher yield.",
+        "decision": "To alkylate diazophosphonate 2, we used KHMDS (3.1 equiv) as the base, expecting a better yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS",
+          "CI"
+        ],
+        "solvent": "THF",
+        "temperature": "-72 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "The use of KHMDS (3.1 equiv) (entry 4) provided the desired product in 45% yield."
+      },
+      "evidence": {
+        "text_span": "The use of KHMDS (3.1 equiv) (entry 4) provided the desired product in $45\\%$ yield.",
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "KHMDS provided 45% yield, which is an improvement.",
+        "gap": "Further optimization of the base and conditions is needed to maximize yield.",
+        "decision": "To alkylate diazophosphonate 2, we evaluated LDA as a base under different conditions. The use of 2.1 equiv of LDA and 2 equiv of methyl iodide (entry 7) was chosen, expecting the best result."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LDA",
+          "CI"
+        ],
+        "solvent": "THF",
+        "temperature": "-72 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "The use of 2.1 equiv of LDA and 2 equiv of methyl iodide (entry 7) led to the best result (62%). It is also important to highlight that the order of addition of reagents proved to be of great influence on the reaction yield."
+      },
+      "evidence": {
+        "text_span": "Next, LDA was evaluated as a base on different conditions (entries 5 to 9). The use of 2.1 equiv of LDA and 2 equiv of methyl iodide (entry 7) led to the best result $( 6 2 \\% )$ . It is also important to highlight that the order of addition of reagents proved to be of great influence on the reaction yield.",
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimized conditions for synthesizing diazophosphonate 1 using LDA and methyl iodide yielded 62%.",
+        "gap": "To demonstrate the divergent character of this approach, other alkylated diazophosphonates need to be synthesized.",
+        "decision": "To synthesize other olefination reagents, we evaluated the alkylation conditions of diazophosphonate 2 on other electrophiles, specifically benzyl iodide, expecting to obtain alkylated product 3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LDA",
+          "benzyl iodide"
+        ],
+        "solvent": "THF",
+        "temperature": "-72 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "Using benzyl iodide, the alkylated product 3 was obtained in 56% yield."
+      },
+      "evidence": {
+        "text_span": "Given the good results obtained with this approach, we decided to evaluate the alkylation conditions of diazophosphonate 2 on other electrophiles (Scheme 2). Using benzyl iodide, the alkylated product 3 was obtained in $5 6 \\%$ yield, while allyl bromide furnished diazophosphonate 4 in $45\\%$ yield.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkylation with benzyl iodide was successful.",
+        "gap": "Further expanding the scope of alkylated diazophosphonates for divergent synthesis.",
+        "decision": "To synthesize another olefination reagent, we used allyl bromide as the electrophile under the optimized alkylation conditions, expecting to obtain diazophosphonate 4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LDA",
+          "allyl bromide"
+        ],
+        "solvent": "THF",
+        "temperature": "-72 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "Allyl bromide furnished diazophosphonate 4 in 45% yield. The use of different diazophosphonates in this synthetic route opens up a range of functionalization possibilities in the piperidine core, which reinforces the divergent approach of our strategy."
+      },
+      "evidence": {
+        "text_span": "Given the good results obtained with this approach, we decided to evaluate the alkylation conditions of diazophosphonate 2 on other electrophiles (Scheme 2). Using benzyl iodide, the alkylated product 3 was obtained in $5 6 \\%$ yield, while allyl bromide furnished diazophosphonate 4 in $45\\%$ yield. The use of different diazophosphonates in this synthetic route opens up a range of functionalization possibilities in the piperidine core, which reinforces the divergent approach of our strategy.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diazophosphonates 1, 3, and 4 are now available. N-Cbz-O-TBDPS-serinal 5 is a known building block.",
+        "gap": "The next step is to perform the HWE reaction to synthesize the α,β-unsaturated diazoketones.",
+        "decision": "To synthesize the α,β-unsaturated diazoketones, we applied our HWE protocol using the three prepared diazophosphonates (1, 3, 4) and amino aldehyde 5, expecting to obtain the Z-isomers 6-8 with good diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CS(C)(OCC(C=O)NC(=O)OCc1ccccc1)C(c1ccccc1)(c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "named_reaction": "Horner–Wadsworth–Emmons reaction",
+        "reagents": [
+          "KOtBu"
+        ],
+        "solvent": "THF",
+        "temperature": "-72 °C to 0 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 46,
+        "regio_selectivity": "Z:E ratio (isolated) = 5:1 for 6, 4:1 for 7-8",
+        "observation": "Pure Z-α,β-unsaturated diazoketones 6−8 were obtained in 46−52% isolated yield after purification (diastereoselectivity Z:E = 5:1 for the reaction with 1 and 4:1 for 3−4). This result was reproduced even on higher scales for product 6 (1.08 mmol, 500 mg of 5)."
+      },
+      "evidence": {
+        "text_span": "The known building block N-Cbz-O-TBDPS-serinal 5 can be easily obtained in 5 steps from L-serine or in 3 steps from N-Z-L-serine methyl ester, both nonexpensive and commercially available starting materials.9b Next, the HWE reaction could be evaluated using the three diazophosphonates prepared. Applying our protocol (Scheme 3), pure $Z \\mathrm { - } \\alpha \\mathrm { , } \beta$ -unsaturated diazoketones 6−8 were obtained in $4 6 - 5 2 \\%$ isolated yield after purification (diastereoselectivity $\\it \\Omega = \\epsilon \\sf { S } { : } 1$ for the reaction\nwith 1 and 4:1 for 3−4). This result was reproduced even on higher scales for product 6 $\\mathrm { ^ { ' } 1 . 0 8 \\ m m o l }$ , ${ 5 0 0 } \\mathrm { m g }$ of 5).",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The α,β-unsaturated diazoketones 6-8 have been successfully synthesized.",
+        "gap": "The next key step is the intramolecular N-H insertion reaction to form the piperidine ring.",
+        "decision": "For the cyclization reaction, we employed Cu(acac)2 as the catalyst, expecting to obtain the desired piperidine 9 as a single cis-isomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "CC(C)(C)[Si]12OC[C@@H](O)C[C@H]3C=C[C@@H](Cc4ccccc4)C(=O)C1=CC=CC=CC2=CC=CC=CN3C(=O)OCc1ccccc1",
+          "C=CC[C@@H]1C=C[C@@H]2C[C@H](O)CO[Si]3(C(C)(C)C)C(=CC=CC=CN2C(=O)OCc2ccccc2)C=CC=CC=C3C1=O"
+        ],
+        "catalyst": "copper(II) acetylacetonate",
+        "solvent": "toluene",
+        "temperature": "120 °C",
+        "time": "1 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "regio_selectivity": "single cis-isomer",
+        "observation": "For the cyclization reaction, employing Cu(acac)2 as the catalyst, the desired piperidine 9 was provided in 48% yield (the analogues 10 and 11 were obtained in 30% and 42% yield, respectively). Despite the moderate yield of this key step, it is important to mention the easy reaction setup, the short reaction time (1 min), and the fact that the product is obtained as a single cis-isomer. The stereochemical outcome was confirmed by NOE experiments on 3-piperidinone 9."
+      },
+      "evidence": {
+        "text_span": "For the cyclization reaction, employing $\\operatorname { C u } ( \\mathsf { acac } ) _ { 2 }$ as the catalyst, the desired piperidine 9 was provided in $4 8 \\%$ yield (the analogues 10 and 11 were obtained in $3 0 \\%$ and $4 2 \\%$ yield, respectively). Despite the moderate yield of this key step, it is important to mention the easy reaction setup, the short reaction time (1 min), and the fact that the product is obtained as a single cisisomer. The stereochemical outcome was confirmed by NOE experiments on 3-piperidinone 9.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Piperidine 9 has been synthesized as a single cis-isomer.",
+        "gap": "The next step is to reduce the ketone to an alcohol, which is crucial for further functionalization.",
+        "decision": "Aiming to reach the total synthesis of (-)-cassine, we next submitted enone 9 to a Luche reduction, expecting to obtain the cis,cis allylic alcohol 12 as a single diastereoisomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)(C)[Si](OCC1C=CC(O)N(C(=O)OCC2C=CC=CC2)C1)(c1ccccc1)c1ccccc1"
+        ],
+        "named_reaction": "Luche reduction",
+        "reagents": [
+          "NaBH4",
+          "CeCl3.7H2O"
+        ],
+        "solvent": "MeOH/CH2Cl2",
+        "temperature": "-72 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "dr": "single diastereoisomer",
+        "observation": "Luche reduction, providing the cis,cis allylic alcohol 12 in 92% yield as a single diastereoisomer (also confirmed by NOE experiments)."
+      },
+      "evidence": {
+        "text_span": "Aiming to reach the total synthesis of $( - )$ -cassine, we next submitted enone 9 to a Luche reduction, providing the cis,cis allylic alcohol 12 in $9 2 \\%$ yield (Scheme 4) as a single diastereoisomer (also confirmed by NOE experiments).",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Allylic alcohol 12 is obtained. The next step is to protect the hydroxyl group.",
+        "gap": "Finding a suitable protecting group and conditions that can be removed later in a single step with the Cbz group and the endocyclic double bond reduction.",
+        "decision": "To protect the hydroxyl group, we attempted to install a benzyl protecting group for the hydroxyl group in 12, as it could be removed in a single step at the end of the route, together with the Cbz group and the reduction of the endocyclic double bond. We evaluated several benzylation conditions, including benzyl trichloroacetimidate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)[Si](OCC1C=CC(O)N(C(=O)OCC2C=CC=CC2)C1)(c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[Si](OCC1C=CC(OCC2C=CC=CC2)N(C(=O)OCC2C=CC=CC2)C1)(c1ccccc1)c1ccccc1"
+        ],
+        "reagents": [
+          "benzyl trichloroacetimidate"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "To our surprise, poor results were obtained after evaluation of several benzylation conditions (Table S1, see SI). Even benzyl trichloroacetimidate, a powerful benzylation reagent, failed to provide product 13."
+      },
+      "evidence": {
+        "text_span": "From this point, and as illustrated in Scheme 1, installation of a benzyl protecting group for the hydroxyl group in 12 would be the best choice since it could be removed in a single step at the end of the route, together with the Cbz group and the reduction of the endocyclic double bond. To our surprise, poor results were obtained after evaluation of several benzylation conditions (Table S1, see SI). Even benzyl trichloroacetimidate, a powerful benzylation reagent,12 failed to provide product 13.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "Benzylation of allylic alcohol 12 was unsuccessful.",
+        "gap": "A different protecting group for the hydroxyl group is needed.",
+        "decision": "As a consequence, other protecting groups were evaluated. We decided to move forward using the MOM group, as it furnished the best yield, expecting to obtain protected allylic alcohol 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)[Si](OCC1C=CC(O)N(C(=O)OCC2C=CC=CC2)C1)(c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "COC1C=CC(CO[Si](c2ccccc2)(c2ccccc2)C(C)(C)C)CN1C(=O)OCC1C=CC=CC1"
+        ],
+        "reagents": [
+          "MOMCl",
+          "DIPEA",
+          "TBAI"
+        ],
+        "solvent": "DCM",
+        "temperature": "reflux",
+        "time": "22 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "observation": "Good yields were obtained using chloromethyl methyl ether (15, 79% yield). We decided to move forward using the MOM group, as it furnished the best yield."
+      },
+      "evidence": {
+        "text_span": "As a consequence, other protecting groups were evaluated. No reaction occurred using benzyl chloroformate, but good yields were obtained using $p \\cdot$ - nitrobenzoyl chloride (14, $6 5 \\%$ yield; see Supporting Information) and chloromethyl methyl ether (15, $7 9 \\%$ yield). We decided to move forward using the MOM group, as it furnished the best yield.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The MOM-protected allylic alcohol 15 has been synthesized.",
+        "gap": "The TBDPS protecting group needs to be removed to expose the primary alcohol for further oxidation.",
+        "decision": "To remove the TBDPS group, we used tetrabutylammonium fluoride (TBAF, 3 equiv) in THF, expecting a smooth deprotection to furnish alcohol 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1C=CC(CO[Si](c2ccccc2)(c2ccccc2)C(C)(C)C)CN1C(=O)OCC1C=CC=CC1"
+        ],
+        "product_smiles": [
+          "COC1C=CC(CO)CN1C(=O)OCC1C=CC=CC1"
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "THF",
+        "temperature": "25 °C",
+        "time": "90 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "The TBDPS deprotection of 15 using tetrabutylammonium fluoride (TBAF, 3 equiv) in THF proceeded smoothly, furnishing the alcohol 16 in 80% yield."
+      },
+      "evidence": {
+        "text_span": "The TBDPS deprotection of 15 using tetrabutylammonium fluoride (TBAF, 3 equiv) in THF proceeded smoothly, furnishing the alcohol 16 in $8 0 \\%$ yield.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Alcohol 16 is available. The next step is the oxidation to the corresponding aldehyde.",
+        "gap": "Finding suitable oxidation conditions that do not lead to side reactions or decomposition, especially given the presence of the double bond.",
+        "decision": "To oxidize alcohol 16 to aldehyde 17, we attempted several oxidation methods, expecting to obtain the desired aldehyde."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1C=CC(CO)CN1C(=O)OCC1C=CC=CC1"
+        ],
+        "product_smiles": [
+          "COC1C=CC(C=O)CN1C(=O)OCC1C=CC=CC1"
+        ],
+        "reagents": [
+          "unspecified oxidation reagents"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "observation": "Unfortunately, several oxidation methods failed to give the aldehyde 17, with results varying from complex mixtures to no consumption of the starting material (Table S2, see the SI)."
+      },
+      "evidence": {
+        "text_span": "The following steps consisted of the oxidation to the corresponding aldehyde and the coupling of the long aliphatic chain via Wittig olefination. Unfortunately, several oxidation methods failed to give the aldehyde 17, with results varying from complex mixtures to no consumption of the starting material (Table S2, see the SI).",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Several oxidation methods failed to produce aldehyde 17 from alcohol 16.",
+        "gap": "The presence of the double bond might be interfering with the oxidation.",
+        "decision": "To oxidize alcohol 16, we used PCC for 12 hours at room temperature, expecting to obtain aldehyde 17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1C=CC(CO)CN1C(=O)OCC1C=CC=CC1"
+        ],
+        "product_smiles": [
+          "COC1C=CC(=O)CN1C(=O)OCC1C=CC=CC1"
+        ],
+        "reagents": [
+          "PCC"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "room temperature",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 75,
+        "failure_mode": "side_product_dominant",
+        "observation": "Interestingly, the use of PCC for 12 h at room temperature resulted in the decarboxylated product 18 in 75% yield (Scheme 4). Based on this result, we considered that the presence of the double bond of the piperidine core may have an influence on this step, leading to undesired product 18."
+      },
+      "evidence": {
+        "text_span": "Interestingly, the use of PCC for $^ { 1 2 \\mathrm { ~ h ~ } }$ at room temperature resulted in the decarboxylated product 18 in $7 5 \\%$ yield (Scheme 4). Based on this result, we considered that the presence of the double bond of the piperidine core may have an influence on this step, leading to undesired product 18.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 18,
+      "thought": {
+        "background": "The presence of the double bond in alcohol 16 led to decarboxylation during oxidation with PCC.",
+        "gap": "The double bond needs to be reduced before oxidation to prevent side reactions.",
+        "decision": "To put this hypothesis to the test, the olefin was reduced with a hydrogen atmosphere and PtO2 (0.1 equiv), expecting to obtain the hydrogenated product 19, which could then be oxidized to the aldehyde."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1C=CC(CO)CN1C(=O)OCC1C=CC=CC1"
+        ],
+        "product_smiles": [
+          "COC(C[C@H]1CC[C@H](CO)[C@H](C)N(C(=O)OCc2ccccc2)C1)OC"
+        ],
+        "catalyst": "PtO2",
+        "reagents": [
+          "H2"
+        ],
+        "solvent": "THF",
+        "temperature": "room temperature",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "The olefin was reduced with a hydrogen atmosphere and PtO2 (0.1 equiv) and the hydrogenated product 19 was obtained in 81% yield as a colorless oil without further purification."
+      },
+      "evidence": {
+        "text_span": "To put this hypothesis to the test, the olefin was reduced with a hydrogen atmosphere and $\\mathrm { P t O } _ { 2 }$ (0.1\nequiv) and the hydrogenated product 19 was submitted to oxidation conditions with IBX (Scheme 5). After this sequence, aldehyde 20 was obtained in $9 4 \\%$ yield.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Hydrogenated product 19 is available.",
+        "gap": "Now that the double bond is reduced, the oxidation to the aldehyde should proceed without decarboxylation.",
+        "decision": "To oxidize alcohol 19 to aldehyde 20, we used IBX (3 equiv) in ethyl acetate under reflux, expecting to obtain the desired aldehyde in high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(C[C@H]1CC[C@H](CO)[C@H](C)N(C(=O)OCc2ccccc2)C1)OC"
+        ],
+        "product_smiles": [
+          "COC(C[C@H]1CC[C@H](C=O)[C@H](C)N(C(=O)OCc2ccccc2)C1)OC"
+        ],
+        "reagents": [
+          "2-iodoxybenzoic acid (IBX)"
+        ],
+        "solvent": "ethyl acetate",
+        "temperature": "reflux",
+        "time": "5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "After this sequence, aldehyde 20 was obtained in 94% yield. The aldehyde was carefully used in the next step to avoid degradation."
+      },
+      "evidence": {
+        "text_span": "To put this hypothesis to the test, the olefin was reduced with a hydrogen atmosphere and $\\mathrm { P t O } _ { 2 }$ (0.1\nequiv) and the hydrogenated product 19 was submitted to oxidation conditions with IBX (Scheme 5). After this sequence, aldehyde 20 was obtained in $9 4 \\%$ yield.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 20 is available. Phosphonium salt 21 is easily prepared from commercially available 11-bromo-1-undecene.",
+        "gap": "The long aliphatic chain needs to be coupled to the aldehyde via Wittig olefination.",
+        "decision": "To couple the long aliphatic chain, we submitted phosphonium salt 21 to aldehyde 20, in the presence of KHMDS, expecting to obtain the Wittig olefination product 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(C[C@H]1CC[C@H](C=O)[C@H](C)N(C(=O)OCc2ccccc2)C1)OC",
+          "C=C(C)CCCCCCCC[PH](c1ccccc1)(c1ccccc1)c1ccccc1.[Br-]"
+        ],
+        "product_smiles": [
+          "CCCCCCCCC(C)=C[C@H]1CC[C@H](CC(OC)OC)CN(C(=O)OCc2ccccc2)[C@H]1C"
+        ],
+        "named_reaction": "Wittig olefination",
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C to room temperature",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 50,
+        "observation": "The Wittig olefination product 22 was obtained in 50% yield."
+      },
+      "evidence": {
+        "text_span": "Next, the phosphonium salt 21, easily prepared from commercially available 11-bromo-1-undecene following literature procedures,13 was submitted to aldehyde 20, in the presence of KHMDS. The Wittig olefination product 22 was obtained in $5 0 \\%$ yield (Scheme 5).",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Wittig olefination product 22 has been obtained.",
+        "gap": "The terminal alkene needs to be converted to a methyl ketone, which is characteristic of cassine.",
+        "decision": "Making use of the conditions described by Hirota and co-workers, we performed a Wacker oxidation, expecting to furnish the methyl ketone 23."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCC(C)=C[C@H]1CC[C@H](CC(OC)OC)CN(C(=O)OCc2ccccc2)[C@H]1C"
+        ],
+        "product_smiles": [
+          "CCCCCCCCC(=O)[C@H]1CC[C@H](CC(OC)OC)CN(C(=O)OCc2ccccc2)[C@H]1C"
+        ],
+        "named_reaction": "Wacker oxidation",
+        "catalyst": "PdCl2",
+        "reagents": [
+          "CuCl2",
+          "O2"
+        ],
+        "solvent": "DMF/water",
+        "temperature": "room temperature",
+        "time": "17 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 41,
+        "observation": "The Wacker oxidation proceeded well, furnishing the methyl ketone 23 in 41% yield."
+      },
+      "evidence": {
+        "text_span": "Making use of the conditions described by Hirota and co-workers,5d the Wacker oxidation proceeded well, furnishing the methyl ketone 23 in $4 1 \\%$ yield.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Methyl ketone 23 has been synthesized.",
+        "gap": "The final steps involve deprotection of the Cbz and MOM groups, and reduction of the exocyclic double bond to yield (-)-cassine.",
+        "decision": "For the last step of the total synthesis, substrate 23 was treated with Pd/C and hydrogen to remove the Cbz group and to reduce the exocyclic double bond, previously formed in the Wittig reaction. After 16 h, the reaction vessel was opened and a few drops of concentrated HCl were added for MOM group removal, expecting to obtain (-)-cassine."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCC(=O)[C@H]1CC[C@H](CC(OC)OC)CN(C(=O)OCc2ccccc2)[C@H]1C"
+        ],
+        "product_smiles": [
+          "CC(=O)CCCCCCCCCC[C@@H]1C[C@@H](O)[C@@H](C)CN1"
+        ],
+        "catalyst": "Pd/C",
+        "reagents": [
+          "H2",
+          "HCl"
+        ],
+        "solvent": "MeOH",
+        "temperature": "room temperature",
+        "time": "40 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "The reaction ended after 24 h and standard workup procedures furnished (-)-cassine in 78% yield. The spectroscopic data were in agreement with those already reported in the literature (Tables S3 and S4, see SI).5g"
+      },
+      "evidence": {
+        "text_span": "For the last step of the total synthesis, substrate 23 was treated with $\\operatorname { P d } / C$ and hydrogen to remove the Cbz group and to reduce the exocyclic double bond, previously formed in the Wittig reaction. After $1 6 \\mathrm { { h } , }$ , the reaction vessel was opened and a few drops of concentrated HCl were added for MOM group removal. The reaction ended after $2 4 \\ \\mathrm { h }$ and standard workup procedures furnished $( - )$ -cassine in $78 \\%$ yield. The spectroscopic data were in agreement with those already reported in the literature (Tables S3 and S4, see SI).5g",
+        "section": "Main Text"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "NOESY1D",
+      "HRMS",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield not explicitly stated, but individual step yields are provided."
+      },
+      "Total Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "Total number of steps from N-Cbz-O-TBDPS-L-serinal."
+      },
+      "Failed Attempts Count": {
+        "value": 4,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly mentioned failed attempts."
+      }
+    },
+    "significance": "The asymmetric total synthesis of (-)-cassine was accomplished in 10 steps from N-Cbz-O-TBDPS-serinal. Key steps involved a complete diastereoselective intramolecular N-H insertion reaction and Luche reduction, leading to a single cis,cis-isomer. Three new olefination reagents were synthesized from diazophosphonate 2 using an alkylation strategy and were converted to three novel highly functionalized intermediates. This divergent approach reinforces the versatility and applicability of α,β-unsaturated diazoketones in the total synthesis of natural products and analogues."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.joc.5c00729",
+      "pmcid": "PMC12186531",
+      "title": "α,β-Unsaturated Diazoketones as Building Blocks to Piperidine Alkaloids: Total Synthesis of (-)-Cassine.",
+      "authors": "Pedro de F Lima J, Gallo RDC, Burtoloso ACB.",
+      "journal": "J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12186531?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/8e0e28ea-657b-45c2-accd-5faa2830588b.zip",
+      "parsed_at": "2026-05-11T06:24:15.395864+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 48,
+    "parseable": 26,
+    "canonicalized": 26,
+    "invalid": 22,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C(CCl)CP(=O)(OPh)OPh",
+      "O=C(C(=N#N)C)CP(=O)(OPh)OPh",
+      "O=C(C(=N#N)H)CP(=O)(OPh)OPh",
+      "O=C(C(=N#N)H)CP(=O)(OPh)OPh",
+      "O=C(C(=N#N)C)CP(=O)(OPh)OPh",
+      "O=C(C(=N#N)H)CP(=O)(OPh)OPh",
+      "O=C(C(=N#N)H)CP(=O)(OPh)OPh",
+      "O=C(C(=N#N)C)CP(=O)(OPh)OPh",
+      "O=C(C(=N#N)H)CP(=O)(OPh)OPh",
+      "O=C(C(=N#N)C)CP(=O)(OPh)OPh"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

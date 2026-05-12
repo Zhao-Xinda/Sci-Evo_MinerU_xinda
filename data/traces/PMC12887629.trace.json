@@ -1,0 +1,991 @@
+{
+  "trace_id": "TS-PMC12887629",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-Melonine",
+    "smiles": "CC[C@H]1CC2C3CN2c2ccccc2N(C)[N+]3(C)C1",
+    "natural_product_class": "monoterpene indole alkaloid",
+    "structural_features": {
+      "stereocenters": 4,
+      "ring_systems": "pentacyclic",
+      "key_motifs": [
+        "2,2,3-trisubstituted indoline",
+        "quinolizidine"
+      ]
+    },
+    "motivation": "Melonine (1) belongs to a small subfamily of monoterpene indole alkaloids (MIAs), known as the schizozygane alkaloids. A defining structural feature of this class, exemplified by (–)-vallesamidine (3), is the presence of a 2,2,3-trisubstituted indoline motif. The authors' group has long been interested in the synthesis of alkaloids bearing a 2,2-disubstituted indoline unit as well as schizozygane type natural products.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Yokoshima",
+        "year": 2025,
+        "doi": "https://doi.org/10.1021/acs.orglett.4c04851",
+        "key_strategy": "Stille cross coupling between 4-(tributylstannyl)quinoline (8) and vinyl bromide 9, followed by intramolecular aziridine ring-opening of intermediate 10 and construction of the piperidine ring via intramolecular Appel reaction of amino alcohol 11."
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "First enantioselective total synthesis of (+)-melonine and (+)-N4-oxy melonine. The spectroscopic data of both 1 and 2 match well with those described in the literature. X-ray crystallographic analysis of the TFA salt of 1 unambiguously confirmed the structure and absolute configuration."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "N4-C21 bond",
+        "named_strategy": "lactamization",
+        "reasoning": "Formation of the N4-C21 bond from fused tetracyclic compound 13 was envisioned to access the pentacyclic framework, guided by conformational analysis of melonine.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Tetracyclic core from cycloheptene",
+        "named_strategy": "bis-cyclizative diamination of alkene",
+        "reasoning": "The tetracyclic core (13) could arise from a bis-cyclizative diamination of cycloheptene 14, leveraging a method developed by Bower and co-workers.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Cycloheptene 14 from cycloheptanedione 15",
+        "named_strategy": "Wittig olefination",
+        "reasoning": "Readily accessible cycloheptanedione derivative 15 and Wittig reagent 16 were identified as suitable starting materials for the synthesis of enantioenriched compound 14."
+      }
+    ],
+    "rationale": "The synthesis aimed for an enantioselective route to (+)-melonine, addressing the challenges of its highly rearranged carbon framework and the 2,2,3-trisubstituted indoline moiety. The strategy involved building the cycloheptene precursor 14, followed by a key bis-cyclizative diamination to form the tetracyclic core 13, and finally an AlMe3-mediated lactamization to complete the pentacyclic skeleton. This approach was chosen after an initial attempt to follow a biosynthetically inspired pathway failed."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Melonine (1) was first isolated in 1978 and its structure was initially assigned as a pentacyclic compound featuring an unusual C2-C6 bond. In 2021, Beniddir, Le Pogam and co-workers re-isolated (+)-melonine (1) and revised its structure through detailed spectroscopic analysis and DFT calculations. The absolute configuration, (2R,3S,7S,20R), was established by comparison between the TDDFT-calculated and experimental electronic circular dichroism (ECD) spectra. The structure of (+)-N4-oxy melonine (2) was revised accordingly.",
+        "gap": "No enantioselective total synthesis of (+)-melonine had been reported.",
+        "decision": "To understand the structural features and prior synthetic efforts, a thorough literature review was conducted."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The revised structure and absolute configuration of (+)-melonine (1) and (+)-N4-oxy melonine (2) were confirmed. Yokoshima and co-workers achieved the first total synthesis of (±)-melonine (1) in 2025, confirming the revised structural assignment."
+      },
+      "evidence": {
+        "text_span": "In 2021, Beniddir, Le Pogam and co-workers re-isolated $( + )$ -melonine (1) and revised its structure through detailed spectroscopic analysis and DFT calculations.[6] The absolute configuration, (2R,3S,7S,20R), was established by comparison between the TDDFT-calculated and experimental electronic circular dichroism (ECD) spectra. The structure of $\\left( + \\right) { - } N _ { 4 }$ -oxy melonine (2) was revised accordingly.\nIn 2025, Yokoshima and co-workers achieved the first total synthesis of $( \\pm )$ -melonine (1) (Scheme 1c), thereby confirming the revised structural assignment.[13]",
+        "section": "Abstract"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "The proposed biosynthesis of melonine involves a 1,3-prototropy of iminium ion 5 to isomeric iminium ion 7, followed by transannular cyclization via C2─C3 bond formation and reduction.",
+        "gap": "Can this biosynthetic pathway be mimicked in a synthetic route?",
+        "decision": "To explore a biosynthetically inspired route, the cyclization of iminium salt 7 was investigated, generated from compound 12."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The iminium ion 7 was generated from easily accessible starting materials."
+      },
+      "evidence": {
+        "text_span": "In approaching the synthesis of melonine (1), we initially investigated the cyclization of iminium salt 7 (See Supporting Information), inspired by the proposed biosynthetic pathway. The iminium ion 7 was generated by acidic treatment of compound 12, which was readily prepared from easily accessible starting materials.[19,20]",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Iminium ion 7 was generated from compound 12.",
+        "gap": "Will iminium ion 7 cyclize to form melonine (1)?",
+        "decision": "Attempts were made to convert 7 to 1, or directly from 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "acidic treatment"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "All attempts to achieve the conversion of 7 to 1—or directly from 12—were unsuccessful, likely due to the unfavorable conformational characteristics of the iminium ion 7."
+      },
+      "evidence": {
+        "text_span": "However, all attempts to achieve the conversion of 7 to 1–or directly from ${ \\bf 1 } 2 ^ { [ 2 1 - 2 4 ] }$ were unsuccessful, likely due to the unfavorable conformational characteristics of the iminium ion 7.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "The biosynthetically inspired route failed. A new strategy is needed.",
+        "gap": "How can the pentacyclic framework of melonine be constructed efficiently and enantioselectively?",
+        "decision": "To overcome the challenges, a new retrosynthetic analysis was performed, envisioning accessing the pentacyclic framework via formation of the N4─C21 bond from a fused tetracyclic compound (13), which in turn could arise from a bis-cyclizative diamination of cycloheptene 14. Cycloheptanedione derivative 15 and Wittig reagent 16 were identified as starting materials for 14."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A new retrosynthetic pathway was designed, focusing on a bis-cyclizative diamination and lactamization strategy."
+      },
+      "evidence": {
+        "text_span": "Guided by this conformational analysis, we envisioned accessing the pentacyclic framework via formation of the N4─C21 bond from fused tetracyclic compound. Our retro-synthetic analysis is outlined in Scheme 1d. Specifically, we anticipated that the N4─C21 bond could be forged through lactamization of amino diester 13, which in turn could arise from a bis-cyclizative diamination of cycloheptene 14. The readily accessible cycloheptanedione derivative 15 and Wittig reagent 16 were identified as suitable starting materials for the synthesis of enantioenriched compound 14.",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "bcf8db02e43d39c1572005fc0acffa1d69b978c9959753d1e30ec899b3000f01.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ethyl malonate (17) is a readily available starting material.",
+        "gap": "How to introduce two butene chains onto ethyl malonate?",
+        "decision": "To form the dialkylated product, double alkylation of ethyl malonate (17) with 4-bromobut-1-ene (18) was performed using NaH as a base."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)CC(=O)OCC",
+          "C=CCCBr"
+        ],
+        "product_smiles": [
+          "C=CCC(CC=C)(C(=O)OCC)C(=O)OCC"
+        ],
+        "reagents": [
+          "NaH"
+        ],
+        "solvent": "DMF",
+        "temperature": "RT",
+        "time": "48 h",
+        "stoichiometry": {
+          "17": "1.0 equiv.",
+          "NaH": "2.4 equiv.",
+          "18": "3.0 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "Double alkylation of ethyl malonate (17) with 4-bromobut-1-ene (18) afforded 19 in 97% yield."
+      },
+      "evidence": {
+        "text_span": "Double alkylation of ethyl malonate (17) with 4-bromobut-1-ene (18) afforded 19, which underwent Rucatalyzed one-pot intramolecular ring closing metathesis/α- ketohydroxylation sequence to afford the desired cycloheptanone derivative 20 in $5 0 \\%$ yield $( 5 \\mathrm { ~ m o l\\% ~ }$ of Grubbs II catalyst, then Oxone).",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "0bbbe08faf3cf314dd7f01c368a64c5281af1cef45424e07dde1e508bb1c4abf.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 19 contains two terminal alkenes and a malonate ester.",
+        "gap": "How to form the cycloheptanone derivative 20 with an α-hydroxyketone functionality?",
+        "decision": "To achieve this, a Ru-catalyzed one-pot intramolecular ring closing metathesis/α-ketohydroxylation sequence was employed using Grubbs II catalyst followed by Oxone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCC(CC=C)(C(=O)OCC)C(=O)OCC"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)CCCC(=O)C1O"
+        ],
+        "catalyst": "Grubbs II catalyst",
+        "reagents": [
+          "Oxone",
+          "NaHCO3"
+        ],
+        "solvent": "EtOAc/MeCN/H2O",
+        "temperature": "0 °C",
+        "time": "12 h (metathesis), 30 min (hydroxylation)",
+        "stoichiometry": {
+          "Grubbs II catalyst": "5.0 mol%",
+          "Oxone": "5.0 equiv.",
+          "NaHCO3": "2.5 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 50,
+        "observation": "The one-pot sequence afforded the desired cycloheptanone derivative 20 in 50% yield."
+      },
+      "evidence": {
+        "text_span": "Double alkylation of ethyl malonate (17) with 4-bromobut-1-ene (18) afforded 19, which underwent Rucatalyzed one-pot intramolecular ring closing metathesis/α- ketohydroxylation sequence to afford the desired cycloheptanone derivative 20 in $5 0 \\%$ yield $( 5 \\mathrm { ~ m ol\\% ~ }$ of Grubbs II catalyst, then Oxone).",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "0bbbe08faf3cf314dd7f01c368a64c5281af1cef45424e07dde1e508bb1c4abf.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 20 is an α-hydroxyketone.",
+        "gap": "How to oxidize the α-hydroxyketone to a cycloheptanedione (15)?",
+        "decision": "To achieve this, DMP (Dess-Martin Periodinane) oxidation was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)CCCC(=O)C1O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)CC(=O)CCCC1=O"
+        ],
+        "reagents": [
+          "DMP"
+        ],
+        "solvent": "DCM",
+        "temperature": "RT",
+        "time": "2 h",
+        "stoichiometry": {
+          "DMP": "1.1 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "DMP oxidation of 20 furnished the corresponding cycloheptanedione 15."
+      },
+      "evidence": {
+        "text_span": "Subsequent DMP (Dess-Martin Periodinane) oxidation of the $\\alpha$ -hydroxyketone in 20 furnished the corresponding cycloheptanedione 15, which, upon Wittig olefination with the phosphonium salt 16 (toluene, $\\mathrm { Et } _ { 3 } \\mathrm { N } )$ delivered a mixture of (E)-21 and (Z)-21 in a ratio of 10:1.",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "cb9932d6079ee29e05731563cbdb6c6c21fc7bb0c2c7e9d2d8c9c74c6d53a9eb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cycloheptanedione 15 is ready for Wittig olefination.",
+        "gap": "How to introduce the nitro-substituted alkene side chain with high E/Z selectivity?",
+        "decision": "Wittig olefination with phosphonium salt 16 was performed in toluene with Et3N."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)CC(=O)CCCC1=O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)CCC/C(c2ccccc2[N+](=O)[O-])=C\\CC1=O",
+          "CCOC(=O)C1(C(=O)OCC)CCC/C(c2ccccc2[N+](=O)[O-])=C\\CC1=O"
+        ],
+        "reagents": [
+          "16",
+          "Et3N"
+        ],
+        "solvent": "toluene",
+        "temperature": "0 °C to RT",
+        "time": "8 h",
+        "stoichiometry": {
+          "16": "1.6 equiv.",
+          "Et3N": "1.5 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 47,
+        "regio_selectivity": "E/Z = 10:1",
+        "observation": "Wittig olefination delivered a mixture of (E)-21 and (Z)-21 in a ratio of 10:1. The high E-selectivity is consistent with the stabilized ylide."
+      },
+      "evidence": {
+        "text_span": "Subsequent DMP (Dess-Martin Periodinane) oxidation of the $\\alpha$ -hydroxyketone in 20 furnished the corresponding cycloheptanedione 15, which, upon Wittig olefination with the phosphonium salt 16 (toluene, $\\mathrm { Et } _ { 3 } \\mathrm { N } )$ delivered a mixture of (E)-21 and (Z)-21 in a ratio of 10:1.",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "cb9932d6079ee29e05731563cbdb6c6c21fc7bb0c2c7e9d2d8c9c74c6d53a9eb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Wittig olefination of 15 with 16 in toluene gave 10:1 E/Z selectivity.",
+        "gap": "Can the E/Z selectivity be improved or controlled by changing solvent?",
+        "decision": "The olefination reaction was conducted in CH2Cl2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)CC(=O)CCCC1=O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)CCC/C(c2ccccc2[N+](=O)[O-])=C\\CC1=O",
+          "CCOC(=O)C1(C(=O)OCC)CCC/C(c2ccccc2[N+](=O)[O-])=C\\CC1=O"
+        ],
+        "reagents": [
+          "16",
+          "Et3N"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "observation": "The E/Z selectivity decreased to 4:1 when the olefination reaction was conducted in CH2Cl2.",
+        "regio_selectivity": "E/Z = 4:1"
+      },
+      "evidence": {
+        "text_span": "Notably, the $E / Z$ selectivity decreased to 4:1 when the olefination reaction was conducted in $\\mathrm { C H } _ { 2 } \\mathrm { Cl } _ { 2 }$ .",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A mixture of (E)-21 and (Z)-21 was obtained. Enantioselective reduction of the ketone is required.",
+        "gap": "How to achieve enantioselective reduction of the ketone in (E)-21 with high yield and ee?",
+        "decision": "CBS reduction was performed on isomerically pure (E)-21 using (S)-22 as catalyst and BH3·THF."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)CCC/C(c2ccccc2[N+](=O)[O-])=C\\CC1=O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)C=C(C=Cc2ccccc2[N+](=O)[O-])CCC=C1CC"
+        ],
+        "catalyst": "(S)-22",
+        "reagents": [
+          "BH3.THF"
+        ],
+        "solvent": "THF",
+        "temperature": "-20 °C",
+        "time": "1 h",
+        "stoichiometry": {
+          "(S)-22": "50 mol%",
+          "BH3.THF": "1.1 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "ee_percent": 97,
+        "observation": "Reduction of (E)-21 furnished (R)-23 in 99% yield with 97% ee. The absolute configuration was assigned based on the established stereochemical model of the CBS reduction and later confirmed by X-ray crystallographic analysis of an advanced intermediate."
+      },
+      "evidence": {
+        "text_span": "In the presence of Corey-Bakshi-Shibata (CBS) catalyst (S)-22 $( 5 0 \\ \\mathrm { \\ m o l\\% } )$ ) and $\\mathrm { BH } _ { 3 }$ ·THF (1.1 equiv) at $- 2 0 \\ ^ { \\circ } \\mathrm { C }$ , reduction of (E)-21 furnished (R)-23 in $9 9 \\%$ yield with $9 7 \\%$ ee.",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "d6c7d4a62c390de9914346d521bc48fffb348fcf6c9d2390cc4eb6431ebf9dc6.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "CBS reduction of (E)-21 with 50 mol% (S)-22 gave 97% ee.",
+        "gap": "Can the catalyst loading be reduced without compromising enantioselectivity?",
+        "decision": "The reduction was attempted with 10 mol% of (S)-22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)CCC/C(c2ccccc2[N+](=O)[O-])=C\\CC1=O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)C=C(C=Cc2ccccc2[N+](=O)[O-])CCC=C1CC"
+        ],
+        "catalyst": "(S)-22",
+        "reagents": [
+          "BH3.THF"
+        ],
+        "solvent": "THF",
+        "temperature": "-20 °C",
+        "time": "1 h",
+        "stoichiometry": {
+          "(S)-22": "10 mol%",
+          "BH3.THF": "1.1 equiv."
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "ee_percent": 55,
+        "observation": "The ee of 23 reduced to 55% when 10 mol% of the (S)-22 was used, likely due to the competitive background reduction of (E)-21 by BH3·THF."
+      },
+      "evidence": {
+        "text_span": "The ee of 23 reduced to $5 5 \\%$ when $1 0 \\mathrm { \\ m ol\\% }$ of the (S)-22 was used, likely due to the competitive background reduction of (E)-21 by $\\mathrm { BH } _ { 3 }$ ·THF.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Enantioselective reduction of (E)-21 was successful, but (Z)-21 was also present in the mixture.",
+        "gap": "Can (Z)-21 be reduced under the same CBS conditions?",
+        "decision": "Reduction of (Z)-21 was attempted under the same conditions as (E)-21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)CCC/C(c2ccccc2[N+](=O)[O-])=C\\CC1=O"
+        ],
+        "product_smiles": [],
+        "catalyst": "(S)-22",
+        "reagents": [
+          "BH3.THF"
+        ],
+        "solvent": "THF",
+        "temperature": "-20 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Reduction of (Z)-21 proceeded much more slowly under the same conditions affording racemic allylic alcohol, presumably due to steric hindrance around the carbonyl oxygen in (Z)-21."
+      },
+      "evidence": {
+        "text_span": "Interestingly, reduction of (Z)-21 proceeded much more slowly under the same conditions affording racemic allylic alcohol, presumably due to steric hindrance around the carbonyl oxygen in (Z)-21.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "Separation of E/Z isomers of 21 is tedious. (Z)-21 is unreactive under CBS reduction conditions.",
+        "gap": "Can the enantioselective reduction be performed on the E/Z mixture, and then separate the desired product?",
+        "decision": "To simplify the process, the enantioselective reduction was performed on the E/Z mixture of 21, expecting that (Z)-21 would remain unreacted and could be separated."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)CCC/C(c2ccccc2[N+](=O)[O-])=C\\CC1=O",
+          "CCOC(=O)C1(C(=O)OCC)CCC/C(c2ccccc2[N+](=O)[O-])=C\\CC1=O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)C=C(C=Cc2ccccc2[N+](=O)[O-])CCC=C1CC"
+        ],
+        "catalyst": "(S)-22",
+        "reagents": [
+          "BH3.THF"
+        ],
+        "solvent": "THF",
+        "temperature": "-20 °C",
+        "time": "1 h",
+        "stoichiometry": {
+          "(S)-22": "50 mol%",
+          "BH3.THF": "1.1 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 37,
+        "ee_percent": 97,
+        "observation": "Remarkably, (R)-23 was isolated in 97% ee, along with recovered (Z)-21. The facile separation of (R)-23 from (Z)-21 made this approach particularly attractive, obviating the need for tedious chromatographic separation of the individual E/Z isomers. Overall, (R)-23 was isolated in 37% yield from α-hydroxyketone 20."
+      },
+      "evidence": {
+        "text_span": "This observation prompted us to examine the enantioselective reduction of the $E / Z$ mixture of 21. Remarkably, (R)-23 was isolated in $9 7 \\%$ ee, along with recovered (Z)-21. The facile separation of (R)-23 from (Z)-21\nmade this approach particularly attractive, as it obviates the need for tedious chromatographic separation of the individual $E / Z$ isomers. Overall, (R)-23 was isolated in $3 7 \\%$ yield from $\\alpha$ -hydroxyketone 20.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "(R)-23 is an allylic alcohol with an ester group.",
+        "gap": "How to perform a stereospecific rearrangement to form the β-substituted γ,δ-unsaturated ester (R)-24?",
+        "decision": "Treatment of (R)-23 with a catalytic amount of pivalic acid in trimethyl orthoacetate was performed to induce a Johnson-Claisen [3,3]-sigmatropic rearrangement."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)C=C(C=Cc2ccccc2[N+](=O)[O-])CCC=C1CC"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)C=C(C(CC(=O)OC)c2ccccc2[N+](=O)[O-])CCC=C1CC"
+        ],
+        "reagents": [
+          "PivOH",
+          "MeC(OMe)3"
+        ],
+        "temperature": "80 °C (3 h), then 120 °C (4 h)",
+        "stoichiometry": {
+          "PivOH": "20 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "ee_percent": 97,
+        "observation": "The reaction afforded (R)-24 in a stereospecific manner in 67% yield with 97% ee via Johnson-Claisen [3,3]-sigmatropic rearrangement of the corresponding ketene acetal intermediate."
+      },
+      "evidence": {
+        "text_span": "Treatment of (R)-23 with a catalytic amount of pivalic acid in trimethyl orthoacetate $( 8 0 ^ { \\mathrm { ~ \\circ ~ } } \\mathrm { C } , \\mathrm { ~ 3 ~ h ~ }$ , then $1 2 0 ~ ^ { \\circ } \\mathrm { C } .$ $4 \\ \\mathrm { h }$ ) afforded, in a stereospecific manner, the $\\beta$ -substituted $\\gamma , \\delta$ -unsaturated ester (R)-24 $( 6 1 \\%$ , $9 7 \\%$ ee) via Johnson-Claisen [3,3]-sigmatropic rearrangement of the corresponding ketene acetal intermediate.",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "e0eab60e462784e79c6618689cbd1a0fa22e6985d4e65cdf43f3b2752ff3f500.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound (R)-24 contains a methyl ester and a nitro group, in addition to the diethylmalonate unit.",
+        "gap": "How to selectively reduce the methyl ester to an alcohol and the nitro group to an amino group?",
+        "decision": "A one-pot sequence of selective reduction of the methyl ester with DIBAL-H followed by reduction of the nitro group to an amino group with Zn powder and NH4Cl was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)C=C(C(CC(=O)OC)c2ccccc2[N+](=O)[O-])CCC=C1CC"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)C=C(C(CCCO)c2ccccc2N)CCC=C1CC"
+        ],
+        "reagents": [
+          "DIBAL-H",
+          "Zn",
+          "NH4Cl"
+        ],
+        "solvent": "THF (DIBAL-H), MeOH (Zn/NH4Cl)",
+        "temperature": "-70 °C (DIBAL-H), RT (Zn/NH4Cl)",
+        "time": "1 h (DIBAL-H), 2 h (Zn/NH4Cl)",
+        "stoichiometry": {
+          "DIBAL-H": "2.0 equiv.",
+          "Zn": "14.0 equiv.",
+          "NH4Cl": "14.0 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "The one-pot selective reduction converted 24 into amino alcohol 25 in 78% yield."
+      },
+      "evidence": {
+        "text_span": "One-pot selective reduction of methyl ester in the presence of the diethylmalonate unit with DIBAL-H (diisobutylaluminium hydride, 2.0 equiv., -\n$1 0 ~ ^ { \\circ } \\mathrm { C } )$ , followed by reduction of nitro to amino group (Zn powder, $\\mathrm { N H } _ { 4 } \\mathrm { C l }$ , MeOH) converted 24 into amino alcohol 25 in $7 8 \\%$ yield.",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "e0eab60e462784e79c6618689cbd1a0fa22e6985d4e65cdf43f3b2752ff3f500.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amino alcohol 25 needs to be functionalized for the subsequent diamination.",
+        "gap": "How to introduce the Boc-protected tosylamide and then mesylate the amino group?",
+        "decision": "Mitsunobu reaction of 25 with BocNHOTs was performed, followed by sulfonylating the amino group with MsCl."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)C=C(C(CCCO)c2ccccc2N)CCC=C1CC"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "BocNHOTs",
+          "DIAD",
+          "PPh3",
+          "MsCl",
+          "pyridine"
+        ],
+        "solvent": "THF (Mitsunobu), DCM (Mesylation)",
+        "temperature": "0 °C to RT (Mitsunobu), RT (Mesylation)",
+        "time": "1 h (Mitsunobu), 2 h (Mitsunobu), 3 h (Mesylation)",
+        "stoichiometry": {
+          "BocNHOTs": "1.5 equiv",
+          "DIAD": "1.2 equiv.",
+          "PPh3": "1.5 equiv.",
+          "MsCl": "3.0 equiv.",
+          "pyridine": "4.0 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "Mitsunobu reaction afforded 26, whose amino group was subsequently sulfonylated to give compound 14. These transformations were performed on gram-scale."
+      },
+      "evidence": {
+        "text_span": "The Mitsunobu reaction of 25 with commercially available aminating reagent NHBocOTs under standard conditions afforded 26, whose amino group was subsequently sulfonylated to give compound 14. It is noteworthy that all those transformations were performed on gram-scale.",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "d6c7d4a62c390de9914346d521bc48fffb348fcf6c9d2390cc4eb6431ebf9dc6.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 14 is the precursor for the bis-cyclizative diamination.",
+        "gap": "How to achieve the bis-cyclizative diamination to form the tetracyclic core 13?",
+        "decision": "Stirring a trifluoroethanol solution of 14 in the presence of trifluoroacetic acid was performed, leveraging Bower and co-workers' method."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1(C(=O)OCC)C/C=C/CCC=C1C(CC[N+](C)(C)C(OC(C)(C)C)OS(=O)(=O)c1ccc(C)cc1)c1ccccc1NS(C)(=O)=O"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "TFE",
+        "temperature": "75 °C",
+        "time": "18 h",
+        "stoichiometry": {
+          "TFA": "4.0 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "observation": "The reaction afforded two products, 13 and 29, in yields of 48% and 52%, respectively. The desired tetracyclic compound 13 arose from a regioselective 5-exo-tet ring opening of aziridinium intermediate 27 by the tethered sulfonamide. The structure of 29 was confirmed by X-ray crystallographic analysis, which also corroborated the absolute configuration of allylic alcohol 23."
+      },
+      "evidence": {
+        "text_span": "Gratifyingly, stirring a trifluoroethanol solution of 14 $( c \\ 0 . 1 \\ \\mathbf { M } )$ in the presence of 4 equivalents of trifluoroacetic acid at $7 5 ^ { \\circ } \\mathrm { C }$ afforded two products 13 and 29 in yields of $4 8 \\%$ and $5 2 \\%$ , respectively (Scheme 3). The desired tetracyclic compound 13 arose from a regioselective 5-exo-tet ring opening of aziridinium intermediate 27 by the tethered sulfonamide. In contrast, for the diastereomeric aziridinium 28, the same cyclization was geometrically impossible due to the cis relative stereochemistry between the C─Ar and\nC─N bonds. Instead, one of the two ethoxycarbonyl groups, positioned trans to the C─N bond, opened the aziridinium via an $\\mathrm { S } _ { \\mathrm { N } } 2$ process to afford the bridged lactone 29, whose structure was confirmed by X-ray crystallographic analysis.[38] This structural elucidation also corroborated the absolute configuration of the allylic alcohol 23 (cf Scheme 2), initially assigned based on the empirical CBS reduction model.",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "75cc9005315d0510cc3c564a6a1234471591bcc62572a59c32a2f774e16e4524.jpg",
+          "c61f908ff836c1fdb5744228029d6b1f26a1a0533228c45761e2b662bb438c27.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetracyclic compound 13 is formed.",
+        "gap": "How to complete the pentacyclic skeleton of melonine and achieve desymmetrization at the C20 prochiral center?",
+        "decision": "Treatment of a solution of 13 with AlMe3 was performed to trigger an intramolecular amidation reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "AlMe3"
+        ],
+        "solvent": "toluene",
+        "temperature": "RT (1 h), then 40 °C (3 h)",
+        "stoichiometry": {
+          "AlMe3": "1.03 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "The intramolecular amidation reaction delivered the bridged lactam 30, accompanied by desymmetrization at the C20 prochiral center. This transformation completed the construction of the cage-like pentacyclic skeleton of melonine (1)."
+      },
+      "evidence": {
+        "text_span": "Treatment of a solution of 13 with ${ \\bf A M e } _ { 3 }$ then triggered an intramolecular amidation reaction to deliver the bridged lactam 30, accompanied by desymmetrization at the C20 prochiral center. This transformation completed the construction of the cage-like pentacyclic skeleton of melonine (1).",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "1efcc67fabe282433373084f5eee0fb35f233a409fc46f275bca0640737ff358.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Lactam 30 contains ester, amide, and sulfonamide functionalities.",
+        "gap": "How to homologate the C20-hydroxymethyl substituent after reduction of all functionalities?",
+        "decision": "Simultaneous reduction of the ester, amide, and sulfonamide functionalities in 30 with LiAlH4 was performed to obtain 32, followed by attempts to homologate the C20-hydroxymethyl substituent."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "OCC1CN2C3CN4c5ccccc5NC2C4CC13"
+        ],
+        "reagents": [
+          "LiAlH4"
+        ],
+        "solvent": "THF",
+        "temperature": "RT (1 h), then reflux (5 h)",
+        "stoichiometry": {
+          "LiAlH4": "5.0 equiv."
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 79,
+        "failure_mode": "other",
+        "observation": "Simultaneous reduction afforded 32 in 79% yield. However, all attempts to homologate the C20-hydroxymethyl substituent were unsuccessful, presumably due to interferences from the two amino groups."
+      },
+      "evidence": {
+        "text_span": "Simultaneous reduction of the ester, amide and the sulfonamide functionalities in 30 with $\\mathrm { LiAlH _ { 4 } }$ afforded 32 in $7 9 \\%$ yield.[38] However, all attempts to homologate the C20- hydroxymethyl substituent were unsuccessful, presumably due to interferences from the two amino groups.",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "69bcf2ab490cd9934e18e27d89c3407d659e42580dbae0b43f6f73d180d5ac8c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 19,
+      "thought": {
+        "background": "Homologation of the C20-hydroxymethyl substituent after global reduction was problematic.",
+        "gap": "How to selectively reduce the ester while keeping the amide and sulfonamide intact, to allow for subsequent homologation?",
+        "decision": "To overcome the homologation issue, the synthetic sequence was modified to include chemoselective reduction of the ester in 30 with LiBH4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CS(=O)(=O)N1CC2C3CC(=O)N2C2C1c1ccccc1N2CC3CO"
+        ],
+        "reagents": [
+          "LiBH4"
+        ],
+        "solvent": "MeOH, Et2O",
+        "temperature": "RT",
+        "time": "2 h",
+        "stoichiometry": {
+          "LiBH4": "8.0 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Chemoselective reduction of the ester in 30 with LiBH4, leaving the amide and sulfonamide groups intact, furnished alcohol 33 in 92% yield."
+      },
+      "evidence": {
+        "text_span": "The sequence was therefore slightly modified. Chemoselective reduction of the ester in 30 with $\\mathrm { LiBH _ { 4 } }$ , leaving the amide and sulfonamide groups intact, furnished alcohol 33.",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "69bcf2ab490cd9934e18e27d89c3407d659e42580dbae0b43f6f73d180d5ac8c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alcohol 33 is obtained.",
+        "gap": "How to convert the alcohol to a methyl group at C20?",
+        "decision": "A sequence of oxidation under Ley’s conditions, followed by one-pot methylenation of the aldehyde with Matsubara’s reagent and hydrogenation of the resulting alkene using Wilkinson’s catalyst under a hydrogen atmosphere was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CS(=O)(=O)N1CC2C3CC(=O)N2C2C1c1ccccc1N2CC3CO"
+        ],
+        "product_smiles": [
+          "CC1CN2c3ccccc3C3C2N2C(=O)CC1C2CN3S(C)(=O)=O"
+        ],
+        "reagents": [
+          "TPAP",
+          "NMO",
+          "CH2(ZnI)2",
+          "RhCl(PPh3)3",
+          "H2"
+        ],
+        "solvent": "DCM (oxidation), THF (methylenation/hydrogenation)",
+        "temperature": "RT",
+        "time": "2 h (oxidation), 4 h (methylenation), 16 h (hydrogenation)",
+        "atmosphere": "H2",
+        "stoichiometry": {
+          "TPAP": "20 mol%",
+          "NMO": "3.0 equiv.",
+          "CH2(ZnI)2": "4.0 equiv.",
+          "RhCl(PPh3)3": "70 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "The sequence provided 34 in 72% yield over two steps."
+      },
+      "evidence": {
+        "text_span": "Oxidation of 33 under Ley’s conditions followed by a one-pot methylenation of the aldehyde with Matsubara’s reagent[39–41] and hydrogenation of the resulting alkene using Wilkinson’s catalyst[42,43] under a hydrogen atmosphere provided 34 in $7 2 \\%$ yield over two steps.[44]",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "69bcf2ab490cd9934e18e27d89c3407d659e42580dbae0b43f6f73d180d5ac8c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 34 contains an amide and an N-mesyl group.",
+        "gap": "How to reduce these functionalities to obtain (+)-melonine (1)?",
+        "decision": "One-pot reduction of the amide and N-mesyl groups with Red-Al in toluene was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CN2c3ccccc3C3C2N2C(=O)CC1C2CN3S(C)(=O)=O"
+        ],
+        "product_smiles": [
+          "CC[C@H]1CC2C3CN2c2ccccc2N(C)[N+]3(C)C1"
+        ],
+        "reagents": [
+          "Red-Al"
+        ],
+        "solvent": "toluene",
+        "temperature": "RT (1 h), then 95 °C (3 h)",
+        "stoichiometry": {
+          "Red-Al": "10.0 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "The one-pot reduction afforded (+)-melonine (1) in 95% yield. A single batch execution of the entire synthetic sequence delivered 165 mg of the natural product 1."
+      },
+      "evidence": {
+        "text_span": "Finally, one-pot reduction of the amide and Nmesyl groups with Red-Al in toluene afforded $( + )$ -melonine (1) in $9 5 \\%$ yield. Oxidation of 1 with $m$ -CPBA in $\\mathrm { C H C l } _ { 3 }$ proceeded smoothly to afford the corresponding $\\left( + \\right) { - } N _ { 4 }$ -oxy melonine (2) in quantitative yield $3 0 ~ \\mathrm { m g }$ scale). A single batch execution of the entire synthetic sequence delivered $1 6 5 ~ \\mathrm { m g }$ of the natural product 1, underscoring the overall efficiency of our approach.",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "69bcf2ab490cd9934e18e27d89c3407d659e42580dbae0b43f6f73d180d5ac8c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "(+)-Melonine (1) is synthesized.",
+        "gap": "How to synthesize (+)-N4-oxy melonine (2)?",
+        "decision": "Oxidation of 1 with m-CPBA in CHCl3 was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H]1CC2C3CN2c2ccccc2N(C)[N+]3(C)C1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "m-CPBA"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "0 °C",
+        "time": "15 min",
+        "stoichiometry": {
+          "m-CPBA": "1.1 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Oxidation of 1 with m-CPBA proceeded smoothly to afford the corresponding (+)-N4-oxy melonine (2) in quantitative yield (30 mg scale)."
+      },
+      "evidence": {
+        "text_span": "Oxidation of 1 with $m$ -CPBA in $\\mathrm { C H C l } _ { 3 }$ proceeded smoothly to afford the corresponding $\\left( + \\right) { - } N _ { 4 }$ -oxy melonine (2) in quantitative yield $3 0 ~ \\mathrm { m g }$ scale).",
+        "section": "Total Synthesis",
+        "image_refs": [
+          "69bcf2ab490cd9934e18e27d89c3407d659e42580dbae0b43f6f73d180d5ac8c.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Not explicitly stated for the overall sequence, but 165 mg of 1 was obtained from a single batch execution."
+      },
+      "Longest Linear Steps": {
+        "value": 15,
+        "unit": "steps",
+        "interpretation": "The total synthesis of (+)-melonine (1) was accomplished in 15 steps in the longest linear sequence from ethyl malonate."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Not explicitly stated, but likely higher than 15 due to parallel routes and intermediate steps."
+      },
+      "Failed Attempts Count": {
+        "value": 3,
+        "unit": "attempts",
+        "interpretation": "Three explicit failed attempts were reported: initial biosynthetic pathway, reduced catalyst loading in CBS reduction, and homologation after global reduction."
+      }
+    },
+    "comparison_to_prior": "The spectroscopic data of both 1 and 2 match well with those described in the literature. The X-ray crystallographic analysis of the TFA salt of 1 unambiguously confirmed not only the structure of (+)-melonine (1), but also its absolute configuration. This is the first enantioselective total synthesis, contrasting with Yokoshima's racemic synthesis.",
+    "significance": "This work represents the first enantioselective total synthesis of (+)-melonine and (+)-N4-oxy melonine. Key features include a highly enantioselective CBS reduction followed by a stereospecific Johnson-Claisen rearrangement, Bower’s bis-cyclizative diamination of alkene for tetracyclic core formation, and an AlMe3-mediated lactamization with desymmetrization at the C20 prochiral center. The synthesis is concise (15 steps in the longest linear sequence) and efficient, demonstrated by gram-scale production."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.8101956",
+      "pmcid": "PMC12887629",
+      "title": "Total Synthesis of (+)-Melonine and (+)-N&lt;sub&gt;4&lt;/sub&gt;-Oxy Melonine Enabled by an Intramolecular Alkene Diamination Reaction.",
+      "authors": "Goëlo V, Wang Q, Zhu J.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12887629?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/6db8713d-023f-4b65-938e-5a6119605247.zip",
+      "parsed_at": "2026-05-07T14:31:20.214235+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 44,
+    "parseable": 35,
+    "canonicalized": 31,
+    "invalid": 9,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC[C@@H]1C[C@@H]2N3CCC4=C(C=CC=C4)N(C=C3C1)C",
+      "CCOC(=O)C1(C(=CCC/C(C(CCNBocOTs)c2ccccc2NMs)CC1)C(=O)OCC",
+      "CCOC(=O)C1(C(=O)OCC)CCC23C(N(Ms)C4=CC=CC=C4C2)C(C[C@H]3NC)C1",
+      "CCOC(=O)C1C(=O)OC2C[C@H](NC)C[C@@H]([C@H]2C1)C3=CC=CC=C3N(Ms)H",
+      "CCOC(=O)C1(C(=O)OCC)CCC23C(N(Ms)C4=CC=CC=C4C2)C(C[C@H]3NC)C1",
+      "CCOC(=O)C1(C(=O)N2C3CCC4C(C3)NC(Ms)C2C4)CCCC1",
+      "CCOC(=O)C1(C(=O)N2C3CCC4C(C3)NC(Ms)C2C4)CCCC1",
+      "CCOC(=O)C1(C(=O)N2C3CCC4C(C3)NC(Ms)C2C4)CCCC1",
+      "CC[C@@H]1C[N+]2(C)[O-]C3C(N(C3)C4=CC=CC=C4N2C)C1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

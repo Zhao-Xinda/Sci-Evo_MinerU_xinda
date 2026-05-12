@@ -1,0 +1,985 @@
+{
+  "trace_id": "TS-PMC11877517",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "2a",
+    "smiles": "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+    "natural_product_class": "unspecified",
+    "structural_features": {
+      "stereocenters": 4,
+      "ring_systems": "bicyclic",
+      "key_motifs": [
+        "cyclic acetal",
+        "ester"
+      ]
+    },
+    "motivation": "Development of a highly reproducible and user-friendly protocol for tandem Ueno-Stork cyclization/intermolecular Giese addition, avoiding toxic tin reagents and addressing sensitivity issues of previous Ni-catalyzed methods. The reaction aims for stereoselective difunctionalization of allylic alcohols to build continuous carbon stereocenters.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Dai",
+        "year": 2022,
+        "doi": "10.1021/acs.joc.2c00800",
+        "key_strategy": "Ni-catalyzed tandem Ueno-Stork cyclization from iodoacetals"
+      }
+    ],
+    "success_criteria": {
+      "yield_target_percent": 80,
+      "stereochemistry_required": true,
+      "free_text": "High diastereoselectivity (e.g., 17:1 dr) at newly formed vicinal stereocenters. Broad substrate scope for cyclic and linear allylic alcohols. Scalability to 1.00 mmol scale."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond between the cyclic acetal and the Giese addition product",
+        "named_strategy": "Giese Addition",
+        "reasoning": "The Giese addition is proposed to trap the alkyl radical generated after the Ueno-Stork cyclization, forming a new C-C bond and introducing the ester functionality.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond forming the cyclic acetal",
+        "named_strategy": "Ueno-Stork Cyclization",
+        "reasoning": "The Ueno-Stork cyclization is a known method for difunctionalization of allylic alcohols, forming a cyclic acetal and a radical intermediate.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-I bond in the iodoacetal",
+        "named_strategy": "Homolytic C(sp3)-halogen bond cleavage",
+        "reasoning": "Photoredox conditions are employed to cleave the C-I bond, generating a primary carbon-centered radical, which initiates the Ueno-Stork cyclization.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The strategy involves a photocatalytic tandem Ueno-Stork cyclization/intermolecular Giese addition sequence. The Ueno-Stork cyclization generates a cyclic acetal and an alkyl radical. This radical is then trapped by an electron-deficient alkene via Giese addition, forming a new C-C bond and introducing an additional functional group. The photocatalytic approach aims to overcome the limitations of traditional Ueno-Stork reactions (toxic tin reagents) and previous Ni-catalyzed methods (sensitivity to Zn source)."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "The Ueno-Stork cyclization is a powerful method for difunctionalization of allylic alcohols, but often requires toxic tin hydrides and has limitations in tandem reactions. Previous Ni-catalyzed methods exist but suffer from reproducibility issues.",
+        "gap": "A highly reproducible, user-friendly, and tin-free tandem Ueno-Stork cyclization method is needed, especially one that can incorporate intermolecular carbofunctionalization.",
+        "decision": "To develop a green and practical tandem Ueno-Stork cyclization/intermolecular carbofunctionalization reaction, we will explore photoredox conditions for homolytic C(sp3)-halogen bond cleavage, followed by Giese addition."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The hypothesis led to the investigation of photocatalytic conditions for the Ueno-Stork/Giese tandem reaction."
+      },
+      "evidence": {
+        "text_span": "Inspired by several successful examples of homolytic C(sp3)−halogen bond cleavage under photoredox conditions, we aimed to develop a green and practical tandem Ueno−Stork cyclization/ intermolecular carbofunctionalization reaction.6,7 Herein, we report a novel photocatalytic tandem Ueno−Stork cyclization/ intermolecular Giese addition sequence as a new catalytic method for vicinal difunctionalization of allylic alcohols, offering high stereoselectivity and a broad substrate scope (Scheme 1C).",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A photocatalytic tandem Ueno-Stork cyclization/intermolecular Giese addition sequence is proposed. Initial conditions need to be established.",
+        "gap": "What are the optimal photocatalyst, base, additive, and solvent for this reaction?",
+        "decision": "To identify suitable reaction conditions, we will evaluate various photoredox catalysts, bases, additives, and solvents using α-iodoacetal 1a as the model substrate and methyl acrylate as the radical acceptor."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "COC(=O)CCC(C)C[C@@H]1[C@H]2OCCC(C[C@H]1C)O2"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "2.0 eq",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "dr": 17,
+        "observation": "The desired cyclic acetal product 2a was obtained in 59% yield with high diastereoselectivity (17:1), along with 8.2% of undesired diester 3a. The combined yield of 2a and 3a was 68% with 11% residual 1a."
+      },
+      "evidence": {
+        "text_span": "We commenced our study by evaluating various photoredox catalysts, bases, additives, and solvents using α-iodoacetal 1a as the model substrate (Table 1). Blue light-emitting diode (LED) light 456 nm in the presence of a catalytic amount (2.0 mol %) of Ir[dF(CF3)ppy2](dtbbpy)PF6, i-Pr2NEt, and H2O in MeCN enabled the tandem reaction, affording the desired cyclic acetal product 2a in 59% yield and the undesired diester 3a in 8.2% yield (entry 1). Notably, under these conditions, cyclized product 2a was obtained with high diastereoselectivity (17:1) at the two newly formed vicinal stereocenters.",
+        "page": 1,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Initial conditions provided 59% yield of 2a. Optimization is needed to improve conversion and yield.",
+        "gap": "Is water essential for the reaction?",
+        "decision": "To determine the importance of water, the reaction will be run without H2O."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "COC(=O)CCC(C)C[C@@H]1[C@H]2OCCC(C[C@H]1C)O2"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "2.0 eq",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "The combined yield of 2a and 3a was only 19%, with 64% residual starting material 1a. This indicates low conversion without water."
+      },
+      "evidence": {
+        "text_span": "The addition of water proved to be important, as the conversion was low without it (entry 2).",
+        "page": 1,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Water is important. Now, evaluate the photocatalyst.",
+        "gap": "Can Ru(bpy)3Cl2 be used as an alternative photocatalyst?",
+        "decision": "To test the photocatalyst's influence, Ru(bpy)3Cl2 will be used instead of Ir[dF(CF3)ppy2](dtbbpy)PF6."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "COC(=O)CCC(C)C[C@@H]1[C@H]2OCCC(C[C@H]1C)O2"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ru(bpy)3Cl2",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "2.0 eq",
+          "Ru(bpy)3Cl2": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Substituting the iridium catalyst with Ru(bpy)3Cl2 decreased the combined yield to 36% and conversion, with 37% residual 1a."
+      },
+      "evidence": {
+        "text_span": "Substituting Ir[dF(CF3)ppy2](dtbbpy)PF6 with Ru(bpy)3Cl2 decreased the yield and conversion (entry 3), and other photoredox catalysts were ineffective in conversion.",
+        "page": 1,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The iridium catalyst is superior. Now, evaluate the base.",
+        "gap": "Can quinuclidine be used as an alternative base?",
+        "decision": "To test the base's influence, quinuclidine will be used instead of i-Pr2NEt."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "COC(=O)CCC(C)C[C@@H]1[C@H]2OCCC(C[C@H]1C)O2"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "2.0 eq",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "quinuclidine": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The reaction hardly proceeded with quinuclidine, resulting in only 4% combined yield and 88% residual 1a."
+      },
+      "evidence": {
+        "text_span": "Next, amine bases instead of Ωi-Pr2NEt were screened. The reaction hardly proceeded with quinuclidine (entry 4), while Et3N slightly decreased the combined yield (entry 5).",
+        "page": 1,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Quinuclidine is not suitable. Now, test another amine base.",
+        "gap": "Can Et3N be used as an alternative base?",
+        "decision": "To test the base's influence, Et3N will be used instead of i-Pr2NEt."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "COC(=O)CCC(C)C[C@@H]1[C@H]2OCCC(C[C@H]1C)O2"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "2.0 eq",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "Et3N": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Et3N slightly decreased the combined yield to 65% (compared to 68% with i-Pr2NEt), with 13% residual 1a."
+      },
+      "evidence": {
+        "text_span": "Next, amine bases instead of Ωi-Pr2NEt were screened. The reaction hardly proceeded with quinuclidine (entry 4), while Et3N slightly decreased the combined yield (entry 5).",
+        "page": 1,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "i-Pr2NEt seems to be the best base. Now, evaluate the solvent.",
+        "gap": "Can DMF be used as an alternative solvent?",
+        "decision": "To test the solvent's influence, DMF will be used instead of MeCN."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "COC(=O)CCC(C)C[C@@H]1[C@H]2OCCC(C[C@H]1C)O2"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "DMF",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "2.0 eq",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Using DMF as solvent reduced the combined yield to 30%, with 38% residual 1a."
+      },
+      "evidence": {
+        "text_span": "A DMF or DMSO solvent instead of acetonitrile also reduced the yield (entry 6 or 7, respectively).",
+        "page": 1,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "DMF is not suitable. Now, test another solvent.",
+        "gap": "Can DMSO be used as an alternative solvent?",
+        "decision": "To test the solvent's influence, DMSO will be used instead of MeCN."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "COC(=O)CCC(C)C[C@@H]1[C@H]2OCCC(C[C@H]1C)O2"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "DMSO",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "2.0 eq",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Using DMSO as solvent reduced the combined yield to 44%, with 45% residual 1a."
+      },
+      "evidence": {
+        "text_span": "A DMF or DMSO solvent instead of acetonitrile also reduced the yield (entry 6 or 7, respectively).",
+        "page": 1,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "MeCN is the best solvent. Now, optimize the amount of methyl acrylate to suppress diester 3a formation.",
+        "gap": "What is the optimal amount of methyl acrylate?",
+        "decision": "To suppress the generation of diester 3a, the amount of methyl acrylate will be varied, starting with 1.1 equiv."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "COC(=O)CCC(C)C[C@@H]1[C@H]2OCCC(C[C@H]1C)O2"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "1.1 equiv",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Decomposition of starting material 1a was observed with 1.1 equiv of methyl acrylate, although the combined yield was 67% with 8% residual 1a."
+      },
+      "evidence": {
+        "text_span": "To suppress the generation of diester 3a, we varied the amount of methyl acrylate; decomposition of 1a was observed with 1.1 equiv of methyl acrylate (entry 8), but 1.5 equiv improved the yield of 2a and suppressed the formation of 3a (entry 9).",
+        "page": 1,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "1.1 equiv of methyl acrylate led to decomposition of 1a. A higher amount might be better.",
+        "gap": "What is the optimal amount of methyl acrylate to improve yield and suppress 3a formation?",
+        "decision": "To improve the yield of 2a and suppress the formation of 3a, the amount of methyl acrylate will be increased to 1.5 equiv."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "COC(=O)CCC(C)C[C@@H]1[C@H]2OCCC(C[C@H]1C)O2"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "1.5 equiv",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "Using 1.5 equiv of methyl acrylate improved the isolated yield of 2a to 64% and suppressed the formation of 3a (5.8%). The combined yield was 74% with 16% residual 1a."
+      },
+      "evidence": {
+        "text_span": "To suppress the generation of diester 3a, we varied the amount of methyl acrylate; decomposition of 1a was observed with 1.1 equiv of methyl acrylate (entry 8), but 1.5 equiv improved the yield of 2a and suppressed the formation of 3a (entry 9).",
+        "page": 1,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 10,
+      "thought": {
+        "background": "With 1.5 equiv of methyl acrylate, the yield of 2a is 64%, but there is still 16% residual 1a.",
+        "gap": "How can full conversion of the starting material be achieved?",
+        "decision": "To achieve full conversion, the reaction time will be extended to 12 h."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "COC(=O)CCC(C)C[C@@H]1[C@H]2OCCC(C[C@H]1C)O2"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "12 h",
+        "stoichiometry": {
+          "methyl acrylate": "1.5 equiv",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Extending the reaction time to 12 h led to full conversion of starting materials, affording ester 2a in 84% isolated yield (5.9% of 3a)."
+      },
+      "evidence": {
+        "text_span": "Finally, extending the reaction time to 12 h led to the full conversion of starting materials, affording ester 2a in 84% isolated yield (entry 10).",
+        "page": 1,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "Optimized conditions provide 84% yield of 2a on a 0.100 mmol scale.",
+        "gap": "Can the developed reaction system be scaled up?",
+        "decision": "To confirm scalability, the reaction will be performed using 1.00 mmol of 1a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "COC(=O)CCC(C)C[C@@H]1[C@H]2OCCC(C[C@H]1C)O2"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "12 h",
+        "scale": "1.00 mmol",
+        "stoichiometry": {
+          "methyl acrylate": "1.5 equiv",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Cyclic acetal 2a was obtained with a similar yield (78%) on a 1.00 mmol scale (5.8% of 3a)."
+      },
+      "evidence": {
+        "text_span": "We confirmed the scalability of the developed reaction system by using 1.00 mmol of 1a, and cyclic acetal 2a was obtained with a similar yield on a 0.100 mmol scale (entry 11).",
+        "page": 1,
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimized conditions for the photocatalytic tandem Ueno-Stork cyclization/intermolecular Giese addition sequence have been established and scaled up for model substrate 1a.",
+        "gap": "How broad is the substrate scope of this reaction, particularly with respect to different cyclic alkenes and radical acceptors?",
+        "decision": "To evaluate the substrate scope, a variety of cyclic α-iodoacetals with different substituents and ring sizes, as well as various electron-deficient alkenes as radical acceptors, will be examined under the optimized conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1",
+          "CCOC(CI)C1CCC=C(C)C1",
+          "",
+          "",
+          "CCOC(CI)C1C=C(C(C)C)CC1",
+          "CCOC(CI)C1C=CCC1",
+          "CCOC(CI)C1C=CCC1",
+          "CCOC(CI)C1C=CCC1",
+          "CCOC(CI)C1C=C(C)CC1",
+          "CCOC(CI)C1C=C(C(C)C)CC1",
+          "CCOC(CI)C1C=CCC1",
+          "CCOC(CI)C1C=CCC1",
+          "CCOC(CI)C1C=CCC1",
+          "CCOC(CI)C1C=CCC1",
+          "CCOC(CI)C1C=CCC1",
+          "CCOC(CI)C1C=CCC1",
+          "CCOC(CI)C1C=CCC1"
+        ],
+        "product_smiles": [
+          "CCOC1CC2CC(C(=O)OC)CC21",
+          "CCOC1CC2CC(C(=O)OC)CC1C2C",
+          "CCOC1CC2CC(C(=O)OC)CC1C2(C)C",
+          "CCOC1CC2CC(C(=O)OC)CC1C2C",
+          "",
+          "CCOC1CC2CC(C(=O)OC)CC1C2C(C)C",
+          "CCOC1CC2CC(C(=O)OC)CC21",
+          "CCOC1CC2CC(C(=O)OC)CC21",
+          "CCOC1CC2CC(C(=O)OC)CC21",
+          "CCOC1CC2CC(C(=O)OC)CC1C2C",
+          "CCOC1CC2CC(C(=O)OC)CC1C2C(C)C",
+          "CCOC1CC2CC(C(=O)OC)CC21",
+          "",
+          "",
+          "",
+          "",
+          "CCOC1CC(CCc2ccccc2)C1CC(C)C(=O)OC",
+          "CCOC1CC(CCc2ccccc2)C1CC(C)C(=O)OC",
+          "CCOC1CC(CCc2ccccc2)C1CC(C(=O)OC)C(C)C",
+          "CCOC1CC(CCc2ccccc2)C1CC(C)C(=O)OC"
+        ],
+        "reagents": [
+          "methyl acrylate",
+          "methyl vinyl ketone",
+          "vinyl sulfone",
+          "vinyl phosphonate",
+          "acrylonitrile"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "12 h",
+        "stoichiometry": {
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq",
+          "methyl acrylate": "1.5 equiv",
+          "methyl vinyl ketone": "3.0 equiv",
+          "vinyl sulfone": "3.0 equiv",
+          "vinyl phosphonate": "3.0 equiv",
+          "acrylonitrile": "3.0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The reaction showed good to excellent yields and diastereoselectivities for various cyclic α-iodoacetals (2b-2m), including disubstituted, dimethyl-substituted, and TBS-oxy substituted alkenes, as well as 5,5- and 5,7-fused ring systems. Cyclopentene with a methyl group at C1 (2k) was also compatible. Various electron-deficient alkenes like methyl vinyl ketone (2n), vinyl sulfone (2o), and vinyl phosphonate (2p) also gave good results. Linear allylic alcohols also provided the corresponding cyclic acetals (2r-2u).",
+        "regio_selectivity": "Regioselectivity of initial radical addition (5-exo or 6-endo) and stereochemistry were determined by NOE correlations of lactones derived from acetals.",
+        "dr": "Good diastereoselectivity for most cyclic substrates (e.g., 2b, 2c, 2d, 2f, 2h-2m). Trisubstituted alkene 1e showed low dr. 1,2-disubstituted alkene 1u showed ~1:1 dr for Giese addition step, independent of E:Z ratio of starting alkene."
+      },
+      "evidence": {
+        "text_span": "A variety of substrates were examined under the optimized conditions (Figure 1). First, the substituent effect of the cyclohexene ring on the reactivity was investigated. Disubstituted alkenes also afford good diastereoselectivity and yield (2b). Dimethyl substitution provided a good yield and diastereoselectivity (2c and 2d). However, trisubstituted alkene 1e exhibited low diastereoselectivity. Trisubstituted alkene having TBS oxy group was investigated as bulky substrates, and a good yield and good diastereoselectivity were obtained (2f). We also investigated the iodoacetal synthesized from carvone, but the yield and diastereoselectivity were relatively low (2g). Next, cyclic alkenes with different ring sizes were tested under the optimized conditions. Here, 5,5- or 5,7- fused ring systems afforded products in good yields (2h−2l). Di- and trisubstituted cyclopentenes were compatible for the reaction conditions. In particular, cyclopentene having a methyl group at position C1, which was not applicable in Dai’s procedure, gave the desired cyclic acetal (2k). Polycyclic iodoacetal 1m was investigated, and the desired cyclic acetal was obtained in good yield and diastereoselectivity (2m). Various electron-deficient alkenes were also compatible. Methyl vinyl ketone (2n), vinyl sulfone (2o), and vinyl phosphonate (2p) produced good results with a high diastereoselectivity. Acrylonitrile, however, showed an inferior yield compared to those of the others (2q). We also tested other radical acceptors, but the reaction did not proceed (Supporting Information). Next, α-iodoacetals derived from linear allylic alcohols were investigated as a substrate. Both monosubstituted and 1,1- disubstituted alkenes provided the corresponding cyclic acetal (2r and 2s, respectively). The regioselectivity of the initial radical addition (i.e., 5-exo or 6-endo) and the stereochemistry of 2r−2u were determined using nuclear Overhauser effect correlations of lactones derived from the corresponding acetals. The result for 1,2-disubstituted alkene 1u revealed that the diastereoselectivity of the Giese addition step (∼1:1) does not correlate with the E:Z ratio of the starting alkene (2.3:1 E:Z). The trisubstituted alkene produced the cyclic acetal in good yield (2t). These results indicate that the stability of the generated alkyl radical after the initial addition to the alkene is crucial to achieving high yields of cyclic acetals. This is the first reported example of the vicinal difunctionalization of linear alkenes via tandem-type Ueno−Stork cyclization.",
+        "page": 2,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "032fd7ae09d31fe7e0606d347dcf07615ab80d2af9a4a1eda5a1f74bce454a61.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The tandem Ueno-Stork/Giese addition works for α-iodoacetals. The authors want to explore other tethering groups.",
+        "gap": "Can (iodomethyl)dimethylsilane be used as a substrate to form oxasilolanes, and can these be further functionalized?",
+        "decision": "To expand the scope of the reaction, (iodomethyl)dimethylsilane 4a will be investigated as a substrate, followed by Tamao-Fleming oxidation to yield 1,3-diols."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "methyl vinyl ketone"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "12 h",
+        "stoichiometry": {
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "methyl vinyl ketone": "3.0 eq",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "(Iodomethyl)dimethylsilane 4a was compatible, producing oxasilolane 5a. This intermediate was then subjected to Tamao-Fleming oxidation to afford 1,3-diol 6a in 56% yield over two steps. This approach was applicable to various (iodomethyl)dimethylsilanes (6b-6d)."
+      },
+      "evidence": {
+        "text_span": "In addition to α-iodoacetals, (iodomethyl)dimethylsilane 4a was found to be compatible, producing oxasilolane 5a (Scheme 2).4e,9 Compound 5 was subjected to Tamao−Fleming oxidation,10 affording 1,3-diol 6a in 56% yield (two steps). This reaction could be applied to various (iodomethyl)- dimethylsilane (6b−6d). This enables adjustments of the introduced carbon chain length, thereby increasing the synthetic flexibility for subsequent functionalization.",
+        "page": 2,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "2df5b535ebe167132acf7f0433063bdc67084186ef68788efd4bedf037204654.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The reaction proceeds under photocatalytic conditions.",
+        "gap": "What are the essential components for the reaction to occur?",
+        "decision": "To investigate the reaction mechanism, control experiments will be conducted by omitting the photocatalyst, blue LED light, and base individually."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1=CC(C)CCC1"
+        ],
+        "product_smiles": [
+          "COC(=O)CCC1(C)CC2OC1CCC2C"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "2.0 eq",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction occurred when the photocatalyst was omitted (entry 1 in Scheme 3A)."
+      },
+      "evidence": {
+        "text_span": "First, we conducted control experiments (Scheme 3A). The results of entries 1−3 indicated that the photocatalyst, blue LED light, and base were all necessary to promote the reaction.",
+        "page": 2,
+        "section": "Mechanistic Studies",
+        "image_refs": [
+          "b2ea93d54c197587b6269d27e91d24ae242eaa2ed82fb453dfc62c8da1cbb704.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The photocatalyst is essential.",
+        "gap": "Is blue LED light necessary for the reaction?",
+        "decision": "To investigate the reaction mechanism, control experiments will be conducted by omitting blue LED light."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1=CC(C)CCC1"
+        ],
+        "product_smiles": [
+          "COC(=O)CCC1(C)CC2OC1CCC2C"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "2.0 eq",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "H2O": "20 eq"
+        },
+        "atmosphere": "dark"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction occurred when blue LED light was omitted (entry 2 in Scheme 3A)."
+      },
+      "evidence": {
+        "text_span": "First, we conducted control experiments (Scheme 3A). The results of entries 1−3 indicated that the photocatalyst, blue LED light, and base were all necessary to promote the reaction.",
+        "page": 2,
+        "section": "Mechanistic Studies",
+        "image_refs": [
+          "b2ea93d54c195787b626d927e91d24ae242eaa2ed82fb453dfc62c8da1cbb704.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Both photocatalyst and blue LED light are essential.",
+        "gap": "Is the base necessary for the reaction?",
+        "decision": "To investigate the reaction mechanism, control experiments will be conducted by omitting the base."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1=CC(C)CCC1"
+        ],
+        "product_smiles": [
+          "COC(=O)CCC1(C)CC2OC1CCC2C"
+        ],
+        "reagents": [
+          "methyl acrylate"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "4 h",
+        "stoichiometry": {
+          "methyl acrylate": "2.0 eq",
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "0 eq",
+          "H2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction occurred when the base was omitted (entry 3 in Scheme 3A)."
+      },
+      "evidence": {
+        "text_span": "First, we conducted control experiments (Scheme 3A). The results of entries 1−3 indicated that the photocatalyst, blue LED light, and base were all necessary to promote the reaction.",
+        "page": 2,
+        "section": "Mechanistic Studies",
+        "image_refs": [
+          "b2ea93d54c195787b626d927e91d24ae242eaa2ed82fb453dfc62c8da1cbb704.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The control experiments confirmed that the photocatalyst, blue LED light, and base are all necessary. This suggests a radical mechanism.",
+        "gap": "Is the reaction proceeding via a radical pathway?",
+        "decision": "To confirm the involvement of radical intermediates, a radical inhibitor (TEMPO) will be added to the reaction mixture."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          "CCOC1COC1C1CC(CCC(=O)OC)CCC1C",
+          "CCOC1COC1C1CC(C(ON2C(C)(C)CCCC2(C)C)C(=O)OC)CCC1C"
+        ],
+        "reagents": [
+          "methyl acrylate",
+          "TEMPO"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "12 h",
+        "stoichiometry": {
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "methyl acrylate": "1.5 eq",
+          "H2O": "20 eq",
+          "TEMPO": "2.0 eq"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "When a stoichiometric amount of TEMPO was added, the formation of 2a was mostly inhibited, and TEMPO adduct 2a' was obtained in 15% yield. This strongly supports a radical mechanism."
+      },
+      "evidence": {
+        "text_span": "When a stoichiometric amount of TEMPO was added as a radical inhibitor, the formation of 2a was mostly inhibited, and TEMPO adduct 2a′ was obtained in 15% yield (Scheme 3B).",
+        "page": 2,
+        "section": "Mechanistic Studies",
+        "image_refs": [
+          "2b73f180b86a283891a1259c03a2cb1db79b800d183f80f22f5500509ee4fdea.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The reaction proceeds via a radical mechanism, and water is essential.",
+        "gap": "What is the role of water in the mechanism, specifically in the protonation step?",
+        "decision": "To investigate the protonation step, an isotope labeling experiment will be conducted using D2O instead of H2O."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(CI)C1CC=C(C)CC1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "methyl acrylate",
+          "D2O",
+          "mCPBA",
+          "BF3.OEt2",
+          "MgSO4"
+        ],
+        "catalyst": "Ir[dF(CF3)ppy2](dtbbpy)PF6",
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "time": "12 h",
+        "stoichiometry": {
+          "Ir[dF(CF3)ppy2](dtbbpy)PF6": "2.0 mol%",
+          "i-Pr2NEt": "2.0 eq",
+          "methyl acrylate": "1.5 eq",
+          "D2O": "20 eq"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "After oxidation of the resulting acetal into lactone 7, the α-position of the methyl ester was almost fully deuterated (95% based on 1H NMR). This indicates that water acts as the proton source in the final protonation step of the enolate intermediate."
+      },
+      "evidence": {
+        "text_span": "Next, we conducted an isotope labeling experiment using D2O instead of H2O (Scheme 3C). After oxidation of the resulting acetal into lactone 7, the α- position of the methyl ester was almost fully deuterated 95% based on 1H NMR).",
+        "page": 2,
+        "section": "Mechanistic Studies",
+        "image_refs": [
+          "b6da54301a3aa6caf891f66afb704978c6b76e15d7e9edf253f98d82bd29208f.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 84,
+        "unit": "%",
+        "interpretation": "Isolated yield of the target compound 2a under optimized conditions."
+      },
+      "Longest Linear Steps": {
+        "value": 1,
+        "unit": "steps",
+        "interpretation": "The synthesis of 2a from 1a is a single-step tandem reaction."
+      },
+      "Total Steps": {
+        "value": 1,
+        "unit": "steps",
+        "interpretation": "The synthesis of 2a from 1a is a single-step tandem reaction."
+      },
+      "Failed Attempts Count": {
+        "value": 7,
+        "unit": "attempts",
+        "interpretation": "Number of failed attempts during optimization of reaction conditions."
+      }
+    },
+    "comparison_to_prior": "The developed photocatalytic method avoids the use of toxic tin hydrides, which are typically required in classical Ueno-Stork cyclizations. It also addresses the reproducibility issues associated with previous Ni-catalyzed tandem Ueno-Stork cyclizations, which were highly sensitive to the Zn source.",
+    "significance": "This novel photocatalytic tandem Ueno-Stork cyclization/intermolecular Giese addition sequence provides a green, practical, and stereoselective method for the vicinal difunctionalization of allylic alcohols. It offers high stereoselectivity and a broad substrate scope, including cyclic and linear allylic alcohols, and various radical acceptors. The ability to adjust carbon chain length through silyl ether substrates further enhances synthetic flexibility. This method is particularly useful for synthesizing substrates with contiguous stereocenters and represents the first reported example of vicinal difunctionalization of linear alkenes via tandem-type Ueno-Stork cyclization."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.5c00287",
+      "pmcid": "PMC11877517",
+      "title": "Photocatalytic Tandem Ueno-Stork Cyclization/Intermolecular Giese Addition Sequence for Stereoselective Difunctionalization of Allylic Alcohols.",
+      "authors": "Tateishi Y, Nagasawa S, Iwabuchi Y.",
+      "journal": "Org Lett",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC11877517?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/a14a8e29-d094-4cc7-94bc-7ed8c5cd4755.zip",
+      "parsed_at": "2026-05-11T06:39:05.696139+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 84,
+    "parseable": 74,
+    "canonicalized": 70,
+    "invalid": 10,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CCOC(CI)C1CCC(C)(C)=C1",
+      "CCOC(CI)C1CCC(OSi(C)(C)C(C)(C)C)=C1",
+      "CCOC1C(CC(C(=O)OC)C2)C(OSi(C)(C)C(C)(C)C)C2C1",
+      "CCOC1C(CCC(=O)C)C2C1",
+      "CCOC1C(CCCS(=O)(=O)CC)C2C1",
+      "CCOC1C(CCC(=O)P(OCC)OCC)C2C1",
+      "CCOC1C(CCCC#N)C2C1",
+      "I[CH2]S[Si](C)(C)OC1=C(R1)C(R2)C(R2)C1",
+      "O=C(C)CCC[C@@H]1[C@H]2[C@@H]([C@@H](R2)C(R2)C2)O[Si](C)(C)C[C@H]1R1",
+      "COC(=O)C(D)C1C(C)C2CCC(O2)C1C(=O)O"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

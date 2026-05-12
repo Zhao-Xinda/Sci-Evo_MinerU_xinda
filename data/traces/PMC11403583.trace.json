@@ -1,0 +1,1782 @@
+{
+  "trace_id": "TS-PMC11403583",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-dihydromaritidine",
+    "smiles": "COc1cc2c(c(OC)c1)C1[C@H]3C[C@@H](O)CN(C)[C@@H]1[C@H]3C2",
+    "natural_product_class": "Amaryllidaceae alkaloid",
+    "structural_features": {
+      "key_motifs": [
+        "[5,11b]-ethanophenanthridine skeleton",
+        "benzylic all-carbon quaternary stereocenter"
+      ]
+    },
+    "motivation": "Amaryllidaceae alkaloids are a structurally diverse group of plant specialized metabolites with important biological activities. Maritidine is of particular interest due to its cytotoxic properties and limited supplies from natural sources. The incorporation of sterically congested quaternary center is the critical element in the total synthesis of Amaryllidaceae alkaloids. Most reported approaches provided racemic products, and only a few asymmetric syntheses have been reported. A concise catalytic asymmetric approach to Amaryllidaceae alkaloids sharing electron-rich aromatics remains a challenge.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Asymmetric total synthesis of (+)-dihydromaritidine with high enantioselectivity and diastereoselectivity."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming Pictet-Spengler cyclization",
+        "named_strategy": "Pictet-Spengler cyclization",
+        "reasoning": "To form the [5,11b]-ethanophenanthridine skeleton from a cis-3a-octahydroindole derivative.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-N and C-C bond forming ester-aminolysis and aza-Michael reaction",
+        "named_strategy": "Ester-aminolysis and intramolecular aza-Michael reaction",
+        "reasoning": "To construct the tricyclic core (1c) of the cis-3a-octahydroindoline skeleton from an enone-ester.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond forming Johnson-Claisen rearrangement",
+        "named_strategy": "Johnson-Claisen rearrangement",
+        "reasoning": "To install the all-carbon quaternary stereocenter required for unified strategy for Sceletium and Amaryllidaceae alkaloids from an enantioenriched allylic alcohol.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-O bond forming reduction",
+        "named_strategy": "Corey-Bakshi-Shibata (CBS) reduction",
+        "reasoning": "To access enantioenriched 3-(aryl)cyclohex-2-enols from 3-aryl-2-cyclohexenones with high enantioselectivity.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The strategy envisions a Johnson–Claisen rearrangement of an enantioenriched allylic alcohol to install the all-carbon quaternary stereocenter. This intermediate would then undergo allylic oxidation, followed by ester aminolysis and an aza-Michael reaction to form the tricyclic core. The enantioenriched allylic alcohol is to be obtained via enantioselective CBS reduction of a cyclohexenone, which itself is synthesized via a Stork–Danheiser sequence."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of 3-aryl-2-cyclohexenone 11b is a known process.",
+        "gap": "Need to synthesize 3-aryl-2-cyclohexenone 11b from vinylogous ester 10b.",
+        "decision": "To synthesize 3-aryl-2-cyclohexenone 11b, the Stork–Danheiser sequence on compound 10b using aryl magnesium bromide was carried out, expecting 11b in good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)OC1=CC(=O)CCC1"
+        ],
+        "product_smiles": [
+          "COc1ccc(C2=CC(=O)CCC2)cc1OC"
+        ],
+        "reagents": [
+          "ArMgBr",
+          "1(N) HCl"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "3-aryl 2-cyclohexenone 11b was afforded in 82% yields."
+      },
+      "evidence": {
+        "text_span": "Moving forward with above proposed strategy, it was required to synthesize enantioenriched 3-(aryl)cyclohex-2-enols 9b for the orthoester Johnson–Claisen rearrangement (Scheme 2). Towards this, the Stork–Danheiser sequence on compound 10b using aryl magnesium bromide was carried out to afford 3-aryl 2-cyclohexenone 11b in 82% yields (Scheme 2).",
+        "image_refs": [
+          "ed800df697f90fa13be17aa62eead3f03447baa93005888e8614f66d32b83fef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Corey–Bakshi–Shibata (CBS) reduction is a reliable method for reducing substituted cyclic enones with high enantioselectivity.",
+        "gap": "Need to achieve high enantioselectivity in the CBS reduction of 11b.",
+        "decision": "Attempted CBS reduction of 11b using (R)-CBS reagent in THF, expecting good enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC(=O)CCC2)cc1OC"
+        ],
+        "reagents": [
+          "BH3.Me2S",
+          "CN1CCC[C@H]1[C@@](C2=CC=CC=C2)(C3=CC=CC=C3)OB(C)C"
+        ],
+        "solvent": "THF",
+        "temperature": "reflux",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Coordinating polar aprotic solvent THF may reduce the acidity of BH3·Me2S, resulting in an incomplete catalytic cycle. Even with 100 mol% (R)-CBS, a maximum of 42% ee was observed."
+      },
+      "evidence": {
+        "text_span": "In this regard, we first observed that coordinating polar aprotic solvent THF may reduce the acidity of BH3·Me2S results it unable to complete catalytic cycle of CBS reduction even in refluxing condition. Later on, we investigated that polar aprotic noncoordinating solvent CH2Cl2 unable to reduce acidity of BH3·Me2S results to complete the catalytic cycle of CBS reduction at rt with 20 mol% catalyst. (R)-CBS regent was used for the optimization of enantioselective reduction of 3-aryl 2-cyclohexenone 11b.22b However, our initial results in this direction were rather discouraging and it was found that even after using 100 mol% (R)-CBS regent, a maximum of 42% ee was observed.",
+        "image_refs": [
+          "1a157c8cc145a0687ef36756299a770be9cce678174ac8346d96160242a76f91.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "The CBS reduction of 11b yielded low enantioselectivity, possibly due to the electron-rich nature of the aryl group.",
+        "gap": "Need a strategy to improve enantioselectivity in the CBS reduction.",
+        "decision": "It was argued that a sterically crowded, easily removable group might help in bringing high enantioselectivity. A halogen group, such as bromine, which can be easily removed via reductive conditions, was incorporated."
+      },
+      "evidence": {
+        "text_span": "It was argued that a sterically crowded easily removable group might help in bringing high enantioselectivity (Scheme 3). Thus, a halogen group such as bromo group that can be easily remove via reductive condition was incorporated.",
+        "image_refs": [
+          "835c83595a450df27682f5e765a07b517fd8d31e80fa1848a7cdc89bb8756c32.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A bromine group was hypothesized to improve enantioselectivity in CBS reduction.",
+        "gap": "Need to synthesize the bromo-substituted cyclohexenone 11a.",
+        "decision": "The Stork–Danheiser sequence was applied to bromo vinylogous ester 10a using aryl magnesium bromide to afford 2-bromo-3-aryl 2-cyclohexenone 11a, expecting good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)OC1=C(Br)C=CC(=O)C1",
+          ""
+        ],
+        "product_smiles": [
+          "COc1ccc(C2=CCCC(=O)C2Br)cc1OC"
+        ],
+        "reagents": [
+          "ArMgBr",
+          "1(N) HCl"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "2-bromo-3-aryl 2-cyclohexenone 11a was afforded in 82% yields."
+      },
+      "evidence": {
+        "text_span": "Therefore, Stork–Danheiser sequence bromo vinylogous ester 10a was carried out using aryl magnesium bromide to afford 2- bromo-3-aryl 2-cyclohexenone 11a in 82% yields (Scheme 4).",
+        "image_refs": [
+          "4391e1b0b43564bccde7a1b88eddb5a2115ac4aa962b246111987fcc07070362.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "2-bromo-3-aryl 2-cyclohexenone 11a was synthesized.",
+        "gap": "Need to reduce 11a to the corresponding allylic alcohol for HPLC analysis.",
+        "decision": "Luche reduction of 2-bromo enone 11a was performed to provide racemic allyl alcohol 12a for HPLC analysis."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CCCC(=O)C2Br)cc1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc(C2=C(Br)C(O)CCCC2)cc1OC"
+        ],
+        "reagents": [
+          "CeCl3.7H2O",
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Racemic allyl alcohol 12a was obtained in 91% yield."
+      },
+      "evidence": {
+        "text_span": "Luche reduction of 2-bromo enone provided racemic allyl alcohol 12a for HPLC analysis.",
+        "image_refs": [
+          "4391e1b0b43564bccde7a1b88eddb5a2115ac4aa962b246111987fcc07070362.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous CBS reduction of 11b in THF was unsuccessful. The bromo group is expected to improve enantioselectivity.",
+        "gap": "Need to optimize CBS reduction conditions for 11a to achieve high enantioselectivity.",
+        "decision": "Attempted CBS reduction of 11a in THF at 0 °C with 100 mol% (R)-CBS reagent, expecting improved results due to the bromo group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CCCC(=O)C2Br)cc1OC"
+        ],
+        "reagents": [
+          "BH3.Me2S",
+          "CN1CCC[C@H]1[C@@](C2=CC=CC=C2)(C3=CC=CC=C3)OB(C)C"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "24 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No product was formed (0% yield)."
+      },
+      "evidence": {
+        "text_span": "Next, 2-bromo-3-aryl 2-cyclohexenone 11a in hand it was explored under Corey–Bakshi–Shibata (CBS) reduction and the result is summarized in Table 1. The optimization studies were conducted in different solvents such as THF and dichloromethane under different temperature using (R)-CBS regent. ... Entry 1: 100 mol% (R)-CBS, THF, 0 °C, 24 h, 0% yield.",
+        "image_refs": [
+          "09f72c1fe5aed5b450c1efdacdf227b125dcb97057b13d494dd6a08bb7d75d9a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "CBS reduction of 11a in THF at 0 °C failed. THF might be reducing the acidity of BH3·Me2S.",
+        "gap": "Need to find suitable conditions for CBS reduction of 11a.",
+        "decision": "Increased temperature to 25 °C and reduced reaction time to 0.5 h in THF, expecting to complete the catalytic cycle."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CCCC(=O)C2Br)cc1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc(C2=C(Br)[C@@H](O)CCCC2)cc1OC"
+        ],
+        "reagents": [
+          "BH3.Me2S",
+          "CN1CCC[C@H]1[C@@](C2=CC=CC=C2)(C3=CC=CC=C3)OB(C)C"
+        ],
+        "solvent": "THF",
+        "temperature": "25 °C",
+        "time": "0.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "ee_percent": 90,
+        "observation": "Allyl alcohol was obtained in 91% yield with 90% ee."
+      },
+      "evidence": {
+        "text_span": "Entry 2: 100 mol% (R)-CBS, THF, 25 °C, 0.5 h, 91% yield, 90% ee.",
+        "image_refs": [
+          "09f72c1fe5aed5b450c1efdacdf227b125dcb97057b13d494dd6a08bb7d75d9a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 7,
+      "thought": {
+        "background": "CBS reduction in THF at 25 °C gave 90% ee. Need to improve enantioselectivity and reduce catalyst loading.",
+        "gap": "Need to find optimal conditions for CBS reduction of 11a.",
+        "decision": "Switched solvent to CH2Cl2, which is a non-coordinating solvent, and tried 100 mol% (R)-CBS at 25 °C, expecting higher enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CCCC(=O)C2Br)cc1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc(C2=C(Br)[C@@H](O)CCCC2)cc1OC"
+        ],
+        "reagents": [
+          "BH3.Me2S",
+          "CN1CCC[C@H]1[C@@](C2=CC=CC=C2)(C3=CC=CC=C3)OB(C)C"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "25 °C",
+        "time": "0.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "ee_percent": 97,
+        "observation": "Allyl alcohol was obtained in 93% yield with 97% ee. Dichloromethane was found to be a better solvent."
+      },
+      "evidence": {
+        "text_span": "Following exhaustive optimization, it was observed that dichloromethane is a better solvent for this transformation and 100 mol% of (R)-CBS in dichloromethane at room temperature afforded allyl alcohol in 97% ee (entry 7, Table 1).",
+        "image_refs": [
+          "09f72c1fe5aed5b450c1efdacdf227b125dcb97057b13d494dd6a08bb7d75d9a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "CBS reduction in CH2Cl2 gave 97% ee with 100 mol% catalyst. Need to further reduce catalyst loading and improve ee.",
+        "gap": "Need to achieve highest possible enantioselectivity with reduced catalyst loading.",
+        "decision": "Reduced catalyst loading to 20 mol% (R)-CBS and employed slow reverse addition of bromo-enone 11a over 3 hours, expecting to achieve higher ee."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CCCC(=O)C2Br)cc1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc(C2=C(Br)[C@@H](O)CCCC2)cc1OC"
+        ],
+        "reagents": [
+          "BH3.Me2S",
+          "CN1CCC[C@H]1[C@@](C2=CC=CC=C2)(C3=CC=CC=C3)OB(C)C"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "25 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "ee_percent": 99,
+        "observation": "Achieved 99% ee with 20 mol% catalyst and slow addition."
+      },
+      "evidence": {
+        "text_span": "On further decrease of catalyst loading to 20 mol% of (R)-CBS, and under slow reverse addition of bromo-enone 11a, it was found to achieve a 99% ee (entry 9, Table 1).",
+        "image_refs": [
+          "09f72c1fe5aed5b450c1efdacdf227b125dcb97057b13d494dd6a08bb7d75d9a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enantioenriched 2-bromo-3-aryl-2-cyclohexenol (-)-12a was obtained with 99% ee. The bromo group needs to be removed.",
+        "gap": "Need to remove the bromo group from (-)-12a to obtain the desired allylic alcohol (+)-9b without compromising enantiopurity.",
+        "decision": "The bromo group of allyl alcohol was removed by using n-BuLi at low temperature to generate vinyl carbanion, which was further reacted with water to get allyl alcohol 9b, expecting high yield and retention of ee."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=C(Br)[C@@H](O)CCCC2)cc1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc(C2=C[C@@H](O)CCCC2)cc1OC"
+        ],
+        "reagents": [
+          "nBuLi",
+          "H2O"
+        ],
+        "solvent": "PhMe",
+        "temperature": "0 °C",
+        "time": "20 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "ee_percent": 98,
+        "observation": "Allyl alcohol 9b was obtained in 78% yield with 98% ee."
+      },
+      "evidence": {
+        "text_span": "In particular, the bromo group of allyl alcohol was removed by using n-BuLi at low temperature to generate vinyl carbanion which was further reacted with water to get allyl alcohol 9b in 98% ee (Scheme 4).",
+        "image_refs": [
+          "09f72c1fe5aed5b450c1efdacdf227b125dcb97057b13d494dd6a08bb7d75d9a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Enantioenriched 3-(aryl)cyclohex-2-enol 9b was obtained. Johnson-Claisen rearrangement is the next key step.",
+        "gap": "Need to perform orthoester Johnson–Claisen rearrangement of 9b to obtain the quaternary stereocenter.",
+        "decision": "Attempted acid-catalyzed orthoester Johnson–Claisen rearrangement of 9b with triethyl orthoacetate in toluene at 130 °C using propanoic acid as catalyst, expecting the desired product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC=C[C@@H](O)[CH]2)cc1OC",
+          "CCCOC(C)(OCCC)OCCC"
+        ],
+        "reagents": [
+          "propanoic acid"
+        ],
+        "solvent": "Toluene",
+        "temperature": "130 °C",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "A mixture of products was obtained."
+      },
+      "evidence": {
+        "text_span": "Further, orthoester Johnson–Claisen rearrangement of 3- (aryl)cyclohex-2-enols 9b with triethyl orthoacetate was investigated in different solvent and in presence of catalytic amount of weak acid under heating condition (Table 2). ... Entry 1: 10 mol% propanoic acid, 10 equiv. triethyl orthoacetate, Toluene, 130 °C, Mixture of products.",
+        "image_refs": [
+          "7937447e3700bf81bdc0b55a20092dea491b134a62a0f916498c33ee3e3707d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "Acid-catalyzed Johnson-Claisen rearrangement in toluene gave a mixture of products. Need to optimize acid and solvent.",
+        "gap": "Need to find suitable conditions for acid-catalyzed Johnson-Claisen rearrangement.",
+        "decision": "Changed solvent to xylene and increased temperature to 160 °C with propanoic acid, expecting better selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC=C[C@@H](O)[CH]2)cc1OC",
+          "CCCOC(C)(OCCC)OCCC"
+        ],
+        "reagents": [
+          "propanoic acid"
+        ],
+        "solvent": "Xylene",
+        "temperature": "160 °C",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "A mixture of products was still obtained."
+      },
+      "evidence": {
+        "text_span": "Entry 2: 5 mol% propanoic acid, 10 equiv. triethyl orthoacetate, Xylene, 160 °C, Mixture of products.",
+        "image_refs": [
+          "7937447e3700bf81bdc0b55a20092dea491b134a62a0f916498c33ee3e3707d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "Propanoic acid in xylene still gave a mixture of products. Need to try different acids.",
+        "gap": "Need to find a suitable acid catalyst for the Johnson-Claisen rearrangement.",
+        "decision": "Tried pivalic acid as catalyst in xylene at 140 °C, expecting improved selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC=C[C@@H](O)[CH]2)cc1OC",
+          "CCCOC(C)(OCCC)OCCC"
+        ],
+        "reagents": [
+          "pivalic acid"
+        ],
+        "solvent": "Xylene",
+        "temperature": "140 °C",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "A mixture of products was obtained."
+      },
+      "evidence": {
+        "text_span": "Entry 3: 5 mol% pivalic acid, 10 equiv. triethyl orthoacetate, Xylene, 140 °C, Mixture of products.",
+        "image_refs": [
+          "7937447e3700bf81bdc0b55a20092dea491b134a62a0f916498c33ee3e3707d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "Pivalic acid in xylene still gave a mixture of products. Need to try another acid.",
+        "gap": "Need to find a suitable acid catalyst for the Johnson-Claisen rearrangement.",
+        "decision": "Tried butyric acid as catalyst in xylene at 140 °C, expecting improved selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC=C[C@@H](O)[CH]2)cc1OC",
+          "CCCOC(C)(OCCC)OCCC"
+        ],
+        "reagents": [
+          "butyric acid"
+        ],
+        "solvent": "Xylene",
+        "temperature": "140 °C",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "A mixture of products was obtained."
+      },
+      "evidence": {
+        "text_span": "Entry 4: 5 mol% butyric acid, 10 equiv. triethyl orthoacetate, Xylene, 140 °C, Mixture of products.",
+        "image_refs": [
+          "7937447e3700bf81bdc0b55a20092dea491b134a62a0f916498c33ee3e3707d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "Various carboxylic acids failed to give the desired product. Need to try a different type of acid catalyst.",
+        "gap": "Need to find a suitable acid catalyst for the Johnson-Claisen rearrangement.",
+        "decision": "Tried o-nitrophenol as catalyst in xylene at 160 °C, expecting improved selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC=C[C@@H](O)[CH]2)cc1OC",
+          "CCCOC(C)(OCCC)OCCC"
+        ],
+        "reagents": [
+          "o-nitrophenol"
+        ],
+        "solvent": "Xylene",
+        "temperature": "160 °C",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "A mixture of products was obtained."
+      },
+      "evidence": {
+        "text_span": "Entry 5: 5 mol% o-nitrophenol, 10 equiv. triethyl orthoacetate, Xylene, 160 °C, Mixture of products.",
+        "image_refs": [
+          "7937447e3700bf81bdc0b55a20092dea491b134a62a0f916498c33ee3e3707d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 15,
+      "thought": {
+        "background": "o-nitrophenol at 160 °C gave a mixture of products. Perhaps higher temperature is needed.",
+        "gap": "Need to find optimal temperature for o-nitrophenol catalyzed Johnson-Claisen rearrangement.",
+        "decision": "Increased temperature to 220 °C with o-nitrophenol in xylene, expecting to obtain the desired product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC=C[C@@H](O)[CH]2)cc1OC",
+          "CCCOC(C)(OCCC)OCCC"
+        ],
+        "product_smiles": [
+          "CCOC(=O)[C@@H]1CCC=C[C@@H]1c1ccc(OC)c(OC)c1"
+        ],
+        "reagents": [
+          "o-nitrophenol"
+        ],
+        "solvent": "Xylene",
+        "temperature": "220 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "ee_percent": 68,
+        "observation": "Product 8b was afforded in 62% isolated yield, but with compromised enantioselectivity (68% ee from 99% ee starting material)."
+      },
+      "evidence": {
+        "text_span": "Following an exhaustive optimization, it was observed that acid catalysed orthoester Johnson–Claisen rearrangement of allyl alcohol 9b afforded product 8b with benzylic all-carbon quaternary stereogenic center in 62% isolated yield when 5 mol% of o-nitrophenol was employed as catalyst. The enantioselectivity of product 8b found to be compromised to 68% ee from 99% ee of starting allylic alcohol (entry 6, Table 2).",
+        "image_refs": [
+          "7937447e3700bf81bdc0b55a20092dea491b134a62a0f916498c33ee3e3707d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Acid-catalyzed Johnson-Claisen rearrangement led to a loss of enantiopurity (68% ee from 99% ee starting material). The electron-rich aromatic ring might be stabilizing an allylic carbocation intermediate, leading to racemization.",
+        "gap": "Need to prevent the loss of enantiopurity during the Johnson-Claisen rearrangement.",
+        "decision": "It was hypothesized that performing the ortho-ester Johnson–Claisen rearrangement under basic conditions might avoid the formation of racemizing carbocation intermediates. N,N-diisopropylethylamine (DIPEA) was chosen as both promoter and solvent."
+      },
+      "evidence": {
+        "text_span": "In order to understand the loss of enantiopurity, it was thought of looking at the mechanism of orthoester Johnson– Claisen rearrangement (Scheme 5). ... It is believed that 3-(aryl)cyclohex-2-enols 9b could generate some amount of an allylic carbocation such as Ab (through the intermediate Aa) in the course of reaction (Scheme 6), which is getting stabilized by the electron-donating nature of aromatic ring, in particular, 4-methoxy group of aryl ring present in the 3- position of allyl alcohol (see the formation of Ab from Ac). The allylic carbocation Ab could recombine with ethyl orthoacetate to reform intermediate Ac (68% ee) responsible for the [3,3]- sigmatropic rearrangement product. Thus, it was thought of exploring the ortho-ester Johnson– Claisen rearrangement of 3-(aryl)cyclohex-2-enols 9b under basic condition (entries 7–10, Table 2). Under the thermal decomposition of triethyl orthoacetate one could able to generate the key intermediate responsible for [3,3]-sigmatropic rearrangement. Thus, Hünig's base i.e. N,N-diisopropylethylamine (DIPEA) was used a promoter as well as solvent.",
+        "image_refs": [
+          "31ecddf32f759258a72b5754a29dd90f3147b64202a6adb336204e03ac520c0d.jpg",
+          "46bd3e5574a17de59981195ce3bf54cad3b6b24c8a2f7c0828b6f6ae3f49d1e9.jpg",
+          "92067adb88ad1fdca336ebb8c9fe3bcfcbdc704e07c45240940c2e651cb5b860.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Acid-catalyzed Johnson-Claisen rearrangement led to racemization. A basic medium might prevent this.",
+        "gap": "Need to find optimal conditions for basic-catalyzed Johnson-Claisen rearrangement.",
+        "decision": "Attempted Johnson-Claisen rearrangement in DIPEA (as promoter and solvent) at 130 °C, expecting to retain enantiopurity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC=C[C@@H](O)[CH]2)cc1OC",
+          "CCCOC(C)(OCCC)OCCC"
+        ],
+        "reagents": [],
+        "solvent": "DIPEA",
+        "temperature": "130 °C",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "A mixture of products was obtained."
+      },
+      "evidence": {
+        "text_span": "Entry 7: —, 10 equiv. triethyl orthoacetate, DIPEA, 130 °C, Mixture of products.",
+        "image_refs": [
+          "7937447e3700bf81bdc0b55a20092dea491b134a62a0f916498c33ee3e3707d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 18,
+      "thought": {
+        "background": "DIPEA at 130 °C gave a mixture of products. Need to optimize temperature.",
+        "gap": "Need to find optimal temperature for DIPEA-mediated Johnson-Claisen rearrangement.",
+        "decision": "Increased temperature to 140 °C in DIPEA, expecting better conversion."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC=C[C@@H](O)[CH]2)cc1OC",
+          "CCCOC(C)(OCCC)OCCC"
+        ],
+        "reagents": [],
+        "solvent": "DIPEA",
+        "temperature": "140 °C",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 20,
+        "observation": "Obtained 20% product with 36% starting material remaining."
+      },
+      "evidence": {
+        "text_span": "Entry 8: —, 10 equiv. triethyl orthoacetate, DIPEA, 140 °C, 20% + 36% (SM).",
+        "image_refs": [
+          "7937447e3700bf81bdc0b55a20092dea491b134a62a0f916498c33ee3e3707d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 19,
+      "thought": {
+        "background": "DIPEA at 140 °C gave low yield. Higher temperature might be needed for full conversion.",
+        "gap": "Need to achieve higher yield and retain enantiopurity in DIPEA-mediated Johnson-Claisen rearrangement.",
+        "decision": "Increased temperature to 220 °C in DIPEA, expecting full conversion and retention of enantiopurity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC=C[C@@H](O)[CH]2)cc1OC",
+          "CCCOC(C)(OCCC)OCCC"
+        ],
+        "product_smiles": [
+          "CCOC(=O)[C@@H]1CCC=C[C@@H]1c1ccc(OC)c(OC)c1"
+        ],
+        "reagents": [],
+        "solvent": "DIPEA",
+        "temperature": "220 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "ee_percent": 97,
+        "observation": "Obtained 73% yield with 97% enantioselectivity, with minimum loss of enantiopurity."
+      },
+      "evidence": {
+        "text_span": "It was a pleasure to see that, after exhaustive optimization, 10 equiv. of N,N-diisopropylethylamine (DIPEA) and 10 equiv. of triethyl orthoacetate under heating condition produce γ,δ-unsaturated ester with 73% yield with 97% enantioselectivity.24 Interestingly, this reaction afforded enantioenriched [3,3]-sigmatropic rearrangement product (97% ee) with minimum loss of enantiopurity under elevated temperature in the presence of N,N-diisopropylethylamine (DIPEA) (Scheme 7).",
+        "image_refs": [
+          "7937447e3700bf81bdc0b55a20092dea491b134a62a0f916498c33ee3e3707d3.jpg",
+          "31ecddf32f759258a72b5754a29dd90f3147b64202a6adb336204e03ac520c0d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "DIPEA-mediated Johnson-Claisen rearrangement of 9b gave 97% ee. However, the previous strategy involved a bromo group to enhance enantioselectivity in the CBS reduction.",
+        "gap": "Can the bromo group also be beneficial in the Johnson-Claisen rearrangement, potentially allowing for acid catalysis without racemization?",
+        "decision": "It was hypothesized that the electron-withdrawing bromo functionality in 2-bromo-3-(aryl)cyclohex-2-enol 12b might counteract the electron-donating effect of the aromatic ring, preventing carbocation stabilization and thus racemization under acid-catalyzed Johnson-Claisen rearrangement conditions. The orthoester Johnson–Claisen rearrangement of 2-bromo 3-(aryl)cyclohex-2-enols 12b was undertaken under conventional acid-catalyzed approach."
+      },
+      "evidence": {
+        "text_span": "Next, the orthoester Johnson–Claisen rearrangement of 2- bromo 3-(aryl)cyclohex-2-enols 12b was undertaken. Since, 3- (aryl)cyclohex-2-enol having an electron-rich aromatic was difficult, it was thought of exploring the [3,3]-sigmatropic rearrangement of 2-bromo 3-(aryl)cyclohex-2-enol. The reason behind is that the substrate, 2-bromo 3-(aryl)cyclohex-2-enol, has an electron-rich aromatics and at the same time it is having an electron-withdrawing bromo functionality. Based on this intuition, the orthoester Johnson–Claisen rearrangement was carried out under conventional approach i.e. under acid catalyzed process.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The bromo group in 12b might allow for acid-catalyzed Johnson-Claisen rearrangement without racemization.",
+        "gap": "Need to perform the Johnson-Claisen rearrangement of 12b.",
+        "decision": "Orthoester Johnson–Claisen rearrangement of 2-bromo 3-(aryl)cyclohex-2-enol 12b was performed under acid-catalyzed conditions (o-nitrophenol, 220 °C, 36 h), expecting good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=C(Br)C[C@H](O)[C@@H](C)CC2)cc1OC",
+          ""
+        ],
+        "product_smiles": [
+          "CCOC(=O)C[C@H]1CCCCC(c2ccc(OC)c(OC)c2)=C1Br"
+        ],
+        "reagents": [
+          "o-nitrophenol"
+        ],
+        "temperature": "220 °C",
+        "time": "36 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Product 8a was afforded in 76% yield."
+      },
+      "evidence": {
+        "text_span": "Gratifyingly, it was observed that orthoester Johnson–Claisen rearrangement of 2-bromo 3- (aryl)cyclohex-2-enol was found to be very efficient and afforded product 8a in 76% yield (Scheme 8).",
+        "image_refs": [
+          "1e04931d261b450119a4fc9c2638a678a7bfbde0ac45607b1ea492339b8ae065.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 22,
+      "thought": {
+        "background": "Acid-catalyzed Johnson-Claisen rearrangement of 12b gave 76% yield. Microwave conditions might improve efficiency.",
+        "gap": "Need to improve the efficiency of the Johnson-Claisen rearrangement of 12b.",
+        "decision": "Performed the reaction under microwave conditions at 210 °C for 25 minutes, expecting higher yield and faster reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=C(Br)C[C@H](O)[C@@H](C)CC2)cc1OC",
+          ""
+        ],
+        "product_smiles": [
+          "CCOC(=O)C[C@H]1CCCCC(c2ccc(OC)c(OC)c2)=C1Br"
+        ],
+        "reagents": [
+          "o-nitrophenol"
+        ],
+        "temperature": "210 °C",
+        "time": "25 min",
+        "atmosphere": "microwave"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "observation": "Product 8a was afforded in 79% yield under microwave conditions."
+      },
+      "evidence": {
+        "text_span": "Pleasingly, this reaction was found to be more facile under microwave condition to afford product in 79% yield (Scheme 8).",
+        "image_refs": [
+          "1e04931d261b450119a4fc9c2638a678a7bfbde0ac45607b1ea492339b8ae065.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bromo-substituted ester 8a was obtained. The bromo group needs to be removed.",
+        "gap": "Need to debrominate 8a to obtain 8b.",
+        "decision": "Debromination of 8a was performed using tri-n-butyltin hydride in the presence of AIBN, expecting efficient removal of the bromine."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C[C@H]1CCCCC(c2ccc(OC)c(OC)c2)=C1Br"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C[C@@H]1C=C(c2ccc(OC)c(OC)c2)CCCC1"
+        ],
+        "reagents": [
+          "AIBN",
+          "nBu3SnH"
+        ],
+        "solvent": "THF",
+        "temperature": "80 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "observation": "Debromination afforded product 8b in 63% yield."
+      },
+      "evidence": {
+        "text_span": "Next, debromination of bromo group was conveniently done under classical condition with tri-n-butyltin hydride in the presence of AIBN.",
+        "image_refs": [
+          "1e04931d261b450119a4fc9c2638a678a7bfbde0ac45607b1ea492339b8ae065.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ester 8b was obtained. The next step is allylic oxidation to form the enone-ester 7b.",
+        "gap": "Need to convert 8b into the α,β-unsaturated ketone 7b via allylic oxidation.",
+        "decision": "Direct allylic oxidation of 8b was performed using CrO3, 3,5-dimethylpyrazole, in CH2Cl2, expecting to set the stage for cyclization studies."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C[C@@H]1C=C(c2ccc(OC)c(OC)c2)CCCC1"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C[C@@H]1C=C(c2ccc(OC)c(OC)c2)CCC(=O)C1"
+        ],
+        "reagents": [
+          "CrO3",
+          "CC1=C(C)N(C#C)N=C1"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-10 °C to 25 °C",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Conversion of 8b into the α,β-unsaturated ketone 7b was achieved in 77% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent direct conversion of 8b in to the α,β-unsaturated ketone 7b via an allylic oxidation (CrO3, 3,5-dimethylpyrazole, CH2Cl2, −10 °C to 25 °C, 16 h, 77%) set the stage for studies on its cyclization.",
+        "image_refs": [
+          "1e04931d261b450119a4fc9c2638a678a7bfbde0ac45607b1ea492339b8ae065.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "4-Aryl 4-alkyl α,β-unsaturated ketone 7b was obtained. The next step is to form the tricyclic core via ester-aminolysis and aza-Michael reaction.",
+        "gap": "Need to convert 7b into the bicyclic keto lactam 1c using methylamine.",
+        "decision": "Treatment of 7b with MeNH2 in THF at 80 °C for 16 h was performed, expecting smooth formation of 1c."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C[C@@H]1C=C(c2ccc(OC)c(OC)c2)CCC(=O)C1"
+        ],
+        "product_smiles": [
+          "COc1ccc(C2C(=O)N(C)C3CC(=O)CCC23)cc1OC"
+        ],
+        "reagents": [
+          "MeNH2"
+        ],
+        "solvent": "THF",
+        "temperature": "80 °C",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Bicyclic keto lactam 1c was furnished in 96% yield."
+      },
+      "evidence": {
+        "text_span": "Following optimization, it was observed that the treatment of 4- aryl 4-alkyl α,β-unsaturated ketone 7b with MeNH2 in THF (80 °C, 16 h) proceeded smoothly furnish bicyclic keto lactam 1c in 96% yield.",
+        "image_refs": [
+          "2894be50bed293027d3275155606f9d444d9c0f48a8e06ef655b027bb12d3e66.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Bicyclic keto lactam 1c was obtained. Need to chemoselectively reduce the keto carbonyl to complete the synthesis of (-)-2-oxoepimesembranol (1d).",
+        "gap": "Need to find a highly stereoselective reducing agent for the ketone functionality in 1c.",
+        "decision": "Attempted reduction of 1c using NaBH4 in MeOH at 0 °C, expecting stereoselective reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2C(=O)N(C)C3CC(=O)CCC23)cc1OC"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "1 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "dr": "8:1",
+        "observation": "Obtained 84% yield with ~8:1 dr, which is not high enough diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Next, chemoselective reduction of keto carbonyl functionality over carboxamide carbonyl was undertaken. In this regard, a number of reducing agents were selected and reduction was performed under different condition (Table 3). ... Entry 1: NaBH4(MeOH), 1 eq., 0 °C, 1 h, 84% yield, ~8:1 dr.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 28,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 27,
+      "thought": {
+        "background": "NaBH4 gave insufficient diastereoselectivity. Need a more selective reducing agent.",
+        "gap": "Need to find a highly stereoselective reducing agent for the ketone functionality in 1c.",
+        "decision": "Attempted reduction of 1c using LiAlH4 in THF at 0 °C, expecting improved stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2C(=O)N(C)C3CC(=O)CCC23)cc1OC"
+        ],
+        "reagents": [
+          "LiAlH4"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "1 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "dr": "5:1",
+        "observation": "Obtained 70% yield with ~5:1 dr, which is worse than NaBH4."
+      },
+      "evidence": {
+        "text_span": "Entry 2: LiAlH4(THF), 1 eq., 0 °C, 1 h, 70% yield, ~5:1 dr.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 29,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 28,
+      "thought": {
+        "background": "LiAlH4 at 0 °C gave low diastereoselectivity. Lower temperature might improve selectivity.",
+        "gap": "Need to find a highly stereoselective reducing agent for the ketone functionality in 1c.",
+        "decision": "Attempted reduction of 1c using LiAlH4 in THF at -78 °C, expecting improved stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2C(=O)N(C)C3CC(=O)CCC23)cc1OC"
+        ],
+        "reagents": [
+          "LiAlH4"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "1 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "dr": "10:1",
+        "observation": "Obtained 69% yield with ~10:1 dr, which is better but still not excellent."
+      },
+      "evidence": {
+        "text_span": "Entry 3: LiAlH4(THF), 1 eq., -78 °C, 1 h, 69% yield, ~10:1 dr.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 30,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 29,
+      "thought": {
+        "background": "LiAlH4 at -78 °C gave 10:1 dr. Need to try other reducing agents.",
+        "gap": "Need to find a highly stereoselective reducing agent for the ketone functionality in 1c.",
+        "decision": "Attempted reduction of 1c using Red-Al in PhMe at 25 °C, expecting improved stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2C(=O)N(C)C3CC(=O)CCC23)cc1OC"
+        ],
+        "reagents": [
+          "Red-Al"
+        ],
+        "solvent": "PhMe",
+        "temperature": "25 °C",
+        "time": "4 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "dr": "5:1",
+        "observation": "Obtained 65% yield with ~5:1 dr, which is not good."
+      },
+      "evidence": {
+        "text_span": "Entry 4: Red-Al (PhMe), 1 eq., 25 °C, 4 h, 65% yield, ~5:1 dr.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 31,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 30,
+      "thought": {
+        "background": "Various reducing agents failed to give excellent diastereoselectivity. Need a more bulky and selective hydride source.",
+        "gap": "Need to find a highly stereoselective reducing agent for the ketone functionality in 1c.",
+        "decision": "Attempted reduction of 1c using K-selectride in THF at -78 °C, expecting excellent diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2C(=O)N(C)C3CC(=O)CCC23)cc1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc(C23CCCC(O)C2CN(C)C3=O)cc1OC"
+        ],
+        "reagents": [
+          "K-selectride"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "dr": ">20:1",
+        "observation": "Highly stereoselective reduction of ketone group was achieved, completing the total synthesis of (-)-2-oxoepimesembranol (1d) in 99% yield and >20:1 diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Following extensive optimization using various hydride source such as NaBH4, LiAlH4, Red-Al, and K-selectride, it was found that a highly stereoselective reduction of ketone group is possible to complete the total synthesis of (–)-2-oxoepimesembranol (1d) in excellent yield (99%) and excellent diastereoselectivity (>20:1) (Table 3).",
+        "image_refs": [
+          "cf8745a87862b9c2c6c2b41f53c0a4b60d773c4e40d63f152077b34bd757c8e4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 32,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of (-)-2-oxoepimesembranol (1d) was completed. Now, need to synthesize (-)-6-epimesembranol (1b).",
+        "gap": "Need to reductively remove the lactam carbonyl of 1d.",
+        "decision": "Reductive removal of the lactam carbonyl of 1d was performed upon treatment with LiAlH4 (5 equiv, THF, 70 °C reflux, 6 h), expecting to complete the total synthesis of (-)-6-epimesembranol (1b)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C23CCCC(O)C2CN(C)C3=O)cc1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc(C2=CC3C(O)CCC24CCN(C)CC34)cc1OC"
+        ],
+        "reagents": [
+          "LiAlH4"
+        ],
+        "solvent": "THF",
+        "temperature": "70 °C",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "The total synthesis of (-)-6-epimesembranol (1b) was completed in 92% yield."
+      },
+      "evidence": {
+        "text_span": "Next, the reductive removal of the lactam carbonyl of 1d upon treatment with LiAlH4 (5 equiv, THF, 70 °C reflux, 6 h) completed the total synthesis of (–)-6-epimesembranol (1b) in 92% yield (Scheme 10).",
+        "image_refs": [
+          "8a10170dc03dc0ab70d2272ce47d46be23595c27dd02028b4704b55.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 33,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of (-)-6-epimesembranol (1b) was completed. Now, need to synthesize (-)-mesembrine (1a).",
+        "gap": "Need to oxidize 1b to (-)-mesembrine (1a).",
+        "decision": "Treatment of 1b with IBX in DMSO (25 °C, 3 h) was performed, expecting to afford (-)-mesembrine (1a)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C2=CC3C(O)CCC24CCN(C)CC34)cc1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc(C2CC34CCN(C)C2C3CCC4=O)cc1OC"
+        ],
+        "reagents": [
+          "IBX"
+        ],
+        "solvent": "DMSO",
+        "temperature": "25 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "(-)-mesembrine (1a) was afforded in 83% yield."
+      },
+      "evidence": {
+        "text_span": "Further, the treatment with IBX in DMSO (25 °C, 3 h) affords the (–)-mesembrine (1a) in 83% yield (Scheme 10).",
+        "image_refs": [
+          "6a89f683367b0e76b1373f733ddfe682f04facc859f5e08fe6c41e85f028582a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 34,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The collective total synthesis of cis-3a-octahydroindoline alkaloids was demonstrated. Now, the total synthesis of naturally occurring dihydromaritidine is undertaken.",
+        "gap": "Need to synthesize the tricyclic core 6b from 4-aryl 4-alkyl α,β-unsaturated ketone 7b via ester-aminolysis and aza-Michael reaction using ammonia.",
+        "decision": "Treatment of 7b with NH3 in THF (70 °C, 16 h) was performed, expecting smooth formation of bicyclic keto lactam 6b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C[C@@H]1C=C(c2ccc(OC)c(OC)c2)CCC(=O)C1"
+        ],
+        "product_smiles": [
+          "COc1ccc(C[C@]23CCC(=O)C[C@H]2C(=O)NC3=O)c(OC)c1"
+        ],
+        "reagents": [
+          "NH3"
+        ],
+        "solvent": "THF",
+        "temperature": "70 °C",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Bicyclic keto lactam 6b was furnished in 94% yield."
+      },
+      "evidence": {
+        "text_span": "Following optimization, it was observed that the treatment of 4-aryl 4-alkyl α,β-unsaturated ketone 7b with NH3 in THF (70%)) proceeded smoothly furnish bicyclic keto lactam 6b in 94% yield (Scheme 11).",
+        "image_refs": [
+          "6b3a86b4d03a19bd16a1b39c08544380c056dc68623595c27dd02028b4704b55.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 35,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bicyclic keto lactam 6b was obtained. The keto functional group needs to be protected before further reduction.",
+        "gap": "Need to protect the keto functional group of 6b.",
+        "decision": "The keto functional group of 6b was protected with ethylene glycol in the presence of catalytic amount p-toluene sulfonic acid, expecting high yield of 13b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C[C@]23CCC(=O)C[C@H]2C(=O)NC3=O)c(OC)c1"
+        ],
+        "product_smiles": [
+          "C",
+          "O",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "O",
+          "C",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "C",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "C",
+          "",
+          "C",
+          "C",
+          "",
+          "C",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "C",
+          "",
+          "",
+          "C",
+          "",
+          "",
+          "",
+          "",
+          "C",
+          "C",
+          "",
+          "",
+          "O",
+          "",
+          "O",
+          "C",
+          "C",
+          "O",
+          ""
+        ],
+        "reagents": [
+          "p-TsOH",
+          "OCCO"
+        ],
+        "solvent": "PhMe",
+        "temperature": "110 °C",
+        "time": "5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Compound 13b was afforded in 98% yield."
+      },
+      "evidence": {
+        "text_span": "Further, keto functional group of the bicyclic keto lactam 6b was protected with ethylene glycol in the presence of catalytic amount p-toluene sulfonic acid to afford 13b in 98% yield (Scheme 12).",
+        "image_refs": [
+          "737b979e8a9ceea6d3d2e060a8820122013ea971fdf69f0148e6ac6a8ed7cb8a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 36,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Keto-protected lactam 13b was obtained. Need to reduce the lactam carbonyl to form the cis-8a-octahydroindole derivative 14b.",
+        "gap": "Need to find an efficient reducing agent for the lactam carbonyl of 13b.",
+        "decision": "Attempted reduction of 13b using Red-Al, expecting to form 14b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Red-Al"
+        ],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "scope_limited",
+        "observation": "Red-Al proved to be inefficient for this transformation."
+      },
+      "evidence": {
+        "text_span": "Other reducing agents such as Red-Al, superhydride were proved to be inefficient for this transformation.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 37,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Red-Al was inefficient for reducing 13b. Need to try another reducing agent.",
+        "gap": "Need to find an efficient reducing agent for the lactam carbonyl of 13b.",
+        "decision": "Attempted reduction of 13b using superhydride, expecting to form 14b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "reagents": [
+          "superhydride"
+        ],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "scope_limited",
+        "observation": "Superhydride proved to be inefficient for this transformation."
+      },
+      "evidence": {
+        "text_span": "Other reducing agents such as Red-Al, superhydride were proved to be inefficient for this transformation.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 38,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 37,
+      "thought": {
+        "background": "Red-Al and superhydride were inefficient for reducing 13b. Need a stronger reducing agent.",
+        "gap": "Need to find an efficient reducing agent for the lactam carbonyl of 13b.",
+        "decision": "Lithium aluminum hydride reduction in tetrahydrofuran under reflux was performed, expecting to afford cis-8a-octahydroindole derivative 14b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COc1ccc(C23CC(O)C(CCC2N)O3)c(OC)c1"
+        ],
+        "reagents": [
+          "LiAlH4"
+        ],
+        "solvent": "THF",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "cis-8a-octahydroindole derivative 14b was afforded in 94% yield. The work-up was done under basic conditions (1(N) NaOH) to prevent deprotection of the ketal."
+      },
+      "evidence": {
+        "text_span": "Later, lithium aluminium hydride reduction in tetrahydrofuran under reflux afforded cis-8a-octahydroindole derivative 14b in 94% yield. ... The work-up process of reduction of 13b (particularly the quench of lithium aluminum hydride) is worth mentioning, which was done under the basic condition using 1(N) NaOH. It was observed that an acidic work up using 0.5(N) HCl always afforded a mixture of spots, probably because of the deprotection of ketal functional group.",
+        "image_refs": [
+          "0f4cc690dfc8d32a85daa568a7babc731262be5dcead998c5cce7d92ae2fe905.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 39,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "cis-8a-octahydroindole derivative 14b was obtained. The next step is Pictet–Spengler cyclization to obtain the [5,11b]-ethanophenanthridine skeleton.",
+        "gap": "Need to find suitable conditions for Pictet–Spengler cyclization of 14b.",
+        "decision": "Attempted Pictet–Spengler cyclization using paraformaldehyde and TFA at 0 °C, expecting to form (+)-dihydrooxomaritidine (15b)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C23CC(O)C(CCC2N)O3)c(OC)c1"
+        ],
+        "reagents": [
+          "OCO",
+          "OC(=O)C(F)(F)F"
+        ],
+        "temperature": "0 °C",
+        "time": "8 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "Obtained 62% yield, but not optimal."
+      },
+      "evidence": {
+        "text_span": "With significant quantity of cis-C-8a-octahydroindole derivative 14b in hand, the next effort was put forward to affect the Pictet–Spengler cyclization to obtain [5,11b]- ethanophenanthridine skeleton (Scheme 13). In this regard, a number of formaldehyde equivalents such as paraformaldehyde, 1,3,5-trioxane, Eschenmoser salt, and formalin were used. ... Entry 1: TFA, Paraformaldehyde, 0 °C, 8 h, 62% yield.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 40,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 39,
+      "thought": {
+        "background": "Paraformaldehyde and TFA gave 62% yield. Need to improve yield.",
+        "gap": "Need to find suitable conditions for Pictet–Spengler cyclization of 14b.",
+        "decision": "Attempted Pictet–Spengler cyclization using 1,3,5-trioxane and BF3·OEt2 at 0 °C, expecting improved yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C23CC(O)C(CCC2N)O3)c(OC)c1"
+        ],
+        "reagents": [
+          "1,3,5-Trioxane",
+          "BF3.OEt2"
+        ],
+        "temperature": "0 °C",
+        "time": "8 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "Obtained 56% yield, which is lower."
+      },
+      "evidence": {
+        "text_span": "Entry 2: TFA, 1,3,5-Trioxane, BF3·OEt2, 0 °C, 8 h, 56% yield.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 41,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 40,
+      "thought": {
+        "background": "1,3,5-trioxane and BF3·OEt2 gave low yield. Need to try another formaldehyde equivalent.",
+        "gap": "Need to find suitable conditions for Pictet–Spengler cyclization of 14b.",
+        "decision": "Attempted Pictet–Spengler cyclization using Eschenmoser salt at 40 °C without additional acid, expecting improved yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C23CC(O)C(CCC2N)O3)c(OC)c1"
+        ],
+        "reagents": [
+          "Eschenmoser salt"
+        ],
+        "temperature": "40 °C",
+        "time": "3 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Obtained 65% yield, which is better but still not optimal."
+      },
+      "evidence": {
+        "text_span": "Entry 3: None, Eschenmoser salt, 40 °C, 3 h, 65% yield.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 42,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 41,
+      "thought": {
+        "background": "Eschenmoser salt gave 65% yield. Need to try another formaldehyde equivalent and acid.",
+        "gap": "Need to find suitable conditions for Pictet–Spengler cyclization of 14b.",
+        "decision": "Attempted Pictet–Spengler cyclization using formalin and TFA at 0 °C, expecting improved yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C23CC(O)C(CCC2N)O3)c(OC)c1"
+        ],
+        "reagents": [
+          "C=O",
+          "OC(=O)C(F)(F)F"
+        ],
+        "temperature": "0 °C",
+        "time": "24 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "observation": "Obtained 71% yield, which is better."
+      },
+      "evidence": {
+        "text_span": "Entry 4: TFA, Formalin, 0 °C, 24 h, 71% yield.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 43,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 42,
+      "thought": {
+        "background": "Formalin and TFA gave 71% yield. Need to optimize acid and temperature.",
+        "gap": "Need to find optimal conditions for Pictet–Spengler cyclization of 14b.",
+        "decision": "Attempted Pictet–Spengler cyclization using formalin and 6(N) HCl at 40 °C, expecting highest yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C23CC(O)C(CCC2N)O3)c(OC)c1"
+        ],
+        "product_smiles": [
+          "COc1ccc(C[C@H]2C[C@@H]3C(=O)CCN[C@H]23)c(OC)c1"
+        ],
+        "reagents": [
+          "C=O",
+          "HCl"
+        ],
+        "solvent": "MeOH",
+        "temperature": "40 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "The synthesis of (+)-dihydrooxomaritidine (15b) was obtained in 91% yield."
+      },
+      "evidence": {
+        "text_span": "Following an exhaustive optimization (Table 4), it was delighted to observe that the synthesis of required [5,11b]- ethanophenanthridine skeleton, i.e. (+)-dihydrooxomaritidine (15b) could be obtained in 91% from a reaction of 14b and formalin (aqueous solution) in methanol in the presence of 6(N) HCl.",
+        "image_refs": [
+          "c447a85f55adbc85ba4282c6cf54f927f19eae0b8abe3f2cc4a31db57ff66bd5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 44,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "(+)-dihydrooxomaritidine (15b) was obtained. The next effort is to synthesize (+)-dihydromaritidine (2c) via highly diastereoselective reduction of the ketone.",
+        "gap": "Need to find a highly diastereoselective reducing agent for the ketone functionality in 15b.",
+        "decision": "Attempted reduction of 15b using NaBH4 in MeOH at -10 °C, expecting stereoselective reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C[C@H]2C[C@@H]3C(=O)CCN[C@H]23)c(OC)c1"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "-10 °C",
+        "time": "1 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "dr": "10:1",
+        "observation": "Obtained 98% yield with 10:1 dr, which is good but not excellent."
+      },
+      "evidence": {
+        "text_span": "The next effort was to synthesize the naturally occurring Amaryllidaceae alkaloids, (+)-dihydromaritidine (2c) sharing [5,11b]-ethanophenanthridine skeleton. In this regard a highly diastereoselective reduction of ketone was undertaken (Table 5). ... Entry 1: NaBH4(MeOH), 1 eq., -10 °C, 1 h, 98% yield, ~10:1 dr.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 45,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 44,
+      "thought": {
+        "background": "NaBH4 gave 10:1 dr. Need a more selective reducing agent.",
+        "gap": "Need to find a highly diastereoselective reducing agent for the ketone functionality in 15b.",
+        "decision": "Attempted reduction of 15b using LiAlH4 in THF at 0 °C, expecting improved stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C[C@H]2C[C@@H]3C(=O)CCN[C@H]23)c(OC)c1"
+        ],
+        "reagents": [
+          "LiAlH4"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "1 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "dr": "5:1",
+        "observation": "Obtained 90% yield with ~5:1 dr, which is worse."
+      },
+      "evidence": {
+        "text_span": "Entry 2: LiAlH4(THF), 1 eq., 0 °C, 1 h, 90% yield, ~5:1 dr.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 46,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 45,
+      "thought": {
+        "background": "LiAlH4 at 0 °C gave low diastereoselectivity. Lower temperature might improve selectivity.",
+        "gap": "Need to find a highly diastereoselective reducing agent for the ketone functionality in 15b.",
+        "decision": "Attempted reduction of 15b using LiAlH4 in THF at -10 °C, expecting improved stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C[C@H]2C[C@@H]3C(=O)CCN[C@H]23)c(OC)c1"
+        ],
+        "reagents": [
+          "LiAlH4"
+        ],
+        "solvent": "THF",
+        "temperature": "-10 °C",
+        "time": "5 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "dr": "10:1",
+        "observation": "Obtained 69% yield with ~10:1 dr, which is better but still not excellent."
+      },
+      "evidence": {
+        "text_span": "Entry 3: LiAlH4(THF), 1 eq., -10 °C, 5 h, 69% yield, ~10:1 dr.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 47,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 46,
+      "thought": {
+        "background": "LiAlH4 at -10 °C gave 10:1 dr. Need to try other reducing agents.",
+        "gap": "Need to find a highly diastereoselective reducing agent for the ketone functionality in 15b.",
+        "decision": "Attempted reduction of 15b using Red-Al in PhMe at 25 °C, expecting improved stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C[C@H]2C[C@@H]3C(=O)CCN[C@H]23)c(OC)c1"
+        ],
+        "reagents": [
+          "Red-Al"
+        ],
+        "solvent": "PhMe",
+        "temperature": "25 °C",
+        "time": "4 h",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "dr": "10:1",
+        "observation": "Obtained 65% yield with ~10:1 dr, which is not good."
+      },
+      "evidence": {
+        "text_span": "Entry 4: Red-Al (PhMe), 1 eq., 25 °C, 4 h, 65% yield, ~10:1 dr.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 48,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 47,
+      "thought": {
+        "background": "Various reducing agents failed to give excellent diastereoselectivity. Need a more bulky and selective hydride source.",
+        "gap": "Need to find a highly diastereoselective reducing agent for the ketone functionality in 15b.",
+        "decision": "Attempted reduction of 15b using K-selectride in THF at -78 °C, expecting excellent diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(C[C@H]2C[C@@H]3C(=O)CCN[C@H]23)c(OC)c1"
+        ],
+        "product_smiles": [
+          "COc1cc2c(c(OC)c1)C1[C@H]3C[C@@H](O)CN(C)[C@@H]1[C@H]3C2"
+        ],
+        "reagents": [
+          "K-selectride"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "dr": ">20:1",
+        "observation": "Highly diastereoselective reduction of ketone was achieved, furnishing the natural product 2c in 99% yield with >20:1 diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Among various reducing agent, Kselectride was found to be the best and furnished the natural product 2c in 99% yield with >20:1 diastereoselectivity (entry 5, Table 5).",
+        "image_refs": [
+          "959fe7e055304e58afa0e881e4de6628730d956a2c22611579f24481e2911bee.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated for the entire synthesis of (+)-dihydromaritidine, but individual steps show high yields."
+      },
+      "Longest Linear Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Longest linear sequence not explicitly stated."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Total number of steps not explicitly stated."
+      },
+      "Failed Attempts Count": {
+        "value": 13,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly reported failed attempts during optimization."
+      }
+    },
+    "significance": "The paper describes a general approach to Sceletium and Amaryllidaceae alkaloids, including the first total synthesis of (-)-2-oxo-epimesembranol and an asymmetric total synthesis of (+)-dihydromaritidine. The key Johnson–Claisen rearrangement was optimized to retain high enantioselectivity under basic conditions, addressing a significant challenge with electron-rich aromatic systems. The strategy successfully installed a benzylic all-carbon quaternary stereocenter and demonstrated high diastereoselectivity in key reduction steps."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d4ra05275g",
+      "pmcid": "PMC11403583",
+      "title": "Total synthesis of (-)-2-oxo epimesembranol and (+)-dihydromaritidine <i>via</i> a key Johnson-Claisen rearrangement.",
+      "authors": "Majumder S, Yadav A, Pal S, Mondal A, Bisai A.",
+      "journal": "RSC Adv",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11403583?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/5ce9d331-1fb9-4a89-bed1-5c8434d2c1f8.zip",
+      "parsed_at": "2026-05-11T06:36:01.233216+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 133,
+    "parseable": 91,
+    "canonicalized": 70,
+    "invalid": 42,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "BrMgc1ccc(OC)c(OC)c1",
+      "CCOC(C)(C)OEt",
+      "CCOC(C)(C)OEt",
+      "c",
+      "1",
+      "c",
+      "c",
+      "(",
+      ")",
+      "c"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

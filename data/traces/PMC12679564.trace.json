@@ -1,0 +1,893 @@
+{
+  "trace_id": "TS-PMC12679564",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Kavaratamide A",
+    "smiles": "CCCCCCC[C@H](O)CC(=O)N[C@H](C(=O)N(C)[C@@H](C)C(=O)O[C@H](C(=O)N(C1=C(OC)C(=O)OC1)C(C)C)C(C)C)C(C)C",
+    "natural_product_class": "lipodepsipeptide",
+    "structural_features": {
+      "stereocenters": 6,
+      "ring_systems": "1",
+      "key_motifs": [
+        "3-hydroxydecanoic acid",
+        "tetramic acid",
+        "peptide backbone"
+      ]
+    },
+    "motivation": "Kavaratamide A, B, and C are marine-derived lipodepsipeptides with diverse biological properties, including moderate cytotoxicity against human medulloblastoma D283-MED cells. Their unique structures and biological significance necessitate total syntheses for further studies into their bioactivities and potential medicinal uses.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Chen",
+        "year": 2025,
+        "doi": "10.1039/d5ra07822a",
+        "key_strategy": "Evans aldol and Steglich esterification sequence"
+      },
+      {
+        "lead_author": "Kontham",
+        "year": 2025,
+        "doi": "10.1039/d5ra07822a",
+        "key_strategy": "convergent Keck asymmetric allylation"
+      },
+      {
+        "lead_author": "Lindsley",
+        "year": 2025,
+        "doi": "10.1039/d5ra07822a",
+        "key_strategy": "modular total synthesis"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Successful synthesis of Kavaratamide A, B, and C with confirmed structures and stereochemistry, providing a platform for further medicinal chemistry investigations."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "Amide bond between beta-hydroxycarboxylic acid (BHA) and tetradepsipeptide",
+        "named_strategy": "Amide coupling",
+        "reasoning": "This disconnection simplifies the target into two major fragments: a lipid tail (BHA) and a peptide backbone (tetradepsipeptide)."
+      },
+      {
+        "bond_description": "C-C bond in beta-hydroxycarboxylic acid (BHA)",
+        "named_strategy": "Reformatsky reaction",
+        "reasoning": "This reaction allows for the stereoselective construction of the (3S)-3-hydroxydecanoic acid (HDA) fragment, a key lipid component."
+      },
+      {
+        "bond_description": "Ester and amide bonds within the tetradepsipeptide",
+        "named_strategy": "Steglich esterification and Amidation",
+        "reasoning": "These reactions are efficient and selective for constructing the peptide backbone."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "BHA_2",
+        "smiles": "CC(C)C(C)C(C)C(O)C(=O)O",
+        "role": "lipid tail precursor",
+        "comes_from": "Reformatsky reaction of aldehyde 4 and oxazolidinone 5"
+      },
+      {
+        "fragment_id": "tetradepsipeptide_3",
+        "smiles": "COC1=CC(=O)N(C(C)C(=O)OC(C(=O)NC(C)C(=O)NC(NC(=O)OC(C)(C)C)C(C)C)C(C)C)C1C(C)C",
+        "role": "peptide backbone precursor",
+        "comes_from": "Coupling of tetramic acid 6 and Boc-N-L-valine 7"
+      },
+      {
+        "fragment_id": "tetramic_acid_6",
+        "smiles": "COC1=CC(=O)NC1C(C)C",
+        "role": "tetramic acid moiety",
+        "comes_from": "Boc-N-L-valine 7"
+      }
+    ],
+    "rationale": "The strategy is divergent, allowing for the synthesis of Kavaratamide A, B, and C from a common tetradepsipeptide intermediate by varying the beta-hydroxycarboxylic acid. The key steps involve a stereoselective Reformatsky reaction for the lipid fragment and sequential Steglich esterification and amidation for the peptide backbone, ensuring high efficiency and stereochemical control."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Kavaratamide A, B, and C are lipodepsipeptides with a lipid tail and a peptide backbone. They exhibit promising bioactivity.",
+        "gap": "How to efficiently and stereoselectively synthesize these complex molecules.",
+        "decision": "To synthesize kavaratamide A, B, and C, a retrosynthetic analysis was performed. The molecules were disconnected into a beta-hydroxycarboxylic acid (BHA) 2 and a tetradepsipeptide 3 via amide coupling. BHA 2 was further disconnected to an aldehyde 4 and (R)-4-benzyl-3-(2-bromoacetyl)oxazolidin-2-one 5 via a Reformatsky reaction. Tetradepsipeptide 3 was disconnected to tetramic acid 6 and Boc-N-L-valine 7."
+      },
+      "evidence": {
+        "text_span": "Retrosynthetic analysis (Scheme 1) reveals that kavaratamide A, B, and C could be synthesized by treating a $\\beta$ -hydroxycarboxylic acid (BHA) 2 with a tetradepsipeptide 3 via amide coupling. The BHA 2 was obtained via a two-step Reformatsky reaction29 involving an aldehyde 4 and (R)-4-benzyl-3-(2-bromoacetyl) oxazolidin-2-one 5 (Scheme 2). Tetradepsipeptide 3 was synthesized through a series of coupling reactions involving a tetramic acid 6, which can be prepared from commercially available Boc-N-L-valine 7.32",
+        "section": "Results and discussion",
+        "image_refs": [
+          "c3a1135a0ee6559e59e5a7feb70f13e3458638a18dd7ec8f1d4df96b81ff84a6.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "BHA_2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The retrosynthetic analysis identified (R)-4-benzyl-3-(2-bromoacetyl)oxazolidin-2-one (5) as a key intermediate for the BHA fragment.",
+        "gap": "How to synthesize compound 5.",
+        "decision": "To synthesize 5, (R)-4-benzyloxazolidin-2-one chiral auxiliary (8) was treated with n-BuLi, followed by bromoacetyl bromide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1N[C@@H](Cc2ccccc2)CO1"
+        ],
+        "product_smiles": [
+          "O=C(CBr)N1C[C@@H](Cc2ccccc2)OC1=O"
+        ],
+        "rxn_smiles": "O=C1N[C@@H](Cc2ccccc2)CO1.O=C(CBr)CBr>>O=C(CBr)N1C[C@@H](Cc2ccccc2)OC1=O",
+        "reagents": [
+          "n-BuLi",
+          "bromoacetyl bromide"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to rt",
+        "time": "3.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Compound 5 was obtained in 78% yield."
+      },
+      "evidence": {
+        "text_span": "Our synthesis began by preparing the key BHA intermediates using a $\\mathrm { { Sml } } _ { 2 }$ -mediated Reformatsky reaction. The (R)-4-benzyl-3-(2-bromoacetyl)oxazolidin-2-one (5) was synthesized in $78\\%$ yield by treating (R)-4-benzyloxazolidin-2-one chiral auxiliary (8) with $n$ -BuLi, followed by bromoacetyl bromide.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "baef70d88ff47bd24fa0d2013dfdbd918be6c21b3fff22e523718c52dbd4a9c3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "BHA_2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 5 is ready. The next step is to construct the (3S)-3-hydroxydecanoic acid (HDA) fragment, which is a key lipid component.",
+        "gap": "How to stereoselectively form the C-C bond and introduce the hydroxyl group.",
+        "decision": "To synthesize the (R)-4-benzyl-3-((S)-3-hydroxydecanoyl)-oxazolidin-2-one intermediate (9a), compound 5 was condensed with octanal (4a) using a SmI2-mediated Reformatsky reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(CBr)N1C[C@@H](Cc2ccccc2)OC1=O",
+          "CCCCCCCC=O"
+        ],
+        "product_smiles": [
+          "CCCCCC[C@@H](O)CC(=O)N1C[C@@H](Cc2ccccc2)OC1=O"
+        ],
+        "rxn_smiles": "O=C(CBr)N1C[C@@H](Cc2ccccc2)OC1=O.CCCCCCCC=O>>CCCCCC[C@@H](O)CC(=O)N1C[C@@H](Cc2ccccc2)OC1=O",
+        "reagents": [
+          "SmI2"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 47,
+        "dr": "8.8:1.2",
+        "observation": "Intermediate 9a was obtained in 47% yield with excellent diastereoselectivity. The moderate yield was attributed to partial conversion of starting material."
+      },
+      "evidence": {
+        "text_span": "We prepared the key (R)-4-benzyl-3-((S)-3-hydroxydecanoyl)-oxazolidin-2-one intermediate (9a) by condensing (R)-4-benzyl-3-(2-bromoacetyl) oxazolidin-2-one (5) with octanal (4a) at $- 7 8 ~ ^ { \\circ } \\mathrm { C }$ mediated by $\\operatorname { S mI } _ { 2 }$ . $\\operatorname { S m } \\mathbf { I } _ { 2 }$ enables a unique and chemoselective transformation that was not attainable using other conventional reagents. Here, we $\\ﬁ$rst slowly added a mixture of 5 and 4a in THF to a ${ \\bf 0 . 1 \\ M }$ solution of $\\operatorname { SmI } _ { 2 }$ in THF at $- 7 8 ~ ^ { \\circ } \\mathrm { C }$ , with the resulting mixture stirred for 1 h, which afforded 9a in $4 7\\%$ yield $( \\mathrm { dr } = 8 . 8 : 1 . 2$ , determined by isolated yield). The moderate yield can be ascribed to partial conversion of the starting material, indicating that the reaction did not proceed to completion even upon treatment with 3.0 equivalents of $\\operatorname { SmI } _ { 2 }$ . This may be due to steric hindrance around the reactive site or limited accessibility of $\\operatorname { Sm } \\mathbf { I } _ { 2 }$ to the substrate under the applied conditions. Despite the modest yield, this step proceeds with excellent selectivity and functional group tolerance.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "baef70d88ff47bd24fa0d2013dfdbd918be6c21b3fff22e523718c52dbd4a9c3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "BHA_2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 9a has been synthesized. The next step is to remove the chiral auxiliary to obtain the desired beta-hydroxydecanoic acid (2a).",
+        "gap": "How to hydrolyze the oxazolidinone without affecting the newly formed stereocenter.",
+        "decision": "To obtain 2a, 9a was hydrolyzed with hydrogen peroxide and LiOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCC[C@@H](O)CC(=O)N1C[C@@H](Cc2ccccc2)OC1=O"
+        ],
+        "product_smiles": [
+          "CCCCCC[C@@H](O)CC(=O)O"
+        ],
+        "rxn_smiles": "CCCCCC[C@@H](O)CC(=O)N1C[C@@H](Cc2ccccc2)OC1=O>>CCCCCC[C@@H](O)CC(=O)O",
+        "reagents": [
+          "LiOH",
+          "H2O2"
+        ],
+        "solvent": "THF/H2O",
+        "temperature": "0 °C to rt",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "The desired beta-hydroxydecanoic acid (2a) was obtained in 84% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent hydrolysis of 9a with hydrogen peroxide and LiOH furnished the desired $\\beta$ - hydroxydecanoic acid (2a) in $8 4\\%$ yield.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "baef70d88ff47bd24fa0d2013dfdbd918be6c21b3fff22e523718c52dbd4a9c3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "BHA_2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The method for synthesizing 2a is established. Kavaratamide B and C require similar BHA fragments with different chain lengths.",
+        "gap": "How to synthesize 2b and 2c efficiently.",
+        "decision": "To synthesize 2b and 2c, the same strategy was applied using hexanal (4b) and decanal (4c) respectively, followed by hydrolysis."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(CBr)N1C[C@@H](Cc2ccccc2)OC1=O",
+          "CCCCCC=O",
+          "CCCCCCCCCC=O"
+        ],
+        "product_smiles": [
+          "CCCC[C@@H](O)CC(=O)O",
+          "CCCCCCCC[C@@H](O)CC(=O)O"
+        ],
+        "rxn_smiles": "O=C(CBr)N1C(=O)O[C@H](Cc2ccccc2)C1.O=CCCCCC>>O=C(C[C@H](O)CCCC)N1C(=O)O[C@H](Cc2ccccc2)C1;O=C(CBr)N1C(=O)O[C@H](Cc2ccccc2)C1.O=CCCCCCCCCC>>O=C(C[C@H](O)CCCCCCCC)N1C(=O)O[C@H](Cc2ccccc2)C1",
+        "reagents": [
+          "SmI2",
+          "LiOH",
+          "H2O2"
+        ],
+        "solvent": "THF/H2O",
+        "temperature": "-78 °C to rt",
+        "time": "1 h (Reformatsky), 16 h (hydrolysis)"
+      },
+      "outcome": {
+        "valid": true,
+        "dr": "9.1:0.9 (for 9b), 8.1:1.9 (for 9c)",
+        "observation": "Intermediates 9b and 9c were obtained with good diastereoselectivity, and subsequent hydrolysis yielded BHAs 2b and 2c in good yields."
+      },
+      "evidence": {
+        "text_span": "Intermediates 2b and 2c, which are required for the preparation of kavaratamide B and C, respectively, were synthesized using the same strategy. The corresponding oxazolidinone intermediates 9b $\\mathrm { dr } = 9 . 1$ : 0.9) and 9c $( \\mathrm { dr } = 8 . 1 : 1 . 9$ , determined by isolated yield) were obtained by the $\\operatorname { SmI } _ { 2 }$ -mediated condensation of 5 with hexanal (4b) and decanal (4c), respectively, at $- 7 8^ { \\circ } \\mathrm { C }$ . Amides 9b and 9c were hydrolyzed under the same conditions as those used for 9a, which resulted in the formation of BHAs 2b and 2c in good yields.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "baef70d88ff47bd24fa0d2013dfdbd918be6c21b3fff22e523718c52dbd4a9c3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "tetramic_acid_6",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The retrosynthetic analysis identified tetramic acid 6 as a key intermediate for the tetradepsipeptide.",
+        "gap": "How to synthesize tetramic acid 6 from commercially available Boc-N-L-valine (7).",
+        "decision": "To synthesize tetramic acid 6, Boc-N-L-valine (7) was coupled with Meldrum's acid, followed by reflux in methanol, Mitsunobu reaction with methanol, and N-Boc deprotection with TFA."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H](NC(=O)OC(C)(C)C)C(=O)O"
+        ],
+        "product_smiles": [
+          "COC1=CC(=O)N[C@H]1C(C)C"
+        ],
+        "rxn_smiles": "CC(C)[C@@H](NC(=O)OC(C)(C)C)C(=O)O>>COC1=CC(=O)N[C@H]1C(C)C",
+        "reagents": [
+          "DCC",
+          "DMAP",
+          "Meldrum's acid",
+          "methanol",
+          "PPh3",
+          "DIAD",
+          "TFA"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "reflux (methanol), unspecified (Mitsunobu), unspecified (deprotection)",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 51,
+        "observation": "Boc-protected tetramic acid was obtained in 60% overall yield over two steps, and subsequent deprotection yielded tetramic acid 6 in 85% yield. The overall yield from 7 to 6 is 51% (0.60 * 0.85)."
+      },
+      "evidence": {
+        "text_span": "The synthesis began by coupling Boc-N-L-valine (7) with Meldrum's acid using DCC and DMAP as coupling agents. The resulting intermediate was reuxed in methanol to produce vinylogous carbamic acid, which was used in subsequent steps without further purication. Vinylogous carbamic acid was reacted with methanol under Mitsunobu conditions with triphenylphosphine $\\left( \\mathrm { PPh } _ { 3 } \\right)$ and diisopropyl azodicarboxylate (DIAD) to afford Bocprotected tetramic acid in $6 0\\%$ overall yield over two steps. Finally, N-Boc-deprotected using triuoroacetic acid (TFA) in $\\mathrm { CH } _ { 2 } \\mathrm { Cl } _ { 2 }$ , to give tetramic acid 6 in $8 5\\%$ yield.32",
+        "section": "Results and discussion",
+        "image_refs": [
+          "d2bc895897f188058742181fa6a3a22ad0e56145456fcef8ef83a4bec412259f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The tetradepsipeptide intermediate requires (S)-hydroxyisovaleric acid [(S)-Hiva] as a building block.",
+        "gap": "How to prepare TBS-protected methyl ester of (S)-Hiva (12) and its corresponding acid (13).",
+        "decision": "To prepare 12, (S)-Hiva (10) was esterified with methanol, then TBS-protected. The acid 13 was obtained by hydrolysis of 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H](O)C(=O)O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "CC(C)[C@@H](O)C(=O)O>>CC(C)[C@@H](O)C(=O)OC;CC(C)[C@@H](O)C(=O)OC>>CC(C)[C@@H](OSi(C)(C)C(C)(C)C)C(=O)OC;CC(C)[C@@H](OSi(C)(C)C(C)(C)C)C(=O)OC>>CC(C)[C@@H](OSi(C)(C)C(C)(C)C)C(=O)O",
+        "reagents": [
+          "H2SO4",
+          "MeOH",
+          "TBSCl",
+          "imidazole",
+          "LiOH"
+        ],
+        "solvent": "MeOH, CH2Cl2, THF/MeOH/H2O",
+        "temperature": "80 °C (esterification), 0 °C to rt (TBS protection), rt (hydrolysis)",
+        "time": "4 h (esterification), 16 h (TBS protection), 16 h (hydrolysis)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Methyl (S)-hydroxyisovalerate (11) was obtained in 94% yield. TBS-protected methyl ester 12 was obtained in 73% yield. Hydrolysis of 12 yielded acid 13 in 75% yield. Overall yield from 10 to 13 is 94% * 73% * 75% = 51.4%."
+      },
+      "evidence": {
+        "text_span": "We next synthesized the TBS-protected methyl ester of (S)- hydroxyisovaleric acid [(S)-Hiva] (12). Accordingly, (S)-Hiva was reuxed in methanol with a catalytic amount of $\\mathrm { H } _ { 2 } \\mathrm { SO } _ { 4 }$ to afford methyl (S)-hydroxyisovalerate (11) in $9 4\\%$ yield; 11 was then TBS-protected using TBSCl and imidazole in $\\mathrm { CH } _ { 2 } \\mathrm { Cl } _ { 2 }$ to give TBSprotected methyl ester 12 in $7 3\\%$ yield. Hydrolysis of 12 with LiOH produced the corresponding acid intermediate 13 in $7 5\\%$ yield.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "0da93cec7f40c52c7df7ab254c0f0e2ba60091e29c599a8863b9aeb189db5d75.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Tetramic acid 6 and acid 13 are available. The next step is to couple them to form didepsipeptide 15.",
+        "gap": "Direct coupling methods might not be suitable for this transformation.",
+        "decision": "Attempted direct coupling of 6 with 13 using HATU, DIPEA, and Grignard chemistry in THF."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC(=O)N[C@H]1C(C)C",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "HATU",
+          "DIPEA",
+          "Grignard reagent"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Attempts to directly couple 6 with 13 using HATU, DIPEA, and Grignard chemistry in THF proved unsuccessful."
+      },
+      "evidence": {
+        "text_span": "With intermediates 6 and 13 in hand, we next examined coupling them to give TBS-protected didepsipeptide 15 However, our attempts to directly couple 6 with 13 using the HATU, DIPEA coupling and Grignard chemistry in THF proved unsuccessful; not surprisingly, there are limited literature precedents for such a transformation.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "Direct coupling of 6 and 13 failed.",
+        "gap": "A more effective coupling strategy is needed.",
+        "decision": "To overcome this challenge, compound 13 was activated through Steglich esterification with p-nitrophenol and DCC to form intermediate 14, which was then coupled with 6 using n-BuLi as base."
+      },
+      "evidence": {
+        "text_span": "To overcome this challenge, we activated compound 13 through Steglich esterication with $p$ -nitrophenol and DCC, which provided intermediate 14 in $6 5\\%$ yield. Compounds 14 and 6 were then successfully coupled by using n-BuLi as base to afford TBS-protected didepsipeptide 15 in $4 5\\%$ yield.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acid 13 needs to be activated for coupling.",
+        "gap": "How to activate 13 for coupling with tetramic acid 6.",
+        "decision": "To activate 13, it was subjected to Steglich esterification with p-nitrophenol and DCC to form intermediate 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "p-nitrophenol",
+          "DCC"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "rt",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Intermediate 14 was obtained in 65% yield."
+      },
+      "evidence": {
+        "text_span": "To overcome this challenge, we activated compound 13 through Steglich esterication with $p$ -nitrophenol and DCC, which provided intermediate 14 in $6 5\\%$ yield.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "3f3e55818283714784bcc62bda9e49f2dc260977c7d1d1dc5962f787d46cf75.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Activated intermediate 14 and tetramic acid 6 are available.",
+        "gap": "How to couple 14 and 6 to form didepsipeptide 15.",
+        "decision": "To form 15, compounds 14 and 6 were coupled using n-BuLi as base."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COC1=CC(=O)N[C@H]1C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "n-BuLi"
+        ],
+        "solvent": "THF",
+        "temperature": "-50 °C to rt",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "TBS-protected didepsipeptide 15 was obtained in 45% yield."
+      },
+      "evidence": {
+        "text_span": "Compounds 14 and 6 were then successfully coupled by using n-BuLi as base to afford TBS-protected didepsipeptide 15 in $4 5\\%$ yield.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "3f3e55818283714784bcc62bda9e49f2dc260977c7d1d1dc5962f787d46cf75.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Didepsipeptide 15 is synthesized. The TBS protecting group needs to be removed to allow further coupling.",
+        "gap": "How to deprotect the TBS group without side reactions.",
+        "decision": "Initially attempted deprotection of 15 with tetrabutylammonium fluoride (TBAF)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBAF"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Deprotection with TBAF gave 16 in low yield due to the formation of undesired byproducts (multiple spots on TLC)."
+      },
+      "evidence": {
+        "text_span": "With the aim of synthesizing tetradepsipeptide intermediate 3, we initially attempted to deprotect didepsipeptide 15 with tetrabutylammonium uoride (TBAF); however, this method gave 16 in low yield owing to the formation of undesired byproducts (multiple spots on TLC), which ultimately reduced the reaction efficiency and yield.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "TBAF deprotection of 15 failed.",
+        "gap": "A more selective deprotection method is needed.",
+        "decision": "To successfully deprotect 15, the conditions were switched from basic (TBAF) to acidic, using trifluoroacetic acid (TFA) as the deprotecting agent."
+      },
+      "evidence": {
+        "text_span": "Consequently, we switched basic condition to acidic condition with triuoroacetic acid (TFA) as the deprotecting agent, which successfully yielded didepsipeptide 16 in $7 2\\%$ yield",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Didepsipeptide 15 needs to be deprotected.",
+        "gap": "How to selectively remove the TBS group.",
+        "decision": "To deprotect 15, trifluoroacetic acid (TFA) in CH2Cl2 was used."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC1=CC(C(C)C)N(C(=O)C(O)C(C)C)C1=O"
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to rt",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "Didepsipeptide 16 was successfully yielded in 72%."
+      },
+      "evidence": {
+        "text_span": "Consequently, we switched basic condition to acidic condition with triuoroacetic acid (TFA) as the deprotecting agent, which successfully yielded didepsipeptide 16 in $7 2\\%$ yield",
+        "section": "Results and discussion",
+        "image_refs": [
+          "3f3e55818283714784bcc62bda9e49f2dc260977c7d1d1dc5962f787d46cf75.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "tetradepsipeptide_3",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Didepsipeptide 16 is available. The next step is to extend the peptide chain by esterifying it with Boc-N-Me-L-alanine (17).",
+        "gap": "How to efficiently couple 16 with 17.",
+        "decision": "To form tridepsipeptide 18, 16 was esterified with Boc-N-Me-L-alanine (17) under Steglich conditions using DCC and DMAP."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC(C(C)C)N(C(=O)C(O)C(C)C)C1=O",
+          "CC(C(=O)O)N(C)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "COc1cc(C)n(C(C)C)c(=O)c1C(=O)OC(C(=O)N(C)C(C)C(=O)OC(C)(C)C)C(C)C"
+        ],
+        "rxn_smiles": "COC1=CC(C(C)C)N(C(=O)C(O)C(C)C)C1=O.CC(C(=O)O)N(C)C(=O)OC(C)(C)C>>COc1cc(C)n(C(C)C)c(=O)c1C(=O)OC(C(=O)N(C)C(C)C(=O)OC(C)(C)C)C(C)C",
+        "reagents": [
+          "DCC",
+          "DMAP"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to rt",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Tridepsipeptide 18 was obtained in an impressive yield of 87%."
+      },
+      "evidence": {
+        "text_span": "esteried with Boc-N-Me-L-alanine (17), itself prepared from N-Me-L-alanine and $\\mathrm { Boc } _ { 2 } \\mathrm { O }$ ,33 under Steglich conditions, to afford tridepsipeptide 18. Esterication facilitated by DCC and DMAP provided intermediate 18 in an impressive yield of $8 7\\%$ .",
+        "section": "Results and discussion",
+        "image_refs": [
+          "e7210a6429fefba276544b1301a28f6c32c17b98690b94704785efe287c424e0.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "tetradepsipeptide_3",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tridepsipeptide 18 is synthesized. The N-Boc protecting group needs to be removed, and then coupled with Boc-N-L-valine (7) to form the tetradepsipeptide 3.",
+        "gap": "How to deprotect 18 and then couple it with 7 efficiently.",
+        "decision": "To form tetradepsipeptide 3, 18 was N-Boc deprotected using 4N HCl in dioxane, followed by HATU-mediated coupling with Boc-N-L-valine (7)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(C)n(C(C)C)c(=O)c1C(=O)OC(C(=O)N(C)C(C)C(=O)OC(C)(C)C)C(C)C",
+          "CC(C)C(NC(=O)OC(C)(C)C)C(=O)O"
+        ],
+        "product_smiles": [
+          "COc1cc(C)n(C(C)C)c(=O)c1C(=O)OC(C(=O)NC(NC(=O)OC(C)(C)C)C(C)C)C(C)C"
+        ],
+        "rxn_smiles": "COc1cc(C)n(C(C)C)c(=O)c1C(=O)OC(C(=O)N(C)C(C)C(=O)OC(C)(C)C)C(C)C>>COc1cc(C)n(C(C)C)c(=O)c1C(=O)OC(C(=O)NC(NC(=O)OC(C)(C)C)C(C)C)C(C)C",
+        "reagents": [
+          "4N HCl in 1,4-dioxane",
+          "HATU",
+          "DIPEA"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to rt (deprotection), rt (coupling)",
+        "time": "2 h (deprotection), 16 h (coupling)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "Tetradepsipeptide 3 was furnished in 75% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent N-Boc deprotection under acidic conditions using $4 \\ : \\mathrm { N \\ : HCl }$ in dioxane and HATU-mediated coupling with Boc-N-Lvaline (7) furnished tetradepsipeptide 3, a key intermediate in our divergent total synthesis.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "e7210a6429fefba276544b1301a28f6c32c17b98690b94704785efe287c424e0.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": "tetradepsipeptide_3",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Tetradepsipeptide 3 is synthesized. The N-Boc protecting group needs to be removed to allow coupling with the BHA fragment.",
+        "gap": "How to deprotect the N-Boc group without cleaving the ester bond.",
+        "decision": "Attempted N-Boc deprotection of tetradepsipeptide 3 using 4N HCl in dioxane at 0 °C for 2 h."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC(=O)N(C(C)C(=O)OC(C)C(=O)N(C)C(=O)[C@H](CC(C)C)NC(=O)OC(C)(C)C)[C@H](C(C)C)C1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "4N HCl in dioxane"
+        ],
+        "temperature": "0 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "These conditions led to the cleavage of the ester bond, resulting in the formation of 16 alongside the desired intermediate."
+      },
+      "evidence": {
+        "text_span": "We also examined an alternative $N$ -Boc deprotection approach using 4 N HCl in dioxane at ${ \\bf 0 } \\ ^ { \\mathrm { ~ \\circ ~ } } \\mathrm { C }$ for $^ { 2\\mathrm { ~ h ~ } }$ ; however, these conditions led to the cleavage of the ester bond, which resulted in the formation of 16 alongside the desired intermediate.34",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": "tetradepsipeptide_3",
+      "action": "revision",
+      "revises_step_id": 17,
+      "thought": {
+        "background": "N-Boc deprotection of 3 with HCl in dioxane resulted in ester bond cleavage.",
+        "gap": "A milder deprotection method is needed to avoid ester hydrolysis.",
+        "decision": "To deprotect the N-Boc group without ester cleavage, TMSCl in 2,2,2-trifluoroethanol (TFE) was used."
+      },
+      "evidence": {
+        "text_span": "First, tetradepsipeptide 3 was $N \\cdot$ -Boc-deprotected using TMSCl in 2,2,2-triuoroethanol (TFE) at room temperature for $^ { 2\\mathrm { ~ h ~ } }$ to afford the corresponding free amine 19",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": "tetradepsipeptide_3",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetradepsipeptide 3 needs to be N-Boc deprotected.",
+        "gap": "How to selectively remove the N-Boc group without affecting other sensitive functionalities.",
+        "decision": "To deprotect 3, TMSCl in 2,2,2-trifluoroethanol (TFE) was used."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC(=O)N(C(C)C(=O)OC(C)C(=O)N(C)C(=O)[C@H](CC(C)C)NC(=O)OC(C)(C)C)[C@H](C(C)C)C1"
+        ],
+        "product_smiles": [
+          "COC1=CC(=O)N(C(C)C(=O)OC(C)C(=O)N(C)C(=O)[C@@H](N)CC(C)C)[C@H](C(C)C)C1"
+        ],
+        "rxn_smiles": "COC1=CC(=O)N(C(C)C(=O)OC(C)C(=O)N(C)C(=O)[C@H](CC(C)C)NC(=O)OC(C)(C)C)[C@H](C(C)C)C1>>COC1=CC(=O)N(C(C)C(=O)OC(C)C(=O)N(C)C(=O)[C@@H](N)CC(C)C)[C@H](C(C)C)C1",
+        "reagents": [
+          "TMSCl"
+        ],
+        "solvent": "2,2,2-trifluoroethanol (TFE)",
+        "temperature": "rt",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The corresponding free amine 19 was afforded."
+      },
+      "evidence": {
+        "text_span": "First, tetradepsipeptide 3 was $N \\cdot$ -Boc-deprotected using TMSCl in 2,2,2-triuoroethanol (TFE) at room temperature for $^ { 2\\mathrm { ~ h ~ } }$ to afford the corresponding free amine 19",
+        "section": "Results and discussion",
+        "image_refs": [
+          "281509ced592cc210355017ce86a6f73171fe02fdac32dc2e91007ed56fc8c6f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Free amine 19 and beta-hydroxydecanoic acid (2a) are available.",
+        "gap": "How to couple 19 and 2a to synthesize Kavaratamide A (1a).",
+        "decision": "To synthesize 1a, 19 was coupled with 2a under HATU-mediated amide-coupling conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC(=O)N(C(C)C(=O)OC(C)C(=O)N(C)C(=O)[C@@H](N)CC(C)C)[C@H](C(C)C)C1",
+          "CCCCCC[C@@H](O)CC(=O)O"
+        ],
+        "product_smiles": [
+          "CCCCCCC[C@H](O)CC(=O)N[C@H](C(=O)N(C)[C@@H](C)C(=O)O[C@H](C(=O)N(C1=C(OC)C(=O)OC1)C(C)C)C(C)C)C(C)C"
+        ],
+        "rxn_smiles": "COC1=CC(=O)N(C(C)C(=O)OC(C)C(=O)N(C)C(=O)[C@@H](N)CC(C)C)[C@H](C(C)C)C1.CCCCCC[C@@H](O)CC(=O)O>>CCCCCCC[C@H](O)CC(=O)N[C@H](C(=O)N(C)[C@@H](C)C(=O)O[C@H](C(=O)N(C1=C(OC)C(=O)OC1)C(C)C)C(C)C)C(C)C",
+        "reagents": [
+          "HATU",
+          "DIPEA"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "rt",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "Kavaratamide A (1a) was produced in 58% yield."
+      },
+      "evidence": {
+        "text_span": "First, tetradepsipeptide 3 was $N \\cdot$ -Boc-deprotected using TMSCl in 2,2,2-triuoroethanol (TFE) at room temperature for $^ { 2\\mathrm { ~ h ~ } }$ to afford the corresponding free amine 19, which was subsequently coupled with $\\beta$ -hydroxydecanoic acid (2a) under HATUmediated amide-coupling conditions to produce kavaratamide A (1a).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "281509ced592cc210355017ce86a6f73171fe02fdac32dc2e91007ed56fc8c6f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of Kavaratamide A is complete. Kavaratamide B and C can be synthesized using the same strategy with different BHA fragments.",
+        "gap": "How to synthesize Kavaratamide B (1b) and Kavaratamide C (1c).",
+        "decision": "To synthesize 1b and 1c, tetradepsipeptide 3 was deprotected to 19 and then coupled with beta-hydroxyoctanoic acid (2b) or beta-hydroxydodecanoic acid (2c) respectively, under HATU-mediated conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC(=O)N(C(C)C(=O)OC(C)C(=O)N(C)C(=O)[C@@H](N)CC(C)C)[C@H](C(C)C)C1",
+          "CCCCC[C@@H](O)CC(=O)O",
+          "CCCCCCCC[C@@H](O)CC(=O)O"
+        ],
+        "product_smiles": [
+          "CCCCCCC[C@H](O)CC(=O)N[C@H](C(=O)N(C)[C@@H](C)C(=O)O[C@H](C(=O)N(C1=C(OC)C(=O)OC1)C(C)C)C(C)C)C(C)C",
+          "CCCCCCC[C@H](O)CC(=O)N[C@H](C(=O)N(C)[C@@H](C)C(=O)O[C@H](C(=O)N(C1=C(OC)C(=O)OC1)C(C)C)C(C)C)C(C)C"
+        ],
+        "rxn_smiles": "CC(C)C[C@H](N)C(=O)N(C)C(=O)C(C)OC(=O)C(C)N1C(=O)C=C(OC)C[C@H]1C(C)C.O=C(O)C[C@H](O)CCCCC>>CCCCCCC[C@H](O)CC(=O)N[C@@H](C(C)C)C(=O)N(C)[C@@H](C)C(=O)O[C@@H](C(C)C)C(=O)N(C(C)C)C1=C(OC)C(=O)OC1;CC(C)C[C@H](N)C(=O)N(C)C(=O)C(C)OC(=O)C(C)N1C(=O)C=C(OC)C[C@H]1C(C)C.O=C(O)C[C@H](O)CCCCCCCC>>CCCCCCC[C@H](O)CC(=O)N[C@@H](C(C)C)C(=O)N(C)[C@@H](C)C(=O)O[C@@H](C(C)C)C(=O)N(C(C)C)C1=C(OC)C(=O)OC1",
+        "reagents": [
+          "HATU",
+          "DIPEA"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "rt",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "observation": "Kavaratamide B (1b) was obtained in 54% yield, and Kavaratamide C (1c) was obtained in 43% yield."
+      },
+      "evidence": {
+        "text_span": "Kavaratamide B and C were synthesized in a similar manner (Scheme 4). Tetradepsipeptide 3 was $\\ﬁ$rst deprotected using the same condition and subsequently directly coupled with $\\beta \\cdot$ - hydroxyoctanoic acid (2b) or $\\beta$ -hydroxydodecanoic acid 2c under HATU-mediated conditions to give kavaratamide B (1b) $( 5 4\\% )$ or kavaratamide C (1c) $( 4 3\\% )$ , respectively.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "281509ced592cc210355017ce86a6f73171fe02fdac32dc2e91007ed56fc8c6f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Kavaratamides A-C have been synthesized.",
+        "gap": "Confirmation of the structure and stereochemistry of the synthetic products.",
+        "decision": "To confirm the structures, comprehensive spectroscopic and analytical data were collected, including 1H NMR, 13C NMR, HRMS, and optical rotation."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The 1H and 13C NMR spectra were in excellent agreement with reported data. HRMS data confirmed molecular compositions. Optical rotation values validated absolute configurations. The synthetic products are structurally and stereochemically identical to natural isolates."
+      },
+      "evidence": {
+        "text_span": "The structures of synthetic kavaratamides A–C were conrmed by comprehensive spectroscopic and analytical data. The $^ 1 \\mathrm { H }$ and $^ { 1 3 } \\mathrm { C }$ NMR spectra of the synthetic compounds were in excellent agreement with those reported for the natural products (comparison table in SI), showing identical chemical shis and coupling patterns. The HRMS data showed molecular ion peaks consistent with the calculated molecular masses, conrming the correct molecular compositions. Furthermore, the measured optical rotation values for kavaratamides A, B and C validating the absolute congurations of the synthetic products. These results unambiguously conrm that our synthetic kavaratamides are structurally and stereochemically identical to the natural isolates.",
+        "section": "Results and discussion"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for Kavaratamide A, B, and C not explicitly stated as a single value, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "Calculated based on the longest sequence of reactions to form the final product."
+      },
+      "Total Steps": {
+        "value": 16,
+        "unit": "steps",
+        "interpretation": "Total number of distinct reaction steps, including failed attempts and revisions."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Two failed attempts were reported during the synthesis."
+      }
+    },
+    "significance": "The developed synthetic route provides access to these bioactive natural products in good yields and offers a platform for further medicinal chemistry investigations. The divergent strategy allows for the preparation of other kavaratamide analogs and further biological evaluation."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5ra07822a",
+      "pmcid": "PMC12679564",
+      "title": "Divergent total syntheses of kavaratamide A, B, and C.",
+      "authors": "Rekunge D, Huu Nhan BH, Wang Y, Lee J, Kim SH.",
+      "journal": "RSC Adv",
+      "year": 2025,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC12679564?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/ffefc43b-f83c-4341-8a70-5654345b20e7.zip",
+      "parsed_at": "2026-05-07T14:29:46.120565+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 50,
+    "parseable": 39,
+    "canonicalized": 32,
+    "invalid": 11,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)[C@@H](OSi(C)(C)C(C)(C)C)C(=O)O",
+      "CC(C)[C@@H](OSi(C)(C)C(C)(C)C)C(=O)O",
+      "CC(C)[C@@H](OSi(C)(C)C(C)(C)C)C(=O)O",
+      "O=C(Oc1ccc([N+](=O)[O-])cc1)C(C(C)C)OTBS",
+      "O=C(Oc1ccc([N+](=O)[O-])cc1)C(C(C)C)OTBS",
+      "O=C1N(C(=O)C(C(C)C)OTBS)C(C(C)C)C=C1OC",
+      "O=C1N(C(=O)C(C(C)C)OTBS)C(C(C)C)C=C1OC",
+      "O=C1N(C(=O)C(C(C)C)OTBS)C(C(C)C)C=C1OC"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

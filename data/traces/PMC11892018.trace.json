@@ -1,0 +1,937 @@
+{
+  "trace_id": "TS-PMC11892018",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "tetraselide",
+    "smiles": "CCCCCCCCCC[C@@H](C)[C@@H](C)OC(=O)CN[C@@H](C(C)O)[C@H](C)NC(=O)[C@H](CO)NC(=O)[C@H](CO)NC(=O)[C@H](CO)NC(=O)[C@@H](N)CCCNC(=O)[C@@H](N)CCCNC(=O)[C@H](C)NC(=O)CC(C)C",
+    "natural_product_class": "macrocyclic depsipeptide",
+    "structural_features": {
+      "stereocenters": 6,
+      "key_motifs": [
+        "five consecutive beta-hydroxy-amino acid residues",
+        "fatty acid moiety"
+      ]
+    },
+    "motivation": "Tetraselide, an antifungal cyclic peptide isolated from a marine-derived filamentous fungus, possesses a unique amphiphilic structural feature. The structure elucidation of the naturally occurring product left six stereocenters ambiguous, requiring chemical synthesis to fully characterize the absolute structure.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Determine the absolute structure of tetraselide (1) by synthesizing all plausible isomers and comparing them to the natural product."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-terminus of Orn and N-terminus of Thr",
+        "named_strategy": "Serine/Threonine Ligation (STL)",
+        "reasoning": "To suppress problematic epimerization via oxazolone formation at the C-terminus for convergent fragment coupling and to promote facile macrocyclization. This allows for the preparation of the Ser fragment without protection of the hydroxy group at the N-terminal side chain.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "17",
+        "smiles": "",
+        "role": "Ser fragment",
+        "comes_from": "disconnection of tetraselide"
+      },
+      {
+        "fragment_id": "18",
+        "smiles": "",
+        "role": "Western fragment",
+        "comes_from": "disconnection of tetraselide"
+      }
+    ],
+    "rationale": "The strategy involves a convergent total synthesis of the four remaining plausible isomers of tetraselide via liquid-phase peptide synthesis (LPPS) using soluble hydrophobic tag auxiliaries. Key advances include fragment coupling by the serine/threonine ligation (STL) reaction and head-to-tail macrolactamization of carrier-supported precursors. The TCbz group installed on the amine group of the Orn side chain allows for assembly of macrocyclic peptides supported on a carrier molecule, facilitating systematic elaboration of amphiphilic cyclic peptides."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Preliminary structural elucidation of tetraselide (1) suggested 16 possible diastereomers (four of consecutive Ser moieties and four of fatty acid moiety). Failure to clarify structure using Edman degradation and X-ray crystallography.",
+        "gap": "Narrow down the number of plausible structural candidates for tetraselide (1).",
+        "decision": "To narrow down structural candidates, implemented bioinformatic analysis of the FKJ-0225 strain genome sequence to identify genes associated with tetraselide biosynthesis and predict stereochemistry of the fatty acid moiety and D-Ser position."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Bioinformatic analysis suggested (3S)-hydroxy and (4R)-methyl configurations for the fatty acid moiety and that the Ser residue next to Thr might be the D-form. This narrowed down the plausible structure to four isomers in the consecutive Ser residues."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "First, from the dra genome sequence of the FKJ-0225 strain, we found ve genes (ttsA to ttsE, ESI Fig. S12A,† accession number: LC847109) associated with the biosynthesis of 1 by mining a candidate biosynthetic gene cluster using antiSMASH 7.0 (ref. 26) and 2ndnd.27 This indicated that the $\beta$ -hydroxy- $\\Upsilon$ -methyl fatty acid moiety produced by the polyketide synthase (PKS; ttsA) is transferred to the non-ribosomal peptide synthase (NRPS; ttsE). Subsequent peptide elongation from L-Ala to Gly, followed by macrolactonization at the C-terminus of Gly with the hydroxy group at C3, furnishes tetraselide (ESI Fig. $\\mathbf { S12B } \\dagger$ ). To predict the position of the D-Ser residue, Clabofold28 and AutoDock29 were used to conduct docking simulations of the adenylation (A) domains in the modules that construct the consecutive Ser moiety. Consequently, all A domains are likely responsible for the recognition of only L-Ser (ESI Fig. S13†) and the corresponding epimerization (E) domains are not involved, suggesting that L-Ser might be epimerized at a condensation (C) domain in the modules.30 As a result of phylogenic analysis of the C domains (ESI Fig. S14†), we speculated that the Ser residue next to Thr might be the D-form, although the mechanism of epimerization is unclear at this stage (see the ESI† for details).\nWe expected that the stereocenters of the $\\beta$ -hydroxy- -methyl b gfatty acid moiety in 1 would be predictable because the absolute stereochemistry of compounds produced by PKSs relies on the amino acid sequence of each PKS domain. As a result of the bioinformatic analysis (ESI Fig. S15†), we found that the keto reductase (KR) domain in the PKS was classied as the B-type, which generally reduces the ketone group to a D-hydroxy group.31 In addition, we identied that the Tyr residue—one of the proton donors in the enoyl reductase (ER) domain—is substituted with Leu, suggesting that the methyl group would likely be in the D-conguration.32 These results indicated that the $\\beta$ -hydroxy- -methyl fatty acid moiety in 1 could be in the b g(3S)-hydroxy and (4R)-methyl congurations. To support this hypothesis, we next attempted a chemical degradation study of the naturally occurring 1 and synthesis of the degraded fragment using a chiral pool approach.",
+        "section": "Results and discussion",
+        "page": 3
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bioinformatic analysis suggested (3S)-hydroxy and (4R)-methyl configurations for the fatty acid moiety and that the Ser residue next to Thr might be the D-form.",
+        "gap": "Experimentally confirm the stereochemistry of the fatty acid moiety.",
+        "decision": "To confirm the hypothesis, performed chemical degradation of natural product 1 to obtain the fatty acid fragment."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCC[C@@H](C)[C@@H](C)OC(=O)CN[C@@H](C(C)O)[C@H](C)NC(=O)[C@H](CO)NC(=O)[C@H](CO)NC(=O)[C@H](CO)NC(=O)[C@@H](N)CCCNC(=O)[C@@H](N)CCCNC(=O)[C@H](C)NC(=O)CC(C)C"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCC(C)C(O)C(=O)O"
+        ],
+        "rxn_smiles": "CCCCCCCCCCC(C)C(O)C(=O)O.CCCCCCCCCC[C@@H](C)[C@@H](C)OC(=O)CN[C@@H](C(C)O)[C@H](C)NC(=O)[C@H](CO)NC(=O)[C@H](CO)NC(=O)[C@H](CO)NC(=O)[C@@H](N)CCCNC(=O)[C@@H](N)CCCNC(=O)[C@H](C)NC(=O)CC(C)C>>CCCCCCCCCCC(C)C(O)C(=O)O",
+        "reagents": [
+          "NaOH",
+          "HCl"
+        ],
+        "solvent": "H2O",
+        "temperature": "100 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 10,
+        "observation": "Hydrolysis of the ester moiety with 2 M NaOH yielded linear peptide 3. Further hydrolysis of amide bonds with 6 M HCl at 100 °C afforded fatty acid 4 as the major component. Selective benzylation of the acid moiety in 4 provided ester 5 in 10% overall yield over four steps from 1."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Our degradation experiments of 1 began with hydrolysis of the ester moiety by treatment with 2 M NaOH, yielding linear peptide 3 (Scheme 1A). Peptide 3 was subjected to 6 M HCl at $1 0 0 ~ ^ { \\circ } \\mathrm { C }$ to hydrolyze the amide bonds, affording fatty acid 4 as the major component aer acid extraction. In order to facilitate UV detection for purication by reverse-phase HPLC, selective benzylation of the acid moiety in 4 provided ester 5 in $1 0 \\%$ overall yield over four steps from 1. With successfully degraded alcohol 5 in hand, we next chemically synthesized fatty acid derivatives to conrm the absolute stereochemistry.",
+        "section": "Results and discussion",
+        "page": 3
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Degraded fatty acid fragment 5 was obtained from natural product 1. Bioinformatic analysis suggested (3S)-hydroxy and (4R)-methyl configurations for the fatty acid moiety.",
+        "gap": "Synthesize fatty acid derivatives with known stereochemistry to compare with degraded 5 and confirm the absolute configuration.",
+        "decision": "To confirm the absolute stereochemistry, performed enantiospecific synthesis of fatty acid derivatives starting from Roche ester (R)-6."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(C)CCO"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [],
+        "named_reaction": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Roche ester (R)-6 was converted to aldehyde 7 in three steps."
+      },
+      "revises_step_id": null,
+      "references": [
+        "33"
+      ],
+      "evidence": {
+        "text_span": "We began our investigation with Roche ester (R)-6 because the (S)-enantiomer is more expensive and less available (Scheme 1B). Following the known three-step sequence to produce aldehyde 7, 33",
+        "section": "Results and discussion",
+        "page": 3
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 7 was synthesized from Roche ester (R)-6.",
+        "gap": "Extend the carbon chain to form the fatty acid backbone.",
+        "decision": "To extend the carbon chain, performed Julia–Kocienski olefination of aldehyde 7 with PT-sulfone 8."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "CCCCCCC[C@H](C)S(=O)(=O)C1=NN=N1Ph",
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "observation": "Julia–Kocienski olefination of 7 using PT-sulfone 8 afforded alkene 9 in 71% yield as a single isomer."
+      },
+      "revises_step_id": null,
+      "references": [
+        "34"
+      ],
+      "evidence": {
+        "text_span": "Julia–Kocienski olenation34 of 7 using PT-sulfone 8 afforded alkene 9 in $7 1 \\%$ yield as a single isomer.",
+        "section": "Results and discussion",
+        "page": 3
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkene 9 was obtained from aldehyde 7.",
+        "gap": "Remove the double bond and benzyl protecting group, then oxidize to an aldehyde.",
+        "decision": "To achieve this, performed hydrogenation of the double bond and simultaneous hydrogenolysis of the benzyl group in 9, followed by Dess–Martin oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCCCCCCCCC(C)C=O"
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "Pd/C",
+          "Dess-Martin periodinane"
+        ],
+        "solvent": "THF, H2O, DCM",
+        "temperature": "50 °C, r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Hydrogenation of the double bond and simultaneous hydrogenolysis of the benzyl group in 9, followed by Dess–Martin oxidation, produced aldehyde 10 in 89% yield over two steps."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Hydrogenation of the double bond and simultaneous hydrogenolysis of the benzyl group in 9, which was followed by Dess– Martin oxidation, produced aldehyde 10.",
+        "section": "Results and discussion",
+        "page": 3
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Aldehyde 10 was synthesized.",
+        "gap": "Introduce the alpha-hydroxy ester moiety to form the fatty acid fragment.",
+        "decision": "To introduce the alpha-hydroxy ester, attempted Reformatsky reaction of 10 using bromoacetate 11."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCC(C)C=O"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "BrCC(=O)OBn",
+          "Cp2TiCl2",
+          "Mn"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C to r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 89,
+        "failure_mode": "other",
+        "observation": "Reformatsky reaction of 10 using bromoacetate 11 gave rise to an inseparable 1:1 mixture of diastereomers (12a and 12b) in 89% yield over three steps. This was not suitable for stereochemical determination."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Reformatsky reaction of 10 using bromoacetate 11 gave rise to an inseparable 1 : 1 mixture of diastereomers (12a and 12b) in $8 9 \\%$ yield over three steps.",
+        "section": "Results and discussion",
+        "page": 3
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Reformatsky reaction yielded an inseparable 1:1 mixture of diastereomers (12a and 12b).",
+        "gap": "Achieve diastereoselective synthesis of the alpha-hydroxy ester moiety to allow for separation and stereochemical determination.",
+        "decision": "To achieve diastereoselective aldol reaction, treated 10 with chiral auxiliary 13 using TiCl4 in the presence of iPr2NEt."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCC(C)C=O"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCC(C)[C@@H](O)C(=O)N1C(=S)OC[C@H](C)[C@H]1C",
+          "CCCCCCCCCC(C)[C@@H](O)C(=O)N1C(=S)OC[C@H](C)[C@H]1C"
+        ],
+        "rxn_smiles": "CCCCCCCCCC(C)C=O.CC(C)C(=O)N1CCOC1=S>>CCCCCCCCCC(C)[C@@H](O)C(=O)N1C(=S)OC[C@H](C)[C@H]1C.CCCCCCCCCC(C)[C@@H](O)C(=O)N1C(=S)OC[C@H](C)[C@H]1C",
+        "reagents": [
+          "TiCl4",
+          "iPr2NEt",
+          "O=C(N1C(=S)OCC1)C(C)C"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 46,
+        "observation": "Treatment of 10 with chiral auxiliary 13 using TiCl4 in the presence of iPr2NEt afforded the desired adducts 14a and 14b, which were easily separable by column chromatography."
+      },
+      "revises_step_id": 6,
+      "references": [
+        "35"
+      ],
+      "evidence": {
+        "text_span": "Fortunately, during our investigation to achieve a diastereoselective aldol reaction, we found that treatment of 10 with chiral auxiliary 13 using $\\mathrm { TiCl } _ { 4 }$ in the presence of $\\mathbf { \\mathrm { ^ { i } P r } _ { 2 } N E t ^ { 3 5 } }$ afforded the desired adducts 14a and 14b, which were easily separable by column chromatography.",
+        "section": "Results and discussion",
+        "page": 3
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diastereomers 14a and 14b were separated.",
+        "gap": "Convert the adducts to benzyl esters for comparison with degraded fragment 5.",
+        "decision": "To convert to benzyl esters, performed benzyl esterification of 14a and 14b using BnOH and DMAP."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCC(C)[C@@H](O)C(=O)N1C(=S)OC[C@H](C)[C@H]1C",
+          "CCCCCCCCCC(C)[C@@H](O)C(=O)N1C(=S)OC[C@H](C)[C@H]1C"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "BnOH",
+          "DMAP"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 42,
+        "observation": "Benzyl esterification of 14a and 14b provided alcohols 12a (42% yield) and 12b (30% yield), respectively. The stereochemistry of the hydroxy groups in 12a and 12b was determined by the modified Mosher method."
+      },
+      "revises_step_id": null,
+      "references": [
+        "36"
+      ],
+      "evidence": {
+        "text_span": "Aer separating the diastereomers, benzyl esterication of 14a and 14b using BnOH and DMAP provided alcohols 12a $4 2 \\%$ yield) and 12b $3 0 \\%$ yield), respectively. The stereochemistry of the hydroxy groups in 12a and 12b was determined by the modied Mosher method (ESI Fig. S18†).36",
+        "section": "Results and discussion",
+        "page": 3
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Degraded fatty acid fragment 5 and synthesized fatty acid derivatives 12a and 12b with known stereochemistry were obtained.",
+        "gap": "Determine the absolute configuration of the fatty acid moiety in tetraselide (1).",
+        "decision": "To determine the absolute configuration, compared the 1H NMR spectra of synthesized alcohols 12a and 12b with degraded 5 and analyzed optical rotation."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Comparison of the 1H NMR spectra for the synthesized alcohols 12a and 12b with degraded 5 revealed that the methyl and hydroxy groups in the natural form are in the anti-configuration. Because the optical rotation of 12a was opposite to that of 5, the absolute configuration of the β-hydroxy-γ-methyl fatty acid moiety in tetraselide (1) was assigned as (3S, 4R). This result is consistent with bioinformatic analysis. This narrowed down the plausible structure of natural product 1 to four isomers in the consecutive Ser residues."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "A comparison of the $^ 1 \\mathrm { H }$ NMR spectra for the synthesized alcohols 12a and 12b with degraded 5 revealed that the methyl and hydroxy groups in the natural form are in the anticonguration. Because the optical rotation of 12a was opposite to that of 5, we assigned the absolute conguration of the $\\beta \\cdot$ - bhydroxy- -methyl fatty acid moiety in tetraselide (1) as (3S, 4R). gThis result is consistent with our bioinformatic analysis of the PKS of 1. Nevertheless, we narrowed down the plausible structure of natural product 1 to four isomers in the consecutive Ser residues. With this invaluable information, we commenced the total synthesis of all four isomers.",
+        "section": "Results and discussion",
+        "page": 3
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "18",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The fatty acid moiety 28 was prepared in 10 steps from commercially available 21.",
+        "gap": "Synthesize the western peptide fragment 18 by elongating the peptide chain from Fmoc-Orn(TCbz)-OH (20).",
+        "decision": "To synthesize the western fragment, installed the 9-phenylfluorenyl (Fl) group on the acid moiety of 20, followed by Fmoc group removal to provide amine 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "9-Br-9PhPl",
+          "iPr2NEt",
+          "DBU"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "50 °C, r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "observation": "The 9-phenylfluorenyl (Fl) group was installed on the acid moiety of 20 in 71% yield, followed by removal of the Fmoc group, to provide amine 29 quantitatively."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "With fatty acid 28 in hand, we then undertook peptide elongation by investigation of the protecting group at the Cterminus of Fmoc-Orn(TCbz)-OH (20) (see the ESI† for details). Consequently, the 9-phenyluorenyl (Fl) group was installed on the acid moiety of 20 in $7 1 \\%$ yield, followed by removal of the Fmoc group, to provide amine 29 quantitatively (Scheme 3B).",
+        "section": "Results and discussion",
+        "page": 4
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "18",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amine 29 was obtained.",
+        "gap": "Elongate the peptide chain by adding an alanine residue.",
+        "decision": "To elongate the peptide, condensed 29 with Fmoc-Ala-OH and subsequently removed the Fmoc group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "Fmoc-Ala-OH",
+          "PyBOP",
+          "iPr2NEt",
+          "DBU"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Dipeptide 30 was produced in quantitative yield over two steps."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Condensation of 29 with Fmoc-Ala-OH and subsequent removal of the Fmoc group produced 30 in quantitative yield over two steps.",
+        "section": "Results and discussion",
+        "page": 4
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": "18",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dipeptide 30 was obtained.",
+        "gap": "Incorporate the fatty acid moiety 28 into the peptide chain.",
+        "decision": "To incorporate the fatty acid, condensed dipeptide 30 with fatty acid 28."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CCCCCCCCCC(C)C(O)C(=O)O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "PyBOP",
+          "iPr2NEt"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Dipeptide 30 was condensed with fatty acid 28 in 94% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Dipeptide 30 was condensed with fatty acid 28 $( 9 4 \\%$ yield),",
+        "section": "Results and discussion",
+        "page": 4
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "18",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The fatty acid moiety was incorporated into the peptide chain.",
+        "gap": "Add a glycine residue and deprotect the amine group.",
+        "decision": "To add glycine and deprotect, performed esterification of alcohol 31 with Fmoc-Gly-OH using MNBA and deprotection of the amine group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "Fmoc-Gly-OH",
+          "MNBA",
+          "DMAP",
+          "iPr2NEt",
+          "DBU"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Esterification of alcohol 31 with Fmoc-Gly-OH using MNBA and deprotection of the amine group provided 32 in 96% yield over two steps."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "followed by esterication of alcohol 31 with Fmoc-Gly-OH using MNBA (2-methyl-6-nitrobenzoic anhydride) and deprotection of the amine group, providing 32 in $9 6 \\%$ yield over two steps.",
+        "section": "Results and discussion",
+        "page": 4
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": "18",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Peptide 32 was obtained.",
+        "gap": "Add a D-allo-threonine residue and deprotect the acid group.",
+        "decision": "To add D-allo-threonine and deprotect, subjected 32 to condensation conditions with Fmoc-D-allo-Thr-OH to produce 33 and subsequently deprotected the acid group under mild conditions to provide 34."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "Fmoc-D-allo-Thr-OH",
+          "PyBOP",
+          "iPr2NEt",
+          "HFIP",
+          "PhSiH3"
+        ],
+        "solvent": "CHCl3, DCM",
+        "temperature": "r.t., 30 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Subjection of 32 to the condensation conditions with Fmoc-D-allo-Thr-OH produced 33 (80% yield) and subsequent deprotection of the acid group under mild conditions provided 34 in 85% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Subjection of 32 to the condensation conditions with Fmoc-D-allo-Thr-OH to produce 33 $8 0 \\%$ yield) and subsequent deprotection of the acid group under mild conditions provided 34 in $8 5 \\%$ yield.",
+        "section": "Results and discussion",
+        "page": 4
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "18",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Peptide 34 was obtained.",
+        "gap": "Form the salicylaldehyde ester 18, which is required for the STL reaction.",
+        "decision": "To form the salicylaldehyde ester, performed esterification of 34 with phenol 35 and oxidative cleavage of the corresponding unsaturated ester."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COc1ccccc1C=CC(=O)O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "DCC",
+          "DMAP",
+          "(±)-CSA",
+          "OsO4",
+          "NaIO4 on silica"
+        ],
+        "solvent": "CHCl3, THF",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "Salicylaldehyde ester 18 was synthesized by esterification of 34 with phenol 35 (68% yield) and oxidative cleavage of the corresponding unsaturated ester (89% yield). Thus, the western fragment 18 was prepared in a total of 11 steps from Fmoc-Orn(TCbz)-OH (20)."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Finally, salicylaldehyde ester 18 was synthesized by esterication of 34 with phenol 35 ( $6 8 \\%$ yield) and oxidative cleavage of the corresponding unsaturated ester $8 9 \\%$ yield). Thus, the western fragment 18 was prepared in a total of 11 steps from Fmoc-Orn(TCbz)-OH (20).",
+        "section": "Results and discussion",
+        "page": 4
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "17",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A one-pot protocol for Ser fragment synthesis was previously developed for emodepsides. The tag-carrier 36 was chosen for orthogonality to the TCbz group.",
+        "gap": "Synthesize tag-supported Ser 19 and address potential gelation issues during purification.",
+        "decision": "To synthesize tag-supported Ser 19, performed esterification of 36 with Fmoc-D-Ser(tBu)-OH, followed by trapping excess activated ester with propylamine and Fmoc cleavage with DBU. To prevent gelation, used HOBt in MeOH for solidification."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCCCCCCCCCOc1ccc(OCCCCCCCCCCCCCCCCCCCCCC)c(C=O)c1"
+        ],
+        "product_smiles": [
+          "CCCCCCCCCCCCCCCCCCCCCCOc1ccc(OCCCCCCCCCCCCCCCCCCCCCC)c(C(=O)OC[C@H](N)COCC(C)(C)C)c1"
+        ],
+        "rxn_smiles": "CCCCCCCCCCCCCCCCCCCCCCOc1ccc(OCCCCCCCCCCCCCCCCCCCCCC)c(C=O)c1.CC(C)(C)COC[C@H](N)C(=O)O>>CCCCCCCCCCCCCCCCCCCCCCOc1ccc(OCCCCCCCCCCCCCCCCCCCCCC)c(C(=O)OC[C@H](N)COCC(C)(C)C)c1",
+        "reagents": [
+          "Fmoc-D-Ser(tBu)-OH",
+          "DCC",
+          "DMAP",
+          "propylamine",
+          "DBU",
+          "HOBt"
+        ],
+        "solvent": "MeOH",
+        "named_reaction": "Esterification"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Esterification of 36 with Fmoc-D-Ser(tBu)-OH, followed by trapping of excess activated ester with propylamine and cleavage of the Fmoc group with DBU, furnished amine D-19. Solidification using MeOH containing HOBt successfully suppressed problematic gelation."
+      },
+      "revises_step_id": null,
+      "references": [
+        "23",
+        "41",
+        "19"
+      ],
+      "evidence": {
+        "text_span": "We began our investigation of the Ser fragment synthesis with a one-pot protocol similar to that we previously developed in the total synthesis of emodepsides.23 Considering the orthogonality to the TCbz group in the downstream deprotection step, we chose tag-carrier 36 reported by Chiba and coworkers41 which could be selectively removed at the late-stage under mild conditions. Esterication of 36 with Fmoc-D-Ser(t Bu)-OH using DCC and DMAP, followed by trapping of the excess activated ester reagent residue with propylamine and cleavage of the Fmoc group using DBU, furnished the corresponding amine D-19.\nUnexpectedly, the typical purication procedure of LPPS using the tag-carrier by solidication with MeOH led to gelation of the mixture and diminished the yield (Scheme 4A). To our delight, we found that solidication using MeOH containing HOBt as a moderately acidic additive, which we previously employed to prevent the undesired cross condensation in the total synthesis of argin,19 successfully suppressed the problematic gelation. The addition of HOBt may affect the intermolecular hydrogen bonding network of the carrier-supported Ser derivative in the MeOH solution.",
+        "section": "Results and discussion",
+        "page": 5
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": "17",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carrier-supported Ser D-19 was synthesized, and a practical purification procedure was established.",
+        "gap": "Rapidly elongate the peptide chain to form the consecutive Ser fragment (tetrapeptide 39a) using a one-pot protocol.",
+        "decision": "To elongate the peptide, subjected D-19 to condensation with Fmoc-Ser(tBu)-OH using COMU, followed by propylamine and DBU treatment for Fmoc removal. Used HOBt in MeCN for solidification and washing."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCCCCCCCCCCCCCCCCOc1ccc(OCCCCCCCCCCCCCCCCCCCCCC)c(C(=O)OC[C@H](N)COCC(C)(C)C)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "COMU",
+          "iPr2NEt",
+          "propylamine",
+          "DBU",
+          "HOBt"
+        ],
+        "solvent": "DCM, MeCN",
+        "named_reaction": "Peptide coupling"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Carrier-supported Ser D-19 was subjected to condensation with Fmoc-Ser(tBu)-OH to form dipeptide 37a. This procedure was iterated using 37a and Fmoc-Ser(tBu)-OH to afford tripeptide 38a, and then analogously with Fmoc-Ser-OH to lead to tetrapeptide 39a without incident. The overall yield for 39a was 95%. Similarly, all four plausible isomers of the Ser fragments (39b–d) were synthesized in a range of 92-97% yield. This method could be performed on a 0.4 mmol scale, demonstrating a one-pot parallel synthesis to rapidly access the four fragments at scale."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "With this simple and practical procedure to handle the carriersupported polar peptide, we attempted the one-pot synthesis of the consecutive Ser fragment (Scheme 4B). Carrier-supported Ser D-19 was subjected to the condensation conditions using COMU with Fmoc-Ser(t Bu)-OH. Subsequent treatment with propylamine and DBU removed the Fmoc group. A solution of HOBt in MeCN was used for solidication, in which the precipitate was washed once with MeCN containing HOBt, followed by addition of pure MeCN twice to provide dipeptide 37a. This procedure was iterated using 37a and Fmoc-Ser(t Bu)-OH to afford tripeptide 38a, and then analogously with Fmoc-Ser-OH to lead to tetrapeptide 39a without incident. Similarly, all four plausible isomers of the Ser fragments (39b–d) were synthesized in a range of $9 2 \\mathrm { - } 9 7 \\%$ yield. This method could be performed on a 0.4 mmol scale, demonstrating a one-pot parallel synthesis to rapidly access the four fragments at scale.",
+        "section": "Results and discussion",
+        "page": 5
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Western fragment 18 and Ser fragment 39a were synthesized.",
+        "gap": "Couple the two fragments using the Serine/Threonine Ligation (STL) reaction.",
+        "decision": "To couple the fragments, treated 18 and 39a with 5% AcOH/pyridine (1:1 mol mol-1) in DCM."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "AcOH",
+          "pyridine"
+        ],
+        "solvent": "DCM",
+        "named_reaction": "Serine/Threonine Ligation (STL)",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Treatment of 18 and 39a with 5% AcOH/pyridine (1:1 mol mol-1) in DCM (0.03 M) gave rise to the desired coupled product 40a in quantitative yield as a diastereomeric mixture of the N,O-acetal moiety. The STL reaction proceeded efficiently with only a slight excess (1.05 eq.) of 39a without epimerization of the peptide backbone."
+      },
+      "revises_step_id": null,
+      "references": [
+        "42",
+        "43"
+      ],
+      "evidence": {
+        "text_span": "Aer a survey of buffered reaction conditions that could promote imine formation while maintaining the solubility of the carrier-supported peptide fragments,42 we found that treatment of 18 and 39a with $5 \\%$ AcOH/pyridine $\\left( 1 : 1 \\mathrm { mol } \\mathrm { mol } ^ { - 1 } \\right)$ in DCM (0.03 M) gave rise to the desired coupled product 40a in quantitative yield as a diastereomeric mixture of the N,O-acetal moiety.43 Remarkably, the STL reaction proceeded efficiently with only a slight excess (1.05 eq.) of 39a without epimerization of the peptide backbone. This highlights the power of convergent LPPS strategy under the homogeneous reaction conditions.",
+        "section": "Results and discussion",
+        "page": 5
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Coupled product 40a was obtained.",
+        "gap": "Prepare the macrocyclization precursor by removing the Fmoc group and the C-terminal carrier molecule.",
+        "decision": "To prepare the macrocyclization precursor, performed cleavage of the Fmoc group in 40a under basic conditions, followed by selective removal of the C-terminal carrier molecule under mild conditions using HFIP to furnish amino acid 42a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "DBU",
+          "HFIP"
+        ],
+        "solvent": "unspecified",
+        "named_reaction": "Deprotection"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Cleavage of the Fmoc group in 40a under basic conditions, followed by selective removal of the carrier molecule at the C-terminus under mild conditions using HFIP, furnished amino acid 42a."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Aer cleavage of the Fmoc group in 40a under basic conditions, the carrier molecule at the C-terminus in 41a was selectively removed under mild conditions using HFIP to furnish amino acid 42a.",
+        "section": "Results and discussion",
+        "page": 5
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amino acid 42a was obtained.",
+        "gap": "Form the macrocyclic peptide.",
+        "decision": "To form the macrocyclic peptide, performed macrolactamization of 42a using HATU in the presence of iPr2NEt."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "HATU",
+          "iPr2NEt"
+        ],
+        "solvent": "unspecified",
+        "named_reaction": "Macrolactamization"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Macrolactamization of 42a using HATU in the presence of iPr2NEt afforded head-to-tail macrocyclic peptide 43a."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Macrolactamization of 42a using HATU in the presence of $\\mathrm { ^iPr } _ { 2 } N E t$ afforded head-to-tail macrocyclic peptide 43a.",
+        "section": "Results and discussion",
+        "page": 5
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Macrocyclic peptide 43a was obtained.",
+        "gap": "Obtain the final tetraselide isomer by global deprotection.",
+        "decision": "To obtain the final product, performed global deprotection of the amino acids in 43a, including the TCbz group, by treatment with TFA in HFIP/CHCl3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCCCCCCCCC[C@@H](C)[C@@H](C)OC(=O)CN[C@@H](C(C)O)[C@H](C)NC(=O)[C@H](CO)NC(=O)[C@H](CO)NC(=O)[C@H](CO)NC(=O)[C@@H](N)CCCNC(=O)[C@@H](N)CCCNC(=O)[C@H](C)NC(=O)CC(C)C"
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "HFIP/CHCl3",
+        "named_reaction": "Global deprotection"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 39,
+        "observation": "Global deprotection of the amino acids in 43a, including the TCbz group, was accomplished by treatment with TFA in HFIP/CHCl3. The crude filtrate was purified by reverse-phase HPLC, affording the desired peptide 44a in 39% yield over four steps. Analogously, the other three isomers 44b–d were prepared in four steps (17-23% yield)."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Finally, global deprotection of the amino acids in 43a including the TCbz group was accomplished by treatment with TFA in $\\mathbf { HFIP/CHCl _ { 3 } }$ . At this stage, the solid residue derived from the carrier molecules was removed by ltration and washed with MeCN. The crude ltrate was puried by reverse-phase HPLC, affording the desired peptide 44a in $3 9 \\%$ yield over four steps. Analogously, we prepared the other three isomers 44b–d in four steps $( 1 7 - 2 3 \\%$ yield).",
+        "section": "Results and discussion",
+        "page": 5
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "All four plausible isomers of tetraselide (44a-d) were synthesized.",
+        "gap": "Determine the absolute structure of the natural product tetraselide (1).",
+        "decision": "To determine the absolute structure, compared the spectral data of synthesized 44a with naturally occurring tetraselide (1)."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "All spectral data of synthesized 44a were consistent with those of naturally occurring tetraselide (1), thus determining the order of the four consecutive Ser moieties in the natural product 1 as L-L-L-D. This revealed the absolute structure of the natural product."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "All spectral data of synthesized 44a were consistent with those of naturally occurring tetraselide (1), thus determining the order of the four consecutive Ser moieties in the natural product 1 as L-L-L-D. Consequently, our rapid systematic syntheses of all plausible isomers of tetraselide through the assembly of the carrier-supported macrocyclic peptides allowed us to reveal the absolute structure of the natural product.",
+        "section": "Results and discussion",
+        "page": 5
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "LC-MS/MS",
+      "optical_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for the total synthesis of 44a was 39% over four steps from fragment coupling. Other isomers (44b-d) were 17-23% over four steps."
+      },
+      "Longest Linear Steps": {
+        "value": 11,
+        "unit": "steps",
+        "interpretation": "Longest linear sequence for western fragment 18."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Total steps for the full synthesis of tetraselide."
+      },
+      "Failed Attempts Count": {
+        "value": 1,
+        "unit": "count",
+        "interpretation": "One explicitly mentioned failed attempt in the chiral pool synthesis of fatty acid derivatives."
+      }
+    },
+    "comparison_to_prior": "The planar structure of tetraselide was previously reported in a patent (JP 2004-168685), but the reported NMR spectra did not match with those of tetraselide (1). This work provides the first total synthesis and absolute structure determination.",
+    "significance": "The first total synthesis of tetraselide was achieved, leading to the determination of its absolute structure. This was crucial because six stereocenters were ambiguous from initial structural elucidation. The work highlights the power of LPPS for practical convergent syntheses of macrocyclic peptides and provides a foundation for further studies on antifungal properties and structure-activity relationships."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5sc00566c",
+      "pmcid": "PMC11892018",
+      "title": "Isolation, total synthesis and structure determination of antifungal macrocyclic depsipeptide, tetraselide.",
+      "authors": "Nakahara H, Sennari G, Azami H, Tsutsumi H, Watanabe Y, Noguchi Y, Inahashi Y, Iwatsuki M, Hirose T, Sunazuka T.",
+      "journal": "Chem Sci",
+      "year": 2025,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC11892018?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/87758cba-abee-4fe2-b078-69d15606a951.zip",
+      "parsed_at": "2026-05-11T06:21:35.703681+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 48,
+    "parseable": 17,
+    "canonicalized": 7,
+    "invalid": 31,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "unspecified",
+      "O=C(O[C@@H](C)C(=O)N[C@@H](CCCNC(=O)OCc1c2ccccc2c3ccccc13)C(=O)N[C@@H](C)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](C(C)C)C(=O)N[C@@H](C)C(=O)O)C(C)(C)C",
+      "CC(C=O)CCOBn",
+      "CC(C=O)CCOBn",
+      "CCCCCCCC[C@H](C)C=C(OBn)C",
+      "CCCCCCCC[C@H](C)C=C(OBn)C",
+      "CCCCCCCCCC(C)[C@@H](O)[C@H](C)C(=O)OBn",
+      "CCCCCCCCCC(C)[C@@H](O)[C@@H](C)C(=O)OBn",
+      "CCCCCCCCCC(C)[C@@H](O)[C@H](C)C(=O)OBn",
+      "CCCCCCCCCC(C)[C@@H](O)[C@@H](C)C(=O)OBn"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

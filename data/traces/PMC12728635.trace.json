@@ -1,0 +1,1077 @@
+{
+  "trace_id": "TS-PMC12728635",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Koshidacin B",
+    "smiles": "C[C@@H](NC(=O)C(C)(C)O)C(=O)N[C@@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](C=O)CCCC(=O)C(O)CO",
+    "natural_product_class": "Cyclic Tetrapeptide",
+    "structural_features": {
+      "key_motifs": [
+        "cyclic tetrapeptide",
+        "alpha,beta-dihydroxyketone"
+      ]
+    },
+    "motivation": "Antimalarial activity against chloroquine-resistant Plasmodium falciparum K1 strain, unique macrocyclic structure, and promising biological properties for medicinal chemistry foundation.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Schmidt",
+        "year": "1984",
+        "key_strategy": "Classical solution peptide synthesis"
+      },
+      {
+        "lead_author": "Rich",
+        "year": "1986",
+        "key_strategy": "Classical solution peptide synthesis"
+      },
+      {
+        "lead_author": "Baldwin",
+        "year": "1993",
+        "key_strategy": "Classical solution peptide synthesis"
+      },
+      {
+        "lead_author": "Durand",
+        "year": "2001",
+        "key_strategy": "Classical solution peptide synthesis"
+      },
+      {
+        "lead_author": "Kazmaier",
+        "year": "2009",
+        "key_strategy": "Classical solution peptide synthesis"
+      },
+      {
+        "lead_author": "Kananovich",
+        "year": "2019",
+        "key_strategy": "Classical solution peptide synthesis"
+      },
+      {
+        "lead_author": "Chattopadhyay",
+        "year": "2024",
+        "key_strategy": "Late-stage scaffold diversification"
+      },
+      {
+        "lead_author": "Chen",
+        "year": "2025",
+        "key_strategy": "Olefin cross-metathesis reactions"
+      },
+      {
+        "lead_author": "Liu",
+        "year": "2025",
+        "key_strategy": "Unspecified"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Total synthesis of Koshidacins A and B, demonstrating inverse peptide elongation, head-to-tail macrocyclization, and photoinduced deaminative alkylation."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C5-C6 bond in the alkyl chain",
+        "named_strategy": "Deaminative Giese addition",
+        "reasoning": "To construct the alkyl chain moiety at a late stage through a cross-coupling reaction, specifically deaminative generation of an alkyl radical engaging in Giese addition with a SOMOphile.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Macrocyclic amide bond between C-terminus of Pro and N-terminus of Orn",
+        "named_strategy": "Head-to-tail macrocyclization",
+        "reasoning": "To form the cyclic tetrapeptide core from a linear precursor, anticipating that turn-inducing residues (D-Pro and Aib) and the hydrophobic TCbz group would facilitate this challenging cyclization.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Peptide bonds in the linear tetrapeptide",
+        "named_strategy": "Inverse peptide elongation",
+        "reasoning": "To systematically assemble the core cyclopeptide with carrier-support, starting from Phth-L-Orn(TCbz)-OH, to suppress undesired diketopiperazine formation and epimerization, which were problematic in previous syntheses.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "3",
+        "smiles": "",
+        "role": "Radical precursor (Katritzky salt)",
+        "comes_from": "Cyclic tetrapeptide 4 after TCbz cleavage and pyrylium salt condensation"
+      },
+      {
+        "fragment_id": "4",
+        "smiles": "CC(C)[C@@H]1NC(=O)[C@H](Cc2ccccc2)NC(=O)C(C2CCCC2)N(C2CCCC2)C(=O)NC(=O)[C@H](CCCNC(=O)OC(Cl)(Cl)Cl)NC1=O",
+        "role": "TCbz-bound cyclic tetrapeptide",
+        "comes_from": "Linear tetrapeptide 5 via head-to-tail macrocyclization"
+      },
+      {
+        "fragment_id": "5",
+        "smiles": "CC(C)[C@@H](NC(=O)[C@H](N)CCCNC(=O)OC(Cl)(Cl)Cl)C(=O)N[C@H](Cc1ccccc1)C(=O)N1CCCC[C@@H]1C(=O)O",
+        "role": "Linear tetrapeptide precursor for macrocyclization",
+        "comes_from": "Tripeptide 11 and H-D-Pro-OFl via inverse peptide elongation"
+      },
+      {
+        "fragment_id": "6",
+        "smiles": "O=C(NCCC[C@H](C(=O)O)N(C(=O)c1ccccc1)C(=O)c1ccccc1)OC(Cl)(Cl)Cl",
+        "role": "Phth-L-Orn(TCbz)-OH",
+        "comes_from": "H-L-Orn-(Boc)-OMe (7) after phthaloylation, Boc-cleavage, TCbz-carbamate formation, and C-terminus deprotection"
+      }
+    ],
+    "rationale": "The strategy focuses on a late-stage native peptide modification approach. It leverages liquid-phase peptide synthesis (LPPS) with a soluble hydrophobic tag (TCbz group) and an inverse peptide elongation sequence to build the cyclic tetrapeptide core. The key innovation is the photoinduced deaminative alkylation to install the unique alkyl chain, minimizing functional group interconversions and allowing for SAR studies."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Koshidacins A and B are antimalarial cyclic tetrapeptides with a unique macrocyclic structure and promising biological properties. Previous syntheses of related cyclic tetrapeptides (chlamydocin, diheteropeptin) relied on classical solution peptide synthesis, often facing challenges with diketopiperazine formation and epimerization due to Pro and Aib residues.",
+        "gap": "A versatile and systematic approach for assembling the core cyclopeptide in LPPS is needed, especially one that can construct the alkyl chain at a late stage to facilitate SAR studies.",
+        "decision": "To overcome the limitations of previous syntheses and enable late-stage modification, we will explore an unconventional utility of the TCbz group in LPPS, focusing on an inverse peptide elongation sequence and photoinduced deaminative functionalization."
+      },
+      "evidence": {
+        "text_span": "Koshidacins A and B (1 and 2, Scheme 1A)1 are antimalarial natural products identified at our institute through in-house bioassay-based screening to find new drug candidates.2 These cyclic tetrapeptides, isolated from a filamentous fungal strain (Pochonia boninensis FKR-0564), showed in vitro activity with IC50 values of 12.5 and 0.83 μM against a chloroquine-resistant Plasmodium falciparum K1 strain. In this preliminary structure−activity relationship (SAR) through the naturally occurring products, it turned out that the α,β-dihydroxyketone moiety in the side chain of 2 played a crucial role for the biological activity both in vitro and in vivo tests. The unique macrocyclic structure and promising biological properties of this class of natural products3 led us to pursue a synthetic study targeting koshidacins as the foundation for medicinal chemistry.\nTo date, total syntheses of the structurally related natural products—chlamydocin10 and diheteropeptin11—consisting of the same core cyclic tetrapeptide as koshidacins (1 and 2) have been achieved by the groups of Schmidt,12 Rich,13 Baldwin,14 Durand,15 Kazmaier,16 and Kananovich.17 Recently, Chattopadhyay and co-workers reported the synthesis of 9-epikoshidacin B and diheteropeptin,18 and the Chen group achieved the first total synthesis of 1 and 2. 19 Also, Liu and coworkers reported the total synthesis of 2 and related congeners.20 Considering the peptide components of this family, the diketopiperazine (DKP) formation in iterative peptide elongation steps using AAs one by one would be problematic due to the cis-amide bond character of Pro and the Thorpe-Ingold effect of Aib. Because these inherent challenges in building this family of cyclic tetrapeptides limited the elongation order, previous syntheses12−20 relied on classical solution peptide synthesis (CSPS)21 employing the common building block (Supporting Information Schemes S1−S8). Therefore, we saw an opportunity to develop an alternative approach in LPPS for a versatile and systematic assembly of the core cyclopeptide with the carrier-support.",
+        "page": 1,
+        "section": "ABSTRACT"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "The target molecules are koshidacins A and B, which are cyclic tetrapeptides with an alkyl chain. Previous syntheses of similar cyclic tetrapeptides faced challenges with DKP formation and epimerization.",
+        "gap": "How to efficiently construct the unique alkyl chain and the strained cyclic tetrapeptide core while avoiding known peptide synthesis issues.",
+        "decision": "To construct the alkyl chain at a late stage via deaminative Giese addition from a Katritzky salt (3). The Katritzky salt (3) will be derived from a TCbz-bound cyclic tetrapeptide (4). The cyclic tetrapeptide (4) will be formed by head-to-tail macrocyclization of a linear tetrapeptide (5), which will be synthesized using an inverse peptide elongation sequence starting from Phth-L-Orn(TCbz)-OH (6). This inverse elongation, combined with new condensation methodologies, is expected to suppress DKP formation and epimerization."
+      },
+      "evidence": {
+        "text_span": "In order to facilitate SAR studies, we envisioned the construction of the alkyl chain moiety in koshidacins at the late-stage through a cross-coupling reaction. Particularly, we turned our attention to a deaminative generation of the corresponding alkyl radical,22 which could engage in a variety of cross-coupling reactions. In this regard, our retrosynthesis was contingent on the disconnection at C5−6 (Scheme 2), which could trace back the radical precursor to the cyclopeptidic Katritzky salt (3) consisting of four conventional amino acids: L-Orn, Aib, L-Phe, and D-Pro. In the coupling process, we thought that deaminative Giese addition23 of the generating C-centered radical into a SOMOphile would provide 2 through the C−C bond formation.\nThe radical precursor 3 would be prepared from TCbzbound cyclic tetrapeptide 4. Although cyclic tetrapeptides are regarded as one of the most challenging cyclopeptides to synthesize due to the transannular steric interaction,24 we anticipated that turn-inducing residues (D-Pro and Aib) with the hydrophobic TCbz group in L-Orn would allow systematic elaboration of the core in LPPS. The cyclic core in 4 could be forged by head-to-tail macrocyclization between the Cterminus of Pro and N-terminus of Orn, leading to amino acid 5 as the precursor. To fabricate the carrier-supported linear tetrapeptide 5, we envisaged inverse peptide elongation25 from Phth-L-Orn(TCbz)−OH (6). We thought that the inverse elongation, in conjunction with the emerging condensation methodology,26 could suppress the undesired DKP formation as well as epimerization of the peptide residue.",
+        "page": 2,
+        "section": "Scheme 2. Retrosynthesis of Koshidacin B through Native Peptide Modification"
+      },
+      "image_refs": [
+        "307a3fe44e7f98e40fd92198f31098c27fc5672df6b443e92f34c42ef68c93dd.jpg"
+      ]
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "6",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The first step in the inverse peptide elongation is to prepare the TCbz-bound Orn residue (6).",
+        "gap": "How to convert H-L-Orn-(Boc)-OMe (7) into Phth-L-Orn(TCbz)-OH (6) efficiently.",
+        "decision": "To treat H-L-Orn-(Boc)-OMe (7) with phthalic anhydride, followed by Boc-cleavage to get amine 8. Then, convert the primary amine in 8 to the TCbz-carbamate and deprotect the C-terminus to yield carboxylic acid 6."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(N)CCCNC(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "phthalic anhydride",
+          "iPr2NEt",
+          "TFA"
+        ],
+        "solvent": "PhMe, DCM",
+        "temperature": "70 °C, r.t.",
+        "rxn_smiles": "",
+        "observation": "Amine 8 was obtained in excellent yield."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99
+      },
+      "evidence": {
+        "text_span": "Our synthesis began with the preparation of the TCbzbound Orn residue (Scheme 3A). Treatment of H-L-Orn-(Boc)-OMe (7) with phthalic anhydride and subsequent Boccleavage afforded amine 8 in excellent yield by CSPS.",
+        "page": 3,
+        "section": "Scheme 3. Inverse Peptide Elongation and Macrocyclization through LPPSa"
+      },
+      "image_refs": [
+        "2f778efed9c3d678bda91301226bb431283416923c7229c1304bda23796b025d.jpg"
+      ]
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "6",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amine 8 was obtained in excellent yield.",
+        "gap": "How to convert amine 8 to the TCbz-carbamate and then deprotect the C-terminus to get carboxylic acid 6.",
+        "decision": "To convert the primary amine in 8 to the TCbz-carbamate using TCbz-OArF, followed by C-terminus deprotection using Me3SnOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "O=C(NCCC[C@H](C(=O)O)N(C(=O)c1ccccc1)C(=O)c1ccccc1)OC(Cl)(Cl)Cl"
+        ],
+        "reagents": [
+          "TCbz-OArF",
+          "Et3N",
+          "Me3SnOH"
+        ],
+        "solvent": "CHCl3, DCE",
+        "temperature": "r.t., 70 °C",
+        "rxn_smiles": "",
+        "observation": "Carboxylic acid 6 was obtained in good yield after purification by solidification protocol."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82
+      },
+      "evidence": {
+        "text_span": "The primary amine in 8 was converted to the TCbz-carbamate in 99%* yield, which was purified by our established solidification protocol in LPPS (Scheme 3B, asterisk after the percentage shows isolated yield by the solidification protocol). Subsequent deprotection of the C-terminus provided carboxylic acid 6 in good yield.",
+        "page": 3,
+        "section": "Scheme 3. Inverse Peptide Elongation and Macrocyclization through LPPSa"
+      },
+      "image_refs": [
+        "2f778efed9c3d678bda91301226bb431283416923c7229c1304bda23796b025d.jpg"
+      ]
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "9",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carboxylic acid 6 is ready for peptide elongation.",
+        "gap": "How to couple 6 with H-Aib-OFl and then cleave the Fl group to form dipeptide 9.",
+        "decision": "To condense 6 with H-Aib-OFl using COMU and iPr2NEt, followed by Fl-cleavage using iPr3SiH and HFIP."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(NCCC[C@H](C(=O)O)N(C(=O)c1ccccc1)C(=O)c1ccccc1)OC(Cl)(Cl)Cl"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "H-Aib-OFl",
+          "COMU",
+          "iPr2NEt",
+          "iPr3SiH",
+          "HFIP"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "0 °C to r.t.",
+        "rxn_smiles": "",
+        "observation": "Dipeptide 9 was obtained in good yield."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99
+      },
+      "evidence": {
+        "text_span": "Condensation of 6 with H-Aib-OFl using COMU, followed by Fl-cleavage, gave rise to dipeptide 9 in good yield.",
+        "page": 3,
+        "section": "Scheme 3. Inverse Peptide Elongation and Macrocyclization through LPPSa"
+      },
+      "image_refs": [
+        "2f778efed9c3d678bda91301226bb431283416923c7229c1304bda23796b025d.jpg"
+      ]
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "10",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dipeptide 9 was obtained.",
+        "gap": "How to convert dipeptide 9 to azlactone 10.",
+        "decision": "To treat dipeptide 9 with COMU to form azlactone 10."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "COMU",
+          "iPr2NEt"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "0 °C",
+        "rxn_smiles": "",
+        "observation": "Azlactone 10 was formed in 91% yield if isolated."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91
+      },
+      "evidence": {
+        "text_span": "We found that dipeptide 9 was converted to azlactone 10 by treating with COMU 91%* yield if isolated)",
+        "page": 3,
+        "section": "Scheme 3. Inverse Peptide Elongation and Macrocyclization through LPPSa"
+      },
+      "image_refs": [
+        "2f778efed9c3d678bda91301226bb431283416923c7229c1304bda23796b025d.jpg"
+      ]
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Azlactone 10 was formed.",
+        "gap": "How to convert azlactone 10 to tripeptide 11 via aminolysis with H-L-Phe-OFl and subsequent deprotection.",
+        "decision": "To perform one-pot aminolysis of azlactone 10 with H-L-Phe-OFl, followed by deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "H-L-Phe-OFl",
+          "iPr3SiH",
+          "HFIP"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "0 to 30 °C, r.t.",
+        "rxn_smiles": "",
+        "observation": "Tripeptide 11 was obtained in excellent yield."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99
+      },
+      "evidence": {
+        "text_span": "which underwent one-pot aminolysis with H-L-Phe-OFl (90%*) and subsequent deprotection (>99%), affording tripeptide 11.",
+        "page": 3,
+        "section": "Scheme 3. Inverse Peptide Elongation and Macrocyclization through LPPSa"
+      },
+      "image_refs": [
+        "2f778efed9c3d678bda91301226bb431283416923c7229c1304bda23796b025d.jpg"
+      ]
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "13",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tripeptide 11 was obtained. Epimerization of the Phe residue is a concern during condensation.",
+        "gap": "How to condense 11 with H-D-Pro-OFl to form tetrapeptide 13 while avoiding epimerization.",
+        "decision": "To use MYTsA as a condensation agent to activate carboxylic acid 11 as enamide 12 in situ, which is prone to undergo amide bond formation with H-D-Pro-OFl."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MYTsA",
+          "H-D-Pro-OFl"
+        ],
+        "solvent": "DCM, THF",
+        "temperature": "r.t.",
+        "rxn_smiles": "",
+        "observation": "Tetrapeptide 13 was obtained in good yield, and epimerization was circumvented."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88
+      },
+      "evidence": {
+        "text_span": "Epimerization of the Phe residue in 11, which could occur via the corresponding azlactone formation, was circumvented by using MYTsA as a condensation agent.26b In this event, carboxylic acid 11 was activated as enamide 12 in situ that was prone to undergo the amide bond formation with H-D-Pro-OFl to provide tetrapeptide 13 in 88%* yield.",
+        "page": 3,
+        "section": "Scheme 3. Inverse Peptide Elongation and Macrocyclization through LPPSa"
+      },
+      "image_refs": [
+        "2f778efed9c3d678bda91301226bb431283416923c7229c1304bda23796b025d.jpg"
+      ]
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "5",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetrapeptide 13 was synthesized. Deprotection of the amino acid in 13 was initially problematic due to unexpected reactivity and solubility issues.",
+        "gap": "How to effectively deprotect the N-terminus and Fl group of 13 to obtain linear tetrapeptide 5.",
+        "decision": "To implement a two-step deprotection sequence: first, N-terminus deprotection with hydrazine, followed by removal of the Fl group with MeONH2·HCl."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)[C@@H](NC(=O)[C@H](N)CCCNC(=O)OC(Cl)(Cl)Cl)C(=O)N[C@H](Cc1ccccc1)C(=O)N1CCCC[C@@H]1C(=O)O"
+        ],
+        "reagents": [
+          "hydrazine",
+          "MeONH2·HCl"
+        ],
+        "solvent": "THF/EtOH, HFIP/CHCl3",
+        "temperature": "10 °C, r.t.",
+        "rxn_smiles": "",
+        "observation": "Amino acid 5 was obtained in good yield."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63
+      },
+      "evidence": {
+        "text_span": "Although deprotection of the amino acid in 13 was initially problematic due to the unexpected reactivity and solubility issues (Tables S3 and S4), the following two-step sequence was effective for this purpose. We first implemented deprotection of the Nterminus by treating 13 with hydrazine (85%), followed by removal of the Fl group, providing amino acid 5 in 63% yield.",
+        "page": 3,
+        "section": "Scheme 3. Inverse Peptide Elongation and Macrocyclization through LPPSa"
+      },
+      "image_refs": [
+        "2f778efed9c3d678bda91301226bb431283416923c7229c1304bda23796b025d.jpg"
+      ]
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "4",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Linear peptide 5 is in hand. The next step is head-to-tail macrocyclization to form cyclic tetrapeptide 4. This is known to be challenging for 12-membered rings due to transannular steric interactions.",
+        "gap": "How to achieve efficient macrocyclization of 5.",
+        "decision": "To attempt macrocyclization using (Cl3CO)2CO and NMI, expecting to form a larger 14-membered ring intermediate to relieve strain."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H](NC(=O)[C@H](N)CCCNC(=O)OC(Cl)(Cl)Cl)C(=O)N[C@H](Cc1ccccc1)C(=O)N1CCCC[C@@H]1C(=O)O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "(Cl3CO)2CO",
+          "NMI",
+          "KOH"
+        ],
+        "solvent": "THF/MeCN/H2O",
+        "temperature": "0 to 60 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "This method led to nonspecific decomposition."
+      },
+      "evidence": {
+        "text_span": "We initially thought that forging the larger 14-membered ring as an intermediate27 would be beneficial to relieve the transannular interaction for macrocyclization. However, this method led to nonspecific decomposition (entry 1).",
+        "page": 3,
+        "section": "Scheme 4. Investigation of Macrocyclization"
+      },
+      "image_refs": [
+        "08f29cc7448c60584d59601f08e30cffcd15d614906f33feed411013b184d11b.jpg"
+      ]
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "4",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Macrocyclization using (Cl3CO)2CO resulted in decomposition.",
+        "gap": "How to achieve efficient macrocyclization of 5.",
+        "decision": "To attempt macrocyclization using ClCO2iPr and Me2NBr, which are acylammonium species known for peptide cyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H](NC(=O)[C@H](N)CCCNC(=O)OC(Cl)(Cl)Cl)C(=O)N[C@H](Cc1ccccc1)C(=O)N1CCCC[C@@H]1C(=O)O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "ClCO2iPr",
+          "Me2NBr",
+          "KOH"
+        ],
+        "solvent": "DCE/MeCN/H2O",
+        "temperature": "0 to 60 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Resulted in N-carbonylation of amino acid 5."
+      },
+      "evidence": {
+        "text_span": "By means of the acylammonium species for peptide cyclization28 resulted in N-carbonylation of amino acid 5 (entry 2).",
+        "page": 3,
+        "section": "Scheme 4. Investigation of Macrocyclization"
+      },
+      "image_refs": [
+        "08f29cc7448c60584d59601f08e30cffcd15d614906f33feed411013b184d11b.jpg"
+      ]
+    },
+    {
+      "step_id": 12,
+      "fragment_id": "4",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempts at macrocyclization failed. PyBOP and HATU were reported to give moderate yields in related syntheses.",
+        "gap": "How to achieve efficient macrocyclization of 5.",
+        "decision": "To attempt macrocyclization using DPPA, iPr2NEt, DMAP, and HOBt."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H](NC(=O)[C@H](N)CCCNC(=O)OC(Cl)(Cl)Cl)C(=O)N[C@H](Cc1ccccc1)C(=O)N1CCCC[C@@H]1C(=O)O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DPPA",
+          "iPr2NEt",
+          "DMAP",
+          "HOBt"
+        ],
+        "solvent": "CHCl3/DMF",
+        "temperature": "0 °C to r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "The DPPA-HOBt system did not work in this case, leading to decomposition."
+      },
+      "evidence": {
+        "text_span": "Among the condensation agents that were employed for macrocyclization of the related tetrapeptides in the previous syntheses, PyBOP and HATU15,17,19,20 gave rise to the desired cyclic tetrapeptide 4 in moderate yield, whereas the DPPA-HOBt system18 did not work in this case (entries 3−5).",
+        "page": 3,
+        "section": "Scheme 4. Investigation of Macrocyclization"
+      },
+      "image_refs": [
+        "08f29cc7448c60584d59601f08e30cffcd15d614906f33feed411013b184d11b.jpg"
+      ]
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "4",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous attempts at macrocyclization were unsuccessful or gave moderate yields. PyBOP and HATU gave moderate yields (36% and 33% respectively). T3P was also tested.",
+        "gap": "How to achieve efficient macrocyclization of 5.",
+        "decision": "To use T3P as a condensation agent for macrocyclization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H](NC(=O)[C@H](N)CCCNC(=O)OC(Cl)(Cl)Cl)C(=O)N[C@H](Cc1ccccc1)C(=O)N1CCCC[C@@H]1C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)[C@@H]1NC(=O)[C@H](Cc2ccccc2)NC(=O)C(C2CCCC2)N(C2CCCC2)C(=O)NC(=O)[C@H](CCCNC(=O)OC(Cl)(Cl)Cl)NC1=O"
+        ],
+        "reagents": [
+          "T3P",
+          "iPr2NEt"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 44,
+        "observation": "T3P gave the best result among the initial set of reagents, affording 4 in 44% yield."
+      },
+      "evidence": {
+        "text_span": "In other reagents that were tested (entries 6−8), T3P gave the best result, affording 4 in 44% yield.",
+        "page": 3,
+        "section": "Scheme 4. Investigation of Macrocyclization"
+      },
+      "image_refs": [
+        "08f29cc7448c60584d59601f08e30cffcd15d614906f33feed411013b184d11b.jpg"
+      ]
+    },
+    {
+      "step_id": 14,
+      "fragment_id": "4",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The moderate efficiency of macrocyclization with conventional conditions is attributed to the challenging 12-membered ring formation. Superactive esters might improve the reaction by changing the rate-limiting step to initial nucleophilic addition.",
+        "gap": "How to achieve higher yields in macrocyclization.",
+        "decision": "To investigate triazine-based condensation reagents, starting with DMTMM(BF4) in THF/NMP without a base."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H](NC(=O)[C@H](N)CCCNC(=O)OC(Cl)(Cl)Cl)C(=O)N[C@H](Cc1ccccc1)C(=O)N1CCCC[C@@H]1C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)[C@@H]1NC(=O)[C@H](Cc2ccccc2)NC(=O)C(C2CCCC2)N(C2CCCC2)C(=O)NC(=O)[C@H](CCCNC(=O)OC(Cl)(Cl)Cl)NC1=O"
+        ],
+        "reagents": [
+          "DMTMM(BF4)"
+        ],
+        "solvent": "THF/NMP",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 50,
+        "failure_mode": "low_yield",
+        "observation": "Macrocycle 4 was obtained in 50% yield, which is an improvement but still not optimal."
+      },
+      "evidence": {
+        "text_span": "As a result of the initial investigation for solvent and base (Table S6) based on the reported conditions,29b DMTMM-(BF4) in the absence of base in THF/NMP provided macrocycle 4 in 50% yield (entry 9).",
+        "page": 4,
+        "section": "Scheme 4. Investigation of Macrocyclization"
+      },
+      "image_refs": [
+        "08f29cc7448c60584d59601f08e30cffcd15d614906f33feed411013b184d11b.jpg"
+      ]
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "4",
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "DMTMM(BF4) gave 50% yield, but competitive SNAr reaction of the amine to the triazine reagent might be occurring.",
+        "gap": "How to improve the yield of macrocyclization using DMTMM(BF4).",
+        "decision": "To add HOBt (1 equiv) as an additive to suppress the competitive SNAr reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H](NC(=O)[C@H](N)CCCNC(=O)OC(Cl)(Cl)Cl)C(=O)N[C@H](Cc1ccccc1)C(=O)N1CCCC[C@@H]1C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)[C@@H]1NC(=O)[C@H](Cc2ccccc2)NC(=O)C(C2CCCC2)N(C2CCCC2)C(=O)NC(=O)[C@H](CCCNC(=O)OC(Cl)(Cl)Cl)NC1=O"
+        ],
+        "reagents": [
+          "DMTMM(BF4)",
+          "HOBt"
+        ],
+        "solvent": "THF/NMP",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "The yield improved to 58% by adding HOBt."
+      },
+      "evidence": {
+        "text_span": "Further extensive optimization (Table S7) revealed that an addition of DMTMM (BF4) to a premixed solution of 5 and HOBt (1 equiv) as an additive improved the reaction to 58% yield by suppressing a competitive SNAr reaction of the amine to the triazine reagent (entry 10).",
+        "page": 4,
+        "section": "Scheme 4. Investigation of Macrocyclization"
+      },
+      "image_refs": [
+        "08f29cc7448c60584d59601f08e30cffcd15d614906f33feed411013b184d11b.jpg"
+      ]
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "4",
+      "action": "revision",
+      "revises_step_id": 15,
+      "thought": {
+        "background": "Using DMTMM(BF4) with HOBt gave 58% yield. A tosylate salt of DMTMM was also considered.",
+        "gap": "How to further improve the yield of macrocyclization.",
+        "decision": "To use a tosylate salt of DMTMM (DMTMM(OTs)) and optimize the solvent system to THF/DMF for homogeneous reaction conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H](NC(=O)[C@H](N)CCCNC(=O)OC(Cl)(Cl)Cl)C(=O)N[C@H](Cc1ccccc1)C(=O)N1CCCC[C@@H]1C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)[C@@H]1NC(=O)[C@H](Cc2ccccc2)NC(=O)C(C2CCCC2)N(C2CCCC2)C(=O)NC(=O)[C@H](CCCNC(=O)OC(Cl)(Cl)Cl)NC1=O"
+        ],
+        "reagents": [
+          "DMTMM(OTs)",
+          "HOBt"
+        ],
+        "solvent": "THF/DMF",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "The reaction promoted fast cyclization, affording 4 in 81% yield."
+      },
+      "evidence": {
+        "text_span": "Finally, we found that a tosylate salt of DMTMM (entry 11) in a THF/DMF solvent system promoted fast cyclization, likely attributed to the homogeneous reaction conditions, affording 4 in 81% yield (entry 12).",
+        "page": 4,
+        "section": "Scheme 4. Investigation of Macrocyclization"
+      },
+      "image_refs": [
+        "08f29cc7448c60584d59601f08e30cffcd15d614906f33feed411013b184d11b.jpg"
+      ]
+    },
+    {
+      "step_id": 17,
+      "fragment_id": "14",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The challenging cyclic tetrapeptide formation was established with 81% yield for 4.",
+        "gap": "How to prepare the Katritzky salt precursor for late-stage peptide modification.",
+        "decision": "To cleave the TCbz group in 4 with TFA to provide primary amine 14, then condense 14 with a pyrylium salt to afford the corresponding pyridinium salt (Katritzky salt 3)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H]1NC(=O)[C@H](Cc2ccccc2)NC(=O)C(C2CCCC2)N(C2CCCC2)C(=O)NC(=O)[C@H](CCCNC(=O)OC(Cl)(Cl)Cl)NC1=O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TFA",
+          "pyrylium salt"
+        ],
+        "solvent": "CHCl3, EtOH",
+        "temperature": "r.t., 90 °C",
+        "rxn_smiles": "",
+        "observation": "Primary amine 14 was obtained quantitatively, and subsequent condensation with pyrylium salt also proceeded quantitatively to give Katritzky salt 3."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99
+      },
+      "evidence": {
+        "text_span": "The TCbz group in 4 was cleaved by treatment with TFA to provide primary amine 14, which was condensed with a pyrylium salt, affording the corresponding pyridinium salt quantitatively (see Scheme 3).",
+        "page": 4,
+        "section": "Scheme 5. Late-Stage Peptide Modification"
+      },
+      "image_refs": [
+        "2f778efed9c3d678bda91301226bb431283416923c7229c1304bda23796b025d.jpg"
+      ]
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Katritzky salt 3 was prepared. The goal is photoinduced deaminative alkylation to install the alkyl chain.",
+        "gap": "How to achieve efficient deaminative alkylation using Katritzky salt 3.",
+        "decision": "To treat Katritzky salt 3 with Hantzsch ester (HE) and Et3N in the presence of SOMOphile 16 in DMA under blue LED irradiation, following literature precedent."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[n+]1cc(-c2ccccc2)cc(-c2ccccc2)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "HE",
+          "Et3N",
+          "C=CC(=O)C[C@H]1OC2(CCCCC2)OC1"
+        ],
+        "solvent": "DMA",
+        "atmosphere": "blue LED irradiation"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Leading to nonspecific decomposition."
+      },
+      "evidence": {
+        "text_span": "Following the literature precedent,23 Katritzky salt 3 was treated with Hantzsch ester (HE) and Et3N in the presence of SOMOphile 16 in DMA under blue LED irradiation, but leading to nonspecific decomposition (Table 2 in Scheme 5A, entry 1).",
+        "page": 4,
+        "section": "Scheme 5. Late-Stage Peptide Modification"
+      },
+      "image_refs": [
+        "b666ea606b17059dd4f9b134ffd7fc0158a5851b3d990130526ecb85b27dac13.jpg"
+      ]
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The initial attempt with Katritzky salt 3 resulted in decomposition. Increasing the amount of SOMOphile and heating might help.",
+        "gap": "How to achieve efficient deaminative alkylation using Katritzky salt 3.",
+        "decision": "To use 3.0 equiv of SOMOphile 16 and conduct the reaction at 60 °C under photoirradiation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[n+]1cc(-c2ccccc2)cc(-c2ccccc2)c1"
+        ],
+        "product_smiles": [
+          "CC(C)[C@@H]1NC(=O)[C@H](Cc2ccccc2)NC(=O)C(=O)N(C[C@H]2CCC2CCC(=O)OC[C@H]2COC(C)(C)O2)C1=O"
+        ],
+        "reagents": [
+          "HE",
+          "Et3N",
+          "C=CC(=O)C[C@H]1OC2(CCCCC2)OC1"
+        ],
+        "solvent": "DMA",
+        "temperature": "60 °C",
+        "atmosphere": "photoirradiation"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 8,
+        "failure_mode": "low_yield",
+        "observation": "Desired product 17 was obtained, but in low yield (8%)."
+      },
+      "evidence": {
+        "text_span": "We obtained the desired 17 using 3.0 equiv of 16 under thermal heating with photoirradiation albeit low yielding (8%, entry 2).",
+        "page": 4,
+        "section": "Scheme 5. Late-Stage Peptide Modification"
+      },
+      "image_refs": [
+        "b666ea606b17059dd4f9b134ffd7fc0158a5851b3d990130526ecb85b27dac13.jpg"
+      ]
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Katritzky salt 3 gave low yield. Trimethoxy derivative of Katritzky salt (15a) was reported to be optimal for deaminative alkylation on solid-phase.",
+        "gap": "How to achieve efficient deaminative alkylation.",
+        "decision": "To test Katritzky salt 15a under various conditions (DMA, DMF, MeCN, 60 °C)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(-c2cc(-c3ccc(OC)cc3)c[n+](C)c2)cc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "HE",
+          "Et3N",
+          "C=CC(=O)C[C@H]1OC2(CCCCC2)OC1"
+        ],
+        "solvent": "DMA, DMF, MeCN",
+        "temperature": "r.t., 60 °C",
+        "atmosphere": "blue LED irradiation"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No productive reactions were observed under several conditions using 15a."
+      },
+      "evidence": {
+        "text_span": "Although the Hart group showcased that the trimethoxy derivative of the Katritzky salt was optimal for their deaminative alkylation of peptides on solid-phase,32 we did not observe any productive reactions under several conditions using 15a (entries 3−6).",
+        "page": 4,
+        "section": "Scheme 5. Late-Stage Peptide Modification"
+      },
+      "image_refs": [
+        "b666ea606b17059dd4f9b134ffd7fc0158a5851b3d990130526ecb85b27dac13.jpg"
+      ]
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Katritzky salts 3 and 15a were not effective. Rovis and co-workers found that tensioned Katritzky salt precursors (like 15b) could generate primary alkyl radicals effectively via EDA complex formation.",
+        "gap": "How to achieve efficient deaminative alkylation.",
+        "decision": "To use tensioned Katritzky salt 15b for the photoinduced deaminative alkylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[N+]1=C2C=CC=C3C2C(c2ccccc2)=C2C=CC=C(C2)C31"
+        ],
+        "product_smiles": [
+          "CC(C)[C@@H]1NC(=O)[C@H](Cc2ccccc2)NC(=O)C(=O)N(C[C@H]2CCC2CCC(=O)OC[C@H]2COC(C)(C)O2)C1=O"
+        ],
+        "reagents": [
+          "HE",
+          "Et3N",
+          "C=CC(=O)C[C@H]1OC2(CCCCC2)OC1"
+        ],
+        "solvent": "DMA",
+        "atmosphere": "blue LED irradiation"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 21,
+        "failure_mode": "low_yield",
+        "observation": "Desired product 17 was formed, but in low yield (21%)."
+      },
+      "evidence": {
+        "text_span": "We were pleased to see the formation of the desired product using 15b, providing 17 in 21% yield (entry 7).",
+        "page": 4,
+        "section": "Scheme 5. Late-Stage Peptide Modification"
+      },
+      "image_refs": [
+        "b666ea606b17059dd4f9b134ffd7fc0158a5851b3d990130526ecb85b27dac13.jpg"
+      ]
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 21,
+      "thought": {
+        "background": "Using Katritzky salt 15b gave 21% yield. Further optimization is needed.",
+        "gap": "How to improve the yield of photoinduced deaminative alkylation using 15b.",
+        "decision": "To use iPr2NEt instead of Et3N, and increase the amount of SOMOphile 16 to 3.0 equiv."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[N+]1=C2C=CC=C3C2C(c2ccccc2)=C2C=CC=C(C2)C31"
+        ],
+        "product_smiles": [
+          "CC(C)[C@@H]1NC(=O)[C@H](Cc2ccccc2)NC(=O)C(=O)N(C[C@H]2CCC2CCC(=O)OC[C@H]2COC(C)(C)O2)C1=O"
+        ],
+        "reagents": [
+          "HE",
+          "iPr2NEt",
+          "C=CC(=O)C[C@H]1OC2(CCCCC2)OC1"
+        ],
+        "solvent": "DMA",
+        "atmosphere": "blue LED irradiation"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "The reaction afforded 17 in an acceptable 45% yield."
+      },
+      "evidence": {
+        "text_span": "After the extensive optimization using 15b (Table S8), we found that the use of iPr2NEt instead of Et3N, with 3.0 equiv of SOMOphile 16, afforded 17 in an acceptable 45% yield. To our delight, this reaction successfully converted the native peptide of the Orn residue to the requisite alkyl chain structure in the targeting natural products.",
+        "page": 4,
+        "section": "Scheme 5. Late-Stage Peptide Modification"
+      },
+      "image_refs": [
+        "b666ea606b17059dd4f9b134ffd7fc0158a5851b3d990130526ecb85b27dac13.jpg"
+      ]
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The alkyl chain was successfully installed, yielding 17.",
+        "gap": "How to deprotect the diol moiety in 17 to obtain koshidacin B (2).",
+        "decision": "To treat 17 with 1.5 M HCl to deprotect the diol moiety."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@@H]1NC(=O)[C@H](Cc2ccccc2)NC(=O)C(=O)N(C[C@H]2CCC2CCC(=O)OC[C@H]2COC(C)(C)O2)C1=O"
+        ],
+        "product_smiles": [
+          "C[C@@H](NC(=O)C(C)(C)O)C(=O)N[C@@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](C=O)CCCC(=O)C(O)CO"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "stoichiometry": {
+          "HCl": "1.5 M"
+        },
+        "rxn_smiles": "CC(C)[C@@H]1NC(=O)[C@H](Cc2ccccc2)NC(=O)C(=O)N(C[C@H]2CCC2CCC(=O)OC[C@H]2COC(C)(C)O2)C1=O>>C[C@@H](NC(=O)C(C)(C)O)C(=O)N[C@@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](C=O)CCCC(=O)C(O)CO",
+        "observation": "Koshidacin B (2) was obtained in good yield."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77
+      },
+      "evidence": {
+        "text_span": "Lastly, deprotection of the diol moiety in 17 by treating with 1.5 M HCl gave rise to koshidacin B (2) in 77% yield.",
+        "page": 4,
+        "section": "Scheme 5. Late-Stage Peptide Modification"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Koshidacin B (2) was synthesized. The final task is the selective reduction of the ketone group in 2 to obtain koshidacin A (1). A hydride addition via the Felkin-Ahn model might lead to the undesired diastereomer, and diol-protected substrates were unsuccessful in analogous systems.",
+        "gap": "How to selectively reduce the ketone group in 2 with anti-selectivity.",
+        "decision": "To perform chelation-controlled reduction of the free α,β-dihydroxy ketone in 2 using NaBH4 in the presence of CeCl3·7H2O in MeOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H](NC(=O)C(C)(C)O)C(=O)N[C@@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](C=O)CCCC(=O)C(O)CO"
+        ],
+        "product_smiles": [
+          "C[C@@H](NC(=O)C(C)(C)O)C(=O)N[C@@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](C=O)CCCC(O)C(O)CO"
+        ],
+        "reagents": [
+          "NaBH4",
+          "CeCl3.7H2O"
+        ],
+        "solvent": "MeOH",
+        "rxn_smiles": "C[C@@H](NC(=O)C(C)(C)O)C(=O)N[C@@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](C=O)CCCC(=O)C(O)CO>>C[C@@H](NC(=O)C(C)(C)O)C(=O)N[C@@H](Cc1ccccc1)C(=O)N1CCC[C@H]1C(=O)N[C@H](C=O)CCCC(O)C(O)CO",
+        "observation": "The desired koshidacin A (1) was obtained in good yield and excellent diastereoselectivity, likely driven by 1,3-chelation of cerium and axial hydride addition."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "regio_selectivity": "excellent"
+      },
+      "evidence": {
+        "text_span": "En route to koshidacin A (1), the final task was the selective reduction of the ketone group in either 17 or 2. We speculated that a hydride addition via the Felkin−Ahn model would provide the undesired diastereomer. Because the desired anti-selectivity employing diol-protected substrates in the analogous system was shown to be unsuccessful,35 we focused on chelationcontrolled reduction of the free α,β-dihydroxy ketone in 2. To our delight, treatment of 2 with NaBH4 in the presence of CeCl3·7H2O in MeOH36 provided the desired 1 in 80% yield and excellent diastereoselectivity. We believe that the selectivity was driven by the 1,3-chelation of the cerium atom and an external hydride addition from the axial face (Figure S1).",
+        "page": 4,
+        "section": "Scheme 5. Late-Stage Peptide Modification"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield not explicitly stated for the entire synthesis, but individual steps show good to excellent yields after optimization."
+      },
+      "Longest Linear Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "From H-L-Orn-(Boc)-OMe (7) to Koshidacin A (1)."
+      },
+      "Total Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps from starting material to final product."
+      },
+      "Failed Attempts Count": {
+        "value": 5,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly described failed attempts during macrocyclization and deaminative alkylation optimization."
+      }
+    },
+    "significance": "The total synthesis of koshidacins A and B was achieved using a native peptide modification approach. Key advances include an inverse peptide elongation sequence for systematic and scalable assembly of cyclic tetrapeptides, head-to-tail macrocyclization using 'superactive esters' to overcome the challenge of strained 12-membered rings, and photoinduced deaminative Giese addition for late-stage installation of the unique alkyl side chain. This approach minimizes functional group interconversions and is applicable to analogue synthesis for SAR studies."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.5c01394",
+      "pmcid": "PMC12728635",
+      "title": "Late-Stage Native Peptide Modification Approach to the Total Synthesis of Koshidacins A and B.",
+      "authors": "Nakahara H, Okano T, Sennari G, Iwatsuki M, Sunazuka T, Hirose T.",
+      "journal": "JACS Au",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC12728635?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/81851bf4-c147-42ad-b4e7-4fdf5d4700c9.zip",
+      "parsed_at": "2026-05-07T14:30:18.777614+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 49,
+    "parseable": 32,
+    "canonicalized": 31,
+    "invalid": 17,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)(C(=O)N[C@@H](C(=O)N[C@@H](CC1=CC=CC=C1)C(=O)N2CCC[C@H]2C(=O)N[C@@H](CCC[N+]3=C(C=C(C=C3)C4=CC=CC=C4)C5=CC=CC=C5)C(=O))C)O.[BF4-]",
+      "COC(=O)C(N)CCCNC(=O)c1ccccc1-2-c1ccccc1",
+      "COC(=O)C(N)CCCNC(=O)c1ccccc1-2-c1ccccc1",
+      "CC(C)(C)OC(=O)NC(C)C(=O)NC(CCCNC(=O)c1ccccc1-2-c1ccccc1)C(=O)O",
+      "CC(C)(C)OC(=O)NC(C)C(=O)NC(CCCNC(=O)c1ccccc1-2-c1ccccc1)C(=O)O",
+      "CC1(C)OC(=O)C(NC(=O)C(CCCNC(=O)c1ccccc1-2-c1ccccc1)C(=O)O)N1",
+      "CC1(C)OC(=O)C(NC(=O)C(CCCNC(=O)c1ccccc1-2-c1ccccc1)C(=O)O)N1",
+      "O=C(O)C(NC(=O)C(CCCNC(=O)c1ccccc1-2-c1ccccc1)C(=O)O)C(C)C",
+      "O=C(O)C(NC(=O)C(CCCNC(=O)c1ccccc1-2-c1ccccc1)C(=O)O)C(C)C",
+      "O=C(O)C(NC(=O)C(CCCNC(=O)c1ccccc1-2-c1ccccc1)C(=O)O)C(C)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

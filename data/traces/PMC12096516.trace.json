@@ -1,0 +1,669 @@
+{
+  "trace_id": "TS-PMC12096516",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "daphnepapytone A",
+    "smiles": "CC1=C(C)C(=O)CC2CC(O)C3C(C1)C2C3(C)C",
+    "natural_product_class": "guaiane-derived sesquiterpene",
+    "structural_features": {
+      "ring_systems": "bridged cyclobutane",
+      "key_motifs": [
+        "guaiane skeleton",
+        "bridged cyclobutane"
+      ]
+    },
+    "motivation": "Daphnepapytone A (1) is an unprecedented guaiane-derived sesquiterpene characterized by a bridged and highly substituted cyclobutane. It has alpha-glycosidase inhibitory properties and a limited extraction yield, justifying a straightforward synthetic route for lead compound development in antidiabetic treatments.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Total synthesis of daphnepapytone A (1) with high efficiency and stereoselectivity, particularly in late-stage C-H oxidation and reduction steps."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond formation via [2+2] cycloaddition",
+        "named_strategy": "[2+2] photocycloaddition",
+        "reasoning": "To form the bridged cyclobutane of daphnepapytone A (1) from oleodaphnone (3) in a biomimetic manner.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond formation via Pauson-Khand reaction",
+        "named_strategy": "allene Pauson-Khand reaction (APKR)",
+        "reasoning": "To construct the guaiane skeleton from allene intermediate 4 with distal regioselectivity.",
+        "alternatives_considered": [
+          {
+            "strategy": "Pauson-Khand reaction of a methylidenecyclobutane intermediate",
+            "rejected_because": "Disclosed concurrently by Stoltz and co-workers, not part of the initial strategy."
+          }
+        ]
+      },
+      {
+        "bond_description": "C-C bond formation via allenylation",
+        "named_strategy": "allenylation",
+        "reasoning": "To form allene intermediate 4 from aldehyde 5.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond cleavage via Eschenmoser-Tanabe fragmentation",
+        "named_strategy": "Eschenmoser-Tanabe fragmentation",
+        "reasoning": "To obtain aldehyde 5 from (R)-carvone (6) epoxide.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "1",
+        "smiles": "CC1=C(C)C(=O)CC2CC(O)C3C(C1)C2C3(C)C",
+        "role": "target",
+        "comes_from": "late-stage reduction of 15"
+      },
+      {
+        "fragment_id": "2",
+        "smiles": "CC1=C(C)C2C(=O)C3(C)CC3C2C1=O",
+        "role": "intermediate",
+        "comes_from": "[2+2] cycloaddition of 3"
+      },
+      {
+        "fragment_id": "3",
+        "smiles": "C=C(C)[C@H]1CCC(=O)C2=C(C)C(=O)C=C21",
+        "role": "intermediate",
+        "comes_from": "deprotection and oxidation of 9a/9b"
+      },
+      {
+        "fragment_id": "4",
+        "smiles": "C#CC(=O)C(CC#CC)C(C)=O",
+        "role": "intermediate",
+        "comes_from": "oxidation of 7a/7b"
+      },
+      {
+        "fragment_id": "5",
+        "smiles": "C#CCC(C=O)C=C(C)C",
+        "role": "intermediate",
+        "comes_from": "Eschenmoser-Tanabe fragmentation of carvone epoxide"
+      },
+      {
+        "fragment_id": "6",
+        "smiles": "CC(C)=C1C=CC(C)C(=O)C1",
+        "role": "starting_material",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "7a/7b",
+        "smiles": "C#CCC(C)(C#C)C(O)C(C)C=C(C)C",
+        "role": "intermediate",
+        "comes_from": "allenylation of 5"
+      },
+      {
+        "fragment_id": "8a/8b",
+        "smiles": "",
+        "role": "intermediate",
+        "comes_from": "TBS-protection of 7a/7b"
+      },
+      {
+        "fragment_id": "9a/9b",
+        "smiles": "",
+        "role": "intermediate",
+        "comes_from": "APKR of 8a/8b"
+      },
+      {
+        "fragment_id": "15",
+        "smiles": "CC1=C(C)C(=O)CC2CC(=O)C3C(C1)C2C3(C)C",
+        "role": "intermediate",
+        "comes_from": "late-stage oxidation of 2"
+      }
+    ],
+    "rationale": "The strategy is bio-inspired, combining an efficient skeleton construction (cyclase phase) and a challenging late-stage C-H oxidation (oxidase phase). The guaiane skeleton is built via an allenic Pauson-Khand reaction, followed by a biomimetic [2+2] cycloaddition to form the bridged cyclobutane. The final steps involve regioselective and stereoselective C-H oxidation and reduction."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "6",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The starting material is (R)-carvone (6). The first step in the retrosynthesis is the Eschenmoser-Tanabe fragmentation of its epoxide to yield aldehyde 5.",
+        "gap": "Need to epoxidize (R)-carvone and then perform the fragmentation.",
+        "decision": "To epoxidize (R)-carvone (6) using H2O2 under basic conditions, followed by Eschenmoser-Tanabe fragmentation with tosylhydrazide in CH2Cl2/AcOH to obtain branched 5-heptynal (5)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=C1C=CC(C)C(=O)C1"
+        ],
+        "product_smiles": [
+          "C#CCC(C=O)C=C(C)C"
+        ],
+        "reagents": [
+          "H2O2",
+          "NaOH",
+          "TsNHNH2"
+        ],
+        "solvent": "CH2Cl2/AcOH",
+        "scale": "decagram"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 43,
+        "observation": "Branched 5-heptynal (5) was obtained in 43% yield on a decagram scale."
+      },
+      "evidence": {
+        "text_span": "To start this synthetic sequence, (R)-carvone (6) was readily epoxidized in presence of H2O2 under basic (NaOH) assistance (Scheme 2). The Eschenmoser–Tanabe fragmentation of the resulting epoxycarvone was conducted in presence of tosylhydrazide in a CH2Cl2/AcOH mixture, giving the branched 5- heptynal (5) in 43% yield on a decagram scale.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "5",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 5 has been successfully synthesized. The next step is the allenylation to form allenols 7a and 7b.",
+        "gap": "Need to perform the allenylation reaction and determine the diastereomeric ratio.",
+        "decision": "To perform In(0)-promoted allenylation of aldehyde 5 with 2-butynyl bromide to afford a diastereomeric mixture of gem-disubstituted allenols 7a and 7b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#CCC(C=O)C=C(C)C"
+        ],
+        "product_smiles": [
+          "C#CCC(C)(C#C)C(O)C(C)C=C(C)C"
+        ],
+        "reagents": [
+          "In(0)",
+          "2-butynyl bromide"
+        ],
+        "solvent": "H2O"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "dr": "1:1.5",
+        "observation": "A diastereomeric mixture of gem-disubstituted allenols 7a and 7b was obtained in 95% yield with a dr of 1:1.5."
+      },
+      "evidence": {
+        "text_span": "The efficient In(0)-promoted allenylation of aldehyde 5 in presence of 2- butynyl bromide34 afforded a diastereomeric mixture of gemdisubstituted allenols 7a and 7b (dr4S/4R = 1:1.5, partially separable).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "7a/7b",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Allenols 7a and 7b have been synthesized. The next step is to protect the secondary alcohols to prepare for the Pauson-Khand reaction.",
+        "gap": "Need to find a suitable protecting group and conditions.",
+        "decision": "To protect the secondary alcohols of 7a/7b with TBS using TBSCl, Et3N, and DMAP in CH2Cl2 to obtain 8a/8b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#CCC(C)(C#C)C(O)C(C)C=C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBSCl",
+          "Et3N",
+          "DMAP"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "TBS-protected products 8a and 8b were obtained in 94% yield."
+      },
+      "evidence": {
+        "text_span": "After TBS-protection of the secondary alcohols, the Pauson– Khand reaction was envisaged on intermediates 8a and 8b, and directly on the diastereomeric mixture (Scheme 2, step 6).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "7a/7b",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Allenols 7a and 7b were obtained as a diastereomeric mixture. The next step is the Pauson-Khand reaction, but the authors considered an alternative approach by oxidizing the allenols to ketone 4.",
+        "gap": "Need to evaluate if ketone 4 is a suitable intermediate for the APKR.",
+        "decision": "To oxidize the diastereomeric mixture of allenols 7a/7b using Dess-Martin periodinane (DMP) to furnish ketone 4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#CCC(C)(C#C)C(O)C(C)C=C(C)C"
+        ],
+        "product_smiles": [
+          "C#CC(=O)C(CC#CC)C(C)=O"
+        ],
+        "reagents": [
+          "Dess-Martin periodinane"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The volatile ketone 4 turned out to be unreactive towards the next APKR step."
+      },
+      "evidence": {
+        "text_span": "Alternatively, the diastereomeric mixture of allenols could be oxidized in presence of Dess– Martin periodinane (DMP), furnishing ketone 4 (Scheme 1). This volatile ketone, however, turned out to be unreactive towards the next APKR step (not shown).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "8a/8b",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "TBS-protected allenols 8a and 8b are available. The next key step is the allene Pauson-Khand reaction (APKR) to form the guaiane skeleton.",
+        "gap": "Need to achieve distal regioselectivity in the APKR and optimize conditions for the diastereomeric mixture.",
+        "decision": "To perform the APKR on the diastereomeric mixture 8a/8b using a Rh(I)-based catalytic system ([Rh(CO)2Cl]2) in a Skrydstrup's two-chamber COware® system with CO generated from COgen."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "COgen",
+          "PdCl(cod)",
+          "[(t-Bu)3PH]BF4",
+          "MeN(Cy)2",
+          "[Rh(CO)2Cl]2"
+        ],
+        "catalyst": "[Rh(CO)2Cl]2",
+        "solvent": "toluene",
+        "temperature": "110 °C",
+        "scale": "1.87 mmol"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "The APKR of the diastereomeric mixture 8a/8b afforded the 5/7-fused TBS-protected products 9a and 9b (guaiane skeleton) in 75% yield after a 20h addition time. Exclusive distal regioselectivity was observed."
+      },
+      "evidence": {
+        "text_span": "Thus, the APKR of substrates 8a and 8b (added slowly to chamber B)43 in presence of [Rh(CO)2Cl]2 (5 mol%) exclusively afforded the 5/ 7-fused TBS-protected products 9a and 9b possessing a guaiane skeleton. ... Furthermore, the APKR on the diastereomeric mixture 8a/8b could be achieved in a 75% yield after an addition time of 20 h on a 1.87 mmol scale.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "8a/8b",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The APKR on 8a/8b was successful with [Rh(CO)2Cl]2. However, the authors explored alternative catalysts and CO generation methods.",
+        "gap": "Need to evaluate if other catalysts or CO sources are more efficient or cost-effective.",
+        "decision": "To test [Rh(CO)(dppp)2]Cl as a catalyst on 8b and to generate CO from CHCl3 with KOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "[Rh(CO)(dppp)2]Cl"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 54,
+        "failure_mode": "low_yield",
+        "observation": "The catalyst [Rh(CO)(dppp)2]Cl gave a lower yield (54%) than [Rh(CO)2Cl]2. Generating CO from CHCl3 with KOH also resulted in a drop of APKR yield (55% for mixture 9a/9b)."
+      },
+      "evidence": {
+        "text_span": "Finally, the catalyst [Rh(CO)(dppp)2]Cl tested on 8b gave a lower yield (54%) than [Rh(CO)2Cl]2, while Pauson–Khand reagents like Mo(CO)6 or Co2(CO)8 led to degradation or no reaction. To improve the atom-economy and reduce the cost of this two-chamber process, CO was also generated from the reaction of CHCl3 with KOH in chamber A,37,48 yet with a drop of the APKR yield (55% for mixture 9a/9b).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "9a/9b",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The TBS-protected guaiane skeleton (9a/9b) has been formed. The next step is to deprotect the alcohol and oxidize it to complete the synthesis of oleodaphnone (3).",
+        "gap": "Need to find conditions for deprotection and oxidation without epimerization.",
+        "decision": "To deprotect the diastereomeric mixture 9a/9b under acidic conditions (aqueous HCl, CH3CN) followed by oxidation of the secondary alcohol with Dess-Martin periodinane (DMP) to synthesize oleodaphnone (3)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "HCl",
+          "Dess-Martin periodinane",
+          "NaHCO3"
+        ],
+        "solvent": "CH3CN, CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 50,
+        "observation": "Oleodaphnone (3) was synthesized in 50% yield over two steps. However, acidic conditions were found to induce epimerization of the C-9 stereocenter."
+      },
+      "evidence": {
+        "text_span": "The deprotection of the diastereomeric mixture 9a/9b under acidic condition (aqueous HCl, CH3CN), followed by the oxidation of the secondary alcohol with Dess–Martin periodinane (DMP), in 50% yield over two steps, completed the first total synthesis of pale green compound oleodaphnone (3, see Table S4† for NMR data comparison with the literature). Alternatively, since this acidic condition was found to induce epimerization of the C-9 stereocenter, the deprotection of pure diastereoisomers 9a and 9b in presence of tetrabutylammonium fluoride (TBAF) afforded the two natural products diarthroncha C (10, structure shown as reported)49 and daphnenicillata W (11),50 in 73% and 61% yields, respectively.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "3",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Oleodaphnone (3) has been synthesized. The next key step is the biomimetic [2+2] photocycloaddition to form the bridged cyclobutane intermediate 2.",
+        "gap": "Need to find suitable irradiation conditions for the [2+2] cycloaddition.",
+        "decision": "To irradiate a solution of oleodaphnone (3) in CH2Cl2 at 370 nm (Kessil lamp) to form intermediate 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=C[C@H]1CCC(=O)C2=C(C)C(=O)C=C21"
+        ],
+        "product_smiles": [
+          "CC1=C(C)C2C(=O)C3(C)CC3C2C1=O"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "rt",
+        "time": "56h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Bridged cyclobutane intermediate 2 was obtained in 73% yield. The structure was confirmed by X-ray crystallography."
+      },
+      "evidence": {
+        "text_span": "To finally elaborate the carbocyclic skeleton of daphnepapytone A, a solution of oleodaphnone 3 in CH2Cl2 was irradiated at 370 nm (Kessil lamp), giving the bridged cyclobutane intermediate 2 in 73% yield (Scheme 3, and Fig. S2a† for key NMR correlations). This structure was confirmed by X-ray crystallography (CCDC 2419407).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "3",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The [2+2] cycloaddition of oleodaphnone (3) to 2 was successful under 370 nm irradiation. The authors wanted to test the biomimetic hypothesis of sunlight-induced cycloaddition.",
+        "gap": "Need to evaluate if white light can induce the cycloaddition.",
+        "decision": "To treat a sample of 3 in CDCl3 under white light (LED) and monitor by NMR."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=C[C@H]1CCC(=O)C2=C(C)C(=O)C=C21"
+        ],
+        "product_smiles": [
+          "CC1=C(C)C2C(=O)C3(C)CC3C2C1=O"
+        ],
+        "solvent": "CDCl3",
+        "time": "18 days"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 10,
+        "failure_mode": "low_yield",
+        "observation": "NMR monitoring confirmed the formation of 2, yet in low yield (10%) and with marked degradation after 18 days."
+      },
+      "evidence": {
+        "text_span": "To test this hypothesis—since Paris weather in 2024 did not allow us to copy Ciamician's rooftop condition used in 1908 to photocyclize carvone52—a sample of 3 in CDCl3 was treated under white light (LED). NMR monitoring confirmed the formation of 2, yet in low yield (10%) and with marked degradation after 18 days (Fig. S3†).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "2",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 2 has been synthesized. The next challenge is the late-stage oxidative functionalization at the gamma-position (C-6) of the enone.",
+        "gap": "Need to find a regioselective and stereoselective C-H oxidation method.",
+        "decision": "To investigate Riley oxidation conditions with SeO2 and photooxygenation attempts with singlet oxygen."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=C(C)C2C(=O)C3(C)CC3C2C1=O"
+        ],
+        "product_smiles": [
+          "CC1=C(C)C(=O)CC2CC(O)C3C(C1)C2C3(C)C"
+        ],
+        "reagents": [
+          "SeO2",
+          "singlet oxygen"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Compound 2 was neither reactive under Riley oxidation conditions with SeO2, nor toward the formation of a dienol silyl ether. Photooxygenation attempts led to degradation."
+      },
+      "evidence": {
+        "text_span": "Compound 2 turned out to be neither reactive under Riley oxidation condition in presence of SeO2, nor toward the formation of a dienol silyl ether targeting a vinylogous Rubottom reaction toward 1 (Table S8†). While photooxygenation attempts53 in presence of singlet oxygen led to degradation (see Table S9† for other attempts),",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "2",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous oxidation attempts on 2 failed. The authors explored autooxidation conditions.",
+        "gap": "Need to evaluate autooxidation for C-H functionalization.",
+        "decision": "To apply autooxidation conditions in the presence of tBuOK under air."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=C(C)C2C(=O)C3(C)CC3C2C1=O"
+        ],
+        "product_smiles": [
+          "CC1=CC(=O)C2(C)C1C(=O)C1CC(C)C12"
+        ],
+        "reagents": [
+          "tBuOK",
+          "air"
+        ],
+        "solvent": "EtOH"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 40,
+        "failure_mode": "side_product_dominant",
+        "observation": "Autooxidation under air provided a new, rearranged but non-oxidized structure (13) in 40% yield. This rearrangement was also observed under argon (67% yield), indicating it's not an oxidative process."
+      },
+      "evidence": {
+        "text_span": "the application of autooxidation conditions in presence of tBuOK under air (route a) provided a new, rearranged but non-oxidized structure (13, see Fig. S2b† for key NMR correlations) in 40% yield (or 67% when performed under argon).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": "2",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Autooxidation led to rearrangement. The authors then explored Newhouse's precedent using a Cr(V) complex for C-H oxidation.",
+        "gap": "Need to achieve regioselective and stereoselective hydroxylation at C-6.",
+        "decision": "To apply the 2-hydroxy-2-methyl-butanoic acid chromium complex Cr(V) for oxidation of 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=C(C)C2C(=O)C3(C)CC3C2C1=O"
+        ],
+        "product_smiles": [
+          "CC1=C(C)C(=O)CC2CC(O)C3C(C1)C2C3(C)C"
+        ],
+        "reagents": [
+          "CC[O-][Cr](=O)(O[C@@](C)(C(=O)O)C)O[C@@](C)(C(=O)O)C.[Na+]",
+          "15-crown-5"
+        ],
+        "solvent": "CH3CN",
+        "temperature": "85 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 28,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "6-epi-daphnepapytone A (epi-1) was obtained as a major compound (28% yield, or 46% b.r.s.m.), along with rearranged triketone 14 (12%) and remaining starting material (40%). This indicated unfavorable stereoselectivity for the desired product."
+      },
+      "evidence": {
+        "text_span": "Most interestingly, based on Newhouse's precedent, the application of the 2-hydroxy-2-methyl-butanoic acid chromium complex Cr(V) (route b) not only afforded 6-epi-daphnepapytone A (epi-1) as a major compound (28% yield, or 46% b.r.s.m.), but also the rearranged triketone 14 (12%), a substantial amount of remaining starting material (40%) and traces of ketone 15. Despite its appealing character confirming the possibility to directly hydroxylate position C-6, this result also highlighted the unfavourable stereoselectivity of the α-hydroxylation to reach 1, explained by the higher steric hindrance of the α-face.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous C-H oxidation attempts on 2 were unsuccessful or led to undesired products. The authors then explored CrO3 under acidic conditions.",
+        "gap": "Need to achieve regioselective oxidation to form triketone 15.",
+        "decision": "To attempt oxidation of 2 with CrO3 under acidic conditions (CH2Cl2/AcOH)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=C(C)C2C(=O)C3(C)CC3C2C1=O"
+        ],
+        "product_smiles": [
+          "CC1=C(C)C(=O)CC2CC(=O)C3C(C1)C2C3(C)C"
+        ],
+        "reagents": [
+          "CrO3",
+          "AcOH"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "Enedione 15 was furnished in 62% yield. The regioselectivity was confirmed by X-ray crystallography and rationalized by preferred hydrogen abstraction at C-6."
+      },
+      "evidence": {
+        "text_span": "Gratifyingly, oxidation attempts in presence of CrO3 under acidic condition (CH2Cl2/AcOH) furnished enedione 15 in 62% yield (see Table S10† for optimisation). The regioselectivity of this transformation, confirmed by X-ray crystallography (CCDC 2418568), was rationalized by the preferred hydrogen abstraction at C-6, leading to the formation of stabilized radical intermediate 16 (Scheme 4).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": "15",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Triketone 15 has been successfully synthesized. The final step is the chemo- and stereoselective reduction of the newly installed ketone at C-6 to yield daphnepapytone A (1).",
+        "gap": "Need to achieve selective reduction of the C-6 ketone in the presence of other carbonyls.",
+        "decision": "To reduce 15 with NaBH4 (0.75 equiv.) in MeOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=C(C)C(=O)CC2CC(=O)C3C(C1)C2C3(C)C"
+        ],
+        "product_smiles": [
+          "CC1=C(C)C(=O)CC2CC(O)C3C(C1)C2C3(C)C"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Daphnepapytone A (1) was delivered in 73% yield, achieving the total synthesis. The reduction was remarkably chemo- and stereoselective, exclusively targeting the cyclohexanone ring at C-6."
+      },
+      "evidence": {
+        "text_span": "In fact, this reduction turned out to target exclusively the cyclohexanone ring at C-6, in presence of NaBH4 (0.75 equiv.) in MeOH, delivering daphnepapytone A (1) in a 73% yield (Scheme 5) and thus achieving the total synthesis of this natural product. All spectroscopic data of 1 were consistent with those of the literature (Table S11†),20 including crystallographic analysis (CCDC 2418571).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "15",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The reduction of 15 to 1 was successful with NaBH4. The authors explored alternative reduction conditions.",
+        "gap": "Need to evaluate if Luche conditions offer better selectivity or yield.",
+        "decision": "To attempt reduction of 15 using Luche conditions (CeCl3, NaBH4, MeOH)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=C(C)C(=O)CC2CC(=O)C3C(C1)C2C3(C)C"
+        ],
+        "product_smiles": [
+          "CC1=C(C)C(=O)CC2CC(O)C3C(C1)C2C3(C)C",
+          "CC1=C(C)C(=O)CC2CC(O)C(O)C3C(C1)C2C3(C)C"
+        ],
+        "reagents": [
+          "CeCl3",
+          "NaBH4"
+        ],
+        "solvent": "MeOH"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 16,
+        "failure_mode": "scope_limited",
+        "observation": "Luche conditions resulted in poor chemo- and stereoselectivity, giving a mixture of 1 (16%), diol 19 (19%), and other non-identified products."
+      },
+      "evidence": {
+        "text_span": "The Luche conditions (CeCl3, NaBH4, MeOH)55 resulted in poor chemo- and stereoselectivity, giving a mixture of 1 (16%), diol 19 (19%) and other non-identified products.",
+        "section": "Results and discussion"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "X-ray crystallography"
+    ],
+    "metrics": {},
+    "significance": "This work represents the first biomimetic total synthesis of daphnepapytone A (1), providing rapid access to its complex caged structure and its biomimetic precursor (3). It also revised the structure of diarthroncha C, identifying it as daphnenicillata W (11). The synthesis highlights a highly efficient two-phase strategy, including a Pauson-Khand reaction for skeleton construction, a biomimetic [2+2] cycloaddition for the bridged structure, and a remarkably chemo- and stereoselective late-stage C-H oxidation and reduction. This work has biological perspectives towards anti-diabetes or anti-HIV treatments."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5sc02953h",
+      "pmcid": "PMC12096516",
+      "title": "Bio-inspired total synthesis of daphnepapytone A.",
+      "authors": "Pereira J, Casaretto N, Frison G, Nay B.",
+      "journal": "Chem Sci",
+      "year": 2025,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC12096516?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/d8e0eccd-ac05-4e7a-8ad0-0eb7ad899ae8.zip",
+      "parsed_at": "2026-05-11T06:21:55.536684+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 42,
+    "parseable": 33,
+    "canonicalized": 33,
+    "invalid": 9,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)=CC(C(OSi(C)(C)C(C)(C)C)C(C)(C#C)CC#C)C",
+      "CC(C)=C[C@H]1CC(=O)C(C)=C2C(C)=C(OTBS)C[C@@H]12",
+      "CC(C)=CC(C(OSi(C)(C)C(C)(C)C)C(C)(C#C)CC#C)C",
+      "CC(C)=CC(C(OSi(C)(C)C(C)(C)C)C(C)(C#C)CC#C)C",
+      "CC(C)=C[C@H]1CC(=O)C(C)=C2C(C)=C(OTBS)C[C@@H]12",
+      "CC(C)=CC(C(OSi(C)(C)C(C)(C)C)C(C)(C#C)CC#C)",
+      "CC(C)=C[C@H]1CC(=O)C(C)=C2C(C)=C(OTBS)C[C@@H]12",
+      "CC(C)=C[C@H]1CC(=O)C(C)=C2C(C)=C(OTBS)C[C@@H]12",
+      "CC(C)=C[C@H]1CC(=O)C(C)=C2C(C)=OCCC[C@@H]12"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

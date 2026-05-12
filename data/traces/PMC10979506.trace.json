@@ -1,0 +1,576 @@
+{
+  "trace_id": "TS-PMC10979506",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Falcarinphthalide A",
+    "smiles": "C=CC(O)c1cc(C#C[C@H](O)/C=C/CCC)cc2c1C(C)OC2=O",
+    "natural_product_class": "phthalide",
+    "structural_features": {
+      "molecular_weight": 422.56,
+      "stereocenters": 2,
+      "ring_systems": "phthalide, benzene",
+      "key_motifs": [
+        "phthalide",
+        "polyacetylene",
+        "alkyne",
+        "alkene",
+        "alcohol"
+      ]
+    },
+    "motivation": "Falcarinphthalide A (1) is a novel phthalide isolated from Angelica sinensis, exhibiting potent in vitro antiosteoporotic activity by inhibiting NF-κB and c-Fos signaling-mediated osteoclastogenesis. Its unique structure and mechanism offer potential for a new drug scaffold for osteoporosis, avoiding side effects of existing treatments. Gram-scale total synthesis is needed for further biological investigation.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "scale_target": "gram-scale",
+      "stereochemistry_required": true,
+      "free_text": "The total synthesis should provide ample material for further biological study and confirm the absolute configuration."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bonds forming the phthalide ring and the connection to the polyacetylene moiety",
+        "named_strategy": "Inverse Electron Demand Diels-Alder (IEDDA) / retro-Diels-Alder cascade",
+        "reasoning": "Inspired by the proposed biosynthetic pathway, this cascade reaction is thermodynamically favorable and forms the core phthalide structure with the polyacetylene side chain. DFT calculations guided the choice of dienophile.",
+        "alternatives_considered": [
+          {
+            "strategy": "Direct Diels-Alder reaction between (3R,8S)-falcarindiol (3) and (Z)-ligustilide (4)",
+            "rejected_because": "Low reactivity of compound 3 as a dienophile, leading to failed attempts in direct reactions. The overall activation barrier was calculated to be relatively high (31.4 kcal/mol), indicating kinetic infeasibility without activation."
+          }
+        ]
+      },
+      {
+        "bond_description": "C-C bond forming the C-8' stereocenter",
+        "named_strategy": "Enantioselective addition of organozinc reagent to aldehyde",
+        "reasoning": "This disconnection allows for the stereoselective introduction of the C-8' stereocenter, which is crucial for the target molecule's activity.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond forming the heptyl chain",
+        "named_strategy": "Negishi cross-coupling reaction",
+        "reasoning": "This reaction is suitable for forming the C-C bond with high efficiency and tolerates various functional groups, allowing for the introduction of the long alkyl chain.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "F1",
+        "smiles": "CCC/C=C1\\C(=O)Oc2ccccc21",
+        "role": "diene precursor",
+        "comes_from": "Z-ligustilide (4)"
+      },
+      {
+        "fragment_id": "F2",
+        "smiles": "",
+        "role": "activated dienophile precursor",
+        "comes_from": "acrolein and TMSA"
+      }
+    ],
+    "rationale": "The total synthesis was guided by the proposed biosynthetic pathway, which suggested a Diels-Alder/retro-Diels-Alder cascade. Initial DFT studies indicated that the direct reaction between natural precursors was kinetically unfavorable. Therefore, an activated alkynyl dienophile (7) was designed, with silane as the activating group due to its ease of removal and compatibility with subsequent steps. Further DFT calculations confirmed the regioselectivity and lower activation energy for the IEDDA reaction with the activated dienophile. The synthesis then proceeds with stereoselective formation of the C-8' center and Negishi coupling for the alkyl chain, followed by global deprotection."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Falcarinphthalide A (1) is a novel natural product with potent antiosteoporotic activity. Its structure suggests a biosynthetic origin from (3R,8S)-falcarindiol (3) and (Z)-ligustilide (4) via a Diels-Alder/retro-Diels-Alder reaction.",
+        "gap": "The feasibility of this proposed biosynthetic pathway for total synthesis needs to be evaluated, particularly the reactivity of the natural precursors.",
+        "decision": "To investigate the proposed Diels-Alder/retro-Diels-Alder cascade, DFT calculations will be performed to assess the thermodynamic and kinetic favorability of the reaction between (3R,8S)-falcarindiol (3) and (Z)-ligustilide (4)."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "DFT calculations showed that the cascade reaction is highly exergonic (-43.1 kcal/mol), suggesting thermodynamic favorability. However, the overall activation barrier is relatively high (31.4 kcal/mol), indicating kinetic infeasibility for a direct, uncatalyzed reaction."
+      },
+      "evidence": {
+        "text_span": "The DFT calculations showed that the cascade reaction is highly exergonic (−43.1 kcal/mol), suggesting that it is favorable in thermodynamics, but the overall activation barrier is relatively high (31.4 kcal/mol), indicating that this Diels−Alder/retro-Diels−Alder process is infeasible in kinetics.",
+        "section": "Discussion of Production Mechanism",
+        "image_refs": [
+          "af6cae4d582e5bed336ad8c3b860511bc7360075262c128d62201a81c6ddb78d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "DFT calculations indicated that the direct Diels-Alder reaction between (3R,8S)-falcarindiol (3) and (Z)-ligustilide (4) is kinetically unfavorable.",
+        "gap": "Despite the unfavorable kinetics, a direct experimental attempt is warranted to confirm the computational prediction and explore any unexpected reactivity.",
+        "decision": "To attempt the direct Diels-Alder reaction between compounds 3 and 4 to form falcarinphthalide A (1)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@@H](O)C#CC#C[C@H](O)C=C(C)CCCCCC",
+          "CCC/C=C1\\C(=O)Oc2ccccc21"
+        ],
+        "product_smiles": [
+          "C=CC(O)c1cc(C#C[C@H](O)/C=C/CCC)cc2c1C(C)OC2=O"
+        ],
+        "rxn_smiles": "C=C[C@H](O)C#CC#C[C@H](O)C=C(C)CCCCCC.CCC/C=C1\\C(=O)Oc2ccccc21>>C=CC(O)c1cc(C#C[C@H](O)/C=C/CCC)cc2c1C(C)OC2=O",
+        "reagents": [],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "All attempts of the direct Diels-Alder reaction between compounds 3 and 4 failed."
+      },
+      "evidence": {
+        "text_span": "Due to the low reactivity of compound 3 as a dienophile, as illuminated in the above calculations, all attempts of the direct Diels−Alder reaction between compounds 3 and 4 failed (Table S12);",
+        "section": "DFT-Guided Bioinspired Total Synthesis"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "The direct Diels-Alder reaction between natural precursors failed due to the low reactivity of (3R,8S)-falcarindiol (3) as a dienophile, as predicted by DFT calculations.",
+        "gap": "A strategy is needed to activate the dienophile to facilitate the Diels-Alder reaction while allowing for subsequent functionalization and deprotection.",
+        "decision": "To use a preactivated alkynyl dienophile. Silane was chosen as the activation group due to its ease of removal and ability to circumvent nucleophilic addition, unlike ester-activated dienophiles which could cleave the lactone ring. Two silane dienophiles, (R)-5-(trimethylsilyl)pent-1-en-4-yn-3-ol (5) and (R)-7-(trimethylsilyl)hepta-1-en-4,6-diyn-3-ol (7), were designed, and further DFT studies were planned to ascertain their regioselectivity."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Silane-activated dienophiles were identified as a promising alternative. DFT calculations on these new dienophiles were initiated to guide the choice and regioselectivity."
+      },
+      "evidence": {
+        "text_span": "thus, a preactivated alkynyl dienophile was needed. Although the ester-activated alkynyl dienophiles were reported to be competent in Diels−Alder reaction with compound 4,55,56 the subsequent elongation of the side chain needs nucleophilic addition, which may break the lactone ring of (Z)-ligustilide. Herein, silane was chosen as the activation group due to its ease of removal and ability to circumvent nucleophilic addition.57 Accordingly, two silicane dienophiles were designed, (R)-5-(trimethylsilyl)pent-1-en-4-yn-3-ol (5) and (R)-7-(trimethylsilyl)hepta-1-en-4,6-diyn-3-ol (7) as the dienophile, and additional DFT computational study was performed to ascertain their regioselectivity in the proposed Diels−Alder/retro-Diels−Alder reaction.",
+        "section": "DFT-Guided Bioinspired Total Synthesis",
+        "image_refs": [
+          "05272e3340a31ee716e345511405cfb0a2adc98dcc0be855298ea64e1c7a04.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Two silane-activated dienophiles, 5 and 7, were designed to overcome the low reactivity of the natural dienophile. DFT calculations are needed to predict the most favorable transition state and regioselectivity for the Diels-Alder reaction with (Z)-ligustilide (4).",
+        "gap": "Determine which activated dienophile (5 or 7) and which regioselectivity (α- or β-face addition) will lead to the most efficient and selective Diels-Alder reaction.",
+        "decision": "To perform DFT calculations on 12 possible Diels-Alder transition states involving dienophiles 5 and 7 with (Z)-ligustilide (4), considering different enantioselectivities and regioselectivities. Frontier Molecular Orbital (FMO) theory will be used to explain the trends."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "DFT calculations identified TS-5β as the most favorable transition state with an energy barrier of 27.8 kcal/mol. FMO theory indicated an inverse electron demand Diels-Alder (IEDDA) reaction, with dienophile 7 having a smaller HOMOdienophile-LUMOdiene gap than 5, suggesting higher reactivity for 7."
+      },
+      "evidence": {
+        "text_span": "As shown in Figure 7B, the activation energy of 12 possible Diels−Alder transition states with different enantioselectivities α- or β-face addition) and regioselectivities were calculated (TS-3 and TS-4 for dienophile 5; TS-5, TS-6, TS-7, and TS-8 for dienophile 7). According to the calculation results, TS-⋅5β was expected as the most favorable transition state bearing an energy barrier of 27.8 kcal/mol. These trends could be explained by frontier molecular orbital (FMO) theory,58 which showed that 7 had a smaller HOMOdienophile−LUMOdiene gap than 5 and also indicated an inverse electron demand Diels−Alder reaction (IEDDA, Figure S18).",
+        "section": "DFT-Guided Bioinspired Total Synthesis",
+        "image_refs": [
+          "0e4205634c290c5c708a8c561b11736ba40c9020412a06eb4934da9280a9eb5f.jpg",
+          "a32ef81204c36532d14cf63f5614a11457af9fb93b2946c67fe3f597bfa5d9d8.jpg",
+          "dcb0cba71401162bca430ab94d1bef96f0185aea85747194c77be2ab3d76db27.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "F2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The DFT study identified dienophile 7 as the most promising for the IEDDA reaction. The first step in the total synthesis is to prepare enantiopure alcohol 7.",
+        "gap": "Synthesize enantiopure (R)-5-(trimethylsilyl)pent-1-en-4-yn-3-ol (5) from acrolein, then convert it to (R)-7-(trimethylsilyl)hepta-1-en-4,6-diyn-3-ol (7).",
+        "decision": "To synthesize 5 via Pu's procedure (enantioselective phenylacetylene addition to acrolein), followed by oxidative bromination of 5 to 6, and then Cadiot-Chodkiewicz cross-coupling of 6 with TMSA to yield 7."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC=O"
+        ],
+        "product_smiles": [
+          "C=CC(O)C#C[Si](C)(C)C"
+        ],
+        "rxn_smiles": "C=CC=O>>C=CC(O)C#C[Si](C)(C)C",
+        "named_reaction": "Enantioselective Phenylacetylene Addition",
+        "reagents": [],
+        "catalyst": "unspecified",
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "ee_percent": 96,
+        "observation": "Allylic alcohol 5 was obtained in 62% yield with 96% ee."
+      },
+      "references": [
+        "59"
+      ],
+      "evidence": {
+        "text_span": "The gram-scale total synthesis of 1 began with the preparation of enantiopure alcohol 7 (Figure 7C). According to Pu’s procedure,59 the allylic alcohol 5 was obtained in 62% yield with 96% ee,",
+        "section": "DFT-Guided Bioinspired Total Synthesis",
+        "image_refs": [
+          "0f8c44ff3340a31ee716e345511405cfb0a2adc98dcc0be855298ea64e1c7a04.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "F2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enantiopure allylic alcohol 5 has been synthesized. The next step is to convert 5 into the activated dienophile 7.",
+        "gap": "Transform 5 into 7 through a two-step sequence: oxidative bromination and Cadiot-Chodkiewicz cross-coupling.",
+        "decision": "To subject 5 to oxidative bromination using NBS and AgNO3 to yield 6, followed by Cadiot-Chodkiewicz cross-coupling of 6 with TMSA in the presence of CuCl to obtain 7."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(O)C#C[Si](C)(C)C"
+        ],
+        "product_smiles": [
+          "C=CC(O)C#CBr"
+        ],
+        "rxn_smiles": "C=CC(O)C#C[Si](C)(C)C>>C=CC(O)C#CBr",
+        "reagents": [
+          "NBS",
+          "AgNO3"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Compound 6 was obtained in 78% yield."
+      },
+      "references": [
+        "38",
+        "60"
+      ],
+      "evidence": {
+        "text_span": "which was then subjected to oxidative bromination to give 6 in the presence of 40% AgNO3,38,60 Thus, 7 could be easily obtained in 78% yield by and",
+        "section": "DFT-Guided Bioinspired Total Synthesis",
+        "image_refs": [
+          "0f8c44ff3340a31ee716e345511405cfb0a2adc98dcc0be855298ea64e1c7a04.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "F2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Brominated intermediate 6 has been synthesized. The next step is to complete the synthesis of the activated dienophile 7.",
+        "gap": "Perform the Cadiot-Chodkiewicz cross-coupling reaction to introduce the second alkyne and the TMS group.",
+        "decision": "To react 6 with TMSA via Cadiot-Chodkiewicz cross-coupling in the presence of CuCl to obtain 7."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(O)C#CBr"
+        ],
+        "product_smiles": [
+          "C=CC(O)C#CC#C[Si](C)(C)C"
+        ],
+        "rxn_smiles": "C=CC(O)C#CBr.C#C[Si](C)(C)C>>C=CC(O)C#CC#C[Si](C)(C)C",
+        "named_reaction": "Cadiot-Chodkiewicz cross-coupling",
+        "reagents": [
+          "TMSA"
+        ],
+        "catalyst": "CuCl",
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 40,
+        "observation": "Dienophile 7 was obtained in 40% yield."
+      },
+      "references": [
+        "61",
+        "62"
+      ],
+      "evidence": {
+        "text_span": "Thus, 7 could be easily obtained in 78% yield by and adopting the Cadiot−Chodkiewicz cross-coupling reaction between 6 and TMSA.61,62 As expected, the IEDDA/reverse Diels−Alder cascade of 4 and 7 was performed at 200 °C in Ph2O and gave the desired cycloadduct 8 with 40% yield.",
+        "section": "DFT-Guided Bioinspired Total Synthesis",
+        "image_refs": [
+          "0f8c44ff3340a31ee716e345511405cfb0a2adc98dcc0be855298ea64e1c7a04.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enantiopure activated dienophile 7 has been synthesized. The key IEDDA/retro-Diels-Alder cascade reaction needs to be performed with (Z)-ligustilide (4).",
+        "gap": "Execute the IEDDA/retro-Diels-Alder cascade to form the core phthalide structure with the polyacetylene side chain, leading to cycloadduct 8.",
+        "decision": "To perform the IEDDA/reverse Diels-Alder cascade of (Z)-ligustilide (4) and dienophile 7 at 200 °C in diphenyl ether (Ph2O)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC/C=C1\\C(=O)Oc2ccccc21",
+          "C=CC(O)C#CC#C[Si](C)(C)C"
+        ],
+        "product_smiles": [
+          "C=CC(O)c1cc(C#C[Si](C)(C)C)c2oc(=O)ccc2c1"
+        ],
+        "rxn_smiles": "CCC/C=C1\\C(=O)Oc2ccccc21.C=CC(O)C#CC#C[Si](C)(C)C>>C=CC(O)c1cc(C#C[Si](C)(C)C)c2oc(=O)ccc2c1",
+        "reagents": [],
+        "solvent": "Ph2O",
+        "temperature": "200 °C",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 40,
+        "observation": "The desired cycloadduct 8 was obtained with 40% yield."
+      },
+      "evidence": {
+        "text_span": "As expected, the IEDDA/reverse Diels−Alder cascade of 4 and 7 was performed at 200 °C in Ph2O and gave the desired cycloadduct 8 with 40% yield.",
+        "section": "DFT-Guided Bioinspired Total Synthesis",
+        "image_refs": [
+          "0f8c44ff3340a31ee716e345511405cfb0a2adc98dcc0be85511405cfb0a2adc98dcc0be855298ea64e1c7a04.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cycloadduct 8, containing the TMS protecting group and a free hydroxyl group, has been formed.",
+        "gap": "Remove the TMS group and protect the hydroxyl group with TBS to prepare for subsequent stereoselective reactions.",
+        "decision": "To remove the TMS group of 8 using TBAF, followed by protection of the hydroxyl group with TBS to yield 9."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(O)c1cc(C#C[Si](C)(C)C)c2oc(=O)ccc2c1"
+        ],
+        "product_smiles": [
+          "C#Cc1cc(C(C=C)O[Si](C)(C)C(C)(C)C)cc2c(CCC)cc(=O)oc12"
+        ],
+        "rxn_smiles": "C=CC(O)c1cc(C#C[Si](C)(C)C)c2oc(=O)ccc2c1>>C#Cc1cc(C(C=C)O[Si](C)(C)C(C)(C)C)cc2c(CCC)cc(=O)oc12",
+        "reagents": [
+          "TBAF",
+          "TBSOTf"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "Compound 9 was obtained in 55% yield over two steps (69% for TMS removal, 79% for TBS protection)."
+      },
+      "evidence": {
+        "text_span": "Then the TMS group of 8 was removed in the presence of TBAF, and the hydroxyl group was protected with TBS and gave 9 in 55% yield over two steps.",
+        "section": "DFT-Guided Bioinspired Total Synthesis",
+        "image_refs": [
+          "0f8c44ff3340a31ee716e345511405cfb0a2adc98dcc0be855298ea64e1c7a04.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 9 is ready for the construction of the C-8' stereocenter.",
+        "gap": "Introduce the C-8' stereocenter enantioselectively.",
+        "decision": "To convert 9 to the corresponding zinc reagent and react it with (Z)-3-iodoacrylaldehyde in the presence of ligand L (0.17 equiv) and dimethylzinc (Me2Zn) to yield iodide 10."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#Cc1cc(C(C=C)O[Si](C)(C)C(C)(C)C)cc2c(CCC)cc(=O)oc12"
+        ],
+        "product_smiles": [
+          "C=CC(O[Si](C)(C)C(C)(C)C)c1cc(C#C[C@H](O)/C=C/CCC)c2oc(=O)cc(CCC)c2c1"
+        ],
+        "rxn_smiles": "C#Cc1cc(C(C=C)O[Si](C)(C)C(C)(C)C)cc2c(CCC)cc(=O)oc12.O=CC=CI>>C=CC(O[Si](C)(C)C(C)(C)C)c1cc(C#C[C@H](O)/C=C/CCC)c2oc(=O)cc(CCC)c2c1",
+        "reagents": [
+          "(Z)-3-iodoacrylaldehyde",
+          "Me2Zn"
+        ],
+        "catalyst": "CN1CCC[C@H]1C(O)(C2=CC=CC=C2)C3=CC=CC=C3",
+        "ligand": "CN1CCC[C@H]1C(O)(C2=CC=CC=C2)C3=CC=CC=C3",
+        "stoichiometry": {
+          "L": "0.17 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "observation": "Iodide 10 was obtained in 69% yield, successfully constructing the C-8' stereocenter."
+      },
+      "references": [
+        "63",
+        "64"
+      ],
+      "evidence": {
+        "text_span": "At this stage, the construction of the C–8′ stereocenter was achieved by converting 9 to the corresponding zinc reagent and reacting with the (Z)-3-iodoacrylaldehyde in the presence of L (0.17 equiv),63,64 which gave iodide 10 in 69% yield.",
+        "section": "DFT-Guided Bioinspired Total Synthesis",
+        "image_refs": [
+          "0f8c44ff3340a31ee716e345511405cfb0a2adc98dcc0be855298ea64e1c7a04.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 10, with the C-8' stereocenter established, needs further functionalization to introduce the heptyl chain.",
+        "gap": "Protect the newly formed hydroxyl group and then perform a Negishi cross-coupling reaction to attach the heptyl chain.",
+        "decision": "To protect the hydroxyl group in 10 with TBSOTf, followed by a Negishi cross-coupling reaction with heptylzinc(II) iodide in the presence of Pd(PPh3)2Cl2 to yield 11."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(O[Si](C)(C)C(C)(C)C)c1cc(C#C[C@H](O)/C=C/CCC)c2oc(=O)cc(CCC)c2c1"
+        ],
+        "product_smiles": [
+          "C=CC(O[Si](C)(C)C(C)(C)C)c1cc(C#C[C@@H](/C=C/CCC)O[Si](C)(C)C(C)(C)C)c2oc(=O)cc(CCC)c2c1"
+        ],
+        "rxn_smiles": "C=CC(O[Si](C)(C)C(C)(C)C)c1cc(C#C[C@H](O)/C=C/CCC)c2oc(=O)cc(CCC)c2c1.CC(C)(C)[Si](C)(C)C.CCCCCC[CH2][Zn][I]>>C=CC(O[Si](C)(C)C(C)(C)C)c1cc(C#C[C@@H](/C=C/CCC)O[Si](C)(C)C(C)(C)C)c2oc(=O)cc(CCC)c2c1",
+        "named_reaction": "Negishi cross-coupling",
+        "reagents": [
+          "TBSOTf",
+          "heptylzinc(II) iodide"
+        ],
+        "catalyst": "Pd(PPh3)2Cl2",
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "Compound 11 was obtained with 60% yield over two steps (82% for TBS protection, unspecified for Negishi coupling)."
+      },
+      "references": [
+        "65"
+      ],
+      "evidence": {
+        "text_span": "The newly formed hydroxyl group in 10 was then protected, and the corresponding product could proceed with the Negishi cross-coupling reaction in the presence of Pd(PPh3)2Cl2 and heptylzinc(II) iodide,65 giving 11 with 60% yield.",
+        "section": "DFT-Guided Bioinspired Total Synthesis",
+        "image_refs": [
+          "0f8c44ff3340a31ee716e345511405cfb0a2adc98dcc0be855298ea64e1c7a04.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 11 contains all the necessary carbon skeleton and stereochemistry, but with protecting groups.",
+        "gap": "Remove all protecting groups to yield the final target molecule, falcarinphthalide A (1).",
+        "decision": "To perform global deprotection of 11 using TBAF."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(O[Si](C)(C)C(C)(C)C)c1cc(C#C[C@@H](/C=C/CCC)O[Si](C)(C)C(C)(C)C)c2oc(=O)cc(CCC)c2c1"
+        ],
+        "product_smiles": [
+          "C=CC(O)c1cc(C#C[C@H](O)/C=C/CCC)c2oc(=O)cc(CCC)c2c1"
+        ],
+        "rxn_smiles": "C=CC(O[Si](C)(C)C(C)(C)C)c1cc(C#C[C@@H](/C=C/CCC)O[Si](C)(C)C(C)(C)C)c2oc(=O)cc(CCC)c2c1>>C=CC(O)c1cc(C#C[C@H](O)/C=C/CCC)c2oc(=O)cc(CCC)c2c1",
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "observation": "Falcarinphthalide A (1) was obtained in 57% yield. The spectroscopic data (1H and 13C NMR, ECD, optical rotation) matched those of the natural product."
+      },
+      "evidence": {
+        "text_span": "The global deprotection finally afforded falcarinphthalide A (1) with 57% yield, and the 1H and 13C NMR spectra, ECD spectra, and optical rotation of synthesized 1 agreed with the natural product.",
+        "section": "DFT-Guided Bioinspired Total Synthesis",
+        "image_refs": [
+          "0f8c44ff3340a31ee716e345511405cfb0a2adc98dcc0be855298ea64e1c7a04.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "ECD",
+      "VCD",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield from acrolein to falcarinphthalide A (1) is not explicitly stated but can be calculated from individual step yields."
+      },
+      "Longest Linear Steps": {
+        "value": 8,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence from acrolein to falcarinphthalide A (1)."
+      },
+      "Total Steps": {
+        "value": 8,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps from commercially available starting materials to the target."
+      },
+      "Failed Attempts Count": {
+        "value": 1,
+        "unit": "attempts",
+        "interpretation": "One failed attempt at direct Diels-Alder reaction was reported."
+      }
+    },
+    "significance": "The gram-scale total synthesis of falcarinphthalide A (1) provides ample material for further biological studies, confirming its structure and absolute configuration. This work validates the bioinspired IEDDA/retro-Diels-Alder cascade as a key strategy and highlights the potential of this novel molecular scaffold for antiosteoporotic drug development. The synthesis was guided by intensive DFT studies, demonstrating the power of computational chemistry in complex natural product synthesis."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acscentsci.3c01414",
+      "pmcid": "PMC10979506",
+      "title": "Discovery of a Potent Antiosteoporotic Drug Molecular Scaffold Derived from <i>Angelica sinensis</i> and Its Bioinspired Total Synthesis.",
+      "authors": "Zou J, Qiu ZC, Yu QQ, Wu JM, Wang YH, Shi KD, Li YF, He RR, Qin L, Yao XS, Wang XL, Gao H.",
+      "journal": "ACS Cent Sci",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC10979506?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/a791a45e-86b4-4901-a76f-1550772164d7.zip",
+      "parsed_at": "2026-05-11T06:34:56.452973+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 23,
+    "parseable": 22,
+    "canonicalized": 20,
+    "invalid": 1,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "C=CC(O)C#CC#CSi(C)(C)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

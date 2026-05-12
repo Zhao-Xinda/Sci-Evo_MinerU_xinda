@@ -1,0 +1,543 @@
+{
+  "trace_id": "TS-PMC12706788",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Musellarin D (revised)",
+    "smiles": "COc1cc(O)c2c(c1)C[C@H]1C=C[C@@H](c3ccc(O)c(OC)c3)O[C@@H]1C2",
+    "natural_product_class": "diarylheptanoid",
+    "structural_features": {
+      "ring_systems": "bicyclic dihydropyran (DHP)",
+      "key_motifs": [
+        "diarylheptanoid",
+        "dihydropyran"
+      ]
+    },
+    "motivation": "Musellarins are a rare class of diarylheptanoid natural products with cytotoxic activity. Musellarins D and E with trans-fused-2,6-cis-dihydropyran (DHP) remained synthetically unexplored. The synthesis aims to correct the misassigned configuration of carbon-10b (C10b) as a cis-fused-2,6-cis-THP motif.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Tong",
+        "year": 2014,
+        "doi": "10.1039/C4CC06290A",
+        "key_strategy": "Achmatowicz rearrangement for central DHP core, palladium-catalyzed Heck-Matsuda arylation for (4a,3)-trans-configuration, Friedel-Crafts cyclization for (4a,10b)-cis-fused configuration. This strategy was not applicable to musellarins D and E."
+      },
+      {
+        "lead_author": "Tong",
+        "year": 2015,
+        "doi": "10.1002/chem.201501800",
+        "key_strategy": "Asymmetric total synthesis of (-)-Musellarins A-C using Achmatowicz rearrangement and Heck-Matsuda reaction."
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Achieve the first total synthesis of musellarins D and E, and enable correction of their misassigned stereochemistry. The synthetic musellarins should match spectral data of natural products."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming the tricyclic core",
+        "named_strategy": "Friedel-Crafts cyclization",
+        "reasoning": "To construct the tricyclic core of musellarins. The stereochemistry of allylic alcohol might influence the stereochemical outcome of Friedel-Crafts cyclization for trans-fused (4a, 10b) cyclization."
+      },
+      {
+        "bond_description": "C-C bond between the DHP ring and the aryl group",
+        "named_strategy": "Palladium-catalyzed aryl-allyl coupling",
+        "reasoning": "To introduce the aryl group onto the dihydropyranone core. This reaction was known to produce both 2,6-trans- and 2,6-cis-dihydropyranones, allowing access to both musellarins A-C and D-E."
+      },
+      {
+        "bond_description": "Formation of the dihydropyranone ring",
+        "named_strategy": "Achmatowicz rearrangement",
+        "reasoning": "A known method for constructing the central DHP core from furfuryl alcohol derivatives."
+      }
+    ],
+    "rationale": "The strategy leverages an Achmatowicz rearrangement to form the dihydropyranone core, followed by a palladium-catalyzed aryl-allyl coupling to introduce the diarylheptanoid side chain. This coupling is crucial as it provides both trans- and cis-configured dihydropyranones, enabling the collective synthesis of musellarins A-C (from trans) and D-E (from cis). Subsequent Friedel-Crafts cyclization forms the tricyclic system. The stereochemical outcome of the Friedel-Crafts cyclization, particularly for the trans-fused (4a,10b) configuration, was a potential challenge but was explored based on the influence of allylic alcohol stereochemistry."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optically active furfuryl alcohol 1 is a known intermediate, prepared by a 5-step method.",
+        "gap": "The next step is to form the dihydropyranone core via Achmatowicz rearrangement and then acetylate the product.",
+        "decision": "To construct the DHP core, the Achmatowicz rearrangement was performed on furfuryl alcohol 1 using a green Fe(TPY)Br3-catalyzed H2O2 system, followed by acetylation with acetic anhydride to yield acetylated AchR product 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Fe(TPY)Br3",
+          "H2O2",
+          "Ac2O"
+        ],
+        "catalyst": "Fe(TPY)Br3",
+        "stoichiometry": {
+          "Fe(TPY)Br3": "2 mol%",
+          "H2O2": "2.2 eq"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Acetyl-AchR product 2 was obtained as a mixture of diastereomers (dr, 3:2) in 84% yield over two steps (AchR and acetylation)."
+      },
+      "evidence": {
+        "text_span": "Our synthesis began with the preparation of optically active furfuryl alcohol 1 by our reported 5-step method6 (Scheme 2). With enantiopure furfuryl alcohol 1 in hand, we carried out AchR reaction with our oxone/KBr (cat) green condition13 to provide AchR products, which was immediately acetylated with acetic anhydride (Ac2O) to deliver acetylated AchR product 2 (dr, 3:2) in 84% yields (gram scale) over two steps.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "e813c16053ebe48af90b1a04cdc1b6a1e5fd2186b4b1a2448cdd4f2078a09496.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The Achmatowicz rearrangement of furfuryl alcohol 1 to product 2 was previously reported using stoichiometric NBS.",
+        "gap": "A greener and more efficient method for the Achmatowicz rearrangement is desired.",
+        "decision": "To improve the 'greenness' of the synthesis, the Achmatowicz rearrangement was attempted using oxone/KBr (cat) conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "oxone",
+          "KBr"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "observation": "The text implies that the oxone/KBr (cat) condition was used, but then immediately states that a new Fe(TPY)Br3 system was used, suggesting the oxone/KBr was not the optimal or final choice for this specific synthesis, or was superseded by a better 'green' method. The yield for the oxone/KBr method is not explicitly stated for this specific reaction, but the Fe(TPY)Br3 method is highlighted as an improvement."
+      },
+      "evidence": {
+        "text_span": "It should be noted that stoichiometric NBS was employed for the AchR reaction of furfuryl alcohol 1 in our previous synthesis to produce compound 2 in a 90% yield. Subsequently, we found that our newly established system Fe(TPY)Br3 (cat)/H2O214 could affect the AchR reaction with comparable high yield (90%) within 15 min in a gram scale.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Previous Achmatowicz rearrangement methods (stoichiometric NBS, or oxone/KBr) were either not green or not optimal.",
+        "gap": "A more efficient and environmentally friendly Achmatowicz rearrangement method is needed.",
+        "decision": "To improve the 'greenness' and efficiency, a newly established Fe(TPY)Br3 (cat)/H2O2 system was employed for the Achmatowicz rearrangement of furfuryl alcohol 1, followed by acetylation to give product 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Fe(TPY)Br3",
+          "H2O2",
+          "Ac2O"
+        ],
+        "catalyst": "Fe(TPY)Br3",
+        "stoichiometry": {
+          "Fe(TPY)Br3": "2 mol%",
+          "H2O2": "2.2 eq"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "The Fe(TPY)Br3-catalyzed AchR reaction provided product 2 in 90% yield within 15 min on a gram scale, with water as the only stoichiometric byproduct, significantly improving the 'greenness' and ease of purification."
+      },
+      "evidence": {
+        "text_span": "Subsequently, we found that our newly established system Fe(TPY)Br3 (cat)/H2O214 could affect the AchR reaction with comparable high yield (90%) within 15 min in a gram scale. Notably, only 2 mol % of Fe(TPY)Br3 was needed as the catalyst and water was the only stoichiometric byproduct, which greatly eased the purification and substantially improved the “greenness” of our synthesis.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "e813c16053ebe48af90b1a04cdc1b6a1e5fd2186b4b1a2448cdd4f2078a09496.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acetyl-AchR product 2 is available. The goal is to introduce the second aryl group.",
+        "gap": "Need to perform the aryl-allyl coupling reaction with aryl boronic acids to form the diarylheptanoid skeleton.",
+        "decision": "The allyl-aryl coupling of 2 with aryl boronic acids (3a-3c) was carried out using Pd2(dba)3/K2CO3 conditions in THF/H2O."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "reagents": [
+          "Pd2(dba)3",
+          "K2CO3",
+          "3a/3b/3c (aryl boronic acids)"
+        ],
+        "catalyst": "Pd2(dba)3",
+        "solvent": "THF/H2O"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "The coupling reaction proceeded with good yields (73-78%), but an inseparable mixture of diastereomers (dr, 1:0.9 or 1:0.8) was obtained. These diastereomers were considered desirable for the collective synthesis of musellarins A-C and D-E."
+      },
+      "evidence": {
+        "text_span": "Next, we set out to examine the allyl−aryl coupling of 2 with aryl boronic acids (3a−3c) with our previously reported conditions (Pd2(dba)3/K2CO3 or PdCl2/KF). It was found that the coupling reaction with Pd2(dba)3/K2CO3 occurred with better yields (73−78%) in THF/H2Oℓ, although an inseparable mixture of diastereomers (dr, 1:0.9 or 1:0.8) was obtained. Nevertheless, these diastereomers were desirable, because they might be elaborated to musellarins A−C and musellarins D−E, respectively.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "e813c16053ebe48af90b1a04cdc1b6a1e5fd2186b4b1a2448cdd4f2078a09496.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The allyl-aryl coupling yielded an inseparable mixture of diastereomers (4a-4c).",
+        "gap": "Need to separate the diastereomers to proceed with the synthesis of individual musellarins.",
+        "decision": "Acetylation of the phenolic alcohol of the diastereomeric mixture was attempted to facilitate separation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Ac2O",
+          "pyridine",
+          "DMAP"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "purification_failed",
+        "observation": "Acetylation of the phenolic alcohol did not result in better separation of the diastereomers."
+      },
+      "evidence": {
+        "text_span": "Acetylation of the phenolic alcohol of these diastereomers did not result in better separation of these diastereomers.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The allyl-aryl coupling products (4a-4c) were obtained as an inseparable mixture of diastereomers. Direct separation was not successful.",
+        "gap": "Need to convert the enones to a form that allows for separation or further reaction towards the target musellarins.",
+        "decision": "The enones 4a-4c were reduced with NaBH4 in methanol, followed by acetylation with Ac2O to yield 5a-5c."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "reagents": [
+          "NaBH4",
+          "Ac2O",
+          "pyridine",
+          "DMAP"
+        ],
+        "solvent": "MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Reduction of enones 4a-4c with NaBH4 and subsequent acetylation yielded 5a-5c in 81% yield. Four anticipated diastereomers were isolated as two inseparable pairs of diastereomers, which complicated characterization but were deemed acceptable for the next step."
+      },
+      "evidence": {
+        "text_span": "Therefore, we moved forward to reduce the enones 5a−5c with NaBH4 in methanol, and without surprise, four anticipated diastereomers were isolated as two inseparable pairs of diastereomers, which complicated their characterization. Luckily, it was unnecessary to separate these four diastereomers, because subsequent Friedel−Crafts cyclization of these diastereomers with triflic anhydride yielded only two separable diastereomers (6a/7a, 6b/7b, and 6c/7c), which upon global deprotection furnished the corresponding pair of musellarins (A/E, B/D, and C/F).",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "28841cb8ffced98d1a4eb21e07b81918890bc9decf454f343ce9c323190aad9d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The reduced and acetylated products 5a-5c were obtained as inseparable diastereomeric mixtures.",
+        "gap": "Need to form the tricyclic core via Friedel-Crafts cyclization and achieve separation of the resulting products.",
+        "decision": "Friedel-Crafts cyclization of the diastereomeric mixtures 5a-5c was performed using triflic anhydride (Tf2O) to yield two separable diastereomers (6a/7a, 6b/7b, and 6c/7c)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "named_reaction": "Friedel-Crafts cyclization",
+        "reagents": [
+          "Tf2O"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 38,
+        "observation": "Friedel-Crafts cyclization yielded two separable diastereomers (6a/7a, 6b/7b, and 6c/7c) in 38% yield. These were subsequently deprotected to furnish the corresponding pairs of musellarins (A/E, B/D, and C/F)."
+      },
+      "evidence": {
+        "text_span": "Luckily, it was unnecessary to separate these four diastereomers, because subsequent Friedel−Crafts cyclization of these diastereomers with triflic anhydride yielded only two separable diastereomers (6a/7a, 6b/7b, and 6c/7c), which upon global deprotection furnished the corresponding pair of musellarins (A/E, B/D, and C/F).",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "28841cb8ffced98d1a4eb21e07b81918890bc9decf454f343ce9c323190aad9d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The tricyclic intermediates (6a/7a, 6b/7b, and 6c/7c) were obtained after Friedel-Crafts cyclization.",
+        "gap": "Need to deprotect the intermediates to obtain the final musellarin natural products.",
+        "decision": "Global deprotection of the tricyclic intermediates was performed to furnish the corresponding pairs of musellarins (A/E, B/D, and C/F)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "COc1cc(O)c2c(c1)C[C@H]1C=C[C@@H](Oc3ccc(O)cc3)[C@@H]1C2",
+          "COc1cc(O)c2c(c1)C[C@H]1C=C[C@@H](Oc3ccc(O)c(OC)c3)[C@@H]1C2",
+          "COc1cc(O)c2c(c1)C[C@H]1C=C[C@@H](Oc3ccc(OC)c(O)c3)[C@@H]1C2",
+          "COc1cc(O)c2c(c1)C[C@H]1C=C[C@@H](Oc3ccc(O)cc3)[C@@H]1C2",
+          "COc1cc(O)c2c(c1)C[C@H]1C=C[C@@H](Oc3ccc(O)c(OC)c3)[C@@H]1C2",
+          "COc1cc(O)c2c(c1)C[C@H]1C=C[C@@H](Oc3ccc(OC)c(O)c3)[C@@H]1C2"
+        ],
+        "reagents": [
+          "K2CO3",
+          "TBAF"
+        ],
+        "solvent": "MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 23,
+        "observation": "Global deprotection furnished musellarins A (23%), B (19%), C (16%), E (22%), D (19%), and F (18%). The spectral data of synthetic musellarins were consistent with those reported for natural musellarins by Zhao, confirming the first total synthesis of musellarins D and E."
+      },
+      "evidence": {
+        "text_span": "Luckily, it was unnecessary to separate these four diastereomers, because subsequent Friedel−Crafts cyclization of these diastereomers with triflic anhydride yielded only two separable diastereomers (6a/7a, 6b/7b, and 6c/7c), which upon global deprotection furnished the corresponding pair of musellarins (A/E, B/D, and C/F). It was noted that musellarin F was not reported in the literature. All spectral data of our synthetic musellarins were consistent with those reported for the natural musellarins by Zhao,2 which suggested that we successfully achieved the first total synthesis of musellarins D and E.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "ecdad0668330695669e70fad72ff9b2ea2c75a720607b6c7d5d1f6ede227ba5d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The total synthesis of musellarins D and E was achieved, and their spectral data matched reported natural products. However, the authors were skeptical about the reported relative stereochemistry of natural musellarins D and E, particularly the trans-fused configuration [(4a,10b)-trans] which is not typically favored in Friedel-Crafts cyclization.",
+        "gap": "Need to verify the relative stereochemistry of musellarins D and E and potentially correct misassignments.",
+        "decision": "NOE experiments were conducted on synthetic musellarins A and E to analyze their relative stereochemistry, specifically focusing on the protons at C4a and C10b, and C4a and C3."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "NOE enhancement was observed between protons at C4a (4.2 ppm) and C10b (3.2-3.4 ppm) for both musellarin A (4.31% NOE) and musellarin E (5.57% NOE). This suggested that musellarin E has the identical cis-fused configuration [(4a,10b)-cis] as musellarin A. Additionally, NOE enhancement (4.18%) between protons at C4a (4.2 ppm) and C3 (5.1 ppm) of musellarin E substantiated the (4a,3)-cis-THP configuration."
+      },
+      "evidence": {
+        "text_span": "We first analyzed the NMR data of natural musellarins A and E and found that both compounds were reported to have the similar NOE enhancement24 between protons at C4a (4.2 ppm) and C10b (3.2−3.4 ppm), which was also confirmed by our NOE experiment (4.31% NOE for musellarin A and 5.57% NOE for musellarin E) (Figure 2). This finding suggested that musellarin E might have the identical cis-fused configuration [(4a,10b)-cis] as musellarin A25 (note: X-ray diffraction of a single crystal was reported for musellarin A). In addition, the NOE enhancement (4.18%) between protons at C4a (4.2 ppm) and C3 (5.1 ppm) of musellarin E substantiated the (4a,3)-cis-THP configuration.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "5da61e2c3119b0199d1e953e0c7a1dc9637f6f1fbf2c4cf885c1be973c215252.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "NOE experiments suggested that musellarin E has a cis-fused configuration at C4a/C10b, similar to musellarin A, and a cis-THP configuration at C4a/C3. This contradicts the previously assigned trans-fused configuration for natural musellarin E.",
+        "gap": "Need further chemical evidence to support the stereochemical revision of musellarin E as a C3 epimer of musellarin A.",
+        "decision": "Musellarin A and musellarin E were treated with HCl/Et2O in methanol to induce C3 epimerization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(O)c2c(c1)C[C@H]1C=C[C@@H](Oc3ccc(O)cc3)C1C2"
+        ],
+        "product_smiles": [
+          "COc1cc(O)c2c(c1)C[C@H]1C=C[C@H](Oc3ccc(O)cc3)C1C2"
+        ],
+        "reagents": [
+          "HCl",
+          "Et2O"
+        ],
+        "solvent": "MeOH",
+        "temperature": "room temperature",
+        "time": "15 min"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Treatment of either musellarin A or musellarin E resulted in a mixture (1:1.8) of musellarins A and E, as determined by in situ proton NMR. This C3 epimerization result consolidated the stereochemical revision of musellarin E as a C3 epimer of musellarin A."
+      },
+      "evidence": {
+        "text_span": "First, treatment of either musellarin A or musellarin E with HCl/Et2O in methanol at room temperature26 for 15 min resulted in a mixture (1:1.8) of musellarins A and E, which were determined by in situ proton NMR. This C3 epimerization result consolidated our stereochemical revision of musellarin E as a C3 epimer of musellarin A.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "32f17eb230f522451ee13598f463a4623d705c186c7cfa08df6d144a1c0ece3e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "C3 epimerization experiments supported the relationship between musellarins A and E. To further confirm the stereochemical revision, particularly regarding C10b, a transformation that eliminates C3 stereochemistry is needed.",
+        "gap": "Need to eliminate the C3 stereochemistry and observe if musellarins A and E converge to the same product, implying they only differ at C3.",
+        "decision": "Reductive hydrogenation of both musellarins A and E was performed using Pd/C and Pd(OH)2/C in HCl/MeOH to cleave the C3-O bond and hydrogenate the alkene."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(O)ccc1C[C@H]1C=CC(c2ccc(O)cc2)O[C@@H]1C",
+          "COc1cc(O)ccc1C[C@H]1C=CC(c2ccc(O)cc2)O[C@@H]1C"
+        ],
+        "product_smiles": [
+          "COc1cc(O)ccc1C[C@H]1CCC(c2ccc(O)cc2)O[C@@H]1C"
+        ],
+        "reagents": [
+          "Pd/C",
+          "Pd(OH)2/C",
+          "H2"
+        ],
+        "solvent": "HCl/MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Reductive hydrogenation of both musellarins A and E resulted in efficient C3-O bond cleavage and alkene hydrogenation, producing the same reduction product 8. Since catalytic hydrogenation is unlikely to cause epimerization at C10b, this confirmed that musellarins A and E differed only at C3 stereochemistry, supporting the revision of musellarin E's C10b stereochemistry."
+      },
+      "evidence": {
+        "text_span": "Second, we decided to eliminate the C3 stereochemistry by reductive cleavage of C3−O bond of musellarins A and E. It was discovered that the reductive hydrogenation of both musellarins A and E with a combination of Pd/C and Pd(OH)2/C in HCl/MeOH resulted in efficient C3−O bond cleavage as well as alkene hydrogenation to produce the same reduction product 8. Since the catalytic hydrogenation condition would be less likely to cause epimerization at C10b, we concluded that musellarins A and E differed only at C3 stereochemistry and therefore the proposed structure of musellarin E should be revised at C10b stereochemistry.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "b82aef2241ca8a9b2a5630ab9542b587b449ad1309948bfe6378649b297229aa.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "NOE",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield from furfuryl alcohol 1 to musellarins A-E is not explicitly stated as a single value, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 8,
+        "unit": "steps",
+        "interpretation": "The synthesis of musellarins A-E from furfuryl alcohol 1 takes 8 steps."
+      },
+      "Total Steps": {
+        "value": 8,
+        "unit": "steps",
+        "interpretation": "The total number of steps from furfuryl alcohol 1 is 8."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Two failed attempts were explicitly mentioned: one for an alternative Achmatowicz rearrangement condition and one for diastereomer separation."
+      }
+    },
+    "comparison_to_prior": "All spectral data of synthetic musellarins A-F were consistent with those reported for the natural musellarins by Zhao. The study successfully achieved the first total synthesis of musellarins D and E, and provided evidence to revise the stereochemistry of musellarins D and E, specifically at C10b, from trans-fused to cis-fused.",
+    "significance": "This work represents the first total synthesis of musellarins D and E, enabling the correction of their previously misassigned stereochemistry. It also showcases the synthetic application of two new methodologies developed by the authors: Fe(TPY)Br3-catalyzed Achmatowicz rearrangement and palladium-catalyzed arylation of Achmatowicz rearrangement products with aryl boronic acids. The synthetic musellarins were evaluated for cytotoxicity and anti-inflammatory activity, showing moderate anti-inflammatory effects."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.joc.5c02575",
+      "pmcid": "PMC12706788",
+      "title": "Collective Asymmetric Total Syntheses of Musellarins A-E.",
+      "authors": "Liu Y, Ou Y, Chang V, Yao H, Tong R.",
+      "journal": "J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12706788?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/f0492930-5321-412f-9bf7-cd20f71f564b.zip",
+      "parsed_at": "2026-05-07T14:29:37.618224+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 43,
+    "parseable": 12,
+    "canonicalized": 7,
+    "invalid": 31,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC1=C(OSi(C(C)C)(C(C)C)C(C)C)C=CC(CCC(O)C2=COC=C2)=C1",
+      "COC1=C(OSi(C(C)C)(C(C)C)C(C)C)C=CC2=C1CCC3C(=O)C=COC3(OC(C)=O)O2",
+      "COC1=C(OSi(C(C)C)(C(C)C)C(C)C)C=CC(CCC(O)C2=COC=C2)=C1",
+      "COC1=C(OSi(C(C)C)(C(C)C)C(C)C)C=CC2=C1CCC3C(=O)C=COC3(OC(C)=O)O2",
+      "COC1=C(OSi(C(C)C)(C(C)C)C(C)C)C=CC(CCC(O)C2=COC=C2)=C1",
+      "COC1=C(OSi(C(C)C)(C(C)C)C(C)C)C=CC2=C1CCC3C(=O)C=COC3(OC(C)=O)O2",
+      "COC1=C(OSi(C(C)C)(C(C)C)C(C)C)C=CC2=C1CCC3C(=O)C=COC3(OC(C)=O)O2",
+      "COC1=C(OSi(C(C)C)(C(C)C)C(C)C)C=CC2=C1CCC3C(=O)C=COC3(C4=CC=C(O)C=C4)O2",
+      "COC1=C(OSi(C(C)C)(C(C)C)C(C)C)C=CC2=C1CCC3C(=O)C=COC3(C4=CC=C(O)C=C4)O2",
+      "COC1=C(OSi(C(C)C)(C(C)C)C(C)C)C=CC2=C1CCC3C(=O)C=COC3(C4=CC=C(O)C=C4)O2"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

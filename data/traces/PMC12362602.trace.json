@@ -1,0 +1,948 @@
+{
+  "trace_id": "TS-PMC12362602",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Mycoplanecin A",
+    "smiles": "CC(C)C[C@H](NC(=O)[C@@H](C)N(C)C(=O)[C@H](O)[C@@H](C)NC(=O)[C@@H]1CCCN1C(=O)C(C)C)[C@@H]1CCCN1C(=O)C(C)C",
+    "natural_product_class": "macrocyclic depsipeptide",
+    "structural_features": {
+      "key_motifs": [
+        "N-methylated amino acids",
+        "trans-4-methyl-L-proline",
+        "trans-4-ethyl-L-proline"
+      ]
+    },
+    "motivation": "Mycoplanecin A is a potent antitubercular macrocyclic depsipeptide natural product targeting the DnaN sliding clamp. There is an urgent need for novel antibiotics against multidrug-resistant Mtb. Synthetic access is required for further biological evaluation and SAR studies.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "First total synthesis of mycoplanecin A, enabling further biological investigation and analogue development."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "Macrocyclization between 4-methylproline and homoleucine (HoLeu)",
+        "named_strategy": "Macrocyclization",
+        "reasoning": "Analogous to the successful strategy used in the total synthesis of griselimycin."
+      },
+      {
+        "bond_description": "Peptide bond between glycine and N-methylated D-leucine",
+        "named_strategy": "Fragment Coupling",
+        "reasoning": "To couple two fragments (western and eastern part)."
+      },
+      {
+        "bond_description": "N-terminal alpha-ketobutyric acid",
+        "reasoning": "Should be introduced toward the end of the synthetic sequence to provide easy access to derivatives for SAR studies by varying the acylating reagents."
+      },
+      {
+        "bond_description": "trans-4-alkylated-L-prolines",
+        "named_strategy": "Matteson homologation",
+        "reasoning": "To stereoselectively introduce different substituents into a continuously growing alkyl chain, especially for the unusual trans-4-ethyl-L-proline for which no feasible synthesis was known."
+      }
+    ],
+    "rationale": "The synthesis aimed for a convergent approach, coupling a hexapeptide (western fragment) and a tetrapeptide (eastern fragment), followed by macrocyclization. A key challenge was the synthesis of the unusual trans-4-alkylated-L-prolines, which was addressed using iterative Matteson homologation. The N-terminal alpha-ketobutyric acid was planned for late-stage introduction to facilitate SAR studies."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "proline_synthesis",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of mycoplanecin A requires two unusual nonproteinogenic amino acids: trans-4-methyl- and trans-4-ethyl-L-proline. While 4-methylproline is known, a feasible synthesis for the trans-derivative of 4-ethylproline is not. The Matteson homologation is a known method for stereoselective introduction of substituents into alkyl chains and for amino acid synthesis.",
+        "gap": "How to synthesize the trans-4-alkylated-L-prolines stereoselectively.",
+        "decision": "To synthesize the desired trans-4-alkylproline derivatives, a series of Matteson homologations will be employed, starting from boronate 1. The initial sequence will introduce the required alkyl side chains to furnish intermediate boronates 2 and 3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1OB(C(C2CCCCC2)C(C)C(C)C(C)OC(c2ccccc2)(c2ccccc2)c2ccccc2)OC(C2CCCCC2)C(C)C1C"
+        ],
+        "product_smiles": [
+          "CC1OB(OCC(C)C(c2ccccc2)(c2ccccc2)c2ccccc2)OC(C2CCCCC2)C(C)C1C",
+          "CCC(COB1OC(C)C(C)C(C)C(C2CCCCC2)O1)C(c1ccccc1)(c1ccccc1)c1ccccc1"
+        ],
+        "cond": "1) LiCHCl2, ZnCl2, THF, -98 °C -> rt\n2) RMgCl, THF, 0 °C -> rt",
+        "reagents": [
+          "LiCHCl2",
+          "ZnCl2",
+          "RMgCl"
+        ],
+        "solvent": "THF",
+        "temperature": "-98 °C to rt",
+        "named_reaction": "Matteson homologation"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The initial sequence involved introducing the required alkyl side chains to furnish intermediate boronates 2 and 3 in good yield."
+      },
+      "evidence": {
+        "text_span": "The synthesis of the desired trans-4-alkylproline derivatives 12 and 13 commenced with boronate 1,20 employing a series of Matteson homologations as outlined in Scheme 1. The initial sequence involved introducing the required alkyl side chains to furnish intermediate boronates 2 and 3 in good yield.",
+        "image_refs": [
+          "0da5280692075999c582e93e71fe2ef233f51e1907a70256eea545ec93ee1bf0.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "proline_synthesis",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Boronates 2 and 3 have been synthesized. The next step is chain extension.",
+        "gap": "How to extend the carbon chain and introduce the nitrogen moiety.",
+        "decision": "Further chain extension will be accomplished via a second homologation, where the generated alpha-chloroboronate will be reduced with superhydride to introduce a methylene group. Then, the nitrogen moiety will be introduced by converting 4 and 5 to their corresponding alpha-chloroboronates followed by displacement with NaN3 in DMF to generate the alpha-azido boronates 6 and 7."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [],
+        "cond": "1) LiCHCl2, ZnCl2, THF, -98 °C -> rt\n2) Superhydride\n3) LiCHCl2, ZnCl2, THF, -98 °C -> rt\n4) NaN3, DMF",
+        "reagents": [
+          "LiCHCl2",
+          "ZnCl2",
+          "Superhydride",
+          "NaN3"
+        ],
+        "solvent": "THF, DMF",
+        "temperature": "-98 °C to rt",
+        "named_reaction": "Matteson homologation"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The chain extension and introduction of the azide group were successful."
+      },
+      "evidence": {
+        "text_span": "Their further chain extension was accomplished via a second homologation, where the generated alpha-chloroboronate was reduced with superhydride to introduce a methylene group. Next, the nitrogen moiety was subsequently introduced by converting 4 and 5 to their corresponding alpha-chloroboronates followed by displacement with NaN3 in DMF to generate the alpha-azido boronates 6 and 7.",
+        "image_refs": [
+          "0da5280692075999c582e93e71fe2ef233f51e1907a70256eea545ec93ee1bf0.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "proline_synthesis",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Alpha-azido boronates 6 and 7 have been synthesized. The next step is a final homologation to install a bromine atom alpha to the boron center.",
+        "gap": "How to efficiently install the bromine atom.",
+        "decision": "A final homologation step was performed to install a bromine atom alpha to the boron center, yielding the corresponding alpha-bromo-beta-azido boronic esters. The analogous homologation toward the corresponding alpha-chloro boronate was also considered."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [],
+        "cond": "Homologation toward alpha-chloro boronate",
+        "reagents": [],
+        "solvent": ""
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "The analogous homologation toward the corresponding alpha-chloro boronate resulted in significant lower yields due to incomplete conversion."
+      },
+      "evidence": {
+        "text_span": "It should be mentioned that the analogous homologation toward the corresponding alpha-chloro boronate resulted in significant lower yields due to incomplete conversion.",
+        "image_refs": [
+          "0da5280692075999c582e93e71fe2ef233f51e1907a70256eea545ec93ee1bf0.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "proline_synthesis",
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "The alpha-chloro boronate homologation resulted in low yields. An alternative strategy is needed.",
+        "gap": "How to efficiently install the halogen atom for the final homologation.",
+        "decision": "To install a bromine atom alpha to the boron center, yielding the corresponding alpha-bromo-beta-azido boronic esters, as this proved more effective."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [],
+        "cond": "Homologation toward alpha-bromo boronate",
+        "reagents": [],
+        "solvent": ""
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The alpha-bromo-beta-azido boronic esters were obtained successfully."
+      },
+      "evidence": {
+        "text_span": "A final homologation step was performed to install a bromine atom alpha to the boron center, yielding the corresponding alpha-bromo-beta-azido boronic esters.",
+        "image_refs": [
+          "0da5280692075999c582e93e71fe2ef233f51e1907a70256eea545ec93ee1bf0.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "proline_synthesis",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alpha-bromo-beta-azido boronic esters have been obtained.",
+        "gap": "How to convert the boronic esters to carboxylic acids and then to tert-butyl esters.",
+        "decision": "The alpha-bromo-beta-azido boronic esters obtained were subjected to a Pinnick-type oxidation to afford the corresponding alpha-azidocarboxylic acids. Subsequent esterification as tert-butyl esters provided 8 and 9 in good yields over three steps."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [
+          "CC(C[C@@H](N=[N+]=[N-])C(=O)OC(C)(C)C)[C@@H](C)OCCC(c1ccccc1)(c1ccccc1)c1ccccc1",
+          "CCC(C[C@@H](N=[N+]=[N-])C(=O)OC(C)(C)C)[C@@H](C)OCCC(c1ccccc1)(c1ccccc1)c1ccccc1"
+        ],
+        "cond": "1) NaClO2, KH2PO4, 2-Methyl-2-butene, t-BuOH/H2O 2:1, rt\n2) t-BuBr, BnEt3NCl, K2CO3, DMAC, 55 °C",
+        "reagents": [
+          "NaClO2",
+          "KH2PO4",
+          "2-Methyl-2-butene",
+          "t-BuBr",
+          "BnEt3NCl",
+          "K2CO3"
+        ],
+        "solvent": "t-BuOH/H2O, DMAC",
+        "temperature": "rt, 55 °C",
+        "named_reaction": "Pinnick oxidation"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Alpha-azidocarboxylic acids were obtained and then esterified as tert-butyl esters 8 and 9 in good yields over three steps."
+      },
+      "evidence": {
+        "text_span": "These alpha-bromo-beta-azido boronates obtained were subjected to a Pinnick-type oxidation to afford the corresponding alpha-azidocarboxylic acids. Subsequent esterification as tert-butyl esters21 provided 8 and 9 in good yields over three steps.",
+        "image_refs": [
+          "901448cdc5697615edd4e97713ae2f6bfbf8d968fa97cbad3c71afc038effc83.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "proline_synthesis",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tert-butyl esters 8 and 9 have been synthesized.",
+        "gap": "How to detritylate, tosylate, and then cyclize to form the proline ring.",
+        "decision": "Subsequent acidic detritylation and tosylation furnished tosylates 10 and 11. Finally, hydrogenation of the azide moiety over Pd/C effected reduction to the amine, which underwent spontaneous intramolecular cyclization to construct the proline ring scaffold. The resulting secondary amine was directly N-protected to afford the desired proline derivates 12 and 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C[C@@H](N=[N+]=[N-])C(=O)OC(C)(C)C)[C@@H](C)OCCC(c1ccccc1)(c1ccccc1)c1ccccc1",
+          "CCC(C[C@@H](N=[N+]=[N-])C(=O)OC(C)(C)C)[C@@H](C)OCCC(c1ccccc1)(c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC1CC(C(=O)OC(C)(C)C)N(C(=O)OCc2ccccc2)C1",
+          "CCC1CC(C(=O)OC(C)(C)C)N(C(=O)OCc2ccccc2)C1"
+        ],
+        "cond": "1) AcOH/H2O 4:1, 55 °C\n2) TsCl, Py, DCM, 0 °C -> rt\n3) H2, Pd/C, MeOH, rt\n4) CbzCl, Et3N, MeOH, 0 °C -> rt",
+        "reagents": [
+          "AcOH",
+          "TsCl",
+          "pyridine",
+          "H2",
+          "Pd/C",
+          "CbzCl",
+          "Et3N"
+        ],
+        "solvent": "H2O, DCM, MeOH",
+        "temperature": "55 °C, 0 °C to rt",
+        "named_reaction": "Hydrogenation, Cyclization"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 26,
+        "observation": "The desired proline derivates 12 and 13 were obtained in 26% and 21% overall yield over ten steps, starting from bromomethylboronic acid pinacol ester."
+      },
+      "evidence": {
+        "text_span": "Subsequent acidic detritylation22 and tosylation furnished tosylates 10 and 11. Finally, hydrogenation of the azide moiety over Pd/C effected reduction to the amine, which underwent spontaneous intramolecular cyclization to construct the proline ring scaffold.23 The resulting secondary amine was directly Nprotected to afford the desired proline derivates 12 and 13 in 26% and 21% overall yield over ten steps, starting from bromomethylboronic acid pinacol ester",
+        "image_refs": [
+          "57aa91df216ca7ce4ef617101f0130887648b5b0a2c984dfda7f8bc3f8490943.jpg",
+          "901448cdc5697615edd4e97713ae2f6bfbf8d968fa97cbad3c71afc038effc83.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "hexapeptide_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Proline derivative 12 has been synthesized. The next step is to incorporate it into the hexapeptide fragment.",
+        "gap": "How to couple 12 with Cbz-Leu-OH.",
+        "decision": "For the synthesis of the hexapeptide fragment, 12 was subjected to hydrogenation and the resulting amine was coupled with Cbz-Leu-OH using EDC/HOBt to afford dipeptide 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC(C(=O)OC(C)(C)C)N(C(=O)OCc2ccccc2)C1"
+        ],
+        "product_smiles": [
+          "CC(C)C[C@@H](NC(=O)OCc1ccccc1)C(=O)N1C(C(=O)OC(C)(C)C)CC[C@@H]1C"
+        ],
+        "cond": "1) H2, Pd/C, MeOH, rt, 3 h\n2) Cbz-Leu-OH, EDC, HOBt, NMM, DMF, 0 °C -> rt, 14.5 h",
+        "reagents": [
+          "H2",
+          "Pd/C",
+          "Cbz-Leu-OH",
+          "EDC",
+          "HOBt",
+          "NMM"
+        ],
+        "solvent": "MeOH, DMF",
+        "temperature": "rt, 0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Dipeptide 14 was afforded in 90% yield."
+      },
+      "evidence": {
+        "text_span": "For the synthesis of the hexapeptide fragment, 12 was subjected to hydrogenation and the resulting amine was coupled with Cbz-Leu-OH using EDC/HOBt to afford dipeptide 14 (Scheme 2).",
+        "image_refs": [
+          "99023cadf668171432f95ea386994f06bd726178d614fc3bda44af35a5a2ee640.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "hexapeptide_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dipeptide 14 has been synthesized. The next step is to extend the peptide chain.",
+        "gap": "How to deprotect Cbz and couple with Cbz-(OTBS)-MeThr-OH while preventing diketopiperazine formation.",
+        "decision": "To prevent potential diketopiperazine formation, the following Cbz deprotection was conducted in the presence of 1 eq. HCl. Coupling of the dipeptide hydrochloride with Cbz-(OTBS)-MeThr-OH (S2), mediated by isobutyl chloroformate (IBCF), provided tripeptide 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@@H](NC(=O)OCc1ccccc1)C(=O)N1C(C(=O)OC(C)(C)C)CC[C@@H]1C"
+        ],
+        "product_smiles": [
+          "CC(C)C[C@@H]1[C@@H](C(=O)OC(C)(C)C)C[C@H](C)N1C(=O)[C@H](NC(=O)[C@H](C)N(C)C(=O)OCc1ccccc1)C(C)CO[Si](C)(C)C(C)(C)C"
+        ],
+        "cond": "1) H2, Pd/C, HCl, MeOH, rt, 3 h\n2) Cbz-(OTBS)-MeThr-OH (S2), IBCF, NMM, THF/DCM 2.5:2, -20 °C -> rt, 15 h",
+        "reagents": [
+          "H2",
+          "Pd/C",
+          "HCl",
+          "Cbz-(OTBS)-MeThr-OH",
+          "IBCF",
+          "NMM"
+        ],
+        "solvent": "MeOH, THF/DCM",
+        "temperature": "rt, -20 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Tripeptide 15 was provided in excellent yield (92%)."
+      },
+      "evidence": {
+        "text_span": "In order to prevent potential diketopiperazine formation, the following Cbz deprotection was conducted in the presence of 1 eq. HCl. Coupling of the dipeptide hydrochloride with Cbz-(OTBS)-MeThr-OH (S2), mediated by isobutyl chloroformate (IBCF), provided tripeptide 15 in excellent yield.",
+        "image_refs": [
+          "1031f54e12619be571e65030271dda32a06831cc3b31698edf22d16ddd59de3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "hexapeptide_fragment",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Tripeptide 15 contains a silyl ether protecting group that needs to be removed.",
+        "gap": "How to remove the silyl ether without side reactions.",
+        "decision": "Initial attempts to remove the silyl ether with TBAF were made."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@@H]1[C@@H](C(=O)OC(C)(C)C)C[C@H](C)N1C(=O)[C@H](NC(=O)[C@H](C)N(C)C(=O)OCc1ccccc1)C(C)CO[Si](C)(C)C(C)(C)C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": ""
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Removal of the silyl ether with TBAF unfortunately led to the formation of the corresponding oxazolidinone."
+      },
+      "evidence": {
+        "text_span": "Removal of the silyl ether with TBAF unfortunately led to the formation of the corresponding oxazolidinone",
+        "image_refs": [
+          "3ac953c912d3390b5ee231b1c72d7ca26041ffb35ec9f135afc20434252a79a1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "hexapeptide_fragment",
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "TBAF failed to remove the silyl ether without forming an oxazolidinone. An alternative deprotection method is needed.",
+        "gap": "How to selectively deprotect the silyl ether to yield the desired alcohol.",
+        "decision": "Deprotection using catalytic acetyl chloride in MeOH will be used, followed by esterification with C-terminal deprotected ethyl proline 13' using MNBA and PPY."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@@H]1[C@@H](C(=O)OC(C)(C)C)C[C@H](C)N1C(=O)[C@H](NC(=O)[C@H](C)N(C)C(=O)OCc1ccccc1)C(C)CO[Si](C)(C)C(C)(C)C",
+          "CCC[C@H]1CN(C(=O)OCc2ccccc2)C[C@H]1O"
+        ],
+        "product_smiles": [
+          "CC[C@H]1CN(C(=O)OCc2ccccc2)C[C@H]1OC(=O)[C@@H](C)N(C(=O)OCc1ccccc1)[C@@H](C)C(=O)N[C@@H](C)C(=O)N1C[C@H](C)C[C@@H]1C(=O)OC(C)(C)C"
+        ],
+        "cond": "1) cat. AcCl, MeOH, 0 °C -> rt, 17 h\n2) trans-4-Ethyl-Pro-OH (13'), MNBA, PPY, THF, 0 °C -> rt, 15 h",
+        "reagents": [
+          "AcCl",
+          "trans-4-Ethyl-Pro-OH (13')",
+          "MNBA",
+          "PPY"
+        ],
+        "solvent": "MeOH, THF",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Deprotection using catalytic acetyl chloride in MeOH yielded the desired alcohol in excellent yield. This alcohol was subsequently esterified to furnish depsipeptide 16 without detectable epimerization in 96% yield."
+      },
+      "evidence": {
+        "text_span": "Removal of the silyl ether with TBAF unfortunately led to the formation of the corresponding oxazolidinone, whereas deprotection using catalytic acetyl chloride in MeOH24 yielded the desired alcohol in excellent yield. This alcohol was subsequently esterified with C-terminal deprotected ethyl proline 13' (obtained by treating 13 with a mixture 1:3 of TFA in CHCl3,) using 2-methyl-6- nitrobenzoic anhydride (MNBA) and 4-pyrrolidinylpyridine (PPY) to furnish the depsipeptide 16 without detectable epimerization",
+        "image_refs": [
+          "3ac953c912d3390b5ee231b1c72d7ca26041ffb35ec9f135afc20434252a79a1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "hexapeptide_fragment",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Depsipeptide 16 has been synthesized. Alternative conditions for esterification were considered.",
+        "gap": "How to achieve complete conversion during esterification.",
+        "decision": "Alternative conditions, such as DIC/DMAP or EDC/PPY, were attempted for the esterification."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [],
+        "reagents": [
+          "DIC",
+          "DMAP",
+          "EDC",
+          "PPY"
+        ],
+        "solvent": ""
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "incomplete_conversion",
+        "observation": "Alternative conditions, such as DIC/DMAP or EDC/PPY, led to incomplete conversion, although starting material was recoverable."
+      },
+      "evidence": {
+        "text_span": "(Alternative conditions, such as DIC/DMAP or EDC/PPY, led to incomplete conversion, although starting material was recoverable).",
+        "image_refs": [
+          "3ac953c912d3390b5ee231b1c72d7ca26041ffb35ec9f135afc20434252a79a1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": "hexapeptide_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Depsipeptide 16 has been synthesized. The next step is to remove Cbz protecting groups and extend the chain.",
+        "gap": "How to remove Cbz groups and couple with Alloc-MeVal-OH.",
+        "decision": "Simultaneous removal of both Cbz protecting groups via hydrogenation will be performed, which is expected to induce a concomitant O-N acyl shift. Chain elongation will then proceed by coupling the obtained free amine with Alloc-MeVal-OH (S4) using PyAOP."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H]1CN(C(=O)OCc2ccccc2)C[C@H]1OC(=O)[C@@H](C)N(C(=O)OCc1ccccc1)[C@@H](C)C(=O)N[C@@H](C)C(=O)N1C[C@H](C)C[C@@H]1C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)C[C@H](NC(=O)[C@@H](C)N(C)C(=O)[C@H](O)[C@@H](C)NC(=O)[C@@H]1CCCN1C(=O)C(C)C)[C@@H]1CCCN1C(=O)C(C)C"
+        ],
+        "cond": "1) H2, Pd/C, MeOH, rt, 6 h\n2) Alloc-MeVal-OH (S4), PyAOP, NMM, DMF, 0 °C -> rt, 15 h",
+        "reagents": [
+          "H2",
+          "Pd/C",
+          "Alloc-MeVal-OH",
+          "PyAOP",
+          "NMM"
+        ],
+        "solvent": "MeOH, DMF",
+        "temperature": "rt, 0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Simultaneous removal of both Cbz protecting groups via hydrogenation induced a concomitant O-N acyl shift, regenerating the MeThr secondary alcohol and forming the peptide bond. Pentapeptide 17 was obtained in good yield (88%)."
+      },
+      "evidence": {
+        "text_span": "Next, simultaneous removal of both Cbz protecting groups via hydrogenation induced a concomitant O-N acyl shift. This key step regenerated the MeThr secondary alcohol and formed the peptide bond corresponding to the previous ester linkage. Chain elongation by coupling the obtained free amine with Alloc-MeVal-OH (S4) using PyAOP gave pentapeptide 17 in good yield.",
+        "image_refs": [
+          "921dcd56448d2482b151755d73a07a81948bdec17e30dcc6d7edd5de43dd4c3e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "hexapeptide_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Pentapeptide 17 has been synthesized. The final step for the hexapeptide fragment is to esterify the MeThr side-chain hydroxyl group.",
+        "gap": "How to esterify the hydroxyl group with Fmoc-Gly-OH.",
+        "decision": "Esterification of the MeThr side-chain hydroxyl group in 17 with Fmoc-Gly-OH will be performed using MNBA/PPY conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@H](NC(=O)[C@@H](C)N(C)C(=O)[C@H](O)[C@@H](C)NC(=O)[C@@H]1CCCN1C(=O)C(C)C)[C@@H]1CCCN1C(=O)C(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)C[C@@H]1CC[C@H](C(=O)OC(C)C)N1C(=O)[C@H](C)N(C)C(=O)[C@H](C)OC(=O)CNC(=O)OCC1c2ccccc2-c2ccccc21"
+        ],
+        "cond": "Fmoc-Gly-OH, MNBA, PPY, THF, rt, 15 h",
+        "reagents": [
+          "Fmoc-Gly-OH",
+          "MNBA",
+          "PPY"
+        ],
+        "solvent": "THF",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "The synthesis of the target hexapeptide fragment 18 was completed in 96% yield, resulting in an overall 65% yield from 12."
+      },
+      "evidence": {
+        "text_span": "Finally, esterification of the MeThr side-chain hydroxyl group in 17 with Fmoc-Gly-OH, again employing MNBA/PPY conditions, completed the synthesis of the target hexapeptide fragment 18 in overall 65% yield from 12.",
+        "image_refs": [
+          "a4bc2164733db4330fe0e1ca9e1314d2b0a560856d8db1fced5be0349d0a342b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": "tetrapeptide_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of the tetrapeptide fragment 22 starts from Boc-D-MeLeu-OMe (19).",
+        "gap": "How to deprotect Boc and couple with Boc-Pro-OH.",
+        "decision": "Removal of the Boc protecting group will be followed by coupling of the resulting amine with Boc-Pro-OH, mediated by an acyl N-methylimidazolium cation, to afford dipeptide 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H](CC(C)C)N(C)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@H](CC(C)C)N(C)C(=O)[C@@H]1CCCN1C(=O)OC(C)(C)C"
+        ],
+        "cond": "1) AcCl, MeOH, rt, 1.5 h\n2) Boc-Pro-OH, IPCF, DIPEA, cat. BnNMe2, cat. NMI, cat. HCl, dioxane/MeCN 3:1, 60 °C, 17 h",
+        "reagents": [
+          "AcCl",
+          "Boc-Pro-OH",
+          "IPCF",
+          "DIPEA",
+          "BnNMe2",
+          "NMI",
+          "HCl"
+        ],
+        "solvent": "MeOH, dioxane/MeCN",
+        "temperature": "rt, 60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Dipeptide 20 was afforded in 84% yield."
+      },
+      "evidence": {
+        "text_span": "The synthesis of tetrapeptide fragment 22 started from Boc-D-MeLeu-OMe (19, Scheme 3). Removal of the Boc protecting group was followed by coupling of the resulting amine with Boc-Pro-OH, mediated by an acyl N-methylimidazolium cation,25 to afford dipeptide 20.",
+        "image_refs": [
+          "e12d086e719a666f4bc24bbe8e7a0aa88c26279397623f6fd4dc5b57f0799209.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "tetrapeptide_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dipeptide 20 has been synthesized. The next step is to extend the peptide chain.",
+        "gap": "How to deprotect Boc and couple with Boc-MeVal-OH.",
+        "decision": "Subsequent Boc deprotection and coupling of the amine formed with Boc-MeVal-OH using TBTU will provide tripeptide 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H](CC(C)C)N(C)C(=O)[C@@H]1CCCN1C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@H](CC(C)C)N(C)C(=O)[C@@H]1CCCN1C(=O)[C@H](C(C)C)N(C)C(=O)OC(C)(C)C"
+        ],
+        "cond": "1) AcCl, MeOH, rt, 1.5 h\n2) Boc-MeVal-OH, TBTU, DIPEA, MeCN, 0 °C -> rt, 16 h",
+        "reagents": [
+          "AcCl",
+          "Boc-MeVal-OH",
+          "TBTU",
+          "DIPEA"
+        ],
+        "solvent": "MeOH, MeCN",
+        "temperature": "rt, 0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Tripeptide 21 was provided in 70% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent Boc deprotection and coupling of the amine formed with Boc-MeVal-OH using TBTU provided tripeptide 21.",
+        "image_refs": [
+          "e12d086e719a666f4bc24bbe8e7a0aa88c26279397623f6fd4dc5b57f0799209.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "tetrapeptide_fragment",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Tripeptide 21 has been synthesized. The final coupling for the tetrapeptide fragment is with Boc-HoLeu-OH.",
+        "gap": "How to efficiently couple with Boc-HoLeu-OH and then saponify the methyl ester.",
+        "decision": "Alternative conditions for this final coupling, such as using BEP or the acyl N-methylimidazolium cation mediated transformation, were considered."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [],
+        "reagents": [
+          "BEP",
+          "acyl N-methylimidazolium cation"
+        ],
+        "solvent": ""
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Alternative conditions for this final coupling, such as using BEP or the acyl N-methylimidazolium cation mediated transformation, furnished the product in significantly lower yields."
+      },
+      "evidence": {
+        "text_span": "(Notably, alternative conditions for this final coupling, such as using BEP or the acyl N-methylimidazolium cation mediated transformation, furnished the product in significantly lower yields.)",
+        "image_refs": [
+          "e12d086e719a666f4bc24bbe8e7a0aa88c26279397623f6fd4dc5b57f0799209.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": "tetrapeptide_fragment",
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Alternative coupling conditions for the final step of the tetrapeptide fragment resulted in low yields. A more effective strategy is needed.",
+        "gap": "How to efficiently couple with Boc-HoLeu-OH and then saponify the methyl ester.",
+        "decision": "Following a final acidic cleavage of the Boc group, the resulting amine will be coupled with Boc-HoLeu-OH employing HATU as the coupling reagent, yielding protected tetrapeptide 22'. Lastly, saponification of the methyl ester in 22' will generate the C-terminally free acid 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H](CC(C)C)N(C)C(=O)[C@@H]1CCCN1C(=O)[C@H](C(C)C)N(C)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)C[C@H](NC(=O)OC(C)(C)C)C(=O)N(C)[C@H](C(=O)N1CCC[C@H]1C(=O)N(C)[C@H](CC(C)C)C(=O)O)C(C)C"
+        ],
+        "cond": "1) AcCl, MeOH, rt, 3 h\n2) Boc-HoLeu-OH, HATU, HOAt, DIPEA, DMF, 0 °C -> rt, 15 h\n3) LiOH, dioxane, rt, 22 h",
+        "reagents": [
+          "AcCl",
+          "Boc-HoLeu-OH",
+          "HATU",
+          "HOAt",
+          "DIPEA",
+          "LiOH"
+        ],
+        "solvent": "MeOH, DMF, dioxane",
+        "temperature": "rt, 0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 43,
+        "observation": "The protected tetrapeptide 22' was obtained, and subsequent saponification generated the C-terminally free acid 22 in 43% yield from 19."
+      },
+      "evidence": {
+        "text_span": "Following a final acidic cleavage of the Boc group, the resulting amine was coupled with Boc-HoLeu-OH employing HATU as the coupling reagent, yielding protected tetrapeptide 22'. (Notably, alternative conditions for this final coupling, such as using BEP or the acyl N-methylimidazolium cation mediated transformation, furnished the product in significantly lower yields.) Lastly, saponification of the methyl ester in 22' generated the C-terminally free acid 22 (43% yield from 19), which was used in the subsequent fragment coupling.",
+        "image_refs": [
+          "e12d086e719a666f4bc24bbe8e7a0aa88c26279397623f6fd4dc5b57f0799209.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Hexapeptide fragment 18 and tetrapeptide fragment 22 are in hand. The next step is their convergent coupling.",
+        "gap": "How to efficiently couple the two fragments.",
+        "decision": "The Fmoc protecting group of 18 was cleaved using tris(2-aminoethyl)amine (tren). Initial attempts to couple the resulting free amine with carboxylic acid 22 using HATU or propylphosphonic anhydride (T3P) were made."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@@H]1CC[C@H](C(=O)OC(C)C)CN1C(=O)[C@H](C)N(C)C(=O)[C@H](C)OC(=O)CNC(=O)OCC1c2ccccc2-c2ccccc21"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "tren",
+          "HATU",
+          "T3P"
+        ],
+        "solvent": "DCM"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Initial attempts to couple the resulting free amine with carboxylic acid 22 using HATU or propylphosphonic anhydride (T3P) provided the desired linear decapeptide 23 only in moderate yields."
+      },
+      "evidence": {
+        "text_span": "First, the Fmoc protecting group of 18 was cleaved using tris(2- aminoethyl)amine (tren).26 Initial attempts to couple the resulting free amine with carboxylic acid 22 using HATU or propylphosphonic anhydride (T3P) provided the desired linear decapeptide 23 only in moderate yields.",
+        "image_refs": [
+          "2978501167fb0a528c5602e6e4d1b5de204d2612baf4ab4ae8f4965fdf5ff858.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 18,
+      "thought": {
+        "background": "HATU and T3P provided only moderate yields for the fragment coupling. A more effective coupling agent is needed.",
+        "gap": "How to achieve high yield in the fragment coupling.",
+        "decision": "Employing COMU as the coupling agent will be used to furnish 23."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(C(C)C)C1CCC(C)C(C(=O)N(C)C(C)OC(=O)CNC(=O)C(NC(=O)C2CCC(C)N2C(C)C)C(C)CC)N(C(C)C)C1=O"
+        ],
+        "cond": "1) tren, DCM, rt, 50 min\n2) 22, COMU, NMM, DMF, 0 °C -> rt, 25 h",
+        "reagents": [
+          "tren",
+          "22",
+          "COMU",
+          "NMM"
+        ],
+        "solvent": "DCM, DMF",
+        "temperature": "rt, 0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Employing COMU as the coupling agent successfully furnished 23 in a much improved yield of 81%."
+      },
+      "evidence": {
+        "text_span": "However, employing COMU as the coupling agent successfully furnished 23 in a much improved yield of 81%.",
+        "image_refs": [
+          "2978501167fb0a528c5602e6e4d1b5de204d2612baf4ab4ae8f4965fdf5ff858.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Linear decapeptide 23 has been synthesized. The next step is global deprotection and macrocyclization.",
+        "gap": "How to achieve efficient macrocyclization.",
+        "decision": "Global deprotection of 23 was affected in a 1:1 mixture of TFA in DCM. The resulting deprotected peptide was then subjected to macrocyclization under high-dilution conditions. Coupling agents such as PyAOP and COMU were initially tested."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C(C)C)C1CCC(C)C(C(=O)N(C)C(C)OC(=O)CNC(=O)C(NC(=O)C2CCC(C)N2C(C)C)C(C)CC)N(C(C)C)C1=O"
+        ],
+        "product_smiles": [],
+        "cond": "1) TFA/DCM 1:1, rt, 3 h\n2) PyAOP or COMU, high-dilution conditions",
+        "reagents": [
+          "TFA",
+          "PyAOP",
+          "COMU"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Coupling agents such as PyAOP and COMU delivered 24 only in 22% yield while TFFH failed to produce any desired product."
+      },
+      "evidence": {
+        "text_span": "Coupling agents such as PyAOP and COMU delivered 24 only in 22% yield while TFFH failed to produce any desired product.",
+        "image_refs": [
+          "2978501167fb0a528c5602e6e4d1b5de204d2612baf4ab4ae8f4965fdf5ff858.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 20,
+      "thought": {
+        "background": "Initial macrocyclization attempts with PyAOP and COMU yielded only 22%, and TFFH failed. Optimization is needed.",
+        "gap": "How to improve the yield of macrocyclization.",
+        "decision": "Optimization of the COMU conditions by increasing the equivalents from 4.4 to 10 eq. will be attempted. A more effective strategy involving performing the cyclization at elevated temperature (70 °C) will also be explored, specifically with PyAOP and FDPP."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C(C)C)C1CCC(C)C(C(=O)N(C)C(C)OC(=O)CNC(=O)C(NC(=O)C2CCC(C)N2C(C)C)C(C)CC)N(C(C)C)C1=O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(C(C)C)C1CCC(C)C(C(=O)N(C)C(C)OC(=O)CNC(=O)C(NC(=O)C2CCC(C)N2C(C)C)C(C)CC)N(C(C)C)C1=O"
+        ],
+        "cond": "1) TFA/DCM 1:1, rt, 3 h\n2) FDPP, DIPEA, DMF (1 mM), 70 °C, 1 h",
+        "reagents": [
+          "TFA",
+          "FDPP",
+          "DIPEA"
+        ],
+        "solvent": "DCM, DMF",
+        "temperature": "rt, 70 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 52,
+        "observation": "Optimization of the COMU conditions by increasing the equivalents from 4.4 to 10 eq. improved the yield modestly to 39%. A more effective strategy involved performing the cyclization at elevated temperature (70 °C). Although, this drastically reduced the yield with COMU (to 9%), it significantly improved the yield with PyAOP and FDPP (pentafluorophenyl diphenyl-phosphinate), which was finally used for cyclizations in a 1 mM scale. However, attempts to scale up the cyclization resulted in a decreased yield of 52%."
+      },
+      "evidence": {
+        "text_span": "Optimization of the COMU conditions by increasing the equivalents from 4.4 to 10 eq. improved the yield modestly to 39%. A more effective strategy involved performing the cyclization at elevated temperature (70 °C). Although, this drastically reduced the yield with COMU (to 9%), it significantly improved the yield with PyAOP and FDPP (pentafluorophenyl diphenyl-phosphinate), which was finally used for cyclizations in a 1 mM scale. However, attempts to scale up the cyclization resulted in a decreased yield of 52%.",
+        "image_refs": [
+          "2978501167fb0a528c5602e6e4d1b5de204d2612baf4ab4ae8f4965fdf5ff858.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Macrocyclization has been achieved, yielding 24. The penultimate step is to remove the Alloc protecting group.",
+        "gap": "How to selectively remove the Alloc group from the N-methylated valine residue.",
+        "decision": "The Alloc protecting group from the N-methylated valine residue in 24 will be removed using Pd(PPh3)4 and dimethyl barbituric acid (DMBA) acting as an allyl scavenger."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C(C)C)C1CCC(C)C(C(=O)N(C)C(C)OC(=O)CNC(=O)C(NC(=O)C2CCC(C)N2C(C)C)C(C)CC)N(C(C)C)C1=O"
+        ],
+        "product_smiles": [],
+        "cond": "DMBA, cat. Pd(PPh3)4, DCM, rt, 2.5 h",
+        "reagents": [
+          "DMBA",
+          "Pd(PPh3)4"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The Alloc protecting group was successfully removed."
+      },
+      "evidence": {
+        "text_span": "The penultimate step involved removal of the Alloc protecting group from the N-methylated valine residue in 24. This was achieved using Pd(PPh3)4 and dimethyl barbituric acid (DMBA) acting as an allyl scavenger.",
+        "image_refs": [
+          "2978501167fb0a528c5602e6e4d1b5de204d2612baf4ab4ae8f4965fdf5ff858.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Alloc protecting group has been removed, liberating the amine. The final step is acylation to form mycoplanecin A.",
+        "gap": "How to acylate the liberated amine with 2-oxobutanoic acid.",
+        "decision": "The liberated amine will be acylated with 2-oxobutanoic acid by treatment with the corresponding acid chloride, to furnish mycoplanecin A."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [
+          "CCOC(=O)N(C(C)C)C1CCC(C)C(C(=O)N(C)C(C)OC(=O)CNC(=O)C(NC(=O)C2CCC(C)N2C(C)C)C(C)CC)N(C(C)C)C1=O"
+        ],
+        "cond": "2-oxobutanoic acid, oxalyl chloride, NMM, cat. DMF, DCM, 0 °C -> rt, 19 h",
+        "reagents": [
+          "2-oxobutanoic acid",
+          "oxalyl chloride",
+          "NMM",
+          "DMF"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C to rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Mycoplanecin A was furnished in good yield (70%)."
+      },
+      "evidence": {
+        "text_span": "Finally, the liberated amine was acylated with 2- oxobutanoic acid by treatment with the corresponding acid chloride, to furnish mycoplanecin A in good yield.",
+        "image_refs": [
+          "2978501167fb0a528c5602e6e4d1b5de204d2612baf4ab4ae8f4965fdf5ff858.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 5.2,
+        "unit": "%",
+        "interpretation": "Overall yield for the total synthesis."
+      },
+      "Longest Linear Steps": {
+        "value": 18,
+        "unit": "steps",
+        "interpretation": "Number of steps in the longest linear sequence."
+      }
+    },
+    "significance": "This work describes the first total synthesis of mycoplanecin A, providing chemical access for further biological investigation and analogue development against Mycobacterium tuberculosis. Key features include the synthesis of unusual trans-4-alkyl-L-prolines via Matteson homologation and a successful macrocyclization strategy."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.5c02803",
+      "pmcid": "PMC12362602",
+      "title": "Total Synthesis of Mycoplanecin A.",
+      "authors": "Papadopoulos E, Junk L, Kazmaier U.",
+      "journal": "Org Lett",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12362602?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/183f9489-1857-4a42-85e9-11e2df2698b8.zip",
+      "parsed_at": "2026-05-11T06:26:00.290368+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 36,
+    "parseable": 35,
+    "canonicalized": 35,
+    "invalid": 1,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)C[C@H]1N(C(=O)[C@H](C)N(C)C(=O)[C@H](C)OC(=O)CNC(=O)OCC2c3ccccc3-c4ccccc42"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

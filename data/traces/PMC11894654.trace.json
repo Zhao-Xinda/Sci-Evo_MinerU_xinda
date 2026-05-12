@@ -1,0 +1,941 @@
+{
+  "trace_id": "TS-PMC11894654",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Hyperforin",
+    "smiles": "CC(C)=CCC[C@H]1C(=O)C2(CC=C(C)C)CC(C)(C)C(=C(CC=C(C)C)C1O)C2=O",
+    "natural_product_class": "polycyclic polyprenylated acylphloroglucinol",
+    "structural_features": {
+      "stereocenters": 5,
+      "ring_systems": "bicyclo[3.3.1]nonane",
+      "key_motifs": [
+        "bicyclo[3.3.1]nonane-2,4,9-trione",
+        "prenyl groups",
+        "acylphloroglucinol"
+      ]
+    },
+    "motivation": "Hyperforin is the flagship congener among polycyclic polyprenylated acylphloroglucinols due to its compelling and complex molecular architecture, coupled with remarkable biological activity, thus rendering it an appealing synthetic target for chemists over the past two decades. It has antidepressant, antibiotic, anti-inflammatory, and anticancer effects, and is a potential treatment for Alzheimer’s disease.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Shimizu",
+        "year": 2010,
+        "doi": "10.1002/anie.200906692",
+        "key_strategy": "Catalytic Asymmetric Total Synthesis"
+      },
+      {
+        "lead_author": "Sparling",
+        "year": 2013,
+        "doi": "10.1021/ja310991c",
+        "key_strategy": "Enantioselective Total Synthesis"
+      },
+      {
+        "lead_author": "Uwamori",
+        "year": 2013,
+        "doi": "10.1016/j.tetlet.2013.02.029",
+        "key_strategy": "Intramolecular Cyclopropanation"
+      },
+      {
+        "lead_author": "Bellavance",
+        "year": 2014,
+        "doi": "10.1002/anie.201402700",
+        "key_strategy": "Gold(I)-Catalyzed Carbocyclization"
+      },
+      {
+        "lead_author": "Ting",
+        "year": 2015,
+        "doi": "10.1021/jacs.5b03000",
+        "key_strategy": "Total Synthesis"
+      },
+      {
+        "lead_author": "Ji",
+        "year": 2022,
+        "doi": "10.1002/anie.202116136",
+        "key_strategy": "Enantioselective Total Synthesis"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "A linear total synthesis of hyperforin (1) in 17 steps from commercially available cyclooctatetraene (4), demonstrating a salient approach to selective C5-C9 bond formation in PPAP chemistry via transannular acylation."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C5-C9 bond formation",
+        "named_strategy": "transannular acylation",
+        "reasoning": "This strategy allows for the formation of the bicyclo[3.3.1]nonane-2,4,9-trione framework from a decorated eight-membered ring, which is a crucial missing piece in PPAP syntheses compared to typical six-membered ring precursors."
+      },
+      {
+        "bond_description": "Bridgehead substitutions at C5, C3, and C1",
+        "reasoning": "These are late-stage modifications to achieve the final hyperforin structure."
+      },
+      {
+        "bond_description": "Formation of decorated carboxylic acid 3",
+        "reasoning": "This intermediate is envisioned to be derived from commercially available cyclooctatetraene (COT) via multiple conjugate additions."
+      }
+    ],
+    "rationale": "The overall retrosynthetic idea is divided into three major steps: (1) derivation of decorated carboxylic acid 3 from cyclooctatetraene (4) via multiple conjugate additions, (2) generation of the key intermediate bicyclo[3.3.1]nonatrione 2 through transannular cyclization followed by consecutive oxidation, and (3) obtaining hyperforin (1) after subsequent bridgehead substitution of C5, C3, and C1. This approach is based on the perspective that the bicyclo[3.3.1]nonane framework can be viewed as a bridged eight-membered ring, offering a novel strategy compared to existing syntheses that typically use six-membered precursors."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Pineschi reported copper-catalyzed addition of organometallic nucleophiles to COT-monoepoxide (5), followed by a thermally induced 1,5-sigmatropic hydrogen shift to ketones. However, allylic substituents were not reported, and the quality of the Grignard reagent was critical.",
+        "gap": "Need to reliably introduce an allylic substituent (prenyl group) and ensure high yield and stability of the resulting allylic alcohol and subsequent ketone.",
+        "decision": "To introduce the prenyl group, chose copper-catalyzed addition of prenylmagnesium bromide to COT-monoepoxide (5). Extensive experimentation was necessary to identify factors ensuring a potent solution of prenylmagnesium bromide. The resulting allylic alcohol 6 was converted to ketone 7 directly after column chromatography due to instability."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C1=CC2=CC=CC(=C1)O2"
+        ],
+        "product_smiles": [
+          "C=C(C)CC[C@H]1C=CC=C[C@@H](O)C=C1"
+        ],
+        "rxn_smiles": "C=C(C)CCBr.C1=CC2=CC=CC(=C1)O2>>C=C(C)CC[C@H]1C=CC=C[C@@H](O)C=C1",
+        "reagents": [
+          "prenylmagnesium bromide"
+        ],
+        "catalyst": "CuCN",
+        "solvent": "ClCCl",
+        "temperature": "-78 °C",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Allylic alcohol 6 was obtained. It was unstable and converted to ketone 7 directly after column chromatography."
+      },
+      "evidence": {
+        "text_span": "Pineschi reported the copper-catalyzed addition of common organometallic nucleophiles to COT-monoepoxide (5), followed by a thermally induced 1,5-sigmatropic hydrogen shift of the resulting allylic alcohols to their respective ketones.12 The group successfully introduced methyl, ethyl, and butyl moieties but did not report the introduction of any allylic substituents.13 We initially found that the overall yields of prenylated alcohol 6 were highly dependent on the quality of the Grignard reagent prepared prior to the reaction (Scheme 2). Extensive experimentation was necessary to identify the factors that ensure a potent solution of prenylmagnesium bromide.14 Among the copper sources tested (CuTC, Cu(OTf)2·C6H6, and CuCN), only CuCN resulted in any reaction. Allylic alcohol 6 was converted into ketone 7 directly after column chromatography due to its instability, even under an argon atmosphere at −18 °C.",
+        "section": "main text",
+        "image_refs": [
+          "afd7ee5cc286ea3d8de7b79a4f0fcebd1b0de2baf5fc64c6e3251dfff7ae5eef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Allylic alcohol 6 was obtained and converted to ketone 7. The next step is to convert 6 to 7 via a 1,5-sigmatropic hydrogen shift.",
+        "gap": "The yields and ratio of ketones 7 and 8 (bicyclic ketone from 6π-electrocyclic ring closure of 7's enol form) were not reproducible when 6 was refluxed in toluene or heated neat to 80 °C. Ketone 8 was generally the main product.",
+        "decision": "Attempted to convert 6 to 7 by refluxing in toluene or heating neat to 80 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)CC[C@H]1C=CC=C[C@@H](O)C=C1"
+        ],
+        "product_smiles": [
+          "C=C(C)CC[C@H]1C=CC=CC(=O)C=C1",
+          "CC(C)=CCC[C@H]1[C@@H]2C=CC(=O)C[C@@H]21"
+        ],
+        "solvent": "Cc1ccccc1",
+        "temperature": "reflux or 80 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Ketones 7 and 8 were obtained, but yields and ratio were not reproducible. Ketone 8 was generally the main product. Unreacted alcohol 6 facilitated enolization, as ketone 7 remained unreactive in refluxing toluene."
+      },
+      "evidence": {
+        "text_span": "When compound 6 was refluxed in toluene or heated neat to 80 °C, ketones 7 and 8 were obtained. The yields and ratio of the ketones were not reproducible, but ketone 8 was generally the main product. Bicyclic ketone 8 results from a 6π- electrocyclic ring closure of the enol form of 7. We envisaged that unreacted alcohol 6 facilitates enolization, as ketone 7 remained unreactive in refluxing toluene.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Previous attempts to convert allylic alcohol 6 to ketone 7 resulted in irreproducible yields and significant formation of bicyclic ketone 8. Unreacted alcohol 6 seemed to facilitate enolization.",
+        "gap": "Need to shift the tautomeric equilibrium in favor of ketone 7 and achieve a high, reproducible yield.",
+        "decision": "To shift the tautomeric equilibrium in favor of ketone 7, added 1.1 equiv of NEt3 as a hydrogen bonding acceptor. This adjustment was expected to result in an excellent yield of ketone 7. Any byproduct 8 could be collected and subjected to reverse 6π-electrocyclic ring opening."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)CC[C@H]1C=CC=C[C@@H](O)C=C1"
+        ],
+        "product_smiles": [
+          "C=C(C)CC[C@H]1C=CC=CC(=O)C=C1"
+        ],
+        "reagents": [
+          "Et3N"
+        ],
+        "solvent": "c1ccccc1",
+        "temperature": "reflux",
+        "time": "overnight",
+        "stoichiometry": {
+          "Et3N": "1.1 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Ketone 7 was obtained in excellent yield. This allowed for multigram scale synthesis from cyclooctatetraene (4)."
+      },
+      "evidence": {
+        "text_span": "However, in the presence of octanol, the formation of ketone 8 was observed by TLC. The tautomeric equilibrium could be shifted in favor of ketone 7 with 1.1 equiv of NEt3, which acted as a hydrogen bonding acceptor during the reaction. This adjustment resulted in an excellent yield of 91% for ketone 7. From a practical perspective, any byproduct 8 could be collected and subjected to the reverse 6π-electrocyclic ring opening. Under the optimized conditions, we were able to easily synthesize 7 from cyclooctatetraene (4) on a multigram scale.",
+        "section": "main text",
+        "image_refs": [
+          "afd7ee5cc286ea3d8de7b79a4f0fcebd1b0de2baf5fc64c6e3251dfff7ae5eef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ketone 7 was successfully synthesized on a multigram scale.",
+        "gap": "Need to introduce a β-keto ester moiety and activate the double bond for subsequent conjugate additions.",
+        "decision": "To introduce the β-keto ester, performed a copper-mediated conjugate addition and trapped the respective enolate with 2-(trimethylsilyl)ethyl (TSE) cyanoformate. To ensure the syn conformation of the selenide and the proton at the tertiary center in the double bond regeneration sequence, reacted 9 slowly with PhSeCl at -100 °C, then oxidized with mCPBA, with excess 2-methyl-2-butene and NEt3 added to mimic the prenyl moiety and prevent over-oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)CC[C@H]1C=CC=CC(=O)C=C1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "MeLi",
+          "2-(trimethylsilyl)ethyl cyanoformate",
+          "NaH",
+          "PhSeCl",
+          "mCPBA",
+          "2-methyl-2-butene",
+          "Et3N"
+        ],
+        "catalyst": "CuCN",
+        "solvent": "C1CCOC1",
+        "temperature": "-78 to -40 °C (conjugate addition), -100 to -78 °C (selenation), -78 °C (oxidation)",
+        "time": "1 h (MeLi), 1.5 h (TSE cyanoformate), 1 h (NaH), 3 h (PhSeCl), 1.5 h (mCPBA)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "β-keto ester 9 was furnished in 95% yield (dr 3.8:1 for 9a/9b). Doubly activated Michael acceptor 10 was obtained in 68% overall yield after selenation and oxidation, considering the two adjacent tertiary centers of 9."
+      },
+      "evidence": {
+        "text_span": "Simple copper-mediated conjugate addition and subsequent trapping of the respective enolate with 2-(trimethylsilyl)ethyl (TSE) cyanoformate furnished β-keto ester 9 in an excellent 95% yield. To ensure the syn conformation of the selenide and the proton at the tertiary center in our double bond regeneration sequence, 9 was reacted slowly with PhSeCl at −100 °C. The crude product was then oxidized with mCPBA,15 with excess 2-methyl-2-butene and NEt3 added at the end to mimic the prenyl moiety and prevent over-oxidation. Considering the two adjacent tertiary centers of 9, we were pleased with the 68% overall yield of doubly activated Michael acceptor 10.",
+        "section": "main text",
+        "image_refs": [
+          "afd7ee5cc286ea3d8de7b79a4f0fcebd1b0de2baf5fc64c6e3251dfff7ae5eef.jpg",
+          "00f02a522f5cd4e34e339f375d247848750ca4e8f37c3becf48959a450a8fb91.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Doubly activated Michael acceptor 10 was synthesized. The next step is to implement the homoprenylic side chain via conjugate addition.",
+        "gap": "Need to find conditions for the conjugate addition of the homoprenylic side chain to 10 without degradation or side reactions.",
+        "decision": "Attempted conjugate addition using Cu(OTf)2·C6H6 or CuCN as copper sources."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [],
+        "catalyst": "Cu(OTf)2.C6H6 or CuCN"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "No product was obtained. Merely, degradation of starting material 10 was observed above -30 °C."
+      },
+      "evidence": {
+        "text_span": "Initial attempts to implement the homoprenylic side chain were unsuccessful. Reactions conducted in the presence of Cu(OTf)2·C6H6 or CuCN yielded no product. Merely, degradation of starting material 10 could be observed above −30 °C.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempts with Cu(OTf)2·C6H6 or CuCN failed due to degradation. Need to find a suitable copper source and conditions for conjugate addition.",
+        "gap": "Need to achieve the desired ester 11 with good yield and control over diastereoselectivity.",
+        "decision": "Attempted conjugate addition with CuBr·SMe2 at -40 °C overnight."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "homoprenylmagnesium bromide"
+        ],
+        "catalyst": "CuBr.SMe2",
+        "solvent": "C1CCOC1",
+        "temperature": "-40 °C",
+        "time": "overnight"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 47,
+        "failure_mode": "side_product_dominant",
+        "observation": "Desired ester 11 was obtained in 47% yield, accompanied by 20% of enol 12 (from vinylogous deprotonation and double bond isomerization). 11 was a mixture of three diastereomers (11a:11b:11c = 6:1:1, anti/syn 3:1)."
+      },
+      "evidence": {
+        "text_span": "With CuBr·SiMe2 at −40 °C, the desired ester 11 was obtained in 47% yield, accompanied by 20% of enol 12 (Table 1, entry 1). The latter results from vinylogous deprotonation, followed by double bond isomerization. Intense NMR analysis and multiple chromatography steps revealed that 11 was obtained as a mixture of three diastereomers; 11c can be separated using petroleum ether and DCM in a 1:2 ratio. NOESY experiments led to the structural assignments, as shown in Table 1. Although the desired diastereomer 11d was not formed in this reaction, the good anti:syn ratio of 3:1, referring to the relative configuration of the prenyl and homoprenyl substituents, would ultimately allow us to generate 11d from 11a through epimerization.",
+        "section": "main text",
+        "image_refs": [
+          "ad06743f16b136870abc4963560979b1402da6fe09581705e6b58e7a459dd7b1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Conjugate addition with CuBr·SMe2 gave 11 in low yield with significant side product 12 and poor diastereoselectivity. Need to improve yield and control diastereoselectivity.",
+        "gap": "Need to find conditions that favor the desired diastereomer 11d and minimize side products.",
+        "decision": "Initiated optimization work using TMSCl as an activating agent and HMPA to enhance nucleophilicity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "homoprenylmagnesium bromide",
+          "TMSCl",
+          "HMPA"
+        ],
+        "catalyst": "CuI",
+        "solvent": "C1CCOC1",
+        "temperature": "-78 °C to rt",
+        "time": "overnight"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 23,
+        "failure_mode": "side_product_dominant",
+        "observation": "The sole product obtained was silyl ether 13 (23% yield)."
+      },
+      "evidence": {
+        "text_span": "We initiated optimization work using TMSCl as an activating agent and HMPA to enhance the nucleophilicity. Under these conditions, the sole product obtained was silyl ether 13 (Table 1, entry 2).",
+        "section": "main text",
+        "image_refs": [
+          "ad06743f16b136870abc4963560979b1402da6fe09581705e6b58e7a459dd7b1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 7,
+      "thought": {
+        "background": "Previous attempts for conjugate addition resulted in low yields, side products, and poor diastereoselectivity. TMSCl and HMPA led to silyl ether 13 as the sole product.",
+        "gap": "Need to improve yield and control diastereoselectivity, inspired by successful allylmagnesium bromide additions to β-ketoesters.",
+        "decision": "Explored the use of soluble CuI with LiCl and TMSCl, inspired by Stoffman and Clive's work. Conducted the reaction at -78 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "homoprenylmagnesium bromide",
+          "LiCl",
+          "TMSCl"
+        ],
+        "catalyst": "CuI",
+        "solvent": "C1CCOC1",
+        "temperature": "-78 °C to -55 °C",
+        "time": "2.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Yields increased to 77% for 11, but the anti:syn ratio decreased to 1:3.4. 10% of enol 12 was also formed."
+      },
+      "evidence": {
+        "text_span": "Inspired by the work of Stoffman and Clive,16 which involved adding allylmagnesium bromide to an equally activated β-ketoester with great yields, we explored the use of soluble CuI with LiCl and TMSCl.17 Under these conditions at −78 °C, yields increased to 77%, although the anti:syn ratio decreased to 1:3.4 (Table 1, entry 3).",
+        "section": "main text",
+        "image_refs": [
+          "ad06743f16b136870abc4963560979b1402da6fe09581705e6b58e7a459dd7b1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "Conjugate addition with CuI, LiCl, and TMSCl at -78 °C gave 77% yield but a poor anti:syn ratio (1:3.4).",
+        "gap": "Need to determine if the change in anti:syn ratio is due to Lewis acid activation or temperature dependency, and improve the anti:syn ratio.",
+        "decision": "Repeated the experiment at -20 °C to investigate temperature dependency."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "homoprenylmagnesium bromide",
+          "LiCl",
+          "TMSCl"
+        ],
+        "catalyst": "CuI",
+        "solvent": "C1CCOC1",
+        "temperature": "-20 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "observation": "11 was obtained in 63% yield with an anti:syn ratio of 1.3:1. Enol 12 was also formed. This improved the anti:syn ratio compared to -78 °C."
+      },
+      "evidence": {
+        "text_span": "To determine whether the change in the anti:syn ratio was due to Lewis acid activation or temperature dependency, we repeated the experiment at −20 °C. At this temperature, 11 was obtained in 63% yield with an anti:syn ratio of 1.3:1 (Table 1, entry 4). Additionally, attempts using catalytic quantities of copper did not lead to any reaction as did the change from homoprenylmagnesium bromide to bishomoprenyl zinc.18",
+        "section": "main text",
+        "image_refs": [
+          "ad06743f16b136870abc4963560979b1402da6fe09581705e6b58e7a459dd7b1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Conjugate addition to 10 yielded a mixture of diastereomers of 11 (11a-c). The desired diastereomer 11d was not directly formed.",
+        "gap": "Need to obtain the desired diastereomer 11d from the mixture of 11a-c.",
+        "decision": "Attempted to use catalytic quantities of copper for the conjugate addition or change from homoprenylmagnesium bromide to bishomoprenyl zinc."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "homoprenylmagnesium bromide",
+          "bishomoprenyl zinc"
+        ],
+        "catalyst": "Cu (catalytic quantities)"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Attempts using catalytic quantities of copper did not lead to any reaction, nor did changing from homoprenylmagnesium bromide to bishomoprenyl zinc."
+      },
+      "evidence": {
+        "text_span": "Additionally, attempts using catalytic quantities of copper did not lead to any reaction as did the change from homoprenylmagnesium bromide to bishomoprenyl zinc.18",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The conjugate addition yielded a diastereomeric mixture of 11a-c. The desired diastereomer 11d was not directly formed but could potentially be generated through epimerization from 11a.",
+        "gap": "Need to obtain the desired diastereomer 11d from the diastereomeric mixture of 11a-c.",
+        "decision": "Subjected the diastereomeric mixture of 11a-c to thermodynamic equilibration of epimers using DBU in refluxing THF."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)=CC[C@@H]1C[C@H](C)CC(=O)C(=O)[C@@H]1CCC=C(C)C[Si](C)(C)CCO"
+        ],
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "reflux",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "The desired diastereomer 11d was obtained in 70% yield for each cycle of epimerization (based on 11a present). Diastereomer 11d was completely separable from the mixture."
+      },
+      "evidence": {
+        "text_span": "The diastereomeric mixture of 11a−c was next subjected to the thermodynamic equilibration of epimers (Scheme 3). The desired diastereomer 11d was obtained in 70% yield for each cycle of epimerization, based on the amount of 11a present in the recovered diastereomeric mixture of 11a−c. Fortunately, diastereomer 11d was found to be completely separable from the mixture.",
+        "section": "main text",
+        "image_refs": [
+          "566bc3924dd4ff3f7600a4ff6010a75a635e8a1232fc4c917c92c8b049302262.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Diastereomer 11d was successfully obtained. The next step is to form the enol ether 14.",
+        "gap": "Need to find conditions for enol ether formation of 11d without decomposition.",
+        "decision": "Reacted 11d with substoichiometric amounts of (±)-CSA and 2 equiv of HC(OMe)3 in methanol. Also attempted with PTSA, 5-sulfosalicylic acid, catalytic H2SO4, AcOH, TFA, Amberlyst 15, or HCl in 1,4-dioxane, and TiCl4 in methanol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CC[C@@H]1C[C@H](C)CC(=O)C(=O)[C@@H]1CCC=C(C)C[Si](C)(C)CCO"
+        ],
+        "product_smiles": [
+          "COC1=CC[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C[Si](C)(C)CCO)C1=O"
+        ],
+        "reagents": [
+          "(±)-CSA",
+          "HC(OMe)3",
+          "PTSA",
+          "5-sulfosalicylic acid",
+          "H2SO4",
+          "AcOH",
+          "TFA",
+          "Amberlyst 15",
+          "HCl"
+        ],
+        "catalyst": "TiCl4",
+        "solvent": "CO",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 11,
+        "failure_mode": "decomposition",
+        "observation": "Diastereomer 11d reacted much more slowly than 11a and 11c, yielding only 11% of enol ether 14 and 57% recovered starting material after 2 h. Changing the acid to PTSA or 5-sulfosalicylic acid gave similar results with slightly diminished yields. Catalytic amounts of H2SO4, AcOH, TFA, Amberlyst 15, or HCl in 1,4-dioxane proved futile, as most product and starting material degraded. TiCl4 in methanol, while working for 11c, caused decomposition for 11d before major product formation."
+      },
+      "evidence": {
+        "text_span": "Diastereomer 11a with minor impurities of 11b, separated isomer 11c, and separated isomer 11d were reacted with substoichiometric amounts of (±)-CSA and 2 equiv of HC(OMe)3 in methanol. After 2 h, we observed full conversion of 11a as well as 11c, both resulting in a 67% yield of their respective enol ethers. Surprisingly, 11d reacted much more slowly, yielding only 11% of enol ether 14 and 57% of the recovered starting material. Ultimately, optimization of the enol ether formation of 11d was necessary. The best results were achieved using 1 equiv of (±)-CSA and terminating the reaction after 3.5 h to prevent decomposition of both the product and the starting material. Changing the acid to PTSA or 5-sulfosalicylic acid gave the same results with slightly diminished yields. Catalytic amounts of H2SO4, AcOH, TFA, Amberlyst 15, or HCl in 1,4-dioxane proved to be futile, as most of the product and starting material degraded. Due to the more acidic proton at C1, any efforts to generate 14 via anionic pathways were unsuccesful. Although Lewis acid-catalyzed enol ether formation with TiCl4 in methanol19 worked well for diastereomer 11c, delivering 60% of the respective enol ether and 33% of the re-isolated starting material, no major product formation for diastereomer 11d was observed by TLC or NMR before decomposition.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "Initial attempts to form enol ether 14 from 11d resulted in low yield and decomposition. 11d reacted much slower than other diastereomers.",
+        "gap": "Need to optimize conditions for enol ether formation of 11d to prevent decomposition and achieve higher yield.",
+        "decision": "Optimized the enol ether formation of 11d using 1 equiv of (±)-CSA and terminating the reaction after 3.5 h to prevent decomposition."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CC[C@@H]1C[C@H](C)CC(=O)C(=O)[C@@H]1CCC=C(C)C[Si](C)(C)CCO"
+        ],
+        "product_smiles": [
+          "COC1=CC[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C[Si](C)(C)CCO)C1=O"
+        ],
+        "reagents": [
+          "(±)-CSA",
+          "HC(OMe)3"
+        ],
+        "solvent": "CO",
+        "temperature": "60 °C",
+        "time": "3.5 h",
+        "stoichiometry": {
+          "(±)-CSA": "1 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "observation": "Enol ether 14 was obtained in 63% yield (BRSM). The assigned relative configuration of 11d was confirmed by X-ray crystallography of 14."
+      },
+      "evidence": {
+        "text_span": "Satisfyingly, at this point we were able to confirm the assigned relative configuration of 11d by X-ray crystallography of 14. Ultimately, optimization of the enol ether formation of 11d was necessary. The best results were achieved using 1 equiv of (±)-CSA and terminating the reaction after 3.5 h to prevent decomposition of both the product and the starting material.",
+        "section": "main text",
+        "image_refs": [
+          "566bc3924dd4ff3f7600a4ff6010a75a635e8a1232fc4c917c92c8b049302262.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enol ether 14 was successfully synthesized and its structure confirmed. The next step is to release carboxylic acid 3.",
+        "gap": "Need to cleave the TSE ester to release carboxylic acid 3 in high yield.",
+        "decision": "Released carboxylic acid 3 from 14 using TBAF in THF at 40 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C[Si](C)(C)CCO)C1=O"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC[C@H]1C(=O)C(O)=CC[C@@H](C)C[C@H]1CC=C(C)C"
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "40 °C",
+        "time": "2.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Carboxylic acid 3 was released in nearly quantitative yield."
+      },
+      "evidence": {
+        "text_span": "With 11d in hand, we released carboxylic acid 3 in nearly quantitative yield.",
+        "section": "main text",
+        "image_refs": [
+          "566bc3924dd4ff3f7600a4ff6010a75a635e8a1232fc4c917c92c8b049302262.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carboxylic acid 3 was obtained in high yield. The next step is the transannular acylation to form allylic alcohol 15.",
+        "gap": "Need to perform the cyclization without side reactions with intermediate cationic species.",
+        "decision": "Used 2,6-di-tert-butyl-4-methylpyridine as an additive and lower reaction temperatures to avoid side reactions. Performed the reaction with TFAA in CHCl3, followed by saturated K2CO3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC[C@H]1C(=O)C(O)=CC[C@@H](C)C[C@H]1CC=C(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC[C@H]1C(=O)C(O)=CC[C@@H](C)C[C@H]1CC=C(C)C"
+        ],
+        "reagents": [
+          "2,6-di-tert-butyl-4-methylpyridine",
+          "TFAA",
+          "K2CO3"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "-40 °C (acylation), rt (workup)",
+        "time": "30 min (acylation), 1 h (workup)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "dr": "1.4:1.0 (exo/endo)",
+        "observation": "Allylic alcohol 15 was obtained in 69% yield, comparable to model studies. The additive and lower temperature were crucial to avoid side reactions."
+      },
+      "evidence": {
+        "text_span": "Unlike our initial cyclization protocol,20 the addition of 2,6-di-tert-butyl-4-methylpyridine21 to the natural product scaffold and the use of lower reaction temperatures were crucial to avoid side reactions with intermediate cationic species. The resulting 69% yield of allylic alcohol 15 is comparable to the result from our model studies.",
+        "section": "main text",
+        "image_refs": [
+          "566bc3924dd4ff3f7600a4ff6010a75a635e8a1232fc4c917c92c8b049302262.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Allylic alcohol 15 was successfully synthesized. The next step is the oxidation of 15 to ketone 16.",
+        "gap": "Need to find an effective oxidation method for the bicyclic PPAP scaffold to its 1,3,5-trione system, as this is known to be difficult.",
+        "decision": "Attempted standard oxidation procedures such as Swern, TPAP, hypervalent iodine, and manganese oxidants."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC[C@H]1C(=O)C(O)=CC[C@@H](C)C[C@H]1CC=C(C)C"
+        ],
+        "product_smiles": [
+          "COC1=CC[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C)C1=O"
+        ],
+        "reagents": [
+          "Swern reagents",
+          "TPAP",
+          "hypervalent iodine reagents",
+          "manganese oxidants"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Only trace amounts of ketone 16 were yielded. This aligns with literature reports on the difficulties of oxidizing a bicyclic PPAP scaffold to its 1,3,5-trione system."
+      },
+      "evidence": {
+        "text_span": "Following this, the next step involved the oxidation of 15 to ketone 16. Standard procedures such as Swern, TPAP, hypervalent iodine, and manganese oxidants yielded only trace amounts of ketone 16. This finding aligns with literature reports on the difficulties of oxidizing a bicyclic PPAP scaffold to its 1,3,5-trione system.22",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Standard oxidation procedures for 15 to 16 yielded only trace amounts.",
+        "gap": "Need to find an effective oxidation method for 15 to ketone 16.",
+        "decision": "Oxidized 15 using PCC with NaOAc as an additive."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC[C@H]1C(=O)C(O)=CC[C@@H](C)C[C@H]1CC=C(C)C"
+        ],
+        "product_smiles": [
+          "COC1=CC[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C)C1=O"
+        ],
+        "reagents": [
+          "PCC",
+          "NaOAc"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Ketone 16 was readily oxidized in 73% yield."
+      },
+      "evidence": {
+        "text_span": "However, we were pleased to find that 15 could be readily oxidized by using PCC with NaOAc as an additive.",
+        "section": "main text",
+        "image_refs": [
+          "566bc3924dd4ff3f7600a4ff6010a75a635e8a1232fc4c917c92c8b049302262.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ketone 16 was successfully synthesized. Bicyclo[3.3.1]nontraiones without bridgehead substituents are rare, and direct prenylation of C5 would lead to an intermediate from Barriault's synthesis.",
+        "gap": "Need to isomerize vinylogous ester 16 to its regioisomer 17, which is expected to be thermodynamically favored and more reactive for subsequent bridgehead substitution.",
+        "decision": "Isomerized 16 to 17 under standard conditions with PTSA and HC(OMe)3 in MeOH, followed by HCl to cleave the dimethyl acetal formed at C9."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C)C1=O"
+        ],
+        "product_smiles": [
+          "COC1=CC[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C)C1=O"
+        ],
+        "reagents": [
+          "PTSA",
+          "HC(OMe)3",
+          "HCl"
+        ],
+        "solvent": "CO",
+        "temperature": "50 °C",
+        "time": "42-50 h (isomerization), 25 min (HCl cleavage)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Regioisomer 17 was obtained in 70% yield. Isomerization was carried out under standard conditions, with HCl added at the end to cleave the dimethyl acetal formed simultaneously at C9."
+      },
+      "evidence": {
+        "text_span": "While direct prenylation of C5 would yield an intermediate known from Barriault’s synthesis of hyperforin (1),10d we chose to isomerize vinylogous ester 16 to its regioisomer. On the basis of previous reports, regioisomer 17 should be the thermodynamically favored product and expected to react more readily.24 Isomerization was carried out under standard conditions with the addition of HCl at the end to cleave the dimethyl acetal formed simultaneously at C9 during the reaction.25",
+        "section": "main text",
+        "image_refs": [
+          "566bc3924dd4ff3f7600a4ff6010a75a635e8a1232fc4c917c92c8b049302262.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Regioisomer 17 was successfully synthesized. The next step is bridgehead substitution.",
+        "gap": "Need to find a suitable base for bridgehead substitution without decomposition or reduction of the C9 ketone.",
+        "decision": "Attempted bridgehead substitution using LDA and LTMP, which are commonly used bases for this transformation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C)C1=O"
+        ],
+        "product_smiles": [
+          "COC1=C(CC=C(C)C)C[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C)C1=O"
+        ],
+        "reagents": [
+          "LDA",
+          "LTMP",
+          "prenyl bromide"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 37,
+        "failure_mode": "side_product_dominant",
+        "observation": "Both LDA and LTMP proved ineffective. LTMP led to complete decomposition. LDA resulted in the reduction of the C9 ketone and a poor 37% yield of the desired product 18."
+      },
+      "evidence": {
+        "text_span": "Next, we turned to bridgehead substitution. While LDA and LTMP are commonly used bases for this transformation, both proved to be ineffective in our case. LTMP led to complete decomposition, and LDA resulted in the reduction of the C9 ketone and a poor 37% yield of the desired product 18.26",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 19,
+      "thought": {
+        "background": "Common bases like LDA and LTMP were ineffective for bridgehead substitution of 17, leading to decomposition or low yield with C9 ketone reduction.",
+        "gap": "Need to find a suitable base that provides good yield for bridgehead substitution without side reactions.",
+        "decision": "Used 2 equiv of lithium dicyclohexylamide for the bridgehead substitution with prenyl bromide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C)C1=O"
+        ],
+        "product_smiles": [
+          "COC1=C(CC=C(C)C)C[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C)C1=O"
+        ],
+        "reagents": [
+          "Cy2NLi",
+          "prenyl bromide"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "-78 °C",
+        "time": "15 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Product 18 was afforded in a good 73% yield using lithium dicyclohexylamide."
+      },
+      "evidence": {
+        "text_span": "Fortunately, we found that using just 2 equiv of the rather unusual lithium dicyclohexylamide in the reaction afforded 18 in a good 73% yield.",
+        "section": "main text",
+        "image_refs": [
+          "566bc3924dd4ff3f7600a4ff6010a75a635e8a1232fc4c917c92c8b049302262.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 18 was successfully synthesized. Maimone's previous work provides a known sequence for completing the synthesis from this intermediate.",
+        "gap": "Need to complete the synthesis of hyperforin (1) from 18.",
+        "decision": "Followed Maimone's sequence involving C3 chlorination, C1 acylation, metal-halogen exchange enabling substitution at C3, and Krapcho-type demethylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=C(CC=C(C)C)C[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C)C1=O"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC[C@H]1C(=O)C2(CC=C(C)C)CC(C)(C)C(=C(CC=C(C)C)C1O)C2=O"
+        ],
+        "rxn_smiles": "COC1=C(CC=C(C)C)C[C@@H](C)C[C@@H](CC=C(C)C)[C@@H](CCC=C(C)C)C1=O>>CC(C)=CCC[C@H]1C(=O)C2(CC=C(C)C)CC(C)(C)C(=C(CC=C(C)C)C1O)C2=O",
+        "named_reaction": "Krapcho-type demethylation",
+        "free_text_reagents": "C3 chlorination reagents, C1 acylation reagents, metal-halogen exchange reagents"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Hyperforin (1) was successfully synthesized from 18 following Maimone's sequence."
+      },
+      "evidence": {
+        "text_span": "In light of Maimone’s previous work, we successfully completed our synthetic venture from 18.10e The sequence involving C3 chlorination, C1 acylation, metal− halogen exchange enabling substitution at C3, and Krapchotype demethylation proceeded as described.",
+        "section": "main text",
+        "image_refs": [
+          "566bc3924dd4ff3f7600a4ff6010a75a635e8a1232fc4c917c92c8b049302262.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated, but 17 steps from cyclooctatetraene."
+      },
+      "Longest Linear Steps": {
+        "value": 17,
+        "unit": "steps",
+        "interpretation": "Total steps in the linear synthesis."
+      },
+      "Total Steps": {
+        "value": 17,
+        "unit": "steps",
+        "interpretation": "Total steps in the linear synthesis."
+      },
+      "Failed Attempts Count": {
+        "value": 6,
+        "unit": "count",
+        "interpretation": "Number of explicitly mentioned failed attempts."
+      }
+    },
+    "significance": "This synthesis provides significant insights into cyclooctane chemistry, demonstrates a salient approach to selective C5-C9 bond formation in PPAP chemistry via transannular acylation, and employs an adaptive intermediate that offers full control over derivative-specifying positions around the bicyclo[3.3.1]nonane framework. It represents an innovative linear total synthesis of hyperforin."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.5c00243",
+      "pmcid": "PMC11894654",
+      "title": "Transannular Acylation Facilitates C&lt;sub&gt;5&lt;/sub&gt;-C&lt;sub&gt;9&lt;/sub&gt; Bond Formation in Hyperforin Total Synthesis.",
+      "authors": "König JA, Frey S, Morgenstern B, Jauch J.",
+      "journal": "Org Lett",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11894654?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/b5e4f282-f1f9-4661-bd45-0369a9ce2c7e.zip",
+      "parsed_at": "2026-05-11T06:20:31.517598+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 45,
+    "parseable": 30,
+    "canonicalized": 30,
+    "invalid": 15,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(=CCC[C@H]1CC=CCC(=C(C)C(=O)OTSE)C1)C",
+      "CC(=CCC[C@H]1CC=CCC(=C(C)C(=O)OTSE)C1)C",
+      "CC(=CCC[C@H]1CC=CCC(=C(C)C(=O)OTSE)C1)C",
+      "CC(C)=CCC[C@@H]1C(=O)C(=O)C[C@H](C)[C@@H]1C=C(C)C.O=C(OTSE)C",
+      "CC(C)=CCC[C@H]1C=CC=C(C)C(=O)C1OTSE",
+      "CC(=CCC[C@H]1CC=CCC(=C(C)C(=O)OTSE)C1)C",
+      "CC(C)=CCC[C@H]1C=CC=C(C)C(OTSE)C1OTMS",
+      "CC(=CCC[C@H]1CC=CCC(=C(C)C(=O)OTSE)C1)C",
+      "CC(C)=CCC[C@@H]1C(=O)C(=O)C[C@H](C)[C@@H]1C=C(C)C.O=C(OTSE)C",
+      "CC(=CCC[C@H]1CC=CCC(=C(C)C(=O)OTSE)C1)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

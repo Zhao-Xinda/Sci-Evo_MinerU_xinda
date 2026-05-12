@@ -1,0 +1,987 @@
+{
+  "trace_id": "TS-PMC12258682",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Isodaphlongamine H",
+    "smiles": "CC1C[C@H]2[C@H]3CC(=O)[C@H]4C[C@@H](C[C@H]5C[C@H]5C=C3N2C[C@H]1C)OC4(C)C",
+    "natural_product_class": "Daphniphyllum alkaloids",
+    "structural_features": {
+      "stereocenters": 10,
+      "ring_systems": "pentacyclic",
+      "key_motifs": [
+        "lactam",
+        "isoxazolidine"
+      ]
+    },
+    "motivation": "Isodaphlongamine H is an unnatural product, but the biogenetically related 5-epi isomer of daphlongamine H. It exhibited antiproliferative effects comparable to natural deoxycalyciphylline B against several human cancer cell lines. The authors aim to develop a general synthetic strategy for biologically active complex alkaloids using a lactam strategy.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Hanessian",
+        "year": 2016,
+        "doi": "10.1002/anie.201600000",
+        "key_strategy": "First total synthesis of isodaphlongamine H."
+      },
+      {
+        "lead_author": "Hugelshofer and Sarpong",
+        "year": 2019,
+        "doi": "10.1021/jacs.9b02000",
+        "key_strategy": "Flexible synthetic route for both daphlongamine H and isodaphlongamine H."
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Achieve total synthesis of isodaphlongamine H using a lactam strategy, demonstrating the utility of iridium-catalyzed reductive [3+2] cycloaddition."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond formation to construct pentacyclic core",
+        "named_strategy": "Intramolecular Hosomi–Sakurai allylation",
+        "reasoning": "This reaction is known to proceed from the opposite face of the silyl group, allowing for stereocontrol at C10."
+      },
+      {
+        "bond_description": "Amide carbonyl functionalization and ring formation",
+        "named_strategy": "Iridium-catalyzed reductive [3+2] cycloaddition of N-hydroxylactam",
+        "reasoning": "This reaction forms a tricyclic isoxazolidine and a C8 quaternary carbon center in a one-pot process, providing a key intermediate for the complex alkaloid structure."
+      },
+      {
+        "bond_description": "Alkylation at alpha-position of lactam",
+        "reasoning": "To introduce the long aliphatic substituent and establish the cis-configuration of the lactam."
+      }
+    ],
+    "rationale": "The strategy leverages a lactam intermediate as a cyclic amine surrogate, which is more stable and allows for diverse reaction conditions. The key is the functionalization of the inert amide carbonyl group via iridium-catalyzed reductive functionalization. The synthesis aims to build the pentacyclic core through intramolecular Hosomi-Sakurai allylation."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of chiral lactam 9 is a crucial starting point. Diester 18 is commercially available.",
+        "gap": "Need to convert diester 18 to carboxylic acid 19 with high enantioselectivity.",
+        "decision": "To obtain carboxylic acid 19 with high enantioselectivity, chose enantioselective hydrolysis of dimethyl ester 18 with pig liver esterase, expecting high yield and ee."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)CC(C)CC(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)CC(C)CC(=O)O"
+        ],
+        "reagents": [
+          "pig liver esterase",
+          "NaOH"
+        ],
+        "solvent": "H2O",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "ee_percent": 97,
+        "observation": "Enantioselective hydrolysis provided carboxylic acid 19 in 97% yield and 97% ee."
+      },
+      "evidence": {
+        "text_span": "Enantioselective hydrolysis of dimethyl ester 18 with a pig liver esterase provided carboxylic acid 19 in 97% yield 97% ee).",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carboxylic acid 19 is available.",
+        "gap": "Need to convert carboxylic acid 19 to carbamate 20.",
+        "decision": "To convert 19 to carbamate 20, chose Curtius rearrangement with DPPA followed by addition of tBuOH in the presence of CuCl, expecting the formation of the carbamate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)CC(C)CC(=O)O"
+        ],
+        "product_smiles": [
+          "COC(=O)CC(C)CCNC(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "DPPA",
+          "Et3N",
+          "tBuOH",
+          "CuCl"
+        ],
+        "solvent": "toluene",
+        "temperature": "80 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Curtius rearrangement of 19 with DPPA, followed by addition of tBuOH in the presence of CuCl at 80 °C, gave carbamate 20."
+      },
+      "evidence": {
+        "text_span": "The Curtius rearrangement of 19 with DPPA,[83–85] followed by addition of tBuOH in the presence of CuCl[86] at 80 °C, gave carbamate 20",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Carbamate 20 is available.",
+        "gap": "Need to convert carbamate 20 to lactam 9.",
+        "decision": "To convert carbamate 20 to lactam 9, chose treatment with Me3Al, expecting cyclization to the lactam."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)CC(C)CCNC(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CC1CC(=O)N(C(=O)OC(C)(C)C)C1"
+        ],
+        "reagents": [
+          "Me3Al"
+        ],
+        "solvent": "toluene",
+        "temperature": "-20 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Carbamate 20 was converted to lactam 9 with Me3Al."
+      },
+      "evidence": {
+        "text_span": "carbamate 20, which was converted to lactam 9[87] with Me3Al.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Chiral lactam 9 is available.",
+        "gap": "Need to install an aliphatic substituent via alkylation with triflate 10.",
+        "decision": "To install the aliphatic substituent, chose deprotonation of 9 with KHMDS and subsequent addition of triflate 10, expecting alkylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC(=O)N(C(=O)OC(C)(C)C)C1",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "toluene/HMPA = 2",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "observation": "Deprotonation of 9 with KHMDS and subsequent addition of freshly prepared triflate 10 gave cis- and trans-11 in 69% combined yield (cis:trans = 1:14).",
+        "failure_mode": "wrong_stereochemistry"
+      },
+      "evidence": {
+        "text_span": "Deprotonation of 9 with KHMDS in toluene Δ/HMPA = 2 at −78 °C and subsequent addition of freshly prepared triflate 10 gave cis- and trans-11 in 69% combined yield (cis:trans = 1:14). Although the long aliphatic substituent was successfully installed by alkylation, undesired stereoselectivity was observed favoring the trans configuration.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Alkylation of lactam 9 with triflate 10 yielded a mixture of cis- and trans-11, with trans-11 being the major product (cis:trans = 1:14).",
+        "gap": "Need to improve the cis-selectivity for lactam 11.",
+        "decision": "Attempted epimerization of 11 (cis:trans = 1:14) by deprotonation with KHMDS in toluene without iBu3Al, followed by addition of dimethyl malonate as a proton source, expecting improved cis-selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS",
+          "dimethyl malonate"
+        ],
+        "solvent": "toluene",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 67,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "Epimerization without iBu3Al resulted in 67% yield with a cis:trans ratio of 1.0:1, which was not satisfactory."
+      },
+      "evidence": {
+        "text_span": "w/o iBu3Al 67%, cis:trans = 1.0:1",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Epimerization of 11 (cis:trans = 1:14) was attempted, but the cis-selectivity was not optimal.",
+        "gap": "Need to improve the cis-selectivity for lactam 11.",
+        "decision": "Attempted epimerization using THF instead of toluene as solvent, expecting a different cis:trans ratio."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS",
+          "dimethyl malonate"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 78,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "Use of THF instead of toluene resulted in 78% yield with a cis:trans ratio of 2.7:1, which was lower than desired."
+      },
+      "evidence": {
+        "text_span": "THF instead of toluene 78%, cis:trans = 2.7:1",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Epimerization of 11 (cis:trans = 1:14) was attempted, but the cis-selectivity was not optimal.",
+        "gap": "Need to improve the cis-selectivity for lactam 11.",
+        "decision": "Attempted epimerization using AcOH as a proton source instead of dimethyl malonate, expecting a different cis:trans ratio."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS",
+          "AcOH"
+        ],
+        "solvent": "toluene",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 81,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "Use of AcOH showed poor selectivity, with 81% yield and a cis:trans ratio of 1.1:1."
+      },
+      "evidence": {
+        "text_span": "AcOH as a protone source 81%, cis:trans = 1.1:1",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "Alkylation of lactam 9 with triflate 10 resulted in poor cis-selectivity (cis:trans = 1:14). Previous attempts to improve cis-selectivity via epimerization were not optimal.",
+        "gap": "Need to find conditions for kinetic epimerization to favor cis-11.",
+        "decision": "To improve cis-selectivity, chose kinetic epimerization of 11 with KHMDS in toluene in the presence of iBu3Al, followed by addition of dimethyl malonate as a proton source, expecting the formation of a six-membered chelated intermediate to enhance cis-selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS",
+          "iBu3Al",
+          "dimethyl malonate"
+        ],
+        "solvent": "toluene",
+        "temperature": "-78 °C to RT"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 49,
+        "observation": "The developed conditions were scalable (6.9 g scale), giving cis-11 in 49% yield (cis:trans = 4.1:1). Addition of iBu3Al was crucial, probably due to the formation of a six-membered chelated intermediate. Dimethyl malonate proved to be the best proton source.",
+        "regio_selectivity": "cis:trans = 4.1:1"
+      },
+      "evidence": {
+        "text_span": "After extensive study, we found epimerization at C2 was feasible under kinetic conditions. Thus, after deprotonation of 11 (100 mg scale, cis:trans = 1:14) with KHMDS in toluene at −78 °C in the presence of iBu3Al, dimethyl malonate was added as a proton source, giving a mixture of 11 in 83% combined yield favoring cis-11 (cis:trans 4.1:1).[88,89] Addition of iBu3Al was crucial probably due to the formation of the six-membered chelated intermediate through the Boc carbamate (w/o iBu Al: 67%, cis:trans 1.0:1). This chelation was also supported by the fact that the use of THF instead of toluene resulted in lower cis-selectivity (78%, cis:trans 2.7:1). Dimethyl malonate proved to be the best proton source. For example, use of AcOH showed poor selectivity (81%, cis:trans 1.1:1). The developed conditions were scalable (6.9 g scale), giving cis-11 and trans-11 in 49% and 14% yields, respectively.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "cis-11 was successfully obtained.",
+        "gap": "Need to cleave the Boc group from cis-11 to obtain 21.",
+        "decision": "To cleave the Boc group, chose treatment of cis-11 with formic acid, expecting deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "HCO2H"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "RT"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Cleavage of the Boc group in cis-11 with formic acid provided 21 in 89% yield."
+      },
+      "evidence": {
+        "text_span": "Cleavage of the Boc group in cis-11 with formic acid provided 21 in 89% yield.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Chiral secondary lactam 21 is available. N-oxidation of secondary amides is challenging.",
+        "gap": "Need to convert secondary amide 21 to imino ether 22.",
+        "decision": "To convert 21 to imino ether 22, chose treatment with the Meerwein reagent, expecting imino ether formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Me3O.BF4"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "RT"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "Secondary amide 21 was converted to imino ether 22 with the Meerwein reagent in 83% yield."
+      },
+      "evidence": {
+        "text_span": "First, secondary amide 21 was converted to imino ether 22 with the Meerwein reagent.[90–93]",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Imino ether 22 is available.",
+        "gap": "Need to convert imino ether 22 to N-hydroxylactam 12.",
+        "decision": "To convert 22 to 12, chose a two-step method: treatment with mCPBA and NaOAc to generate an unstable oxaziridine, followed by ring opening with oxalic acid and recyclization with K2CO3, expecting N-hydroxylactam formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "mCPBA",
+          "NaOAc",
+          "(COOH)2.2H2O",
+          "K2CO3"
+        ],
+        "solvent": "CH2Cl2, MeOH, H2O",
+        "temperature": "0 °C to RT"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "observation": "Treatment of 22 with mCPBA and NaOAc generated the unstable oxaziridine, which underwent ring opening with oxalic acid to give methyl ester 23. Addition of K2CO3 to 23 in a one-pot process caused recyclization, providing N-hydroxylactam 12 in 57% yield."
+      },
+      "evidence": {
+        "text_span": "Treatment of 22 with mCPBA and NaOAc generated the unstable oxaziridine, which underwent ring opening with oxalic acid in MeOH/H2O to give methyl ester 23. Addition of K2CO3 to 23 in a one-pot process caused recyclization, providing N-hydroxylactam 12 in 57% yield.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "N-hydroxylactam 12 is available. The goal is iridium-catalyzed reductive [3+2] cycloaddition to form isoxazolidine 14.",
+        "gap": "Need to optimize conditions for the intramolecular [3+2] cycloaddition, specifically regarding the role of additives.",
+        "decision": "Attempted the iridium-catalyzed reductive [3+2] cycloaddition of 12 without benzyl alcohol, expecting the formation of 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "IrCl(CO)(PPh3)2",
+          "(Me2HSi)2O",
+          "TBAF",
+          "Et3N"
+        ],
+        "solvent": "toluene",
+        "temperature": "RT to 90 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 56,
+        "failure_mode": "low_yield",
+        "observation": "The reaction without benzyl alcohol gave isoxazolidine 14 in only 56% yield. Benzyl alcohol was found to be important to quench remaining silane."
+      },
+      "evidence": {
+        "text_span": "Benzyl alcohol was added to quench the remaining silane, which could become a reducing agent when nitrone 13 was heated at 90 °C (14: 56% without benzyl alcohol).",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "N-hydroxylactam 12 is available. The goal is iridium-catalyzed reductive [3+2] cycloaddition to form isoxazolidine 14. Previous attempts showed that benzyl alcohol is important.",
+        "gap": "Need to optimize conditions for the intramolecular [3+2] cycloaddition, specifically regarding the role of Et3N.",
+        "decision": "Attempted the iridium-catalyzed reductive [3+2] cycloaddition of 12 with benzyl alcohol but without Et3N, expecting the formation of 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "IrCl(CO)(PPh3)2",
+          "(Me2HSi)2O",
+          "BnOH",
+          "TBAF"
+        ],
+        "solvent": "toluene",
+        "temperature": "RT to 90 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 78,
+        "failure_mode": "low_yield",
+        "observation": "The reaction without Et3N gave isoxazolidine 14 in 78% yield, indicating that Et3N improved the yield."
+      },
+      "evidence": {
+        "text_span": "Although the role of Et3N has yet to be elucidated, addition of Et3N after formation of N,O-acetal 24 improved the yield (14: 78% without Et3N).",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "N-hydroxylactam 12 is available. Previous attempts to optimize the iridium-catalyzed reductive [3+2] cycloaddition showed that both benzyl alcohol and Et3N are important for high yield.",
+        "gap": "Need to perform the reaction under optimized conditions.",
+        "decision": "To achieve high yield, chose iridium-catalyzed reductive [3+2] cycloaddition of 12 with IrCl(CO)(PPh3)2, (Me2HSi)2O, followed by addition of benzyl alcohol, TBAF, and Et3N, and heating, expecting high yield and stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "IrCl(CO)(PPh3)2",
+          "(Me2HSi)2O",
+          "BnOH",
+          "TBAF",
+          "Et3N"
+        ],
+        "solvent": "toluene",
+        "temperature": "RT to 90 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "The iridium-catalyzed reductive [3+2] cycloaddition of N-hydroxylactam 12 provided tricyclic isoxazolidine 14 in 91% yield as a single diastereomer. The reaction was completely chemoselective without hydrosilylation of the exo-olefin.",
+        "regio_selectivity": "single diastereomer"
+      },
+      "evidence": {
+        "text_span": "Treatment of N-hydroxylactam 12 with 0.5 mol% of IrCl(CO)(PPh3)2 and (Me2HSi)2O[94] initiated both dehydrosilylation of the N-hydroxy group and hydrosilylation of the amide carbonyl group, generating N,O-acetal 24. Subsequent addition of benzyl alcohol, TBAF, and Et3N produced nitrone 13 through desilylation and elimination of the N,O-acetal. The resulting solution was then heated to 90 °C to promote intramolecular [3+2] cycloaddition, affording isoxazolidine 14 in 91% yield as a single diastereomer. The iridium-catalyzed reaction was completely chemoselective without causing hydrosilylation of the exo-olefin.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tricyclic isoxazolidine 14 is available.",
+        "gap": "Need to cleave the N-O bond in 14 to obtain 1,3-amino alcohol 25.",
+        "decision": "To cleave the N-O bond, chose treatment of 14 with zinc at 90 °C, expecting reductive cleavage."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC23C(C)C[C@H]1N2COCC3COCc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC1CC23C(C)C[C@H]1N2C[C@@H](O)C3COCc1ccccc1"
+        ],
+        "reagents": [
+          "Zn"
+        ],
+        "solvent": "AcOH/H2O = 1",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Cleavage of the N-O bond in 14 with zinc at 90 °C gave 1,3-amino alcohol 25."
+      },
+      "evidence": {
+        "text_span": "The cleavage of the N─O bond in 14 with zinc at 90 °C gave 1,3-amino alcohol 25.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "1,3-amino alcohol 25 is available. Carboxylic acid 15 is also available.",
+        "gap": "Need to perform chemoselective condensation between amine 25 and carboxylic acid 15 to form amide 26 without ester formation.",
+        "decision": "To form amide 26 chemoselectively, chose condensation with DMT-MM, expecting amide formation over esterification."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC23C(C)C[C@H]1N2C[C@@H](O)C3COCc1ccccc1",
+          ""
+        ],
+        "product_smiles": [
+          "CC1CC23C(C)C[C@H]1N2C(=O)C[C@@H](O)C3COCc1ccccc1"
+        ],
+        "reagents": [
+          "DMT-MM",
+          "NMM"
+        ],
+        "solvent": "EtOH",
+        "temperature": "RT"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Chemoselective condensation between amine 25 and carboxylic acid 15 with DMT-MM provided amide 26 in 81% yield without formation of the ester (2 steps from 14)."
+      },
+      "evidence": {
+        "text_span": "Chemoselective condensation between amine 25 and carboxylic acid 15 with DMT-MM[95,96] provided amide 26 in 81% yield without formation of the ester (2 steps).",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amide 26 is available.",
+        "gap": "Need to oxidize the primary alcohol in 26 to an aldehyde 27.",
+        "decision": "To oxidize the primary alcohol, chose TPAP-oxidation, expecting selective oxidation to the aldehyde."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC23C(C)C[C@H]1N2C(=O)C[C@@H](O)C3COCc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC1CC23C(C)C[C@H]1N2C(=O)C[C@@H](C=O)C3COCc1ccccc1"
+        ],
+        "reagents": [
+          "TPAP",
+          "NMO"
+        ],
+        "solvent": "MeCN",
+        "temperature": "RT"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "TPAP-oxidation of the remaining primary alcohol in 26 provided aldehyde 27."
+      },
+      "evidence": {
+        "text_span": "After TPAP-oxidation of the remaining primary alcohol, the intramolecular aldol reaction[97,98] of aldehyde 27 with LiHMDS",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 27 is available.",
+        "gap": "Need to perform intramolecular aldol reaction and subsequent Dess-Martin oxidation to obtain cyclic beta-ketoamide 29.",
+        "decision": "To form cyclic beta-ketoamide 29, chose intramolecular aldol reaction of 27 with LiHMDS, followed by Dess-Martin oxidation of the intermediate 28, expecting cyclization and oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC23C(C)C[C@H]1N2C(=O)C[C@@H](C=O)C3COCc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiHMDS",
+          "Dess-Martin",
+          "NaHCO3"
+        ],
+        "solvent": "THF, CH2Cl2",
+        "temperature": "-78 °C, RT"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "Intramolecular aldol reaction of aldehyde 27 with LiHMDS and subsequent Dess-Martin oxidation of 28 gave cyclic beta-ketoamide 29 in 74% yield (3 steps from 26)."
+      },
+      "evidence": {
+        "text_span": "the intramolecular aldol reaction[97,98] of aldehyde 27 with LiHMDS and subsequent Dess–Martin oxidation[99,100] of 28 gave cyclic β-ketoamide 29 in 74% yield (3 steps).",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cyclic beta-ketoamide 29 is available.",
+        "gap": "Need to convert 29 to enaminone 30.",
+        "decision": "To convert 29 to enaminone 30, chose a modified Sarpong method involving iridium-catalyzed amide-selective hydrosilylation and subsequent elimination, expecting enaminone formation without affecting the ketone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "IrCl(CO)(PPh3)2",
+          "(Me2HSi)2O"
+        ],
+        "solvent": "THF",
+        "temperature": "RT"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "Treatment of cyclic beta-ketoamide 29 with 3 mol% of IrCl(CO)(PPh3)2 and (Me2HSi)2O initiated amide-selective hydrosilylation and subsequent elimination, providing 30 in 68% yield without affecting the ketone."
+      },
+      "evidence": {
+        "text_span": "Cyclic β-ketoamide 29 was converted to enaminone 30[101-103] by a slightly modified Sarpong method.[15,16] Thus, treatment of cyclic β-ketoamide 29 in THF with 3 mol% of IrCl(CO)(PPh3)2 and (Me2HSi)2O initiated amide-selective hydrosilylation and subsequent elimination, providing 30 in 68% yield without affecting the ketone.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enaminone 30 is available. Allylic silane fragment 16 is also available.",
+        "gap": "Need to perform Michael addition of the cuprate derived from 16 to 30 to form tetracyclic intermediate 17alpha.",
+        "decision": "To form 17alpha, chose Michael addition of the cuprate (prepared from 16 with sBuLi and CuBr.Me2S/BF3.Et2O) to 30, expecting a single trans isomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C[Si](C)(c1ccccc1)[C@@H]1CCC=C1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "sBuLi",
+          "CuBr.Me2S",
+          "BF3.OEt2"
+        ],
+        "solvent": "THF/Et2O = 1",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "Michael addition of the cuprate, which was prepared from allylic silane fragment 16, afforded tetracyclic intermediate 17alpha in 64% yield as a single trans isomer."
+      },
+      "evidence": {
+        "text_span": "Michael addition of the cuprate, which was prepared from allylic silane fragment 16 afforded tetracyclic intermediate 17α in 64% yield as a single trans isomer.[12,15,16]",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetracyclic intermediate 17alpha is available. The goal is to construct the pentacyclic intermediate via intramolecular Hosomi-Sakurai allylation.",
+        "gap": "Need to find optimal aqueous acidic conditions for both hydrolysis of the cyclic acetal and cyclization.",
+        "decision": "To achieve both hydrolysis and cyclization in a single operation, chose 6 M HCl/THF = 2 at room temperature, expecting the formation of pentacyclic intermediates 31, 32, and 33."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "THF",
+        "temperature": "RT"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "observation": "6 M HCl/THF = 2 at room temperature was optimal to achieve both hydrolysis and cyclization in a single operation, providing pentacyclic intermediates 31, 32, and 33 in 59% combined yields (31:32:33 = 1:2:1). The C10 stereochemistry was correct, but the C6 stereocenter underwent complete epimerization.",
+        "regio_selectivity": "31:32:33 = 1:2:1",
+        "failure_mode": "epimerization"
+      },
+      "evidence": {
+        "text_span": "We found that 6 M HCl/THF = 2 at room temperature was optimal to achieve both hydrolysis and cyclization in a single operation, providing pentacyclic intermediates 31, 32, and 33 in 59% combined yields (31:32:33 = 1:2:1).[104] The dimethylphenyl silane of 33 was removed with TBAF in DMSO at 70 °C in quantitative yield to give 32. All three products 31–33 possessed the correct stereochemistry at C10 because Hosomi–Sakurai allylation is known to proceed from the opposite face of the silyl group.[78] In contrast, the C6 stereocenter underwent the complete epimerization, resulting in the cis-configuration between C6 and C7.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Pentacyclic intermediates 31, 32, and 33 are available. 33 has a dimethylphenyl silane group.",
+        "gap": "Need to remove the dimethylphenyl silane from 33 to obtain 32.",
+        "decision": "To remove the silane, chose treatment of 33 with TBAF in DMSO at 70 °C, expecting desilylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "DMSO",
+        "temperature": "70 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "observation": "The dimethylphenyl silane of 33 was removed with TBAF in DMSO at 70 °C in quantitative yield to give 32."
+      },
+      "evidence": {
+        "text_span": "The dimethylphenyl silane of 33 was removed with TBAF in DMSO at 70 °C in quantitative yield to give 32.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A mixture of 31 and 32 is available. The goal is to deoxygenate the hydroxyl group.",
+        "gap": "Need to convert the hydroxyl group to a xanthate and then perform Barton-McCombie deoxygenation.",
+        "decision": "To deoxygenate, chose conversion of the mixture of 31 and 32 to xanthate 34 using NaH, CS2, and MeI, followed by Barton-McCombie deoxygenation with AIBN and nBu3SnH, expecting removal of the hydroxyl group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaH",
+          "CS2",
+          "MeI",
+          "AIBN",
+          "nBu3SnH"
+        ],
+        "solvent": "THF, toluene",
+        "temperature": "0 °C to RT, 110 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "A mixture of 31 and 32 was converted to xanthate 34, which underwent Barton-McCombie deoxygenation with AIBN and nBu3SnH, giving 35 in 76% yield (2 steps)."
+      },
+      "evidence": {
+        "text_span": "A mixture of 31 and 32 was converted to xanthate 34, which underwent Barton–MaCombie deoxygenation with AIBN and nBu3SnH,[105,106] giving 35 in 76% yield (2 steps).",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deoxygenated pentacyclic compound 35 is available. The benzyl group needs to be removed and converted to an acetate.",
+        "gap": "Need to cleave the benzyl group and form the acetate 36.",
+        "decision": "To cleave the benzyl group and form the acetate, chose treatment of 35 with TMSOTf and Ac2O in CH2Cl2 at 0 °C, expecting debenzylation and acetylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TMSOTf",
+          "Ac2O"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Treatment of 35 with TMSOTf and Ac2O in CH2Cl2 at 0 °C provided the corresponding acetate 36."
+      },
+      "evidence": {
+        "text_span": "Although the cleavage of the benzyl group was not trivial, treatment of 35 with TMSOTf and Ac2O in CH2Cl2 at 0 °C provided the corresponding acetate 36.",
+        "section": "Total Synthesis"
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acetate 36 is available. The final steps involve nucleophilic addition, deprotection, and oxidation/lactonization to form isodaphlongamine H (5).",
+        "gap": "Need to perform stereoselective nucleophilic addition, remove the acetate, and then oxidize and lactonize to complete the synthesis.",
+        "decision": "To complete the synthesis, chose nucleophilic addition of methyl lithium to 36 in the presence of CeCl3, followed by Jones' oxidation of the resulting primary alcohol and spontaneous lactonization, expecting stereoselective addition and final product formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC1C[C@H]2[C@H]3CC(=O)[C@H]4C[C@@H](C[C@H]5C[C@H]5C=C3N2C[C@H]1C)OC4(C)C"
+        ],
+        "reagents": [
+          "MeLi",
+          "CeCl3",
+          "CrO3",
+          "H2SO4"
+        ],
+        "solvent": "THF, acetone",
+        "temperature": "-78 °C to RT, 0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "Nucleophilic addition of methyl lithium to 36 in the presence of CeCl3 proceeded in a complete stereoselective manner from the less hindered beta-side, associated with removal of the acetate. Finally, Jones' oxidation of the resulting primary alcohol and spontaneous lactonization accomplished the total synthesis of isodaphlongamine H (5) in 58% yield (3 steps)."
+      },
+      "evidence": {
+        "text_span": "Nucleophilic addition of methyl lithium to 36 in the presence of CeCl3 proceeded in a complete stereoselective manner from the less hindered β-side, associated with removal of the acetate. Finally, Jones’ oxidation of the resulting primary alcohol and spontaneous lactonization[15,16] accomplished the total synthesis of isodaphlongamine H (5) in 58% yield (3 steps).",
+        "section": "Total Synthesis"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 0.8,
+        "unit": "%",
+        "interpretation": "Overall yield from commercially available diester 18."
+      },
+      "Total Steps": {
+        "value": 23,
+        "unit": "steps",
+        "interpretation": "Total number of steps in the synthesis."
+      }
+    },
+    "significance": "The total synthesis of isodaphlongamine H demonstrates the utility of the lactam strategy for complex alkaloids. The iridium-catalyzed reductive [3+2] cycloaddition of N-hydroxylactam is a key transformation. The deoxygenated pentacyclic intermediate 35 showed higher cytotoxicity than isodaphlongamine H, suggesting it could be a lead compound for further biological study."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.202508062",
+      "pmcid": "PMC12258682",
+      "title": "Total Synthesis of Isodaphlongamine H by Iridium-Catalyzed Reductive [3 + 2] Cycloaddition of N-Hydroxylactam.",
+      "authors": "Iwamoto S, Nakano R, Sasaki K, Kobayashi S, Taira Y, Takei K, Kawakita R, Tokuyama A, Nakamura H, Tomoike M, Kawahara R, Murase A, Simizu S, Chida N, Okamura T, Sato T.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC12258682?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/fae00729-0bc9-44af-938a-bdec413e9a1d.zip",
+      "parsed_at": "2026-05-11T06:24:16.426381+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 57,
+    "parseable": 17,
+    "canonicalized": 10,
+    "invalid": 40,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=S(=O)(OC/C=C(/C)CCC(C)(C)OBn)C(F)(F)F",
+      "CC1C[C@@H](N(C(=O)O1)C(=O)OC(C)(C)C)C(C)C=C(C)CCCCOBn",
+      "CC1C[C@@H](N(C(=O)O1)C(=O)OC(C)(C)C)C(C)C=C(C)CCCCOBn",
+      "CC1C[C@@H](N(C(=O)O1)C(=O)OC(C)(C)C)C(C)C=C(C)CCCCOBn",
+      "CC1C[C@@H](N(C(=O)O1)C(=O)OC(C)(C)C)C(C)C=C(C)CCCCOBn",
+      "CC1C[C@@H](N(C(=O)O1)C(=O)OC(C)(C)C)C(C)C=C(C)CCCCOBn",
+      "CC1C[C@@H](N(C(=O)O1)C(=O)OC(C)(C)C)C(C)C=C(C)CCCCOBn",
+      "CC1C[C@@H](N(C(=O)O1)C(=O)OC(C)(C)C)C(C)C=C(C)CCCCOBn",
+      "CC1C[C@@H](N(C(=O)O1)C(=O)OC(C)(C)C)C(C)C=C(C)CCCCOBn",
+      "CC[C@H]1C(=O)N(C(OC(C)(C)C)=O)C[C@@H]1C(C)=C(CCCCOBn)"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,1090 @@
+{
+  "trace_id": "TS-PMC12888011",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Embellicine A fragment",
+    "smiles": "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12",
+    "natural_product_class": "macrocyclic alkaloid",
+    "structural_features": {
+      "ring_systems": "6/5/6/5",
+      "key_motifs": [
+        "cyclopenta[b]fluorene"
+      ]
+    },
+    "motivation": "Embellicines exhibit potent cytotoxic activity against human cancer cell lines and strongly inhibit TNFα-induced transcriptional activity of NF-κB, making them new leads for anticancer and anti-inflammatory drugs. The detailed structure-activity relationships need to be elucidated through total synthesis. This paper focuses on synthesizing an A/B-cis-fused cyclopenta[b]fluorene (6/5/6/5) fragment.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Kobayashi",
+        "year": 2012,
+        "doi": "10.1021/ol302240k",
+        "key_strategy": "Diels-Alder reaction to construct A/B-cis-fused tricyclic decahydrofluorene skeleton of pyrrocidine A"
+      },
+      {
+        "lead_author": "Uchiro",
+        "year": 2011,
+        "doi": "10.1021/ol202640k",
+        "key_strategy": "IMDA reaction for A/B-trans-fused decahydrofluorene skeletons (hirsutellone B)"
+      },
+      {
+        "lead_author": "Uchiro",
+        "year": 2017,
+        "doi": "10.1002/asia.201601670",
+        "key_strategy": "IMDA reaction for A/B-trans-fused decahydrofluorene skeletons (GKK1032A2)"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "First synthesis of an A/B-cis-fused cyclopenta[b]fluorene (6/5/6/5) ring system with complete stereoselectivity."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bonds forming the A/B-cis-fused tetracyclic skeleton",
+        "named_strategy": "Intramolecular Diels-Alder (IMDA) reaction",
+        "reasoning": "The IMDA reaction is effective for stereoselective construction of A/B-ring systems. To achieve A/B-cis-selectivity, an eight-membered silylene tether was designed to reverse the orientation of the diene moiety towards the β-side of the C-ring, overcoming steric repulsion in the thermodynamically stable transition state (TS-1) that would lead to A/B-trans fusion. Introducing a cyclopentanone at the diene terminus allows simultaneous construction of the tetracyclic skeleton.",
+        "alternatives_considered": [
+          {
+            "strategy": "Direct Diels-Alder reaction without tether",
+            "rejected_because": "Would lead to A/B-trans-fused products due to steric repulsion in the transition state (TS-1 vs TS-2)."
+          }
+        ]
+      },
+      {
+        "bond_description": "C-C bond between vinyl iodide and cyclic vinyl stannane",
+        "named_strategy": "Stille coupling reaction",
+        "reasoning": "To connect the silylene-bridged vinyl iodide fragment (8) with the cyclic vinyl stannane fragment (9) to form the IMDA precursor (7)."
+      },
+      {
+        "bond_description": "C-C bonds forming the C-ring",
+        "named_strategy": "Diels-Alder reaction and subsequent hydrogenation",
+        "reasoning": "To construct the C-ring intermediate (10) from dienophile (11) and siloxydiene (12) with stereocontrol."
+      }
+    ],
+    "rationale": "The overall strategy involves constructing the C-ring first, then elaborating it to incorporate the silylene tether and the vinyl iodide moiety. This fragment is then coupled with a cyclic vinyl stannane to form the IMDA precursor. The key step is the silylene-tethered IMDA reaction to form the A/B-cis-fused tetracyclic core, followed by functional group manipulations on the D-ring to reach the target fragment."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Natural organic compounds containing cyclopenta[b]fluorene (6/5/6/5) ring systems are known, including A/B-trans-fused compounds (phomapyrrolidones, ascomylactams) and A/B-cis-fused embellicines. Embellicines A and B show potent cytotoxic activity and inhibit NF-κB, making them potential drug leads. Prior work by Kobayashi et al. showed A/B-cis-fused tricyclic decahydrofluorene synthesis via Diels-Alder, but required many additional reactions for functional group transformations. Our group previously achieved A/B-trans-fused decahydrofluorene skeletons using IMDA.",
+        "gap": "The main challenge is to construct an A/B-cis-fused ring system for embellicines, which requires reversing the stereoselectivity of the IMDA reaction from A/B-trans-selective to A/B-cis-selective.",
+        "decision": "To achieve A/B-cis-selectivity in the IMDA reaction, a tethered structure will be introduced into the IMDA precursor. Specifically, an eight-membered silylene tether will connect two hydroxyl groups on the β-side of the C-ring and diene moiety. This tether is expected to force the diene into a conformation that favors the A/B-cis fusion (Tethered TS). A cyclopentanone structure at the diene terminus will enable simultaneous construction of the tetracyclic skeleton."
+      },
+      "evidence": {
+        "text_span": "The most challenging task in the synthesis of tetracyclic fragments of embellicines is constructing an A/B-cis-fused ring system. In 2012, Kobayashi et al. reported the synthesis of an A/B-cis-fused tricyclic decahydrofluorene skeleton of pyrrocidine A5 (Figure 2). They utilized a Diels−Alder reaction between five-membered cyclic enone containing the B/C-ring and a Danishefsky−Kitahara type diene to construct the A/Bcis-fused tricyclic framework. Although this synthetic strategy is reliable for constructing A/B-cis-fused structures, many additional reactions are required for functional group transformations on the A- and C-rings.\nBy contrast, we previously reported the efficient synthesis of A/B-trans-fused decahydrofluorene skeletons in the total synthesis of hirsutellone B6 and GKK1032A2. 7 In this strategy, the intramolecular Diels−Alder (IMDA) reaction was effectively utilized for the stereoselective construction of the A/B-ring system. To apply a strategy similar to that used for the construction of the tetracyclic skeleton of embellicine A, it is necessary to completely reverse the stereoselectivity of the IMDA reaction from A/B-trans-selective to A/B-cis-selective.\nThen we considered the transition state of the IMDA reaction (Scheme 1). In the thermodynamically stable transition state of the IMDA reaction (TS-1), the diene moiety would be distributed to the α-side toward the C-ring because, in the alternative transition state where the diene moiety is located on the β-side (TS-2), non-negligible steric repulsion between a methyl group of the diene moiety and the axial hydrogen on the C-ring should be generated. Therefore, we introduced a tethered structure into the IMDA precursor to reverse the orientation of the diene moiety toward the β-side of the C-ring. Specifically, two hydroxyl groups were introduced on the β-side of the C-ring and diene moiety. If these groups were connected by a silicon atom, the resulting eightmembered tether would play the desired role in the transition state of the IMDA reaction (Tethered TS). Furthermore, introducing a cyclopentanone structure at the terminus of the diene moiety would enable the simultaneous construction of the desired tetracyclic skeleton through the IMDA reaction. Although such Diels−Alder reactions utilizing electrondeficient dienes conjugated with carbonyl groups have rarely been reported,8 we dare to employ this type of reaction precursor considering the following modifications of the Dring.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C-ring fragment is needed for the overall synthesis. Chiral dienophile 11 can be synthesized from L-ascorbic acid. Siloxydiene 12 can be prepared from (E)-2-methyl-2-pentenal 13.",
+        "gap": "How to construct the C-ring intermediate 10 with the correct stereochemistry.",
+        "decision": "Perform an asymmetric Diels-Alder reaction between dienophile 11 and siloxydiene 12, promoted by BF3·OEt2, followed by diastereoselective hydrogenation. This should yield cyclohexene 14 with a β-configured siloxy group, crucial for the tethered structure, and then the desired C-ring intermediate 10."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)C=CC1OC(C)(C)O1",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "BF3.OEt2",
+        "solvent": "ClCCl",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "The reaction proceeded stereoselectively, yielding cyclohexene 14 with a β-configured siloxy group."
+      },
+      "evidence": {
+        "text_span": "The construction of the C-ring was investigated first (Scheme 3). Chiral dienophile 11 was synthesized from Lascorbic acid in a four-step reaction using a reported procedure.9 Siloxydiene 12 was prepared by treating commercially available (E)-2-methyl-2-pentenal 13 with TBSCl and NaI in the presence of Et3N . Resulting dienophile 11 and diene 12 underwent an asymmetric Diels−Alder reaction promoted by BF3·OEt2 . The reaction proceeded stereoselectively, and cyclohexene 14 possesses a β-configured siloxy group, which is crucial for constructing the designed tethered structure.",
+        "page": 3,
+        "section": "Synthesis of the C-Ring Fragment",
+        "image_refs": [
+          "4ef15343ddb67a6f6bd0e9d720a6e752f1428ec4c499f7ae783ad7787fc55a34.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cyclohexene 14 was obtained with the correct stereochemistry.",
+        "gap": "Need to hydrogenate the olefin moiety to obtain the C-ring intermediate 10.",
+        "decision": "Perform diastereoselective hydrogenation of 14 using Pd/C and H2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "Pd/C",
+        "solvent": "CO",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "The desired C-ring intermediate 10 was successfully obtained."
+      },
+      "evidence": {
+        "text_span": "After the diastereoselective hydrogenation of 14, the desired C-ring intermediate 10 was successfully obtained.",
+        "page": 3,
+        "section": "Synthesis of the C-Ring Fragment",
+        "image_refs": [
+          "4ef15343ddb67a6f6bd0e9d720a6e752f1428ec4c499f7ae783ad7787fc55a34.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "C-ring intermediate 10 is available.",
+        "gap": "Need to convert the methyl ketone moiety into a propargyl alcohol (15) for subsequent hydrostannylation and iodination.",
+        "decision": "Convert the methyl ketone of 10 into an enol phosphate, followed by elimination and hydroxymethylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LDA",
+          "CIPO(OEt)2",
+          "(HCHO)n"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "Propargyl alcohol 15 was obtained."
+      },
+      "evidence": {
+        "text_span": "The methyl ketone moiety of C-ring intermediate 10 was converted into enol phosphate,10 and the subsequent elimination11 and hydroxymethylation were conducted to afford propargyl alcohol 15.",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)",
+        "image_refs": [
+          "a95d65f17f46de0878d6d02861560cbdcf54cc48cb9b574b0f5c64a0bada0141.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Propargyl alcohol 15 is available.",
+        "gap": "Need to remove the TBS group to expose the hydroxyl group for subsequent steps.",
+        "decision": "Treat 15 with TBAF."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC1C(C)C([C@@H]2COC(C)(C)O2)C(C)C(O)C1C#CCO"
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "TBS group was removed, yielding 16."
+      },
+      "evidence": {
+        "text_span": "After removal of the TBS group, hydrostannylation of the alkyne moiety,12 and subsequent iodination, nontethered vinyl iodide 18 was obtained.",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)",
+        "image_refs": [
+          "a95d65f17f46de0878d6d02861560cbdcf54cc48cb9b574b0f5c64a0bada0141.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 16 is available.",
+        "gap": "Need to perform hydrostannylation of the alkyne moiety.",
+        "decision": "Perform hydrostannylation using PdCl2(PPh3)2 and Bu3SnH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1C(C)C([C@@H]2COC(C)(C)O2)C(C)C(O)C1C#CCO"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Bu3SnH"
+        ],
+        "catalyst": "PdCl2(PPh3)2",
+        "solvent": "hexane",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Hydrostannylation was successful, yielding 17."
+      },
+      "evidence": {
+        "text_span": "After removal of the TBS group, hydrostannylation of the alkyne moiety,12 and subsequent iodination, nontethered vinyl iodide 18 was obtained.",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)",
+        "image_refs": [
+          "a95d65f17f46de0878d6d02861560cbdcf54cc48cb9b574b0f5c64a0bada0141.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 17 is available.",
+        "gap": "Need to convert the stannane into a vinyl iodide.",
+        "decision": "Perform iodination using I2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC1C(C)C([C@@H]2COC(C)(C)O2)C(C)C(O)C1C=C(I)CO"
+        ],
+        "reagents": [
+          "I2"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "-40 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "Nontethered vinyl iodide 18 was obtained."
+      },
+      "evidence": {
+        "text_span": "After removal of the TBS group, hydrostannylation of the alkyne moiety,12 and subsequent iodination, nontethered vinyl iodide 18 was obtained.",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)",
+        "image_refs": [
+          "a95d65f17f46de0878d6d02861560cbdcf54cc48cb9b574b0f5c64a0bada0141.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Nontethered vinyl iodide 18 is available. The primary hydroxyl group needs protection, and the dienophile moiety needs to be constructed.",
+        "gap": "Need to protect the primary hydroxyl group of 18 and then remove the acetonide group.",
+        "decision": "Protect the primary hydroxyl group of 18 with a TBDPS group to give 19. Then, remove the acetonide group of 19 using propanedithiol and BF3·OEt2 to yield the 1,2-diol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1C(C)C([C@@H]2COC(C)(C)O2)C(C)C(O)C1C=C(I)CO"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBDPSCl",
+          "propanedithiol",
+          "BF3.OEt2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The primary hydroxyl group was protected, and the acetonide was removed to give the 1,2-diol (intermediate between 19 and 20)."
+      },
+      "evidence": {
+        "text_span": "The primary hydroxyl group of 18 was protected with a TBDPS group, and the construction of the dienophile moiety was started. The acetonide group of 19 was removed by a treatment of propanedithiol and BF3·OEt2,13 and the resulting 1,2-diol was once more protected with a p-methoxybenzylidene group.",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The 1,2-diol (from step 8) is available.",
+        "gap": "Need to protect the 1,2-diol with a p-methoxybenzylidene group.",
+        "decision": "Protect the 1,2-diol with a p-methoxybenzylidene group to yield 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "p-methoxybenzaldehyde dimethyl acetal",
+          "p-TsOH"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The 1,2-diol was protected with a p-methoxybenzylidene group, yielding 20."
+      },
+      "evidence": {
+        "text_span": "The acetonide group of 19 was removed by a treatment of propanedithiol and BF3·OEt2,13 and the resulting 1,2-diol was once more protected with a p-methoxybenzylidene group.",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acetal 20 is available.",
+        "gap": "Need to protect the remaining secondary hydroxyl group on the C-ring.",
+        "decision": "Protect the secondary hydroxyl group of 20 with a TES group to yield 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TESCl",
+          "imidazole"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The secondary hydroxyl group was protected with a TES group, yielding 21."
+      },
+      "evidence": {
+        "text_span": "The remaining secondary hydroxyl group on the C-ring of acetal 21 was protected with a TES group, and reductive cleavage of the p-methoxybenzylidene acetal using DIBAL yielded alcohol 23.",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acetal 21 is available.",
+        "gap": "Need to reductively cleave the p-methoxybenzylidene acetal.",
+        "decision": "Perform reductive cleavage of the p-methoxybenzylidene acetal using DIBAL to yield alcohol 23."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DIBAL"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Reductive cleavage of the p-methoxybenzylidene acetal yielded alcohol 23."
+      },
+      "evidence": {
+        "text_span": "The remaining secondary hydroxyl group on the C-ring of acetal 21 was protected with a TES group, and reductive cleavage of the p-methoxybenzylidene acetal using DIBAL yielded alcohol 23.",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alcohol 23 is available.",
+        "gap": "Need to oxidize the primary hydroxyl group to an aldehyde.",
+        "decision": "Perform Swern oxidation of the primary hydroxyl group of 23 to yield aldehyde 24."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "(COCl)2",
+          "CS(=O)C",
+          "CCN(CC)CC"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "-78 °C to rt",
+        "yield": 90
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Swern oxidation of the primary hydroxyl group of 23 yielded aldehyde 24."
+      },
+      "evidence": {
+        "text_span": "After Swern oxidation of the primary hydroxyl group of 23, resulting aldehyde 24 was converted into (Z)-configured α,β-unsaturated ester 25 by the Horner− Wadsworth−Emmons (HWE) reaction using the Stille− Gennari reagent.14",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)",
+        "image_refs": [
+          "7a4ce7c61dbf2e4815be61ab1ac4ff4c53f0b4823c9d7540eebcfd516d0f141b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 24 is available.",
+        "gap": "Need to convert aldehyde 24 into a (Z)-configured α,β-unsaturated ester.",
+        "decision": "Perform Horner-Wadsworth-Emmons (HWE) reaction using the Stille-Gennari reagent ((CF3CH2O)2P(O)CH2CO2Me) and KHMDS with 18-crown-6 to yield 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "(CF3CH2O)2P(O)CH2CO2Me",
+          "KHMDS",
+          "18-crown-6"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "-78 °C",
+        "yield": 92
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Aldehyde 24 was converted into (Z)-configured α,β-unsaturated ester 25."
+      },
+      "evidence": {
+        "text_span": "After Swern oxidation of the primary hydroxyl group of 23, resulting aldehyde 24 was converted into (Z)-configured α,β-unsaturated ester 25 by the Horner− Wadsworth−Emmons (HWE) reaction using the Stille− Gennari reagent.14",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)",
+        "image_refs": [
+          "7a4ce7c61dbf2e4815be61ab1ac4ff4c53f0b4823c9d7540eebcfd516d0f141b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "α,β-unsaturated ester 25 is available. The TES and TBDPS groups need to be removed to expose the hydroxyl groups for silylene tether formation.",
+        "gap": "Need to selectively remove the TES and TBDPS groups.",
+        "decision": "Treat 25 with TBAF to simultaneously remove the TES and TBDPS groups, yielding diol 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COCc1ccc(OC2C(C)C(C=C(CO)CI)C(O)C(C)C2C(O)C=CCOC(=O)OC)cc1"
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "0 °C to rt",
+        "yield": 92
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The TES and TBDPS groups were simultaneously removed, giving diol 26."
+      },
+      "evidence": {
+        "text_span": "Finally, an eight-membered silylene tether was introduced. The TES and TBDPS groups of α,β-unsaturated ester 25 were simultaneously removed by treatment with TBAF, giving diol 26.",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)",
+        "image_refs": [
+          "7a4ce7c61dbf2e4815be61ab1ac4ff4c53f0b4823c9d7540eebcfd516d0f141b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diol 26 is available. The two hydroxyl groups are in the correct positions for forming the silylene tether.",
+        "gap": "Need to introduce the eight-membered silylene tether.",
+        "decision": "Treat diol 26 with Et2NPh2SiCl under basic conditions, followed by gradual addition of DMAP, to form the silylene-bridged vinyl iodide 8."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COCc1ccc(OC2C(C)C(C=C(CO)CI)C(O)C(C)C2C(O)C=CCOC(=O)OC)cc1"
+        ],
+        "product_smiles": [
+          "COCc1ccc(OC2C(C)C(C=C(CI)CO[Si](O)(c3ccccc3)c3ccccc3)C(O)C(C)C2C(O)C=CCOC(=O)OC)cc1"
+        ],
+        "reagents": [
+          "Et3N",
+          "DMAP",
+          "Et2NPh2SiCl"
+        ],
+        "solvent": "ClCCl",
+        "temperature": "0 °C to rt",
+        "yield": 90
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The desired eight-membered silylene-bridged vinyl iodide 8 was obtained in high yield.",
+        "ee_percent": 100
+      },
+      "evidence": {
+        "text_span": "Diol 26 was then treated with Et2NPh2SiCl under basic conditions,15 followed by the gradual addition of DMAP, resulting in the desired eight-membered silylene-bridged vinyl iodide 8 in high yield.16",
+        "page": 3,
+        "section": "Synthesis of Tethered Vinyl Iodide (8)",
+        "image_refs": [
+          "7a4ce7c61dbf2e4815be61ab1ac4ff4c53f0b4823c9d7540eebcfd516d0f141b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Silylene-bridged vinyl iodide 8 is available, and cyclic vinyl stannane 9 is independently prepared.",
+        "gap": "Need to couple these two fragments to form the cyclization precursor 7.",
+        "decision": "Perform a Stille coupling reaction between 8 and 9 using Pd(PPh3)4 and CuTC."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(C=C(C)C)C1CCC(C)C(C)C(O[Si](c2ccccc2)C(O)C=CI)C1(C)C",
+          "CC[CH2][Sn]([CH2]CC)([CH2]CC)[C]1=C(C)CCC1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)C(C=C(C)C)C1CCC(C)C(C)C(O[Si](c2ccccc2)C(O)C=CC(C)=C2CCC(=O)C2)C1(C)C"
+        ],
+        "reagents": [],
+        "catalyst": "Pd(PPh3)4",
+        "ligand": "CuTC",
+        "solvent": "CN(C)C=O",
+        "temperature": "rt",
+        "yield": 93
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Cyclization precursor 7 was obtained in good yield."
+      },
+      "evidence": {
+        "text_span": "Thus, the designed eight-membered silylene tether was successfully introduced, and a tetracyclic skeleton was constructed (Scheme 5). A Stille coupling reaction between silylene-bridged vinyl iodide 8 and independently prepared cyclic vinyl stannane 9 was conducted to obtain cyclization precursor 7. 17",
+        "page": 4,
+        "section": "Construction of the A/B-cis-Fused Tetracyclic Skeleton",
+        "image_refs": [
+          "0155093acce095b934593f003794e424d41a0d11e70d09c393528b69997a794a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cyclization precursor 7 is available, containing the silylene tether and the diene/dienophile system.",
+        "gap": "Need to perform the key intramolecular Diels-Alder (IMDA) reaction to form the A/B-cis-fused tetracyclic compound.",
+        "decision": "Heat precursor 7 in xylene to induce the IMDA reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(C=C(C)C)C1CCC(C)C(C)C(O[Si](c2ccccc2)C(O)C=CC(C)=C2CCC(=O)C2)C1(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)C(C=C(C)C)C1CCC(C)C(C)C(O[Si](c2ccccc2)C(O)C=CC(C)=C2CCC(=O)C2)C1(C)C"
+        ],
+        "reagents": [
+          "BHT"
+        ],
+        "solvent": "Cc1ccccc1",
+        "temperature": "140 °C",
+        "yield": 76
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The expected IMDA reaction proceeded smoothly, producing the desired A/B-cis-fused tetracyclic compound 6 in good yield with complete stereoselectivity. The A/B-cis-fused structure was elucidated by NOESY correlation. The carbonyl group conjugated with the diene moiety did not inhibit the IMDA reaction.",
+        "regio_selectivity": "complete",
+        "ee_percent": 100
+      },
+      "evidence": {
+        "text_span": "Upon heating to 140 °C in xylene, the expected IMDA reaction proceeded smoothly, producing the desired A/ B-cis-fused tetracyclic compound 6 in good yield with complete stereoselectivity. The A/B-cis-fused structure of compound 6 was elucidated by the NOESY correlation. It is noteworthy that the carbonyl group conjugated with the diene moiety of precursor 7 did not inhibit the IMDA reaction.",
+        "page": 4,
+        "section": "Construction of the A/B-cis-Fused Tetracyclic Skeleton",
+        "image_refs": [
+          "0155093acce095b934593f003794e424d41a0d11e70d09c393528b69997a794a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetracyclic compound 6 is available.",
+        "gap": "Need to convert the cyclopentanone moiety into an enone.",
+        "decision": "Convert the cyclopentanone moiety of 6 into enone 27 via α-selenenylation, followed by oxidative elimination."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "reagents": [
+          "LDA",
+          "PhSeCl",
+          "30 % H2O2 aq.",
+          "sat. NH4Cl aq."
+        ],
+        "yield": 76
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The cyclopentanone moiety of 6 was converted into enone 27."
+      },
+      "evidence": {
+        "text_span": "Next, deoxygenation of the silylene moiety and elaboration of the D-ring were investigated (Scheme 6). The cyclopentanone moiety of 6 was converted into enone 27 via α- selenenylation, followed by oxidative elimination.",
+        "page": 4,
+        "section": "Synthesis of the Tetracyclic Skeleton of Embellicines",
+        "image_refs": [
+          "4bc1fa2597c14aa7725c0c5e961e1b8a80a445905b69099ac53e1539d2c4e51a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enone 27 is available.",
+        "gap": "Need to add a methyl group to the enone in a stereoselective manner.",
+        "decision": "Perform conjugate addition of a methyl group to enone 27 using the Gilman reagent (Me2CuLi)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "reagents": [
+          "Me2CuLi"
+        ],
+        "solvent": "CCOCC",
+        "temperature": "-78 °C",
+        "yield": 90
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Conjugate addition of a methyl group to enone 27 proceeded with complete stereoselectivity, yielding β-methylketone 28.",
+        "ee_percent": 100
+      },
+      "evidence": {
+        "text_span": "Conjugate addition of a methyl group to enone 27 using the Gilman reagent proceeded with complete stereoselectivity. Resulting β- methylketone 28 was further methylated at the α-position by successive treatment with LDA and methyl iodide.",
+        "page": 4,
+        "section": "Synthesis of the Tetracyclic Skeleton of Embellicines",
+        "image_refs": [
+          "4bc1fa2597c14aa7725c0c5e961e1b8a80a445905b69099ac53e1539d2c4e51a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "β-methylketone 28 is available.",
+        "gap": "Need to further methylate the α-position.",
+        "decision": "Methylate 28 at the α-position by successive treatment with LDA and methyl iodide to yield bismethylated intermediate 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "reagents": [
+          "LDA",
+          "HMPA",
+          "Mel"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "-78 to -20 °C",
+        "yield": 91
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Bismethylated intermediate 29 was obtained."
+      },
+      "evidence": {
+        "text_span": "Resulting β- methylketone 28 was further methylated at the α-position by successive treatment with LDA and methyl iodide.",
+        "page": 4,
+        "section": "Synthesis of the Tetracyclic Skeleton of Embellicines",
+        "image_refs": [
+          "4bc1fa2597c14aa7725c0c5e961e1b8a80a445905b69099ac53e1539d2c4e51a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bismethylated intermediate 29 is available.",
+        "gap": "Need to cleave the silylene tether to obtain the diol.",
+        "decision": "Cleave the silylene tether of 29 using HF-pyridine to obtain diol 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "reagents": [
+          "HF-pyridine"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "rt",
+        "yield": 90
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Cleavage of the silylene tether yielded diol 30."
+      },
+      "evidence": {
+        "text_span": "Cleavage of the silylene tether of bismethylated intermediate 29 was achieved using HF-pyridine to obtain diol 30.",
+        "page": 4,
+        "section": "Synthesis of the Tetracyclic Skeleton of Embellicines",
+        "image_refs": [
+          "4bc1fa2597c14aa7725c0c5e961e1b8a80a445905b69099ac53e1539d2c4e51a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diol 30 is available. The two hydroxyl groups need to be removed.",
+        "gap": "Need to deoxygenate the first hydroxyl group.",
+        "decision": "Perform Barton-McCombie deoxygenation on one of the hydroxyl groups of 30. First, convert the hydroxyl group to a xanthate using NaH, CS2, and Mel to yield 31."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "reagents": [
+          "NaH",
+          "CS2",
+          "Mel"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "0 to -78 °C",
+        "yield": 84
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "One hydroxyl group was converted to a xanthate, yielding 31."
+      },
+      "evidence": {
+        "text_span": "The two resulting hydroxyl groups were sequentially removed by repeated Barton−McCombie deoxygenation to afford compound 34.",
+        "page": 4,
+        "section": "Synthesis of the Tetracyclic Skeleton of Embellicines",
+        "image_refs": [
+          "4bc1fa2597c14aa7725c0c5e961e1b8a80a445905b69099ac53e1539d2c4e51a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Xanthate 31 is available.",
+        "gap": "Need to deoxygenate the xanthate.",
+        "decision": "Perform radical deoxygenation using AIBN and Bu3SnH to yield 32."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "reagents": [
+          "AIBN",
+          "Bu3SnH"
+        ],
+        "solvent": "c1ccccc1",
+        "temperature": "reflux",
+        "yield": 91
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Deoxygenation of the first hydroxyl group was successful, yielding 32."
+      },
+      "evidence": {
+        "text_span": "The two resulting hydroxyl groups were sequentially removed by repeated Barton−McCombie deoxygenation to afford compound 34.",
+        "page": 4,
+        "section": "Synthesis of the Tetracyclic Skeleton of Embellicines",
+        "image_refs": [
+          "4bc1fa2597c14aa7725c0c5e961e1b8a80a445905b69099ac53e1539d2c4e51a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 32 has one remaining hydroxyl group.",
+        "gap": "Need to deoxygenate the second hydroxyl group.",
+        "decision": "Repeat the Barton-McCombie deoxygenation. First, convert the hydroxyl group to a xanthate using NaHMDS, CS2, and Mel to yield 33."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "reagents": [
+          "NaHMDS",
+          "CS2",
+          "Mel"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "-78 °C",
+        "yield": 94
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The second hydroxyl group was converted to a xanthate, yielding 33."
+      },
+      "evidence": {
+        "text_span": "The two resulting hydroxyl groups were sequentially removed by repeated Barton−McCombie deoxygenation to afford compound 34.",
+        "page": 4,
+        "section": "Synthesis of the Tetracyclic Skeleton of Embellicines",
+        "image_refs": [
+          "4bc1fa2597c14aa7725c0c5e961e1b8a80a445905b69099ac53e1539d2c4e51a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Xanthate 33 is available.",
+        "gap": "Need to deoxygenate the xanthate.",
+        "decision": "Perform radical deoxygenation using AIBN and Bu3SnH to yield 34."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "reagents": [
+          "AIBN",
+          "Bu3SnH"
+        ],
+        "solvent": "c1ccccc1",
+        "temperature": "reflux",
+        "yield": 90
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Deoxygenation of the second hydroxyl group was successful, affording compound 34."
+      },
+      "evidence": {
+        "text_span": "The two resulting hydroxyl groups were sequentially removed by repeated Barton−McCombie deoxygenation to afford compound 34.",
+        "page": 4,
+        "section": "Synthesis of the Tetracyclic Skeleton of Embellicines",
+        "image_refs": [
+          "4bc1fa2597c14aa7725c0c5e961e1b8a80a445905b69099ac53e1539d2c4e51a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 34 is available. The cyclopentanone moiety needs to be converted into an enol triflate.",
+        "gap": "Need to form the enol triflate.",
+        "decision": "Convert the cyclopentanone moiety of 34 into enol triflate 35 using LDA and Comins' reagent."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "reagents": [
+          "LDA",
+          "Comins' reagent"
+        ],
+        "solvent": "C1CCOC1",
+        "temperature": "-78 °C",
+        "yield": 86
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The cyclopentanone moiety was converted into enol triflate 35."
+      },
+      "evidence": {
+        "text_span": "Finally, the cyclopentanone moiety of this compound was converted into enol triflate 35, and palladium-catalyzed hydrogenolysis was conducted to obtain the desired tetracyclic fragment 5.",
+        "page": 4,
+        "section": "Synthesis of the Tetracyclic Skeleton of Embellicines",
+        "image_refs": [
+          "4bc1fa2597c14aa7725c0c5e961e1b8a80a445905b69099ac53e1539d2c4e51a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enol triflate 35 is available.",
+        "gap": "Need to perform hydrogenolysis to obtain the desired tetracyclic fragment 5.",
+        "decision": "Perform palladium-catalyzed hydrogenolysis using Pd(OAc)2, P(Cy)3, Et3N, and HCOOH. Electron-rich phosphine ligands are essential."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(C)C(=O)C[C@H]2[C@H]3CC[C@H]4[C@@H](O[Si](C)(C)CC4(C)C)[C@H]3C[C@H](OP(C)C)[C@@H]12"
+        ],
+        "reagents": [
+          "Et3N",
+          "HCOOH"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "ligand": "P(C1CCCCC1)3",
+        "solvent": "CN(C)C=O",
+        "temperature": "120 °C",
+        "yield": 90
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Palladium-catalyzed hydrogenolysis was successful, yielding the desired tetracyclic fragment 5. The NOE correlations observed for compound 5 were consistent with those of embellicine A.",
+        "ee_percent": 100
+      },
+      "evidence": {
+        "text_span": "Finally, the cyclopentanone moiety of this compound was converted into enol triflate 35, and palladium-catalyzed hydrogenolysis was conducted to obtain the desired tetracyclic fragment 5. Interestingly, the use of electron-rich phosphine ligands, such as tricyclohexylphosphine or tributylphosphine, was essential for the reaction to proceed.18 The NOE correlations observed for the tetracyclic skeleton of compound 5 were consistent with those of embellicine A.",
+        "page": 4,
+        "section": "Synthesis of the Tetracyclic Skeleton of Embellicines",
+        "image_refs": [
+          "4bc1fa2597c14aa7725c0c5e961e1b8a80a445905b69099ac53e1539d2c4e51a.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "NOESY"
+    ],
+    "metrics": {},
+    "significance": "This work achieved the first synthesis of an A/B-cis-fused cyclopenta[b]fluorene (6/5/6/5) fragment of embellicines via an IMDA reaction of an eight-membered silylene-tethered precursor with complete stereoselectivity. This confirms that embellicines possess an A/B-cis-fused tetracyclic skeleton, resolving previous structural confusion in the field. This is a crucial step towards the total synthesis of embellicine A."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.5c04318",
+      "pmcid": "PMC12888011",
+      "title": "Synthesis of an A/B-&lt;i&gt;cis&lt;/i&gt;-Fused Cyclopenta[&lt;i&gt;b&lt;/i&gt;]fluorene (6/5/6/5) Ring System for Embellicine A via the Eight-Membered Silylene-Tethered IMDA Reaction.",
+      "authors": "Sakai Y, Murata R, Hirakawa A, Nakatani Y, Maeda T, Kuwano Y, Morita S, Uchiro H.",
+      "journal": "Org Lett",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12888011?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/f19b865d-d869-4a55-a664-c89ad92fe13b.zip",
+      "parsed_at": "2026-05-11T06:42:19.185058+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 55,
+    "parseable": 34,
+    "canonicalized": 34,
+    "invalid": 21,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC=C(C)C(OSi(C)(C)C(C)(C)C)=C",
+      "CC(=O)[C@@H]1[C@H](C[C@H](C)[C@@H](OSi(C)(C)C(C)(C)C)C=C1)[C@@H](CO[C@](C)(C)O2)C2",
+      "CC(=O)[C@@H]1[C@H](C[C@H](C)[C@@H](OSi(C)(C)C(C)(C)C)C=C1)[C@@H](CO[C@](C)(C)O2)C2",
+      "CC(=O)[C@@H]1[C@H](C[C@H](C)[C@@H](OSi(C)(C)C(C)(C)C)C1)[C@@H](CO[C@](C)(C)O2)C2",
+      "CC1C(C(C(C(C1C(=O)C)OSi(C)(C)C(C)(C)C)C)[C@@H]2COC(O2)(C)C)C",
+      "CC1C(C(C(C(C1C#CCO)OSi(C)(C)C(C)(C)C)C)[C@@H]2COC(O2)(C)C)C",
+      "CC1C(C(C(C(C1C#CCO)OSi(C)(C)C(C)(C)C)C)[C@@H]2COC(O2)(C)C)C",
+      "CC1C(C(C(C(C1C=C(CO)Sn(CCCC)(CCCC)CCCC)O)C)[C@@H]2COC(O2)(C)C)C",
+      "CC1C(C(C(C(C1C=C(CO)Sn(CCCC)(CCCC)CCCC)O)C)[C@@H]2COC(O2)(C)C)C",
+      "CC1C(C(C(C(C1C=C(COB(C)(C)C2=CC=CC=C2C2=CC=CC=C2)I)O)C)C(CO)O)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

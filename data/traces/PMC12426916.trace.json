@@ -1,0 +1,733 @@
+{
+  "trace_id": "TS-PMC12426916",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-Psathyrin A",
+    "smiles": "CC(C)[C@@H]1C(=O)C23CC(C)(C[C@@H]4CC(CO)=C[C@@H](O)[C@@H]42)C3C[C@H]1C",
+    "natural_product_class": "diterpene",
+    "structural_features": {
+      "stereocenters": 7,
+      "ring_systems": "6/4/5/5 tetracyclic",
+      "key_motifs": [
+        "cyclobutane",
+        "all-carbon quaternary centers"
+      ]
+    },
+    "motivation": "Psathyrin A is an antibacterial diterpene natural product with a unique 6/4/5/5 tetracyclic carbon skeleton and seven contiguous stereocenters, including three adjacent all-carbon quaternary centers. The strained cyclobutane ring poses a significant synthetic challenge, and the authors are interested in leveraging MHAT-initiated radical cyclization for constructing strained ring systems.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "First total synthesis of (-)-Psathyrin A in 19 steps."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C7-C8 bond formation",
+        "named_strategy": "MHAT-initiated radical cyclization",
+        "reasoning": "To construct the challenging four-membered ring and establish the third all-carbon quaternary center. The C5 ketone activates the C6-C7 olefin as a radical acceptor.",
+        "alternatives_considered": [
+          {
+            "strategy": "Oxidative dearomatization to dienone 10a for radical cyclization",
+            "rejected_because": "The C14 ketone further reacted with the newly formed dienone, complicating the reaction."
+          },
+          {
+            "strategy": "Ring contraction of a five-membered ring (e.g., Favorskii, Wolff rearrangement)",
+            "rejected_because": "Authors preferred MHAT-initiated radical cyclization for strained ring systems."
+          },
+          {
+            "strategy": "[2+2] cycloaddition reactions (e.g., photochemical, ketene-alkene)",
+            "rejected_because": "Authors preferred MHAT-initiated radical cyclization for strained ring systems."
+          }
+        ]
+      },
+      {
+        "bond_description": "Formation of 5/5-fused bicyclic ring system and all-carbon quaternary center",
+        "named_strategy": "Gold(I)-catalyzed Conia-ene reaction",
+        "reasoning": "To form the desired five-membered ring and an all-carbon quaternary center from compound 12."
+      },
+      {
+        "bond_description": "Introduction of aromatic ring as six-membered ring precursor",
+        "named_strategy": "Suzuki-Miyaura cross coupling",
+        "reasoning": "To assemble compound 13 from boronic acid 14 and vinyltriflate 15."
+      },
+      {
+        "bond_description": "Formation of first two stereocenters and one all-carbon quaternary center",
+        "named_strategy": "Enantioselective copper/NHC-catalyzed conjugate addition and enolate propargylation",
+        "reasoning": "To derive vinyltriflate 15 from 2-methyl-2-cyclopenten-1-one (16), 1-bromo-2-butyne (18), and an isopropyl nucleophile (17)."
+      }
+    ],
+    "rationale": "The synthesis was designed to address the complexity of the psathyrin A skeleton, particularly the strained cyclobutane ring and multiple contiguous stereocenters. The key strategy involves a MHAT-initiated radical cyclization to form the cyclobutane, preceded by a gold(I)-catalyzed Conia-ene reaction to build the 5/5-fused bicyclic system. The initial stereocenters are set via an enantioselective conjugate addition/propargylation sequence. Peripheral decorations complete the synthesis after the core framework is established."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The starting material is commercially available 2-methyl-2-cyclopenten-1-one (16). The goal is to set the first two stereocenters, including one all-carbon quaternary center.",
+        "gap": "How to achieve enantioselective formation of the first two stereocenters and an all-carbon quaternary center.",
+        "decision": "To achieve enantioselective formation of the first two stereocenters and an all-carbon quaternary center, a tandem copper-catalyzed enantioselective conjugate addition of an isopropyl Grignard reagent and propargylation with 1-bromo-2-butyne (18) was chosen, using chiral N-heterocyclic carbene (NHC) ligand 19, expecting product 20 in high yield and enantiomeric excess."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)C1CCC1"
+        ],
+        "product_smiles": [
+          "CC#CC1C(=O)C(C)(C)C1C(C)C"
+        ],
+        "reagents": [
+          "Cu(OTf)2",
+          "CC(C)(C)C(O)C1=CC=CC=C1N(C)C(C)C1=CC=CC=C1",
+          "CC(C)MgBr",
+          "HMPA",
+          "CC#CCBr"
+        ],
+        "solvent": "Et2O",
+        "time": "12 h",
+        "named_reaction": "Copper-catalyzed enantioselective conjugate addition and propargylation"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Product 20 was obtained in 87% yield and 81% ee on a multigram scale."
+      },
+      "evidence": {
+        "text_span": "Our synthesis started with 16 being converted to 20 via a tandem copper-catalyzed enantioselective conjugate addition of an isopropyl Grignard reagent and propargylation with 18 (Scheme 1). The enantiomer of 20 was prepared in our peyssonnoside A total synthesis.4 In the current case, the use of chiral N-heterocyclic carbene (NHC) ligand 19 gave product 20 in 87% yield and 81% ee on multigram scale.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 20 has been successfully synthesized.",
+        "gap": "How to convert the ketone 20 into a vinyl triflate 15 for subsequent Suzuki-Miyaura coupling.",
+        "decision": "To convert 20 to vinyltriflate 15, the Comins' protocol was chosen, expecting good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC#CC1C(=O)C(C)(C)C1C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS",
+          "Comins' reagent"
+        ],
+        "solvent": "THF",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Vinyltriflate 15 was obtained in 88% yield."
+      },
+      "evidence": {
+        "text_span": "After 20 was converted to vinyltriflate 15 using the Comins’ protocol,11 a Suzuki−Miyaura cross coupling reaction12 between 15 and commercially available (4-methoxyphenyl)boronic acid (21) gave 22 in good yield.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Vinyltriflate 15 has been successfully synthesized.",
+        "gap": "How to introduce an aromatic ring as the six-membered ring precursor.",
+        "decision": "To introduce an aromatic ring, a Suzuki-Miyaura cross coupling reaction between 15 and commercially available (4-methoxyphenyl)boronic acid (21) was chosen, expecting good yield of 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "COc1ccc(B(O)O)cc1"
+        ],
+        "product_smiles": [
+          "CC#CC1C(c2ccc(OC)cc2)C(C)(C)C1C(C)C"
+        ],
+        "reagents": [
+          "PdCl2(dppf)",
+          "K3PO4"
+        ],
+        "solvent": "DMF/H2O",
+        "time": "4 h",
+        "named_reaction": "Suzuki-Miyaura cross coupling"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Product 22 was obtained in good yield."
+      },
+      "evidence": {
+        "text_span": "After 20 was converted to vinyltriflate 15 using the Comins’ protocol,11 a Suzuki−Miyaura cross coupling reaction12 between 15 and commercially available (4-methoxyphenyl)boronic acid (21) gave 22 in good yield.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 22 has been successfully synthesized.",
+        "gap": "How to prepare for the gold(I)-catalyzed Conia-ene reaction to form the 5/5-fused bicyclic ring system.",
+        "decision": "To prepare for the Conia-ene reaction, electrophilic epoxidation of 22 with m-CPBA was chosen, expecting epoxide 23."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC#CC1C(c2ccc(OC)cc2)C(C)(C)C1C(C)C"
+        ],
+        "product_smiles": [
+          "CC#CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "reagents": [
+          "m-CPBA"
+        ],
+        "solvent": "CH2Cl2",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Epoxide 23 was formed, but it started to undergo Meinwald rearrangement during NMR analysis."
+      },
+      "evidence": {
+        "text_span": "Electrophilic epoxidation with m-CPBA gave epoxide 23. Interestingly, 23 started to undergo a Meinwald rearrangement13 to afford ketone 24 in deuterated chloroform during NMR analysis.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Epoxide 23 was formed and started to rearrange to ketone 24.",
+        "gap": "How to accelerate the Meinwald rearrangement to obtain ketone 24 efficiently.",
+        "decision": "To accelerate the rearrangement, p-TsOH was added to the reaction mixture, expecting to obtain ketone 24 in good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC#CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "p-TsOH"
+        ],
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Ketone 24 was obtained in 87% yield from 22."
+      },
+      "evidence": {
+        "text_span": "To further accelerate the rearrangement process, p-TsOH was added to the same reaction pot to provide ketone 24 in 87% yield from 22.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ketone 24 is ready for the Conia-ene reaction.",
+        "gap": "How to construct the 5/5-fused bicyclic ring system and the second all-carbon quaternary center.",
+        "decision": "To construct the 5/5-fused bicyclic ring system and the second all-carbon quaternary center, a gold(I)-catalyzed Conia-ene reaction of 24 with a combination of AuCl(PPh3) and AgOTf in toluene was chosen, expecting bicyclic product 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "reagents": [
+          "AuCl(PPh3)",
+          "AgOTf"
+        ],
+        "solvent": "toluene",
+        "time": "30 min",
+        "named_reaction": "Gold(I)-catalyzed Conia-ene reaction"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Bicyclic product 25 with vicinal all-carbon quaternary centers at its ring junction was produced in 81% yield."
+      },
+      "evidence": {
+        "text_span": "Upon treatment of 24 with a combination of AuCl(PPh3) and AgOTf in toluene, bicyclic product 25 with vicinal all-carbon quaternary centers at its ring junction was produced in 81% yield to set up the stage for the proposed MHAT-initiated radical cyclization to form the four-membered ring and the third all-carbon quaternary center.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Bicyclic product 25 is ready for the proposed MHAT-initiated radical cyclization. The initial plan was to prepare dienone 10a via oxidative dearomatization.",
+        "gap": "How to prepare dienone 10a from 25 via oxidative dearomatization.",
+        "decision": "To prepare dienone 10a, oxidative dearomatization protocols were attempted on 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Unable to prepare substrates such as 10a via oxidative dearomatization protocols because the C14 ketone further reacted with the newly formed dienone to complicate the reaction."
+      },
+      "evidence": {
+        "text_span": "Unfortunately, we were unable to prepare substrates such as 10a via oxidative dearomatization protocols because the C14 ketone further reacted with the newly formed dienone to complicate the reaction.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Oxidative dearomatization to 10a failed. The next step is the radical cyclization.",
+        "gap": "How to perform the radical cyclization on substrate 25.",
+        "decision": "Radical cyclization attempts were made with substrate 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Radical cyclization attempts with substrate 25 were unsuccessful."
+      },
+      "evidence": {
+        "text_span": "Our radical cyclization attempts with substrate 25 were unsuccessful as well.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 7,
+      "thought": {
+        "background": "Attempts to prepare dienone 10a and perform radical cyclization on 25 failed.",
+        "gap": "A new strategy is needed to prepare a suitable substrate for the MHAT-initiated radical cyclization.",
+        "decision": "The strategy was switched to preparing enone substrate 27, which involves reducing the ketone, Birch reduction, hydrolysis, acetate protection, and double bond isomerization."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Switched to preparing enone substrate 27."
+      },
+      "evidence": {
+        "text_span": "We then switched to preparing enone substrate 27.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The strategy is to prepare enone substrate 27 from 25.",
+        "gap": "How to reduce the ketone, perform Birch reduction and hydrolysis, and protect the secondary alcohol.",
+        "decision": "To prepare 26, the ketone functionality of 25 was first reduced with LiAlH4, followed by one-pot Birch reduction and hydrolysis, and then acetate protection of the secondary alcohol, expecting smooth conversion."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "reagents": [
+          "LiAlH4",
+          "Li",
+          "NH3 (l)",
+          "EtOH",
+          "HCl",
+          "Ac2O",
+          "Et3N",
+          "DMAP"
+        ],
+        "solvent": "THF",
+        "time": "12 h",
+        "observation": "The ketone functionality of 25 was first reduced to a secondary alcohol with LiAlH4. The subsequent one-pot Birch reduction and hydrolysis, followed by acetate protection of the secondary alcohol, gave 26 smoothly."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "Product 26 was obtained smoothly with an overall yield of 97% for the three steps."
+      },
+      "evidence": {
+        "text_span": "The ketone functionality of 25 was first reduced to a secondary alcohol with LiAlH4. The subsequent one-pot Birch reduction and hydrolysis, followed by acetate protection of the secondary alcohol, gave 26 smoothly.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 26 has been synthesized. The next step is double bond isomerization to form enone 27.",
+        "gap": "How to achieve the double bond isomerization with good conversion and diastereoselectivity.",
+        "decision": "Isomerization of 26 was attempted with HCl (1.0 M in Et2O) in THF at 0 °C for 6 h."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "The isomerization had low conversion (~30%) and the diastereoselectivity was sensitive to reaction conditions. The recovered starting material was subjected to the same conditions again."
+      },
+      "evidence": {
+        "text_span": "The next double bond isomerization turned out to be nontrivial. The isomerization has low conversion and the diastereoselectivity is sensitive to the reaction time, temperature, and scale. When 1.79 g of 26 was treated with HCl (1.0 M in Et2O) in THF at 0 °C for 6 h, ~30% conversion was achieved.14 The recovered starting material was subjected to the same reaction conditions again.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "The initial attempt at double bond isomerization had low conversion.",
+        "gap": "How to improve the conversion and obtain product 27 with desired stereochemistry.",
+        "decision": "The recovered starting material 26 was subjected to the same reaction conditions (HCl (1.0 M in Et2O) in THF at 0 °C for 6 h) for a second cycle to improve conversion and avoid significant loss of starting material."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "dr": "8.5/1",
+        "observation": "After two cycles, product 27 was produced in 61% yield (dr = 8.5/1) with the rest of 26 recovered. The major diastereomer had the desired stereochemistry at C2."
+      },
+      "evidence": {
+        "text_span": "After two cycles, product 27 was produced in 61% yield (dr = 8.5/1) with the rest of 26 recovered to avoid significant loss of the starting material. To our delight, the major diastereomer has the desired stereochemistry at C2.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enone substrate 27 has been successfully prepared with the desired stereochemistry.",
+        "gap": "How to construct the four-membered ring and establish the third all-carbon quaternary center using MHAT-initiated radical cyclization.",
+        "decision": "To construct the four-membered ring and establish the third all-carbon quaternary center, the Baran reductive olefin coupling conditions (Fe(acac)3, PhSiH3, EtOH) were chosen for the MHAT-initiated radical cyclization of 27, expecting excellent yield of 28."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "reagents": [
+          "Fe(acac)3",
+          "PhSiH3"
+        ],
+        "solvent": "EtOH",
+        "time": "1.5 h",
+        "named_reaction": "Baran reductive olefin coupling (MHAT-initiated radical cyclization)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Compound 27 underwent MHAT-initiated radical cyclization to provide 28 in excellent yield, showcasing the efficiency of such MHAT chemistry in building strained ring systems."
+      },
+      "evidence": {
+        "text_span": "With the Baran reductive olefin coupling conditions (Fe-(acac) , PhSiH , EtOH),7a compound 27 underwent MHATinitiated radical cyclization to provide 28 in excellent yield, showcasing the efficiency of such MHAT chemistry in building strained ring systems!",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetracyclic product 28 is in hand. The next stage is peripheral decorations.",
+        "gap": "How to introduce a hydroxyl group at C6.",
+        "decision": "To introduce a hydroxyl group at C6, a one-pot Rubottom oxidation was chosen, involving selective silyl enol ether formation and dihydroxylation, expecting to give 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "reagents": [
+          "TBAF",
+          "HMDS",
+          "TMS-imidazole",
+          "OsO4"
+        ],
+        "solvent": "THF",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 51,
+        "observation": "Product 29 was obtained via a one-pot Rubottom oxidation."
+      },
+      "evidence": {
+        "text_span": "With tetracyclic product 28 in hand, we next focused on peripheral decorations to complete the total synthesis of (−)-psathyrin A. In addition to facilitating the MHAT-initiated radical cyclization, the C5 ketone functionality allowed introduction of a hydroxyl group at C6 via a one-pot Rubottom oxidation,15 namely, selective silyl enol ether formation and dihydroxylation, to give 29.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 29 has been synthesized. The secondary alcohol needs protection, and a methyl carboxylate group needs to be introduced at C4.",
+        "gap": "How to protect the secondary alcohol and introduce the carboxylate group, followed by conversion to an olefin.",
+        "decision": "To protect the secondary alcohol, it was protected as a TBS ether. Then, a methyl carboxylate group was introduced at C4 using Mander's protocol, followed by a one-pot α-selenation and oxidative syn-elimination to afford compound 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "reagents": [
+          "TBSOTf",
+          "2,6-lutidine",
+          "LiHMDS",
+          "CNCO2Me",
+          "PhSeBr",
+          "pyridine",
+          "H2O2"
+        ],
+        "solvent": "CH2Cl2",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Compound 30 was obtained in good yield after TBS protection, Mander's protocol, and α-selenation/oxidative syn-elimination."
+      },
+      "evidence": {
+        "text_span": "The resulting secondary alcohol was protected as a TBS ether. The C5 ketone further enabled us to introduce a methyl carboxylate group at C4 using Mander’s protocol.16 The carboxylate group served as a precursor of the hydroxymethyl group encoded by the target molecule. A subsequent one-pot α-selenation and oxidative syn-elimination afforded compound 30 in good yield.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 30 has been synthesized. The C5 ketone needs to be reduced to a methylene group.",
+        "gap": "How to reduce the C5 ketone to a methylene group without affecting the strained cyclobutane ring.",
+        "decision": "To reduce the C5 ketone to a methylene group, a sequence of Luche reduction and Barton-McCombie deoxygenation was chosen, expecting the strained cyclobutane ring to survive."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "reagents": [
+          "CeCl3.7H2O",
+          "NaBH4",
+          "NaH",
+          "CS2",
+          "MeI",
+          "AIBN",
+          "n-Bu3SnH"
+        ],
+        "solvent": "MeOH",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "Compound 31 was obtained in 68% yield. The strained cyclobutane ring survived this radical deoxygenation process."
+      },
+      "evidence": {
+        "text_span": "At this stage, it was time to reduce the C5 ketone to a methylene group and convert 30 to 31. This task was achieved by a sequence of Luche reduction17 and Barton-McCombie deoxygenation.18 Notably, the strained cyclobutane ring survived this radical deoxygenation process.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 31 has been synthesized. The carboxylate and acetate groups need to be reduced, and the primary alcohol selectively protected.",
+        "gap": "How to reduce the carboxylate and acetate groups and selectively protect the primary alcohol.",
+        "decision": "To reduce the carboxylate group and acetate group, DIBAL-H was used. The resulting primary alcohol was then selectively protected as a TBS ether to give 32."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "reagents": [
+          "DIBAL-H",
+          "potassium sodium tartrate",
+          "TBSCl",
+          "imidazole"
+        ],
+        "solvent": "CH2Cl2",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Compound 32 was obtained in 94% yield."
+      },
+      "evidence": {
+        "text_span": "The carboxylate group and acetate group of 31 were then reduced with DIBAL-H. The resulting primary alcohol was selectively protected as a TBS ether to give 32 in 94% yield.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 32 has been synthesized. The final steps are to oxidize the secondary alcohol and remove the protecting groups to obtain (-)-Psathyrin A.",
+        "gap": "How to oxidize the secondary alcohol at C4 and remove the two TBS protecting groups.",
+        "decision": "To complete the total synthesis, IBX oxidation of the secondary alcohol at C4 was performed, followed by removal of the two TBS protecting groups with HF/pyridine."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C(c2ccc(OC)cc2)C12OC(C(C)C)C2(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)[C@@H]1C(=O)C23CC(C)(C[C@@H]4CC(CO)=C[C@@H](O)[C@@H]42)C3C[C@H]1C"
+        ],
+        "reagents": [
+          "IBX",
+          "HF-pyridine"
+        ],
+        "solvent": "DMSO",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "The total synthesis of (-)-Psathyrin A was completed in 19 steps."
+      },
+      "evidence": {
+        "text_span": "IBX oxidation of the secondary alcohol at C4 followed by removal of the two TBS protecting groups with HF/pyridine completed the total synthesis of (−)-psathyrin A in 19 steps.",
+        "section": "Total Synthesis of (−)-Psathyrin A Enabled by Radical Cyclization"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield not explicitly stated, but individual step yields are provided."
+      },
+      "Total Steps": {
+        "value": 19,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "count",
+        "interpretation": "Number of explicitly mentioned failed attempts."
+      }
+    },
+    "significance": "This is the first enantioselective total synthesis of (-)-Psathyrin A, highlighting the power of MHAT-initiated radical cyclization for constructing highly congested and strained cyclobutane rings within complex natural product frameworks. It also showcases efficient strategies for setting multiple contiguous stereocenters and all-carbon quaternary centers."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.5c11534",
+      "pmcid": "PMC12426916",
+      "title": "Total Synthesis of (-)-Psathyrin A Enabled by Radical Cyclization.",
+      "authors": "Zhao W, Al-Ahmad R, Dai M.",
+      "journal": "J Am Chem Soc",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12426916?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/35233638-b44a-48e1-9de2-39e27791c646.zip",
+      "parsed_at": "2026-05-11T06:26:56.866334+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 36,
+    "parseable": 30,
+    "canonicalized": 29,
+    "invalid": 6,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)C1C(C)(C)C(OTf)C1C#CC",
+      "CC(C)C1C(C)(C)C(OTf)C1C#CC",
+      "CC(C)C1C(C)(C)C2(O)C(C#CC)C2C3=CC=C(OC)C=C3",
+      "CC(C)C1C(C)(C)C2(O)C(C#CC)C2C3=CC=C(OC)C=C3"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

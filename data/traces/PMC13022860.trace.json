@@ -1,0 +1,906 @@
+{
+  "trace_id": "TS-PMC13022860",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Caribbean Ciguatoxin C-CTX1",
+    "smiles": "CC=C[C@H](O)[C@@H]1C[C@@H]2O[C@H]3[C@@H](O)[C@@H]4O[C@H]5[C@@H](O)[C@@H]6O[C@H]7[C@@H](O)[C@@H]8O[C@@H]9CC[C@@H](O)[C@H](CO)O[C@H]9[C@@H](O)[C@H]8O[C@H]7[C@@H](O)[C@H]6O[C@H]5[C@@H](O)[C@H]4O[C@H]3[C@@H](O)[C@H]2O1",
+    "natural_product_class": "polycyclic ether",
+    "structural_features": {
+      "stereocenters": 30,
+      "ring_systems": "14 fused ether rings",
+      "key_motifs": [
+        "ladder-shaped polycyclic ether"
+      ]
+    },
+    "motivation": "C-CTX1 is a highly potent ladder-shaped polycyclic ether toxin responsible for ciguatera fish poisoning. Its extreme structural complexity and scarcity from natural sources have prevented full validation of its structure and biological properties by chemical means. A total synthesis is needed to confirm its structure and provide access to material for biological studies.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Hirama",
+        "year": 2001,
+        "doi": "10.1126/science.1063742",
+        "key_strategy": "Total synthesis of Ciguatoxin CTX3C"
+      },
+      {
+        "lead_author": "Inoue",
+        "year": 2006,
+        "doi": "10.1021/ja063023+",
+        "key_strategy": "Total synthesis of Ciguatoxin and 51-HydroxyCTX3C"
+      },
+      {
+        "lead_author": "Yamashita",
+        "year": 2011,
+        "doi": "10.1021/np100860k",
+        "key_strategy": "Stereoselective 6-exo Radical Cyclization Using cis-Vinyl Sulfoxide: Practical Total Synthesis of CTX3C"
+      },
+      {
+        "lead_author": "Yamashita",
+        "year": 2015,
+        "doi": "10.1002/chem.201405490",
+        "key_strategy": "Practical Route to the Left Wing of CTX1B and Total Syntheses of CTX1B and 54-deoxyCTX1B"
+      },
+      {
+        "lead_author": "Hamajima",
+        "year": 2009,
+        "doi": "10.1002/anie.200900062",
+        "key_strategy": "Total Synthesis of Ciguatoxin"
+      }
+    ],
+    "success_criteria": {
+      "scale_target": "milligram-scale access",
+      "stereochemistry_required": true,
+      "free_text": "Structural confirmation of C-CTX1 and its C3-epimer, and biological comparison."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond between ABCDE and HIJKLMN fragments",
+        "named_strategy": "Fragment Coupling",
+        "reasoning": "To simplify the synthesis of a large, complex molecule by breaking it into smaller, more manageable units. This allows for parallel synthesis of fragments and late-stage assembly.",
+        "alternatives_considered": [
+          {
+            "strategy": "Chlorosulfide-mediated union",
+            "rejected_because": "low yielding and poorly reproducible"
+          }
+        ]
+      },
+      {
+        "bond_description": "F-ring and G-ring",
+        "named_strategy": "Radical Cyclization-Ring-Closing Metathesis (RCM)",
+        "reasoning": "This sequence allows for stereoselective formation of the seven-membered G-ring via radical cyclization and subsequent closure of the nine-membered F-ring via RCM, completing the polycyclic framework. This strategy was previously developed and proven effective for fused ether construction.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "ABCDE-ring fragment",
+        "smiles": "",
+        "role": "left-wing fragment",
+        "comes_from": "previous work, with C3 configuration correction"
+      },
+      {
+        "fragment_id": "HIJKLMN-ring fragment",
+        "smiles": "",
+        "role": "right-wing fragment",
+        "comes_from": "previous work"
+      }
+    ],
+    "rationale": "The synthesis of C-CTX1 relies on a convergent union of the ABCDE- and HIJKLMN-ring fragments, followed by late-stage FG-ring construction. A radical cyclization-RCM sequence assembles the FG-ring system. Fragment coupling delivers a β-alkoxy acrylate bearing a chalcogen acetal, enabling stereoselective radical G-ring formation and RCM closure of the F-ring to complete the polycyclic framework. This strategy builds on our radical cyclization-RCM approach for fused ether construction and is extended here to C-CTX1."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "ABCDE-ring fragment",
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Previous convergent routes to the ABCDE- and HIJKLMN-ring fragments were established, enabling scalable access to these intermediates.",
+        "gap": "Reinvestigation revealed a misassignment of the C3 configuration in the original ABCDE-ring fragment.",
+        "decision": "To correct the C3 configuration, a regioselective epoxide opening followed by stereoinversion was chosen, expecting to install the corrected C3 configuration as confirmed by NOE analysis."
+      },
+      "evidence": {
+        "text_span": "Our reported convergent routes to the ABCDE- and HIJKLMN-ring fragments enabled scalable access to these intermediates,16 but reinvestigation revealed misassignment of the C3 configuration in the originall ABCDE-ring fragment.18 The corrected C3 configuration was installed via regioselective epoxide opening of 7, 16d followed by stereoinversion, as confirmed by NOE analysis (Scheme 2).",
+        "section": "Main Text",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "ABCDE-ring fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C3 configuration of the ABCDE-ring fragment needed to be corrected.",
+        "gap": "A method to achieve regioselective epoxide opening and stereoinversion was required.",
+        "decision": "To install the corrected C3 configuration, a sequence involving LiAlH4 reduction, p-O2NC6H4CO2H/PPh3/DEAD, and K2CO3 was chosen, expecting to achieve the desired stereoinversion."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "product_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "LiAlH4",
+          "p-O2NC6H4CO2H",
+          "PPh3",
+          "DEAD",
+          "K2CO3"
+        ],
+        "yield_percent": 74
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "The reaction sequence successfully provided intermediate 8 with the corrected C3 configuration."
+      },
+      "evidence": {
+        "text_span": "The corrected C3 configuration was installed via regioselective epoxide opening of 7, 16d followed by stereoinversion, as confirmed by NOE analysis (Scheme 2). The revised intermediate 8 was advanced through the established sequence 16d to furnish the ABCDE-ring fragment 4.",
+        "section": "Main Text",
+        "image_refs": [
+          "192fa1852d2a5ae607280cfad3d2a870bdd301c581e662c98d54e58c3580027f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "ABCDE-ring fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 8 with the corrected C3 configuration was obtained.",
+        "gap": "The established sequence for the ABCDE-ring fragment needed to be completed.",
+        "decision": "To advance intermediate 8, a sequence involving NaH/NAPBr, DIBALH, I2/PPh3/imidazole, and t-BuOK was chosen, expecting to continue the synthesis towards the ABCDE-ring fragment 4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "product_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "NaH",
+          "NAPBr",
+          "DIBALH",
+          "I2",
+          "PPh3",
+          "imidazole",
+          "t-BuOK"
+        ],
+        "yield_percent": 84
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Intermediate 9 was obtained in good yield."
+      },
+      "evidence": {
+        "text_span": "The revised intermediate 8 was advanced through the established sequence 16d to furnish the ABCDE-ring fragment 4.",
+        "section": "Main Text",
+        "image_refs": [
+          "192fa1852d2a5ae607280cfad3d2a870bdd301c581e662c98d54e58c3580027f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "ABCDE-ring fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 9 was available.",
+        "gap": "Further steps were needed to complete the ABCDE-ring fragment.",
+        "decision": "To continue the synthesis, a sequence involving 9-BBN-H/aq Cs2CO3/Pd(PPh3)4 and ThexylBH2/aq NaOH/H2O2 was chosen, expecting to form intermediate 11."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC",
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "product_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "9-BBN-H",
+          "Cs2CO3",
+          "Pd(PPh3)4",
+          "ThexylBH2",
+          "NaOH",
+          "H2O2"
+        ],
+        "yield_percent": null
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Intermediate 11 was formed."
+      },
+      "evidence": {
+        "text_span": "The revised intermediate 8 was advanced through the established sequence 16d to furnish the ABCDE-ring fragment 4.",
+        "section": "Main Text",
+        "image_refs": [
+          "192fa1852d2a5ae607280cfad3d2a870bdd301c581e662c98d54e58c3580027f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "ABCDE-ring fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 11 was available.",
+        "gap": "Further transformations were needed for the ABCDE-ring fragment.",
+        "decision": "To advance intermediate 11, a sequence involving DMP, LiN(TMS)2/TMSCl, and Pd(OAc)2 was chosen, expecting to form intermediate 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "product_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "DMP",
+          "LiN(TMS)2",
+          "TMSCl",
+          "Pd(OAc)2"
+        ],
+        "yield_percent": 95
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Intermediate 12 was obtained in high yield."
+      },
+      "evidence": {
+        "text_span": "The revised intermediate 8 was advanced through the established sequence 16d to furnish the ABCDE-ring fragment 4.",
+        "section": "Main Text",
+        "image_refs": [
+          "192fa1852d2a5ae607280cfad3d2a870bdd301c581e662c98d54e58c3580027f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "ABCDE-ring fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 12 was available.",
+        "gap": "Further transformations were needed for the ABCDE-ring fragment.",
+        "decision": "To advance intermediate 12, a sequence involving CSA/MeOH/HC(OMe)3, CSA/MeOH, and TMSOTf/Et3SiH was chosen, expecting to form intermediate 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "product_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "CSA",
+          "MeOH",
+          "HC(OMe)3",
+          "TMSOTf",
+          "Et3SiH"
+        ],
+        "yield_percent": 73
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Intermediate 13 was obtained."
+      },
+      "evidence": {
+        "text_span": "The revised intermediate 8 was advanced through the established sequence 16d to furnish the ABCDE-ring fragment 4.",
+        "section": "Main Text",
+        "image_refs": [
+          "192fa1852d2a5ae607280cfad3d2a870bdd301c581e662c98d54e58c3580027f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "ABCDE-ring fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 13 was available.",
+        "gap": "Further transformations were needed for the ABCDE-ring fragment.",
+        "decision": "To advance intermediate 13, a sequence involving TBSCl, DMP, LiN(TMS)2/TMSCl, and Pd(OAc)2 was chosen, expecting to form intermediate 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "product_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "TBSCl",
+          "DMP",
+          "LiN(TMS)2",
+          "TMSCl",
+          "Pd(OAc)2"
+        ],
+        "yield_percent": 82
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Intermediate 14 was obtained in good yield."
+      },
+      "evidence": {
+        "text_span": "The revised intermediate 8 was advanced through the established sequence 16d to furnish the ABCDE-ring fragment 4.",
+        "section": "Main Text",
+        "image_refs": [
+          "192fa1852d2a5ae607280cfad3d2a870bdd301c581e662c98d54e58c3580027f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "ABCDE-ring fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 14 was available.",
+        "gap": "Further transformations were needed for the ABCDE-ring fragment.",
+        "decision": "To advance intermediate 14, a sequence involving (R)-Me-CBS/BH3-THF and Bu4NF was chosen, expecting to form intermediate 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "product_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "(R)-Me-CBS",
+          "BH3-THF",
+          "Bu4NF"
+        ],
+        "yield_percent": 96
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Intermediate 15 was obtained in high yield."
+      },
+      "evidence": {
+        "text_span": "The revised intermediate 8 was advanced through the established sequence 16d to furnish the ABCDE-ring fragment 4.",
+        "section": "Main Text",
+        "image_refs": [
+          "192fa1852d2a5ae607280cfad3d2a870bdd301c581e662c98d54e58c3580027f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "ABCDE-ring fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 15 was available.",
+        "gap": "Further transformations were needed for the ABCDE-ring fragment.",
+        "decision": "To advance intermediate 15, a sequence involving TsCl/pyr and Bu4NCN was chosen, expecting to form intermediate 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "product_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "TsCl",
+          "pyridine",
+          "Bu4NCN"
+        ],
+        "yield_percent": null
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Intermediate 16 was obtained in 90% and 87% yield for the two steps respectively."
+      },
+      "evidence": {
+        "text_span": "The revised intermediate 8 was advanced through the established sequence 16d to furnish the ABCDE-ring fragment 4.",
+        "section": "Main Text",
+        "image_refs": [
+          "192fa1852d2a5ae607280cfad3d2a870bdd301c581e662c98d54e58c3580027f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "ABCDE-ring fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 16 was available.",
+        "gap": "The final steps to obtain the ABCDE-ring fragment 4 were needed.",
+        "decision": "To complete the synthesis, a sequence involving DIBALH and Ph3P+CH3Br/NaN(TMS)2 was chosen, expecting to furnish the ABCDE-ring fragment 4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "product_smiles": [
+          "CC[C@H](C[C@@H]1C[C@@H]2O[C@H](O1)[C@@H]2CO[Si](C)(C)CC)O[Si](CC)CC"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "DIBALH",
+          "Ph3P+CH3Br",
+          "NaN(TMS)2"
+        ],
+        "yield_percent": 66
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "The ABCDE-ring fragment 4 was successfully synthesized."
+      },
+      "evidence": {
+        "text_span": "The revised intermediate 8 was advanced through the established sequence 16d to furnish the ABCDE-ring fragment 4.",
+        "section": "Main Text",
+        "image_refs": [
+          "192fa1852d2a5ae607280cfad3d2a870bdd301c581e662c98d54e58c3580027f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "HIJKLMN-ring fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The HIJKLMN-ring fragment 5 was needed for fragment coupling.",
+        "gap": "The alcohol 5 needed to be oxidized to the corresponding acid 19.",
+        "decision": "To obtain acid 19, AZADOL oxidation of alcohol 5 was chosen, expecting a high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1"
+        ],
+        "product_smiles": [
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": "AZADOL oxidation",
+        "reagents": [
+          "AZADOL",
+          "PhI(OAc)2"
+        ],
+        "solvent": "CH2Cl2/pH 6.8 buffer",
+        "temperature": "rt",
+        "yield_percent": 99
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Acid 19 was obtained in high yield."
+      },
+      "evidence": {
+        "text_span": "Yamaguchi esterification of alcohol 4 with acid 19, obtained by AZADOL oxidation20 of alcohol 5, afforded ester 20 in high yield.",
+        "section": "Main Text",
+        "image_refs": [
+          "ae9bb1629c0b3d55f9ea34fc59e1f8aeeecae5824a603087064e4cec3e6f4fe2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The ABCDE-ring fragment 4 and HIJKLMN-ring fragment 17 (or 5) were available.",
+        "gap": "A reliable method for fragment coupling was needed.",
+        "decision": "To couple the fragments, chlorosulfide-mediated union was attempted, expecting to form the coupled product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1",
+          ""
+        ],
+        "product_smiles": [],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [],
+        "catalyst": null,
+        "ligand": null,
+        "solvent": null,
+        "temperature": null,
+        "time": null,
+        "atmosphere": null,
+        "scale": null,
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "The chlorosulfide-mediated union proved low yielding and poorly reproducible."
+      },
+      "evidence": {
+        "text_span": "Fragment coupling of 4 and 1716e was first attempted via chlorosulfide-mediated unio n,13b−d,19 but proved low yielding and poorly reproducible (Scheme 3A).",
+        "section": "Main Text",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 13,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "The chlorosulfide-mediated union for fragment coupling was low yielding and poorly reproducible.",
+        "gap": "A more effective and reproducible fragment coupling strategy was needed.",
+        "decision": "To achieve efficient fragment coupling, an esterification-based strategy was developed, expecting to provide the coupled product in high yield."
+      },
+      "evidence": {
+        "text_span": "We therefore developed an alternative esterification-based strategy (Scheme 3B).",
+        "section": "Main Text",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 14,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "An esterification-based strategy was chosen for fragment coupling. Alcohol 4 and acid 19 were available.",
+        "gap": "The two fragments needed to be coupled via esterification.",
+        "decision": "To couple alcohol 4 and acid 19, Yamaguchi esterification was chosen, expecting to afford ester 20 in high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1",
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1"
+        ],
+        "product_smiles": [
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": "Yamaguchi esterification",
+        "reagents": [
+          "Et3N",
+          "DMAP"
+        ],
+        "solvent": "toluene",
+        "temperature": "rt",
+        "yield_percent": 90
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Ester 20 was afforded in high yield."
+      },
+      "evidence": {
+        "text_span": "Yamaguchi esterification of alcohol 4 with acid 19, obtained by AZADOL oxidation20 of alcohol 5, afforded ester 20 in high yield.",
+        "section": "Main Text",
+        "image_refs": [
+          "ae9bb1629c0b3d55f9ea34fc59e1f8aeeecae5824a603087064e4cec3e6f4fe2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ester 20 was obtained.",
+        "gap": "Conversion to α-chloroacetoxy ether 21 was needed.",
+        "decision": "To convert 20 to 21, a modified Rychnovsky reductive acylation protocol was chosen, involving DIBALH reduction followed by trapping with chloroacetic anhydride in the presence of DMAP and pyridine, expecting to suppress over-reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1"
+        ],
+        "product_smiles": [
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": "Rychnovsky reductive acylation",
+        "reagents": [
+          "DIBALH",
+          "chloroacetic anhydride",
+          "DMAP",
+          "pyridine"
+        ],
+        "solvent": "toluene",
+        "temperature": "-94 °C to 0 °C",
+        "yield_percent": null
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Conversion to α-chloroacetoxy ether 21 was achieved, and over-reduction was suppressed by careful control of temperature and time during DIBALH reduction."
+      },
+      "evidence": {
+        "text_span": "Conversion to α-chloroacetoxy ether 21 was achieved using a modified Rychnovsky reductive acylation protocol.21 Optimized DIBALH reduction followed by trapping with chloroacetic anhydride22 in the presence of DMAP and pyridine suppressed over-reduction.23",
+        "section": "Main Text",
+        "image_refs": [
+          "ae9bb1629c0b3d55f9ea34fc59e1f8aeeecae5824a603087064e4cec3e6f4fe2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "α-Chloroacetoxy ether 21 was obtained.",
+        "gap": "Selenoacetal 22 needed to be formed.",
+        "decision": "To form selenoacetal 22, treatment of 21 with i-Bu2AlSePh was chosen, expecting the desired transformation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1"
+        ],
+        "product_smiles": [
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "i-Bu2AlSePh"
+        ],
+        "yield_percent": null
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Selenoacetal 22 was obtained. The terminal N-ring acetal remained intact under the selenoacetalization conditions."
+      },
+      "evidence": {
+        "text_span": "Treatment of 21 with i-Bu2AlSePh17,24 gave selenoacetal 22.25",
+        "section": "Main Text",
+        "image_refs": [
+          "ae9bb1629c0b3d55f9ea34fc59e1f8aeeecae5824a603087064e4cec3e6f4fe2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Selenoacetal 22 was obtained.",
+        "gap": "β-Alkoxy acrylate 23 needed to be furnished to enable FG-ring construction.",
+        "decision": "To obtain β-alkoxy acrylate 23, a sequence involving TIPS deprotection (Bu4NF) and reaction with pentafluorophenyl propiolate and Me3P was chosen, expecting to furnish the desired product in preparative yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1"
+        ],
+        "product_smiles": [
+          "C=C[C@H]1C=C[C@@H](O)[C@@H]2[C@@H](O)[C@@H]3[C@@H](O)[C@@H]4[C@@H](O)[C@@H]5O[C@H](CC(C)C)O[C@@H]5[C@@H](O)[C@@H]4[C@@H](O)[C@@H]3[C@@H](O)[C@@H]2O1"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "Bu4NF",
+          "pentafluorophenyl propiolate",
+          "Me3P"
+        ],
+        "solvent": "THF, CH2Cl2",
+        "temperature": "rt",
+        "yield_percent": 56
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "β-Alkoxy acrylate 23 was furnished in preparative yield, enabling FG-ring construction."
+      },
+      "evidence": {
+        "text_span": "Subsequent TIPS deprotection and reaction with pentafluorophenyl propiolate and Me3P13b−d furnished β-alkoxy acrylate 23 in preparative yield, enabling FG-ring construction.",
+        "section": "Main Text",
+        "image_refs": [
+          "ae9bb1629c0b3d55f9ea34fc59e1f8aeeecae5824a603087064e4cec3e6f4fe2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "β-Alkoxy acrylate 23 was available, and the central FG-ring system needed to be constructed.",
+        "gap": "The G-ring needed to be formed stereoselectively.",
+        "decision": "To form the G-ring, radical cyclization of 23 under established conditions was chosen, expecting stereoselective formation of the seven-membered G-ring. The product would then be converted to methyl ester 24."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C=C[C@@H](C(=O)OC)[C@@H](C)O[C@@H]1CC[C@H](COC(OC)OC)O[C@@H]1C"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": "Radical cyclization",
+        "reagents": [
+          "Bu3SnH",
+          "AIBN"
+        ],
+        "yield_percent": null
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Radical cyclization of 23 stereoselectively forged the seven-membered G-ring. The product was converted to methyl ester 24, and the newly formed C26 stereocenter was assigned by ROE analysis."
+      },
+      "evidence": {
+        "text_span": "Radical cyclization of 23 under our established conditions17 stereoselectively forged the seven-membered G-ring. The product was converted to methyl ester 24, and the newly formed C26 stereocenter was assigned by ROE analysis.",
+        "section": "Main Text",
+        "image_refs": [
+          "0e6e609200dbbbffc89979f35b5c3017f0ce2b2fe53707577f6612c7df4fb3e9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Methyl ester 24, containing the newly formed G-ring, was available.",
+        "gap": "The F-ring needed to be formed to complete the 14-ring ladder-shaped polycyclic ether framework.",
+        "decision": "To form the F-ring, installation of the terminal olefin to furnish tetraene 25, followed by RCM with the first-generation Grubbs catalyst, was chosen, expecting to form the nine-membered F-ring."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@@H](C(=O)OC)[C@@H](C)O[C@@H]1CC[C@H](COC(OC)OC)O[C@@H]1C"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](C(=O)OC)[C@@H](C)O[C@@H]1CC[C@H](COC(OC)OC)O[C@@H]1C"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": "RCM",
+        "catalyst": "first-generation Grubbs catalyst",
+        "yield_percent": null
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Installation of the terminal olefin furnished tetraene 25, which underwent RCM with the first-generation Grubbs catalyst to form the nine-membered F-ring, completing the 14-ring ladder-shaped polycyclic ether framework 26. The F-ring 1H and 13C NMR signals of 26 exhibited line broadening at ambient temperature, characteristic of slow conformational exchange in fused nine-membered ethers and supporting successful F-ring formation."
+      },
+      "evidence": {
+        "text_span": "Installation of the terminal olefin furnished tetraene 25, which underwent RCM with the first-generation Grubbs catalyst to form the nine-membered F-ring, completing the 14-ring ladder-shaped polycyclic ether framework 26. Consistent with reported ciguatoxin spectra,2,26 the F-ring 1H and 13C NMR signals of 26 exhibited line broadening at ambient temperature, characteristic of slow conformational exchange in fused nine-membered ethers and supporting successful F-ring formation.",
+        "section": "Main Text",
+        "image_refs": [
+          "0e6e609200dbbbffc89979f35b5c3017f0ce2b2fe53707577f6612c7df4fb3e9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The 14-ring ladder-shaped polycyclic ether framework 26 was completed.",
+        "gap": "Global deprotection was needed to obtain synthetic C-CTX1 (1).",
+        "decision": "To obtain C-CTX1 (1), global deprotection of 26 by sequential removal of NAP groups with DDQ and acetonide cleavage with TFA was chosen, expecting to complete the total synthesis."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [
+          "CC=C[C@H](O)[C@@H]1C[C@@H]2O[C@H]3[C@@H](O)[C@@H]4O[C@H]5[C@@H](O)[C@@H]6O[C@H]7[C@@H](O)[C@@H]8O[C@@H]9CC[C@@H](O)[C@H](CO)O[C@H]9[C@@H](O)[C@H]8O[C@H]7[C@@H](O)[C@H]6O[C@H]5[C@@H](O)[C@H]4O[C@H]3[C@@H](O)[C@H]2O1"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [
+          "DDQ",
+          "TFA"
+        ],
+        "yield_percent": null
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Synthetic C-CTX1 (1) was obtained, completing the total synthesis. Comprehensive NMR analysis and comparison with reported data for the natural toxin confirmed the structure."
+      },
+      "evidence": {
+        "text_span": "Global deprotection of 26 by sequential removal of NAP groups with DDQ and acetonide cleavage with TFA furnished synthetic C-CTX1 (1), completing the total synthesis. Comprehensive NMR analysis (HSQC and HSQC-TOCSY) and comparison with reported data for the natural toxin confirmed the structure of C-CTX1 (1).27",
+        "section": "Main Text",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 21,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The epimeric ABCDE-ring fragment 3-epi-4 was available.",
+        "gap": "The synthesis of 3-epi-C-CTX1 (3) was needed for parallel studies and biological comparison.",
+        "decision": "To synthesize 3-epi-C-CTX1 (3), the same convergent sequence used for C-CTX1 (1) was applied to the epimeric ABCDE-ring fragment 3-epi-4, expecting to obtain the C3-epimer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "CC=C[C@H](O)[C@@H]1C[C@@H]2O[C@H]3[C@@H](O)[C@@H]4O[C@H]5[C@@H](O)[C@@H]6O[C@H]7[C@@H](O)[C@@H]8O[C@@H]9CC[C@@H](O)[C@H](CO)O[C@H]9[C@@H](O)[C@H]8O[C@H]7[C@@H](O)[C@H]6O[C@H]5[C@@H](O)[C@H]4O[C@H]3[C@@H](O)[C@H]2O1"
+        ],
+        "rxn_smiles": null,
+        "named_reaction": null,
+        "reagents": [],
+        "yield_percent": 11
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 11,
+        "observation": "3-epi-C-CTX1 (3) was synthesized. Epimer 3 showed characteristic 1H and 13C NMR differences in the A-ring region consistent with C3 inversion."
+      },
+      "evidence": {
+        "text_span": "The epimeric ABCDE-ring fragment 3-epi-416d,18 enabled parallel synthesis of 3-epi-C-CTX1 (3) through the same convergent sequence (Scheme 5). Epimer 3 showed characteristic 1H and 13C NMR differences in the A-ring region consistent with C3 inversion.28",
+        "section": "Main Text",
+        "image_refs": [
+          "9d60c4a24411629f6b3bfec196f55c94f65bd0fc853810a988ade00a01f59e90.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HSQC",
+      "HSQC-TOCSY",
+      "ROE analysis",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 11,
+        "unit": "%",
+        "interpretation": "Overall yield for the synthesis of 3-epi-C-CTX1 (3) from 3-epi-4 and 19."
+      }
+    },
+    "significance": "The total synthesis confirmed the proposed structure of C-CTX1 (1) and provided milligram-scale access to both C-CTX1 and its C3-epimer. Direct biological comparison revealed a clear difference in apparent neurotoxicity between the two epimers, underscoring the influence of C3 stereochemistry on activity. The radical cyclization-RCM strategy provides a scalable blueprint for accessing complex marine ladder-shaped polycyclic ethers."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.6c01247",
+      "pmcid": "PMC13022860",
+      "title": "Convergent Total Synthesis of Caribbean Ciguatoxin C-CTX1 and Its C3-Epimer.",
+      "authors": "Sasaki M, Umehara A, Sugahara K, Satake M, Tsumuraya T.",
+      "journal": "J Am Chem Soc",
+      "year": 2026,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC13022860?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/c21d1a07-776c-451f-8d99-405bd1e23916.zip",
+      "parsed_at": "2026-05-07T14:32:21.425968+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 43,
+    "parseable": 37,
+    "canonicalized": 37,
+    "invalid": 6,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC=C[C@H](O)[C@H]1O[C@@H]2[C@H](O)[C@@H]3O[C@@H]4[C@H](O)[C@@H]5O[C@@H](CNAP)CC[C@H]5O[C@H]4[C@H](O)[C@@H]3O[C@H]2C1",
+      "C[C@@H]1O[C@@H]2[C@H](O)[C@@H]3O[C@@H]4[C@H](O)[C@@H]5O[C@@H]6[C@H](O)[C@@H]7O[C@@H]8[C@H](O)[C@@H]9O[C@@H](C(C(=O)O)OTIPSO)CC[C@H]9O[C@H]8[C@H](O)[C@@H]7O[C@H]6[C@H](O)[C@@H]5O[C@H]4[C@H](O)[C@@H]3O[C@H]2C1",
+      "CC=C[C@H](O)[C@H]1O[C@@H]2[C@H](O)[C@@H]3O[C@@H]4[C@H](O)[C@@H]5O[C@@H](CNAP)CC[C@H]5O[C@H]4[C@H](O)[C@@H]3O[C@H]2C1",
+      "COC(OC)OC[C@H]1CC[C@@H](O[C@H](X)[C@@H](C=C)C(=O)OC)[C@H](O1)C",
+      "CC=C[C@H](O)[C@H]1O[C@@H]2[C@H](O)[C@@H]3O[C@@H]4[C@H](O)[C@@H]5O[C@@H](CNAP)CC[C@H]5O[C@H]4[C@H](O)[C@@H]3O[C@H]2C1",
+      "C[C@@H]1O[C@@H]2[C@H](O)[C@@H]3O[C@@H]4[C@H](O)[C@@H]5O[C@@H]6[C@H](O)[C@@H]7O[C@@H]8[C@H](O)[C@@H]9O[C@@H](C(C(=O)O)OTIPSO)CC[C@H]9O[C@H]8[C@H](O)[C@@H]7O[C@H]6[C@H](O)[C@@H]5O[C@H]4[C@H](O)[C@@H]3O[C@H]2C1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

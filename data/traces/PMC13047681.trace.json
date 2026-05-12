@@ -1,0 +1,915 @@
+{
+  "trace_id": "TS-PMC13047681",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "SJG-2 glycan",
+    "smiles": "O=C(O)[C@@H](O)[C@@H](O)[C@@H](CO)O[C@@H]1[C@H](O)[C@@H](O)[C@H](CO)[C@@H](O[C@@H]2[C@H](O)[C@@H](O)[C@H](CO)[C@@H](O[C@@H]3[C@H](O)[C@@H](O)[C@H](CO)[C@@H](O[C@@H]4[C@H](O)[C@@H](O)[C@H](CO)[C@@H](O[C@@H]5[C@H](O)[C@@H](O)[C@H](CO)[C@@H](O[C@@H]6[C@H](O)[C@@H](O)[C@H](CO)[C@@H](O)[C@@H]6O)[C@@H]5O)[C@@H]4O)[C@@H]3O)[C@@H]2O)[C@@H]1O",
+    "natural_product_class": "ganglioside",
+    "structural_features": {
+      "key_motifs": [
+        "trisialylated glycan",
+        "alpha(2,3)-sialylation",
+        "alpha(2,4)-sialylation",
+        "beta(1,8)-sialylation"
+      ]
+    },
+    "motivation": "SJG-2 is an echinoderm-derived ganglioside with potent neuroregenerative activity, but its complex and sterically congested trisialylated glycan motif has made it synthetically inaccessible for over two decades. A total synthesis is needed to explore its neurobiological functions and therapeutic potential.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Fukase",
+        "year": "unspecified",
+        "key_strategy": "N-phthaloyl-protected donor for alpha(2,4)-sialylation, but low yield (28%)"
+      },
+      {
+        "lead_author": "Crich",
+        "year": "unspecified",
+        "key_strategy": "N3-protected donor with SAda leaving group for alpha(2,4)-sialylation, 41% yield"
+      },
+      {
+        "lead_author": "Cai",
+        "year": "unspecified",
+        "key_strategy": "5-N,4-O-oxazolidinone donor for alpha(2,4)-sialylation, but mixed products"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "First total synthesis of the SJG-2 glycan, overcoming challenges of alpha(2,4)-sialylation and beta(1,8)-sialylation, and providing a practical route to sterically congested sialylated glycans."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "beta(1,8)-linkage between nonreducing-end trisaccharide (2) and reducing-end tetrasaccharide (3)",
+        "named_strategy": "[4+3] glycosylation",
+        "reasoning": "This is the most challenging and sterically demanding linkage, requiring a convergent approach to assemble the full heptasaccharide framework.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "alpha(2,4)- and alpha(2,3)-sialylations on nonreducing-end trisaccharide (2)",
+        "reasoning": "These are sterically demanding linkages, especially the alpha(2,4)-sialoside due to the poor nucleophilicity of the axial C4-OH of Gal. A conformational inversion strategy was proposed.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "alpha(2,3)-sialylation on reducing-end tetrasaccharide (3)",
+        "reasoning": "This motif is uncommon and underexplored, requiring careful evaluation of protecting groups and donor/acceptor effects.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "2",
+        "smiles": "",
+        "role": "nonreducing-end trisaccharide donor",
+        "comes_from": "Gal building block, D8, 5"
+      },
+      {
+        "fragment_id": "3",
+        "smiles": "",
+        "role": "reducing-end tetrasaccharide acceptor",
+        "comes_from": "galactosamine donor (8), lactose acceptor (9), 5"
+      }
+    ],
+    "rationale": "The retrosynthetic analysis aimed to divide the complex heptasaccharide into manageable fragments, allowing for a convergent assembly. The key challenges were identified as the alpha(2,4)- and beta(1,8)-sialylations, which required specific strategies like conformational inversion and protecting group engineering. A stepwise assembly for the reducing-end tetrasaccharide was chosen to allow for optimization of the alpha(2,3)-sialylation."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "SJG-2 glycan (1) is a heptasaccharide with two terminal sialic acids attached to galactose via alpha(2,3)- and alpha(2,4)-sialylations, and an internal beta(1,8)-sialylation to another sialic acid. This structure is highly branched and sterically congested, making it synthetically challenging.",
+        "gap": "How to efficiently construct the alpha(2,4)- and beta(1,8)-sialyl linkages, which are known to be difficult.",
+        "decision": "To simplify the synthesis, the target heptasaccharide (1) was retrosynthetically divided into a nonreducing-end trisaccharide (2) and a reducing-end tetrasaccharide (3). This convergent [4+3] glycosylation strategy would allow for the construction of the crucial beta(1,8)-linkage. The nonreducing end trisaccharide donor (2) would be derived from a 1C4-configured anhydro-Gal building block to facilitate stereocontrolled installation of two sialic acid residues. The reducing-end tetrasaccharide (3) would be assembled stepwise from a galactosamine donor (8) and lactose acceptor (9) to form trisaccharide (6), followed by sialylation with donor (5)."
+      },
+      "evidence": {
+        "text_span": "To establish an efficient route toward SJG-2, we first analyzed its structure to identify strategic disconnections and feasible synthetic fragments. The target heptasaccharide SJG-2 (1) was retrosynthetically divided into a nonreducing-end trisaccharide (2) and a reducing-end tetrasaccharide (3) (Scheme 1). This convergent strategy allowed the key $[ 4 + 3 ]$ glycosylation to construct the crucial $\beta ( 1 , 8 )$ -linkage connecting the two fragments. The nonreducing end trisaccharide donor (2) was derived from a $^ 1 { \\cal C } _ { 4 }$ -configured anhydro-Gal building block, which facilitated stereocontrolled installation of two sialic acid residues. Sequential $\\alpha ( 2 , 4 )$ - and $\\alpha ( 2 , 3 )$ -sialylations were carried out using donors D8 and 5, respectively, to construct the branched sialylated Gal core. For the reducing-end tetrasaccharide (3), a stepwise assembly was adopted, beginning from galactosamine donor (8) and lactose acceptor (9) to afford trisaccharide intermediate (6) via $\\left[ 2 { \begin{array} { l } { + } \\end{array} } 1 \right]$ glycosylation. Subsequent sialylation of 6 with donor 5 completed the construction of fragment 3. This design provided a convergent and flexible synthetic route to SJG-2, allowing modular access to both fragments and efficient assembly through the final $[ 4 + 3 ]$ glycosylation.",
+        "section": "Retrosynthetic Analysis of SJG-2 Glycan 1"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The nonreducing-end trisaccharide fragment 2 requires selective installation of two sialic acids onto a Gal acceptor, starting with alpha(2,4)-sialylation at the C4-OH of Gal acceptors. Previous literature and initial experiments with disaccharide acceptor A1 and sialyl donors D1alpha and D2 (both with 5-N,4-O-oxazolidinone groups, typically alpha-directing) resulted in only beta-anomers.",
+        "gap": "The conventional alpha-directing donors are not effective for alpha(2,4)-sialylation on sterically congested Gal acceptors, leading to undesired beta-anomers.",
+        "decision": "To investigate the influence of protecting groups on the acceptor, a series of monosaccharide acceptors (A2, A3, A4) with different substituents (PMB/Bn, Me, TBS) were evaluated."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NIS",
+          "TfOH",
+          "TMSOTf"
+        ],
+        "solvent": "DCM/CH3CN",
+        "temperature": "-78 to -50",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "Using disaccharide acceptor A1 (entries 1−2) exclusively produced β-anomers, regardless of the sialyl donor used. Notably, these sialyl donors carried a 5-N,4-O-oxazolidinone group, which typically promotes α-selectivity. Changing the leaving group improved the yield from 28% to 82% (entries 1−6) but did not affect stereoselectivity. The reduced α-selectivity observed for cyclic Gal acceptors is consistent with donor−acceptor mismatch in sialylation reactions, in which steric hindrance and diminished nucleophilicity of the axial C4-OH weaken the kinetic preference for α-attack even when strongly α-directing donors are employed. Similar behavior has been documented in related sialylation systems, including oxazolidinone-protected donors and sterically hindered acceptors. Accordingly, the axial C4-OH of the Gal acceptor likely limits the stereodirecting influence of the 5-N,4-O-oxazolidinone-protected donors under these conditions. These findings indicate that conventional α-directing donors cannot be reliably applied to sterically congested Gal acceptors, requiring alternative methods in constructing such linkages. When monosaccharide acceptors A2, A3, and A4 were employed, only beta-anomers were observed in all cases (entries 3−6)."
+      },
+      "evidence": {
+        "text_span": "To construct the nonreducing-end trisaccharide fragment 2 necessitates selective installation of two sialic acids onto a Gal acceptor. We first examined $\\alpha ( 2 , 4 )$ -sialylation at the C4-OH of Gal acceptors (Tables 1 and S1). Using disaccharide acceptor A1 (entries 1−2) exclusively produced $\beta$ -anomers, regardless of the sialyl donor used. Notably, these sialyl donors carried a 5-N,4-O-oxazolidinone group, which typically promotes $\\alpha \\cdot$ - selectivity.36 Changing the leaving group improved the yield from $2 8 \\%$ to $8 2 \\%$ (entries 1−6) but did not affect stereoselectivity. The reduced $\\alpha$ -selectivity observed for cyclic Gal acceptors is consistent with donor−acceptor mismatch in sialylation reactions, in which steric hindrance and diminished nucleophilicity of the axial C4-OH weaken the kinetic preference for $\\alpha$ -attack even when strongly $\\alpha$ -directing donors are employed. Similar behavior has been documented in related sialylation systems, including oxazolidinone-protected donors and sterically hindered acceptors.25,34−36 Accordingly, the axial C4-OH of the Gal acceptor likely limits the stereodirecting influence of the 5-N,4-O-oxazolidinone-protected donors under these conditions. These findings indicate that conventional $\\alpha$ -directing donors cannot be reliably applied to sterically congested Gal acceptors, requiring alternative methods in constructing such linkages. To further identify the influences of protecting groups on the acceptor, we evaluated a series of monosaccharide acceptors, namely, A2, A3, and A4, which contain PMB/Bn, Me, and TBS substituents, respectively. Although prior studies reported increased reactivity for A4, 42,43 ${ \\mathbf { A4 } } , ^ { 4 2 , 4 3 }$ only $\beta$ -anomers were observed in all cases (entries 3−6).",
+        "page": 4,
+        "section": "Synthesis of Nonreducing-End Disialyl Trisaccharide Donor Precursors: Investigation of 4C1-Gal Acceptors"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Conventional alpha-directing donors failed to achieve alpha(2,4)-sialylation on 4C1-configured Gal acceptors due to steric hindrance and poor nucleophilicity of the axial C4-OH.",
+        "gap": "How to overcome the steric and electronic limitations of 4C1-configured Gal acceptors to achieve efficient and stereoselective alpha(2,4)-sialylation.",
+        "decision": "To address this, a conformational inversion strategy was hypothesized: converting the Gal acceptor into the 1C4 form would reposition the C4-OH from axial to equatorial, increasing its nucleophilicity and improving sialylation efficiency. Initial experiments with open-ring galactitol acceptor A5 were planned."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "When the open-ring galactitol acceptor A5 was employed, donor D2 furnished the desired alpha(2,4)-linked product P5 in high yield and exclusive stereoselectivity (93%, alpha-only; entry 7). This outcome is probably due to increased conformational flexibility and reduced steric congestion around the reacting hydroxyl group, which likely facilitates nucleophilic approach and restores alpha-selectivity."
+      },
+      "evidence": {
+        "text_span": "To overcome this limitation, we hypothesized that conformational inversion of the Gal acceptor into the $^ 1 { \\cal C } _ { 4 }$ form, repositioning the C4-OH from axial to equatorial orientation, would increase nucleophilicity and thereby improve sialylation efficiency. Initial experiments using diol acceptors A7 and A8 (entries 1 and 2, Table 2) produced only monosialyted products when donor D2 or D5 were used, however, in both cases, the desired $\\alpha ( 2 , 4 )$ -glycosidic linkage was obtained. These results confirmed that $^ { 1 } \bar { C } _ { 4 } \bar { }$ -configured Gal acceptors are viable substrates for stereoselective $\\alpha$ -sialylation. We next examined the role of protecting groups at the C3 and C2 positions of the Gal acceptor (A9-A12). Donor D5 consistently gave higher $\\alpha$ selectivity and yield than donor D1 (entries 3 and 4). Moreover, the nature of the C2 protecting group strongly influenced reactivity: ether-type substituents enhanced yields, whereas benzoyl esters significantly decreased the yields (entries 5 and 9 vs 6). Notably, orthogonally protected A12 was identified as a practical acceptor, suitable for downstream transformation. A broader evaluation of sialyl donors (D3 and D5-D8), differing in their C5-N protecting groups and anomeric leaving groups, further clarified donor performance. Donors bearing an N-phthalimido (Phth) protection at ${ \\mathrm { C } } 5 { - } \\mathrm { N }$ (D5 and D7) performed better than those containing $\\Nu _ { 3 }$ (D6) or a 5-N,4-Ooxazolidinone (D3) (entries 7−9). Within this group, the SAda-leaving group (D7) outperformed its PTFAI counterparts (D5), while donor D8 $_ N$ -Troc) consistently promoted efficient $\\alpha ( 2 , 4 )$ -glycosylation with excellent $\\alpha$ -selectivity across a range of donor-to-acceptor ratios (entries 11 and 12). Additional extended screening data are summarized in the Supporting Information (Table S2). Presumably, the superior performance of the N-Troc-protected donor (D8) is attributed to its strong electron-withdrawing character,28 which modulates oxocarbenium ion reactivity and promotes formation of a more ordered nitrilium-oxocarbenium ion pair in nitrile solvent,46,47 thereby favoring $\\alpha$ -glycosylation. In contrast, C2- benzoylated Gal acceptor (A11) displayed diminished reactivity. The electron-withdrawing benzoyl substituent further decreases the nucleophilicity of the intrinsically weak axial C4-OH nucleophile, resulting in reduced conversion without improved stereocontrol. Collectively, these results demonstrate that conformational inversion to $^ 1 \\mathrm { C } _ { 4 } \\mathrm { - G a l } _ { , }$ $^ 1 { \\cal C } _ { 4 }$ , in combination with judicious donor and protecting-group selection, enables efficient and stereoselective $\\alpha ( 2 , 4 )$ -sialylation. This strategy ultimately provided the key disialyl trisaccharide donor precursors required for the assembly of SJG-2.",
+        "page": 4,
+        "section": "Synthesis of Disialyl Trisaccharide Donor Precursors Using 1C4-Gal Acceptor"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The open-ring galactitol acceptor A5 successfully yielded alpha(2,4)-linked product P5. However, this open-ring structure is not suitable for downstream synthesis of the cyclic Gal structure.",
+        "gap": "How to regenerate the cyclic Gal structure from P5 for further transformations.",
+        "decision": "Attempts were made to regenerate the cyclic Gal structure from P5 by allyl deprotection followed by selective oxidation of the primary hydroxy group."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "observation": "Attempts to regenerate the cyclic Gal structure from P5 by allyl deprotection followed by selective oxidation of the primary hydroxy group were unsuccessful, preventing its use in downstream synthesis.",
+        "yield_percent": 40
+      },
+      "evidence": {
+        "text_span": "In contrast, donor D4 underwent rapid hydrolysis, reducing the yield to $4 0 \\%$ (entry 8). Attempts to regenerate the cyclic Gal structure from P5 by allyl deprotection followed by selective oxidation of the primary hydroxy group were unsuccessful, preventing its use in downstream synthesis.",
+        "page": 4,
+        "section": "Synthesis of Disialyl Trisaccharide Donor Precursors Using 1C4-Gal Acceptor"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempts to achieve alpha(2,4)-sialylation on 4C1-configured Gal acceptors were unsuccessful. The conformational inversion strategy showed promise with open-ring acceptors.",
+        "gap": "Can previously reported sialyl donors, known to produce alpha(2,4)-linkages with galactosyl acceptors, be used effectively under these conditions?",
+        "decision": "To test previously reported sialyl donors (Fukase's donor D5 and Crich's donor D6) for alpha(2,4)-sialylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TMSOTf",
+          "NIS",
+          "TfOH"
+        ],
+        "solvent": "unspecified",
+        "temperature": "-78",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Neither Fukase’s donor D5 (entry 9) nor Crich’s donor D6 (entry 10) afforded the desired product under our reaction conditions, instead yielding elimination side products.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "We also tested previously reported sialyl donors known to produce $\\alpha ( 2 , 4 )$ -linkages with galactosyl acceptors. However, neither Fukase’s donor $ { \\mathbf Ḋ 5 Ḍ } ^ { 3 4 }$ (entry 9) nor Crich’s donor $\\mathbf { D } \\mathbf { 6 } ^ { 3 5 }$ (entry 10) afforded the desired product under our reaction conditions, instead yielding elimination side products.",
+        "page": 4,
+        "section": "Synthesis of Disialyl Trisaccharide Donor Precursors Using 1C4-Gal Acceptor"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The conformational inversion strategy to 1C4-configured Gal acceptors proved effective for alpha(2,4)-sialylation. Now, the next step is to install the second sialic acid via alpha(2,3)-sialylation to construct the trisaccharide donor.",
+        "gap": "How to achieve efficient and stereoselective alpha(2,3)-sialylation, especially considering the challenges observed with 4C1-configured acceptors in previous steps.",
+        "decision": "To facilitate alpha(2,3)-sialylation, the acceptor conformation was reverted to the 4C1 form (A13) to position the C3-OH group equatorial, thereby enhancing its reactivity. Sialylation of A13 with highly alpha-selective donor D7 or commonly employed donor D4 was planned."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TMSOTf",
+          "NIS",
+          "TfOH"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 33,
+        "observation": "Sialylation of the 4C1-configured acceptor A13 using either the highly alpha-selective donor D7 or the commonly employed donor D4 afforded trisaccharide products exclusively as beta-anomers. Even with Ando’s donor D9, the desired alpha-configured disialylated trisaccharide was obtained only in modest yield (33%, P17, entry 4).",
+        "regio_selectivity": "alpha/beta = 1/0"
+      },
+      "evidence": {
+        "text_span": "After successfully establishing the $\\alpha ( 2 , 4 )$ -glycosidic linkage, we next investigated the $\\alpha ( 2 , 3 )$ -sialylation required to construct the trisaccharide donor (Table 3). To facilitate this transformation, the acceptor conformation was reverted to the ${ } ^ { 4 } \\mathrm { C } _ { 1 }$ form (A13) to position the C3-OH group equatorial, thereby enhancing its reactivity. The syntheses of acceptors A13 and A14 (Table 3) are described in the Supporting Information. Sialylation of the $^ { 4 } { \bf C } _ { 1 }$ -configured acceptor A13 using either the highly $\\alpha$ -selective donor D7 or the commonly employed donor D4 afforded trisaccharide products exclusively as $\beta \\mathrm { . }$ - anomers. Even with Ando’s donor D9, 48 the desired $\\alpha$ - configured disialylated trisaccharide was obtained only in modest yield $3 3 \\%$ , P17, entry 4), and related ${ } ^ { 4 } \\mathrm { C } _ { 1 }$ -configured acceptor bearing neighboring sialyl substituent (entry 5) also gave poor sialylation yields.",
+        "page": 5,
+        "section": "Synthesis of Nonreducing-End Disialyl Trisaccharide Donor Precursors"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "Reverting to the 4C1 conformation for alpha(2,3)-sialylation resulted in beta-anomers or modest yields, indicating that this conformation is not optimal for stereoselective alpha-sialylation at C3.",
+        "gap": "How to achieve efficient and stereoselective alpha(2,3)-sialylation.",
+        "decision": "To re-evaluate the conformational strategy, the 1C4-configured acceptors A15 and A16 were tested for C3 sialylation, hypothesizing that this conformation might be more favorable."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "The axial C3-OH of 1C4-configured acceptors A15 and A16 exhibited markedly higher reactivity in the second sialylation, producing the target trisaccharides P19 and P20 in 75% and 57% yields, respectively (entries 6 and 7). This comparison indicates that the 1C4 conformation is more favorable for C3 sialylation under these conditions.",
+        "regio_selectivity": "alpha/beta = 1/0"
+      },
+      "evidence": {
+        "text_span": "Notably, the axial C3-OH of $^ 1 { \\cal C } _ { 4 }$ -configured acceptors A15 and A16 exhibited markedly higher reactivity in the second sialylation, producing the target trisaccharides P19 and P20 in $7 5 \\%$ and $5 7 \\%$ yields, respectively (entries 6 and 7). This comparison indicates that the $^ 1 { \\cal C } _ { 4 }$ conformation is more favorable for C3 sialylation under these conditions.",
+        "page": 5,
+        "section": "Synthesis of Nonreducing-End Disialyl Trisaccharide Donor Precursors"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The 1C4 conformation proved more favorable for C3 sialylation, yielding P19 and P20. However, further donor screening with phthalimido donors and oxazolidinone-protected donors was conducted.",
+        "gap": "Can other donors improve the yield and selectivity for C3 sialylation?",
+        "decision": "To screen additional donors (phthalimido donors with various leaving groups and oxazolidinone-protected donors with SAda or OPO(OBu)2 leaving groups) and intramolecular glycosylation strategies."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "unspecified"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Additional donor screening (Table S3) (phthalimido donors with various leaving groups and oxazolidinone-protected donors with SAda or OPO(OBu)2 leaving groups) primarily resulted in elimination byproducts rather than productive glycosylation. Furthermore, attempts to employ intramolecular glycosylation strategies were also unsuccessful (Table S4).",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "Additional donor screening (Table S3) (phthalimido donors with various leaving groups and oxazolidinone-protected donors with SAda or $\\mathrm { O P O } ( \\mathrm { O B u } ) _ { 2 }$ leaving groups) primarily resulted in elimination byproducts rather than productive glycosylation. Furthermore, attempts to employ intramolecular glycosylation strategies were also unsuccessful (Table S4).",
+        "page": 5,
+        "section": "Synthesis of Nonreducing-End Disialyl Trisaccharide Donor Precursors"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Trisaccharide P19 was obtained from C3 sialylation, but its protecting groups needed manipulation to convert it into the desired compound 10.",
+        "gap": "How to successfully convert P19 into compound 10 through protecting group manipulation.",
+        "decision": "To attempt the conversion of P19 to compound 10 by replacing the NHTroc and its constrained substituent with an NHAc group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C=CC1OC2C(OC(C)=O)C(OC(C)=O)C(NC(C)=O)C(OC(C)=O)C2OC2OC(C(=O)OC)OC(OC3C(Cl)C(Cl)C(COC(C)=O)OC3C(OC(C)=O)C2OC(C)=O)C(Cl)C1Cl"
+        ],
+        "reagents": [
+          "Zn",
+          "AcOH",
+          "CH3CN",
+          "Ac2O",
+          "pyr.",
+          "DCM"
+        ],
+        "solvent": "CH3CN, DCM",
+        "temperature": "rt",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Despite extensive efforts, P19 could not be converted into the desired compound 10. This discrepancy was attributed to partial hydrolysis of the phthalimido group in P19, as evidenced by the disappearance of Phth signals in the 1H NMR spectrum and increased polarity during chromatography.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "We next attempted to manipulate the protecting groups on the sialic acid moieties of compounds P19 and P20 (Scheme 2), which produced divergent outcomes. Despite extensive efforts, P19 could not be converted into the desired compound 10, whereas P20 was successfully transformed into compound 11 after replacing the NHTroc and its constrained substituent with an NHAc group. This discrepancy was attributed to partial hydrolysis of the phthalimido group in P19, as evidenced by the disappearance of Phth signals in the $^ 1 \\mathrm { H }$ NMR spectrum and increased polarity during chromatography.",
+        "page": 5,
+        "section": "Synthesis of Nonreducing-End Disialyl Trisaccharide Donor Precursors"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "P19 could not be converted to 10 due to phthalimido group hydrolysis. P20, however, was successfully transformed into compound 11 by replacing the NHTroc with an NHAc group.",
+        "gap": "How to introduce a benzoyl group at the Gal C2-OH position to enhance beta-selectivity in the forthcoming [4+3] glycosylation, without acylating the sialic acid C5-NHAc.",
+        "decision": "To attempt direct debenzylation of 11 followed by benzoylation at Gal-C2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1OC2C(OC(C)=O)C(OC(C)=O)C(NC(C)=O)C(OC(C)=O)C2OC2OC(C(=O)OC)OC(OC3C(Cl)C(Cl)C(COC(C)=O)OC3C(OC(C)=O)C2OC(C)=O)C(Cl)C1Cl"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Bz2O",
+          "BzCl"
+        ],
+        "solvent": "unspecified",
+        "temperature": "rt",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Direct debenzylation of 11 followed by benzoylation proved unsuccessful: the liberated hydroxyl was poorly nucleophilic and failed to undergo benzoylation under standard conditions with either Bz2O or BzCl at room temperature. Heating the reaction mixture promoted benzoylation at Gal-C2, but concomitant acylation of the sialic acid C5-NHAc also occurred, yielding an undesired N-benzoylacetamide (NBzAc) byproduct (Scheme S1).",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "To enhance $\beta$ -selectivity in the forthcoming $[ 4 + 3 ]$ glycosylation, a benzoyl group was introduced at the Gal C2- OH position. However, direct debenzylation of 11 followed by benzoylation proved unsuccessful: the liberated hydroxyl was poorly nucleophilic and failed to undergo benzoylation under standard conditions with either $\\mathrm { B z } _ { 2 } \\mathrm { O }$ or BzCl at room temperature. Heating the reaction mixture promoted benzoylation at Gal-C2, but concomitant acylation of the sialic acid C5-NHAc also occurred, yielding an undesired N-benzoylacetamide (NBzAc) byproduct (Scheme S1).",
+        "page": 5,
+        "section": "Synthesis of Nonreducing-End Disialyl Trisaccharide Donor Precursors"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 10,
+      "thought": {
+        "background": "Direct debenzylation and benzoylation of compound 11 led to poor nucleophilicity of the liberated hydroxyl and undesired acylation of the sialic acid C5-NHAc.",
+        "gap": "How to selectively introduce a benzoyl group at Gal C2 without affecting the sialic acid C5-NHAc.",
+        "decision": "To circumvent this issue, compound 11 was first diacetylated to produce 12. Subsequent hydrogenation followed by selective benzoylation at Gal C2 was planned to yield compound 13. Further transformations involved ring opening of the anhydro-Gal unit and selective C1 deprotection to yield the glycosyl donor precursor 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1OC2C(OC(C)=O)C(OC(C)=O)C(NC(C)=O)C(OC(C)=O)C2OC2OC(C(=O)OC)OC(OC3C(Cl)C(Cl)C(COC(C)=O)OC3C(OC(C)=O)C2OC(C)=O)C(Cl)C1Cl"
+        ],
+        "product_smiles": [
+          "COC(=O)C1OC2OC3C(Cl)C(Cl)C(COC(C)=O)OC3C(OC(C)=O)C(OC(C)=O)C(O1)OC1C(OC(COC(C)=O)C(Cl)C2Cl)C(OC(C)=O)C(OC(C)=O)C(N(C(C)=O)C(C)=O)C1OC(C)=O"
+        ],
+        "reagents": [
+          "AcCl",
+          "DIPEA",
+          "DMAP",
+          "Pd/C",
+          "H2",
+          "BzCl",
+          "BF3.OEt2",
+          "N2H4.HOAc"
+        ],
+        "solvent": "DCM, THF, DMF",
+        "temperature": "rt, 80",
+        "time": "6 h, 3 h, 10 h, 30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "Compound 11 was first diacetylated to produce 12 (97% yield). Subsequent hydrogenation followed by selective benzoylation at Gal C2 gave compound 13 in 74% yield over two steps. Further transformations involved ring opening of the anhydro-Gal unit under Lewis acid/acetic anhydride conditions, followed by selective C1 deprotection with hydrazine acetate to yield the desired glycosyl donor precursor 14 in 91% overall yield (two steps).",
+        "regio_selectivity": "selective benzoylation at Gal C2"
+      },
+      "evidence": {
+        "text_span": "To circumvent this issue, compound 11 was first diacetylated to produce 12 (Scheme 2). Subsequent hydrogenation followed by selective benzoylation at Gal C2 gave compound 13 in $7 4 \\%$ yield over two steps. Further transformations involved ring opening of the anhydro-Gal unit under Lewis acid/acetic anhydride conditions, followed by selective C1 deprotection with hydrazine acetate to yield the desired glycosyl donor precursor 14 in $9 1 \\%$ overall yield (two steps). Notably, the diacetylamino group $\\left( \\mathrm { N A c } _ { 2 } \right)$ ) exhibited limited stability under the final deprotection conditions, undergoing partial hydrolysis to regenerate the NHAc group. With the nonreducing-end fragment secured, we then focused on the synthesis of the reducing-end tetrasaccharide, which posed distinct stereoelectronic and protecting-group challenges.",
+        "page": 5,
+        "section": "Synthesis of Nonreducing-End Disialyl Trisaccharide Donor Precursors"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The next objective is to construct the rare Neu5Ac-alpha(2,3)-GalNAc linkage for the reducing-end tetrasaccharide. This motif is underexplored.",
+        "gap": "How to achieve efficient and stereoselective alpha(2,3)-sialylation on a galactosamine acceptor, considering the impact of protecting groups on both the acceptor and donor.",
+        "decision": "Initial efforts focused on building the reducing-end tetrasaccharide from the sialic acid terminus, using a galactosamine acceptor with an NHTroc group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "unspecified"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Sialylation of a galactosamine acceptor bearing an NHTroc group led only to elimination byproducts (Table S5, entries 1-10). Substituting the Troc group with an azide (S14 and S15 in Table S5) enabled successful coupling with sialyl donor D5 (entries 11 and 12 of Table S5), consistent with previous reports. However, alpha(2,3)-sialylation using orthogonally protected donors (S7 and S10) failed under all tested conditions (entries 13 and 14 of Table S5).",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "Initial efforts to build the reducing-end tetrasaccharide from the sialic acid terminus were unsuccessful (Table S5). Sialylation of a galactosamine acceptor bearing an NHTroc group led only to elimination byproducts (Table S5, entries $1 -$ 10). Substituting the Troc group with an azide (S14 and S15 in Table S5) enabled successful coupling with sialyl donor D5 (entries 11 and 12 of Table S5), consistent with previous reports.52 However, $\\alpha ( 2 , 3 )$ -sialylation using orthogonally protected donors (S7 and S10) failed under all tested conditions (entries 13 and 14 of Table S5).",
+        "page": 6,
+        "section": "Synthesis of Reducing-End Tetrasaccharide Acceptors"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "Building the reducing-end tetrasaccharide from the sialic acid terminus proved unsuccessful due to elimination byproducts and failed alpha(2,3)-sialylation with orthogonally protected donors.",
+        "gap": "How to achieve reliable alpha(2,3)-sialylation for the reducing-end tetrasaccharide.",
+        "decision": "Inspired by the finding that reliable alpha(2,3)-sialylation could be achieved only in a more favorable donor-acceptor combination, the synthetic strategy was shifted to construct the glycan sequence from the reducing end using a lactose-derived acceptor. A series of trisaccharide acceptors (15-18) with varied protecting groups were synthesized and evaluated."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "NIS",
+          "TfOH"
+        ],
+        "solvent": "EtCN",
+        "temperature": "-78",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "When trisaccharide acceptor 15 (bearing a benzylidene acetal) was glycosylated with sialyl donor 19, the alpha-anomer was obtained in 55% yield (Table 4, entry 1). By contrast, electron-withdrawing benzoyl protection on acceptor 16 significantly reduced reactivity and selectivity (entry 2). The electron-donating benzyl-protected acceptor 17 increased yield to 85%, though alpha-selectivity was lost (entries 3 vs 1). Glycosylation with sialyl donors 5 and 21 (both lacking a C5-NH amide, previously shown to enhance glycosylation reactivity) yielded alpha-anomers in 78% and 54%, respectively, with acceptor 18. The more reactive SAda donor 5 gave higher yield than STol donor 21, indicating that both donor reactivity and steric hindrance at the acceptor C4-position critically affect alpha(2,3)-sialylation efficiency.",
+        "regio_selectivity": "alpha-anomer"
+      },
+      "evidence": {
+        "text_span": "Inspired by the finding that reliable $\\alpha ( 2 , 3 )$ -sialylation could be achieved only in a more favorable donor−acceptor combination, we shifted the synthetic strategy to construct the glycan sequence from the reducing end using lactose-derived acceptor. To evaluate donor and acceptor effects, a series of trisaccharide acceptors were synthesized from lactose and galactosamine derivatives bearing varied protecting groups and subsequently converted to the corresponding azides 15−18 (see Scheme S2 for the detailed syntheses). When trisaccharide acceptor 15 (bearing a benzylidene acetal) was glycosylated with sialyl donor 19, the $\\alpha$ -anomer was obtained in $5 5 \\%$ yield (Table 4, entry 1). By contrast, electron-withdrawing benzoyl protection on acceptor 16 significantly reduced reactivity and selectivity (entry 2). The electron-donating benzyl-protected acceptor 17 increased yield to $8 5 \\%$ , though $\\alpha$ -selectivity was lost (entries 3 vs 1). Switching to a chloroacetyl (ClAc)- protected donor 20 enhanced reactivity but gave only elimination products regardless of the acceptor used (entries 4−6). To probe steric effects, we next employed acceptor 18, lacking C4-OH protection. Glycosylation with sialyl donors 5 and 21 (both lacking a C5-NH amide, previously shown to enhance glycosylation reactivity)53 yielded $\\alpha$ -anomers in $78 \\%$ and $5 4 \\%$ , respectively. The more reactive SAda donor 5 gave higher yield than STol donor 21, indicating that both donor reactivity and steric hindrance at the acceptor C4-position critically affect $\\alpha ( 2 , 3 )$ -sialylation efficiency.",
+        "page": 6,
+        "section": "Synthesis of Reducing-End Tetrasaccharide Acceptors"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The alpha(2,3)-sialylation was successfully achieved, yielding TBDPS-protected tetrasaccharides. However, the next step is isopropylidene deprotection.",
+        "gap": "How to deprotect the isopropylidene group without cleaving the TBDPS group, which is acid-labile.",
+        "decision": "To attempt isopropylidene deprotection at room temperature under mildly acidic conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TFA",
+          "MeOH"
+        ],
+        "solvent": "unspecified",
+        "temperature": "rt",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Isopropylidene deprotection of the resulting TBDPS-protected tetrasaccharides proved challenging. At room temperature, partial TBDPS cleavage occurred under mildly acidic conditions.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "Finally, isopropylidene deprotection of the resulting TBDPS-protected tetrasaccharides proved challenging. At room temperature, partial TBDPS cleavage occurred under mildly acidic conditions.",
+        "page": 6,
+        "section": "Synthesis of Reducing-End Tetrasaccharide Acceptors"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "Isopropylidene deprotection at room temperature led to partial TBDPS cleavage.",
+        "gap": "How to selectively deprotect the isopropylidene group while preserving the TBDPS group.",
+        "decision": "To perform the deprotection reaction at a lower temperature (4 °C) to preserve the TBDPS group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "TFA",
+          "H2O",
+          "DCM"
+        ],
+        "solvent": "DCM",
+        "temperature": "4",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "observation": "Performing the reaction at 4 °C (see Table S6 for other deprotection conditions) successfully preserved the TBDPS, yielding the desired tetrasaccharides 25 and 26 in 31% (two steps) and 54% (three steps) yields, respectively.",
+        "regio_selectivity": "unspecified"
+      },
+      "evidence": {
+        "text_span": "Performing the reaction at $4 ^ { \\circ } \\mathrm { C }$ (see Table S6 for other deprotection conditions) successfully preserved the TBDPS, yielding the desired tetrasaccharides 25 and 26 in $3 1 \\%$ (two steps) and $5 4 \\%$ (three steps) yields, respectively. These results demonstrate that balancing donor reactivity and acceptor protection is essential for $\\scriptstyle { \\alpha ( 2 , 3 ) }$ - sialylation, providing robust access to stable reducing-end tetrasaccharide acceptors of SJG-2.",
+        "page": 6,
+        "section": "Synthesis of Reducing-End Tetrasaccharide Acceptors"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Donor precursor 14 and acceptors 25 and 26 are now available. The next critical step is the [4+3] glycosylation to assemble the full heptasaccharide framework of SJG-2.",
+        "gap": "How to achieve efficient and stereoselective [4+3] glycosylation, considering the potential for hydrolysis of imidate donors and the acid lability of the product.",
+        "decision": "Compound 14 was transformed into either TCAI or PTFAI derivatives to compare the effects of different leaving groups on coupling efficiency with acceptors 25 or 26. The glycosylation of acceptor 25 with the imidate donor was performed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Cl3CCN",
+          "K2CO3",
+          "TMSOTf"
+        ],
+        "solvent": "DCM",
+        "temperature": "-40",
+        "time": "16 h, 2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "observation": "The imidate donors showed high susceptibility to hydrolysis; purification prior to glycosylation reduced the overall two-step yield from 36% to 31% (entries 1 vs 2). The best result was obtained using a 1:2 donor-to-acceptor ratio, where glycosylation of acceptor 25 with the imidate donor produced the desired beta-linked heptasaccharide 27 in 48% yield over two steps (entry 3).",
+        "regio_selectivity": "beta-only"
+      },
+      "evidence": {
+        "text_span": "With donor precursor 14 and acceptors 25 and 26 in hand, we next attempted the key $[ 4 + 3 ]$ glycosylation to assemble the full heptasaccharide framework of SJG-2. Compound 14 was transformed into either TCAI or PTFAI derivatives to compare the effects of different leaving groups on coupling efficiency with acceptors 25 or 26 (Table 5). The imidate donors, however, showed high susceptibility to hydrolysis; purification prior to glycosylation reduced the overall two-step yield from $3 6 \\%$ to $3 1 \\%$ (entries 1 vs 2). The best result was obtained using a 1:2 donor-to-acceptor ratio, where glycosylation of acceptor 25 with the imidate donor produced the desired $\beta$ -linked heptasaccharide 27 in $4 8 \\%$ yield over two steps (entry 3).",
+        "page": 6,
+        "section": "First Generation of [4+3] Glycosylation"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The [4+3] glycosylation yielded heptasaccharide 27, but it was highly acid-labile.",
+        "gap": "How to perform global deprotection of heptasaccharide 27 without degradation.",
+        "decision": "Attempts were made to remove the TBDPS group either before or after ester hydrolysis, and selective azide reduction using Lindlar’s catalyst was also tried."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Lindlar's catalyst"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Attempts at global deprotection of heptasaccharide 27 were unsuccessful (Scheme S3). Efforts to remove the TBDPS group either before or after ester hydrolysis led to degradation into unidentified fragments, while selective azide reduction using Lindlar’s catalyst also failed.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "Attempts at global deprotection of heptasaccharide 27 were unsuccessful (Scheme S3). Efforts to remove the TBDPS group either before or after ester hydrolysis led to degradation into unidentified fragments, while selective azide reduction using Lindlar’s catalyst also failed. Although this first-generation strategy successfully constructed the heptasaccharide framework, several limitations became evident. These included the limited availability of donor D9, which hindered scale-up; the modest yield $( \\dot { 5 } 7 \\% )$ of the key reducing-end disialyl intermediate P20; and the conformational rigidity of its constrained sialic acid residue, which complicated structural characterization and required variable-temperature NMR analysis. Collectively, these challenges highlight the need to redesign the synthetic route and refine donor−acceptor pairing to overcome the obstacles encountered in this first-generation approach.",
+        "page": 6,
+        "section": "First Generation of [4+3] Glycosylation"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 17,
+      "thought": {
+        "background": "The first-generation [4+3] glycosylation strategy had several limitations: acid lability of heptasaccharide 27, difficulty in global deprotection, limited availability of donor D9, modest yield of P20, and conformational rigidity of the sialic acid residue.",
+        "gap": "How to redesign the synthetic route to overcome these limitations, particularly the acid lability and low yields.",
+        "decision": "A second-generation strategy was initiated, focusing on improving the synthesis of the trisaccharide donor and the reducing-end tetrasaccharide acceptor. The NHTroc group on disaccharide P14 was transformed into an NAc2 group, and the Nap group was converted to a Boc group to give 32. Subsequent hydrogenolysis and benzoylation yielded compound 7. This modified disaccharide 7 was then used in a [2+1] glycosylation with donor 5 to produce alpha-trisaccharide 4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "reagents": [
+          "Zn",
+          "Ac2O",
+          "AcOH",
+          "CH3CN",
+          "AcCl",
+          "DIPEA",
+          "DMAP",
+          "DDQ",
+          "H2O",
+          "Boc2O",
+          "Pd/C",
+          "H2",
+          "BzCl",
+          "TFA",
+          "NIS",
+          "TfOH"
+        ],
+        "solvent": "CH3CN, DCM, THF, EtCN",
+        "temperature": "rt, -78",
+        "time": "1 h, 6 h, 16 h, 3 h, 1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "The NHTroc group on disaccharide P14 was transformed into an NAc2 group through Zn-mediated Troc deprotection followed by acetylation, affording compound 30 in quantitative yield. To preserve orthogonality at Gal-C3, the Nap group was converted into a Boc group to give 32 (91% yield). Subsequent hydrogenolysis of the Gal-C2 benzyl group, followed by benzoylation, and final Boc deprotection with TFA yielded compound 7 in 81% yield over three steps. Importantly, benzoylation proved far more efficient at the disaccharide stage than at the trisaccharide stage (compound 12, Scheme 2), proceeding smoothly at room temperature. Using this modified disaccharide 7, a [2+1] glycosylation was then performed. Despite the presence of electron-withdrawing Bz group at the 1C4 Gal-C2 position, donor 5 remained highly effective, producing the desired alpha-trisaccharide 4 in 86% yield.",
+        "regio_selectivity": "alpha-trisaccharide"
+      },
+      "evidence": {
+        "text_span": "In our earlier $\\left[ 4 ~ + ~ 3 \right]$ glycosylation studies, the TBDPS groups on tetrasaccharide 23 and heptasaccharide 27 proved highly acid-labile. To improve acid stability and streamline global deprotection, we replaced the TBDPS group of compound 17 with a benzoyl group, generating trisaccharide 6 (Scheme S2) as the revised acceptor scaffold (Scheme 4). In the subsequent $[ 3 + 1 ]$ glycosylation of acceptor 6 with donor 5 to form the reducing-end tetrasaccharide 37, installation of a benzyl group at $\\mathrm { G a l N } _ { 3 } – \\mathrm { C } 4$ slightly reduced $\\alpha$ -selectivity (from $78 \\%$ to $7 3 \\%$ , with $1 6 \\% \\ \beta$ anomer) compared to the free C4- OH acceptor (Table 4, Entry 8). Nevertheless, eliminating TBDPS-related decomposition improved the overall two-step yield (from 6), giving acceptor 38 in $6 4 \\%$ yield. However, tetrasaccharide 38 failed to undergo glycosylation under either $[ 4 + 3 ]$ (using TCAI or PTFAI derivatives of 34) or $[ 4 + 1 ]$ conditions (Scheme S6). To rationalize this poor reactivity, we performed ChemDraw conformational analysis of reactive (25) versus unreactive (26 and 38) acceptors. The comparison revealed that the N-acetyl group in the unreactive substrates, which appeared to introduce steric hindrance near the sialic acid C8-OH site, thereby reducing nucleophilicity. This hypothesis was experimentally validated: selective hydrazine acetate treatment of compound 38 effectively removed the oxazolidinone acetyl group, yielding tetrasaccharide acceptor 3 in $8 5 \\%$ yield. Subsequent $[ 4 + 3 ]$ glycosylation of acceptor 3 with trisaccharide donors 2 or 36 proceeded smoothly, confirming that the $N$ -acetyl group was indeed responsible for suppressed reactivity. Notably, different trisaccharide donors were employed in these comparisons: donor 34 contains a carbonothioate on the $\\alpha ( 2 , 3 )$ -linked sialic acid, whereas donors 2 and 36 bear an acetate at this position. Optimization of this $[ 4 + 3 ]$ glycosylation further established that donor 36 afforded the desired product in $6 5 \\%$ yield when two equivalents of acceptor were used (entry 4). The efficiency dropped sharply at lower acceptor loadings (entry 5), and the use of TfOH as promoter negatively affected yields. Donor 2 delivered the heptasaccharide 39 in $4 9 \\%$ yield with 1.2 equiv of acceptor (entries 1−3). Notably, heptasaccharide 39 was highly acid-sensitive, rendering TfOH unsuitable as a promoter for this glycosylation (entries 2 and 5).",
+        "page": 7,
+        "section": "Second Generation of [4+3] Glycosylation"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The first-generation [4+3] glycosylation yielded acid-labile heptasaccharide 27 and had issues with TBDPS group stability. A second-generation strategy was initiated to improve acid stability and streamline global deprotection.",
+        "gap": "How to improve acid stability and streamline global deprotection for the reducing-end tetrasaccharide acceptor.",
+        "decision": "To replace the TBDPS group of compound 17 with a benzoyl group, generating trisaccharide 6 as the revised acceptor scaffold. This was followed by a [3+1] glycosylation of acceptor 6 with donor 5 to form the reducing-end tetrasaccharide 37. However, tetrasaccharide 38 (derived from 37) failed to undergo glycosylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "unspecified"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Tetrasaccharide 38 failed to undergo glycosylation under either [4+3] (using TCAI or PTFAI derivatives of 34) or [4+1] conditions (Scheme S6). ChemDraw conformational analysis revealed that the N-acetyl group in the unreactive substrates appeared to introduce steric hindrance near the sialic acid C8-OH site, thereby reducing nucleophilicity.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "In our earlier $\\left[ 4 ~ + ~ 3 \right]$ glycosylation studies, the TBDPS groups on tetrasaccharide 23 and heptasaccharide 27 proved highly acid-labile. To improve acid stability and streamline global deprotection, we replaced the TBDPS group of compound 17 with a benzoyl group, generating trisaccharide 6 (Scheme S2) as the revised acceptor scaffold (Scheme 4). In the subsequent $[ 3 + 1 ]$ glycosylation of acceptor 6 with donor 5 to form the reducing-end tetrasaccharide 37, installation of a benzyl group at $\\mathrm { G a l N } _ { 3 } – \\mathrm { C } 4$ slightly reduced $\\alpha$ -selectivity (from $78 \\%$ to $7 3 \\%$ , with $1 6 \\% \\ \beta$ anomer) compared to the free C4- OH acceptor (Table 4, Entry 8). Nevertheless, eliminating TBDPS-related decomposition improved the overall two-step yield (from 6), giving acceptor 38 in $6 4 \\%$ yield. However, tetrasaccharide 38 failed to undergo glycosylation under either $[ 4 + 3 ]$ (using TCAI or PTFAI derivatives of 34) or $[ 4 + 1 ]$ conditions (Scheme S6). To rationalize this poor reactivity, we performed ChemDraw conformational analysis of reactive (25) versus unreactive (26 and 38) acceptors. The comparison revealed that the N-acetyl group in the unreactive substrates, which appeared to introduce steric hindrance near the sialic acid C8-OH site, thereby reducing nucleophilicity.",
+        "page": 7,
+        "section": "Second Generation of [4+3] Glycosylation"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 19,
+      "thought": {
+        "background": "Tetrasaccharide 38 failed to undergo glycosylation due to steric hindrance from the N-acetyl group near the sialic acid C8-OH, reducing nucleophilicity.",
+        "gap": "How to restore nucleophilicity at the sialic acid C8-OH to enable [4+3] glycosylation.",
+        "decision": "To selectively remove the oxazolidinone acetyl group from compound 38 using hydrazine acetate, yielding tetrasaccharide acceptor 3. This would validate the hypothesis that the N-acetyl group was responsible for suppressed reactivity and enable subsequent [4+3] glycosylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "hydrazine acetate"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Selective hydrazine acetate treatment of compound 38 effectively removed the oxazolidinone acetyl group, yielding tetrasaccharide acceptor 3 in 85% yield. Subsequent [4+3] glycosylation of acceptor 3 with trisaccharide donors 2 or 36 proceeded smoothly, confirming that the N-acetyl group was indeed responsible for suppressed reactivity.",
+        "regio_selectivity": "unspecified"
+      },
+      "evidence": {
+        "text_span": "This hypothesis was experimentally validated: selective hydrazine acetate treatment of compound 38 effectively removed the oxazolidinone acetyl group, yielding tetrasaccharide acceptor 3 in $8 5 \\%$ yield. Subsequent $[ 4 + 3 ]$ glycosylation of acceptor 3 with trisaccharide donors 2 or 36 proceeded smoothly, confirming that the $N$ -acetyl group was indeed responsible for suppressed reactivity.",
+        "page": 7,
+        "section": "Second Generation of [4+3] Glycosylation"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetrasaccharide acceptor 3, with the N-acetyl group removed, is now available for [4+3] glycosylation. Trisaccharide donors 2 and 36 are also available.",
+        "gap": "How to optimize the [4+3] glycosylation to achieve high yield of heptasaccharide 39, considering the acid sensitivity of the product.",
+        "decision": "To optimize the [4+3] glycosylation using donor 36 with two equivalents of acceptor 3, and also test donor 2 with 1.2 equivalents of acceptor. The use of TfOH as a promoter was also considered but with caution due to acid sensitivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NIS",
+          "TMSOTf",
+          "TfOH"
+        ],
+        "solvent": "unspecified",
+        "temperature": "-78, -40",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Optimization of this [4+3] glycosylation further established that donor 36 afforded the desired product in 65% yield when two equivalents of acceptor were used (entry 4). The efficiency dropped sharply at lower acceptor loadings (entry 5), and the use of TfOH as promoter negatively affected yields. Donor 2 delivered the heptasaccharide 39 in 49% yield with 1.2 equiv of acceptor (entries 1−3). Notably, heptasaccharide 39 was highly acid-sensitive, rendering TfOH unsuitable as a promoter for this glycosylation (entries 2 and 5).",
+        "regio_selectivity": "unspecified"
+      },
+      "evidence": {
+        "text_span": "Optimization of this $[ 4 + 3 ]$ glycosylation further established that donor 36 afforded the desired product in $6 5 \\%$ yield when two equivalents of acceptor were used (entry 4). The efficiency dropped sharply at lower acceptor loadings (entry 5), and the use of TfOH as promoter negatively affected yields. Donor 2 delivered the heptasaccharide 39 in $4 9 \\%$ yield with 1.2 equiv of acceptor (entries 1−3). Notably, heptasaccharide 39 was highly acid-sensitive, rendering TfOH unsuitable as a promoter for this glycosylation (entries 2 and 5).",
+        "page": 7,
+        "section": "Second Generation of [4+3] Glycosylation"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Heptasaccharide 39 has been successfully synthesized, but it is highly acid-sensitive. The final step is global deprotection to yield the target SJG-2 glycan (1).",
+        "gap": "How to perform global deprotection of heptasaccharide 39 without degradation, considering its acid sensitivity and the various protecting groups present (azide, esters, 5-N,4-O-oxazolidinone, benzyl groups).",
+        "decision": "Global deprotection was planned in a sequence: zinc-mediated azide reduction with in situ acetylation, followed by LiOH treatment to remove esters and the oxazolidinone motif, reacetylation, and finally global hydrogenolysis under acidic conditions. Purification would involve activated carbon and P2 BioGel column chromatography."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Zn",
+          "AcOH",
+          "Ac2O",
+          "LiOH",
+          "H2",
+          "Pd/C"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "Global deprotection of heptasaccharide 39 began with zinc-mediated azide reduction in the presence of AcOH/Ac2O, during which the liberated amine was immediately acetylated, yielding the corresponding acetamide (NHAc) derivative. Subsequent treatment with aqueous LiOH removed all ester protecting groups as well as 5-N,4-O-oxazolidinone motif, and reacetylation with Ac2O reintroduced the N-acetyl moiety. Final global hydrogenolysis under acidic conditions, followed by sequential purification using activated carbon and a P2 BioGel column chromatography, produced the target heptasaccharide SJG-2 (1) in 61% overall yield over four steps.",
+        "regio_selectivity": "unspecified"
+      },
+      "evidence": {
+        "text_span": "Global deprotection of heptasaccharide 39 began with zinc-mediated azide reduction in the presence of $\\mathrm { A c O H/A c _ { 2 } O }$ during which the liberated amine was immediately acetylated, yielding the corresponding acetamide (NHAc) derivative (Scheme 5). Subsequent treatment with aqueous LiOH removed all ester protecting groups as well as 5-N,4-Ooxazolidinone motif, and reacetylation with $\\mathtt { A c } _ { 2 } \\mathtt { O }$ reintroduced the $N .$ -acetyl moiety. Final global hydrogenolysis under acidic conditions, followed by sequential purification using activated carbon and a P2 BioGel column chromatography, produced the target heptasaccharide SJG-2 (1) in $6 1 \\%$ overall yield over four steps.",
+        "page": 7,
+        "section": "Global Deprotection and Completion of SJG-2 Synthesis"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "13C NMR"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "61",
+        "unit": "%",
+        "interpretation": "Overall yield for the final global deprotection steps."
+      }
+    },
+    "comparison_to_prior": "The 13C NMR chemical shifts of the anomeric carbons of synthetic SJG-2 (1) were largely consistent with those reported for natural SJG-2, with minor downfield shifts (1.6 to 2.2 ppm) attributed to the absence of the ceramide aglycone and solvent-induced changes. This strongly supported the structural equivalence.",
+    "significance": "This work achieved the first total synthesis of the neuroregenerative ganglioside SJG-2 glycan, overcoming long-standing barriers in sialylation chemistry. It established generalizable principles for addressing reactivity and selectivity challenges in sterically congested sialosides, providing a broadly applicable framework for accessing complex gangliosides for glycobiology, diagnostics, and therapeutic discovery."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.6c00368",
+      "pmcid": "PMC13047681",
+      "title": "Total Synthesis of the SJG-2 Glycan: General Strategies for Constructing Sterically Congested Sialylated Glycans.",
+      "authors": "Su YY, Adak AK, Kuo YT, Lin HJ, Li YS, Tseng HK, Lin CC.",
+      "journal": "J Am Chem Soc",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC13047681?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/fc9670a1-1d9f-4a35-ae2e-58b8c999987a.zip",
+      "parsed_at": "2026-05-07T15:42:05.893412+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 52,
+    "parseable": 5,
+    "canonicalized": 5,
+    "invalid": 47,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "unspecified",
+      "unspecified",
+      "unspecified",
+      "unspecified",
+      "unspecified",
+      "unspecified",
+      "unspecified",
+      "CC(=O)OC[C@H]1[C@@H](O)O[C@H](OSia1)[C@H](OC(C)=O)[C@@H]1OBn",
+      "unspecified",
+      "unspecified"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

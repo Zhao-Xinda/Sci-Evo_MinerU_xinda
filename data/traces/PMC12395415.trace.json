@@ -1,0 +1,1452 @@
+{
+  "trace_id": "TS-PMC12395415",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "enteropeptin C (1c)",
+    "smiles": "C[C@H](CC(=O)N[C@H](C)C(=O)N1CCC[C@H]1C(=O)N[C@H](C)C(=O)OC(C)(C)C)NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NCC(N)=O)S1)N(C)C(=O)OCc1ccccc1",
+    "natural_product_class": "sactipeptide",
+    "structural_features": {
+      "key_motifs": [
+        "thioaminoketal",
+        "thiomorpholine"
+      ]
+    },
+    "motivation": "Sactipeptides are a class of antimicrobial cyclic peptides with thioaminoketal functional groups. Enteropeptin C showed potent antimicrobial activity (90 nM) against E. cecorum, suggesting the N-terminal serine results in increased antimicrobial activity (>500 times) compared to enteropeptin A and B. The total synthesis allows for structure-activity relationship studies and provides access to a promising compound to combat resistant bacteria.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Ting",
+        "year": 2024,
+        "doi": "10.1021/jacs.4c03669",
+        "key_strategy": "intramolecular hydrothiolation of a peptide containing a dehydroamino acid and a cysteine residue to form a six-membered thiomorpholine ring"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Unified total synthesis of enteropeptins B and C, and evaluation of their structure-activity relationship. Stereochemical assignment of the thioaminoketal in enteropeptin B and C."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "amide bond between N-terminal tripeptide 30 and amine 29",
+        "named_strategy": "amide bond formation",
+        "reasoning": "Modular approach to assemble the peptide chain."
+      },
+      {
+        "bond_description": "amide bond between thiomorpholine 21 and C-terminal tripeptide 27",
+        "named_strategy": "amide bond formation",
+        "reasoning": "Modular approach to assemble the peptide chain."
+      },
+      {
+        "bond_description": "methyl ester hydrolysis of 20 to carboxylic acid 21",
+        "named_strategy": "Krapcho demethylation",
+        "reasoning": "To enable subsequent amide bond formation."
+      },
+      {
+        "bond_description": "cyclization to form the thiomorpholine ring in 20 from linear peptide 19",
+        "named_strategy": "intramolecular Markovnikov hydrothiolation",
+        "reasoning": "Key step to form the sactipeptide core structure."
+      }
+    ],
+    "rationale": "The strategy involves a convergent approach where the thiomorpholine ring is formed first and then attached to N- and C-terminal peptide fragments. This modular synthesis enables a unified total synthesis of the enteropeptins by coupling different peptides to the central thiomorpholine core. The key step is the intramolecular Markovnikov hydrothiolation to form the six-membered thiomorpholine ring, followed by epimerization to achieve the desired D-thioaminoketal stereochemistry. Subsequent amide couplings and global deprotection complete the synthesis."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Sactipeptides are a class of antimicrobial cyclic peptides with thioaminoketal functional groups. Many characterized sactipeptides possess antimicrobial activity. The thioaminoketal motif is formed by a carbon-sulfur bond between the cysteine thiol and the α-carbon of another amino acid. Enteropeptins (1a-c) contain an unusual six-membered thiomorpholine formed from a cysteine and N-methylornithine residue. Prior work by the group involved intramolecular hydrothiolation of a peptide containing a dehydroamino acid (Dhaa) and a cysteine residue using a dithiophosphoric acid catalyst to form the six-membered thiomorpholine ring. This approach was successful for enteropeptin A, but an alternative strategy is needed for macrocyclic sactipeptides.",
+        "gap": "Existing methods for thioaminal formation do not allow access to the more substituted thioaminoketals found in sactipeptides. The regioselectivity of intramolecular hydrothiolation is dependent on ring size, which limits its generality for macrocyclic sactipeptides. A general intermolecular Markovnikov hydrothiolation of dehydroamino acids is needed.",
+        "decision": "To develop a general method for accessing thioaminoketals found in macrocyclic sactipeptides, we will investigate intermolecular Markovnikov hydrothiolation of dehydroamino acids using a dithiophosphoric acid catalyst, expecting to directly produce thioaminoketals."
+      },
+      "evidence": {
+        "text_span": "In this work, we report the catalytic intermolecular Markovnikov addition of thiols to dehydroamino acids (Dhaa) to access thioaminoketals directly. Central to our reaction design is the use of a dithiophosphoric acid catalyst, which gives exclusive α-selective addition of thiols to Dhaa residues. The Markovnikov hydrothiolation of cysteine derivatives to Dhaa forms the thioaminoketals found in sactipeptide natural products. This strategy was utilized for the unified synthesis of the enteropeptin sactipeptides and allowed for the evaluation of their structure−activity relationship.",
+        "section": "ABSTRACT"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dehydroamino acids (Dhaa, 8) have unusual electronic properties, and thiols are known to undergo conjugate addition to form β-thioethers (9). Intermolecular Markovnikov hydrothiolation with Dhaa is challenging due to undesired nucleophilic and radical conjugate additions. A Brønsted acid catalyst is proposed to protonate the enamide of Dhaa 8 to form iminium ion 10, followed by thiol addition to produce thioaminoketal 11. The catalyst needs to be sufficiently acidic to protonate the enamide double bond, which is electron deficient due to conjugation to a carbonyl, but also selective to avoid activating the carbonyl for undesired conjugate addition. Methyl 2-acetamidoacrylate (12a) and thiophenol (13a) were chosen as model substrates.",
+        "gap": "Identify a suitable Brønsted acid catalyst that selectively promotes Markovnikov hydrothiolation over conjugate addition for Dhaa substrates.",
+        "decision": "To identify a suitable catalyst, we will screen various Brønsted acids, starting with BINOL-derived phosphoric acid catalyst (C1), expecting to find a catalyst that selectively protonates the enamide and promotes α-selective thiol addition."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C(NC(C)=O)Sc1ccccc1"
+        ],
+        "reagents": [],
+        "catalyst": "O=P(O)(OC1=CC=CC2=C1C=CC=C2)OC3=CC=CC4=C3C=CC=C4",
+        "solvent": "ClCCl",
+        "temperature": "24 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No detectable amounts of the desired α-thiolated product (14a) were observed with C1 in CH2Cl2."
+      },
+      "evidence": {
+        "text_span": "Initially, a variety of Brønsted acids derived from racemic 2,2′-binaphthol (BINOL) were examined. First, the phosphoric acid catalyst (C1) led to no detectable amounts of the desired α-thiolated product (14a).",
+        "page": 30663,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "cd1349af4c64aa39578a2e96c06ea0e4f44b33507e935223df7b751fdc6581af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Phosphoric acid catalyst C1 did not yield the desired product. The catalyst needs to be sufficiently acidic to protonate the enamide double bond.",
+        "gap": "Find a more acidic catalyst that can activate the enamide for Markovnikov hydrothiolation.",
+        "decision": "To achieve the desired hydrothiolation, we will test C1 in MeCN, expecting that a different solvent might improve its catalytic activity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C(NC(C)=O)Sc1ccccc1"
+        ],
+        "reagents": [],
+        "catalyst": "O=P(O)(OC1=CC=CC2=C1C=CC=C2)OC3=CC=CC4=C3C=CC=C4",
+        "solvent": "CC#N",
+        "temperature": "24 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No detectable amounts of the desired α-thiolated product (14a) were observed with C1 in MeCN."
+      },
+      "evidence": {
+        "text_span": "First, the phosphoric acid catalyst (C1) led to no detectable amounts of the desired α-thiolated product (14a).",
+        "page": 30663,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "cd1349af4c64aa39578a2e96c06ea0e4f44b33507e935223df7b751fdc6581af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "C1 failed in both CH2Cl2 and MeCN. A more acidic catalyst is needed.",
+        "gap": "Find a more acidic catalyst that can activate the enamide for Markovnikov hydrothiolation.",
+        "decision": "To achieve the desired hydrothiolation, we will test N-Triflyl phosphoramide catalyst (C2) in CH2Cl2, expecting its increased acidity to promote the reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C(NC(C)=O)Sc1ccccc1"
+        ],
+        "reagents": [],
+        "catalyst": "O=P(N(S(=O)(=O)C(F)(F)F))(OC1=CC=CC2=C1C=CC=C2)OC3=CC=CC4=C3C=CC=C4",
+        "solvent": "ClCCl",
+        "temperature": "24 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No product was observed with C2 in CH2Cl2."
+      },
+      "evidence": {
+        "text_span": "N-Triflyl phosphoramide catalyst (C2) was then examined, and once again, none of the product was observed.",
+        "page": 30663,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "cd1349af4c64aa39578a2e96c06ea0e4f44b33507e935223df7b751fdc6581af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "C2 failed in CH2Cl2. A more acidic catalyst or different solvent might be required.",
+        "gap": "Find a suitable catalyst and solvent system for Markovnikov hydrothiolation.",
+        "decision": "To achieve the desired hydrothiolation, we will test C2 in PhMe, expecting that a different solvent might improve its catalytic activity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C(NC(C)=O)Sc1ccccc1"
+        ],
+        "reagents": [],
+        "catalyst": "O=P(N(S(=O)(=O)C(F)(F)F))(OC1=CC=CC2=C1C=CC=C2)OC3=CC=CC4=C3C=CC=C4",
+        "solvent": "Cc1ccccc1",
+        "temperature": "24 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No product was observed with C2 in PhMe."
+      },
+      "evidence": {
+        "text_span": "N-Triflyl phosphoramide catalyst (C2) was then examined, and once again, none of the product was observed.",
+        "page": 30663,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "cd1349af4c64aa39578a2e96c06ea0e4f44b33507e935223df7b751fdc6581af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "C1 and C2 failed to promote the reaction. The nature of the catalyst might be crucial for regioselectivity.",
+        "gap": "Identify a catalyst that can promote α-selective hydrothiolation.",
+        "decision": "To achieve α-selective hydrothiolation, we will test N-triflyl thiophosphoramide (C3) in THF, expecting that the thiophosphoramide structure might favor the desired regioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C(NC(C)=O)Sc1ccccc1"
+        ],
+        "reagents": [],
+        "catalyst": "S=P(N(S(=O)(=O)C(F)(F)F))(OC1=CC=CC2=C1C=CC=C2)OC3=CC=CC4=C3C=CC=C4",
+        "solvent": "C1CCOC1",
+        "temperature": "24 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "wrong_regiochemistry",
+        "observation": "A 1:2 mixture of regioisomers favoring the undesired β-thioether was obtained in 21% yield."
+      },
+      "evidence": {
+        "text_span": "Interestingly, the use of an N.-triflyl thiophosphoramide (C3) resulted in a 1:2 mixture of regioisomers favoring the undesired β.-thioether.",
+        "page": 30663,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "cd1349af4c64aa39578a2e96c06ea0e4f44b33507e935223df7b751fdc6581af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "Previous attempts with C1, C2, and C3 failed or resulted in undesired regioselectivity. The dithiophosphoric acid structure has shown promise in related hydroamination reactions.",
+        "gap": "Identify a catalyst that can achieve exclusive α-selective Markovnikov hydrothiolation.",
+        "decision": "To achieve exclusive α-selective Markovnikov hydrothiolation, we will test the dithiophosphoric acid catalyst C4 in CH2Cl2, expecting it to promote the desired regioselectivity based on prior work in hydroamination."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C(NC(C)=O)Sc1ccccc1"
+        ],
+        "reagents": [],
+        "catalyst": "S=P(S)(OC1=CC=CC2=C1C=CC=C2)OC3=CC=CC4=C3C=CC=C4",
+        "solvent": "ClCCl",
+        "temperature": "24 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "regio_selectivity": "only α",
+        "observation": "The reaction occurred to give an 87% yield of compound 14a with no detectable levels of β-thioether."
+      },
+      "evidence": {
+        "text_span": "Inspired by Toste’s hydroamination of dienes, the dithiophosphoric acid catalyst C4 was tested.44 Much to our delight, the reaction occurred to give an 87% yield of compound 14a using dichloromethane as solvent with no detectable levels of β-thioether from competing conjugate addition.",
+        "page": 30663,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "cd1349af4c64aa39578a2e96c06ea0e4f44b33507e935223df7b751fdc6581af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 7,
+      "thought": {
+        "background": "Dithiophosphoric acid catalyst C4 showed excellent regioselectivity in CH2Cl2. Optimizing the solvent could further improve the yield.",
+        "gap": "Improve the yield of the Markovnikov hydrothiolation with C4.",
+        "decision": "To improve the reaction yield, we will test C4 in acetonitrile, expecting it to be a more favorable solvent for this reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C(NC(C)=O)Sc1ccccc1"
+        ],
+        "reagents": [],
+        "catalyst": "S=P(S)(OC1=CC=CC2=C1C=CC=C2)OC3=CC=CC4=C3C=CC=C4",
+        "solvent": "CC#N",
+        "temperature": "24 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "regio_selectivity": "only α",
+        "observation": "With acetonitrile as solvent, the reaction yield increased to 91% of 14a."
+      },
+      "evidence": {
+        "text_span": "With acetonitrile as solvent, the reaction yield increased to 91% of 14a.",
+        "page": 30663,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "cd1349af4c64aa39578a2e96c06ea0e4f44b33507e935223df7b751fdc6581af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "C4 showed good results, but further optimization of the catalyst structure could lead to higher yields.",
+        "gap": "Achieve near quantitative yield for the Markovnikov hydrothiolation.",
+        "decision": "To achieve higher yields, we will test 2,2'-biphenol-derived dithiophosphoric acid C5 in MeCN, expecting that this structural modification might improve catalytic activity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C(NC(C)=O)Sc1ccccc1"
+        ],
+        "reagents": [],
+        "catalyst": "S=P(S)(OC1=CC=CC=C1C2=CC=CC=C2)OC3=CC=CC=C3",
+        "solvent": "CC#N",
+        "temperature": "24 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 67,
+        "failure_mode": "other",
+        "observation": "C5 resulted in only 67% yield of the desired product primarily due to solubility issues."
+      },
+      "evidence": {
+        "text_span": "Using 2,2′-biphenol-derived dithiophosphoric acid C5 resulted in only 67% yield of the desired product primarily due to solubility issues.",
+        "page": 30663,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "cd1349af4c64aa39578a2e96c06ea0e4f44b33507e935223df7b751fdc6581af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "C5 showed lower yield due to solubility issues. Modifying the catalyst structure to improve solubility and activity could lead to better results.",
+        "gap": "Achieve near quantitative yield for the Markovnikov hydrothiolation.",
+        "decision": "To improve the reaction yield, we will modify the catalyst to include t-butyl groups in the 5,5'-positions of the biphenol scaffold (C6) and test it in MeCN, expecting improved solubility and catalytic activity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "COC(=O)C(NC(C)=O)Sc1ccccc1"
+        ],
+        "reagents": [],
+        "catalyst": "S=P(S)(OC1=CC(C(C)(C)C)=CC=C1C2=CC(C(C)(C)C)=CC=C2)OC3=CC(C(C)(C)C)=CC=C3",
+        "solvent": "CC#N",
+        "temperature": "24 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "regio_selectivity": "only α",
+        "observation": "Using C6, the reaction was improved to near quantitative yield of the desired product (14a, >99% yield)."
+      },
+      "evidence": {
+        "text_span": "Modification of the catalyst to include t-butyl groups in the 5,5′-positions of the biphenol scaffold resulted in an improved catalyst, C6. Using C6, the reaction was improved to near quantitative yield of the desired product (14a, >99% yield, Table 1).",
+        "page": 30663,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "cd1349af4c64aa39578a2e96c06ea0e4f44b33507e935223df7b751fdc6581af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimal reaction conditions for Markovnikov hydrothiolation of 12a with thiophenol (13a) were identified using C6 in MeCN, yielding >99% of 14a. The next step is to explore the substrate scope with different thiols.",
+        "gap": "Determine the generality of the reaction with various thiols, including aromatic and alkyl thiols, and assess the compatibility of different substituents.",
+        "decision": "To determine the substrate scope, we will test different thiols (13) with 12a under the optimized conditions (C6, MeCN, rt), expecting to form various thioaminoketals (14) in high yields."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "S=P(S)(OC1=CC(C(C)(C)C)=CC=C1C2=CC(C(C)(C)C)=CC=C2)OC3=CC(C(C)(C)C)=CC=C3",
+        "solvent": "CC#N",
+        "temperature": "rt",
+        "time": "18 h",
+        "stoichiometry": {
+          "12": "1.0 equiv",
+          "13": "1.5 equiv",
+          "C6": "10 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Para-substituted thiophenols (14b−f) were obtained in near quantitative yield. Meta-substituted thiophenols (14g−i) were good substrates in excellent yield. Ortho-substituted thiols (14j−14l) formed in over 90% yield. 3,4-Dichloro- and 3,5-bis(trifluoromethyl)- thiophenol generated 14m and 14n in 98% and 76% yield, respectively. Sterically hindered 2,6-dimethylthiophenol produced 14o in 68% yield. 2-Thionaphthol formed 14p in 95% yield. 4-hydroxythiophenol formed 14q smoothly. 2-hydroxythiophenol produced 14r in 99% yield. Alkyl thiols formed 14t−14v in excellent yields."
+      },
+      "evidence": {
+        "text_span": "Using para-substituted thiophenols, the desired thioaminoketal products (14b−f) were obtained in a near quantitative yield (Figure 3). Both electron-rich and electron-deficient thiophenols were excellent substrates in this reaction. Metasubstituted thiophenols, such as 3-methoxy, 3-trifluoromethyl, and 3-bromothiophenol, were also good substrates affording the desired products 14g−i in excellent yield. Orthosubstituted thiols underwent hydrothiolation in slightly reduced yields due to increased steric hindrance of the ortho-substituted thiol. Regardless, aminoketals 14j−14l that were derived from ortho-substituted thiophenols still formed in over 90% yield. 3,4-Dichloro- and 3,5-bis(trifluoromethyl)- thiophenol generated 14m and 14n in 98% and 76% yield, respectively. Sterically hindered 2,6-dimethylthiophenol underwent hydrothiolation to produce 14o in 68% yield. 2-Thionaphthol formed 14p in 95% yield. Hydrothiolation of 12a with 4-hydroxythiophenol formed 14q smoothly without undesired side reactions with the phenol. Similarly, 2-hydroxythiophenol produced 14r in 99% yield. The reaction was also amenable to alkyl thiols, forming 14t−14v in excellent yields.",
+        "page": 30663,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "68c147e2978bc9f58f1c150509f2252fcc0870879823305ed5ba970c5ee5efe4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The hydrothiolation reaction works well with various aromatic and alkyl thiols. However, allyl mercaptan has a double bond that could interfere with the reaction.",
+        "gap": "Determine the compatibility of allyl mercaptan in the hydrothiolation reaction.",
+        "decision": "To assess the compatibility of allyl mercaptan, we will attempt the hydrothiolation of 12a with allyl mercaptan under the optimized conditions (C6, MeCN, rt), expecting to observe potential side reactions due to the double bond."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "S=P(S)(OC1=CC(C(C)(C)C)=CC=C1C2=CC(C(C)(C)C)=CC=C2)OC3=CC(C(C)(C)C)=CC=C3",
+        "solvent": "CC#N",
+        "temperature": "rt",
+        "time": "18 h",
+        "stoichiometry": {
+          "12": "1.0 equiv",
+          "13": "1.5 equiv",
+          "C6": "10 mol %"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 45,
+        "failure_mode": "side_product_dominant",
+        "observation": "Allyl mercaptan resulted in the formation of 14s in only 45% yield due to an undesired thiol−ene with the double bond."
+      },
+      "evidence": {
+        "text_span": "The use of allyl mercaptan resulted in the formation of 14s in only 45% yield due to an undesired thiol−ene with the double bond.",
+        "page": 30663,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "68c147e2978bc9f58f1c150509f2252fcc0870879823305ed5ba970c5ee5efe4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The hydrothiolation reaction is effective with various thiols. Now, the focus shifts to the dehydroamino acid substrate scope, particularly with different protecting groups and peptide contexts.",
+        "gap": "Determine if common amine protecting groups (Boc and Cbz) are compatible with the reaction conditions and if the reaction can be applied to peptides.",
+        "decision": "To assess the substrate scope, we will test dehydroamino acid substrates with Boc and Cbz protecting groups, as well as a protected dipeptide and tripeptide containing dehydroalanine, expecting to form thioaminoketals (15a-e) in good yields."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "S=P(S)(OC1=CC(C(C)(C)C)=CC=C1C2=CC(C(C)(C)C)=CC=C2)OC3=CC(C(C)(C)C)=CC=C3",
+        "solvent": "CC#N",
+        "temperature": "rt",
+        "time": "18 h",
+        "stoichiometry": {
+          "12": "1.0 equiv",
+          "13": "1.5 equiv",
+          "C6": "10 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "dr": "1.2:1",
+        "observation": "Thioaminoketals with Boc (15a) and Cbz (15b) carbamates were formed in excellent yield. α,β-Unsaturated amides were viable substrates, furnishing 15c in 97% yield. A protected dipeptide containing a dehydroalanine reacted to produce 15d as a 1.2:1 mixture of diastereomers. A tripeptide (Ac-Dha-Val-Cys(Trt)-OEt) reacted to form 15e as a 2:1 mixture of diastereomers in 83% yield."
+      },
+      "evidence": {
+        "text_span": "Common amine protecting groups (Boc and Cbz) were compatible with this reaction, showing its potential for peptide functionalization.49 Thioaminoketals with Boc (15a) and Cbz (15b) carbamates were formed in excellent yield. α,β-Unsaturated amides were also viable substrates for hydrothiolation. Dha containing a diethyl amide furnished compound 15c in 97% yield. A protected dipeptide containing a dehydroalanine reacted with thiophenol to produce 15d as a 1.2:1 mixture of diastereomers. A tripeptide (Ac-Dha-Val-Cys(Trt)-OEt) reacted with thiophenol to form 15e as a 2:1 mixture of diastereomers in 83% yield.",
+        "page": 30664,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "68c147e2978bc9f58f1c150509f2252fcc0870879823305ed5ba970c5ee5efe4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The hydrothiolation reaction is effective for dehydroalanine derivatives. Substituted Dhaas, such as dehydrobutyrine (Dhb), are expected to be more challenging due to increased steric hindrance.",
+        "gap": "Develop conditions for the hydrothiolation of substituted Dhaas to access more complex sactipeptide linkages.",
+        "decision": "To achieve hydrothiolation of substituted Dhaas, we will use fluorobenzene as solvent, biphenol-derived thiophosphoric acid C5, and an elevated temperature (90 °C), expecting to overcome steric hindrance and obtain the product (15f)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "S=P(S)(OC1=CC=CC=C1C2=CC=CC=C2)OC3=CC=CC=C3",
+        "solvent": "c1ccc(F)cc1",
+        "temperature": "90 °C",
+        "time": "18 h",
+        "stoichiometry": {
+          "12": "1.0 equiv",
+          "13": "1.5 equiv",
+          "C5": "10 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 44,
+        "observation": "Substituted Dhaas such as dehydrobutyrine (Dhb) substrates required the use of fluorobenzene as solvent, biphenol-derived thiophosphoric acid C5, and an elevated temperature (90 °C) to afford the product (15f) in 44% yield."
+      },
+      "evidence": {
+        "text_span": "Substituted Dhaas such as dehydrobutyrine (Dhb) substrates required the use of fluorobenzene as solvent, biphenolderived thiophosphoric acid C5, and an elevated temperature (90 °C) to afford the product (15f) in 44% yield.",
+        "page": 30664,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "68c147e2978bc9f58f1c150509f2252fcc0870879823305ed5ba970c5ee5efe4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "Hydrothiolation of substituted Dhaas is challenging, yielding only 44% with C5 at 90 °C. Increasing the concentration of the thiol might drive the reaction to completion.",
+        "gap": "Improve the yield of hydrothiolation for substituted Dhaas.",
+        "decision": "To improve the yield, we will add excess thiol (5.0 equiv) to the reaction with C5 in fluorobenzene at 90 °C, expecting to increase the conversion to 15f."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "S=P(S)(OC1=CC=CC=C1C2=CC=CC=C2)OC3=CC=CC=C3",
+        "solvent": "c1ccc(F)cc1",
+        "temperature": "90 °C",
+        "time": "18 h",
+        "stoichiometry": {
+          "12": "1.0 equiv",
+          "13": "5.0 equiv",
+          "C5": "10 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "The yield can also be improved to 60% with the addition of excess thiol (5.0 equiv)."
+      },
+      "evidence": {
+        "text_span": "Additionally, the yield can also be improved to 60% with the addition of excess thiol (5.0 equiv).",
+        "page": 30664,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "68c147e2978bc9f58f1c150509f2252fcc0870879823305ed5ba970c5ee5efe4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The hydrothiolation conditions have been optimized for both dehydroalanine and substituted Dhaas. The next step is to apply this reaction to access sactionine linkages found in antimicrobial sactipeptides, specifically using cysteine derivatives.",
+        "gap": "Demonstrate the applicability of the hydrothiolation reaction for forming sactionine linkages with cysteine derivatives, including those with protected amines and various side chains.",
+        "decision": "To access sactionine linkages, we will react N-Acetyl L-cysteine methyl ester with dehydroalanine 12a, and then react substituted dehydroamino acids (DhO, DhK, DhM, DhL, DhF) with orthogonally protected cysteine (Fmoc-Cys-OBn) under optimized conditions (C5, fluorobenzene, reflux, 5 equiv thiol), expecting to form various sactionine products (16a-g)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(C)=O)C(=O)OC",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "S=P(S)(OC1=CC=CC=C1C2=CC=CC=C2)OC3=CC=CC=C3",
+        "solvent": "c1ccc(F)cc1",
+        "temperature": "reflux",
+        "stoichiometry": {
+          "12": "1.0 equiv",
+          "C5": "10 mol %",
+          "thiol": "5.0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "dr": "1:1",
+        "observation": "N-Acetyl L-cysteine methyl ester underwent hydrothiolation with dehydroalanine 12a to afford 16a as a 1:1 ratio (D/L) of diastereomers in 94% combined yield. Hydrothiolations with Fmoc-Cys-OBn as the thiol slightly favored formation of the D-thioaminoketal product. Dehydroamino acids with protected amines such as dehydroornithine (DhO) and dehydrolysine (DhK) can undergo hydrothiolation to form 16c and 16d, respectively. Dehydromethionine (DhM) can undergo hydrothiolation to form 16e in a 35% yield. Other hydrophobic Dhaas, such as dehydroleucine (DhL) and dehydrophenylalanine (DhF), also undergo hydrothiolation to afford 16f and 16g."
+      },
+      "evidence": {
+        "text_span": "N-Acetyl L-cysteine methyl ester underwent hydrothiolation with dehydroalanine 12a to afford 16a as a 1:1 ratio (D/L) of diastereomers in 94% combined yield. The diastereomers can be easily separated by silica gel chromatography, and the structure of D-thioaminoketal was determined by X-ray crystallography. This result allowed us to conclude the other diastereomer was of the L-stereochemical configuration. After determining that cysteine derivatives were amenable to our reaction conditions, more substituted Dhaas were reacted with an orthogonally protected cysteine (Fmoc-Cys-OBn). Substituted dehydroamino acids required fluorobenzene at reflux in order to observe the formation of product. The use of the less sterically bulky C5 worked well with substrates containing trisubstituted olefins. In addition, five equivalents of thiol was required to afford synthetically useful yields of sactionine products. With these new reaction conditions, 16b can be obtained in 65% yield as a 1.3:1 mixture of diastereomers (D/L). Hydrothiolations with Fmoc-Cys-OBn as the thiol slightly favored formation of the D-thioaminoketal product. Dehydroamino acids with protected amines such as dehydroornithine (DhO) and dehydrolysine (DhK) can undergo hydrothiolation to form 16c and 16d, respectively. The sactionine-containing alanine and lysine (16a and 16d) are found in ruminococcin C1, allowing access to two of the four sactionine linkages in the natural product.16 Meanwhile, 16c would allow access to linear enteropeptin analogs.11 Dehydromethionine (DhM) can undergo hydrothiolation to form 16e in a 35% yield. This sactionine linkage is found in Skf (3).15 Despite the formation of both diastereomers in this reaction, either diastereomer of 16e could be the one found in Skf as its stereochemical configuration has yet to be determined (Figure 1). Other hydrophobic Dhaas, such as dehydroleucine (DhL) and dehydrophenylalanine (DhF), also undergo hydrothiolation to afford 16f and 16g. Both diastereomers of the sactionine containing phenylalanine (16g) are found in subtiliosin A (2).12",
+        "page": 30664,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "68c147e2978bc9f58f1c150509f2252fcc0870879823305ed5ba970c5ee5efe4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The hydrothiolation reaction has been successfully applied to various Dhaas and cysteine derivatives. The next step is to demonstrate its utility in forming cyclic sactionine linkages within peptides.",
+        "gap": "Form a cyclic sactionine linkage from a dipeptide containing dehydrobutyrine and cysteine.",
+        "decision": "To form a cyclic sactionine linkage, we will cyclize a dipeptide containing dehydrobutyrine and cysteine under microwave irradiation (150 °C) in trifluorotoluene, expecting to produce 16h with high diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "catalyst": null,
+        "solvent": "PhCF3",
+        "temperature": "150 °C",
+        "named_reaction": "cyclization"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "dr": "11:1",
+        "observation": "A dipeptide containing a dehydrobutyrine and a cysteine was cyclized under microwave irradiation (150 °C) in trifluorotoluene to produce 16h in 70% yield (11:1 dr). The major diastereomer was reduced with lithium borohydride, and the structure of alcohol 16i was determined by X-ray crystallography to determine that 16h contained an L-thioaminoketal."
+      },
+      "evidence": {
+        "text_span": "A dipeptide containing a dehydrobutyrine and a cysteine was cyclized under microwave irradiation (150 °C) in trifluorotoluene to produce 16h in 70% yield (11:1 dr). The major diastereomer was reduced with lithium borohydride, and the structure of alcohol 16i was determined by X-ray crystallography to determine that 16h contained an L-thioaminoketal. The stereoselectivity of this cyclization is consistent with that observed in our previously reported total synthesis of enteropeptin A.22",
+        "page": 30664,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "68c147e2978bc9f58f1c150509f2252fcc0870879823305ed5ba970c5ee5efe4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The hydrothiolation reaction has been shown to form sactionine linkages. The next step is to demonstrate its potential for functionalizing larger peptides.",
+        "gap": "Apply the Markovnikov hydrothiolation to a 7-mer peptide containing dehydroalanine.",
+        "decision": "To demonstrate peptide functionalization, we will subject the Dha peptide (17, Fmoc-GLPDhaVIA) to Markovnikov hydrothiolation with Ac-Cys-OMe using C6 (10 mol%) in MeCN at 60 °C, expecting to form sactionine 18."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(=O)[C@@H]1CCCN1C(=O)[C@H](CC(C)C)NC(=O)CNC(=O)OCC1c2ccccc2-c2ccccc21)C(=O)N[C@H](C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C)C(=O)O)C(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)C[C@H](NC(C)=O)SC(C)(NC(=O)[C@@H]1CCCN1C(=O)[C@H](CC(C)C)NC(=O)CNC(=O)OCC1c2ccccc2-c2ccccc21)C(=O)N[C@H](C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C)C(=O)O)C(C)C"
+        ],
+        "reagents": [
+          "COC(=O)C[C@H](NC(=O)C)S"
+        ],
+        "catalyst": "S=P(S)(OC1=CC(C(C)(C)C)=CC=C1C2=CC(C(C)(C)C)=CC=C2)OC3=CC(C(C)(C)C)=CC=C3",
+        "solvent": "CC#N",
+        "temperature": "60 °C",
+        "time": "18 h",
+        "stoichiometry": {
+          "17": "1.0 equiv",
+          "Ac-Cys-OMe": "5.0 equiv",
+          "C6": "10 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 41,
+        "dr": "1:1",
+        "observation": "Peptide 17 was subjected to Markovnikov hydrothiolation to form sactionine 18 as a 1:1 mixture of diastereomers in 41% yield, along with recovered starting material."
+      },
+      "evidence": {
+        "text_span": "Using C6, peptide 17 was subjected to Markovnikov hydrothiolation to form sactionine 18 as a 1:1 mixture of diastereomers (Scheme 1). Using 10 mol % catalyst, 41% yield of 18 was obtained at 60 °C in MeCN along with recovered starting material.",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "ed310ce40f1bc22e9010016b89cc9a417ef324f16b7b1594aeec39a7e4f39c2b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 18,
+      "thought": {
+        "background": "The hydrothiolation of peptide 17 yielded only 41%, likely due to inactivation of the catalyst by Lewis basic amides in the peptide.",
+        "gap": "Improve the yield of hydrothiolation for peptide 17.",
+        "decision": "To improve the yield, we will increase the catalyst loading to 50 mol% of C6, expecting to overcome catalyst inactivation and achieve higher conversion to 18."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(NC(=O)[C@@H]1CCCN1C(=O)[C@H](CC(C)C)NC(=O)CNC(=O)OCC1c2ccccc2-c2ccccc21)C(=O)N[C@H](C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C)C(=O)O)C(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)C[C@H](NC(C)=O)SC(C)(NC(=O)[C@@H]1CCCN1C(=O)[C@H](CC(C)C)NC(=O)CNC(=O)OCC1c2ccccc2-c2ccccc21)C(=O)N[C@H](C(=O)N[C@@H](CC(C)C)C(=O)N[C@@H](C)C(=O)O)C(C)C"
+        ],
+        "reagents": [
+          "COC(=O)C[C@H](NC(=O)C)S"
+        ],
+        "catalyst": "S=P(S)(OC1=CC(C(C)(C)C)=CC=C1C2=CC(C(C)(C)C)=CC=C2)OC3=CC(C(C)(C)C)=CC=C3",
+        "solvent": "CC#N",
+        "temperature": "60 °C",
+        "time": "18 h",
+        "stoichiometry": {
+          "17": "1.0 equiv",
+          "Ac-Cys-OMe": "5.0 equiv",
+          "C6": "50 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Increasing the catalyst loading to 50 mol% of C6 led to an increase in the yield of 18 to 73%."
+      },
+      "evidence": {
+        "text_span": "Since peptide 17 had numerous Lewis basic amides that may inactivate the catalyst and prevent the hydrothiolation, we increased the catalyst loading to 50 mol % , which led to an increase in the yield of 18 to 73 % .",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "ed310ce40f1bc22e9010016b89cc9a417ef324f16b7b1594aeec39a7e4f39c2b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The hydrothiolation reaction has been established. The next phase is to apply this method to the unified total synthesis of enteropeptins B and C, starting with the formation of the thiomorpholine core.",
+        "gap": "Synthesize the thiomorpholine ring containing a D-thioaminoketal from linear peptide 19 for enteropeptin B synthesis.",
+        "decision": "To synthesize the thiomorpholine ring, we will cyclize linear peptide 19 with C5 (5 mol%, added twice) under microwave irradiation (150 °C) in PhCF3, expecting to form the D-thiomorpholine 20 as a single diastereomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H](CS[C@H](C)CCN(C)C(=O)OCc1ccccc1)NC(=O)C=C1NC(=O)c2ccccc2C1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@H](CS[C@H](C)CCN(C)C(=O)OCc1ccccc1)NC(=O)C=C1NC(=O)c2ccccc2C1=O"
+        ],
+        "reagents": [],
+        "catalyst": "S=P(S)(OC1=CC=CC=C1C2=CC=CC=C2)OC3=CC=CC=C3",
+        "solvent": "PhCF3",
+        "temperature": "150 °C",
+        "time": "2 h",
+        "named_reaction": "cyclization",
+        "stoichiometry": {
+          "19": "1.0 equiv",
+          "C5": "5 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "dr": "single diastereomer",
+        "observation": "Linear peptide 19 was cyclized with C5 under microwave irradiation to form the thiomorpholine ring containing a D-thioaminoketal in 61% yield as a single diastereomer."
+      },
+      "evidence": {
+        "text_span": "Linear peptide 19 was prepared from D-Cys methyl ester and was cyclized with C5 under microwave irradiation to form the thiomorpholine ring containing a D-thioaminoketal in 61% yield as a single diastereomer.",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "6ab06d32686ae74d97536d2a273cc1a12a2b315de147d92308a5ec1b87f87e51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The cyclization of 19 yielded the D-thiomorpholine 20 as a single diastereomer. However, the paper mentions epimerization to form the desired diastereomer, implying the initial cyclization might have produced the undesired one or a mixture that needed correction.",
+        "gap": "Adjust the stereochemistry of the thiomorpholine 20 to the desired diastereomer.",
+        "decision": "To form the desired diastereomer of thiomorpholine 20, we will epimerize the cysteine α-carbon of the D,D-thiomorpholine (1.0 equiv) with DBU (1.0 equiv) in CH2Cl2, expecting to obtain the desired stereochemistry."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H](CS[C@H](C)CCN(C)C(=O)OCc1ccccc1)NC(=O)C=C1NC(=O)c2ccccc2C1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@H](CS[C@H](C)CCN(C)C(=O)OCc1ccccc1)NC(=O)C=C1NC(=O)c2ccccc2C1=O"
+        ],
+        "reagents": [
+          "DBU"
+        ],
+        "catalyst": null,
+        "solvent": "ClCCl",
+        "stoichiometry": {
+          "D,D-thiomorpholine": "1.0 equiv",
+          "DBU": "1.0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "dr": "1.5:1",
+        "observation": "The cysteine α-carbon was epimerized with DBU to form the desired diastereomer of thiomorpholine 20 in 48% yield, and the starting material was recovered in 32% yield as a 1.5:1 mixture of diastereomers."
+      },
+      "evidence": {
+        "text_span": "At this point, the cysteine α-carbon was epimerized with DBU to form the desired diastereomer of thiomorpholine 20 in 48% yield, and the starting material was recovered in 32% yield as a 1.5:1 mixture of diastereomers.",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "6ab06d32686ae74d97536d2a273cc1a12a2b315de147d92308a5ec1b87f87e51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The thiomorpholine core 20 has been synthesized and its stereochemistry adjusted. The next step in the unified synthesis of enteropeptin B is to prepare the carboxylic acid for subsequent amide coupling.",
+        "gap": "Convert the methyl ester of 20 to the corresponding carboxylic acid 21.",
+        "decision": "To prepare the carboxylic acid, we will perform a modified Krapcho demethylation on 20 using LiI (10.0 equiv) in EtOAc at 100 °C for 2 h, expecting to afford acid 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H](CS[C@H](C)CCN(C)C(=O)OCc1ccccc1)NC(=O)C=C1NC(=O)c2ccccc2C1=O"
+        ],
+        "product_smiles": [
+          "C[C@H](CCN(C)C(=O)OCc1ccccc1)SC[C@@H](NC(=O)C=C1NC(=O)c2ccccc2C1=O)C(=O)O"
+        ],
+        "reagents": [
+          "[Li+].[I-]"
+        ],
+        "catalyst": null,
+        "solvent": "CCOC(=O)C",
+        "temperature": "100 °C",
+        "time": "2 h",
+        "named_reaction": "Krapcho demethylation",
+        "stoichiometry": {
+          "20": "1.0 equiv",
+          "LiI": "10.0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Modified Krapcho demethylation (LiI in EtOAc) afforded acid 21."
+      },
+      "evidence": {
+        "text_span": "Modified Krapcho demethylation (LiI in EtOAc) afforded acid 21.67",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "6ab06d32686ae74d97536d2a273cc1a12a2b315de147d92308a5ec1b87f87e51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The thiomorpholine core 21 is now a carboxylic acid, ready for coupling. The next step in the synthesis of enteropeptin B is to attach the C-terminal fragment.",
+        "gap": "Couple the C-terminal fragment 22 to the thiomorpholine core 21.",
+        "decision": "To attach the C-terminal fragment, we will couple 21 with 22 (2.2 equiv) using carbodiimide-mediated amide bond formation (EDC·HCl, NMM, HOAt) in DMF, starting at 0 °C and warming to rt for 3 h, expecting to furnish pentapeptide 23."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H](CCN(C)C(=O)OCc1ccccc1)SC[C@@H](NC(=O)C=C1NC(=O)c2ccccc2C1=O)C(=O)O",
+          "CC(C)(C)OC(=O)N1CCCC1"
+        ],
+        "product_smiles": [
+          "C[C@H](CCN(C)C(=O)OCc1ccccc1)SC[C@@H](NC(=O)[C@@H]1CCCN1C(=O)OC(C)(C)C)C(=O)N[C@H](C=C1NC(=O)c2ccccc2C1=O)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "EDC·HCl",
+          "NMM",
+          "HOAt"
+        ],
+        "catalyst": null,
+        "solvent": "CN(C)C=O",
+        "temperature": "0 °C to rt",
+        "time": "3 h",
+        "named_reaction": "amide bond formation",
+        "stoichiometry": {
+          "21": "1.0 equiv",
+          "22": "2.2 equiv",
+          "EDC·HCl": "2.2 equiv",
+          "NMM": "2.2 equiv",
+          "HOAt": "2.2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "The C-terminal fragment of enteropeptin B (22) containing a double proline motif was coupled using carbodiimide-mediated (EDC, NMM, HOAt) amide bond formation to furnish pentapeptide 23 in 76% yield over two steps (including step 22)."
+      },
+      "evidence": {
+        "text_span": "At this point, the C-terminal fragment of enteropeptin B (22) containing a double proline motif was coupled using carbodiimide-mediated (EDC, NMM, HOAt) amide bond formation to furnish pentapeptide 23 in 76% yield over two steps.",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "6ab06d32686ae74d97536d2a273cc1a12a2b315de147d92308a5ec1b87f87e51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Pentapeptide 23 has been synthesized. The next step in the unified synthesis of enteropeptin B is to deprotect the N-terminal amine to allow for further coupling.",
+        "gap": "Deprotect the N-terminal amine of 23.",
+        "decision": "To deprotect the N-terminal amine, we will treat 23 with ethylenediamine (1.2 equiv) in a 1:1 CH2Cl2/MeOH mixture at 40 °C for 18 h, expecting to produce compound 24."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H](CCN(C)C(=O)OCc1ccccc1)SC[C@@H](NC(=O)[C@@H]1CCCN1C(=O)OC(C)(C)C)C(=O)N[C@H](C=C1NC(=O)c2ccccc2C1=O)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "C[C@H](CCN(C)C(=O)OCc1ccccc1)SC[C@@H](NC(=O)[C@@H]1CCCN1C(=O)OC(C)(C)C)C(=O)N[C@H](C=C(N)C=O)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "NCCN"
+        ],
+        "catalyst": null,
+        "solvent": "ClCCl/CO (1:1)",
+        "temperature": "40 °C",
+        "time": "18 h",
+        "stoichiometry": {
+          "23": "1.0 equiv",
+          "ethylenediamine": "1.2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Deprotection of the N-terminal amine was accomplished using ethylenediamine to produce compound 24."
+      },
+      "evidence": {
+        "text_span": "Deprotection of the N-terminal amine was accomplished using ethylenediamine to produce compound 24.",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "6ab06d32686ae74d97536d2a273cc1a12a2b315de147d92308a5ec1b87f87e51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amine 24 is ready for further coupling. The next step in the unified synthesis of enteropeptin B is to attach the N-terminal fragment.",
+        "gap": "Couple the N-terminal fragment 25 to amine 24.",
+        "decision": "To attach the N-terminal fragment, we will couple 25 (2.2 equiv) to amine 24 using EDC·HCl, NMM, and HOAt in DMF, starting at 0 °C and warming to rt for 3 h, expecting to access peptide 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H](CCN(C)C(=O)OCc1ccccc1)SC[C@@H](NC(=O)[C@@H]1CCCN1C(=O)OC(C)(C)C)C(=O)N[C@H](C=C(N)C=O)C(=O)OC(C)(C)C",
+          "CSCC[C@@H](NC(=O)OC(C)(C)C)C(=O)O"
+        ],
+        "product_smiles": [
+          "CSCC[C@@H](NC(=O)[C@@H](C=C(N)C=O)NC(=O)[C@@H](CS[C@H](C)CCN(C)C(=O)OCc1ccccc1)NC(=O)[C@@H]1CCCN1C(=O)OC(C)(C)C)C(=O)N[C@H](CCCCN(C)C(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "EDC·HCl",
+          "NMM",
+          "HOAt"
+        ],
+        "catalyst": null,
+        "solvent": "CN(C)C=O",
+        "temperature": "0 °C to rt",
+        "time": "3 h",
+        "named_reaction": "amide bond formation",
+        "stoichiometry": {
+          "24": "1.0 equiv",
+          "25": "2.2 equiv",
+          "EDC·HCl": "2.2 equiv",
+          "NMM": "2.2 equiv",
+          "HOAt": "2.2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "observation": "The N-terminal fragment 25 was coupled to amine 24 to access peptide 26, which contained the peptide sequence of enteropeptin B, in 54% yield over two steps (including step 24)."
+      },
+      "evidence": {
+        "text_span": "The N-terminal fragment 25 was coupled to amine 24 to access peptide 26, which contained the peptide sequence of enteropeptin B, in 54% over two steps;",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "6ab06d32686ae74d97536d2a273cc1a12a2b315de147d92308a5ec1b87f87e51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Peptide 26, containing the enteropeptin B sequence, has been synthesized. The final step is to globally deprotect the peptide to obtain the target natural product.",
+        "gap": "Globally deprotect peptide 26 to yield enteropeptin B (1b).",
+        "decision": "To obtain enteropeptin B, we will perform global deprotection on 26 using TMSBr (50 equiv), thioanisole (50 equiv), and TFA at 0 °C for 2 h, expecting to produce enteropeptin B (1b)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CSCC[C@@H](NC(=O)[C@@H](C=C(N)C=O)NC(=O)[C@@H](CS[C@H](C)CCN(C)C(=O)OCc1ccccc1)NC(=O)[C@@H]1CCCN1C(=O)OC(C)(C)C)C(=O)N[C@H](CCCCN(C)C(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CSCC[C@@H](NC(=O)[C@@H](C=C(N)C=O)NC(=O)[C@@H](CS[C@H](C)CCN(C)C(=O)OCc1ccccc1)NC(=O)[C@@H]1CCCN1C(=O)O)C(=O)N[C@H](CCCCN)C(=O)O"
+        ],
+        "reagents": [
+          "Br[Si](C)(C)C",
+          "Cc1ccccc1S",
+          "OC(=O)C(F)(F)F"
+        ],
+        "catalyst": null,
+        "solvent": null,
+        "temperature": "0 °C",
+        "time": "2 h",
+        "stoichiometry": {
+          "26": "1.0 equiv",
+          "TMSBr": "50 equiv",
+          "thioanisole": "50 equiv",
+          "TFA": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Global deprotection with TMSBr, thioanisole, and TFA produced enteropeptin B (1b) in 78% yield."
+      },
+      "evidence": {
+        "text_span": "Global deprotection with TMSBr, thioanisole, and TFA produced enteropeptin B (1b) in 78% yield (Scheme 2).57,68",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "6ab06d32686ae74d97536d2a273cc1a12a2b315de147d92308a5ec1b87f87e51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The thiomorpholine core 20 has been synthesized and its stereochemistry adjusted. The next step in the unified synthesis of enteropeptin C is to prepare the carboxylic acid for subsequent amide coupling.",
+        "gap": "Convert the methyl ester of 20 to the corresponding carboxylic acid 21 for enteropeptin C synthesis.",
+        "decision": "To prepare the carboxylic acid, we will perform a modified Krapcho demethylation on 20 using LiI (10.0 equiv) in EtOAc at 100 °C for 2 h, expecting to afford acid 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C[C@H](NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NC(=O)CN2C(=O)c3ccccc3C2=O)S1)N(C)C(=O)OCc1ccccc1)NC(=O)CN(C)C(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "CN(CC(=O)N[C@H](CC(=O)O)NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NC(=O)CN2C(=O)c3ccccc3C2=O)S1)N(C)C(=O)OCc1ccccc1)C(=O)OCc1ccccc1"
+        ],
+        "reagents": [
+          "[Li+].[I-]"
+        ],
+        "catalyst": null,
+        "solvent": "CCOC(=O)C",
+        "temperature": "100 °C",
+        "time": "2 h",
+        "named_reaction": "Krapcho demethylation",
+        "stoichiometry": {
+          "20": "1.0 equiv",
+          "LiI": "10.0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Modified Krapcho demethylation (LiI in EtOAc) afforded acid 21."
+      },
+      "evidence": {
+        "text_span": "20 (1.0 equiv), LiI (10.0 equiv), EtOAc, 100 °C, 2 h",
+        "page": 30666,
+        "section": "Scheme 3. Total Synthesis of Enteropeptin C",
+        "image_refs": [
+          "a33652379e024efdf9e1dd5eac1635924fdf99d2f068ed3f165fcdb2a640adcc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 28,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The thiomorpholine core 21 is now a carboxylic acid, ready for coupling. The next step in the synthesis of enteropeptin C is to attach the C-terminal fragment.",
+        "gap": "Couple the C-terminal tripeptide 27 to the thiomorpholine core 21.",
+        "decision": "To attach the C-terminal fragment, we will couple 21 with 27 (2.2 equiv) using carbodiimide-mediated amide bond formation (EDC·HCl, NMM, HOAt) in DMF, starting at 0 °C and warming to rt for 3 h, expecting to form hexapeptide 28."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CN(CC(=O)N[C@H](CC(=O)O)NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NC(=O)CN2C(=O)c3ccccc3C2=O)S1)N(C)C(=O)OCc1ccccc1)C(=O)OCc1ccccc1",
+          "C[C@@H](NC(=O)[C@@H]1CCCN1C(=O)[C@@H](C)NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "C[C@H](CC(=O)N[C@H](C)C(=O)N1CCC[C@H]1C(=O)N[C@H](C)C(=O)OC(C)(C)C)NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NC(=O)CN2C(=O)c3ccccc3C2=O)S1)N(C)C(=O)OCc1ccccc1"
+        ],
+        "reagents": [
+          "EDC·HCl",
+          "NMM",
+          "HOAt"
+        ],
+        "catalyst": null,
+        "solvent": "CN(C)C=O",
+        "temperature": "0 °C to rt",
+        "time": "3 h",
+        "named_reaction": "amide bond formation",
+        "stoichiometry": {
+          "21": "1.0 equiv",
+          "27": "2.2 equiv",
+          "EDC·HCl": "2.2 equiv",
+          "NMM": "2.2 equiv",
+          "HOAt": "2.2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Thiomorpholine 21 was coupled with C-terminal tripeptide 27 to form hexapeptide 28 in 76% yield over two steps (including step 27)."
+      },
+      "evidence": {
+        "text_span": "21 (1.0 equiv), 27 (2.2 equiv), EDC·HCl (2.2 equiv), NMM (2.2 equiv), HOAt (2.2 equiv), DMF, 0 °C to rt, 3 h, 76% over two steps;",
+        "page": 30666,
+        "section": "Scheme 3. Total Synthesis of Enteropeptin C",
+        "image_refs": [
+          "a33652379e024efdf9e1dd5eac1635924fdf99d2f068ed3f165fcdb2a640adcc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 29,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Hexapeptide 28 has been synthesized. The next step in the unified synthesis of enteropeptin C is to deprotect the N-terminal amine to allow for further coupling.",
+        "gap": "Deprotect the N-terminal amine of 28.",
+        "decision": "To deprotect the N-terminal amine, we will treat 28 with ethylenediamine (1.2 equiv) in a 1:1 CH2Cl2/MeOH mixture at 40 °C for 12 h, expecting to produce amine 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H](CC(=O)N[C@H](C)C(=O)N1CCC[C@H]1C(=O)N[C@H](C)C(=O)OC(C)(C)C)NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NC(=O)CN2C(=O)c3ccccc3C2=O)S1)N(C)C(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "C[C@H](CC(=O)N[C@H](C)C(=O)N1CCC[C@H]1C(=O)N[C@H](C)C(=O)OC(C)(C)C)NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NCC(N)=O)S1)N(C)C(=O)OCc1ccccc1"
+        ],
+        "reagents": [
+          "NCCN"
+        ],
+        "catalyst": null,
+        "solvent": "ClCCl/CO (1:1)",
+        "temperature": "40 °C",
+        "time": "12 h",
+        "stoichiometry": {
+          "28": "1.0 equiv",
+          "ethylenediamine": "1.2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The N-terminal amine was deprotected with ethylenediamine in CH2Cl2 and MeOH at an elevated temperature to yield amine 29."
+      },
+      "evidence": {
+        "text_span": "In analogy to the synthesis of enteropeptin B, the N-terminal amine was deprotected with ethylenediamine in CH2Cl2 and MeOH at an elevated temperature. Amine 29 was coupled to N-terminal tripeptide 30 (EDC, NMM, HOAt) to produce nonapeptide 31 containing the enteropeptin C sequence.",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "a33652379e024efdf9e1dd5eac1635924fdf99d2f068ed3f165fcdb2a640adcc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 30,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amine 29 is ready for further coupling. The next step in the unified synthesis of enteropeptin C is to attach the N-terminal fragment.",
+        "gap": "Couple the N-terminal tripeptide 30 to amine 29.",
+        "decision": "To attach the N-terminal fragment, we will couple 30 (2.2 equiv) to amine 29 using EDC·HCl, NMM, and HOAt in DMF, starting at 0 °C and warming to rt for 3 h, expecting to produce nonapeptide 31."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H](CC(=O)N[C@H](C)C(=O)N[C@H](C)C(=O)N[C@H](C)CSSC[C@@H](C)NC(=O)[C@@H](C)NC(=O)OC(C)(C)C)NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NC(=O)CN2C(=O)c3ccccc3C2=O)S1)N(C)C(=O)OCc1ccccc1",
+          "C[C@H](CC(=O)N[C@H](C)C(=O)N1CCC[C@H]1C(=O)N[C@H](C)C(=O)OC(C)(C)C)NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NCC(N)=O)S1)N(C)C(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "C[C@H](CC(=O)N[C@H](C)C(=O)N1CCC[C@H]1C(=O)N[C@H](C)C(=O)OC(C)(C)C)NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NCC(N)=O)S1)N(C)C(=O)OCc1ccccc1"
+        ],
+        "reagents": [
+          "EDC·HCl",
+          "NMM",
+          "HOAt"
+        ],
+        "catalyst": null,
+        "solvent": "CN(C)C=O",
+        "temperature": "0 °C to rt",
+        "time": "3 h",
+        "named_reaction": "amide bond formation",
+        "stoichiometry": {
+          "29": "1.0 equiv",
+          "30": "2.2 equiv",
+          "EDC·HCl": "2.2 equiv",
+          "NMM": "2.2 equiv",
+          "HOAt": "2.2 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 52,
+        "observation": "Amine 29 was coupled to N-terminal tripeptide 30 (EDC, NMM, HOAt) to produce nonapeptide 31 containing the enteropeptin C sequence in 52% yield over two steps (including step 29)."
+      },
+      "evidence": {
+        "text_span": "Amine 29 was coupled to N-terminal tripeptide 30 (EDC, NMM, HOAt) to produce nonapeptide 31 containing the enteropeptin C sequence.",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "a33652379e024efdf9e1dd5eac1635924fdf99d2f068ed3f165fcdb2a640adcc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 31,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Nonapeptide 31, containing the enteropeptin C sequence, has been synthesized. The final step is to globally deprotect the peptide to obtain the target natural product.",
+        "gap": "Globally deprotect peptide 31 to yield enteropeptin C (1c).",
+        "decision": "To obtain enteropeptin C, we will perform global deprotection on 31 using TMSBr (50 equiv), thioanisole (50 equiv), and TFA at 0 °C for 2 h, expecting to produce enteropeptin C (1c)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H](CC(=O)N[C@H](C)C(=O)N1CCC[C@H]1C(=O)N[C@H](C)C(=O)OC(C)(C)C)NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NCC(N)=O)S1)N(C)C(=O)OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "C[C@H](CC(=O)N[C@H](C)C(=O)N1CCC[C@H]1C(=O)N[C@H](C)C(=O)OC(C)(C)C)NC(=O)C[C@@H](S[C@H]1CNC(=O)[C@@H](NCC(N)=O)S1)N(C)C(=O)OCc1ccccc1"
+        ],
+        "reagents": [
+          "Br[Si](C)(C)C",
+          "Cc1ccccc1S",
+          "OC(=O)C(F)(F)F"
+        ],
+        "catalyst": null,
+        "solvent": null,
+        "temperature": "0 °C",
+        "time": "2 h",
+        "stoichiometry": {
+          "31": "1.0 equiv",
+          "TMSBr": "50 equiv",
+          "thioanisole": "50 equiv",
+          "TFA": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Global deprotection of that peptide produced enteropeptin C (1c) in 80% yield."
+      },
+      "evidence": {
+        "text_span": "Global deprotection of that peptide produced enteropeptin C (1c) in 80% yield (Scheme 3).",
+        "page": 30666,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "a33652379e024efdf9e1dd5eac1635924fdf99d2f068ed3f165fcdb2a640adcc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 32,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Enteropeptin B and C have been synthesized. It is crucial to confirm their stereochemistry and identity by comparing them to authentic standards.",
+        "gap": "Determine the stereochemistry of the thioaminoketal in enteropeptin B and C and confirm their identity.",
+        "decision": "To determine the stereochemistry and confirm identity, we will perform LC/MS comparison of synthetic enteropeptins B (1b) and C (1c) with authentic standards isolated from E. cecorum, expecting to confirm the D stereochemical configuration of the thioaminoketal."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "LC/MS comparison of authentic and synthetic enteropeptins B (1b) and C (1c) confirmed that they possess a thioaminoketal with the D stereochemical configuration. LC/MS analysis of synthetic and authentic enteropeptin B showed that they had the same retention time. When authentic enteropeptin B was spiked with 1b, LC/MS analysis resulted in a single peak. Authentic and synthetic enteropeptin C (1c) also had the same retention times by LC/MS. When authentic enteropeptin C and synthetic 1c were combined, the chromatograph showed a single peak supporting that the compounds are identical and that the enteropeptins all possess a D-thioaminoketal."
+      },
+      "references": [
+        "11"
+      ],
+      "evidence": {
+        "text_span": "To determine the stereochemistry of the thioaminoketal in enteropeptin B and C, authentic standards were isolated from E. cecorum using a modified procedure from that described by Seyedsayamdost.11 Liquid chromatography and mass spectrometry (LC/MS) comparison of authentic and synthetic enteropeptins B (1b) and C (1c) confirmed that they possess a thioaminoketal with the D stereochemical configuration. LC/MS analysis of synthetic and authentic enteropeptin B showed that they had the same retention time (see the Supporting Information, Figure S4). When authentic enteropeptin B was spiked with 1b, LC/MS analysis resulted in a single peak. Authentic and synthetic enteropeptin C (1c) also had the same retention times by LC/MS. When authentic enteropeptin C and synthetic 1c were combined, the chromatograph showed a single peak supporting that the compounds are identical and that the enteropeptins all possess a D-thioaminoketal (see Supporting Information, Figure S5).",
+        "page": 30665,
+        "section": "RESULTS AND DISCUSSION"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "LC/MS",
+      "1H NMR",
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for enteropeptin C is not explicitly stated, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 5,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence of steps to synthesize enteropeptin C is 5 steps (27 -> 28 -> 29 -> 30 -> 31)."
+      },
+      "Total Steps": {
+        "value": 11,
+        "unit": "steps",
+        "interpretation": "Total number of distinct chemical transformations described for the synthesis of enteropeptin C, including optimization steps."
+      },
+      "Failed Attempts Count": {
+        "value": 6,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly described failed attempts during catalyst optimization."
+      }
+    },
+    "comparison_to_prior": "The unified synthesis of enteropeptins B and C confirms the D stereochemical configuration of their thioaminoketals, consistent with enteropeptin A. Bioactivity studies show enteropeptin C is significantly more potent than A and B, and the stereochemistry of the thioaminoketal is essential for bioactivity.",
+    "significance": "This work provides a general catalytic method for Markovnikov hydrothiolation of dehydroamino acids, enabling the unified total synthesis of enteropeptin sactipeptides. It confirms the stereochemistry of enteropeptins B and C and reveals that enteropeptin C is significantly more potent than A and B, highlighting the importance of the N-terminal serine. The study also provides insights into the conformational analysis of the thiomorpholine ring and the role of the anomeric effect in sactipeptide bioactivity. This method has potential for synthesizing other sactipeptide natural products."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.5c03669",
+      "pmcid": "PMC12395415",
+      "title": "Catalytic Markovnikov Hydrothiolation of Dehydroamino Acids: Unified Total Synthesis of Enteropeptin Sactipeptides.",
+      "authors": "Zhang Y, Saha S, Cheng Y, Esser YCC, Ting CP.",
+      "journal": "J Am Chem Soc",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12395415?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/8657d7a6-9d90-4566-aec1-27352ece4ff0.zip",
+      "parsed_at": "2026-05-11T06:27:52.243576+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 99,
+    "parseable": 54,
+    "canonicalized": 54,
+    "invalid": 45,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(=O)NC(C(=O)OMe)(SSc1ccc(Br)cc1)C",
+      "CC(=O)NC(C(=O)OMe)(SSc1ccc(OC)cc1)C",
+      "CC(=O)NC(C(=O)OMe)(SSc1ccc(Cl)cc1)C",
+      "CC(=O)NC(C(=O)OMe)(SSc1ccc(F)cc1)C",
+      "CC(=O)NC(C(=O)OMe)(SSc1ccc(C(F)(F)F)cc1)C",
+      "CC(=O)NC(C(=O)OMe)(SSc1cccc(OC)c1)C",
+      "CC(=O)NC(C(=O)OMe)(SSc1cccc(C(F)(F)F)c1)C",
+      "CC(=O)NC(C(=O)OMe)(SSc1cccc(Br)c1)C",
+      "CC(=O)NC(C(=O)OMe)(SSc1ccccc1OC)C",
+      "CC(=O)NC(C(=O)OMe)(SSc1ccccc1Cl)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,912 @@
+{
+  "trace_id": "TS-PMC12720957",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "diaporisoindole A",
+    "smiles": "CC(C)=CCC[C@H]1C(=O)Nc2c(-c3cc(C)c(C(C)(C)O)o3)cc(O)cc21",
+    "natural_product_class": "indole alkaloid",
+    "structural_features": {
+      "molecular_weight": 435.53,
+      "stereocenters": 3,
+      "ring_systems": "indole, furan, lactam, prenyl",
+      "key_motifs": [
+        "indole",
+        "gamma-lactam",
+        "prenyl group",
+        "benzofuran"
+      ]
+    },
+    "motivation": "To demonstrate the feasibility of selenium-catalyzed lactamization and product derivatization/deprotection protocols in a complex context, specifically capitalizing on the electron-deficient nature of the unsaturated lactam products for Diels-Alder reactions.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Cui",
+        "year": 2017,
+        "doi": "10.1021/acs.orglett.7b02700",
+        "key_strategy": "unspecified"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Successful enantioselective total synthesis matching reported NMR data and optical rotation."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-N bond of the lactam ring",
+        "named_strategy": "Selenium-catalyzed enantioselective lactamization",
+        "reasoning": "This is the core methodology developed in the paper, enabling the formation of the enantioenriched lactam from an unsaturated carboxamide precursor."
+      },
+      {
+        "bond_description": "C-C bonds forming the bicyclic system",
+        "named_strategy": "Diels-Alder reaction",
+        "reasoning": "The electron-deficient nature of the unsaturated lactam product makes it a suitable dienophile for a Diels-Alder reaction with an electron-rich diene, allowing for the rapid construction of the complex bicyclic core and installation of the prenyl group."
+      },
+      {
+        "bond_description": "N-S bond of the N-fluorosulfonyl group",
+        "named_strategy": "Reductive deprotection",
+        "reasoning": "The N-fluorosulfonyl group is crucial for the lactamization but needs to be removed to access the natural product. Standard deprotection methods failed, necessitating a single-electron reduction."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "11",
+        "smiles": "Cc1ccc2c(c1)OC(/C=C/C(=O)NS(=O)(=O)F)[C@@H](C(C)(C)O)CO2",
+        "role": "Lactamization precursor",
+        "comes_from": "Synthesized from cresol"
+      },
+      {
+        "fragment_id": "13",
+        "smiles": "",
+        "role": "Diene for Diels-Alder",
+        "comes_from": "Commercial or synthesized"
+      }
+    ],
+    "rationale": "The strategy leverages the newly developed selenium-catalyzed enantioselective lactamization to form the key chiral lactam intermediate. This lactam then acts as a dienophile in a Diels-Alder reaction to build the complex bicyclic core. Finally, a specific reductive deprotection method is employed to remove the N-fluorosulfonyl group, followed by redox manipulation to yield the target natural product."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Electrophilic cyclization of unsaturated carboxylic acids is well-established for lactones. However, analogous catalytic enantioselective lactamizations are underdeveloped due to the ambident nucleophilicity of carboxamides, favoring O-cyclization.",
+        "gap": "Existing stoichiometric methods for lactamization require N-modification (e.g., N,O-bis-trimethylsilyl, N-Boc, N-tosyl), but these are challenging for catalytic enantioselective approaches, especially N-tosyl which is difficult to remove.",
+        "decision": "To overcome the limitations of existing carboxamide modifications, we will explore new N-activating groups that promote N-cyclization and are compatible with catalytic enantioselective methods."
+      },
+      "evidence": {
+        "text_span": "Electrophilic cyclization of unsaturated carboxylic acids is a well-established strategy for the catalytic enantioselective synthesis of lactones. In contrast, analogous catalytic transformations of unsaturated carboxamides to access enantioenriched lactams remain underdeveloped due to the ambident nucleophilicity of carboxamides, favoring nucleophilic attack from their oxygen atom. Herein, we unveil N-(fluorosulfonyl)carboxamides as versatile and reactive substrates that overcome this limitation, as demonstrated by a selenium-catalyzed enantioselective lactamization, facile product derivatization, and application to the total synthesis of diaporisoindole A.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Our group has developed selenium-catalyzed enantioselective electrophilic lactonization.",
+        "gap": "Adapting this lactonization to lactamization has been difficult.",
+        "decision": "We attempted to use N-acyl, N-Boc, and N-tosyl carboxamides as substrates for selenium-catalyzed lactamization, expecting to achieve N-cyclization based on prior work in stoichiometric lactamization and selenium-catalyzed C-N bond formations."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "",
+          "C=CCC(=O)NS(=O)(=O)c1ccc(C)cc1"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "chiral diselenide catalyst"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Initial attempts using N-acyl and N-Boc carboxamides failed to yield the desired lactams. Even with the N-tosyl group, no desired product was obtained. In one case using N-methoxy carboxamides, the corresponding iminolactones were obtained exclusively."
+      },
+      "evidence": {
+        "text_span": "Our initial attempts using N-acyl and N-Boc carboxamides failed to yield the desired lactams. Even with the N-tosyl group, which has been validated not only in asymmetric lactamizations (Fig. 1c) but also selenium-catalyzed C–N bond formations,42–45 no desired product was obtained. In one case using N-methoxy carboxamides, the corresponding iminolactones were obtained exclusively.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Previous attempts with N-acyl, N-Boc, and N-tosyl carboxamides failed to produce lactams via selenium catalysis.",
+        "gap": "A more effective nitrogen nucleophile is needed that can overcome the O-cyclization preference and be compatible with selenium π-acid catalysis.",
+        "decision": "Based on a separate project identifying N-(fluorosulfonyl)carbamates as highly effective nitrogen nucleophiles, we chose to incorporate the N-fluorosulfonyl group into unsaturated carboxamides, expecting clean conversion to lactams with high enantioselectivities."
+      },
+      "evidence": {
+        "text_span": "The breakthrough came from our separate project where N-(fluorosulfonyl)carbamates were identified as highly effective nitrogen nucleophiles.47–50 Incorporating the N-fluorosulfonyl group into unsaturated carboxamides led to clean conversion, producing the desired lactams with high enantioselectivities (Fig. 1d, this work).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "N-(fluorosulfonyl)amides are promising substrates for lactamization.",
+        "gap": "Understanding the reactivity difference between N-tosyl and N-fluorosulfonyl amides is crucial for optimizing the reaction and predicting selectivity.",
+        "decision": "We turned to computational studies to elucidate the drastic reactivity difference, focusing on pKa values, local nucleophilicities (Fukui functions), and steric accessibility (SASA) of the nitrogen and oxygen atoms, expecting to confirm that the N-fluorosulfonyl group facilitates amide anion generation and promotes N-cyclization despite potential steric hindrance."
+      },
+      "evidence": {
+        "text_span": "We initially turned to computational studies to elucidate the drastic reactivity difference between N-tosyl and N-fluorosulfonyl amides (Fig. 1e). The key distinction lies in their pKa values, differing by more than 8 units between two model acetamides in acetonitrile.52 The local nucleophilicities of the nitrogen and oxygen atoms of each anion were assessed using condensed Fukui functions based on Hirshfeld charges, revealing that the nitrogen atoms exhibit higher values and thus greater nucleophilicity in both cases (Fig. 1e, middle).53–58 In contrast, neutral acetamide shows greater nucleophilicity at the oxygen atom, supporting the conventional knowledge as in Fig. 1a and b. Based on these observations, we reasoned that the higher acidity of an N-(fluorosulfonyl)amide facilitates the generation of the amide anion, which renders the nitrogen atom more nucleophilic, without interfering with electrophilic activation of the alkene by a selenium π-acid (key intermediate in Fig. 1d).59,60 Yet, the nitrogen atom of an N-(fluorosulfonyl)amide is less accessible than the oxygen atom as visually evident from the structure and quantitatively assessed by its smaller solvent accessible surface area (SASA) (Fig. 1e, right), posing a steric obstacle that could undermine the electronically harnessed pathway to lactamization.61,62",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Computational studies support the use of N-fluorosulfonyl amides for N-cyclization.",
+        "gap": "The substrate scope and enantioselectivity for aliphatic N-(fluorosulfonyl)amides need to be evaluated.",
+        "decision": "We evaluated the substrate scope with minimal modification to the reaction conditions optimized for lactonization, using 5 mol% diselenide 1, expecting good yields and high enantioselectivities for aliphatic substrates."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCC(=O)NS(=O)(=O)F"
+        ],
+        "product_smiles": [
+          "CCCCCCC[C@@H]1CC=C(C=O)N1S(=O)(=O)F",
+          "O=C1C=CN(S(=O)(=O)F)C1C1CCCCC1",
+          "O=C1c2ccccc2C(=O)N1CC[C@@H]1C=CC(=O)N1S(=O)(=O)F",
+          "N#CCCC[C@@H]1C=CC(=O)N1S(=O)(=O)F",
+          "COC(=O)CCC[C@H]1C=CC(=O)N1S(=O)(=O)F",
+          "CC(C)CCCC[C@H](C)[C@@H]1C=CC(=O)N1S(=O)(=O)F",
+          "CC(C)CCC[C@H](C)[C@@H]1C=CC(=O)N1S(=O)(=O)F",
+          "O=C1C=C[C@@H](Cc2ccccc2)N1S(=O)(=O)F",
+          "COc1ccc(C[C@@H]2C=CC(=O)N2S(=O)(=O)F)cc1",
+          "CCOC(=O)c1ccc(C[C@H]2C=CC(=O)N2S(=O)(=O)F)cc1",
+          "O=C1C=CN(S(=O)(=O)F)[C@H]1C[C@@H]1C=CC(Br)=CC1",
+          "Cc1ccccc1C[C@H]1C=CC(=O)N1S(=O)(=O)F"
+        ],
+        "reagents": [
+          "chiral diselenide 1",
+          "CaCO3"
+        ],
+        "catalyst": "chiral diselenide 1",
+        "solvent": "toluene",
+        "temperature": "-10C",
+        "time": "5-27 h",
+        "stoichiometry": {
+          "chiral diselenide 1": "5 mol%",
+          "CaCO3": "1 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 44,
+        "ee_percent": 85,
+        "dr": 85,
+        "observation": "The enantioselective lactamization of aliphatic N-(fluorosulfonyl)amides 3 proceeded in good yields (44-74%) and high enantioselectivities (85-96% ee), tolerating primary and secondary alkyl, as well as benzyl groups at the γ-position. A small amount of O-cyclized iminolactones was observed in the crude mixtures."
+      },
+      "evidence": {
+        "text_span": "With the computational rationale in hand, we evaluated the substrate scope with minimal modification to the reaction conditions optimized for the lactonization,37 using 5 mol% diselenide 1 (Fig. 2a). The enantioselective lactamization of aliphatic N-(fluorosulfonyl)amides 3 proceeded in good yields and high enantioselectivities, tolerating primary and secondary alkyl (5a–5i), as well as benzyl (5j–5n) groups at the γ-position, although a small amount of O-cyclized iminolactones was observed in the crude mixtures.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "e96c4213550e756efb4f90dd688366cefe5f3a1b0cf4f4089ad9ee26a9d5aff1.jpg",
+          "a8f2e631bcf69dee61c446db09a203ce3ee9c89bc0634eaa7743d3a6ce1172d7.jpg",
+          "d5084702f8119127e402137ef06613d9aa0d173d5896818fff9401ef0485e931.jpg",
+          "7e3278852d7782dc98aa21d5bfaedd452ca8ef0b26d34332df4ac04731142e7f.jpg",
+          "4c1953bccf14a16d3a0da1ba02318adfc9fab51c8735e31323f67bf0f66f2eaf.jpg",
+          "5ae1f463eb912a95c1c61afa5c00b311edb52e65cce9876bf4aea73abf9af0cf.jpg",
+          "376644cdc527be84945cc21f1630557c4a34dc13a6160361f5df33f1ee5407e.jpg",
+          "63a5c6efd2f5ccce5a820a844f27f1f54ad421054bc50acc814ce8fe81a0ffc8.jpg",
+          "306ff9973422fcbb27ade57d226f9043b4f3cabfc438aed54bc0f6e0149f1aab.jpg",
+          "bdc833dc6f673ff79c61c26b81a07786bdae8d6beca54ed5f40cd182df8f16dd.jpg",
+          "f072a8225be3117226491650dcf99d9ed32c682839fcd450955410efbc5f4ced.jpg",
+          "8eeab4b745957025fbd2a7eb2bfdbb1d72f0cdb6f02f0af3e06a445a2be8b7c1.jpg",
+          "45060d5031875da5397f8a93d7b5f62064d7d4a68c14482a73596eafc2e7192a.jpg",
+          "c53c4840b98d121260cb6827659d569951e0b4caad908b0ffa01b552389b2c9c.jpg",
+          "48bdbe12cf9f7ff171f4e58959341845935b5306f334611f0cd83cd4cc8f554c.jpg",
+          "503eebccf4b5a0541d6aaae208f6ef8d3d97d88cdd8644391e7846192df81061.jpg",
+          "f1d6e00aaada185b52eb9fbbe106370966cb94e5cbbe6e8c979fed829f7d8e96.jpg",
+          "60bf69ca4be90e5b6940156db89d9d7d62ea73151ef837026facd47807c272d3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Aliphatic substrates showed good results, but steric factors are important for N/O selectivity.",
+        "gap": "The enantioselectivity for γ-aryl-substituted carboxamides was lower.",
+        "decision": "We attempted to apply the same conditions to γ-aryl-substituted carboxamides, expecting similar high enantioselectivities."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(C(=O)NS(=O)(=O)F)c1ccccc1"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "chiral diselenide 1",
+          "CaCO3"
+        ],
+        "catalyst": "chiral diselenide 1",
+        "solvent": "toluene",
+        "temperature": "-10C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Lower enantioselectivities were observed with γ-aryl-substituted carboxamides. This was attributed to two factors: formation of a desilylated catalyst (still active but favoring the opposite enantiomer) and gradual racemization of the more acidic product. Longer reaction times for aromatic substrates exacerbated these issues. Also, γ-t-alkyl amides underwent O-cyclization exclusively (data not shown)."
+      },
+      "evidence": {
+        "text_span": "One limitation was the use of γ-t-alkyl amides which underwent O-cyclization exclusively (data not shown), highlighting the importance of steric factors in achieving N/O selectivity. In the further substrate evaluation, we encountered lower enantioselectivities with γ-aryl-substituted carboxamides 4. It was concluded that the poorer enantioselectivity was caused by two factors: first, the formation of a desilylated catalyst which is still catalytically active but favors the opposite enantiomer (see the SI), and second, the gradual racemization of the more acidic product. The longer reaction times required for the full conversion of aromatic substrates exacerbated these issues.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "Lower enantioselectivities were observed for γ-aryl-substituted carboxamides due to catalyst desilylation and product racemization.",
+        "gap": "Optimized conditions are needed for aromatic substrates to improve enantioselectivity and yield.",
+        "decision": "We re-optimized the reaction conditions, specifically using a more desilylation-resistant TIPS-substituted catalyst 2, TMSOAc as a non-basic fluoride scavenger, and CH3CN/H2O as the solvent, expecting to achieve high yields and enantioselectivities for various aromatic substrates."
+      },
+      "evidence": {
+        "text_span": "In light of these challenges, we re-optimized the reaction conditions (see the SI), making them applicable to various aromatic substrates (Fig. 2b). Key modifications were the use of more desilylation-resistant, TIPS-substituted catalyst 2, TMSOAc as the non-basic fluoride scavenger and CH3CN/H2O as the solvent. Under these optimized reaction conditions, unsaturated lactams 6a–6n were obtained in high yields and enantioselectivities, regardless of their substituent patterns or electronic properties. In case of aromatic substrates, O-cyclized products were not detected in the crude NMR, contributing to higher product yields. Notably, a trisubstituted alkene also participated in this lactamization, forming a tetra-substituted stereocenter with 78% ee (6o).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimized conditions for aromatic substrates have been developed.",
+        "gap": "The substrate scope for aromatic N-(fluorosulfonyl)amides needs to be evaluated under the revised conditions.",
+        "decision": "We applied the optimized conditions (catalyst 2, TMSOAc, CH3CN/H2O) to various aromatic substrates, expecting high yields and enantioselectivities."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(C(=O)NS(=O)(=O)F)c1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C1C=C[C@@H](c2ccccc2)N1S(=O)(=O)F",
+          "COc1ccc(C[C@H]2C=CC(=O)N2S(=O)(=O)F)cc1",
+          "COc1cccc(C[C@H]2C=CC(=O)N2S(=O)(=O)F)c1",
+          "COc1ccccc1[C@@H]1C=CC(=O)N1S(=O)(=O)F",
+          "O=C1C=C[C@@H](c2ccc(Br)cc2)N1S(=O)(=O)F",
+          "O=C1C=CN(S(=O)(=O)F)[C@@H]1[C@H]1C=CC(Cl)=CC1",
+          "O=C1C=CN(S(=O)(=O)F)C1c1ccccc1Cl",
+          "O=C1C=C[C@@H](c2ccc(C(F)(F)F)cc2)N1S(=O)(=O)F",
+          "O=C1C=C[C@@H](c2cccc3ccccc23)N1S(=O)(=O)F",
+          "O=C1C=CN(S(=O)(=O)F)[C@@H]1c1cccc2ccccc12",
+          "O=C1C=C[C@@H](c2ccsc2)N1S(=O)(=O)F",
+          "O=C1C=C(C2Oc3ccccc32)C(=O)N1S(=O)(=O)F"
+        ],
+        "reagents": [
+          "chiral diselenide 2",
+          "AcOTMS"
+        ],
+        "catalyst": "chiral diselenide 2",
+        "solvent": "MeCN/H2O",
+        "temperature": "10C",
+        "time": "14-42 h",
+        "stoichiometry": {
+          "chiral diselenide 2": "5 mol%",
+          "AcOTMS": "2 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "ee_percent": 75,
+        "observation": "Unsaturated lactams 6a–6n were obtained in high yields (68-97%) and enantioselectivities (75-93% ee). O-cyclized products were not detected. A trisubstituted alkene also participated, forming a tetra-substituted stereocenter with 78% ee (6o)."
+      },
+      "evidence": {
+        "text_span": "Under these optimized reaction conditions, unsaturated lactams 6a–6n were obtained in high yields and enantioselectivities, regardless of their substituent patterns or electronic properties. In case of aromatic substrates, O-cyclized products were not detected in the crude NMR, contributing to higher product yields. Notably, a trisubstituted alkene also participated in this lactamization, forming a tetra-substituted stereocenter with 78% ee (6o).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "d425e9e4d6504faaac97c9a2115f06700418662b3d7c27521763522aab54a9bc.jpg",
+          "8a664b5bf790cfcc871a8c7461a728f1cf988cda9f4dd374e530e2fc8bf28c0d.jpg",
+          "a0548ec75f656f0d63e06345f1334bfdd1c38729b701e16d6398a71067562986.jpg",
+          "a0830a056ab7666171bb06aed33b0036e51db760109cd2b7ae128feace3bc33e.jpg",
+          "63849262ba4113deb42ce49c51fd6ee867b6d81988151845e7c1a132119a15a0.jpg",
+          "b853513a39bc23090bfbeeb1f3678660492f9b7870e10f94b7fa6e28db9a9f79.jpg",
+          "2cffefeca8e2b256a7f199936e36a2688fcfe002a0f64c7293d59b649d44195b.jpg",
+          "09193ca858cc5f5a34c857927a053ba038ba0c9d0ba2f5024a3f735483bc8ae9.jpg",
+          "74239f485e3156166e95dd962de187a64f93a1a11ab5676fba5406a02782687a.jpg",
+          "c9acc42e48adf5f7a7502e3211232ddae72defd5acca58863fe1613ef82d3b1f.jpg",
+          "e0ccdea4d59d3d1406368082391df04904f46c6d7ad905e7e1f33e11dfd958d.jpg",
+          "abb44ec2820b2b480b40b178e26456551211c730b665d39be8f6ab53446ae01d.jpg",
+          "3ec66b9152b86905ebb5c2aa08ad8fe9c6b16da603f335bebfd8994b92e9f4cc.jpg",
+          "e5d1628861667513b2caf3d8d17b09ba72cf6714834d79cf30a7e51a292a4651.jpg",
+          "a86e1f933ae0a9359a1242a35ff09efae15be376b86893ddb813b4b8abd291eb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "The lactamization of aromatic substrates is successful on a 0.1 mmol scale.",
+        "gap": "A larger quantity of enantioenriched unsaturated lactam 6a is needed for further derivatization studies and total synthesis.",
+        "decision": "We scaled up the reaction for 6a to 1 mmol, using 3 mol% of diselenide 2, expecting to maintain high yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(C(=O)NS(=O)(=O)F)c1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C1C=C[C@@H](c2ccccc2)N1S(=O)(=O)F"
+        ],
+        "reagents": [
+          "chiral diselenide 2",
+          "AcOTMS"
+        ],
+        "catalyst": "chiral diselenide 2",
+        "solvent": "MeCN/H2O",
+        "temperature": "10C",
+        "time": "14-42 h",
+        "scale": "1.0 mmol",
+        "stoichiometry": {
+          "chiral diselenide 2": "3 mol%",
+          "AcOTMS": "2 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "ee_percent": 91,
+        "observation": "The reaction was scaled up to 1 mmol, yielding 6a in 91% yield and 91% ee under 3 mol% of diselenide 2."
+      },
+      "evidence": {
+        "text_span": "Finally, the reaction was scaled up to 1 mmol, yielding 6a in 91% yield and 91% ee under 3 mol% of diselenide 2.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enantioenriched unsaturated lactam 6a is available.",
+        "gap": "Explore derivatization of 6a via 1,4-addition.",
+        "decision": "We explored a 1,4-addition of an organocuprate reagent to 6a, expecting smooth reaction and retention of enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1C=CC(c2ccccc2)N(S(=O)(=O)F)C1"
+        ],
+        "product_smiles": [
+          "CC[C@H]1C[C@@H](c2ccccc2)N(S(=O)(=O)F)C1=O"
+        ],
+        "reagents": [
+          "CuI",
+          "MeMgI"
+        ],
+        "solvent": "Et2O",
+        "temperature": "-78 °C",
+        "stoichiometry": {
+          "CuI": "2 eq.",
+          "MeMgI": "4 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "A 1,4-addition of an organocuprate reagent proceeded smoothly, giving 4,5-trans-disubstituted γ-lactam 7 in 95% yield. The C5 stereocenter of γ-lactam 6a's enantioselectivity was retained."
+      },
+      "evidence": {
+        "text_span": "With the sufficient supply of enantioenriched unsaturated lactam 6a, we next explored its derivatization. A 1,4-addition of an organocuprate reagent proceeded smoothly, giving 4,5-trans-disubstituted γ-lactam 7 in 95% yield (Fig. 3a). Although the C5 stereocenter of γ-lactam 6a is prone to base-mediated racemization, its enantioselectivity was retained throughout the transformation.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "19d82775a1b31e664d4e018f5c16e8dcea281414e0d99953bba872ac00552bb3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactam 6a can undergo 1,4-addition.",
+        "gap": "Explore derivatization of 6a via Giese radical alkylation.",
+        "decision": "We applied a Giese radical alkylation to lactam 6a, expecting to install a bulky t-butyl group on the β-position."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1C=CC(c2ccccc2)N(S(=O)(=O)F)C1",
+          "CC(C)(C)C(=O)N1C(=O)c2ccccc2C1=O"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[C@@H]1CC(=O)CN(S(=O)(=O)F)[C@@H]1c1ccccc1"
+        ],
+        "reagents": [
+          "Hantzsch ester"
+        ],
+        "solvent": "DMA",
+        "temperature": "30 °C",
+        "stoichiometry": {
+          "Hantzsch ester": "1.5 eq."
+        },
+        "other_conditions": "blue LED"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "A Giese radical alkylation was applicable to lactam 6a, enabling the installation of a bulky t-butyl group on the β-position, yielding 8 in 98% yield."
+      },
+      "evidence": {
+        "text_span": "A Giese radical alkylation was also applicable to lactam 6a, 63 enabling the installation of a bulky t-butyl group on the β-position (Fig. 3b).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "19d82775a1b31e664d4e018f5c16e8dcea281414e0d99953bba872ac00552bb3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactam 8 with the N-fluorosulfonyl group is synthesized.",
+        "gap": "Deprotect the N-fluorosulfonyl group to obtain the N-H free lactam.",
+        "decision": "We removed the N-fluorosulfonyl group of 8 by sequential treatment with acid and base, expecting facile deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)[C@H]1CCC(=O)N(S(=O)(=O)F)C1c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[C@H]1CCC(=O)N[C@@H]1c1ccccc1"
+        ],
+        "reagents": [
+          "HCl aq.",
+          "NaHCO3 aq."
+        ],
+        "solvent": "MeOH",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "The N-fluorosulfonyl group of 8 was readily removed by sequential treatment with acid and base, yielding 9 in 99% yield (2 steps)."
+      },
+      "evidence": {
+        "text_span": "The N-fluorosulfonyl group of 8 was readily removed by sequential treatment with acid and base (Fig. 3c).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "8189e3f86b5223fdd6fed3be59a72b0193b93a394a887c42419b93361328afc7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactam 8 with the N-fluorosulfonyl group is synthesized.",
+        "gap": "Derivatize 8 to the corresponding N-H free pyrrolidine.",
+        "decision": "We performed LiAlH4-mediated reduction of 8, expecting to furnish the corresponding N-H free pyrrolidine without opening the ring structure."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)[C@H]1CCC(=O)N(S(=O)(=O)F)C1c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[C@H]1CCCN[C@@H]1c1ccccc1"
+        ],
+        "reagents": [
+          "LiAlH4"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C to rt",
+        "stoichiometry": {
+          "LiAlH4": "4 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "LiAlH4-mediated reduction of 8 furnished the corresponding N–H free pyrrolidine 10 in 92% yield without opening the ring structure."
+      },
+      "evidence": {
+        "text_span": "Moreover, LiAlH4-mediated reduction of 8 furnished the corresponding N–H free pyrrolidine without opening the ring structure (Fig. 3d). These deprotection protocols further highlight the advantage of using the N-fluorosulfonyl group over the N-tosyl group.27",
+        "section": "Results and discussion",
+        "image_refs": [
+          "8189e3f86b5223fdd6fed3be59a72b0193b93a394a887c42419b93361328afc7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The selenium-catalyzed lactamization method is established.",
+        "gap": "Apply the lactamization to a more complex precursor for the total synthesis of diaporisoindole A.",
+        "decision": "We subjected the lactamization precursor 11 (synthesized from cresol) to our selenium catalysis, expecting to afford the key unsaturated lactam 12 with good yield and diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1ccc2c(c1)OC(/C=C/C(=O)NS(=O)(=O)F)[C@@H](C(C)(C)O)CO2"
+        ],
+        "product_smiles": [
+          "Cc1ccc2c(c1)[C@H](C1=CC(=O)N(S(=O)(=O)F)C1)C[C@@H](C(C)(C)O)CO2"
+        ],
+        "reagents": [
+          "chiral diselenide 2",
+          "NFSI",
+          "TMSOAc"
+        ],
+        "catalyst": "chiral diselenide 2",
+        "solvent": "CH3CN/H2O",
+        "temperature": "10 °C",
+        "stoichiometry": {
+          "chiral diselenide 2": "5 mol%",
+          "NFSI": "1.1 eq.",
+          "TMSOAc": "2 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "dr": 84,
+        "observation": "The lactamization precursor 11 was subjected to selenium catalysis, affording the key unsaturated lactam 12 in 71% yield with 84:16 dr."
+      },
+      "evidence": {
+        "text_span": "The lactamization precursor 11 was synthesized from cresol in enantioenriched form (see the SI), and was then subjected to our selenium catalysis, affording the key unsaturated lactam 12 in 71% yield with 84:16 dr.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "f55a845702aac6c2fd4cf0b11d81b2bb3b48d9fd19f7319e0d0cd7e517a658aa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The key unsaturated lactam 12 is synthesized.",
+        "gap": "Construct the bicyclic core of diaporisoindole A via a Diels-Alder reaction.",
+        "decision": "We investigated the Diels-Alder reaction of 12 with electron-rich 1,3-bis-silyloxybutadiene 13, expecting efficient formation of bicyclic compound 14 with concurrent installation of the prenyl group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1ccc2c(c1)[C@H](C1=CC(=O)N(S(=O)(=O)F)C1)C[C@@H](C(C)(C)O)CO2",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "solvent": "toluene",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Electron-rich 1,3-bis-silyloxybutadiene 13 reacted efficiently with 12 to furnish bicyclic compound 14 with the concurrent installation of the prenyl group. The relative stereochemical relationship was tentatively assigned based on SCXRD of a model compound."
+      },
+      "evidence": {
+        "text_span": "We next investigated the Diels–Alder reaction, identifying electron-rich 1,3-bis-silyloxybutadiene 13 which reacted efficiently with 12 to furnish bicyclic compound 14 with the concurrent installation of the prenyl group. The relative stereochemical relationship of this Diels–Alder reaction was tentatively assigned as shown in the scheme, based on SCXRD of a model compound (see the SI).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "f55a845702aac6c2fd4cf0b11d81b2bb3b48d9fd19f7319e0d0cd7e517a658aa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "14",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Bicyclic compound 14 with the N-fluorosulfonyl group is synthesized.",
+        "gap": "Deprotect the N-fluorosulfonyl group to obtain the N-H free lactam.",
+        "decision": "We attempted to deprotect the N-fluorosulfonyl group using the acid/base method established in Fig. 3c, expecting to obtain the N-H free lactam in satisfactory yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "HCl aq.",
+          "NaHCO3 aq."
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Our attempt to deprotect the N-fluorosulfonyl group as described in Fig. 3c did not result in the formation of the N–H free lactam in satisfactory yield."
+      },
+      "evidence": {
+        "text_span": "Our attempt to deprotect the N-fluorosulfonyl group as described in Fig. 3c did not result in the formation of the N–H free lactam in satisfactory yield.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": "14",
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "The standard acid/base deprotection of the N-fluorosulfonyl group failed for the complex bicyclic intermediate 14.",
+        "gap": "A more robust deprotection method is needed that does not compromise the structural integrity of the molecule.",
+        "decision": "We employed a single-electron reduction of the fluorosulfonyl group by SmI2, expecting to cleanly provide the N–H free lactam 15 without structural degradation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC1=CC(=O)[C@H]2C(c3cc(C)c(C(C)(C)O)o3)NC(=O)[C@H]2[C@@H]1CCC=C(C)C"
+        ],
+        "reagents": [
+          "SmI2",
+          "H2O"
+        ],
+        "solvent": "THF",
+        "temperature": "-40 °C",
+        "stoichiometry": {
+          "SmI2": "4 eq.",
+          "H2O": "10 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 52,
+        "observation": "A single-electron reduction of the fluorosulfonyl group by SmI2 cleanly provided the N–H free lactam 15 in 52% yield (over 2 steps) without compromising the molecule's structural integrity."
+      },
+      "evidence": {
+        "text_span": "To address this issue, we employed a single-electron reduction of the fluorosulfonyl group by SmI2 which cleanly provided the N–H free lactam 15 without compromising the molecule's structural integrity.70",
+        "section": "Results and discussion",
+        "image_refs": [
+          "f55a845702aac6c2fd4cf0b11d81b2bb3b48d9fd19f7319e0d0cd7e517a658aa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": "15",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "N-H free lactam 15 is obtained.",
+        "gap": "Convert 15 to diaporisoindole A 17 through redox manipulation.",
+        "decision": "We performed DIBAL-H reduction of 15, expecting to form intermediate 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC(=O)[C@H]2C(c3cc(C)c(C(C)(C)O)o3)NC(=O)[C@H]2[C@@H]1CCC=C(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC[C@@H]1C=CC(=O)[C@H]2C(c3cc(C)c(C(C)(C)O)o3)NC(=O)[C@@H]12"
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "stoichiometry": {
+          "DIBAL-H": "4 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "DIBAL-H reduction of 15 furnished intermediate 16 in 89% yield."
+      },
+      "evidence": {
+        "text_span": "Redox manipulation of this bicyclic intermediate led to diaporisoindole A 17, which matched the reported NMR data and optical rotation.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "da3f8744bb932aab9f5f4d1ca1567af383e0ee2fc80257ad9448134054264997.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": "16",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 16 is obtained.",
+        "gap": "Complete the synthesis of diaporisoindole A 17.",
+        "decision": "We performed a two-step sequence involving LiHMDS/PhSeCl followed by H2O2 oxidation on 16, expecting to yield diaporisoindole A 17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC[C@@H]1C=CC(=O)[C@H]2C(c3cc(C)c(C(C)(C)O)o3)NC(=O)[C@@H]12"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC[C@H]1C(=O)Nc2c(-c3cc(C)c(C(C)(C)O)o3)cc(O)cc21"
+        ],
+        "reagents": [
+          "LiHMDS",
+          "PhSeCl",
+          "H2O2"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to 0 °C",
+        "stoichiometry": {
+          "LiHMDS": "1.6 eq.",
+          "PhSeCl": "1.4 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "Redox manipulation of bicyclic intermediate 16 led to diaporisoindole A 17 in 66% yield, which matched the reported NMR data and optical rotation. The synthesized quantity allowed characterization of a broad 13C peak at C8 unassigned in original research."
+      },
+      "evidence": {
+        "text_span": "Redox manipulation of this bicyclic intermediate led to diaporisoindole A 17, which matched the reported NMR data and optical rotation. Notably, the synthesized quantity of diaporisoindole A allowed us to characterize a broad 13C peak at C8 that was unassigned in the original isolation research (see the SI).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "da3f8744bb932aab9f5f4d1ca1567af383e0ee2fc80257ad9448134054264997.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "N-fluorosulfonyl carboxamides are effective in selenium-catalyzed lactamization.",
+        "gap": "Investigate the utility of N-fluorosulfonyl carboxamides in other electrophilic lactamizations, specifically racemic iodo-lactamization.",
+        "decision": "We examined racemic exo-iodolactamization using selected N-fluorosulfonyl carboxamides, expecting to form the corresponding lactams."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(CCC(=O)NS(=O)(=O)F)c1ccccc1",
+          "C=C(C)CCC(=O)NS(=O)(=O)F"
+        ],
+        "product_smiles": [
+          "O=C1CCC(I)C(c2ccccc2)N1S(=O)(=O)F",
+          "CC1C(I)CCC(=O)N1S(=O)(=O)F"
+        ],
+        "reagents": [
+          "I2",
+          "Li2CO3"
+        ],
+        "solvent": "TBME",
+        "temperature": "rt",
+        "stoichiometry": {
+          "I2": "3 eq.",
+          "Li2CO3": "1.2 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Exo-iodolactamizations using molecular iodine provided the corresponding lactams in moderate to good yields (e.g., 78% for 20), along with minor amounts of iminolactones."
+      },
+      "evidence": {
+        "text_span": "Exo- and endo-iodolactamizations using molecular iodine provided the corresponding lactams in moderate to good yields, along with minor amounts of iminolactones (Fig. 4a and b).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "6de5dab1656bf6d913db827c69e095faf22ff4478b66f3db7e0b488e96919709.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "N-fluorosulfonyl carboxamides are effective in selenium-catalyzed lactamization and racemic iodo-lactamization.",
+        "gap": "Investigate the utility of N-fluorosulfonyl carboxamides in racemic hydro-lactamization.",
+        "decision": "We examined racemic hydro-lactamization catalyzed by H2SO4, expecting clean conversion to the lactam."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(CCC(=O)NS(=O)(=O)F)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC1CC(=O)N(S(=O)(=O)F)C(c2ccccc2)C1"
+        ],
+        "reagents": [
+          "H2SO4"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "stoichiometry": {
+          "H2SO4": "0.4 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Hydrolactamization catalyzed by H2SO4 proceeded cleanly to give 21 in nearly quantitative yield (96%). Conversion of initially formed iminolactone into lactam was observed, indicating reversibility and thermodynamic preference for lactam formation."
+      },
+      "evidence": {
+        "text_span": "Hydrolactamization catalyzed by H2SO4 proceeded cleanly to give 21 in nearly quantitative yield (Fig. 4c). These results would provide a basis for developing catalytic enantioselective variants.72,73 It should be noted that we observed the conversion of the initially formed iminolactone into the lactam in the hydrolactamization, but not in the seleno- or iodo-lactamizations, indicating the reversibility of this acid-catalyzed process and its thermodynamic preference for lactam formation.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "6de5dab1656bf6d913db827c69e095faf22ff4478b66f3db7e0b488e96919709.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "optical_rotation",
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for the total synthesis of diaporisoindole A was not explicitly stated, but individual steps showed good to high yields."
+      },
+      "Longest Linear Steps": {
+        "value": 6,
+        "unit": "steps",
+        "interpretation": "From precursor 11 to diaporisoindole A 17 (11 -> 12 -> 14 -> 15 -> 16 -> 17)"
+      },
+      "Total Steps": {
+        "value": 6,
+        "unit": "steps",
+        "interpretation": "Total steps for the total synthesis of diaporisoindole A (11 -> 12 -> 14 -> 15 -> 16 -> 17)"
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Two failed attempts were explicitly mentioned in the paper: initial lactamization attempts with other N-modifications and the initial deprotection of the N-fluorosulfonyl group in the total synthesis."
+      }
+    },
+    "comparison_to_prior": "The synthesized diaporisoindole A matched reported NMR data and optical rotation. The synthesized quantity allowed characterization of a broad 13C peak at C8 that was unassigned in the original isolation research.",
+    "significance": "This work demonstrates that N-(fluorosulfonyl)amides serve as effective substrates for chiral selenium-catalyzed electrophilic lactamization, a reactivity unattainable with other amides. The method's practicality is highlighted by straightforward derivatization of lactam products and its application to the enantioselective total synthesis of diaporisoindole A. It also proved applicable to racemic iodo- and hydrolactamizations, paving the way for future enantioselective variants."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5sc08502k",
+      "pmcid": "PMC12720957",
+      "title": "Se-catalyzed enantioselective lactamization enabled by a &lt;i&gt;N&lt;/i&gt;-fluorosulfonyl group: total synthesis of diaporisoindole A.",
+      "authors": "Yamamoto D, Yamasaki S, Hashimoto T.",
+      "journal": "Chem Sci",
+      "year": 2026,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC12720957?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/94e4d9cb-c8f2-47ac-9a6e-78edce91fd91.zip",
+      "parsed_at": "2026-05-07T14:29:52.368680+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 62,
+    "parseable": 55,
+    "canonicalized": 44,
+    "invalid": 7,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC(=C/C(OTBS)=C/C=C(C)C)OTMS",
+      "C=CCC(=O)NAc",
+      "C=CCC(=O)NBoc",
+      "COC(=C/C(OTBS)=C/C=C(C)C)OTMS",
+      "CC(C)(O)[C@H]1COC2=C(C=C(C)C=C2)[C@@H](C1)[C@@H]3C(=O)N(S(=O)(=O)F)[C@H]4[C@H]3[C@@H](C=C(C)C)C(OC)(OTMS)C4",
+      "CC(C)(O)[C@H]1COC2=C(C=C(C)C=C2)[C@@H](C1)[C@@H]3C(=O)N(S(=O)(=O)F)[C@H]4[C@H]3[C@@H](C=C(C)C)C(OC)(OTMS)C4",
+      "CC(C)(O)[C@H]1COC2=C(C=C(C)C=C2)[C@@H](C1)[C@@H]3C(=O)N(S(=O)(=O)F)[C@H]4[C@H]3[C@@H](C=C(C)C)C(OC)(OTMS)C4"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

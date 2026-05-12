@@ -1,0 +1,789 @@
+{
+  "trace_id": "TS-PMC11322964",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Sarglamide E",
+    "smiles": "CC(C)[C@H]1CC[C@H]2C(C1)[C@H](O)[C@]1(C)[C@@H]3CCN(C(=O)C=Cc4ccccc4)[C@@H]3CC(=O)[C@@H]21",
+    "natural_product_class": "alkaloid",
+    "structural_features": {
+      "stereocenters": 10,
+      "ring_systems": "tetracyclic",
+      "key_motifs": [
+        "alpha-phellandrene",
+        "trans-N-cinnamoylindolinoid"
+      ]
+    },
+    "motivation": "Sarglamides A-E were identified as a structurally new class of alkaloids with potential application for inflammation-associated diseases. Sarglamides C-E were found to inhibit NO production against lipopolysaccharide-induced inflammation in BV-2 microglial cells. The unprecedented caged pentacyclic skeleton of sarglamide E along with the inspirational biosynthetic hypothesis prompted interest in its total synthesis.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "First asymmetric total synthesis of sarglamides A, C, D, E, and F within 7 steps."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming the tetracyclic core",
+        "named_strategy": "Diels-Alder cycloaddition",
+        "reasoning": "Inspired by the proposed biosynthetic hypothesis involving alpha-phellandrene and toussaintine C. However, initial attempts with toussaintine C analogues failed due to steric hindrance. Re-designed to use alpha-phellandrene and 1,4-benzoquinone to form the core, followed by further elaboration.",
+        "alternatives_considered": [
+          {
+            "strategy": "Intermolecular Diels-Alder reaction of alpha-phellandrene (6a) and N-tosyl-5,6-dehydro-4-hydroxyindolidin-7-one (7f)",
+            "rejected_because": "Did not occur under Lewis acid (Et2AlCl or BF3-Et2O) or thermal (200 °C) conditions. Suspected steric interaction of tertiary hydroxy group from 7f with diene moiety of alpha-phellandrene. Decomposition of 7f observed under harsh conditions."
+          }
+        ]
+      },
+      {
+        "bond_description": "C-O and C-C bonds forming the pentacyclic lactone 9b",
+        "named_strategy": "Cascade double cyclization (cycloetherification and oxa-Michael cyclization)",
+        "reasoning": "Envisioned to construct the caged pentacyclic skeleton of sarglamide E from intermediate 10b. This strategy was discovered to be novel and efficient.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-N bond forming the lactam 15b",
+        "named_strategy": "Transamination (aminolysis, dehydration, intramolecular aza-Michael addition)",
+        "reasoning": "To replace the oxygen of the lactone 9b with nitrogen, forming the lactam core of sarglamide E.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-N bond forming the pyrrolidine moiety of sarglamides A/C",
+        "named_strategy": "Cascade reductive amination and intramolecular aza-Michael addition",
+        "reasoning": "To construct the pyrrolidine moiety of sarglamides A/C from aldehyde intermediates 18a/b.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The synthesis was inspired by the proposed biosynthetic pathway of sarglamides, which suggested a Diels-Alder reaction. Initial attempts to mimic the biosynthesis directly failed due to steric hindrance. A revised strategy involved a Diels-Alder reaction between (S)-alpha-phellandrene and 1,4-benzoquinone to form the core, followed by an acetate aldol reaction. The resulting diastereomers were then subjected to different cascade cyclization strategies: a novel cycloetherification/oxa-Michael cyclization for sarglamides E/F, and a reductive amination/aza-Michael addition for sarglamides A/C. This approach allowed for the asymmetric total synthesis of multiple sarglamides."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Sarglamides A-E are a new class of alkaloids with potential anti-inflammatory properties. Their proposed biosynthesis involves a Diels-Alder reaction between alpha-phellandrene and toussaintine C.",
+        "gap": "Can this proposed biosynthetic Diels-Alder reaction be replicated in a non-enzymatic total synthesis?",
+        "decision": "To investigate the intermolecular Diels-Alder reaction of alpha-phellandrene (6a) and N-tosyl-5,6-dehydro-4-hydroxyindolidin-7-one (7f, an analogue of toussaintine C) under various conditions to form the tetracyclic core."
+      },
+      "evidence": {
+        "text_span": "Inspired by the proposed biosynthetic hypothesis, we set out to investigate the “straightforward” intermolecular Diels–Alder reaction of α-phellandrene (6a) and N-tosyl-5,6-dehydro-4-hydroxyindolidin-7-one (7f, the analogue of toussaintine C) (Scheme 1a).",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The proposed biosynthetic Diels-Alder reaction was attempted.",
+        "gap": "The reaction did not proceed as expected.",
+        "decision": "To understand why the reaction failed, considering steric interactions and decomposition."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC=C(C(C)C)CC1",
+          "Cc1ccc(S(=O)(=O)N2CCC3C=CC(=O)C[C@@H]2CC3O)cc1"
+        ],
+        "product_smiles": [],
+        "named_reaction": "Diels-Alder",
+        "reagents": [],
+        "catalyst": "Et2AlCl or BF3-Et2O",
+        "temperature": "200 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The Diels–Alder reaction did not occur under either classical Lewis acid (Et2AlCl or BF3–Et2O) or thermal conditions (200 °C). Appreciable decomposition of 7f was observed under harsh conditions. Suspected significant steric interaction with the diene moiety of alpha-phellandrene."
+      },
+      "evidence": {
+        "text_span": "Surprisingly, the Diels–Alder reaction did not occur under either classical Lewis acid Et2AlCl or BF3–Et2O) or thermal conditions (200 °C). We suspected that the tertiary hydroxy group from 7f presented a significant steric interaction with the diene moiety of α-phellandrene (6a) as suggested in the transition state in Fig. 1b. Under harsh conditions, appreciable decomposition of 7f was observed.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "The initial Diels-Alder strategy failed due to steric hindrance from the dienophile. Literature review revealed challenges with cyclohexadiene-based Diels-Alder reactions, especially with bulky dienophiles.",
+        "gap": "How to achieve a successful Diels-Alder reaction to form the core, given the constraints of using a cyclohexadiene (alpha-phellandrene)?",
+        "decision": "To re-design the synthetic strategy by using a structurally planar dienophile, 1,4-benzoquinone (7g), which has minimal steric hindrance, with (S)-alpha-phellandrene (6a). This is based on preliminary studies showing success with cyclohexenone (7a) and p-benzoquinone (7g) where R2 was hydrogen or ketonic oxygen.",
+        "outcome": "This success might be attributed to an effective minimization of the steric repulsion between R2 and diene in the transition state when R2 was hydrogen (7a) or R2/R3 were ketonic oxygen (7g)."
+      },
+      "evidence": {
+        "text_span": "This unexpected failure drove us to re-examine this type of DA reaction more systematically. Literature survey revealed that only a few reports3–5 documented the intermolecular Diels–Alder reactions of cyclohexa-1,3-dienes and cyclohexenone derivatives (Scheme 1b) and the inherent challenge was uncovered with poor yield under thermal conditions (30% yield)4 or protic acid catalysis (0% yield).3 It was recognized that the reactivity of cyclopentadiene as a diene for the DA reaction was much higher than that of cyclohexadiene: TfOH promoted the reaction of cyclopentadiene and cyclohexanone in 65% yield while no reaction occurred under identical conditions for cyclohexadiene.3 Since our targets (sarglamides) required the use of cyclohexadiene (α-phellandrene) as the diene for the DA reaction, we sought appropriate cyclohexene-containing dienophiles. We performed a study of the DA reaction of cyclohexadiene 6a–c and dienophiles 7a-7g under either Lewis acid or heating conditions (Scheme 1b). It was found that only 7a (cyclohexenone) and 7g (p-benzoquinone) could react with cyclohexadienes 6a–c. This success might be attributed to an effective minimization of the steric repulsion between R2 and diene in the transition state when R2 was hydrogen (7a) or R2/R3 were ketonic oxygen (7g). In the case of R2 being a methyl (7b–d) or hydroxyl (7c, 7e and 7f) group, the severe steric repulsion between R2 and diene prevented the Diels–Alder reaction. Notably, p-benzoquinone (7g) as the dienophile for the Diels–Alder reaction was historically significant as the very first example investigated by Diels and Alder.6,7 On the basis of these preliminary results, we re-designed our synthetic strategy towards sarglamides and focused on the most structurally complex E by exploiting the Diels–Alder reaction of α-phellandrene (6a)8 and the structurally planar p-benzoquinone (7g) as depicted in Scheme 1c.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A revised Diels-Alder strategy using (S)-alpha-phellandrene and 1,4-benzoquinone was designed to form the core adduct 8.",
+        "gap": "To efficiently synthesize the Diels-Alder adduct 8 with exclusive endo selectivity and on a gram scale.",
+        "decision": "To perform the Diels-Alder reaction of enantio-enriched (S)-(+)-alpha-phellandrene (6a) and sublimated 1,4-benzoquinone under solvent-free conditions at room temperature for gram scale, or in refluxing EtOH/H2O for larger scale, expecting exclusive endo selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC[C@H](C(C)C)C=C1",
+          "O=C1C=CC(=O)C=C1"
+        ],
+        "product_smiles": [
+          "CC(C)C1CC(=O)C2C(=O)C(C)C21"
+        ],
+        "named_reaction": "Diels-Alder",
+        "solvent": "solvent-free or EtOH/H2O",
+        "temperature": "room temperature or reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "The Diels–Alder reaction occurred smoothly under solvent-free conditions at room temperature to provide the desired cyclization adduct 8 in 60% yield (gram scale, >4.9 g obtained) with exclusive endo selectivity. For the reaction at a larger scale (200 mmol), the reaction needed to be carried out in reflux EtOH/H2O to afford comparable yields."
+      },
+      "evidence": {
+        "text_span": "Our synthesis started with the intermolecular Diels–Alder reaction of enantio-enriched (S)-(+)-α-phellandrene (6a) and 1,4-benzoquinone (Scheme 2). Since (S)-(+)-α-phellandrene (6a) was expected to deliver the corresponding correct stereochemistry of sarglamides but was not commercially available, it was prepared from (R)–(–)-carvone through selective hydrogenation and the Shapiro reaction38,39 (see the ESI† for details). The Diels–Alder reaction of sublimated 1,4-benzoquinone occurred smoothly under solvent-free conditions at room temperature to provide the desired cyclization adduct 8 in 60% yield (gram scale, >4.9 g obtained) with exclusive endo selectivity. For the reaction at a larger scale (200 mmol), the reaction needed to be carried out in reflux EtOH/H2O to afford comparable yields.",
+        "section": "Scheme 2 Asymmetric total syntheses of sarglamides A, C, E, and F."
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Diels-Alder adduct 8 was successfully synthesized.",
+        "gap": "To introduce the acetate moiety via an aldol reaction and obtain intermediates 10a and 10b, which are precursors for different sarglamides.",
+        "decision": "To perform an aldol reaction of 8 with t-butyl acetate and LiHMDS, with the assistance of CeCl3 to improve nucleophilicity, expecting non-regioselective formation of stereoisomers 10a and 10b, which will then be separated."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CC(=O)C2C(=O)C(C)C21"
+        ],
+        "product_smiles": [
+          "CC(C)C1CC2C(C(=O)OC(C)(C)C)C(O)C(C)C12",
+          "CC(C)C1CC2C(C(=O)OC(C)(C)C)C(O)C(C)C12"
+        ],
+        "named_reaction": "Aldol reaction",
+        "reagents": [
+          "t-butyl acetate",
+          "LiHMDS"
+        ],
+        "catalyst": "CeCl3",
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "The aldol reaction of 8 and t-butyl acetate/LiHMDS was achieved with 70% yield in a non-regioselective manner with the assistance of CeCl3. The resulting stereoisomers 10a and 10b were separated by column chromatography on silica gel."
+      },
+      "evidence": {
+        "text_span": "The aldol reaction of 8 and t-butyl acetate/LiHMDS was achieved with 70% yield in a non-regioselective manner with the assistance of CeCl3, which was believed to improve the nucleophilicity of lithium enolate.40,41 Due to the poor solubility of CeCl3 in THF, the maximum scale for this aldol reaction was 12.2 g of 8. The resulting stereoisomers 10a and 10b were separated by column chromatography on silica gel, determined at the late stage, and used for the synthesis of sarglamides A/F and C/E, respectively.",
+        "section": "Scheme 2 Asymmetric total syntheses of sarglamides A, C, E, and F."
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "Sarglamide E route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Stereoisomer 10b was obtained and separated.",
+        "gap": "To construct the pentacyclic lactone 9b from 10b via a cascade double cyclization (cycloetherification and oxa-Michael cyclization).",
+        "decision": "To examine different acid promoters for the double cyclization of 10b, expecting to find an optimal condition to provide pentacyclic 9b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CC2C(C(=O)OC(C)(C)C)C(O)C(C)C12"
+        ],
+        "product_smiles": [
+          "CC(C)C1CC2C(C(=O)O)C(=O)C(C)C12"
+        ],
+        "catalyst": "FeCl3"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Examination of different acid promoters led to the identification of iron(III) chloride (FeCl3) as the optimal acid for the double cyclization to provide pentacyclic 9b in 77% yield. Other acid promoters including Amberlyst-15, BF3–Et2O, TMSOTf, and TBSOTf gave similar results."
+      },
+      "evidence": {
+        "text_span": "The stereoisomer 10b was subjected to the conditions optimized for double cyclization (cycloetherification42,43 and oxa-Michael cyclization44). Examination of different acid promoters led to the identification of iron(III) chloride (FeCl3) as the optimal acid for the double cyclization to provide pentacyclic 9b in 77% yield. Other acid promoters including Amberlyst-15, BF3–Et2O, TMSOTf, and TBSOTf gave similar results (see the ESI† for details). The relative and absolute configuration of pentacyclic 9b was confirmed by X-ray diffraction analysis (CCDC 2358359).",
+        "section": "Scheme 2 Asymmetric total syntheses of sarglamides A, C, E, and F."
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "Sarglamide E route",
+      "action": "characterization",
+      "thought": {
+        "background": "Pentacyclic lactone 9b was synthesized.",
+        "gap": "To confirm the relative and absolute configuration of 9b.",
+        "decision": "To perform X-ray diffraction analysis on 9b."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The relative and absolute configuration of pentacyclic 9b was confirmed by X-ray diffraction analysis (CCDC 2358359)."
+      },
+      "evidence": {
+        "text_span": "The relative and absolute configuration of pentacyclic 9b was confirmed by X-ray diffraction analysis (CCDC 2358359).",
+        "section": "Scheme 2 Asymmetric total syntheses of sarglamides A, C, E, and F."
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "Sarglamide E route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Pentacyclic lactone 9b was obtained.",
+        "gap": "To convert the lactone 9b into a lactam, which is a key structural feature of sarglamides, via transamination.",
+        "decision": "To perform transamination of lactone 9b using ammonium hydroxide (NH4OH) at room temperature, expecting aminolysis, dehydration, and intramolecular cis-selective aza-Michael addition."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CC2C(C(=O)O)C(=O)C(C)C12"
+        ],
+        "product_smiles": [
+          "CC(C)C1CC2C(C(N)=O)C(=O)C(C)C12"
+        ],
+        "reagents": [
+          "NH4OH"
+        ],
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Transamination of lactone 9b: replacement of “O” with “NH” was successfully achieved with 89% yield by using ammonium hydroxide (NH4OH) at room temperature, which was believed to involve aminolysis (13a), dehydration (14) and intramolecular cis-selective aza-Michael addition (15b)."
+      },
+      "evidence": {
+        "text_span": "Transamination of lactone 9b: replacement of “O” with “NH” was successfully achieved with 89% yield by using ammonium hydroxide (NH4OH) at room temperature, which was believed to involve aminolysis45,46 of lactone (13a), dehydration (14) and intramolecular cis-selective aza-Michael addition (15b).",
+        "section": "Scheme 2 Asymmetric total syntheses of sarglamides A, C, E, and F."
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "Sarglamide E route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactam 15b was obtained.",
+        "gap": "To selectively reduce the lactam 15b without reducing the ketonic group, to form 16a/b.",
+        "decision": "To perform reductive deoxygenation of lactam 15b with silane under rhodium catalysis, carefully controlling the reaction time to minimize competing reduction of the ketonic group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CC2C(C(N)=O)C(=O)C(C)C12"
+        ],
+        "product_smiles": [
+          "CC(C)C1CC2C(C(N)=O)C(O)C(C)C12",
+          "CC(C)C1CC2C(C(N)=O)C(O)C(C)C12"
+        ],
+        "reagents": [
+          "PhSiH3"
+        ],
+        "catalyst": "RhH(CO)(PPh3)3"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Reductive deoxygenation of lactam 15b with silane could be achieved with rhodium catalysis47–49 when the reaction time was well controlled to minimize the competing reduction of the ketonic group into alcohol (16a)."
+      },
+      "evidence": {
+        "text_span": "Reductive deoxygenation of lactam 15b with silane could be achieved with rhodium catalysis47–49 when the reaction time was well controlled to minimize the competing reduction of the ketonic group into alcohol (16a).",
+        "section": "Scheme 2 Asymmetric total syntheses of sarglamides A, C, E, and F."
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "Sarglamide E route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 16a/b was obtained.",
+        "gap": "To complete the total synthesis of sarglamide E by introducing the cinnamoyl group.",
+        "decision": "To perform amidation of 16a/b with cinnamoyl chloride."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CC2C(C(N)=O)C(O)C(C)C12"
+        ],
+        "product_smiles": [
+          "CC(C)[C@H]1CC[C@H]2C(C1)[C@H](O)[C@]1(C)[C@@H]3CCN(C(=O)C=Cc4ccccc4)[C@@H]3CC(=O)[C@@H]21"
+        ],
+        "reagents": [
+          "Et3N",
+          "PhCH=CHCOCl"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "Subsequent amidation completed the total synthesis of sarglamide E in only 6 steps with 14.38% overall yield. The spectroscopic data of our synthetic sample were well in agreement with those reported for the natural sarglamide E.1"
+      },
+      "evidence": {
+        "text_span": "Subsequent amidation completed the total synthesis of sarglamide E in only 6 steps with 14.38% overall yield. The spectroscopic data of our synthetic sample were well in agreement with those reported for the natural sarglamide E.1",
+        "section": "Scheme 2 Asymmetric total syntheses of sarglamides A, C, E, and F."
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "Sarglamide F route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The isomer 10a was obtained and separated.",
+        "gap": "To synthesize pentacyclic 9a from 10a, similar to the synthesis of 9b from 10b.",
+        "decision": "To subject 10a to cycloetherification/oxa-Michael cyclization under protic acid conditions (Amberlyst-15)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CC2C(C(=O)OC(C)(C)C)C(O)C(C)C12"
+        ],
+        "product_smiles": [
+          "CC(C)C1CC2C(C(=O)O)C(=O)C(C)C12"
+        ],
+        "catalyst": "Amberlyst-15"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 53,
+        "observation": "The isomer 10a was found to undergo similar cycloetherification/oxa-Michael cyclization under protic acid conditions (Amberlyst-15) to provide pentacyclic 9a in 53% yield."
+      },
+      "evidence": {
+        "text_span": "The isomer 10a was found to undergo similar cycloetherification/oxa-Michael cyclization under protic acid conditions (Amberlyst-15) to provide pentacyclic 9a in 53% yield, which was elaborated in an identical 3-step sequence to sarglamide F (17), a compound that has not yet been identified from the natural source but shares the pentacyclic structural framework of sarglamide E.",
+        "section": "Scheme 2 Asymmetric total syntheses of sarglamides A, C, E, and F."
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": "Sarglamide F route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Pentacyclic 9a was obtained.",
+        "gap": "To convert 9a to lactam 15a.",
+        "decision": "To perform transamination of 9a using ammonium hydroxide (NH4OH)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CC2C(C(=O)O)C(=O)C(C)C12"
+        ],
+        "product_smiles": [
+          "CC(C)C1CC2C(C(N)=O)C(=O)C(C)C12"
+        ],
+        "reagents": [
+          "NH4OH"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "9a was elaborated in an identical 3-step sequence to sarglamide F (17). The yield for the transamination step was 61%."
+      },
+      "evidence": {
+        "text_span": "The isomer 10a was found to undergo similar cycloetherification/oxa-Michael cyclization under protic acid conditions (Amberlyst-15) to provide pentacyclic 9a in 53% yield, which was elaborated in an identical 3-step sequence to sarglamide F (17), a compound that has not yet been identified from the natural source but shares the pentacyclic structural framework of sarglamide E.",
+        "image_refs": [
+          "8c2558ff3f6bedf12d91fe8427fe9110e8cad4e7d0096612a3fc6376faacf186.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "Sarglamide F route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactam 15a was obtained.",
+        "gap": "To complete the synthesis of sarglamide F.",
+        "decision": "To perform reductive deoxygenation with silane and rhodium catalysis, followed by amidation with cinnamoyl chloride."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CC2C(C(N)=O)C(=O)C(C)C12"
+        ],
+        "product_smiles": [
+          "CC(C)C1CC2C(C(=O)NC(=O)C=Cc3ccccc3)C(=O)C(C)C12"
+        ],
+        "reagents": [
+          "PhSiH3",
+          "Et3N",
+          "PhCH=CHCOCl"
+        ],
+        "catalyst": "RhH(CO)(PPh3)3"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 44,
+        "observation": "Sarglamide F (17) was obtained in 44% yield over two steps (reductive deoxygenation and amidation)."
+      },
+      "evidence": {
+        "text_span": "The isomer 10a was found to undergo similar cycloetherification/oxa-Michael cyclization under protic acid conditions (Amberlyst-15) to provide pentacyclic 9a in 53% yield, which was elaborated in an identical 3-step sequence to sarglamide F (17), a compound that has not yet been identified from the natural source but shares the pentacyclic structural framework of sarglamide E.",
+        "image_refs": [
+          "8c2558ff3f6bedf12d91fe8427fe9110e8cad4e7d0096612a3fc6376faacf186.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": "Sarglamide A route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The acetate aldol product 10a was obtained.",
+        "gap": "To prepare the aldehyde 18a for the subsequent cascade reductive amination/aza-Michael addition to construct the pyrrolidine moiety.",
+        "decision": "To protect the tertiary alcohol of 10a as a trimethylsilyl ether (to prevent retro-aldol reaction during reduction), followed by DIBAL-H reduction and Dess-Martin periodinane (DMP) oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CC2C(C(=O)OC(C)(C)C)C(O)C(C)C12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TMSOTf",
+          "2,6-Lutidine",
+          "DIBAL-H",
+          "DMP"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "observation": "The tertiary alcohol of 10a was protected as trimethylsilyl ether and DIBAL-H reduction and Dess–Martin periodinane (DMP) oxidation delivered the desired aldehyde 18a in 48% yield over three steps."
+      },
+      "evidence": {
+        "text_span": "Next, we set out to elaborate the acetate aldol product 10a/b into sarglamides A/C, respectively. Our strategy was exploiting cascade reductive amination and intramolecular aza-Michael addition50 to construct the pyrrolidine moiety (18a/b → 19a/b). To this end, the tertiary alcohol of 10a/b was protected as trimethylsilyl ether (without the protection, the retro-aldol reaction occurred during the reduction) and DIBAL-H reduction and Dess–Martin periodinane51 (DMP) oxidation delivered the desired aldehyde 18a/b.",
+        "image_refs": [
+          "8c2558ff3f6bedf12d91fe8427fe9110e8cad4e7d0096612a3fc6376faacf186.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "Sarglamide A route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 18a was obtained.",
+        "gap": "To construct the pyrrolidine moiety and introduce the cinnamoyl group to form 19a.",
+        "decision": "To perform a cascade reductive amination/intramolecular aza-Michael addition using NH3-MeOH and NaBH(OAc)3, followed by amidation with cinnamoyl chloride."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NH3-MeOH",
+          "NaBH(OAc)3",
+          "PhCH=CHCOCl"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "The cascade reductive amination/intramolecular aza-Michael addition was successful but low yields were obtained (45% for 19a). The resulting pyrrolidine was unstable and used without purification for subsequent amidation."
+      },
+      "evidence": {
+        "text_span": "The cascade reductive amination/intramolecular aza-Michael addition50 was successful but low yields were obtained (45% and 22% yield, respectively). Attempts to improve the yield of this cascade reaction proved fruitless. A major side-product was isolated, but its structure could not be fully determined. We suspected that the ammonia mediated (aza-)Morita–Baylis–Hillman reaction52–54 might effectively compete with reductive amination/aza-Michael addition. The resulting pyrrolidine was unstable and used without purification for subsequent amidation with cinnamoyl chloride (18a/b → 19a/b).",
+        "image_refs": [
+          "8c2558ff3f6bedf12d91fe8427fe9110e8cad4e7d0096612a3fc6376faacf186.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "Sarglamide A route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 19a was obtained.",
+        "gap": "To deprotect the silyl ether to obtain Sarglamide A.",
+        "decision": "To perform desilylation of 19a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)C1CC2C(C(=O)NC(=O)C=Cc3ccccc3)C(O)C(C)C12"
+        ],
+        "reagents": [
+          "TBAF"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Desilylation of 19a afforded sarglamide A in 78% yield. All spectroscopic data of our synthetic samples were in good agreement with those of natural sarglamides A and C.1"
+      },
+      "evidence": {
+        "text_span": "Desilylation of 19a/b could afford sarglamides A and C, respectively. All spectroscopic data of our synthetic samples were in good agreement with those of natural sarglamides A and C.1",
+        "image_refs": [
+          "8c2558ff3f6bedf12d91fe8427fe9110e8cad4e7d0096612a3fc6376faacf186.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": "Sarglamide C route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The acetate aldol product 10b was obtained.",
+        "gap": "To prepare the aldehyde 18b for the subsequent cascade reductive amination/aza-Michael addition to construct the pyrrolidine moiety.",
+        "decision": "To protect the tertiary alcohol of 10b as a trimethylsilyl ether, followed by DIBAL-H reduction and Dess-Martin periodinane (DMP) oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CC2C(C(=O)OC(C)(C)C)C(O)C(C)C12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TMSOTf",
+          "2,6-Lutidine",
+          "DIBAL-H",
+          "DMP"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "The tertiary alcohol of 10b was protected as trimethylsilyl ether and DIBAL-H reduction and Dess–Martin periodinane (DMP) oxidation delivered the desired aldehyde 18b in 64% yield over three steps."
+      },
+      "evidence": {
+        "text_span": "Next, we set out to elaborate the acetate aldol product 10a/b into sarglamides A/C, respectively. Our strategy was exploiting cascade reductive amination and intramolecular aza-Michael addition50 to construct the pyrrolidine moiety (18a/b → 19a/b). To this end, the tertiary alcohol of 10a/b was protected as trimethylsilyl ether (without the protection, the retro-aldol reaction occurred during the reduction) and DIBAL-H reduction and Dess–Martin periodinane51 (DMP) oxidation delivered the desired aldehyde 18a/b.",
+        "image_refs": [
+          "8c2558ff3f6bedf12d91fe8427fe9110e8cad4e7d0096612a3fc6376faacf186.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": "Sarglamide C route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 18b was obtained.",
+        "gap": "To construct the pyrrolidine moiety and introduce the cinnamoyl group to form 19b.",
+        "decision": "To perform a cascade reductive amination/intramolecular aza-Michael addition using NH3-MeOH and NaBH(OAc)3, followed by amidation with cinnamoyl chloride."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NH3-MeOH",
+          "NaBH(OAc)3",
+          "PhCH=CHCOCl"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 22,
+        "observation": "The cascade reductive amination/intramolecular aza-Michael addition was successful but low yields were obtained (22% for 19b). The resulting pyrrolidine was unstable and used without purification for subsequent amidation."
+      },
+      "evidence": {
+        "text_span": "The cascade reductive amination/intramolecular aza-Michael addition50 was successful but low yields were obtained (45% and 22% yield, respectively). Attempts to improve the yield of this cascade reaction proved fruitless. A major side-product was isolated, but its structure could not be fully determined. We suspected that the ammonia mediated (aza-)Morita–Baylis–Hillman reaction52–54 might effectively compete with reductive amination/aza-Michael addition. The resulting pyrrolidine was unstable and used without purification for subsequent amidation with cinnamoyl chloride (18a/b → 19a/b).",
+        "image_refs": [
+          "8c2558ff3f6bedf12d91fe8427fe9110e8cad4e7d0096612a3fc6376faacf186.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": "Sarglamide C route",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 19b was obtained.",
+        "gap": "To deprotect the silyl ether to obtain Sarglamide C.",
+        "decision": "To perform desilylation of 19b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)C1CC2C(C(=O)NC(=O)C=Cc3ccccc3)C(O)C(C)C12"
+        ],
+        "reagents": [
+          "TBAF"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Desilylation of 19b afforded sarglamide C in 80% yield. All spectroscopic data of our synthetic samples were in good agreement with those of natural sarglamides A and C.1"
+      },
+      "evidence": {
+        "text_span": "Desilylation of 19a/b could afford sarglamides A and C, respectively. All spectroscopic data of our synthetic samples were in good agreement with those of natural sarglamides A and C.1",
+        "image_refs": [
+          "8c2558ff3f6bedf12d91fe8427fe9110e8cad4e7d0096612a3fc6376faacf186.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Sarglamide C was synthesized. It was noted that sarglamide C could be converted into sarglamides E and D under acidic conditions, implying a possible biosynthetic relationship or artifact.",
+        "gap": "To investigate the cycloetherification of sarglamide C to sarglamides E and D.",
+        "decision": "To treat sarglamide C with p-TsOH and analyze the products."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)[C@H]1CC[C@H]2C(C1)[C@H](O)[C@]1(C)[C@@H]3CCN(C(=O)C=Cc4ccccc4)[C@@H]3CC(=O)[C@@H]21"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "p-TsOH"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Sarglamide C was converted into sarglamide E (35% yield) and compound 20 (35% yield) upon treatment with p-TsOH. Compound 20 upon treatment with HCl/MeOH resulted in production of sarglamide D (90% yield)."
+      },
+      "evidence": {
+        "text_span": "It was noted that sarglamide C could be converted into sarglamides E and D under acidic conditions through cycloetherification,1 which implied their possible biosynthetic relationship or artifact of sarglamides E/D. We were intrigued by such transformation and performed the cycloetherification of sarglamide C with p-TsOH and isolated sarglamide E (35% yield) and compound 20 (35% yield), which upon treatment with HCl/MeOH resulted in production of sarglamide D (90% yield) (Scheme 3).",
+        "section": "Scheme 3 Cycloetherification of sarglamides A and C and compound 10c."
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Sarglamide A was synthesized.",
+        "gap": "To investigate the cycloetherification of sarglamide A to sarglamide F.",
+        "decision": "To treat sarglamide A with p-TsOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1CC2C(C(=O)NC(=O)C=Cc3ccccc3)C(O)C(C)C12"
+        ],
+        "product_smiles": [
+          "CC(C)C1CC2C(C(=O)NC(=O)C=Cc3ccccc3)C(=O)C(C)C12"
+        ],
+        "reagents": [
+          "p-TsOH"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "Similarly, p-TsOH triggered the cycloetherification of sarglamide A to furnish sarglamide F (67% yield)."
+      },
+      "evidence": {
+        "text_span": "Similarly, p-TsOH triggered the cycloetherification of sarglamide A to furnish sarglamide F (67% yield).",
+        "section": "Scheme 3 Cycloetherification of sarglamides A and C and compound 10c."
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The cycloetherification of sarglamides C and A was successful.",
+        "gap": "To investigate the cycloetherification of compound 10c.",
+        "decision": "To treat 10c with FeCl3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "FeCl3"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "When 10c was treated with FeCl3, cycloetherification occurred to provide 9c in 60% yield. These findings unveiled that the pyrrolidine moiety as a cis-fused ring was not essential for the cycloetherification and the caged conformation of the tricyclic framework might be responsible for the high efficiency of the cycloetherification."
+      },
+      "evidence": {
+        "text_span": "When 10c was treated with FeCl3, cycloetherification occurred to provide 9c in 60% yield. These findings unveiled that the pyrrolidine moiety as a cis-fused ring was not essential for the cycloetherification and the caged conformation of the tricyclic framework might be responsible for the high efficiency of the cycloetherification.17–23",
+        "section": "Scheme 3 Cycloetherification of sarglamides A and C and compound 10c."
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 14.38,
+        "unit": "%",
+        "interpretation": "Overall yield for Sarglamide E synthesis"
+      },
+      "Longest Linear Steps": {
+        "value": 6,
+        "unit": "steps",
+        "interpretation": "Longest linear sequence for Sarglamide E synthesis"
+      }
+    },
+    "significance": "The first asymmetric total syntheses of sarglamides A, C, D, E, and F were accomplished. The study revealed that the proposed biosynthetic Diels-Alder reaction with toussaintine C was not viable under non-enzymatic conditions, leading to a re-designed strategy using 1,4-benzoquinone. Novel and efficient cascade cyclization strategies (cycloetherification/oxa-Michael and reductive amination/aza-Michael) were developed. Biomimetic cycloetherification of sarglamides C to D/E and A to F was successfully achieved, providing biosynthetic implications. This concise synthetic strategy might allow rapid access to a library of sarglamide analogues for further bioactivity evaluation."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d4sc03553d",
+      "pmcid": "PMC11322964",
+      "title": "Asymmetric total syntheses of sarglamides A, C, D, E, and F.",
+      "authors": "Kim R, Wu Y, Tong R.",
+      "journal": "Chem Sci",
+      "year": 2024,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC11322964?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/397d29da-14e1-41fc-99ac-4d577d30429f.zip",
+      "parsed_at": "2026-05-11T06:34:03.562177+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 43,
+    "parseable": 31,
+    "canonicalized": 29,
+    "invalid": 12,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)C1C2C(C)C(OSi(C)(C)C)C(C(=O)C=O)C2C1",
+      "CC(C)C1C2C(C)C(OSi(C)(C)C)C(C(=O)C=O)C2C1",
+      "CC(C)C1C2C(C)C(OSi(C)(C)C)C(C(=O)N(C(=O)C=CC3=CC=CC=C3))C2C1",
+      "CC(C)C1C2C(C)C(OSi(C)(C)C)C(C(=O)N(C(=O)C=CC3=CC=CC=C3))C2C1",
+      "CC(C)C1C2C(C)C(OSi(C)(C)C)C(C(=O)C=O)C2C1",
+      "CC(C)C1C2C(C)C(OSi(C)(C)C)C(C(=O)C=O)C2C1",
+      "CC(C)C1C2C(C)C(OSi(C)(C)C)C(C(=O)N(C(=O)C=CC3=CC=CC=C3))C2C1",
+      "CC(C)C1C2C(C)C(OSi(C)(C)C)C(C(=O)N(C(=O)C=CC3=CC=CC=C3))C2C1",
+      "CC(C)[C@H]1CC[C@@H]2[C@@H]3C[C@H](C)[C@@H]4[C@H](C(=O)C[C@H]2N(C(=O)C=Cc5ccccc5)C3)O4",
+      "CC(C)[C@H]1CC[C@@H]2[C@@H]3C[C@H](C)[C@@H]4[C@H](C(=O)C[C@H]2N(C(=O)C=Cc5ccccc5)C3)O4"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

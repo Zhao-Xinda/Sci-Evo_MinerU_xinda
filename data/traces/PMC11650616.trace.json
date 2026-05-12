@@ -1,0 +1,239 @@
+{
+  "trace_id": "TS-PMC11650616",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "ianthelliformisamine D",
+    "smiles": "",
+    "natural_product_class": "polyamine",
+    "structural_features": {
+      "molecular_weight": 459.17,
+      "key_motifs": [
+        "dibromo-4-methoxyphenyl",
+        "propenamide",
+        "N-(3-aminopropyl)-2-pyrrolidone"
+      ]
+    },
+    "motivation": "Ianthelliformisamine D (4) contains a rare N-(3-aminopropyl)-2-pyrrolidone moiety only found in <30 natural products. Owing to the novelty of compound 4, we undertook the first total synthesis of this natural product.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "The NMR data comparison of the natural product and our synthetic compound was essentially identical."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "amide bond formation between acrylic acid derivative and aminopropylpyrrolidinone",
+        "named_strategy": "Amidation",
+        "reasoning": "This disconnection simplifies the target into two readily available or synthesizable fragments: a brominated cinnamic acid analogue and 1-(3-aminopropyl)pyrrolidin-2-one.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond formation via Knoevenagel condensation",
+        "named_strategy": "Doebner–Knoevenagel condensation",
+        "reasoning": "This reaction forms the α,β-unsaturated carboxylic acid from an aldehyde and malonic acid, a common and efficient method for this type of transformation.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "O-methylation of phenol",
+        "named_strategy": "Methylation",
+        "reasoning": "The methoxy group on the aromatic ring is introduced early from a commercially available hydroxybenzaldehyde.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The total synthesis of ianthelliformisamine D was achieved in three steps, starting from commercially sourced 3,5-dibromo-4-hydroxybenzaldehyde. The strategy involved methylation, Doebner–Knoevenagel condensation, and final amidation."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The starting material is commercially available 3,5-dibromo-4-hydroxybenzaldehyde. The first step is to methylate the phenolic hydroxyl group.",
+        "gap": "Efficient and selective methylation of the phenol in the presence of the aldehyde.",
+        "decision": "To methylate the 3,5-dibromo-4-hydroxybenzaldehyde, chose TMSCHN2 in MeOH/CH2Cl2 at room temperature, expecting selective O-methylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1cc(Br)c(O)c(Br)c1"
+        ],
+        "product_smiles": [
+          "COc1c(Br)cc(C=O)cc1Br"
+        ],
+        "reagents": [
+          "TMSCHN2"
+        ],
+        "solvent": "CH2Cl2/MeOH",
+        "temperature": "room temperature",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 17,
+        "observation": "3,5-dibromo-4-methoxybenzaldehyde (9) was purified."
+      },
+      "references": [
+        "19"
+      ],
+      "evidence": {
+        "text_span": "In a similar, but modified manner to that reported by Gan et al. [19] we firstly methylated the commercially sourced 3,5-dibromo-4-hydroxybenzaldehyde using TMSCHN2 in MeOH/CH2Cl2 at room temperature (17% yield).",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The methylated benzaldehyde intermediate 9 is available. The next step is to form the α,β-unsaturated carboxylic acid.",
+        "gap": "Efficient formation of the acrylic acid moiety with the correct trans-stereochemistry.",
+        "decision": "To form the brominated cinnamic acid analogue, chose a Doebner–Knoevenagel condensation with malonic acid and pyridine, expecting the formation of the trans-alkene."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1c(Br)cc(C=O)cc1Br"
+        ],
+        "product_smiles": [
+          "COc1cc(Br)c(C=CC(=O)O)cc1Br"
+        ],
+        "reagents": [
+          "malonic acid",
+          "pyridine"
+        ],
+        "solvent": "pyridine",
+        "temperature": "100 °C",
+        "time": "5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "observation": "The brominated cinnamic acid analogue 10 was obtained."
+      },
+      "references": [
+        "19"
+      ],
+      "evidence": {
+        "text_span": "Subjecting the methoxylated benzaldehyde intermediate 9 to a Doebner–Knoevenagel condensation with malonic acid and pyridine afforded the brominated cinnamic acid analogue 10 in 54% yield [19].",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The brominated cinnamic acid analogue 10 is available. The final step is to couple it with 1-(3-aminopropyl)pyrrolidin-2-one to form the amide bond.",
+        "gap": "Efficient and high-yielding amide bond formation.",
+        "decision": "To complete the total synthesis, chose amidation chemistry using carbonyldiimidazole (CDI) and the commercially available primary amine, 1-(3-aminopropyl)pyrrolidin-2-one, expecting the formation of the target natural product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(Br)c(C=CC(=O)O)cc1Br",
+          "NCCCCN1CCCC1=O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "1,1'-carbonyldiimidazole",
+          "1-(3-aminopropyl)pyrrolidin-2-one"
+        ],
+        "solvent": "CH3CN",
+        "temperature": "room temperature",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 16,
+        "observation": "Synthetic Ianthelliformisamine D (4) was purified. The NMR data of the synthetic compound matched that of the natural product."
+      },
+      "references": [
+        "18"
+      ],
+      "evidence": {
+        "text_span": "Amidation chemistry using carbonyldiimidazole (CDI) [18] and the commercially available primary amine, 1-(3-aminopropyl)pyrrolidin-2-one completed the total synthesis of the natural product in an overall yield of 1.5%. The NMR data comparison of the natural product and our synthetic compound was essentially identical.",
+        "section": "Results and Discussion"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "LRESIMS",
+      "HRESIMS",
+      "UV"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 1.5,
+        "unit": "%",
+        "interpretation": "Calculated from the product of individual step yields (0.17 * 0.54 * 0.16 = 0.014688, approximately 1.5%)"
+      },
+      "Longest Linear Steps": {
+        "value": 3,
+        "unit": "steps",
+        "interpretation": "The synthesis was achieved in three linear steps."
+      },
+      "Total Steps": {
+        "value": 3,
+        "unit": "steps",
+        "interpretation": "The synthesis was achieved in three linear steps."
+      }
+    },
+    "significance": "The first total synthesis of ianthelliformisamine D was achieved in three steps with an overall yield of 1.5%. The synthetic compound's NMR data was identical to the natural product, confirming its structure. This synthesis provides access to a natural product with a rare N-(3-aminopropyl)-2-pyrrolidone moiety for further biological profiling."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.3762/bjoc.20.266",
+      "pmcid": "PMC11650616",
+      "title": "Discovery of ianthelliformisamines D-G from the sponge <i>Suberea ianthelliformis</i> and the total synthesis of ianthelliformisamine D.",
+      "authors": "Hayes S, Lu Y, Rehm BHA, Davis RA.",
+      "journal": "Beilstein J Org Chem",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11650616?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/13685847-2d7d-4819-bd44-07b69c465c01.zip",
+      "parsed_at": "2026-05-11T06:36:07.291719+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 8,
+    "parseable": 6,
+    "canonicalized": 2,
+    "invalid": 2,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COc1c(Br)cc(C=CC(=O)NCCCn2cccc2=O)cc1Br",
+      "COc1c(Br)cc(C=CC(=O)NCCCn2cccc2=O)cc1Br"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "ianthelliformisamine D",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

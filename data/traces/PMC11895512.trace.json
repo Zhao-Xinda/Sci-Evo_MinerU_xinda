@@ -1,0 +1,648 @@
+{
+  "trace_id": "TS-PMC11895512",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "dehydro-d-viniferin",
+    "smiles": "Oc1ccc(-c2oc3cc(C=Cc4cc(O)cc(O)c4)ccc3c2-c2ccc(O)cc2)cc1",
+    "natural_product_class": "oligostilbene",
+    "structural_features": {
+      "molecular_weight": 450.46,
+      "stereocenters": 0,
+      "ring_systems": "benzofuran",
+      "key_motifs": [
+        "stilbene dimer",
+        "2,3-diarylbenzofuran"
+      ]
+    },
+    "motivation": "Dehydro-d-viniferin (1) is a stilbene dimer with a 2,3-diarylbenzofuran skeleton, displaying potent anti-inflammatory, antioxidant, antifungal, antibacterial, and anticancer activities. It has shown substantial inhibitory activity against T3SS, better efficacy in rescuing eukaryotic cells from infection, and strong toxicity toward eukaryotic cells at high concentrations. Additionally, compound 1 exhibited remarkable antibacterial activity against S. aureus and antioxidant properties. The previous synthetic route had a low yield, necessitating a more efficient and practical route for further investigation and structure-activity relationship studies.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Beneventi",
+        "year": 2015,
+        "doi": "10.1016/j.tet.2015.03.019",
+        "key_strategy": "biotransformation (laccase-biocatalyzed dimerization of resveratrol, followed by dehydrogenation)"
+      },
+      {
+        "lead_author": "Elofsson",
+        "year": 2016,
+        "doi": "10.1002/adsc.201600770",
+        "key_strategy": "one-pot, two-step Sonogashira cyclization of o-iodophenol and 4-ethynylanisole"
+      },
+      {
+        "lead_author": "Teng",
+        "year": 2020,
+        "doi": "10.1080/10286020.2020.1730000",
+        "key_strategy": "Amberlyst 15-catalyzed cyclodehydration of alpha-aryloxyketone (low yield)"
+      }
+    ],
+    "success_criteria": {
+      "yield_target_percent": 27,
+      "scale_target": "multigram quantities",
+      "free_text": "Efficient, concise, and practical eight-step route, scalable for analogs."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming olefination to form the stilbene moiety",
+        "named_strategy": "Horner–Wadsworth–Emmons olefination",
+        "reasoning": "The target compound 1 could be prepared through the olefination of benzofuran aldehyde 7."
+      },
+      {
+        "bond_description": "C-C bond forming between benzofuran and aryl bromide",
+        "reasoning": "Benzofuran aldehyde 7 could be prepared via a transition-metal-catalyzed direct C–H activation of benzofuran 8, followed by intermolecular coupling with an appropriate aryl bromide."
+      },
+      {
+        "bond_description": "Formation of the benzofuran ring",
+        "named_strategy": "Metal–halogen exchange cyclization and dehalogenation",
+        "reasoning": "The requisite 8 is expected to be derived from iodo ketone 6, which can be conveniently prepared from commercially available 4-hydroxybenzaldehyde (9) and 3,5-dihydroxyacetophenone (10). This strategy addresses the low yield issue of previous cyclodehydration methods."
+      }
+    ],
+    "rationale": "The retrosynthetic analysis aimed to address the low yield observed in previous cyclodehydration approaches for constructing the 2-arylbenzofuran core. The key strategy involves a metal–halogen exchange cyclization and dehalogenation of a di-iodinated alpha-aryloxyketone intermediate to form the benzofuran core, followed by C-H activation/coupling and Horner-Wadsworth-Emmons olefination to complete the stilbene dimer structure. This approach was chosen to provide a more efficient and practical route."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The synthesis began with the preparation of 3-iodo-4-hydroxyaldehyde (11) from 4-hydroxybenzaldehyde (9). A literature procedure for iodination was followed.",
+        "gap": "The goal was to selectively mono-iodinate 4-hydroxybenzaldehyde to yield 11.",
+        "decision": "To achieve mono-iodination, the iodination of 4-hydroxybenzaldehyde (9) was conducted in the presence of NIS (1.2 eq.) and trifluoroacetic acid, following Castanet et al.'s procedure."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "O=Cc1ccc(O)c(I)c1",
+          "O=Cc1cc(I)c(O)cc1I"
+        ],
+        "reagents": [
+          "NIS"
+        ],
+        "solvent": "TFA",
+        "time": "6 h",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "The reaction produced an inseparable mixture of the monoiodinated benzaldehyde 11 and di-iodinated benzaldehyde (12) in a 43:57 ratio, instead of the target product 11."
+      },
+      "evidence": {
+        "text_span": "As outlined in Scheme 3, the synthesis began with the preparation of the required 3-iodo-4-hydroxyaldehyde (11). Following the iodination reaction described by Castanet et al.,16,17 iodination of 4-hydroxybenzaldehyde (9) was conducted in the presence of NIS (1.2 eq.) and trifluoroacetic acid. However, the reaction produced an inseparable mixture of the monoiodinated benzaldehyde 11 and di-iodinated benzaldehyde (12) in a 43:57 ratio, instead of the target product 11.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 1,
+      "thought": {
+        "background": "The initial attempt at mono-iodination yielded an inseparable mixture of mono- and di-iodinated products.",
+        "gap": "A higher yield of a single, isolable iodinated product was needed. The authors realized that di-iodination might be acceptable if subsequent dehalogenation was feasible.",
+        "decision": "To improve reaction efficiency and obtain a single product, the molar ratio of substrate to reagent (NIS) was altered from 1:1.2 to 1:2.2 to favor di-iodination. This was deemed acceptable because subsequent dehalogenation reactions at the benzofuran ring after cyclization can be easily conducted."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "O=Cc1cc(I)c(O)cc1I"
+        ],
+        "reagents": [
+          "NIS"
+        ],
+        "solvent": "TFA",
+        "time": "6 h",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "The di-iodinated product 12 was obtained in 91% yield. This strategy was considered advantageous compared to using the monoiodinated product as the key intermediate."
+      },
+      "evidence": {
+        "text_span": "Thus, the molar ratio of the substrate to reagent was altered from 1 : 1.2 to 1 : 1.8 , or 1 : 2.2 , to improve the reaction efficiency. As a result, the di-iodinated product 12 was obtained in 91% yield at a ratio of 1 : 2.2, though the monoiodinated product 11 was still unsuccessfully isolated in higher yield. Theoretically, subsequent dehalogenation reactions at the benzofuran ring after cyclization can be easily conducted; thus, di-iodinated product 12 remains a viable intermediate for the designed synthetic route. Therefore, this strategy is advantageous compared to using the monoiodinated product as the key intermediate.15,18",
+        "section": "Results and discussion",
+        "image_refs": [
+          "b35512bcb6db726691f1bb88d2e1910a0f80e4dce02689817fd90a621512a1a16.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Di-iodinated benzaldehyde 12 was successfully synthesized.",
+        "gap": "The aldehyde group needed protection to prevent interference in subsequent reactions.",
+        "decision": "To protect the aldehyde, compound 12 was reacted with TMSCl and ethylene glycol under refluxing dichloromethane conditions to yield the glycol acetal 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1cc(I)c(O)cc1I"
+        ],
+        "product_smiles": [
+          "O=C1OCCOC1c1cc(I)c(O)cc1I"
+        ],
+        "reagents": [
+          "TMSCl",
+          "ethylene glycol"
+        ],
+        "solvent": "DCM",
+        "time": "18 h",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Protection of the aldehyde 12 successfully yielded the glycol acetal 13 in 87% yield."
+      },
+      "evidence": {
+        "text_span": "Afterward, protection of the aldehyde 12 using TMSCl and ethylene glycol under refluxing dichloromethane conditions successfully yielded the glycol acetal 13 in 87% yield.19",
+        "section": "Results and discussion",
+        "image_refs": [
+          "b35512bcb6db72691f1bb88d2e1910a0f80e4dce02689817fd90a621512a1a16.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The protected di-iodinated phenol 13 was prepared.",
+        "gap": "The next step was to construct the di-iodinated alpha-aryloxyketone 14, which requires the other fragment, 2-bromo-3,5-dimethoxyacetophenone (15).",
+        "decision": "Compound 15 was synthesized from 3,5-dihydroxyacetophenone (10) via methylation with methyl iodide, followed by alpha-bromination with TBABr3. Then, 13 was reacted with 15 via etherification."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)c1cc(O)cc(O)c1"
+        ],
+        "product_smiles": [
+          "COc1cc(OC)cc(C(=O)CBr)c1"
+        ],
+        "reagents": [
+          "CH3I",
+          "K2CO3",
+          "TBABr3"
+        ],
+        "solvent": "acetone, THF-methanol",
+        "time": "24 h, 3 h",
+        "temperature": "r.t., reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Compound 15 was easily synthesized from commercially available 3,5-dihydroxyacetophenone 10 via methylation with methyl iodide in acetone (94% yield), followed by alpha-bromination with TBABr3 in THF and methanol (98% yield)."
+      },
+      "evidence": {
+        "text_span": "Compound 15 was easily synthesized from commercially available 3,5-dihydroxyacetophenone 10 via methylation with methyl iodide in acetone, followed by $\\alpha$ -bromination with $\\text{TBABr}_3$ in THF and methanol (Scheme 4).11–13",
+        "section": "Results and discussion",
+        "image_refs": [
+          "c4f930f935f86044a8492ee3310d6b3107be398a837f2024f32b547d70b25f3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The protected di-iodinated phenol 13 and 2-bromo-3,5-dimethoxyacetophenone (15) were prepared.",
+        "gap": "The next step was to construct the di-iodinated alpha-aryloxyketone 14 via etherification.",
+        "decision": "Etherification of phenol 13 with 2-bromo-3,5-dimethoxyacetophenone (15) was performed in boiling acetone in the presence of potassium carbonate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1OCCOC1c1cc(I)c(O)cc1I",
+          "COc1cc(OC)cc(C(=O)CBr)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "acetone",
+        "time": "3 h",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "The reaction resulted in a 98% yield of compound 14."
+      },
+      "evidence": {
+        "text_span": "Using prepared glycol acetal 13, this study focused on constructing the di-iodinated $\\alpha$ -aryloxyketone 14, which was achieved through the etherification of phenol 13 with 2-bromo-3,5- dimethoxyacetophenone (15) in boiling acetone in the presence of potassium carbonate, which resulted in a 98% yield.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "c4f930f935f86044a8492ee3310d6b3107be398a837f2024f32b547d70b25f3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Di-iodinated alpha-aryloxyketone 14 was prepared. The next step was the installation of the key intermediate 3-arylbenzofuran 8 via a metal–halogen exchange reaction.",
+        "gap": "Previous reports indicated that metal–halogen exchange with alkyllithium is faster than with a carbonyl group, suggesting this approach for cyclization.",
+        "decision": "Compound 14 was treated with three equivalents of methyllithium at -78 °C in THF, following the approach described by Kraus and Kim."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "methyllithium"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "observation": "This reaction resulted in a complex mixture, with no detection of the expected monoiodinated benzofuran 16, as indicated by TLC."
+      },
+      "evidence": {
+        "text_span": "After preparing the di-iodinated $\\alpha$ -aryloxyketone 14, the installation of the key intermediate 3-arylbenzofuran 8 via a metal–halogen exchange reaction commenced (Scheme 5). Previous reports indicated that metal–halogen exchange with alkyllithium is faster than with a carbonyl group.20,21 Hence, the approach described by Kraus and Kim was initially explored, and compound 14 was treated with three equivalents of methyllithium at $- 7 8 \\ ^ { \\circ } \\mathrm { C }$ in THF.14,15 Unfortunately, this reaction resulted in a complex mixture, with no detection of the expected monoiodinated benzofuran 16, as indicated by TLC.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Methyllithium failed to produce the desired monoiodinated benzofuran 16.",
+        "gap": "An alternative alkyllithium reagent might be more effective for the metal-halogen exchange.",
+        "decision": "Butyllithium was used instead of methyllithium for the metal–halogen exchange reaction of 14 in THF."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "butyllithium"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "The reaction generated only the dehalogenated starting compound, rather than the target compound 16."
+      },
+      "evidence": {
+        "text_span": "Furthermore, using butyllithium instead of methyllithium, the metal– halogen exchange reaction of 14 in THF generated only the dehalogenated starting compound, rather than the target compound 16.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "Previous attempts with methyllithium and butyllithium for metal-halogen exchange cyclization were unsuccessful.",
+        "gap": "A different organometallic reagent and optimized conditions were needed to achieve the desired cyclization and potentially dehalogenation.",
+        "decision": "Compound 14 was exposed to 3.5 equivalents of i-PrMgCl·LiCl in THF at -78 °C for 0.5 h, following a reported procedure, to generate the monoiodinated benzofuran 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COc1cc(OC)cc(C(O)c2cc(I)c3oc(C4OCCO4)cc3c2)c1"
+        ],
+        "reagents": [
+          "i-PrMgCl·LiCl"
+        ],
+        "solvent": "THF",
+        "time": "0.5 h",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "The desired monoiodinated benzofuran 16 was generated in 61% yield."
+      },
+      "evidence": {
+        "text_span": "Intensive exploration of the reaction conditions surprisingly revealed that exposure of 14 to 3.5 equivalents $i \\mathrm { \\cdot }$ PrMgCl$\\cdot$LiCl in THF at $- 7 8 { } ^ { \\circ } \\mathrm { C }$ for $_ { 0 . 5 \\mathrm { ~ h ~ } }$ , following the reported procedure,22,23 generated the desired monoiodinated benzofuran 16 in 61% yield.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "860f67887a3d12299e34d3804919f2c3d377f2e856083322a2feb368f86edb2c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The metal-halogen exchange cyclization of 14 with i-PrMgCl·LiCl for 0.5 h yielded monoiodinated benzofuran 16. The authors then explored extending the reaction time.",
+        "gap": "Investigate the effect of longer reaction times on the metal-halogen exchange cyclization and dehalogenation.",
+        "decision": "The reaction time for the metal-halogen exchange of 14 with i-PrMgCl·LiCl was extended to 2 hours."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COc1cc(OC)cc(C(O)c2ccc3oc(C4OCCO4)cc3c2)c1"
+        ],
+        "reagents": [
+          "i-PrMgCl·LiCl"
+        ],
+        "solvent": "THF",
+        "time": "2 h",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "Intermediate 14 was unexpectedly directly converted into the dehalogenated alcohol 17 in 75% yield, instead of the expected monoiodinated product 16. This finding indicates that a longer reaction time facilitates the intramolecular cyclization and dehalogenation simultaneously."
+      },
+      "evidence": {
+        "text_span": "However, when the reaction time was extended to $_ { 2 \\mathrm { ~ h ~ } }$ , intermediate 14 was unexpectedly directly converted into the dehalogenated alcohol 17 in 75% yield, instead of the expected monoiodinated product 16. This finding indicates that a longer reaction time facilitates the intramolecular cyclization and dehalogenation simultaneously. Further exploration indicates that the longer reaction time and using more than 3.5 equivalent reagents (i-PrMgCl$\\cdot$LiCl) were crucial for generating dehalogenated product 17.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "860f67887a3d12299e34d3804919f2c3d377f2e856083322a2feb368f86edb2c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Dehalogenated alcohol 17 was successfully formed by extending the reaction time of the metal-halogen exchange. The authors wanted to confirm if 16 could be converted to 17 under the same conditions.",
+        "gap": "Determine if the monoiodinated alcohol 16 could be further dehalogenated to 17 under the optimized conditions for 17 formation.",
+        "decision": "Monoiodinated alcohol 16 was treated under the same conditions (longer reaction time, excess i-PrMgCl·LiCl)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(OC)cc(C(O)c2cc(I)c3oc(C4OCCO4)cc3c2)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "i-PrMgCl·LiCl"
+        ],
+        "solvent": "THF",
+        "time": "2 h",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The expected dehalogenated product 17 remained undetected in the product mixture, as indicated by TLC."
+      },
+      "evidence": {
+        "text_span": "By contrast, when monoiodinated alcohol 16 was treated under the same conditions, the expected dehalogenated product 17 remained undetected in the product mixture, as indicated by TLC.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dehalogenated alcohol 17 was efficiently constructed. The next step was to complete the synthesis of aldehyde 8.",
+        "gap": "Alcohol 17 needed to undergo dehydration and deprotection of the dioxolane to yield aldehyde 8.",
+        "decision": "Alcohol 17 was treated with p-TsOH (15 mol%) in dichloromethane at room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(OC)cc(C(O)c2ccc3oc(C4OCCO4)cc3c2)c1"
+        ],
+        "product_smiles": [
+          "COc1cc(OC)cc(-c2coc3ccc(C=O)cc23)c1"
+        ],
+        "reagents": [
+          "p-TsOH"
+        ],
+        "solvent": "DCM",
+        "time": "2 h",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Treatment of alcohol 17 resulted in both dehydration and deprotection of the dioxolane, generating the desired aldehyde 8 in 85% yield."
+      },
+      "evidence": {
+        "text_span": "With the efficient construction of alcohol 17 realized, the path was cleared for completing the synthesis of aldehyde 8, as illustrated in Scheme 5. Based on previous work reported in the literature,14,15,24 treatment of alcohol 17 or monoiodinated alcohol 16 in dichloromethane with PTSA (15% mol) at room temperature resulted not only in dehydration but also in the deprotection of the dioxolane, generating the desired aldehyde 8 or monoiodinated aldehyde 18 in 85% and 65% yields, respectively.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "860f67887a3d12299e34d3804919f2c3d377f2e856083322a2feb368f86edb2c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 8 was successfully synthesized.",
+        "gap": "The next step was to introduce the 4-methoxyphenyl group at the 2-position of the benzofuran via C-H activation/coupling.",
+        "decision": "Aldehyde 8 was reacted with 4-bromoanisole in the presence of Pd(OAc)2, Cs2CO3, and PCy3·HBF4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(OC)cc(-c2coc3ccc(C=O)cc23)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "4-bromoanisole",
+          "Cs2CO3",
+          "PCy3·HBF4"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "solvent": "DMA",
+        "temperature": "140 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "Aldehyde 8 was reacted with 4-bromoanisole to produce aldehyde 19 in 86% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequently, aldehyde 8 was reacted with 4-bromoanisole in the presence of $\\text{Pd}(\\text{OAc})_2$ (0.2 equiv.) and $\\text{Cs}_2\\text{CO}_3$ (2 equiv.) at $140 \\ ^ { \\circ } \\mathrm { C }$ in DMA, producing aldehyde 19 in 86% yield.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ce6bc134d158fc11b4f7be5c9bb3430840c214cd2a3f938f074105fcc2f4e7e2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 19 was successfully synthesized.",
+        "gap": "The next step was to form the stilbene moiety via Horner–Wadsworth–Emmons olefination.",
+        "decision": "Aldehyde 19 was reacted with diethyl 3,5-dimethoxybenzylphosphonate (20) in THF at 0 °C to room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CCOP(=O)(CC)Cc1cc(OC)cc(OC)c1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "t-BuOK"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C – r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "The Horner–Wadsworth–Emmons-type olefination of 19 with diethyl 3,5-dimethoxybenzylphosphonate (20) resulted in the formation of permethylated dehydro-d-viniferin (21) in 94% yield."
+      },
+      "evidence": {
+        "text_span": "The Horner–Wadsworth–Emmons-type olefination of 19 with diethyl 3,5-dimethoxybenzylphosphonate (20) in THF at $0 \\ ^ { \\circ } \\mathrm { C }$ to room temperature resulted in the formation of permethylated dehydro-d-viniferin (21) in 94% yield.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ce6bc134d158fc11b4f7be5c9bb3430840c214cd2a3f938f074105fcc2f4e7e2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Permethylated dehydro-d-viniferin (21) was synthesized.",
+        "gap": "The final step was to deprotect the methyl ethers to yield the target compound, dehydro-d-viniferin (1).",
+        "decision": "Compound 21 was treated with BBr3 in dichloromethane at -45 °C to room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "Oc1ccc(-c2oc3cc(C=Cc4cc(O)cc(O)c4)ccc3c2-c2ccc(O)cc2)cc1"
+        ],
+        "reagents": [
+          "BBr3"
+        ],
+        "solvent": "DCM",
+        "time": "15 h",
+        "temperature": "-45 °C – 0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "Treatment of 21 with BBr3 successfully yielded the target compound, dehydro-d-viniferin, in 58% yield."
+      },
+      "evidence": {
+        "text_span": "Finally, treatment 21 with $\\text{BBr}_3$ in dichloromethane at $- 4 5 \\ ^ { \\circ } \\mathrm { C }$ to room temperature for $_ { 1 5 \\mathrm { ~ h ~ } }$ successfully yielded the target compound, dehydro-d-viniferin, in 58% yield (Scheme 6).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "ce6bc134d158fc11b4f7be5c9bb3430840c214cd2a3f938f074105fcc2f4e7e2.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 27,
+        "unit": "percent",
+        "interpretation": "Overall yield from 3,5-dihydroxyacetophenone."
+      },
+      "Longest Linear Steps": {
+        "value": 8,
+        "unit": "steps",
+        "interpretation": "The total number of steps in the longest linear sequence."
+      },
+      "Total Steps": {
+        "value": 8,
+        "unit": "steps",
+        "interpretation": "The total number of steps in the synthesis."
+      },
+      "Failed Attempts Count": {
+        "value": 3,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly reported failed attempts."
+      }
+    },
+    "comparison_to_prior": "The developed route is an efficient, concise, and practical total synthetic route to dehydro-d-viniferin in eight steps, with an overall yield of 27% from 3,5-dihydroxyacetophenone. This is an improvement over previous routes, particularly addressing the low yield issues of cyclodehydration methods.",
+    "significance": "This study developed a highly efficient and operationally convenient route to dehydro-d-viniferin and its analogs, utilizing metal–halogen exchange cyclization and dehalogenation as the key step. The synthesis was successfully conducted for the first time in multigram quantities, providing sufficient amounts for further studies on the bioactivity of dehydro-d-viniferin and enabling structure–activity relationship studies. The starting materials are readily available, and the reaction is operationally convenient."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5ra00960j",
+      "pmcid": "PMC11895512",
+      "title": "Efficient total synthesis of dehydro-&lt;i&gt;δ&lt;/i&gt;-viniferin through metal-halogen exchange cyclization.",
+      "authors": "Cao J, Zhu Q, Sha Z, Zhou X, Zhu R, Yao C.",
+      "journal": "RSC Adv",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11895512?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/66bfaa15-bd15-47bf-a836-164018970fe6.zip",
+      "parsed_at": "2026-05-11T06:20:12.948595+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 32,
+    "parseable": 20,
+    "canonicalized": 17,
+    "invalid": 12,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C(C1=CC(OC)=CC(OC)=C1)COC2=C(I)C=C(C3OC(O3)C3)C=C2I",
+      "O=C(C1=CC(OC)=CC(OC)=C1)COC2=C(I)C=C(C3OC(O3)C3)C=C2I",
+      "O=C(C1=CC(OC)=CC(OC)=C1)COC2=C(I)C=C(C3OC(O3)C3)C=C2I",
+      "O=C(C1=CC(OC)=CC(OC)=C1)COC2=C(I)C=C(C3OC(O3)C3)C=C2I",
+      "O=C(C1=CC(OC)=CC(OC)=C1)COC2=C(I)C=C(C3OC(O3)C3)C=C2I",
+      "COc1cc(OC)cc(c1)C=2Oc3ccc(C=O)cc3C2=Cc4ccc(OC)cc4",
+      "COc1cc(OC)cc(c1)C=2Oc3ccc(C=O)cc3C2=Cc4ccc(OC)cc4",
+      "COc1cc(OC)cc(c1)C=Cc2ccc3oc(C=4ccc(OC)cc4)c(C=5cc(OC)cc(OC)c5)c3c2",
+      "COc1cc(OC)cc(c1)C=Cc2ccc3oc(C=4ccc(OC)cc4)c(C=5cc(OC)cc(OC)c5)c3c2"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

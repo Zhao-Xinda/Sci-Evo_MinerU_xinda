@@ -1,0 +1,1060 @@
+{
+  "trace_id": "TS-PMC11849684",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Aleutianamine",
+    "smiles": "",
+    "natural_product_class": "pyrroloiminoquinone",
+    "structural_features": {
+      "key_motifs": [
+        "pyrroloiminoquinone",
+        "thiazabicyclo[3.2.1]octadiene",
+        "azabicyclo[3.3.1]nonadiene",
+        "bridging allylic N,S-acetal",
+        "charged bridging iminium ion"
+      ]
+    },
+    "motivation": "Aleutianamine possesses a daunting heptacyclic architecture and potent in vitro activity against the human pancreatic cancer cell line PANC-1 (IC50 = 25 nM).",
+    "prior_syntheses": [
+      {
+        "lead_author": "Tokuyama",
+        "year": 2023,
+        "key_strategy": "oxidative spirocyclization, rearrangement"
+      },
+      {
+        "lead_author": "Stoltz",
+        "year": 2023,
+        "key_strategy": "Pd-catalyzed intramolecular thiophene dearomative Heck-type reaction"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Convergent total synthesis, novel paradigm for pyrroloiminoquinone synthesis, access to entire carbon framework in 8 steps, carefully choreographed sequence of carbon-nitrogen bond formations."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C5-C21 bond",
+        "named_strategy": "Vinylogous Mukaiyama-Michael reaction",
+        "reasoning": "This intermolecular carbon-carbon bond forming event between a pyrroloquinone monoketal and a siloxythiophene fragment was identified as the only productive method for constructing the sterically hindered C5-C21 bond, diverging from typical intramolecular spirocyclization approaches."
+      },
+      {
+        "bond_description": "Northernmost carbon-nitrogen bond",
+        "reasoning": "Envisioned to arise from azide 9 by reduction and addition of the derived amine to the electrophilic pyrroloiminoquinone core."
+      },
+      {
+        "bond_description": "Intramolecular alkylation of imine moiety",
+        "reasoning": "Aleutianamine (1) would arise from the late-stage intramolecular alkylation of the imine moiety present in 8, following activation of the secondary allylic alcohol."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "11",
+        "smiles": "COC1=CCC(c2c(CCNC(=O)OC(C)(C)C)n(S(C)(=O)=O)c3ccccc23)=C(OC)C1=O",
+        "role": "pyrroloquinone monoketal",
+        "comes_from": "4-hydroxyindole"
+      },
+      {
+        "fragment_id": "12",
+        "smiles": "",
+        "role": "siloxythiophene",
+        "comes_from": "benzoquinone dimethyl ketal"
+      }
+    ],
+    "rationale": "The strategy aimed to diverge from traditional intramolecular spirocyclization by employing a convergent intermolecular C-C bond forming event. This key coupling would rapidly assemble the core, followed by a series of skeletal rearrangements and C-N bond formations to complete the synthesis."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Commercially available 4-methoxyphenol and its known phenolic oxidation product benzoquinone dimethyl ketal 13 were identified as a viable point of departure for the siloxythiophene fragment. The goal was to construct the five-membered, sulfur-containing heterocycle.",
+        "gap": "How to form the five-membered sulfur heterocycle from 13.",
+        "decision": "To construct the 6,5-ring system, chose a formal [3+2] coupling between thioacetic acid and benzoquinone dimethyl ketal 13, expecting a cascade sequence of aldol addition and ring closure."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC(=O)C=CC1=O"
+        ],
+        "product_smiles": [
+          "O=C1C=C[C@H]2C(C1)SC(=O)[C@H]2O"
+        ],
+        "reagents": [
+          "LDA",
+          "thioacetic acid",
+          "HCl"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "stoichiometry": {
+          "LDA": "2 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Thiolactone 14 was readily achieved via a cascade sequence."
+      },
+      "evidence": {
+        "text_span": "In seeking a method for constructing the five-membered, sulfur-containing heterocycle present in 12, we were pleased to discover that the formal $[ { \\bar { 3 } } { \\mathrm { ~ + ~ } } 2 ]$ coupling between thioacetic acid and benzoquinone dimethyl ketal 13 is readily achieved by utilizing the former as its dianion (generated in situ by treatment with LDA), in a cascade sequence that proceeds by initial aldol addition and then ring closure to thiolactone 14.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Thiolactone 14 was successfully synthesized.",
+        "gap": "How to convert 14 to bromoenone 15.",
+        "decision": "To convert 14 to 15, chose dibromination/elimination mediated by bromine and aqueous sodium bicarbonate, expecting regioselective bromination and elimination."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1C=C[C@H]2C(C1)SC(=O)[C@H]2O"
+        ],
+        "product_smiles": [
+          "O=C1C=C(Br)[C@H]2C(C1)SC(=O)[C@H]2O"
+        ],
+        "reagents": [
+          "Br2",
+          "NaHCO3"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "The derived bromoenone 15 was obtained."
+      },
+      "evidence": {
+        "text_span": "As illustrated, the latter can be performed in a five-step sequence involving an initial dibromination/elimination mediated by bromine and aqueous sodium bicarbonate. The derived bromoenone 15 is then reduced to the corresponding allylic alcohol under Luche conditions to diastereoselectively provide the anti-1,4-diol 16.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bromoenone 15 was successfully synthesized.",
+        "gap": "How to reduce 15 to the corresponding allylic alcohol 16 diastereoselectively.",
+        "decision": "To reduce 15 to 16, chose Luche conditions (NaBH4, CeCl3*7H2O), expecting diastereoselective reduction to the anti-1,4-diol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1C=C(Br)[C@H]2C(C1)SC(=O)[C@H]2O"
+        ],
+        "product_smiles": [
+          "O=C1SC2[C@@H](O)C(=O)C=C(Br)[C@@H]2[C@@H]1O"
+        ],
+        "reagents": [
+          "NaBH4",
+          "CeCl3*7H2O"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The corresponding allylic alcohol 16 was diastereoselectively provided as the anti-1,4-diol."
+      },
+      "evidence": {
+        "text_span": "The derived bromoenone 15 is then reduced to the corresponding allylic alcohol under Luche conditions to diastereoselectively provide the anti-1,4-diol 16.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Anti-1,4-diol 16 was successfully synthesized.",
+        "gap": "How to regioselectively protect the secondary alcohol in 16.",
+        "decision": "To protect the secondary alcohol, chose TBSCl and imidazole, expecting regioselective protection to furnish TBS ether 17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1SC2[C@@H](O)C(=O)C=C(Br)[C@@H]2[C@@H]1O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBSCl",
+          "imidazole"
+        ],
+        "solvent": "DMF",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Regioselective protection of the secondary alcohol furnished TBS ether 17."
+      },
+      "evidence": {
+        "text_span": "Regioselective protection of the secondary alcohol furnished TBS ether 17, which was promptly advanced via a one-pot mesylation/elimination cascade initiated by exposure to methanesulfonyl chloride (MsCl) and triethylamine $\\left( \\mathrm { Et } _ { 3 } \\mathrm { N } \\right)$ .",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "TBS ether 17 was successfully synthesized.",
+        "gap": "How to advance 17 to thiobutenolides 18a and 18b.",
+        "decision": "To advance 17, chose a one-pot mesylation/elimination cascade initiated by exposure to methanesulfonyl chloride (MsCl) and triethylamine (Et3N), expecting formation of thiobutenolides."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "MsCl",
+          "Et3N"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "A 6:1 mixture of thiobutenolides (18a and 18b) was obtained. Their relative stereochemistry was assigned by single-crystal X-ray analysis of the major isomer (18a)."
+      },
+      "evidence": {
+        "text_span": "Regioselective protection of the secondary alcohol furnished TBS ether 17, which was promptly advanced via a one-pot mesylation/elimination cascade initiated by exposure to methanesulfonyl chloride (MsCl) and triethylamine $\\left( \\mathrm { Et } _ { 3 } \\mathrm { N } \\right)$ . Although the derived 6:1 mixture of thiobutenolides (18a and 18b, respectively) was inconsequential, they were readily isolated, and their relative stereochemistry assigned unequivocally by single-crystal X-ray analysis of the major isomer (18a).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Thiobutenolides 18a and 18b were successfully synthesized.",
+        "gap": "How to convert 18a and 18b to siloxythiophene 12.",
+        "decision": "To convert 18a and 18b to siloxythiophene 12, chose soft enolization upon careful treatment with tert-butyldimethylsilyl trifluoromethanesulfonate (TBSOTf) and Et3N, expecting smooth conversion."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBSOTf",
+          "Et3N"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "18a and 18b smoothly underwent soft enolization to furnish siloxythiophene 12."
+      },
+      "evidence": {
+        "text_span": "In practice, 18a and 18b were advanced without separation and both found to smoothly undergo soft enolization to furnish siloxythiophene 12 upon careful treatment with tert-butyldimethylsilyl trifluoromethanesulfonate (TBSOTf) and $\\mathrm { Et } _ { 3 } \\mathrm { N }$ .",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "11",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The pyrroloquinone monoketal 11 was hypothesized to arise via double phenolic oxidation of an appropriately substituted 4-hydroxyindole. A model study with N-tosyl-4-hydroxyindole validated this approach.",
+        "gap": "How to prepare a suitable C3-functionalized hydroxyindole for this oxidation.",
+        "decision": "To prepare a suitable C3-functionalized hydroxyindole, chose known benzyl ether 19, which could be readily prepared in five steps from commercially available 4-benzyloxyindole, expecting it to be a suitable intermediate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)NCCc1c(O)c2ccccc2n1S(C)(=O)=O"
+        ],
+        "reagents": [
+          "H2",
+          "Pd(OH)2"
+        ],
+        "solvent": "MeOH",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Hydrogenolysis of the benzyl ether in 19 gave the desired phenol 20 in nearly quantitative yield."
+      },
+      "evidence": {
+        "text_span": "To this end, were pleased to find that the known benzyl ether 19 (Scheme 2B), which could be readily prepared in five steps from commercially available 4-benzyloxyindole (see Supporting Information), was a suitable intermediate for this purpose.15 Hydrogenolysis of the benzyl ether in 19 gave the desired phenol 20 in nearly quantitative yield and set the stage for the ensuing phenolic oxidation.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "11",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Phenol 20 was successfully synthesized. A model study with unsubstituted hydroxy indole showed promising results for phenolic oxidation.",
+        "gap": "How to oxidize phenol 20 to pyrroloquinone monoketal 11 without competitive oxidation of the indole Π-bond.",
+        "decision": "To oxidize phenol 20, initially used conditions from the model study, expecting direct formation of 11."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NCCc1c(O)c2ccccc2n1S(C)(=O)=O"
+        ],
+        "product_smiles": [
+          "COC1=CCC(c2c(CCNC(=O)OC(C)(C)C)n(S(C)(=O)=O)c3ccccc23)=C(OC)C1=O",
+          "COC1=C(c2c(CCNC(=O)OC(C)(C)C)n(S(C)(=O)=O)c3ccccc23)CC=CC1(O)OC"
+        ],
+        "reagents": [
+          "PIFA"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "The initial conditions utilized to oxidize phenol 20 led to a variety of products, with the desired pyrroloquinone monoketal 11 being isolated as a minor component. The principal side reaction was the competitive oxidation of the indole Π-bond to provide dimethoxyindoline 21."
+      },
+      "evidence": {
+        "text_span": "In contrast to the promising results from our model unsubstituted hydroxy indole, the initial conditions utilized to oxidize phenol 20 led to a variety of products, with the desired pyrroloquinone monoketal 11 being isolated as a minor component. The principal side reaction was the competitive oxidation of the indole Π-bond to provide dimethoxyindoline 21, likely due to the hyperconjugative increase in electron density conferred by the newly introduced C3-substituent.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "11",
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "Initial oxidation conditions for phenol 20 yielded 11 as a minor product and dimethoxyindoline 21 as a major side product due to competitive oxidation of the indole Π-bond.",
+        "gap": "How to optimize the oxidation to favor 11 over 21.",
+        "decision": "To improve selectivity, chose careful optimization of the oxidant and temperature of the reaction, expecting 11 to be isolated as the major product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NCCc1c(O)c2ccccc2n1S(C)(=O)=O"
+        ],
+        "product_smiles": [
+          "COC1=CCC(c2c(CCNC(=O)OC(C)(C)C)n(S(C)(=O)=O)c3ccccc23)=C(OC)C1=O",
+          "COC1=C(c2c(CCNC(=O)OC(C)(C)C)n(S(C)(=O)=O)c3ccccc23)CC=CC1(O)OC"
+        ],
+        "reagents": [
+          "PIFA"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "Pyrroloquinone monoketal 11 was isolated as the major product in 56% yield, alongside 40% of the undesired dimethoxyindoline 21."
+      },
+      "evidence": {
+        "text_span": "Gratifyingly, careful optimization of the oxidant and temperature of the reaction allowed for pyrroloquinone monoketal 11 to be isolated as the major product in $56\\%$ yield, alongside $4 0\\%$ of the undesired dimethoxyindoline 21.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Both nucleophilic siloxythiophene fragment 12 and electrophilic pyrroloquinone monoketal 11 were reliably and scalably accessed.",
+        "gap": "How to achieve the planned convergent fragment coupling via a vinylogous Mukaiyama-Michael reaction.",
+        "decision": "To promote the desired intermolecular vinylogous Mukaiyama-Michael reaction, chose tin(IV) chloride as an acid catalyst, expecting it to leave potentially acid-labile protective groups unscathed and lead to the formation of thioxapropellane 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC(=O)C(OC)=C2C(N(C)S(C)(=O)=O)=CC(CCNC(=O)OC(C)(C)C)=C12",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "SnCl4"
+        ],
+        "solvent": "MeCN/DCM",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "The transformation was reasonably straightforward. The sole coupled product corresponded to [4.3.3]-thioxapropellane 22. No trace of the open-form phenol 10 was found, indicating rapid 5-exo-trig oxa-Michael cyclization."
+      },
+      "evidence": {
+        "text_span": "In the event, we were pleased to find this transformation reasonably straightforward (Scheme 3A). After testing a variety of acid catalysts, tin(IV) chloride was found to promote the desired intermolecular vinylogous Mukaiyama-Michael reaction while leaving the potentially acid-labile protective groups (e.g., TBS, Boc) unscathed. Though we anticipated some extent of oxa-Michael behavior following carbon−carbon bond formation, we were surprised to find no trace of the open-form phenol 10 (Scheme 1) upon isolation. Indeed, the sole coupled product corresponded to [4.3.3]-thioxapropellane 22.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Thioxapropellane 22 was successfully synthesized. The next step in the retrosynthetic plan was to elevate the arene to the pyrroloquinone oxidation state.",
+        "gap": "How to oxidize the arene in 22 to the pyrroloquinone oxidation state.",
+        "decision": "To oxidize 22, chose cerium(IV) ammonium nitrate (CAN)-mediated oxidation combined with a basic ethanolic workup, expecting to provide pyrroloquinone 23."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "CAN",
+          "Et3N"
+        ],
+        "solvent": "MeCN/H2O, EtOH",
+        "temperature": "0 °C, 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "22 proved to be an excellent substrate for cerium(IV) ammonium nitrate-mediated oxidation, which, when combined with a basic ethanolic workup, provided pyrroloquinone 23."
+      },
+      "evidence": {
+        "text_span": "We were pleased to find that 22 proved to be an excellent substrate for cerium(IV) ammonium nitrate-mediated oxidation, which, when combined with a basic ethanolic workup, provided pyrroloquinone 23 (Scheme 3B) and set the stage for deprotection and cyclocondensation.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Pyrroloquinone 23 was successfully synthesized. The next step was Boc-deprotection and cyclocondensation to form a six-membered cyclic imine (24).",
+        "gap": "How to induce cyclization of the deprotected 23 to the desired imine 24.",
+        "decision": "To induce cyclization, attempted a variety of conditions, including similar transformations on a wide variety of substrates related to 24 with different C10 functionalizations (amino or methoxy substituents), expecting to form 24."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "solvent": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Although 23 was indeed amenable to Boc-deprotection, attempts to induce cyclization to the desired imine (24) under a variety of conditions were unproductive. All such cyclocondensations failed, and the pyrroloiminoquinone core present in 24 could not be accessed."
+      },
+      "evidence": {
+        "text_span": "Although 23 was indeed amenable to Boc-deprotection, attempts to induce cyclization to the desired imine (24) under a variety of conditions were unproductive. The viability of this cyclocondensation step is well-known to be highly dependent upon the substitution pattern of the pyrroloquinone.4,17 Thus, we attempted similar transformations on a wide variety of substrates related to 24, wherein C10 was functionalized with either an amino or methoxy substituent, as these were known to facilitate cyclocondensation on related compounds.18−20 To our chagrin, all such cyclocondensations failed, and we were unable to access the pyrroloiminoquinone core present in 24.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Para-quinone 23 proved to be a nonviable substrate for cyclocondensation. The strategy shifted to an ortho-quinone intermediate (e.g., 25) for C-N bond formation.",
+        "gap": "How to facilitate formation of the ortho-quinone 25 by removing the methyl ether in 22.",
+        "decision": "To remove the methyl ether, chose exposure of 22 to BBr3, expecting to produce 27 (demethylated and deprotected)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "BBr3"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 to 0 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Exposure of 22 to BBr3 produced 27, wherein both the methyl ether and Boc protecting groups had been removed. Efforts to advance 27 by either reprotecting the oxidatively labile primary amine or direct aryl oxidation led only to formation of para-quinone 23, which had previously proven useless. This failure was attributable to the propensity of intermediates to undergo E1cB elimination followed by autoxidation to para-quinone products."
+      },
+      "evidence": {
+        "text_span": "In the event, exposure of 22 to $\\mathrm { B Br } _ { 3 }$ was found to produce 27, wherein both the methyl ether and Boc protecting groups had been removed. Unfortunately, efforts to advance 27 by either reprotecting the oxidatively labile primary amine or direct aryl oxidation (Scheme 4B), led only to formation of para-quinone 23, which had previously proven useless. Despite extensive experimentation on 22, 27, and analogous compounds, including a protecting group swap from Boc to the $\\operatorname { B Br } _ { 3 } .$ - tolerant Fmoc (not illustrated) and attempts to protect the C19 phenol derived from E1cB elimination, we were unable to produce an ortho-quinone akin to 25. In most instances, this failure was attributable to the propensity of intermediates to undergo E1cB elimination followed by autoxidation to para-quinone products.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "Previous attempts to form an ortho-quinone from 22 or 27 failed, leading to para-quinone 23 or E1cB elimination/autoxidation. The C19 phenol needed to remain protected, and reversible elimination/oxa-Michael mitigated. The stability of 23 without further elimination/aromatization provided hope.",
+        "gap": "How to prepare a rearranged analog where the TBS ether is replaced by the pendant aryl ring as an internal protecting group, leading to an ortho-quinone.",
+        "decision": "To achieve this, developed a deprotection/alcohol-activation/retro-oxa-Michael/cycloetherification/reprotection sequence, expecting to convert thioxapropellane 22 to oxabicycle 29, which could then be oxidized to an ortho-quinone."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=C(c2c(CCNC(=O)OC(C)(C)C)ccn2S(=O)(=O)c2ccc(C)cc2)C=CC(Br)=CC2C(=O)SC(C)(C)C2O1"
+        ],
+        "product_smiles": [
+          "COC1=C(c2c(CCNC(=O)OC(C)(C)C)ccn2S(=O)(=O)c2ccc(C)cc2)C=CC(Br)=CC2C(=O)SC(C)(C)C2O1"
+        ],
+        "reagents": [
+          "HF-pyridine",
+          "MsCl",
+          "Et3N"
+        ],
+        "solvent": "THF, DCM",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "HF-pyridine mediated removal of the TBS ether in 22 followed by in situ treatment with MsCl furnished oxabicycle 28."
+      },
+      "evidence": {
+        "text_span": "With this new strategy in mind, we carried out numerous experiments and eventually developed a deprotection/alcohol-activation/retro-oxa-Michael/cycloetherification/reprotection sequence that allows for the conversion of thioxapropellane 22 to oxabicycle 29 (Scheme 5). Specifically, HF-pyridine mediated removal of the TBS ether in 22 followed by in situ treatment with MsCl furnished oxabicycle 28 which, upon exposure to boron tribromide undergoes demethylation and concomitant Boc cleavage; quenching the reaction with aqueous potassium carbonate and reintroduction of the Boc protecting group then proceeded to give phenol 29.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Oxabicycle 28 was successfully synthesized.",
+        "gap": "How to demethylate and deprotect 28, then reprotect the amine to form phenol 29.",
+        "decision": "To achieve this, chose exposure of 28 to boron tribromide for demethylation and concomitant Boc cleavage, followed by quenching with aqueous potassium carbonate and reintroduction of the Boc protecting group, expecting to give phenol 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=C(c2c(CCNC(=O)OC(C)(C)C)ccn2S(=O)(=O)c2ccc(C)cc2)C=CC(Br)=CC2C(=O)SC(C)(C)C2O1"
+        ],
+        "product_smiles": [
+          "Cc1ccc(S(=O)(=O)n2ccc(CCNC(=O)OC(C)(C)C)c2C2=C(O)OC3C(C=C(Br)C=C2)C(=O)SC3(C)C)cc1"
+        ],
+        "reagents": [
+          "BBr3",
+          "K2CO3",
+          "Boc2O"
+        ],
+        "solvent": "DCM, THF",
+        "temperature": "-78 to 0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Demethylation and concomitant Boc cleavage occurred, and subsequent reprotection gave phenol 29."
+      },
+      "evidence": {
+        "text_span": "Specifically, HF-pyridine mediated removal of the TBS ether in 22 followed by in situ treatment with MsCl furnished oxabicycle 28 which, upon exposure to boron tribromide undergoes demethylation and concomitant Boc cleavage; quenching the reaction with aqueous potassium carbonate and reintroduction of the Boc protecting group then proceeded to give phenol 29.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Phenol 29 was successfully synthesized.",
+        "gap": "How to oxidize 29 to the ortho-quinone 30.",
+        "decision": "To oxidize 29, chose IBX, expecting it to readily undergo oxidation to cleanly deliver ortho-quinone 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1ccc(S(=O)(=O)n2ccc(CCNC(=O)OC(C)(C)C)c2C2=C(O)OC3C(C=C(Br)C=C2)C(=O)SC3(C)C)cc1"
+        ],
+        "product_smiles": [
+          "Cc1ccc(S(=O)(=O)n2ccc(CCNC(=O)OC(C)(C)C)c2C2=C(C=O)OC3C(C=C(Br)C=C2)C(=O)SC3(C)C)cc1"
+        ],
+        "reagents": [
+          "IBX"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "29 readily undergoes oxidation with IBX to cleanly deliver ortho-quinone 30."
+      },
+      "evidence": {
+        "text_span": "With 29 in hand, we were delighted to find that it readily undergoes oxidation with IBX to cleanly deliver ortho-quinone 30.2 1",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ortho-quinone 30 was successfully synthesized. The next step was to remove the Boc carbamate and induce intramolecular vinylogous nucleophilic acyl substitution, followed by an aza-Michael reaction to deliver thiazapropellane 32.",
+        "gap": "How to deprotect 30 and facilitate the subsequent cyclizations.",
+        "decision": "To achieve this, chose removal of the Boc carbamate in 30 with trifluoroacetic acid to produce an intermediate amine salt, followed by freebasing with methanolic Et3N, expecting intramolecular vinylogous nucleophilic acyl substitution and subsequent aza-Michael reaction to deliver 32."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1ccc(S(=O)(=O)n2ccc(CCNC(=O)OC(C)(C)C)c2C2=C(C=O)OC3C(C=C(Br)C=C2)C(=O)SC3(C)C)cc1"
+        ],
+        "product_smiles": [
+          "Cc1ccc(S(=O)(=O)n2ccc3c2CCC(N)C(C2=C(O)OC4C(C=C(Br)C=C2)C(=O)SC4(C)C)C3=O)cc1"
+        ],
+        "reagents": [
+          "TFA",
+          "Et3N"
+        ],
+        "solvent": "DCM, MeOH",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Removal of the Boc carbamate produced an intermediate amine salt, which upon freebasing underwent intramolecular vinylogous nucleophilic acyl substitution. The resultant aminated ortho-quinone 31 (not observed) proceeded further via an aza-Michael reaction to deliver [4.3.3]-thiazapropellane 32."
+      },
+      "evidence": {
+        "text_span": "Removal of the Boc carbamate in 30 with trifluoroacetic acid produces an intermediate amine salt which, upon freebasing with methanolic $\\mathrm { Et } _ { 3 } \\mathrm { N } ,$ , undergoes intramolecular vinylogous nucleophilic acyl substitution. The resultant aminated orthoquinone 31, unsurprisingly not observed, proceeds further via an aza-Michael reaction to deliver [4.3.3]-thiazapropellane 32.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Thiazapropellane 32 was successfully synthesized. The goal was to rearrange 32 to 33, which possesses the aleutianamine [3.3.1]-azabicyclic scaffold. This would require advancing 32 to an intermediate with a stereoinverted nucleofuge at C3 to allow a suprafacial migration of nitrogen.",
+        "gap": "How to introduce a stereoinverted nucleofuge at C3 and induce the eliminative rearrangement.",
+        "decision": "To achieve this, chose exposure of 32 to pyridine-buffered PCl5 to cleanly give an intermediate stereoinverted chloride, followed by treatment with DBU to induce the eliminative rearrangement, expecting rearranged ortho-quinone 33 as the major product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CN1C2=C(S[C@@H]3C(Br)C=C[C@H](O)C31)C(=O)c1ccn(C)c1C2=O"
+        ],
+        "product_smiles": [
+          "C=CN1C2=C(S[C@@H]3C(Br)C=CC31)C(=O)c1ccn(C)c1C2=O"
+        ],
+        "reagents": [
+          "PCl5",
+          "pyridine",
+          "DBU"
+        ],
+        "solvent": "DCM, THF",
+        "temperature": "0 °C, 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "regio_selectivity": "2.2:1 rr",
+        "observation": "Exposure of 32 to pyridine-buffered PCl5 cleanly gave an intermediate stereoinverted chloride, which underwent eliminative rearrangement upon treatment with DBU, yielding rearranged ortho-quinone 33 as the major product (2.2:1 rr). The structure of 33 was confirmed by single-crystal X-ray analysis."
+      },
+      "evidence": {
+        "text_span": "After testing a number of strategies (e.g., Mitsunobu, Appel halogenation, etc.) we found that exposure of 32 to pyridine-buffered $\\mathrm { P Cl } _ { 5 }$ (Scheme 6A) cleanly gave an intermediate stereoinverted chloride (not illustrated) which could be coaxed to undergo the eliminative rearrangement upon treatment with 1,8-diazabicyclo(5.4.0)undec-7-ene (DBU), yielding rearranged ortho-quinone 33 as the major product, with an $S _ { \\mathrm { N } } 2 ^ { \\prime }$ regiomer being produced as a minor component (2.2:1 rr, see Supporting Information). The structure of 33 was confirmed by single-crystal X-ray analysis of its catechol diacetate derivative (see Supporting Information).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ortho-quinone 33 was successfully synthesized. The next step was to chemoselectively reduce the thiobutenolide to its corresponding thiolactol in the presence of the reduction-labile ortho-quinone.",
+        "gap": "How to achieve this chemoselective reduction.",
+        "decision": "To achieve this, chose global reduction with LAH, followed by autoxidation of the derived catechol to ortho-quinone 34 upon exposure to oxygen, expecting to obtain the desired thiolactol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CN1C2=C(S[C@@H]3C(Br)C=CC31)C(=O)c1ccn(C)c1C2=O"
+        ],
+        "product_smiles": [
+          "C=CN1C2=C(S[C@@H]3C(Br)C=C[C@H](O)C31)C(=O)c1ccn(C)c1C2=O"
+        ],
+        "reagents": [
+          "LiAlH4",
+          "O2"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C, 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "observation": "This proved difficult but was eventually accomplished by global reduction with LAH, followed by autoxidation of the derived catechol to ortho-quinone 34 upon exposure to oxygen."
+      },
+      "evidence": {
+        "text_span": "Having accessed the aleutianamine ring system, we turned next to developing conditions that would allow for chemoselective reduction of the thiobutenolide to its corresponding thiolactol in the presence of the reductionlabile ortho-quinone. This proved difficult and was eventually accomplished by global reduction with LAH, followed by autoxidation of the derived catechol to ortho-quinone 34 upon exposure to oxygen.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Thiolactol 34 was successfully synthesized and was in the aleutianamine oxidation state. The goal was to convert it to the protected natural product N-Ts-aleutianamine (35) via regioselective intermolecular amination at the C10 carbonyl.",
+        "gap": "How to achieve regioselective intermolecular amination at C10.",
+        "decision": "To achieve this, exposed 34 to a wide variety of conditions utilizing ammonia or other analogous nitrogen-containing nucleophiles, expecting to deliver N-Ts-aleutianamine (35) or its derivatives based on literature precedents for related ortho-quinones."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CN1C2=C(S[C@@H]3C(Br)C=C[C@H](O)C31)C(=O)c1ccn(C)c1C2=O"
+        ],
+        "product_smiles": [
+          "C=CN1C2=C(S[C@@H]3C(Br)C=CC31)C(=O)c1ccn(C)c1C2=O"
+        ],
+        "reagents": [
+          "ammonia",
+          "other nitrogen-containing nucleophiles"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Despite literature precedents for related ortho-quinones, exposing 34 to a wide variety of conditions utilizing ammonia or other analogous nitrogen-containing nucleophiles failed to deliver N-Ts-aleutianamine (35) or its derivatives."
+      },
+      "evidence": {
+        "text_span": "Unfortunately, despite literature precedents for related orthoquinones, which suggested the feasibility of regioselective intermolecular amination at the C10 carbonyl, exposing 34 to a wide variety of conditions utilizing ammonia or other analogous nitrogen-containing nucleophiles failed to deliver N-Ts-aleutianamine (35) or its derivatives.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermolecular amination failed. Literature precedent also suggested intramolecular amination would be a feasible approach. The goal was to prepare an N,S-acetal poised for intramolecular condensation on the quinone.",
+        "gap": "How to activate the thiolactol 34 and introduce an azide moiety for intramolecular cyclization.",
+        "decision": "To achieve this, chose activation of the thiolactol as its acetate (36), followed by an azidation step using SnCl4 and azidotrimethylsilane to furnish azide N,S-acetal 37, expecting subsequent cyclocondensation of the derived amine."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CN1C2=C(S[C@@H]3C(Br)C=C[C@H](O)C31)C(=O)c1ccn(C)c1C2=O"
+        ],
+        "product_smiles": [
+          "C=CN1C2=C(S[C@@H]3C(Br)C=C[C@H](N=[N+]=[N-])C31)C(=O)c1ccn(C)c1C2=O"
+        ],
+        "reagents": [
+          "Ac2O",
+          "Et3N",
+          "DMAP",
+          "TMSN3",
+          "SnCl4"
+        ],
+        "solvent": "DCM",
+        "temperature": "23 °C, -78 to -20 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Although successful in incorporating and eventually reducing the azide moiety, it was impossible to induce cyclocondensation of the derived amine under basic, acidic, or neutral conditions. These experiments only led to isolation of the free amino N,S-acetal. The illustrated stereochemistry is suspected to underlie this unfortunate behavior."
+      },
+      "evidence": {
+        "text_span": "Literature precedent also suggested intramolecular amination would be a feasible approach, so we endeavored to prepare an N,S-acetal that would be poised to undergo intramolecular condensation on the quinone (Scheme 6B). To this latter end, activation of the thiolactol as its acetate gave the sensitive intermediate 36, which was used directly in a subsequent azidation step. We were pleased to discover that $\\mathrm { { \\cal S n C l } } _ { 4 }$ and azidotrimethylsilane could indeed mediate an electrophilic azidation, furnishing azide N,S-acetal 37. Though we were successful in incorporating and eventually reducing the azide moiety, much to our dismay, we were unable to induce cyclocondensation of the derived amine under basic, acidic, or neutral conditions. These experiments only lead to isolation of the free amino N,S-acetal (see Supporting Information). We suspect the illustrated stereochemistry underlies this unfortunate behavior, despite the well-known ability of glycosylamine-type structures to undergo epimerization.27",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous amination strategies failed. Introducing ammonia regioselectively required an increase in electrophilicity at C10. The goal was to convert thiolactol 34 to vinylogous imidate salt 40 via methylation of the vinylogous amide moiety, followed by addition/elimination with ammonia.",
+        "gap": "How to methylate the vinylogous amide moiety in 34.",
+        "decision": "To achieve this, attempted to effect the methylation transformation, expecting to form 40."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CN1C2=C(S[C@@H]3C(Br)C=C[C@H](O)C31)C(=O)c1ccn(C)c1C2=O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "methylating agent"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Efforts to effect this transformation only returned starting material."
+      },
+      "evidence": {
+        "text_span": "The conversion of 34 to 40 was envisioned as arising via methylation of the vinylogous amide moiety. Unfortunately, efforts to effect this transformation only returned starting material.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 22,
+      "thought": {
+        "background": "Direct methylation of 34 failed. A stepwise approach was needed to introduce the final nitrogen atom, inspired by Stoltz's oxidative amination.",
+        "gap": "How to achieve the desired amination in a stepwise manner, starting from ortho-quinone 33.",
+        "decision": "To achieve this, opted for a stepwise approach: reduction of ortho-quinone 33 to the corresponding catechol by hydrogenation over Pd/C, followed by in situ treatment with excess potassium carbonate and iodomethane to give dimethylcatechol 38. Then, careful reduction of the thiobutenolide in 38 with DIBAL-H to produce sensitive thiolactol 39, which would be used directly in a CAN-mediated oxidation to generate ephemeral vinylogous imidate salt 40, followed by addition/elimination with excess aqueous ammonia to furnish intermediate vinylogous amidine 41."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CN1C2=C(S[C@@H]3C(Br)C=CC31)C(=O)c1ccn(C)c1C2=O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "H2",
+          "Pd/C",
+          "K2CO3",
+          "MeI"
+        ],
+        "solvent": "DMF",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The resultant hydroquinone was treated in situ with an excess of potassium carbonate and iodomethane to give dimethylcatechol 38."
+      },
+      "evidence": {
+        "text_span": "As such, we opted for a stepwise approach which began with reduction of ortho-quinone 33 to the corresponding catechol by hydrogenation over Pd/C.28 The resultant hydroquinione was then treated in situ with an excess of potassium carbonate and iodomethane to give dimethylcatechol 38.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dimethylcatechol 38 was successfully synthesized.",
+        "gap": "How to reduce the thiobutenolide in 38 to a sensitive thiolactol 39.",
+        "decision": "To achieve this, chose careful reduction of the thiobutenolide in 38 with diisobutylaluminum hydride (DIBAL-H), expecting to produce sensitive thiolactol 39."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "PhMe",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Careful reduction of the thiobutenolide in 38 with diisobutylaluminum hydride (DIBAL-H) produced a sensitive thiolactol (39)."
+      },
+      "evidence": {
+        "text_span": "Careful reduction of the thiobutenolide in 38 with diisobutylaluminum hydride (DIBAL-H) produced a sensitive thiolactol (39).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Sensitive thiolactol 39 was successfully synthesized.",
+        "gap": "How to generate the ephemeral vinylogous imidate salt 40 and then convert it to vinylogous amidine 41 via addition/elimination with aqueous ammonia.",
+        "decision": "To achieve this, used 39 directly in a CAN-mediated oxidation to generate the ephemeral vinylogous imidate salt (40), followed by treatment with excess aqueous ammonia, expecting addition/elimination to furnish intermediate vinylogous amidine 41."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "CAN",
+          "aqueous NH3"
+        ],
+        "solvent": "MeCN/H2O",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "39 was used directly in a CAN-mediated oxidation to generate the ephemeral vinylogous imidate salt (40), which undergoes addition/elimination upon treatment with excess aqueous ammonia, furnishing the intermediate vinylogous amidine 41."
+      },
+      "evidence": {
+        "text_span": "The latter could be used directly in a CANmediated oxidation to generate the ephemeral vinylogous imidate salt (40), which undergoes addition/elimination upon treatment with excess aqueous ammonia, furnishing the intermediate vinylogous amidine 41.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Vinylogous amidine 41 was successfully synthesized.",
+        "gap": "How to convert 41 to N-Ts-aleutianamine (35).",
+        "decision": "To achieve this, chose treatment of the reaction mixture with trifluoroacetic acid, expecting it to induce ionization of the thiolactol to the corresponding thionium ion, which would then be promptly captured intramolecularly by the pendant vinylogous amidine, yielding N-Ts-aleutianamine (35)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Treatment of the reaction mixture with trifluoroacetic acid is believed to induce ionization of the thiolactol to the corresponding thionium ion which is promptly captured intramolecularly by the pendant vinylogous amidine, yielding N-Ts-aleutianamine (35)."
+      },
+      "evidence": {
+        "text_span": "Treatment of the reaction mixture with trifluoroacetic acid is believed to induce ionization of the thiolactol to the corresponding thionium ion which is promptly captured intramolecularly by the pendant vinylogous amidine, yielding N-Ts-aleutianamine (35).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "N-Ts-aleutianamine (35) was successfully synthesized.",
+        "gap": "How to detosylate 35 and obtain aleutianamine (1).",
+        "decision": "To achieve this, chose detosylation as described by Stoltz and Tokuyama, performed by exposure of 35 to sodium methoxide, followed by treatment with TFA, expecting to smoothly provide aleutianamine (1) as its trifluoroacetate salt."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaOMe",
+          "TFA"
+        ],
+        "solvent": "MeOH/THF",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 30,
+        "observation": "Detosylation was performed by exposure of 35 to sodium methoxide, which upon treatment with TFA smoothly provides aleutianamine (1) as its trifluoroacetate salt. The spectral data of the synthetic material was identical to that reported for both the natural material and synthetic aleutianamine reported by the Tokuyama and Stoltz groups."
+      },
+      "evidence": {
+        "text_span": "Detosylation, as described by both Stoltz and Tokuyama, was performed by exposure of 35 to sodium methoxide, which upon treatment with TFA smoothly provides aleutianamine (1) as its trifluoroacetate salt. 8,9 The spectral data of our synthetic material was identical to that reported for both the natural material and synthetic aleutianamine reported by the Tokuyama and Stoltz groups (see Supporting Information).6,8,9",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 16,
+        "unit": "steps",
+        "interpretation": "Total steps in the longest linear sequence from benzoquinone dimethylketal (13)."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Total number of steps not explicitly stated."
+      },
+      "Failed Attempts Count": {
+        "value": 4,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly described failed attempts."
+      }
+    },
+    "comparison_to_prior": "The spectral data of our synthetic material was identical to that reported for both the natural material and synthetic aleutianamine reported by the Tokuyama and Stoltz groups.",
+    "significance": "This convergent total synthesis of aleutianamine exemplifies a novel paradigm for pyrroloiminoquinone synthesis, hinging upon a convergent intermolecular carbon-carbon bond forming event. It introduces all carbon atoms in 8 steps and the entire carbocyclic skeleton in 13 steps from commercially available materials. The strategy overcomes challenges in C-N bond formation through skeletal rearrangements and novel manipulations of complex pyrroloquinone derivatives, enabling rapid generation of diverse analogs for biological studies."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.4c12946",
+      "pmcid": "PMC11849684",
+      "title": "Convergent Total Synthesis of Aleutianamine.",
+      "authors": "Tuccinardi JP, Wood JL.",
+      "journal": "J Am Chem Soc",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC11849684?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/03f9253f-7f2b-41b0-8064-a23756ac0625.zip",
+      "parsed_at": "2026-05-11T06:40:06.941742+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 61,
+    "parseable": 34,
+    "canonicalized": 33,
+    "invalid": 27,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "N1C=C(C[C@H]2N3C=C(Br)C=C[C@@H]4SC[C@H]24)C3=C(C1=O)NC(=O)C1",
+      "BrC1=CC[C@@H](OSi(C)(C)C(C)(C)C)C2=C1SC=C2",
+      "O=C1C=C(Br)[C@@H]2[C@H](O)C(=O)SC2[C@H]1OSi(C)(C)C(C)(C)C",
+      "O=C1C=C(Br)[C@@H]2[C@H](O)C(=O)SC2[C@H]1OSi(C)(C)C(C)(C)C",
+      "O=C1C=C(Br)[C@@H]2[C@H](OSi(C)(C)C(C)(C)C)C(=O)SC2C1",
+      "O=C1C=C(Br)[C@@H]2[C@H](OSi(C)(C)C(C)(C)C)C(=O)SC2C1",
+      "O=C1C=C(Br)[C@@H]2[C@H](OSi(C)(C)C(C)(C)C)C(=O)SC2C1",
+      "BrC1=CC[C@@H](OSi(C)(C)C(C)(C)C)C2=C1SC=C2",
+      "CC(C)(C)OC(=O)NCCC1=C(OBn)C2=CC=CC=C2N1S(=O)(=O)C",
+      "BrC1=CC[C@@H](OSi(C)(C)C(C)(C)C)C2=C1SC=C2"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "Aleutianamine",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

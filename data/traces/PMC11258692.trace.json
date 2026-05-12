@@ -1,0 +1,839 @@
+{
+  "trace_id": "TS-PMC11258692",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Hypersampsone M",
+    "smiles": "",
+    "natural_product_class": "homoadamantane polycyclic polyprenylated acylphloroglucinols (PPAPs)",
+    "structural_features": {
+      "key_motifs": [
+        "homoadamantane core",
+        "fused cyclopentane",
+        "phloroglucinol moiety"
+      ]
+    },
+    "motivation": "Hypersampsone M is a prototypical representative of the homoadamantane PPAP subclass, which has over 70 members but no prior total syntheses. This class exhibits promising bioactivity (antitumor, anti-inflammatory/immunosuppressive, hepatoprotective, antiadipogenesis). A viable structure-activity relationship (SAR) has not yet been established for PPAPs, and small structural changes can lead to unexpected effects on biological activity.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "First total synthesis of a homoadamantane PPAP natural product, establishing a potentially general strategy for related compounds."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C1-benzoyl group",
+        "named_strategy": "bridgehead benzoylation",
+        "reasoning": "To install the final benzoyl group on the homoadamantane core."
+      },
+      {
+        "bond_description": "C4-cycloheptanone ring",
+        "named_strategy": "Claisen condensation",
+        "reasoning": "To form the homoadamantane cage from a tricycle intermediate."
+      },
+      {
+        "bond_description": "Prenyl group and cyclization",
+        "reasoning": "To access tricycle 3 from simplified hydrazulene 4, utilizing the C4 ketone as a handle."
+      },
+      {
+        "bond_description": "Cycloheptenone 5 from hydrazulene 4",
+        "named_strategy": "cyclopentene annulation",
+        "reasoning": "A key annulation to build the polycyclic core."
+      }
+    ],
+    "rationale": "The strategy centers on the C4-cycloheptanone ring, employing a late-stage Claisen condensation and bridgehead benzoylation on C1 from tricycle 3. Prenylation and cyclization would allow access to tricycle 3 from simplified hydrazulene 4, which could finally be traced back to cycloheptenone 5 through a key cyclopentene annulation. Initial attempts with a cycloheptenone substrate led to undesired stereochemistry, prompting a revision to a cyclohexenone substrate followed by ring expansion to intercept the original retrosynthesis at hydrazulene 4."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The retrosynthetic strategy identified cycloheptenone 7 as a key intermediate, which could be derived from known ketone 6.",
+        "gap": "How to synthesize cycloheptenone 7 from ketone 6.",
+        "decision": "To synthesize cycloheptenone 7, acylation of ketone 6 with NaH and dimethyl carbonate was chosen to provide the beta-ketoester, followed by acetal cleavage and Knoevenagel condensation, expecting to deliver cycloheptenone 7."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)[C@@H]1CCC(=O)C(OC)C1OC"
+        ],
+        "product_smiles": [
+          "C=C(C)[C@@H]1CCCC(=O)C=C1C(=O)OC"
+        ],
+        "reagents": [
+          "NaH",
+          "dimethyl carbonate",
+          "HClO4",
+          "piperidine",
+          "AcOH"
+        ],
+        "solvent": "THF",
+        "temperature": "50 °C",
+        "rxn_smiles": "[NaH].COC(=O)OC.C=C(C)[C@H]1CCCC(=O)CC1=O.COC(=O)OC>>C=C(C)[C@@H]1CCCC(=O)C=C1C(=O)OC",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 30,
+          "observation": "Acylation of known ketone 6 with NaH and dimethyl carbonate provides access to the required beta-ketoester. Cleavage of the acetal, followed by a Knoevenagel condensation, delivers cycloheptenone 7."
+        },
+        "named_reaction": "Knoevenagel condensation"
+      },
+      "evidence": {
+        "text_span": "We began by targeting cycloheptenone 7 (Scheme 1B). Acylation of known ketone 610 with NaH and dimethyl carbonate provides access to the required β-ketoester. Cleavage of the acetal, followed by a Knoevenagel condensation, delivers cycloheptenone 7.",
+        "section": "Main Text",
+        "image_refs": [
+          "786c9b63036a99115ecc848f413a0b87e0de651b31de3636df8714d491c5ee55.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Cycloheptenone 7 was successfully synthesized. The next step was a key cyclopentene annulation.",
+        "gap": "Achieving the desired stereochemical outcome in the cyclopentene annulation with the demanding gem-dimethyl moiety.",
+        "decision": "To perform a 1,4-addition of 1,1-dimethylpropargylzinc bromide 8 to enone 7, followed by cyclization, expecting to form hydrazulene 10 with the desired stereochemistry."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)[C@@H]1CCCC(=O)C=C1C(=O)OC",
+          ""
+        ],
+        "product_smiles": [
+          "C#CC(C)(C)[C@@H]1C[C@@]2(C(=O)OC)C(=O)CCC[C@H](C(=C)C)[C@H]12"
+        ],
+        "reagents": [
+          "1,1-dimethylpropargylzinc bromide"
+        ],
+        "solvent": "DME",
+        "temperature": "-15 °C, then 80 °C",
+        "rxn_smiles": "C=C(C)[C@@H]1CCCC(=O)C=C1C(=O)OC>>C#CC(C)(C)[C@@H]1C[C@@]2(C(=O)OC)C(=O)CCC[C@H](C(=C)C)[C@H]12",
+        "outcome": {
+          "valid": false,
+          "yield_percent": 31,
+          "failure_mode": "wrong_stereochemistry",
+          "observation": "1,1-dimethylpropargylzinc bromide 8 undergoes facile 1,4-addition to enone 7, providing zinc enolate 9 as a single isomer. Subsequent heating of zinc enolate 9 following conjugate addition was sufficient to effect cyclization, affording the hydrazulene product (10) in a single step. However, NOESY studies indicated that the undesired syn-isomer (i.e., C20 and C7) was exclusively isolated as a 4:1 mixture of diastereomers at C3. Attempts to control the addition temperature or alter solvents did not invert the stereochemical outcome."
+        }
+      },
+      "evidence": {
+        "text_span": "While several cyclopentene annulation reactions were considered, the demanding gem-dimethyl moiety excluded most obvious options.11 After significant optimization, our observations indicated that 1,1-dimethylpropargylzinc bromide 8 undergoes facile 1,4-addition to enone 7, providing zinc enolate 9 as a single isomer.12 Subsequent heating of zinc enolate 9 following conjugate addition was sufficient to effect cyclization, affording the hydrazulene product (10) in a single step.13 To our surprise,14 NOESY studies indicated that the undesired syn-isomer (i.e., C20 and C7) was exclusively isolated as a 4:1 mixture of diastereomers at C3 (i.e., cis and trans ring junctures). Attempts to control the addition temperature or alter solvents did not invert the stereochemical outcome, and we propose that the bulky nature of the nucleophile was likely responsible for the undesired initial syn conjugate addition stereochemistry, perhaps through torsional steering effects.",
+        "section": "Main Text",
+        "image_refs": [
+          "786c9b63036a99115ecc848f413a0b87e0de651b31de3636df8714d491c5ee55.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "The cyclopentene annulation on cycloheptenone 7 yielded the undesired syn-isomer.",
+        "gap": "How to achieve the desired anti-stereochemistry for the cyclopentene annulation.",
+        "decision": "To use a cyclohexenone substrate (13) instead of cycloheptenone 7, followed by a successive ring expansion, expecting a more predictable stereochemical outcome in the cyclopentene annulation and interception of the original retrosynthesis at hydrazulene 4."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A cyclohexenone substrate was chosen to provide a more predictable stereochemical outcome in the cyclopentene annulation, with a successive ring expansion to intercept the original retrosynthesis at hydrazulene 4."
+      },
+      "evidence": {
+        "text_span": "In response, we rationalized that a cyclohexenone substrate would provide a more predictable stereochemical outcome in the cyclopentene annulation and a successive ring expansion would intercept the original retrosynthesis at hydrazulene 4.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A revised strategy involves starting from cyclohexenone 11.",
+        "gap": "How to synthesize ketone 12 from cyclohexenone 11.",
+        "decision": "To access ketone 12 from cyclohexenone (11) in a single step using a radical HAT coupling, expecting a good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1CCCCC1"
+        ],
+        "product_smiles": [
+          "C=C(CCCCO[Si](C)(C)C(C)(C)C)C1CCCCC1=O"
+        ],
+        "reagents": [
+          "Fe(acac)3",
+          "PhSiH3",
+          "Ethylene glycol"
+        ],
+        "solvent": "DCE",
+        "temperature": "60 °C",
+        "rxn_smiles": "O=C1CCCCC1.C=CCCCCO[Si](C)(C)C(C)(C)C.O=C1CCCCC1>>C=C(CCCCO[Si](C)(C)C(C)(C)C)C1CCCCC1=O",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 48,
+          "observation": "Ketone 12 was accessed from cyclohexenone (11) in a single step using a radical HAT coupling."
+        }
+      },
+      "evidence": {
+        "text_span": "We began by targeting the annulation substrate (13, Scheme 2). We were able to access ketone 12 from cyclohexenone (11) in a single step using a radical HAT coupling.15",
+        "section": "Main Text",
+        "image_refs": [
+          "2aa46b85823baa75f27ebcb53a25b78ef7803f43331d90bac888ec2cc2a91d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ketone 12 was synthesized.",
+        "gap": "How to convert ketone 12 into activated enone 13.",
+        "decision": "To convert ketone 12 to enone 13 via acylation and selenoxide elimination, expecting good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(CCCCO[Si](C)(C)C(C)(C)C)C1CCCCC1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=CCC(CCCCOS[Si](C)(C)C(C)(C)C)CC1=O"
+        ],
+        "reagents": [
+          "NaH",
+          "dimethyl carbonate",
+          "PhSeCl",
+          "pyridine",
+          "H2O2"
+        ],
+        "solvent": "THF",
+        "temperature": "reflux, then 0 °C",
+        "rxn_smiles": "C=C(CCCCO[Si](C)(C)C(C)(C)C)C1CCCCC1=O.COC(=O)OC.[NaH].Cl[Se]c1ccccc1.O=C(O)O>>COC(=O)C1=CCC(CCCCOS[Si](C)(C)C(C)(C)C)CC1=O",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 73,
+          "observation": "Acylation and selenoxide elimination provided activated enone 13 in 73% yield over 2 steps."
+        }
+      },
+      "evidence": {
+        "text_span": "Acylation and selenoxide elimination provided activated enone 13 in 73% yield over 2 steps.",
+        "section": "Main Text",
+        "image_refs": [
+          "2aa46b85823baa75f27ebcb53a25b78ef7803f43331d90bac888ec2cc2a91d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Activated enone 13 was synthesized. The key cyclopentene annulation was to be performed.",
+        "gap": "Achieving the desired anti-stereochemistry in the cyclopentene annulation.",
+        "decision": "To perform the cyclopentene annulation using propargylzinc (8) addition to enone 13, expecting the cyclohexenone substrate to provide a more predictable stereochemical outcome."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=CCC(CCCCOS[Si](C)(C)C(C)(C)C)CC1=O",
+          ""
+        ],
+        "product_smiles": [
+          "COC(=O)C1CC(=O)C2C(CCCCOS[Si](C)(C)C(C)(C)C)CCC12"
+        ],
+        "reagents": [
+          "propargylzinc (8)"
+        ],
+        "solvent": "DME",
+        "temperature": "0 -> 40 -> 80 °C",
+        "rxn_smiles": "COC(=O)C1=CCC(CCCCOS[Si](C)(C)C(C)(C)C)CC1=O>>COC(=O)C1CC(=O)C2C(CCCCOS[Si](C)(C)C(C)(C)C)CCC12",
+        "outcome": {
+          "valid": false,
+          "failure_mode": "wrong_stereochemistry",
+          "observation": "Proceeding to the key cyclopentene annulation, we were surprised to still observe the presence of the syn addition product at C7."
+        }
+      },
+      "evidence": {
+        "text_span": "Proceeding to the key cyclopentene annulation, we were surprised to still observe the presence of the syn addition product at C7.",
+        "section": "Main Text",
+        "image_refs": [
+          "2aa46b85823baa75f27ebcb53a25b78ef7803f43331d90bac888ec2cc2a91d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "The cyclopentene annulation on cyclohexenone 13 still yielded the undesired syn addition product at C7.",
+        "gap": "How to achieve the desired anti-stereochemistry and cis ring fusion.",
+        "decision": "To lower the temperature during the propargylzinc (8) addition to -40 °C, expecting the formation of the desired anti-isomer with exclusively cis ring fusion."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=CCC(CCCCOS[Si](C)(C)C(C)(C)C)CC1=O",
+          ""
+        ],
+        "product_smiles": [
+          "COC(=O)C1CC(=O)C2C(CCCCOS[Si](C)(C)C(C)(C)C)CCC12"
+        ],
+        "reagents": [
+          "propargylzinc (8)"
+        ],
+        "solvent": "DME",
+        "temperature": "-40 °C",
+        "rxn_smiles": "COC(=O)C1=CCC(CCCCOS[Si](C)(C)C(C)(C)C)CC1=O>>COC(=O)C1CC(=O)C2C(CCCCOS[Si](C)(C)C(C)(C)C)CCC12",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 65,
+          "dr": "6.3:1",
+          "observation": "Further lowering the temperature to -40 °C during the propargylzinc (8) addition resulted in the formation of the desired anti-isomer 14 (6.3:1) with exclusively cis ring fusion."
+        }
+      },
+      "evidence": {
+        "text_span": "Fortunately, further lowering the temperature to −40 °C during the propargylzinc (8) addition resulted in the formation of the desired anti-isomer 14 (6.3:1) with exclusively cis ring fusion.",
+        "section": "Main Text",
+        "image_refs": [
+          "2aa46b85823baa75f27ebcb53a25b78ef7803f43331d90bac888ec2cc2a91d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The desired anti-isomer 14 was obtained. The next step was ring expansion of the hydroindene system to access the required hydrazulene.",
+        "gap": "How to perform the ring expansion and introduce the diazoacetate moiety.",
+        "decision": "To hydrogenate the cyclopentene, then deprotonate a designer diazoacetate (15) with LDA for nucleophilic addition to the neopentylic ketone on hydroindene 14, furnishing alcohol 16. Catalytic Rh2(TFA)4 would then initiate the ring-expansion rearrangement to beta-ketoester 17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1CC(=O)C2C(CCCCOS[Si](C)(C)C(C)(C)C)CCC12",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCCCOS[Si](C)(C)C(C)(C)C)CCC21"
+        ],
+        "reagents": [
+          "Pd/C (10 wt %)",
+          "H2",
+          "LDA",
+          "Rh2(TFA)4 (1 mol %)"
+        ],
+        "solvent": "EtOAc, THF, pentane/CH2Cl2",
+        "temperature": "18 °C, -78 °C",
+        "rxn_smiles": "",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 85,
+          "observation": "Following hydrogenation of the cyclopentene, deprotonation of 15 with LDA enabled nucleophilic addition to the neopentylic ketone on hydroindene 14, furnishing alcohol 16. Catalytic Rh2(TFA)4 was found to be uniquely effective in initiating the ring-expansion rearrangement, resulting in β-ketoester 17 as a mixture of three inseparable isomers."
+        }
+      },
+      "evidence": {
+        "text_span": "Following hydrogenation of the cyclopentene, we shifted our focus to ringexpansion of the hydroindene system to access the required hydrazulene (4). Significant effort was made on this front, and it was found necessary to use a designer diazoacetate (15).16 Deprotonation of 15 with LDA enabled nucleophilic addition to the neopentylic ketone on hydroindene 14, furnishing alcohol 16. 17 Catalytic Rh2(TFA)4 was found to be uniquely effective in initiating the ring-expansion rearrangement, resulting in β-ketoester 17 as a mixture of three inseparable isomers, which were putatively assigned to the enol and two ketone diastereomers.",
+        "section": "Main Text",
+        "image_refs": [
+          "2aa46b85823baa75f27ebcb53a25b78ef7803f43331d90bac888ec2cc2a91d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Beta-ketoester 17 was obtained as a mixture of isomers. The trimethylsilylethyl ester was chosen for selective decarboxylation.",
+        "gap": "Ensuring selective decarboxylation of the newly installed ester without affecting the preexistent methyl ester.",
+        "decision": "To use commercially available ethyl diazoacetate and tert-butyl diazoacetate for the rearrangement, expecting similar rearrangements and selective decarboxylation."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "incompatible_protecting_group",
+        "observation": "Commercially available ethyl diazoacetate and tert-butyl diazoacetate undergo similar rearrangements but ultimately proved to be synthetic impasses, as selective decarboxylation of the newly installed esters could not be accomplished in the presence of the neighboring, preexistent methyl ester."
+      },
+      "evidence": {
+        "text_span": "Commercially available ethyl diazoacetate and tert-butyl diazoacetate undergo similar rearrangements but ultimately proved to be synthetic impasses, as selective decarboxylation of the newly installed esters could not be accomplished in the presence of the neighboring, preexistent methyl ester.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "Previous attempts with ethyl and tert-butyl diazoacetates failed due to non-selective decarboxylation.",
+        "gap": "How to achieve selective decarboxylation of the newly installed ester.",
+        "decision": "To use a trimethylsilylethyl ester, which would allow selective decarboxylation with TBAF after prenylation, expecting concomitant TBS cleavage and DMP oxidation to yield aldehyde 19."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCCCOS[Si](C)(C)C(C)(C)C)CCC21"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21"
+        ],
+        "reagents": [
+          "NaH",
+          "prenyl bromide",
+          "TBAF",
+          "DMP"
+        ],
+        "solvent": "THF, CH2Cl2",
+        "temperature": "0 -> 18 °C",
+        "rxn_smiles": "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCCCOS[Si](C)(C)C(C)(C)C)CCC21.CC(C)=CCBr.[NaH].F[Si](F)(F)F.CC(=O)O[IH](=O)c1ccccc1>>COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 79,
+          "observation": "The trimethylsilylethyl ester thus proved vital, as following prenylation to form bicycle 18, treatment with TBAF resulted in the selective decarboxylation of the trimethylsilylethyl ester. Concomitant TBS cleavage produces the desired primary alcohol as a single diastereomer, which upon DMP oxidation results in aldehyde 19 in excellent yield (79%, 2 steps)."
+        }
+      },
+      "evidence": {
+        "text_span": "The trimethylsilylethyl ester thus proved vital, as following prenylation to form bicycle 18, treatment with TBAF resulted in the selective decarboxylation of the trimethylsilylethyl ester. Concomitant TBS cleavage produces the desired primary alcohol as a single diastereomer, which upon DMP oxidation results in aldehyde 19 in excellent yield (79%, 2 steps).17",
+        "section": "Main Text",
+        "image_refs": [
+          "2aa46b85823baa75f27ebcb53a25b78ef7803f43331d90bac888ec2cc2a91d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "A scalable route to aldehyde 19 was established. The next step was an aldol reaction to provide tricycle 20.",
+        "gap": "Achieving the aldol reaction to form tricycle 20.",
+        "decision": "To apply classic aldol conditions, expecting the formation of tricycle 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C2CCC(CCC=C(C)C)C2C(O)C1C(=O)OC(C)(C)C"
+        ],
+        "outcome": {
+          "valid": false,
+          "failure_mode": "decomposition",
+          "observation": "Unfortunately, classic aldol conditions lead to decomposition or, in most cases, return the starting aldehyde without any trace of desired tricycle 20."
+        }
+      },
+      "evidence": {
+        "text_span": "With a scalable route to aldehyde 19 established, we were optimistic about the aldol reaction proposed to provide tricycle 20. Unfortunately, classic aldol conditions lead to decomposition or, in most cases, return the starting aldehyde without any trace of desired tricycle 20.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "Classic aldol conditions failed to produce tricycle 20, leading to decomposition or unreacted starting material.",
+        "gap": "How to achieve the aldol reaction and cyclization to a stable product.",
+        "decision": "To use TsOH·H2O in CH2Cl2, hypothesizing that the aldol reaction to form tricycle 20 is highly reversible and that further lactonization would provide a powerful thermodynamic driving force for cyclization to caged lactone 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21"
+        ],
+        "reagents": [
+          "TsOH·H2O"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "18 °C",
+        "rxn_smiles": "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21.Cc1ccc([SH](=O)(O)O)cc1>>COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 46,
+          "observation": "TsOH·H2O in CH2Cl2 was the only set of conditions evaluated that resulted in a product of interest, forging caged lactone 21 slowly in moderate yield."
+        }
+      },
+      "evidence": {
+        "text_span": "In fact, TsOH·H2O in CH2Cl2 was the only set of conditions evaluated that resulted in a product of interest, forging caged lactone 21 slowly in moderate yield. We hypothesized that the aldol reaction to form tricycle 20 is likely highly reversible under most conditions, and perhaps even favors aldehyde 19 due to strain induced upon cyclization. Further lactonization of the aldol product (20) provides a powerful thermodynamic driving force for cyclization and highlights the opportune placement of the methyl ester.",
+        "section": "Main Text",
+        "image_refs": [
+          "2aa46b85823baa75f27ebcb53a25b78ef7803f43331d90bac888ec2cc2a91d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Caged lactone 21 was formed. The next step was to open or saponify the lactone.",
+        "gap": "How to open or saponify lactone 21.",
+        "decision": "To attempt opening or saponification of lactone 21 using various acidic or basic conditions (NaOMe/MeOH, Bu3SnOMe, Al(Oi-Pr)3/MeOH, KOH/H2O), expecting to obtain an open-chain product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC[C@@H]1C(=O)O[C@@H]2[C@H]3C(=O)C[C@H]4C[C@@H]([C@@H]21)[C@@H]3C4(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaOMe/MeOH",
+          "Bu3SnOMe",
+          "Al(Oi-Pr)3/MeOH",
+          "KOH/H2O"
+        ],
+        "outcome": {
+          "valid": false,
+          "failure_mode": "no_reaction",
+          "observation": "Attempts to reopen or saponify it (Table 1, 21 -> 24) with any number of acidic or basic conditions resulted in no reaction or decomposition (entries 1−4)."
+        }
+      },
+      "evidence": {
+        "text_span": "Formation of the lactone (21) seemed so favorable that attempts to reopen or saponify it (Table 1, 21 -> 24) with any number of acidic or basic conditions resulted in no reaction or decomposition (entries 1−4).",
+        "section": "Main Text",
+        "image_refs": [
+          "82dbc2b3603b25bb90ed6bcb7e87b47de48e0bd31b4da1c28f219548f9c6c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "Lactone 21 proved resistant to opening or saponification under various conditions.",
+        "gap": "How to irreversibly open the lactone and introduce a functional group that could be further transformed.",
+        "decision": "To open the lactone with AlMe3/N,O-dimethylhydroxylamine to afford a Weinreb amide, expecting it to be suitably stable and allow further transformation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC[C@@H]1C(=O)O[C@@H]2[C@H]3C(=O)C[C@H]4C[C@@H]([C@@H]21)[C@@H]3C4(C)C"
+        ],
+        "product_smiles": [
+          "CON(C)C(=O)C12C(=O)[C@@H](CCC=C(C)C)C(C)(C)C(=O)[C@@H]1CCC2(C)C"
+        ],
+        "reagents": [
+          "NHMe(OMe)·HCl",
+          "AlMe3"
+        ],
+        "solvent": "PhMe",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 85,
+          "observation": "Opening the lactone with AlMe3/N,O-dimethylhydroxylamine to afford the Weinreb amide proceeded smoothly (entry 5)."
+        }
+      },
+      "evidence": {
+        "text_span": "We concluded that the lactone would need to be opened in an irreversible fashion and hypothesized that an amide would be suitably stable. While this approach seemed promising, it introduced the eventual synthetic challenge of needing to activate an extremely hindered amide in order to progress with our plans. For example, opening the lactone with AlMe3/N,O-dimethylhydroxylamine to afford the Weinreb amide proceeded smoothly (entry 5)",
+        "section": "Main Text",
+        "image_refs": [
+          "82dbc2b3603b25bb90ed6bcb7e87b47de48e0bd31b4da1c28f219548f9c6c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The Weinreb amide 25 was formed smoothly.",
+        "gap": "How to further transform the Weinreb amide 25.",
+        "decision": "To oxidize the Weinreb amide 25, expecting it to be transformable into the desired product 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CON(C)C(=O)C12C(=O)[C@@H](CCC=C(C)C)C(C)(C)C(=O)[C@@H]1CCC2(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "outcome": {
+          "valid": false,
+          "failure_mode": "no_reaction",
+          "observation": "Following oxidation, we were unable to further transform amide 25 in a useful fashion (25 -> 2)."
+        }
+      },
+      "evidence": {
+        "text_span": "but following oxidation, we were unable to further transform amide 25 in a useful fashion (25 -> 2).",
+        "section": "Main Text",
+        "image_refs": [
+          "5f5f6a03d93262a37dd3e350ba19cbb2d574ef4e4f12ec5bf1d0fa8540183eb6.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The Weinreb amide 25 could not be further transformed. Other amides were considered.",
+        "gap": "How to form a transformable amide.",
+        "decision": "To form the unsubstituted ammonia-derived amide and dimethylamide, expecting them to be transformable."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC[C@@H]1C(=O)O[C@@H]2[C@H]3C(=O)C[C@H]4C[C@@H]([C@@H]21)[C@@H]3C4(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)=CCC[C@@H]1C(=O)C2(C(N)=O)[C@@H](CCC2(C)C)C(=O)C1(C)C",
+          "CC(C)=CCC[C@@H]1C(=O)C2(C(=O)N(C)C)[C@@H](CCC2(C)C)C(=O)C1(C)C"
+        ],
+        "reagents": [
+          "NH4Cl/AlMe3",
+          "NHMe2·HCl/AlMe3"
+        ],
+        "outcome": {
+          "valid": false,
+          "failure_mode": "decomposition",
+          "observation": "Some amides, such as the unsubstituted ammonia-derived amide, were also formed successfully (entry 6), but subsequent oxidation resulted in decomposition. Many disubstituted amides simply failed to form, as was the case with dimethylamide (entry 7)."
+        }
+      },
+      "evidence": {
+        "text_span": "Some amides, such as the unsubstituted ammonia-derived amide, were also formed successfully (entry 6), but subsequent oxidation resulted in decomposition. Many disubstituted amides simply failed to form, as was the case with dimethylamide (entry 7).",
+        "section": "Main Text",
+        "image_refs": [
+          "82dbc2b3603b25bb90ed6bcb7e87b47de48e0bd31b4da1c28f219548f9c6c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Previous attempts to form and transform amides from lactone 21 failed.",
+        "gap": "How to form a stable and transformable amide from lactone 21.",
+        "decision": "To install aniline (entry 8) and oxidize the revealed alcohol, providing anilide 22, expecting good yield and further transformation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)=CCC[C@@H]1C(=O)O[C@@H]2[C@H]3C(=O)C[C@H]4C[C@@H]([C@@H]21)[C@@H]3C4(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21"
+        ],
+        "reagents": [
+          "PhNH2·HCl",
+          "AlMe3",
+          "DMP"
+        ],
+        "solvent": "PhMe, CH2Cl2",
+        "temperature": "0 -> 18 °C",
+        "rxn_smiles": "CC(C)=CCC[C@@H]1C(=O)O[C@@H]2[C@H]3C(=O)C[C@H]4C[C@@H]([C@@H]21)[C@@H]3C4(C)C.Cl.N.c1ccccc1.CC(=O)O[IH](=O)c1ccccc1>>COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 70,
+          "observation": "Fortunately, we were able to install aniline (entry 8) and oxidize the revealed alcohol, providing anilide 22 (Scheme 2) in good yield (70%, 2 steps)."
+        }
+      },
+      "evidence": {
+        "text_span": "Fortunately, we were able to install aniline (entry 8) and oxidize the revealed alcohol, providing anilide 22 (Scheme 2) in good yield (70%, 2 steps).",
+        "section": "Main Text",
+        "image_refs": [
+          "2aa46b85823baa75f27ebcb53a25b78ef7803f43331d90bac888ec2cc2a91d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Anilide 22 was successfully synthesized. The next goal was to methanolyze the anilide to the methyl ester, targeting homoadamantane 2 via Dieckmann cyclization.",
+        "gap": "How to convert the anilide to a methyl ester.",
+        "decision": "To directly install a methyl ester with MeOH/H+, expecting to achieve the desired transformation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21"
+        ],
+        "reagents": [
+          "MeOH",
+          "H+"
+        ],
+        "outcome": {
+          "valid": false,
+          "failure_mode": "no_reaction",
+          "observation": "The direct installation of a methyl ester with MeOH/H+ was not successful."
+        }
+      },
+      "evidence": {
+        "text_span": "We next aimed to methanolyze the anilide (22) to the methyl ester, targeting homoadamantane 2 via Dieckmann cyclization. The direct installation of a methyl ester with MeOH/H+ was not successful;",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 18,
+      "thought": {
+        "background": "Direct methanolysis of anilide 22 to the methyl ester failed.",
+        "gap": "How to convert the anilide to a methyl ester and induce Dieckmann cyclization.",
+        "decision": "To treat anilide 22 with Me3OBF4 (methyl-Meerwein’s salt) to form the methyl imidate, which could then be hydrolyzed to the methyl ester, expecting direct cyclization to the homoadamantane cage."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21"
+        ],
+        "reagents": [
+          "Me3OBF4",
+          "2,6-di-tert-butylpyridine (DTBP)",
+          "EtOAc/HCl"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "18 °C",
+        "rxn_smiles": "COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21.C[O+](C)C.CC(C)(C)c1cccnc1C(C)(C)C>>COC(=O)C1C(C(=O)OC(C)(C)C)C(=O)C2C(CCC=C(C)C)CCC21",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 67,
+          "observation": "Excitingly, we observed direct cyclization to the homoadamantane cage instead, isolating imine 23. Following optimization, 2,6-di-tert-butylpyridine (DTBP) was added to suppress decomposition of the prenyl group, and an acidic workup was performed to hydrolyze the imine product and provide access to trione 2 in a single step."
+        }
+      },
+      "evidence": {
+        "text_span": "however, we believed that treatment with Me3OBF4 (methyl-Meerwein’s salt) would form the methyl imidate, which could then be hydrolyzed to the methyl ester.18 Excitingly, we observed direct cyclization to the homoadamantane cage instead, isolating imine 23. Mechanistically, we propose that methyl imidate formation likely occurs first. We then envision that one of two scenarios is likely for bond construction. In one case, enol addition would occur directly to the imidate to form a particularly sterically hindered tetrahedral intermediate. Alternatively, elimination of MeOH or Me2O could form a nitrilium that can cyclize to the observed imine (23). Following optimization, 2,6-di-tertbutylpyridine (DTBP) was added to suppress decomposition of the prenyl group, and an acidic workup was performed to hydrolyze the imine product and provide access to trione 2 in a single step.",
+        "section": "Main Text",
+        "image_refs": [
+          "2aa46b85823baa75f27ebcb53a25b78ef7803f43331d90bac888ec2cc2a91d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Trione 2 was successfully synthesized. The final step was to install the benzoyl group to obtain hypersampsone M (1).",
+        "gap": "How to achieve bridgehead acylation on the homoadamantane core.",
+        "decision": "To attempt variations of the Danishefsky protocol involving an intermediate bridgehead iodide, as well as Shair’s direct bridgehead acylation protocol, expecting to install the benzoyl group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiTMP",
+          "BzCl"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 -> -35 °C",
+        "rxn_smiles": "",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 20,
+          "observation": "Deuterium incorporation experiments with LiTMP showed that no deprotonation occurs at -78 °C, whereas complete decomposition is observed at 0 °C. A screen of several intermediary temperatures established that 40% deuterium incorporation could be achieved at -35 °C. Despite the difficulty in generating the required anion, treatment with BzCl directly affords hypersampsone M (1) in moderate yield with an equivalent amount of isolated starting trione (2)."
+        }
+      },
+      "evidence": {
+        "text_span": "To install the final benzoyl group, we attempted variations of the Danishefsky protocol involving an intermediate bridgehead iodide,3b as well as Shair’s direct bridgehead acylation protocol.3p Deuterium incorporation experiments with LiTMP showed that no deprotonation occurs at −78 °C, whereas complete decomposition is observed at 0 °C. A screen of several intermediary temperatures established that 40% deuterium incorporation could be achieved at −35 °C. It has been shown that deprotonation of bridgehead homoadamantane protons is challenging compared to those on bicyclo[3.3.1]nonane systems.19 Interestingly, the challenge associated with bridgehead acylations in the sister BPAP systems seems to stem from lack of anion reactivity, rather than generation of the stabilized anion itself.3h This was found to be in stark contrast with homoadamantane 2, as despite the difficulty in generating the required anion, treatment with BzCl directly affords hypersampsone M (1) in moderate yield with an equivalent amount of isolated starting trione (2).",
+        "section": "Main Text",
+        "image_refs": [
+          "2aa46b85823baa75f27ebcb53a25b78ef7803f43331d90bac888ec2cc2a91d3c.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "IR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield not explicitly stated, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 15,
+        "unit": "steps",
+        "interpretation": "Total steps from cyclohexenone to hypersampsone M."
+      },
+      "Total Steps": {
+        "value": 15,
+        "unit": "steps",
+        "interpretation": "Total steps from cyclohexenone to hypersampsone M."
+      },
+      "Failed Attempts Count": {
+        "value": 6,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly mentioned failed attempts in the synthesis."
+      }
+    },
+    "significance": "This work represents the first total synthesis of hypersampsone M, an archetypal member of the homoadamantane PPAP subclass, which previously had no syntheses despite its significant scope and bioactivity. The route establishes a potentially general strategy for synthesizing related homoadamantane PPAPs, particularly through the enabling cyclopentene annulation method for installing highly substituted five-membered rings."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.4c07007",
+      "pmcid": "PMC11258692",
+      "title": "Total Synthesis of Hypersampsone M.",
+      "authors": "Samkian AE, Virgil SC, Stoltz BM.",
+      "journal": "J Am Chem Soc",
+      "year": 2024,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC11258692?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/48e19311-523a-4296-9e7f-bbeb22736150.zip",
+      "parsed_at": "2026-05-11T06:33:17.420863+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 43,
+    "parseable": 33,
+    "canonicalized": 28,
+    "invalid": 10,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)=CC[C@@H]1C(=O)C2(C)C(C)(C)[C@H]3CC[C@@H]4C(C)(C)[C@@H]2[C@@H]4C(=O)C1C(=O)c5ccccc5",
+      "BrZnC(C)(C)C#CH",
+      "BrZnC#CC(C)(C)C",
+      "BrZnC#CC(C)(C)C",
+      "O=C(C(=N2)C(=O)OC(C)(C)C)C[Si](C)(C)C",
+      "COC(=O)C1C2CCC(CCCCOS[Si](C)(C)C(C)(C)C)C2C(O)C1C(=N2)C(=O)OC(C)(C)C",
+      "CC(C)=CCC[C@@H]1C(O)[C@H](R)[C@H]2[C@@H]1[C@@H]3C[C@H]4C(C)(C)[C@@H]3[C@@H]2C(=O)C4",
+      "CC(C)=CCC[C@@H]1C(=O)C2(C(=O)C3C(C)(C)CC[C@H]3C(=O)C1(C)C)O2",
+      "CC(C)=CC[C@@H]1C(=O)C2(C)C(C)(C)[C@H]3CC[C@@H]4C(C)(C)[C@@H]2[C@@H]4C(=O)C1O",
+      "CC(C)=CC[C@@H]1C(=O)C2(C)C(C)(C)[C@H]3CC[C@@H]4C(C)(C)[C@@H]2[C@@H]4C(=O)C1C(=O)c5ccccc5"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "Hypersampsone M",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

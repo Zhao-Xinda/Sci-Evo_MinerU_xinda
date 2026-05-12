@@ -1,0 +1,654 @@
+{
+  "trace_id": "TS-PMC13066112",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Lenalidomide",
+    "smiles": "Nc1cccc2c1CN(C1CCCC(=O)NC1=O)C(=O)C2",
+    "natural_product_class": "unspecified",
+    "structural_features": {
+      "molecular_weight": 259.23,
+      "stereocenters": 1,
+      "ring_systems": "isoindolinone, glutarimide",
+      "key_motifs": [
+        "glutarimide",
+        "isoindolinone",
+        "aromatic amine"
+      ]
+    },
+    "motivation": "Immunomodulatory imide drugs (IMiDs) like lenalidomide are widely used in treating multiple myeloma. Existing production routes are lengthy and inefficient, necessitating more efficient and broadly applicable synthetic strategies. This work aims to develop an integrated continuous flow platform for accelerated synthesis of lenalidomide and pomalidomide, and their derivatives, to improve efficiency, reduce reaction times, and enable gram-scale production without column chromatography.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Ito",
+        "year": 2010,
+        "doi": "10.1126/science.1186150",
+        "key_strategy": "Discovery of IMiDs binding to cereblon (CRBN), enabling their use as CRBN-recruiting ligands in PROTACs."
+      },
+      {
+        "lead_author": "Ivanova",
+        "year": 2022,
+        "doi": "10.1007/s41615-022-00309-x",
+        "key_strategy": "Stepwise continuous flow synthesis of pomalidomide from Boc-L-glutamine, with 38% overall yield. Individual steps were not telescoped in series."
+      }
+    ],
+    "success_criteria": {
+      "yield_target_percent": 60,
+      "lls_target": 3,
+      "scale_target": "gram-scale",
+      "stereochemistry_required": true,
+      "free_text": "Eliminate intermediate work-up and isolation steps, achieve completion within short residence times, improve solvent compatibility, and avoid column chromatography."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "Reduction of nitro group to amine in the isoindolinone ring.",
+        "named_strategy": "Catalytic Hydrogenation",
+        "reasoning": "This is a common final step for IMiDs, converting the nitro precursor to the active drug. The challenge is to perform this in continuous flow with solvent compatibility.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Formation of the glutarimide ring from an isoindolinone precursor and 3-aminopiperidine-2,6-dione.",
+        "named_strategy": "Cyclization",
+        "reasoning": "This step forms the key glutarimide moiety. The challenge is to ensure complete cyclization and avoid uncyclized intermediates in a flow system.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Bromination of methyl 2-methyl-3-nitrobenzoate to methyl 2-bromomethyl-3-nitrobenzoate.",
+        "named_strategy": "Wohl-Ziegler bromination (photobromination)",
+        "reasoning": "This initial step introduces a reactive site for subsequent cyclization. Photobromination is chosen over thermal conditions to avoid explosion hazards and leverage flow advantages.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The strategy for lenalidomide involves a three-step continuous flow synthesis starting from commercially available methyl 2-methyl-3-nitrobenzoate. The key steps are photobromination, cyclization, and catalytic hydrogenation. A common intermediate (4) is identified, which can be further oxidized to produce pomalidomide, demonstrating a convergent approach for both IMiDs. The overall strategy focuses on overcoming solvent compatibility and purification challenges inherent in batch processes by leveraging continuous flow advantages."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Immunomodulatory imide drugs (IMiDs) like lenalidomide and pomalidomide are crucial for treating multiple myeloma and as CRBN-recruiting ligands in PROTACs. Existing syntheses are often lengthy, inefficient, and involve multiple batch steps with laborious workups.",
+        "gap": "There is a need for more efficient, broadly applicable, and integrated continuous flow synthetic strategies for IMiDs, particularly those that overcome solvent compatibility issues and enable uninterrupted synthesis without intermediate isolation.",
+        "decision": "To address the inefficiencies of current IMiD syntheses, we will develop a fully integrated continuous flow platform for lenalidomide and pomalidomide, aiming for shorter reaction times, simplified workups, and gram-scale production."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Identified the need for an improved synthetic route for IMiDs, focusing on continuous flow chemistry to address limitations of batch processes."
+      },
+      "evidence": {
+        "text_span": "Immunomodulatory imide drugs are widely used in the treatment of multiple myeloma, yet existing production routes are often lengthy and inefficient, underscoring the need for more efficient and broadly applicable synthetic strategies. Herein, we report the synthesis of lenalidomide (63% overall yield) and pomalidomide (62% overall yield) using an integrated continuous flow platform with residence times of 42 minutes and 52 minutes, respectively. Additionally, both continuous flow processes are readily conducted on gram scale. Compared with known methods, our approach improves solvent compatibility across the reaction sequence and enables uninterrupted continuous flow synthesis of both drugs. The products are obtained without the need for column chromatography, and both immunomodulatory imide drugs (IMiDs) can be accessed from a common intermediate through our developed route.",
+        "section": "Abstract"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The first step in lenalidomide synthesis is the bromination of methyl 2-methyl-3-nitrobenzoate (1). Conventional thermal conditions with radical initiators (AIBN, BPO) pose explosion hazards. Photobromination avoids these risks and flow setups offer advantages like superior light penetration and precise control.",
+        "gap": "Optimizing solvent for photobromination in a flow system, as MeOAc, a common solvent in batch, gave low yield.",
+        "decision": "To achieve efficient photobromination, we will screen solvents for the reaction of 1 with NBS under flow photochemical conditions, expecting acetonitrile to be a better medium based on preliminary results."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1cccc([N+](=O)[O-])c1C"
+        ],
+        "product_smiles": [
+          "COC(=O)c1c(Br)cccc1[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "1-bromopyrrolidine-2,5-dione"
+        ],
+        "solvent": "MeCN",
+        "time": "10 min",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Complete conversion of 1 to 2 was achieved in acetonitrile with a 10 min residence time at 403.2 W light intensity. This step was performed in a HANU Reactor I (11 mL work volume) irradiated at 460 nm.",
+        "yield_percent": 99
+      },
+      "evidence": {
+        "text_span": "Our three-step continuous flow synthesis of lenalidomide (5a) began with the bromination of commercially available methyl 2-methyl-3-nitrobenzoate (1) using 1-bromopyrrolidine-2,5-dione (NBS) to afford methyl 2-bromomethyl-3-nitrobenzoate (2) under flow in a Wohl-Ziegler bromination reactions shown in Supplementary Table 1. Conventional thermal conditions using radical initiators such as azobisisobutyronitrile (AIBN) and benzoyl peroxide (BPO) present explosion hazards, whereas photobromination avoids these reagents and associated risks44–48. In addition, the flow photochemical setup offers superior light penetration, precise control over residence time and temperature, and improved energy efficiency49–51 Since MeOAc, the solvent commonly used in batch photobromination, afforded only a 51% yield (Supplementary Table 1, Entry 1), we subsequently optimized the solvent and identified acetonitrile as the optimal medium (Supplementary Table 1, Entries 2-4). Using acetonitrile as the reaction solvent, we found that the conversion rate increased further as the light intensity decreased. A 10 min residence time (tR) at a light intensity of 403.2 W resulted in complete conversion of 1 (Supplementary Table 1, Entry 12).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The second step is a cyclization reaction where a base facilitates deprotonation and accelerates cyclization. DIPEA was identified as an optimal base in initial screening.",
+        "gap": "Despite using DIPEA, the cyclization reaction showed incomplete conversion, with uncyclized intermediate remaining, and extending residence time, increasing base equivalents, or raising temperature did not improve yield.",
+        "decision": "The incomplete cyclization suggests DIPEA might not be fully effective upon initial mixing. We need to investigate the activation of the base or substrate prior to the main reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1c(Br)cccc1[N+](=O)[O-]",
+          "O=C1CCCC(=O)N1"
+        ],
+        "product_smiles": [
+          "O=C1CCCC(N2Cc3c(cccc3[N+](=O)[O-])C2=O)C(=O)N1"
+        ],
+        "reagents": [
+          "DIPEA"
+        ],
+        "solvent": "DMF"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 64,
+        "failure_mode": "low_yield",
+        "observation": "Initial cyclization with DIPEA in DMF gave only 64% yield. Extending residence time, increasing base equivalents, or raising temperature did not improve the yield. 1H NMR showed uncyclized intermediate."
+      },
+      "evidence": {
+        "text_span": "In the second step of the cyclization reaction (Supplementary Table 2), the base plays a key role in this reaction, facilitating the deprotonation of the ammonium salt and acceleration of the cyclization step. We first screened various organic and inorganic bases and identified DIPEA as the optimal base, affording the product in 64% yield (Supplementary Table 2, Entry 7). 1H NMR analysis of the reaction mixture discovered peaks corresponding to the uncyclized intermediate. However, extending the residence time failed to improve the yield. Similarly, neither increasing the equivalents of base nor raising the temperature improved the yield (Supplementary Table 2, Entries 8–10).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "The previous attempt at cyclization with DIPEA resulted in low yield and uncyclized intermediate, suggesting insufficient activation of the base or substrate.",
+        "gap": "How to ensure full activation of DIPEA and the substrate for complete cyclization in a continuous flow setup.",
+        "decision": "To improve cyclization yield, we will preheat the DMF solution of the substrate (3) and DIPEA at 50 °C for 10 min before introducing it into the main reactor, expecting this pre-activation to facilitate deprotonation and improve conversion."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1c(Br)cccc1[N+](=O)[O-]",
+          "O=C1CCCC(=O)N1"
+        ],
+        "product_smiles": [
+          "O=C1CCCC(N2Cc3c(cccc3[N+](=O)[O-])C2=O)C(=O)N1"
+        ],
+        "reagents": [
+          "DIPEA"
+        ],
+        "solvent": "DMF",
+        "temperature": "80 °C",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "Preheating the DMF solution of 3 and DIPEA at 50 °C for 10 min (until blue-purple coloration) before introducing it to Reactor II at 80 °C for 30 min residence time successfully increased the yield to 83%."
+      },
+      "evidence": {
+        "text_span": "This troubling issue prompted us to consider the cause of the incomplete cyclization, and we speculated that DIPEA may not have fully performed its intended role after mixing. We observed that a DMF solution of 3 and DIPEA gradually darkened upon heating, which could be attributed to the slow deprotonation of 3. To investigate this effect, we performed a control experiments (Supplementary Table 2, Entries 11–12). Specifically, 3 was preheated with DIPEA in DMF at 50 °C for 10 min until a blue–purple coloration developed, and the resulting mixture was then introduced into reactor II at 80 °C with a residence time of 30 min, successfully affording the desired product in an increased yield of 83% (Supplementary Table 2, Entry 11).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The final step for lenalidomide is the reduction of the nitro group. Batch reductions often use water or methanol, leading to paste-like mixtures and potential blockages in flow systems. DMF is a suitable solvent for the previous step.",
+        "gap": "Identify an optimal catalyst and flow conditions for the hydrogenation of lenalidomide precursor 4 in DMF to avoid solvent switching and compatibility issues.",
+        "decision": "To achieve efficient hydrogenation in flow, we will screen commercially available catalysts in DMF and optimize flow rate, temperature, and back pressure, expecting 5% Pd/Al2O3 to be effective."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1CCCC(N2Cc3c(cccc3[N+](=O)[O-])C2=O)C(=O)N1"
+        ],
+        "product_smiles": [
+          "Nc1cccc2c1CN(C1CCCC(=O)NC1=O)C(=O)C2"
+        ],
+        "catalyst": "5% Pd/Al2O3",
+        "solvent": "DMF",
+        "temperature": "100 °C",
+        "time": "2 min",
+        "atmosphere": "H2",
+        "stoichiometry": {}
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Hydrogenation of 4 using 5% Pd/Al2O3 at 100 °C, 0.5 MPa back pressure, and 2 min residence time in DMF yielded lenalidomide 5a in 98%. This was performed in a packed-bed reactor (2 mL work volume)."
+      },
+      "evidence": {
+        "text_span": "In the third step of the synthesis, the batch reduction of lenalidomide precursor 4 is typically carried out using water or methanol as the solvent, which leads to a paste-like reaction mixture due to the low solubility of 417,22,23. Such a mixture is likely to cause blockages in the piping and packed bed, and to avoid a solvent switch and potential compatibility issues with the solvent used in the previous step, we selected DMF as the reaction solvent, which also proved suitable for the hydrogenation step in our flow setup. Initial screening of the commercially available catalysts identified 5% Pd/Al2O3 as the optimal catalyst (Supplementary Table 3, Entries 1–4). Further optimization of the flow rate established the optimal conditions as 5% Pd/Al2O3 at 100 °C, back pressure 0.5 MPa, and tR = 2 min, leading to the production of lenalidomide 5a in 98% yield (Supplementary Table 3, Entry 6).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "The three-step continuous flow synthesis of lenalidomide (5a) has been successfully optimized, achieving high yields and short residence times.",
+        "gap": "Evaluate the scalability of the developed flow system for lenalidomide production.",
+        "decision": "To demonstrate scalability, we will conduct a gram-scale synthesis of 5a using the optimized continuous flow conditions, expecting to achieve significant productivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)c1cccc([N+](=O)[O-])c1C"
+        ],
+        "product_smiles": [
+          "Nc1cccc2c1CN(C1CCCC(=O)NC1=O)C(=O)C2"
+        ],
+        "reagents": [
+          "1-bromopyrrolidine-2,5-dione",
+          "DIPEA",
+          "H2"
+        ],
+        "catalyst": "5% Pd/Al2O3",
+        "solvent": "MeCN, DMF",
+        "temperature": "room temperature, 80 °C, 100 °C",
+        "time": "42 min (total residence time)",
+        "scale": "gram-scale"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "observation": "A gram-scale synthesis of 5a was successfully conducted. After 2 hours of continuous operation, 1.03 g of 5a was obtained, corresponding to a productivity of 0.515 g/h. The overall yield was 63% with a total residence time of 42 min, and no column chromatography was required.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "After successful stepwise optimization, we eventually developed a three-step continuous flow total synthesis of lenalidomide 5a from commercially available starting materials, as summarized in Fig. 2; a photograph of the experimental setup is provided in Supplementary Fig. 1. The synthesis of lenalidomide 5a started with the photo-bromination of 1 (0.6 M, 1.0 equiv.) with NBS (0.9 M, 1.5 equiv.) using MeCN as the solvent. The photochemical flow system comprised HANU Reactor I (11 mL work volume), an LED light source equipped with a recirculating chiller, and associated optics. The stream was irradiated at 460 nm at room temperature (lamp power 403.2 W) with a residence time of 10 min. Prior to mixing, a DMF solution of 3 (0.39 M, 1.3 equiv.) and DIPEA (0.90 M, 3.0 equiv.) was preheated at 50 °C for 10 min to develop a blue–purple coloration. This preactivated solution was then merged via a T-mixer with the reaction stream from the first step (bromide 2), and the combined stream was directly delivered to PolyTetraFluroEthylene (PTFE) Reactor II (1.6 mm i.d., 66 mL work volume) at 80 °C with a residence time of 30 min. Subsequently, the output solution 4 from Reactor II was treated with H2 (20 sccm) and passed through a 5% Pd/Al2O3 packed-bed reactor (2 mL work volume) at 100 °C with a residence time of 2 min and a back pressure of 0.5 MPa. Finally, lenalidomide (5a) was obtained by evaporation of the collected reaction mixture, followed by precipitation upon addition of water. Compared with the traditional three-step batch synthesis, which requires over 40 h, our continuous flow synthesis eliminated intermediate work-up and isolation steps, and achieved completion of the sequence within a total residence time of 42 min, delivering lenalidomide in an overall yield of 63%. Notably, no column chromatography was required for purification in the final step; simple crystallization afforded the pure product. To evaluate the scalability of our flow system, we conducted a gram-scale synthesis of 5a. After 2 h of continuous operation, 1.03 g of 5a was obtained, corresponding to a productivity of 0.515 g/h. Moreover, the versatility of this assembled continuous flow system was exemplified by the successful synthesis of a series of lenalidomide derivatives 5b–5e with the same procedure, leading to the overall yields ranging from 40% to 45% (please see SI for details).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Given the structural similarity between lenalidomide and pomalidomide, the next goal is to extend the continuous flow strategy to pomalidomide. This requires installing an additional carbonyl group via C(sp3)-H oxidation of intermediate 4.",
+        "gap": "Identify an effective oxidation protocol for converting 4 to 6, as initial attempts with common oxidants (SeO2, I2, PhI(OAc)2, H2O2) failed or gave very low conversion.",
+        "decision": "To achieve the desired oxidation, we will explore conditions inspired by a reported benzylic oxidation side reaction, specifically using NBS with water as a nucleophilic reagent, and then optimize photoinduced conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1CCC(N2C(=O)c3cccc([N+](=O)[O-])c3C2=O)C(=O)N1"
+        ],
+        "product_smiles": [
+          "O=C1CCC(N2C(=O)c3cccc([N+](=O)[O-])c3C2=O)C(=O)N1"
+        ],
+        "reagents": [
+          "NBS",
+          "H2O"
+        ],
+        "solvent": "MeCN",
+        "temperature": "room temperature",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "Using NBS in MeCN:H2O (1:0.1) with 460 nm (20 W) irradiation at room temperature for 1 hour yielded 6 in 97%. Initial attempts with SeO2, I2, PhI(OAc)2, and H2O2 failed or gave very low conversion. A previous method for thalidomide derivatives also failed to produce 6. Adding water with excess NBS initially gave 82% conversion.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "Upon completion of the continuous flow synthesis of lenalidomide, we therefore designed a synthetic route that relies on the C(sp3)-H oxidation of 4 to install an additional carbonyl group, thereby furnishing the pomalidomide precursor 6 via a pathway distinct from previously reported methods. Initial screening of the benzylic C(sp3)–H oxidation protocols revealed that SeO2, I2, and PhI(OAc)2 all failed to convert 4 to 6, leaving the starting material essentially unchanged (Table 1, Entries 1–3). Using H2O2 as the oxidant afforded merely 5% conversion (Table 1, Entry 4). A previously reported method for synthesizing thalidomide derivatives described a benzylic oxidation side reaction52. Inspired by this report, we applied the same conditions to 4, but observed only consumption of the starting material without formation of 6 (Table 1, Entry 5). Pleasingly, adding water as a nucleophilic reagent along with a large excess of NBS successfully promoted the oxidation, leading to an 82% conversion (Table 1, Entry 6). A plausible mechanism involves over-bromination of 4 to the corresponding unstable dibromide 4a, followed by the nucleophilic substitution by H2O to afford 4b, and final dehydration furnished the desired product 6. Encouraged by this outcome, we next screened a series of photoinduced conditions and identified NBS in MeCN:H2O (1:0.1) with 460 nm (20 W) irradiation at room temperature as optimal, which delivered 6 in 97% yield (Table1, Entry 7). This photoinduced strategy was proven to be more efficient than the thermal initiation strategy, requiring only 1 h to achieve completion.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The photoinduced oxidation of 4 to 6 was successful in batch using MeCN:H2O. However, translating this to continuous flow proved challenging due to poor solubility of 4 in MeCN, leading to precipitation.",
+        "gap": "Find a solvent system that ensures homogeneous feed and prevents precipitation of 4 under continuous flow conditions for the photoinduced oxidation.",
+        "decision": "We will attempt to use CCl4:H2O as a solvent system, as 4 forms a stable suspension in CCl4, suggesting a non-settling slurry feed might be possible. If this fails, a mixed solvent system will be explored."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1CCC(N2C(=O)c3cccc([N+](=O)[O-])c3C2=O)C(=O)N1"
+        ],
+        "product_smiles": [
+          "O=C1CCC(N2C(=O)c3cccc([N+](=O)[O-])c3C2=O)C(=O)N1"
+        ],
+        "reagents": [
+          "NBS"
+        ],
+        "solvent": "CCl4:H2O (1:0.1)",
+        "temperature": "room temperature",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Using CCl4:H2O (1:0.1) as the solvent under otherwise identical conditions failed to furnish 6. Poor solubility of 4 in MeCN led to precipitation within the tubing, preventing direct translation of batch conditions."
+      },
+      "evidence": {
+        "text_span": "However, translating this photoinduced strategy to continuous flow proved challenging because poor solubility of 4 in MeCN led to the precipitation within the tubing. Our most straightforward approach was therefore to identify a solvent system that would ensure a homogeneous feed and suppress precipitation under continuous flow conditions. Disappointingly, none of the commonly used solvents dissolved 4 to an appreciable extent (Supplementary Table 4). Interestingly, we noticed that 4 formed a stable suspension in carbon tetrachloride (CCl4), suggesting a nonsettling slurry feed could be used under continuous flow operation. However, using CCl4:H2O (1:0.1) as the solvent under otherwise identical conditions failed to furnish 6 (Table 1, Entry 8).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "The previous attempt to translate the photoinduced oxidation to continuous flow failed due to solubility issues and precipitation of intermediate 4. CCl4:H2O alone was not effective.",
+        "gap": "Find a mixed solvent system that can dissolve 4 sufficiently for continuous flow operation while maintaining high reaction yield.",
+        "decision": "To resolve the solubility issue, we will try a mixed solvent system of MeCN:CCl4:H2O, expecting it to provide a homogeneous feed and enable efficient photoinduced oxidation in continuous flow."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1CCC(N2C(=O)c3cccc([N+](=O)[O-])c3C2=O)C(=O)N1"
+        ],
+        "product_smiles": [
+          "O=C1CCC(N2C(=O)c3cccc([N+](=O)[O-])c3C2=O)C(=O)N1"
+        ],
+        "reagents": [
+          "NBS"
+        ],
+        "solvent": "MeCN:CCl4:H2O (1:1:0.1)",
+        "temperature": "room temperature",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Employing a MeCN:CCl4:H2O (1:1:0.1) mixed solvent afforded 6 in 97% yield in batch. Under continuous flow, with 4 (0.2 M) and NBS (0.80 M) stirred for 5 min and fed into the photochemical system (460 nm, 576 W) at room temperature with a 10 min residence time, 6 was obtained in 98% yield. This resolved the in-line settling of 4.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "By contrast, employing a MeCN;CCl4;H2O (1:1:0.1) mixed solvent afforded 6 in 97% yield (Table1, Entry 9). On the basis of our solubility studies of lenalidomide precursor 4, the reaction solvent for this flow step was revised, thereby resolving the in-line settling of 4; optimization details are provided in Supplementary Table 5. Using a mixed solvent of MeCN;CCl4;H2O (1:1:0.1), solutions of 4 (0.2 M) and NBS (0.80 M) were stirred for 5 min and then fed into the continuous flow photochemical system, which was irradiated at 460 nm (576 W) at room temperature with a 10 min residence time, affording 6 in 98% yield (Supplementary Table 5, Entry 5).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The first step of pomalidomide synthesis (oxidation of 4 to 6) was successfully implemented in continuous flow using a MeCN:CCl4:H2O mixed solvent. The next step is hydrogenation, similar to lenalidomide synthesis.",
+        "gap": "Directly feeding the stream from the oxidation step into the hydrogenation system using previously optimized conditions for lenalidomide failed.",
+        "decision": "The failure is attributed to solvent vaporization and product precipitation in the packed bed at 100 °C. We need to suppress solvent boiling and improve solubility for the hydrogenation step in continuous flow."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1CCC(N2C(=O)c3cccc([N+](=O)[O-])c3C2=O)C(=O)N1"
+        ],
+        "product_smiles": [
+          "Nc1cccc2c1C(=O)N(C1CCC(=O)NC1=O)C2=O"
+        ],
+        "catalyst": "5% Pd/Al2O3",
+        "solvent": "MeCN:CCl4:H2O (1:1:0.1)",
+        "temperature": "100 °C",
+        "time": "2 min",
+        "atmosphere": "H2"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "blockage",
+        "observation": "Attempting to feed the stream from the oxidation step directly into the hydrogenation system using the previous optimal conditions resulted in a gas leak through the packed bed. This was attributed to partial vaporization of the mixed solvent at 100 °C despite backpressure, leading to product precipitation and blockage."
+      },
+      "evidence": {
+        "text_span": "We attempted but failed to feed this stream directly into the hydrogenation reduction system using the previously optimum conditions, which is attributed to a gas leak occurring through the packed bed. We suspect that at 100 °C, partial vaporization of the mixed solvent occurred despite the applied backpressure, leading to product precipitation and blockage of the packed bed.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 10,
+      "thought": {
+        "background": "The direct coupling of the oxidation product stream to the hydrogenation step failed due to solvent vaporization and precipitation in the packed bed.",
+        "gap": "How to suppress solvent boiling and improve solubility for the hydrogenation step in continuous flow, especially with the mixed solvent from the previous step.",
+        "decision": "To overcome the blockage issue, we will introduce an additional DMF stream as a high-boiling and better solubilizing co-solvent, mixing it with the reaction stream before hydrogenation to suppress vaporization and improve solubility."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1CCC(N2C(=O)c3cccc([N+](=O)[O-])c3C2=O)C(=O)N1"
+        ],
+        "product_smiles": [
+          "Nc1cccc2c1C(=O)N(C1CCC(=O)NC1=O)C2=O"
+        ],
+        "catalyst": "5% Pd/Al2O3",
+        "solvent": "MeCN:CCl4:H2O:DMF",
+        "temperature": "100 °C",
+        "time": "2 min",
+        "atmosphere": "H2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "Introducing an additional DMF stream as a co-solvent, mixed evenly with the reaction stream before hydrogenation, successfully suppressed solvent boiling and improved solubility. The two-step continuous flow process achieved a 97% yield for the hydrogenation step, with a total residence time of 52 min and an overall yield of 62% for pomalidomide (7).",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "To suppress solvent boiling and improve solubility, we therefore introduced an additional DMF stream as a high-boiling and better solubilizing co-solvent. After mixing the two streams evenly through a T-mixer, the mixture was placed in a stirring device before being further introduced into the continuous hydrogenation system. The resulting solution was passed through a packed-bed hydrogenation reactor charged with 5% Pd/Al2O3 (2 mL work volume) at 100 °C (tR = 2 min; back-pressure 0.5 MPa). The collected reaction mixture was evaporated, and the crude mixture was then precipitated by addition of water to afford the pomalidomide (7). Compared with the previously reported batch synthesis and stepwise continuous flow synthesis, we have developed an approach involving the photoinduced oxidation of common intermediate 4 followed by hydrogenation. This two-step continuous flow process achieved a yield of 97% with a residence time of only 12 min, and an overall yield of 62% based on the starting material with a total residence time of 52 min.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "The two-step continuous flow synthesis of pomalidomide (7) has been successfully optimized, achieving high yields and short residence times.",
+        "gap": "Evaluate the scalability of the developed flow system for pomalidomide production.",
+        "decision": "To demonstrate scalability, we will conduct a gram-scale synthesis of 7 using the optimized continuous flow conditions, expecting to achieve significant productivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1CCC(N2C(=O)c3cccc([N+](=O)[O-])c3C2=O)C(=O)N1"
+        ],
+        "product_smiles": [
+          "Nc1cccc2c1C(=O)N(C1CCC(=O)NC1=O)C2=O"
+        ],
+        "reagents": [
+          "NBS",
+          "H2O",
+          "H2"
+        ],
+        "catalyst": "5% Pd/Al2O3",
+        "solvent": "MeCN:CCl4:H2O:DMF",
+        "temperature": "room temperature, 100 °C",
+        "time": "52 min (total residence time)",
+        "scale": "gram-scale"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "A gram-scale synthesis of pomalidomide (7) was successfully conducted. After 2 hours of continuous operation, 1.206 g of 7 was obtained, corresponding to a productivity of 0.603 g/h, which is approximately tenfold higher than previously reported methods. The overall yield was 62% with a total residence time of 52 min.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "Furthermore, we evaluated its scalability by conducting a gram-scale synthesis. After 2 h of continuous operation, pomalidomide 7 was obtained in 1.206 g, corresponding to a productivity of 0.603 g/h, which is approximately tenfold higher than that of the previously reported method19.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "With the successful continuous flow synthesis of pomalidomide, the next focus is on preparing CRBN ligand-linkers, which are crucial for PROTACs. The reaction involves nucleophilic aromatic substitution (SNAr) of 8 with various amines.",
+        "gap": "Optimize the SNAr reaction conditions for compound 8 and propargylamine as model substrates under continuous flow, as initial conditions showed low conversion.",
+        "decision": "To improve conversion, we will screen reaction temperatures and residence times, and then optimize the loading of propargylamine, expecting higher temperatures and longer residence times to be beneficial."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)c1cccc(F)c1N1C(=O)CCC1=O"
+        ],
+        "product_smiles": [
+          "C#CCCNc1cccc(C(=O)O)c1N1C(=O)CCC1=O"
+        ],
+        "reagents": [
+          "propargylamine",
+          "DIPEA"
+        ],
+        "solvent": "DMSO",
+        "temperature": "170 °C",
+        "time": "90 min",
+        "stoichiometry": {
+          "propargylamine": "1.5 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "Optimization revealed that 170 °C and 90 min residence time, with 1.5 equivalents of propargylamine, yielded 94% conversion. Initial conditions (130 °C, 30 min) gave 41% conversion. Increasing temperature to 170-190 °C improved conversion to 63%. Extending residence time to 90 min further increased conversion to 85%. Increasing propargylamine to 1.5 equiv. gave 94% conversion, with no further benefit at 2.0 equiv."
+      },
+      "evidence": {
+        "text_span": "The optimization of reaction conditions was investigated using 8 and propargylamine as model substrates (Experimental procedures for the synthesis of compound 8 and CRBN ligand-linkers can be found in Supplementary Figs. 3, 4. Following literature-reported batch conditions31, a DMSO solution of 8 was first merged into a T-mixer with a DMSO solution of propargylamine and DIPEA. The combined stream was fed into a stainless-steel coil reactor (0.8 mm i.d., 2 mL work volume) at 130 °C with a residence time of 30 min, resulting in 41% conversion. Screening of the reaction temperature ranging from 90 to 190 °C revealed that the conversion increased with temperature, reaching a maximum of 63% at both 170 or 190 °C (Table 2, Entries 1–6). Increasing the residence time to 90 min was proven beneficial, with the conversion reaching 85% (Table 2, Entry 8), whereas further extending tR to 120 min led to a slight decline in conversion (82%, Table 2, Entry 9). Finally, increasing the loading of propargylamine to 1.5 equiv. improved the conversion to 94% (Table 2, Entry 10), while a further increase to 2.0 equiv. did not provide any additional benefit (93%, Table 2, Entry 11).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimized conditions for the SNAr reaction of 8 with propargylamine (170 °C, 90 min, 1.5 equiv. amine) yielded 94% conversion.",
+        "gap": "Explore the scope of various amine nucleophiles under these optimized continuous flow conditions to synthesize a diverse library of CRBN ligand-linkers.",
+        "decision": "To demonstrate the versatility of the method, we will apply the optimized continuous flow conditions to a range of diverse amines, expecting high yields for the corresponding CRBN ligand-linkers."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)c1cccc(F)c1N1C(=O)CCC1=O"
+        ],
+        "product_smiles": [
+          "Nc1cccc(C(=O)O)c1N1C(=O)CCC1=O",
+          "C#CCCNc1cccc(C(=O)O)c1N1C(=O)CCC1=O",
+          "CC(C)(C)OC(=O)NC1CCN(c2cccc(C(=O)O)c2N2C(=O)CCC2=O)CC1",
+          "CC(C)(C)OC(=O)NCCNc1cccc(C(=O)O)c1N1C(=O)CCC1=O",
+          "O=C(O)c1cccc(NCCc2ccccc2)c1N1C(=O)CCC1=O",
+          "CC(C)(C)OC(=O)NCCCCNc1cccc(C(=O)O)c1N1C(=O)CCC1=O",
+          "O=C(O)c1cccc(NCCO)c1N1C(=O)CCC1=O",
+          "O=C(O)c1cccc(NCCOCCO)c1N1C(=O)CCC1=O",
+          "CC(C)(C)OC(=O)CNCCOCCNc1cccc(C(=O)O)c1N1C(=O)CCC1=O",
+          "CC(C)(C)OC(=O)NCCCCNc1cccc(C(=O)O)c1N1C(=O)CCC1=O",
+          "CC(C)(C)OC(=O)NCCCCCCNc1cccc(C(=O)O)c1N1C(=O)CCC1=O",
+          "CN(CCNCC(=O)OC(C)(C)C)c1cccc(C(=O)O)c1N1C(=O)CCC1=O",
+          "CN(Cc1ccccc1)c1cccc(C(=O)O)c1N1C(=O)CCC1=O",
+          "CN(CCO)c1cccc(C(=O)O)c1N1C(=O)CCC1=O",
+          "C#CCN(C)c1cccc(C(=O)O)c1N1C(=O)CCC1=O",
+          "CC(C)(C)OC(=O)NC1CCN(c2cccc(C(=O)O)c2N2C(=O)CCC2=O)CC1",
+          "CC(C)(C)OC(=O)N1CCN(c2cccc(C(=O)O)c2N2C(=O)CCC2=O)CC1",
+          "CC(C)(C)OC(=O)C1CCN(c2cccc(C(=O)O)c2N2C(=O)CCC2=O)CC1",
+          "CC1CCC2(CCN(c3cccc(C(=O)O)c3N3C(=O)CCC3=O)C2C(=O)OC(C)(C)C)C1",
+          "CC(C)(C)OC(=O)C1CN(c2cccc(C(=O)O)c2N2C(=O)CCC2=O)C1"
+        ],
+        "reagents": [
+          "diverse amines (0.30 M, 1.5 equiv.)",
+          "DIPEA (0.60 M, 3.0 equiv.)"
+        ],
+        "solvent": "DMSO",
+        "temperature": "170 °C",
+        "time": "90 min",
+        "atmosphere": "0.5 MPa backpressure"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "A series of CRBN ligand-linkers were successfully synthesized with yields exceeding 90% for all compounds. This demonstrates the broad scope of the continuous flow SNAr reaction for various primary, secondary, and cyclic amines."
+      },
+      "evidence": {
+        "text_span": "With the optimum conditions in hand, we sought to explore the amine-nucleophile scope under continuous flow conditions (Fig. 4). Solutions of diverse amines (0.30 M, 1.5 equiv.) and DIPEA (0.60 M, 3.0 equiv.) in DMSO were combined via a T-mixer with a DMSO solution of 8 (0.20 M). The resulting stream was subsequently fed into a stainless-steel coil reactor at 170 °C with a residence time of 90 min under 0.5 MPa backpressure, furnishing a series of CRBN ligand–linkers in yields above 90%.",
+        "section": "Results and discussion"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield (Lenalidomide)": {
+        "value": 63,
+        "unit": "%",
+        "interpretation": "High overall yield for a multi-step continuous flow synthesis."
+      },
+      "Overall Yield (Pomalidomide)": {
+        "value": 62,
+        "unit": "%",
+        "interpretation": "High overall yield for a multi-step continuous flow synthesis."
+      },
+      "Longest Linear Steps": {
+        "value": 3,
+        "unit": "steps",
+        "interpretation": "Concise synthesis for lenalidomide."
+      },
+      "Total Steps": {
+        "value": 3,
+        "unit": "steps",
+        "interpretation": "Concise synthesis for lenalidomide."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Two failed attempts were encountered and overcome during optimization."
+      },
+      "Lenalidomide Productivity": {
+        "value": 0.515,
+        "unit": "g/h",
+        "interpretation": "Demonstrates gram-scale production capability."
+      },
+      "Pomalidomide Productivity": {
+        "value": 0.603,
+        "unit": "g/h",
+        "interpretation": "Demonstrates gram-scale production capability, approximately tenfold higher than previous methods."
+      },
+      "Lenalidomide Total Residence Time": {
+        "value": 42,
+        "unit": "min",
+        "interpretation": "Significantly reduced reaction time compared to traditional batch synthesis (>40 h)."
+      },
+      "Pomalidomide Total Residence Time": {
+        "value": 52,
+        "unit": "min",
+        "interpretation": "Significantly reduced reaction time compared to traditional batch synthesis."
+      }
+    },
+    "comparison_to_prior": "The continuous flow synthesis of lenalidomide (63% overall yield, 42 min total residence time) and pomalidomide (62% overall yield, 52 min total residence time) significantly outperforms traditional batch syntheses (typically >40 h, multiple post-processing steps) and previous stepwise continuous flow methods (e.g., 38% yield for pomalidomide by Ivanova et al. 2022, without telescoping). The method eliminates intermediate work-up and isolation, avoids column chromatography, and achieves gram-scale production with improved solvent compatibility.",
+    "significance": "This work presents an efficient, integrated continuous flow platform for the synthesis of immunomodulatory imide drugs (IMiDs) and their derivatives. It addresses critical challenges in IMiD synthesis, such as lengthy reaction times, laborious workups, solvent incompatibility, and compound precipitation. The developed methodology enables rapid, gram-scale production of lenalidomide and pomalidomide from a common intermediate, without the need for column chromatography. Furthermore, it provides an optimized continuous flow route for synthesizing a diverse library of CRBN ligand-linkers, which are crucial for PROTAC development. This advancement offers a more flexible, efficient, safer, and industrially scalable approach to IMiD and PROTAC synthesis, with broad implications for pharmaceutical manufacturing and drug discovery."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s42004-026-01956-1",
+      "pmcid": "PMC13066112",
+      "title": "Accelerated synthesis of immunomodulatory imide drugs and their derivatives via continuous flow chemistry.",
+      "authors": "Hou T, Huang J, Li Y, Zhu Y, You H, Chen FE.",
+      "journal": "Commun Chem",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC13066112?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/b88963e8-b769-4286-bd37-94094ba865f1.zip",
+      "parsed_at": "2026-05-11T06:42:59.099324+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 48,
+    "parseable": 48,
+    "canonicalized": 48,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

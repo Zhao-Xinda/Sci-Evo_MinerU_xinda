@@ -1,0 +1,245 @@
+{
+  "trace_id": "TS-PMC13098635",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(R)-(−)-Eliprodil",
+    "smiles": "O[C@H](CN1CCC(Cc2ccc(F)cc2)CC1)c1ccccc1",
+    "natural_product_class": "pharmaceutically active compound",
+    "structural_features": {
+      "stereocenters": 2,
+      "key_motifs": [
+        "piperidine",
+        "fluorobenzene",
+        "benzylamine",
+        "phenylmethanol"
+      ]
+    },
+    "motivation": "Synthesis of the enantiomer of the neuroprotective drug eliprodil, demonstrating an efficient four-step synthesis including the first earth-abundant metal-catalyzed asymmetric hydrogenation of an α-hydroxy ketone.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Efficient synthesis in four steps with high enantioselectivity."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-N bond formation between the piperidine nitrogen and the benzylic carbon of the epoxide",
+        "named_strategy": "Ring-opening of epoxide",
+        "reasoning": "This disconnection allows for the introduction of the piperidine moiety and the phenyl group from readily available precursors."
+      },
+      {
+        "bond_description": "C-O bond formation to form the epoxide ring",
+        "named_strategy": "Epoxidation",
+        "reasoning": "The epoxide can be formed from a diol, which in turn can be obtained from an α-hydroxy ketone."
+      },
+      {
+        "bond_description": "C-O bond formation to form the α-hydroxy ketone",
+        "named_strategy": "Asymmetric hydrogenation",
+        "reasoning": "This is the key chirality-inducing step, allowing for the enantioselective synthesis of the α-hydroxy ketone from a prochiral ketone."
+      }
+    ],
+    "rationale": "The synthesis of (R)-(−)-Eliprodil was designed to be efficient and enantioselective, with the key step being an earth-abundant metal-catalyzed asymmetric hydrogenation to establish the crucial stereocenter. Subsequent steps involve standard functional group transformations and ring-opening reactions to construct the final molecule."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The target molecule is (R)-(−)-Eliprodil. The first step aims to introduce the initial stereocenter via asymmetric hydrogenation.",
+        "gap": "Achieving high enantioselectivity in the hydrogenation of the α-hydroxy ketone using an earth-abundant metal catalyst.",
+        "decision": "To achieve enantioselective reduction, chose Co(OAc)2 with (S,S)-Ph-BPE ligand and salicylic acid additive under H2 atmosphere, expecting high yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(CCl)c1ccc(Cl)cc1"
+        ],
+        "product_smiles": [
+          "OC[C@@H](O)c1ccc(Cl)cc1"
+        ],
+        "named_reaction": "Asymmetric Hydrogenation",
+        "reagents": [],
+        "catalyst": "Co(OAc)2",
+        "ligand": "c1ccc(P2CCC[C@@H]2P(c2ccccc2)(c2ccccc2)CC[C@@H]2CCC[C@H]2P(c2ccccc2)(c2ccccc2)c2ccccc2)cc1",
+        "solvent": "toluene",
+        "temperature": "70 °C",
+        "time": "48 h",
+        "atmosphere": "H2",
+        "stoichiometry": {
+          "Co(OAc)2": "6 mol%",
+          "(S,S)-Ph-BPE": "5 mol%",
+          "salicylic acid": "10 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "ee_percent": 92,
+        "observation": "Asymmetric hydrogenation of 38a afforded diol 38b in 98% yield with 92% ee."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Asymmetric hydrogenation of 38a $( { \bf C o } ( { \bf O A c } ) _ { 2 }$ $( 6 \\mathrm { m o l\\% } )$ ), (S,S)-Ph-BPE (5 mol%) with salicylic acid $\\left( 1 0 ~ \\mathrm { m o l\\% } \right)$ , $\\mathrm { H } _ { 2 }$ (50 bar), toluene, $7 0 ^ { \\circ } \\mathrm { C }$ , 48 h) resulted in diol 38b ( $9 8 \\%$ yield, $9 2 \\% \\mathrm { e e } ]$",
+        "image_refs": [
+          "3d79fdd5d3ab6c4c60d551ef4d8958872a4ff8cafdadaea73961522cffe5b9a5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diol 38b has been synthesized with good enantioselectivity. The next step is to convert one of the hydroxyl groups into a leaving group to facilitate epoxide formation.",
+        "gap": "Selective tosylation of one hydroxyl group in the presence of another.",
+        "decision": "To selectively tosylate the primary alcohol, chose p-TsCl, DBTO, and TEA in DCM."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "OC[C@@H](O)c1ccc(Cl)cc1"
+        ],
+        "product_smiles": [
+          "Cc1ccc(OS(=O)(=O)OC[C@H](O)c2ccc(Cl)cc2)cc1"
+        ],
+        "reagents": [
+          "p-TsCl",
+          "DBTO",
+          "Et3N"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Tosylation of 38b afforded 38c."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "followed by its tosylation $\\dot { p }$ -TsCl, DBTO, TEA, DCM, rt) to obtain 38c",
+        "image_refs": [
+          "3d79fdd5d3ab6c4c60d551ef4d8958872a4ff8cafdadaea73961522cffe5b9a5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 38c contains a tosylate and a hydroxyl group. The next step is to form the epoxide ring.",
+        "gap": "Efficient intramolecular cyclization to form the epoxide.",
+        "decision": "To form the epoxide, chose base-mediated epoxidation using NaOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1ccc(OS(=O)(=O)OC[C@H](O)c2ccc(Cl)cc2)cc1"
+        ],
+        "product_smiles": [
+          "Clc1ccc([C@@H]2CO2)cc1"
+        ],
+        "reagents": [
+          "NaOH"
+        ],
+        "solvent": "Et2O",
+        "temperature": "rt",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Base-mediated epoxidation afforded 38d."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "whose base-mediated epoxidation (NaOH, $\\mathrm { Et } _ { 2 } \\mathrm { O } ]$ afforded 38d.",
+        "image_refs": [
+          "3d79fdd5d3ab6c4c60d551ef4d8958872a4ff8cafdadaea73961522cffe5b9a5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Epoxide 38d has been formed. The final step is to open the epoxide with the piperidine derivative to yield the target molecule.",
+        "gap": "Regioselective ring-opening of the epoxide with the amine.",
+        "decision": "To complete the synthesis, chose ring-opening of 38d with 4-(4-fluorobenzyl)piperidine under reflux conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Clc1ccc([C@@H]2CO2)cc1",
+          "Fc1ccc(CC2CCNCC2)cc1"
+        ],
+        "product_smiles": [
+          "O[C@H](CN1CCC(Cc2ccc(F)cc2)CC1)c1ccccc1"
+        ],
+        "solvent": "i-PrOH",
+        "temperature": "reflux",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "ee_percent": 97,
+        "observation": "Ring-opening of 38d with 4-(4-fluorobenzyl)piperidine delivered (R)-(−)-eliprodil 38e in 64% yield with 97% ee."
+      },
+      "references": [],
+      "evidence": {
+        "text_span": "Finally, the ring-opening of 38d with 4-(4-uorobenzyl)piperidine (i-PrOH, reux, 4 h) delivered (R)-( )-eliprodil 38e in $6 4 \\%$ yield with 97%ee (Scheme 38).",
+        "image_refs": [
+          "3d79fdd5d3ab6c4c60d551ef4d8958872a4ff8cafdadaea73961522cffe5b9a5.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [],
+    "metrics": {},
+    "significance": "This synthesis provides an efficient and enantioselective route to (R)-(−)-Eliprodil, a neuroprotective drug enantiomer, utilizing an earth-abundant metal-catalyzed asymmetric hydrogenation as a key step. This highlights the potential of cobalt catalysis in accessing complex chiral molecules."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d6ra00479b",
+      "pmcid": "PMC13098635",
+      "title": "Cobalt catalysis in organic synthesis: a powerful tool in the synthesis of natural products and pharmaceutically active compounds.",
+      "authors": "Mehak I, Khan SG, Noreen R, Hussain SM, Al-Qawasmeh RA, Abbas M, Ali KG, Parveen B, Ashraf R, Zahoor AF.",
+      "journal": "RSC Adv",
+      "year": 2026,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC13098635?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/aa699da2-fd69-4805-85d9-b30192f7f4fc.zip",
+      "parsed_at": "2026-05-07T15:41:21.161294+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 10,
+    "parseable": 10,
+    "canonicalized": 7,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

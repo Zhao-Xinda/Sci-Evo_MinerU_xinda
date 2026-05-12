@@ -1,0 +1,1090 @@
+{
+  "trace_id": "TS-PMC11186323",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "C-C dimer of xiamycin A (3)",
+    "smiles": "CC1(CCC2C3=CC=C(Nc4ccc(-c5ccc(NC6=CC7=CC8C(CCC9(C)C8CC(O)C9(C)C(=O)O)C7=C6)cc5)cc4)CC32)CC(C)(C(=O)O)C1O",
+    "natural_product_class": "indolosesquiterpene alkaloid",
+    "structural_features": {
+      "key_motifs": [
+        "carbazole",
+        "trans-decalin"
+      ]
+    },
+    "motivation": "To synthesize a C-C linked xiamycin dimer, which had been overlooked in biogenesis, as a tool to create unique scaffolds for drug candidates. This C-C dimer is an unnatural product, but related to naturally occurring N-N and C-N linked xiamycin dimers.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Baran",
+        "year": 2014,
+        "doi": "10.1021/ja502071w",
+        "key_strategy": "Electrochemical oxidative N-N dimerization of xiamycin A to dixiamycin B (1b)"
+      },
+      {
+        "lead_author": "Ang Li",
+        "year": 2015,
+        "doi": "10.1038/ncomms7096",
+        "key_strategy": "Late-stage C-N bond formation for dixiamycin C (2)"
+      },
+      {
+        "lead_author": "Bisai",
+        "year": 2023,
+        "doi": "10.1039/D3SC02000A",
+        "key_strategy": "Cu(I)-catalyzed aerobic oxidation for asymmetric total synthesis of dixiamycin A (1a) and dixiamycin B (1b)"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Efficient and mild conditions for generating chemoselective and regioselective C-C bond formation, with high functional group tolerance."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C6-C6' bond in the carbazole units",
+        "named_strategy": "Oxidative dimerization",
+        "reasoning": "Biomimetic approach, hypothesizing that an appropriate oxidant could oxidize carbazole to a carbazole radical, followed by homocoupling. This would lead to a C-C dimer, which is thermodynamically favored over N-N or C-N dimers.",
+        "alternatives_considered": [
+          {
+            "strategy": "N-N dimerization (Baran)",
+            "rejected_because": "Did not afford dixiamycin A and produced uncharacterized C-C and C-N dimers."
+          },
+          {
+            "strategy": "C-N dimerization (Ang Li)",
+            "rejected_because": "Involves multiple steps and specific protecting groups."
+          }
+        ]
+      }
+    ],
+    "rationale": "The strategy focuses on a direct, single-step oxidative C-C dimerization of xiamycin A or its derivatives, aiming for high chemoselectivity and regioselectivity at the C-6 position of the carbazole unit. This approach is inspired by biosynthetic hypotheses and seeks to access a previously overlooked C-C dimer scaffold."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Naturally occurring dimeric indolosesquiterpenoids like dixiamycin A, B, and C are known, with prior syntheses focusing on N-N and C-N linkages. Biosynthetic pathways suggest radical intermediates.",
+        "gap": "A direct and efficient synthesis of C-C dimeric indolosesquiterpenoid frameworks, particularly a C-C dimer of xiamycin A, is lacking. Previous attempts to form N-N dimers sometimes yielded uncharacterized C-C and C-N dimers.",
+        "decision": "To explore a biomimetic oxidative C-C dimerization of xiamycin A, focusing on the C-6 position, to create a new molecular space for structure-activity relationship studies."
+      },
+      "evidence": {
+        "text_span": "In 2014, Baran et al. reported the rst total synthesis of dixiamycin B (1b) via the electrochemical oxidative N–N dimerisation of xiamycin A (5). However, this effort could not afford the total synthesis of dixiamycin A (an atropisomer of dixiamycin B) (1a), and the authors observed a range of unidentied compounds, possibly C–C and C–N dimers, without offering any characterization for these species (Fig. 2A).6a In 2015, Ang Li et al. reported the rst total synthesis of dixiamycin C6b via crucial late-stage C–N bond formation between TMSE-protected xiamycin A (6) and its bromo derivative (7) using Buchwald's protocol7 (Fig. 2B). Recently, our group reported the rst asymmetric total synthesis of dixiamycin A (1a) in addition to its atropisomer, dixiamycin B (1b), via Cu(I)- catalyzed aerobic oxidation to construct an N–N bond.8b Biosynthetically, all N–N and C–N coupled xiamycin dimers are initiated by XiaH4c mediated N-cation radical formation via single electron transfer (SET) and followed by deprotonation, resulting in xiamycin N-radical Int-1. This xiamycin N-radical (Int-1) could show mesomeric structures where spin density resides on different carbon atoms, among them C6 (Int-3) and C21 (Int-2). Eventually, all N–N and C–N coupled dimers were formed by homocoupling reactions of these radicals at different sites (Scheme 1).4b,c,8b Herein, we report the discovery and full characterization of a C–C dimer of xiamycin A (3), which had been overlooked in the biogenesis (Scheme 1). Therefore, developing a protocol for the regioselective C–C dimerisation of xiamycin A (5) through a biomimetic pathway is still a fascinating goal and may open up a new molecular space for the study of the structure–activity relationship.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Prior work suggests radical intermediates in xiamycin dimerization. Hypervalent iodine reagents are known oxidants.",
+        "gap": "Identifying an oxidant and conditions that can chemoselectively and regioselectively form a C-C bond at C-6, while avoiding overoxidation and N-N/C-N dimerization.",
+        "decision": "To use hypervalent iodine(III) (PIFA) as an oxidant and BF3·Et2O as an additive to promote C-C dimerization at C-6, expecting a radical-mediated pathway."
+      },
+      "evidence": {
+        "text_span": "Initially, we hypothesized that an appropriate oxidant (hypervalent iodine(III), PIFA) could oxidize carbazole (Cz) to a carbazole radical (Cz)˙ via two-electron oxidation and perhaps a homocoupling could be achieved between the two species. However, there were still numerous potential challenges to this proposed transformation, including: (1) securing an oxidant that could chemoselectively make a C–C bond, (2) controlling the regioselectivity (coupling occurs exclusively at C-6), (3) inhibiting overoxidation of the carbazole scaffold and secondary hydroxyl group. Hence, we developed a radicalmediated protocol for the C6–C6′ dimerization of xiamycin A (5) by exploiting the hypervalent iodine(III) reagent,9 phenyliodine bis(triuoroacetate) (PIFA) as an oxidant and BF3·Et2O as an additive (Fig. 2C), which leads to efficient and mild conditions for generating chemoselective and regioselective C–C bond formation.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "PIFA is a known oxidant.",
+        "gap": "Determine if PIFA alone can induce dimerization.",
+        "decision": "Treat deoxy-xiamycin A methyl ester (8a) with PIFA in CH2Cl2 at 25 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "PhI(OCOCF3)2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "25 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Did not provide the desired dimerization product. Multitude of spots and no desired product formation."
+      },
+      "evidence": {
+        "text_span": "At the outset, compound 8a was treated with 1.0 equiv. of hypervalent iodine catalyst (PIFA) in CH2Cl2 under an inert atmosphere but did not provide the desired dimerization product (9a) (Table 1, entry 1).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "FeCl3 is reported for oxidative C-C dimerization of carbazole.",
+        "gap": "Test FeCl3 for dimerization of deoxy-xiamycin A methyl ester (8a).",
+        "decision": "Treat deoxy-xiamycin A methyl ester (8a) with FeCl3 in CHCl3 at 25 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "FeCl3"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "25 °C",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 8,
+        "observation": "A small yield (8%) of the desired dimerized product (9a) was obtained, displaying a sole regioisomer."
+      },
+      "evidence": {
+        "text_span": "Interestingly, upon treating deoxy-xiamycin A methyl ester (8a) with FeCl3 (ref. 10) as the oxidant, a small yield (8%) of the desired dimerized product (9a) was obtained, displaying a sole regioisomer (Table 1, entry 2).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "DDQ is a metal-free organic oxidant for C-C coupling on carbazole scaffolds.",
+        "gap": "Evaluate DDQ with MsOH as an additive for dimerization of 8a.",
+        "decision": "Treat deoxy-xiamycin A methyl ester (8a) with DDQ and MsOH in CHCl3 at 25 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DDQ",
+          "MsOH"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "25 °C",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 15,
+        "observation": "Only a modest 15% yield was obtained."
+      },
+      "evidence": {
+        "text_span": "Next, keeping in mind literature reports, compound 8a was charged with organic oxidant 2,3-dichloro-5,6-dicyano-1,4-benzoquinone (DDQ)n in the presence of methanesulphonic acid (MsOH) as an additive. Unfortunately, this approach did not give desired results, with only a modest 15% yield (Table 1, entry 3).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Various oxidants are available.",
+        "gap": "Identify an effective oxidant for dimerization.",
+        "decision": "Screen ceric ammonium nitrate (CAN) and silver hexafluoroantimonate (AgSbF6)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "CAN"
+        ],
+        "solvent": "H2O",
+        "temperature": "25 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "None of them were successful in producing the desired dimerized product."
+      },
+      "evidence": {
+        "text_span": "Despite various attempts using various common oxidants, such as ceric ammonium nitrate (CAN) and silver hexauoroantimonate (AgSbF6),12 none of them were successful in producing the desired dimerized product (Table 1, entries 4 and 5).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "PIFA alone was ineffective. Additives can activate hypervalent iodine catalysts.",
+        "gap": "Determine if a base additive can improve PIFA-mediated dimerization.",
+        "decision": "Treat 8a with PIFA and triethylamine (Et3N) as a base additive."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "Et3N"
+        ],
+        "solvent": "(CH2Cl)2",
+        "temperature": "0 °C",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Resulting in complete recovery of the starting material (8a)."
+      },
+      "evidence": {
+        "text_span": "Next, considering the role of additives in activating a hypervalent iodine (PIFA) catalyst, a mixture of substrate and triethyl amine as a base additive was treated with PIFA as an oxidant, resulting in complete recovery of the starting material (8a) (Table 1, entry 6).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 7,
+      "thought": {
+        "background": "Base additives were ineffective with PIFA. Lewis acids can also act as additives.",
+        "gap": "Explore Lewis acids as additives to improve PIFA-mediated dimerization.",
+        "decision": "Use BF3·Et2O as a Lewis acid additive with PIFA for dimerization of 8a at 0 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 27,
+        "observation": "The dimerized product (9a) was obtained in 27% yield as a single regioisomer."
+      },
+      "evidence": {
+        "text_span": "Following that, the possibility of improving the reaction by incorporating Lewis acids as acid additives was explored. Encouragingly, it was found that the dimerized product (9a) was obtained in 27% yield as a single regioisomer at a temperature of 0 °C by employing BF3–Et2O as an additive (Table 1, entry 7).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "BF3·Et2O as an additive with PIFA gave 27% yield at 0 °C.",
+        "gap": "Optimize reaction temperature for improved yield.",
+        "decision": "Screen lower temperatures: -40 °C and -78 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-40 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 43,
+        "observation": "Yield increased to 43% at -40 °C."
+      },
+      "evidence": {
+        "text_span": "To investigate the reaction further, temperature screening was performed (Table 1, entries 8 and 9). Remarkably, at a temperature of −78 °C., the reaction displayed high efficiency with 77% yield of the dimerized product (9a).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "Yield improved to 43% at -40 °C.",
+        "gap": "Further optimize reaction temperature.",
+        "decision": "Test -78 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "The reaction displayed high efficiency with 77% yield of the dimerized product (9a)."
+      },
+      "evidence": {
+        "text_span": "To investigate the reaction further, temperature screening was performed (Table 1, entries 8 and 9). Remarkably, at a temperature of −78 °C., the reaction displayed high efficiency with 77% yield of the dimerized product (9a).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Optimal conditions found with PIFA and BF3·Et2O in CH2Cl2 at -78 °C.",
+        "gap": "Investigate the influence of solvent.",
+        "decision": "Perform the reaction in hexafluoroisopropanol (HFIP) solvent."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2"
+        ],
+        "solvent": "HFIP",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "No enhancement was observed in product formation, with a yield of 64%."
+      },
+      "evidence": {
+        "text_span": "To further showcase the inuence of the solvent, the model reaction was performed in hexauoroisopropanol (HFIP) solvent, but no enhancement was observed in product formation (Table 1, entry 10).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "BF3·Et2O is an effective additive.",
+        "gap": "Study the effect of other additives.",
+        "decision": "Test BBr3 and TMSI as additives."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BBr3"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 36,
+        "observation": "Decreased the efficiency of the reaction substantially (36% yield)."
+      },
+      "evidence": {
+        "text_span": "Next, to study the effect of additives on the model reaction, different additives (Table 1, entries 11 and 12) were used, which decreased the efficiency of the reaction substantially.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "BF3·Et2O is an effective additive.",
+        "gap": "Study the effect of other additives.",
+        "decision": "Test TMSI as an additive."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "TMSI"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "Decreased the efficiency of the reaction substantially (55% yield)."
+      },
+      "evidence": {
+        "text_span": "Next, to study the effect of additives on the model reaction, different additives (Table 1, entries 11 and 12) were used, which decreased the efficiency of the reaction substantially.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "PIFA (1.0 equiv) gave 77% yield.",
+        "gap": "Determine the optimal stoichiometry of PIFA.",
+        "decision": "Decrease PIFA content to 0.5 equiv."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "PhI(OCOCF3)2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h",
+        "stoichiometry": {
+          "PhI(OCOCF3)2": "0.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 31,
+        "observation": "A decrease in the formation of 9a to 31% was observed."
+      },
+      "evidence": {
+        "text_span": "Furthermore, when the content of PIFA was decreased from 1.0 equiv. to 0.5 equiv., a decrease in the formation of 9a to 31% was observed (Table 1, entry 13).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "PIFA is effective, but other hypervalent iodine oxidants exist.",
+        "gap": "Evaluate the efficacy of PIDA (PhI(OAc)2) as an oxidant.",
+        "decision": "Test PIDA under optimized conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PhI(OCOCH3)2",
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "observation": "Resulted in a satisfactory (62%) yield for dimerization."
+      },
+      "evidence": {
+        "text_span": "Later, the efficacy of optimized conditions with PIDA as an oxidant was tested, which resulted in a satisfactory (62%) yield for dimerization (Table 1, entry 14).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "PIDA gave 62% yield.",
+        "gap": "Test other hypervalent iodine oxidants.",
+        "decision": "Use iodosobenzene (PhIO) as an oxidant."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "PhIO",
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "The desired product (9a) was obtained in a trace amount."
+      },
+      "evidence": {
+        "text_span": "However, when iodosobenzene (PhIO) was used as an oxidant, the desired product (9a) was obtained in a trace amount (Table 1, entry 15).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Table 1"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimized conditions (PIFA, BF3·Et2O, CH2Cl2, -78 °C) are established for dimerization of deoxy-xiamycin A methyl ester (8a).",
+        "gap": "Demonstrate the broad applicability of the method to various indolosesquiterpene derivatives.",
+        "decision": "Apply the optimized conditions to a range of N-substituted carbazole derivatives (9b-9g)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(C)(C)[C@H]1CC[C@@H]2C=Cc3c(c4ccccc4n3C)C=C2C1",
+          "CCn1c2c(c3ccccc31)C=C1C[C@@H](C(C)(C)C(=O)OC)CC[C@@H]1C=C2",
+          "COC(=O)C(C)(C)[C@H]1CC[C@@H]2C=Cc3c(c4ccccc4n3CCC(C)=C(C)C)C=C2C1",
+          "C#CCn1c2c(c3ccccc31)C=C1C[C@@H](C(C)(C)C(=O)OC)CC[C@@H]1C=C2"
+        ],
+        "product_smiles": [
+          "",
+          "CCOC(=O)[C@@H]1[C@H](C)[C@@H]2CC[C@H](C)[C@@H]2[C@H]1c1ccc2c3cc(-c4ccc5c6cc([C@H]7[C@@H]([C@H](C)C(=O)OC)[C@@H](C)CC[C@H]7C)ccc6n(CC)c5c4)ccc3n(CC)c2c1",
+          "",
+          ""
+        ],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Carbazole derivatives bearing electron-donating groups (e.g., methyl, ethyl, benzyl, carbazoline ethyl acetate, prenyl, and propargyl) showed good reactivity and provided dimerised products in good yields (9b–9g)."
+      },
+      "evidence": {
+        "text_span": "With established optimal conditions in hand, the applicability of the PIFA-mediated oxidative dimerization reaction was tested with a wide range of the indolosesquiterpene derivatives. Scheme 2 summarizes various N·-substituents from carbazole that were examined during investigation of this reaction. Carbazole derivatives bearing electron-donating groups (e.g., methyl, ethyl, benzyl, carbazoline ethyl acetate, prenyl, and propargyl) showed good reactivity and provided dimerised products in good yields (9b–9g).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Scheme 2"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimized dimerization conditions are effective for N-substituted carbazoles.",
+        "gap": "Test the functional group tolerance of the reaction.",
+        "decision": "Apply the conditions to indolosesquiterpenes with primary alcohol, silyl ether, benzylic ketone, benzylic alcohol, and carboxylic acid groups (9h-9m)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC1(c2ccc3c(c2)c2ccc(N)cc2n3Cc2ccccc2)C[C@H]2C[C@@H](C(C)(C)CO)CC[C@H]2C1",
+          "COC(=O)[C@@]1(C)CC[C@@H]2C(C1)c1cc(ccc1C1C=Cc3[nH]c4ccc(-c5ccc6c(c5)[C@@H]5C[C@](C)(C(=O)OC)C[C@H]5C[C@@H]6O)cc4c3C=C1)C[C@H]2O",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "CC1(c2ccc3c(c2)c2ccc(C4(c5ccc6c(c5)c5ccc(N)cc5n6Cc5ccccc5)C[C@H]5C[C@@H](C(C)(C)CO)CC[C@H]5C4)cc2n3Cc2ccccc2)C[C@H]2C[C@@H](C(C)(C)CO)CC[C@H]2C1",
+          "COC(=O)[C@@]1(C)CC[C@@H]2C(C1)c1cc(ccc1C1C=Cc3[nH]c4ccc(-c5ccc6c(c5)[C@@H]5C[C@](C)(C(=O)OC)C[C@H]5C[C@@H]6O)cc4c3C=C1)C[C@H]2O",
+          ""
+        ],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Indolosesquiterpenes containing diverse reactive functional groups, such as primary alcohol (9h and 9i), silyl ether (9j), benzylic ketone (9k), benzylic alcohol (9l), and carboxylic acid (9m) groups exhibited good compatibility and yielded expected products in moderate yields. Notably, yields obtained with benzylic ketone and benzylic alcohol were comparatively lower, possibly due to potential overoxidation (Scheme 2)."
+      },
+      "evidence": {
+        "text_span": "Moreover, indolosesquiterpenes containing diverse reactive functional groups, such as primary alcohol (9h and 9i), silyl ether (9j), benzylic ketone (9k), benzylic alcohol (9l), and carboxylic acid (9m) groups exhibited good compatibility and yielded expected products in moderate yields. Notably, yields obtained with benzylic ketone and benzylic alcohol were comparatively lower, possibly due to potential overoxidation (Scheme 2).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Scheme 2"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The dimerization conditions are effective for various functionalized indolosesquiterpenes.",
+        "gap": "Expand the scope to include diastereomeric and regioisomeric scaffolds.",
+        "decision": "Apply the conditions to C-16 epimers (10a-c) and their N-substituted counterparts (10d-10e), and regioisomeric derivatives (11a-d)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)C[C@]2(C)c3ccc4cccc(C)c4c3N[C@@H]1CC[C@H]2C",
+          "CC(CO)C1(C)CCC2(C)C=c3cccc4c3=CC=C(CN4C)C21",
+          "CC(CO)C1(C)CCC2(C)C=c3cccc4c3=CC=C(CN4Cc3ccccc3)C21",
+          "",
+          "CC1(CO)C[C@@H](CO)[C@H]2Nc3cc4c(cc3[C@H]2C1)-c1ccc(cc1)Nc1cc2c(cc1N4)[C@H]1CC(C)(CO)C[C@H]1N2"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@H]1CC[C@](C)(c2cn(Cc3ccccc3)c3ccc(-c4cn(Cc5ccccc5)c5ccc(C6[C@@H](C(C)(C)C(=O)OC)CC[C@@]6(C)c6ccc7c(ccn7Cc7ccccc7)c6)cc45)cc23)CC1(C)C",
+          "",
+          "",
+          "",
+          "CC1(CO)C[C@@H](CO)[C@H]2Nc3cc4c(cc3[C@H]2C1)-c1ccc(cc1)Nc1cc2c(cc1N4)[C@H]1CC(C)(CO)C[C@H]1N2"
+        ],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "We were able to efficiently produce 10a–c, which are the C-16 epimers of 9a–b, 9d, along with their N·-substituted counterparts (10d–10e), yielding satisfactory results. Additionally, we found that our established protocol is capable of accommodating regioisomeric derivatives of 9a–b, 9d and 9h, providing yields ranging from 55% to 78% (11a–d) (Scheme 3). We observed successful reactions in all instances, leading to the formation of desired dimers with yields ranging from 34% to 85%.",
+        "regio_selectivity": "sole regioisomer",
+        "yield_percent": "34-85"
+      },
+      "evidence": {
+        "text_span": "The scope of substrates was further broadened in our study to include diastereomeric and regioisomeric scaffolds (Scheme 3). We were able to efficiently produce 10a–c, which are the C-16 epimers of 9a–b, 9d, along with their N·-substituted counterparts (10d–10e), yielding satisfactory results. Additionally, we found that our established protocol is capable of accommodating regioisomeric derivatives of 9a–b, 9d and 9h, providing yields ranging from 55% to 78% (11a–d) (Scheme 3). We observed successful reactions in all instances, leading to the formation of desired dimers with yields ranging from 34% to 85%.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Scheme 3"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The mechanism is proposed to involve a cation radical intermediate (Int-A) formed via single-electron oxidation.",
+        "gap": "Confirm the role of electron-withdrawing groups on the carbazole ring in the proposed mechanism.",
+        "decision": "Test carbazole derivatives with electron-withdrawing groups (acetyl 9n, 11e and p-toluenesulfonyl 9o, 10f)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H]1C(C)C[C@H]2[C@@H]1CC[C@H]2c1ccc2c3cc(-c4ccc5c6cc([C@@H]7CC[C@H]8[C@@H]7C(C)C[C@H]8C(=O)OC)ccc6n(C(C)=O)c5c4)ccc3n(C(C)=O)c2c1",
+          ""
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Resulted in the inhibition of dimerization. This is likely to be attributed to the destabilization of the cation radical intermediate formed during the reaction."
+      },
+      "evidence": {
+        "text_span": "The formation of a cation radical intermediate is further supported by the introduction of electron-withdrawing groups (acetyl 9n, 11e and p-toluenesulfonyl 9o, 10f) on the carbazole ring within the indolosesquiterpene motif, resulting in the inhibition of dimerization (Scheme 3). This is likely to be attributed to the destabilization of the cation radical intermediate formed during the reaction (pathway A, Scheme 4).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Scheme 3",
+          "Scheme 4"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Boger et al. reported intermolecular coupling of vindoline with a β-keto ester using PIFA and BF3·Et2O.",
+        "gap": "Investigate if a similar intermolecular coupling occurs with carbazole 8a and a β-keto ester, or if dimerization is still dominant.",
+        "decision": "React carbazole 8a with PIFA and BF3·Et2O, then add a β-keto ester."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)CCC[C@H]2CCc3c(ccc4[nH]c5ccccc5c34)[C@@]21C"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@]1(C)CCC[C@H]2CCc3c(ccc4[nH]c5ccccc5c34)[C@@]21C"
+        ],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2",
+          "COC(=O)C1CCCCC1=O"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C to 25 °C",
+        "stoichiometry": {
+          "PhI(OCOCF3)2": "1.5 equiv",
+          "Et3N": "3 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 19,
+        "observation": "Did not afford the intermolecular coupling product. Instead, 19% of C–C coupled carbazole dimer 9a was isolated."
+      },
+      "evidence": {
+        "text_span": "Towards this end, a reaction of carbazole 8a with 1.5 equivalents of PIFA and BF3·Et2O for the in situ preparation of diaryliodonium salt17 followed by a reaction with β-keto ester did not afford the intermolecular coupling product (Scheme 5). Instead, we were able to isolate 19% of C–C coupled carbazole dimer 9a from this reaction mixture.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Scheme 5"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The mechanism is proposed to involve radical cations.",
+        "gap": "Provide further evidence for the radical cation mechanism using a radical inhibitor.",
+        "decision": "React carbazole 8a with PIFA and BF3·Et2O in the presence of TEMPO (a radical inhibitor)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@]1(C)CCC[C@H]2CCc3c(ccc4[nH]c5ccccc5c34)[C@@]21C"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@]1(C)CCC[C@H]2CCc3c(ccc4[nH]c5ccccc5c34)[C@@]21C"
+        ],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2",
+          "O1N(C(C)(C)C)C(C)(C)C1"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "stoichiometry": {
+          "PhI(OCOCF3)2": "1.5 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 27,
+        "observation": "Led to the formation of a TEMPO-adduct that was detected via HRMS analysis of the crude reaction mixture. This reaction was also associated with the formation of 27% yield of C–C coupled carbazole dimer 9a."
+      },
+      "evidence": {
+        "text_span": "In another sequence, a reaction of carbazole 8a with 1.5 equivalents of PIFA and BF3·Et2O to generate the radical cation followed by a reaction with well-known radical inhibitor TEMPO led to the formation of a TEMPO-adduct that was detected via the HRMS analysis of the crude reaction mixture. This reaction was also associated with the formation of 27% yield of C–C coupled carbazole dimer 9a (Scheme 5). Together with the literature reports, our results suggest that direct dimerization of a radical cation might be operative for the oxidative dimerization process (pathway A, Scheme 4).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Scheme 5",
+          "Scheme 4"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A previously published procedure (ref 8a) exists for synthesizing xiamycin D (13) from abietic acid (12).",
+        "gap": "Synthesize xiamycin D (13) as an intermediate for xiamycin A methyl ester (14) and xiamycin A (5).",
+        "decision": "Follow the 15-step procedure from abietic acid (12) to xiamycin D (13)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C1=CCC2C3CCC1=CC3CCC2(C)C(=O)O"
+        ],
+        "product_smiles": [
+          "COC(=O)C1(C)CCC2(C)C(O)CCC3C1c1ccc4cc[nH]c4c1C(O)C32"
+        ],
+        "named_reaction": "Formal synthesis of xiamycin D",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 12,
+        "observation": "Ultimately yielding xiamycin D (13) as a single diastereomer in an overall 12% yield."
+      },
+      "evidence": {
+        "text_span": "Using our previously published procedure,8a we embarked on a synthesis journey starting from abietic acid (12), ultimately yielding xiamycin D (13) as a single diastereomer (Scheme 6). This intricate process involved 15 sequential steps and resulted in an overall 12% yield.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Scheme 6"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Xiamycin D (13) is synthesized.",
+        "gap": "Synthesize xiamycin A methyl ester (14) from xiamycin D (13) via selective dehydroxylation.",
+        "decision": "Use a BF3·Et2O/Et3SiH mediated procedure for dehydroxylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1(C)CCC2(C)C(O)CCC3C1c1ccc4cc[nH]c4c1C(O)C32"
+        ],
+        "product_smiles": [
+          "COC(=O)C1(C)CCC2(C)C(O)CCC3C1c1ccc4cc[nH]c4c1C(O)C32"
+        ],
+        "reagents": [
+          "BF3.OEt2",
+          "Et3SiH"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Resulting in the successful synthesis of xiamycin A methyl ester (14) in 65% yield."
+      },
+      "evidence": {
+        "text_span": "Aer obtaining xiamycin D, our focus shied towards the selective dehydroxylation reaction aimed at synthesizing xiamycin A methyl ester (14). To achieve this, we used a BF3·Et2O/Et3SiH18 mediated procedure, resulting in the successful synthesis of xiamycin A methyl ester (14) in 65% yield (Scheme 6).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Scheme 6"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Xiamycin A methyl ester (14) is synthesized.",
+        "gap": "Synthesize xiamycin A (5) from xiamycin A methyl ester (14).",
+        "decision": "Perform hydrolysis of compound 14 with lithium hydroxide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1(C)CCC2(C)C(O)CCC3C1c1ccc4cc[nH]c4c1C(O)C32"
+        ],
+        "product_smiles": [
+          "CC1(C(=O)O)CCC2(C)C(O)CCC3C1c1ccc4cc[nH]c4c1C(O)C32"
+        ],
+        "reagents": [
+          "LiOH.H2O"
+        ],
+        "solvent": "THF:MeOH:H2O (1:1:1)",
+        "temperature": "50 °C",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Gave us 82% yield of xiamycin A (5), which was spectroscopically identical to the natural product."
+      },
+      "evidence": {
+        "text_span": "Subsequent hydrolysis of compound 14 with lithium hydroxide19 gave us 82% yield of xiamycin A (5), which was spectroscopically identical to the natural product (Scheme 6).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Scheme 6"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimized dimerization conditions are established. Xiamycin A methyl ester (14) is synthesized.",
+        "gap": "Apply the optimized dimerization conditions to xiamycin A methyl ester (14) to synthesize its C-C dimer (15).",
+        "decision": "Perform PIFA-mediated dimerization of xiamycin A methyl ester (14) under optimized conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1(C)C[C@@H](O)C[C@@H]2Nc3ccc(c4c3ccc3cc[nH]c34)C[C@@H]21"
+        ],
+        "product_smiles": [
+          "COC(=O)C1(C)C[C@@H](O)C[C@@H]2Nc3ccc(c4c3C=Cc3cc(c5cc[nH]c5c3)C=Cc3cc[nH]c3-4)C[C@@H]21"
+        ],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "The PIFA-mediated dimerization of xiamycin A methylester (14) delightfully afforded 64% yield of C–C dimer 15 under the optimized conditions."
+      },
+      "evidence": {
+        "text_span": "As shown in Scheme 7, the PIFA-mediated dimerization of xiamycin A methylester (14) delightfully afforded 64% yield of C–C dimer 15 under the optimized conditions.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Scheme 7"
+        ]
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimized dimerization conditions are established. Xiamycin A (5) is synthesized.",
+        "gap": "Apply the optimized dimerization conditions to xiamycin A (5) to synthesize its C-C dimer (3).",
+        "decision": "Perform PIFA-mediated dimerization of xiamycin A (5) under optimized conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PhI(OCOCF3)2",
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "observation": "The dimerization of xiamycin A (5) furnished a C–C dimer of xiamycin A (3) in 59% yield, clearly demonstrating the potential of this approach."
+      },
+      "evidence": {
+        "text_span": "Along similar lines, the dimerization of xiamycin A (5) furnished a C–C dimer of xiamycin A (3) in 59% yield, clearly demonstrating the potential of this approach.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "Scheme 7"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 59,
+        "unit": "%",
+        "interpretation": "Yield for the final dimerization step of xiamycin A to its C-C dimer."
+      }
+    },
+    "significance": "This work reports the first synthetic route to access a C-C dimeric indolosesquiterpene skeleton, featuring a hypervalent iodine (PIFA)-catalyzed oxidative dimerization reaction in a single-step operation with overwhelming control over chemoselectivity and regioselectivity. It successfully synthesizes an unnatural C-C dimer of xiamycin A, opening new avenues for studying structure-activity relationships and expanding carbazole chemistry."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d4sc01396d",
+      "pmcid": "PMC11186323",
+      "title": "Highly chemoselective oxidative dimerization of indolosesquiterpene alkaloids: a biomimetic approach to dixiamycin.",
+      "authors": "Munda M, Mondal A, Roy NK, Murmu R, Niyogi S, Bisai A.",
+      "journal": "Chem Sci",
+      "year": 2024,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC11186323?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/e647a3be-ea80-443b-bc13-949f89a09028.zip",
+      "parsed_at": "2026-05-11T06:33:49.479518+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 63,
+    "parseable": 43,
+    "canonicalized": 43,
+    "invalid": 20,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC(=O)[C@@]1(C)[C@H]2CC[C@@H](C)[C@]1(C)Cc1ccc3[nH]c2ccc3c1-c1ccc2[nH]c3ccc([C@]4(C)C(=O)OC)[C@H](C)CC[C@@H]4C)c2c1",
+      "COC(=O)[C@@]1(C)[C@H]2CC[C@@H](C)[C@]1(C)Cc1ccc3[nH]c2ccc3c1-c1ccc2[nH]c3ccc([C@]4(C)C(=O)OC)[C@H](C)CC[C@@H]4C)c2c1",
+      "COC(=O)[C@@]1(C)[C@H]2CC[C@@H](C)[C@]1(C)Cc1ccc3[nH]c2ccc3c1-c1ccc2[nH]c3ccc([C@]4(C)C(=O)OC)[C@H](C)CC[C@@H]4C)c2c1",
+      "COC(=O)[C@@]1(C)[C@H]2CC[C@@H](C)[C@]1(C)Cc1ccc3[nH]c2ccc3c1-c1ccc2[nH]c3ccc([C@]4(C)C(=O)OC)[C@H](C)CC[C@@H]4C)c2c1",
+      "COC(=O)[C@@]1(C)[C@H]2CC[C@@H](C)[C@]1(C)Cc1ccc3[nH]c2ccc3c1-c1ccc2[nH]c3ccc([C@]4(C)C(=O)OC)[C@H](C)CC[C@@H]4C)c2c1",
+      "COC(=O)[C@@]1(C)[C@H]2CC[C@@H](C)[C@]1(C)Cc1ccc3[nH]c2ccc3c1-c1ccc2[nH]c3ccc([C@]4(C)C(=O)OC)[C@H](C)CC[C@@H]4C)c2c1",
+      "COC(=O)[C@@](C)(C)[C@H]1CC[C@H]2C(C1)=CC3=C(C=C2)N(C)C4=CC=C(C=C4)C5=CC6=C(C=C5)N(C)C7=CC=C([C@@H]8CC[C@H](C(C)(C)C(=O)OC)C(C8)=C7)C6",
+      "COC(=O)[C@@](C)(C)[C@H]1CC[C@@H]2C(C1)=CC3=C(C=C2)N(CCC(C)=C(C)C)C4=CC=C(C=C4)C5=CC6=C(C=C5)N(CCC(C)=C(C)C)C7=CC=C([C@@H]8CC[C@H](C(C)(C)C(=O)OC)C(C8)=C7)C6",
+      "COC(=O)[C@@](C)(C)[C@H]1CC[C@@H]2C(C1)=CC3=C(C=C2)N(CC#C)C4=CC=C(C=C4)C5=CC6=C(C=C5)N(CC#C)C7=CC=C([C@@H]8CC[C@H](C(C)(C)C(=O)OC)C(C8)=C7)C6",
+      "CC1(C[C@@H]2CC[C@H](C(C)(C)CO)C[C@@H]2C1)c3ccc4c(c3)c5ccc(cc5n4)N"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

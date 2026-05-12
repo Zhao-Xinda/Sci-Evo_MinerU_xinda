@@ -1,0 +1,264 @@
+{
+  "trace_id": "TS-PMC11922160",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Strychnine",
+    "smiles": "O=C1C=CO[C@@H]2[C@@H]3CN1[C@@H]2C[C@H]1[C@@H]3[C@@H]2C=Cc3ccccc3N21",
+    "natural_product_class": "Alkaloid",
+    "motivation": "Strychnine was selected as a natural product and popular total synthesis target molecule due to its well-documented biosynthesis and numerous total syntheses performed by organic chemists. This comparison provides insights into the differences between human and natural synthetic approaches and traces the development and improvement of synthetic methods in organic chemistry from a quantitative perspective.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Woodward",
+        "year": 1954,
+        "doi": "10.1021/ja01647a088",
+        "key_strategy": "Extensive use of protective groups and functional fragments not part of the final product's structure."
+      },
+      {
+        "lead_author": "Overman",
+        "year": 1995,
+        "doi": "10.1021/ja00126a017",
+        "key_strategy": "Extensive use of protective groups and functional fragments not part of the final product's structure."
+      },
+      {
+        "lead_author": "Vanderwal",
+        "year": 2011,
+        "doi": "10.1039/c1sc00009h",
+        "key_strategy": "Atom economy paradigm, no protection groups, monotonic and rapid growth of molecular complexity, minimizing steps."
+      },
+      {
+        "lead_author": "Nakanishi and Mori",
+        "year": 2002,
+        "doi": "10.1002/1521-3773(20020603)41:11<1934::AID-ANIE1934>3.0.CO;2-F",
+        "key_strategy": "unspecified"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Efficient synthesis of the target molecule, potentially with atom economy and rapid growth of molecular complexity."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [],
+    "rationale": "The paper analyzes existing total syntheses of strychnine rather than proposing a new one. The focus is on comparing the evolution of synthetic strategies (human vs. natural, and historical human approaches vs. modern human approaches) through the lens of molecular complexity changes at each step."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "The concept of molecular complexity is fundamental but lacks a standardized numerical measure. Various methods exist, but they have limitations in universality or capturing expert intuition.",
+        "gap": "A robust, universally accepted, and numerically unbiased definition of molecular complexity is needed to quantify synthetic efficiency and understand trends in organic chemistry.",
+        "decision": "To address the challenge of quantifying molecular complexity, a novel machine learning-based framework employing a Learning to Rank (LTR) approach will be developed, leveraging human expertise to capture complex decision rules that researchers intuitively use."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A machine learning model was developed to quantify molecular complexity based on expert rankings. This model was then applied to analyze various aspects of chemistry, including total synthesis."
+      },
+      "references": [
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "evidence": {
+        "text_span": "In this study, we introduce a novel machine learning-based framework employing a Learning to Rank (LTR) approach to quantify molecular complexity on the basis of labeled data. As a result, we developed a ranking model utilizing the dataset that comprizes approximately 300 000 data points across diverse chemical structures, leveraging human expertise to capture complex decision rules that researchers intuitively use.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Molecular complexity is a crucial research driving force in total synthesis. Different synthetic approaches (biosynthesis, historical human syntheses, modern human syntheses) exist for complex natural products like strychnine.",
+        "gap": "A quantitative comparison of molecular complexity changes across these different synthetic strategies is needed to understand their evolution and underlying principles.",
+        "decision": "To explore synthetic strategies, the trained molecular complexity ranking model will be applied to analyze the synthetic routes of strychnine, comparing biosynthesis with various human-developed total syntheses."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The analysis revealed distinct patterns of molecular complexity changes in biosynthesis (non-monotonic, 'ascent-descent' strategy) compared to historical human syntheses (non-monotonic due to protection/deprotection) and modern human syntheses (monotonic, atom-economical)."
+      },
+      "references": [
+        "36",
+        "37",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42"
+      ],
+      "evidence": {
+        "text_span": "To further demonstrate the potential applications of molecular complexity, the eld of total synthesis was explored, where molecular complexity is crucial research driving force, as was concluded in the work of Wright and Sarpong.36 Unlike the reaction atlas, total synthesis provides a temporal structure, detailing how particular synthetic steps are planned and executed with foresight in later stages. A trained ranking model was applied to analyze synthetic routes, yielding several profound observations on the evolution of human-developed methods and their comparison to natural approaches. ... For this analysis, the natural product and popular total synthesis target molecule strychnine37 was selected, due to its well-documented biosynthesis38 and numerous total syntheses performed by organic chemists.39–42 This comparison provides insights into the differences between human and natural synthetic approaches and traces the development and improvement of synthetic methods in organic chemistry from a quantitative perspective.",
+        "section": "Exploring synthetic strategies with molecular complexity"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Biosynthesis of strychnine involves a series of enzymatic transformations.",
+        "gap": "How does molecular complexity change during the biosynthesis of strychnine?",
+        "decision": "To understand the natural approach, the molecular complexity of intermediates in the strychnine biosynthesis pathway will be calculated and plotted over the course of the synthesis."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@@H]1CC(O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)C=C(C(=O)OC)N2c3ccccc3CCN[C@@H]12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C(O)C(C)=C[C@H]2[C@H]1C1=[N+]2CN2c3ccccc3CCN[C@@H]2C1"
+        ],
+        "named_reaction": "Strictosidine Glucosidase (SGD) catalyzed reaction",
+        "reagents": [
+          "SGD"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Biosynthesis exhibits non-monotonic molecular complexity changes, often involving steps like glycosylation and subsequent removal of the sugar moiety. For example, strictosidine (a complex intermediate) is formed and then modified, leading to strychnine and other alkaloids.",
+        "free_text": "The paper highlights a specific step in biosynthesis where glycosylation (stage 6) increases complexity, and later the glucose disappears (stage 11), indicating a non-monotonic change. This is exemplified by the transformation of strictosidine."
+      },
+      "references": [
+        "38"
+      ],
+      "evidence": {
+        "text_span": "In the biosynthesis route (Fig. 5a, biosynthesis), Nature uses specially designed enzymes for each transformation, allowing chemical transformations to be carried out with excellent selectivity and efficiency. The non-monotonic behavior of molecular complexity during biosynthesis is evident. For instance, in the biosynthesis of strychnine, one step includes the glycosylation of the alcohol group (stage 6), which later disappears (stage 11). Although this approach does not align with the atom economy paradigm, the glucose molecule is reused for other biosystem purposes.",
+        "image_refs": [
+          "bb84834a69da93f77a619eab87e6b7e2ab92a1a1070707e154ca880c4eba6766.jpg",
+          "ece6cef413bf280a8dbd3ebf318b44727abc11b819d83e6d6759de7ca8478c19.jpg",
+          "826401a9437d6af8b688a15482f38fe967d3dc636a83a648e1e8feea1d3cbca2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Early total syntheses of strychnine, such as Woodward's, aimed to achieve the target molecule using available synthetic techniques.",
+        "gap": "How did molecular complexity evolve in these historical human syntheses, and how does it compare to biosynthesis?",
+        "decision": "To analyze historical human approaches, the molecular complexity of intermediates in Woodward's synthesis of strychnine will be calculated and plotted."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=NCCc1c(-c2ccc(OC)c(OC)c2)[nH]c2ccccc12"
+        ],
+        "product_smiles": [
+          "CCOC(=O)[C@@H]1N(S(=O)(=O)c2ccc(C)cc2)C[C@@H]2N=CC21c1ccc(OC)c(OC)c1"
+        ],
+        "reagents": [
+          "TsCl",
+          "pyridine"
+        ],
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Historical human syntheses also exhibited non-monotonic molecular complexity changes, often due to the extensive use of protective groups and functional fragments not incorporated into the final product. This resembles Nature's methods due to limited synthetic techniques at the time.",
+        "free_text": "The paper mentions that in 1954, the primary objective of Woodward's synthesis was to synthesize the target molecule, with extensive use of protective groups and functional fragments not part of the final product's structure."
+      },
+      "references": [
+        "39"
+      ],
+      "evidence": {
+        "text_span": "Initially developed synthetic approaches also exhibit non-monotonic molecular complexity changes, oen due to steps such as protection/deprotection stages. For example, in 1954, the primary objective of Woodward's39 or Overman's40 syntheses of strychnine was to synthesize the target molecule (Fig. 5a, Woodward; Overman). Extensive use of protective groups and functional fragments that are not part of the nal product's structure was common. These previously developed approaches resemble Nature's methods in terms of changing molecular complexity, driven by limited synthetic techniques.",
+        "image_refs": [
+          "c341831bb59ea83f148968390ecd4b61975f64b86fa72148e431578661b2c00f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Modern total syntheses aim for efficiency and atom economy.",
+        "gap": "How does molecular complexity evolve in modern human syntheses, and how does this compare to historical approaches and biosynthesis?",
+        "decision": "To analyze modern human approaches, the molecular complexity of intermediates in Vanderwal's 2011 total synthesis of strychnine will be calculated and plotted."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1ccc(S(=O)(=O)N2C3=CCCC(CO[Si](C)(C)C(C)(C)C)=C3C(Br)c3ccccc32)cc1"
+        ],
+        "product_smiles": [
+          "Cc1ccc(S(=O)(=O)N2C3=CCCC(CO)=C3C(Br)c3ccccc32)cc1"
+        ],
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Modern syntheses, like Vanderwal's, demonstrate an atom economy paradigm with no protection groups and a focus on monotonic and rapid growth of molecular complexity, minimizing the number of steps.",
+        "free_text": "Vanderwal's synthesis demonstrates the atom economy paradigm, which uses no protection groups and focuses on the monotonic and rapid growth of molecular complexity (Fig. 5a, Vanderwal). This approach minimizes the number of steps between the starting reagents and the target molecule."
+      },
+      "references": [
+        "41"
+      ],
+      "evidence": {
+        "text_span": "For example, Vanderwal's 2011 total synthesis41 aimed to synthesize the target molecule efficiently. Vanderwal's synthesis demonstrates the atom economy paradigm, which uses no protection groups and focuses on the monotonic and rapid growth of molecular complexity (Fig. 5a, Vanderwal). This approach minimizes the number of steps between the starting reagents and the target molecule.",
+        "image_refs": [
+          "5c45bc87794c9ef6e6dbd187d9822ee559ed76641ccc28fd2619fecd339a0f3c.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [],
+    "metrics": {},
+    "comparison_to_prior": "The study provides a quantitative comparison of molecular complexity evolution in different total syntheses of strychnine (biosynthesis, Woodward, Overman, Vanderwal). It highlights that biosynthesis and historical human syntheses show non-monotonic complexity changes, often due to protection/deprotection steps or the 'ascent-descent' strategy in nature. Modern syntheses, like Vanderwal's, tend to exhibit monotonic and rapid growth in complexity, emphasizing atom economy.",
+    "significance": "This work introduces a novel machine learning-based framework to quantify molecular complexity, transforming it from a subjective concept into a measurable property. This tool allows for quantitative analysis of synthetic strategies, revealing trends in the evolution of synthetic methods and providing insights into the differences between human-developed and natural biosynthetic pathways. It has broad potential applications in medicinal chemistry and synthetic methodology, guiding drug discovery and optimizing synthetic routes."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d4sc07320g",
+      "pmcid": "PMC11922160",
+      "title": "Digitization of molecular complexity with machine learning.",
+      "authors": "Tyrin AS, Boiko DA, Kolomoets NI, Ananikov VP.",
+      "journal": "Chem Sci",
+      "year": 2025,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC11922160?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/a6af5694-e2a1-4803-86f8-d18cab052bd8.zip",
+      "parsed_at": "2026-05-11T06:19:56.375697+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 7,
+    "parseable": 7,
+    "canonicalized": 7,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

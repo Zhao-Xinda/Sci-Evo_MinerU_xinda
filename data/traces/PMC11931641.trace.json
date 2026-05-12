@@ -1,0 +1,428 @@
+{
+  "trace_id": "TS-PMC11931641",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(±)-simonsol C",
+    "smiles": "C=CCC1=CC(=C)C(c2ccc(CC=C)cc2O)C2=C(O)C(=O)C=CC2(C)C1",
+    "natural_product_class": "sesquineolignan",
+    "structural_features": {
+      "ring_systems": "6/5/6 tricyclic benzofuran",
+      "key_motifs": [
+        "aryl-containing quaternary carbon center",
+        "allyl group",
+        "benzofuran"
+      ]
+    },
+    "motivation": "Simonsol C, isolated from star anise, exhibits biological activity promoting neuronal synapse growth and inhibiting acetylcholinesterase. It features a unique 6/5/6 tricyclic benzofuran structure with an aryl- and allyl-containing quaternary carbon center, making it an attractive synthetic target.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Banwell",
+        "year": 2016,
+        "doi": "10.1021/acs.orglett.6b01799",
+        "key_strategy": "intramolecular Heck reaction"
+      },
+      {
+        "lead_author": "Qin",
+        "year": 2024,
+        "doi": "10.1021/acs.joc.4c00518",
+        "key_strategy": "basic dearomatization and reductive elimination with Zn/AcOH"
+      },
+      {
+        "lead_author": "Denton",
+        "year": 2024,
+        "doi": "10.1039/d4sc03232b",
+        "key_strategy": "alkaline dearomatization followed by Wittig reaction and oxy-Michael addition"
+      }
+    ],
+    "success_criteria": {
+      "overall_yield_target_percent": 13,
+      "lls_target": 8,
+      "free_text": "Shortest known route, construction of aryl-containing quaternary center via acidic dearomatization, formation of 6/5/6 benzofuran unit via reductive elimination and spontaneous oxy-Michael addition."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-O bond forming the benzofuran ring",
+        "named_strategy": "oxy-Michael addition",
+        "reasoning": "The 6/5/6 benzofuran skeleton of (±)-simonsol C can be accessed via an oxy-Michael addition from dienone 15."
+      },
+      {
+        "bond_description": "C-C bond forming the cyclohexadienone unit",
+        "named_strategy": "acidic dearomatization",
+        "reasoning": "The 6/6/6 tricyclic structure in 15 can be constructed through dearomatization of compound 16, which forms the aryl-containing quaternary center."
+      },
+      {
+        "bond_description": "C-C and C-O bonds",
+        "named_strategy": "alkylation",
+        "reasoning": "Compound 16 can be readily synthesized through consecutive alkylation steps starting from magnolol (11). Using magnolol as the starting material brings two allyl groups into the product, thus avoiding the challenges associated with allyl formation reactions."
+      }
+    ],
+    "rationale": "The strategy focuses on an acidic dearomatization to construct the aryl-containing quaternary center, a method not previously explored for simonsol C. This is followed by a reductive elimination and spontaneous oxy-Michael addition to form the benzofuran unit. Magnolol is used as a starting material to incorporate the allyl groups early in the synthesis."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Magnolol (11) has two phenol groups. Selective protection of one phenol group is required.",
+        "gap": "How to selectively protect one phenol group of magnolol (11) to obtain compound 17.",
+        "decision": "To selectively protect one phenol group, chose MOMCl and DIPEA, expecting to obtain compound 17 with good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1cc(O)cc(-c2ccc(CC=C)cc2O)c1"
+        ],
+        "product_smiles": [
+          "C=CCc1ccc(-c2ccc(O)c(CC=C)c2)c(OC(C)OC)c1"
+        ],
+        "reagents": [
+          "MOMCl",
+          "DIPEA"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C-rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "One of the phenol groups was selectively protected, affording compound 17 with an 89% yield."
+      },
+      "evidence": {
+        "text_span": "Starting with magnolol (11), one of the phenol groups was selectively protected by controlling the equivalents of MOMCl and DIPEA, affording compound 17 with an 89% yield [11].",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 17 needs to be alkylated with tert-butyl bromoacetate at the phenolic hydroxy group.",
+        "gap": "Finding an effective base for the alkylation of the phenolic hydroxy group.",
+        "decision": "To alkylate the phenolic hydroxy group, chose potassium carbonate and cesium carbonate, expecting them to be sufficient due to the pKa requirements."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc(-c2ccc(O)c(CC=C)c2)c(OC(C)OC)c1"
+        ],
+        "product_smiles": [
+          "C=CCc1ccc(-c2ccc(OCC(=O)OC(C)(C)C)c(CC=C)c2)c(OC(C)OC)c1"
+        ],
+        "reagents": [
+          "K2CO3",
+          "Cs2CO3",
+          "tert-butyl bromoacetate"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The reaction outcomes with these two bases did not meet the desired expectations, as some starting material remained after 5 hours of reaction. Extending the reaction time did not lead to full consumption of the starting material."
+      },
+      "evidence": {
+        "text_span": "For the following alkylation step with tert-butyl bromoacetate, three bases were tested: potassium carbonate, cesium carbonate, and sodium hydride. Considering the targeted alkylation of a phenolic hydroxy group and the pKa requirements of this reaction, weaker bases like potassium carbonate and cesium carbonate should theoretically suffice. However, the reaction outcomes with these two bases did not meet the desired expectations, as some starting material remained after 5 hours of reaction. Extending the reaction time did not lead to full consumption of the starting material.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Potassium carbonate and cesium carbonate were ineffective for the alkylation of the phenolic hydroxy group of compound 17.",
+        "gap": "A stronger base is needed to achieve complete conversion for the alkylation.",
+        "decision": "To achieve complete conversion, chose sodium hydride as a stronger base, expecting better reaction progress."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc(-c2ccc(O)c(CC=C)c2)c(OC(C)OC)c1"
+        ],
+        "product_smiles": [
+          "C=CCc1ccc(-c2ccc(OCC(=O)OC(C)(C)C)c(CC=C)c2)c(OC(C)OC)c1"
+        ],
+        "reagents": [
+          "NaH",
+          "BrCH2CO2t-Bu"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "When the base was changed to the stronger base sodium hydride, the reaction proceeded much better. Within 2 hours, the starting material was completely converted, yielding compound 18 with 95% isolated yield."
+      },
+      "evidence": {
+        "text_span": "Subsequently, when the base was changed to the stronger base sodium hydride [12], the reaction proceeded much better. Within 2 hours, the starting material was completely converted, yielding compound 18 with 95% isolated yield.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 18 is ready for alkylation at the alpha-position to the carbonyl group.",
+        "gap": "How to achieve proton abstraction and subsequent alkylation with 4-bromobenzyl bromide.",
+        "decision": "To alkylate at the alpha-position, chose LDA for proton abstraction followed by addition of 4-bromobenzyl bromide, expecting to obtain compound 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc(-c2ccc(OCC(=O)OC(C)(C)C)c(CC=C)c2)c(OC(C)OC)c1"
+        ],
+        "product_smiles": [
+          "C=CCc1ccc(-c2ccc(OC(Cc3ccc(Br)cc3)C(=O)OC(C)(C)C)c(CC=C)c2)c(OC(C)OC)c1"
+        ],
+        "reagents": [
+          "LDA",
+          "p-BrBnBr"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "observation": "Proton abstraction of the hydrogen in the alpha-position to the carbonyl group in 18 was achieved by using LDA, followed by the addition of 4-bromobenzyl bromide for alkylation, giving compound 16 with 69% isolated yield."
+      },
+      "evidence": {
+        "text_span": "Proton abstraction of the hydrogen in the alpha-position to the carbonyl group in 18 was achieved by using LDA, followed by the addition of 4-bromobenzyl bromide for alkylation, giving compound 16 with 69% isolated yield.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 16 needs to be reduced to an alcohol.",
+        "gap": "How to selectively reduce the ester group to an alcohol without affecting other functionalities.",
+        "decision": "To reduce the ester to an alcohol, chose LAH at 0 °C, expecting rapid and efficient conversion to alcohol 19."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCc1ccc(-c2ccc(OC(Cc3ccc(Br)cc3)C(=O)OC(C)(C)C)c(CC=C)c2)c(OC(C)OC)c1"
+        ],
+        "product_smiles": [
+          "C=CCc1ccc(-c2ccc(OC(CO)Cc3ccc(Br)cc3)c(CC=C)c2)c(OC(C)OC)c1"
+        ],
+        "reagents": [
+          "LiAlH4"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "Compound 16 was then reduced to alcohol 19 with 2 equiv LAH at 0 °C. The reaction was completed within 10 minutes and the desired alcohol 19 was isolated in 89% yield."
+      },
+      "evidence": {
+        "text_span": "Compound 16 was then reduced to alcohol 19 with 2 equiv LAH at 0 °C. The reaction was completed within 10 minutes and the desired alcohol 19 was isolated in 89% yield.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alcohol 19 contains a bromine substituent that needs to be replaced with a hydroxy group.",
+        "gap": "How to achieve copper-catalyzed replacement of bromine with a hydroxy group efficiently and with minimal side reactions.",
+        "decision": "To replace bromine with a hydroxy group, chose copper-catalyzed conditions with oxalamide ligand I, expecting to obtain product 20 with good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1cc(C(OC)OC)ccc1Cc1ccc(Br)cc1"
+        ],
+        "product_smiles": [
+          "C=Cc1cc(C(OC)OC)ccc1Cc1ccc(O)cc1"
+        ],
+        "reagents": [
+          "Cu(acac)2",
+          "LiOH.H2O"
+        ],
+        "catalyst": "Cu(acac)2",
+        "ligand": "Cc1cc(C)c(NC(=O)NC2=C(C)C=C(C)C=C2C)c(C)c1",
+        "solvent": "DMSO/H2O",
+        "temperature": "80 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "The copper-catalyzed replacement of the bromine substituent in 19 with a hydroxy group was achieved in the presence of a catalytic amount of oxalamide ligand I. This transformation is critical for enabling further functionalization and the reaction conditions were optimized to achieve product 20 with 85% yield, minimizing potential side reactions."
+      },
+      "evidence": {
+        "text_span": "The copper-catalyzed replacement of the bromine substituent in 19 with a hydroxy group was achieved in the presence of a catalytic amount of oxalamide ligand I [13]. This transformation is critical for enabling further functionalization and the reaction conditions were optimized to achieve product 20 with 85% yield, minimizing potential side reactions.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 20 needs to undergo dearomatization to construct the cyclohexadienone unit and the aryl-containing quaternary center.",
+        "gap": "How to control the dearomatization reaction to achieve good yield and selectivity, as the reaction is known to be rapid.",
+        "decision": "To achieve dearomatization, chose PIDA in trifluoroethanol, and optimized reaction time and temperature to -30 °C for 15 minutes, expecting to control the rapid reaction and obtain product 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1cc(C(OC)OC)ccc1Cc1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "C=Cc1cc(C(OC)OC)ccc1Cc1ccc(O)cc1"
+        ],
+        "reagents": [
+          "PIDA"
+        ],
+        "solvent": "TFE",
+        "temperature": "-30 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "Oxidation of compound 20 with PIDA in trifluoroethanol, the original phenol was converted into a quinone moiety, successfully forming the aryl-containing quaternary center. However, in this step, the reaction was too rapid to control. After optimizing the reaction time and temperature, the reaction was carried out at -30 °C for 15 minutes and product 14 was isolated in a yield as high as 58% [14]."
+      },
+      "evidence": {
+        "text_span": "The subsequent dearomatization step is crucial for the construction of the cyclohexadienone unit. Oxidation of compound 20 with PIDA in trifluoroethanol, the original phenol was converted into a quinone moiety, successfully forming the aryl-containing quaternary center. However, in this step, the reaction was too rapid to control. After optimizing the reaction time and temperature, the reaction was carried out at -30 °C for 15 minutes and product 14 was isolated in a yield as high as 58% [14].",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 14 needs to be iodinated, and the MOM group needs to be cleaved.",
+        "gap": "How to achieve both iodination and MOM group cleavage in one step.",
+        "decision": "To achieve iodination and concomitant MOM cleavage, chose I2, PPh3, and imidazole in DCM, expecting the in situ-generated acid to trigger MOM cleavage."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1cc(C(OC)OC)ccc1Cc1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "C=Cc1cc(C(OC)OC)ccc1Cc1ccc(O)cc1"
+        ],
+        "reagents": [
+          "I2",
+          "PPh3",
+          "imidazole"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "Iodination of compound 14 was performed next and the desired iodide was isolated and, to our delight, the cleavage of the MOM group occurred concomitantly, affording compound 15 in 75% yield. This reaction is likely triggered by the in situ-generated acid."
+      },
+      "evidence": {
+        "text_span": "Iodination of compound 14 was performed next and the desired iodide was isolated and, to our delight, the cleavage of the MOM group occurred concomitantly, affording compound 15 in 75% yield. This reaction is likely triggered by the in situ-generated acid.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 15 needs to undergo reductive elimination to liberate the allyl group and simultaneously construct the 6/5/6 tricyclic skeleton via an oxy-Michael addition.",
+        "gap": "How to achieve both reductive elimination and oxy-Michael addition in a single step.",
+        "decision": "To achieve both transformations, chose Zn/AcOH reductive elimination, expecting to form (±)-simonsol C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=Cc1cc(C(OC)OC)ccc1Cc1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "C=CC1=CC(C=C)=C2C(C=C)C3C(O)C(C(C)=O)CC3C12"
+        ],
+        "reagents": [
+          "Zn",
+          "AcOH"
+        ],
+        "solvent": "MeOH",
+        "temperature": "65 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "As in our previously reported synthesis, a Zn/AcOH reductive elimination was utilized to liberate the allyl group and to simultaneously construct the 6/5/6 tricyclic skeleton via an oxy-Michael addition affording (±)-simonsol C in 70% yield."
+      },
+      "evidence": {
+        "text_span": "As in our previously reported synthesis, a Zn/AcOH reductive elimination was utilized to liberate the allyl group and to simultaneously construct the 6/5/6 tricyclic skeleton via an oxy-Michael addition affording (±)-simonsol C in 70% yield (Scheme 4).",
+        "section": "Results and Discussion"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "ROESY spectroscopy"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 13,
+        "unit": "%",
+        "interpretation": "The overall yield for the 8-step synthesis."
+      },
+      "Longest Linear Steps": {
+        "value": 8,
+        "unit": "steps",
+        "interpretation": "The total number of steps in the longest linear sequence."
+      }
+    },
+    "comparison_to_prior": "The synthesis consists of 8 steps and achieves an overall yield of 13%, making it the shortest known route to (±)-simonsol C. The spectral data were in agreement with reported ones. The cis relation between the protons at C5 and C7 was confirmed by 1H-1H ROESY spectroscopy.",
+    "significance": "This work demonstrates a novel approach for the total synthesis of (±)-simonsol C using an acidic dearomatization as a key step to construct the aryl-containing quaternary center. This strategy provides an alternative and efficient method for synthesizing aryl-containing quaternary carbon centers, which are common in many natural products, potentially valuable for the synthesis of related compounds."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.3762/bjoc.21.47",
+      "pmcid": "PMC11931641",
+      "title": "Total synthesis of (±)-simonsol C using dearomatization as key reaction under acidic conditions.",
+      "authors": "Bi XY, Yang XS, Chen SS, Sui JJ, Cai ZN, Chuan YM, Qin HB.",
+      "journal": "Beilstein J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11931641?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/515522ae-a3dd-4acd-b461-e14f396e6918.zip",
+      "parsed_at": "2026-05-11T06:19:59.948371+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 19,
+    "parseable": 19,
+    "canonicalized": 19,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

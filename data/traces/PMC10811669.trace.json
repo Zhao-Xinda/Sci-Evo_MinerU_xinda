@@ -1,0 +1,1068 @@
+{
+  "trace_id": "TS-PMC10811669",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-Heilonine",
+    "smiles": "C[C@@H]1CC[C@@H]2[C@H]1C[C@@H]1O[C@@H]3C=C(CC[C@@H]21)[C@@H]1[C@@H](C3)[C@H]2CC[C@@H](C)N(C)C[C@H]2C[C@H]1O",
+    "natural_product_class": "steroidal alkaloid",
+    "structural_features": {
+      "molecular_weight": 427.64,
+      "stereocenters": 9,
+      "ring_systems": "hexacyclic",
+      "key_motifs": [
+        "C-nor D-homo steroidal skeleton",
+        "trans-hydrindane",
+        "piperidine E ring",
+        "aromatic D-ring"
+      ]
+    },
+    "motivation": "Heilonine is a C-nor D-homo steroidal alkaloid with a hexacyclic ring system, nine stereocenters, and a trans-hydrindane moiety. It belongs to the Veratrum steroidal alkaloid family, which has broad therapeutic potential. The authors aim to establish a general and efficient approach to access both natural and synthetic analogs for comprehensive biological evaluations.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Rawal and Cassaidy",
+        "year": 2021,
+        "doi": null,
+        "key_strategy": "enantioselective organocatalyzed Diels–Alder reaction to build the B ring and a Rh-catalyzed [2+2+2] cycloaddition to form the aromatic D-ring"
+      }
+    ],
+    "success_criteria": {
+      "lls_target": "11 or 13",
+      "stereochemistry_required": true,
+      "free_text": "Convergent and efficient total synthesis."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond between AB and DEF ring systems",
+        "named_strategy": "Stille carbonylative cross-coupling",
+        "reasoning": "To rapidly bring together the AB and DEF ring systems with carbon monoxide as a one-carbon linchpin.",
+        "alternatives_considered": [
+          {
+            "strategy": "Suzuki carbonylative cross-coupling",
+            "rejected_because": "Not successful, lactam carbonyl group was problematic due to steric and electronic effects."
+          }
+        ]
+      },
+      {
+        "bond_description": "C ring closure",
+        "named_strategy": "Nazarov cyclization",
+        "reasoning": "To construct the five-membered C ring from a ketone precursor.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-H functionalization at ortho position of lactam",
+        "named_strategy": "C-H borylation / C-H iodination",
+        "reasoning": "To introduce handles for the carbonylative cross-coupling.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond between C20 and C22",
+        "named_strategy": "Negishi cross-coupling",
+        "reasoning": "To forge a key C-C bond from an in situ generated organozinc reagent and vinyl iodide.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-H functionalization at C6 of Wieland-Miescher ketone derivative",
+        "named_strategy": "Na2-Eosin Y-catalyzed visible-light-induced γ-hydroxylation",
+        "reasoning": "To introduce a hydroxyl group at C6 selectively.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The synthesis aims for convergence and efficiency by employing four selective C-H functionalizations to form key C-C bonds and stereocenters, a Stille carbonylative cross-coupling to connect the AB ring system with the DEF ring system, and a Nazarov cyclization to construct the five-membered C ring. These transformations significantly reduce functional group manipulations. The strategy involves preparing two main fragments, 17 (or 26) and 42, and coupling them. Stereochemical control is addressed by leveraging existing chiral centers and directed reactions, with epimerization as a potential correction for C9."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "DEF ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The amine 21 needs to be coupled with vinyl iodide 22 to form the C-C bond between C20 and C22, establishing the C22 stereocenter.",
+        "gap": "Finding suitable conditions for the Negishi cross-coupling that are highly regio- and diastereoselective.",
+        "decision": "To form the C-C bond between C20 and C22, chose Boc-directed lithiation of 21 with s-BuLi followed by transmetalation with ZnCl2 and Negishi cross-coupling with vinyl iodide 22 using Buchwald CPhos Pd G3 as catalyst, expecting highly regio- and diastereoselective formation of 24."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC(C)N(C(=O)OC(C)(C)C)C1",
+          "C=CC(=O)c1ccccc1"
+        ],
+        "product_smiles": [
+          "CC1CN(C(=O)OC(C)(C)C)C(C)C1C1=CC=CCC=C1"
+        ],
+        "named_reaction": "Negishi cross-coupling",
+        "reagents": [
+          "s-BuLi",
+          "TMEDA",
+          "ZnCl2"
+        ],
+        "catalyst": "CPhos Pd G3",
+        "ligand": "CPhos",
+        "solvent": "Et2O",
+        "temperature": "-78 °C to 23 °C then 80 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Compound 24 was produced in a highly regio- and diastereoselective manner with the desired stereochemistry at C22. The C25 stereocenter controlled the C22 stereocenter by enforcing a Boc-directed lithiation of the equatorial proton."
+      },
+      "evidence": {
+        "text_span": "Our synthesis commenced from 21 and 22 (Scheme 1A). For the Negishi cross-coupling, the organozinc reagent was generated via Boc-directed lithiation of 21 with s-BuLi followed by transmetalation with ZnCl2. After modifying the conditions developed by Knochel and co-workers,15 the Negishi cross-coupling between the organozinc reagent derived from 21 and vinyl iodide 22 occurred with the Buchwald CPhos Pd G3 as catalyst.16 Compound 24 (CCDC 2306389) was produced in a highly regio- and diastereoselective manner with the desired stereochemistry at C22. The C25 stereocenter controlled the C22 stereocenter by enforcing a Boc-directed lithiation of the equatorial proton.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "c99bb24e8a5162edd30c717781f570d802c8b96dfdbd2931c50a849bdd520ecd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "DEF ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 24 has a Boc protecting group that needs to be removed to liberate the amine for subsequent steps.",
+        "gap": "Efficiently removing the Boc group without affecting other parts of the molecule.",
+        "decision": "To remove the Boc group, chose treatment with TFA in DCM, expecting to obtain amine 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CN(C(=O)OC(C)(C)C)C(C)C1C1=CC=CCC=C1"
+        ],
+        "product_smiles": [
+          "CC1CNC(C)C1C1=CC=CCC=C1"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 52,
+        "observation": "Amine 25 was produced in 52% yield over two steps (including step 1)."
+      },
+      "evidence": {
+        "text_span": "After Boc removal with TFA, amine 25 was produced in 52% yield over two steps.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "c99bb24e8a5162edd30c717781f570d802c8b96dfdbd2931c50a849bdd520ecd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "DEF ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amine 25 contains an exomethylene group, and the C20 stereocenter needs to be set.",
+        "gap": "Achieving diastereoselective reduction of the exomethylene group to introduce the C20 stereocenter.",
+        "decision": "To set the C20 stereocenter, chose directed and catalytic hydrogenation with Crabtree’s catalyst, expecting stereoselective reduction of the exomethylene."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CNC(C)C1C1=CC=CCC=C1"
+        ],
+        "product_smiles": [
+          "CC1CNC(C)C1C1=CC=CCC=C1"
+        ],
+        "catalyst": "Crabtree's catalyst",
+        "reagents": [
+          "H2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Delivered 20 in 88% yield as a single diastereomer. The stereochemical outcome could be explained by a nitrogen-directed chelation model (cf. 25a)."
+      },
+      "evidence": {
+        "text_span": "To set up the C20 stereocenter, directed and catalytic hydrogenation with Crabtree’s catalyst was used to reduce the exomethylene stereoselectively17 and delivered 20 in 88% yield as a single diastereomer (CCDC 2306390). The stereochemical outcome could be explained by a nitrogen-directed chelation model (cf. 25a).",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "c99bb24e8a5162edd30c717781f570d802c8b96dfdbd2931c50a849bdd520ecd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "DEF ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Amine 20 needs to be converted into a lactam to close the E ring, which will also serve as a directing group for subsequent C-H functionalization.",
+        "gap": "Finding suitable conditions for oxidative carbonylative C-H lactamization.",
+        "decision": "To close the E ring, chose the conditions developed by Orito and co-workers, using Pd(OAc)2 as catalyst and Cu(OAc)2 and air as co-oxidants under a carbon monoxide atmosphere, expecting to produce lactam 19."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CNC(C)C1C1=CC=CCC=C1"
+        ],
+        "product_smiles": [
+          "CC1CC(C)N(C(=O)c2ccccc2)C1"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "reagents": [
+          "Cu(OAc)2",
+          "CO",
+          "air"
+        ],
+        "solvent": "toluene",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Desired product 19 (CCDC 2306384) was produced in 82% yield."
+      },
+      "evidence": {
+        "text_span": "For the next oxidative carbonylative C-H lactamization to close the E ring, we employed the conditions developed by Orito and co-workers.11a With Pd(OAc)2 as catalyst and Cu(OAc)2 and air as co-oxidants, desired product 19 (CCDC 2306384) was produced in 82% yield under carbon monoxide atmosphere in refluxing toluene.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "c99bb24e8a5162edd30c717781f570d802c8b96dfdbd2931c50a849bdd520ecd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "DEF ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Lactam 19 needs to be functionalized at its ortho position to introduce a handle for the subsequent carbonylative cross-coupling. Two options were considered: borylation and iodination.",
+        "gap": "Synthesizing 17a (with Bpin) and 17b (with iodide) to test their feasibility in the carbonylative cross-coupling.",
+        "decision": "To introduce a handle at the ortho position, chose to synthesize 17a via iridium-catalyzed C-H borylation and 17b via rhodium-catalyzed C-H iodination, expecting to obtain suitable precursors for cross-coupling."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC(C)N(C(=O)c2ccccc2)C1"
+        ],
+        "product_smiles": [
+          "CC1CC(C)N(C(=O)c2ccccc2)C1",
+          "CC1CC(C)N(C(=O)c2ccccc2)C1"
+        ],
+        "reagents": [
+          "B2pin2",
+          "NIS",
+          "PivOH"
+        ],
+        "catalyst": "[Ir(cod)(OMe)]2",
+        "ligand": "L1",
+        "solvent": "THF",
+        "temperature": "100 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "17a (with Bpin) was prepared via iridium-catalyzed C-H borylation. 17b (with iodide) was accessed via rhodium-catalyzed C-H iodination."
+      },
+      "evidence": {
+        "text_span": "At the exploration stage, we synthesized 17a with a Bpin group and 17b with an iodide. The former was prepared via an iridium-catalyzed C−H borylation developed by Chattopadhyay and co-workers,18 and the latter was accessed via a rhodium-catalyzed C−H iodination reported by Glorius et al.19",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "c99bb24e8a5162edd30c717781f570d802c8b96dfdbd2931c50a849bdd520ecd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "AB ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Wieland-Miescher ketone (23) needs to be converted into vinyltriflate 27, a precursor for the AB ring system.",
+        "gap": "Efficiently synthesizing vinyltriflate 27 from Wieland-Miescher ketone.",
+        "decision": "To prepare vinyltriflate 27, chose to use LiHMDS and Comins' reagent, expecting to obtain 27 in reasonable yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C"
+        ],
+        "product_smiles": [
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C"
+        ],
+        "reagents": [
+          "LiHMDS",
+          "Comins' reagent",
+          "HMPA"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 40,
+        "observation": "Vinyltriflate 27 was prepared from Wieland−Miescher ketone in 40% yield."
+      },
+      "evidence": {
+        "text_span": "To test the feasibility of the carbonylative cross-coupling and the Nazarov cyclization, vinyltriflate 27 was prepared from Wieland− Miescher ketone in 40% yield.20",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "c99bb24e8a5162edd30c717781f570d802c8b96dfdbd2931c50a849bdd520ecd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "AB ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Vinyltriflate 27 needs to be converted to vinylstannane 28 for the Stille carbonylative cross-coupling.",
+        "gap": "Efficiently converting vinyltriflate 27 to vinylstannane 28.",
+        "decision": "To convert 27 to vinylstannane 28, chose to use the Wulff method with Pd(PPh3)4 and (Me3Sn)2, expecting good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C"
+        ],
+        "product_smiles": [
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C"
+        ],
+        "catalyst": "Pd(PPh3)4",
+        "reagents": [
+          "(Me3Sn)2",
+          "LiCl"
+        ],
+        "solvent": "THF",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "The latter was further converted to vinylstannane 28 in 83% yield using the Wulff method."
+      },
+      "evidence": {
+        "text_span": "The latter was further converted to vinylstannane 28 in 83% yield using the Wulff method.21",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "c99bb24e8a5162edd30c717781f570d802c8b96dfdbd2931c50a849bdd520ecd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "DEF ring system precursor",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Fragments 17a (borylated) and 17b (iodinated) were prepared, and vinyltriflate 27 and vinylstannane 28 were also prepared. The next step is to connect these fragments via carbonylative cross-coupling.",
+        "gap": "Successfully performing palladium-catalyzed Suzuki (between 17a and 27) or Stille (between 17b and 28) carbonylative cross-coupling.",
+        "decision": "To connect the fragments, chose to investigate various palladium-catalyzed Suzuki or Stille carbonylative cross-coupling conditions, expecting to form the desired coupled product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC(C)N(C(=O)c2ccccc2)C1",
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C"
+        ],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Various palladium-catalyzed Suzuki or Stille carbonylative cross-coupling conditions were not successful. The lactam carbonyl group was problematic due to both steric and electronic effects."
+      },
+      "evidence": {
+        "text_span": "We then investigated various palladium-catalyzed Suzuki (between 17a and 27) or Stille (between 17b and 28) carbonylative cross-coupling conditions but were unfortunately not successful. The information we gathered indicated that the lactam carbonyl group was problematic due to both the steric and electronic effects it generated.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "DEF ring system precursor",
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "The lactam carbonyl group in 17a/17b was problematic for the carbonylative cross-coupling.",
+        "gap": "Overcoming the steric and electronic issues caused by the lactam carbonyl group to enable the cross-coupling.",
+        "decision": "To enable the cross-coupling, decided to remove the lactam carbonyl group before the carbonylative cross-coupling, by reducing 17b with borane-THF to deliver 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC(C)N(C(=O)c2ccccc2)C1"
+        ],
+        "product_smiles": [
+          "CC1CC(C)N(C(=O)c2ccccc2)C1"
+        ],
+        "reagents": [
+          "BH3-THF"
+        ],
+        "solvent": "THF",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "While reduction of 17a was difficult, we were able to reduce 17b with borane−THF to deliver 26 in 95% yield."
+      },
+      "evidence": {
+        "text_span": "Thus, we decided to remove it before the carbonylative cross-coupling and were aware of potential difficulties in dealing with the resulting tertiary amine in the following steps. While reduction of 17a was difficult, we were able to reduce 17b with borane−THF to deliver 26 in 95% yield.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "c99bb24e8a5162edd30c717781f570d802c8b96dfdbd2931c50a849bdd520ecd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The lactam carbonyl group was removed from 17b to give 26. Vinylstannane 28 is available. The next step is to perform the Stille carbonylative cross-coupling.",
+        "gap": "Successfully performing the Stille carbonylative cross-coupling between 26 and 28.",
+        "decision": "To perform the cross-coupling, chose to use Pd(PPh3)4, LiCl, CuCl, and CO, expecting the reaction to proceed smoothly without the problematic lactam carbonyl."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC(C)N(C(=O)c2ccccc2)C1",
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C"
+        ],
+        "product_smiles": [
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C"
+        ],
+        "catalyst": "Pd(PPh3)4",
+        "reagents": [
+          "LiCl",
+          "CuCl",
+          "CO"
+        ],
+        "solvent": "DMSO",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "Without the lactam carbonyl group, the Stille carbonylative cross-coupling between 26 and 28 occurred smoothly with cuprous chloride as an additive to facilitate the transmetalation step. Nazarov precursor 29 was obtained in 68% yield."
+      },
+      "evidence": {
+        "text_span": "Without the lactam carbonyl group, the Stille carbonylative cross-coupling between 26 and 28 occurred smoothly with cuprous chloride as an additive to facilitate the transmetalation step.22 Nazarov precursor 29 was obtained in 68% yield.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "c99bb24e8a5162edd30c717781f570d802c8b96dfdbd2931c50a849bdd520ecd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Nazarov precursor 29 is available. The next step is to perform the Nazarov cyclization to form the C ring.",
+        "gap": "Successfully performing the Nazarov cyclization under various conditions.",
+        "decision": "To perform the Nazarov cyclization, chose to examine various conditions, including photochemical conditions, expecting to obtain the cyclized product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C"
+        ],
+        "product_smiles": [
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C"
+        ],
+        "reagents": [],
+        "solvent": "1,2-DCE",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Under photochemical conditions (254 nm), instead of the Nazarov cyclization products, a mixture of spirocyclic compounds (dr 2.7:1) was obtained as the major identifiable products. The structure of the major diastereomer (30) was confirmed by X-ray crystallography. The formation of 30 was proposed to go through intermediate 31 derived from the excitation of 29. A subsequent 1,6-hydrogen atom abstraction would produce 32 with a benzylic radical further stabilized by the tertiary amine. Intramolecular radical recombination would give 30."
+      },
+      "evidence": {
+        "text_span": "We next examined the Nazarov cyclization under various conditions. Interestingly, under photochemical conditions (254 nm), instead of the Nazarov cyclization products, we obtained a mixture of spirocyclic compounds (dr 2.7:1) as the major identifiable products. The structure of the major diastereomer (30) was confirmed by X-ray crystallography (CCDC 2309636). The formation of 30 was proposed to go through intermediate 31 derived from the excitation of 29. A subsequent 1,6-hydrogen atom abstraction would produce 32 with a benzylic radical further stabilized by the tertiary amine. Intramolecular radical recombination would give 30.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "c99bb24e8a5162edd30c717781f570d802c8b96dfdbd2931c50a849bdd520ecd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "The tertiary amine in 29 complicated the Nazarov reaction under photochemical conditions, leading to undesired spirocyclic products.",
+        "gap": "Finding conditions for the Nazarov cyclization that avoid side reactions caused by the tertiary amine and yield the desired cyclized products.",
+        "decision": "To achieve the Nazarov cyclization, decided to protect the tertiary amine in situ as an ammonium salt and treat 29 with triflic acid (TfOH) in hexafluoro-2-propanol (HFIP), expecting to obtain the desired cyclized products 33, 34, and 35."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C"
+        ],
+        "product_smiles": [
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C",
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C",
+          "CC1C(=O)CC2C1C=CC(=O)C2(C)C"
+        ],
+        "reagents": [
+          "TfOH"
+        ],
+        "solvent": "HFIP",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "dr": "1.2:1 (33:34)",
+        "observation": "The Nazarov cyclization took place, giving a mixture of 33 (43%), 34 (41%), and 35 (11%) in 95% total yield. HFIP helped to improve the overall yield and stereoselectivity at C8. Without HFIP, a 2.5/1 mixture of 33 (major, undesired) and 34 was obtained in 81% yield. The angular methyl group exerted little stereochemical control at C8 (dr = 1.2/1 with HFIP). Cis hydrindane 34 could be partially epimerized to give the desired trans hydrindane 35."
+      },
+      "evidence": {
+        "text_span": "Since the tertiary amine complicated the Nazarov reaction, we decided to protect it in situ as an ammonium salt and treated 29 with triflic acid (TfOH) in hexafluoro-2-propanol (HFIP) at 60 °C.10i,k To our delight, the Nazarov cyclization took place under these conditions to give a mixture of 33 (43%; CCDC 2306386), 34 (41%), and 35 (11%; CCDC 2310768) in 95% total yield. Notably, HFIP helped to improve the overall yield and stereoselectivity at C8. Without HFIP, a 2.5/1 mixture of 33 (major, undesired) and 34 was obtained in 81% yield (see the Supporting Information). These results indicate that the angular methyl group exerts little stereochemical control at C8 (dr = 1.2/1 with HFIP). We suspected that a bulky group protected secondary alcohol at C6 could improve the diastereoselectivity. We further learned that cis hydrindane 34 can be partially epimerized to give the desired trans hydrindane 35.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "c99bb24e8a5162edd30c717781f570d802c8b96dfdbd2931c50a849bdd520ecd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "AB ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The previous Nazarov cyclization showed limited stereochemical control at C8. A more sophisticated vinylstannane (42) with a protected axial secondary alcohol at C6 is needed to improve diastereoselectivity.",
+        "gap": "Synthesizing monoketal 36 from Wieland-Miescher ketone 23.",
+        "decision": "To synthesize 42, chose to convert Wieland-Miescher ketone 23 to its monoketal 36 using p-TsOH.H2O and ethylene glycol, expecting to protect one ketone selectively."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC(=O)C=C1CCC(=O)C2"
+        ],
+        "product_smiles": [
+          "CC12CCC(=O)C=C1C1(CCO1)CCC(=O)C2"
+        ],
+        "reagents": [
+          "p-TsOH.H2O",
+          "HOCH2CH2OH",
+          "4A MS"
+        ],
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Wieland−Miescher ketone 23 was converted to its monoketal 36 in 91% yield."
+      },
+      "evidence": {
+        "text_span": "To synthesize 42, Wieland−Miescher ketone 23 was converted to its monoketal 36 (Scheme 1B).",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": "AB ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Monoketal 36 needs to be hydroxylated at C6. A directed C-H hydroxylation is desired.",
+        "gap": "Achieving selective C-H hydroxylation at C6 of 36.",
+        "decision": "To hydroxylate at C6, chose a Na2-Eosin Y-catalyzed visible-light-induced γ-hydroxylation of enones developed by Yue and Zheng, expecting to convert 36 to 37."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC(=O)C=C1C1(CCO1)CCC(=O)C2"
+        ],
+        "product_smiles": [
+          "CC12CCC(=O)C=C1C1(CCO1)CCC(O)C2"
+        ],
+        "named_reaction": "photoredox C-H oxidation",
+        "catalyst": "Na2-Eosin Y",
+        "reagents": [
+          "O2",
+          "thiourea"
+        ],
+        "solvent": "CH3CN",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "After finely tuning the catalyst loading, we were able to convert 36 to 37 in 45% yield. The main side reaction is overoxidation to a diketone."
+      },
+      "evidence": {
+        "text_span": "While 36 could be advanced to 37 in two steps via extended silyl enol ether formation followed by Rubottom oxidation,23 we wondered whether a directed C−H hydroxylation at C6 could be realized and noted a Na2-Eosin Y-catalyzed visible-light-induced γ- hydroxylation of enones developed by Yue and Zheng recently.24 After finely tuning the catalyst loading, we were able to convert 36 to 37 in 45% yield. The main side reaction is overoxidation to a diketone.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "AB ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 37 needs to be isomerized to 1,4-dione 38 with a trans ring junction.",
+        "gap": "Achieving the isomerization of 37 to 38 with the desired trans ring junction.",
+        "decision": "To isomerize 37, chose to use KOH in MeOH/H2O, expecting to obtain 1,4-dione 38 with a trans ring junction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC(=O)C=C1C1(CCO1)CCC(O)C2"
+        ],
+        "product_smiles": [
+          "CC12CCC(=O)C=C1C1(CCO1)CCC(=O)C2"
+        ],
+        "reagents": [
+          "KOH"
+        ],
+        "solvent": "MeOH/H2O",
+        "temperature": "100 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "37 was then isomerized to 1,4-dione 38 (CCDC 2306391) with a trans ring junction with KOH in 56% yield."
+      },
+      "evidence": {
+        "text_span": "37 was then isomerized to 1,4- dione 38 (CCDC 2306391) with a trans ring junction with KOH.25",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "AB ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "1,4-dione 38 needs to be reduced to a diol, and the ketal protecting group needs to be removed.",
+        "gap": "Achieving dual reduction of 38 and one-pot removal of the ketal protecting group to obtain 1,4-diol 39 with high diastereoselectivity.",
+        "decision": "To obtain 1,4-diol 39, chose dual reduction of 38 using bulky LiAl(Ot-Bu)3H followed by one-pot removal of the ketal protecting group with 1 N HCl, expecting high diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC(=O)C=C1C1(CCO1)CCC(=O)C2"
+        ],
+        "product_smiles": [
+          "CC12CCC(O)C=C1C1(CCO1)CCC(O)C2"
+        ],
+        "reagents": [
+          "LiAl(Ot-Bu)3H",
+          "1 N HCl"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "dr": ">20:1",
+        "observation": "Dual reduction of 38 using bulky LiAl(Ot-Bu)3H followed by one-pot removal of the ketal protecting group delivered 1,4-diol 39 (dr >20:1)."
+      },
+      "evidence": {
+        "text_span": "Dual reduction of 38 using bulky LiAl(O t-Bu)3H26 followed by one-pot removal of the ketal protecting group delivered 1,4-diol 39 (dr >20:1)",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": "AB ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "1,4-diol 39 needs to be protected as bis-TBS ether 40.",
+        "gap": "Efficiently protecting both hydroxyl groups of 39 as TBS ethers.",
+        "decision": "To protect the diol, chose to use TBSOTf and 2,6-lutidine, expecting to obtain bis-TBS ether 40 in high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC(O)C=C1C1(CCO1)CCC(O)C2"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBSOTf",
+          "2,6-lutidine"
+        ],
+        "solvent": "THF",
+        "temperature": "-20 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "39 was subsequently protected as bis-TBS ether 40 in 90% yield over two steps (including step 16)."
+      },
+      "evidence": {
+        "text_span": "which was subsequently protected as bis-TBS ether 40 in 90% yield over two steps.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": "AB ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 40 needs to be converted to vinylstannane 42, which involves vinyl triflate formation and palladium-catalyzed stannylation.",
+        "gap": "Efficiently converting 40 to vinyl triflate 41.",
+        "decision": "To form vinyl triflate 41, chose to use NaHMDS and Comins' reagent, expecting to obtain 41 in good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaHMDS",
+          "Comins' reagent"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "Compound 40 was advanced to vinyl triflate 41 in 75% yield."
+      },
+      "evidence": {
+        "text_span": "Compound 40 was then advanced to vinylstannane 42 in two steps, namely, vinyl triflate formation and palladium-catalyzed stannylation.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": "AB ring system precursor",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Vinyl triflate 41 needs to be converted to vinylstannane 42.",
+        "gap": "Efficiently performing palladium-catalyzed stannylation of 41.",
+        "decision": "To convert 41 to vinylstannane 42, chose palladium-catalyzed stannylation using Pd(PPh3)4, LiCl, and (Me3Sn)2, expecting high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "Pd(PPh3)4",
+        "reagents": [
+          "LiCl",
+          "(Me3Sn)2"
+        ],
+        "solvent": "THF",
+        "temperature": "reflux"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "Vinyl triflate 41 was converted to vinylstannane 42 in 97% yield."
+      },
+      "evidence": {
+        "text_span": "Compound 40 was then advanced to vinylstannane 42 in two steps, namely, vinyl triflate formation and palladium-catalyzed stannylation.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Vinylstannane 42 and fragment 26 are available. The next step is to perform the Stille carbonylation.",
+        "gap": "Successfully performing the Stille carbonylation between 42 and 26.",
+        "decision": "To perform the Stille carbonylation, chose to use the conditions previously successful for the coupling between 26 and 28 (DMSO as solvent), expecting similar results."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC1CC(C)N(C(=O)c2ccccc2)C1"
+        ],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "The conditions used for the coupling between 26 and 28 gave unsatisfactory results."
+      },
+      "evidence": {
+        "text_span": "We then examined the Stille carbonylation between 42 and 26. Unfortunately, the conditions we used for the coupling between 26 and 28 gave unsatisfactory results.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 20,
+      "thought": {
+        "background": "The Stille carbonylation between 42 and 26 gave unsatisfactory results with DMSO as solvent.",
+        "gap": "Finding suitable conditions for the Stille carbonylation between 42 and 26.",
+        "decision": "To improve the Stille carbonylation, chose to switch the solvent from DMSO to 1,4-dioxane, expecting to turn on the carbonylative cross-coupling."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC1CC(C)N(C(=O)c2ccccc2)C1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "Pd(PPh3)4",
+        "reagents": [
+          "LiCl",
+          "CuCl",
+          "CO"
+        ],
+        "solvent": "1,4-dioxane",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "After an extensive investigation, a simple switch of solvent from DMSO to 1,4-dioxane turned on the carbonylative cross-coupling between 42 and 26 to deliver 43 in 73% yield."
+      },
+      "evidence": {
+        "text_span": "After an extensive investigation, we learned that a simple switch of solvent from DMSO to 1,4-dioxane turned on the carbonylative cross-coupling between 42 and 26 to deliver 43 in 73% yield.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 43 is the Nazarov precursor. The previous Nazarov cyclization attempts had issues with stereoselectivity and side products.",
+        "gap": "Successfully performing the Nazarov cyclization on 43 with improved stereochemical control at C8.",
+        "decision": "To perform the Nazarov cyclization, chose a combination of acetic acid and light (370 nm), followed by in situ epimerization, expecting to obtain a mixture of 44 (cis) and 45 (trans) with high stereochemical control at C8 due to the C6 axial TBS ether."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "AcOH",
+          "KOH"
+        ],
+        "solvent": "toluene",
+        "temperature": "23 °C then 60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "dr": "1:1.7 (44:45)",
+        "observation": "A 1/1.7 mixture of 44 (cis)/45 (trans) was obtained in 69% yield. The former could be further epimerized to the latter with i-Pr2NH in MeOH at 50 °C. With the C6 axial TBS ether, high stereochemical control at C8 was obtained."
+      },
+      "evidence": {
+        "text_span": "We then encountered issues with the Nazarov cyclization. We explored various acidic and photochemical conditions and discovered that a combination of acetic acid and light at 370 nm was optimal. After in situ epimerization, a 1/1.7 mixture of 44 (cis)/45 (trans) was obtained in 69% yield. The former could be further epimerized to the latter with i-Pr2NH in MeOH at 50 °C. Notably, with the C6 axial TBS ether, high stereochemical control at C8 was obtained.",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The ketone in 45 needs to be reduced to a methylene group. A one-step reduction was considered.",
+        "gap": "Achieving a one-step reduction of the ketone to a methylene while retaining the TBS protecting groups.",
+        "decision": "To reduce the ketone, chose the Clemmensen reduction with Zn in HCl, expecting to obtain the methylene product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC12CCC(O)C=C1C1(CCO1)CCC(O)C2"
+        ],
+        "reagents": [
+          "Zn",
+          "conc. HCl"
+        ],
+        "solvent": "EtOH",
+        "temperature": "23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 24,
+        "observation": "The Clemmensen reduction with Zn in HCl gave the methylene product with mono-TBS (C3) removal in 25% yield. A subsequent C6 TBS deprotection with TfOH gave (+)-heilonine in 96% yield (11 LLS steps)."
+      },
+      "evidence": {
+        "text_span": "Among the conditions we explored, the Clemmensen reduction with Zn in HCl gave the methylene product with mono-TBS (C3) removal in 25% yield (see the Supporting Information). A subsequent C6 TBS deprotection with TfOH gave (+)-heilonine in 96% yield (11 LLS steps).",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The ketone in 45 needs to be reduced to a methylene. The one-step Clemmensen reduction was challenging and led to partial deprotection.",
+        "gap": "Developing a more robust sequence to reduce the ketone to a methylene without premature deprotection.",
+        "decision": "To reduce the ketone to a methylene, chose a sequence involving reduction to a secondary alcohol with NaBH4, followed by Barton−McCombie deoxygenation, expecting to obtain 46 in good yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaBH4",
+          "NaHMDS",
+          "CS2",
+          "MeI",
+          "Et3B",
+          "n-Bu3SnH",
+          "air"
+        ],
+        "solvent": "MeOH/THF",
+        "temperature": "0 °C to 23 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "The ketone was reduced to a secondary alcohol with NaBH4 and used the Barton−McCombie deoxygenation to deliver 46 in 64% yield over 3 steps."
+      },
+      "evidence": {
+        "text_span": "On the other hand, we reduced the ketone to a secondary alcohol with NaBH4 and used the Barton− McCombie deoxygenation to deliver 46 in 64% yield over 3 steps.27",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 46 contains two TBS protecting groups that need to be removed to yield (+)-heilonine.",
+        "gap": "Efficiently removing both TBS groups to obtain the final product.",
+        "decision": "To remove the TBS groups, chose to use TfOH in CH2Cl2, expecting to obtain (+)-heilonine."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C[C@@H]1CC[C@@H]2[C@H]1C[C@@H]1O[C@@H]3C=C(CC[C@@H]21)[C@@H]1[C@@H](C3)[C@H]2CC[C@@H](C)N(C)C[C@H]2C[C@H]1O"
+        ],
+        "reagents": [
+          "TfOH"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C to -40 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "Final removal of the two TBS groups with TfOH gave (+)-heilonine in 86% yield (13 LLS steps)."
+      },
+      "evidence": {
+        "text_span": "Final removal of the two TBS groups with TfOH gave (+)-heilonine in 86% yield (13 LLS steps).",
+        "section": "Scheme 1. Total Synthesis of (+)-Heilonine",
+        "image_refs": [
+          "943e4ca11aeb7ddd24609d71203fe74ae9936ee76de56aaa803acbc97d1c9bba.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 13,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence is 13 steps, with an alternative 11-step route."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Total number of steps not explicitly stated."
+      },
+      "Failed Attempts Count": {
+        "value": 3,
+        "unit": "count",
+        "interpretation": "Three explicitly mentioned failed attempts."
+      }
+    },
+    "significance": "This work demonstrates a convergent and efficient total synthesis of (+)-heilonine, a complex steroidal alkaloid, in 11 or 13 longest linear sequence steps. It highlights the power of transition metal catalysis and C-H functionalization chemistry, specifically four well-orchestrated C-H functionalizations, a Stille carbonylation, and a photochemical Nazarov cyclization. The strategy enabled the rapid synthesis of building blocks and consecutive bond constructions around a monosubstituted aromatic starting material to produce the tetrasubstituted aromatic core of heilonine."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.3c13492",
+      "pmcid": "PMC10811669",
+      "title": "Convergent and Efficient Total Synthesis of (+)-Heilonine Enabled by C-H Functionalizations.",
+      "authors": "Jin Y, Hok S, Bacsa J, Dai M.",
+      "journal": "J Am Chem Soc",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC10811669?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/3c826ee9-717e-4b09-85b7-3856d76ccee0.zip",
+      "parsed_at": "2026-05-11T06:34:44.070374+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 58,
+    "parseable": 43,
+    "canonicalized": 42,
+    "invalid": 15,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC12CCC(OSi(C)(C)C(C)(C)C)C=C1C3(CCO3)CCC(OSi(C)(C)C(C)(C)C)C2",
+      "CC12CCC(OSi(C)(C)C(C)(C)C)C=C1C3(CCO3)CCC(OSi(C)(C)C(C)(C)C)C2",
+      "CC12CCC(OSi(C)(C)C(C)(C)C)C=C1C3(CCO3)CCC(OSi(C)(C)C(C)(C)C)C2",
+      "CC12CCC(OSi(C)(C)C(C)(C)C)C=C1C3(CCO3)CCC(OSi(C)(C)C(C)(C)C)C2",
+      "CC12CCC(OSi(C)(C)C(C)(C)C)C=C1C3(CCO3)CCC(OSi(C)(C)C(C)(C)C)C2",
+      "CC12CCC(OSi(C)(C)C(C)(C)C)C=C1C3(CCO3)CCC(OSi(C)(C)C(C)(C)C)C2",
+      "CC12CCC(OSi(C)(C)C(C)(C)C)C=C1C3(CCO3)CCC(OSi(C)(C)C(C)(C)C)C2",
+      "CC12CCC(OSi(C)(C)C(C)(C)C)C=C1C3(CCO3)CCC(OSi(C)(C)C(C)(C)C)C2",
+      "CC12CCC(OSi(C)(C)C(C)(C)C)C=C1C3(CCO3)CCC(OSi(C)(C)C(C)(C)C)C2",
+      "CC12CCC(OSi(C)(C)C(C)(C)C)C=C1C3(CCO3)CCC(OSi(C)(C)C(C)(C)C)C2"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

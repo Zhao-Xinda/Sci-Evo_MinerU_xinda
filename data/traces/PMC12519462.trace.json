@@ -1,0 +1,522 @@
+{
+  "trace_id": "TS-PMC12519462",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Polyhydroxylated Cyclopentanone Scaffold",
+    "smiles": "",
+    "natural_product_class": "unspecified",
+    "structural_features": {
+      "stereocenters": 3,
+      "ring_systems": "cyclopentanone",
+      "key_motifs": [
+        "cyclopentanone",
+        "benzyl ether",
+        "methyl ester"
+      ]
+    },
+    "motivation": "The synthesis of polyhydroxylated cyclopentanone scaffolds from readily available pentoses is motivated by the potential to access complex natural products containing multiple hydroxy groups and well-defined stereocenters. This approach aims to overcome the difficulties in transferring synthetic methods into sugar chemistry due to functional group tolerance and regioselectivity issues.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Matsuda",
+        "year": 2000,
+        "doi": "10.1002/1521-3773(20000117)39:2<355::AID-ANIE355>3.0.CO;2-S",
+        "key_strategy": "SmI2-mediated radical cyclization of hexoses to form carbocycles."
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "High efficiency and consistent selectivity across all tested substrates, with the ability to selectively eliminate the C5 benzyloxy group post-cyclization."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond formation to close the cyclopentanone ring",
+        "named_strategy": "Intramolecular Stetter Cyclization",
+        "reasoning": "This strategy allows for the formation of the five-membered ring with multiple chiral centers from a linear aldehyde precursor, leveraging NHC catalysis for umpolung reactivity."
+      },
+      {
+        "bond_description": "C-C bond formation to introduce the Michael acceptor",
+        "named_strategy": "Wittig reaction",
+        "reasoning": "The Wittig reaction is a robust method for introducing the activated olefin necessary for the subsequent Stetter cyclization."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "F1",
+        "smiles": "COC1CC(O)C(O)C(O)O1",
+        "role": "starting material",
+        "comes_from": "commercial availability of D-pentoses"
+      },
+      {
+        "fragment_id": "F2",
+        "smiles": "",
+        "role": "cyclization precursor",
+        "comes_from": "F1 after 4-step activation protocol"
+      }
+    ],
+    "rationale": "The overall strategy involves a multi-step activation protocol of readily available pentoses to generate a linear aldehyde with an intramolecular Michael acceptor. This precursor then undergoes an NHC-catalyzed intramolecular Stetter cyclization to form the polyhydroxylated cyclopentanone scaffold. The use of benzyl protecting groups ensures stability during the transformation and allows for orthogonal deprotection. The strategy is designed to be general and applicable to all D-pentoses, providing access to various stereochemical permutations."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Monosaccharides are abundant, enantiomerically pure building blocks with multiple stereocenters, but their use in total synthesis is underrepresented due to difficulties in applying synthetic methods to sugar chemistry.",
+        "gap": "A general and efficient method for carbocyclization of pentoses to form polyhydroxylated cyclopentanones, overcoming functional group tolerance and regioselectivity issues.",
+        "decision": "To access cyclopentanones with multiple chiral centers, an intramolecular Stetter cyclization of functionalized pentoses via NHC catalysis was envisioned. This would require a cyclization precursor accessible via a general synthetic sequence from methyl glycosides."
+      },
+      "evidence": {
+        "text_span": "In continuation of our previous efforts to expand the scope of useful transformations of the sugar scaffold based on organocatalytic activation with N-heterocyclic carbenes (NHC),14 we wanted to explore the intramolecular Stetter cyclization of functionalized pentose s.15−20 This would allow access to cyclopentanones with multiple chiral centers, which would be suited for the preparation of certain natural products (Scheme 1A).",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "F1",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The goal is to prepare a linear aldehyde precursor for the Stetter cyclization. A 4-step approach from methyl glycosides was considered.",
+        "gap": "Identify robust and general protocols for global protection, C-1 acetal hydrolysis, Wittig reaction, and Dess-Martin oxidation that are compatible with sugar chemistry.",
+        "decision": "To prepare the cyclization precursor, a 4-step protocol was chosen: 1. Global protection of hydroxy groups (benzyl groups); 2. Acidic hydrolysis of the C-1 acetal; 3. Wittig reaction to introduce the activated olefin; and 4. Dess-Martin oxidation. Benzyl protecting groups were selected for their stability and orthogonal cleaving conditions. This protocol was applied to methyl xylo-pyranoside to yield aldehyde 1a.",
+        "outcome": "Aldehyde 1a was successfully synthesized in 59% yield over 4 steps at decagram scale."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1CC(O)C(O)C(O)O1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "BnBr",
+          "NaH",
+          "H2SO4",
+          "Ph3PCCO2R",
+          "Dess-Martin periodinane"
+        ],
+        "named_reaction": "Wittig reaction, Dess-Martin oxidation",
+        "solvent": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "observation": "Aldehyde 1a was obtained in 59% yield over 4 steps at decagram scale, with 2 chromatographic purifications. The protocols were robust and successfully applied to all D-pentoses."
+      },
+      "evidence": {
+        "text_span": "Among other candidate concepts, a 4-step synthetic approach from methyl glycosides consisting of: 1. Global protection of hydroxy groups; 2. Acidic hydrolysis of the C-1 acetal; 3. Wittig reaction to introduce the activated olefin; and 4. Dess-Martin oxidation, became the method of choice (see Scheme 2, top). The protocols for these 4 steps are well established in the literature,22,24,31,32 very robust, and were successfully applied to all D-pentoses (see Supporting Information). The result is a fully protected linear aldehyde, such as 1a, with the carbonyl functionality residing on the former C-5 of the starting pentose. We decided to focus on benzyl protecting groups, as they promised good stability during the transformation while having orthogonal cleaving conditions after cyclization. Following the works of the Rovis group, we expected little influence from the substituents.33 Starting from methyl xylo-pyranoside and applying our 4-step protocol provides aldehyde 1a in 4 steps and 59% yield (2 chromatographic purifications) at decagram scale.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "F2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "With the cyclization precursor 1a in hand, the next step is to optimize the intramolecular Stetter cyclization conditions.",
+        "gap": "Identify the optimal NHC catalyst, base, and solvent for efficient carbocyclization to product 2a.",
+        "decision": "To optimize the reaction, a screening of five commonly used NHC catalysts (A-E) was performed with Et3N as base in DCE. Catalyst A was found to be the most efficient.",
+        "outcome": "Catalyst A showed 87% yield of 2a with Et3N in DCE."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "CN1C=NC(C1)N(C)C.C1=CC=C(C=C1)C(F)(F)F",
+        "reagents": [
+          "Et3N"
+        ],
+        "solvent": "ClCCCl",
+        "temperature": "40 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Catalyst A (pentafluorinated triazole catalyst) efficiently catalyzed the transformation toward carbocycle 2a with Et3N activation, yielding 87% of 2a and 4% recovery of 1a. Other catalysts (B-E) showed very low yields (2-3%) or no reaction."
+      },
+      "evidence": {
+        "text_span": "At first, we screened for a catalyst with the right reactivity profile; thus, five (A−E) commonly used NHC catalysts were employed. In this case, the reaction was highly dependent on the catalyst, with only the pentafluorinated triazole catalyst A efficiently catalyzing this transformation toward carbocycle 2a with, e.g., Et3N activation (see Table 1, entries 1−5) at concentrations below the catalyst.",
+        "page": 14329,
+        "section": "Table 1, entry 1"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "F2",
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "Catalyst A with Et3N gave a good yield, but further optimization of the base could improve the yield.",
+        "gap": "Determine if other bases can further increase the yield of 2a.",
+        "decision": "To improve the yield, a base screening was performed using catalyst A. DBU and DIPEA were tested.",
+        "outcome": "DBU and DIPEA showed slight increases in yield compared to Et3N."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "CN1C=NC(C1)N(C)C.C1=CC=C(C=C1)C(F)(F)F",
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "ClCCCl",
+        "temperature": "40 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "DBU resulted in a 94% yield of 2a with no recovery of 1a, a slight increase compared to Et3N. DIPEA also showed a high yield (93%). 2,6-lutidine was not basic enough."
+      },
+      "evidence": {
+        "text_span": "Next, the base screening was tackled, which resulted in a slight increase in yield compared to Et3N with bases DBU and DIPEA (entries 7 and 8), whereas 2,6-lutidine was not basic enough to enable the reaction (entry 9).",
+        "page": 14329,
+        "section": "Table 1, entry 7"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "F2",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The Stetter cyclization with catalyst A and Et3N was successful, but using equimolar amounts of base might affect the reaction outcome.",
+        "gap": "Investigate the effect of using 1.0 equivalent of Et3N on the reaction.",
+        "decision": "To explore the effect of base stoichiometry, the reaction was run with 1.0 equivalent of Et3N instead of 0.2 equivalents.",
+        "outcome": "Predominant elimination of the C-2 benzyloxy group was observed, leading to product 3a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "catalyst": "CN1C=NC(C1)N(C)C.C1=CC=C(C=C1)C(F)(F)F",
+        "reagents": [
+          "Et3N"
+        ],
+        "stoichiometry": {
+          "Et3N": "1.0 equiv"
+        },
+        "solvent": "ClCCCl",
+        "temperature": "40 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 32,
+        "failure_mode": "side_product_dominant",
+        "observation": "Using 1.0 equivalent of Et3N led to predominant elimination of the C-2 benzyloxy group via an E1cB mechanism, yielding 32% of 2a and 39% of 3a. This was not the desired outcome for the cyclization step."
+      },
+      "evidence": {
+        "text_span": "Using equimolar quantities of base (entry 10) led to predominant elimination of the C-2 benzyloxy group via an E1cB mechanism.",
+        "page": 14329,
+        "section": "Table 1, entry 10"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "F2",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Catalysts B and E showed poor performance with Et3N. It's possible that insufficient carbene formation was the issue.",
+        "gap": "Re-evaluate catalysts B and E using a stronger base (DBU) to ensure sufficient carbene formation.",
+        "decision": "To rule out insufficient carbene formation, catalysts B and E were re-tested with DBU, a stronger base.",
+        "outcome": "Still no conversion to the targeted carbocycle was observed."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "CN1C=NC(C1)N(C)C.C1=CC=C(C=C1)C(C)C",
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "ClCCCl",
+        "temperature": "40 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 6,
+        "failure_mode": "low_yield",
+        "observation": "Catalyst B with DBU yielded only 6% of 2a and 20% recovery of 1a. Catalyst E with DBU yielded <5% of 2a and 87% recovery of 1a. This indicates that the issue was not solely carbene formation."
+      },
+      "evidence": {
+        "text_span": "We then revisited catalysts B and E using commonly used DBU as a stronger base34 to rule out insufficient carbene formation of these precatalyst salts, still yielding no conversion to the targeted carbocycle (entries 11, 12).",
+        "page": 14329,
+        "section": "Table 1, entries 11, 12"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "F2",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "With an optimized catalyst (A) and base (DBU) identified, the next step is to reduce the catalyst loading for practical and economic reasons.",
+        "gap": "Determine the minimum catalyst loading that still provides efficient conversion.",
+        "decision": "To lower the precatalyst loading, the reaction was attempted with 10 mol% of catalyst A and 0.08 equivalents of DBU.",
+        "outcome": "The reaction remained incomplete at this lower loading."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "CN1C=NC(C1)N(C)C.C1=CC=C(C=C1)C(F)(F)F",
+        "reagents": [
+          "DBU"
+        ],
+        "stoichiometry": {
+          "catalyst": "0.1 equiv",
+          "DBU": "0.08 equiv"
+        },
+        "solvent": "ClCCCl",
+        "temperature": "40 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 55,
+        "failure_mode": "low_yield",
+        "observation": "Even at 10 mol% catalyst loading, the reaction remained incomplete, yielding 55% of 2a and 30% recovery of 1a."
+      },
+      "evidence": {
+        "text_span": "With an optimized pair of NHC precatalyst and base at hand, we tried to lower the precatalyst loading (see Supporting Information for further details). However, even at 10 mol%, the reaction remained incomplete (entry 13).",
+        "page": 14329,
+        "section": "Table 1, entry 13"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "F2",
+      "action": "revision",
+      "revises_step_id": 7,
+      "thought": {
+        "background": "The reaction conditions with catalyst A and DBU were effective, but the solvent choice needed to be explored for broader applicability.",
+        "gap": "Determine the optimal solvent for the cyclization reaction.",
+        "decision": "To investigate the effect of solvent polarity, the reaction was tested in DCE (non-anhydrous), DMF, DMSO, THF, and toluene.",
+        "outcome": "DCE and toluene gave excellent yields, while more polar solvents showed incomplete conversion."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "CN1C=NC(C1)N(C)C.C1=CC=C(C=C1)C(F)(F)F",
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "Cc1ccccc1",
+        "temperature": "40 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "DCE (even non-anhydrous) and toluene gave excellent yields (91% and 91% respectively). More polar solvents like DMF, DMSO, and THF showed incomplete conversion even with extended reaction times (58-87% yield)."
+      },
+      "evidence": {
+        "text_span": "Regarding the choice of solvents, the reaction can be carried out in solvents of different polarity (entries 14−18). Generally, DCE and toluene gave excellent yields (entries 7 and 18), whereas more polar solvents showed incomplete conversion even with extended reaction times (entries 15−17). Notably, even with water-saturated DCE, the reaction performed equally well (entry 14).",
+        "page": 14329,
+        "section": "Table 1, entry 18"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Stetter cyclization produces carbocycle 2a. The authors also want to access the corresponding cyclopentenone 3a via elimination.",
+        "gap": "Develop a controlled elimination procedure to convert 2a to 3a, either directly from 1a (one-pot) or from isolated 2a.",
+        "decision": "Based on the observation that 1.0 equiv of Et3N caused partial elimination (step 5), a modified procedure was developed using 2.0 equiv of base and slightly increased temperature to achieve clean transformation to 3a.",
+        "outcome": "Clean transformation to 3a was achieved overnight using 2.0 equiv of base and 50 °C. Et3N was preferred over DBU for cleaner reactions and better yields."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Et3N"
+        ],
+        "stoichiometry": {
+          "Et3N": "2.0 equiv"
+        },
+        "temperature": "50 °C",
+        "time": "overnight"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A clean transformation to cyclopentenone 3a was achieved overnight using 2.0 equiv of base (Et3N) and slightly increasing the temperature to 50 °C. This can be done in a one-pot procedure from 1a or from isolated 2a/2b."
+      },
+      "evidence": {
+        "text_span": "With optimized conditions (entry 7) available, we turned our attention to eliminating product 3a to allow for optional access to this product directly by means of controlled elimination. Based on the conditions showing incomplete elimination using 1.0 equiv. of Et3N (entry 13), we were pleased to find that a clean transformation was achieved overnight using 2.0 equiv. of base and slightly increasing the temperature to 50 °C. The elimination can also be achieved within minutes using DBU, but Et3N generally showed much cleaner reactions and better yields in this protocol. With the modified procedure, the cyclopentenone structure 3a is accessible directly from its parent aldehyde 1a (via a one-pot procedure) or from the respective carbocycles 2a or 2b through base-mediated elimination in a subsequent step.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "The optimized conditions for precursor synthesis and cyclization have been established for 1a.",
+        "gap": "Demonstrate the generality and scope of the method by applying it to all D-pentoses and various ester functionalities.",
+        "decision": "To explore the scope, the precursor synthesis and cyclization protocol were applied to all D-pentoses and various ester functionalities (methyl, ethyl, tert-butyl, benzyl esters, and a nitrile).",
+        "outcome": "Both precursor synthesis and cyclization proceeded smoothly for all D-pentoses, with high yields (83-96%). Various ester functionalities were well tolerated. The elimination products were also accessible."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1OC1C(O)C(O)CO"
+        ],
+        "product_smiles": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "reagents": [
+          "BnBr",
+          "NaH",
+          "H2SO4",
+          "Ph3PCCO2R",
+          "Dess-Martin periodinane",
+          "CN1C=NC(C1)N(C)C.C1=CC=C(C=C1)C(F)(F)F",
+          "DBU",
+          "Et3N"
+        ],
+        "solvent": "ClCCCl",
+        "temperature": "40 °C, 50 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "The precursor synthesis and cyclization protocol proceeded smoothly for all D-pentoses, with yields ranging from 83% to 96% for the complete series of methyl esters. Various ester functionalities (methyl, ethyl, tert-butyl, benzyl) were well tolerated. The corresponding elimination products were also accessible in excellent yield."
+      },
+      "evidence": {
+        "text_span": "With this, we set out to explore the scope of the whole transformation by applying it to all D-pentoses (see Scheme 2). Gratifyingly, both the precursor synthesis and the cyclization protocol proceeded smoothly for all D-pentoses, with yields ranging from 83 to 96% for a complete series of methyl esters. We observed that the syn-configuration between C1 and C5 was favored (4:1) for the lyxo-product, while all other stereochemical patterns gave good to excellent selectivity toward the anti-product. Notably, for the ribo-configured carbocycle 2c, we obtained the antiproduct as a single isomer, which we attribute to the inherent instability of the syn-configuration in the transition state, having 4 bulky residues oriented toward the same face above the plane. The obtained diastereomeric ratios follow our predictions from a simple transition state model (see Supporting Information), where the Michael acceptor always arranges quasi-equatorially in a 5- membered chairlike TS. Interestingly, we observed no change in diastereoselectivity depending on the E/Z configuration of the cyclization precursor, as E/Z mixtures gave comparable reaction outcomes (see Supporting Information). Specifically, we observed an inherent tendency of the xylo-configured cyclopentanone 2a to equilibrate at C1 toward an ∼1:1 syn/ anti mixture upon, for example, extended (10 min) treatment with 0.5 M HCl. We did not observe this behavior for other configurations. Expanding the scope with respect to the Stetter acceptor, to our delight, a variety of ester functionalities were well tolerated by this method. On the xylo-scaffold rather small methyl and ethyl esters are equally well tolerated as bulky tert-butyl and benzyl esters. Further, we could show that an α,β-unsaturated nitrile undergoes carbocyclization within seconds; however, in this particular case, we were unsuccessful in preventing partial follow-up elimination even with reduced amounts of base. We also tested per-OTMS protection in the substrate with our cyclization protocol to obtain carbocycle 2e, where cyclization proceeds smoothly, but partial hydrolysis of the OTMS group is an issue (access to OTMS-protected precursors via a different procedure35, see Supporting Information). We demonstrated the flexibility of the method by obtaining the follow-up elimination products of the methyl ester series (3a and 3c) cleanly in excellent yield, in a one-pot and multistep fashion from both possible parent compounds. Also, eliminated ethyl and benzyl esters (3f and 3g), as well as the nitrile compound 3i, are accessible from their parent cyclopentanones.",
+        "section": "main text"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The method was successful for pentoses and various ester functionalities.",
+        "gap": "Determine if the methodology can be extended to larger analogous hexose structures.",
+        "decision": "To extend the methodology, analogous hexose structures were tested as substrates.",
+        "outcome": "The efforts to extend the methodology to hexoses were unsuccessful."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [],
+        "observation": "Efforts to extend the methodology to larger analogous hexose structures were unsuccessful, likely due to lower reactivity of hexose-derived precursors with α,β-unsaturated ester groups to form the six-membered ring system.",
+        "failure_mode": "no_reaction"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Efforts to extend the methodology to the larger analogous hexose structures have been unsuccessful, likely due to the lower reactivity of hexose-derived precursors with α,β-unsaturated ester groups to form the six-membered ring system."
+      },
+      "evidence": {
+        "text_span": "Interestingly, our efforts to extend the methodology to the larger analogous hexose structures have been unsuccessful—likely due to the lower reactivity of hexose-derived precursors with α,β-unsaturated ester groups to form the six-membered ring system, in consistency with reports on simpler cyclizations.36−38",
+        "section": "main text"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "83-96",
+        "unit": "%",
+        "interpretation": "Yields for the complete series of methyl esters from D-pentoses."
+      }
+    },
+    "significance": "A robust and general strategy for the synthesis of highly functionalized cyclopentanones from naturally occurring pentoses using an organocatalytic NHC-mediated intramolecular Stetter reaction. The method tolerates a variety of functional groups and stereochemical configurations with consistent selectivity and high efficiency. It enables the construction of enantiomerically pure, densely functionalized carbocycles from inexpensive and commercially available sugars, providing access to intermediates for natural product synthesis and medicinal chemistry."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.joc.5c01792",
+      "pmcid": "PMC12519462",
+      "title": "Organocatalytic Stetter Cyclization of Pentoses for the Synthesis of Polyhydroxylated Cyclopentanone Scaffolds.",
+      "authors": "Suster C, Kratena N, Bocharov K, Stanetty C.",
+      "journal": "J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12519462?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/3c935d8e-e2c9-42ee-9c1d-8ac149efba63.zip",
+      "parsed_at": "2026-05-11T06:29:26.148904+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 30,
+    "parseable": 3,
+    "canonicalized": 3,
+    "invalid": 27,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC(=O)CC1C(=O)C(OBn)C(OBn)C1OBn",
+      "O=C(C=C)C(COBn)C(OBn)C(OBn)C(=O)C",
+      "COC(=O)C=C[C@H](OBn)[C@H](OBn)C(=O)[C@H](OBn)C=O",
+      "COC(=O)C=C[C@H](OBn)[C@H](OBn)C(=O)[C@H](OBn)C=O",
+      "COC(=O)C[C@H]1C(=O)C[C@H](OBn)[C@H]1OBn",
+      "COC(=O)C=C[C@H](OBn)[C@H](OBn)C(=O)[C@H](OBn)C=O",
+      "COC(=O)C[C@H]1C(=O)C[C@H](OBn)[C@H]1OBn",
+      "COC(=O)C=C[C@H](OBn)[C@H](OBn)C(=O)[C@H](OBn)C=O",
+      "COC(=O)C[C@H]1C(=O)C[C@H](OBn)[C@H]1OBn",
+      "COC(=O)C=C1C(=O)C[C@H](OBn)[C@H]1OBn"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "Polyhydroxylated Cyclopentanone Scaffold",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

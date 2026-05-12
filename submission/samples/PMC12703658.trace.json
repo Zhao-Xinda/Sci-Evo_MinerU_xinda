@@ -1,0 +1,1033 @@
+{
+  "trace_id": "TS-PMC12703658",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-Ineleganolide",
+    "smiles": "CC1=C(C)C2CC3C(CC4OC(=O)C5OC(C)C5OC4C3O)C(=O)C2C1",
+    "natural_product_class": "norcembranoid",
+    "structural_features": {
+      "key_motifs": [
+        "furanocembranoid",
+        "caged pentacyclic framework"
+      ]
+    },
+    "motivation": "Distinctive polycyclic architecture, promising bioactivities, high topological complexity, eight contiguous stereocenters, flagship norcembranoid, and cherished synthetic target.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Pattenden",
+        "year": 2011,
+        "key_strategy": "semisynthesis from (-)-5-epi-sinuleptolide via double-transannular Michael cyclization"
+      },
+      {
+        "lead_author": "Wood",
+        "year": 2022,
+        "key_strategy": "first total synthesis (22 steps) inspired by Pattenden's approach, using NHK macrocyclization"
+      },
+      {
+        "lead_author": "Stoltz",
+        "year": 2023,
+        "key_strategy": "convergent synthesis using a one-step Michael/aldol cascade and SmI2-mediated semipinacol rearrangement"
+      },
+      {
+        "lead_author": "Fürstner",
+        "year": 2024,
+        "key_strategy": "transformation from (-)-scabrolide B with base"
+      },
+      {
+        "lead_author": "Sarlah",
+        "year": 2025,
+        "key_strategy": "optimized synthetic protocol and 14-step total synthesis"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "10-step (asymmetric) or 9-step (formal racemic) solution, good efficiency, high stereocontrol from readily available starting materials."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond cleavage in cyclobutanol 7",
+        "named_strategy": "de Mayo-type process",
+        "reasoning": "To access the ineleganolide core polycycle in few steps from a strained cyclobutane.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "[2+2] cycloaddition",
+        "named_strategy": "photochemical [2+2] cycloaddition",
+        "reasoning": "To form cyclobutane 7 from 5,5-fused bicycle 8 and a cyclohexene-containing building block.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The strategy involves a de Mayo-type process, specifically an intermolecular photochemical [2+2] cycloaddition/fragmentation. This approach allows for the rapid construction of the complex polycyclic framework of ineleganolide. The key challenge is to achieve trans-selectivity in the [2+2] cycloaddition and to control the C-C bond cleavage cascade."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The target molecule (+)-ineleganolide has eight contiguous stereocenters. The first crucial stereocenter needs to be set.",
+        "gap": "How to establish the first stereocenter enantioselectively.",
+        "decision": "To set the first crucial stereocenter at C10 with an (S)-configuration, chose catalytic asymmetric Keck allylation of commercially available aldehyde 10 with allyltributyltin, expecting allylic alcohol 11 in high yield and enantiomeric excess."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C=O"
+        ],
+        "product_smiles": [
+          "C=CC(O)C(C)C"
+        ],
+        "reagents": [
+          "allyltributyltin"
+        ],
+        "named_reaction": "Keck allylation"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "ee_percent": 99,
+        "observation": "Allylic alcohol 11 was furnished in 93% yield (99% ee) and with an (S)-configuration at C10."
+      },
+      "evidence": {
+        "text_span": "Our investigations commenced with a catalytic asymmetric Keck allylation21 of commercially available aldehyde 10 with allyltributyltin, furnishing allylic alcohol 11 in 93% yield (99% ee) and with an (S)-configuration at C10, the first crucial stereocenter set (Scheme 1).",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Allylic alcohol 11 was successfully synthesized. The next step is to oxidize the terminal alkene to a β-hydroxyketone.",
+        "gap": "Finding suitable conditions for the oxidation of the terminal alkene to β-hydroxyketone 12 without significant side products.",
+        "decision": "To oxidize the terminal alkene to β-hydroxyketone 12, chose traditional Tsuji–Wacker oxidation conditions (PdCl2, CuCl, O2, DMF/H2O), expecting the desired product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(O)C(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)C(O)C=O"
+        ],
+        "reagents": [
+          "PdCl2",
+          "CuCl",
+          "O2"
+        ],
+        "solvent": "DMF/H2O"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 30,
+        "failure_mode": "side_product_dominant",
+        "observation": "β-hydroxyketone 12 was obtained in 30% yield, but lactol products derived from undesired anti-Markovnikov addition were also isolated in equimolar quantity."
+      },
+      "evidence": {
+        "text_span": "The terminal alkene was then oxidized to β-hydroxyketone 12. While traditional Tsuji− Wacker oxidation conditions (PdCl2, CuCl, O2, DMF/H2O) did provide 12 in 30% yield, lactol products derived from the undesired anti-Markovnikov addition were also isolated in equimolar quantity.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Traditional Tsuji–Wacker oxidation conditions resulted in low yield and significant side products. A more selective oxidation method is needed.",
+        "gap": "Identifying an optimal oxidation method to selectively produce β-hydroxyketone 12.",
+        "decision": "To improve the yield and selectivity of the oxidation, chose Sigman’s modification involving a combination of Pd[(-)-sparteine]-Cl2, N,N′-dimethylacetamide (DMAc), and H2O under oxygen atmosphere, expecting an optimal outcome."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(O)C(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)C(O)C=O"
+        ],
+        "reagents": [
+          "Pd[(-)-sparteine]-Cl2",
+          "O2"
+        ],
+        "solvent": "DMAc/H2O"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "Sigman’s modification provided 12 in 67% yield, which was an optimal outcome."
+      },
+      "evidence": {
+        "text_span": "After extensive screening, Sigman’s modification,22 involving a combination of Pd[(-)-sparteine]-Cl2, N,N′-dimethylacetamide (DMAc), and H2O under oxygen atmosphere, was found to provide an optimal outcome, generating 12 in 67% yield.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "β-hydroxyketone 12 was successfully obtained. The next goal is to set the C8 stereochemistry.",
+        "gap": "Achieving high diastereoselectivity in the addition of lithium ethoxyacetylide to 12.",
+        "decision": "To set the C8 stereochemistry, chose to add lithium ethoxyacetylide to 12, followed by protection of the diol as a TBS ether, expecting preferential formation of 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C(O)C=O"
+        ],
+        "product_smiles": [
+          "CC(C)C(C#CCO)O[Si](C)(C)C(C)(C)C",
+          "CC(C)C(C#CCO)O[Si](C)(C)C(C)(C)C"
+        ],
+        "reagents": [
+          "lithium ethoxyacetylide",
+          "TBSCl"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 75,
+        "failure_mode": "low_yield",
+        "dr": "30:45 (13:13')",
+        "observation": "Enynes 13 and its C8 epimer 13' were formed in 30% and 45% yield, respectively, indicating low diastereoselectivity. This was attributed to a competing interplay between closed, chelation-controlled and open transition states."
+      },
+      "evidence": {
+        "text_span": "Lithium ethoxyacetylide was then added to 12, and after protection of the unstable diol as a tertbutyl(dimethyl)silyl (TBS) ether, 13 and its C8 epimer 13′ (not shown, see the SI) were formed in 30% and 45% yield, respectively. The observed low diastereoselectivity was attributed to a competing interplay between a closed, chelation-controlled transition state (see TS-1, Scheme 1 inset) and an open one (see TS-2).",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The previous attempt to set C8 stereochemistry resulted in low diastereoselectivity. Further optimization is needed.",
+        "gap": "Improving diastereoselectivity in the 1,2-addition to 12.",
+        "decision": "To enhance diastereoselectivity, chose to investigate the effects of additives, temperature, concentration, and solvents, expecting an improvement."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C(O)C=O"
+        ],
+        "product_smiles": [
+          "CC(C)C(C#CCO)O[Si](C)(C)C(C)(C)C",
+          "CC(C)C(C#CCO)O[Si](C)(C)C(C)(C)C"
+        ],
+        "reagents": [
+          "lithium ethoxyacetylide",
+          "TBSCl"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "observation": "Further comprehensive investigation into the effects of additives, temperature, concentration, and solvents led to no appreciable improvement."
+      },
+      "evidence": {
+        "text_span": "Further comprehensive investigation into the effects of additives, temperature, concentration, and solvents23 led to no appreciable improvement.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempts to control diastereoselectivity in the 1,2-addition were unsuccessful. A different chelating agent might be effective.",
+        "gap": "Achieving preferential formation of 13 with high diastereoselectivity.",
+        "decision": "To improve diastereoselectivity, chose to use TiCl4 as the chelating metal source, expecting enhanced diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C(O)C=O"
+        ],
+        "product_smiles": [
+          "CC(C)C(C#CCO)O[Si](C)(C)C(C)(C)C",
+          "CC(C)C(C#CCO)O[Si](C)(C)C(C)(C)C"
+        ],
+        "reagents": [
+          "lithium ethoxyacetylide",
+          "TBSCl",
+          "TiCl4"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 92,
+        "dr": "1:9 (13:13')",
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "A markedly enhanced diastereoselectivity ratio (dr, 9:1) with higher combined yield (92%) was observed for the undesired stereoisomer 13'."
+      },
+      "evidence": {
+        "text_span": "In contrast, a markedly enhanced diastereoselectivity ratio (dr, 9:1) with higher combined yield (92%) for undesired stereoisomer 13′ was observed when TiCl4 was used as the chelating metal source24 (see Scheme 1 insert).",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "Previous attempts to control diastereoselectivity in the 1,2-addition were unsuccessful or led to the undesired epimer. A different strategy for silyl ether formation might be key.",
+        "gap": "Achieving preferential formation of 13 with high diastereoselectivity.",
+        "decision": "To achieve preferential formation of 13, chose in situ generation of a TBS silyl ether prior to lithiate addition, expecting improved diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C(O)C=O"
+        ],
+        "product_smiles": [
+          "CC(C)C(C#CCO)O[Si](C)(C)C(C)(C)C",
+          "CC(C)C(C#CCO)O[Si](C)(C)C(C)(C)C"
+        ],
+        "reagents": [
+          "lithium ethoxyacetylide",
+          "TBSCl"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "dr": "66:22 (13:13')",
+        "observation": "Preferential formation of 13 was ultimately achieved by in situ generation of a TBS silyl ether prior to lithiate addition, producing enynes 13 and 13' in 66% and 22% yield, respectively."
+      },
+      "evidence": {
+        "text_span": "Preferential formation of 13 was ultimately achieved by in situ generation of a TBS silyl ether prior to lithiate addition, producing enynes 13 and 13′ in 66% and 22% yield, respectively.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enantioselective synthesis of enyne 13 was achieved. The next step is to form the 5,5-fused core via an intramolecular Pauson–Khand (PK) reaction.",
+        "gap": "Achieving the desired endo cyclization mode in the PK reaction, which is known to be challenging with allylic siloxy groups.",
+        "decision": "To form bicyclic 15, chose to perform an intramolecular Pauson–Khand (PK) cyclization of 13 in the presence of Co2(CO)8, expecting the desired endo cyclization mode despite the presence of the allylic TBS silyl ether."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C(C#CCO)O[Si](C)(C)C(C)(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Co2(CO)8"
+        ],
+        "named_reaction": "Pauson–Khand reaction"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "dr": "13:1",
+        "observation": "The allylic TBS silyl ether-containing substrate 13 underwent PK cyclization smoothly, affording desired product 15 and its C11, C12-epimer 15' in an 84% combined yield with excellent endo selectivity (13:1 ratio favoring 15). The structure and absolute configuration of 15 were unambiguously confirmed by X-ray crystallographic analysis."
+      },
+      "evidence": {
+        "text_span": "With a three-step asymmetric synthesis of enyne 13 in hand, we proceeded to evaluate an intramolecular Pauson−Khand (PK) reaction to form bicycle 15. We anticipated that achieving the desired endo cyclization mode needed in our system would be challenging as opposite exo/endo selectivities are generally observed between substrates bearing bulky allylic siloxy groups and their free alcohol counterparts—while the former typically favors exo selectivity, the latter delivers the endo cycloadducts predominantly.26 To our surprise, we found that the allylic TBS silyl ether-containing substrate 13 underwent PK cyclization smoothly in the presence of Co2(CO)8, affording desired product 15 and its C11, C12- epimer 15′ (not shown, see the SI) in an 84% combined yield with excellent endo selectivity (13:1 ratio favoring 15). The unusual stereoselectivity could be ascribed to minimization of steric repulsion between the C8 substituents and the ethoxy unit in the endo transition state (see 14). The structure and absolute configuration of 15 were unambiguously confirmed by X-ray crystallographic analysis.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bicyclic 15 was successfully synthesized. The next goal is to unveil the key enone-enol-ester chromophore found in 8.",
+        "gap": "Developing a sequence to convert 15 into 8, involving silylation, silyl enol ether formation, and carbonyl isomerization.",
+        "decision": "To unveil the enone-enol-ester chromophore 8, chose a sequence involving addition of TBSOTf and 2,6-lutidine to 15 for silylation and silyl enol ether formation, followed by exposure to aq. HCl (6 M) and HF·pyridine complex for carbonyl isomerization, expecting synthetically useful yields."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBSOTf",
+          "2,6-lutidine",
+          "HCl (6 M)",
+          "HF·pyridine complex"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "The optimized sequence delivered carbonyl isomerization product 8 in synthetically useful yields (55%). The structure of 8 was confirmed unambiguously by an X-ray crystallographic analysis."
+      },
+      "evidence": {
+        "text_span": "In a carefully optimized sequence, the addition of TBSOTf and 2,6-lutidine to 15 both silylated the C8 tertiary alcohol and formed an unstable cyclopentadiene intermediate via silyl enol ether formation at C5. Subsequent exposure of the resulting reaction mixture was observed to aq. HCl (6 M) followed by a HF·pyridine complex (HF·Py) delivered carbonyl isomerization product 8 in synthetically useful yields (55%). The structure of 8 was confirmed unambiguously by an X-ray crystallographic analysis.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Bicyclic enol 8 is available. The next critical step is the intermolecular photochemical [2+2] cycloaddition with a cyclohexene-containing fragment.",
+        "gap": "Finding conditions that promote the desired trans-selective [2+2] cycloaddition and avoid side reactions or no reaction.",
+        "decision": "To assess the viability of 8 as a coupling partner, chose to evaluate various photochemical conditions and cyclohexene-containing substrates, including Ir[dF(CF3)ppy]2(dtbbbpy)PF6, Sc(OTf)3, terpy, imidazole at 427 nm in CH2Cl2, expecting cycloadduct formation.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "OC1C=CCCC1"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "Ir[dF(CF3)ppy]2(dtbbbpy)PF6",
+          "Sc(OTf)3",
+          "terpy",
+          "imidazole"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "23 °C",
+        "time": "15 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction was observed under these conditions (Entry 1, Table 1)."
+      },
+      "evidence": {
+        "text_span": "Ir[dF(CF3)ppy]2(dtbbbpy)PF6, Sc(OTf)3, terpy, imidazole 427 nm, CH2Cl2, 0.05 M, 23 °C, 15 h",
+        "page": 44729,
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous photochemical conditions were ineffective. Other catalysts and light sources should be explored.",
+        "gap": "Finding conditions that promote the desired trans-selective [2+2] cycloaddition.",
+        "decision": "To promote the cycloaddition, chose ZrCl4 with 440 nm light in CH2Cl2, expecting cycloadduct formation.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "OC1C=CCCC1"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "ZrCl4"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "23 °C",
+        "time": "14 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction was observed (Entry 2, Table 1)."
+      },
+      "evidence": {
+        "text_span": "ZrCl4, 440 nm, CH2Cl2, 0.1 M, 23 °C, 14 h",
+        "page": 44729,
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous photochemical conditions were ineffective. Different photocatalysts and bases should be tested.",
+        "gap": "Finding conditions that promote the desired trans-selective [2+2] cycloaddition.",
+        "decision": "To promote the cycloaddition, chose 4CzIPN with n-Bu2PO4NMe(n-Bu)3 at 455 nm in CH3CN, expecting cycloadduct formation.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "OC1C=CCCC1"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "4CzIPN",
+          "n-Bu2PO4NMe(n-Bu)3"
+        ],
+        "solvent": "CH3CN",
+        "temperature": "23 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction was observed (Entry 3, Table 1)."
+      },
+      "evidence": {
+        "text_span": "4CzIPN, n-Bu2PO4NMe(n-Bu)3, 455 nm, CH3CN, 0.1 M, 23 °C, 24 h",
+        "page": 44729,
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous photochemical conditions were ineffective. A different light source and solvent should be explored.",
+        "gap": "Finding conditions that promote the desired trans-selective [2+2] cycloaddition.",
+        "decision": "To promote the cycloaddition, chose Hg (450 W) in benzene at 40 °C, expecting cycloadduct formation.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "OC1C=CCCC1"
+        ],
+        "product_smiles": [],
+        "reagents": [],
+        "solvent": "benzene",
+        "temperature": "40 °C",
+        "time": "5 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "observation": "An unidentified mixture was observed along with the formation of 20 and 21, but in very low yield (<10%) (Entry 4, Table 1)."
+      },
+      "evidence": {
+        "text_span": "Hg (450 W), benzene, 0.02 M or 0.1 M, 40 °C, 5 h",
+        "page": 44729,
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous photochemical conditions were ineffective. A different wavelength of light should be tested.",
+        "gap": "Finding conditions that promote the desired trans-selective [2+2] cycloaddition.",
+        "decision": "To promote the cycloaddition, chose 390 nm light in benzene at 45 °C, expecting cycloadduct formation.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "OC1C=CCCC1"
+        ],
+        "product_smiles": [],
+        "reagents": [],
+        "solvent": "benzene",
+        "temperature": "45 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction was observed (Entry 5, Table 1)."
+      },
+      "evidence": {
+        "text_span": "390 nm, benzene, 0.02 M, 45 °C, 24 h",
+        "page": 44729,
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous photochemical conditions were ineffective. A different wavelength of light should be tested.",
+        "gap": "Finding conditions that promote the desired trans-selective [2+2] cycloaddition.",
+        "decision": "To promote the cycloaddition, chose 350 nm light in CH2Cl2 at 0 °C, expecting cycloadduct formation.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "OC1C=CCCC1"
+        ],
+        "product_smiles": [],
+        "reagents": [],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C",
+        "time": "15 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 5,
+        "failure_mode": "low_yield",
+        "observation": "Partial recovery of 8 along with the formation of 20 and 21, but in very low yield (<5%) (Entry 7, Table 1)."
+      },
+      "evidence": {
+        "text_span": "350 nm, CH2Cl2, 0.02 M, 0 °C, 15 h",
+        "page": 44729,
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous photochemical conditions were ineffective. A different wavelength of light should be tested.",
+        "gap": "Finding conditions that promote the desired trans-selective [2+2] cycloaddition.",
+        "decision": "To promote the cycloaddition, chose 254 nm light in CH2Cl2 at -78 °C, expecting cycloadduct formation.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "OC1C=CCCC1"
+        ],
+        "product_smiles": [],
+        "reagents": [],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 5,
+        "failure_mode": "low_yield",
+        "observation": "Partial recovery of 8 along with the formation of 20 and 21, but in very low yield (<5%) (Entry 9, Table 1)."
+      },
+      "evidence": {
+        "text_span": "254 nm, CH2Cl2, 0.02 M, -78 °C, 24 h",
+        "page": 44729,
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous photochemical conditions were ineffective. Different solvents should be explored.",
+        "gap": "Finding conditions that promote the desired trans-selective [2+2] cycloaddition.",
+        "decision": "To promote the cycloaddition, chose 300 nm light in Et2O, EtOAc, or acetone at -78 °C, expecting cycloadduct formation.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "OC1C=CCCC1"
+        ],
+        "product_smiles": [],
+        "reagents": [],
+        "solvent": "Et2O or EtOAc or acetone",
+        "temperature": "-78 °C",
+        "time": "16-24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 5,
+        "failure_mode": "low_yield",
+        "observation": "An unidentified mixture was observed along with the formation of 20 and 21, but in very low yield (<5%) (Entry 10, Table 1)."
+      },
+      "evidence": {
+        "text_span": "300 nm, Et2O or EtOAc or acetone, 0.02 M, -78 °C, 16-24 h",
+        "page": 44729,
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous photochemical conditions were ineffective. A different solvent should be explored.",
+        "gap": "Finding conditions that promote the desired trans-selective [2+2] cycloaddition.",
+        "decision": "To promote the cycloaddition, chose 300 nm light in MeOH at -78 °C, expecting cycloadduct formation.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "OC1C=CCCC1"
+        ],
+        "product_smiles": [],
+        "reagents": [],
+        "solvent": "MeOH",
+        "temperature": "-78 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction was observed (Entry 12, Table 1)."
+      },
+      "evidence": {
+        "text_span": "300 nm, MeOH, 0.02 M, -78 °C, 24 h",
+        "page": 44729,
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 18,
+      "thought": {
+        "background": "Previous photochemical conditions were ineffective or gave low yields. A different solvent and temperature might be optimal for trans-selectivity.",
+        "gap": "Achieving high yield and trans-selectivity in the photochemical [2+2] cycloaddition.",
+        "decision": "To optimize the cycloaddition, chose 300 nm light in CH2Cl2 at -78 °C, expecting improved yield and selectivity for the trans adduct 20.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "OC1C=CCCC1"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "regio_selectivity": "trans:cis = 43:29",
+        "observation": "Trans adduct 20 and cis adduct 21 were produced from 8 and racemic 2-cyclohexen-1-ol (2.5 equiv) in 43% and 29% yield, respectively (Entry 8, Table 1). Both cycloadducts contain the desired regioselectivity, facial selectivity, and exo selectivity. A single configuration at the C3 stereocenter was obtained despite using racemic 2-cyclohexen-1-ol."
+      },
+      "evidence": {
+        "text_span": "After thorough evaluation of an array of cyclohexene-containing substrates and photochemical conditions (see Table 1), we were delighted to find that trans adduct 20 and cis adduct 21 were produced from 8 and racemic 2- cyclohexen-1-ol (2.5 equiv) in 43% and 29% yield, respectively (entry 8, Table 1). Although both 20 and 21 were found to be unstable under basic, acidic, and thermal conditions, both were rapidly characterized by 1H NMR and 13C NMR (including 2D). Notably, both cycloadducts contain the desired regioselectivity, facial selectivity, and exo selectivity. Moreover, a single configuration at the C3 stereocenter was obtained, despite using racemic 2-cyclohexen-1-ol.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 19,
+      "thought": {
+        "background": "The photochemical [2+2] cycloaddition conditions in CH2Cl2 provided a mixture of trans and cis adducts. Further optimization of the solvent might improve trans-selectivity.",
+        "gap": "Achieving higher trans-selectivity in the photochemical [2+2] cycloaddition.",
+        "decision": "To improve trans-selectivity, chose acetonitrile (MeCN) as the reaction solvent, expecting it to be optimal for achieving uncommon trans-selectivity.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "OC1C=CCCC1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "solvent": "MeCN",
+        "temperature": "-20 °C",
+        "time": "9 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "Further exploration of reaction solvents revealed that acetonitrile (MeCN) was optimal for achieving uncommon trans-selectivity, yielding 67% of 20 (Entry 11, Table 1)."
+      },
+      "evidence": {
+        "text_span": "Further exploration of reaction solvents revealed that acetonitrile (MeCN) was optimal for achieving uncommon trans-selectivity.19a,27",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A reliable route for preparing trans adduct 20 was established. The next pivotal step is the fragmentation of the cyclobutanol to form the caged pentacycle.",
+        "gap": "Achieving the desired cascade of desilylation, lactone formation, retro-aldol cleavage, and ketalization in a single step.",
+        "decision": "To execute the pivotal fragmentation step, chose to treat the optimized photocycloaddition reaction mixture directly with aq. HCl (1 M), expecting spontaneous formation of caged pentacycle 16 as a single diastereomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@H]1C[C@@H](O)C[C@H]2[C@H]1OC(=O)[C@@]21O[C@H]2C[C@@H](C)C21"
+        ],
+        "reagents": [
+          "HCl (1 M)"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 52,
+        "dr": ">20:1",
+        "observation": "Surprisingly, directly treating the optimized photocycloaddition reaction mixture with aq. HCl (1 M) led to the spontaneous formation of caged pentacycle 16 in 52% yield and as essentially a single diastereomer. The structure of compound 16 was confirmed by X-ray analysis. This cascade involves desilylation of the C10 and C8 hydroxyl groups with concomitant formation of the hallmark C19 lactone, retro-aldol cleavage of the C5−C12 bond, and finally ketalization to furnish the pentacycle."
+      },
+      "evidence": {
+        "text_span": "Having established a reliable route for preparing 20, we executed the pivotal fragmentation step of the de Mayo-type process (Scheme 1). Surprisingly, directly treating the optimized photocycloaddition reaction mixture with aq. HCl (1 M) led to the spontaneous formation of caged pentacycle 16 in 52% yield and as essentially a single diastereomer. The structure of compound 16 was confirmed by X-ray analysis. Presumably, this cascade involves desilylation of the C10 and C8 hydroxyl groups with concomitant formation of the hallmark C19 lactone, retro-aldol cleavage of the C5−C12 bond, and finally ketalization to furnish the pentacycle (Figure 2A). Thus, in a single step, the entire skeleton and eight of nine vital stereocenters of ineleganolide (4) were assembled from 8 and (±)-2-cyclohexen-1-ol.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Pentacycle 16 was successfully synthesized. The next goal is the regioselective removal of the extraneous C5 bridgehead hydroxyl group.",
+        "gap": "Finding a method to selectively deoxygenate the C5 hydroxyl group in the presence of the C3 secondary alcohol.",
+        "decision": "To remove the C5 hydroxyl group, chose to attempt direct ionic hydrogenation or SmI2-mediated dehydroxylation, expecting selective deoxygenation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H]1C[C@@H](O)C[C@H]2[C@H]1OC(=O)[C@@]21O[C@H]2C[C@@H](C)C21"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "ionic hydrogenation reagents",
+          "SmI2"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Initial attempts to elicit direct ionic hydrogenation or SmI2-mediated dehydroxylation resulted only in the recovery of 16 or formation of unidentified mixtures."
+      },
+      "evidence": {
+        "text_span": "Initial attempts to elicit direct ionic hydrogenation or SmI2-mediated dehydroxylation resulted only in the recovery of 16 or formation of unidentified mixtures.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Direct deoxygenation attempts failed. Barton–McCombie deoxygenation might offer a broader reactivity window.",
+        "gap": "Forming the requisite activated thiocarbonyls for Barton–McCombie deoxygenation.",
+        "decision": "To deoxygenate the C5 hydroxyl group, chose to explore Barton–McCombie-type deoxygenation, expecting to form the activated thiocarbonyls.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H]1C[C@@H](O)C[C@H]2[C@H]1OC(=O)[C@@]21O[C@H]2C[C@@H](C)C21"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "thiocarbonylating reagents"
+        ],
+        "named_reaction": "Barton–McCombie deoxygenation"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "observation": "We were unable to form the requisite activated thiocarbonyls likely due to steric hindrance at this position."
+      },
+      "evidence": {
+        "text_span": "While a Barton−McCombie-type deoxygenation might allow for a broader reactivity window to be explored, we were unable to form the requisite activated thiocarbonyls likely due to steric hindrance at this position.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 23,
+      "thought": {
+        "background": "Previous deoxygenation attempts failed due to steric hindrance. A different approach involving cyclic sulfate formation might be successful.",
+        "gap": "Regioselectively removing the C5 bridgehead hydroxyl group.",
+        "decision": "To remove the C5 hydroxyl group, chose to convert 16 into its corresponding cyclic sulfate using sulfuryl chloride (SO2Cl2), hoping to leverage the potentially more accessible C3 hydroxyl group as a tether.",
+        "alternatives_considered": []
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H]1C[C@@H](O)C[C@H]2[C@H]1OC(=O)[C@@]21O[C@H]2C[C@@H](C)C21"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@H]1C[C@@H](Cl)C[C@H]2[C@H]1OC(=O)[C@@]21O[C@H]2C[C@@H](C)C21"
+        ],
+        "reagents": [
+          "SO2Cl2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "To our surprise, this process instead formed chloride 17, whose structure was established by X-ray crystallographic analysis, with the C3 alcohol intact."
+      },
+      "evidence": {
+        "text_span": "As a final recourse, we explored the conversion of 16 into its corresponding cyclic sulfate using sulfuryl chloride (SO2Cl2)5 in the hopes of leveraging the potentially more accessible C3 hydroxyl group as a tether. To our surprise, this process instead formed chloride 17, whose structure was established by X-ray crystallographic analysis, with the C3 alcohol intact.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Chloride 17 was successfully formed. The next step is to remove the chlorine atom.",
+        "gap": "Regioselectively removing the chlorine atom without overreduction.",
+        "decision": "To remove the chlorine atom, chose SmI2-mediated dehalogenation conditions, expecting to afford β-keto tetrahydrofuran 18 without overreduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H]1C[C@@H](Cl)C[C@H]2[C@H]1OC(=O)[C@@]21O[C@H]2C[C@@H](C)C21"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@H]1C[C@@H](O)C[C@H]2[C@H]1OC(=O)[C@@]21O[C@H]2C[C@@H](C)C21"
+        ],
+        "reagents": [
+          "SmI2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "The chlorine atom was uneventfully removed under careful SmI2-mediated dehalogenation conditions, affording β-keto tetrahydrofuran 18 in 93% yield. Overreduction of the β-keto tetrahydrofuran moiety was not observed likely due to poor orbital overlap, i.e. the O3−C6− C5−O2 dihedral angle being 161.4° as noted in the X-ray crystal structure of 17."
+      },
+      "evidence": {
+        "text_span": "The chlorine atom was uneventfully removed under careful SmI2-mediated dehalogenation conditions, affording β-keto tetrahydrofuran 18 in 93% yield. Overreduction of the β-keto tetrahydrofuran moiety was not observed likely due to poor orbital overlap, i.e. the O3−C6− C5−O2 dihedral angle being 161.4° as noted in the X-ray crystal structure of 17 (see insert Scheme 1).",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "β-keto tetrahydrofuran 18 was successfully obtained. The next step is to introduce the cyclohexenone moiety.",
+        "gap": "Developing an efficient double-oxidation process to form cyclohexenone 19.",
+        "decision": "To form cyclohexenone 19, chose a one-pot double-oxidation process employing benzeneseleninic acid anhydride [(PhSeO)2O], expecting efficient delivery."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H]1C[C@@H](O)C[C@H]2[C@H]1OC(=O)[C@@]21O[C@H]2C[C@@H](C)C21"
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@H]1C[C@@H](O)C[C@H]2[C@H]1OC(=O)[C@@]21O[C@H]2C[C@@H](C)C21"
+        ],
+        "reagents": [
+          "(PhSeO)2O"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "A one-pot double-oxidation process employing benzeneseleninic acid anhydride [(PhSeO)2O] efficiently delivered cyclohexenone 19 in 81% yield."
+      },
+      "evidence": {
+        "text_span": "With 18 secured, we were pleased to find that a one-pot double-oxidation process employing benzeneseleninic acid anhydride [(PhSeO)2O] efficiently delivered cyclohexenone 19 in 81% yield.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cyclohexenone 19 was successfully obtained. The final step is the stereospecific installation of the C1 isopropenyl unit to complete the synthesis of (+)-ineleganolide (4).",
+        "gap": "Achieving stereospecific installation of the C1 isopropenyl unit with high diastereoselectivity, as similar conjugate additions have faced stereochemical challenges.",
+        "decision": "To install the C1 isopropenyl unit, chose to treat enone 19 with excess freshly prepared isopropenyl cuprate, expecting excellent diastereoselectivity and the formation of (+)-ineleganolide (4)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@@H]1C[C@@H](O)C[C@H]2[C@H]1OC(=O)[C@@]21O[C@H]2C[C@@H](C)C21"
+        ],
+        "product_smiles": [
+          "CC1=C(C)C2CC3C(CC4OC(=O)C5OC(C)C5OC4C3O)C(=O)C2C1"
+        ],
+        "reagents": [
+          "isopropenyl cuprate"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "dr": ">20:1",
+        "observation": "We fortuitously observed the opposite facial selectivity when enone 19 was treated with excess freshly prepared isopropenyl cuprate, which furnished (+)-ineleganolide (4) in 76% isolated yield with excellent diastereoselectivity (dr > 20:1)."
+      },
+      "evidence": {
+        "text_span": "Finally, the stereospecific installation of the C1 isopropenyl unit was explored. While Zhang and co-workers faced stereochemical challenges on a similar conjugate addition reaction to a seven-membered enone in their synthesis of (−)-sinulochmodin C,29 we fortuitously observed the opposite facial selectivity when enone 19 was treated with excess freshly prepared isopropenyl cuprate, which furnished (+)-ineleganolide (4) in 76% isolated yield with excellent diastereoselectivity (dr > 20:1).",
+        "section": "Main Text"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated, but individual steps show good to excellent yields."
+      },
+      "Longest Linear Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "The synthesis is 10 steps in its asymmetric form."
+      },
+      "Total Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "The synthesis is 10 steps in its asymmetric form."
+      },
+      "Failed Attempts Count": {
+        "value": 10,
+        "unit": "attempts",
+        "interpretation": "Multiple failed attempts were reported during the optimization of the Wacker oxidation, 1,2-addition, and photochemical cycloaddition."
+      }
+    },
+    "significance": "This concise 10-step asymmetric total synthesis of ineleganolide (4) is a significant achievement for a flagship norcembranoid. Key to its success were a diastereoselective alkynylation, an endo selective Pauson–Khand reaction, a stereospecific de Mayo-type intermolecular photochemical [2+2] cycloaddition/fragmentation cascade, a regioselective chlorination of a hindered lactol, and a facial selective conjugate addition. The convergent coupling strategy requires only one of the two coupling partners to be generated in enantioenriched form, obviating the need for chiral building blocks like norcarvone. This study provides a conceptually new abiotic blueprint for this fascinating family of diterpenes and can inform future syntheses of other intriguing cyclized cembranoids."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.5c17640",
+      "pmcid": "PMC12703658",
+      "title": "Short, Enantioselective Total Synthesis of (+)-Ineleganolide.",
+      "authors": "Yu K, Gorou A, Huang D, Maimone TJ.",
+      "journal": "J Am Chem Soc",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12703658?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/fcd46b74-4891-4959-bd27-6a67f8f2045b.zip",
+      "parsed_at": "2026-05-11T06:40:36.327492+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 60,
+    "parseable": 42,
+    "canonicalized": 39,
+    "invalid": 18,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC(=O)C1=C(OSi(C)(C)C(C)(C)C)C2C(C(C1=O)C(C2C)OSi(C)(C)C(C)(C)C)OSi(C)(C)C(C)(C)C",
+      "COC(=O)C1=C(OSi(C)(C)C(C)(C)C)C2C(C(C1=O)C(C2C)OSi(C)(C)C(C)(C)C)OSi(C)(C)C(C)(C)C",
+      "COC(=O)C1=C(O)C2C(C(C1=O)C(C2C)OSi(C)(C)C(C)(C)C)OSi(C)(C)C(C)(C)C",
+      "COC(=O)C1=C(O)C2C(C(C1=O)C(C2C)OSi(C)(C)C(C)(C)C)OSi(C)(C)C(C)(C)C",
+      "COC(=O)C1=C(O)C2C(C(C1=O)C(C2C)OSi(C)(C)C(C)(C)C)OSi(C)(C)C(C)(C)C",
+      "COC(=O)C1=C(O)C2C(C(C1=O)C(C2C)OSi(C)(C)C(C)(C)C)OSi(C)(C)C(C)(C)C",
+      "COC(=O)C1=C(O)C2C(C(C1=O)C(C2C)OSi(C)(C)C(C)(C)C)OSi(C)(C)C(C)(C)C",
+      "COC(=O)C1=C(O)C2C(C(C1=O)C(C2C)OSi(C)(C)C(C)(C)C)OSi(C)(C)C(C)(C)C",
+      "COC(=O)C1=C(O)C2C(C(C1=O)C(C2C)OSi(C)(C)C(C)(C)C)OSi(C)(C)C(C)(C)C",
+      "COC(=O)C1=C(O)C2C(C(C1=O)C(C2C)OSi(C)(C)C(C)(C)C)OSi(C)(C)C(C)(C)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

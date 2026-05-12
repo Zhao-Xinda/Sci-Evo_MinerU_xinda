@@ -1,0 +1,458 @@
+{
+  "trace_id": "TS-PMC12642946",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-aglacin B",
+    "smiles": "COc1cc2c(cc1OC)O[C@@H]1C[C@@H](Cc3cc(OC)c(OC)c(OC)c3)[C@H]1C2",
+    "natural_product_class": "aryltetralin lignan",
+    "structural_features": {
+      "stereocenters": 3,
+      "ring_systems": "tetrahydronaphtho[2,3-c]furan",
+      "key_motifs": [
+        "aryltetralin",
+        "furan"
+      ]
+    },
+    "motivation": "Aglacins are bioactive cyclic ether natural products with broad attention from the synthetic community. This work aims to achieve a total synthesis of (+)-aglacin B using a non-photocatalysis approach, specifically focusing on nickel-promoted reductive cyclization.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Zhu",
+        "year": 2020,
+        "doi": "10.1002/anie.202007548",
+        "key_strategy": "visible light-catalyzed radical cation cascade for C8–C8′ and C2–C7′ bond formation (racemic)"
+      },
+      {
+        "lead_author": "Zhu",
+        "year": 2022,
+        "doi": "10.1038/s41467-022-31000-4",
+        "key_strategy": "improved conditions for racemic synthesis of aglacins A and E"
+      },
+      {
+        "lead_author": "Gao",
+        "year": 2021,
+        "doi": "10.1002/anie.202105395",
+        "key_strategy": "asymmetric photoenolization/Diels–Alder reactions for C7–C8 and C7′–C8′ bond construction (enantioselective)"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "The synthesis should efficiently construct the aryltetralin[2,3-c]furan skeleton and provide (+)-aglacin B with confirmed structure and stereochemistry."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C8'-C8 and C7-C1 bonds",
+        "named_strategy": "Ni-promoted tandem radical cyclization",
+        "reasoning": "These two bonds can be formed in one step from the β-bromo acetal 5, followed by acetal reduction to complete the synthesis."
+      },
+      {
+        "bond_description": "C7' stereocenter",
+        "named_strategy": "Evans’ auxiliary-induced asymmetric conjugate addition",
+        "reasoning": "The diarylmethine stereocenter at C7' in primary alcohol 6 can be formed by an asymmetric conjugate addition of α,β-unsaturated acyl oxazolidinone 7 with 3,4,5-trimethoxyphenylmagnesium bromide (8)."
+      }
+    ],
+    "rationale": "The strategy leverages a nickel-promoted reductive cyclization cascade to construct the core aryltetralin[2,3-c]furan skeleton and an Evans' auxiliary-induced asymmetric conjugate addition to establish the key stereocenter, avoiding photocatalysis."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis starts from commercially available 2,6-dimethoxyphenol, which is converted to o-bromobenzaldehyde 9.",
+        "gap": "Need to extend the carbon chain and introduce an α,β-unsaturated ester functionality.",
+        "decision": "To extend the carbon chain and introduce the α,β-unsaturated ester, chose a Horner–Wadsworth–Emmons (HWE) reaction of o-bromobenzaldehyde 9 with triethyl phosphonoacetate, expecting ester 10."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(C=O)c(Br)c(OC)c1OC"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C=Cc1cc(OC)c(OC)c(OC)c1Br"
+        ],
+        "reagents": [
+          "triethyl phosphonoacetate",
+          "NaH"
+        ],
+        "solvent": "THF",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "The Horner–Wadsworth–Emmons (HWE) reaction of o-bromobenzaldehyde 9 with triethyl phosphonoacetate successfully yielded ester 10."
+      },
+      "evidence": {
+        "text_span": "As shown in Scheme 2, the forward synthesis began with a triethyl phosphonoacetate-mediated Horner–Wadsworth– Emmons (HWE) reaction of o-bromobenzaldehyde 9 derived from 2,6-dimethoxyphenol (Supporting Information File 1). The generated ester 10 was then converted into the corresponding acyl chloride by saponification and subsequent reaction with pivaloyl chloride.",
+        "image_refs": [
+          "a4339c01781a6da81bc88451557ddaf6538cd5c5b807a0bba7e1ae5d1399c4f9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ester 10 was successfully synthesized.",
+        "gap": "Need to convert the ester to an acyl oxazolidinone for asymmetric conjugate addition.",
+        "decision": "To prepare the α,β-unsaturated acyl oxazolidinone 7, chose saponification of ester 10, followed by reaction with pivaloyl chloride to form the acyl chloride, and then trapping with (S)-4-phenyl-2-oxazolidinone (11), expecting the desired amide 7."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1cc(OC)c(OC)c(OC)c1Br"
+        ],
+        "product_smiles": [
+          "COc1cc(C=CC(=O)N2C[C@@H](c3ccccc3)OC2=O)c(Br)c(OC)c1OC"
+        ],
+        "reagents": [
+          "NaOH",
+          "pivaloyl chloride",
+          "(S)-4-phenyl-2-oxazolidinone",
+          "LDA"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "The ester 10 was converted to the α,β-unsaturated amide 7 via saponification, acyl chloride formation, and reaction with (S)-4-phenyl-2-oxazolidinone (11)."
+      },
+      "evidence": {
+        "text_span": "The generated ester 10 was then converted into the corresponding acyl chloride by saponification and subsequent reaction with pivaloyl chloride. The resulting acyl chloride was then trapped by (S)-4-phenyl-2-oxazolidinone (11) to produce the desired α,β-unsaturated amide 7.",
+        "image_refs": [
+          "a4339c01781a6da81bc88451557ddaf6538cd5c5b807a0bba7e1ae5d1399c4f9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The α,β-unsaturated acyl oxazolidinone 7 is ready for asymmetric conjugate addition.",
+        "gap": "Need to introduce the 3,4,5-trimethoxyphenyl group stereoselectively.",
+        "decision": "To form the diarylmethine stereocenter, chose an asymmetric conjugate addition using an in situ generated aryl–copper(I) species from CuBr·Me2S and Grignard reagent 8, adding to 7, expecting excellent diastereocontrol for 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(C=CC(=O)N2C[C@@H](c3ccccc3)OC2=O)c(Br)c(OC)c1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc([C@H](C(=O)N2C[C@@H](c3ccccc3)OC2=O)[C@H](CC(=O)N2C[C@@H](c3ccccc3)OC2=O)c2cc(OC)c(OC)c(OC)c2Br)c(OC)c1OC"
+        ],
+        "reagents": [
+          "CuBr.Me2S",
+          "COc1cc(MgBr)cc(OC)c1OC"
+        ],
+        "solvent": "THF",
+        "temperature": "-48 °C to 0 °C",
+        "time": "2.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "dr": "20:1",
+        "observation": "The asymmetric conjugate addition proceeded with excellent diastereocontrol, yielding 12. This reaction was scalable to ten grams."
+      },
+      "evidence": {
+        "text_span": "Next, the asymmetric conjugate addition was carried out [20,21]. The in situ generated aryl–copper(I) species was obtained under the action of CuBrMe2S with Grignard reagent 8, and then added to a THF solution of the α,β-unsaturated acyl oxazolidinone 7 at −48 °C. This reaction demonstrated an excellent diastereocontrol for 12 (dr = 20:1), and could easily proceed on a scale of ten grams (Supporting Information File 1).",
+        "image_refs": [
+          "a4339c01781a6da81bc88451557ddaf6538cd5c5b807a0bba7e1ae5d1399c4f9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 12, containing the chiral auxiliary, was obtained.",
+        "gap": "Need to remove the chiral auxiliary and obtain the primary alcohol.",
+        "decision": "To reduce the chiral auxiliary in 12, chose NaBH4 in THF/H2O, expecting primary alcohol 6."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc([C@H](C(=O)N2C[C@@H](c3ccccc3)OC2=O)[C@H](CC(=O)N2C[C@@H](c3ccccc3)OC2=O)c2cc(OC)c(OC)c(OC)c2Br)c(OC)c1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc([C@H](C(=O)N2C[C@@H](c3ccccc3)OC2=O)[C@H](CCO)c2cc(OC)c(OC)c(OC)c2Br)c(OC)c1OC"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "THF/H2O",
+        "temperature": "rt",
+        "time": "10 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Reduction of the chiral auxiliary in 12 with NaBH4 provided the primary alcohol 6 in good yield."
+      },
+      "evidence": {
+        "text_span": "For the reduction of the chiral auxiliary in 12, NaBH4 in THF/H2O proved to be the optimal conditions, giving the primary alcohol 6 in 80% yield.",
+        "image_refs": [
+          "a4339c01781a6da81bc88451557ddaf6538cd5c5b807a0bba7e1ae5d1399c4f9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Primary alcohol 6 was obtained.",
+        "gap": "Need to convert the primary alcohol to an acetal for the subsequent cyclization precursor.",
+        "decision": "To form the acetal, chose oxidation of alcohol 6 by IBX followed by reaction with CH(OMe)3, expecting acetal 17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc([C@H](C(=O)N2C[C@@H](c3ccccc3)OC2=O)[C@H](CCO)c2cc(OC)c(OC)c(OC)c2Br)c(OC)c1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc([C@H](C(=O)N2C[C@@H](c3ccccc3)OC2=O)[C@@H](c2cc(OC)c(OC)c(OC)c2Br)C(OC)OC)c(OC)c1OC"
+        ],
+        "reagents": [
+          "IBX",
+          "CH(OMe)3"
+        ],
+        "solvent": "CH3CN, MeOH",
+        "time": "5 h, then 30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "Oxidation of alcohol 6 by IBX followed by reaction with CH(OMe)3 successfully afforded acetal 17."
+      },
+      "evidence": {
+        "text_span": "Subsequently, oxidation of this alcohol by IBX followed by reaction with CH(OMe)3 afforded acetal 17, which was then subjected to a CH2Cl2 solution of TMSOTf and iPr2NEt.",
+        "image_refs": [
+          "a4339c01781a6da81bc88451557ddaf6538cd5c5b807a0bba7e1ae5d1399c4f9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acetal 17 was synthesized.",
+        "gap": "Need to convert the acetal to an enol methyl ether for further functionalization.",
+        "decision": "To produce enol methyl ethers, chose subjecting acetal 17 to TMSOTf and iPr2NEt in CH2Cl2, expecting a mixture of enol methyl ethers 18 via an elimination reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc([C@H](C(=O)N2C[C@@H](c3ccccc3)OC2=O)[C@@H](c2cc(OC)c(OC)c(OC)c2Br)C(OC)OC)c(OC)c1OC"
+        ],
+        "product_smiles": [
+          "COC=C[C@H](c1cc(OC)c(OC)c(OC)c1Br)[C@@H](C(=O)N1C[C@@H](c2ccccc2)OC1=O)c1ccc(OC)c(OC)c1OC"
+        ],
+        "reagents": [
+          "TMSOTf",
+          "DIPEA"
+        ],
+        "solvent": "CH2Cl2",
+        "time": "25 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "An elimination reaction of acetal 17 produced a mixture of enol methyl ethers 18."
+      },
+      "evidence": {
+        "text_span": "A mixture of enol methyl ethers 18 were thus produced by an elimination reaction.",
+        "image_refs": [
+          "a4339c01781a6da81bc88451557ddaf6538cd5c5b807a0bba7e1ae5d1399c4f9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enol methyl ethers 18 were obtained.",
+        "gap": "Need to introduce bromine and an allyl group to form the β-bromo acetal 5, which is the cyclization precursor.",
+        "decision": "To form the β-bromo acetal 5, chose site-selective bromination of the double bond in 18 with 2,4,4,6-tetrabromo-2,5-cyclohexadienone (TBCD), followed by reaction with allyl alcohol, expecting the desired precursor 5."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC=C[C@H](c1cc(OC)c(OC)c(OC)c1Br)[C@@H](C(=O)N1C[C@@H](c2ccccc2)OC1=O)c1ccc(OC)c(OC)c1OC"
+        ],
+        "product_smiles": [
+          "COc1ccc([C@@H]2OC(OC)C(Br)C2c2cc(OC)c(OC)c(OC)c2Br)c(OC)c1OC"
+        ],
+        "reagents": [
+          "2,4,4,6-tetrabromo-2,5-cyclohexadienone",
+          "allyl alcohol"
+        ],
+        "solvent": "CH2Cl2",
+        "time": "9 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "Site-selective bromination of the double bond in 18 followed by reaction with allyl alcohol provided β-bromo acetal 5. The overall yield from alcohol 6 to 5 was 30%."
+      },
+      "evidence": {
+        "text_span": "Eventually, a site-selective bromination of the double bond over the electron-rich benzene rings with 2,4,4,6-tetrabromo-2,5- cyclohexadienone (TBCD) in CH2Cl2 followed by reaction with allyl alcohol, provided β-bromo acetal 5 in 30% overall yield starting from alcohol 6.",
+        "image_refs": [
+          "a4339c01781a6da81bc88451557ddaf6538cd5c5b807a0bba7e1ae5d1399c4f9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The cyclization precursor 5 was successfully prepared.",
+        "gap": "Need to perform the key nickel-promoted reductive tandem cyclization to form the core skeleton.",
+        "decision": "To construct the trans-tetrahydronaphtho[2,3-c]furan skeleton, chose a nickel-promoted reductive tandem cyclization of 5 using NiCl2, Zn, ethyl crotonate, and pyridine in DMA, expecting bicyclization and formation of 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@@H]1OC(OC)C(Br)=C(Br)[C@H]1Cc1c(OC)c(OC)cc(OC)c1OC"
+        ],
+        "product_smiles": [
+          "COc1cc(OC)c(OC)c2c1C[C@H]1[C@@H]3C[C@H](OC)[C@@H](OC)O[C@H]3C[C@H]21"
+        ],
+        "reagents": [
+          "NiCl2",
+          "Zn",
+          "ethyl crotonate",
+          "pyridine"
+        ],
+        "solvent": "DMA",
+        "temperature": "rt",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 30,
+        "observation": "The nickel-promoted reductive tandem cyclization of 5 occurred smoothly, efficiently constructing the trans-tetrahydronaphtho[2,3-c]furan skeleton embedded in 13. The desired diastereomer was separated by flash column chromatography."
+      },
+      "evidence": {
+        "text_span": "With a successful preparation of the cyclization precursor 5, the designed nickel-promoted reductive tandem cyclization was pursued (Scheme 3). By slightly modifying the reaction conditions of our previous studies [11,12], the expected bicyclization of 5 occurred smoothly, resulting in an efficient construction of the trans-tetrahydronaphtho[2,3-c]furan skeleton embedded in 13, which could be separated from the other diastereomer [14] by flash column chromatography in 30% yield. The stereocon- trolled formation of aryltetralin 13 could be attributed to an adoption of a pseudo-half-chair conformation 5a.",
+        "image_refs": [
+          "2e4c9378402cf706c28bcf5f085d14e0ade1fb8e9db8a9227cca2a16fb5689b9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 13, containing the core skeleton, was obtained.",
+        "gap": "Need to complete the total synthesis by reducing the acetal.",
+        "decision": "To achieve the final step towards (+)-aglacin B (2), chose treatment of 13 with BF3·Et2O as the Lewis acid and Et3SiH as the hydrogen source, expecting the natural product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(OC)c(OC)c2c1C[C@H]1[C@@H]3C[C@H](OC)[C@@H](OC)O[C@H]3C[C@H]21"
+        ],
+        "product_smiles": [
+          "COc1cc2c(cc1OC)O[C@@H]1C[C@@H](Cc3cc(OC)c(OC)c(OC)c3)[C@H]1C2"
+        ],
+        "reagents": [
+          "BF3.OEt2",
+          "Et3SiH"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "rt",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "The final step, acetal reduction, successfully afforded (+)-aglacin B (2). NMR data matched literature, and X-ray diffraction confirmed the precise structure with three continuous chiral centers."
+      },
+      "evidence": {
+        "text_span": "Finally, the final step towards the total synthesis of (+)-aglacin B (2) was achieved by treatment with BF3·Et2O as the Lewis acid and Et3SiH as the hydrogen source [22], affording this natural product in 58% isolated yield. NMR data of the synthetic sample were found to be in agreement with those of previous literature (Tables S1 and S2, Supporting Information File 1). Moreover, the newly synthesized (+)-aglacin B (2) formed single crystals, and a corresponding X-ray diffraction analysis (inset in Scheme 3, selected H atoms have been omitted for clarity, and Table S3, Supporting Information File 1) unambiguously confirmed its precise structure with three continuous chiral centers.",
+        "image_refs": [
+          "2e4c93783402cf706c28bcf5f085d14e0ade1fb8e9db8a9227cca2a16fb5689b9.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "X-ray crystallography",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield not explicitly stated, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 9,
+        "unit": "steps",
+        "interpretation": "Calculated from the execution trace."
+      },
+      "Total Steps": {
+        "value": 9,
+        "unit": "steps",
+        "interpretation": "Calculated from the execution trace."
+      },
+      "Failed Attempts Count": {
+        "value": 0,
+        "unit": "count",
+        "interpretation": "No explicit failed attempts described in the provided text."
+      }
+    },
+    "significance": "The total synthesis of (+)-aglacin B was achieved using a non-photocatalytic approach. The key Ni-promoted reductive cyclization cascade efficiently established the tetrahydronaphtho[2,3-c]furan core, demonstrating a new fashion for constructing this type of natural product. The structure and stereochemistry were unambiguously confirmed by X-ray crystallography."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.3762/bjoc.21.197",
+      "pmcid": "PMC12642946",
+      "title": "Ni-promoted reductive cyclization cascade enables a total synthesis of (+)-aglacin B.",
+      "authors": "Yao SC, Cao JS, Xiao J, Wang YW, Peng Y.",
+      "journal": "Beilstein J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12642946?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/ab880e4c-e232-430a-b271-42ee56907827.zip",
+      "parsed_at": "2026-05-07T15:41:05.723766+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 19,
+    "parseable": 19,
+    "canonicalized": 19,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

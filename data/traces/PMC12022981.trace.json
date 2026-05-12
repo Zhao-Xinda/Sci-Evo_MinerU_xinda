@@ -1,0 +1,403 @@
+{
+  "trace_id": "TS-PMC12022981",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Lugdunomycin",
+    "smiles": "COc1cccc2c1C1C(C(C)C(=O)NC(=O)C1(O)O)C2C",
+    "natural_product_class": "angucycline polyketide",
+    "structural_features": {
+      "key_motifs": [
+        "benzaza[4,3,3]propellane-6-spiro-2'-2H-naphtho[1,8-bc]furan core"
+      ]
+    },
+    "motivation": "Lugdunomycin is a highly rearranged angucycline polyketide with an enigmatic biosynthetic pathway. Understanding its biosynthesis is important for insights into angucycline synthesis and for discovering new chemical space for drug discovery.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Produce lugdunomycin identical to the natural product, including its stereochemistry, and elucidate its biosynthetic pathway."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bonds forming the central six-membered ring of the propellane core",
+        "named_strategy": "Intermolecular Diels-Alder reaction",
+        "reasoning": "The complex core structure of lugdunomycin suggests a Diels-Alder reaction between a diene and a dienophile. Elmonin can act as a masked diene (isobenzofuran) and iso-maleimycin as a dienophile.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "elmonin",
+        "smiles": "COc1cccc2c1C(c1cc(C)ccc1O)[C@H]1[CH]CC(O2)O1",
+        "role": "masked diene precursor",
+        "comes_from": "BGC12"
+      },
+      {
+        "fragment_id": "iso-maleimycin",
+        "smiles": "O=C1C=C[C@@H](O)C(=O)N1",
+        "role": "dienophile",
+        "comes_from": "BGC23a"
+      }
+    ],
+    "rationale": "The proposed biosynthesis involves an intermolecular Diels-Alder reaction between an isobenzofuran derived from elmonin (a C-ring-cleaved angucyclinone) and iso-maleimycin. This strategy was supported by genomic, mutational, and heterologous expression studies showing that elmonin and iso-maleimycin are produced by distinct BGCs and are both required for lugdunomycin biosynthesis. The biomimetic synthesis aims to confirm this key step and investigate its stereoselectivity."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Lugdunomycin (1) is a highly rearranged angucycline derivative with an unusual core structure. Its biosynthesis is unclear, but it is known to be produced by Streptomyces sp. QL37.",
+        "gap": "The final steps in lugdunomycin biosynthesis, particularly how its unique core structure is formed, are unknown.",
+        "decision": "To understand the biosynthesis of lugdunomycin, a combination of biomimetic total synthesis, paired omics, and computational simulation will be used."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Initial understanding of lugdunomycin's structure and origin."
+      },
+      "evidence": {
+        "text_span": "Lugdunomycin (1) is a highly rearranged angucycline derivative produced by the soil-derived Streptomyces sp. QL37.5 Angucyclines comprise a very large family of glycosylated natural products.6 Their aglycones, referred to as angucyclinones, originate from a benz[a]anthracene framework synthesized through the polyketide pathway.6a,7 They collectively constitute the most extensive category of natural products derived from a type II polyketide synthase (PKS), boasting over 400 identified members, approximately 45% of which exhibit biological activity.8 Many of the compounds have antimicrobial and/or anticancer activity; however, many other bioactivities have been described, such as vasodilator, glutamate receptor agonist, platelet aggregation inhibitor, or antidiabetic.6a A major reason for the strong interest in the angucyclines is the occurrence of highly diverse chemical scaffolds, whereby over a hundred different compounds may be produced by the same Streptomyces strain.5,9 This still offers great opportunities to discover new synthetic and biosynthetic routes and, thus, enrich the chemical space for drug discovery. Lugdunomycin is very different from typical angucyclinones, featuring a rare benzaza[4,3,3]propellane-6-spiro-2′-2Hnaphtho[1,8-bc]furan core structure.5 A putative biosynthetic pathway was proposed for the biosynthesis of lugdunomycin. While the biosynthesis of the core angucycline backbone of lugdunomycin is encoded by a type II PKS biosynthetic gene cluster (BGC), it is unclear how the final product is synthesized.",
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "The unique structure of lugdunomycin suggests a complex biosynthetic pathway. Previous work hypothesized that the final steps might involve an angucyclinone and maleimycin or iso-maleimycin.",
+        "gap": "Confirmation of the specific precursors and the nature of the key reaction (e.g., Diels-Alder) is needed.",
+        "decision": "Hypothesize that lugdunomycin is formed by an intermolecular Diels-Alder reaction between an angucyclinone-derived diene and iso-maleimycin, with both precursors originating from distinct BGCs."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Formulated a hypothesis for the key biosynthetic step."
+      },
+      "evidence": {
+        "text_span": "We previously hypothesized that the final steps in lugdunomycin biosynthesis may require the combination of an angucyclinone and maleimycin7 or its constitutional isomer iso-maleimycin (2). Both iso-maleimycin 2 and maleimycin were produced by chemical synthesis, and comparative metabolomics analysis demonstrated that iso-maleimycin, and not maleimycin, is produced by Streptomyces sp. QL37.10 Understanding the biosynthesis of lugdunomycin is of major importance for better insights into how angucyclines and angucyclinones are synthesized. Its highly unusual structure likely requires a complex biosynthetic pathway. In this paper, we resolved the final steps in lugdunomycin biosynthesis via a combination of biomimetic total synthesis, paired omics, and computational simulation. We harnessed the power of biomimetic total synthesis to synthesize the highly complex lugdunomycin in vitro and, in doing so, provide evidence that lugdunomycin is produced from iso-maleimycin and elmonin in an intermolecular Diels−Alder reaction. This type of reaction is rare in natural product biosynthesis. Our work also shows that iso-maleimycin and elmonin are produced from different biosynthetic gene clusters, which explains why lugdunomycin is rarely found in nature, despite the fact that many streptomycetes produce angucyclines.",
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Lugdunomycin is produced at very low levels in solid-grown cultures. To facilitate omics approaches, liquid culture conditions need to be optimized.",
+        "gap": "Identify liquid culture conditions that induce lugdunomycin production.",
+        "decision": "Grow Streptomyces sp. QL37 in liquid minimal medium with various carbon sources (glucose, xylose, rhamnose, fructose, arabinose, or galactose) and analyze extracts via LC-MS/MS."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Lugdunomycin was detected only in supernatants of galactose-grown cultures. Classical angucyclinones and rearranged-angucyclinones like elmonin were detected in all samples.",
+        "regio_selectivity": "Galactose-grown cultures specifically induced lugdunomycin."
+      },
+      "evidence": {
+        "text_span": "We previously showed that lugdunomycin 1 is detected exclusively in solid-grown cultures of Streptomyces sp. QL37, and at very low levels; 7.5 L of minimal medium (MM) agar afforded some 0.6 mg of the compound, which was nevertheless sufficient to elucidate its structure.5 Still, the expression of metabolites in liquid-grown cultures is the preferred method to enable elicitation approaches and paired omics. These approaches facilitate correlating gene expression profiles to metabolite production so as to allow the identification of the biosynthetic genes for the compound(s) of interest.11 In an attempt to improve lugdunomycin biosynthesis in liquid-grown cultures, Streptomyces sp. QL37 was grown in liquid MM with glucose, xylose, rhamnose, fructose, arabinose, or galactose as the sole carbon source, and extracts were prepared from culture supernatants. Analysis via liquid chromatography combined with mass spectrometry (LC−MS/MS) identified classical angucyclinones in all samples, as well as rearranged-angucyclinones such as elmonin8 (Figure S1a). Interestingly, lugdunomycin was detected only in supernatants of galactose-grown cultures (Figure S1b).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Galactose-grown cultures induce lugdunomycin production. Proteomining can correlate gene expression with metabolite production.",
+        "gap": "Identify specific BGCs involved in lugdunomycin biosynthesis.",
+        "decision": "Perform quantitative proteomics on mycelia grown in MM with galactose (inducing) and glucose (noninducing) to identify differentially expressed proteins and associated BGCs."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "42 proteins were differentially expressed (log2 fold change > 2) between galactose- and glucose-grown cultures. A subset belonged to BGC23, annotated as consisting of BGC23a (for a β-lactone-like compound) and BGC23b (for a γ-butyrolactone). BGC23a showed homology to the putative maleimycin BGC of Streptomyces showdoensis ATCC 15227.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "To establish which genes/proteins relate to lugdunomycin biosynthesis, we applied a proteomining approach,11a which is based on the fact that expression levels of biosynthetic proteins encoded by BGCs correlate very well with the levels of the metabolites they produce. The strong correlation between the two allows connection of biosynthetic proteins to their cognate metabolite(s).11a For this, quantitative proteomics was performed to determine the most differentially expressed proteins in mycelia grown in MM with galactose (inducing conditions) and MM with glucose (noninducing). After 3 days of growth, biomass was harvested and snap-frozen in liquid nitrogen. Subsequent quantitative proteomics analysis was performed on four replicate samples per growth condition, yielding 2444 quantifiable proteins, of which 42 were differentially expressed with a log2 fold change higher than 2, between galactose- and glucose-grown cultures (Table S1). Expectedly, most proteins that exhibited enhanced differential expression in galactose-grown cultures were primarily associated with galactose metabolism. However, a subset of genes stood out that belonged to a BGC that was annotated as BGC23 in the Streptomyces sp. QL37 genome. BGC23 (Figure 1a) was annotated by antiSMASH12 as consisting of two subclusters, namely, BGC23a (for a β-lactone-like compound) and BGC23b (for a γ-butyrolactone). Subcluster 23a includes a gene encoding a 2-isopropylmalate synthase (QL37_30710) and a gene encoding an AMP ligase (QL37_30720), similar to those seen in β-lactone BGCs responsible for belactosin and cystargolide production.13 Furthermore, BGC23a also includes a gene for an orthologue of LysW (QL37_30715), a carrier protein involved in lysine synthesis.14 Recent studies have demonstrated that these proteins play a key role in the biosynthesis of nonproteogenic building blocks in natural products, such as vazabitide A.15 BGC23a shows significant homology in terms of sequence identity and gene arrangement with the putative maleimycin BGC of Streptomyces showdoensis ATCC 15227 (Figure 1b).",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "iso-maleimycin",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "BGC23a shows homology to maleimycin BGCs and is upregulated during lugdunomycin production. This suggests its involvement in iso-maleimycin biosynthesis.",
+        "gap": "Confirm that BGC23a is responsible for iso-maleimycin production.",
+        "decision": "Create a knockout mutant of BGC23a (ΔlysWrimK) in Streptomyces sp. QL37 and compare its metabolomics profile to the wild-type and chemically synthesized iso-maleimycin."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [
+          "O=C1C=C[C@@H](O)C(=O)N1"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The ΔlysWrimK mutant failed to produce iso-maleimycin, while the wild-type strain did. This confirms BGC23a's involvement in iso-maleimycin biosynthesis. Importantly, the PKS null mutant (BGC12 null) still produced iso-maleimycin, indicating its biosynthesis is independent of the angucycline pathway. The ΔlysWrimK mutant also failed to produce lugdunomycin, while still producing angucyclines."
+      },
+      "evidence": {
+        "text_span": "To gain further insights into the precise compound(s) produced by BGC23a and the possible role in lugdunomycin biosynthesis, a knockout mutant of Streptomyces sp. QL37 was created, in which BGC23 was inactivated. To achieve this, genes lysW (QL30715) and rimK (QL30720), which were predicted to encode an amino carrier protein and its cofactor, respectively,15 were selected for gene deletion. The two genes were together replaced by the apramycin resistance cassette (aacC4) using homologous recombination. For this, a knockout strategy was applied that is based on the unstable multicopy plasmid pWHM3.17 The correct mutant was verified by PCR. To establish if the knockout strain was still capable of producing iso-maleimycin, we compared the metabolomics profiles with chemically synthesized iso-maleimycin,10 dissolved in methanol, which serves as a standard due to the challenges in detecting iso-maleimycin directly using LC−MS. In this way, iso-maleimycin was readily detected as its methanol adduct [M + CH3OH + H]+ (Figure S2). Subsequently, extracts from both parental strains of Streptomyces sp. QL37 and its ΔlysWrimK mutant were analyzed for the ability to produce iso-maleimycin. The strains were cultivated for 7 days on MM agar supplemented with 0.5% mannitol and 1% glycerol, and extracts were prepared from the culture supernatant. Although iso-maleimycin was readily detected in extracts from the wild-type strain, its BGC23a knockout strain failed to produce iso-maleimycin (Figure S3), thus implying its involvement in iso-maleimycin biosynthesis. Next, the effect of the inactivation of BGC23a on the biosynthesis of angucyclines and lugdunomycin was studied. For this purpose, mutant ΔlysWrimK and its parent Streptomyces sp. QL37, along with the minimal PKS mutant of BGC12, which fails to produce lugdunomycin or angucyclinones,5 were cultivated in the same way as mentioned above, and extracts were prepared. LC−MS analysis (Figure 2a) revealed the presence of canonical angucyclines, elmonin, and lugdunomycin in extracts from the parental strain. Expectedly, no angucyclines or elmonin were detected in the minimal PKS mutant. Importantly, although the ΔlysWrimK mutant did produce angucyclines, lugdunomycin was not detected (Figure 2a). Thus, the proteomics, metabolomics, and gene deletion experiments collectively suggested a pivotal role for BGC23a in the later stage of lugdunomycin biosynthesis. Further analysis of the metabolome of the PKS null mutant revealed the biosynthesis of iso-maleimycin (Figure S3), while the compound was not produced in the ΔlysWrimK mutant. This strongly suggests that the biosynthesis of iso-maleimycin depends on BGC23a, while it is independent of the angucycline biosynthetic pathway. From here onward, BGC23a is referred to as the iso-maleimycin BGC. The involvement of a reaction partner derived from another BGC in lugdunomycin production is further supported by two lines of evidence. First, heterologous expression of BGC12 in Streptomyces coelicolor M1152 resulted in the biosynthesis of angucyclines, while lugdunomycin itself was never detected.18 Second, overexpression of the angucycline gene cluster (BGC12) resulted in strong overproduction of angucyclinones but did not improve lugdunomycin production.18",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Inactivation of either BGC12 (angucyclinones) or BGC23a (iso-maleimycin) prevents lugdunomycin production. This suggests that both BGCs are required.",
+        "gap": "Confirm that the two BGCs independently produce substrates that can then combine to form lugdunomycin.",
+        "decision": "Coculture the BGC12 null mutant (ΔminPKS) and the BGC23a null mutant (ΔlysWrimK) and analyze for lugdunomycin production."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [
+          "COc1cccc2c1C1C(C(C)C(=O)NC(=O)C1(O)O)C2C"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Cocultivation of the two mutants restored lugdunomycin production, while neither mutant produced it alone. This strongly supports the requirement of both BGCs for lugdunomycin biosynthesis.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "Our data show that inactivation of either BGC12 (for the biosynthesis of angucyclinones) or BGC23a (for the biosynthesis of iso-maleimycin) prevents lugdunomycin production. This suggests that the biosynthesis of lugdunomycin requires reaction partners from both BGCs. If indeed the two BGCs independently produce the substrates for the final step in lugdunomycin biosynthesis, the individual mutants lacking either BGC12 or BGC23a should be able to complement each other chemically and thus produce lugdunomycin. To test this hypothesis, spores of the two strains were mixed in a 1:1 ratio and cultured for 7 days on MM agar supplemented with 0.5% mannitol and 1% glycerol and subsequently extracted with ethyl acetate for analysis by LC−MS (Figure 2b). As controls, BGC12 null mutant ΔminPKS, BGC23a null mutant ΔlysWrimK, and their parent were grown separately and treated the same way. Importantly, while no lugdunomycin was produced by either of the mutants grown alone, cocultivation of the mutants restored lugdunomycin production (Figure 2b). This further supports the notion that both BGCs are necessary for the biosynthesis of lugdunomycin.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cocultivation experiments suggest both BGCs are sufficient for lugdunomycin biosynthesis.",
+        "gap": "Confirm sufficiency by heterologous expression of both BGCs in a single host.",
+        "decision": "Express both BGC12 and BGC23 in S. coelicolor M1152 (which already contains BGC12) and check for lugdunomycin production."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [
+          "COc1cccc2c1C1C(C(C)C(=O)NC(=O)C1(O)O)C2C",
+          "O=C1C=C[C@@H](O)C(=O)N1"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Additional introduction of BGC23 into S. coelicolor M1152+lug (containing BGC12) afforded production of lugdunomycin (1) as well as iso-maleimycin (2). This confirms that both BGCs are sufficient for lugdunomycin biosynthesis.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "To test if the two BGCs indeed suffice for lugdunomycin biosynthesis, we expressed both BGCs in S. coelicolor M1152.19 For this, we used S. coelicolor M1152 which already contains a copy of the lug gene cluster.18 This strain was shown to produce angucyclines but failed to produce lugdunomycin. Importantly, additional introduction of BGC23 into S. coelicolor M1152+lug indeed afforded production of lugdunomycin 1 (Figure S4a) as well as iso-maleimycin 2 (Figure S4b). Taken together, all of these results demonstrate that both BGC12 and BGC23 are required for the production of lugdunomycin.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "elmonin",
+      "action": "characterization",
+      "thought": {
+        "background": "Elmonin is a C-ring-cleaved angucyclinone produced by Streptomyces sp. QL37 and is a potential precursor for the diene in the Diels-Alder reaction.",
+        "gap": "Confirm that elmonin can act as a masked diene, specifically an isobenzofuran precursor, under acidic conditions.",
+        "decision": "Treat elmonin (6) with p-TsOH in D3COD and monitor for deuteration at C17 via 1H NMR, which would indicate reversible isobenzofuran formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cccc2c1C(c1cc(C)ccc1O)[C@H]1[CH]CC(O2)O1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "p-TsOH"
+        ],
+        "solvent": "D3COD"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "After 24h, a significant decrease in the intensity of the signal at 5.30 ppm (corresponding to H17) was observed in 1H NMR. This indicates deuteration at C17, supporting reversible deprotonation and isobenzofuran formation. DFT calculations confirmed that isobenzofuran (7) is more stable than a quinodimethane.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "Elmonin Is a Masked Diene. Elmonin 6 can be viewed as a 1-alkoxy 1,3-dihydroisobenzofuran derivative. These compounds are precursors of isobenzofuran derivatives, generated upon base or Brønsted acid-promoted 1,4-elimination.24 Isobenzofurans, in turn, are highly reactive dienes in Diels−alder reactions.25 Next to studies on the reactivity of isobenzofurans in situ, isobenzofuran formation has been applied in the chemical synthesis of galtamycinone26 and in the synthesis of epithuriferic acid methyl ester.27 Considering the structure of elmonin, we anticipated it could act as a masked diene, and we would be able to generate the corresponding isobenzofuran by treatment with acid. In an exploratory experiment, a solution of 6 in D3COD was treated with a small amount of p-TsOH (Figure 4). After 24 h, a significant decrease in the intensity of the signal at 5.30 ppm (corresponding to H17) was observed in 1H NMR (Figure S9). This is the result of reversible deprotonation at C17 and supports the hypothesis that 6 is a masked isobenzofuran. Deuteration of the spiro-ketal leads to ring opening and elimination to give isobenzofuran 9. As this process is reversible, the net result is deuteration at C17. A mechanistically similar formation of a quinodimethane under the same conditions was initially considered, but density functional theory (DFT) calculations showed that isobenzofuran 7 is more than 15 kcal/mol lower in energy than the corresponding quinodimethane (QDM, in Figure S21). This can be underpinned with qualitative chemical arguments; in 7, aromaticity is partly retained, whereas in a quinodimethane, this is not the case.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Elmonin acts as a masked diene and iso-maleimycin is the dienophile. A Diels-Alder reaction between them should form lugdunomycin.",
+        "gap": "Synthesize lugdunomycin via the proposed Diels-Alder reaction and characterize the product(s).",
+        "decision": "Heat a mixture of elmonin (6) and iso-maleimycin (2) in m-xylene in a sealed tube at 110 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cccc2c1OC[C@@H]2OC1=C2C=C(O)C(C)=CC=C21",
+          "O=C1C=C[C@@H](O)C(=O)N1"
+        ],
+        "product_smiles": [
+          "COc1cccc2c1OC[C@@H]2OC1=C2C=C(O)C(C)=CC=C21"
+        ],
+        "solvent": "m-xylene",
+        "temperature": "110 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "One main Diels-Alder product was formed, but 1H and 13C NMR spectra revealed it was not lugdunomycin (1) but an isomer (12). X-ray crystallography confirmed 12 as the C9-epimer of lugdunomycin (9-epi-lugdunomycin). Small quantities of lugdunomycin and up to six other diastereomers were also observed by LC-MS.",
+        "yield_percent": 43
+      },
+      "evidence": {
+        "text_span": "Diels−Alder Reaction of iso-Maleimycin and Elmonin Yields Lugdunomycin and Its Diastereomers. Upon heating a mixture of elmonin 6 and iso-maleimycin 2 in m-xylene in a sealed tube at 110 °C, one main Diels−Alder product was formed. However, close inspection of the 1H and 13C NMR spectra revealed that the product obtained was not lugdunomycin but instead an isomer (12; Figures 5a and S12−S14). With the help of X-ray crystallography, we established that four out of five stereocenters (16S*, 17R*, 19S*, 21S*) had identical relative configurations as compared to lugdunomycin (Figures 5 and S7). However, the quaternary, fifth stereocenter at C9, being R* in lugdunomycin,6 was S* in the synthetic material. This makes compound 12 the C9-epimer of lugdunomycin. Although the Diels−Alder reaction mainly afforded the production of 12, analysis of the reaction mixture by LC−MS also revealed small quantities of lugdunomycin, accompanied by up to six other products with identical mass and similar retention times, which probably represent diastereomers.",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "ee2a84688e1fa1832a102faaff128da3e83d18d77bf8e90317e9c87e9a2a00b4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The Diels-Alder reaction produced 9-epi-lugdunomycin (12) as the main product, not lugdunomycin (1). It might be possible to isomerize 12 to 1.",
+        "gap": "Convert 9-epi-lugdunomycin (12) to lugdunomycin (1) via isomerization.",
+        "decision": "Treat 12 with p-TsOH, anticipating protonation of the ether oxygen at C9, ring opening to a carbenium ion, bond rotation, and subsequent ring closure to 1."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cccc2c1C(O)C1(O)CNC(=O)C1C2"
+        ],
+        "product_smiles": [
+          "COC1=CC=C2C(C)C3CNC(=O)C(C3O)C2C1O"
+        ],
+        "reagents": [
+          "p-TsOH"
+        ],
+        "solvent": "CHCl3",
+        "temperature": "50 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "No epimerization product (1) was observed. Instead, product 14 was formed in high yield due to electronically and entropically favored dehydration. DFT calculations showed that the required bond rotation for isomerization is not feasible due to hindered rotation.",
+        "yield_percent": 87
+      },
+      "evidence": {
+        "text_span": "Attempts to convert 12 by isomerization into the desired 1 were unsuccessful (Figure 5b). We anticipated that protonation of the ether oxygen at C9 would lead to ring opening, providing relatively stable carbenium ion 15. Bond rotation would then provide the other conformer of 15, which can subsequently undergo ring closure, leading to 1. However, when 12 was treated with pTsOH., no epimerization product was observed. Instead, it afforded product 14 in high yield, apparently formed due to electronically and entropically favored dehydration. In addition, DFT calculations showed that the required bond rotation is not feasible because of hindered rotation (Figure S23).",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "7ad66d0b205d3d066bfe9dfe9155f2e1494e93044f8bea8e2222afd408536a72.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "The in vitro Diels-Alder reaction produced 9-epi-lugdunomycin (12) as the main product, while the bacterial host consistently produces lugdunomycin (1). This suggests an additional 'steering factor' in vivo.",
+        "gap": "Identify conditions that can steer the Diels-Alder reaction towards lugdunomycin (1) in vitro, mimicking the in vivo process.",
+        "decision": "Investigate the effect of solvent, temperature, pH, and addition of surfactants or salts on the diastereomeric ratio. Subsequently, test the addition of proteins with hydrophobic pockets to mimic a templating effect, as iso-maleimycin and elmonin have limited water solubility."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Initial attempts with solvent, temperature, pH, and surfactants/salts led to only minor changes in the diastereomeric ratio. However, adding proteins like BSA showed a significant shift. After optimization, Amano Lipase from Pseudomonas fluorescens in phosphate-buffered saline and 30% DMSO at 80 °C shifted the 1/12/other ratio from 2:6:1 to 2:2:1, a dramatic shift in favor of lugdunomycin. Scale-up provided 8.4 mg of pure lugdunomycin (1), identical to the natural product.",
+        "yield_percent": 40
+      },
+      "evidence": {
+        "text_span": "We were puzzled by the fact that the Diels−Alder reaction in the bacterial host consistently led to lugdunomycin 1, while during the in vitro reaction, 9-epi-lugdunomycin 12 was obtained as the main product. This conflicts with the idea that lugdunomycin is biosynthesized in vivo in an undirected manner, i.e., without a steering factor. Involvement of an enzyme, a Diels−Alderase, was considered less likely at this stage, also because lugdunomycin crystallized from the isolate as the racemate. However, all attempts to mimic this reaction chemically, including a study of the effects of solvent, temperature, pH, and the addition of surfactants or salts, led to just minor changes in the ratio of the diastereomeric products (Table S4). Protein-Based Templating Promotes Lugdunomycin Synthesis In Vitro. An important property of a Diels−Alderase would consist of a templating effect by increasing the effective molarity of both iso-maleimycin and elmonin, which is needed considering the low concentrations of the reactants in the bacterium. Furthermore, suitable positioning of both reactants would explain the stereoselectivity of the reaction, not necessarily disputing the observation that lugdunomycin is formed with low or small enantioselectivity, considering its isolation as racemic crystals. In order to mimic this templating effect, we added proteins with a hydrophobic pocket or cleft to the in vitro Diels−Alder reaction. iso-Maleimycin and, in particular, elmonin have a limited solubility in water, so offering a hydrophobic “shelter” would possibly bring both compounds together. Upon adding proteins like BSA to the reaction, we immediately saw a significant and positive effect; the diastereomeric ratio shifted in favor of lugdunomycin, although not to such an extent that it became the main product. After extensive screening and optimization, it turned out that the use of Amano Lipase from Pseudomonas fluorescens in phosphate-buffered saline and 30% DMSO at 80 °C shifted the ratio of 1/12/other from 2:6:1 to 2:2:1 (Table S4). This is a dramatic shift in favor of lugdunomycin and offers support for the need for a template and for the possible presence of a Diels−Alderase in the producer strain Streptomyces QL37. Scale-up of this protein-assisted reaction at 0.4 mmol provided 74 mg of lugdunomycin-diastereomers after column chromatography. Preparative HPLC subsequently provided 8.4 mg of pure lugdunomycin 1 which in all aspects was identical to the lugdunomycin isolated from cultures of Streptomyces sp. QL37 (Supporting Information Sections 3 and 5).",
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "ee2a84688e1fa1832a102faaff128da3e83d18d77bf8e90317e9c87e9a2a00b4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "The protein-assisted Diels-Alder reaction suggests a templating effect in vivo, possibly by a Diels-Alderase enzyme. Intermolecular Diels-Alderases are rare in bacteria.",
+        "gap": "Identify a candidate Diels-Alderase in Streptomyces sp. QL37.",
+        "decision": "Search for enzymes with homology to annotated Diels-Alderases. Investigate GarL, an orthologue of fungal macrophomate synthase (MPS), which was initially reported as a putative Diels-Alderase."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "GarL was identified as a candidate. Alphafold modeling and MD simulations showed that both iso-maleimycin and the isobenzofuran from elmonin can be stabilized in GarL's active site. Genetic experiments showed that deletion of garL led to reduced lugdunomycin biosynthesis in vivo, which was restored by genetic complementation. GarL is considered an 'opportunistic Diels-Alderase' given its primary role as an aldolase.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "Although intermolecular Diels−Alderases are rare in nature, the rapid advancement of omics technologies and bioinformatics has led to the identification of an increasing number of Diels−Alderases, particularly those that catalyze intermolecular Diels−Alder reactions.30 However, to the best of our knowledge, there has not been a report of an intermolecular Diels−Alderase in bacteria. To see if we could identify a candidate Diels−Alderase in Streptomyces sp. QL37, we searched for enzymes with homology to annotated Diels−Alderases. This revealed GarL, which is an orthologue of the fungal enzyme macrophomate synthase (MPS). MPS was initially reported as a putative Diels−Alderase31 but was shown to act as an efficient aldolase.32 Initial experiments showed that deletion of garL led to reduced biosynthesis of lugdunomycin in vivo, while genetic complementation of the mutant with a wild-type copy of garL restored lugdunomycin production to wild-type levels (see Section 2 of the Supporting Information, Figure S6E). A combination of Alphafold modeling and MD simulations showed that both iso-maleimycin and the isobenzofuran formed from elmonin can be stabilized in the active site of GarL, thereby facilitating the Diels−Alder reaction (Figure S6A−D). Given its primary role as a 5-keto-4-deoxy-D-glucarate aldolase, similar to MPS, GarL candidates as an “opportunistic Diels−Alderase”.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "LC-MS",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Not explicitly stated for the overall biomimetic synthesis, but 8.4 mg of pure lugdunomycin was obtained from a 0.4 mmol scale protein-assisted reaction."
+      }
+    },
+    "significance": "This work elucidated the complex biosynthesis of lugdunomycin, revealing a rare intermolecular Diels-Alder reaction between precursors from two distinct BGCs. The biomimetic synthesis confirmed this key step and demonstrated the importance of protein templating for stereoselectivity, suggesting an 'opportunistic Diels-Alderase'. This highlights unconventional biosynthetic relationships and provides insights for pathway engineering and synthetic biology."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.5c01883",
+      "pmcid": "PMC12022981",
+      "title": "Biomimetic Total Synthesis and Paired Omics Identify an Intermolecular Diels-Alder Reaction as the Key Step in Lugdunomycin Biosynthesis.",
+      "authors": "Uiterweerd MT, Nuñez Santiago I, Cunha AV, Havenith RWA, Du C, Zhang L, van der Heul HU, Elsayed SS, Minnaard AJ, van Wezel GP.",
+      "journal": "J Am Chem Soc",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12022981?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/1d272292-81ee-46d4-a8db-7a87774b908c.zip",
+      "parsed_at": "2026-05-11T06:21:06.877667+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 14,
+    "parseable": 13,
+    "canonicalized": 13,
+    "invalid": 1,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "COC1=CC=CC2=C1C(C3=C(O[D])C=CC(C)=C3)[C@@H]4OC(O2)C[C@H]4[D]"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

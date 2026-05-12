@@ -1,0 +1,810 @@
+{
+  "trace_id": "TS-PMC11998070",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Brevianamide S",
+    "smiles": "",
+    "natural_product_class": "diketopiperazine alkaloid dimer",
+    "structural_features": {
+      "key_motifs": [
+        "proline-proline linkage",
+        "diketopiperazine",
+        "indole"
+      ]
+    },
+    "motivation": "Brevianamide S exhibits selective antibacterial activity against Bacille Calmette-Guerin (BCG), a surrogate for Mycobacterium tuberculosis, suggesting a novel mechanism of action and potential as an antitubercular drug lead.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "First total synthesis of brevianamide S, confirming its structure and providing a flexible platform for analogue synthesis."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "double aldol transform of brevianamide S (1) to aldehyde 3 and bis-diketopiperazine 4",
+        "reasoning": "Aims for step economy and future exploration of structural diversity, despite known challenges with aldol condensations on similar diketopiperazines.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "central disconnection of bis-diketopiperazine 4 to monomeric unsaturated diketopiperazine 5",
+        "named_strategy": "alkenyl-alkenyl Stille cross-coupling",
+        "reasoning": "No direct literature precedent for this specific coupling, but many synthetic variants of building block 5 are conceivable. This unique C-C coupling is crucial for a concise synthesis.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The strategy employs a bidirectional approach involving a bespoke alkenyl-alkenyl Stille cross-coupling and a double aldol condensation. This three-component coupling strategy is ambitious but aims for conciseness and flexibility for analogue synthesis."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Proline methyl ester is a readily available starting material.",
+        "gap": "Need to introduce unsaturation and an N-acyl group to set up the diketopiperazine formation.",
+        "decision": "To access dehydroproline 7, chose N-chlorosuccinimide and triethylamine for dehydrogenation, followed by phthalylglycyl chloride and 2,6-lutidine for N-acylation, expecting enamide 8."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)[C@H]1CCCN1"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=NCCC1C(=O)CN1C(=O)c2ccccc2C1=O"
+        ],
+        "reagents": [
+          "N-chlorosuccinimide",
+          "Et3N",
+          "PhthNCH2COCl",
+          "2,6-lutidine"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to rt",
+        "time": "3 h (dehydrogenation), 23 h (acylation)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "Enamide 8 was obtained in 66% yield on multigram scale after recrystallization."
+      },
+      "evidence": {
+        "text_span": "The synthesis began with a one-pot oxidation/N-acylation of proline methyl ester 6 (Scheme 2).9 The initial dehydrogenation to access dehydroproline 7 was achieved using Nchlorosuccinimide and triethylamine, which was followed by addition of phthalylglycyl chloride and 2,6-lutidine to give enamide 8 in 66% yield on multigram scale, following recrystallization.",
+        "section": "Main Text",
+        "image_refs": [
+          "c7e676961ccdcaae68cc8a6aa37ee96b8195ba7be38aef67b66d6e0efdbb916e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The goal is to form enamide 8.",
+        "gap": "The choice of base for imine acylation is critical.",
+        "decision": "Using stronger bases like triethylamine for imine acylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=NCCC1"
+        ],
+        "product_smiles": [
+          "CCCN1C(=O)C2CC(c3ccccc3)C(=O)N2C1=O"
+        ],
+        "reagents": [
+          "Et3N",
+          "PhthNCH2COCl"
+        ],
+        "solvent": "CHCl3"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 24,
+        "failure_mode": "side_product_dominant",
+        "observation": "Stronger bases, such as triethylamine, resulted in an unwanted (2+2)-Staudinger synthesis of β-lactam 9 in 24% yield (unoptimized)."
+      },
+      "evidence": {
+        "text_span": "It should be noted that the choice of base for the imine acylation process is important, with stronger bases, such as triethylamine, resulting in an unwanted (2+2)- Staudinger synthesis of β-lactam 9 (Scheme 2a).",
+        "section": "Main Text",
+        "image_refs": [
+          "c8ebaa2b76566859d17fe91bd101b16e3eee47288bad0651b61c649423183255.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enamide 8 is synthesized.",
+        "gap": "Need to deprotect the phthaloyl group and cyclize to form the diketopiperazine.",
+        "decision": "To form diketopiperazine 10, chose ammonia in methanol for deprotection and spontaneous cyclization, expecting high yields."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=NCCC1C(=O)CN1C(=O)c2ccccc2C1=O"
+        ],
+        "product_smiles": [
+          "O=C1NC(=O)C2=NCCC2N1"
+        ],
+        "reagents": [
+          "NH3"
+        ],
+        "solvent": "MeOH",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Clean deprotection and spontaneous cyclization gave diketopiperazine 10 in near quantitative yields (95%) after Soxhlet extraction and recrystallization."
+      },
+      "evidence": {
+        "text_span": "Ammonia in methanol results in clean deprotection of the phthaloylprotected amine 8, with spontaneous cyclization giving diketopiperazine 10 in near quantitative yields, following Soxhlet extraction of phthalamide and subsequent recrystallization.11",
+        "section": "Main Text",
+        "image_refs": [
+          "c7e676961ccdcaae68cc8a6aa37ee96b8195ba7be38aef67b66d6e0efdbb916e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Diketopiperazine 10 is available.",
+        "gap": "Need to introduce an alkenyl iodide for the Stille coupling.",
+        "decision": "Attempted direct oxidative homocoupling of diketopiperazine 10."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1NC(=O)C2=NCCC2N1"
+        ],
+        "product_smiles": [],
+        "named_reaction": "oxidative homocoupling"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Preliminary attempts at direct oxidative homocoupling of diketopiperazine 10 failed to give any promising results."
+      },
+      "evidence": {
+        "text_span": "Preliminary attempts at direct oxidative homocoupling of diketopiperazine 10 failed to give any promising results.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "Direct oxidative homocoupling of diketopiperazine 10 was unsuccessful.",
+        "gap": "Need an alternative method to functionalize diketopiperazine 10 with an alkenyl iodide.",
+        "decision": "To obtain alkenyl iodide 11, exposed diketopiperazine 10 to iodine and pyridine, expecting successful iodination."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1NC(=O)C2=NCCC2N1"
+        ],
+        "product_smiles": [
+          "O=C1NC(=O)C2=C(I)CCC2N1"
+        ],
+        "reagents": [
+          "I2",
+          "pyridine"
+        ],
+        "solvent": "DMF",
+        "temperature": "0 °C to rt",
+        "time": "19 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Alkenyl iodide 11 was obtained in 77% yield on multigram scale, with purification by trituration."
+      },
+      "evidence": {
+        "text_span": "However, when diketopiperazine 10 was exposed to iodine and pyridine, alkenyl iodide 11 could be obtained in 77% yield on multigram scale, with purification achieved by simple trituration (Scheme 2).",
+        "section": "Main Text",
+        "image_refs": [
+          "c7e676961ccdcaae68cc8a6aa37ee96b8195ba7be38aef67b66d6e0efdbb916e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Alkenyl iodide 11 is available.",
+        "gap": "Need to form the C-C bond for the bis-diketopiperazine.",
+        "decision": "Attempted Ullmann homocoupling of iodide 11 and Heck-type cross-coupling with the parent diketopiperazine 10."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1NC(=O)C2=C(I)CCC2N1",
+          "O=C1NC(=O)C2=NCCC2N1"
+        ],
+        "product_smiles": [],
+        "named_reaction": "Ullmann homocoupling, Heck cross-coupling"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Attempts at Ullmann homocoupling of iodide 11 and Heck-type cross-coupling with the parent diketopiperazine 10 were unsuccessful. Many other tactics were also investigated with frustratingly little success."
+      },
+      "evidence": {
+        "text_span": "Attempts at Ullmann homocoupling of iodide 11 and Heck-type cross-coupling with the parent diketopiperazine 10 were unsuccessful. Many other tactics were also investigated, including numerous cross-coupling and homocoupling reactions of various intermediates, with frustratingly little success (see Tables S1−4 in the Supporting Information (SI) for full details).",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkenyl iodide 11 is available.",
+        "gap": "Need to prepare an organotin coupling partner for Stille reaction.",
+        "decision": "To access organotin 12, coupled iodide 11 with hexamethylditin under standard Pd-catalyzed conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1NC(=O)C2=C(I)CCC2N1"
+        ],
+        "product_smiles": [
+          "[CH3][Sn]([CH3])([CH3])[C]1=C2C(=O)NC(=O)NC2CC1"
+        ],
+        "reagents": [
+          "Pd(PPh3)2Cl2",
+          "(SnMe3)2",
+          "Li2CO3"
+        ],
+        "solvent": "1,4-dioxane",
+        "temperature": "85 °C",
+        "time": "19 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "observation": "Organotin 12 was accessed in 59% yield on 300 mg scale."
+      },
+      "evidence": {
+        "text_span": "Organotin 12 could be accessed in 59% yield on 300 mg scale by coupling iodide 11 with hexamethylditin under standard Pd-catalyzed conditions (Scheme 2).",
+        "section": "Main Text",
+        "image_refs": [
+          "c7e676961ccdcaae68cc8a6aa37ee96b8195ba7be38aef67b66d6e0efdbb916e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Iodide 11 and organotin 12 are available.",
+        "gap": "Need to perform the Stille cross-coupling to form the bis-diketopiperazine.",
+        "decision": "Attempted Stille cross-coupling of iodide 11 and organotin 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1NC(=O)C2=C(I)CCC2N1",
+          "[CH3][Sn]([CH3])([CH3])[C]1=C2C(=O)NC(=O)NC2CC1"
+        ],
+        "product_smiles": [
+          "O=C1CN2CCC(c3c4n(c(=O)[nH]c3=O)CCC4)=C2C(=O)N1"
+        ],
+        "named_reaction": "Stille cross-coupling"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "purification_failed",
+        "observation": "The Stille reaction was frustrated by the bis-diketopiperazine 4 being highly insoluble and difficult to purify, despite tantalizing evidence of C-C bond formation."
+      },
+      "evidence": {
+        "text_span": "Attempts at the cross-coupling of iodide 11 and organotin 12 gave tantalizing evidence that the key C−C bond formation was occurring (Scheme 3a). However, this Stille reaction was frustrated by the bis-diketopiperazine 4 being highly insoluble and difficult to purify.",
+        "section": "Main Text",
+        "image_refs": [
+          "1e9fe69d8c0df54219e670dfa661f5f64eea049a337735215fd964b29fd8e2f5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "The Stille coupling of 11 and 12 was problematic due to insolubility and purification issues.",
+        "gap": "Need to improve solubility and handleability of the intermediates and activate the methylene position for later aldol chemistry.",
+        "decision": "To address solubility and activate the methylene, converted the secondary lactam in iododiketopiperazine 11 into a methyl lactim ether 13 using Me3OBF4 and Cs2CO3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1NC(=O)C2=C(I)CCC2N1"
+        ],
+        "product_smiles": [
+          "COC1=NC(=O)C2=C(I)CCC2N1"
+        ],
+        "reagents": [
+          "Me3OBF4",
+          "Cs2CO3"
+        ],
+        "solvent": "CH2Cl2",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Methyl lactim ether 13 was obtained in 77% yield."
+      },
+      "evidence": {
+        "text_span": "Therefore, the secondary lactam in iododiketopiperazine 11 was first converted into a methyl lactim ether 13 (Scheme 2).12 The hope was this would not only give more soluble, easy-to-handle compounds but also activate the neighboring methylene position for the challenging aldol chemistry later in the synthesis,13 vide inf ra.",
+        "section": "Main Text",
+        "image_refs": [
+          "c7e676961ccdcaae68cc8a6aa37ee96b8195ba7be38aef67b66d6e0efdbb916e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Methyl lactim ether 13 and organotin 12 are available.",
+        "gap": "Need to perform the Stille cross-coupling to form the bis-diketopiperazine 14.",
+        "decision": "To achieve the Stille cross-coupling, used bis(benzonitrile)palladium dichloride as precatalyst and copper(I) iodide as an additive, expecting improved yield and solubility."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=NC(=O)C2=C(I)CCC2N1",
+          "[CH3][Sn]([CH3])([CH3])[C]1=C2C(=O)NC(=O)NC2CC1"
+        ],
+        "product_smiles": [
+          "COC1=NC(=O)C2=C(C3=NCCC3N(C)C(=O)C3=C(OC)N=C(OC)C3=O)CCC2N1"
+        ],
+        "named_reaction": "Stille cross-coupling",
+        "catalyst": "Pd(NCPh)2Cl2",
+        "reagents": [
+          "CuI"
+        ],
+        "solvent": "DMF",
+        "temperature": "65 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Bis-diketopiperazine 14 was obtained in 70% yield (over 400 mg in a single batch)."
+      },
+      "evidence": {
+        "text_span": "A Stille crosscoupling of iodide 13 and organotin 12 was achieved using bis(benzonitrile)palladium dichloride as the precatalyst and copper(I) iodide as an additive to give over 400 mg of bisdiketopiperazine 14 in a single batch, in 70% yield (Scheme 2).14",
+        "section": "Main Text",
+        "image_refs": [
+          "c7e676961ccdcaae68cc8a6aa37ee96b8195ba7be38aef67b66d6e0efdbb916e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Organotin methyl lactim ether 15 is a potential coupling partner.",
+        "gap": "Need to explore alternative Stille coupling partners.",
+        "decision": "Attempted Stille cross-coupling of organotin methyl lactim ether 15 with iodide 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=NC2=C(C=C(I)CC2)N(C)CC1=O",
+          "COC1=NC2=C(C=C([CH2][Sn]([CH3])([CH3])[CH3])CC2)N(C)CC1=O"
+        ],
+        "product_smiles": [
+          "COC1=NC2=C(C=C(c3c4n(c(=O)[nH]c3=O)CCC4)CC2)N(C)CC1=O",
+          "COC1=NC2=C(C=C([CH2][Sn]([CH3])([CH3])[CH3])CC2)N(C)CC1=O"
+        ],
+        "named_reaction": "Stille cross-coupling"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "The desired product 16 was not easily separated from a minor dimeric organotin product 17."
+      },
+      "evidence": {
+        "text_span": "The organotin methyl lactim ether 15 is also a competent coupling partner for a Stille cross-coupling reaction with iodide 13, but the desired product 16 is not easily separated from a minor dimeric organotin product 17 (Scheme 3b).",
+        "section": "Main Text",
+        "image_refs": [
+          "40e27d41e235488b9cc1e6d3529403d9f5f9ea4448197177f20f99c3ad89f08f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Methyl lactim ether 13 is available.",
+        "gap": "Need to explore alternative organometallic intermediates.",
+        "decision": "Attempted to access organometallic intermediates of methyl lactim ether 13 via metalation or lithium-halogen exchange."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=NC2=C(C=C(I)CC2)N(C)CC1=O"
+        ],
+        "product_smiles": [
+          "COC1=NC2=C(CCC2)N(C)CC1=O"
+        ],
+        "named_reaction": "metalation, lithium-halogen exchange"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Many other attempts to access organometallic intermediates of methyl lactim ether 13 were unproductive due to facile formation of pyrazinone 18, attributed to the relatively acidic methylene position."
+      },
+      "evidence": {
+        "text_span": "It is worth noting that many other attempts to access organometallic intermediates of methyl lactim ether 13, via metalation or lithium-halogen exchange, were unproductive due to facile formation of pyrazinone 18, which we attribute to the relatively acidic methylene position in iodide 13 (Scheme 3c) (see Table S7 in the SI for full details).",
+        "section": "Main Text",
+        "image_refs": [
+          "84f0d60fb6bafa07e25a7a9e65f5b9e6c2e2e68a9e0a8a1d3ce9991ec205252a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Known aldehyde 3 is required for the aldol condensation.",
+        "gap": "Need to prepare aldehyde 3 on a gram scale.",
+        "decision": "Prepared known aldehyde 3 on gram scale following literature procedures."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [
+          "C=C(C)C(C)(C)c1[nH]c2ccccc2c1C=O"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Known aldehyde 3 was prepared on gram scale following literature procedures."
+      },
+      "evidence": {
+        "text_span": "The known aldehyde 3 was prepared on gram scale following literature procedures (Scheme 2b).7",
+        "section": "Main Text",
+        "image_refs": [
+          "435dccd53e970ca51b0e0e2d64d260b7364d7091401e88968e5879af8279bd2a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Bis-diketopiperazine 14 and aldehyde 3 are available. Aldol condensations with diketopiperazines are known to have low yields.",
+        "gap": "Need to perform a double aldol condensation.",
+        "decision": "Attempted double aldol condensation between bis-diketopiperazine 14 and excess aldehyde 3 in piperidine under reflux, using conditions from Kishi and Trauner's synthesis of neochinulin B."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=NC(=O)C2=C(C3=NCCC3N(C)C(=O)C3=C(OC)N=C(OC)C3=O)CCC2N1",
+          "C=CC(C)(C)c1c(C=O)[nH]c2ccccc12"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "piperidine"
+        ],
+        "temperature": "106 °C",
+        "time": "7 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Preliminary attempts led to very limited product formation, with extensive decomposition observed."
+      },
+      "evidence": {
+        "text_span": "Preliminary attempts at the double aldol condensation between bis-diketopiperazine 14 and excess aldehyde 3 in piperidine under reflux (i.e., the conditions used by Kishi and Trauner) led to very limited product formation, with extensive decomposition observed (Scheme 4).",
+        "section": "Main Text",
+        "image_refs": [
+          "1f1da5df9e2cbec00713d4eb0c5cb861ac1913915cb44ddf2635001e6ea39b7f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "Reflux conditions for double aldol condensation led to decomposition and low yield.",
+        "gap": "Need to find conditions that allow for aldol condensation without decomposition, potentially leading to a double aldol product.",
+        "decision": "To improve aldol condensation, screened reaction conditions and found that conducting the reaction at ambient temperature in methanol resulted in a selective single aldol condensation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=NC(=O)C2=C(C3=NCCC3N(C)C(=O)C3=C(OC)N=C(OC)C3=O)CCC2N1",
+          "C=CC(C)(C)c1c(C=O)[nH]c2ccccc12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "piperidine"
+        ],
+        "solvent": "MeOH",
+        "temperature": "rt",
+        "time": "22 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "A selective single aldol condensation occurred exclusively adjacent to the lactim-ether, giving monoadduct 21 in 64% isolated yield."
+      },
+      "evidence": {
+        "text_span": "Following a screen of reaction conditions, it was found that conducting the reaction at ambient temperature in methanol resulted in a selective single aldol condensation occurring exclusively adjacent to the lactim-ether, giving monoadduct 21 in 64% isolated yield (Scheme 4b).",
+        "section": "Main Text",
+        "image_refs": [
+          "1f1da5df9e2cbec00713d4eb0c5cb861ac1913915cb44ddf2635001e6ea39b7f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Single aldol condensation was achieved, but the goal is a double aldol condensation.",
+        "gap": "Need to promote the second aldol condensation.",
+        "decision": "Left the aldol condensation for several days and added sodium sulfate as a dehydrating agent to encourage double aldol formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=NC(=O)C2=C(C3=NCCC3N(C)C(=O)C3=C(OC)N=C(OC)C3=O)CCC2N1",
+          "C=CC(C)(C)c1c(C=O)[nH]c2ccccc12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "piperidine",
+          "Na2SO4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "rt",
+        "time": "8 days"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 4,
+        "failure_mode": "low_yield",
+        "observation": "Even with extended reaction time and dehydrating agent, the double-aldol adduct 22 was only isolated in 4% yield, with the monoadduct 21 still representing the major product (32% yield)."
+      },
+      "evidence": {
+        "text_span": "Even when the aldol condensation was left for several days and sodium sulfate was added as a dehydrating agent the doublealdol adduct 22 was only isolated in 4% yield, with the monoadduct 21 still representing the major product (Scheme 4b).",
+        "section": "Main Text",
+        "image_refs": [
+          "1f1da5df9e2cbec00713d4eb0c5cb861ac1913915cb44ddf2635001e6ea39b7f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "The double aldol condensation was unsuccessful with bis-diketopiperazine 14.",
+        "gap": "Need to activate the second lactam for aldol condensation.",
+        "decision": "To enable a double aldol condensation, methylated the remaining secondary lactam of bis-diketopiperazine 14 to give double methyl lactim ether 16 using Me3OBF4 and SrCO3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=NC(=O)C2=C(C3=NCCC3N(C)C(=O)C3=C(OC)N=C(OC)C3=O)CCC2N1"
+        ],
+        "product_smiles": [
+          "COC1=NC(=O)C2=C(C3=NCCC3N(C)C(=O)C3=C(OC)N=C(OC)C3=O)CCC2N1"
+        ],
+        "reagents": [
+          "Me3OBF4",
+          "SrCO3"
+        ],
+        "solvent": "CH2Cl2",
+        "time": "26 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "observation": "Double methyl lactim ether 16 was obtained in 59% yield."
+      },
+      "evidence": {
+        "text_span": "Therefore, to enable a double aldol condensation, the remaining secondary lactam of bis-diketopiperazine 14 was first methylated to give double methyl lactim ether 16 in 59% yield (Scheme 2) (see Table S5 in the SI for full details).",
+        "section": "Main Text",
+        "image_refs": [
+          "c7e676961ccdcaae68cc8a6aa37ee96b8195ba7be38aef67b66d6e0efdbb916e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Double methyl lactim ether 16 is available, along with aldehyde 3.",
+        "gap": "Need to perform the double aldol condensation.",
+        "decision": "To achieve the double aldol condensation, used piperidine in methanol at ambient temperature with 3.4 equivalents of aldehyde 3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=NC(=O)C2=C(C3=NCCC3N(C)C(=O)C3=C(OC)N=C(OC)C3=O)CCC2N1",
+          "C=CC(C)(C)c1c(C=O)[nH]c2ccccc12"
+        ],
+        "product_smiles": [
+          "COC1=NC(=O)C2=C(C3=NCCC3N(C)C(=O)C3=C(OC)N=C(OC)C3=O)CCC2N1"
+        ],
+        "reagents": [
+          "piperidine"
+        ],
+        "solvent": "MeOH",
+        "temperature": "rt",
+        "time": "2.5 h",
+        "stoichiometry": {
+          "3": "3.4 equiv."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 19,
+        "observation": "Dimethyl-brevianamide S (23) was obtained in 19% yield, which equates to a 44% yield per-aldol condensation."
+      },
+      "evidence": {
+        "text_span": "A double aldol condensation between bis-diketopiperazine 16 and aldehyde 3 was then achieved using piperidine in methanol at ambient temperature to give dimethyl-brevianamide S (23) in 19% yield. Although a seemingly modest yield, this equates to a 44% yield per-aldol condensation.7,8",
+        "section": "Main Text",
+        "image_refs": [
+          "c7e676961ccdcaae68cc8a6aa37ee96b8195ba7be38aef67b66d6e0efdbb916e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dimethyl-brevianamide S (23) is synthesized.",
+        "gap": "Need to deprotect the secondary lactams to obtain brevianamide S (1).",
+        "decision": "To deprotect the secondary lactams, used trimethylsilyl chloride in acetonitrile."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=NC(=O)C2=C(C3=NCCC3N(C)C(=O)C3=C(OC)N=C(OC)C3=O)CCC2N1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "trimethylsilyl chloride"
+        ],
+        "solvent": "MeCN"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "observation": "Deprotection proceeded in 48% yield, completing the total synthesis of brevianamide S (1). Monodeprotected material 22 was also isolated in 20% yield."
+      },
+      "evidence": {
+        "text_span": "Final deprotection of the secondary lactams using trimethylsilyl chloride in acetonitrile proceeded in 48% yield,16 thus completing the first total synthesis of brevianamide S (1) in 8 steps (longest linear sequence).11 The deprotection did not go to full conversion, with the monodeprotected material 22 isolated in 20% yield.",
+        "section": "Main Text",
+        "image_refs": [
+          "c7e676961ccdcaae68cc8a6aa37ee96b8195ba7be38aef67b66d6e0efdbb916e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 19,
+      "thought": {
+        "background": "The deprotection of dimethyl-brevianamide S (23) did not go to full conversion, yielding monodeprotected material 22.",
+        "gap": "Need to convert the monodeprotected material to the final product.",
+        "decision": "Resubjected the monodeprotected material 22 to the deprotection conditions to access more brevianamide S (1)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "trimethylsilyl chloride"
+        ],
+        "solvent": "MeCN"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Resubjecting the monodeprotected material to the deprotection conditions allowed for more brevianamide S (1) to be accessed, in 65% yield."
+      },
+      "evidence": {
+        "text_span": "Resubjecting this material to the deprotection conditions allowed for more brevianamide S (1) to be accessed, in 65% yield (Scheme 2).",
+        "section": "Main Text",
+        "image_refs": [
+          "c7e676961ccdcaae68cc8a6aa37ee96b8195ba7be38aef67b66d6e0efdbb916e.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Longest Linear Steps": {
+        "value": 8,
+        "unit": "steps",
+        "interpretation": "The total synthesis was achieved in 8 longest linear steps."
+      }
+    },
+    "comparison_to_prior": "The spectroscopic data for synthetic brevianamide S (1) matched perfectly with that reported by Capon and co-workers.",
+    "significance": "The first total synthesis of a proline-proline linked diketopiperazine-alkaloid dimer has been achieved using a bidirectional three-component coupling strategy. This involved developing a bespoke alkenyl-alkenyl Stille cross-coupling and a double aldol condensation, providing a flexible synthetic strategy for diverse analogues."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.5c00860",
+      "pmcid": "PMC11998070",
+      "title": "Total Synthesis of Brevianamide S.",
+      "authors": "Lockyer AR, Jones HE, Green NJ, Godfrey RC, Demertzidou VP, Nichol GS, Lawrence AL.",
+      "journal": "Org Lett",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11998070?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/7f1b3c50-6171-4f26-aa23-92b6e7564499.zip",
+      "parsed_at": "2026-05-11T06:23:39.422442+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 46,
+    "parseable": 40,
+    "canonicalized": 18,
+    "invalid": 6,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)(C=C)c1c2[nH]c3ccccc3c2c(C=C(NC(=O)C4=NCCC4)C(=O)NC(=O)C5=NCCC5)c1",
+      "CC(C=C)(C)c1c(C=Cc2c(C(=O)N(C)CC2)c2c(nc(OC)n2)CCN2C(=O)N)c2ccccc12",
+      "CC(C=C)(C)c1c(C=Cc2c(C(=O)N(C)CC2)c2c(nc(OC)n2)CCN2C(=O)N)c2ccccc12",
+      "CC(C)(C=C)c1c2[nH]c3ccccc3c2c(C=C(NC(=O)C4=NCCC4)C(=O)NC(=O)C5=NCCC5)c1",
+      "CC(C=C)(C)c1c(C=Cc2c(C(=O)N(C)CC2)c2c(nc(OC)n2)CCN2C(=O)N)c2ccccc12",
+      "CC(C)(C=C)c1c2[nH]c3ccccc3c2c(C=C(NC(=O)C4=NCCC4)C(=O)NC(=O)C5=NCCC5)c1"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "Brevianamide S",
+        "smiles": null,
+        "reason": "pubchem_miss"
+      }
+    ]
+  }
+}

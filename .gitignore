@@ -1,0 +1,59 @@
+# ===== Secrets (NEVER commit) =====
+# local working notes — contains real MinerU JWT token
+readme.txt
+.env
+.env.*
+*.token
+*.secret
+**/credentials.json
+
+# ===== Build artefacts =====
+# rebuilt from submission/ on demand
+submission.zip
+
+# Internal working-status doc (auto-maintained by the assistant; stale by submission time)
+now.md
+
+# ===== Large regenerable data =====
+# Raw OA PDFs — too large to ship; reproducible via download_pdfs.py
+data/pdfs/raw/
+
+# MinerU per-paper outputs — reproducible via mineru_api.py + manifests
+data/mineru_out/PMC*/
+
+# MinerU batch result JSONs reference expired CDN URLs; not useful in repo
+data/mineru_out/pilot_results/
+data/mineru_out/scale_results/
+
+# Per-image SMILES — regen via extract_chem_from_image.py
+data/extracted/*.smiles.jsonl
+
+# Raw LLM responses kept only for debugging failed parses
+data/traces/*.raw.txt
+
+# Organiser-provided Sci-Evo reference (not our IP; users fetch from organiser)
+other/
+
+# ===== KEEP (NOT gitignored) =====
+#   data/manifests/*.jsonl
+#   data/traces/*.trace.json
+#   data/traces/_quality_report.{md,json}
+#   docs/*.md
+#   schema/*
+#   submission/
+#   src/
+#   README.md, DATASET_CARD.md, MINERU_USAGE.md, LICENSE, requirements.txt
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+*.swp
+
+# ===== OS / IDE =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

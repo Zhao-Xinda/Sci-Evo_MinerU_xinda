@@ -1,0 +1,890 @@
+{
+  "trace_id": "TS-PMC12340961",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Isopalhinine A",
+    "smiles": "CC(C)C(=O)C1C2CC3C(=O)C1C3C2",
+    "natural_product_class": "Lycopodium alkaloid",
+    "structural_features": {
+      "key_motifs": [
+        "isotwistane skeleton",
+        "dione moiety",
+        "azonane ring"
+      ]
+    },
+    "motivation": "Development of an atom-economic synthetic strategy for isopalhinine A, leveraging a thiol-mediated acyl radical rearrangement/cyclization reaction of bicyclo[2.2.2]octenone.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Chen, C.-M.",
+        "year": 2018,
+        "doi": "10.1002/anie.201809090",
+        "key_strategy": "Biomimetic synthesis"
+      },
+      {
+        "lead_author": "Nakhla, M. C.",
+        "year": 2021,
+        "doi": "10.1016/j.tetlet.2021.153177",
+        "key_strategy": "Nazarov cyclization for bicyclic core"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Selective formation of rearrangement product over cyclization product, leading to the isotwistane skeleton of isopalhinine A."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond formation leading to the isotwistane skeleton",
+        "named_strategy": "Thiol-mediated acyl radical rearrangement/cyclization",
+        "reasoning": "This reaction allows for the repositioning of the dione moiety and construction of the isotwistane skeleton from a bicyclo[2.2.2]octenone precursor. The selectivity (rearrangement vs. cyclization) is influenced by ring strain and noncovalent interactions."
+      },
+      {
+        "bond_description": "Ring expansion to form the nine-membered azonane ring",
+        "reasoning": "A functional group, such as a diol intermediate, is required to facilitate the ring expansion from a six-membered fused ring to the nine-membered azonane ring."
+      }
+    ],
+    "rationale": "The strategy hinges on a thiol-mediated acyl radical reaction of bicyclo[2.2.2]octenone derivatives. The key challenge is to control the selectivity between rearrangement and cyclization pathways, which is influenced by allylic substituent orientation and steric hindrance. The protected dione moiety is strategically placed to be repositioned during the rearrangement, and a diol intermediate is envisioned for subsequent ring expansion to form the azonane ring."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Previous work showed that ring strain influences the outcome of thiol-mediated acyl radical reactions of bicyclo[2.2.2]octenone 1, leading to either rearrangement product RP1 or cyclization product CP1. Specifically, a six-membered fused ring favors RP1 due to lower ring strain.",
+        "gap": "The influence of allylic substituent orientation and steric hindrance on the selectivity of this reaction needs to be investigated to develop a general strategy for complex natural products like isopalhinine A.",
+        "decision": "To understand the factors governing selectivity, we will investigate the thiol-mediated acyl radical reaction with various substituted bicyclo[2.2.2]octenone precursors."
+      },
+      "evidence": {
+        "text_span": "Recently, we reported a ring-strain-influenced radical rearrangement/cyclization reaction during a thiol-mediated acyl radical reaction of bicyclo[2.2.2]octenone 1 (Scheme 1).1,2 Our study revealed that ring strain plays a critical role in determining whether the reaction yields a rearrangement product RP1 or a cyclization product CP1. Among fused rings of different sizes, we found that only the six-membered fused ring favors the formation of the rearranged product RP1, owing to its lower ring strain compared to its cyclization counterpart. This unexpected discovery inspired the development of an atom-economic synthetic strategy for isopalhinine A.3,4",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bicyclo[2.2.2]octenone radical precursors can be synthesized via Diels-Alder reactions and homologation.",
+        "gap": "How does the orientation of allylic substituents affect the rearrangement/cyclization selectivity?",
+        "decision": "To investigate the effect of hydroxyl group orientation, we will synthesize diastereomeric diol precursors 3 and 4 and subject them to thiol-mediated acyl radical reactions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "Isomer 3 yielded the rearranged product RP3."
+      },
+      "evidence": {
+        "text_span": "After the diastereomers of diol precursors 3 and 4 were obtained, both were subjected to thiol-mediated acyl radical reactions (Scheme 2). A contrasting result was observed: isomer 3 yielded the rearranged product RP3",
+        "image_refs": [
+          "bd2b1ae8d72a0b979bd5c22d321c7a63e0891819739f829e889b0f4920d24b2e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Precursor 3 yielded the rearrangement product RP3.",
+        "gap": "What product will be formed from the diastereomer 4?",
+        "decision": "To compare the reactivity, we will subject diastereomer 4 to the same thiol-mediated acyl radical reaction conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Its counterpart 4 yielded the cyclized product CP4 along with the related alkene product 6."
+      },
+      "evidence": {
+        "text_span": "A contrasting result was observed: isomer 3 yielded the rearranged product RP3, whereas its counterpart 4 yielded the cyclized product CP4 along with the related alkene product 6.",
+        "image_refs": [
+          "bd2b1ae8d72a0b979bd5c22d321c7a63e0891819739f829e889b0f4920d24b2e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The rearranged product RP3 was obtained from precursor 3.",
+        "gap": "Confirm the structure of RP3.",
+        "decision": "To confirm the structure, we will perform desilylation of RP3 and analyze the resulting product by X-ray crystallography."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "THF",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "The structure of the rearranged product RP3 was further confirmed by X-ray analysis of its desilylation product 5 (CCDC 2344716)."
+      },
+      "evidence": {
+        "text_span": "The structure of the rearranged product RP3 was further confirmed by X-ray analysis of its desilylation product 5 (CCDC 2344716).",
+        "image_refs": [
+          "bd2b1ae8d72a0b979bd5c22d321c7a63e0891819739f829e889b0f4920d24b2e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diastereomers 3 and 4 showed different selectivities based on hydroxyl group orientation.",
+        "gap": "Is this effect general for monoallylic alcohol precursors?",
+        "decision": "To validate the effect of hydroxyl group position and orientation, we will subject monoallylic alcohol precursors 7 and 8 to the radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "When the hydroxyl group was oriented toward the aldehyde, the rearranged product RP7 was obtained."
+      },
+      "evidence": {
+        "text_span": "To validate the effect of the position and orientation of hydroxyl groups, the monoallylic alcohol precursors 7 and 8 were subjected to the radical reaction. Similar results were obtained: When the hydroxyl group was oriented toward the aldehyde, the rearranged product RP7 was obtained.",
+        "image_refs": [
+          "bd2b1ae8d72a0b979bd5c22d321c7a63e0891819739f829e889b0f4920d24b2e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Precursor 7, with hydroxyl oriented towards aldehyde, yielded rearrangement product RP7.",
+        "gap": "What product will be formed from precursor 8, with hydroxyl oriented towards ketone?",
+        "decision": "To further validate the effect of hydroxyl group orientation, we will subject precursor 8 to the same radical reaction conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 22,
+        "observation": "When the hydroxyl group was oriented toward the ketone, the cyclized product CP8 and the related alkene product 9 were formed."
+      },
+      "evidence": {
+        "text_span": "In contrast, when the hydroxyl group was oriented toward the ketone, the cyclized product CP8 and the related alkene product 9 were formed.",
+        "image_refs": [
+          "bd2b1ae8d72a0b979bd5c22d321c7a63e0891819739f829e889b0f4920d24b2e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The effect of allylic hydroxyl group orientation on selectivity has been demonstrated.",
+        "gap": "Can this effect be extended to the homoallylic position?",
+        "decision": "To investigate the influence of the homoallylic position, we attempted to synthesize the corresponding bicyclo[2.2.2]octenone product via Diels-Alder reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [],
+        "named_reaction": "Diels-Alder reaction"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The corresponding Diels−Alder reaction unfortunately failed to produce the bicyclo[2.2.2]octenone product."
+      },
+      "evidence": {
+        "text_span": "Although we intended to further investigate the influence of the homoallylic position, the corresponding Diels−Alder reaction unfortunately failed to produce the bicyclo[2.2.2]octenone product.",
+        "section": "Main text"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Experimental results show that the orientation of the hydroxyl group dictates the selectivity between rearrangement and cyclization products for precursors 7 and 8.",
+        "gap": "What is the underlying reason for this selectivity?",
+        "decision": "To understand the mechanism, we will perform density functional theory (DFT) calculations to analyze the thermodynamic preferences for rearrangement and cyclization products."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Computational results reveal that the reaction energies for 7 forming CP7 and RP7 are -13.0 and -20.8 kcal/mol, respectively, indicating a strong preference for RP7. For 8, the ΔE values for CP8 and RP8 are -18.0 and -16.8 kcal/mol, respectively, suggesting a preference for CP8. This aligns with experimental observations."
+      },
+      "evidence": {
+        "text_span": "To understand why the primary products of 7 and 8 are the rearrangement and cyclization products, respectively, density functional theory (DFT) calculations were performed. In our previous study of similar systems, we found that the kinetic barriers are all readily surmounted and that the thermodynamic trends align more closely with the experimentally observed selectivity.1 Therefore, the present study focuses solely on thermodynamic analysis. The computational results reveal that the reaction energies (ΔE) for 7 forming the cyclization (CP7) and rearrangement (RP7) products are −13.0 and −20.8 kcal/mol, respectively, indicating a strong preference for the rearrangement product. This finding aligns with experimental observations, which show that only the rearrangement product is formed. In contrast, the ΔE values for 8 forming the cyclization (CP8) and rearrangement (RP8) products are −18.0 and −16.8 kcal/mol, respectively, suggesting a preference for the cyclization product, consistent with experimental data.",
+        "section": "Main text",
+        "image_refs": [
+          "a43447ca1ebdebc4e6cde39ff5d6f521448834a820a7df79ca7c148df087954a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "DFT calculations show that changing the orientation of the OTBS group from facing the ketone (in 8) to facing the aldehyde (in 7) disfavors cyclization and promotes rearrangement.",
+        "gap": "What is the molecular basis for this energetic difference?",
+        "decision": "To rationalize the influence of OTBS orientation, we will use interaction region indicator (IRI) analysis to examine noncovalent interactions in the products."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "IRI analysis indicates that OTBS exhibits fewer attractive interactions in CP7 than in CP8, destabilizing CP7. Conversely, in RP7, OTBS engages in more pronounced interatomic attraction compared to RP8, enhancing its stability. These factors explain the strong preference for rearrangement in 7."
+      },
+      "evidence": {
+        "text_span": "To rationalize the influence of the OTBS orientation change in two cyclization products and two rearrangement products, we used the interaction region indicator (IRI) in Multiwfn7 to analyze the noncovalent interactions in these products (Figure 1). IRI analysis indicates that OTBS exhibits fewer attractive interactions (green areas) with the rest of the molecule in CP7 than in CP8. In contrast, IRI analysis demonstrates that, relative to RP8, OTBS in RP7 engages in a more pronounced interatomic attraction, enhancing its stability. These factors collectively explain why 7 strongly favors the formation of the rearrangement product.",
+        "section": "Main text",
+        "image_refs": [
+          "f4fb14eb7510a1a72b42b1bf11959c7161cad5dc77883a8c8c112536eeb4d4fc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Allylic substituent orientation significantly impacts reaction selectivity.",
+        "gap": "How does steric hindrance at the alkene bridge (R1, R2) or bridgehead (R3) affect the rearrangement/cyclization acyl radical reaction?",
+        "decision": "To understand the impact of steric hindrance, we will subject a series of acyl radical precursors with mono- or disubstitutions at R1, R2, or R3 to thiol-mediated acyl radical reactions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "regio_selectivity": "1.0:1.5 (RP:CP)",
+        "observation": "When R1 has a methyl substitution (10), the reaction tends to follow the cyclization pathway, yielding CP10 (57%) and RP10 (37%)."
+      },
+      "evidence": {
+        "text_span": "The results of Entries 1−3 show that when R1 has a substitution, the reactions tend to follow the cyclization pathway, yielding cyclized products CP10−12.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Methyl substitution at R1 (10) favored cyclization.",
+        "gap": "How does increasing steric hindrance at R1 (i-Pr) affect selectivity?",
+        "decision": "To investigate the effect of increased steric hindrance at R1, we will use precursor 11 (i-Pr at R1) in the thiol-mediated acyl radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "regio_selectivity": "1.0:1.5 (RP:CP)",
+        "observation": "With i-Pr at R1 (11), cyclized product CP11 (58%) and rearranged product RP11 (38%) were obtained, maintaining a similar ratio to methyl substitution."
+      },
+      "evidence": {
+        "text_span": "The results of Entries 1−3 show that when R1 has a substitution, the reactions tend to follow the cyclization pathway, yielding cyclized products CP10−12.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Increasing steric hindrance at R1 from methyl to i-Pr still favored cyclization.",
+        "gap": "What happens with even larger steric hindrance at R1 (t-Bu)?",
+        "decision": "To further investigate the effect of steric hindrance at R1, we will use precursor 12 (t-Bu at R1) in the thiol-mediated acyl radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 25,
+        "failure_mode": "side_product_dominant",
+        "observation": "When R1 was t-Bu (12), only the cyclized product CP12 (25%) was obtained, along with a thiol ether side product (51%) and recovered starting material (13%). This suggests the tert-butyl group shields the aldehyde, hindering acyl radical formation."
+      },
+      "evidence": {
+        "text_span": "However, as the steric hindrance increased, a thiol ether side product was formed. The reaction mechanism remains unclear, but it is possible that the tert-butyl group shields the aldehyde group, hindering acyl radical formation. This could allow the thiol radical to add to the alkene bridge, followed by hydrogen atom abstraction.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Steric hindrance at R1 favored cyclization but led to side products with t-Bu.",
+        "gap": "How does substitution at R2 affect the selectivity?",
+        "decision": "To investigate the effect of substitution at R2, we will use precursor 13 (Me at R2) in the thiol-mediated acyl radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 42,
+        "regio_selectivity": "1.0:0.8 (RP:CP)",
+        "observation": "When R2 was methyl (13), RP13 (52%) and CP13 (42%) were formed, with a slight preference for rearrangement."
+      },
+      "evidence": {
+        "text_span": "Entries 4−6 indicate that when R2 was substituted, the yield of cyclization products CP13−15 decreased significantly with increasing steric hindrance. In contrast, the yield of rearrangement products RP13−15 remained consistently around 50% regardless of the steric hindrance change.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Methyl substitution at R2 (13) showed a slight preference for rearrangement.",
+        "gap": "How does increasing steric hindrance at R2 (i-Pr) affect selectivity?",
+        "decision": "To investigate the effect of increased steric hindrance at R2, we will use precursor 14 (i-Pr at R2) in the thiol-mediated acyl radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 22,
+        "regio_selectivity": "1.0:0.4 (RP:CP)",
+        "observation": "With i-Pr at R2 (14), RP14 (56%) was favored over CP14 (22%), and the yield of cyclization product decreased."
+      },
+      "evidence": {
+        "text_span": "Entries 4−6 indicate that when R2 was substituted, the yield of cyclization products CP13−15 decreased significantly with increasing steric hindrance. In contrast, the yield of rearrangement products RP13−15 remained consistently around 50% regardless of the steric hindrance change.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Increasing steric hindrance at R2 from methyl to i-Pr further favored rearrangement.",
+        "gap": "What happens with even larger steric hindrance at R2 (t-Bu)?",
+        "decision": "To further investigate the effect of steric hindrance at R2, we will use precursor 15 (t-Bu at R2) in the thiol-mediated acyl radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 9,
+        "regio_selectivity": "1.0:0.2 (RP:CP)",
+        "observation": "With t-Bu at R2 (15), RP15 (45%) was strongly favored over CP15 (9%), and the yield of cyclization product significantly decreased. Some starting material (21%) was recovered."
+      },
+      "evidence": {
+        "text_span": "Entries 4−6 indicate that when R2 was substituted, the yield of cyclization products CP13−15 decreased significantly with increasing steric hindrance. In contrast, the yield of rearrangement products RP13−15 remained consistently around 50% regardless of the steric hindrance change.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Substitution at R2 increasingly favored rearrangement with larger substituents.",
+        "gap": "How does substitution at the bridgehead (R3) affect selectivity?",
+        "decision": "To investigate the effect of substitution at R3, we will use precursor 16 (Me at R3) in the thiol-mediated acyl radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "regio_selectivity": "1.0:1.7 (RP:CP)",
+        "observation": "When R3 was methyl (16), CP16 (58%) was favored over RP16 (34%)."
+      },
+      "evidence": {
+        "text_span": "Entries 7−9 demonstrate that when a substituent was present at the bridgehead (R3), the yield of cyclized products CP16−17 also decreased as steric hindrance increase, whereas the yield of rearranged products RP16−17 increased.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Methyl substitution at R3 (16) favored cyclization.",
+        "gap": "How does increasing steric hindrance at R3 (i-Pr) affect selectivity?",
+        "decision": "To investigate the effect of increased steric hindrance at R3, we will use precursor 17 (i-Pr at R3) in the thiol-mediated acyl radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 20,
+        "regio_selectivity": "1.0:0.6 (RP:CP)",
+        "observation": "With i-Pr at R3 (17), RP17 (53%) was favored over CP17 (20%), and the yield of cyclization product decreased while rearrangement increased."
+      },
+      "evidence": {
+        "text_span": "Entries 7−9 demonstrate that when a substituent was present at the bridgehead (R3), the yield of cyclized products CP16−17 also decreased as steric hindrance increase, whereas the yield of rearranged products RP16−17 increased.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Increasing steric hindrance at R3 from methyl to i-Pr shifted selectivity towards rearrangement.",
+        "gap": "What happens with even larger steric hindrance at R3 (t-Bu)?",
+        "decision": "To further investigate the effect of steric hindrance at R3, we will use precursor 18 (t-Bu at R3) in the thiol-mediated acyl radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC(C(C)=O)C(OC)C(C)(C)C"
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 68,
+        "failure_mode": "side_product_dominant",
+        "observation": "When R3 was t-Bu (18), a 68% yield of side product 22 (acetal) was obtained, indicating further decarbonylation due to hindered hydrogen atom abstraction in RP18."
+      },
+      "evidence": {
+        "text_span": "However, when the substitution is a tert-butyl group (18), it may hinder hydrogen atom abstraction at the adjacent carbon in rearranged product RP18. Consequently, the reaction underwent further decarbonylation, producing an acetal side product 22.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Single substitutions at R1, R2, and R3 showed varying effects on selectivity.",
+        "gap": "How do disubstitutions at the alkene bridge and bridgehead affect selectivity?",
+        "decision": "To investigate disubstitution effects, we will use precursor 19 (Me at R1 and R2) in the thiol-mediated acyl radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 40,
+        "regio_selectivity": "1.0:0.8 (RP:CP)",
+        "observation": "When disubstitution occurred solely at the bridge (R1 and R2, 19), RP19 (52%) and CP19 (40%) were formed, with a slight preference for rearrangement."
+      },
+      "evidence": {
+        "text_span": "Entries 10−12 show the results for disubstituted precursors at alkene bridge and bridgehead. When disubstitution occurred solely at the bridge (R1 and R2, 19), the ratio of rearranged product RP19 to cyclized product CP19 was 1.0:0.8.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Disubstitution at R1 and R2 (19) showed a slight preference for rearrangement.",
+        "gap": "How does disubstitution involving both bridgehead (R3) and bridge (R1) affect selectivity?",
+        "decision": "To investigate this, we will use precursor 20 (Me at R1 and R3) in the thiol-mediated acyl radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 31,
+        "regio_selectivity": "1.0:0.5 (RP:CP)",
+        "observation": "For disubstitution with Me at R1 and R3 (20), the reaction consistently favored the formation of rearranged product RP20 (62%) over CP20 (31%)."
+      },
+      "evidence": {
+        "text_span": "Conversely, for disubstitution involving both the bridgehead and the bridge, where one substituent is at the bridgehead (R3) and the other at either R1 (20) or R2 (21) on the bridge, the reaction consistently favored the formation of rearranged products RP20 and RP21.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Disubstitution at R1 and R3 (20) favored rearrangement.",
+        "gap": "How does disubstitution involving both bridgehead (R3) and bridge (R2) affect selectivity?",
+        "decision": "To investigate this, we will use precursor 21 (Me at R2 and R3) in the thiol-mediated acyl radical reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "t-BuSH",
+          "AIBN"
+        ],
+        "solvent": "benzene",
+        "temperature": "reflux",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 20,
+        "regio_selectivity": "1.0:0.3 (RP:CP)",
+        "observation": "For disubstitution with Me at R2 and R3 (21), the reaction consistently favored the formation of rearranged product RP21 (57%) over CP21 (20%)."
+      },
+      "evidence": {
+        "text_span": "Conversely, for disubstitution involving both the bridgehead and the bridge, where one substituent is at the bridgehead (R3) and the other at either R1 (20) or R2 (21) on the bridge, the reaction consistently favored the formation of rearranged products RP20 and RP21.",
+        "image_refs": [
+          "a13759a2ee522051eb9230e2f570cc768c8048be24a2cefe1768d27c30582a51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Experimental results show that increasing steric hindrance at R3 shifts selectivity towards rearrangement, but t-Bu at R3 leads to side products.",
+        "gap": "What is the underlying reason for the substituent effect at the bridgehead (R3)?",
+        "decision": "To understand the substituent effect at R3, we will focus on two extreme cases (methyl and tert-butyl) and perform DFT calculations to compare their effects on rearrangement and cyclization energies."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "For methyl-substituted 16, reaction energies for RP16 and CP16 are both approximately -23.9 kcal/mol, with CP16 only 0.03 kcal/mol more stable, aligning with experimental observation (RP:CP = 1.0:1.7). For tert-butyl-substituted 18, reaction energies for RP18 and CP18 are -30.3 and -23.3 kcal/mol, respectively, suggesting a strong preference for RP18, consistent with experimental data."
+      },
+      "evidence": {
+        "text_span": "To understand the substituent effect at the bridgehead (R3), we focused on two extreme cases—methyl and tert-butyl—to compare their effects (entries 7 and 9). DFT calculations indicate that for the methyl-substituted reactant (16), the reaction energies for forming the rearrangement (RP16) and cyclization (CP16) products are both approximately −23.9 kcal/mol, with the cyclization product only 0.03 kcal/mol more stable. This result aligns with experimental observations, where both products are formed but the cyclization product predominates (RP:CP = 1.0:1.7). In contrast, for the tert-butyl-substituted reactant (18), the reaction energies for forming the rearrangement (RP18) and cyclization (CP18) products are −30.3 and −23.3 kcal/mol, respectively, suggesting a strong preference for the rearrangement product, consistent with experimental data.",
+        "section": "Main text",
+        "image_refs": [
+          "0f5c96fe3cbe63006bba755b747d76f3dc3c3b5543bfd18e045d3fc66a77e593.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "DFT calculations showed different thermodynamic preferences for methyl- and tert-butyl-substituted bridgehead precursors 16 and 18.",
+        "gap": "Since 16 and 18 are not isomers, their energies cannot be directly compared. How can their relative stability and the impact of substitution on product energies be evaluated?",
+        "decision": "To compare their relative stability, a homodesmotic reaction will be employed. Then, the energy changes for cyclization and rearrangement products upon substitution will be analyzed."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The homodesmotic reaction indicates that compound 18 is 1.7 kcal/mol higher in energy than compound 16. Replacing methyl with tert-butyl increases the energy of CP16 by 2.3 kcal/mol (CP16 → CP18) while decreasing the energy of RP16 by -4.7 kcal/mol (RP16 → RP18). This substitution disfavors cyclization and promotes rearrangement, shifting selectivity towards rearrangement in 18."
+      },
+      "evidence": {
+        "text_span": "Since compounds 16 and 18 are not isomers, unlike 8 and 7, their energies cannot be directly compared. Therefore, a homodesmotic reaction was employed to evaluate their relative stability.8 The results indicate that compound 18 is 1.7 kcal/mol higher in energy than compound 16. Referencing to the two products of 16, we find that replacing the methyl group with a tert-butyl group increases the energy of the cyclization product by 2.3 kcal/mol (CP16 → CP18, Scheme 4) while it decreases the energy of the rearrangement product by −4.7 kcal/mol (RP16 → RP18). Thus, this substitution disfavors cyclization while it promotes rearrangement, shifting the selectivity from a cyclization product distribution in 16 to a stronger preference for rearrangement in 18.",
+        "section": "Main text",
+        "image_refs": [
+          "370103a7d12956da7580c13ce4dc2a00c471e5b3fe3367807e7b87097dfc9893.jpg",
+          "0f5c96fe3cbe63006bba755b747d76f3dc3c3b5543bfd18e045d3fc66a77e593.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "DFT calculations and homodesmotic analysis showed that tert-butyl substitution at R3 disfavors cyclization and promotes rearrangement.",
+        "gap": "What is the molecular basis for this effect of larger substituents at the bridgehead?",
+        "decision": "To understand the substituent effect, we will use IRI analysis to examine noncovalent interactions in CP18 compared to CP16, and RP18 compared to RP16."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "IRI analysis indicates that the tert-butyl group introduces more extensive repulsive interactions in CP18 compared to CP16, destabilizing the cyclization product. In contrast, the tert-butyl group in RP18 enhances interatomic attraction relative to RP16, increasing its stability. These factors explain the greater preference for the rearrangement product in 18."
+      },
+      "evidence": {
+        "text_span": "IRI analysis indicates that the tert-butyl group introduces more extensive repulsive interactions (orange and red regions) in CP18 compared to CP16 (Figure 2), destabilizing the cyclization product of 18. In contrast, IRI analysis shows that, relative to RP16, the tert-butyl group in RP18 enhances interatomic attraction, increasing its stability. These factors collectively explain why 18 exhibits a greater preference for the rearrangement product.",
+        "section": "Main text",
+        "image_refs": [
+          "eb3eafa0fbbdbbc3554ede5f80f447f535d3dbf9a51c6cdb1943fb81e9082ace.jpg",
+          "930e3dbb0d14def0d99b69082c39d4696748a1a6ee0122294bd6f9f076360c75.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "X-ray crystallography"
+    ],
+    "metrics": {},
+    "significance": "This study elucidates the critical role of noncovalent interactions and steric hindrance in controlling the selectivity of acyl radical rearrangement/cyclization reactions of bicyclo[2.2.2]octenone derivatives. The findings provide a foundation for developing an atom-economic synthetic strategy for complex natural products like isopalhinine A, by demonstrating how allylic substituent orientation and steric bulk can be leveraged to direct reaction outcomes."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.5c01574",
+      "pmcid": "PMC12340961",
+      "title": "Noncovalent Interaction Effects on the Acyl Radical Reaction of Bicyclo[2.2.2]octanone: Selective Formation of Rearrangement and Cyclization Products.",
+      "authors": "Chen CM, Kuo TC, Reddy JS, Teoh YN, Huang JS, Lin SK, Cheng MJ, Hsieh HP.",
+      "journal": "Org Lett",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12340961?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/3eb6fa75-1bd2-4c3e-b3d6-02ba94a4f453.zip",
+      "parsed_at": "2026-05-11T06:25:25.258728+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 47,
+    "parseable": 2,
+    "canonicalized": 2,
+    "invalid": 45,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1C[C@H]2C(C(=O)OC)C(=O)C[C@@H]12OSi(C)(C)C(C)(C)C",
+      "CC(C)(C)[Si](C)(C)O[C@H]1C[C@H]2C(C(=O)OC)C(=O)C[C@@H]12OSi(C)(C)C(C)(C)C",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1C[C@H]2C(C(=O)OC)C(=O)C[C@@H]12OSi(C)(C)C(C)(C)C",
+      "CC(C)(C)[Si](C)(C)O[C@H]1C[C@H]2C(C(=O)OC)C(=O)C[C@@H]12OSi(C)(C)C(C)(C)C",
+      "CC(C)(C)[Si](C)(C)O[C@H]1C[C@H]2C(C(=O)OC)C(=O)C[C@@H]12OSi(C)(C)C(C)(C)C",
+      "CC(C)(C)[Si](C)(C)O[C@H]1C[C@H]2C(C(=O)OC)C(=O)C[C@@H]12OSi(C)(C)C(C)(C)C",
+      "O=C1C[C@@H]2C(C(=O)OC)C(=O)C[C@@H]12O",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1C[C@H]2C(C(=O)OC)C(=O)C[C@@H]12OSi(C)(C)C(C)(C)C",
+      "CC(C)(C)[Si](C)(C)O[C@H]1C[C@H]2C(C(=O)OC)C(=O)C[C@@H]12OSi(C)(C)C(C)(C)C",
+      "CC(C)(C)[Si](C)(C)OC[C@@H]1C[C@H]2C(C(=O)OC)C(=O)C[C@@H]12OSi(C)(C)C(C)(C)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

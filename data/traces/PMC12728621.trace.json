@@ -1,0 +1,871 @@
+{
+  "trace_id": "TS-PMC12728621",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Lablaboside F",
+    "smiles": "C[C@@H]1[C@@H]2CC[C@]3(C)C4C[C@@](C)(CC=C5C(C)(C)C6CCC(C)(C)C(C(=O)OC[C@@H]7O[C@H](O[C@H]8[C@H](O)[C@@H](O)[C@H](O)[C@@H](O)[C@@H]8O)[C@H](O)[C@@H](O)[C@@H]7O)C56C)[C@@H]4CC[C@H]3[C@@H]2CC[C@H]1O[C@@H]1O[C@H](C(=O)O)[C@H](O)[C@H](O)[C@H]1O[C@@H]1O[C@H](CO)[C@H](O)[C@H](O)[C@H]1O[C@@H]1O[C@H](C)[C@@H](O)[C@H](O)[C@H]1O",
+    "natural_product_class": "saponin",
+    "structural_features": {
+      "molecular_weight": 1407.64,
+      "stereocenters": 30,
+      "ring_systems": "triterpene, multiple saccharide rings",
+      "key_motifs": [
+        "oleanolic acid",
+        "C2-branched trisaccharide",
+        "beta-glycosidic bond"
+      ]
+    },
+    "motivation": "Lablaboside F is a promising vaccine adjuvant candidate with robust adjuvanticity and low toxicity. Extracting it from natural sources is inefficient and variable, necessitating a synthetic approach to ensure purity, consistency, and efficiency. The synthesis also allows for structure-activity relationship studies to identify essential structural features for adjuvant activity and develop safer, more effective adjuvants.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Achieve stereoselective control over beta-glycosidic bond formation, especially for C2-branched oligosaccharides without C2-neighboring group participation. Synthesize Lablaboside F and eight structural derivatives (S1-S8) with high yields and excellent stereoselectivity. Evaluate synthesized compounds for adjuvant activity and safety in vivo and in vitro."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C3-hydroxyl of oleanolic acid with western trisaccharide (ether linkage)",
+        "named_strategy": "beta-stereoselective glycosylation",
+        "reasoning": "The western trisaccharide is C2-branched, making traditional C2-neighboring group participation unsuitable for beta-selectivity. The authors propose using a protonated phenanthroline catalyst ([PhenH]+[BF4]-) to achieve this stereoselectivity.",
+        "alternatives_considered": [
+          {
+            "strategy": "Traditional haloglycoside donor",
+            "rejected_because": "Difficult purification and lack of stability compared to trichloroacetimidate donors."
+          }
+        ]
+      },
+      {
+        "bond_description": "C28-carboxylic acid of oleanolic acid with eastern trisaccharide (ester linkage)",
+        "named_strategy": "beta-stereoselective glycosylation",
+        "reasoning": "Similar to the western trisaccharide, the eastern trisaccharide is C2-branched. The authors aim to extend the use of the [PhenH]+[BF4]- catalyst to carboxylic acids, despite differences in reactivity and acidity compared to alcohols. This is a key challenge due to the bulky nature of the C2-branched trisaccharide and potential steric hindrance.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Sequential attachment of monosaccharide units to oleanolic acid (for analogs S1-S8)",
+        "named_strategy": "[1+1+1] glycosylation strategy",
+        "reasoning": "This strategy utilizes C2-neighboring group participation on glucuronic acid, glucose, and galactose units to ensure beta-1,2-trans linkage formation, facilitating the preparation of various analogs. This allows for the installation of one monosaccharide unit at a time.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "oleanolic_acid_core",
+        "smiles": "CC(C)CC1C(C)CC1(C)C(O)CC1C(C)(C)C2CCC(C)(C)C(C(=O)O)C21C",
+        "role": "aglycone",
+        "comes_from": "Oleanolic Acid"
+      },
+      {
+        "fragment_id": "western_trisaccharide_donor",
+        "smiles": "",
+        "role": "glycosyl_donor",
+        "comes_from": "WT-5"
+      },
+      {
+        "fragment_id": "eastern_trisaccharide_donor",
+        "smiles": "CC1C(OC(=N)CCl)C(O)C(O)C(OC2[C@@H](O)C(O)C(O)C(O)[C@@H]2O)C1OC1[C@@H](O)C(O)C(O)C(O)[C@@H]1O",
+        "role": "glycosyl_donor",
+        "comes_from": "ET-5"
+      }
+    ],
+    "rationale": "The retrosynthetic analysis focuses on addressing the challenge of stereoselective beta-glycosidic bond formation, particularly for C2-branched oligosaccharides where traditional C2-neighboring group participation is not feasible. The key strategy involves utilizing a protonated phenanthroline catalyst ([PhenH]+[BF4]-) for both C3-hydroxyl and C28-carboxylic acid glycosylation of oleanolic acid. For the synthesis of analogs, a [1+1+1] glycosylation approach with C2-acetyl neighboring group participation is employed. The order of attachment of the eastern and western trisaccharides is also considered, with the western trisaccharide being attached first due to steric hindrance issues observed when attempting to attach it after the eastern trisaccharide."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Lablaboside F is a bidesmodic saponin with a triterpene oleanolic acid core linked to two C2-branched trisaccharide units. The eastern trisaccharide has a beta-ester linkage, and the western trisaccharide has a beta-ether linkage. Both are C2-branched, making traditional C2-neighboring group participation for beta-selectivity challenging.",
+        "gap": "How to achieve stereoselective beta-glycosylation for C2-branched oligosaccharides without C2-neighboring group participation, especially for the sterically hindered C3-hydroxyl and C28-carboxylic acid of oleanolic acid. Also, how to synthesize various analogs efficiently.",
+        "decision": "To overcome the stereoselectivity challenge, we will employ our recently developed protonated phenanthroline catalyst ([PhenH]+[BF4]-) for beta-stereoselective glycosylation of hydroxyl groups with oligosaccharide trichloroacetimidate electrophiles. For analogs, a [1+1+1] glycosylation strategy with C2-neighboring group participation will be used. We will also investigate the application of [PhenH]+[BF4]- to carboxylic acids."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Retrosynthetic analysis identified key disconnections and proposed the use of [PhenH]+[BF4]- catalyst for stereoselective glycosylation and a [1+1+1] strategy for analogs."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Lablaboside F has a triterpene core made of oleanolic acid, with its C3-hydroxyl group and C28-carboxylic acid group linked to two C2-branched trisaccharides via β-1,2-trans glycoside bonds (Figure 2). The eastern trisaccharide has a β-ester linkage between D-glucose and oleanolic acid. The glucose is then attached to two α-linked L-rhamnoses at the C2 position. The western trisaccharide has a β. -ether linkage between D-glucuronic acid and oleanolic acid. Similarly, glucuronic acid’s C2 holds a β. -linked D-galactose and α- linked-L-rhamnose disaccharide. Since the eastern and western trisaccharides are branched at the C2 position, accessing the β. - 1,2-trans linkage through C2-neighboring group participation to control β-selectivity is not suitable.31 We envisioned that this challenge could be potentially overcome by employing our recently developed catalyst, [PhenH]+[BF4]- , to efficiently construct β-C2-branched oligosaccharides without a C2-acetyl neighboring group.32 [PhenH]+[BF4]- demonstrated remarkable efficiency in glycosylating a C2-branched trisaccharide on either side of the oleanolic acid backbone with excellent β-glycosidic bond selectivity. We tested the synthesized compound lablaboside F (S9), eight derivatives (S1−S8), and the commercially available oleanolic acid backbone (S10) for their adjuvant activity and safety both in vivo and in vitro. Our results demonstrate that most of the compounds displayed favorable safety profiles in vitro. Notably, two truncated analogs of lablaboside F (S1 and S5) exhibited robust adjuvant activity in vivo, as shown by their effectiveness in eliciting antigen-specific total IgG production, surpassing the parent compound S9. Additionally, our modifications to the natural structure of lablaboside F allowed us to identify the essential monosaccharide units and stereochemistry required for enhancing adjuvant activity. Overall, this work provides a thorough evaluation of the potential of our newly derived compounds as vaccine adjuvants and establishes a framework for rapid synthesis of a variety of saponin derivatives. Furthermore, these findings contribute to the development of safer and more effective vaccine adjuvants and establish a foundation for future clinical applications.",
+        "section": "Retrosynthetic Analysis"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The initial stage of synthesis involves glycosylating Glc-11 with allyl-protected oleanolic acid 2. The C2-acetyl group in Glc-11 is expected to direct beta-selectivity.",
+        "gap": "To synthesize the initial glycoconjugate 3.",
+        "decision": "To couple Glc-11 with allyl-protected oleanolic acid 2 using B(C6F5)3 as a Lewis acid to activate the trichloroacetimidate leaving group, expecting good yield and beta-selectivity due to the C2-acetyl group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C=CCOC(=O)C1C(C)C2C(C)C(O)C(C)C(C)C2C2C(C)(C)CCC12C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "B(C6F5)3"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "observation": "Reaction successfully produced glycoconjugate 3 in good yield. The C2-acetyl group in Glc-11 served as the participatory group, effectively directing the beta-selectivity of the coupling process."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "In the initial stage of the synthesis, Glc-11 was glycosylated with allyl-protected oleanolic acid 2, using B(C6F5)3 as a Lewis 6 5 3 acid34 to activate the trichloroacetimidate leaving group. This reaction successfully produced glycoconjugate 3 in good yield (Scheme 1). Notably, the C2-acetyl group in Glc-11 serves as the participatory group, effectively directing the β-selectivity of the coupling process.",
+        "section": "Synthesis",
+        "image_refs": [
+          "a960dc7b723bbad6c491440a25b34a0342f70ce2ae6f04b61399053611f2fff.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Glycoconjugate 3 was successfully synthesized.",
+        "gap": "To deprotect compound 3 to yield the C2-hydroxyl product 4.",
+        "decision": "To deacetylate compound 3 using K2CO3 in MeOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "MeOH",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Compound 3 was deacetylated to yield the C2-hydroxyl product 4."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "From there, compound 3 was deprotected in three steps to give the lablaboside F analog S1. Compound 3 was also deacetylated to yield the C2- hydroxyl product 4.",
+        "section": "Synthesis",
+        "image_refs": [
+          "a960dc7b723bbad6c491440a25b34a0342f70ce2ae6f04b61399053611f2fff.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 4 was obtained. The next step is to glycosylate it with a galactosyl donor. Gal-4-OAc was synthesized and considered.",
+        "gap": "To couple 4 with Gal-4-OAc to form a disaccharide conjugate with beta-selectivity.",
+        "decision": "To attempt glycosylation of Gal-4-OAc with compound 4 under triflic acid conditions, expecting beta-selectivity due to the C2-acetyl group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "catalyst": "TfOH"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "Glycosylating Gal-4-OAc under triflic acid conditions with compound 4 led to the undesired alpha-disaccharide conjugate 7a. It is hypothesized that the observed alpha-selectivity may stem from the formation of an orthoester, which rearranges to yield the alpha-conjugate 7a."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Initially, we explored the coupling of 4 with the galactosyl diacetate, Gal-4-OAc. This electrophile was synthesized through a one-step reaction involving D-galactal and PhI-( OAc )2,35 thereby facilitating its direct preparation for subsequent applications. However, glycosylating Gal-4-OAc under triflic acid conditions with compound 4 led to the undesired α-disaccharide conjugate 7a, even in the presence of the C2- ·β-directing acetyl group . It is hypothesized that the observed α-selectivity may stem from the formation of an orthoester, which rearranges to yield the α-conjugate 7a. 36",
+        "section": "Synthesis",
+        "image_refs": [
+          "184e809a38a881f0cb6b9779b27c1e3236c5e1e80cbfdee6c72c6a2c5a6694d5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "The previous attempt to glycosylate 4 with Gal-4-OAc using TfOH resulted in undesired alpha-selectivity (7a).",
+        "gap": "To achieve beta-selective glycosylation of 4 with a galactosyl donor.",
+        "decision": "To screen various coupling conditions and leaving groups. We will replace the anomeric acetate with phenylthiol (Gal-4) and attempt an NIS/AgOTf-mediated reaction with 4, expecting to minimize alpha-product formation and achieve beta-selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NIS",
+          "AgOTf"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C to rt",
+        "stoichiometry": {
+          "4A MS": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Replacing the anomeric acetate with phenylthiol (Gal-4) led to a successful NIS/AgOTf-mediated reaction with 4, resulting in the desired beta-disaccharide conjugate 7 in 87% yield."
+      },
+      "revises_step_id": 4,
+      "references": [],
+      "evidence": {
+        "text_span": "To minimize the formation of α-product 7a, we screened various coupling conditions and leaving groups. We found that replacing the anomeric acetate with phenylthiol(Gal-4) led to a successful NIS/AgOTf-mediated reaction with 4, resulting in the desired β-disaccharide conjugate 7 in 87% yield (Scheme 1).",
+        "section": "Synthesis",
+        "image_refs": [
+          "184e809a38a881f0cb6b9779b27c1e3236c5e1e80cbfdee6c72c6a2c5a6694d5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Beta-disaccharide conjugate 7 was successfully synthesized.",
+        "gap": "To hydrolyze 7 to remove the C2-acetyl and C6-methyl ester groups to produce 8.",
+        "decision": "To hydrolyze 7 using NaOH solution followed by Cs2CO3 in MeOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaOH solution (1 N)",
+          "Cs2CO3"
+        ],
+        "solvent": "dioxane, MeOH",
+        "temperature": "50 °C then rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Hydrolysis of 7 resulted in the removal of both the C2-acetyl and the C6-methyl ester to produce 8 in 92% yield over two steps."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "The hydrolysis of 7 resulted in the removal of both the C2- acetyl and the C6-methyl ester to produce 8.",
+        "section": "Synthesis",
+        "image_refs": [
+          "184e809a38a881f0cb6b9779b27c1e3236c5e1e80cbfdee6c72c6a2c5a6694d5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 8 was successfully produced.",
+        "gap": "To benzylate the carboxylic acid of 8 to produce 9, allowing for a one-step global deprotection later.",
+        "decision": "To benzylate 8 using BnBr and K2CO3 in DMF."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "BnBr",
+          "K2CO3"
+        ],
+        "solvent": "DMF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "observation": "The carboxylic acid was benzylated to produce 9 in 94% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Following this step, the carboxylic acid was benzylated to produce 9, allowing for a one-step global deprotection.",
+        "section": "Synthesis",
+        "image_refs": [
+          "184e809a38a881f0cb6b9779b27c1e3236c5e1e80cbfdee6c72c6a2c5a6694d5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 9 was successfully produced. The next step is to complete the synthesis of the western trisaccharide by glycosylating 9 with Rha-6.",
+        "gap": "To glycosylate 9 with Rha-6 to form trisaccharide conjugate 11.",
+        "decision": "To glycosylate 9 with Rha-6, which is known for promoting alpha-selectivity, using NIS/AgOTf conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NIS",
+          "AgOTf"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C to rt",
+        "stoichiometry": {
+          "4A MS": "unspecified"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "This reaction successfully produced trisaccharide conjugate 11 in 84% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "To complete the synthesis of the western trisaccharide, the benzylidene acetal Rha-6, known for promoting α-selectivity,37 was glycosylated with 9. This 3 reaction successfully produced trisaccharide conjugate 11, which was then used to prepare S8 through hydrogenation.",
+        "section": "Synthesis",
+        "image_refs": [
+          "184e809a38a881f0cb6b9779b27c1e3236c5e1e80cbfdee6c72c6a2c5a6694d5.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of the eastern branched trisaccharide separately and its glycosylation with oleanolic acid's C28-carboxylic acid is anticipated to be challenging due to steric hindrance and potential reduction in beta-selectivity.",
+        "gap": "To glycosylate the sterically hindered C28-carboxylic acid of oleanolic acid 13 with the sterically hindered eastern trisaccharide ET-5 with beta-selectivity.",
+        "decision": "To use protonated phenanthroline [PhenH]+[BF4]- as the catalyst, starting with 5 mol% loading, expecting beta-stereoselective glycosylation based on the proposed SN2-like transition state and hydrogen bond interactions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1C(OC(=N)CCl)C(O)C(O)C(OC2[C@@H](O)C(O)C(O)C(O)[C@@H]2O)C1OC1[C@@H](O)C(O)C(O)C(O)[C@@H]1O",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "[PhenH]+[BF4]-",
+        "stoichiometry": {
+          "[PhenH]+[BF4]-": "5 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 26,
+        "regio_selectivity": "1:16 (alpha:beta)",
+        "observation": "Initial attempt with 5 mol% of [PhenH]+[BF4]- resulted in 14 in 26% yield with excellent beta-selectivity (alpha:beta = 1:16)."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "To validate our hypothesis, we initially utilized 5 mol % of [PhenH]+[BF4]- in the reaction (Table 1), resulting in 14 in 26% yield with excellent β-selectivity α.β = 1:16 , entry 1).",
+        "section": "Synthesis",
+        "image_refs": [
+          "0f83a6117f89769267e89884a89f4134ba3a7dc16f749a1365a672e675640ffc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "The initial attempt to glycosylate 13 with ET-5 using 5 mol% [PhenH]+[BF4]- yielded 26% with 1:16 alpha:beta ratio.",
+        "gap": "To improve the yield and beta-selectivity of the glycosylation.",
+        "decision": "To increase the catalyst loading of [PhenH]+[BF4]- to 15 mol%."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1C(OC(=N)CCl)C(O)C(O)C(OC2[C@@H](O)C(O)C(O)C(O)[C@@H]2O)C1OC1[C@@H](O)C(O)C(O)C(O)[C@@H]1O",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "[PhenH]+[BF4]-",
+        "stoichiometry": {
+          "[PhenH]+[BF4]-": "15 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "regio_selectivity": ">1:25 (alpha:beta)",
+        "observation": "Increasing the catalyst loading to 15 mol% resulted in a yield of 56% and alpha:beta > 1:25."
+      },
+      "revises_step_id": 9,
+      "references": [],
+      "evidence": {
+        "text_span": "Increasing the catalyst loading led to incremental improvements in both yield and β-selectivity, ultimately achieving a yield of 56% and α:β > 1:25 at 15 mol % [PhenH]+[BF4]- (entries 2 and 3).",
+        "section": "Synthesis",
+        "image_refs": [
+          "0f83a6117f89769267e89884a89f4134ba3a7dc16f749a1365a672e675640ffc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The [PhenH]+[BF4]- catalyst showed promising results for beta-selective glycosylation.",
+        "gap": "To compare the performance of [PhenH]+[BF4]- with established Lewis acid catalysts for the glycosylation of sterically hindered oleanolic acid 13.",
+        "decision": "To test BF3·OEt2 (5 mol%) as a Lewis acid for the glycosylation of 13 with ET-5."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1C(OC(=N)CCl)C(O)C(O)C(OC2[C@@H](O)C(O)C(O)C(O)[C@@H]2O)C1OC1[C@@H](O)C(O)C(O)C(O)[C@@H]1O",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "BF3.OEt2",
+        "temperature": "-78 to 0 °C",
+        "time": "1 h",
+        "stoichiometry": {
+          "BF3.OEt2": "5 mol %"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 71,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "BF3·OEt2 resulted in product 14 with a yield of 71% but an inseparable alpha:beta mixture of 1:2."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "We first tested 5 mol % of BF3 OEt2 as a Lewis acid.33,41 This resulted in product 14 with a yield of 71% and an inseparable α:β mixture of 1:2 (entry 5).",
+        "section": "Synthesis",
+        "image_refs": [
+          "0f83a6117f89769267e89884a89f4134ba3a7dc16f749a1365a672e675640ffc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "BF3·OEt2 resulted in poor stereoselectivity.",
+        "gap": "To evaluate another established Lewis acid catalyst, B(C6F5)3, for the glycosylation of 13 with ET-5.",
+        "decision": "To use B(C6F5)3 (5 mol%) as a Lewis acid for the glycosylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1C(OC(=N)CCl)C(O)C(O)C(OC2[C@@H](O)C(O)C(O)C(O)[C@@H]2O)C1OC1[C@@H](O)C(O)C(O)C(O)[C@@H]1O",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "B(C6F5)3",
+        "temperature": "0 °C",
+        "time": "1 h",
+        "stoichiometry": {
+          "B(C6F5)3": "5 mol %"
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 78,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "Using 5 mol% of B(C6F5)3 also resulted in a similar mixture with a yield of 78% and alpha:beta ratio of 1:2."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Using 5 mol % of B(C6F5)3 42 also resulted in a similar mixture with a yield of 78% and α:β ratio of 1:2 (entry 6).",
+        "section": "Synthesis",
+        "image_refs": [
+          "0f83a6117f89769267e89884a89f4134ba3a7dc16f749a1365a672e675640ffc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Lewis acid catalysts (BF3·OEt2, B(C6F5)3) showed poor stereoselectivity.",
+        "gap": "To evaluate the uncatalyzed reaction for the glycosylation of 13 with ET-5.",
+        "decision": "To perform the reaction without a catalyst, as reported by Schmidt, to see if it yields beta-selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1C(OC(=N)CCl)C(O)C(O)C(OC2[C@@H](O)C(O)C(O)C(O)[C@@H]2O)C1OC1[C@@H](O)C(O)C(O)C(O)[C@@H]1O",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "time": "72 h",
+        "temperature": "25 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 6,
+        "failure_mode": "low_yield",
+        "observation": "The uncatalyzed reaction yielded 14 with excellent beta-selectivity but only a 6% yield after 72 h."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "The uncatalyzed reaction reported by Schmidt33 yielded 14 with excellent β-selectivity but only a 6% yield after 72 h (entry 7).",
+        "section": "Synthesis",
+        "image_refs": [
+          "0f83a6117f89769267e89884a89f4134ba3a7dc16f749a1365a672e675640ffc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The [PhenH]+[BF4]- catalyst proved effective for beta-selective glycosylation of oleanolic acid's C28-carboxylic acid with ET-5.",
+        "gap": "To apply the [PhenH]+[BF4]- catalyst for beta-selective glycosylation of oleanolic acid's C3-hydroxyl with the western trisaccharide WT-5.",
+        "decision": "To glycosylate allyl-protected oleanolic acid 2 with WT-5 using 15 mol% of [PhenH]+[BF4]-. A benzylidene-protected glucose will be used in WT-5, which can be selectively deprotected and oxidized later."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C/C=C/COC(C)=O"
+        ],
+        "product_smiles": [
+          "C/C=C/COC(C)=O"
+        ],
+        "catalyst": "[PhenH]+[BF4]-",
+        "solvent": "THF",
+        "temperature": "25 °C",
+        "stoichiometry": {
+          "[PhenH]+[BF4]-": "15 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "regio_selectivity": ">1:20 (alpha:beta)",
+        "observation": "This reaction yielded trisaccharide conjugate 15 in good yield (57%) and excellent beta-selectivity (alpha:beta > 1:20). THF was used as the solvent to enhance solubility."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Accordingly, the western trisaccharide WT-5 was glycosylated with the allyl-protected oleanolic acid 2 using 15 mol % of [PhenH]+[BF4]- . This reaction yielded trisaccharide conjugate 15 in good yield ( 57% ) and excellent β-selectivity ( α:β > 1:20 ) . In this reaction, THF was used as the solvent rather than Et2O to enhance solubility.",
+        "section": "Synthesis",
+        "image_refs": [
+          "a2fb130a66f48ed197ddbbd036eeefab725c6d1d2d161d482dae5a4ba351a5eb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The [PhenH]+[BF4]- catalyst demonstrated effectiveness in glycosylating oleanolic acid.",
+        "gap": "To further demonstrate the effectiveness of the [PhenH]+[BF4]- catalyst by coupling TIPS-protected oleanolic acid 2a with the eastern trisaccharide ET-5.",
+        "decision": "To couple TIPS-protected oleanolic acid 2a with ET-5 using the [PhenH]+[BF4]- catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "[PhenH]+[BF4]-",
+        "stoichiometry": {
+          "[PhenH]+[BF4]-": "15 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "regio_selectivity": "1:20 (alpha:beta)",
+        "observation": "The glycoconjugate product 16 was obtained in 58% yield with alpha:beta = 1:20."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "To further demonstrate the effectiveness of the [PhenH]+[BF4]- catalyst, we investigated the coupling of TIPS-protected oleanolic acid 2a with the eastern trisaccharide ET-5. The glycoconjugate product 16 was obtained in 58% yield with α:β = 1:20 and was then deprotected to give derivative S4 (Scheme 2).",
+        "section": "Synthesis",
+        "image_refs": [
+          "a2fb130a66f48ed197ddbbd036eeefab725c6d1d2d161d482dae5a4ba351a5eb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The individual glycosylations of oleanolic acid with eastern and western trisaccharides were successful.",
+        "gap": "To couple the western trisaccharide WT-5 with the eastern trisaccharide-oleanolic acid conjugate 17 to form the full lablaboside F structure.",
+        "decision": "To attempt coupling WT-5 with 17 using the [PhenH]+[BF4]- catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(=O)O"
+        ],
+        "product_smiles": [],
+        "catalyst": "[PhenH]+[BF4]-"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "When attempting to couple WT-5 with eastern trisaccharide-oleanolic acid conjugate 17, 17 remained intact, WT-5 decomposed, and the desired product was not observed. This suggests that the steric hindrance from the eastern trisaccharide significantly obstructs the approach of WT-5 to the C3-hydroxyl of 17."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "However, when attempting to couple WT-5 with eastern trisaccharide-oleanolic acid conjugate 17, we found that 17 remained intact, WT-5 decomposed, and the desired product was not observed. This suggests that the steric hindrance from the eastern trisaccharide significantly obstructs the approach of WT-5 to the C3-hydroxyl of 17.",
+        "section": "Synthesis",
+        "image_refs": [
+          "a2fb130a66f48ed197ddbbd036eeefab725c6d1d2d161d482dae5a4ba351a5eb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "The previous attempt to couple WT-5 with 17 failed due to steric hindrance, indicating that the order of attachment matters.",
+        "gap": "To successfully synthesize Lablaboside F by attaching the eastern and western trisaccharides in the correct order.",
+        "decision": "To first deprotect the allyl-protected western trisaccharide-oleanolic acid conjugate 15 to yield the free carboxylic acid product 18. Then, glycosylate 18 with eastern trisaccharide ET-5 using the [PhenH]+[BF4]- catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C/C=C/COC(C)=O"
+        ],
+        "product_smiles": [
+          "CC(=O)O"
+        ],
+        "reagents": [
+          "Pd(PPh3)4",
+          "pyrrolidine"
+        ],
+        "solvent": "DCM/MeOH",
+        "temperature": "40 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "The allyl-protected western trisaccharide-oleanolic acid conjugate 15 was deprotected to yield the free carboxylic acid product 18 in 82% yield."
+      },
+      "revises_step_id": 16,
+      "references": [],
+      "evidence": {
+        "text_span": "Having determined the order that the eastern and western trisaccharides should be attached, the allyl-protected western trisaccharide-oleanolic acid conjugate 15 was deprotected to yield the free carboxylic acid product 18.",
+        "section": "Synthesis",
+        "image_refs": [
+          "50ab83380d5a2859eae607500d7da57a0861b2c40356d9e86e1cf9ee77e5a460.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 18 (free carboxylic acid) was successfully obtained.",
+        "gap": "To glycosylate 18 with eastern trisaccharide ET-5 to form the fully protected lablaboside F structure.",
+        "decision": "To glycosylate 18 with ET-5 using 15 mol% of [PhenH]+[BF4]-."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)O",
+          "CC1C(OC(=N)CCl)C(O)C(O)C(OC2[C@@H](O)C(O)C(O)C(O)[C@@H]2O)C1OC1[C@@H](O)C(O)C(O)C(O)[C@@H]1O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "[PhenH]+[BF4]-",
+        "solvent": "THF",
+        "temperature": "25 °C",
+        "stoichiometry": {
+          "[PhenH]+[BF4]-": "15 mol %"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "regio_selectivity": ">1:20 (alpha:beta)",
+        "observation": "Compound 18 was glycosylated with eastern trisaccharide ET-5 using 15 mol% of [PhenH]+[BF4]- to give 19 in 59% yield with excellent beta-selectivity (alpha:beta > 1:20)."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Compound 18 was then glycosylated with eastern trisaccharide ET-5 using 15 mol % of [PhenH]+[BF4]- to give 19 in 59% yield with excellent β. - selectivity α:β > 1:20 (Scheme 3).",
+        "section": "Synthesis",
+        "image_refs": [
+          "50ab83380d5a2859eae607500d7da57a0861b2c40356d9e86e1cf9ee77e5a460.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 19, the fully protected lablaboside F structure, was successfully synthesized.",
+        "gap": "To complete the synthesis of lablaboside F (S9) by selectively cleaving the benzylidene acetal and oxidizing the C6 hydroxyl group, followed by global deprotection.",
+        "decision": "To selectively cleave the benzylidene acetal to form the C6 hydroxyl group, then oxidize it to the carboxylic acid (product 20), and finally perform global deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "BH3·THF",
+          "Cu(OTf)2",
+          "PhI(OAc)2",
+          "TEMPO",
+          "H2/Pd"
+        ],
+        "solvent": "H2O/DCM, MeOH/THF",
+        "temperature": "25 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "The synthesis was completed by selectively cleaving the benzylidene acetal to form the C6 hydroxyl group, which was oxidized to the carboxylic acid giving product 20. Global deprotection of 20 led to the successful isolation of lablaboside F (S9) in 74% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "The synthesis was completed by selectively cleaving the benzylidene acetal to form the C6 hydroxyl group, which was oxidized to the carboxylic acid giving product 20. Global deprotection of 20 led to the successful isolation of lablaboside F (S9).",
+        "section": "Synthesis",
+        "image_refs": [
+          "50ab83380d5a2859eae607500d7da57a0861b2c40356d9e86e1cf9ee77e5a460.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield for Lablaboside F (S9) is not explicitly stated as a single value, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 5,
+        "unit": "steps",
+        "interpretation": "Based on the synthesis of Lablaboside F (S9) from 15."
+      },
+      "Total Steps": {
+        "value": 19,
+        "unit": "steps",
+        "interpretation": "Total number of distinct chemical transformation steps described in the execution trace."
+      },
+      "Failed Attempts Count": {
+        "value": 3,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly described failed attempts in the execution trace."
+      }
+    },
+    "significance": "The work successfully developed a protonated phenanthroline catalyzed stereoselective glycosylation method for C2-branched oligosaccharides, overcoming a significant challenge in saponin synthesis. This method enabled the efficient synthesis of Lablaboside F and eight structural derivatives. Biological evaluation identified truncated analogs (S1, S5) with robust adjuvant activity, with S5 showing a favorable safety profile and higher antigen-specific total IgG levels than Lablaboside F. The study provides crucial insights into saponin structure-function relationships, paving the way for developing safer and more effective vaccine adjuvants."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.5c01046",
+      "pmcid": "PMC12728621",
+      "title": "Protonated Phenanthroline Catalyzed Stereoselective Glycosylation: Synthesis and Evaluation of Saponin Adjuvant Lablaboside F and Variants Leading to Simplified Vaccine Adjuvants.",
+      "authors": "Ghorai J, Santhin AB, Almounajed L, Hartwig SM, Varga SM, Nguyen HM.",
+      "journal": "JACS Au",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC12728621?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/de3a8c87-bbb1-4c5a-b1f9-e31b3e7749a5.zip",
+      "parsed_at": "2026-05-11T06:40:20.344294+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 52,
+    "parseable": 16,
+    "canonicalized": 13,
+    "invalid": 36,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C(NC(Cl)(Cl)Cl)OC1C(OBn)C(OBn)C(OBn)OC1C1OC(OC2C(OBn)C(OBn)C(OBn)OC2C2OC(C)C(OBn)C(C)C2(C)C)C(OBn)C(OBn)C1C1OC(C)C(OBn)C(C)C1(C)C",
+      "COC(=O)C1C(OBn)C(OBn)C(OC(=O)CCl)OC1OC(=N)CCl",
+      "COC(=O)C1C(OBn)C(OBn)C(OC(=O)C)OC1OC2C(C)C3C(C)C(C(=O)OC/C=C)C(C)(C)CCC3C21",
+      "COC(=O)C1C(OBn)C(OBn)C(OC(=O)C)OC1OC2C(C)C3C(C)C(C(=O)OC/C=C)C(C)(C)CCC3C21",
+      "COC(=O)C1C(OBn)C(OBn)C(O)OC1OC2C(C)C3C(C)C(C(=O)OC/C=C)C(C)(C)CCC3C21",
+      "CC(=O)OC1C(OC(=O)C)C(OBn)C(OBn)C(OBn)O1",
+      "COC(=O)C1C(OBn)C(OBn)C(O)OC1OC2C(C)C3C(C)C(C(=O)OC/C=C)C(C)(C)CCC3C21",
+      "COC(=O)C1C(OC2C(OC(=O)C)C(OBn)C(OBn)C(OBn)O2)C(C)C(C)C2C(C)C(C)C3C(C)C(C)C(C(=O)OCC=C)C(C)C3C21",
+      "CC(=O)OC1C(SC2=CC=C(C)C=C2)C(OBn)C(OBn)C(OBn)O1",
+      "COC(=O)C1C(OBn)C(OBn)C(O)OC1OC2C(C)C3C(C)C(C(=O)OC/C=C)C(C)(C)CCC3C21"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,676 @@
+{
+  "trace_id": "TS-PMC12848721",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Hispidospermidin",
+    "smiles": "CC1C(NCCNCCCN(C)C)CC2OC21C",
+    "natural_product_class": "polycyclic sesquiterpenoid alkaloid",
+    "structural_features": {
+      "ring_systems": "tetracyclic core, bicyclo[3.3.1]nonane, trans-hydrindane, tetrahydrofuran",
+      "key_motifs": [
+        "bicyclo[3.3.1]nonane",
+        "quaternary center",
+        "trans-hydrindane",
+        "tetrahydrofuran"
+      ]
+    },
+    "motivation": "Hispidospermidin (1) possesses a unique bicyclo[3.3.1]nonane-containing tetracyclic core with seven contiguous stereogenic centers, one of which is quaternary, making it an attractive target for total synthesis. It also exhibits promising biological activity as a phospholipase C inhibitor.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Danishefsky",
+        "year": 1997,
+        "doi": "10.1021/ja971700j",
+        "key_strategy": "Racemic synthesis in 31 steps, bicyclo[3.3.1]nonane formed in Step 10 of 21 LLS via Hg-mediated Conia-ene cyclization."
+      },
+      {
+        "lead_author": "Overman",
+        "year": 1998,
+        "doi": "10.1021/ja974390k",
+        "key_strategy": "Enantiospecific synthesis in 24 steps, bicyclic core formed in Step 14 of 23 LLS via Ti-mediated bromoacylation cyclization."
+      },
+      {
+        "lead_author": "Sorensen",
+        "year": 2000,
+        "doi": "10.1021/ja002400j",
+        "key_strategy": "Bioinspired synthesis in 23 steps (diastereomeric mixture), bicyclo[3.3.1]nonane and THF ring formed in Step 13 of 19 LLS via Brønsted acid-mediated Prins/etherification cascade."
+      }
+    ],
+    "success_criteria": {
+      "free_text": "A rapid, protective group-free synthesis of Hispidospermidin (1) in fewer steps than previous syntheses, demonstrating an 'Inside-Out' strategy."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-N bond formation (reductive amination)",
+        "reasoning": "Known transformation from Danishefsky synthesis to connect the amine side chain."
+      },
+      {
+        "bond_description": "C-O bond formation (tetrahydrofuran ring)",
+        "named_strategy": "Suárez C-H etherification",
+        "reasoning": "Efficiently forge the THF ring at a late stage through a C-H desaturation/etherification sequence."
+      },
+      {
+        "bond_description": "C-C bond formation (hydrindane moiety)",
+        "named_strategy": "Giese radical conjugate addition/aldol condensation",
+        "reasoning": "Rapidly assemble the hydrindane framework and establish the quaternary center using crotonaldehyde."
+      },
+      {
+        "bond_description": "C-C bond formation (bicyclo[3.3.1]nonane core)",
+        "reasoning": "The primary complexity element, constructed in the first step of the forward synthesis (last disconnection in retrosynthesis) to enable an 'Inside-Out' approach."
+      }
+    ],
+    "rationale": "The 'Inside-Out' strategy prioritizes the early-stage construction of the primary complexity element, the bicyclo[3.3.1]nonane core, in the first step of the synthesis. This leaves the 'Outside' of the molecule to be decorated in subsequent peripheral functionalizations. This contrasts with traditional retrosynthesis which aims to disconnect complexity elements early. The hypothesis was that this strategy could lead to a rapid synthesis of Hispidospermidin (1) without heavy reliance on new methodological development, highlighting the role of strategy in streamlining synthesis."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The bicyclo[3.3.1]nonane core is the primary complexity element of Hispidospermidin. Previous reports showed access to hydroxy ketone 11 in a single step on gram scale, but with poor (1:1) diastereoselectivity.",
+        "gap": "Achieving high diastereoselectivity for the desired syn product (11) is crucial for the 'Inside-Out' strategy.",
+        "decision": "To control the selectivity of the bicyclo[3.3.1]nonane formation, reaction conditions (temperature and time) were modulated, expecting to favor the desired syn product at lower temperatures."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CCC(=O)CC1",
+          "CCOC(=O)CC(C)=O"
+        ],
+        "product_smiles": [
+          "CC1CCC(O)C(=O)C1"
+        ],
+        "rxn_smiles": "CC1=CCC(=O)CC1.CCOC(=O)CC(C)=O>>CC1CCC(O)C(=O)C1",
+        "reagents": [
+          "NaOMe",
+          "KOH"
+        ],
+        "solvent": "MeOH",
+        "temperature": "room temperature",
+        "time": "19 h (NaOMe), 18 h (KOH, reflux)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "dr": ">9:1",
+        "observation": "The desired syn product (11) was obtained in >9:1 d.r. and 66% yield by running the reaction at room temperature. Higher temperatures provided the undesired anti isomer (4.5:1 d.r.)."
+      },
+      "evidence": {
+        "text_span": "Alternatively, by running the reaction at room temperature, the desired syn product was obtained in >9:1 d.r. in 66% yield.",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea397c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "With the bicyclo[3.3.1]nonane core (11) constructed, the next step is to prepare it for the key Giese radical conjugate addition. This requires converting the hydroxy group into a suitable radical progenitor.",
+        "gap": "Direct formation of a cesium oxalate salt was unfruitful, leading to hydrolysis.",
+        "decision": "Based on literature precedent for bridgehead cation substitutions, conversion to the corresponding tertiary bromide using PBr3 in PhH was chosen, expecting near quantitative yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CCC(O)C(=O)C1"
+        ],
+        "product_smiles": [
+          "CC1CC2(C)CCC1C(=O)C2"
+        ],
+        "rxn_smiles": "CC1CCC(O)C(=O)C1>>CC1CC2(C)CCC1C(=O)C2",
+        "reagents": [
+          "PBr3"
+        ],
+        "solvent": "PhH",
+        "temperature": "0 °C to RT",
+        "time": "19 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "The desired product (10) was obtained in near quantitative yield on decagram scale and used without purification. Its structure was confirmed by X-ray crystallographic analysis."
+      },
+      "evidence": {
+        "text_span": "Under these conditions, the desired product (10) was obtained in near quantitative yield on decagram scale (confirmed by X-ray crystallographic analysis) and was used without purification.",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea397c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "With the bridgehead bromide 10 in hand, the key Giese conjugate addition was planned to rapidly assemble the hydrindane framework and forge the quaternary center.",
+        "gap": "Finding suitable conditions for the Giese reaction, especially with crotonaldehyde, which is known to be challenging for radical conjugate additions.",
+        "decision": "Extensive screening led to the choice of slow addition of n-Bu3SnH in the presence of excess crotonaldehyde, expecting to form ketoaldehyde 9."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC2(C)CCC1C(=O)C2",
+          "CC=CC=O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "n-Bu3SnH",
+          "AIBN"
+        ],
+        "solvent": "PhH",
+        "temperature": "80 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "dr": "1.2:1",
+        "observation": "Ketoaldehyde 9 was furnished in 73% yield as a 1.2:1 diastereomixture, slightly favoring the desired epimer. The reaction was scalable. More modern photoredox or TMS3SiH approaches gave decreased yield, no reactivity, or complex profiles."
+      },
+      "evidence": {
+        "text_span": "After extensive screening, we found that slow addition of n-Bu3SnH in the presence of an excess of crotonaldehyde furnished ketoaldehyde 9 in 73% yield as a 1.2:1 diastereomixture, epimeric about the newly formed methine position, slightly favoring the desired epimer.",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea397c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The previous Giese addition yielded a diastereomeric mixture of ketoaldehydes 9, and efforts to separate these diastereomers were unfruitful.",
+        "gap": "A facile protocol is needed to access diastereomerically pure material.",
+        "decision": "Subjecting the mixture of ketoaldehydes 9 to microwave-mediated aldol condensation conditions was chosen, expecting to form enone 8 in excellent yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "DME",
+        "temperature": "55 °C",
+        "time": "10 min",
+        "atmosphere": "microwave"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "The corresponding enone (8) was obtained in excellent yield and used without purification."
+      },
+      "evidence": {
+        "text_span": "Subjecting the mixture of ketoaldehydes 9 to microwave-mediated aldol condensation conditions17 provided the corresponding enone (8) in excellent yield, which was used without purification.",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea397c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enone 8 was obtained from the previous step. The next goal is to introduce a hydroxyl group and prepare for setting the C9 stereochemistry.",
+        "gap": "Regioselective epoxidation of the enone is required, followed by hydrolysis.",
+        "decision": "In situ generation of the TMS-enol ether of 8 using Hünig’s base and TMSOTf, followed by regioselective epoxidation with mCPBA and subsequent mild acid hydrolysis, was chosen to provide α-hydroxyketones 7a/7b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "TMSOTf",
+          "DIPEA",
+          "mCPBA",
+          "HCl"
+        ],
+        "solvent": "CH2Cl2, MeOH",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "α-Hydroxyketones 7a/7b were obtained in 56% yield after column chromatography on multigram scale, along with 19% of the corresponding TMS ether, which could be quantitatively cleaved to furnish 7a/b."
+      },
+      "evidence": {
+        "text_span": "In situ generation of the trimethylsilyl (TMS)-enol ether of 8 using Hünig’s base and TMSOTf at 0 °C, followed by regioselective epoxidation of the more electron-rich alkene group,18 provided α-hydroxyketones 7a/7b in 56% yield after column chromatography on multigram scale, along with 19% of the corresponding TMS ether, which could be quantitatively cleaved under mild conditions to likewise furnish 7a/b.",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea397c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "A mixture of diastereomeric hydroxy-enones 7a/b was obtained. The goal is to set the requisite C9 stereochemistry, establishing the trans-hydrindane moiety.",
+        "gap": "Reduction of enone 7a to the desired trans-hydrindanone proved highly challenging, with thermodynamic control (Stryker's reagent) giving the undesired cis-hydrindanone, and kinetic control (heterogeneous hydrogenation, L-Selectride) giving inconsistent, small amounts of the desired product.",
+        "decision": "Hydrogenation using Crabtree's catalyst was attempted on the mixture of 7a/b, hoping for a selective reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "catalyst": "[Ir(COD)(pyr)(Cy3P)]PF6",
+        "reagents": [
+          "H2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "RT",
+        "time": "2.5 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 36,
+        "failure_mode": "scope_limited",
+        "observation": "Subjecting the mixture of diastereomeric hydroxy-enones 7a/b to hydrogenation using Crabtree’s catalyst furnished unreacted 7a in 36% isolated yield as a single diastereomer. This kinetic resolution only reduced 7b, leaving 7a unreacted, and did not directly provide the desired trans-hydrindanone."
+      },
+      "evidence": {
+        "text_span": "After significant screening of reduction conditions, we were surprised to find that subjecting the mixture of diastereomeric hydroxy-enones 7a/b to hydrogenation using Crabtree’s catalyst furnished unreacted 7a in 36% isolated yield as a single diastereomer. This kinetic resolution by hydrogenation19,20 of epimeric enone 7b from the sterically more accessible face affords a now separable cis-hydrindane product (6,9,11-epi 5).",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea3a873bd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Reduction of enone 7a to set the requisite C9 stereochemistry and establish the trans-hydrindane moiety was proving highly challenging.",
+        "gap": "Thermodynamic control (Stryker's reagent) gave the undesired cis-hydrindanone. Kinetic control (heterogeneous hydrogenation, L-Selectride) provided only small, inconsistent amounts of the desired trans-hydrindanone.",
+        "decision": "An attempt was made to perturb the cis/trans-hydrindanone thermodynamics by installing a β-silyl group using conditions from Hosomi and Ito."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "unspecified"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Instead of the desired β-silyl group installation, diosphenol 6 was formed. Control experiments revealed that n-Bu3P was solely responsible for this reactivity, presumably through conjugate addition and tautomerization."
+      },
+      "evidence": {
+        "text_span": "In an attempt to perturb the cis/trans-hydrindanone thermodynamics22 by installing a β-silyl group using conditions from Hosomi and Ito,23 we were surprised to find that diosphenol 6 was instead formed. Control experiments revealed that n-Bu3P was solely responsible for the observed reactivity, presumably operating through conjugate addition to form catalytic amounts of enolate, which likely tautomerizes to the thermodynamically favored 6.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 7,
+      "thought": {
+        "background": "The previous attempt to install a β-silyl group unexpectedly led to the formation of diosphenol 6 via a phosphine-mediated isomerization. Danishefsky's work showed that a similar diosphenol could be reduced to the trans-hydrindane, albeit with poor efficiency due to overreduction.",
+        "gap": "A more efficient reduction of the diosphenol 6 is needed to establish the trans-hydrindane moiety (5) as a single diastereomer.",
+        "decision": "A one-pot isomerization/reduction protocol was devised: first, the phosphine-mediated isomerization of 7a to diosphenol 6, followed by 1,2-reduction with LiHBEt3 and kinetic quenching of the resulting enolate, expecting to form the desired trans-hydrindanone 5 in excellent yield and as a single diastereomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "n-Bu3P",
+          "LiHBEt3"
+        ],
+        "solvent": "1,4-dioxane, THF",
+        "temperature": "100 °C (isomerization), 0 °C to RT (reduction)",
+        "time": "12 h (isomerization), 30 min (reduction)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "dr": "single diastereomer",
+        "observation": "A one-pot isomerization/reduction protocol provided 5 in quantitative yield as a single diastereomer. The structure was unambiguously verified using X-ray crystallography. This sequence avoided inefficient redox manipulations."
+      },
+      "evidence": {
+        "text_span": "Ultimately, a one pot isomerization/reduction protocol provided 5 in quantitative yield as a single diastereomer, the structure of which was unambiguously verified using X-ray crystallography. It is important to note that, while this sequence is mechanistically inspired by the work of Danishefsky, we accomplish our reduction in only a single step in large part because of our discovered phosphine-mediated isomerization, which avoids inefficient redox manipulations.",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea397c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diosphenol 5 was obtained as a single diastereomer. The final carbon of the natural product needs to be incorporated.",
+        "gap": "A methyl group needs to be added to the carbonyl group from the exo face.",
+        "decision": "Subjecting crude 5 to MeLi was chosen to deliver the final carbon, expecting to form the corresponding diol (4s) as a single diastereomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "MeLi"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C",
+        "time": "10 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 50,
+        "dr": "single diastereomer",
+        "observation": "The corresponding diol (4s) was delivered from the exo face in 50% yield (based on 7a) as a single diastereomer."
+      },
+      "evidence": {
+        "text_span": "Subjecting crude 5 to MeLi delivered the final carbon of the natural product from the exo face, providing the corresponding diol (4s, see the Supporting Information) in 50% yield (based on 7a) as a single diastereomer.",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea397c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "With diol 4s, the next goal is to oxidize the C13 methine to ultimately forge the THF ring.",
+        "gap": "Direct construction of the THF moiety using methods for alkoxy radical generation (e.g., Suárez or AgOAc/I2) led to cleavage of the [3.3.1] core. Undirected C-H oxidation (TFDO or White and Chen conditions) led to oxidation of C6 or oxidative cleavage of the hydroxyketone.",
+        "decision": "Initial attempts to effect γ/δ-desaturation using conditions from Gevorgyan were made, hypothesizing that a suitable directing group might facilitate selective oxidation at C13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "unspecified"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Initial attempts to effect γ/δ-desaturation using conditions from Gevorgyan were unfruitful and led exclusively to protodehalogenation."
+      },
+      "evidence": {
+        "text_span": "Initial attempts to effect γ/δ- desaturation using conditions from Gevorgyan26 were unfruitful and led exclusively to protodehalogenation.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 10,
+      "thought": {
+        "background": "Previous attempts at C13 oxidation and direct THF ring formation were unsuccessful due to core cleavage or non-selective oxidation. A directing group is needed for selective oxidation.",
+        "gap": "A method for selective C-H desaturation at C13 is required.",
+        "decision": "Installation of an α-bromo dimethylsilyl ether (4a) and subsequent subjection to cobalt-mediated desaturation conditions was chosen, expecting to form olefin 3a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "Me2Si(Cl)CH2Br",
+          "imidazole"
+        ],
+        "solvent": "THF",
+        "temperature": "RT",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "The α-bromo dimethylsilyl ether (4a) was installed in 99% yield. This intermediate was then used in the subsequent desaturation step."
+      },
+      "evidence": {
+        "text_span": "In contrast, we found that by installing an α- bromo dimethylsilyl ether and subjecting this material (4a) to cobalt-mediated desaturation conditions,27 olefin 3a was isolated in synthetically useful yield (22%).",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea397c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The α-bromo dimethylsilyl ether (4a) was successfully installed.",
+        "gap": "Achieving selective C-H desaturation at C13 to form the olefin 3a.",
+        "decision": "Cobalt-mediated desaturation conditions with a photocatalyst were applied to 4a, expecting to form olefin 3a, with the possibility of recycling reduced material 4b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "catalyst": "Co(dmgH)2pyCl, 4CzIPN",
+        "reagents": [
+          "DIPEA"
+        ],
+        "solvent": "MeCN",
+        "temperature": "RT",
+        "time": "16 h",
+        "atmosphere": "470 nm LED"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 22,
+        "observation": "Olefin 3a was isolated in synthetically useful yield (22%). The high mass balance accounted for by 4b (resulting from net reduction) enables efficient recycling of the material (20% yield over the three-step sequence). This constitutes the first example of a 1,6-mediated HAT desaturation in complex molecule synthesis."
+      },
+      "evidence": {
+        "text_span": "In contrast, we found that by installing an α- bromo dimethylsilyl ether and subjecting this material (4a) to cobalt-mediated desaturation conditions,27 olefin 3a was isolated in synthetically useful yield (22%). Despite the limited efficiency of this reaction, the high mass balance accounted for by 4b (resulting from net reduction) enables efficient recycling of the material (20% yield over the three-step sequence, see the Supporting Information for more details). To the best of our knowledge, this constitutes the first example of a 1,6-mediated HAT desaturation in complex molecule synthesis.",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea397c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Olefin 3 was obtained from the previous desaturation step.",
+        "gap": "The final THF ring needs to be formed by cleaving the silyl group and performing a hydroetherification across the alkene.",
+        "decision": "Treatment of olefin 3 with ethereal HCl was chosen to facilitate silyl group cleavage and concomitant hydroetherification, expecting to provide THF tetracycle 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "HCl"
+        ],
+        "solvent": "Et2O, THF",
+        "temperature": "RT",
+        "time": "20 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "THF tetracycle 2 was provided in 68% yield. Compound 2 was reported in the Danishefsky synthesis and could be easily advanced to Hispidospermidin (1)."
+      },
+      "evidence": {
+        "text_span": "Finally, treatment of olefin 3 with ethereal HCl facilitated silyl group cleavage and concomitant hydroetherification of the tertiary hydroxy group across the alkene, providing THF tetracycle 2 in 68% yield. Importantly, compound 2 was reported in the Danishefsky6 synthesis and could be easily advanced to the hispidospermidin (1) in 53% yield over the three steps.",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea397c811.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "THF tetracycle 2 was obtained, which is a known intermediate in the Danishefsky synthesis.",
+        "gap": "The final steps to convert 2 to Hispidospermidin (1) involve oxidation, amination, and reduction.",
+        "decision": "The known sequence from Danishefsky's synthesis was applied: Jones oxidation, followed by reaction with Me3-spermidin and PPTS, and finally NaCNBH3 reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC1C(NCCNCCCN(C)C)CC2OC21C"
+        ],
+        "rxn_smiles": "",
+        "reagents": [
+          "Jones Ox.",
+          "Me3-spermidin",
+          "PPTS",
+          "NaCNBH3"
+        ],
+        "solvent": "PhMe, MeOH",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "Hispidospermidin (1) was obtained in 72% yield over these three steps from compound 2. The overall synthesis was completed in 14 steps without protective groups."
+      },
+      "evidence": {
+        "text_span": "Finally, treatment of olefin 3 with ethereal HCl facilitated silyl group cleavage and concomitant hydroetherification of the tertiary hydroxy group across the alkene, providing THF tetracycle 2 in 68% yield. Importantly, compound 2 was reported in the Danishefsky6 synthesis and could be easily advanced to the hispidospermidin (1) in 53% yield over the three steps. The “Inside-Out” strategy reported here enables access to 1 in only 14 total steps, without the need for protective groups.",
+        "image_refs": [
+          "33483147cc24d63b2752d9232063a6ba194623feb3a0476ac549507ea397c811.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "X-ray crystallography",
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 0.32,
+        "unit": "%",
+        "interpretation": "Comparable to two of the three prior syntheses (Danishefsky: 0.91%, Overman: 2.81%, Sorensen: 0.32%)."
+      },
+      "Longest Linear Steps": {
+        "value": 14,
+        "unit": "steps",
+        "interpretation": "Significantly shorter than previous syntheses (Danishefsky: 21 LLS, Overman: 23 LLS, Sorensen: 19 LLS)."
+      },
+      "Total Steps": {
+        "value": 14,
+        "unit": "steps",
+        "interpretation": "Significantly shorter than previous syntheses (Danishefsky: 31 total steps, Overman: 24 total steps, Sorensen: 23 total steps)."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Two explicitly described failed attempts were overcome by strategic revisions."
+      }
+    },
+    "comparison_to_prior": "The synthesis is 14 steps, compared to 31, 24, and 23 steps for previous syntheses. It is protective group-free. The 'Inside-Out' strategy, building the bicyclo[3.3.1]nonane core in the first step, contrasts with previous syntheses that constructed this primary complexity element mid-to-late stage. Molecular complexity analysis (Spacial Score, MolComplex3 tool) shows a 160% increase in nSPS in the first step, compared to 130-220% increases in later steps for prior syntheses. The overall synthetic efficiency (yield) is comparable to two of the three prior syntheses.",
+    "significance": "This work demonstrates a concise, 14-step, protective group-free total synthesis of Hispidospermidin (1) using an 'Inside-Out' strategic platform. It highlights that prioritizing early-stage complexity generation can significantly streamline synthesis, even at the expense of initial stereochemical control. Key methodological advances include an efficient Giese conjugate addition/aldol condensation sequence, a novel phosphine-mediated hydroxy-enone/diosphenol isomerization, and a directed C-H desaturation for late-stage THF ring formation. The molecular complexity analysis provides quantitative evidence for the strategic advantage of the 'Inside-Out' approach for topologically complex molecules."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.5c01567",
+      "pmcid": "PMC12848721",
+      "title": "An \"Inside-Out\" Strategy Enables a 14-Step Total Synthesis of Hispidospermidin.",
+      "authors": "Amber C, Nakamura T, Amoako M, Settineri NS, Sarpong R.",
+      "journal": "JACS Au",
+      "year": 2026,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC12848721?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/b0bfbf7b-2e9a-4251-8185-9ea39b990727.zip",
+      "parsed_at": "2026-05-07T14:31:13.873598+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 31,
+    "parseable": 9,
+    "canonicalized": 5,
+    "invalid": 22,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1CCC(C(=C)C1)C(=O)C1",
+      "CC1CCC(C(=C)C1)C(=O)C1",
+      "CC1CCC(C(C)C1)C(=O)C1",
+      "CC1CCC(C(C)C1)C(=O)C1",
+      "CC1CCC(C(C)C1)C(O)C1",
+      "CC1CCC(C(C)C1)C(O)C1",
+      "CC1CCC(C(C)C1)C(O)C1",
+      "CC1CCC(C(C)C1)C(O)C1",
+      "CC1CCC(C(C)C1)C(O)C1",
+      "CC1CCC(C(C)C1)C(O)C1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

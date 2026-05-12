@@ -1,0 +1,585 @@
+{
+  "trace_id": "TS-PMC13014192",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Loihichelin C",
+    "smiles": "C=C[C@H](NC(=O)[C@H](CCCNC(=O)NO)NC(=O)[C@H](CO)NC(=O)[C@@H](O)[C@@H](NC(=O)CCCCCCC/C=C\\CCCCCCC)C(=O)O)C(=O)N[C@@H](CO)C(=O)N[C@@H](CCCNC(=O)NO)C(=O)N1CCCC1C(=O)NO",
+    "natural_product_class": "peptidic siderophore",
+    "structural_features": {
+      "ring_systems": "macrocycle",
+      "key_motifs": [
+        "hydroxycarboxylate",
+        "hydroxamate",
+        "N-acetyl-N-hydroxy-L-ornithine",
+        "alpha,beta-unsaturated (Z)-dehydroamino butyric acid",
+        "cyclic N-hydroxy-D-ornithine",
+        "(Z)-dodec-5-enoic acid"
+      ]
+    },
+    "motivation": "To obtain insights into the Fe(III)-chelating and Mn(II)-oxidizing functions of Loihichelin C (1a), and to understand the structural basis for Mn(III) stabilization and Mn(II) oxidation by synthesizing 1a and two analogs (1b and 1c) with stereochemically inverted and deleted hydroxy groups, respectively.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Achieve efficient solid-phase synthesis of 1a-1c, allowing for functional assessment of Fe(III)/Mn(III)-binding and Mn(II)-oxidizing activities, and elucidation of structure-function relationships."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "amide bonds of the 8-mer peptide",
+        "named_strategy": "Solid-phase peptide synthesis",
+        "reasoning": "Operational simplicity in stepwise elongation, structural diversification, and purification."
+      },
+      {
+        "bond_description": "amide bond between ahOrn-5 and ΔAbu-6",
+        "named_strategy": "Stereoretentive traceless Staudinger ligation",
+        "reasoning": "The chemically unstable alkenyl amine cannot be used for direct amidation, necessitating a method for stereoselective construction of enamides."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "2",
+        "smiles": "",
+        "role": "N-Fmoc-protected dipeptide (ahOrn-5-ΔAbu-6)",
+        "comes_from": "synthetic preparation"
+      },
+      {
+        "fragment_id": "3",
+        "smiles": "C=CCOC(=O)N[C@@H]1CCCC(=O)N1O",
+        "role": "N-Alloc-protected cyclic N-hydroxy-D-ornithine (chOrn-8)",
+        "comes_from": "previously established methods"
+      },
+      {
+        "fragment_id": "4a",
+        "smiles": "CC(C)(C)OC(=O)[C@H](NC(=O)OCC1C=CC=Cc2ccccc21)[C@@H](O)CC(=O)O",
+        "role": "N-Fmoc-protected (2R,3R)-β-hydroxy aspartic acid (OHAsp-1)",
+        "comes_from": "previously established methods"
+      },
+      {
+        "fragment_id": "4b",
+        "smiles": "CC(C)(C)OC(=O)[C@@H](NC(=O)OCC1C=CC=Cc2ccccc21)[C@H](O)CC(=O)O",
+        "role": "N-Fmoc-protected (2S,3S)-β-hydroxy aspartic acid (epimeric OHAsp-1)",
+        "comes_from": "previously established methods"
+      },
+      {
+        "fragment_id": "Fmoc-D-Asp(t-Bu)-OH",
+        "smiles": "",
+        "role": "N-Fmoc-protected D-Aspartic acid (deoxy OHAsp-1)",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "Fmoc-D-Ser(t-Bu)-OH",
+        "smiles": "",
+        "role": "N-Fmoc-protected D-Serine",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "Fmoc-L-Ser(t-Bu)-OH",
+        "smiles": "",
+        "role": "N-Fmoc-protected L-Serine",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "Fmoc-L-Gln(Tr)-OH",
+        "smiles": "",
+        "role": "N-Fmoc-protected L-Glutamine",
+        "comes_from": "commercial"
+      },
+      {
+        "fragment_id": "(Z)-dodec-5-enoic acid",
+        "smiles": "CCCCCCC/C=C\\CCCCC(=O)O",
+        "role": "N-terminus capping moiety",
+        "comes_from": "commercial"
+      }
+    ],
+    "rationale": "A solid-phase strategy was chosen for its efficiency in assembling the complex peptidic structure. Orthogonal protecting groups (Fmoc for N-alpha, acid-labile trityl for solid support, Boc/Tr/t-Bu for side chains) were employed. The unstable alkenyl amine required a stereoretentive Staudinger ligation for the ΔAbu-6 moiety. The C-terminal chOrn-8 used an Alloc group to prevent Fmoc removal during resin loading."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Loihichelin C (1a) is an 8-mer peptidic natural product with unusual nonproteinogenic amino acids. Its synthesis requires careful handling of stereochemistry and protecting groups.",
+        "gap": "How to efficiently assemble the complex peptide sequence, especially the unstable ΔAbu-6 and the C-terminal chOrn-8, and ensure orthogonality of protecting groups.",
+        "decision": "To achieve the total synthesis of 1a-1c, a solid-phase strategy will be adopted. The peptide will be disassembled into eight components, with 2, 3, 4a, and 4b requiring synthetic preparation. N-alpha-Fmoc groups will be used for the main chain, acid-labile trityl as the solid-phase linker, and Boc, Tr, or t-Bu groups for side-chain polar functionalities. The N-alpha-Alloc group will be used for C-terminal chOrn-8 (3) to avoid Fmoc removal during loading. A stereoretentive traceless Staudinger ligation will be used for dipeptide 2 (ahOrn-5-ΔAbu-6)."
+      },
+      "evidence": {
+        "text_span": "Due to its operational simplicity in stepwise elongation, structural diversification, and purification, we adopted a solid-phase strategy for total syntheses of loihichelin C (1a, Figure 1a), epimeric analog 1b, and deoxy analog 1c. 21,22 To ensure the orthogonality with base-labile Nα-Fmoc groups of the main α chain,23,24 the acid-labile trityl group was to be utilized as the solid-phase linker, and Boc, Tr, or t-Bu groups were to cap the polar functionalities of the side-chains.25 Accordingly, 1a−1c were retrosynthetically disassembled into eight components, among which 2, 3, 4a, and 4b necessitated synthetic preparation (Figure 1c). Nα-Fmoc-protected dipeptide 2 was designed to possess the Boc group at the N-hydroxy-N-acetamide moiety of ahOrn-5 and the Z-configured enamide of ΔAbu-6. Introducing a bulky t-Bu group to the side-chain carboxylic acids of 4a and 4b26 was expected to provide kinetic protection for their carbonyl groups and the adjacent unprotected hydroxy groups against undesired reactions. The Nα-Alloc group of 3 was selected for C-terminal chOrn-8, as a previous study indicated undesired Fmoc removal during base-induced loading onto a solid support.27",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dipeptide 2, containing the ΔAbu-6 residue, is difficult to synthesize via direct amidation due to the instability of alkenyl amine.",
+        "gap": "How to stereoselectively construct the Z-configured enamide of ΔAbu-6.",
+        "decision": "To synthesize dipeptide 2, a stereoretentive traceless Staudinger ligation will be employed between phosphinophenol ester 5 and Z-alkenyl azide 6. A structurally optimized triarylphosphine (5) bearing two trifluoromethyl groups and one methoxy group will be used to facilitate stereoselective enamide construction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C=CCOC(=O)C(=C)N=[N+]=[N-]"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Stereoretentive traceless Staudinger ligation",
+        "reagents": [
+          "P(p-CF3Ph)2",
+          "1,4-dioxane",
+          "H2O"
+        ],
+        "temperature": "15 °C",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 67,
+          "observation": "Enamide 7 was stereoselectively generated in 67% yield."
+        },
+        "evidence": {
+          "text_span": "Unsaturate d dipeptide 2 was stereoselectively constructed from phosphinophenol ester 5 and Z-alkenyl azide 6 by a stereoretentive traceless Staudinger ligation,29−32 because the chemically unstable alkenyl amine cannot be used for direct amidation (Scheme 1). The triarylphosphine of 5 bearing two trifluoromethyl groups and one methoxy group was structurally optimized in our laboratory to facilitate the stereoselective construction of enamides.27,33,34 Thus, 5 and 6 were individually prepared and then incubated in aqueous 1,4- dioxane at 15 °C, stereoselectively generating enamide 7 in 67% yield.35",
+          "section": "RESULTS AND DISCUSSION",
+          "image_refs": [
+            "6e441f902a5d10d2091a033b606789c70e3f3f79f7d49bb54d1c7bfdd973f0f0.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "2",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The phosphinophenol ester 5 was optimized for stereoselective enamide construction.",
+        "gap": "Is the optimized phosphinophenol ester crucial for high yield?",
+        "decision": "A less optimized, unsubstituted phosphinophenol ester was used for comparison.",
+        "outcome": {
+          "valid": false,
+          "yield_percent": 38,
+          "failure_mode": "low_yield",
+          "observation": "When the corresponding unsubstituted phosphinophenol ester was used for the ligation, the yield of 7 was decreased to 38%."
+        },
+        "evidence": {
+          "text_span": "When the corresponding unsubstituted phosphinophenol ester was used for the ligation, the yield of 7 was decreased to 38% demonstrating the superiority of the CF3/OMe-substituted phosphinophenol ester. See Supporting Information for details.",
+          "section": "RESULTS AND DISCUSSION"
+        }
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enamide 7 has been successfully synthesized.",
+        "gap": "The allyl group of 7 needs to be removed to obtain the desired dipeptide 2.",
+        "decision": "To remove the allyl group, Pd(0)-mediated deprotection will be performed using Pd(PPh3)4 and morpholine.",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 89,
+          "observation": "The allyl group of 7 was removed, giving rise to the requisite dipeptide 2 in 89% yield."
+        },
+        "reaction": {
+          "substrate_smiles": [
+            "CC(=O)N(OCOC(C)(C)C)CCC[C@H](NC(=O)OCc1c2ccccc2c2ccccc12)C(=O)NC(=C)C(=O)OCC=C"
+          ],
+          "product_smiles": [
+            "CC(=O)N(OCOC(C)(C)C)CCC[C@H](NC(=O)OCc1c2ccccc2c2ccccc12)C(=O)NC(=C)C(=O)O"
+          ],
+          "reagents": [
+            "Pd(PPh3)4",
+            "morpholine"
+          ],
+          "solvent": "THF"
+        },
+        "evidence": {
+          "text_span": "The allyl group of 7 was in turn removed by the action of Pd(PPh3)4 and morpholine, giving rise to the requisite dipeptide 2.",
+          "section": "RESULTS AND DISCUSSION",
+          "image_refs": [
+            "6e441f902a5d10d2091a033b606789c70e3f3f79f7d49bb54d1c7bfdd973f0f0.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "All necessary components (2, 3, 4a, 4b, and commercial amino acids) are in hand.",
+        "gap": "The first step of solid-phase synthesis is to load the C-terminal amino acid (3) onto the resin (8).",
+        "decision": "To load N-alpha-Alloc-protected 3 onto trityl-OH ChemMatrix resin 8, the resin will first be chlorinated with SOCl2, then the sterically hindered N-hydroxy group of 3 will be reacted with the chlorotrityl resin in the presence of MTBD in MeCN at 50 °C.",
+        "outcome": {
+          "valid": true,
+          "observation": "Resin-bound 9 was successfully produced."
+        },
+        "reaction": {
+          "substrate_smiles": [
+            "O=C(C1=CC=C(C(O)(C2=CC=CC=C2)C3=CC=CC=C3)C=C1)NCC4CCCCC4",
+            "C=CCOC(=O)N[C@@H]1CCCC(=O)N1O"
+          ],
+          "product_smiles": [
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1"
+          ],
+          "reagents": [
+            "SOCl2",
+            "MTBD"
+          ],
+          "solvent": "MeCN",
+          "temperature": "50 °C"
+        },
+        "evidence": {
+          "text_span": "With all the components in hand, we initiated the total syntheses of 1a−1c by appending Nα-Alloc-protected 3 to trityl-OH ChemMatrix36 resin 8 (Scheme 2). After chlorination of the resin with SOCl2, the sterically hindered N-hydroxy group of 3 was submitted to the resultant chlorotrityl resin and 7-methyl-1,5,7-triazabicyclo[4.4.0]dec-5-ene (MTBD) in MeCN at 50 °C to produce 9.",
+          "section": "RESULTS AND DISCUSSION",
+          "image_refs": [
+            "870e41933e823b5f0bc6aaee44567ea8fb924de4d3e7051157037abe0318e1ec.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Resin-bound 9 has been synthesized.",
+        "gap": "The N-alpha-Alloc group needs to be removed, and the next amino acid, Fmoc-D-Ser(t-Bu)-OH, needs to be coupled.",
+        "decision": "To elongate the peptide chain, Pd(0)-mediated removal of the N-alpha-Alloc group will be followed by condensation of the N-terminal amine with Fmoc-D-Ser(t-Bu)-OH using HATU and HOAt at 40 °C under microwave irradiation.",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 51,
+          "observation": "Resin-bound dipeptide 10 was obtained in 51% yield over two steps."
+        },
+        "reaction": {
+          "substrate_smiles": [
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1"
+          ],
+          "product_smiles": [
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1"
+          ],
+          "reagents": [
+            "Pd(PPh3)4",
+            "morpholine",
+            "Fmoc-D-Ser(t-Bu)-OH",
+            "HATU",
+            "HOAt",
+            "DIPEA"
+          ],
+          "solvent": "NMP",
+          "temperature": "40 °C",
+          "time": "unspecified",
+          "atmosphere": "microwave irradiation"
+        },
+        "evidence": {
+          "text_span": "Pd(0)-mediated removal of the Nα-Alloc group and ensuing condensation of the Nterminal amine with Fmoc-D-Ser(t-Bu)-OH using O-(7- azabenzotriazol-1-yl)-N,N,N′,N′-tetramethyluronium hexafluorophosphate (HATU) and 1-hydroxy-7-azabenzotriazole (HOAt)37 at 40 °C under microwave irradiation38 led to resinbound dipeptide 10.",
+          "section": "RESULTS AND DISCUSSION",
+          "image_refs": [
+            "870e41933e823b5f0bc6aaee44567ea8fb924de4d3e7051157037abe0318e1ec.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Resin-bound dipeptide 10 has been synthesized.",
+        "gap": "The next amino acid, unsaturated dipeptide 2, needs to be coupled without affecting its Z-configuration.",
+        "decision": "To couple dipeptide 2, the N-terminal Fmoc group will be removed with piperidine, followed by introduction of unsaturated dipeptide 2 using PyBOP and HOAt at 40 °C.",
+        "outcome": {
+          "valid": true,
+          "observation": "Tetrapeptide 11 was provided without affecting the Z-configuration of ΔAbu-6."
+        },
+        "reaction": {
+          "substrate_smiles": [
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1",
+            "CC(=O)N(OCOC(C)(C)C)CCC[C@H](NC(=O)OCc1c2ccccc2c2ccccc12)C(=O)NC(=C)C(=O)O"
+          ],
+          "product_smiles": [
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1"
+          ],
+          "reagents": [
+            "piperidine",
+            "PyBOP",
+            "HOAt",
+            "DIPEA"
+          ],
+          "solvent": "NMP",
+          "temperature": "40 °C"
+        },
+        "evidence": {
+          "text_span": "Removal of the N-terminal Fmoc group with piperidine, followed by introduction of unsaturated d i p e p t i d e 2 u s i n g ( b e n z o t r i a z o l - 1 - y l o x y ) - tripyrrolidinophosphonium hexafluorophosphate (PyBOP)39,40 (PyBOP)39,40 and HOAt at 40 °C, provided tetrapeptide 11 without affecting the Z-configuration of ΔAbu-6.",
+          "section": "RESULTS AND DISCUSSION",
+          "image_refs": [
+            "870e41933e823b5f0bc6aaee44567ea8fb924de4d3e7051157037abe0318e1ec.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetrapeptide 11 has been synthesized.",
+        "gap": "The remaining three amino acid residues need to be condensed to form the heptapeptide.",
+        "decision": "To complete the heptapeptide, the Fmoc removal and HATU/HOAt-mediated amidation steps will be repeated for the three amino acid residues.",
+        "outcome": {
+          "valid": true,
+          "observation": "Heptapeptide 12 was furnished."
+        },
+        "reaction": {
+          "substrate_smiles": [
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1"
+          ],
+          "product_smiles": [
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1"
+          ],
+          "reagents": [
+            "piperidine",
+            "Fmoc-L-Ser(t-Bu)-OH",
+            "HATU",
+            "HOAt",
+            "DIPEA",
+            "Fmoc-L-Gln(Tr)-OH",
+            "Fmoc-D-Ser(t-Bu)-OH"
+          ],
+          "solvent": "NMP",
+          "temperature": "40 °C"
+        },
+        "evidence": {
+          "text_span": "The three amino acid residues were then condensed with 11 by repeating the Fmoc removal and HATU/HOAt-mediated amidation to furnish heptapeptide 12.",
+          "section": "RESULTS AND DISCUSSION",
+          "image_refs": [
+            "870e41933e823b5f0bc6aaee44567ea8fb924de4d3e7051157037abe0318e1ec.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The OHAsp residue is crucial for the target molecule's function.",
+        "gap": "How to protect the OHAsp residue during synthesis to prevent undesired side reactions.",
+        "decision": "Initially, an acetonide-protected OHAsp residue was employed for total synthesis of 1a.",
+        "outcome": {
+          "valid": false,
+          "failure_mode": "side_product_dominant",
+          "observation": "Only a trace amount of 1a was obtained, and the major product was the corresponding dehydrated aspartimide."
+        },
+        "evidence": {
+          "text_span": "Initially, an acetonide-protected OHAsp residue was employed for total synthesis of 1a. Only a trace amount of 1a was obtained, however, and the major product was the corresponding dehydrated aspartimide. See Supporting Information for details.",
+          "section": "RESULTS AND DISCUSSION"
+        }
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "Acetonide protection of OHAsp led to dehydration and aspartimide formation.",
+        "gap": "A more suitable protecting group strategy is needed for OHAsp.",
+        "decision": "To prevent undesired reactions, a bulky t-Bu group will be introduced to the side-chain carboxylic acids of 4a and 4b to provide kinetic protection for their carbonyl groups and the adjacent unprotected hydroxy groups.",
+        "outcome": {
+          "valid": true,
+          "observation": "This revised strategy was successful in preventing dehydration and aspartimide formation, leading to the successful synthesis of 1a-1c."
+        }
+      },
+      "evidence": {
+        "text_span": "Introducing a bulky t-Bu group to the side-chain carboxylic acids of 4a and 4b26 was expected to provide kinetic protection for their carbonyl groups and the adjacent unprotected hydroxy groups against undesired reactions.",
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Heptapeptide 12 has been synthesized, and the route now diverges for 1a, 1b, and 1c.",
+        "gap": "The final amino acid (OHAsp-1 or its analogs) and the N-terminal DDA need to be attached, followed by deprotection and purification.",
+        "decision": "After N-alpha-deprotection of 12, 4a (for 1a), 4b (for 1b), and Fmoc-D-Asp(t-Bu)-OH (for 1c) will be separately attached using HATU/HOAt. The Fmoc groups will then be detached, and (Z)-dodec-5-enoic acid will be amidated using HATU/HOAt to afford the fully protected resin-bound octapeptides 13a, 13b, and 13c. Finally, all acid-labile groups and the trityl resin will be removed with aqueous trifluoroacetic acid.",
+        "outcome": {
+          "valid": true,
+          "observation": "Fully protected resin-bound octapeptides 13a, 13b, and 13c were obtained, and subsequent deprotection yielded crude 1a, 1b, and 1c."
+        },
+        "reaction": {
+          "substrate_smiles": [
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1"
+          ],
+          "product_smiles": [
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1",
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1",
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1"
+          ],
+          "reagents": [
+            "piperidine",
+            "4a",
+            "4b",
+            "Fmoc-D-Asp(t-Bu)-OH",
+            "HATU",
+            "HOAt",
+            "DIPEA",
+            "(Z)-dodec-5-enoic acid",
+            "TFA",
+            "H2O"
+          ],
+          "solvent": "NMP",
+          "temperature": "40 °C"
+        },
+        "evidence": {
+          "text_span": "The route diverged from common intermediate 12 for the syntheses of three target compounds 1a, 1b, and 1c. Namely, after Nα-deprotection of 12, 4a, 4b, and its deoxy analog (Fmoc-D-Asp(t-Bu)-OH) were separately attached using HATU/HOAt, and the Fmoc groups of the three adducts were detached using piperidine. Subsequently, the HATU/ HOAt reagent system was applied to the amidation between (Z)-dodec-5-enoic acid and the three amines to afford the fully protected resin-bound octapeptides 13a, 13b, and 13c. The last treatment with aqueous trifluoroacetic acid removed all acid-labile groups (t-Bu, Boc, and Tr) as well as the trityl resin.",
+          "section": "RESULTS AND DISCUSSION",
+          "image_refs": [
+            "870e41933e823b5f0bc6aaee44567ea8fb924de4d3e7051157037abe0318e1ec.jpg"
+          ]
+        }
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Crude 1a, 1b, and 1c were obtained after deprotection.",
+        "gap": "Purification of 1a-1c is challenging due to their metal-chelating properties.",
+        "decision": "Standard purification methods were attempted.",
+        "outcome": {
+          "valid": false,
+          "failure_mode": "purification_failed",
+          "observation": "Purification of the thus-obtained 1a, 1b, and 1c, however, was not straightforward. Because of the presence of the carboxylate and hydroxamates, 1a−1c readily captured a trace amount of aluminum ions from borosilicate glassware, generating the corresponding Al(III) complexes."
+        },
+        "evidence": {
+          "text_span": "Purification of the thus-obtained 1a, 1b, and 1c, however, was not straightforward. Because of the presence of the carboxylate and hydroxamates, 1a−1c readily captured a trace amount of aluminum ions from borosilicate glassware, generating the corresponding Al(III) complexes.",
+          "section": "RESULTS AND DISCUSSION"
+        }
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 12,
+      "thought": {
+        "background": "1a-1c readily form Al(III) complexes, hindering purification.",
+        "gap": "A method is needed to remove aluminum ions and obtain pure, metal-free compounds.",
+        "decision": "To isolate 1a as an aluminum-free form, an excess amount of more Lewis acidic GaCl3 in water will be utilized to convert the 1a-Al(III) complex to the 1a-Ga(III) complex, which will then be treated with EDTA-2Na. For 1b and 1c, direct application of EDTA will be used. All compounds will then be purified by HPLC with a reversed-phase column and a metal-free flow path, collecting fractions in quartz glassware.",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 26,
+          "observation": "The first total synthesis of loihichelin C (1a) was achieved in 26% yield over 14 steps from 10. Alternatively, direct application of EDTA successfully removed an aluminum ion from 1b-Al(III) and 1c-Al(III), and the resultant 1b and 1c were subjected to HPLC purification to isolate 1b and 1c in 18% and 31% yields from 10, respectively. The high overall yields of all three compounds corroborated the robustness of our newly developed synthetic procedures for assembling these unusual sequences."
+        },
+        "reaction": {
+          "substrate_smiles": [
+            "O=C(NCC(C)C)N1CCCC(C(=O)OC(C2=CC=CC=C2)C3=CC=CC=C3)C1"
+          ],
+          "product_smiles": [
+            "CCCCCCC/C=C\\CCCCCCCC(=O)N[C@@H](C(O)=O)[C@H](O)C(=O)N[C@@H](CO)C(=O)N[C@@H](CCCNC(=O)NO)C(=O)N[C@@H](C=C)C(=O)N[C@@H](CO)C(=O)N[C@@H](CCCNC(=O)NO)C(=O)N1CCCC1C(=O)NO",
+            "CCCCCCC/C=C\\CCCCCCCC(=O)N[C@@H](C(O)=O)C(O)C(=O)N[C@@H](CO)C(=O)N[C@@H](CCCNC(=O)NO)C(=O)N[C@@H](C=C)C(=O)N[C@@H](CO)C(=O)N[C@@H](CCCNC(=O)NO)C(=O)N1CCCC1C(=O)NO",
+            "CCCCCCC/C=C\\CCCCCCCC(=O)N[C@@H](C(O)=O)C(=O)N[C@@H](CO)C(=O)N[C@@H](CCCNC(=O)NO)C(=O)N[C@@H](C=C)C(=O)N[C@@H](CO)C(=O)N[C@@H](CCCNC(=O)NO)C(=O)N1CCCC1C(=O)NO"
+          ],
+          "reagents": [
+            "GaCl3",
+            "EDTA-2Na"
+          ],
+          "solvent": "H2O",
+          "stoichiometry": {
+            "GaCl3": "10 equiv",
+            "EDTA-2Na": "30 equiv (for 1a), 60 equiv (for 1b, 1c)"
+          }
+        },
+        "evidence": {
+          "text_span": "To isolate 1a as an aluminum-free form, an excess amount of more Lewis acidic GaCl3 in water was utilized to convert the 1a-Al(III) complex to the 1a-Ga(III) complex, which was then treated with a potent chelating agent, disodium ethylenediaminetetraacetic acid (EDTA-2Na). Finally, pure 1a was isolated by HPLC with a reversed-phase column and a metal-free flow path, collecting fractions in quartz glassware. Hence, the first total synthesis of loihichelin C (1a) was achieved in 26% yield over 14 steps from 10. Alternatively, direct application of EDTA successfully removed an aluminum ion from 1b-Al(III) and 1c-Al(III), and the resultant 1b and 1c were subjected to HPLC purification to isolate 1b and 1c in 18% and 31% yields from 10, respectively. The high overall yields of all three compounds corroborated the robustness of our newly developed synthetic procedures for assembling these unusual sequences.",
+          "section": "RESULTS AND DISCUSSION",
+          "image_refs": [
+            "870e41933e823b5f0bc6aaee44567ea8fb924de4d3e7051157037abe0318e1ec.jpg"
+          ]
+        }
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "UV-vis spectrometry",
+      "ESI-MS"
+    ],
+    "metrics": {
+      "Overall Yield (1a)": {
+        "value": 26,
+        "unit": "percent",
+        "interpretation": "Yield over 14 steps from intermediate 10."
+      },
+      "Overall Yield (1b)": {
+        "value": 18,
+        "unit": "percent",
+        "interpretation": "Yield from intermediate 10."
+      },
+      "Overall Yield (1c)": {
+        "value": 31,
+        "unit": "percent",
+        "interpretation": "Yield from intermediate 10."
+      }
+    },
+    "significance": "The total synthesis of loihichelin C (1a) and its analogs (1b, 1c) enabled the first comprehensive functional analysis of its Fe(III)/Mn(III)-chelating and Mn(II)-oxidizing activities. It revealed that the properly oriented hydroxy group of OHAsp-1 in 1a is crucial for strong Fe(III) binding, stabilization of metastable Mn(III), and promotion of Mn(II)-to-Mn(III) oxidation. The study also uncovered an unusual Mn(III)-mediated degradation pathway for 1b and 1c, highlighting the unique protective role of 1a's structure. These findings provide a structural basis for Mn(III) stabilization and Mn(II) oxidation, suggesting intrinsic roles for 1a in bacterial iron acquisition and manganese metabolism in deep-sea vent environments."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.5c01730",
+      "pmcid": "PMC13014192",
+      "title": "Total Synthesis and Functional Analysis of Loihichelin C: Structural Basis for Mn(III) Stabilization and Mn(II) Oxidation.",
+      "authors": "Sawada M, Kakizawa H, Takeuchi A, Itoh H, Inoue M.",
+      "journal": "JACS Au",
+      "year": 2026,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC13014192?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/e7cb6da3-4def-4e29-9958-b590d2c10f05.zip",
+      "parsed_at": "2026-05-07T14:32:29.422771+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 13,
+    "parseable": 6,
+    "canonicalized": 4,
+    "invalid": 7,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(=O)N(OCOC(C)(C)C)CCC[C@H](NC(=O)OCc1c2ccccc2c2ccccc12)C(=O)NC(=C)C(=O)O",
+      "O=C(O)C[C@H](NC(=O)OCc1c2ccccc2c2ccccc12)C(=O)OC(C)(C)C",
+      "O=C(O)[C@H](COCC(C)(C)C)NC(=O)OCc1c2ccccc2c2ccccc12",
+      "O=C(O)[C@@H](COCC(C)(C)C)NC(=O)OCc1c2ccccc2c2ccccc12",
+      "O=C(O)[C@@H](CCC(=O)N(C(c1ccccc1)(c1ccccc1)c1ccccc1))NC(=O)OCc1c2ccccc2c2ccccc12",
+      "CC(=O)N(OCOC(C)(C)C)CCC[C@H](NC(=O)OCc1c2ccccc2c2ccccc12)C(=O)Oc1ccc(OC)c(P(c2ccc(C(F)(F)F)cc2)c2ccc(C(F)(F)F)cc2)c1",
+      "CC(=O)N(OCOC(C)(C)C)CCC[C@H](NC(=O)OCc1c2ccccc2c2ccccc12)C(=O)NC(=C)C(=O)OCC=C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

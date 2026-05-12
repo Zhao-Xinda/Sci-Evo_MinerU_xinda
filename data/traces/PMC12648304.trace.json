@@ -1,0 +1,1440 @@
+{
+  "trace_id": "TS-PMC12648304",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Zwitterionic Polysaccharide A2 Pentasaccharide Repeating Unit",
+    "smiles": "CC(=O)N[C@H]1[C@H](O)[C@H](O[C@H]2[C@@H](O)[C@H](O)[C@H](NC(C)=O)O[C@H]2CO)O[C@@H](CO)[C@H]1O[C@@H]1O[C@@H](O)[C@@H](O)[C@@H](N)[C@@H]1O.CO[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@@H](OC(=O)C(C)C[O-])O[C@H]2O)[C@H](O)[C@@H](O)[C@@H]1O",
+    "natural_product_class": "polysaccharide",
+    "structural_features": {
+      "key_motifs": [
+        "deoxyamino sugars",
+        "D-glycero-D-manno-heptose",
+        "3-hydroxybutanoic acid"
+      ]
+    },
+    "motivation": "Zwitterionic polysaccharides (ZPSs) are immunomodulatory bacterial glycans that elicit T-cell-dependent immune responses, making them promising immunotherapeutic agents. The synthesis of PS A2-related oligosaccharides has not been reported, hindering understanding of its structural and functional characteristics. This work aims to synthesize the pentasaccharide repeating unit of PS A2 to enable further studies and potentially revise its anomeric configurations.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Seeberger",
+        "year": 2011,
+        "key_strategy": "Total synthesis of PS A1 repeating unit"
+      },
+      {
+        "lead_author": "Andreana",
+        "year": 2018,
+        "key_strategy": "Total synthesis of PS A1 tetrasaccharide repeating unit"
+      },
+      {
+        "lead_author": "Kulkarni",
+        "year": 2021,
+        "key_strategy": "Total synthesis of PS A1 repeating unit"
+      },
+      {
+        "lead_author": "Codée",
+        "year": 2023,
+        "key_strategy": "Total synthesis and structural studies of PS A1 fragments"
+      },
+      {
+        "lead_author": "Kulkarni",
+        "year": 2024,
+        "key_strategy": "Total synthesis of PS B hexasaccharide repeating unit"
+      },
+      {
+        "lead_author": "Townsend",
+        "year": 2019,
+        "key_strategy": "Total synthesis of MM-ZPS trisaccharide repeating unit"
+      },
+      {
+        "lead_author": "Bundle",
+        "year": 2010,
+        "key_strategy": "Synthesis of Sp1 monomeric and dimeric repeating units"
+      },
+      {
+        "lead_author": "Seeberger",
+        "year": 2014,
+        "key_strategy": "Synthesis of conjugation-ready Sp1 oligosaccharides"
+      },
+      {
+        "lead_author": "Codée",
+        "year": 2019,
+        "key_strategy": "Synthetic and structural studies of Sp1 oligosaccharides"
+      },
+      {
+        "lead_author": "Codée",
+        "year": 2023,
+        "key_strategy": "Synthetic Sp1 oligosaccharides carrying labile O-acetyl esters"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "The primary goal is the total synthesis of the pentasaccharide repeating unit of PS A2. A critical secondary goal is to revisit and confirm the anomeric configurations of ManNAc and Hep residues, which are hypothesized to be erroneously assigned in prior reports. Success will be determined by matching NMR data with natural PS A2 and synthesizing variants to confirm stereochemical assignments."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "Glycosidic bond between disaccharide donor 7 and trisaccharide acceptor 8",
+        "named_strategy": "[2+3] glycosylation strategy",
+        "reasoning": "To assemble the complex pentasaccharide 1 efficiently and stereocontrolled."
+      },
+      {
+        "bond_description": "Glycosidic bond between Hep donor 9 and ManNTroc acceptor 10",
+        "reasoning": "To form disaccharide thioglycoside donor 7 with a 1,2-trans-alpha-heptosidic bond, relying on neighboring group participation of Fmoc."
+      },
+      {
+        "bond_description": "Ether linkage of 3Hb group to C-6 of Hep moiety",
+        "named_strategy": "Arndt-Eistert homologation reaction",
+        "reasoning": "To selectively introduce the synthetically challenging ether-linked 3-hydroxybutanoic acid onto the Hep moiety."
+      },
+      {
+        "bond_description": "Glycosidic bond between Fuc donor 14 and disaccharide 13",
+        "reasoning": "To form trisaccharide acceptor 8 with a 1,2-cis-alpha-fucosylation, utilizing anomeric effect and ether solvent effect."
+      },
+      {
+        "bond_description": "Glycosidic bond between ADG donor 15 and AAT acceptor 16",
+        "reasoning": "To form disaccharide 32, ensuring 1,2-trans-glycosyl bond formation with the transient Lev group on 2-OH of ADG."
+      }
+    ],
+    "rationale": "The strategy involves a convergent [2+3] glycosylation approach to assemble the pentasaccharide. Key challenges include the synthesis of rare monosaccharide building blocks (Hep, ADG, AAT), stereoselective construction of various glycosidic bonds (1,2-trans-alpha-ManNAc, 1,2-cis-alpha-Fuc, 1,2-trans-beta-ADG, 1,2-cis-beta-ManNAc, 1,2-cis-beta-Hep), chemoselective differentiation of amino groups for late-stage acylation, and regioselective installation of the 3Hb group on the Hep residue. Orthogonal protecting groups are crucial for achieving stereoselectivity and selective deprotection. The Arndt-Eistert homologation reaction is employed for the 3Hb installation. Specific glycosylation methods (Au(I)-catalyzed OABz glycosylation and B(C6F5)3-promoted TCAI glycosylation) are planned for challenging 1,2-cis linkages."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Zwitterionic polysaccharides (ZPSs) are immunomodulatory bacterial glycans with unique T-cell-dependent immune responses. PS A2 from B. fragilis is a complex ZPS with rare sugars and a unique 3Hb modification. No synthetic studies on PS A2-related oligosaccharides have been reported.",
+        "gap": "A comprehensive understanding of PS A2's structural and functional characteristics is lacking due to the absence of synthetic studies. The complex architecture, including rare deoxyamino sugars (AAT, ADG) and D,D-Hep with an ether-linked 3Hb, poses significant synthetic challenges.",
+        "decision": "To address the lack of synthetic access and structural understanding, the total synthesis of the pentasaccharide repeating unit of PS A2 (compound 1) was chosen as the primary goal. This will involve developing strategies for synthesizing rare monosaccharide building blocks and stereoselectively forming complex glycosidic linkages."
+      },
+      "evidence": {
+        "text_span": "Despite their biological significance and biomedical potential, the synthesis and structural elucidation of ZPSs remain significantly challenging due to their complex architectures and the presence of rare deoxy amino sugars and carboxylation or phosphorylation modifications. To date, significant synthetic advances have been achieved through the total synthesis of several ZPS repeating units and extended structures from PS A1,16−19 P 16-19 PS B,20° M M- ZPS,21 and Sp1,22−25 enabling detailed studies of their secondary structures and structure−activity relationships. In contrast, the synthesis study of PS A2-related oligosaccharides has not yet been reported, thereby hindering a comprehensive understanding of their structural and functional characteristics and limiting their potential in biomedical applications.",
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "The target pentasaccharide 1 is highly complex, featuring rare sugars (AAT, ADG, D,D-Hep), a unique ether-linked 3Hb group, and multiple challenging glycosidic linkages (1,2-cis-Hep, 1,2-cis-ManNAc, 1,2-cis-Fuc, 1,2-cis-AAT).",
+        "gap": "A robust and stereocontrolled strategy is needed to assemble this complex structure from readily available starting materials, while also addressing the specific challenges of each unique feature.",
+        "decision": "A stereocontrolled convergent [2+3] glycosylation strategy was chosen to assemble pentasaccharide 1 from disaccharide donor 7 and trisaccharide acceptor 8. Orthogonal protecting groups will be used to enable selective glycosylations and late-stage modifications. The Arndt-Eistert homologation reaction was identified as a key step for introducing the 3Hb group. Specific glycosylation methods will be employed for challenging 1,2-cis linkages."
+      },
+      "evidence": {
+        "text_span": "In the retrosynthetic analysis, as illustrated in Scheme 1, the pentasaccharide 1 was envisaged to be synthesized after the global deprotection of fully protected compound 6, which was designed to be prepared by a stereocontrolled convergent [2 + 3] approach utilizing disaccharide donor 7 and trisaccharide acceptor 8. A well-tailored orthogonal protecting group strategy made it possible to achieve highly stereoselective glycosylations and selective acylation of distinct amino groups. Anchimeric assistance group 2,2,2-trichloroethoxycarbonyl (Troc)29 for protecting amine in 7 was chosen to ensure the stereospecific glycosylation with 8 for the construction of 1,2- trans- α-ManNAc linkage. Meanwhile, this NHTroc group, along with two azide groups, served as precursors for subsequent conversion to acetamides (NHAc). 30 The permanent benzyloxycarbonyl (Cbz) protecting group was chosen to mask the amino group at C-2 of the AAT residue. The disaccharide thioglycoside donor 7, featuring a 1,2-trans-α-heptosidic bond, could be stereospecifically constructed by the glycosylation of N-phenyl trifluoroacetimidate (PTFAI) donor 9 and thioglycoside acceptor 10, relying on the neighboring group participation of fluorenylmethoxycarbonyl (Fmoc) in C-2 of 9. The Hep building block 11 with free 6- OH was chosen to install the crucial 3Hb group. Furthermore, functionalized butanols 12a-b and commercially available 2(R)-bromopropionic acid 12c were investigated as potential precursors for 3Hb group installation. The trisaccharide acceptor 8 could be prepared by the 1,2-cis- α-fucosylation of thioglycoside donor 14 with disaccharide 13 through a combination of anomeric effect and ether solvent effect.30 The 2-OH of ADG 15 was orthogonally protected with the transient levulinoyl (Lev) group31 for ensuring the formation of 1,2-trans-glycosyl bond with AAT acceptor 16 and subsequent selective removal of the Lev group to afford the disaccharide 13. Additionally, the target pentasaccharide 1 could be obtained by chemoselectively reducing the NHTroc and azide groups to NH2 for acetylation, followed by final global deprotection.",
+        "section": "Synthetic Strategy to Assemble the Reported Structure of PS A2 Pentasaccharide 1",
+        "image_refs": [
+          "695fa72412edd11b2b70496045915895322cc9fa49adfd7a37b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "Hep",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Gram-scale Hep intermediate 11 was prepared from D-mannose. The next step is to install the 3Hb group at C-6 of 11.",
+        "gap": "Direct O-6 alkylation with 12a/b failed due to beta-elimination byproducts. An indirect strategy is needed.",
+        "decision": "To install the 3Hb group, 2(R)-bromopropionic acid 12c will be coupled with 11 via Williamson ether synthesis to form 18, followed by Arndt-Eistert homologation. This approach was inspired by previous success in lactic acid moiety installation.",
+        "outcome": "The reaction successfully formed compound 18 in 88% yield, confirming the C-O ether linkage. This validated 2-bromopropionic acid as a viable substrate for Williamson ether synthesis under strong basic conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "C[C@@H](Br)C(=O)O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaH"
+        ],
+        "solvent": "DMF/1,4-dioxane",
+        "atmosphere": "argon"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "The lactic acid moiety was successfully installed at the C-6-OH of 11, forming compound 18. HMBC correlation confirmed the C-O ether linkage. Direct O-6 alkylation with 12a/b failed."
+      },
+      "evidence": {
+        "text_span": "Initially, we attempted direct O-6 alkylation of 11 with 12a/b via Williamson ether synthesis, with the plan to selectively unmask and oxidize the 2-naphthylmethyl (Nap)-protected hydroxyl group to a carboxylic acid for subsequent benzylation.31 Unfortunately, all attempts failed to form the desired ether bond (Table S6), and β-elimination byproducts from 12a-b were observed, which might be facilitated by the alkoxide and excess base. Inspired by our previous successful installation of a lactic acid moiety in the synthesis of muramyl dipeptide (MDP)33 and the Arndt−Eistert homologation reaction,26 we devised an indirect strategy to introduce the challenging 3Hb group. First, the lactic acid moiety was installed at the C-6-OH of 11 using 2(R)-bromopropionic acid 12c and NaH in a mixed solvent of DMF and 1,4-dioxane to afford compound 18 through an SN2-type reaction.33 The HMBC correlation between C-2 of lactic acid and H-6 of Hep confirmed the formation of a C-O ether linkage in 18. Our synthetic case further indicated that 2-bromopropionic acid was a viable substrate for coupling with alkoxides under strong-base-promoted Williamson ether synthesis.",
+        "section": "Synthesis of Rare Monosaccharide Building Blocks",
+        "image_refs": [
+          "330ae6d12be00f2a65da3ad306e102924f201bcc83d8ab85051c8a88db95b7e1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "Hep",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 18, with the lactic acid moiety, is ready for homologation.",
+        "gap": "The next step is to convert the lactic acid to the 3Hb group using Arndt-Eistert homologation.",
+        "decision": "Employ standard Arndt-Eistert homologation conditions, involving conversion to an alpha-diazoketone intermediate and subsequent Wolff rearrangement with benzyl alcohol, to yield benzyl ester 19.",
+        "outcome": "Compound 18 was successfully converted to benzyl ester 19 in an overall yield of 72% over three steps."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "(COCl)2",
+          "DMF",
+          "TMSCHN2",
+          "BnOH",
+          "TFAOAg",
+          "Et3N"
+        ],
+        "solvent": "CH2Cl2/THF/CH3CN",
+        "temperature": "-20 °C - r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "The Arndt-Eistert homologation successfully introduced the 3Hb group, forming benzyl ester 19."
+      },
+      "evidence": {
+        "text_span": "Next, employing the standard condition of Arndt−Eistert homologation reaction,26,34 compound 18 was successfully converted to an α-diazoketone intermediate. The resulting intermediate was subjected to a silver trifluoroacetate (TFAOAg)-mediated Wolff rearrangement in the presence of benzyl alcohol (BnOH), furnishing benzyl ester 19 in an overall yield of 72% in three steps.",
+        "section": "Synthesis of Rare Monosaccharide Building Blocks",
+        "image_refs": [
+          "330ae6d12be00f2a65da3ad306e102924f201bcc83d8ab85051c8a88db95b7e1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "Hep",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Benzyl ester 19 is formed. Further protecting group manipulations are needed to prepare the Hep donor.",
+        "gap": "The isopropylidene group needs to be cleaved, C-3-OH regioselectively benzylated, and C-2-OH protected with Fmoc.",
+        "decision": "Compound 19 will be transformed into 22 through a three-step procedure: isopropylidene cleavage (80% acetic acid), dibutyltin oxide-mediated regioselective benzylation of C-3-OH of 20, and Fmoc protection of C-2-OH of 21.",
+        "outcome": "Compound 19 was successfully converted to 22 through the planned three-step sequence."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "80% CH3COOH",
+          "n-Bu2SnO",
+          "BnBr",
+          "CsF",
+          "FmocCl"
+        ],
+        "solvent": "PhMe/DMF/CH2Cl2/Pyr",
+        "temperature": "80 °C/110 °C/r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "Compound 19 was transformed into 22 through a facile three-step procedure, including the cleavage of an isopropylidene group using 80% acetic acid, dibutyltin oxide (n-Bu2SnO)-mediated regioselective benzylation of the C-3-OH of 20, and the protection of the C-2-OH of 21 with an Fmoc group."
+      },
+      "evidence": {
+        "text_span": "Subsequently, compound 19 was transformed into 22 through a facile three-step procedure, including the cleavage of an isopropylidene group using 80% acetic acid, dibutyltin oxide (n-Bu2SnO)-mediated regioselective benzylation of the C-3-OH of 20, and the protection of the C-2-OH of 21 with an Fmoc group.",
+        "section": "Synthesis of Rare Monosaccharide Building Blocks",
+        "image_refs": [
+          "330ae6d12be00f2a65da3ad306e102924f201bcc83d8ab85051c8a88db95b7e1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "Hep",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Thioglycoside 22 is prepared.",
+        "gap": "It needs to be converted into the N-phenyl trifluoroacetimidate (PTFAI) Hep donor 9 for glycosylation.",
+        "decision": "Thioglycoside 22 will be converted to a hemiacetal using NIS and catalytic TfOH in wet dichloromethane, followed by treatment with CF3C(NPh)Cl and Cs2CO3 to yield 9.",
+        "outcome": "The desired PTFAI Hep donor 9 was obtained in 85% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NIS",
+          "TfOH",
+          "CF3C(NPh)Cl",
+          "Cs2CO3"
+        ],
+        "solvent": "wet CH2Cl2",
+        "temperature": "0 °C/r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Thioglycoside 22 was successfully converted to PTFAI Hep donor 9."
+      },
+      "evidence": {
+        "text_span": "Lastly, the thioglycoside 22 was converted to a hemiacetal using Niodosuccinimide (NIS) and catalytic trifluoromethanesulfonic acid (TfOH) in wet dichloromethane, and the resulting hemiacetal was treated with CF3C(NPH)Cl and Cs2CO3 to yield the desired N-phenyl trifluoroacetimidate (PTFAI) Hep donor 9. 35",
+        "section": "Synthesis of Rare Monosaccharide Building Blocks",
+        "image_refs": [
+          "330ae6d12be00f2a65da3ad306e102924f201bcc83d8ab85051c8a88db95b7e1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "ADG",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "ADG building block 15 needs to be synthesized from 1,2:5,6-di-O-isopropylidene-alpha-D-allofuranose 23.",
+        "gap": "The 4,6-O-benzylidene protecting group needs to be removed, followed by selective tosylation of 6-hydroxyl, iodide formation, radical reduction, and Fmoc protection.",
+        "decision": "Compound 24 (from 23 in 8 steps) will undergo 4,6-O-benzylidene removal (80% acetic acid) to give diol 25. Then, 6-hydroxyl will be selectively tosylated (TsCl), followed by iodide formation (NaI, TBAI) to 26. Radical reduction (n-Bu3SnH, AIBN) will yield 27, and finally, Fmoc protection will give 15.",
+        "outcome": "The ADG building block 15 was successfully synthesized through the described sequence."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)O[C@@H]1[C@H]2O[C@@H](O2)[C@H](O)[C@H]1O"
+        ],
+        "product_smiles": [
+          "CC(=O)CC[C@H](C)O[C@H]1[C@@H](N=[N+]=[N-])[C@H](OC(=O)OCC2c3ccccc3-c3ccccc32)[C@@H](Sc2ccc(C)cc2)O[C@@H]1C"
+        ],
+        "reagents": [
+          "80% CH3COOH",
+          "TsCl",
+          "Pyr",
+          "NaI",
+          "TBAI",
+          "n-Bu3SnH",
+          "AIBN",
+          "FmocCl"
+        ],
+        "solvent": "Butanone/PhMe/CH2Cl2",
+        "temperature": "80 °C/110 °C/r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Compound 24 was converted to diol 25 (82% yield). Compound 25 was converted to iodide 26 (64% yield). Compound 26 was converted to 27 (95% yield). Compound 27 was converted to 15 (95% yield)."
+      },
+      "evidence": {
+        "text_span": "Next, ADG building block 15 was synthesized from commercially available 1,2:5,6-di-O-isopropylidene-α-D-allofuranose 23 (Scheme 2B). Compound 24 was readily obtained through an eight-step reaction procedure starting from 23 based on a previous report.36 The removal of the 4,6-O-benzylidene protecting group of 24 with 80% acetic acid provided diol 25. The 6-hydroxyl group of 25 was selectively tosylated by 4-toluenesulfonyl chloride (TsCl), followed by treatment with sodium iodide (NaI) and catalytic tetrabutylammonium iodide (TBAI) in refluxing butanone to afford iodide 26. 37 Subsequently, compound 26 was subjected to radical reduction with tributyltin hydride (n-Bu3SnH) and azobis(isobutyronitrile) (AIBN)38 to give 27 in a yield of 95%. Finally, the Fmoc protecting group was introduced on C-4-OH of 27 to provide the orthogonally protected ADG building block 15.",
+        "section": "Synthesis of Rare Monosaccharide Building Blocks",
+        "image_refs": [
+          "d12c7ce73b15ce55f86bef30270f4f433469e03fa6783917a286dd5a6e75e449.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "AAT",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "AAT building block 16 needs to be synthesized from readily available 4,6-diol 28.",
+        "gap": "The 4,6-diol needs to be converted to an iodide, followed by reduction of 6-iodine, azide reduction, Cbz protection, triflation of 4-hydroxyl, azide replacement, and Nap ether cleavage.",
+        "decision": "4,6-diol 28 will be converted to iodide 29. Then, 6-iodine will be removed (Bu3SnH, AIBN), azide reduced (PMe3), and amine protected (CbzCl) to yield 30. 4-hydroxyl will be triflated (Tf2O, Pyr) and replaced with azide (TBAN3) to give 31. Finally, Nap ether will be cleaved (DDQ) to provide 16.",
+        "outcome": "The AAT building block 16 was successfully synthesized in 87% yield after the final step."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC1OC(O[Si](C)(C)C(C)(C)C)C(NC(=O)OCc2ccccc2)C(O)C1N=[N+]=[N-]"
+        ],
+        "reagents": [
+          "TsCl",
+          "Pyr",
+          "NaI",
+          "TBAI",
+          "Bu3SnH",
+          "AIBN",
+          "PMe3",
+          "CbzCl",
+          "NaHCO3",
+          "Tf2O",
+          "TBAN3",
+          "DDQ"
+        ],
+        "solvent": "Butanone/PhMe/THF/H2O/CH2Cl2/PBS buffer",
+        "temperature": "r.t./80 °C/110 °C/-20 °C/0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Compound 28 was converted to iodide 29 (82% yield). Compound 29 was converted to 30 (73% yield). Compound 30 was converted to 31 (64% yield over two steps). Compound 31 was converted to 16 (87% yield)."
+      },
+      "evidence": {
+        "text_span": "To synthesize AAT building block 16 (Scheme 2C), a readily available 4,6-diol 2839 was first converted to the iodide 29 using the same method described for the preparation of 26. Compound 29 was treated with Bu3SnH and AIBN38 to remove 6-iodine, followed by reduction of the azide group with trimethyl phosphine (PMe3)31,40 to yield an amine intermediate, which was reacted with CbzCl to afford compound 30. The 4-hydroxyl group of 30 was triflated using Tf2O and pyridine (Pyr), followed by the replacement with tetrabutylammonium azide (TBAN3)41 in the axial position to yield the azide derivative 31 in an overall yield of 64% for two steps. Finally, the cleavage of Nap ether with 2,3-dichloro-5,6- dicyano-1,4-benzoquinone (DDQ) in a mixed solution of dichloromethane and phosphate buffer (PBS, pH 7.4)31,42 provided the desired AAT building block 16 in 87% yield.",
+        "section": "Synthesis of Rare Monosaccharide Building Blocks",
+        "image_refs": [
+          "5d50982f7860102008ca12e30436906054f96b85482a58d5fa0ef5a37449fa2e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "Disaccharide 32",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "ADG building block 15 and AAT acceptor 16 are available.",
+        "gap": "These need to be condensed to form disaccharide 32, ensuring stereospecific beta-linkage.",
+        "decision": "Condensation will be performed using NIS and TfOH in toluene at 0 °C to room temperature. The Lev group on ADG is expected to provide anchimeric assistance for beta-selectivity.",
+        "outcome": "Disaccharide 32 was obtained in 75% yield with stereospecific beta-linkage (JC1-H1 = 161 Hz)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)CC[C@H](C)O[C@H]1[C@@H](N=[N+]=[N-])[C@H](OC(=O)OCC2c3ccccc3-c3ccccc32)[C@@H](Sc2ccc(C)cc2)O[C@@H]1C",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NIS",
+          "TfOH"
+        ],
+        "solvent": "toluene",
+        "temperature": "0 °C to r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "The newly formed stereospecific beta-linkage (JC1-H1 = 161 Hz) is attributed to the anchimeric assistance of the Lev group."
+      },
+      "evidence": {
+        "text_span": "The ADG thioglycosyl donor 15 and AAT acceptor 16 were condensed to provide disaccharide 32. After investigating the promoter, solvent, and reaction temperature, disaccharide 32 was obtained in 75% yield using 2.0 equiv of NIS (based on the donor) and 0.4 equiv of TfOH in toluene at 0 °C to room temperature (Table S7). The newly formed stereospecific β- linkage (JC1-H1 = 161 Hz)) is attributed to the anchimeric assistance of the Lev group.",
+        "section": "Assembly of Pentasaccharide 1 and 1H NMR Data Analysis",
+        "image_refs": [
+          "402b4222208984a7c05da9d87efad0c5ca8186eb04b5bc640dc140467fc3e0cb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "Disaccharide 13",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Disaccharide 32 is formed.",
+        "gap": "The Lev group needs to be selectively removed to afford glycosyl acceptor 13.",
+        "decision": "The Lev group of 32 will be selectively removed by hydrazine acetate.",
+        "outcome": "Glycosyl acceptor 13 was obtained in 86% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "N2H4*H2O",
+          "CH3COOH"
+        ],
+        "solvent": "Pyr",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "The Lev group was selectively removed to give glycosyl acceptor 13."
+      },
+      "evidence": {
+        "text_span": "Subsequently, the Lev group of 32 was selectively removed by hydrazine acetate31 to give glycosyl acceptor 13 in 86% yield.",
+        "section": "Assembly of Pentasaccharide 1 and 1H NMR Data Analysis",
+        "image_refs": [
+          "402b4222208984a7c05da9d87efad0c5ca8186eb04b5bc640dc140467fc3e0cb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "Trisaccharide 33",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Glycosyl acceptor 13 and Fuc thioglycosyl donor 14 are available.",
+        "gap": "These need to be coupled to form trisaccharide 33 with excellent alpha-selectivity.",
+        "decision": "Coupling will be performed using NIS and TfOH in a mixed solvent of diethyl ether and dichloromethane at -78 °C, leveraging the inherent glycosyl anomeric effect of Fuc and the solvent effect.",
+        "outcome": "Trisaccharide 33 was obtained in 82% yield with excellent alpha-selectivity (alpha/beta > 20:1, JC1-H1 = 171 Hz)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(=O)OC(C)(C)C(=O)O[C@@H]1[C@@H](O)[C@H](N=[N+]=[N-])[C@@H](CO[C@@H]2C[C@H](N=[N+]=[N-])[C@@H](OC(=O)OCC3c4ccccc4-c4ccccc43)O[C@H]2C)O[C@@H]1Sc1ccc(C)cc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NIS",
+          "TfOH"
+        ],
+        "solvent": "Et2O/CH2Cl2",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "regio_selectivity": "alpha/beta > 20:1",
+        "observation": "This highly stereoselective glycosylation resulted from the inherent glycosyl anomeric effect of Fuc and the solvent effect of diethyl ether."
+      },
+      "evidence": {
+        "text_span": "The resulting acceptor 13 was coupled with Fuc thioglycosyl donor 14 in the presence of NIS and TfOH in a mixed solvent of diethyl ether (Et2O) and dichloromethane (CH2Cl2) at −78'°C30,44 to afford trisaccharide 33 in 82% yield with excellent α-selectivity (α/ β > 20!1, JC1-H1 = 171 Hz) . This highly stereoselective glycosylation resulted from the inherent glycosyl anomeric effect of Fuc and the solvent effect of diethyl ether.30",
+        "section": "Assembly of Pentasaccharide 1 and 1H NMR Data Analysis",
+        "image_refs": [
+          "402b4222208984a7c05da9d87efad0c5ca8186eb04b5bc640dc140467fc3e0cb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": "Trisaccharide acceptor 8",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Trisaccharide 33 is formed.",
+        "gap": "The Fmoc group needs to be removed to afford trisaccharide acceptor 8.",
+        "decision": "The Fmoc group of 33 will be removed with Et3N.",
+        "outcome": "Trisaccharide acceptor 8 was obtained in 92% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Et3N"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Subsequent removal of the Fmoc group of 33 with Et3N afforded trisaccharide acceptor 8 in 92% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent removal of the Fmoc group of 33 with Et3N45 afforded trisaccharide acceptor 8 in 92% yield.",
+        "section": "Assembly of Pentasaccharide 1 and 1H NMR Data Analysis",
+        "image_refs": [
+          "402b4222208984a7c05da9d87efad0c5ca8186eb04b5bc640dc140467fc3e0cb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "Disaccharide 7",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "PTFAI donor 9 and ManNTroc acceptor 10 are available.",
+        "gap": "These need to be coupled to form disaccharide 7 with high yield and specific stereoselectivity.",
+        "decision": "Coupling will be performed under catalytic TfOH conditions, relying on the neighboring participation effect of the Fmoc group for alpha-selectivity.",
+        "outcome": "Disaccharide 7 was obtained in 92% yield with alpha-selectivity (JC1-H1 = 173 Hz)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TfOH"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Under the condition of a catalytic amount of TfOH, the newly formed alpha-linked disaccharide 7 (JC1-H1 = 173 Hz) was smoothly generated with a high yield (92%) and specific stereoselectivity due to the neighboring participation effect of the Fmoc group."
+      },
+      "evidence": {
+        "text_span": "Meanwhile, disaccharide 7 was obtained through the coupling of PTFAI donor 9 and ManNTroc acceptor 10. Under the condition of a catalytic amount of TfOH, the newly formed α-linked disaccharide 7 (JC1-H1 = 173 Hz)) was smoothly generated with a high yield (92%) and specific stereoselectivity due to the neighboring participation effect of the Fmoc group.",
+        "section": "Assembly of Pentasaccharide 1 and 1H NMR Data Analysis",
+        "image_refs": [
+          "c694e3cc350306e33311d53b298922a5a243445b278442ce568426f132815583.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": "Pentasaccharide 6",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Disaccharide donor 7 and trisaccharide acceptor 8 are available.",
+        "gap": "These need to be coupled to form the fully protected pentasaccharide 6 with exclusive alpha-anomeric selectivity.",
+        "decision": "Glycosylation will be performed using NIS/TfOH as the promoter combination, relying on the neighboring participation effect of the Troc group for alpha-selectivity.",
+        "outcome": "Fully protected pentasaccharide 6 was obtained in 92% yield with exclusive alpha-anomeric selectivity (JC1-H1 = 172 Hz)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NIS",
+          "TfOH"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "The exclusive alpha-anomeric selectivity (JC1-H1 = 172 Hz) of the glycosylation reaction was attributed to the neighboring participation effect of the Troc group."
+      },
+      "evidence": {
+        "text_span": "Next, the fully protected pentasaccharide 6 was efficiently assembled by glycosylating thioglycoside donor 7 with trisaccharide acceptor 8 using the promoter combination of NIS/TfOH in 92% yield. The exclusive α-anomeric selectivity (JC1-H1 = 172 : Hz) of the glycosylation reaction was attributed to the neighboring participation effect of the Troc group.",
+        "section": "Assembly of Pentasaccharide 1 and 1H NMR Data Analysis",
+        "image_refs": [
+          "f8423665a58a2885e997276ba5a31960903245c8395ed228ee70e2d9c3f186b3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "Pentasaccharide 1",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Fully protected pentasaccharide 6 is synthesized.",
+        "gap": "Global deprotection is needed to obtain the target pentasaccharide 1.",
+        "decision": "Global deprotection will involve converting NHTroc and azide groups to NHAc (Zn/AcOH/Ac2O), removing anomeric TDS (HF/pyridine), and hydrogenolysis of Bn, Cbz, and Fmoc groups (Pd(OH)2/C).",
+        "outcome": "Target pentasaccharide 1 was successfully obtained in 47% yield after global deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(=O)N[C@H]1[C@H](O)[C@H](O[C@H]2[C@@H](O)[C@H](O)[C@H](NC(C)=O)O[C@H]2CO)O[C@@H](CO)[C@H]1O[C@@H]1O[C@@H](O)[C@@H](O)[C@@H](N)[C@@H]1O.CO[C@H]1O[C@@H](O[C@H]2[C@H](O)[C@@H](O)[C@@H](OC(=O)C(C)C[O-])O[C@H]2O)[C@H](O)[C@@H](O)[C@@H]1O"
+        ],
+        "reagents": [
+          "Zn",
+          "AcOH",
+          "Ac2O",
+          "HF/Pyridine",
+          "Pd(OH)2/C",
+          "H2"
+        ],
+        "solvent": "THF/AcOH/Ac2O/Pyridine/t-BuOH/H2O/CH2Cl2",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 47,
+        "observation": "Comprehensive structural analysis of 1 was performed by 1D/2D NMR spectroscopy and high-resolution mass spectrometry (HRMS), confirming the structural integrity and stereochemistry of all glycosidic linkages."
+      },
+      "evidence": {
+        "text_span": "Finally, the global deprotection of 6 successfully provided the target pentasaccharide 1 by converting NHTroc and azido groups into acetylamino (NHAc) with the Zn/AcOH/Ac2O system, followed by removal of the anomeric TDS with HF/pyridine and hydrogenolysis of Bn, Cbz, and Fmoc groups with Pd(OH)2/C as the catalyst in the mixed solvent of t-BuOH/ H2O/CH2Cl2 (v/v/v, 3/2/0.5) . Comprehensive structural analysis of 1 was performed by 1D/2D NMR spectroscopy and high-resolution mass spectrometry (HRMS), confirming the structural integrity and stereochemistry of all glycosidic linkages (Supporting Information Pages S144−S147 and S207).",
+        "section": "Assembly of Pentasaccharide 1 and 1H NMR Data Analysis",
+        "image_refs": [
+          "f8423665a58a2885e997276ba5a31960903245c83915895322cc9fa49adfd7a37b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Pentasaccharide 1 has been synthesized and characterized.",
+        "gap": "The NMR data of synthetic 1 needs to be compared with reported data for natural PS A2 to confirm structural identity.",
+        "decision": "Compare 1H NMR data of synthetic pentasaccharide 1 with reported data for natural PS A2. Specifically, analyze chemical shifts of ADG, AAT, Fuc, Hep, and ManNAc residues.",
+        "outcome": "Significant deviations were observed in the 1H NMR data, particularly for the distal Hep and ManNAc residues, suggesting potential misassignment of anomeric configurations in the reported natural product structure."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "1H NMR data of synthetic pentasaccharide repeating unit 1 displayed apparent deviations from those of natural PS A2. The ADG residue matched well, but AAT and Fuc showed delicate differences (due to free anomeric hydroxyl). Distal Hep and ManNAc residues showed significant downfield shifts (Δδ = +0.20 ppm for ManNAc H-1, +0.25 ppm for Hep H-1; Δδ = +0.32 ppm for ManNAc H-5, +0.33 ppm for Hep H-5)."
+      },
+      "evidence": {
+        "text_span": "Unexpectedly, 1H NMR data of synthetic pentasaccharide repeating unit 1 displayed apparent deviations from those of natural PS A213 (Table S2). The 1H NMR data of the ADG residue, located in the central region of the pentasaccharide backbone, were in excellent agreement with the reported data. For the AAT and its proximal Fuc residues, the delicate differences can be rationalized by the synthetic structure possessing a free anomeric hydroxyl group at the reducing end rather than a hindered glycosidic linkage. However, as depicted in Scheme 3D,E, the discrepancies in the signals from the distal Hep and ManNAc residues remained perplexing. Notably, the significant downfield shifts observed in the H-1 protons Δδ = +0.20 ppm for ManNAc, +0.25 ppm for Hep) and H-5 protons (Δδ = +0.32 ppm for ManNAc, +0.33 ppm for Hep) prompted us to question their characterized anomeric configurations of these two glycosyl units.13,46",
+        "section": "Assembly of Pentasaccharide 1 and 1H NMR Data Analysis",
+        "image_refs": [
+          "3cd2894d6a6a6932b3b25527466ebb17de9cba78ea3163be2a86468d9c74aea3.jpg",
+          "830503ae868a8f6f09746937cfb42d3f7ba9630b50bd91c3bcdf4c418d16d066.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Significant discrepancies were observed in the 1H NMR data of synthetic pentasaccharide 1 compared to natural PS A2, particularly for the Hep and ManNAc residues. The original NOESY spectrum of natural PS A2 needs re-examination.",
+        "gap": "The cause of the NMR discrepancies needs to be identified. A hypothesis regarding the anomeric configurations of ManNAc and Hep residues is needed.",
+        "decision": "Re-examine the reported NOESY spectrum of natural PS A2. Based on NOE correlations between H-1 and axially oriented H-5/H-3 protons within both Hep and ManNAc residues, hypothesize that the anomeric configurations of these two sugar residues in natural PS A2 are beta-linkages, not alpha as previously assigned. This hypothesis will be tested by synthesizing corresponding structures with beta-linked ManNAc or Hep residues.",
+        "outcome": "A hypothesis was formulated that the anomeric configurations of ManNAc and Hep residues in natural PS A2 are beta-linkages, contrary to previous assignments."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Re-examination of the NOESY spectrum of natural PS A2 revealed NOE correlations between H-1 and axially oriented H-5/H-3 protons within both Hep and ManNAc residues, suggesting beta-configurations for these glycosyl units."
+      },
+      "evidence": {
+        "text_span": "After re-examining the reported NMR data and scrutinizing the original NOESY spectrum, we have formulated a hypothesis that the anomeric configurations of these two sugar residues may have been erroneously assigned previously. It is now more plausible that they should be designated as β- linkages. To test this hypothesis, we designed and synthesized two pentasaccharides 2−3 and two frame-shift trisaccharides 4−5 (Figure 2).",
+        "section": "INTRODUCTION",
+        "image_refs": [
+          "580a39e834c950adeb83e9e8b10dfe898529d3a78a0200e0d9f90b6e9543393c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": "Tetrasaccharide 35",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The goal is to synthesize pentasaccharide 2 containing a beta-ManNAc residue. The first step is stereoselective construction of the beta-ManN3 linkage.",
+        "gap": "A suitable glycosylation method is needed for the challenging 1,2-cis-beta-ManNAc linkage.",
+        "decision": "Attempt a hydrogen-bond-mediated aglycone delivery (HAD) approach using C-3 picoloyl (Pico)-modified thioglycosyl donor 34a with trisaccharide acceptor 8.",
+        "outcome": "No desired product was generated, indicating the HAD approach was unsuccessful for this specific glycosylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)Oc1ccccc1SC[C@H]1O[C@H](OC[C@H]2O[C@H](N=[N+]=[N-])[C@@H](O)[C@@H](O)[C@@H]2O)[C@H](O)[C@@H](O)[C@@H]1O",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NIS",
+          "TfOH"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No desired product was generated using the HAD approach with donor 34a."
+      },
+      "evidence": {
+        "text_span": "First, we attempted a hydrogen-bond-mediated aglycone delivery (HAD) approach47 using a C-3 picoloyl (Pico)-modified thioglycosyl donor 34a (Table 1, Entry 1). Unfortunately, no desired product was generated.",
+        "section": "Synthesis of β-ManNAc-Containing Pentasaccharide 2",
+        "image_refs": [
+          "b9e60df0580d7cc7d537dd1d1b4f68a17f6011ddd4f3cb7a543bdaeba301497b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": "Tetrasaccharide 35",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The HAD approach with donor 34a failed. A more reactive donor might be needed.",
+        "gap": "The reactivity mismatch between the glycosyl donor and acceptor needs to be addressed.",
+        "decision": "Transform thioglycosyl donor 34a into a more reactive OPTFAI donor 34b and attempt coupling with acceptor 8.",
+        "outcome": "Only a trace amount of product 35 was detected, indicating the reactivity mismatch persisted."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)Oc1ccccc1SC[C@H]1O[C@H](OC[C@H]2O[C@H](N=[N+]=[N-])[C@@H](O)[C@@H](O)[C@@H]2O)[C@H](O)[C@@H](O)[C@@H]1O",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBSOTf"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Only a trace amount of product 35 was detected by TLC and mass spectrometry analysis. The failure of glycosylation resulted from the reactivity mismatch between the glycosyl donor and the acceptor."
+      },
+      "evidence": {
+        "text_span": "Subsequently, the thioglycosyl donor 34a was transformed to a more reactive OPTFAI donor 34b for coupling with acceptor 8. However, only a trace amount of product 35 was detected by TLC and mass spectrometry analysis (Table 1, Entry 2). The failure of glycosylation resulted from the reactivity mismatch between the glycosyl donor and the acceptor.",
+        "section": "Synthesis of β-ManNAc-Containing Pentasaccharide 2",
+        "image_refs": [
+          "b9e60df0580d7cc7d537dd1d1b4f68a17f6011ddd4f3cb7a543bdaeba301497b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": "Tetrasaccharide 36",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Previous attempts to form the beta-ManN3 linkage failed due to reactivity issues.",
+        "gap": "A more effective method for beta-mannosidation is needed.",
+        "decision": "Employ the Crich beta-mannosidation protocol, involving Ph2SO/Tf2O-mediated preactivation glycosylation, to couple Nap-protected donor 34c with trisaccharide acceptor 8.",
+        "outcome": "Product 36 was obtained in poor yield (30%) with moderate beta/alpha selectivity (2.5:1). Most of the donor decomposed, and the acceptor remained largely unreacted."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Ph2SO",
+          "Tf2O",
+          "TTBP"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-60 °C to r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Activation of donor 34c with Ph2SO and Tf2O yielded 36 in a poor yield of 30% with beta/alpha selectivity of 2.5:1. Most of the donor decomposed, while the acceptor remained largely unreacted."
+      },
+      "evidence": {
+        "text_span": "Next, we employed Crich β-mannosidation protocol,48 which involves Ph2SO/Tf2O-mediated preactivation glycosylation, to couple Nap-protected donor 34c with trisaccharide acceptor 8 (Table 1, Entry 3). Activation of donor 34c with Ph2SO and Tf2O at −60 °C, followed by the addition of trisaccharide acceptor 8 and gradually warming to room temperature (r.t.), yielded 36 in a poor yield of 30% with β/α selectivity of 2.5/1 (JC1-H1 = 161 Hz for β-anomer, JC1-H1 = 171 Hz for α-anomer). In this reaction, as the temperature was raised to room temperature, most of the donor decomposed, while the acceptor remained largely unreacted.",
+        "section": "Synthesis of β-ManNAc-Containing Pentasaccharide 2",
+        "image_refs": [
+          "b9e60df0580d7cc7d537dd1d1b4f68a17f6011ddd4f3cb7a543bdaeba301497b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": "Tetrasaccharide 36",
+      "action": "revision",
+      "revises_step_id": 20,
+      "thought": {
+        "background": "Previous attempts for beta-mannosidation yielded poor results or no reaction.",
+        "gap": "A more efficient and selective method is needed for the challenging 1,2-cis-beta-ManNAc linkage.",
+        "decision": "Employ the gold(I)-catalyzed glycosyl ortho-hexynylbenzoates (OABz) glycosylation method (Yu glycosylation) with donor 34d and acceptor 8. Test different solvents to optimize selectivity.",
+        "outcome": "The coupling in PhMe gave 36 in 89% yield with 3.5:1 beta/alpha selectivity. Switching to PhCl improved selectivity to 5:1 beta/alpha, allowing for purification of the desired beta-isomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Ph3PAuOTf"
+        ],
+        "solvent": "PhMe/PhCl",
+        "temperature": "-40-0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "regio_selectivity": "beta/alpha = 5/1",
+        "observation": "The coupling of glycosyl donor 34d and acceptor 8 proceeded smoothly in the presence of Ph3PAuOTf. In PhMe, 89% yield with 3.5:1 beta/alpha. In PhCl, 86% yield with 5:1 beta/alpha. The desired beta-isomer 36beta can be easily purified."
+      },
+      "evidence": {
+        "text_span": "Alternatively, the gold(I)-catalyzed glycosyl ortho-hexynylbenzoates (OABz) glycosylation method (Yu glycosylation) was also employed to construct this challenging β-linkage.49,50 Gratifyingly, the coupling of glycosyl donor 34d and acceptor 8 proceeded smoothly in the presence of Ph3PAuOTf in PhMe at −40−0 °C, giving the tetrasaccharide 8 in a high yield of 89% with a moderate β-selectivity (β/α = 3.5/1, Table 1, Entry 4). When PhCl was used as the solvent, the β/α ratio was improved to 5/1 (Table 1, Entry 5). Additionally, the desired β-isomer 36β can be easily purified through silica gel column chromatography.",
+        "section": "Synthesis of β-ManNAc-Containing Pentasaccharide 2",
+        "image_refs": [
+          "b9e60df0580d7cc7d537dd1d1b4f68a17f6011ddd4f3cb7a543bdaeba301497b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": "Glycosyl acceptor 37",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The beta-tetrasaccharide 36beta is available.",
+        "gap": "The Nap group needs to be oxidatively cleaved to afford glycosyl acceptor 37.",
+        "decision": "The Nap group will be cleaved by DDQ in DCM/PBS buffer.",
+        "outcome": "Glycosyl acceptor 37 was obtained in 74% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DDQ"
+        ],
+        "solvent": "DCM/PBS buffer"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "The Nap group was oxidatively cleaved by DDQ in DCM/PBS buffer to afford the glycosyl acceptor 37 in 74% yield."
+      },
+      "evidence": {
+        "text_span": "With the β-tetrasaccharide 36β in hand, the Nap group was oxidatively cleaved by DDQ in DCM/PBS buffer31,42 to afford the glycosyl acceptor 37 in 74% yield.",
+        "section": "Synthesis of β-ManNAc-Containing Pentasaccharide 2"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": "Pentasaccharide 38",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Glycosyl acceptor 37 and Hep-PTFAI donor 9 are available.",
+        "gap": "These need to be coupled to form fully protected pentasaccharide 38 with alpha-selectivity.",
+        "decision": "Coupling will be performed under TfOH activation, expecting alpha-selectivity due to neighboring group participation of Fmoc.",
+        "outcome": "Fully protected pentasaccharide 38 was obtained in 75% yield as the only alpha-anomer (JC1-H1 = 172 Hz)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TfOH"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "The coupling of acceptor 37 and Hep-PTFAI donor 9 under the activation of TfOH smoothly generated fully protected pentasaccharide 38 as the only alpha-anomer (JC1-H1 = 172 Hz) in 75% yield due to the neighboring group participation of Fmoc."
+      },
+      "evidence": {
+        "text_span": "Subsequently, the coupling of acceptor 37 and Hep-PTFAI donor 9 under the activation of TfOH smoothly generated fully protected pentasaccharide 38 as the only α-anomer (JC1-H1 = 172 Hz) in 75% yield due to the neighboring group participation of Fmoc.",
+        "section": "Synthesis of β-ManNAc-Containing Pentasaccharide 2"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": "Pentasaccharide 2",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Fully protected pentasaccharide 38 is synthesized.",
+        "gap": "Global deprotection is needed to obtain the target pentasaccharide 2.",
+        "decision": "Global deprotection will follow a similar sequential procedure as for pentasaccharide 1: converting NHTroc and azide groups to NHAc, removing anomeric TDS, and hydrogenolysis of Bn, Cbz, and Fmoc groups.",
+        "outcome": "Target pentasaccharide 2 was obtained after global deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(=O)N[C@H]1[C@H](O)[C@H](O[C@H]2[C@@H](O)[C@H](O)[C@H](NC(C)=O)O[C@H]2CO)O[C@@H](CO)[C@H]1O[C@@H]1O[C@@H](O)[C@@H](O)[C@@H](N)[C@@H]1O.CC[C@H](O[C@@H]1O[C@@H](CO)[C@@H](O)[C@@H](O)[C@@H]1O)C(=O)[O-]"
+        ],
+        "reagents": [
+          "Zn",
+          "AcOH",
+          "Ac2O",
+          "HF/Pyridine",
+          "Pd(OH)2/C",
+          "H2"
+        ],
+        "solvent": "THF/AcOH/Ac2O/Pyridine/t-BuOH/H2O/CH2Cl2",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The global deprotection of 38 provided the desired pentasaccharide 2 through a similar sequential procedure as described for the preparation of 1."
+      },
+      "evidence": {
+        "text_span": "The global deprotection of 38 provided the desired pentasaccharide 2 through a similar sequential procedure as described for the preparation of 1.",
+        "section": "Synthesis of β-ManNAc-Containing Pentasaccharide 2"
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Pentasaccharide 2, containing a beta-ManNAc residue, has been synthesized.",
+        "gap": "The NMR data of 2 needs to be compared with reported data for natural PS A2 to validate the hypothesis regarding ManNAc anomeric configuration.",
+        "decision": "Conduct a detailed analysis of the NMR spectra of pentasaccharide 2, specifically comparing the 1H NMR data of the ManNAc residue with literature values.",
+        "outcome": "The 1H NMR data of the ManNAc residue in 2 showed excellent agreement with reported literature values, strongly supporting the presence of a beta-linked ManNAc residue in natural PS A2."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "1H NMR data of ManNAc residue in pentasaccharide 2 were excellently identical to the literature values, with chemical shift deviations not exceeding 0.04 ppm. This provides strong evidence for the presence of a beta-linked ManNAc residue in natural PS A2."
+      },
+      "evidence": {
+        "text_span": "Next, we conducted a detailed analysis of the NMR spectra of pentasaccharide 2. 1H NMR data of ManNAc residue were excellently identical to the literature values,13 with the deviations of chemical shifts not exceeding 0.04 ppm (Scheme 4B and Table S2). These data provide strong evidence for the presence of a β-linked ManNAc residue in natural PS A2.",
+        "section": "Synthesis of β-ManNAc-Containing Pentasaccharide 2",
+        "image_refs": [
+          "30d37c11b3dcc2e3cd7f5ac30856ad7fe77f8a0f2af7047cba47ada946843e58.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": "Disaccharide 41",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The goal is to synthesize pentasaccharide 3, containing both beta-ManNAc and beta-Hep linkages. The challenging beta-Hep linkage needs to be constructed.",
+        "gap": "A suitable glycosylation method for stereoselective beta-heptosylation is needed.",
+        "decision": "Attempt Yu glycosylation (gold(I)-catalyzed) with glycosyl OABz donor 40a and acceptor 39, testing different gold(I) catalysts.",
+        "outcome": "Only alpha-linked product 41 was generated, regardless of the gold(I) catalyst used. This suggests the reaction did not proceed via the desired SN2-type substitution."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Ph3PAuOTf",
+          "Ph3PAuBAR4F",
+          "SPhosAuNTf2"
+        ],
+        "solvent": "PhCl",
+        "temperature": "-40 °C to r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "The coupling of glycosyl OABz donor 40a with acceptor 39 under different gold(I) catalysts generated only alpha-linked product 41 (JC1-H1 = 171 Hz). This outcome was attributed to the reaction predominantly affording alpha-linked products via an SN1 pathway, where stereoselectivity was affected by the anomeric effect of the glycosyl donor, rather than the desired SN2-type substitution."
+      },
+      "evidence": {
+        "text_span": "Yu glycosylation was first employed to access the β-heptoside.27,53 Unfortunately, the coupling of glycosyl ABz donor 40a with acceptor 39 under different gold(I) catalysts generated only α- linked product 41 (JC1-H1 = 171 Hz, Table 2 Entries 1−3). When glycosyl ABz donor 40b (α/β = 5/1 ) containing an isopropylidene group at C-2/3-OH was tested, a small amount of β-disaccharide was generated (β/α = 1/7.5, JC1-H1 = 163 : Hz for β-anomer, JC1-H1 = 174 : Hz for α-anomer, Table 2 Entry 4). We postulated that the reactions might fail to proceed through SN2-type substitution via the 1-glycosyloxyisochromenylium-4- gold(I) intermediate.27 Consequently, the reaction predominantly afforded α-linked products via an SN1 pathway, where the stereoselectivity was affected by the anomeric effect of the glycosyl donor.",
+        "section": "Synthesis of Pentasaccharide 3 Containing Both β-ManNAc and β-Hep Linkages",
+        "image_refs": [
+          "4631ebfb71925778ab9fd443455e0d2b3d4ade18a2a4f965d1497ef48d439dd1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": "Disaccharide 41",
+      "action": "revision",
+      "revises_step_id": 26,
+      "thought": {
+        "background": "Yu glycosylation with OABz donors failed to provide beta-heptosides.",
+        "gap": "A different glycosylation method is needed to achieve beta-selectivity for the Hep linkage.",
+        "decision": "Employ B(C6F5)3-promoted stereoselective glycosylation of alpha-Hep-TCAI donor 40c with acceptor 39. Optimize reaction temperature to improve beta-selectivity.",
+        "outcome": "At -10 °C, a slightly improved beta-selectivity (1:4.5 beta/alpha) was observed. Decreasing the temperature to -78 °C significantly increased beta-selectivity to 2:1 beta/alpha, yielding 41 in 89% yield. Using donor 40d with an isopropylidene group further improved beta-selectivity to 4:1 beta/alpha, yielding 42 in 82% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "B(C6F5)3"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-10 °C/-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "regio_selectivity": "beta/alpha = 4/1",
+        "observation": "B(C6F5)3-promoted glycosylation of alpha-Hep-TCAI donor 40c with 39 showed improved beta-selectivity at lower temperatures. At -78 °C, 89% yield with 2:1 beta/alpha. Using donor 40d with an isopropylidene group further improved beta-selectivity to 4:1 beta/alpha, yielding 42 in 82% yield. The beta-anomer 42beta can be easily purified."
+      },
+      "evidence": {
+        "text_span": "Given the success of tris(pentafluorophenyl)- borane (B(C6F5)3)-promoted stereoselective glycosylation of 653 superarmed trichloroacetimidate (TCAI) donor,28 particularly with perbenzyl-mannosyl TCAI donors, the α-Hep-TCAI donor 40c was examined for glycosylation with 39. To our delight, a slightly improved β-selectivity (β/α = 1/4.5, JC1-H1 = 157 Hz for β-anomer) was observed under a catalytic amount of B(C6F5)3 in DCM at −10 °C (Table 2 Entry 5). When the reaction temperature was decreased to −78 °C, the disaccharide 41 was obtained in 89% yield with a significant increase in β-selectivity (β/α = 2/1, Table 2, Entry 6). Furthermore, the glycosylation of 40d and 39 in the presence of B(C6F5)3 at −78 °C afforded the disaccharide 42 in 82% yield with better β-selectivity (β/α = 4/1, Table 2, Entry 7). This β-selectivity could be attributed to the acid−base catalyst B(C6F5)3, which forms an adduct with the acceptor and stereoselectively activates the α-OTCAI glycosyl donor through β-face attack to afford β-glycoside.28 The β-anomer 42β can be easily purified by silica gel column chromatography.",
+        "section": "Synthesis of Pentasaccharide 3 Containing Both β-ManNAc and β-Hep Linkages",
+        "image_refs": [
+          "4631ebfb71925778ab9fd443455e0d2b3d4ade18a2a4f965d1497ef48d439dd1.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 28,
+      "fragment_id": "Pentasaccharide 43",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Beta-linked heptosidic disaccharide 42beta is available. The goal is to assemble fully protected pentasaccharide 3.",
+        "gap": "A suitable coupling approach is needed to incorporate the beta-Hep linkage into the pentasaccharide.",
+        "decision": "Attempt a [2+3] coupling approach based on Yu's glycosylation protocol, using ortho-alkynylbenzoate disaccharide donor S21 with trisaccharide acceptor 8.",
+        "outcome": "Only the alpha-ManN3 linkage was formed, likely due to steric hindrance, indicating this approach was not suitable for forming the desired beta-ManNAc linkage in the context of the Hep residue."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Ph3PAuOTf"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "Only the alpha-ManN3 linkage (JC1-H1 = 175 Hz) was formed by the coupling of ortho-alkynylbenzoate disaccharide donor S21 with trisaccharide acceptor 8. This outcome might be attributed to the steric hindrance effect of C-3-linked Hep residue in the ManN3 moiety, which constrained the beta-face attack of acceptor 8."
+      },
+      "evidence": {
+        "text_span": "With the β-linked heptosidic disaccharide 42β in hand, we attempted to assemble the fully protected pentasaccharide through a [2 + 3] coupling approach based on Yu’s glycosylation protocol27,49 (Scheme S15). Unfortunately, only the α-ManN3 linkage (JC1-H1 = 175 Hz)) was formed by the coupling of ortho-alkynylbenzoate disaccharide donor S21 with trisaccharide acceptor 8 under the catalysis of Ph3PAuOTf. . This outcome might be attributed to the steric hindrance effect of C-3-linked Hep residue in the ManN3 moiety, which constrained the β-face attack of acceptor 8. 54",
+        "section": "Synthesis of Pentasaccharide 3 Containing Both β-ManNAc and β-Hep Linkages"
+      }
+    },
+    {
+      "step_id": 29,
+      "fragment_id": "Pentasaccharide 43",
+      "action": "revision",
+      "revises_step_id": 28,
+      "thought": {
+        "background": "The [2+3] coupling approach for pentasaccharide 3 failed to provide the desired beta-ManNAc linkage.",
+        "gap": "An alternative synthetic route is needed to assemble pentasaccharide 3, incorporating the beta-Hep linkage.",
+        "decision": "Design an alternate synthetic route using a [1+4] coupling approach, leveraging the established B(C6F5)3-promoted beta-heptosylation. Tetrasaccharide 37 will be coupled with TCAI donor 41d.",
+        "outcome": "The beta-linked heptosidic pentasaccharide 43 was successfully generated in 61% yield with 4:1 beta/alpha selectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(CC(=O)OCc1ccccc1)OC1C(C)OC2OC(C(=O)CCl)CC(C)(C)OC2CC(Oc2ccccc2)C1Oc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "B(C6F5)3"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "regio_selectivity": "beta/alpha = 4/1",
+        "observation": "The tetrasaccharide 37 was coupled with TCAI donor 41d under B(C6F5)3 activation at -78 °C, smoothly generating the beta-linked heptosidic pentasaccharide 43 in an isolated yield of 61% (beta/alpha = 4/1, JC1-H1 = 163 Hz for beta-anomer)."
+      },
+      "evidence": {
+        "text_span": "Therefore, we designed an alternate synthetic route in which the pentasaccharide 3 would be assembled by a [1 + 4] coupling approach based on the established B(C6F5)3-promoted β-heptosylation (Scheme 5A). The tetrasaccharide 37 was coupled with TCAI donor 41d under B(C6F5)3 activation at −78 °C, smoothly generating the β-linked heptosidic pentasaccharide 43 in an isolated yield of 61% (β/α = 4/1, JC1-H1 = 163 Hz for β-anomer).",
+        "section": "Synthesis of Pentasaccharide 3 Containing Both β-ManNAc and β-Hep Linkages",
+        "image_refs": [
+          "0c0c02009edc3241247404241193c00748f6f8540dfee45c2f797c298d2cfa51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 30,
+      "fragment_id": "Pentasaccharide 3",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Fully protected pentasaccharide 43 is synthesized.",
+        "gap": "Global deprotection is needed to obtain the target pentasaccharide 3.",
+        "decision": "Global deprotection will involve converting azide groups to NHAc (thioacetic acid), cleaving anomeric TDS (HF/pyridine), hydrolyzing isopropylidene and benzylidene acetals (80% HOAc), and hydrogenolytic cleavage of Bn and Cbz groups (Pd(OH)2/C).",
+        "outcome": "Target pentasaccharide 3 was obtained in 44% yield after global deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC[C@H](C(=O)[O-])[C@H](O)[C@@H]1O[C@@H](O[C@@H]2[C@H](O[C@@H]3O[C@@H](O[C@@H]4O[C@@H](O)[C@H](O)[C@@H](N(C)C)[C@@H]4O)[C@H](O)[C@@H](NC(C)=O)[C@@H]3O[C@H]3[C@@H](O)[C@H](O)[C@@H](CO)O[C@H]3O)O[C@@H](CO)[C@H](O)[C@@H]2O)[C@@H](O)[C@H](O)[C@H]1O"
+        ],
+        "reagents": [
+          "AcSH",
+          "HF/Pyridine",
+          "80% HOAc",
+          "Pd(OH)2/C",
+          "H2"
+        ],
+        "solvent": "pyridine/AcSH/t-BuOH/H2O/CH2Cl2",
+        "temperature": "40 °C/r.t./80 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 44,
+        "observation": "All azide groups were transformed to NHAc, followed by cleavage of TDS, hydrolysis of acetals, and hydrogenolytic cleavage of Bn and Cbz groups to afford pentasaccharide 3."
+      },
+      "evidence": {
+        "text_span": "Next, we proceeded with the global deprotection of 43. First, all azide groups were successfully transformed to NHAc using thioacetic acid (AcSH).55 Subsequently, the anomeric TDS group was cleaved by HF/pyridine, and the isopropylidene and benzylidene acetals were hydrolyzed with 80% HOAc. Finally, the hydrogenolytic cleavage of Bn and Cbz groups with Pd(OH)2/C afforded the desired pentasaccharide 3.",
+        "section": "Synthesis of Pentasaccharide 3 Containing Both β-ManNAc and β-Hep Linkages",
+        "image_refs": [
+          "0c0c02009edc3241247404241193c00748f6f8540dfee45c2f797c298d2cfa51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 31,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Pentasaccharide 3, containing both beta-ManNAc and beta-Hep linkages, has been synthesized.",
+        "gap": "The NMR data of 3 needs to be compared with reported data for natural PS A2 to validate the hypothesis regarding both ManNAc and Hep anomeric configurations.",
+        "decision": "Conduct a detailed analysis of the NMR spectra of pentasaccharide 3, specifically comparing the 1H NMR data of the ManNAc and Hep residues with literature values.",
+        "outcome": "The 1H NMR signals of the beta-ManNAc residue correlated well with reported data. The key H-1 and H-5 protons of the beta-linked Hep residue in 3 showed smaller 1H Δδ deviations compared to the alpha-linked Hep in 1 and 2, aligning more closely with natural PS A2."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "1H NMR signals from the beta-ManNAc residue correlated well with the recorded data of the natural PS A2. Compared with the alpha-linked Hep residue in 1 and 2, the key H-1 and H-5 protons of beta-linked Hep residue in 3 displayed a smaller 1H Δδ deviation relative to the reported values."
+      },
+      "evidence": {
+        "text_span": "As depicted in Scheme 5B,C, 1H NMR signals from the β- ManNAc residue correlated well with the recorded data of the natural PS A2. Compared with the α-linked Hep residue in 1 and 2, the key H-1 and H-5 protons of β-linked Hep residue in 3 displayed a smaller 1H Δδ deviation relative to the reported values (Table S2).",
+        "section": "Synthesis of Pentasaccharide 3 Containing Both β-ManNAc and β-Hep Linkages",
+        "image_refs": [
+          "0c0c02009edc3241247404241193c00748f6f8540dfee45c2f797c298d2cfa51.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 32,
+      "fragment_id": "Disaccharide 45",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "To further investigate the influence of AAT substitution on Hep NMR chemical shifts, trisaccharide 4 (mimicking the natural sequence flanking Hep) needs to be synthesized. This requires the introduction of an alpha-linked AAT residue.",
+        "gap": "A new AAT building block (48) with 4-NHTCA and 2-N3 groups is needed to facilitate alpha-AAT linkage formation and subsequent NHAc installation. Then, ManN3 acceptor 44 and Hep-TCAI donor 41d need to be coupled.",
+        "decision": "Synthesize AAT building block 48. Couple ManN3 acceptor 44 and Hep-TCAI donor 41d in the presence of B(C6F5)3 to yield beta-linked heptosidic disaccharide 45.",
+        "outcome": "Beta-linked heptosidic disaccharide 45 was obtained in 63% yield (JC1-H1 = 160 Hz)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)OC1OC(CN=[N+]=[N-])C(O)C(OCc2ccccc2)C1OCc1ccccc1",
+          "CC(CC(=O)OCc1ccccc1)OC1C(C)OC2OC(C(=O)CCl)CC(C)(C)OC2CC(Oc2ccccc2)C1Oc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(CC(=O)OCc1ccccc1)OC1C(C)OC2OC(OC3OC(CN=[N+]=[N-])C(O)C(OCc4ccccc4)C3OCc3ccccc3)CC(C)(C)OC2CC(Oc2ccccc2)C1Oc1ccccc1"
+        ],
+        "reagents": [
+          "B(C6F5)3"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "observation": "ManN3 acceptor 44 and Hep-TCAI donor 41d were coupled in the presence of B(C6F5)3, yielding the beta-linked heptosidic disaccharide 45 in 63% yield (JC1-H1 = 160 Hz)."
+      },
+      "evidence": {
+        "text_span": "First, ManN3 acceptor 44 (Scheme S11) and Hep-TCAI donor 41d were coupled in the presence of B(C6F5)3, yielding the β- linked heptosidic disaccharide 45 in 63% yield (JC1-H1 = 160 Hz).",
+        "section": "Synthesis of Frame-Shift Trisaccharide 4 Containing β-Hep Linkage and Trisaccharide 5 Containing α-Hep Linkage for Comparative NMR Analysis of Hep Residue Deviations",
+        "image_refs": [
+          "82adcba8ac7bee8820b4bd9c2d9da03aee34c397e0d377873ae0af77b224b547.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 33,
+      "fragment_id": "Disaccharide acceptor 47",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Disaccharide 45 is formed.",
+        "gap": "Isopropylidene cleavage, regioselective C-3-OH benzylation, azide reduction, and trichloroacetylation are needed to prepare disaccharide acceptor 47.",
+        "decision": "Compound 45 will undergo isopropylidene cleavage and regioselective C-3-OH benzylation to provide 46. Zinc-mediated azide reduction will yield an amine intermediate, which will be acetylated by TCACl to furnish disaccharide acceptor 47.",
+        "outcome": "Disaccharide acceptor 47 was successfully prepared."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(CC(=O)OCc1ccccc1)OC1C(C)OC2OC(OC3OC(CN=[N+]=[N-])C(O)C(OCc4ccccc4)C3OCc3ccccc3)CC(C)(C)OC2CC(Oc2ccccc2)C1Oc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)OC1OC(CNC(=O)CCl)C(O)C(OCc2ccccc2)C1OCc1ccccc1"
+        ],
+        "reagents": [
+          "80% CH3COOH",
+          "n-Bu2SnO",
+          "BnBr",
+          "CsF",
+          "TBAI",
+          "Zn",
+          "TCACl"
+        ],
+        "solvent": "DMF/PhMe",
+        "temperature": "80 °C/110 °C/r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Subsequent isopropylidene cleavage and regioselective C-3-OH benzylation of the Hep moiety provided compound 46. Zinc-mediated reduction of the azide group of 46 generated an amine intermediate, which was acetylated by trichloroacetyl chloride (TCACl) to furnish disaccharide acceptor 47."
+      },
+      "evidence": {
+        "text_span": "Subsequent isopropylidene cleavage and regioselective C-3-OH benzylation of the Hep moiety provided compound 46. Zinc-mediated reduction of the azide group of 46 generated an amine intermediate, which was acetylated by trichloroacetyl chloride (TCACl) to furnish disaccharide acceptor 47.",
+        "section": "Synthesis of Frame-Shift Trisaccharide 4 Containing β-Hep Linkage and Trisaccharide 5 Containing α-Hep Linkage for Comparative NMR Analysis of Hep Residue Deviations",
+        "image_refs": [
+          "82adcba8ac7bee8820b4bd9c2d9da03aee34c397e0d377873ae0af77b224b547.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 34,
+      "fragment_id": "Trisaccharide 49",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "PTFAI donor 48 and disaccharide acceptor 47 are available.",
+        "gap": "These need to be coupled to form trisaccharide 49 with excellent alpha-selectivity for the AAT linkage.",
+        "decision": "TfOH-promoted glycosylation will be performed in a mixed solvent of CH2Cl2/Et2O, relying on the 4-NHTCA group in 48 for remote neighboring group participation and alpha-selectivity.",
+        "outcome": "Trisaccharide 49 was obtained in 71% yield with excellent alpha-selectivity (JC1-H1 = 175 Hz)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)OC1OC(CN=[N+]=[N-])C(O)C(OCc2ccccc2)C1OCc1ccccc1",
+          "CC(C)OC1OC(CNC(=O)CCl)C(O)C(OCc2ccccc2)C1OCc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(CC(=O)OCc1ccccc1)OC1C(C)OC2OC(OC3OC(CNC(=O)CCl)C(O)C(OCc4ccccc4)C3OCc3ccccc3)CC(C)(C)OC2CC(Oc2ccccc2)C1Oc1ccccc1"
+        ],
+        "reagents": [
+          "TfOH"
+        ],
+        "solvent": "CH2Cl2/Et2O",
+        "temperature": "-25 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "observation": "TfOH-promoted glycosylation of PTFAI donor 48 and acceptor 47 in a mixed solvent of CH2Cl2/Et2O afforded trisaccharide 49 in 71% yield with excellent alpha-selectivity (JC1-H1 = 175 Hz)."
+      },
+      "evidence": {
+        "text_span": "TfOH-promoted glycosylation of PTFAI donor 48 and acceptor 47 in a mixed solvent of CH2Cl2/Et2O afforded trisaccharide 49 in 71% yield with excellent α-selectivity (JC1-H1 = 175 Hz)).",
+        "section": "Synthesis of Frame-Shift Trisaccharide 4 Containing β-Hep Linkage and Trisaccharide 5 Containing α-Hep Linkage for Comparative NMR Analysis of Hep Residue Deviations",
+        "image_refs": [
+          "82adcba8ac7bee8820b4bd9c2d9da03aee34c397e0d377873ae0af77b224b547.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 35,
+      "fragment_id": "Trisaccharide 4",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Trisaccharide 49 is synthesized.",
+        "gap": "Global deprotection is needed to obtain the target trisaccharide 4.",
+        "decision": "Target trisaccharide 4 will be obtained via one-step Pd(OH)2/C-catalyzed hydrogenation to convert NHTCA to NHAc and remove Bn and Nap groups.",
+        "outcome": "Target trisaccharide 4 was obtained in 72% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(CC(=O)OCc1ccccc1)OC1C(C)OC2OC(OC3OC(CNC(=O)CCl)C(O)C(OCc4ccccc4)C3OCc3ccccc3)CC(C)(C)OC2CC(Oc2ccccc2)C1Oc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(=O)NC1C(OC2OC(OC3(CO)OC(OC(C)C)C(O)C3O)C(O)C(O)C2O)OC(C(C)CC(=O)[O-])C(O)C1O.C[H+]N"
+        ],
+        "reagents": [
+          "Pd(OH)2/C",
+          "H2"
+        ],
+        "solvent": "t-BuOH/H2O/CH2Cl2",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "observation": "The target trisaccharide 4 was efficiently obtained via one-step Pd(OH)2/C-catalyzed hydrogenation for converting NHTCA to NHAc and removing Bn and Nap groups."
+      },
+      "evidence": {
+        "text_span": "Next, the target trisaccharide 4 was efficiently obtained via one-step Pd(OH)2/C-catalyzed hydrogenation for converting NHTCA to NHAc60 and removing Bn and Nap groups.",
+        "section": "Synthesis of Frame-Shift Trisaccharide 4 Containing β-Hep Linkage and Trisaccharide 5 Containing α-Hep Linkage for Comparative NMR Analysis of Hep Residue Deviations",
+        "image_refs": [
+          "82adcba8ac7bee8820b4bd9c2d9da03aee34c397e0d377873ae0af77b224b547.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 36,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Trisaccharide 4 (beta-Hep linkage) and trisaccharide 5 (alpha-Hep linkage) have been synthesized.",
+        "gap": "Comparative NMR analysis is needed to understand the influence of AAT substitution and Hep anomeric configuration on NMR chemical shifts.",
+        "decision": "Compare the sugar ring proton chemical shifts of the beta-linked Hep residue in 4 with the native structure, and analyze the H-1 proton of the alpha-linked Hep residue in 5.",
+        "outcome": "The beta-linked Hep residue in 4 showed NMR chemical shifts closer to the native structure. The alpha-linked Hep residue in 5 showed a significant downfield shift for H-1, indicating a larger discrepancy with the literature value. This confirmed that alpha-linked AAT at C-2-OH of Hep significantly influences 1H NMR signals."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The sugar ring proton chemical shifts of beta-linked Hep residue in 4 were closer to those of the native structure than beta-linked Hep moiety in 3. Upon glycosylation with AAT, the H-1 proton of the alpha-linked Hep residue in 5 underwent a significant downfield shift, resulting in a larger discrepancy compared to the literature value. This revealed that alpha-linked AAT at the C-2-OH of the Hep moiety significantly influenced the 1H NMR signals of the Hep residue. 13C NMR data of beta-linked Hep in 3 also aligned more closely with the native structure."
+      },
+      "evidence": {
+        "text_span": "As depicted in Scheme 6B, the sugar ring proton chemical shifts of β-linked Hep residue in 4 were closer to those of the native structure than β-linked Hep moiety in 3. Notably, upon glycosylation with AAT, the H-1 proton of the α-linked Hep residue in 5 underwent a significant downfield shift (Scheme 6C), resulting in a larger discrepancy compared to the literature value. These results revealed that α-linked AAT at the C-2-OH of the Hep moiety significantly influenced the 1H NMR signals of the Hep residue. Additionally, 13C NMR data from the sugar ring carbon of the β-linked Hep residue in compound 3 also aligned more closely with those of the native structure (Table S5).",
+        "section": "Synthesis of Frame-Shift Trisaccharide 4 Containing β-Hep Linkage and Trisaccharide 5 Containing α-Hep Linkage for Comparative NMR Analysis of Hep Residue Deviations",
+        "image_refs": [
+          "9af5cd2baa4f343d60a6ca97a383abc97896072807abd23b29ff2defda8c12aa.jpg",
+          "b8d4c187b0f125470.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "47",
+        "unit": "%",
+        "interpretation": "Overall yield for pentasaccharide 1"
+      },
+      "Longest Linear Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "unspecified"
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "unspecified"
+      },
+      "Failed Attempts Count": {
+        "value": "4",
+        "unit": "attempts",
+        "interpretation": "Number of explicitly reported failed attempts during the synthesis of pentasaccharides 2 and 3."
+      }
+    },
+    "significance": "The total synthesis of the PS A2 pentasaccharide repeating unit (1) was achieved, enabling the revision of anomeric configurations for ManNAc and Hep residues. Comparative NMR analysis of synthetic variants (2, 3, 4, 5) confirmed that beta-linked ManNAc and Hep residues align more closely with the native PS A2 structure. This work provides well-defined PS A2-related oligosaccharides for immunological studies and establishes robust synthetic methodologies for complex zwitterionic glycans, facilitating carbohydrate-based therapeutic development."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.5c01070",
+      "pmcid": "PMC12648304",
+      "title": "Total Synthesis and Anomeric Configuration Revision of Zwitterionic Polysaccharide A2's Pentasaccharide Repeating Unit from &lt;i&gt;Bacteroides fragilis&lt;/i&gt;.",
+      "authors": "Hao T, Zhang L, Li T.",
+      "journal": "JACS Au",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12648304?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/79314ca7-d1a7-471a-a975-94d707feafb6.zip",
+      "parsed_at": "2026-05-11T06:40:14.574833+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 75,
+    "parseable": 23,
+    "canonicalized": 21,
+    "invalid": 52,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1=CC=C(C=C1)S[C@H]2O[C@H](CO)[C@@H](OBn)[C@H](OBn)[C@@H]2OBn",
+      "CC1=CC=C(C=C1)S[C@H]2O[C@H](COC(=O)[C@H](C)O)[C@@H](OBn)[C@H](OBn)[C@@H]2OBn",
+      "CC1=CC=C(C=C1)S[C@H]2O[C@H](COC(=O)[C@H](C)O)[C@@H](OBn)[C@H](OBn)[C@@H]2OBn",
+      "CC1=CC=C(C=C1)S[C@H]2O[C@H](COC(=O)C)[C@@H](OBn)[C@H](OBn)[C@@H]2OBn",
+      "CC1=CC=C(C=C1)S[C@H]2O[C@H](COC(=O)C)[C@@H](OBn)[C@H](OBn)[C@@H]2OBn",
+      "CC1=CC=C(C=C1)S[C@H]2O[C@H](COC(=O)C)[C@@H](OBn)[C@H](OFmoc)[C@@H]2OBn",
+      "CC1=CC=C(C=C1)S[C@H]2O[C@H](COC(=O)C)[C@@H](OBn)[C@H](OFmoc)[C@@H]2OBn",
+      "CC1=CC=C(C=C1)S[C@H]2O[C@H](COC(=O)C)[C@@H](OBn)[C@H](OFmoc)[C@@H]2OBn",
+      "CC(C)(C)[Si](C)(C)OC1C(N=[N+]=[N-])C(ONaP)C(O)C(CO)O1",
+      "O=C(OCC1=CC=CC=C1)N[C@H]1[C@@H](O)C[C@H](N=[N+]=[N-])O[C@H]1OTDS"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

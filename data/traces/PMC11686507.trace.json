@@ -1,0 +1,935 @@
+{
+  "trace_id": "TS-PMC11686507",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Osmitopsin",
+    "smiles": "C=C1C(=O)O[C@@H](C(=C)C)[C@@H]2CCC=C(C)[C@H]12",
+    "natural_product_class": "guaianolide sesquiterpenoid lactone",
+    "structural_features": {
+      "molecular_weight": 246.33,
+      "stereocenters": 5,
+      "ring_systems": "guaianolide",
+      "key_motifs": [
+        "alpha-methylene-gamma-butenolide"
+      ]
+    },
+    "motivation": "To facilitate future investigations into the structure-activity relationship of osmitopsin-type compounds, the synthesis of diverse congeners at C1 and C10 is being targeted. The paper also aims to address the disparity in spectral data for 4,5-epoxy-osmitopsin and explore its biological profile.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Metz",
+        "year": 2016,
+        "doi": "10.1021/acs.orglett.6b01340",
+        "key_strategy": "Domino Metathesis"
+      },
+      {
+        "lead_author": "Posner",
+        "year": 1980,
+        "doi": "10.1021/ja00545a029",
+        "key_strategy": "Stereocontrolled total synthesis of an alpha-methylene guaianolide"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Stereodivergent synthesis of both C1 epimers of 6,12-guaianolide lactone motifs (alpha-H and beta-H at C1) and efficient syntheses of diverse osmitopsin-type guaianolides."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C1-C10 and C5-C6 bonds of guaianolide core",
+        "named_strategy": "Oxy-Cope/Ene reaction cascade",
+        "reasoning": "This cascade is designed to generate two distinct conformers of an intermediate germacranolide (4a and 4b), each leading to a specific C1 epimer of the guaianolide carbocycle. This mimics the biosynthetic origin involving stereoselective cyclization of a common germacranolide core.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond forming the 10-membered ring of elemanolide 5",
+        "named_strategy": "Reductive alkylation",
+        "reasoning": "To access the elemanolide precursor 5 from R-carvone.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Lactone ring formation",
+        "named_strategy": "Direct lactonization",
+        "reasoning": "To form the 6,12-lactone moiety.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Alkylation to introduce isopropenyl group",
+        "named_strategy": "Sterically induced alkylation",
+        "reasoning": "To introduce the remaining unsaturated alkyl chain towards the synthesis of the divergency scaffold 5.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The strategy focuses on a 'divergency scaffold' (elemanolide 5) that mimics biosynthetic routes, allowing for the stereodivergent synthesis of both C1 epimers of 6,12-guaianolide lactone motifs. The key is a rationally designed oxy-Cope/ene reaction cascade that generates two distinct conformers of an intermediate germacranolide, each leading to a specific C1 epimer. Molecular modeling calculations supported the accessibility of both C1 α and β isomers. This approach avoids the limitations of semisynthesis from chiral pools with fixed stereochemistry."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "R-carvone is a readily available chiral pool starting material.",
+        "gap": "Need to transform R-carvone into compound 6, which has an allylic chloride, to facilitate the introduction of the alpha-methylene-gamma-butenolide core.",
+        "decision": "To introduce the allylic chloride, chose a four-step sequence involving reductive alkylation, mesylation, dehydration, and allylic chlorination, expecting compound 6 in good overall yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)[C@@H]1CCC(=O)C1"
+        ],
+        "product_smiles": [
+          "C=C(C)C1C(=O)CC=C(C)C1Cl"
+        ],
+        "reagents": [
+          "L-selectride",
+          "acetaldehyde",
+          "Ca(OCl)2"
+        ],
+        "named_reaction": "Reductive alkylation, Mesylation, Dehydration, Allylic chlorination",
+        "solvent": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "Compound 6 was obtained in 56% overall yield from R-carvone."
+      },
+      "evidence": {
+        "text_span": "The synthesis commenced with the known transformation of R-carvone to compound 6 (Scheme 2A). The four-step sequence involves the reductive alkylation of R-carvone with L-selectride and acetaldehyde,3d,10 the subsequent mesylation and dehydration of the obtained secondary alcohol, and finally the allylic chlorination with Ca(OCl)2 to provide compound 6 in 56% overall yield.",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 6, with an allylic chloride, is available.",
+        "gap": "Need to convert the allylic chloride to a carboxylic acid (7) to prepare for lactonization.",
+        "decision": "To form the acrylic acid, chose treatment with sodium bicarbonate and sodium iodide in DMSO, followed by Lindgren’s protocol, expecting compound 7."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)C1C(=O)CC=C(C)C1Cl"
+        ],
+        "product_smiles": [
+          "C=C(C)C1C(=O)CC=C(C)C1C(=O)O"
+        ],
+        "reagents": [
+          "NaHCO3",
+          "NaI",
+          "NaH2PO4",
+          "NaClO2",
+          "H2O2"
+        ],
+        "solvent": "DMSO"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 43,
+        "observation": "Compound 7 was obtained in 43% yield."
+      },
+      "evidence": {
+        "text_span": "Thus, obtained compound 6 was readily transformed to acrylic acid 7 by its treatment with sodium bicarbonate and sodium iodide in dimethyl sulfoxide (DMSO),11 followed by Lindgren’s protocol, before attempting its direct lactonization.",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acrylic acid 7 is available, and the goal is to form the 6,12-lactone moiety.",
+        "gap": "The pendant alkene in 7 is highly reactive toward electrophiles, posing a challenge for direct lactonization.",
+        "decision": "To overcome the alkene reactivity, chose a radical bromination process using N-bromosuccinimide (NBS) in the presence of UV light, followed by treatment with NaHCO3, expecting compound 8."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)C1C(=O)CC=C(C)C1C(=O)O"
+        ],
+        "product_smiles": [
+          "C=C(C)C1C(=O)CC=C(C)C1Br"
+        ],
+        "reagents": [
+          "NBS",
+          "NaHCO3"
+        ],
+        "solvent": "Et2O/THF",
+        "atmosphere": "UV light"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 53,
+        "observation": "Compound 8 was obtained in 53% yield after treatment with NaHCO3."
+      },
+      "evidence": {
+        "text_span": "The formation of the 6,12-lactone moiety for the synthesis of compound 8 posed a challenge due to the high reactivity of pendant alkene toward electrophiles. This issue was addressed through a radical bromination process, using N.-bromosuccinimide (NBS) in the presence of ultraviolet (UV) light, yielding compound 8 in 53% yield, after treatment with NaHCO3.",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alpha-methylene-gamma-butenolide 8 is available.",
+        "gap": "Need to protect the notoriously nucleophile-sensitive site of compound 8.",
+        "decision": "To protect the sensitive site, chose thiophenol and 4-dimethylaminopyridine (DMAP), expecting compound 9."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)C1C(=O)CC=C(C)C1Br"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "thiophenol",
+          "DMAP"
+        ],
+        "solvent": "DCM",
+        "temperature": "-20 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Compound 9 was obtained in 84% yield."
+      },
+      "evidence": {
+        "text_span": "With α-methylene-γ-butenolide 8 available in gramscale quantities, the next step involved protecting its notoriously nucleophile-sensitive site using thiophenol and 4-dimethylaminopyridine (DMAP), resulting in compound 9.",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Protected compound 9 is available, and the goal is to alkylate it to form the divergency scaffold 5.",
+        "gap": "Need to introduce the isopropenyl group selectively and in good yield.",
+        "decision": "To alkylate compound 9, chose isopropenyl magnesium bromide, expecting compound 5."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Isopropenyl magnesium bromide"
+        ],
+        "solvent": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Isopropenyl magnesium bromide led to a mixture of unidentified products."
+      },
+      "evidence": {
+        "text_span": "Attempts to alkylate compound 9 revealed its sensitivity to nucleophilic sources. Isopropenyl magnesium bromide led to a mixture of unidentified products",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Protected compound 9 is available, and previous attempts with isopropenyl magnesium bromide failed.",
+        "gap": "Need to introduce the isopropenyl group selectively and in good yield.",
+        "decision": "To alkylate compound 9, chose isopropenyl lithium, expecting compound 5."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Isopropenyl lithium"
+        ],
+        "solvent": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": "low",
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "Isopropenyl lithium returned a low yield of the desired product 5 with nonselective diastereoselection, along with products from the addition to carbonyl of the lactone moiety."
+      },
+      "evidence": {
+        "text_span": "while isopropenyl lithium returned a low yield of the desired product 5 with nonselective diastereoselection, along with products from the addition to carbonyl of the lactone moiety (see the Supporting Information).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "Previous attempts to alkylate compound 9 with isopropenyl magnesium bromide and isopropenyl lithium resulted in mixtures of products, low yields, and nonselective diastereoselection.",
+        "gap": "Need a more selective and higher yielding method to introduce the isopropenyl group with good diastereocontrol.",
+        "decision": "To overcome these issues, chose isopropenyl cerium chloride, expecting compound 5 as a mixture of diastereoisomers favoring the anti-orientation. Further optimization with LiCl as an additive was planned to improve diastereocontrol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Isopropenyl cerium chloride",
+          "LiCl"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "dr": "15:1",
+        "observation": "Isopropenyl cerium chloride yielded compound 5 in 66% yield with excellent diastereocontrol (dr = 15:1) after optimization with LiCl."
+      },
+      "evidence": {
+        "text_span": "To overcome these, isopropenyl cerium chloride was utilized providing compound 5 as a mixture of diastereoisomers [diastereomeric ratio (dr) = 4:1] favoring the anti-orientation between the alkenyl chains. Further optimization with the aid of LiCl as an additive yielded compound 5 in 66% yield in an excellent diastereocontrol (dr = 15:1) (Scheme 2A).",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Elemanolide 5, the divergency scaffold, is available.",
+        "gap": "Need to perform the key oxy-Cope/ene reaction cascade to generate the guaianolide core, specifically aiming for both C1 epimers (11 and 12).",
+        "decision": "To achieve the cascade, chose a thermal oxy-Cope reaction at 160 °C in deoxygenated toluene, expecting products 11 and 12 without isolating the germacranolide 4 intermediate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "named_reaction": "Oxy-Cope/ene reaction cascade",
+        "solvent": "toluene",
+        "temperature": "160 °C",
+        "atmosphere": "deoxygenated"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "regio_selectivity": "11:12 ratio of 3:1",
+        "observation": "Products 11 and 12 were produced in an almost 3:1 ratio, with an overall yield of 72%, without isolating the germacranolide 4 intermediate."
+      },
+      "evidence": {
+        "text_span": "In confirmation of our design and predictions, the thermal oxy-Cope reaction of compound 5 at 160 °C in deoxygenated toluene produced products 11 and 12 in an almost 3:1 ratio, with an overall yield of 72%, and, notably, without isolating the germacranolide 4 intermediate (Scheme 2B).",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The oxy-Cope/ene reaction of compound 5 in deoxygenated conditions yielded 11 and 12. The effect of oxygen on this reaction is unknown.",
+        "gap": "Need to understand the influence of dioxygen on the oxy-Cope/ene reaction cascade.",
+        "decision": "To investigate the effect of oxygen, conducted the thermal oxy-Cope/ene reaction at 160 °C in the presence of dioxygen, expecting a similar outcome or a different product distribution."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Oxy-Cope/ene reaction cascade",
+        "solvent": "toluene",
+        "temperature": "160 °C",
+        "atmosphere": "dioxygen"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 41,
+        "failure_mode": "decomposition",
+        "observation": "Only isomerized guaianolide 10 was obtained in 41% yield, suggesting an oxidative decomposition and/or transformation of compound 12 to compound 11 before the isomerization step."
+      },
+      "evidence": {
+        "text_span": "Intriguingly, when the thermal oxy-Cope/ene reaction was conducted at 160 °C in the presence of dioxygen, only isomerized guaianolide 10 was obtained in 41% yield, suggesting an oxidative decomposition and/or transformation of compound 12 to compound 11 before the isomerization step (Scheme 2B).",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The presence of dioxygen during the oxy-Cope/ene reaction led to isomerized product 10. This suggests a transformation of 11 and/or 12.",
+        "gap": "Need to confirm if compound 11 can isomerize to 10 under oxidative conditions and identify any intermediates.",
+        "decision": "To substantiate the hypothesis, heated a pure sample of compound 11 in toluene in the presence of dioxygen at 150 °C, expecting to observe 10 and potential intermediates."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "solvent": "toluene",
+        "temperature": "150 °C",
+        "atmosphere": "dioxygen"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Isolation of stable oxetane 14 and isomerized product 10, indicating a thermal opening of oxetane to compound 10."
+      },
+      "evidence": {
+        "text_span": "To substantiate our hypothesis, heating a pure sample of compound 11 in toluene in the presence of dioxygen at 150 °C led to the isolation of stable oxetane 14 and isomerized product 10, indicating a thermal opening of oxetane to compound 10.",
+        "section": "unspecified",
+        "image_refs": [
+          "6cd9acac6abd75c8b6fd149ab7dd31cc30c7aaec80ca8eece955656d7df94afd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Heating compound 11 under dioxygen produced oxetane 14 and isomerized product 10, suggesting 14 is an intermediate to 10.",
+        "gap": "Need to confirm the thermal opening of oxetane 14 to compound 10.",
+        "decision": "To confirm the thermal opening, heated oxetane 14 at 150 °C, expecting exclusive formation of product 10."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CCC2CC3OC(=O)C(CSCc4ccccc4)C3(O)C2C1"
+        ],
+        "product_smiles": [
+          "C=C1C2CC(C)CCC2CC2OC(=O)C(CSCc3ccccc3)C12"
+        ],
+        "temperature": "150 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Heating oxetane 14 at 150 °C led exclusively to the formation of product 10 in 80% yield."
+      },
+      "evidence": {
+        "text_span": "Indeed, heating oxetane 14 at 150 °C led exclusively to the formation of product 10 in 80% yield.",
+        "section": "unspecified",
+        "image_refs": [
+          "6cd9acac6abd75c8b6fd149ab7dd31cc30c7aaec80ca8eece955656d7df94afd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 11 isomerizes to 10 via oxetane 14 under oxidative conditions. The behavior of the other C1 epimer, 12, under similar conditions is unknown.",
+        "gap": "Need to investigate if compound 12 also undergoes oxidative isomerization.",
+        "decision": "To investigate, heated compound 12 under dioxygen at 150 °C, expecting to observe isomerized product 13 and potentially other products."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "temperature": "150 °C",
+        "atmosphere": "dioxygen"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 20,
+        "observation": "Oxidative transformation of compound 12 provided isomerized compound 13 in 20% yield without isolating respective oxetane 15, along with compounds 11 and 10."
+      },
+      "evidence": {
+        "text_span": "A similar oxidative transformation was also evidenced when compound 12 was heated under dioxygen at 150 °C, providing isomerized compound 13 in 20% yield without isolating respective oxetane 15, along with compounds 11 and 10.",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The oxy-Cope/ene reaction produced 11 and 12. The reversibility of the ene process is a key aspect of the proposed mechanism.",
+        "gap": "Need to demonstrate the reversibility of the ene process between 11 and 12.",
+        "decision": "To demonstrate reversibility, heated the β-H isomer 11 under deoxygenated conditions at 150 °C, expecting to observe a mixture of 11 and 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "solvent": "toluene",
+        "temperature": "150 °C",
+        "atmosphere": "deoxygenated"
+      },
+      "outcome": {
+        "valid": true,
+        "regio_selectivity": "11:12 ratio of 3:1",
+        "observation": "Heating the β-H isomer 11 under deoxygenated conditions at 150 °C led to a 3:1 mixture of compounds 11/12, demonstrating the reversibility of the ene process."
+      },
+      "evidence": {
+        "text_span": "Heating the β-H isomer 11 under deoxygenated conditions at 150 °C led to a 3:1 mixture of compounds 11/12, demonstrating the reversibility of the ene process.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "The oxy-Cope/ene reaction of compound 5 under deoxygenated conditions produced 11 and 12 in a 3:1 ratio, favoring 11. The goal is to achieve selective divergence between the two C1 epimers.",
+        "gap": "Need to find conditions that enrich the production of the α-H guaianolide stereoisomer 12.",
+        "decision": "To achieve this, introduced LiCl in the oxy-Cope/ene reaction of compound 5 in deoxygenated toluene at 160 °C, expecting a preference for compound 12 due to metal interaction between the carbonyl and lactone moieties."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiCl"
+        ],
+        "named_reaction": "Oxy-Cope/ene reaction cascade",
+        "solvent": "toluene",
+        "temperature": "160 °C",
+        "atmosphere": "deoxygenated"
+      },
+      "outcome": {
+        "valid": true,
+        "regio_selectivity": "12:11 ratio of 2:1",
+        "observation": "Compound 12 was obtained as a 2:1 mixture (with 11), indicating a clear preference for 12. This, combined with ene reaction reversibility, allows interconversion of isomer 11 to isomer 12 in 60% yield."
+      },
+      "evidence": {
+        "text_span": "Indeed, when LiCl was introduced in the oxy-Cope/ene reaction of compound 5 in deoxygenated toluene at 160 °Cλ, compound 12 was obtained as a 2:1 mixture, indicating a clear preference. Integrating this result with ene reaction reversibility allows the interconversion of isomer 11 to isomer 12 in 60% yield.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ample quantities of α-H isomer 12 are available. The goal is to synthesize osmitopsin (2).",
+        "gap": "Need to selectively reduce the alkene and achieve good diastereocontrol to obtain the β-methyl product 16.",
+        "decision": "To achieve this, chose reduction with hydrogen in the presence of Adams’ catalyst, expecting good diastereocontrol for product 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "H2",
+          "Adams’ catalyst"
+        ],
+        "named_reaction": "Hydrogenation"
+      },
+      "outcome": {
+        "valid": true,
+        "dr": "5:1",
+        "observation": "α-H isomer 12 was reduced with hydrogen in the presence of Adams’ catalyst to deliver the desired β-methyl product 16 in good diastereocontrol (dr = 5:1)."
+      },
+      "evidence": {
+        "text_span": "Initially, the total synthesis of the osmitopsin natural product (2) was pursued (right side of Scheme 1C). α-H isomer 12 was reduced with hydrogen in the presence of Adams’ catalyst to deliver the desired β-methyl product 16 in good diastereocontrol Ψ (dr = 5:1).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 16, with a tertiary hydroxyl at C5, is available. The next step is dehydration to osmitopsin’s core.",
+        "gap": "Need to dehydrate the tertiary hydroxyl at C5 selectively and in good yield without forming inseparable mixtures of regioisomeric alkene products.",
+        "decision": "To achieve dehydration, screened commonly employed conditions for activating tertiary hydroxyl at C5 (COCl2, POCl3, Martin sulfurane, etc.), expecting the desired dehydration."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "COCl2",
+          "POCl3",
+          "Martin sulfurane"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Screening commonly employed conditions for activating tertiary hydroxyl at C5 yielded inconsistent results, low yields, and inseparable mixtures of regioisomeric alkene products."
+      },
+      "evidence": {
+        "text_span": "Unfortunately, despite the plethora of available methods, its dehydration to osmitopsin’s core posed a significant challenge. Screening commonly employed conditions for activating tertiary hydroxyl at C5 (COCl2, POCl3, Martin sulfurane, etc.) yielded inconsistent results, low yields, and inseparable mixtures of regioisomeric alkene products.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Previous attempts to dehydrate compound 16 failed due to inconsistent results, low yields, and inseparable mixtures.",
+        "gap": "Need a more effective and selective dehydration method.",
+        "decision": "To achieve dehydration, chose Burgess reagent, expecting product 18."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Burgess reagent"
+        ],
+        "solvent": "toluene",
+        "temperature": "107 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "The reaction with Burgess reagent produced product 18 in moderate yield (55%); however, it proved sensitive to chromatographic purification and CDCl3 conditions and transformed acutely to the undesired regioisomer 19. (Yield 64% from image)"
+      },
+      "evidence": {
+        "text_span": "Fortuitously, the reaction with Burgess reagent produced product 18 in moderate yield (55%); however, it proved sensitive to chromatographic purification and CDCl3 conditions and transformed acutely to the undesired regioisomer 19.",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 17,
+      "thought": {
+        "background": "Product 18 from Burgess reagent dehydration was sensitive and transformed to undesired regioisomer 19 during purification/characterization.",
+        "gap": "Need to address the sensitivity issue of protected osmitopsin and achieve the formal synthesis of osmitopsin.",
+        "decision": "To address sensitivity, chose direct treatment of the Burgess reaction mixture with excess mCPBA, followed by deprotection with TBAF, expecting 4,5-epoxy-osmitopsin 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "mCPBA",
+          "TBAF"
+        ],
+        "solvent": "DCM",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 24,
+        "observation": "Direct treatment of the Burgess reaction mixture with excess mCPBA resulted in epoxidation and oxidation, followed by deprotection with TBAF, providing 4,5-epoxy-osmitopsin 20 in 23% over three steps (24% from image)."
+      },
+      "evidence": {
+        "text_span": "To address this sensitivity issue, the direct treatment of the Burgess reaction mixture with excess mCPBA resulted in the epoxidation of C4−C5 alkene and oxidation of sulfide to sulfone that was readily deprotected with tetrabutylammonium fluoride (TBAF) to provide the total synthesis of 4,5-epoxy-osmitopsin 20 in 23% over the three steps and the formal synthesis of osmitopsin.",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The sensitivity of protected osmitopsin (18) was an issue. An alternative approach is to deprotect first.",
+        "gap": "Need to deprotect compound 16 to 17 and then dehydrate it to avoid sensitivity issues.",
+        "decision": "To avoid sensitivity, chose initial deprotection of compound 16 with TBAF to compound 17, followed by dehydration with Burgess reagent, expecting osmitopsin."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBAF",
+          "Burgess reagent"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 91,
+        "failure_mode": "wrong_regiochemistry",
+        "observation": "Initial deprotection of compound 16 with TBAF to compound 17 (91% yield) followed by dehydration with Burgess reagent led unexpectedly solely to the corresponding C1−C5 alkene."
+      },
+      "evidence": {
+        "text_span": "Attempts to overpass the observed sensitivity of protected osmitopsin by the initial deprotection of compound 16 with TBAF to compound 17 followed by dehydration with Burgess reagent led unexpectedly solely to the corresponding C1−C5 alkene.",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241afob30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deprotected alcohol 17 is available. Previous dehydration attempts were problematic.",
+        "gap": "Need to find a method to dehydrate 17 to osmitopsin congeners.",
+        "decision": "To dehydrate, chose BF3·Et2O, expecting alkene products 21 and 22, and noted the requirement for dioxygen."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1OC(=O)C(C)C2CCC(CC2C)C1C"
+        ],
+        "product_smiles": [
+          "C=C[C@@H]1C(=O)O[C@@H]2CC[C@@H](C)[C@@H]1CC1=CC[C@@H](C)C[C@@H]12",
+          "C=C[C@@H]1C(=O)O[C@@H]2CC[C@@H](C)[C@@H]1CC1=C[C@@H](C)C[C@@H]12"
+        ],
+        "reagents": [
+          "BF3.OEt2"
+        ],
+        "atmosphere": "dioxygen"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 47,
+        "observation": "BF3·Et2O resulted in the stereoselective formation of alkene osmitopsin congeners 21 (C3−C4 alkene, 47% yield) and 22 (C1−C10 alkene, 31% yield). The reaction initiates only in the presence of dioxygen."
+      },
+      "evidence": {
+        "text_span": "Additional attempts to dehydrate deprotected alcohol 17 using BF3·Et2O resulted in the stereoselective formation of alkene osmitopsin congeners 21 (C3−C4 alkene) and 22 (C1−C10 alkene). Interestingly, the latter reaction initiates only in the presence of dioxygen, pointing again toward an oxidative radical-based process (Scheme 3).",
+        "section": "unspecified",
+        "image_refs": [
+          "c48893ae340752f5cdc54859d5700caa59e8016060cd04399cefeb3f7eb14594.jpg",
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "C1 epimer 11 is available. The goal is to explore its chemical behavior and synthesize 6-epi-10β-cichopumilide.",
+        "gap": "Need to introduce dienes from 11.",
+        "decision": "To introduce dienes, subjected 11 to a reaction with Martin’s sulfurane, expecting dienes 23 and 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "Martin’s sulfurane"
+        ],
+        "solvent": "toluene",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 39,
+        "observation": "Reaction with Martin’s sulfurane yielded dienes 23 (39% yield) and 25 (42% yield)."
+      },
+      "evidence": {
+        "text_span": "Focusing on exploring the chemical behavior of C1 epimer 11 (left side of Scheme 1C), we subjected it to a reaction with Martin’s sulfurane. This effort yielded dienes 23 and 25 in 39 and 42% yields, respectively.",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dienes 23 and 25 are available. The goal is to selectively form β-hydroxy compounds.",
+        "gap": "Need to perform selective hydration of the alkenes.",
+        "decision": "To achieve selective hydration, chose Mukaiyama hydration with Co(acac)2 catalysis, phenylsilane, and dioxygen, expecting β-hydroxy compounds 24 and 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "Co(acac)2",
+          "PhSiH3"
+        ],
+        "named_reaction": "Mukaiyama hydration",
+        "solvent": "EtOH",
+        "temperature": "r.t.",
+        "atmosphere": "dioxygen"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 38,
+        "observation": "Mukaiyama hydration resulted in the selective formation of β-hydroxy compounds 24 (38% yield from 23) and 26 (42% yield from 25)."
+      },
+      "evidence": {
+        "text_span": "With the employment of Mukaiyama hydration with Co(acac)2 catalysis, phenylsilane and dioxygen in both alkenes resulted in the selective formation of β-hydroxy compounds 24 and 26",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "β-hydroxy compounds 24 and 26 are available. The goal is to complete the synthesis of 6-epi-10β-cichopumilide and an unnatural derivative of artabsin.",
+        "gap": "Need to deprotect compounds 24 and 26.",
+        "decision": "To deprotect, chose TBAF, expecting the final products with correct stereochemistry."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          "C=C1C(=O)O[C@@H](C(C)(C)O)[C@@H]2CCC=C(C)[C@H]12",
+          ""
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Deprotection of 24 with TBAF yielded 6-epi-10β-cichopumilide (3) in 80% yield. Deprotection of 26 with TBAF yielded neoartabsin (27) in 39% yield."
+      },
+      "evidence": {
+        "text_span": "which, after deprotection with TBAF, possess the correct stereochemistry for the total synthesis of 6-epi-10β-cichopumilide and an unnatural derivative of artabsin (named neoartabsin), with the former standing out as an unprecedented 1-epi-·10β-hydroxy osmitopsin analogue.",
+        "section": "unspecified",
+        "image_refs": [
+          "34fba56524eb22c2ac8aa7e2a093241af0b30490a603ac38185641c7a63bb27f.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS"
+    ],
+    "metrics": {},
+    "significance": "The rationally designed synthesis allows for the unprecedented divergent synthesis of both C1 epimers of 6,12-guaianolide through a unified synthetic plan, harnessing the versatility of a reversible oxy-Cope/ene reaction cascade. This approach provides access to diverse osmitopsin-type congeners, which is crucial for structure-activity relationship studies. The work also highlights novel insights into alkoxy radical generation from tertiary alcohols under metal-free conditions."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.4c03504",
+      "pmcid": "PMC11686507",
+      "title": "Stereodivergent Synthesis of 6,12-Guaianolide C1 Epimers via a Rationally Designed Oxy-Cope/Ene Reaction Cascade.",
+      "authors": "Mazaraki K, Zangelidis C, Kelesidis A, Zografos AL.",
+      "journal": "Org Lett",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11686507?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/20e67bee-269a-4ed9-9ce1-a34ec100374d.zip",
+      "parsed_at": "2026-05-11T06:37:16.103367+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 58,
+    "parseable": 14,
+    "canonicalized": 14,
+    "invalid": 44,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1=CCC(=O)C(C(C)=C)C1SPh",
+      "CC1=CCC(=O)C(C(C)=C)C1SPh",
+      "CC1=CCC(=O)C(C(C)=C)C1SPh",
+      "CC1=CCC(=O)C(C(C)=C)C1SPh",
+      "CC1=CCC(=O)C(C(C)=C)C1SPh",
+      "CC1=CCC(=O)C(C(C)=C)C1SPh",
+      "CC1=CCC(=O)C(C(C)=C)C1SPh",
+      "CC1=CCC(=O)C(C(C)=C)C1SPh",
+      "CC1=CCC(=O)C(C(C)=C)C1SPh",
+      "CC1=CCC(=O)C(C(C)=C)C1SPh"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

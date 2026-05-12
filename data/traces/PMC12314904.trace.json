@@ -1,0 +1,637 @@
+{
+  "trace_id": "TS-PMC12314904",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-Flustramine A",
+    "smiles": "CC(C)=CCN1C2=C(CC(N)C2C(C)C)Nc2cc(Br)ccc21",
+    "natural_product_class": "indole alkaloid",
+    "structural_features": {
+      "molecular_weight": 390.32,
+      "stereocenters": 3,
+      "ring_systems": "hexahydropyrrolo[2,3-b]indole",
+      "key_motifs": [
+        "indole",
+        "prenyl",
+        "bromo"
+      ]
+    },
+    "motivation": "Flustramines are a subclass of C3a-reverse prenylated hexahydropyrrolo[2,3-b]indole natural products with broad biological activities. The authors aim to develop a catalytic enantioselective reverse prenylation of achiral 3-substituted indoles to access these compounds in a single step, addressing a systematic gap in asymmetric allylic substitution chemistry. This methodology is then applied to a short biomimetic total synthesis of (-)-flustramine A.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Trost",
+        "year": 2011,
+        "doi": "10.1021/ja201004j",
+        "key_strategy": "Palladium-catalyzed asymmetric prenylation of 2-oxoindolines followed by reductive cyclization."
+      },
+      {
+        "lead_author": "Trost",
+        "year": 2017,
+        "doi": "10.1002/chem.201604990",
+        "key_strategy": "Palladium-catalyzed asymmetric prenylation of 2-oxoindolines followed by reductive cyclization."
+      },
+      {
+        "lead_author": "Kawasaki",
+        "year": 2006,
+        "doi": "10.1039/B513990A",
+        "key_strategy": "Domino olefination/isomerization/Claisen rearrangement sequence."
+      },
+      {
+        "lead_author": "Hou",
+        "year": 2023,
+        "doi": "10.1021/acs.orglett.3c02600",
+        "key_strategy": "Catalytic asymmetric reverse prenylation of indol-2-one."
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "High yields and enantioselectivities, complete branched selectivity, single-step synthesis of hexahydropyrrolo[2,3-b]indoles from achiral tryptamines."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C3a-prenyl bond",
+        "named_strategy": "Iridium-catalyzed allylic substitution",
+        "reasoning": "This disconnection allows for the direct formation of the C3a-reverse prenylated hexahydropyrrolo[2,3-b]indole core in a single step from achiral tryptamines, mimicking the biomimetic addition of a prenyl electrophile to tryptamines. It addresses the challenges of regiocontrol (C- vs N-nucleophilicity and branched vs linear prenylation) and enantioselectivity."
+      },
+      {
+        "bond_description": "N1-methyl and N8-prenyl groups",
+        "named_strategy": "Reductive amination",
+        "reasoning": "These groups are installed in later steps, allowing for the initial enantioselective prenylation to focus on the core structure. Reductive amination is a common and efficient method for installing alkyl groups on amines."
+      }
+    ],
+    "rationale": "The strategy focuses on a direct, catalytic enantioselective reverse prenylation of achiral tryptamines to form the hexahydropyrrolo[2,3-b]indole core. This is a significant improvement over previous methods that often involved multi-step syntheses or lacked enantioselectivity. The subsequent installation of the N-methyl and N-prenyl groups via reductive amination is a straightforward approach to complete the natural product synthesis."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Previous work has shown that iridium catalysts are suitable for regioselective attack at the more substituted allyl terminus, leading to reverse prenylated products. Our own research developed an iridium-catalyzed diastereodivergent reverse prenylation of tryptophans. However, analogous transformations of achiral 3-substituted indoles have only been achieved racemically or with low enantioselectivity.",
+        "gap": "A catalytic enantioselective reverse prenylation of achiral 3-substituted indoles to directly form C3a-prenylated hexahydropyrrolo[2,3-b]indoles in a single step is lacking.",
+        "decision": "To address this gap, we will investigate the iridium-catalyzed reverse prenylation of achiral tryptamines, starting with Boc-tryptamine 2a as a model substrate, using established conditions from our previous work."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The literature review confirmed the need for a direct enantioselective method for reverse prenylation of achiral indoles."
+      },
+      "evidence": {
+        "text_span": "Our research in this field culminated in the development of an iridium-catalyzed diastereodivergent reverse prenylation of tryptophans that achieves stereoselectivity by the simultaneous chiral induction of the substrate and the catalyst in combination with an achiral borane-additive.40 As shown by Carreira and coworkers, for a single substrate a comparable diastereoselectivity can be obtained solely by exploiting substrate control. Analogous transformations of achiral 3-substituted indoles could only be achieved racemically (Scheme 2, path b).41 Efforts to induce asymmetry in the transformation proved unsuccessful; enantiomeric excesses remained below 20%, and the structures of the employed chiral ligands and borane additives were not disclosed.",
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have a known catalytic system for reverse prenylation of tryptophans using [Ir(COD)Cl]2 and (R)-L1 with triethylborane and DBU.",
+        "gap": "The enantioselectivity of this system for achiral tryptamines is unknown.",
+        "decision": "To test the applicability of our established system to achiral tryptamines, we will apply these conditions to Boc-tryptamine 2a, expecting to form the reverse prenylated product (-)-3a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NCCc1c[nH]c2ccccc12",
+          "C=CC(C)(C)OC(=O)C(C)(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)N1CCC2(C)Nc3cccc1c3C2(C)C"
+        ],
+        "reagents": [
+          "DBU",
+          "triethylborane"
+        ],
+        "catalyst": "[Ir(COD)Cl]2",
+        "ligand": "C1=CC=C2C(=C1)C=CC3=C2C(OP(N3c4ccccc4C=Cc4ccccc43)OC5C6=CC=CC=C6C=CC5)=C2",
+        "solvent": "CH2Cl2",
+        "temperature": "r.t.",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "ee_percent": 13,
+        "observation": "The reverse prenylated product (-)-3a was isolated in high yield (99%) but with negligible enantiomeric excess (13%). No linear or N-prenylated products were detected.",
+        "failure_mode": "low_yield"
+      },
+      "evidence": {
+        "text_span": "When applying these conditions to Boc-tryptamine 2a, as a model substrate for an achiral 3-substituted indole, we isolated the reverse prenylated product (−)-3a in a yield of 99% albeit with a negligible enantiomeric excess of 13% (Table 1, entry 1). Notably, neither the linear prenylated derivative nor a N-prenylated product could be detected.",
+        "page": 4,
+        "image_refs": [
+          "e2315c1a8e9f041ce8a8e05dfefce48e99a958bf50972518c210530f46da45f3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "The previous attempt yielded the desired product in high yield but with very low enantioselectivity. We hypothesize that the indole–borane complex is the active nucleophile, and sterically demanding boranes might increase enantioselectivity.",
+        "gap": "Need to improve enantioselectivity.",
+        "decision": "To increase enantioselectivity, we will screen different boranes, starting with B-octyl-9-BBN, which has been successful in previous studies, expecting an increase in enantioselectivity and potentially an inversion of stereoselectivity due to altered indole-borane adduct geometry."
+      },
+      "revises_step_id": 2,
+      "outcome": {
+        "valid": true,
+        "observation": "Utilization of B-octyl-9-BBN led to an increased but still not synthetically useful enantioselectivity of -61% ee with concomitant preservation of the yield. An inversion of stereoselectivity in favor of (+)-3a was observed.",
+        "ee_percent": -61,
+        "yield_percent": 99
+      },
+      "evidence": {
+        "text_span": "Utilization of B-octyl-9-BBN led to an increased but still not synthetically useful enantioselectivity of −61% ee with concomitant preservation of the yield (Table 1, entry 2). Interestingly, in this case an inversion of the stereoselectivity in favor of (+)-3a was observed, which supports the assumption that the geometry of the achiral indole-borane-adduct determines the stereochemical outcome of the reaction.",
+        "page": 4,
+        "image_refs": [
+          "e2315c1a8e9f041ce8a8e05dfefce48e99a958bf50972518c210530f46da45f3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "B-octyl-9-BBN improved enantioselectivity but not to a synthetically useful level. We assume that an aromatic borane might influence facial selectivity through π-interactions.",
+        "gap": "Still need to achieve high enantioselectivity.",
+        "decision": "To further improve enantioselectivity, we will try triphenylborane as an additive, expecting a significant impact on stereoselectivity due to potential π-interactions."
+      },
+      "revises_step_id": 3,
+      "outcome": {
+        "valid": false,
+        "yield_percent": 15,
+        "ee_percent": 94,
+        "failure_mode": "low_yield",
+        "observation": "Triphenylborane resulted in excellent stereoselectivity (94% ee) in favor of (-)-3a, but the yield was very low (15%). This is attributed to a competing β-hydride elimination of the iridium-prenyl-complex, forming isoprene and leading to fast conversion of 1a."
+      },
+      "evidence": {
+        "text_span": "Therefore, triphenylborane was applied as an additive which resulted in a yield of only 15% but an excellent stereoselectivity in favor of (−)-3a (94% ee; Table 1, entry 3). These findings showcase an astonishing case of enantiodivergent catalysis, the selectivity of which is steered through the variation of the achiral borane-additive. The low yield when using triphenylborane is attributed to a competing reaction in which the intermediate iridium-prenyl-complex undergoes β-hydride elimination to form isoprene with a rate that is comparatively high to that of the nucleophilic attack by the indole.",
+        "page": 4,
+        "image_refs": [
+          "e2315c1a8e9f041ce8a8e05dfefce48e99a958bf50972518c210530f46da45f3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Triphenylborane gave high enantioselectivity but very low yield due to unproductive conversion of the allylic substrate 1a. This suggests that the concentration of 1a is a limiting factor.",
+        "gap": "Need to improve yield while maintaining high enantioselectivity.",
+        "decision": "To increase the yield, we will use an increased amount of the allylic substrate 1a (10 equivalents), expecting to compensate for the unproductive conversion and improve the overall yield."
+      },
+      "revises_step_id": 4,
+      "outcome": {
+        "valid": true,
+        "yield_percent": 37,
+        "ee_percent": 94,
+        "observation": "The yield of (-)-3a was raised to 37% by utilizing ten equivalents of 1a, while maintaining high enantioselectivity (94% ee)."
+      },
+      "evidence": {
+        "text_span": "Hence the yield of (−)-3a could be raised to 37% by utilizing ten equivalents of 1a and a further improvement of 48% was achieved by changing the amidine base to TBD (Table 1, entries 3 and 4).",
+        "page": 4,
+        "image_refs": [
+          "e2315c1a8e9f041ce8a8e05dfefce48e99a958bf50972518c210530f46da45f3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Increasing the amount of 1a improved the yield, but it is still not optimal. The amidine base might also play a role in the reaction kinetics.",
+        "gap": "Further improvement in yield is needed.",
+        "decision": "To further improve the yield, we will change the amidine base to TBD, expecting a positive impact on the reaction efficiency."
+      },
+      "revises_step_id": 5,
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "ee_percent": 94,
+        "observation": "A further improvement of 48% yield was achieved by changing the amidine base to TBD, maintaining high enantioselectivity (94% ee)."
+      },
+      "evidence": {
+        "text_span": "Hence the yield of (−)-3a could be raised to 37% by utilizing ten equivalents of 1a and a further improvement of 48% was achieved by changing the amidine base to TBD (Table 1, entries 3 and 4).",
+        "page": 4,
+        "image_refs": [
+          "e2315c1a8e9f041ce8a8e05dfefce48e99a958bf50972518c210530f46da45f3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "The current iridium-bis-phosphoramidite catalyst system suffers from unproductive conversion of the allylic substrate and potential inactivation by forming a stable chelate.",
+        "gap": "Need a new catalyst system that impedes β-hydride elimination and prevents catalyst inactivation while achieving facial selectivity.",
+        "decision": "We hypothesize that replacing one phosphoramidite ligand with an appropriate monodentate alternative, specifically an N-heterocyclic carbene (NHC) ligand, will alter the electronic structure to impede β-hydride elimination and prevent facile catalyst inactivation. This will lead to a kinetically stable heteromeric iridium complex that can induce asymmetry through a combination of a chiral phosphoramidite and an achiral NHC-ligand."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A new catalyst design strategy was formulated based on the limitations of the previous system."
+      },
+      "evidence": {
+        "text_span": "Regarding the limitations of the iridium-bis-phosphoramidite catalyst we envisioned that a novel ligand assembly around the iridium center needs to be designed to effectively achieve facial selectivity as well as reactivity for this challenging class of substrates. Additionally, this new catalyst system needs to meet two major criteria: (a) an altered electronic structure that impedes β-hydride elimination to form isoprene from the prenyl complex and (b) no facile pathway for the inactivation of the catalyst by forming a stable chelate. We thus reasoned that an exchange of one of its ligands (R)-L1 with an appropriate monodentate alternative can fulfill these requirements. A screening of simple trialkyl- and triphenylphosphines revealed that the heteromeric complexes suffered a scrambling of ligands that still resulted in the formation of Ir(κ2-L1)2Cl. For this reason, we opted for imidazolium derived N-heterocyclic carbene (NHC) ligands as their strong σ-donor capability inhibits ligand dissociation, which in turn should result in a kinetically stable heteromeric iridium complex.48,49 Our strategy thus aims to induce asymmetry through a catalyst that combines a chiral phosphoramidite ligand with an achiral NHC-ligand, representing an unprecedented approach in catalyst design for iridiumcatalyzed allylic substitutions.",
+        "page": 5
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A new catalyst design involving iridium-NHC-phosphoramidite complexes has been hypothesized. Precatalysts can be prepared by reacting [Ir(COD)Cl]2 with imidazolium chlorides.",
+        "gap": "Need to synthesize the precatalysts and then combine them with phosphoramidite ligands and a base to form the active catalyst in situ.",
+        "decision": "We will prepare precatalysts 1-4 by reacting [Ir(COD)Cl]2 with imidazolium chlorides im-a-d. These will then be used in situ with phosphoramidite ligands and an amidine base to generate the active iridium-NHC-phosphoramidite complexes for screening."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1n(C)c2ccccc2[n+]1C",
+          "Cc1n(C)c2ccccc2[n+]1C",
+          "Cc1n(C)c2ccccc2[n+]1C",
+          "Cc1n(C)c2ccccc2[n+]1C"
+        ],
+        "product_smiles": [
+          "Cc1n(C)c2ccccc2[n+]1C",
+          "Cc1n(C)c2ccccc2[n+]1C",
+          "Cc1n(C)c2ccccc2[n+]1C",
+          "Cc1n(C)c2ccccc2[n+]1C"
+        ],
+        "reagents": [],
+        "catalyst": "[Ir(COD)Cl]2",
+        "solvent": "ClCCl",
+        "temperature": "r.t.",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Precatalysts 1-4 were prepared via halide exchange. These were subsequently combined with phosphoramidite ligands and an amidine base to generate the active iridium-NHC-phosphoramidite complexes in situ.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "At the outset of our investigation several precatalysts were prepared by reacting [Ir(COD)Cl]2 (0.5 equiv) with an imidazolium chloride im-a−d (1 equiv) which led to a halide exchange and thereby provided the iridates precat. 1−4 (Scheme 3). These were subsequently combined with a phosphoramidite ligand L1−L6 (see the Supporting Information for chemical structures) and an amidine base. Addition of the latter generates the carbene from the respective imidazolium salts to ultimately afford the active iridium−NHC−phosphoramidite-complexes, which were used as received from this in situ procedure.",
+        "page": 5,
+        "image_refs": [
+          "79a89f1e89f88fdc7781471de22c734f970a3f057281a7122c067ae9eee2192b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have synthesized the precatalysts and established that triphenylborane provides high enantioselectivity, albeit with low yield, in the previous system. The new NHC-based catalyst system is expected to improve yield by impeding β-hydride elimination.",
+        "gap": "Need to optimize the new iridium-NHC-phosphoramidite catalyst system for yield and enantioselectivity.",
+        "decision": "We will screen precatalysts 1-4, phosphoramidite ligands L1-L6, amidine bases, and solvents, using Boc-tryptamine 2a and triphenylborane, aiming for high yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NCCc1c[nH]c2ccccc12",
+          "C=CC(C)(C)OC(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)N1CCC2(C)Nc3cccc1c3C2(C)C"
+        ],
+        "reagents": [
+          "MTBD",
+          "BPh3"
+        ],
+        "catalyst": "precat. 1",
+        "ligand": "C1=CC=C2C(=C1)C=CC3=C2C(OP(N3c4ccccc4C=Cc4ccccc43)OC5C6=CC=CC=C6C=CC5)=C2",
+        "solvent": "benzene",
+        "temperature": "r.t.",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "ee_percent": 97,
+        "observation": "With precat. 1, 3, and 4 and MTBD as the amidine base, a quantitative yield of 3a was achieved with only five equivalents of 1a, showing reduced unproductive conversion. Enantiomeric excesses were high (97.3-97.5%). Precat. 1 with (R)-L1 and MTBD in benzene was identified as the optimized condition.",
+        "regio_selectivity": "complete branched selectivity"
+      },
+      "evidence": {
+        "text_span": "Having established that triphenylborane effectuates a high enantioselectivity, a screening of precatalysts, ligands, amidine bases and solvents (Tables 2 and S2) led to the optimized reaction conditions. Notably, with precat. 1, 3 and 4 and MTBD (7-Methyl-1,5,7-triazabicyclo[4.4.0]dec-5-en) as the amidine base a quantitative yield of 3a was achieved with only five equivalents of the allyl cation precursor 1a, which shows its reduced unproductive conversion (Table 2, entries 1, 3, 4). The enantiomeric excesses of (−)-3a were similar and ranged from 97.3%−97.5%.",
+        "page": 5,
+        "image_refs": [
+          "48e91f30e4a0c18879add4ecf5e2058050ef44f93449b591688bf998479ff1b7.jpg",
+          "15e874b6b4579c7929102c37b494fbe65c7b2a9fb1748ffe2a826d47d41f42f7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "The optimized conditions (precat. 1, (R)-L1, MTBD, BPh3 in benzene) provided quantitative yield and high enantioselectivity for (-)-3a on a small scale.",
+        "gap": "Need to confirm the robustness of the optimized conditions on a larger scale.",
+        "decision": "We will perform the reaction on a gram scale (1.00 g of 2a) using the optimized conditions, expecting similar yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NCCc1c[nH]c2ccccc12",
+          "C=CC(C)(C)OC(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)N1CCC2(C)Nc3cccc1c3C2(C)C"
+        ],
+        "reagents": [
+          "MTBD",
+          "BPh3"
+        ],
+        "catalyst": "precat. 1",
+        "ligand": "C1=CC=C2C(=C1)C=CC3=C2C(OP(N3c4ccccc4C=Cc4ccccc43)OC5C6=CC=CC=C6C=CC5)=C2",
+        "solvent": "benzene",
+        "temperature": "r.t.",
+        "time": "12 h",
+        "scale": "1.00 g (3.84 mmol) 2a"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "ee_percent": 97,
+        "observation": "The gram-scale reaction provided (-)-3a with almost identical yield (96%) and enantioselectivity (97% ee) as the small-scale reaction.",
+        "regio_selectivity": "complete branched selectivity"
+      },
+      "evidence": {
+        "text_span": "The developed protocol using precat. 1 could also be carried out on a gram scale (1.00 g, 3.84 mmol 2a) providing the chiral prenylated product (−)-3a with almost identical yield and enantioselectivity as compared to the reaction run on a small milligram scale (Table 2, entry 1d).",
+        "page": 5,
+        "image_refs": [
+          "48e91f30e4a0c18879add4ecf5e2058050ef44f93449b591688bf998479ff1b7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimized conditions for Boc-tryptamine 2a are established. Now, we need to explore the substrate scope, starting with a brominated derivative relevant to natural product synthesis.",
+        "gap": "Need to test the optimized conditions on 6-bromo-Boc-tryptamine 2b.",
+        "decision": "We will apply the optimized conditions (precat. 1, (R)-L1, MTBD, BPh3 in benzene) to 6-bromo-Boc-tryptamine 2b, expecting to form (-)-4c, a precursor for flustramine alkaloids."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NCCc1c[nH]c2cc(Br)ccc12",
+          "C=CC(C)(C)OC(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "C=CC(C)(C)C1(C)c2cc(Br)ccc2NC1C(C)N(C)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "MTBD",
+          "BPh3"
+        ],
+        "catalyst": "precat. 1",
+        "ligand": "C1=CC=C2C(=C1)C=CC3=C2C(OP(N3c4ccccc4C=Cc4ccccc43)OC5C6=CC=CC=C6C=CC5)=C2",
+        "solvent": "benzene",
+        "temperature": "r.t.",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 85,
+        "ee_percent": 93,
+        "failure_mode": "low_yield",
+        "observation": "The reaction of 2b resulted in a slightly lower yield (85%) and enantioselectivity (93% ee) for (-)-4c compared to the non-brominated analog (-)-3a."
+      },
+      "evidence": {
+        "text_span": "For the exploration of the substrate scope, we selected 6-bromo-Boc-tryptamine 2b as the starting point as its reaction product 4c would be a convenient precursor for the synthesis of the prominent family of flustramine alkaloids. Application of the optimized conditions with precat. 1 and triphenylborane resulted in a slightly lower yield and enantioselectivity for (−)-4c (85%, 93% ee) in comparison to its nonbrominated analog (−)-3a (Table 2, entry 6).",
+        "page": 5,
+        "image_refs": [
+          "48e91f30e4a0c18879add4ecf5e2058050ef44f93449b591688bf998479ff1b7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "The previous attempt with 6-bromo-Boc-tryptamine 2b showed slightly reduced yield and enantioselectivity. The borane additive is known to influence both yield and selectivity.",
+        "gap": "Need to restore high yields and selectivities for brominated substrates.",
+        "decision": "We will screen different triarylboranes to adapt the borane properties, expecting to find a borane that provides better yield and enantioselectivity for 2b."
+      },
+      "revises_step_id": 11,
+      "outcome": {
+        "valid": false,
+        "yield_percent": 18,
+        "ee_percent": 96,
+        "failure_mode": "low_yield",
+        "observation": "Using tris(4-chlorophenyl)borane increased enantioselectivity to 96% ee for (-)-4c, but the yield remained low (18%) due to unproductive conversion of 1a."
+      },
+      "evidence": {
+        "text_span": "Therefore, a screening of simple triarylboranes was conducted (Table 3). For (−)-3a and (−)-4c the enantioselectivities could be raised to 99% ee and 96% ee, respectively when using tris(4-chlorophenyl)borane. In both cases the yields were low, due to the unproductive conversion of the allylic substrate 1a (Table 3, entries 1 and 2).",
+        "page": 5,
+        "image_refs": [
+          "766f143fcf6b57f058bac7c1378f2166339ced48d575db2150e3d99a1368d15318.jpg",
+          "402929ef3ce0c03b062d949ebf9f7af767a98dbc5b82e3346b1c70eba1ba1ab4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Tris(4-chlorophenyl)borane gave high enantioselectivity but low yield for 2b. The low yield is attributed to unproductive conversion of 1a, suggesting the borane is too Lewis acidic.",
+        "gap": "Need to improve yield while maintaining high enantioselectivity for 2b.",
+        "decision": "We will investigate weaker Lewis acidic boranes, such as trim-tolylborane or trip-tolylborane, expecting to attenuate the unproductive conversion pathway and improve yields."
+      },
+      "revises_step_id": 12,
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "ee_percent": 94,
+        "observation": "Using trip-tolylborane resulted in a quantitative yield (100%) and high enantioselectivity (94% ee) for (-)-4c. Trim-tolylborane also gave quantitative yield but lower ee (78%).",
+        "regio_selectivity": "complete branched selectivity"
+      },
+      "evidence": {
+        "text_span": "For this reason, weaker Lewis acidic boranes were investigated as these could attenuate this pathway. Indeed, with either trim-tolylborane or triptolylborane the yields of 3a and 4c were up to quantitative (Table 3, entries 3−6). The highest enantioselectivity for (−)-4c was achieved with tris(4-methoxyphenyl)borane although this was accompanied by a reduced yield (Table 3, entry 8).",
+        "page": 5,
+        "image_refs": [
+          "766f143fcf6b57f058bac7c1378f2166339ced48d575db2150e3d99a1368d15318.jpg",
+          "402929ef3ce0c03b062d949ebf9f7af767a98dbc5b82e3346b1c70eba1ba1ab4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Trip-tolylborane provided excellent results for 2b. Tris(4-methoxyphenyl)borane showed even higher enantioselectivity but with reduced yield.",
+        "gap": "Need to achieve both high yield and high enantioselectivity for 2b with tris(4-methoxyphenyl)borane.",
+        "decision": "We will try doubling the catalyst loading and the amount of amidine base with tris(4-methoxyphenyl)borane, expecting to restore the yield while maintaining high enantioselectivity."
+      },
+      "revises_step_id": 13,
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "ee_percent": 97,
+        "observation": "Doubling the catalyst loading and the amount of amidine base restored the yield to 91% for (-)-4c with tris(4-methoxyphenyl)borane, maintaining high enantioselectivity (97% ee).",
+        "regio_selectivity": "complete branched selectivity"
+      },
+      "evidence": {
+        "text_span": "The highest enantioselectivity for (−)-4c was achieved with tris(4-methoxyphenyl)borane although this was accompanied by a reduced yield (Table 3, entry 8). A change of the precatalyst (entries 9−11) was not beneficial in this case but a doubling of the catalyst loading and the amount of amidine base restored the yield (91%, 97% ee, entry 8e).",
+        "page": 5,
+        "image_refs": [
+          "766f143fcf6b57f058bac7c1378f2166339ced48d575db2150e3d99a1368d15318.jpg",
+          "402929ef3ce0c03b062d949ebf9f7af767a98dbc5b82e3346b1c70eba1ba1ab4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimized conditions for the reverse prenylation of 6-bromo-Boc-tryptamine 2b to (-)-4c have been established (Table 3, entry 8e). This product is a key intermediate for (-)-flustramine A.",
+        "gap": "Need to install the N8-prenyl group on (-)-4c.",
+        "decision": "We will install the N8-prenyl group via reductive amination using isovaleraldehyde and NaBH(OAc)3, expecting an excellent yield for (-)-15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(C)[C@]12CN(C(=O)OC(C)(C)C)CC1Nc1cc(Br)ccc12",
+          "CC(C)=CC=O"
+        ],
+        "product_smiles": [
+          "C=CC(C)[C@]12CN(C(=O)OC(C)(C)C)CC1N(CC=C(C)C)c1cc(Br)ccc12"
+        ],
+        "reagents": [
+          "NaBH(OAc)3"
+        ],
+        "solvent": "ClCCCl",
+        "temperature": "r.t.",
+        "time": "72 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "The linear N8-prenyl group was installed by reductive amination with an excellent yield of 97% for (-)-15."
+      },
+      "evidence": {
+        "text_span": "The linear N8-prenyl group was installed by reductive amination with an excellent yield of 97% for (−)-15.",
+        "page": 8,
+        "image_refs": [
+          "be56385936b588d3176500dfcddaa13e82f2f13ff7849f6ddf78fed1c7a324a4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "We have successfully synthesized (-)-15, which contains the N8-prenyl group and the Boc-protecting group. The target molecule, (-)-flustramine A, requires deprotection of the Boc group and N1-methylation.",
+        "gap": "Need to deprotect the Boc group and perform N1-methylation to obtain (-)-flustramine A.",
+        "decision": "We will deprotect the Boc group using trimethylsilyl iodide, followed by a second reductive amination with formaldehyde to install the N1-methyl group, expecting to obtain (-)-flustramine A."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(C)[C@]12CN(C(=O)OC(C)(C)C)CC1N(CC=C(C)C)c1cc(Br)ccc12"
+        ],
+        "product_smiles": [
+          "C=CC(C)[C@]12CN(C)CC1N(CC=C(C)C)c1cc(Br)ccc12"
+        ],
+        "reagents": [
+          "trimethylsilyl iodide",
+          "2,6-lutidine",
+          "H2CO",
+          "NaBH(OAc)3"
+        ],
+        "solvent": "MeCN, THF",
+        "temperature": "-17 °C, r.t.",
+        "time": "45 min, 1.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "ee_percent": 97,
+        "observation": "Deprotection of the Boc group was accomplished by trimethylsilyl iodide, accompanied by partial isomerization and migration of the reverse prenyl group. A second reductive amination of the crude mixture furnished (-)-flustramine A (14) in high purity with an overall yield of 60% for this step and 97% ee.",
+        "free_text": "Overall yield from 2b to 14 is 53%."
+      },
+      "evidence": {
+        "text_span": "Subsequent deprotection of the Bocgroup was accomplished by trimethylsilyl iodide and was accompanied by a partial isomerization of the reverse prenyl group as well as its migration to N1 in the linear form. A second reductive amination of the crude mixture furnished (−)-flustramine A (14) in high purity after standard silica column chromatography. Thus, (−)-flustramine A (14) was obtained from commercially available starting materials in four steps with an overall yield of 53% and an enantiomeric excess of 97%.",
+        "page": 8,
+        "image_refs": [
+          "be56385936b588d3176500dfcddaa13e82f2f13ff7849f6ddf78fed1c7a324a4.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HPLC",
+      "HRMS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 53,
+        "unit": "%",
+        "interpretation": "Overall yield for the total synthesis of (-)-flustramine A from commercially available 6-bromo-Boc-tryptamine 2b."
+      },
+      "Longest Linear Steps": {
+        "value": 4,
+        "unit": "steps",
+        "interpretation": "Number of steps in the longest linear sequence for the total synthesis."
+      },
+      "Total Steps": {
+        "value": 4,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps."
+      }
+    },
+    "significance": "The developed methodology provides the first catalytic enantioselective reverse prenylation of achiral tryptamines and other 3-substituted indoles, furnishing hexahydropyrrolo[2,3-b]indoles in a single step with high yields and enantiomeric excesses. This closes a systematic gap in asymmetric allylic substitution chemistry. The total synthesis of (-)-flustramine A demonstrates the synthetic applicability of the method, achieving a significantly improved overall yield and reduced number of synthetic steps compared to previous enantioselective routes."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.5c06364",
+      "pmcid": "PMC12314904",
+      "title": "Iridium-Catalyzed Regio- and Enantioselective Reverse Prenylation of Tryptamines and Other 3-Substituted Indoles.",
+      "authors": "Sander L, Müller JM, Stark CBW.",
+      "journal": "J Am Chem Soc",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12314904?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/88e85f75-3c70-4593-ae36-5bd66b809001.zip",
+      "parsed_at": "2026-05-11T06:25:33.646356+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 26,
+    "parseable": 26,
+    "canonicalized": 26,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

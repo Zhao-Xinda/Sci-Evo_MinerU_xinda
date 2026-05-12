@@ -1,0 +1,553 @@
+{
+  "trace_id": "TS-PMC12418039",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "threo-cavernosine",
+    "smiles": "CC1=CCCC(C)(C)CCC[C@H]([C@@H](O)C2CCC(=O)O2)C1",
+    "natural_product_class": "terpenoid",
+    "structural_features": {
+      "key_motifs": [
+        "gamma-lactone",
+        "tertiary alcohol"
+      ]
+    },
+    "motivation": "The terpenoid cavernosine (14) was isolated from marine sponges of the Fasciospongia and Cacospongia genera. It features the characteristic tertiary alcohol group as sole substituent in the 5-position of a glactone, and we aimed to produce the butenolide 7k that represents the direct precursor of caverosine in Jefford's total synthesis.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Jefford",
+        "year": 1987,
+        "doi": "10.1016/S0040-4039(00)95440-X",
+        "key_strategy": "unspecified"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Preparation of threo-cavernosine."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [],
+    "rationale": "The strategy involves a key biocatalytic ring contraction of a pyranone intermediate, which is itself derived from a furan. The final step is a reduction of the butenolide to the saturated gamma-lactone."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Previous work showed that alcohol dehydrogenases can convert racemic Achmatowicz pyranones to optically pure d-lactones. However, under reductive conditions, an undesired ring contraction to furan products was observed in in vivo experiments.",
+        "gap": "Can this undesired ring contraction be controlled and redirected to produce synthetically useful gamma-lactones in a stereoselective manner?",
+        "decision": "To achieve stereoselective gamma-lactone synthesis, we hypothesized that interrupting the retro-Achmatowicz transformation by dehydrogenation of a five-membered hemiacetal intermediate would be key. This would involve a dehydrogenase-catalyzed reduction of the pyranone, followed by an oxidation of the furanose intermediate to the desired butenolide."
+      },
+      "evidence": {
+        "text_span": "On the other hand, we speculated that interception of the intermediates arising from the proposed pyranose–furanose isomerization would allow us to deviate the biocatalytic pathway and turn the undesired ring contraction to a novel and synthetically more appealing heterocyclic methodology. In our design, we imagined that interruption of the retro-Achmatowicz transformation by dehydrogenation of the ve-membered hemiacetal would enable us to produce gamma-lactones in a stereoselective fashion (Scheme 2f).",
+        "image_refs": [
+          "8d0b3ba938b981d415ae8fff506823379ae9376080e9e6ff7191c5d31efc6d9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "The concept of ring contraction is known in organic synthesis and biosynthesis.",
+        "gap": "Biocatalytic transformations addressing ring contractions in vitro have been scarce.",
+        "decision": "Reviewing existing literature on ring contraction reactions and biosynthetic pathways involving ring contractions to inform the development of a novel biocatalytic approach."
+      },
+      "evidence": {
+        "text_span": "But ring contraction reactions are not entirely limited to the synthetic chemistry world, and also nature does occasionally take advantage of similar transformations in the biosynthesis of complex metabolites. Examples of these natural ring contractions include the biosynthesis of rare sugars such as the rearrangement of activated pyranoses to UDP-d-apiose,27 the generation of the corrin core of vitamin B12 through the natural contractase CbiH60,28 the conversion of a benzodiazepinedione to the quinolone alkaloid viridicatin,29 or the xanthone contractions to cyclopentadienols such as coniothyrione,30 and the remisporines.31,32 On the other hand, synthetic biotransformations addressing ring contractions in vitro have so far remained scarce at best.33–35",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The P2-G03 enzyme from the Codexis KRED kit was previously identified as suitable for ketoreduction with high stereoselectivity and inability to dehydrogenate hemiacetals in a reductive environment. The goal is to identify a second biocatalyst for selective oxidation of furanose intermediates.",
+        "gap": "Need to identify a biocatalyst capable of selectively oxidizing the furanose intermediates to the desired butenolide, while suppressing undesired side reactions.",
+        "decision": "Screen commercial alcohol dehydrogenases for their ability to oxidize furanose intermediates to butenolides. Initial reduction of rac-1a will be performed with P2-G03, glucose dehydrogenase, and glucose to ensure irreversible reduction. Acetone will be added as an oxidant for the second ADH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)OC(O)C=CC1=O"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1C=COC1=O",
+          "CC(C)(O)[C@@H]1CC=CC(=O)O1"
+        ],
+        "reagents": [
+          "P2-G03",
+          "GDH",
+          "D-glucose",
+          "NAD+",
+          "acetone"
+        ],
+        "solvent": "KPi buffer",
+        "temperature": "30 °C",
+        "atmosphere": "air",
+        "stoichiometry": {
+          "rac-1a": "6.5 mM",
+          "P2-G03": "1 mg mL-1",
+          "GDH": "10 U/ml",
+          "D-glucose": "10 mM",
+          "NAD+": "2 mM"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Seven ADHs showed significant amounts of lactone products, with most featuring high selectivities for the five-membered product. P3-H12 and evo030 showed excellent butenolide selectivities and conversions >95%. The undesired aromatization was not detected.",
+        "regio_selectivity": "High selectivity for five-membered product (e.g., 30:1 for P3-H12 vs. 3:1 for P2-B02)",
+        "yield_percent": 95
+      },
+      "evidence": {
+        "text_span": "In a rst screening to identify biocatalysts that would be capable of selectively oxidizing the furanose intermediates, model substrate rac-1a was initially reduced by means of P2-G03 together with glucose dehydrogenase and glucose in order to render the reduction fully irreversible. Under these conditions (rac-1a (6.5 mM), P2-G03 (1 mg mL-1), GDH (10 U/ml), D-glucose (10 mM), NAD+ (2 mM) KPi buffer (1 mL, 50 mM, pH 7.5), 30 °C, 200 rpm), 1a was quickly consumed, without the observation of any of the corresponding lactone products. The reactions were run in a pH 7.5 phosphate buffer to suppress acid-induced dehydration (i.e. retro-Achmatowicz reactions). Supplementing the reaction mixture with an excess of acetone as oxidant and a second alcohol dehydrogenase, in selected cases, clean conversion of the presumptive pyranose–furanose mixture to the desired butenolide 7a was observed. Out of a set of 26 commercial biocatalysts, seven ADHs showed signicant amounts of lactone products, and most of them actually featured high selectivities for the ve-membered product (SI Scheme S1). While most modern commercial alcohol dehydrogenases have been optimized to operate with isopropanol or acetone as cheap cosubstrates for direct cofactor recycling by the same enzyme, the enzymes KRED101, KRED130 and NADH101 showed poor performance, so that these biocatalysts were complemented with P2-G03 to translate the acetone additive into an oxidative environment. Particularly P3-H12 and evo030 stood out with excellent butenolide selectivities and conversions >95% (Scheme 3a). The differences in selectivities (e.g. 3 : 1 for P2-B02 vs. 30 : 1 for P3-H12) indicate that the pyranose–furanose interconversion is reversible and that the selectivity in product formation is at least partially governed by catalyst selectivity according to the Curtin–Hammett principle (see also SI Table S1). Interestingly, as opposed to the in vivo experiments, the undesired aromatization was not detected under any circumstances.",
+        "section": "Development of an effective method for the redox selfsufficient ring contraction of pyranones",
+        "image_refs": [
+          "67d74c62fcf2985d3e5e0d10e51ce67c78289bcd8cf1579b920486cc97a0fa9f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous screening identified effective dehydrogenation catalysts. Now, the goal is to achieve a true cascade catalysis without distinct reduction and oxidation periods, using a redox mediator.",
+        "gap": "Need to find a suitable redox mediator and enzyme pair that can perform both reduction and oxidation in a single pot, with seemingly contradictory demands on redox balances.",
+        "decision": "Use isopropanol as an additive to force the initial reduction of the pyranone. A second dehydrogenase with affinity for the furanose substrate will then use the resulting acetone to generate oxidized NAD(P)+ and transform the hemiacetal to the desired butenolide. The P2-G03/evo030 couple will be tested."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)OC(O)C=CC1=O"
+        ],
+        "product_smiles": [
+          "CC(C)(O)C1C=COC1=O"
+        ],
+        "reagents": [
+          "P2-G03",
+          "evo030",
+          "NAD+",
+          "isopropanol"
+        ],
+        "solvent": "KPi buffer",
+        "temperature": "30 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "ee_percent": 99,
+        "observation": "At 1% isopropanol, four identified dehydrogenation biocatalysts paired constructively with P2-G03, yielding gamma-lactone 7a in enantiopure form. evo030 showed great performance, delivering the butenolide in 90% yield. Optimization of isopropanol concentration led to 95% selectivity for 7a at 99% ee at 2% isopropanol.",
+        "regio_selectivity": "95% selectivity for 7a"
+      },
+      "evidence": {
+        "text_span": "To our very delight, at 1% isopropanol (v/v) four of the previously identied dehydrogenation biocatalysts paired in a constructive manner with the reductase P2-G03, giving rise to γ-lactone 7a in enantiopure form. The ADH evo030 distinguished itself with a great performance and the P2-G03/evo030/iPrOH assembly delivered the butenolide in 90% yield. Further renement of the system by modulation of the redox mediator revealed the actual impact of isopropanol (Scheme 3c). In absence of any alcohol, the P2-G03/evo030 couple conducted the redox isomerization without signicant ring contraction and high selectivity for the d-lactone (operating through an oxidation-induced pathway, see Scheme 2b). However, already at 0.2% isopropanol, the desired γ-lactone was produced as major entity, and at 2% of the redox mediator, an excellent selectivity of 95% 7a at 99% ee was observed.",
+        "section": "Development of an effective method for the redox selfsufficient ring contraction of pyranones",
+        "image_refs": [
+          "7fe91f23b830bdec35050307e9f6aaeaac52a92e873ea77b1378de9915566a34.jpg",
+          "000bb764dd98d8e703101554782643d824251729de2b4339eeea254f89ea915a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The P2-G03/evo030 couple showed excellent performance for 1a. The methodology is being evaluated for applicability to structurally related pyranones.",
+        "gap": "The geminal diethyl-derivative 1f and the aromatic 1g did not react well with the P2-G03/evo030 couple.",
+        "decision": "The P2-G03/evo030 couple was used for 1f and 1g, but it did not perform well.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC(O)(CC)c1ccoc(=O)c1",
+          "O=C1OC(CO)c2ccccc21"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "P2-G03",
+          "evo030",
+          "NAD+",
+          "isopropanol"
+        ],
+        "solvent": "KPi buffer",
+        "temperature": "30 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "The geminal diethyl-derivative 1f and the aromatic 1g did not react well with the P2-G03/evo030 couple."
+      },
+      "evidence": {
+        "text_span": "The geminal diethyl-derivative 1f and the aromatic 1g did not react well with the P2-G03/evo030 couple and 7f and 7g were best obtained with an alternative single-enzyme option, in which the alcohol dehydrogenase P2-B02 acts both as ketoreductase and as dehydrogenation catalyst for the hemiacetal-to-butenolide conversion.",
+        "section": "Scope & limitations of the biocatalytic ring contraction"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "The P2-G03/evo030 couple did not perform well for 1f and 1g.",
+        "gap": "Need an alternative enzyme system for 1f and 1g to achieve good yields and selectivities.",
+        "decision": "Use P2-B02 as a single-enzyme option, acting as both ketoreductase and dehydrogenation catalyst for 1f and 1g.",
+        "revises_step_id": 5
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCC(O)(CC)c1ccoc(=O)c1",
+          "O=C1OC(CO)c2ccccc21"
+        ],
+        "product_smiles": [
+          "CCC(O)(CC)[C@@H]1C=CC(=O)O1",
+          "O=C1OC(CO)c2ccccc21"
+        ],
+        "reagents": [
+          "P2-B02",
+          "NAD+",
+          "isopropanol"
+        ],
+        "solvent": "KPi buffer",
+        "temperature": "30 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "ee_percent": 99,
+        "observation": "With P2-B02, high enantioselectivities were achieved for 1f and 1g, but selectivities for the five-membered O-heterocyclic products remained lower, and significant amounts of the d-lactone side products were observed.",
+        "regio_selectivity": "Lower selectivity for five-membered O-heterocyclic products compared to 1a-e"
+      },
+      "evidence": {
+        "text_span": "The geminal diethyl-derivative 1f and the aromatic 1g did not react well with the P2-G03/evo030 couple and 7f and 7g were best obtained with an alternative single-enzyme option, in which the alcohol dehydrogenase P2-B02 acts both as ketoreductase and as dehydrogenation catalyst for the hemiacetal-to-butenolide conversion. In both cases, high enantioselectivities were achieved but selectivities for the vemembered O-heterocyclic products remained lower, and signicant amounts of the d-lactone side products were observed.",
+        "section": "Scope & limitations of the biocatalytic ring contraction",
+        "image_refs": [
+          "5aacc8c0dce238c21eb86bf38ea77ae5dc5dc7287f4a9e12934753bc4159ad36.jpg",
+          "5313ec63548b2c029277c37dca70d7b90dcde83c55293f39632cbdb2ad6d7d10.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The P2-G03/evo030 couple successfully mediated redox isomerization with ring contraction for several substrates. The goal is to apply this methodology to natural product synthesis, specifically for Osmunda butenolide 7h.",
+        "gap": "Need to synthesize the methyl-substituted pyranone 1h and test its reactivity with the established enzyme system.",
+        "decision": "Synthesize 1h via oxidative ring expansion of the corresponding furfural-derived optically pure secondary alcohol, then apply the P2-G03/evo030 couple for the ring contraction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(O)c1ccoc(=O)c1"
+        ],
+        "product_smiles": [
+          "CC(O)[C@@H]1C=CC(=O)O1"
+        ],
+        "reagents": [
+          "P2-G03",
+          "evo030",
+          "NAD+",
+          "isopropanol"
+        ],
+        "solvent": "KPi buffer",
+        "temperature": "30 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 38,
+        "ee_percent": 88,
+        "observation": "The P2-G03/evo030 couple mediated the redox isomerization under ring contraction, yielding the plant-derived butenolide 7h in moderate yield and good enantiomeric purity.",
+        "named_reaction": "Osmunda butenolide synthesis"
+      },
+      "evidence": {
+        "text_span": "The methylsubstituted pyranone 1h was easily obtained via oxidative ring expansion of the corresponding furfural-derived optically pure secondary alcohol, and we were very pleased to nd that the P2-G03/evo030 couple mediated the redox isomerization under ring contraction. Hence, the new methodology was successfully applied for the stereoselective synthesis the plant-derived butenolide 7h that was previously isolated from several Osmunda species,61,62 albeit at only moderate yield.",
+        "section": "Scope & limitations of the biocatalytic ring contraction",
+        "image_refs": [
+          "1ff23686d1548927e9b37cdf97c88ecc62ba9eb9a3b6e91bd9064bb06531bc8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The ring contraction methodology has been successful for several pyranones.",
+        "gap": "Attempts to perform ring contractions of 1i and 1j remained unsuccessful.",
+        "decision": "Apply the P2-G03/evo030 couple to 1i and 1j.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1C=CC(O)OC1",
+          "CC=C[C@H](O)c1ccoc(=O)c1"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "P2-G03",
+          "evo030",
+          "NAD+",
+          "isopropanol"
+        ],
+        "solvent": "KPi buffer",
+        "temperature": "30 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Attempts to perform ring contractions of 1i and 1j remained unsuccessful. The isomerization of 1j to musacin D (7j) stalled at the hemiacetal stage (>99% conversion of 1j).",
+        "yield_percent": 0
+      },
+      "evidence": {
+        "text_span": "On the other hand, attempts to perform ring contractions of 1i and 1j remained unsuccessful and the isomerization of 1j to musacin D (7j), a fungal metabolite found in Sepedonium chrysospermum, 63 stalled instead on the hemiacetal stage >99% conv. of 1j).",
+        "section": "Scope & limitations of the biocatalytic ring contraction",
+        "image_refs": [
+          "0a00c1e84ef91db41376c570b5b4ec3e4b995ac96f6432b50dd56048f1d1339f.jpg",
+          "e65c2c37be93693289c3ffba8224c5da568573aed11f17b160227526d9e959e9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "The ring contraction methodology has limitations with certain substrates (e.g., 1i, 1j). Computational analysis suggests that energetics or lack of selectivity of dehydrogenative enzymes are not the primary issue. Instead, the liberation of primary or secondary alcohol groups during ring contraction can skew the redox balance.",
+        "gap": "Need to identify target structures that match favored substitution patterns and deliver butenolides with redox-inactive tertiary alcohol side chains to avoid issues with redox balance.",
+        "decision": "Refocus on target structures with redox-inactive tertiary alcohol side chains. The cavernosine terpenoid family, specifically the butenolide 7k (a direct precursor to cavernosine), fits this criterion due to its characteristic tertiary alcohol group."
+      },
+      "evidence": {
+        "text_span": "Based on these insights, we refocused on possible target structures matching the favored substitution patterns and delivering butenolides with redox-inactive tertiary alcohol side chains. To further investigate the synthetic scope and limitations of the ring contraction strategy, a total synthesis approach based on this key transformation was designed to address the cavernosine terpenoid family.64,65 The terpenoid cavernosine (14) was isolated from marine sponges of the Fasciospongia and Cacospongia genera. It features the characteristic tertiary alcohol group as sole substituent in the 5-position of a glactone, and we aimed to produce the butenolide 7k that represents the direct precursor of caverosine in Jefford's total synthesis (Scheme 6).",
+        "section": "Scope & limitations of the biocatalytic ring contraction",
+        "image_refs": [
+          "c240eac9479509ed746b058762cb717bd0829f98a2f38efca4b71f18367d4c7c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The target is cavernosine, which requires butenolide 7k as a precursor. The pyranone rac-1k is needed for the biocatalytic ring contraction.",
+        "gap": "Need to synthesize rac-1k from the corresponding furan 5k, avoiding oxidation of the cyclohexene moiety.",
+        "decision": "Synthesize rac-1k from furan 5k using a directed Achmatowicz oxidation protocol with VO(acac)2 and tBuOOH under Sharpless epoxidation conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CCCC(C)(C)CCC(C(C)(O)C2=CCO2)C1"
+        ],
+        "product_smiles": [
+          "CC1=CCCC(C)(C)CCC(C2(O)C=CC(=O)O2)C1"
+        ],
+        "reagents": [
+          "tBuOOH",
+          "VO(acac)2"
+        ],
+        "solvent": "DCM",
+        "temperature": "r.t.",
+        "time": "3h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "The racemic pyranone rac-1k was obtained in a decent yield of 58%."
+      },
+      "evidence": {
+        "text_span": "In analogy to our other substrates, the key intermediate rac-1k was obtained from the corresponding furan 5k through Achmatowicz oxidation. Utilizing a directed protocol employing VO(acac)2 and tBuOOH under Sharpless epoxidation conditions, to avoid oxidation of the highly nucleophilic cyclohexene moiety, delivered the racemic pyranone in a decent yield of 58%.",
+        "section": "Scope & limitations of the biocatalytic ring contraction",
+        "image_refs": [
+          "c240eac9479509ed746b058762cb717bd0829f98a2f38efca4b71f18367d4c7c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Racemic pyranone rac-1k has been synthesized. The next step is the biocatalytic ring contraction to (S,S)-7k. This substrate is sterically demanding.",
+        "gap": "Need to find an alcohol dehydrogenase capable of converting rac-1k at acceptable rates, given the bulky trimethylcyclohexene side chain.",
+        "decision": "Test a small set of ADHs for the conversion of rac-1k. P2-B02 will be evaluated.",
+        "revises_step_id": null
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CCCC(C)(C)CCC(C2(O)C=CC(=O)O2)C1"
+        ],
+        "product_smiles": [
+          "CC1=CCCC(C)(C)CCC[C@H]([C@@H](O)C2=CC(=O)OC2)C1"
+        ],
+        "reagents": [
+          "P2-B02",
+          "NAD+",
+          "isopropanol",
+          "aq NaOH"
+        ],
+        "solvent": "KPi buffer, MeOH",
+        "temperature": "30 °C",
+        "time": "20 h (biotransformation), 45 min (base treatment)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 11,
+        "ee_percent": 29,
+        "observation": "P2-B02 facilitated conversion of 1k at acceptable rates. In addition to the desired butenolide 7k, the corresponding d-lactone 2k and the retro-Achmatowicz product 5k were observed. Base-induced transformation of residual 2k converted all isomerization products to 7k, isolated in modest 11% yield. The biotransformation proceeded with an alternative mode of stereocontrol, yielding dehydrocarvernosine 7k as a single diastereomer with moderate enantiopurity (29% ee).",
+        "dr": "single diastereomer"
+      },
+      "evidence": {
+        "text_span": "A small set of ADHs was tested and only P2-B02 facilitated conversion of 1k at acceptable rates. Possibly as a result of the bulky nature of the substrate, in addition to the desired butenolide 7k, also the corresponding d-lactone 2k and the retro-Achmatowicz product 5k were observed. With the synthetic goal in mind, without purication, we opted to conduct an immediate base-induced transformation of the residual 2k to convert all isomerization products to 7k, which was isolated in modest 11% yield. Strikingly, however, the biotransformation of 1k proceeded with an alternative mode of stereocontrol. Apparently, the bulky terpene side chain imposes a strong induction to overwrite the enzyme's native face selectivity, so that the dehydrocarvernosine 7k was isolated as single diastereomer, with only moderate enantiopurity of 29% ee. Comparison with the spectral data of Jefford's study, we could conclude that this chemoenzymatic strategy thus enables the preparation of threo-cavernosine.",
+        "section": "Scope & limitations of the biocatalytic ring contraction",
+        "image_refs": [
+          "c240eac9479509ed746b058762cb717bd0829f98a2f38efca4b71f18367d4c7c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The butenolide (S,S)-7k has been synthesized, which is a direct precursor to threo-cavernosine.",
+        "gap": "Need to complete the formal total synthesis by reducing the butenolide to the saturated gamma-lactone.",
+        "decision": "Perform the reduction of (S,S)-7k to threo-cavernosine using NaBH4 and NiCl2, as described in Jefford's total synthesis."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CCCC(C)(C)CCC[C@H]([C@@H](O)C2=CC(=O)OC2)C1"
+        ],
+        "product_smiles": [
+          "CC1=CCCC(C)(C)CCC[C@H]([C@@H](O)C2CCC(=O)O2)C1"
+        ],
+        "reagents": [
+          "NaBH4",
+          "NiCl2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The chemoenzymatic strategy enables the preparation of threo-cavernosine.",
+        "named_reaction": "Formal total synthesis of threo-cavernosine"
+      },
+      "evidence": {
+        "text_span": "Comparison with the spectral data of Jefford's study, we could conclude that this chemoenzymatic strategy thus enables the preparation of threo-cavernosine.",
+        "section": "Scope & limitations of the biocatalytic ring contraction",
+        "image_refs": [
+          "c240eac9479509ed746b058762cb717bd0829f98a2f38efca4b71f18367d4c7c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Achmatowicz pyranones can be synthesized from furfuryl alcohols. The ring contraction methodology is established. Enzymes are known for enoate reduction.",
+        "gap": "Can the ring contraction module be integrated into a multi-enzyme cascade to achieve enantioselective dearomatization of furfuryl alcohols to saturated gamma-lactones?",
+        "decision": "Assemble a multi-step cascade: 1) Achmatowicz oxidation of furfuryl alcohol 5a to pyranone intermediate, 2) ring contraction using P2-G03 and evo030, and 3) enoate reduction using an enoate reductase (ERED207) and glucose dehydrogenase to yield the saturated gamma-lactone 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(O)c1ccco1"
+        ],
+        "product_smiles": [
+          "CC(C)(O)[C@H]1CCC(=O)O1"
+        ],
+        "reagents": [
+          "chloroperoxidase",
+          "glucose oxidase",
+          "P2-G03",
+          "evo030",
+          "ERED207",
+          "glucose dehydrogenase",
+          "D-glucose",
+          "isopropanol"
+        ],
+        "solvent": "buffer",
+        "outcome": {
+          "valid": true,
+          "yield_percent": 53,
+          "ee_percent": 99,
+          "observation": "A sequential three-step one-pot process involving six distinct enzyme catalysts enabled a streamlined preparation of a saturated O-heterocyclic building block through a formal enantioselective water addition to the biorefinery waste furan, with an overall yield of 53% and excellent optical purity.",
+          "named_reaction": "Enantioselective dearomatization of furfuryl alcohols"
+        },
+        "evidence": {
+          "text_span": "Best results were obtained in a sequential biocatalysis setup where furfuryl alcohol 5a was rst incubated with chloroperoxidase and glucose oxidase in order to furnish the pyranone intermediate. Aer adjustment of the pH of the buffer and addition of P2-G03 and evo030, clean formation of the dearomatized ve-membered O-heterocycle was observed and 7a was generated in enantiopure form, whereupon addition of an enoate reductase (ERED207,) and glucose dehydrogenase delivered the saturated γ-lactone 15 in excellent optical purity. Here, an overall yield of 53% translates to an average yield per chemical step of 81%. The sequential three-step one-pot process involving six distinct enzyme catalysts thus enables a streamlined preparation of a saturated O-heterocyclic building block through a formal enantioselective water addition to the biorenery waste furan, where the central borrowing hydrogen biocatalysis is complemented with both oxidative and reductive enzyme modules.",
+          "section": "Enzymatic ring contraction modules complement the biocatalytic machinery to assemble synthetic multi-step cascades",
+          "image_refs": [
+            "5e889860d3d24481dd1e35dca95a9f7f7742655516c4916e04dd72e33d5e3cf5.jpg"
+          ]
+        }
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "GC-FID",
+      "HPLC",
+      "VCD",
+      "NMR"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 11,
+        "unit": "%",
+        "interpretation": "Yield for the formal total synthesis of threo-cavernosine from rac-1k."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "count",
+        "interpretation": "Number of explicitly reported failed attempts."
+      }
+    },
+    "comparison_to_prior": "The chemoenzymatic strategy enables the preparation of threo-cavernosine, consistent with Jefford's study.",
+    "significance": "This work develops a novel biocatalytic ring contraction methodology for the enantioconvergent conversion of racemic 2-hydroxypyranones to 5-membered butenolides. It demonstrates the synthetic utility of this method in the preparation of an Osmunda butenolide and a formal total synthesis of threo-cavernosine. Furthermore, the biocatalytic tool was integrated into a multi-enzyme cascade for the enantioselective dearomatization of furfuryl alcohols."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5sc02591e",
+      "pmcid": "PMC12418039",
+      "title": "Asymmetric ring contraction of 2-hydroxypyranones by borrowing hydrogen biocatalysis.",
+      "authors": "Liu Y, O'Connell A, Rolfes JD, Deska J.",
+      "journal": "Chem Sci",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12418039?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/ed2dfeeb-23a7-43dc-80ae-b2f0218bf203.zip",
+      "parsed_at": "2026-05-11T06:26:55.603019+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 24,
+    "parseable": 24,
+    "canonicalized": 11,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

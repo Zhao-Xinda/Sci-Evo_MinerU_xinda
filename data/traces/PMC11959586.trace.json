@@ -1,0 +1,787 @@
+{
+  "trace_id": "TS-PMC11959586",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Paenilipoheptin A",
+    "smiles": "CC[C@H](C)CCCCCCC[C@H](C)NC(=O)[C@H](CC(=O)O)NC(=O)[C@H](Cc1ccc(O)cc1)NC(=O)[C@H](Cc1ccccc1)NC(=O)[C@H](C)NC(=O)[C@H](Cc1c[nH]c2ccccc12)NC(=O)[C@@H](C)CCCNC(=O)[C@H](CO)NC(=O)[C@@H](C)CCCNC(N)=O",
+    "natural_product_class": "cyclic lipopeptide",
+    "structural_features": {
+      "stereocenters": 10,
+      "key_motifs": [
+        "macrocyclic core",
+        "beta-amino acid",
+        "anteiso-branched lipid side chain"
+      ]
+    },
+    "motivation": "To fully establish the structure of paenilipoheptin A, including stereochemical ambiguities, and to provide quantities of material suitable for evaluating its biological activity, given its low natural production levels.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Complete structural assignment, including stereochemistry of the beta-amino acid at position 8 and Trp5, and sufficient material for antibacterial and antifungal testing."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "amide bond between C-terminal ΔD-Glu1 residue and amino group of N-terminal beta-amino acid",
+        "named_strategy": "macrocyclization",
+        "reasoning": "This is the final cyclization step to form the macrocyclic core of the lipopeptide. It is performed in solution after SPPS.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "peptide bonds within the macrocyclic core",
+        "named_strategy": "Solid-Phase Peptide Synthesis (SPPS)",
+        "reasoning": "SPPS is a standard and efficient method for synthesizing linear peptides, allowing for the controlled addition of amino acids and subsequent cleavage from the resin.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond forming the lipid side chain of the beta-amino acid",
+        "named_strategy": "Wittig reaction",
+        "reasoning": "The Wittig reaction is a reliable method for forming carbon-carbon double bonds, which can then be hydrogenated to yield the saturated lipid chain. This allows for the installation of the lipid side chain onto the beta-amino acid precursor.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "beta_amino_acid_linear_analog_8a",
+        "smiles": "CCCCCCCC[C@H](NC(=O)OCC1C=Cc2ccccc21)C(=O)O",
+        "role": "intermediate building block",
+        "comes_from": "synthesis from 2a"
+      },
+      {
+        "fragment_id": "beta_amino_acid_linear_analog_8b",
+        "smiles": "CCCCCCCC[C@@H](NC(=O)OCC1C=Cc2ccccc21)C(=O)O",
+        "role": "intermediate building block",
+        "comes_from": "synthesis from 2b"
+      },
+      {
+        "fragment_id": "beta_amino_acid_branched_14",
+        "smiles": "CCCCC(C)C[C@H](NC(=O)OCC1C=Cc2ccccc21)C(=O)O",
+        "role": "key building block",
+        "comes_from": "synthesis from 9"
+      },
+      {
+        "fragment_id": "linear_protected_peptide_15",
+        "smiles": "CC(C)C[C@H](NC(=O)[C@H](CCC(=O)OC(C)(C)C)NC(=O)[C@H](Cc1c[nH]c2ccccc12)NC(=O)[C@H](Cc1ccccc1)NC(=O)[C@H](Cc1ccc(OC(C)(C)C)cc1)NC(=O)[C@H](CCC(=O)OC(C)(C)C)OC(=O)C(C)(C)C)C(=O)N[C@H](C)C(=O)N[C@H](Cc1c[nH]c2ccccc12)C(=O)N[C@H](CCCCN)C(=O)N[C@H](CO)C(=O)N[C@H](CCC(=O)OC(C)(C)C)C(=O)N[C@H](Cc1c[nH]c2ccccc12)C(=O)N[C@H](Cc1ccccc1)C(=O)N[C@H](Cc1ccc(OC(C)(C)C)cc1)C(=O)N[C@H](CCC(=O)OC(C)(C)C)C(=O)O",
+        "role": "linear precursor",
+        "comes_from": "SPPS"
+      }
+    ],
+    "rationale": "The strategy involves a combined solid- and solution-phase approach. First, the unusual beta-amino acid building block with the lipophilic side chain is synthesized. The stereochemistry of this beta-amino acid is determined by comparing Marfey's derivatives of synthetic linear analogs with the natural product. Then, a linear protected peptide precursor is assembled using automated SPPS. This linear peptide is cleaved from the resin, and macrocyclization is performed in solution, followed by global deprotection and purification. This approach allows for the efficient synthesis of the complex lipopeptide and addresses the stereochemical ambiguities."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "Paenilipoheptin A is a cyclic lipopeptide with a macrocyclic core of seven alpha amino acids and an unusual beta-amino acid with a lipophilic side chain. Previous studies provided partial structural assignments but left stereochemical ambiguities, particularly for the beta-amino acid at position 8 and Trp5.",
+        "gap": "The exact stereochemistry of the beta-amino acid at position 8 and Trp5 needs to be determined. A synthetic route is required to confirm the structure and provide sufficient material for bioactivity evaluation.",
+        "decision": "To address the stereochemical ambiguities, a total synthesis approach will be pursued. The synthesis of the unusual beta-amino acid will be a key initial step, with its stereochemistry to be elucidated by comparing Marfey's derivatives of synthetic analogs with the natural product. The peptide backbone will be assembled using SPPS, followed by solution-phase cyclization."
+      },
+      "evidence": {
+        "text_span": "To address these remaining stereochemical details, we therefore turned to a total synthesis approach. To begin, we focused our attention on the unusual 13- carbon branched tail beta-amino acid at position 8. Given that this amino acid is not commercially available in any of the four possible stereochemical configurations, we opted to first synthesize a simpler, structurally similar, linear analog with the aim of gaining insight into the stereochemistry of the β- position.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The beta-amino acid building block is crucial. Previous methods for beta-amino acid synthesis were not optimal. A Wittig reaction approach is considered for installing the lipid side chain.",
+        "gap": "Need to synthesize the aldehyde precursors (3a and 3b) from protected L- and D-Asp building blocks (2a and 2b).",
+        "decision": "To obtain aldehydes 3a and 3b, the previously described method will be used, involving conversion of 2a and 2b to their corresponding aldehydes."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NC[C@@H](O)C(=O)OC(C)(C)C",
+          "CC(C)(C)OC(=O)NC[C@H](O)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)NC[C@@H](C=O)C(=O)OC(C)(C)C",
+          "CC(C)(C)OC(=O)NC[C@H](C=O)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "NMM",
+          "CICOOEt",
+          "NaBH4",
+          "DMP"
+        ],
+        "solvent": "THF, MeOH, DCM",
+        "temperature": "-15°C to RT",
+        "time": "1h, o/n"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Conversion of 2a and 2b to the corresponding aldehydes 3a and 3b was achieved as previously described."
+      },
+      "evidence": {
+        "text_span": "Conversion of 2a and 2b to the corresponding aldehydes 3a and 3b was achieved as previously described.28",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Wittig reagent 5 is needed for the subsequent Wittig reaction.",
+        "gap": "Need to prepare Wittig reagent 5 from halide 4.",
+        "decision": "To prepare Wittig reagent 5, an established protocol will be followed, starting from halide 4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCBr"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PPh3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "reflux",
+        "time": "3 days"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "Wittig reagent 5 was prepared from the corresponding halide 4 via an established protocol."
+      },
+      "evidence": {
+        "text_span": "Wittig reagent 5 was prepared from the corresponding halide 4 via an established protocol.29",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Aldehyde 3a and Wittig reagent 5 are available. The goal is to condense them to form 6a.",
+        "gap": "Need to find suitable conditions for the Wittig reaction.",
+        "decision": "To condense 3a with 5, a 2-fold excess of 5 will be treated with BuLi at -10 °C to generate the active ylide, followed by the addition of the aldehyde at -10 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NC[C@@H](C=O)C(=O)OC(C)(C)C",
+          ""
+        ],
+        "product_smiles": [
+          "CCCCCCC=C[C@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "BuLi"
+        ],
+        "solvent": "THF",
+        "temperature": "-10 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "This approach failed to yield the desired product."
+      },
+      "evidence": {
+        "text_span": "In our initial attempt at condensing 3a with 5, we employed a 2-fold excess of 5 treated with BuLi at −10 °C to generate the active ylide, followed by the addition of the aldehyde at −10 °C. While this approach failed to yield the desired product, we found that lowering the temperature to −78 °C during the aldehyde addition step led to the formation of product 6a in 20% yield after column chromatography.",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "The initial Wittig reaction conditions for 3a and 5 failed.",
+        "gap": "Need to improve the yield of product 6a.",
+        "decision": "To improve the yield, the temperature during the aldehyde addition step will be lowered to -78 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NC[C@@H](C=O)C(=O)OC(C)(C)C",
+          ""
+        ],
+        "product_smiles": [
+          "CCCCCCC=C[C@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "BuLi"
+        ],
+        "solvent": "THF",
+        "temperature": "-10 °C (ylide generation), -78 °C (aldehyde addition)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 20,
+        "observation": "Lowering the temperature to -78 °C during the aldehyde addition step led to the formation of product 6a in 20% yield after column chromatography."
+      },
+      "evidence": {
+        "text_span": "While this approach failed to yield the desired product, we found that lowering the temperature to −78 °C during the aldehyde addition step led to the formation of product 6a in 20% yield after column chromatography.",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The yield for 6a was low (20%). When preparing the enantiomeric 6b, an improved yield is desired.",
+        "gap": "Need to find more efficient conditions for the Wittig reaction to synthesize 6b.",
+        "decision": "To improve the yield for 6b, potassium bis(trimethylsilyl)amide (KHMDS) will be used at room temperature to activate the ylide, followed by the addition of aldehyde 3b at -78 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NC[C@H](C=O)C(=O)OC(C)(C)C",
+          ""
+        ],
+        "product_smiles": [
+          "CCCCCCC=C[C@@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "RT (ylide activation), -78 °C (aldehyde addition)",
+        "time": "1h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "observation": "This approach was found to result in an improved 59% yield of the expected alkene product 6b."
+      },
+      "evidence": {
+        "text_span": "Given this low yield, when preparing the enantiomeric 6b, we explored the use of potassium bis(trimethylsilyl)amide (KHMDS) at room temperature to activate the ylide, followed by the addition of aldehyde 3b at −78 °C. Gratifyingly, this approach was found to result in an improved 59% yield of the expected alkene product.",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Key intermediates 6a and 6b (alkenes) are in hand.",
+        "gap": "Need to convert the alkenes to saturated compounds 7a and 7b.",
+        "decision": "To obtain the saturated compounds, hydrogenation will be performed on 6a and 6b."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCC=C[C@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C",
+          "CCCCCCC=C[C@@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CCCCCCCC[C@@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C",
+          "CCCCCCCC[C@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "H2",
+          "Pd/C"
+        ],
+        "solvent": "EtOH",
+        "temperature": "RT",
+        "time": "o/n"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Hydrogenation yielded the saturated 7a and 7b in quantitative yield."
+      },
+      "evidence": {
+        "text_span": "With key intermediates 6a and 6b in hand, we proceeded with hydrogenation, which yielded the saturated 7a and 7b in quantitative yield.",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Saturated compounds 7a and 7b are available. These are protected beta-amino acids.",
+        "gap": "Need to deprotect and then reprotect with Fmoc to obtain building blocks 8a and 8b for peptide synthesis.",
+        "decision": "To obtain Fmoc-protected 8a and 8b, the Boc and tBu groups will be removed using TFA, followed by direct treatment with Fmoc-succinimide (Fmoc-OSu)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCC[C@@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C",
+          "CCCCCCCC[C@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CCCCCCCC[C@H](NC(=O)OCC1C=Cc2ccccc21)C(=O)O",
+          "CCCCCCCC[C@@H](NC(=O)OCC1C=Cc2ccccc21)C(=O)O"
+        ],
+        "reagents": [
+          "TFA",
+          "TIPS",
+          "H2O",
+          "Fmoc-OSu",
+          "Na2CO3"
+        ],
+        "solvent": "Dioxane, H2O",
+        "temperature": "RT",
+        "time": "1h, o/n"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "The Boc and tBu groups were then removed using TFA, followed by direct treatment with Fmoc-succinimide (Fmoc-OSu) to yield Fmoc-protected 8a and 8b in 75% and 64% yields, respectively."
+      },
+      "evidence": {
+        "text_span": "The Boc and tBu groups were then removed using TFA, followed by direct treatment with Fmoc-succinimide (Fmoc-OSu) to yield Fmocprotected 8a and 8b in 75% and 64% yields, respectively.",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Both enantiomers of the linear analogue of the beta-amino acid (7a and 7b) are available. The stereochemistry of the beta-position in the natural product is unknown.",
+        "gap": "Need to determine the stereochemistry of the beta-position in the natural product's beta-amino acid.",
+        "decision": "To determine the stereochemistry, the retention times of Marfey's derivatives of 7a and 7b will be compared with that of the Marfey's derivative obtained from hydrolysis of natural paenilipoheptin A. This is based on the hypothesis that the branched beta-amino acid from the natural product would have a similar retention time to the linear analogue with the same stereochemistry at the beta-position."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCC[C@@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C",
+          "CCCCCCCC[C@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "TFA",
+          "Marfey's reagent"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Marfey's derivative of amino acid 7a elutes at nearly the same time as that derived from the natural product. The Marfey's adduct derived from the enantiomeric 7b had a significantly different retention time. These findings provided a hint that the beta-position of the N-terminal beta-amino acid in paenilipoheptin A is of R stereochemistry."
+      },
+      "evidence": {
+        "text_span": "With both enantiomers of the linear analogue of the betaamino acid in hand, we proceeded to compare the retention times of their corresponding Marfey’s derivatives with that of the Marfey’s derivative obtained from hydrolysis of natural paenilipoheptin A (Table S1).30,31 To do so, we retained a portion of intermediates 7a and 7b, which, after removal of the Boc and tBu groups, were directly treated with Marfey’s reagent (1-fluoro-2-4-dinitrophenyl-5-L-alanine amide). Our reason for doing so was based on the hypothesis that the branched beta-amino acid derived from the natural product would have a similar retention time to the linear analogue bearing the same stereochemistry at the β- position. When comparing the retention times of the corresponding adducts, we found that Marfey’s derivative of amino acid 7a elutes at nearly the same time as that derived from the natural product. On the other hand, the Marfey’s adduct derived from the enantiomeric 7b had a significantly different retention time. These findings provided a hint that the β- position of the Nterminal beta-amino acid in paenilipoheptin A is of R stereochemistry.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Marfey's analysis suggested R stereochemistry at the beta-position of the N-terminal beta-amino acid. The stereocenter in the anteiso-branched lipid side chain is still unknown.",
+        "gap": "Need to determine the stereochemistry of the anteiso-branched lipid side chain.",
+        "decision": "An assumption will be made that the stereocenter in the anteiso-branched lipid side chain is of the S configuration, as commonly seen in other compounds with anteiso-branched lipids produced by Paenibacillus spp. This allows for the use of commercially available (S)-6-methyloctan-1-ol (9) as a starting material for the Wittig reagent."
+      },
+      "evidence": {
+        "text_span": "With regard to the unknown stereocenter in the anteiso-branched lipid side chain, we made the assumption that it is of the S configuration, as commonly seen in other compounds also bearing anteiso-branched lipids produced by Paenibacillus spp.12,13,32 Conveniently, (S)-6-methyloctan-1-ol (9) is commercially available, providing a short route to the corresponding Wittig reagent (Scheme 1).",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The (S)-6-methyloctan-1-ol (9) is commercially available and will be used to prepare the Wittig reagent for the branched lipid side chain.",
+        "gap": "Need to convert alcohol 9 to bromide 10.",
+        "decision": "To obtain bromide 10, alcohol 9 will first be converted to the mesylate, followed by treatment with LiBr in THF."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)CCCCCCO"
+        ],
+        "product_smiles": [
+          "CC(C)CCCCCCBr"
+        ],
+        "reagents": [
+          "MsCl",
+          "Et3N",
+          "LiBr"
+        ],
+        "solvent": "DCM, THF",
+        "temperature": "RT, reflux",
+        "time": "2h, o/n"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "Alcohol 9 was first converted to the mesylate, followed by treatment with LiBr in THF to yield bromide 10."
+      },
+      "evidence": {
+        "text_span": "In doing so, alcohol 9 was first converted to the mesylate, followed by treatment with LiBr in THF to yield bromide 10.",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bromide 10 is available. The Wittig reagent 11 is needed for the branched lipid side chain.",
+        "gap": "Need to convert bromide 10 to phosphonium bromide 11.",
+        "decision": "To generate phosphonium bromide 11, a similar method as used for the preparation of 5 will be followed, with purification by precipitation from MTBE."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)CCCCCCBr"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PPh3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "reflux",
+        "time": "3 days"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "To generate the phosphonium bromide 11, we followed a similar method as used for the preparation of 5, with purification achieved by precipitation from MTBE rather than column chromatography."
+      },
+      "evidence": {
+        "text_span": "To generate the phosphonium bromide 11, we followed a similar method as used for the preparation of 5, with purification achieved by precipitation from MTBE rather than column chromatography.",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Wittig reagent 11 is available, along with aldehyde 3a. The goal is to form the branched alkene product 12.",
+        "gap": "Need to perform the Wittig reaction with 11 and 3a.",
+        "decision": "Given the limited supply of Wittig reagent 11, only 1.1 equiv will be used in the Wittig reaction, otherwise following the same procedure used for the preparation of 6b (KHMDS at RT, then aldehyde addition at -78 °C)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)NC[C@@H](C=O)C(=O)OC(C)(C)C",
+          ""
+        ],
+        "product_smiles": [
+          "CCCCC(C)C=C[C@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "RT (ylide activation), -78 °C (aldehyde addition)",
+        "time": "1h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "observation": "The desired product 12 was thus formed in an acceptable 57% yield."
+      },
+      "evidence": {
+        "text_span": "With a limited supply of Wittig reagent 11, we opted to use only 1.1 equiv of this compound in the subsequent Wittig reaction, otherwise following the same procedure used for the preparation of 6b. The desired product 12 was thus formed in an acceptable 57% yield, after which hydrogenation yielded 13, which, in turn, was subjected to the same deprotection/ reprotection steps used for preparing 8a and 8b, to arrive at building block 14.",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkene product 12 is available.",
+        "gap": "Need to convert 12 to the saturated compound 13.",
+        "decision": "To obtain the saturated compound 13, hydrogenation will be performed on 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCC(C)C=C[C@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CCCCC(C)C[C@@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "reagents": [
+          "H2",
+          "Pd/C"
+        ],
+        "solvent": "EtOH",
+        "temperature": "RT",
+        "time": "o/n"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Hydrogenation yielded 13."
+      },
+      "evidence": {
+        "text_span": "The desired product 12 was thus formed in an acceptable 57% yield, after which hydrogenation yielded 13, which, in turn, was subjected to the same deprotection/ reprotection steps used for preparing 8a and 8b, to arrive at building block 14.",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Saturated compound 13 is available. This is a protected beta-amino acid.",
+        "gap": "Need to deprotect and then reprotect with Fmoc to obtain building block 14 for peptide synthesis.",
+        "decision": "To obtain Fmoc-protected 14, 13 will be subjected to the same deprotection/reprotection steps used for preparing 8a and 8b (TFA deprotection, then Fmoc-OSu reprotection)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCC(C)C[C@@H](NC(=O)OC(C)(C)C)C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "CCCCC(C)C[C@H](NC(=O)OCC1C=Cc2ccccc21)C(=O)O"
+        ],
+        "reagents": [
+          "TFA",
+          "TIPS",
+          "H2O",
+          "Fmoc-OSu",
+          "Na2CO3"
+        ],
+        "solvent": "Dioxane, H2O",
+        "temperature": "RT",
+        "time": "1h, o/n"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Compound 13 was subjected to the same deprotection/reprotection steps used for preparing 8a and 8b, to arrive at building block 14."
+      },
+      "evidence": {
+        "text_span": "The desired product 12 was thus formed in an acceptable 57% yield, after which hydrogenation yielded 13, which, in turn, was subjected to the same deprotection/ reprotection steps used for preparing 8a and 8b, to arrive at building block 14.",
+        "image_refs": [
+          "703c0971dd7a43a91f5366bfd1c8bdc5d02dce4124568c02a9d9585a2a00355a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Building block 14 (Fmoc-protected beta-amino acid) is in hand. The overall strategy is a combined solid- and solution-phase synthesis.",
+        "gap": "Need to synthesize the linear protected peptide precursor 15 using SPPS.",
+        "decision": "To synthesize 15, microwave-assisted SPPS will be used, starting from ΔD-Glu1 loaded onto 2-chlorotrityl (CT) resin. Fmoc deprotections will use 10% piperazine in NMP/EtOH, and amino acid couplings will use HBTU and DIPEA. The final coupling of compound 14 will be performed manually with reduced equivalents due to its limited supply."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CCCCC(C)C[C@H](NC(=O)OCC1C=Cc2ccccc21)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)C[C@H](NC(=O)[C@H](CCC(=O)OC(C)(C)C)NC(=O)[C@H](Cc1c[nH]c2ccccc12)NC(=O)[C@H](Cc1ccccc1)NC(=O)[C@H](Cc1ccc(OC(C)(C)C)cc1)NC(=O)[C@H](CCC(=O)OC(C)(C)C)OC(=O)C(C)(C)C)C(=O)N[C@H](C)C(=O)N[C@H](Cc1c[nH]c2ccccc12)C(=O)N[C@H](CCCCN)C(=O)N[C@H](CO)C(=O)N[C@H](CCC(=O)OC(C)(C)C)C(=O)N[C@H](Cc1c[nH]c2ccccc12)C(=O)N[C@H](Cc1ccccc1)C(=O)N[C@H](Cc1ccc(OC(C)(C)C)cc1)C(=O)N[C@H](CCC(=O)OC(C)(C)C)C(=O)O"
+        ],
+        "reagents": [
+          "2-chlorotrityl (CT) resin",
+          "DIPEA",
+          "piperazine",
+          "HBTU"
+        ],
+        "solvent": "DCM, NMP/EtOH",
+        "temperature": "RT",
+        "time": "2h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Protected linear peptide 15 was synthesized starting from the ΔD-Glu1 loaded via its α-carboxyl group onto 2-chlorotrityl (CT) resin. Fmoc deprotections and amino acid couplings were performed as described. The final coupling of compound 14 was performed manually using a reduced number of equivalents."
+      },
+      "evidence": {
+        "text_span": "As illustrated in Scheme 2, protected linear peptide 15 was synthesized starting from the ΔD-Glu1 loaded via its α-carboxyl group onto 2-chlorotrityl (CT) resin. In preparing the linear precursor peptide 10% piperazine in NMP/EtOH was used for Fmoc deprotections and N,N,N′,N′-tetramethyl-O-(1H-benzotriazol-1-yl)uronium hexafluorophosphate (HBTU) and N,Ndiisopropylethylamine (DIPEA) for amino acid couplings. Given its limited supply, the final coupling of compound 14 was performed manually using a reduced number of equivalents in comparison to the standard protocol used for the other couplings.",
+        "image_refs": [
+          "b9612ac402c54f49dc3bd550cd5810562354bde94d08506542e1d88b92ffbe32.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The linear protected peptide 15 is synthesized on resin.",
+        "gap": "Need to cleave the peptide from the resin, cyclize it, and then deprotect it to obtain the final product 1b.",
+        "decision": "To obtain 1b, peptide 15 will be cleaved from the resin using hexafluoroisopropanol (HFIP) to maintain side-chain protecting groups. The crude product will then be cyclized using DIC/Oxyma. Finally, global deprotection will be performed with TFA/TIPS/H2O."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@H](NC(=O)[C@H](CCC(=O)OC(C)(C)C)NC(=O)[C@H](Cc1c[nH]c2ccccc12)NC(=O)[C@H](Cc1ccccc1)NC(=O)[C@H](Cc1ccc(OC(C)(C)C)cc1)NC(=O)[C@H](CCC(=O)OC(C)(C)C)OC(=O)C(C)(C)C)C(=O)N[C@H](C)C(=O)N[C@H](Cc1c[nH]c2ccccc12)C(=O)N[C@H](CCCCN)C(=O)N[C@H](CO)C(=O)N[C@H](CCC(=O)OC(C)(C)C)C(=O)N[C@H](Cc1c[nH]c2ccccc12)C(=O)N[C@H](Cc1ccccc1)C(=O)N[C@H](Cc1ccc(OC(C)(C)C)cc1)C(=O)N[C@H](CCC(=O)OC(C)(C)C)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC[C@H](C)CCCCCCC[C@H](C)NC(=O)[C@H](CC(=O)O)NC(=O)[C@H](Cc1ccc(O)cc1)NC(=O)[C@H](Cc1ccccc1)NC(=O)[C@H](C)NC(=O)[C@H](Cc1c[nH]c2ccccc12)NC(=O)[C@@H](C)CCCNC(=O)[C@H](CO)NC(=O)[C@@H](C)CCCNC(N)=O"
+        ],
+        "reagents": [
+          "HFIP",
+          "DIC",
+          "Oxyma",
+          "TFA",
+          "TIPS",
+          "H2O"
+        ],
+        "solvent": "DCM, DMF",
+        "temperature": "RT",
+        "time": "1h, o/n, 2h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "characterization_inconclusive",
+        "observation": "Under these conditions, complete deprotection was not achieved, with approximately 10% of the product observed as a +44 amu species, ascribed to the persistence of a CO2 adduct with the indole of D-Trp5."
+      },
+      "evidence": {
+        "text_span": "After the final Fmoc deprotection, the protected peptide 15 was then cleaved from the resin using hexafluoroisopropanol (HFIP) to maintain all side-chain protecting groups. After evaporation, the crude was then directly treated with N,N′-diisopropylcarbodiimide (DIC)/ ethyl cyanohydroxyiminoacetate (Oxyma) (6:6) in DCM/ DMF (5:1), which resulted in the clean and complete formation of the desired macrocycle via amide bond formation between the amino group of the N-terminal beta-amino acid and the α-carboxyl group of ΔD-Glu1. Following this, global deprotection was performed by treatment with TFA/TIPS/ H2O., resulting in the desired 1b as the main product as judged by LCMS. Interestingly, under these conditions, we did not achieve complete deprotection, with approximately 10% of the product observed as a +44 amu species that we ascribed to the persistence of a CO2 adduct with the indole of D-Trp5.",
+        "image_refs": [
+          "b9612ac402c54f49dc3bdc550cd5810562354bde94d08506542e1d88b92ffbe32.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 17,
+      "thought": {
+        "background": "Global deprotection with TFA/TIPS/H2O did not achieve complete deprotection, leaving a CO2 adduct with D-Trp5.",
+        "gap": "Need to achieve complete deprotection.",
+        "decision": "To resolve the issue of incomplete deprotection, the crude product mixture will be further treated with a 2% solution of acetic acid (AcOH) in H2O/MeCN at 40 °C for 30 min."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C[C@H](NC(=O)[C@H](CCC(=O)OC(C)(C)C)NC(=O)[C@H](Cc1c[nH]c2ccccc12)NC(=O)[C@H](Cc1ccccc1)NC(=O)[C@H](Cc1ccc(OC(C)(C)C)cc1)NC(=O)[C@H](CCC(=O)OC(C)(C)C)OC(=O)C(C)(C)C)C(=O)N[C@H](C)C(=O)N[C@H](Cc1c[nH]c2ccccc12)C(=O)N[C@H](CCCCN)C(=O)N[C@H](CO)C(=O)N[C@H](CCC(=O)OC(C)(C)C)C(=O)N[C@H](Cc1c[nH]c2ccccc12)C(=O)N[C@H](Cc1ccccc1)C(=O)N[C@H](Cc1ccc(OC(C)(C)C)cc1)C(=O)N[C@H](CCC(=O)OC(C)(C)C)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC[C@H](C)CCCCCCC[C@H](C)NC(=O)[C@H](CC(=O)O)NC(=O)[C@H](Cc1ccc(O)cc1)NC(=O)[C@H](Cc1ccccc1)NC(=O)[C@H](C)NC(=O)[C@H](Cc1c[nH]c2ccccc12)NC(=O)[C@@H](C)CCCNC(=O)[C@H](CO)NC(=O)[C@@H](C)CCCNC(N)=O"
+        ],
+        "reagents": [
+          "AcOH"
+        ],
+        "solvent": "H2O/MeCN",
+        "temperature": "40 °C",
+        "time": "30 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 37,
+        "observation": "Further treatment with a 2% solution of acetic acid (AcOH) in H2O/MeCN at 40 °C for 30 min led to complete deprotection. Subsequent purification using RP-HPLC resulted in a yield of 23 mg of compound 1b (37% overall yield, corresponding to an average yield of 94.9% per step)."
+      },
+      "evidence": {
+        "text_span": "To resolve this issue, we further treated the crude product mixture with a 2% solution of acetic acid (AcOH) in H2O/MeCN at 40 °C for 30 min, which led to complete deprotection. Subsequent purification using reverse-phase high-performance liquid chromatography (RP-HPLC) resulted in a yield of 23 mg of compound 1b (37% overall yield, corresponding to an average yield of 94.9% per step).",
+        "image_refs": [
+          "b9612ac402c54f49dc3bd550cd5810562354bde94d08506542e1d88b92ffbe32.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Synthetic paenilipoheptin A (1b) has been successfully synthesized and purified.",
+        "gap": "Need to confirm that the synthetic product is identical to the natural product and fully establish its structure.",
+        "decision": "To confirm the structure, synthetic compound 1b will be compared with natural paenilipoheptin A isolated from its producing Paenibacillus strain using NMR spectroscopy and HPLC retention time."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Both compounds have identical NMR spectra (Figures S2 and S3) and show the same HPLC retention time, also eluting as a single peak when coinjected (Figure 2). These findings confirm that the structure of paenilipoheptin A is indeed that of compound 1b. This further supports the stereochemistry of D-Trp5 and the 3R stereochemistry of the naturally occurring beta-amino acid. While these data also point to S stereochemistry for the anteiso-branched side chain, we cannot completely exclude the possibility of the natural product having the R configuration at this position."
+      },
+      "evidence": {
+        "text_span": "We next proceeded to compare compound 1b with natural paenilipoheptin A isolated from its producing Paenibacillus strain. We were delighted to find that both compounds have identical NMR spectra (Figures S2 and S3) and show the same HPLC retention time, also eluting as a single peak when coinjected (Figure 2). These findings confirm that the structure of paenilipoheptin A is indeed that of compound 1b. This further supports the stereochemistry of D-Trp5 and the 3R stereochemistry of the naturally occurring beta-amino acid. While these data also point to S stereochemistry for the anteiso-branched side chain, we cannot completely exclude the possibility of the natural product having the R configuration at this position.",
+        "section": "Results and Discussion",
+        "image_refs": [
+          "76e91751205877f20c67b43effd4688a575cd109b2e8031aefe6bb797b8c41fd.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "LCMS",
+      "HPLC",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 37,
+        "unit": "percent",
+        "interpretation": "Overall yield for the total synthesis of paenilipoheptin A."
+      },
+      "Average Yield per Step": {
+        "value": 94.9,
+        "unit": "percent",
+        "interpretation": "Average yield per step for the total synthesis of paenilipoheptin A."
+      },
+      "Failed Attempts Count": {
+        "value": 1,
+        "unit": "count",
+        "interpretation": "Number of explicitly reported failed attempts during the synthesis."
+      }
+    },
+    "significance": "The total synthesis of paenilipoheptin A allowed for the complete structural assignment, including the stereochemistry of the beta-amino acid and D-Trp5, which were previously ambiguous. Access to synthetic material enabled comprehensive bioactivity evaluation, revealing specific anti-Gram-positive activity, including against vancomycin-resistant strains, and no hemolytic activity, distinguishing it from similar lipopeptides like iturin A."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.5c00232",
+      "pmcid": "PMC11959586",
+      "title": "Total Synthesis, Structure Elucidation, and Bioactivity Evaluation of the Cyclic Lipopeptide Natural Product Paenilipoheptin A.",
+      "authors": "Lysenko V, Machushynets NV, van Dam JL, Sterk FAC, Speer A, Ram AFJ, Slingerland CJ, Van Wezel GP, Martin NI.",
+      "journal": "Org Lett",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11959586?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/0766d370-2e18-466e-9222-4106ae7ac2db.zip",
+      "parsed_at": "2026-05-11T06:20:27.843287+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 48,
+    "parseable": 41,
+    "canonicalized": 29,
+    "invalid": 7,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "Br[P+](c1ccccc1)(c1ccccc1)(c1ccccc1)CCCCCCC",
+      "Br[P+](c1ccccc1)(c1ccccc1)(c1ccccc1)CCCCCCC",
+      "Br[P+](c1ccccc1)(c1ccccc1)(c1ccccc1)CCCCCCC",
+      "Br[P+](c1ccccc1)(c1ccccc1)(c1ccccc1)CCCCCCC",
+      "Br[P+](c1ccccc1)(c1ccccc1)(c1ccccc1)CCCCCCC(C)C",
+      "Br[P+](c1ccccc1)(c1ccccc1)(c1ccccc1)CCCCCCC(C)C",
+      "O=C(O)[C@H](NC(=O)c1c2ccccc2oc2ccccc12)CCC(=O)OC(C)(C)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

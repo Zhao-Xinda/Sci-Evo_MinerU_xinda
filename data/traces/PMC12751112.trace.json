@@ -1,0 +1,1597 @@
+{
+  "trace_id": "TS-PMC12751112",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Dispirocochlearoid A",
+    "smiles": "CC(C)=CCC[C@H]1Cc2c(O)cc(O)cc2OC1=O",
+    "natural_product_class": "Meroterpenoid dimer",
+    "structural_features": {
+      "key_motifs": [
+        "spirocyclic centers",
+        "hemiacetal group",
+        "hydroquinones",
+        "isoprenoid moieties"
+      ],
+      "ring_systems": "6/6/5/6/6/6-ring system"
+    },
+    "motivation": "Dispirocochlearoids A-C are anti-inflammatory Ganoderma meroterpenoid dimers with complex and constrained architectures, featuring spirocyclic and bridged-ring systems. They are selective COX-2 inhibitors with potent efficacy against LPS-induced acute lung injury in mice. Their limited availability hampers further development, necessitating an efficient chemical synthesis for comprehensive biological evaluation.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Fu",
+        "year": 2022,
+        "doi": "10.1002/cjoc.202200200",
+        "key_strategy": "Diels-Alder reaction to construct the A-F hexacyclic core, but failed to introduce polyunsaturated side chains or hemiacetal group."
+      },
+      {
+        "lead_author": "Kamo",
+        "year": 2025,
+        "doi": "10.1021/acs.orglett.5c04234",
+        "key_strategy": "Total synthesis of ganodilactone via intramolecular vinylogous Michael Addition, but transformation to dispirocochlearoids A-C remains unrealized."
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Efficient access to dispirocochlearoids A-C and their diastereomers, matching reported NMR data for natural products."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "Formation of B/C-bicyclic system",
+        "named_strategy": "Condensation/intramolecular aldol/lactonization cascade",
+        "reasoning": "This cascade reaction constructs the final B/C-bicyclic system and contiguous spirocyclic centers, bridging two critical molecular fragments derived from a common precursor."
+      },
+      {
+        "bond_description": "Formation of D/E-bicyclic core",
+        "named_strategy": "Hetero-Diels-Alder reaction",
+        "reasoning": "This reaction is proposed to construct the D/E-ring system, mimicking a plausible biosynthetic pathway. Initial attempts with a more oxidized substrate failed, leading to a revised strategy using a reduced derivative."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "fragment_A",
+        "smiles": "COC(OC)c1ccc(C(C)=O)cc1",
+        "role": "A-ring precursor",
+        "comes_from": "2,5-dihydroxyacetophenone (14)"
+      },
+      {
+        "fragment_id": "fragment_B",
+        "smiles": "COC(=O)C(=O)CCC=C(C)C",
+        "role": "Side chain precursor (n=1)",
+        "comes_from": "known procedure"
+      },
+      {
+        "fragment_id": "fragment_C",
+        "smiles": "COC(=O)C(=O)CCCC=C(C)C",
+        "role": "Side chain precursor (n=2)",
+        "comes_from": "known procedure"
+      },
+      {
+        "fragment_id": "fragment_D",
+        "smiles": "COC(OC)Oc1ccc2c(c1)OC(C)(C)C[C@H]2CCC=C(C)C",
+        "role": "D/E-ring precursor",
+        "comes_from": "1,4-dimethoxybenzene and succinic anhydride"
+      }
+    ],
+    "rationale": "The synthesis is inspired by the proposed biosynthetic pathway of dispirocochlearoids A-C, which suggests an intermolecular aldol condensation, lactonization, and a pivotal hetero-Diels-Alder (HDA) reaction. The strategy evolved from initial failures with HDA on oxidized substrates to a successful intramolecular aldol approach, leveraging common intermediates derived from dayaolingzhiol M. The final stage involves deprotection and reduction to furnish the hemiacetal."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "fragment_A",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The target molecules are dispirocochlearoids A-C. A key intermediate for the synthesis is a structural analog of fornicin C, which can be derived from 2,5-dihydroxyacetophenone (14).",
+        "gap": "Need to protect the phenolic hydroxyls of 2,5-dihydroxyacetophenone to enable subsequent reactions.",
+        "decision": "To protect the phenolic hydroxyls, chose sequential protection with MOM and THP ethers, expecting to obtain a fully protected intermediate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)c1cc(O)ccc1O"
+        ],
+        "product_smiles": [
+          "COc1ccc(O)c(C(C)=O)c1"
+        ],
+        "reagents": [
+          "MOMBr",
+          "DIPEA"
+        ],
+        "solvent": "DCM",
+        "temperature": "-10 °C",
+        "time": "4.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "Sequential protection of the phenolic hydroxyls with MOM ether was successful, yielding intermediate 15."
+      },
+      "evidence": {
+        "text_span": "Sequential protection of the phenolic hydroxyls with MOM and THP ethers afforded the fully protected intermediate 16. An intermolecular aldol reaction with α-keto ester 17 yielded tertiary alcohol 18, which was dehydrated with TFAA and TEA to give a mixture of geometric isomers 19 and 20, thereby introducing the requisite conjugated double bond. Their E/Z configurations were assigned by 2D NOESY spectroscopy. Selective hydrogenation of 19/20 using Lindlar catalyst then furnished the target compound 21. Subsequent screening of HDA conditions— encompassing thermal activation and Lewis acid catalysis— revealed that 21 did not undergo cyclization, and the desired product 22 was not formed (for details, see Table S2, Supporting Information (SI)).",
+        "image_refs": [
+          "db0c06a6afa35bd1fcfb07d77066fd57506e5f0a5cb030bd0e774623ba64e81a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "fragment_A",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "One phenolic hydroxyl is protected as MOM ether (15).",
+        "gap": "Need to protect the remaining phenolic hydroxyl to obtain the fully protected intermediate.",
+        "decision": "To protect the remaining phenolic hydroxyl, chose THP ether protection, expecting to obtain the fully protected intermediate 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(O)c(C(C)=O)c1"
+        ],
+        "product_smiles": [
+          "COc1ccc(OP)c(C(C)=O)c1"
+        ],
+        "reagents": [
+          "2-Chloro-THP",
+          "NaH"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C to rt",
+        "time": "1.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Protection of the second phenolic hydroxyl with THP ether was successful, affording the fully protected intermediate 16."
+      },
+      "evidence": {
+        "text_span": "Sequential protection of the phenolic hydroxyls with MOM and THP ethers afforded the fully protected intermediate 16.",
+        "image_refs": [
+          "db0c06a6afa35bd1fcfb07d77066fd57506e5f0a5cb030bd0e774623ba64e81a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "fragment_A",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Fully protected intermediate 16 is available.",
+        "gap": "Need to introduce the side chain via an aldol reaction.",
+        "decision": "To introduce the side chain, chose an intermolecular aldol reaction with α-keto ester 17, expecting to yield tertiary alcohol 18."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(OP)c(C(C)=O)c1",
+          "COC(=O)C(=O)CCC=C(C)C"
+        ],
+        "product_smiles": [
+          "C=CC(C)C(C(=O)OC)C(C(C)=O)c1cc(OC)ccc1OP"
+        ],
+        "reagents": [
+          "LiHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Intermolecular aldol reaction with α-keto ester 17 yielded tertiary alcohol 18."
+      },
+      "evidence": {
+        "text_span": "An intermolecular aldol reaction with α-keto ester 17 yielded tertiary alcohol 18",
+        "image_refs": [
+          "db0c06a6afa35bd1fcfb07d77066fd57506e5f0a5cb030bd0e774623ba64e81a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "fragment_A",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tertiary alcohol 18 is available.",
+        "gap": "Need to introduce the requisite conjugated double bond.",
+        "decision": "To introduce the conjugated double bond, chose dehydration with TFAA and TEA, expecting to give a mixture of geometric isomers 19 and 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC(C)C(C(=O)OC)C(C(C)=O)c1cc(OC)ccc1OP"
+        ],
+        "product_smiles": [
+          "COC(=O)C=C(C)CCC=C(C)C",
+          "COC(=O)C=C(C)CCC=C(C)C"
+        ],
+        "reagents": [
+          "TFAA",
+          "DMAP",
+          "Et3N"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C to rt",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 35,
+        "observation": "Dehydration with TFAA and TEA gave a mixture of geometric isomers 19 and 20, introducing the requisite conjugated double bond."
+      },
+      "evidence": {
+        "text_span": "tertiary alcohol 18, which was dehydrated with TFAA and TEA to give a mixture of geometric isomers 19 and 20, thereby introducing the requisite conjugated double bond.",
+        "image_refs": [
+          "db0c06a6afa35bd1fcfb07d77066fd57506e5f0a5cb030bd0e774623ba64e81a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "fragment_A",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A mixture of geometric isomers 19 and 20 is available.",
+        "gap": "Need to selectively hydrogenate the double bond to furnish compound 21.",
+        "decision": "To selectively hydrogenate, chose Lindlar catalyst with quinoline, expecting to obtain compound 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C=C(C)CCC=C(C)C",
+          "COC(=O)C=C(C)CCC=C(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)CC(C)CCC=C(C)C"
+        ],
+        "reagents": [
+          "H2",
+          "Lindlar’s Pd",
+          "Quinoline"
+        ],
+        "solvent": "EtOH",
+        "temperature": "rt",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Selective hydrogenation of 19/20 using Lindlar catalyst furnished compound 21."
+      },
+      "evidence": {
+        "text_span": "Selective hydrogenation of 19/20 using Lindlar catalyst then furnished the target compound 21.",
+        "image_refs": [
+          "db0c06a6afa35bd1fcfb07d77066fd57506e5f0a5cb030bd0e774623ba64e81a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 21, a structural analog of fornicin C, is available. The biosynthetic hypothesis suggests a hetero-Diels-Alder (HDA) reaction to construct the D/E-ring system.",
+        "gap": "Need to achieve the HDA cyclization to form the core scaffold.",
+        "decision": "To achieve HDA cyclization, screened various conditions including thermal activation and Lewis acid catalysis, expecting to form product 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)CC(C)CCC=C(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)C1CC(O)c2c(OC)ccc(O)c2C1(C)O"
+        ],
+        "reagents": [],
+        "catalyst": "Lewis acid",
+        "temperature": "thermal activation"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Compound 21 did not undergo cyclization, and the desired product 22 was not formed under various HDA conditions. This highlights the synthetic challenge of installing the D/E-ring system."
+      },
+      "evidence": {
+        "text_span": "Subsequent screening of HDA conditions— encompassing thermal activation and Lewis acid catalysis— revealed that 21 did not undergo cyclization, and the desired product 22 was not formed (for details, see Table S2, Supporting Information (SI)). These results underscore the synthetic challenge of installing the D/E-ring system onto the dispirocochlearoid framework in the laboratory, despite the mechanistic plausibility of the biosynthetic hypothesis.",
+        "image_refs": [
+          "db0c06a6afa35bd1fcfb07d77066fd57506e5f0a5cb030bd0e774623ba64e81a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "The direct HDA cyclization of compound 21 failed.",
+        "gap": "Need a viable strategy to construct the D/E-ring system.",
+        "decision": "To overcome the HDA failure, turned to the reduced derivative 23, which proved to be a viable substrate for an efficient HDA reaction, providing a practical entry into the target molecular architecture."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A strategic shift to a reduced derivative (23) was identified as a promising approach for HDA."
+      },
+      "evidence": {
+        "text_span": "In pursuit of a general and divergent strategy for synthesizing Ganoderma meroterpenoids, we turned to the reduced derivative 23. Notably, 23 proved to be a viable substrate for an efficient HDA reaction, providing a practical entry into the target molecular architecture.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 8,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A previous method for constructing the A/B/C/D tetracyclic scaffold via an intermolecular aldol reaction is established. Intermediate 25 is synthesized from commercially available 1,4-dimethoxybenzene and succinic anhydride.",
+        "gap": "Need to couple intermediates 20 and 25 to form the core skeleton.",
+        "decision": "To form the core skeleton, chose to couple intermediates 20 and 25 via an aldol reaction, expecting to efficiently afford the desired aldol adduct 26."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(=CC(=O)c1ccc(OC(OC)OC)cc1)CCC=C(C)C",
+          "COC(OC)Oc1ccc2c(c1)OC(C)(C)C[C@H]2CCC=C(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)C1(c2ccc(OC(OC)OC)cc2)OC(CCC=C(C)C)=C(c2ccc(OC(OC)OC)cc2)C1=O"
+        ],
+        "reagents": [
+          "LDA",
+          "HMPA"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to rt",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "observation": "Coupling of intermediates 20 and 25 efficiently afforded the desired aldol adduct 26 in synthetically useful yield."
+      },
+      "evidence": {
+        "text_span": "Using our previously established method for constructing the A/B/C/D tetracyclic scaffold via an intermolecular aldol reaction,23 we first targeted the core skeleton by coupling intermediates 20 and 25 (Scheme 2). Intermediate 25 was synthesized from commercially available 1,4-dimethoxybenzene and succinic anhydride (see the Supporting Information for details). This coupling efficiently afforded the desired aldol adduct 26 in synthetically useful yield.",
+        "image_refs": [
+          "66732a10bfeb252da943971f20feb6832a1d8ece88820cda35107107e124dec2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldol adduct 26 is available.",
+        "gap": "Need to establish the tricyclic core framework.",
+        "decision": "To establish the tricyclic core, chose a sequence of isopropylidene group removal, THP deprotection, and an HDA cascade, expecting to cleanly yield intermediate 27."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1(c2ccc(OC(OC)OC)cc2)OC(CCC=C(C)C)=C(c2ccc(OC(OC)OC)cc2)C1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)C1(c2ccc(OC(OC)OC)cc2)OC(CCC=C(C)C)=C(c2ccc(O)cc2)C1=O"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "DCM",
+        "temperature": "-10 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Removal of the isopropylidene group, THP deprotection, and an HDA cascade cleanly yielded intermediate 27."
+      },
+      "evidence": {
+        "text_span": "Subsequent removal of the isopropylidene group, THP deprotection, and an HDA cascade cleanly yielded intermediate 27.",
+        "image_refs": [
+          "66732a10bfeb252da943971f20feb6832a1d8ece88820cda35107107e124dec2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tricyclic core intermediate 27 is available.",
+        "gap": "Need to perform lactonization to form key intermediate 28.",
+        "decision": "To perform lactonization, chose K2CO3 in refluxing THF, expecting to furnish key intermediate 28."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1(c2ccc(OC(OC)OC)cc2)OC(CCC=C(C)C)=C(c2ccc(O)cc2)C1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)C1([C@@H]2CC(C)(C)Oc3cc(OC(OC)OC)ccc32)OC(CCC=C(C)C)=C(c2ccc(OC(OC)OC)cc2)C1=O"
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "THF/H2O (95%/5%)",
+        "temperature": "60 °C",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "Lactonization of 27 with K2CO3 in refluxing THF furnished the key intermediate 28."
+      },
+      "evidence": {
+        "text_span": "With the tricyclic core framework established, lactonization of 27 with K2CO3 in refluxing THF furnished the key intermediate 28.",
+        "image_refs": [
+          "66732a10bfeb252da943971f20feb6832a1d8ece88820cda35107107e124dec2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Key intermediate 28 is available.",
+        "gap": "Need to install the D-ring double bond to obtain the desired conjugated system 29.",
+        "decision": "To install the D-ring double bond, attempted oxidative elimination using DDQ, expecting to deliver the conjugated system 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1([C@@H]2CC(C)(C)Oc3cc(OC(OC)OC)ccc32)OC(CCC=C(C)C)=C(c2ccc(OC(OC)OC)cc2)C1=O"
+        ],
+        "product_smiles": [
+          "COC(=O)C1([C@@H]2CC(C)(C)Oc3cc(OC(OC)OC)ccc32)OC(CCC=C(C)C)=C(c2ccc(OC(OC)OC)cc2)C1=O"
+        ],
+        "reagents": [
+          "DDQ"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "All subsequent attempts to install the D-ring double bond via oxidative elimination (e.g., using DDQ) failed to deliver the desired conjugated system 29. This suggests significant steric or electronic constraints."
+      },
+      "evidence": {
+        "text_span": "However, all subsequent attempts to install the D-ring double bond via oxidative elimination (e.g., using DDQ) failed to deliver the desired conjugated system 29 (for details, see Table S3, SI). This outcome suggests significant steric or electronic constraints that merit further mechanistic investigation.",
+        "image_refs": [
+          "66732a10bfeb252da943971f20feb6832a1d8ece88820cda35107107e124dec2.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "Attempts to install the D-ring double bond after assembling the A-F hexacyclic framework failed.",
+        "gap": "Need a revised strategy to construct the unsaturation at an earlier stage.",
+        "decision": "To address the failure, redesigned the strategy to construct the unsaturation at an earlier stage by reducing the benzylic carbonyl of 19 to afford benzyl alcohol 30."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A strategic shift to introduce the D-ring unsaturation earlier in the synthesis was adopted."
+      },
+      "evidence": {
+        "text_span": "Given the failure to introduce the D-ring double bond after assembly of the A−F hexacyclic framework, we redesigned our strategy to construct this unsaturation at an earlier stage. Accordingly, the benzylic carbonyl of 19 was first reduced to afford benzyl alcohol 30 (Scheme 3).",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 13,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 19 is available.",
+        "gap": "Need to reduce the benzylic carbonyl to afford benzyl alcohol 30.",
+        "decision": "To reduce the benzylic carbonyl, chose NaBH4 with CeCl3 in MeOH, expecting to obtain benzyl alcohol 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(=CC(=O)c1ccc(OC)cc1C(OC)OC)CCC=C(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)C(=CC(O)c1ccc(OC)cc1C(OC)OC)CCC=C(C)C"
+        ],
+        "reagents": [
+          "NaBH4",
+          "CeCl3"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "Reduction of the benzylic carbonyl of 19 afforded benzyl alcohol 30."
+      },
+      "evidence": {
+        "text_span": "Accordingly, the benzylic carbonyl of 19 was first reduced to afford benzyl alcohol 30 (Scheme 3).",
+        "image_refs": [
+          "f51b120bc62bf514b9b605b298b86aaa01f73420aa274400dbbba2ff50957e59.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Benzyl alcohol 30 is available.",
+        "gap": "Need to perform a HDA reaction to form intermediates 31/31'.",
+        "decision": "To perform the HDA reaction, chose TFA in DCM, expecting to yield intermediates 31/31'."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(=CC(O)c1ccc(OC)cc1C(OC)OC)CCC=C(C)C"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C[C@@H](c2ccc(OC)cc2C(OC)OC)[C@H](O)CC1"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "DCM",
+        "temperature": "-10 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "dr": "6:1",
+        "observation": "Subjecting 30 to a HDA reaction yielded intermediates 31/31'."
+      },
+      "evidence": {
+        "text_span": "Subjecting 30 to a HDA reaction yielded intermediates 31/31′",
+        "image_refs": [
+          "f51b120bc62bf514b9b605b298b86aaa01f73420aa274400dbbba2ff50957e59.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediates 31/31' are available.",
+        "gap": "Need to induce double-bond migration to furnish 32/32'.",
+        "decision": "To induce double-bond migration, chose treatment with DBU in MeOH, expecting to furnish 32/32'."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C[C@@H](c2ccc(OC)cc2C(OC)OC)[C@H](O)CC1"
+        ],
+        "product_smiles": [
+          "COC(=O)C1=C[C@@H](c2ccc(OC)cc2C(OC)OC)[C@H](O)CC1"
+        ],
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "MeOH",
+        "temperature": "rt",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "dr": "6:5",
+        "observation": "Treatment with DBU underwent double-bond migration to furnish 32/32'."
+      },
+      "evidence": {
+        "text_span": "which upon treatment with DBU underwent double-bond migration to furnish 32/32′.",
+        "image_refs": [
+          "f51b120bc62bf514b9b605b298b86aaa01f73420aa274400dbbba2ff50957e59.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediates 31/31' and 32/32' are available. The goal is to perform an intermolecular aldol reaction with 20.",
+        "gap": "Need to achieve the desired coupling.",
+        "decision": "To achieve the coupling, systematically screened various bases (e.g., LDA, LiHMDS, n-BuLi, NaOEt, DBU, TBAF), temperatures (-78 °C to reflux), and stoichiometries, expecting to obtain the desired aldol product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1=C[C@@H](c2ccc(OC)cc2C(OC)OC)[C@H](O)CC1",
+          "COC(=O)C1=C[C@@H](c2ccc(OC)cc2C(OC)OC)[C@H](O)CC1",
+          "COC(=O)C=C(C)CCC=C(C)C"
+        ],
+        "reagents": [
+          "LDA",
+          "LiHMDS",
+          "n-BuLi",
+          "NaOEt",
+          "DBU",
+          "TBAF"
+        ],
+        "temperature": "-78 °C to reflux",
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "The desired coupling was not detected. Instead, homocoupled and oxidized byproducts were isolated, suggesting that both electronic and steric factors collectively impede the desired transformation."
+      },
+      "evidence": {
+        "text_span": "We then explored the intermolecular aldol reaction of intermediates 31/31′ and 32/32′ with 20. Despite systematic screening of bases (e.g., LDA, LiHMDS, n-BuLi, NaOEt, DBU, TBAF), temperatures ( −78 °C to reflux), and stoichiometries, the desired coupling was not detected. Instead, homocoupled and oxidized byproducts were isolated (see the Supporting Information for details), whose formation—potentially via a radical pathway—suggested that both electronic and steric factors collectively impede the desired transformation.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 17,
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Extensive attempts at intermolecular aldol reactions failed.",
+        "gap": "Need a more promising route to the characteristic D/E-ring system.",
+        "decision": "To overcome the failure, prompted a strategic shift toward an intramolecular aldol approach, which offered a more promising route to the characteristic D/E-ring system of dispirocochlearoids A-C."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A strategic shift to an intramolecular aldol approach was adopted."
+      },
+      "evidence": {
+        "text_span": "Consequently, these extensive but unsuccessful efforts prompted a strategic shift toward an intramolecular aldol approach, which offered a more promising route to the characteristic D/E-ring system of dispirocochlearoids A−C.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 18,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis commenced from compound 16. The goal is to form tertiary alcohols 18/34, derivatives of dayaolingzhiol M.",
+        "gap": "Need to perform an intermolecular aldol reaction with α-keto ester intermediates 17/33.",
+        "decision": "To form the tertiary alcohols, chose an intermolecular aldol reaction with α-keto ester intermediates 17/33 (prepared via a known procedure), expecting to furnish 18/34."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(C)=O)cc1",
+          "COC(=O)C(=O)CCC=C(C)C"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C(O)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "LiHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Intermolecular aldol reaction with α-keto ester 17 furnished tertiary alcohol 18."
+      },
+      "evidence": {
+        "text_span": "The synthesis commenced from compound 16 (Scheme 4). An intermolecular aldol reaction with α-keto ester intermediates 17/33—prepared via a known procedure24 furnished the tertiary alcohols 18/34, which are derivatives of dayaolingzhiol M.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis commenced from compound 16. The goal is to form tertiary alcohols 18/34, derivatives of dayaolingzhiol M.",
+        "gap": "Need to perform an intermolecular aldol reaction with α-keto ester intermediates 17/33.",
+        "decision": "To form the tertiary alcohols, chose an intermolecular aldol reaction with α-keto ester intermediates 17/33 (prepared via a known procedure), expecting to furnish 18/34."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(C)=O)cc1",
+          "COC(=O)C(=O)CCCC=C(C)C"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C(O)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "LiHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Intermolecular aldol reaction with α-keto ester 33 furnished tertiary alcohol 34."
+      },
+      "evidence": {
+        "text_span": "The synthesis commenced from compound 16 (Scheme 4). An intermolecular aldol reaction with α-keto ester intermediates 17/33—prepared via a known procedure24 furnished the tertiary alcohols 18/34, which are derivatives of dayaolingzhiol M.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tertiary alcohol 18 is available.",
+        "gap": "Need to dehydrate to provide alkenes 20 and 35 as E/Z isomers.",
+        "decision": "To dehydrate, chose TFAA and TEA, expecting to provide alkenes 20 and 35 as ~1.2:1 mixtures of E/Z isomers."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C(O)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1",
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "TFAA",
+          "DMAP",
+          "Et3N"
+        ],
+        "solvent": "Toluene",
+        "temperature": "0 °C to rt",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "Dehydration with TFAA and TEA provided alkenes 20 and 35 as ~1.2:1 mixtures of E/Z isomers, which were separated by silica gel chromatography."
+      },
+      "evidence": {
+        "text_span": "Dehydration with TFAA and TEA provided alkenes 35 and 39 (20, n = 1) as ~1.2:1 mixtures of E/Z isomers, which were separated by silica gel chromatography. The E/Z configuration of 35/39 was assigned by 2D NOESY spectroscopy.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tertiary alcohol 34 is available.",
+        "gap": "Need to dehydrate to provide alkenes 39 and 35 as E/Z isomers.",
+        "decision": "To dehydrate, chose TFAA and TEA, expecting to provide alkenes 39 and 35 as ~1.2:1 mixtures of E/Z isomers."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C(O)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1",
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "TFAA",
+          "DMAP",
+          "Et3N"
+        ],
+        "solvent": "Toluene",
+        "temperature": "0 °C to rt",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 48,
+        "observation": "Dehydration with TFAA and TEA provided alkenes 39 and 35 as ~1.2:1 mixtures of E/Z isomers, which were separated by silica gel chromatography."
+      },
+      "evidence": {
+        "text_span": "Dehydration with TFAA and TEA provided alkenes 35 and 39 (20, n = 1) as ~1.2:1 mixtures of E/Z isomers, which were separated by silica gel chromatography. The E/Z configuration of 35/39 was assigned by 2D NOESY spectroscopy.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The E-isomer (35) is available.",
+        "gap": "Need to subject 35 to a two-step sequence involving reduction and an HDA cycloaddition to deliver the C7' epimeric pair 37/37'.",
+        "decision": "To deliver the C7' epimeric pair, chose a two-step sequence involving reduction with NaBH4/CeCl3 and HDA cycloaddition with TFA, expecting to obtain 37/37'."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C(O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "NaBH4",
+          "CeCl3"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "The E-isomer (35) was subjected to reduction, yielding 36."
+      },
+      "evidence": {
+        "text_span": "The E-isomer (35) was then subjected to a two-step sequence involving reduction and an HDA cycloaddition, delivering the C7′ epimeric pair 37/37′ (d.r. = 5:1).",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 36 is available.",
+        "gap": "Need to perform HDA cycloaddition to deliver the C7' epimeric pair 37/37'.",
+        "decision": "To perform HDA cycloaddition, chose TFA in DCM, expecting to obtain 37/37'."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C(O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "DCM",
+        "temperature": "-10 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "dr": "5:1",
+        "observation": "HDA cycloaddition delivered the C7' epimeric pair 37/37'."
+      },
+      "evidence": {
+        "text_span": "The E-isomer (35) was then subjected to a two-step sequence involving reduction and an HDA cycloaddition, delivering the C7′ epimeric pair 37/37′ (d.r. = 5:1).",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The C7' epimeric pair 37/37' is available.",
+        "gap": "Need to induce double-bond migration to produce the C9' epimeric pair 38/38'.",
+        "decision": "To induce double-bond migration, chose lithium hydroxide-mediated hydrolysis, expecting to produce the C9' epimeric pair 38/38'."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C(O)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "LiOH.H2O"
+        ],
+        "solvent": "EtOH/H2O",
+        "temperature": "rt",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "dr": "6:1",
+        "observation": "Lithium hydroxide-mediated hydrolysis of 37/37' induced double-bond migration and produced the C9' epimeric pair 38/38'."
+      },
+      "evidence": {
+        "text_span": "Lithium hydroxide-mediated hydrolysis of 37/37′ induced double-bond migration and produced the C9′ epimeric pair 38/38′ (d.r. = 6:1). X-ray crystallographic analysis confirmed the relative configuration of 38 (CCDC: 2487546).",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The C9' epimeric pair 38/38' and compound 40 are available. The goal is to perform an ester condensation, followed by intramolecular aldol and lactonization cascade.",
+        "gap": "Need to achieve the condensation/intramolecular aldol/lactonization cascade.",
+        "decision": "To achieve the cascade, attempted ester condensation between 38 and 40, expecting to yield the cascade products 42-45."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C(O)CCC=C(C)C)cc1",
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "Attempted ester condensation between 38 and 40 unexpectedly yielded trace amounts of the condensation/intramolecular aldol/lactonization cascade products 42-45 over extended reaction times."
+      },
+      "evidence": {
+        "text_span": "Attempted ester condensation between 38 and 40 unexpectedly yielded trace amounts of the condensation/intramolecular aldol/lactonization cascade products 42−45 over extended reaction times, prompting a full optimization of this transformation.",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 26,
+      "action": "revision",
+      "revises_step_id": 25,
+      "thought": {
+        "background": "Initial attempts at the condensation/intramolecular aldol/lactonization cascade yielded only trace amounts of product.",
+        "gap": "Need to optimize the reaction conditions for efficient access to the cascade products.",
+        "decision": "To optimize the cascade, investigated DCC/DMAP-mediated condensation, found that HOBt ensured complete esterification, screened bases (DIPEA, DMAP), and discovered that post-esterification addition of TBAF cleanly promoted the cascade to completion. This led to an optimized one-pot protocol (DCC/HOBt/DMAP/TBAF) in DCM, with the essential role of fluoride anion and dispensability of DMAP."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "An optimized one-pot protocol (DCC/HOBt/TBAF in DCM) was developed, providing efficient access to the cascade products."
+      },
+      "evidence": {
+        "text_span": "The DCC/DMAP-mediated condensation of 38 and 40 initially afforded a complex mixture dominated by the persistent DCC-adduct, along with a minor amount of the esterification intermediate, underscoring the adduct’s low reactivity under these conditions. While the incorporation of HOBt mitigated this issue by ensuring complete esterification, the subsequent aldol cyclization remained inefficient. A screen of bases identified DIPEA and DMAP as viable, whereas stronger bases led to decomposition. The pivotal breakthrough was the postesterification addition of TBAF, which cleanly promoted the cascade to completion. This success informed the development of an optimized one-pot protocol (DCC/ HOBt/DMAP/TBAF). Further investigation confirmed dichloromethane as the optimal solvent, highlighted the essential role of the fluoride anion, and established that DMAP was dispensable. Alternative fluoride sources, including tetraethylammonium fluoride and N,N,N-trimethyl-1-phenylmethanaminium fluoride, were also effective, in contrast to tetramethylammonium fluoride (see SI, Table S1).",
+        "image_refs": []
+      }
+    },
+    {
+      "step_id": 27,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimized conditions for the condensation/intramolecular aldol/lactonization cascade are established.",
+        "gap": "Need to apply the optimized conditions to synthesize the n=1 series (42-45).",
+        "decision": "To synthesize the n=1 series, applied the optimized one-pot protocol (DCC, HOBt, TBAF in DCM) to 38/38' and 40, expecting to obtain 42-45."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C(O)CCC=C(C)C)cc1",
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1",
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1",
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1",
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "DCC",
+          "HOBt",
+          "TBAF"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "The optimized conditions provided efficient access to the n=1 series (42-45) in a ratio of 32.5:29.1:4.9:33.5, with a total tandem reaction yield of ~76% from substrates 40 and 38/38'."
+      },
+      "evidence": {
+        "text_span": "The optimized conditions provided efficient access to four stereoisomeric series: 42−45 (n = 1), and 53−56 (n = 2). HPLC analysis revealed distinct distributions for these precursors. The n = 1 series (42−45) was obtained in a ratio of 32.5:29.1:4.9:33.5, corresponding to a total tandem reaction yield of ~76% from substrates 40 and 38/38′.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 28,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimized conditions for the condensation/intramolecular aldol/lactonization cascade are established.",
+        "gap": "Need to apply the optimized conditions to synthesize the n=2 series (53-56).",
+        "decision": "To synthesize the n=2 series, applied the optimized one-pot protocol (DCC, HOBt, TBAF in DCM) to 38/38' and 41, expecting to obtain 53-56."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C(O)CCC=C(C)C)cc1",
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1",
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1",
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1",
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "DCC",
+          "HOBt",
+          "TBAF"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "The optimized conditions provided efficient access to the n=2 series (53-56) in a ratio of 36.3:25.7:2.9:35.1, with a total yield of ~67% from 41 and 38/38'."
+      },
+      "evidence": {
+        "text_span": "The optimized conditions provided efficient access to four stereoisomeric series: 42−45 (n = 1), and 53−56 (n = 2). HPLC analysis revealed distinct distributions for these precursors. The n = 1 series (42−45) was obtained in a ratio of 32.5:29.1:4.9:33.5, corresponding to a total tandem reaction yield of ~76% from substrates 40 and 38/38′. Similarly, the n = 2 series (53−56) showed a distribution of 36.3:25.7:2.9:35.1, with a total yield of ~67% from 41 and 38/38′.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 29,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Individual diastereomers of the n=1 series (42-45) are available after preparative HPLC separation.",
+        "gap": "Need to deprotect and reduce to yield the target meroterpenoid dimers.",
+        "decision": "To yield the target dimers, chose deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, expecting to obtain 46."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "PPTS"
+        ],
+        "solvent": "t-Butanol",
+        "temperature": "reflux",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Deprotection of 42 with PPTS in t-BuOH was successful, yielding 46."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 30,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Individual diastereomers of the n=2 series (53-56) are available after preparative HPLC separation.",
+        "gap": "Need to deprotect and reduce to yield the target meroterpenoid dimers.",
+        "decision": "To yield the target dimers, chose deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, expecting to obtain 57."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "PPTS"
+        ],
+        "solvent": "t-Butanol",
+        "temperature": "reflux",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "observation": "Deprotection of 53 with PPTS in t-BuOH was successful, yielding 57."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 31,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Individual diastereomers of the n=1 series (42-45) are available after preparative HPLC separation.",
+        "gap": "Need to deprotect and reduce to yield the target meroterpenoid dimers.",
+        "decision": "To yield the target dimers, chose deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, expecting to obtain 47."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "PPTS"
+        ],
+        "solvent": "t-Butanol",
+        "temperature": "reflux",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Deprotection of 43 with PPTS in t-BuOH was successful, yielding 47."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59704272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 32,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Individual diastereomers of the n=2 series (53-56) are available after preparative HPLC separation.",
+        "gap": "Need to deprotect and reduce to yield the target meroterpenoid dimers.",
+        "decision": "To yield the target dimers, chose deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, expecting to obtain 58."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "PPTS"
+        ],
+        "solvent": "t-Butanol",
+        "temperature": "reflux",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Deprotection of 54 with PPTS in t-BuOH was successful, yielding 58."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 33,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Individual diastereomers of the n=1 series (42-45) are available after preparative HPLC separation.",
+        "gap": "Need to deprotect and reduce to yield the target meroterpenoid dimers.",
+        "decision": "To yield the target dimers, chose deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, expecting to obtain 48."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "PPTS"
+        ],
+        "solvent": "t-Butanol",
+        "temperature": "reflux",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Deprotection of 44 with PPTS in t-BuOH was successful, yielding 48."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 34,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Individual diastereomers of the n=2 series (53-56) are available after preparative HPLC separation.",
+        "gap": "Need to deprotect and reduce to yield the target meroterpenoid dimers.",
+        "decision": "To yield the target dimers, chose deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, expecting to obtain 59."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "PPTS"
+        ],
+        "solvent": "t-Butanol",
+        "temperature": "reflux",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Deprotection of 55 with PPTS in t-BuOH was successful, yielding 59."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 35,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Individual diastereomers of the n=1 series (42-45) are available after preparative HPLC separation.",
+        "gap": "Need to deprotect and reduce to yield the target meroterpenoid dimers.",
+        "decision": "To yield the target dimers, chose deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, expecting to obtain 49."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "PPTS"
+        ],
+        "solvent": "t-Butanol",
+        "temperature": "reflux",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "Deprotection of 45 with PPTS in t-BuOH was successful, yielding 49."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 36,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Individual diastereomers of the n=2 series (53-56) are available after preparative HPLC separation.",
+        "gap": "Need to deprotect and reduce to yield the target meroterpenoid dimers.",
+        "decision": "To yield the target dimers, chose deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, expecting to obtain 60."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "PPTS"
+        ],
+        "solvent": "t-Butanol",
+        "temperature": "reflux",
+        "time": "8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "observation": "Deprotection of 56 with PPTS in t-BuOH was successful, yielding 60."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 37,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deprotected intermediate 46 is available.",
+        "gap": "Need to reduce to yield the target meroterpenoid dimer 50.",
+        "decision": "To yield the target dimer, chose reduction with NaBH4 at 0 °C, expecting to obtain 50."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Reduction of 46 with NaBH4 yielded 50. The reduction was highly stereoselective, affording a single diastereomer with a defined configuration at C10'."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers. Notably, the reduction was highly stereoselective across all precursors, each affording a single diastereomer with a defined configuration at C10′.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 38,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deprotected intermediate 57 is available.",
+        "gap": "Need to reduce to yield the target meroterpenoid dimer 1 (Dispirocochlearoid A).",
+        "decision": "To yield the target dimer, chose reduction with NaBH4 at 0 °C, expecting to obtain 1."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Reduction of 57 with NaBH4 yielded 1 (Dispirocochlearoid A). The reduction was highly stereoselective, affording a single diastereomer with a defined configuration at C10'."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers. Notably, the reduction was highly stereoselective across all precursors, each affording a single diastereomer with a defined configuration at C10′. Comparative NMR analysis identified three synthetic compounds 1−3, which sequentially matched the reported 1H and 13C NMR data for the natural products dispirocochlearoids A−C, respectively.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 39,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deprotected intermediate 47 is available.",
+        "gap": "Need to reduce to yield the target meroterpenoid dimer 3 (Dispirocochlearoid C).",
+        "decision": "To yield the target dimer, chose reduction with NaBH4 at 0 °C, expecting to obtain 3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Reduction of 47 with NaBH4 yielded 3 (Dispirocochlearoid C). The reduction was highly stereoselective, affording a single diastereomer with a defined configuration at C10'."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers. Notably, the reduction was highly stereoselective across all precursors, each affording a single diastereomer with a defined configuration at C10′. Comparative NMR analysis identified three synthetic compounds 1−3, which sequentially matched the reported 1H and 13C NMR data for the natural products dispirocochlearoids A−C, respectively.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 40,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deprotected intermediate 58 is available.",
+        "gap": "Need to reduce to yield the target meroterpenoid dimer 2 (Dispirocochlearoid B).",
+        "decision": "To yield the target dimer, chose reduction with NaBH4 at 0 °C, expecting to obtain 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "Reduction of 58 with NaBH4 yielded 2 (Dispirocochlearoid B). The reduction was highly stereoselective, affording a single diastereomer with a defined configuration at C10'."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers. Notably, the reduction was highly stereoselective across all precursors, each affording a single diastereomer with a defined configuration at C10′. Comparative NMR analysis identified three synthetic compounds 1−3, which sequentially matched the reported 1H and 13C NMR data for the natural products dispirocochlearoids A−C, respectively.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 41,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deprotected intermediate 48 is available.",
+        "gap": "Need to reduce to yield the target meroterpenoid dimer 51.",
+        "decision": "To yield the target dimer, chose reduction with NaBH4 at 0 °C, expecting to obtain 51."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Reduction of 48 with NaBH4 yielded 51. The reduction was highly stereoselective, affording a single diastereomer with a defined configuration at C10'."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers. Notably, the reduction was highly stereoselective across all precursors, each affording a single diastereomer with a defined configuration at C10′.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 42,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deprotected intermediate 59 is available.",
+        "gap": "Need to reduce to yield the target meroterpenoid dimer 61.",
+        "decision": "To yield the target dimer, chose reduction with NaBH4 at 0 °C, expecting to obtain 61."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Reduction of 59 with NaBH4 yielded 61. The reduction was highly stereoselective, affording a single diastereomer with a defined configuration at C10'."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers. Notably, the reduction was highly stereoselective across all precursors, each affording a single diastereomer with a defined configuration at C10′.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 43,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deprotected intermediate 49 is available.",
+        "gap": "Need to reduce to yield the target meroterpenoid dimer 52.",
+        "decision": "To yield the target dimer, chose reduction with NaBH4 at 0 °C, expecting to obtain 52."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Reduction of 49 with NaBH4 yielded 52. The reduction was highly stereoselective, affording a single diastereomer with a defined configuration at C10'."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers. Notably, the reduction was highly stereoselective across all precursors, each affording a single diastereomer with a defined configuration at C10′.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 44,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deprotected intermediate 60 is available.",
+        "gap": "Need to reduce to yield the target meroterpenoid dimer 62.",
+        "decision": "To yield the target dimer, chose reduction with NaBH4 at 0 °C, expecting to obtain 62."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "product_smiles": [
+          "COC(OC)c1ccc(C(=O)C=C(C)CCCC=C(C)C)cc1"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "Reduction of 60 with NaBH4 yielded 62. The reduction was highly stereoselective, affording a single diastereomer with a defined configuration at C10'."
+      },
+      "evidence": {
+        "text_span": "Separation by preparative HPLC provided the individual diastereomers. These were then subjected to deprotection with PPTS in t-BuOH, followed by reduction with NaBH4 at 0 °C, to yield the eight target meroterpenoid dimers. Notably, the reduction was highly stereoselective across all precursors, each affording a single diastereomer with a defined configuration at C10′.",
+        "image_refs": [
+          "7f9724ebc9abe0a8c95bf32b59104272f2c64baf0ca08a819d7ba1e95738f7ef.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "ROESY"
+    ],
+    "metrics": {},
+    "comparison_to_prior": "Synthetic compounds 1-3 sequentially matched the reported 1H and 13C NMR data for the natural products dispirocochlearoids A-C, respectively. The relative configurations of all eight final products enabled the retroactive assignment of their precursors (42-45, 53-56, 46-49, and 57-60). This deduction was further corroborated by the unambiguous X-ray crystallographic assignments of the relative configurations for 42 (CCDC: 2487547), 45 (CCDC: 2487548), and 53 (CCDC: 2487549), which were fully consistent with those derived from the final products.",
+    "significance": "The developed efficient three-step cascade sequence constructs the contiguous spirocyclic centers in rings B and C, enabling a convergent total synthesis of dispirocochlearoids A-C and five previously undetected diastereomers. This strategy lays a robust foundation for developing this natural product series as potential anti-inflammatory therapeutics."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.5c04234",
+      "pmcid": "PMC12751112",
+      "title": "Biomimetic Total Synthesis of Dispirocochlearoids A-C and Related &lt;i&gt;Ganoderma&lt;/i&gt; Meroterpenoid Dimers.",
+      "authors": "Shi SJ, Liu XL, Yang L, Zhan DS, Chen LH, Yin JP, Nan FJ.",
+      "journal": "Org Lett",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC12751112?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/ccebd7fd-8e35-4071-903e-4fc1a1ecc36e.zip",
+      "parsed_at": "2026-05-07T14:30:43.452971+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 102,
+    "parseable": 102,
+    "canonicalized": 34,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "trace_id": "TS-PMC12794660",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "cyctetryptomycin A",
+    "smiles": "O=C1NC(c2ccccc2)C2NC(=O)C(c3ccccc3)NC(=O)N3C(=O)C(c4ccccc4)NC4NC(=O)C(c5ccccc5)C5C(=O)NC(NC(=O)C(c6ccccc6)NC1NC(=O)C5C3C(=O)N2)C(c1ccccc1)NC4=O",
+    "natural_product_class": "peptide",
+    "structural_features": {
+      "molecular_weight": 1000.0,
+      "stereocenters": 12,
+      "ring_systems": "multiple fused and macrocyclic rings",
+      "key_motifs": [
+        "diketopiperazine",
+        "tryptophan derivative",
+        "macrocycle"
+      ]
+    },
+    "motivation": "The bibenzyl skeleton is commonly found in numerous natural products and bioactive compounds, and the development of efficient synthetic methods for its construction remains in high demand. The Nakamura group achieved the first total synthesis of cyctetryptomycins A and B by employing a zirconium catalyst.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Scalable synthesis of the C3-C3' dimer of 3-bromotryptophan derivative, followed by efficient conversion to the diketopiperazine core and enzymatic macrocyclization to cyctetryptomycins A and B."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming the macrocycle",
+        "named_strategy": "Enzymatic oxidation/cyclization",
+        "reasoning": "Chemical oxidation conditions led to undesired over-oxidation and no cyclized product. Enzymatic oxidation using CttpC successfully promoted the desired transformation.",
+        "alternatives_considered": [
+          {
+            "strategy": "Chemical oxidation",
+            "rejected_because": "Undesired over-oxidation and no cyclized product."
+          }
+        ]
+      },
+      {
+        "bond_description": "Amide bonds forming diketopiperazine",
+        "named_strategy": "Flash vacuum pyrolysis",
+        "reasoning": "Heating diketopiperazine precursors under flash vacuum pyrolysis conditions led to removal of Boc groups and intramolecular dehydration-condensation, constructing the diketopiperazine core.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C3-C3' bond of tryptophan derivatives",
+        "named_strategy": "Zr-catalyzed radical dimerization",
+        "reasoning": "A mild and scalable method for the dimerization of 3-bromotryptophan derivative was crucial. A sterically bulky dibutylzirconocene catalyst with DPPE proved effective, proceeding under mild conditions at room temperature and tolerating a wide substrate scope.",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The synthesis of cyctetryptomycins A and B relies on a key Zr-catalyzed C3-C3' dimerization of 3-bromotryptophan derivatives, which is then elaborated through diketopiperazine formation and a final enzymatic macrocyclization. This strategy addresses challenges in forming the complex macrocyclic structure and provides a scalable route to these natural products."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The target molecules, cyctetryptomycins A and B, contain a bibenzyl skeleton. Benzyl chlorides are inexpensive and readily available feedstocks for constructing this skeleton. The authors aimed to develop a Zr-catalyzed method for the dimerization of benzyl chlorides.",
+        "gap": "A mild and scalable method for the dimerization of 3-bromotryptophan derivative 59 was needed as a key step for the total synthesis of cyctetryptomycins.",
+        "decision": "To achieve the dimerization, the authors screened various zirconocene catalysts. A sterically bulky dibutylzirconocene catalyst (10 mol%) was found to be particularly effective. The addition of 1,2-bis(diphenylphosphino)ethane (DPPE) (10 mol%) was crucial for the success of the reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1C(C)N(C)C(C(=O)OC(C)(C)C)C2CC(N3CC(C)(C)OC3=O)=CC=CC=C2CC(c2ccccc2N2CC(C)(C)OC2=O)C(C(=O)OC(C)(C)C)N1C"
+        ],
+        "named_reaction": "Zr-catalyzed radical dimerization",
+        "reagents": [
+          "Zn",
+          "1,2-bis(diphenylphosphino)ethane (DPPE)"
+        ],
+        "catalyst": "dibutylzirconocene",
+        "solvent": "THF",
+        "temperature": "40 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 47,
+        "observation": "The dimerization proceeded smoothly under remarkably mild conditions at room temperature, suggesting broad applicability. The reaction was scalable to 100 g scale, affording 40 g of the desired dimer 61b in 47% yield."
+      },
+      "evidence": {
+        "text_span": "The synthesis commenced with the dimerization of 3-bromotryptophan derivative 59. As an initial step, the authors sought to develop a mild and scalable method for the dimerization of 59 to afford the dimerized product 61 (Scheme 12A). A screening of various zirconocene catalysts revealed that a sterically bulky dibutylzirconocene catalyst (10 mol%) was particularly effective. Interestingly, the addition of 1,2-bis(diphenylphosphino)ethane (DPPE) (10 mol%) proved to be crucial for the success of the reaction. ... The established Zr-catalyzed dimerization was next applied to the total synthesis of the cyctetryptomycins (Scheme 14, 76 and 77). The developed dimerization protocol proved scalable to 100 g scale, affording 40 g of the desired dimer 61b in 47% yield.",
+        "section": "Zr-catalyzed radical reaction in the total synthesis of complex natural products",
+        "image_refs": [
+          "a05d893f0ec5d6dbb66afe254c7b6f1008658d139b3d0dacac274bca94abe9cc.jpg",
+          "0a8f64c4b6654798c38d74ff277f1be3aa0d003781d9814831018d7531edbc46.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The Zr-catalyzed dimerization of 3-bromotryptophan derivative 59 was successful, providing the dimer 61b. The next step was to remove the Boc protecting groups and form the diketopiperazine core.",
+        "gap": "The presence of ZnCl2, a byproduct of the catalytic cycle, was found to be detrimental to the reaction, leading to over-reduction.",
+        "decision": "Control experiments were conducted to evaluate the effect of Zn salts on the reaction. The standard dimerization conditions were applied to 3-bromotryptophan derivative 59b, providing the desired dimer 61b in 65% yield. The addition of 1 equivalent of ZnCl2 reduced the yield to 31%. Furthermore, when ZnCl2 (1 equiv) was added in the absence of dppe, the yield dropped further to 21%, and the over-reduced byproduct 62 was obtained in 72% yield. These results suggest that ZnCl2 promotes the formation of the over-reduced compound 62."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC(=O)[C@@H](N)Cc1cn(C(=O)OC(C)(C)C)c2ccccc12"
+        ],
+        "reagents": [
+          "ZnCl2"
+        ],
+        "catalyst": "dibutylzirconocene",
+        "solvent": "THF",
+        "temperature": "40 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 21,
+        "failure_mode": "side_product_dominant",
+        "observation": "The addition of ZnCl2 significantly reduced the yield of the desired dimer and led to the formation of an over-reduced byproduct 62 in 72% yield."
+      },
+      "evidence": {
+        "text_span": "Next, control experiments were conducted to evaluate the effect of Zn salts on the reaction (Scheme 13B). The standard dimerization conditions were applied to 3-bromotryptophan derivative 59b, providing the desired dimer 61b in 65% yield. The addition of 1 equivalent of ZnCl2 reduced the yield to 31%. Furthermore, when ZnCl2 (1 equiv) was added in the absence of dppe, the yield dropped further to 21%, and the over-reduced byproduct 62 was obtained in 72% yield. These results suggest that ZnCl2 promotes the formation of the over-reduced compound 62.",
+        "section": "Zr-catalyzed radical reaction in the total synthesis of complex natural products",
+        "image_refs": [
+          "6c7e85ac2d80f1e6a1a61861f267a99161d7c675f7eb7937b31b16451074f8aa.jpg",
+          "4aad373b72764a93c59dad8bf7e3f109ef4e5f470a52e6d6d2ce93449f92dce8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "ZnCl2, a byproduct, was found to be detrimental, promoting over-reduction. This was attributed to ZnCl2 coordinating with the Boc groups, raising the reduction potential of the intermediate.",
+        "gap": "A strategy was needed to mitigate the detrimental effect of ZnCl2 and stabilize the radical pathway.",
+        "decision": "DPPE was found to be effective in addressing this issue. It captures ZnCl2 to form complex 60, thereby suppressing the increase in reduction potential and stabilizing the radical pathway."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The addition of DPPE successfully suppressed the formation of the over-reduced byproduct and maintained a good yield of the desired dimer."
+      },
+      "evidence": {
+        "text_span": "Mechanistic studies also revealed that ZnCl2, a byproduct of the catalytic cycle, exerts a detrimental effect on the reaction. Specifically, ZnCl2 coordinates with the two Boc groups of the substrate, raising the reduction potential from −1.1 V to −0.9 V. This shift increases the susceptibility of the benzylic radical intermediate to over-reduction, leading to undesired anionic species. To address this issue, DPPE was found to be effective: it captures ZnCl2 to form complex 60, thereby suppressing the increase in reduction potential and stabilizing the radical pathway.",
+        "section": "Zr-catalyzed radical reaction in the total synthesis of complex natural products",
+        "image_refs": [
+          "4aad373b72764a93c59dad8bf7e3f109ef4e5f470a52e6d6d2ce93449f92dce8.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The key C3-C3' dimerization was successfully achieved. The next stage involved constructing the diketopiperazine core.",
+        "gap": "The Boc protecting groups needed to be removed, and the resulting amino acids coupled to form the diketopiperazine.",
+        "decision": "The two Boc groups were removed with TMSI, followed by HATU-mediated amide coupling with various amino acids (65–67) to furnish diketopiperazine precursors (68–70). These precursors were then subjected to flash vacuum pyrolysis to form the diketopiperazine core."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)[C@@H](C[C@H]1[C@H](Br)c2ccccc2N1C(=O)OC(C)(C)C)NC(=O)OC(C)(C)C",
+          "CN(C(=O)OC(C)(C)C)[C@H](Cc1ccccc1)C(=O)O",
+          "CC(C)(C)OC(=O)N1CCC[C@@H]1C(=O)O",
+          "CC(C)(C)OC(=O)N[C@H](Cc1c[nH]c2ccccc12)C(=O)O"
+        ],
+        "product_smiles": [
+          "CC1C(=O)NC(Cc2ccccc2)C(C(=O)N(C)Cc2ccccc2)NC2Nc3ccccc3C2C2NC(=O)C(C)N(C)C(=O)C3c4ccccc4NC3C3c4ccccc4NC3NC2C(=O)N1C",
+          "",
+          ""
+        ],
+        "reagents": [
+          "TMSI",
+          "HATU",
+          "DMF"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C to 25 °C (deprotection), 25 °C (coupling), 230 °C (pyrolysis)",
+        "named_reaction": "Flash Vacuum Pyrolysis"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "observation": "The diketopiperazine precursors were successfully formed and converted to the diketopiperazine core via flash vacuum pyrolysis, enabling the total syntheses of ditryptophenaline (70), dibrevianamide F (71), and tetratryptomycin A (72). Tetratryptomycin A (72) was prepared on a multigram scale (21 g total)."
+      },
+      "evidence": {
+        "text_span": "Subsequent removal of the two Boc groups with TMSI, followed by HATU-mediated amide coupling with various amino acids 65–67, furnished the diketopiperazine precursors 68–70. Heating these precursors under flash vacuum pyrolysis conditions at 230 °C led to the removal of the Boc group and intramolecular dehydration–condensation, thereby constructing the diketopiperazine core and enabling the total syntheses of ditryptophenaline (70), dibrevianamide F (71), and tetratryptomycin A (72). Notably, this strategy enabled the preparation of tetratryptomycin A (72) on a multigram scale, providing a total of 21 g of tetratryptomycin A (72).",
+        "section": "Zr-catalyzed radical reaction in the total synthesis of complex natural products",
+        "image_refs": [
+          "e375d9f8dc0b10352a6e0969874d9456a2ffd1d5b7601246483141237c06bc40.jpg",
+          "9741555d3b75ddbb16d998e61831611c9a6baced24e96d7e0ba0f90d3ce5ce63.jpg",
+          "a4abedcf7f2a1d8ccd6678d6c48c57321d7696f82b106897922527083bb56533.jpg",
+          "0beea785827225a6181de651611088f5e3ce80bf93937a18166b3665958756a2.jpg",
+          "63530b75c4f478cf68be44eab4ae1ae54fd502299358e7d138770a987311efbd.jpg",
+          "1cf7cae7a43bede274ee699c6e43ce4126958bb7af3504d9c9e70a81f7020f25.jpg",
+          "716c9beb11281bdc9f57d935f45c7c4fad741b015f66d5d879fe3f6916bdec37.jpg",
+          "55654d5268b40be882a245dc9a5dfb647b449d0cf33306d64629f033937e1f4.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Tetratryptomycin A (72) was successfully synthesized on a multigram scale. The final step was the macrocyclization to form cyctetryptomycins A and B.",
+        "gap": "Chemical oxidation conditions for macrocyclization led to undesired side reactions.",
+        "decision": "Chemical oxidation conditions were attempted for the macrocyclization of tetratryptomycin A (72)."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "observation": "Under chemical oxidation conditions, undesired over-oxidation occurred, and no cyclized product was detected."
+      },
+      "evidence": {
+        "text_span": "The synthesized tetratryptomycin A (72) was then employed in the total synthesis of cyctetryptomycins (76 and 77). Under chemical oxidation conditions, undesired over-oxidation occurred, and no cyclized product was detected.",
+        "section": "Zr-catalyzed radical reaction in the total synthesis of complex natural products"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 5,
+      "thought": {
+        "background": "Chemical oxidation failed to produce the desired macrocyclized products, leading to over-oxidation.",
+        "gap": "A milder and more selective method for macrocyclization was needed.",
+        "decision": "Enzymatic oxidation using CttpC was employed to promote the desired transformation."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": []
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Enzymatic oxidation using CttpC successfully promoted the desired transformation, affording a separable mixture of cyctetryptomycin A (76) and cyctetryptomycin B (77)."
+      },
+      "evidence": {
+        "text_span": "In contrast, enzymatic oxidation using CttpC successfully promoted the desired transformation, affording a separable mixture of cyctetryptomycin A (76) and cyctetryptomycin B (77). In this way, the total synthesis of the cyctetryptomycins (76 and 77) was accomplished.",
+        "section": "Zr-catalyzed radical reaction in the total synthesis of complex natural products",
+        "image_refs": [
+          "a80665697d6432c2efa9b3000b990c48d075ad93c5df1141c54eced8bb35aa84.jpg",
+          "4fbcf0a2112510c68ce208130bbc4d78732b34087466aa9479dd87e13d22ad06.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield not explicitly stated for the entire synthesis, but individual steps show good yields."
+      },
+      "Longest Linear Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Not explicitly stated."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Not explicitly stated."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Two failed attempts were reported, one related to byproduct inhibition and another to the final macrocyclization method."
+      }
+    },
+    "significance": "The first total synthesis of cyctetryptomycins A and B was achieved, highlighting the utility of Zr-catalyzed radical reactions. The key Zr-catalyzed dimerization step was scalable to 100 g, and the final enzymatic macrocyclization overcame challenges faced with chemical oxidation."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.3762/bjoc.22.3",
+      "pmcid": "PMC12794660",
+      "title": "Advances in Zr-mediated radical transformations and applications to total synthesis.",
+      "authors": "Ogawa H, Nakamura H.",
+      "journal": "Beilstein J Org Chem",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12794660?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/58c2686f-9c86-469c-8f7e-fd609e91fa28.zip",
+      "parsed_at": "2026-05-07T14:30:31.633611+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 12,
+    "parseable": 8,
+    "canonicalized": 8,
+    "invalid": 4,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CCOC(=O)C(N(C(C(Br)C1=CC=CC=C1N2C(=O)OC(C)(C)C2)C2)C(=O)OC(C)(C)C)C",
+      "CCOC(=O)C(N(C(C(Br)C1=CC=CC=C1N2C(=O)OC(C)(C)C2)C2)C(=O)OC(C)(C)C)C",
+      "O=C1N(C(=O)[C@@H]2N(C)C[C@H]3[C@@H]2[C@@H]2C4=CC=CC=C4NC2C2=CC=CC=C2NC[C@@H]3N1C)CCC[C@H]1N",
+      "O=C1NC(C(=O)NC(C2C3=CC=CC=C3NC2)C2C3=CC=CC=C3NC2)C2C3=CC=CC=C3NC2"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

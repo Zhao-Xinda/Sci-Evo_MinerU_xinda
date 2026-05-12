@@ -1,0 +1,875 @@
+{
+  "trace_id": "TS-PMC11575529",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "narcipavlines A and B, and narcikachnines A and B",
+    "smiles": "COc1ccc2c(c1)C1O[C@]23CCN(Cc2ccc4c(c2)OCO4)[C@@H]3C=CC1O",
+    "natural_product_class": "Amaryllidaceae alkaloids",
+    "structural_features": {
+      "stereocenters": 3,
+      "ring_systems": "cis-hydrodibenzofuran, biaryl axis, azepine",
+      "key_motifs": [
+        "cis-hydrodibenzofuran",
+        "all-carbon quaternary stereogenic center",
+        "chiral bi-aryl axis"
+      ]
+    },
+    "motivation": "Newly isolated heterodimeric Amaryllidaceae alkaloids with excellent BuChE inhibition and antiplasmodial activity. Structurally challenging due to three chiral centers, a cis-hydrodibenzofuran core, an all-carbon quaternary stereogenic center, and a chiral bi-aryl axis leading to atropisomerism. Confirmation of absolute stereochemistry.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Confirmation of absolute stereochemistry and synthesis of atropodiastereomers."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-N-C bonds of the seven-membered azepine ring",
+        "named_strategy": "one-pot double reductive amination",
+        "reasoning": "To merge the galantamine and galanthindole cores.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond forming the all-carbon quaternary stereogenic center of the tricyclic hydrodibenzofuran core",
+        "named_strategy": "intramolecular Heck cyclization",
+        "reasoning": "Efficient construction of the tricyclic core.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-O bond forming the alkyl aryl ether",
+        "named_strategy": "Mitsunobu reaction",
+        "reasoning": "To access the precursor for the Heck cyclization from a phenol derivative and an enantioenriched alpha-substituted cyclohex-2-en-1-ol.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "galanthindole_core",
+        "smiles": "Cn1ccc2cc(-c3cc4c(cc3CN)OCO4)ccc21",
+        "role": "galanthindolyl benzylamine (12)",
+        "comes_from": "biaryl aldehyde 17"
+      },
+      {
+        "fragment_id": "galantamine_core",
+        "smiles": "COC1C=CC2(OC1C=O)C(C)C(C[Si](C)(C)C(C)(C)C)C2C",
+        "role": "tricyclic dialdehyde (24)",
+        "comes_from": "enantioenriched alpha-substituted cyclohex-2-en-1-ol (16)"
+      }
+    ],
+    "rationale": "The synthesis aimed for a unified catalytic enantioselective approach. Narcikachnine (2) was envisioned from narcipavline (1) via indole reduction. Narcipavline (1) was to be formed from an advanced intermediate (8) via allylic oxidation and hydrogenation. The key C-N-C bond of the azepine ring was planned via one-pot double reductive amination of galanthindolyl benzylamine (12) with tricyclic dialdehyde (10). The all-carbon quaternary stereogenic center of tricycle (13) was to be built via intramolecular Heck cyclization of alkyl aryl ether (14), which in turn was from Mitsunobu reaction of phenol (15) with enantioenriched alpha-substituted cyclohex-2-en-1-ol (16)."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "galanthindole_core",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The galanthindole core and its corresponding benzylic amine (12) are needed. A known biaryl aldehyde (17) is available.",
+        "gap": "How to convert biaryl aldehyde (17) to galanthindole (7) and then to benzylamine (12)?",
+        "decision": "To synthesize galanthindole (7) from biaryl aldehyde (17) using a modified Hsieh's protocol, followed by reductive amination to obtain benzylamine (12)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cn1ccc2cc(-c3cc4c(cc3C=O)OCO4)ccc21"
+        ],
+        "product_smiles": [
+          "Cn1ccc2cc(-c3cc4c(cc3CO)OCO4)ccc21"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C - 25 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Galanthindole (7) was synthesized."
+      },
+      "evidence": {
+        "text_span": "To this end, we synthesized the known biaryl aldehyde 17, and galanthindole (7) following a modied procedure of Hsieh's protocol (see ESI‡ for details).17",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "galanthindole_core",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Galanthindole (7) has been synthesized. The target is the benzylamine (12).",
+        "gap": "How to convert biaryl aldehyde (17) to benzylamine (12)?",
+        "decision": "To transform biaryl aldehyde (17) into the corresponding benzylamine (±)-12 via a reductive amination using ammonium formate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cn1ccc2cc(-c3cc4c(cc3C=O)OCO4)ccc21"
+        ],
+        "product_smiles": [
+          "Cn1ccc2cc(-c3cc4c(cc3CN)OCO4)ccc21"
+        ],
+        "reagents": [
+          "HCOONH4",
+          "NH3",
+          "NaBH3CN"
+        ],
+        "solvent": "MeOH",
+        "temperature": "22 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "observation": "Benzylamine (±)-12 was obtained. HPLC analysis of galanthindole showed a 50:50 mixture of two atropisomers, confirming its racemic nature."
+      },
+      "evidence": {
+        "text_span": "Subsequently, we transformed the biaryl aldehyde 17 into the corresponding benzylamine (±)-12 via a reductive amination using ammonium formate (Scheme 2). The isolation chemists did not provide any optical rotation data for galanthindole (7).9c However, due to its structural features, including a biphenyl axis and ortho-substituents, it can exhibit axial isomerism. Indeed, when subjected to HPLC analysis, galanthindole showed a 50 : 50 mixture of these two atropisomers, conrming its racemic nature [denoted as (±)-7].",
+        "section": "Results and discussion",
+        "image_refs": [
+          "35bc074bfc771ef00f5458e625b105a22c21ea5baee830096c6e6ff2855b361b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "galantamine_core",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The galantamine core synthesis requires an enantioenriched alpha-substituted cyclohex-2-en-1-ol (16).",
+        "gap": "How to synthesize enantioenriched (96% ee) alpha-substituted cyclohex-2-en-1-ol (16)?",
+        "decision": "To synthesize enantioenriched (96% ee) alpha-substituted cyclohex-2-en-1-ol (16) via a catalytic enantioselective Corey–Bakshi–Shibata (CBS) reduction of a known Trost's enone."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [
+          "CCOC(=O)CC1=CC[C@H](O)CC1"
+        ],
+        "named_reaction": "Corey–Bakshi–Shibata (CBS) reduction",
+        "reagents": [],
+        "catalyst": "CBS catalyst"
+      },
+      "outcome": {
+        "valid": true,
+        "ee_percent": 96,
+        "observation": "Enantioenriched (96% ee) alpha-substituted cyclohex-2-en-1-ol (16) was obtained."
+      },
+      "evidence": {
+        "text_span": "For the synthesis of the galantamine core, we began with the synthesis of enantioenriched (96% ee) alpha-substituted cyclohex-2-en-1-ol18 16 via a catalytic enantioselective Corey–Bakshi–Shibata (CBS) reduction19 of a known Trost's enone20 [see ESI** for details].",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "galantamine_core",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enantioenriched allyl alcohol (+)-16 (96% ee) is available. The next step is to form the alkyl aryl ether (14) using a Mitsunobu reaction.",
+        "gap": "How to perform the Mitsunobu reaction efficiently and stereoselectively?",
+        "decision": "To explore the Mitsunobu reaction with different phosphines and azodicarboxylates. Using diethyl azodicarboxylate (DEAD) and tributylphosphine (nBu3P) with allyl alcohol (+)-16 and 2-iodophenol (15)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)CC1=CC[C@H](O)CC1",
+          "COc1cc(O)c(I)c(C=O)c1"
+        ],
+        "product_smiles": [
+          "CCOC(=O)CC1=CC[C@@H](Oc2cc(OC)cc(C=O)c2I)C=C1"
+        ],
+        "named_reaction": "Mitsunobu reaction",
+        "reagents": [
+          "DEAD",
+          "P(nBu)3"
+        ],
+        "solvent": "THF",
+        "temperature": "25 °C",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "ee_percent": 93,
+        "observation": "Enantioenriched (-)-14 was obtained in 93% ee. Stereochemistry confirmed by single crystal X-ray analysis."
+      },
+      "evidence": {
+        "text_span": "Inspired by Banwell's protocol,14d we explored the Mitsunobu reaction for the synthesis of enantioenriched 14. Extensive optimization with different phosphines and azodicarboxylates revealed that allyl alcohol (+)-16 96% ee) and 2-iodophenol 15 afforded (-)-14 in 93% ee in the presence of diethyl azodicarboxylate (DEAD) and tributylphosphine (nBu3P) [see ESI** for detailed optimization]. Gratifyingly, the stereochemistry of ( )-14 was conrmed by single crystal X-ray analysis [CCDC 2384521].",
+        "section": "Results and discussion",
+        "image_refs": [
+          "93c5fcce7f5a5eb79cf379ecd3b20bec9091e90964c31705e6bf9bcba327934a.jpg",
+          "606d9d86af8c94aedfcb3ffcc4e3d10b97b48e9187c649da9d07bbff0e937f2b.jpg",
+          "a3d4078ab6d3673f0e3610cdf587766724aa1c848efc31b223c4b7751971a0ea.jpg",
+          "b3999021670f8fad39657e2d7ba99da1ef0eacd1cc5e341b34a283651625c744.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "galantamine_core",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enantioenriched (-)-14 (93% ee) is available. The next step is to construct the cis-fused tricyclic hydrodibenzofuran core (-)-13.",
+        "gap": "How to achieve the intramolecular Heck cyclization to form the tricyclic core with the all-carbon quaternary stereogenic center?",
+        "decision": "To use catalytic Pd(OAc)2 under Heck coupling conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)CC1=CC[C@@H](Oc2cc(OC)cc(C=O)c2I)C=C1"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C[C@H]1C2c3c(C=O)ccc(OC)c3O[C@@H]21"
+        ],
+        "named_reaction": "intramolecular Heck cyclization",
+        "catalyst": "Pd(OAc)2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "dr": ">20:1",
+        "observation": "Tricyclic product (-)-13 was afforded with excellent dr (>20:1), generating the all-carbon quaternary stereogenic center. The hydrodibenzofuran core was achieved in 93% ee in 4 steps from commercially available cyclohex-2-en-1-one."
+      },
+      "evidence": {
+        "text_span": "With enantioenriched ( )-14 53% ee) in hand, we moved forward towards the intramolecular Heck cyclization to construct the cis-fused tricyclic hydrodibenzofuran core (Scheme 3). To our delight, charging iodoarene ( )-14 under Heck coupling conditions using catalytic Pd(OAc)2 smoothly afforded tricyclic product ( )-13 with excellent dr (dr > 20 : 1)), with generating the all carbon quaternary stereogenic centre. By employing our strategy, we have been able to achieve the hydrodibenzofuran core in 93% ee (see ESI** for HPLC analysis) in 4 steps from commercially available cyclohex-2-en-1-one which is superior to the previous reports.13b–d,14d",
+        "section": "Results and discussion",
+        "image_refs": [
+          "9b1c90f18f07c10d1f37b89f868c4e66bfd021f9716b99d4b7088dc0a344bb9a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "galantamine_core",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Tricyclic product (-)-13 is available. The goal is to obtain dialdehyde (10).",
+        "gap": "How to reduce the ester group and oxidize the resulting alcohol to an aldehyde, avoiding over-reduction?",
+        "decision": "Attempting a one-step reduction using DIBAL-H."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C[C@H]1C2c3c(C=O)ccc(OC)c3O[C@@H]21"
+        ],
+        "product_smiles": [
+          "COC1C=CC2(OC1C=O)C(C)C(C=O)C2C"
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 40,
+        "failure_mode": "side_product_dominant",
+        "observation": "One-step reduction using DIBAL-H proved difficult, yielding only 40% of the desired dialdehyde (10) along with 35% of the over-reduced diol."
+      },
+      "evidence": {
+        "text_span": "Further, lithium aluminium hydride reduction of the ester group of 13 followed by oxidation using Dess–Martin periodinane (DMP) afforded di-aldehyde - -10 in 85% yield over 2 steps (Scheme 3).21 A one step reduction using DIBAL-H proved to be difficult as it is associated with over-reduced diol in 35% yield in addition to the desired dialdehyde 10 (see ESI** for details).21",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "galantamine_core",
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "Direct DIBAL-H reduction of (-)-13 to dialdehyde (10) was problematic due to over-reduction.",
+        "gap": "How to achieve the reduction of the ester and oxidation to dialdehyde (10) in good yield?",
+        "decision": "To perform a two-step sequence: lithium aluminum hydride reduction of the ester, followed by Dess-Martin periodinane (DMP) oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C[C@H]1C2c3c(C=O)ccc(OC)c3O[C@@H]21"
+        ],
+        "product_smiles": [
+          "COC1C=CC2(OC1C=O)C(C)C(C=O)C2C"
+        ],
+        "reagents": [
+          "LiAlH4",
+          "DMP"
+        ],
+        "solvent": "THF, CH2Cl2",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Dialdehyde (10) was obtained in 85% yield over 2 steps."
+      },
+      "evidence": {
+        "text_span": "Further, lithium aluminium hydride reduction of the ester group of 13 followed by oxidation using Dess–Martin periodinane (DMP) afforded di-aldehyde - -10 in 85% yield over 2 steps (Scheme 3).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dialdehyde (-)-10 and benzylamine (±)-12 are available. The goal is to form intermediate (8) via one-pot double reductive amination.",
+        "gap": "How to perform the one-pot double reductive amination efficiently?",
+        "decision": "To react equimolar amounts of dialdehyde (-)-10 and benzylamine (±)-12 in the presence of sodium cyanoborohydride (NaBH3CN) and a catalytic amount of trifluoroacetic acid."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1C=CC2(OC1C=O)C(C)C(C=O)C2C",
+          "Cn1ccc2cc(-c3cc4c(cc3CN)OCO4)ccc21"
+        ],
+        "product_smiles": [
+          "COc1ccc2c(c1)C13CCN(Cc4ccc5c(c4)OCO5)CC4=C(C=C[C@@H]1C=C4)[C@@H]23"
+        ],
+        "reagents": [
+          "NaBH3CN"
+        ],
+        "catalyst": "TFA",
+        "solvent": "MeOH",
+        "temperature": "25 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Desired product (-)-8 was obtained in 84% yield. 1H NMR analysis revealed a 1:1 mixture of two atropodiastereomers (8a and 8b), which were inseparable by column chromatography."
+      },
+      "evidence": {
+        "text_span": "Next, reacting equimolar amounts of dialdehyde - -10 and benzylamine (±)-12 in the presence of sodium cyanoborohydride (NaBH3CN) and a catalytic amount of triuoroacetic acid afforded the desired product (-) -8 in 84% yield (Scheme 3). Interestingly, 1H NMR analysis of the pure product revealed the presence of two diastereomers in a ~1 : 1 ratio, attributable to atropisomerism around the biphenyl axis, resulting in two distinct congurations of atropodiastereomers 8a and 8b (Scheme 3). The separation of these atropodiastereomers was a tedious job, as the TLC shows a single spot, making them inseparable in column chromatography.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "e90f08b0d35027fa50888c0fc1551386615a464f884c55e8e276b91f917299b3.jpg",
+          "b28d49679d4f736e8b20fefa79725c3109920b6c0f1e3a1ffb9c515500cb2678.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate (8) is a 1:1 mixture of atropodiastereomers (8a and 8b). The next step is allylic oxidation to complete the synthesis of narcipavlines (1).",
+        "gap": "How to perform allylic oxidation without oxidizing the indole ring?",
+        "decision": "Attempting allylic oxidation using selenium dioxide and TBHP under mild conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc2c(c1)C13CCN(Cc4ccc5c(c4)OCO5)CC4=C(C=C[C@@H]1C=C4)[C@@H]23"
+        ],
+        "product_smiles": [
+          "COc1ccc2c(c1)C13CCN(Cc4ccc5c(c4)OCO5)CC4=C(C=C[C@@H]1C=C4)[C@@H]23"
+        ],
+        "reagents": [
+          "SeO2",
+          "TBHP"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0-25 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "All efforts to perform allylic oxidation were unsuccessful. The indole ring of 8 was highly susceptible to oxidation compared to the allylic position, leading to the formation of ~1:1 atropodiastereomers of 2-oxindoles (18a and 18b)."
+      },
+      "evidence": {
+        "text_span": "At this stage, only a diastereoselective allylic oxidation was required to complete the total synthesis of narcipavlines (1). However, all efforts to perform allylic oxidation were unsuccessful and seemed to be very challenging (Scheme 3). When the mixture of 8a and 8b was charged under allylic oxidation conditions using selenium dioxide and TBHP, it was observed that the indole ring of 8 is highly susceptible to oxidation compared to the allylic position. Even under mild conditions using selenium dioxide and tert-butyl hydrogen peroxide (TBHP), we could observe the formation of ~1 : 1 atropodiastereomers of 2-oxindoles, 18a and 18b (Scheme 3).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "8ac15a566cb3e5da9fcf870f045fa3fa3341d46244831d8f794e78851963d311.jpg",
+          "9f5949fe5e321049a12f75549cd0a1571cc59a01c2b724141a0484c75a4f6a72.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "galantamine_core",
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "Allylic oxidation of intermediate (8) failed due to indole oxidation. It was recognized that the allylic alcohol needed to be installed earlier.",
+        "gap": "How to perform allylic oxidation on the tricyclic core (-)-13 before the reductive amination step?",
+        "decision": "To employ Trost's procedure for allylic oxidation of (-)-13 using selenium dioxide with sand as a solid support in refluxing 1,4-dioxane."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=C[C@@H]1COc2cc(OC)cc(C=O)c21"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C=C[C@H](O)[C@@H]1COc2cc(OC)cc(C=O)c21",
+          "CCOC(=O)C=C[C@@H](O)[C@@H]1COc2cc(OC)cc(C=O)c21"
+        ],
+        "reagents": [
+          "SeO2",
+          "KH2PO4",
+          "sand"
+        ],
+        "solvent": "1,4-dioxane",
+        "temperature": "150 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "dr": "6:1",
+        "observation": "A mixture of 11 and 11a was obtained in 79% yield with a dr of ~6:1 in favor of 11. The diastereoselectivity was attributed to the approach of SeO2 from the non-traditional more hindered concave face of the tricycle."
+      },
+      "evidence": {
+        "text_span": "Therefore, employing Trost's procedure,13c we successfully executed the allylic oxidation of ( )-13 using selenium dioxide (SeO2) with sand as a solid support in reuxing 1,4-dioxane to afford a mixture of 11 and 11a (79% yield, dr ~6 : 1 in favour of 11) (Scheme 4). The diastereoselectivity observed in case of allylic oxidation was attributed to the approach of SeO2 from the non-traditional more hindered concave face of tricycle ( )-13 (Scheme 4).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "253e13e5e5e1e45ab57b437dde78c85d12a0510986b9efa81b30a452dcf07f44.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "galantamine_core",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Allylic alcohol (-)-11 (~6:1 dr) is available. The goal is to synthesize (-)-galantamine (6a) and (-)-lycoramine (6b).",
+        "gap": "How to perform the one-pot reductive amination-lactamization sequence with methylamine?",
+        "decision": "To react (-)-11 with MeNH2 in MeOH followed by reduction using NaBH4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=C[C@H](O)[C@@H]1COc2cc(OC)cc(C=O)c21"
+        ],
+        "product_smiles": [
+          "COc1cc(C=O)c2c(c1)OC1[C@H]2CC(=O)CCN1C",
+          "COc1cc(C=O)c2c(c1)OC1[C@@H]2CC(=O)CCN1C"
+        ],
+        "reagents": [
+          "MeNH2",
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "22 °C - 65 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "Lactams (-)-20 (major dr) and 20a were afforded. These two diastereomers were separable by column chromatography. The structure of major diastereomer 20 was confirmed by X-ray single crystal analysis."
+      },
+      "evidence": {
+        "text_span": "It was observed that ( )-11 ~6 : 1 dr) in the presence of MeNH2 in MeOH followed by reduction using NaBH4 afforded lactams -)-20 (as the major dr) and 20a (see ESI* for details). Gratifyingly, these two diastereomers were separable in column chromatography. The structure of major diastereomer 20, having the hydroxyl group above the plane, was conrmed by X-ray single crystal analysis (CCDC 2333542).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "253e13e5e5e1e45ab57b437dde78c85d12a0510986b9efa81b30a452dcf07f44.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": "galantamine_core",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetracycle (-)-20 is available. The goal is to complete the total synthesis of naturally occurring (-)-galantamine (6a).",
+        "gap": "How to convert the lactam (-)-20 to (-)-galantamine (6a)?",
+        "decision": "To perform LiAlH4 reduction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(C=O)c2c(c1)OC1[C@H]2CC(=O)CCN1C"
+        ],
+        "product_smiles": [
+          "COc1ccc2c(c1)OC1C=C(N(C)C)CC2C1C(C)O"
+        ],
+        "reagents": [
+          "LiAlH4"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C - 60 °C",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "(-)-Galantamine (6a) was synthesized."
+      },
+      "evidence": {
+        "text_span": "Next, with tetracycle -)-20 in hand, we completed the total synthesis of naturally occurring (-) -galantamine [( )-6a] just by LiAlH4 reduction (86% yield).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "c8ed721b6b035115ab1b92ed7c9d5a9e02dce4fb4396944d79be86f7e188a41c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "galantamine_core",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "(-)-Galantamine (6a) has been synthesized. The goal is to synthesize (-)-lycoramine (6b).",
+        "gap": "How to convert (-)-galantamine (6a) to (-)-lycoramine (6b)?",
+        "decision": "To perform hydrogenation of (-)-6a."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc2c(c1)OC1C=C(N(C)C)CC2C1C(C)O"
+        ],
+        "product_smiles": [
+          "COc1ccc2c(c1)OC1C(C(C)O)C2CC1N(C)C"
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "Pd-C",
+        "solvent": "MeOH",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "(-)-Lycoramine (6b) was synthesized."
+      },
+      "evidence": {
+        "text_span": "Further, hydrogenation of (-)-6a completed the total synthesis of (-) -lycoramine [( )-6b].",
+        "section": "Results and discussion",
+        "image_refs": [
+          "c8ed721b6b035115ab1b92ed7c9d5a9e02dce4fb4396944d79be86f7e188a41c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The goal is to synthesize the azepine core of narcipavline (1) via a one-pot reductive amination-lactamization cascade using (-)-11 and benzylamine (±)-12.",
+        "gap": "How to achieve this cascade with the sterically demanding benzylamine (±)-12?",
+        "decision": "Attempting condensation of (-)-11 with benzylamine (±)-12, followed by reduction using NaBH4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=C[C@H](O)[C@@H]1COc2cc(OC)cc(C=O)c21",
+          "Cn1c(-c2ccc3c(c2)OCO3)c(CN)c2ccccc21"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "22 °C - 65 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "The required azepine core was not formed. Instead, benzyl alcohol (21) and 3-lactone (22) (through acid-catalyzed cyclization) were isolated in a few specific cases. This was attributed to the electron-donating nature of the p-methoxy group on (-)-11 diminishing the electrophilicity of benzaldehyde, hindering imine formation."
+      },
+      "evidence": {
+        "text_span": "We next turned our attention to the synthesis of the azepine core of narcipavline (1) via a similar one-pot reductive amination-lactamization cascade. However, this proved to be very challenging with the sterically demanding benzylamine (±)-12 (Scheme 5). A condensation reaction of ( )-11 with benzylic amine 12, followed by reduction using NaBH4 didn't afford the required azepine core; instead, we could isolate benzyl alcohol 21 and 3- lactone 22 (through acid-catalysed cyclization) in a few specic cases (Scheme 5). This fact is probably attributed to the strongly electron-donating nature of the p-methoxy group on ( )-11 which could diminish the electrophilicity of benzaldehyde hindering the crucial imine formation (Scheme 5).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "3c47b7c4191d0c12fc424609bb80d684ce9f5858cec7a879d4d880ab23018d4d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "galantamine_core",
+      "action": "revision",
+      "revises_step_id": 14,
+      "thought": {
+        "background": "The one-pot reductive amination-lactamization cascade failed due to hindered imine formation. The secondary alcohol of 11 needs protection.",
+        "gap": "How to protect the secondary alcohol group of 11 and then proceed with the synthesis?",
+        "decision": "To protect the secondary alcohol group of 11 as a TBS-ether to access (-)-23 and 23a, then separate the major diastereomers 23 via column chromatography."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1OC2(C)C=CC(OC)C(C=O)C2C1C"
+        ],
+        "product_smiles": [
+          "CCOC(=O)C1OC2(C[Si](C)(C)C(C)(C)C)C=CC(OC)C(C=O)C2C1C",
+          "CCOC(=O)C1OC2(C[Si](C)(C)C(C)(C)C)C=CC(OC)C(C=O)C2C1C"
+        ],
+        "reagents": [
+          "TBSCl",
+          "imidazole",
+          "DMAP"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "22 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "(-)-23 and 23a were obtained. The major diastereomer 23 was separated by column chromatography."
+      },
+      "evidence": {
+        "text_span": "So, we rst protected the secondary alcohol group of 11 as TBS-ether to access (−)-23 and (−)-23a (Scheme 6). Delightfully, we could separate the major diastereomers 23 via column chromatography.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "de5d32039521ab620c409d2bf19c0245a5f1e88e356d008f4c8d5c28dc0fe2fd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "galantamine_core",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "TBS-protected intermediate (-)-23 is available. The goal is to obtain dialdehyde (-)-24.",
+        "gap": "How to reduce the ester and aldehyde groups and then re-oxidize to dialdehyde (-)-24?",
+        "decision": "To reduce both the ester and aldehyde groups using LiAlH4, followed by re-oxidation using Dess-Martin periodinane (DMP)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C1OC2(C[Si](C)(C)C(C)(C)C)C=CC(OC)C(C=O)C2C1C"
+        ],
+        "product_smiles": [
+          "COC1C=CC2(OC1C=O)C(C)C(C[Si](C)(C)C(C)(C)C)C2C"
+        ],
+        "reagents": [
+          "LiAlH4",
+          "DMP"
+        ],
+        "solvent": "THF, CH2Cl2",
+        "temperature": "0 °C, 22 °C",
+        "time": "0.5 h, 2.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Dialdehyde (-)-24 was afforded in 85% yield over 2 steps."
+      },
+      "evidence": {
+        "text_span": "Next, the ester and the aldehyde group both were reduced and again re-oxidized using Dess–Martin periodinane (DMP) to afford dialdehyde (-) -24 in 85% yield over 2 steps (Scheme 6).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "de5d32039521ab620c409d2bf19c0245a5f1e88e356d008f4c8d5c28dc0fe2fd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dialdehyde (-)-24 and galanthindolyl benzylamine (±)-12 are available. The goal is to form intermediate (25) as a mixture of atropodiastereomers.",
+        "gap": "How to perform the one-pot sequential reductive amination efficiently?",
+        "decision": "To conduct a one-pot sequential reductive amination with (-)-24 and (±)-12 in the presence of NaBH3CN and catalytic trifluoroacetic acid."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1C=CC2(OC1C=O)C(C)C(C[Si](C)(C)C(C)(C)C)C2C",
+          "CC1c2c(ccn2C)C=CC2=CC=C(OCO2)C1N"
+        ],
+        "product_smiles": [
+          "COC1=C(C=O)C2C(C[Si](C)(C)C(C)(C)C)C(C)C(NCCC3=CC=C(c4ccn(C)c4C)OCO3)C2(C)O1",
+          "COC1=C(C=O)C2C(C[Si](C)(C)C(C)(C)C)C(C)C(NCCC3=CC=C(c4ccn(C)c4C)OCO3)C2(C)O1"
+        ],
+        "reagents": [
+          "NaBH3CN"
+        ],
+        "catalyst": "TFA",
+        "solvent": "MeOH",
+        "temperature": "22 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "dr": "1:1",
+        "observation": "Intermediate 25 was furnished as a mixture of two atropodiastereomers, 25a and 25b, with a dr of ~1:1."
+      },
+      "evidence": {
+        "text_span": "Subsequently, a one-pot sequential reductive amination was successfully conducted with (-) -24 and galanthindolyl benzylamine (±)-12 in the presence of NaBH3CN and catalytic triuoroacetic acid to furnish 25 as a mixture of two atropodiastereomers, 25a and 25b with dr ~1 : 1 (see ESI** for detailed characterization).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "de5d32039521ab620c409d2bf19c0245a5f1e88e356d008f4c8d5c28dc0fe2fd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 25 (mixture of 25a and 25b) is available. The goal is to deprotect the silyl ether group to obtain dehydronarcipavline (26a and 26b).",
+        "gap": "How to selectively deprotect the TBS-ether?",
+        "decision": "To use tetra-butyl ammonium fluoride (TBAF) for deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=C(C=O)C2C(C[Si](C)(C)C(C)(C)C)C(C)C(NCCC3=CC=C(c4ccn(C)c4C)OCO3)C2(C)O1",
+          "COC1=C(C=O)C2C(C[Si](C)(C)C(C)(C)C)C(C)C(NCCC3=CC=C(c4ccn(C)c4C)OCO3)C2(C)O1"
+        ],
+        "product_smiles": [
+          "COC1=C(C=O)C2C(C[Si](C)(C)C(C)(C)C)C(C)C(NCCC3=CC=C(c4ccn(C)c4C)OCO3)C2(C)O1",
+          "COC1=C(C=O)C2C(C[Si](C)(C)C(C)(C)C)C(C)C(NCCC3=CC=C(c4ccn(C)c4C)OCO3)C2(C)O1"
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "THF",
+        "temperature": "22 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "Dehydronarcipavline (26a and 26b) was obtained as 1:1 atropodiastereomers. A racemic crystal structure of (±)-26b confirmed the all-bond connections. 1H-NMR of (±)-26b initially showed a single atropodiastereomer, but 13C-NMR after 24h showed doubled signals, confirming rotation along the axis at room temperature and interconversion to a 1:1 mixture of atropodiastereomers."
+      },
+      "evidence": {
+        "text_span": "Next, deprotection of the silyl ether group was achieved using tetra-butyl ammonium uoride (TBAF) yielding dehydronarcipvaline (26a and 26b) as 1 : 1 atropodiastereomers. It is pertinent to mention that, a racemic crystal structure of (±)-26b (CCDC 2363948) (prepared from (±) -24 in a different sequence) unequivocally proved the allbond connections present in dehydronarcipvaline 26. With a few milligrams of crystals in hand, a detailed 1H -NMR analysis was undertaken. It is interesting to note that the 1H -NMR of (±) -26b showed the signals for a single atropodiastereomer (see ESI** for details). However, when 13C -NMR of (±) -26b was recorded aer a day (~24 h), the signal of each carbon appeared to be doubled, thereby conrming the rotation along the axis happening at room temperature. Further, the 1H -NMR of the same sample aer ~24 h provided the signals for ~1 : 1 atropodiastereomers [(±) -26a and (±) -26b]. Thus, it may be concluded that the atropodiastereomer (±) -26b has a very short half-life period and could be easily converted to (±)-26a, leading to the mixtures of atropodiastereomers at room temperature (see ESI* for details).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "de5d32039521ab620c409d2bf19c0245a5f1e88e356d008f4c8d5c28dc0fe2fd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dehydronarcipavline 26 (~1:1 dr) is available. The goal is to synthesize narcipavlines A (1a) and B (1b).",
+        "gap": "How to hydrogenate the atropodiastereomers of dehydronarcipavline 26?",
+        "decision": "To hydrogenate using Pd-C at 1 atm H2 gas."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=C(C=O)C2C(C[Si](C)(C)C(C)(C)C)C(C)C(NCCC3=CC=C(c4ccn(C)c4C)OCO3)C2(C)O1",
+          "COC1=C(C=O)C2C(C[Si](C)(C)C(C)(C)C)C(C)C(NCCC3=CC=C(c4ccn(C)c4C)OCO3)C2(C)O1"
+        ],
+        "product_smiles": [
+          "COc1ccc2c(c1)C1O[C@]23CCN(Cc2ccc4c(c2)OCO4)[C@@H]3C=CC1O",
+          "COc1ccc2c(c1)C1O[C@]23CCN(Cc2ccc4c(c2)OCO4)[C@@H]3C=CC1O"
+        ],
+        "reagents": [
+          "H2"
+        ],
+        "catalyst": "Pd-C",
+        "solvent": "MeOH",
+        "time": "6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "dr": "1:1",
+        "observation": "The first total synthesis of atropodiastereomers of novel heterodimeric Amaryllidaceae alkaloids, narcipavlines A (1a) and B (1b), was achieved as ~1:1 dr. Separation was unsuccessful at room temperature. NMR data matched isolation reports. HPLC analysis revealed two pairs of enantiomers (93% ee) corresponding to 1a and 1b (~50:50 ratio). The structure was confirmed through 2D NMR analysis and negative specific rotation."
+      },
+      "evidence": {
+        "text_span": "Next, the atropodiastereomers of dehydronarcipavline 26 (~1 : 1 dr) were hydrogenated using Pd–C at 1 atm. H2 -gas afforded the rst total synthesis of atropodiastereomers of novel heterodimeric Amaryllidaceae alkaloids, narcipavlines A (1a) and B (1b) as ~1 : 1 dr (Scheme 6). Efforts towards the separation of the atropodiastereomers proved to be unsuccessful at room temperature using column chromatography. Nevertheless, all the corresponding peaks of 1H · and 13C -NMR are in good agreement with the isolation report of narcipavlines (1a : 1b 1 : 1) by Cahl´ıkov´a et al.9a The structure was conrmed through 2D NMR analysis, which revealed a negative specic rotation value for the diastereomeric mixture. Notably, compound 1 and lycoramine (6b) exhibited similar NMR spectra, particularly in the region of the secondary alcohol within the cis-hydrodibenzofuran core, and displayed negative optical rotation values. Further, HPLC analysis using a Chiralpak OD-H column (40% iPrOH/n -hexane) revealed two pairs of enantiomers [93% ee] corresponding to the atropodiastereomers narcipavlines A (1a) and B (1b) [~50 : 50 ratio] (see ESI** for details). These ndings strongly support the proposed structure of atropodiastereomers 1a and 1b, resembling (-) -lycoramine (6b) as a cis-hydrodibenzofuran core, where the secondary alcohol group resides above the plane (Fig. 1).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "de5d32039521ab620c409d2bf19c0245a5f1e88e356d008f4c8d5c28dc0fe2fd.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Narcipavlines A (1a) and B (1b) are available. The goal is to synthesize narcikachnines A (2a) and B (2b).",
+        "gap": "How to reduce the indole ring of narcipavline (1) to form the indoline ring of narcikachnine (2)?",
+        "decision": "To reduce the indole ring of narcipavline (1) with NaBH3CN in AcOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc2c(c1)C1O[C@]23CCN(Cc2ccc4c(c2)OCO4)[C@@H]3C=CC1O",
+          "COc1ccc2c(c1)C1O[C@]23CCN(Cc2ccc4c(c2)OCO4)[C@@H]3C=CC1O"
+        ],
+        "product_smiles": [
+          "COc1ccc2c(c1)C1O[C@]23CCN(Cc2ccc4c(c2)OCO4)[C@@H]3C=CC1O",
+          "COc1ccc2c(c1)C1O[C@]23CCN(Cc2ccc4c(c2)OCO4)[C@@H]3C=CC1O"
+        ],
+        "reagents": [
+          "NaBH3CN"
+        ],
+        "solvent": "CH3COOH",
+        "temperature": "25 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "dr": "1:1",
+        "observation": "Narcikachnines A (2a) and B (2b) were obtained in 72% yield as ~1:1 dr. NMR data matched isolation reports. The diastereomeric mixture showed a negative specific rotation. VT NMR analysis demonstrated atropodiastereomerism at different temperatures, with proton resonances coalescing at higher temperatures."
+      },
+      "evidence": {
+        "text_span": "Aer a quick optimization, we were pleased to see that the indole ring of narcipavline (1) could be reduced with NaBH3CN in AcOH to form indolines of narcikachnines A (2a) and B (2b) in 72% yield in ~1 : 1 dr (Scheme 6). A plausible mechanism of reductive amination of indole to indoline is shown in Scheme 7. Once again, all the corresponding peaks of 1H · and 13C -NMR are in good agreement with the isolation report of narcikachnines (2a : 2b ~1 : 1)) by Cahl´ıkov´a et al.9a The diastereomeric mixture of narcikachnines (2a : 2b) shows a negative specic rotation value. The cause of the doubling of some signals in NMR was found to be due to axial isomerism through the sterically hindered single bond rotation. Accordingly, VT NMR analysis was performed to demonstrate the atropodiastereomerism at different temperatures. Few milligrams of (2) and (26) were dissolved in DMSO-·d6 having a sufficiently high boiling point. At the highest experimental temperature, (up to 70 °C for 2, and 125 °C for 26), the proton resonances coalesced for both diastereomers (see ESI** for details).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "de5d32039521ab620c409d2bf19c0245a5f1e88e356d008f4c8d5c28dc0fe2fd.jpg",
+          "99f29eccefc38be9a27cd1e194635f854c08e24ab2ec40d966918fa2d5bacf34.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 27,
+        "unit": "%",
+        "interpretation": "for narcipavlines A (1a) and B (1b)"
+      },
+      "Longest Linear Steps": {
+        "value": 9,
+        "unit": "steps",
+        "interpretation": "for narcipavlines A (1a) and B (1b)"
+      },
+      "Overall Yield (narcikachnines)": {
+        "value": 19,
+        "unit": "%",
+        "interpretation": "for narcikachnines A (2a) and B (2b)"
+      },
+      "Longest Linear Steps (narcikachnines)": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "for narcikachnines A (2a) and B (2b)"
+      }
+    },
+    "comparison_to_prior": "This is the first total synthesis of heterodimeric atropodiastereomeric Amaryllidaceae alkaloids narcipavlines A (1a) and B (1b) and narcikachnines A (2a) and B (2b). The synthesis also achieved the protecting group free total synthesis of (-)-galantamine (6a) and (-)-lycoramine (6b) in six and seven steps, respectively, which is superior to previous reports for the hydrodibenzofuran core.",
+    "significance": "The synthesis confirmed the absolute structure of narcipavline A (1a), narcipavline B (1b), narcikachnine A (2a), and narcikachnine B (2b) as a mixture of atropodiastereomers. DFT calculations provided insights into the rotational barriers and conformational dynamics of these atropodiastereomers, highlighting their structural rigidity and flexibility. The work provides a unified catalytic enantioselective approach to these complex natural products."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d4sc04361h",
+      "pmcid": "PMC11575529",
+      "title": "Total synthesis of atropodiastereomers of heterodimeric <i>Amaryllidaceae</i> alkaloids: narcipavline and narcikachnine.",
+      "authors": "Pal S, Majumder S, Niyogi S, Shyamal P, Mondal D, Das B, Bisai A.",
+      "journal": "Chem Sci",
+      "year": 2024,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC11575529?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/a9f804cb-50c7-43ff-94c6-5d44fa150233.zip",
+      "parsed_at": "2026-05-11T06:36:45.607148+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 55,
+    "parseable": 55,
+    "canonicalized": 53,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,507 @@
+{
+  "trace_id": "TS-PMC12581007",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "complanadine A",
+    "smiles": "C[C@@H]1C[C@H]2Cc3ncc(-c4ccc5c(n4)C[C@@H]4C[C@@H](C)C[C@]56NCCC[C@H]46)cc3[C@]3(C1)NCCC[C@H]23",
+    "natural_product_class": "lycopodium alkaloid",
+    "structural_features": {
+      "key_motifs": [
+        "pseudo-dimeric",
+        "tetracyclic lycodine",
+        "C2–C3’ linkage",
+        "pyridine rings"
+      ]
+    },
+    "motivation": "Complanadine A is a complex and pseudo-dimeric lycopodium alkaloid with promising neurotrophic activity and potential for pain management. It enhances mRNA expression for nerve growth factor (NGF) biosynthesis and acts as a selective agonist of MrgprX2, a G protein-coupled receptor involved in pain modulation.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Siegel",
+        "year": 2010,
+        "doi": "10.1021/ja101956x",
+        "key_strategy": "Two transition metal-catalyzed alkyne–alkyne–nitrile [2+2+2] cycloadditions"
+      },
+      {
+        "lead_author": "Sarpong",
+        "year": 2010,
+        "doi": "10.1021/ja101893b",
+        "key_strategy": "Biomimetic cascade reaction and iridium-catalyzed site-selective pyridine C–H borylation followed by Suzuki–Miyaura cross coupling"
+      },
+      {
+        "lead_author": "Tsukano",
+        "year": 2013,
+        "doi": "10.1002/anie.201208297",
+        "key_strategy": "Diels–Alder reaction, intramolecular Heck reaction, and pyridine N-oxide directed ortho C–H arylation"
+      },
+      {
+        "lead_author": "Dai",
+        "year": 2021,
+        "doi": "10.1021/jacs.1c08626",
+        "key_strategy": "Single-atom skeletal editing strategy to form pyridine from pyrrole and pyridine N-oxide directed ortho C–H arylation"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "The synthesis should provide access to complanadine A for biological evaluations, including determining its biological target and structure-activity relationships."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C2–C3’ linkage",
+        "named_strategy": "pyridine N-oxide directed ortho C–H arylation",
+        "reasoning": "This strategy allows for the direct formation of the bipyridyl linkage, which is a key structural motif of complanadine A. It was chosen to address the challenge of forming this complex connection efficiently.",
+        "alternatives_considered": [
+          {
+            "strategy": "Suzuki–Miyaura cross coupling (as in Sarpong's synthesis)",
+            "rejected_because": "The Dai synthesis aimed for a different approach to prepare the C–H arylation precursors and utilized a less reactive 3-chloropyridine, necessitating new reaction conditions for the C-H arylation."
+          },
+          {
+            "strategy": "Co-mediated [2+2+2] cycloadditions (as in Siegel's synthesis)",
+            "rejected_because": "The Dai synthesis aimed to construct the C2–C3’ linkage directly rather than embedding it in a starting material, offering a different strategic approach."
+          }
+        ]
+      },
+      {
+        "bond_description": "Pyrrole to Pyridine conversion",
+        "named_strategy": "Ciamician–Dennstedt rearrangement (single-atom skeletal editing)",
+        "reasoning": "This novel strategy allows for the conversion of an electron-rich pyrrole into an electron-deficient pyridine, which is crucial for the subsequent C–H arylation. It also positions a chloride handle at the desired site.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Tetracyclic core skeleton formation",
+        "named_strategy": "Tandem sequence involving intramolecular nucleophilic addition of pyrrole to an iminium ion",
+        "reasoning": "This sequence efficiently forms a key C–C bond and rapidly assembles the tetracyclic core, leveraging the nucleophilicity of the pyrrole group.",
+        "alternatives_considered": [
+          {
+            "strategy": "Diels–Alder reaction and intramolecular Heck reaction (as in Tsukano's synthesis)",
+            "rejected_because": "The Dai synthesis sought a different, more direct approach to build the core ring systems, utilizing the unique reactivity of the pyrrole intermediate."
+          },
+          {
+            "strategy": "Biomimetic cascade reaction (as in Sarpong's synthesis)",
+            "rejected_because": "The Dai synthesis pursued a distinct pathway for core construction, focusing on the pyrrole-to-pyridine transformation."
+          }
+        ]
+      }
+    ],
+    "rationale": "The Dai synthesis aimed to develop a novel and efficient route to complanadine A by employing a single-atom skeletal editing strategy to transform a pyrrole into a pyridine, followed by a pyridine N-oxide directed C–H arylation to construct the pseudo-dimeric linkage. This approach offered a unique way to access the complex alkaloid, showcasing the impact of emerging synthetic concepts."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis of complanadine A requires a complex tetracyclic core and a C2–C3’ bipyridyl linkage. The starting material (+)-pulegone is a chiral pool molecule.",
+        "gap": "How to efficiently introduce the azide functionality and build the initial carbon skeleton.",
+        "decision": "To introduce the azide, chose an anti-Markovnikov hydroazidation reaction with a combination of 59 and TMSN3, expecting to form primary azide 60 from 58."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCC1=C[C@@H](C)CCC1=O"
+        ],
+        "product_smiles": [
+          "C[C@@H]1C=C(CCCN=[N+]=[N-])C(=O)CC1"
+        ],
+        "reagents": [
+          "OIC1(OC(=O)C2=CC=CC=C12)O",
+          "TMSN3",
+          "OC(=O)C(F)(F)F"
+        ],
+        "yield_percent": 42
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Compound 60 was obtained in 42% yield via anti-Markovnikov hydroazidation."
+      },
+      "references": [
+        "10.1021/jacs.9b04381"
+      ],
+      "evidence": {
+        "text_span": "The terminal olefin of 58 was then converted to a primary azide via an anti-Markovnikov hydroazidation reaction with a combination of 59 and TMSN3 recently developed by Xu and co-workers [34].",
+        "section": "The Dai total synthesis – 2021",
+        "image_refs": [
+          "a80f8b150ddc1ae21b6906a195984775cefbf8a3b49fc6509ff792dd6901f698.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Primary azide 60 was successfully synthesized. The next step is to extend the carbon chain and introduce another olefin.",
+        "gap": "How to perform a conjugate addition and subsequent hydrolysis to form 62.",
+        "decision": "To extend the carbon chain, chose a Mukaiyama conjugate addition between 60 and 61 promoted by Tf2NH, followed by a one-pot enol ether hydrolysis, expecting to yield 62 as a mixture of inconsequential stereoisomers."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1C=C(CCCN=[N+]=[N-])C(=O)CC1",
+          "C=CCCC(=C)C"
+        ],
+        "product_smiles": [
+          "C=CCC(=O)C[C@H]1C(CCCN=[N+]=[N-])C(=O)CC[C@@H]1C"
+        ],
+        "reagents": [
+          "Tf2NH",
+          "HCl"
+        ],
+        "yield_percent": 70
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Compound 62 was obtained in 70% yield as a mixture of inconsequential stereoisomers.",
+        "regio_selectivity": "unspecified"
+      },
+      "evidence": {
+        "text_span": "Mukaiyama conjugate addition between 60 and 61 promoted by Tf2NH followed by a one-pot enol ether hydrolysis gave 62 as a mixture of inconsequential stereoisomers.",
+        "section": "The Dai total synthesis – 2021",
+        "image_refs": [
+          "a80f8b150ddc1ae21b6906a195984775cefbf8a3b49fc6509ff792dd6901f698.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 62, bearing an azide and an olefin, is ready for pyrrole formation.",
+        "gap": "How to cleave the terminal olefin and then perform a Paal–Knorr pyrrole synthesis.",
+        "decision": "To form the pyrrole, chose oxidative cleavage of the terminal olefin of 62 using ozonolysis followed by Paal–Knorr pyrrole synthesis, expecting to deliver 63."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCC(=O)C[C@H]1C(CCCN=[N+]=[N-])C(=O)CC[C@@H]1C"
+        ],
+        "product_smiles": [
+          "CC1CCC(CCCN=[N+]=[N-])C(=O)C1C(C)c1ccc[nH]1"
+        ],
+        "reagents": [
+          "O3",
+          "Me2S",
+          "NH4OAc"
+        ],
+        "yield_percent": 56
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Compound 63 was delivered in 56% yield.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "Subsequent oxidative cleavage of the terminal olefin of 62 using ozonolysis followed by Paal–Knorr pyrrole synthesis delivered 63, which was unstable and spontaneously cyclized to provide 64.",
+        "section": "The Dai total synthesis – 2021",
+        "image_refs": [
+          "b4da72efd6c355be20a83ccc70be2e4566f016e3bfd160556ea294ea1858cb74292d12e826e23cc20.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Pyrrole 63 was formed and found to be unstable, spontaneously cyclizing to 64.",
+        "gap": "The spontaneous cyclization of 63 to 64 needs to be acknowledged.",
+        "decision": "To account for the instability, noted that 63 spontaneously cyclized to 64."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CCC(CCCN=[N+]=[N-])C(=O)C1C(C)c1ccc[nH]1"
+        ],
+        "product_smiles": [
+          "CC12CC(CCCN=[N+]=[N-])C(O)(c3ccc[nH]3)C1N2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Compound 63 spontaneously cyclized to provide 64."
+      },
+      "evidence": {
+        "text_span": "Subsequent oxidative cleavage of the terminal olefin of 62 using ozonolysis followed by Paal–Knorr pyrrole synthesis delivered 63, which was unstable and spontaneously cyclized to provide 64.",
+        "section": "The Dai total synthesis – 2021",
+        "image_refs": [
+          "b4da72efd6c355be20a83ccc70be2e4566f016e3bfd160556ea294ea1858cb74292d12e826e23cc20.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 64 contains the necessary functionalities for forming the tetracyclic core.",
+        "gap": "How to achieve the Staudinger azide reduction, hemiaminal opening, amine-ketone condensation, pyrrole nucleophilic addition, and Boc protection in a one-pot tandem process.",
+        "decision": "To form the tetracyclic intermediate 67, chose a one-pot tandem process initiated with Staudinger azide reduction with PPh3, followed by reversible hemiaminal opening, amine–ketone condensation to form iminium ion 65, pyrrole nucleophilic addition to form 66, and Boc protection, expecting to yield 67 in high yield from 64."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CC(CCCN=[N+]=[N-])C(O)(c3ccc[nH]3)C1N2"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PPh3",
+          "TFA",
+          "Boc2O",
+          "Et3N"
+        ],
+        "yield_percent": 96
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Tetracyclic intermediate 67 was obtained in 96% yield from 64. The nucleophilicity of the electron-rich pyrrole group was essential for the key C–C bond formation.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "Compound 64 was then advanced to tetracyclic intermediate 67 in a one-pot tandem process, which initiated with Staudinger azide reduction with PPh3 to form a primary amine. After reversible hemiaminal opening and amine–ketone condensation, iminium ion 65 was produced for the next pyrrole nucleophilic addition to form a strategically important C–C bond and afford 66, which was protected as Boc carbamate in the same pot to give 67 in 96% yield from 64.",
+        "section": "The Dai total synthesis – 2021",
+        "image_refs": [
+          "d42cfd00b8051b5ffaeae4bee868a0c5e465acf3e2c9d6d3a9a3bc590f7c18b7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The pyrrole group in 67 needs to be converted to a pyridine group, and a chloride handle needs to be introduced for subsequent C–H arylation.",
+        "gap": "How to achieve this single-atom skeletal editing and introduce the chloride.",
+        "decision": "To convert the pyrrole to pyridine and introduce a chloride, chose the Ciamician–Dennstedt rearrangement, expecting to position a chloride handle at the desired site and yield 68."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "CCl3COONa",
+          "BnEt3N+Cl-",
+          "CHCl3"
+        ],
+        "yield_percent": 31
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Compound 68 was obtained in 31% yield via the Ciamician–Dennstedt rearrangement.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "In the next step, the pyrrole group was converted to the pyridine group encoded by the natural product. This single-atom skeletal editing step (67 → 68) was achieved using the Ciamician–Dennstedt rearrangement, a reaction discovered back in 1881 [35]. Furthermore, this rearrangement positioned a chloride handle at the desired site for the next C–H arylation.",
+        "section": "The Dai total synthesis – 2021",
+        "image_refs": [
+          "d42cfd00b8051b5ffaeae4bee868a0c5e465acf3e2c9d6d3a9a3bc590f7c18b7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "3-chloropyridine 68 is available. A pyridine N-oxide is needed for the directed C–H arylation.",
+        "gap": "How to convert 68 to the pyridine N-oxide 69.",
+        "decision": "To prepare the N-oxide, chose Pd/C-catalyzed dechlorination of 68 followed by mCPBA oxidation, expecting to yield 69 in high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd/C",
+          "H2",
+          "mCPBA"
+        ],
+        "yield_percent": 99
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Pyridine N-oxide 69 was obtained in 99% yield.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "Part of 68 was then converted to pyridine N-oxide via Pd/C-catalyzed dechlorination and mCPBA oxidation.",
+        "section": "The Dai total synthesis – 2021",
+        "image_refs": [
+          "8a703880f56c18ddfa4902d58e83973fc3f9fd7e7f4ce788bff17b5d994c9fbf.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Both 3-chloropyridine 68 and pyridine N-oxide 69 are available. The C–H arylation needs to be performed.",
+        "gap": "The 3-chloropyridine 68 is less reactive than the 3-bromopyridine used in the Tsukano synthesis, requiring new conditions.",
+        "decision": "To achieve the C–H arylation, utilized a protocol developed by Stoltz et al. [Pd(OAc)2, t–Bu2MePHBF4, Cs2CO3, and CsOPiv in toluene at 130 °C], expecting to afford the C–H arylation product 70 in good yield with a specific ratio of isomers."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd(OAc)2",
+          "t-Bu2MePHBF4",
+          "Cs2CO3",
+          "CsOPiv"
+        ],
+        "solvent": "toluene",
+        "temperature": "130 °C",
+        "yield_percent": 78
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The C–H arylation was afforded in 78% yield with a 1:4 ratio of 68/69 (presumably referring to the ratio of starting materials or isomers, but the text is ambiguous here, so assuming it refers to the product ratio or selectivity).",
+        "regio_selectivity": "1:4 ratio of 68/69"
+      },
+      "references": [
+        "10.1126/science.aav3421"
+      ],
+      "evidence": {
+        "text_span": "While a similar C–H arylation strategy was used in the Tsukano synthesis, the 3-chloropyridine 68 used in the Dai synthesis exhibited much lower reactivity compared to the 3-bromopyridine 55 used in the Tsukano synthesis. Thus, a set of new reaction conditions was needed. To solve this reactivity issue, a protocol developed by Stoltz et al. in their jorunnamycin synthesis [Pd(OAc)2, t–Bu2MePHBF4, Cs2CO3, and CsOPiv in toluene at 130 °C] was utilized to afford the C–H arylation in 78% yield with a 1:4 ratio of 68/69 [36].",
+        "section": "The Dai total synthesis – 2021",
+        "image_refs": [
+          "8a703880f56c18ddfa4902d58e83973fc3f9fd7e7f4ce788bff17b5d994c9fbf.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The pseudo-dimer 70, containing the pyridine N-oxide and Boc protecting groups, has been formed.",
+        "gap": "How to remove the pyridine N-oxide and Boc groups to complete the synthesis of complanadine A.",
+        "decision": "To complete the synthesis, chose a sequence of pyridine N-oxide reduction with Pd(OH)2/C and H2, followed by acidic Boc removal, expecting to yield complanadine A."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd(OH)2/C",
+          "H2",
+          "HCl"
+        ],
+        "yield_percent": 94
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The total synthesis of complanadine A was completed in 94% yield over these two steps.",
+        "failure_mode": null
+      },
+      "evidence": {
+        "text_span": "Subsequent reduction of the pyridine N-oxide with Pd(OH)2/C and H2 followed by acidic Boc removal completed their total synthesis of complanadine A (1).",
+        "section": "The Dai total synthesis – 2021",
+        "image_refs": [
+          "7eece54901bb8b4b1286f52002939422e65bb9bb2fa469f84eebbbebb85bc25f.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "unspecified"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield for the Dai synthesis is not explicitly stated, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 9,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence in the Dai synthesis is 9 steps."
+      },
+      "Total Steps": {
+        "value": 9,
+        "unit": "steps",
+        "interpretation": "The total number of steps in the Dai synthesis is 9."
+      },
+      "Failed Attempts Count": {
+        "value": 0,
+        "unit": "count",
+        "interpretation": "No explicit failed attempts were reported for the Dai synthesis in the provided text."
+      }
+    },
+    "significance": "The Dai total synthesis of complanadine A features a novel single-atom skeletal editing strategy to form the pyridine from a pyrrole and a pyridine N-oxide directed ortho C–H arylation. This approach demonstrates the impact of emerging synthetic capabilities and concepts on natural product total synthesis, particularly the use of a 145-year-old Ciamician–Dennstedt rearrangement in total synthesis. The synthesis also enabled the preparation of simplified analogs for biological evaluation."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.3762/bjoc.21.178",
+      "pmcid": "PMC12581007",
+      "title": "Comparative analysis of complanadine A total syntheses.",
+      "authors": "Al-Ahmad R, Dai M.",
+      "journal": "Beilstein J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12581007?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "e99ccce7-29fe-44b5-81d4-f1e933cb3b0e",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/5fc2722c-0e4c-4b88-a702-98ac28bf8d55.zip",
+      "parsed_at": "2026-05-07T15:41:05.712114+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 21,
+    "parseable": 10,
+    "canonicalized": 10,
+    "invalid": 11,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC1CC2CN3C(C1)C(C=C3)C4=NC5=C(C=C4)C6C7C(C(C6)C)N(CC7)C5",
+      "C[C@H]1CC[N]2(C[C@H]1C1=CC=C[NH]1)CC2C(=O)OC(C)(C)C",
+      "C[C@H]1CC[N]2(C[C@H]1C1=CC=C[NH]1)CC2C(=O)OC(C)(C)C",
+      "C[C@H]1CC[N]2(C[C@H]1C1=NC=C(Cl)C=C1)CC2C(=O)OC(C)(C)C",
+      "CC1C2CN(C(OC(C)(C)C)=O)C1C(C=C(Cl)N=C2)=C2",
+      "CC1C2CN(C(OC(C)(C)C)=O)C1C(C=C[N+]([O-])=C2)=C2",
+      "CC1C2CN(C(OC(C)(C)C)=O)C1C(C=C[N+]([O-])=C2)=C2",
+      "CC1C2CN(C(OC(C)(C)C)=O)C1C(C=C(Cl)N=C2)=C2",
+      "CC1C2CN(C(OC(C)(C)C)=O)C1C(C=C[N+]([O-])=C2)=C1C=CC(C2=C3C[C@H]4[C@H](C)[C@@H]3CN(C(OC(C)(C)C)=O)C2)=C1",
+      "CC1C2CN(C(OC(C)(C)C)=O)C1C(C=C[N+]([O-])=C2)=C1C=CC(C2=C3C[C@H]4[C@H](C)[C@@H]3CN(C(OC(C)(C)C)=O)C2)=C1"
+    ],
+    "overrides": [],
+    "pubchem_fills": [
+      {
+        "field": "target.smiles",
+        "name": "complanadine A",
+        "smiles": "C[C@@H]1C[C@H]2Cc3ncc(-c4ccc5c(n4)C[C@@H]4C[C@@H](C)C[C@]56NCCC[C@H]46)cc3[C@]3(C1)NCCC[C@H]23"
+      }
+    ]
+  }
+}

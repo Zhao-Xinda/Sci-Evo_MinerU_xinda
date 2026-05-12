@@ -1,0 +1,308 @@
+{
+  "trace_id": "TS-PMC12519463",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Lappaceolides A and B",
+    "smiles": "",
+    "natural_product_class": "monoterpene lactones",
+    "structural_features": {
+      "stereocenters": 3,
+      "ring_systems": "tricyclic",
+      "key_motifs": [
+        "lactone",
+        "dioxabicyclo[3.3.0]octane"
+      ]
+    },
+    "motivation": "To verify the Ragasa biosynthetic proposal of lappaceolides arising from a Michael/oxa-Michael dimerization of siphonodin by developing a biomimetic total synthesis of racemic lappaceolides A and B.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": false,
+      "free_text": "Biomimetic total synthesis of racemic lappaceolides A and B."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C3-O bond",
+        "named_strategy": "oxa-Michael",
+        "reasoning": "Disconnecting the C3-O bond in an oxa-Michael sense yields dimeric diol 4.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "dimeric diol 4",
+        "named_strategy": "vinylogous Michael addition",
+        "reasoning": "Dimeric diol 4 can be further disconnected into two molecules of siphonodin (3).",
+        "alternatives_considered": []
+      }
+    ],
+    "rationale": "The strategy is based on Ragasa’s siphonodin homodimerization hypothesis, envisioning a vinylogous-Michael–oxa-Michael domino reaction to assemble lappaceolides A and B directly from siphonodin in a single step."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The biosynthetic hypothesis suggests lappaceolides arise from siphonodin dimerization. Siphonodin (3) is the key monomer.",
+        "gap": "Siphonodin (3) needs to be synthesized.",
+        "decision": "To synthesize siphonodin (3), a Wittig-olefination–lactonization domino reaction will be used, treating dihydroxyacetone (7) with ylide 8."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(CO)CO"
+        ],
+        "product_smiles": [
+          "O=C1C=C(CO)CO1"
+        ],
+        "reagents": [
+          "CCOC(=O)C=CP(c1ccccc1)(c1ccccc1)c1ccccc1"
+        ],
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Siphonodin (3) was obtained in 78% yield. The approach was readily scalable, allowing production of multigram quantities."
+      },
+      "evidence": {
+        "text_span": "Based on the above analysis, the campaign was initiated by synthesis of the postulated biosynthetic monomer siphonodin (3). This was achieved by treating dihydroxyacetone (7) with the ylide 8, resulting in a Wittig-olefination−lactonization domino reaction to deliver the siphonodin (3) in 78% yield (Scheme 2).6a,b The approach was readily scalable, allowing production of multigram quantities of siphonodin (3).",
+        "section": "Main Text",
+        "image_refs": [
+          "6b187d4ff3b1e14074d4a5e33bdb26d62d50289aa5b0fba7c2e4eae5699b6aab.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Siphonodin (3) has been synthesized. The next step is the biomimetic vinylogous-Michael–oxa-Michael homodimerization.",
+        "gap": "Finding suitable conditions for the dimerization of siphonodin (3) to lappaceolides A and B.",
+        "decision": "Attempted dimerization of 3 at room temperature or elevated temperatures in various solvents (THF, water, acetonitrile, DCM, PhMe) with a range of bases (K2CO3, Na2CO3, Cs2CO3, TBAF, Et3N, DBU, NaH, DABCO, NaHMDS, KOtBu) and acidic additives (Zn(OTf)2, Amberlyst 15, and p-TsOH)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1C=C(CO)CO1"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "K2CO3",
+          "Na2CO3",
+          "Cs2CO3",
+          "TBAF",
+          "Et3N",
+          "DBU",
+          "NaH",
+          "DABCO",
+          "NaHMDS",
+          "KOtBu",
+          "Zn(OTf)2",
+          "Amberlyst 15",
+          "p-TsOH"
+        ],
+        "solvent": "THF, water, acetonitrile, DCM, PhMe",
+        "temperature": "rt or elevated"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "No detectable conversion of 3 to lappaceolides was observed by 1H NMR."
+      },
+      "evidence": {
+        "text_span": "We then turned our attention to the biomimetic vinylogous-Michael−oxa-Michael homodimerization of 3. Despite the mechanistically promising biomimetic domino reaction, numerous attempts at dimerizing 3 were unsuccessful. Dimerizing 3 at room temperature or elevated temperatures in a range of solvents (THF, water, acetonitrile, DCM, PhMe) with a range of bases K2CO3, Na2CO3, Cs2CO3, TBAF, Et3N, DBU, NaH, DABCO, NaHMDS, KOtBu) and acidic additives (Zn(OTf)2, Amberlyst 15, and p-TsOH) gave no detectable (1H NMR) conversion of 3 to lappaceolides (see the SI).",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Initial attempts at dimerization were unsuccessful. A related problem was faced by the Lawrence group in their total synthesis of (-)-angiopterlactone B.",
+        "gap": "Identify conditions that promote the dimerization.",
+        "decision": "Implement the Lawrence conditions, using 20 mol % of K2CO3 in 1,2-DCE at 70 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1C=C(CO)CO1"
+        ],
+        "product_smiles": [
+          "ClCCCl"
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "1,2-DCE",
+        "temperature": "70 °C",
+        "time": "12 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 5,
+        "dr": "54:46",
+        "observation": "A 5% conversion to lappaceolides A (1) and B (2) was observed with a dr = 54:46."
+      },
+      "references": [
+        "10.1021/acs.orglett.7b00600"
+      ],
+      "evidence": {
+        "text_span": "A related problem was faced by the Lawrence group in their total synthesis of (−)-angiopterlactone B while developing a domino reaction housing a Michael−oxa-Michael sequence.7 Implementing the Lawrence conditions, using 20 mol % of K2CO3 in 1,2-DCE at 70 °C, in our system, we found a 5% conversion to lappaceolides A (1) and B (2) in dr = 54:46 after 12 h.",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Initial conditions provided a low conversion (5%) to lappaceolides. Further optimization is needed.",
+        "gap": "Improve the yield and conversion of the dimerization reaction.",
+        "decision": "Optimize the reaction conditions, specifically the base, solvent, temperature, and time. The best conditions found were 10.0 equiv of Cs2CO3 in 1,2-DCE at 85 °C for 4 h."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C1C=C(CO)CO1"
+        ],
+        "product_smiles": [
+          "ClCCCl"
+        ],
+        "reagents": [
+          "Cs2CO3"
+        ],
+        "solvent": "1,2-DCE",
+        "temperature": "85 °C",
+        "time": "4 h",
+        "stoichiometry": {
+          "Cs2CO3": "10.0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 30,
+        "dr": "3:2",
+        "observation": "100% conversion to lappaceolides A (1) and B (2) in a 3:2 ratio and 30% isolated yield. Yields, conversions, and diastereomeric ratios varied (8–30%, 75–100%, dr 3:2–2:3) from batch to batch. Reaction times longer than 4 h resulted in lower yields, indicating instability of products at elevated temperatures under reaction conditions. Careful kinetic control was required."
+      },
+      "evidence": {
+        "text_span": "Taking this initial discovery through extensive further optimization (see the SI), we found that using 10.0 equiv of Cs2CO3 in 1,2-DCE at 85 °C in 4 h results, in the best case, in 100% conversion to lappaceolides A (1) and B (2) in a 3:2 ratio and 30% isolated yield. The yields, conversions, and diastereomeric ratios of 1 and 2 were however found to vary (8−30%, 75−100%, dr 3:2−2:3) from batch to batch. Reaction times longer than 4 h were found to result in lower yields, indicating that 1 and 2 are unstable at elevated temperatures under the reaction conditions. Careful kinetic control was, therefore, required for a successful dimerization of 3.",
+        "section": "Main Text",
+        "image_refs": [
+          "56620e130e4763d87ff6a93ca99e72f4be66114e05746e11dd820cb85da87d97.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Lappaceolides A and B have been synthesized.",
+        "gap": "Purification and characterization of the synthesized products.",
+        "decision": "Purify the products using flash column chromatography and characterize them using spectroscopic methods and X-ray diffraction."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Purification was challenging. Typical flash column chromatography eluent systems (EtOAc/hexane or DCM/MeOH) did not separate unreacted siphonodin (3) from 1 and 2. Flash column chromatography using Et2O–MeCN–DCM (1:1:3 v/v/v) allowed separation. Spectroscopic data matched reported values. A single-crystal X-ray diffraction structure of cocrystallized lappaceolides A (1) and B (2) was obtained."
+      },
+      "evidence": {
+        "text_span": "Purification of lappaceolides A (1) and B (2) proved to be equally challenging. Using typical flash column chromatography eluent systems such as EtOAc/hexane or DCM/MeOH did not allow unreacted siphonodin (3) to be separated from 1 and 2. Ultimately, flash column chromatography using Et2O−MeCN−DCM (1:1:3 v/v/v) allowed the separation of siphonodin (3) from lappaceolides (1 and 2). The spectroscopic data obtained for the synthetic sample of lappaceolides A (1) and B (2) were identical to those reported for the isolated materials.1 Furthermore, a single-crystal X-ray diffraction structure of cocrystallized lappaceolides A (1) and B (2) was obtained.8",
+        "section": "Main Text"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "X-ray crystallography",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 30,
+        "unit": "%",
+        "interpretation": "Yield for the dimerization step."
+      },
+      "Longest Linear Steps": {
+        "value": 2,
+        "unit": "steps",
+        "interpretation": "Total steps in the longest linear sequence."
+      },
+      "Total Steps": {
+        "value": 2,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps."
+      },
+      "Failed Attempts Count": {
+        "value": 1,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly reported failed attempts."
+      }
+    },
+    "significance": "The first total synthesis of lappaceolides A and B was achieved in two steps using a biomimetic vinylogous-Michael–oxa-Michael domino reaction. This synthesis provides further proof of the biosynthetic hypothesis that lappaceolides are dimers of siphonodin."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/acs.orglett.5c02445",
+      "pmcid": "PMC12519463",
+      "title": "Biomimetic Total Synthesis of (±)-Lappaceolides A and B.",
+      "authors": "Pallerla RR, Hakola J, Härkönen L, Siitonen JH.",
+      "journal": "Org Lett",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12519463?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "de091bba-0e1f-407c-a171-c2fdc6a2a410",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-07/e1c62225-1316-4079-99f4-064d8a30f5d4.zip",
+      "parsed_at": "2026-05-07T09:21:27.739581+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 8,
+    "parseable": 5,
+    "canonicalized": 4,
+    "invalid": 3,
+    "overridden_by_name": 2,
+    "invalid_examples": [
+      "O=C1OC[C@@H]2[C@H]3C(=O)OC[C@H]2[C@@H](CO)O31",
+      "O=C1OC[C@@H]2[C@H]3C(=O)OC[C@H]2[C@@H](CO)O31",
+      "O=C1OC[C@@H]2[C@H]3C(=O)OC[C@H]2[C@@H](CO)O31"
+    ],
+    "overrides": [
+      {
+        "field": "step_3.product_smiles",
+        "named_compound": "1,2-DCE",
+        "was": "",
+        "now": "ClCCCl",
+        "reason": "original SMILES was missing/invalid"
+      },
+      {
+        "field": "step_4.product_smiles",
+        "named_compound": "1,2-DCE",
+        "was": "",
+        "now": "ClCCCl",
+        "reason": "original SMILES was missing/invalid"
+      }
+    ]
+  }
+}

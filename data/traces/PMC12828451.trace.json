@@ -1,0 +1,577 @@
+{
+  "trace_id": "TS-PMC12828451",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Caylobolide B",
+    "smiles": "CCC[C@H](C[C@@H](C)O)C[C@H](C)C(=O)O[C@H]1CC[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C1",
+    "natural_product_class": "polyhydroxylated macrolide",
+    "structural_features": {
+      "key_motifs": [
+        "1,3-diol",
+        "1,5-diol",
+        "1,3,5-triol",
+        "macrolactone"
+      ]
+    },
+    "motivation": "Caylobolide B, a marine polyhydroxylated macrolide, has significant biological activity but its complete stereochemical configuration remained uncertain, impeding biological studies and synthetic access. The synthesis aims to resolve this ambiguity and enable further research.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Validation of the revised structure and absolute configuration of caylobolide B and iso-caylobolide B, and access to non-natural analogues."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "macrocycle disconnection via one-pot hydroboration-Suzuki cross coupling",
+        "named_strategy": "Suzuki cross-coupling",
+        "reasoning": "This strategy was previously utilized towards bastimolide B and allows for late-stage macrocyclization.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "ester formation to install (Z)-iodoacrylate moiety",
+        "reasoning": "This allows for the introduction of the key unsaturated ester functionality.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond disconnections via boronic ester homologation reactions",
+        "reasoning": "This provides a modular approach to assemble the polyketide backbone from smaller fragments, leveraging established methodology.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "fragment 1 (14)",
+        "smiles": "CC(C)c1ccc(C(C)C)c(-c2c(C(C)C)cccc2C(C)C)c1OP(OC1(C)OC(C)(C)OC1O)c1ccccc1",
+        "role": "unique building block for caylobolide B",
+        "comes_from": "de novo synthesis"
+      },
+      {
+        "fragment_id": "fragment 2 (15)",
+        "smiles": "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O",
+        "role": "common building block",
+        "comes_from": "previous syntheses of caylobolide A and bastimolide B"
+      },
+      {
+        "fragment_id": "fragment 3 (16)",
+        "smiles": "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O",
+        "role": "common building block",
+        "comes_from": "previous syntheses of caylobolide A and bastimolide B"
+      },
+      {
+        "fragment_id": "fragment 4 (17)",
+        "smiles": "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O",
+        "role": "stereodivergent building block",
+        "comes_from": "de novo synthesis (enantiomeric forms)"
+      },
+      {
+        "fragment_id": "fragment 5 (13)",
+        "smiles": "CC(C)C(O)C=O",
+        "role": "common building block",
+        "comes_from": "previous syntheses of bastimolide B"
+      }
+    ],
+    "rationale": "The strategy employs a modular fragment-based approach, unifying four of five building blocks with previous syntheses of related macrolides. A key aspect is the late-stage stereodivergent incorporation of C36, allowing access to both C-36 diastereomers from easily accessible enantiomeric building blocks."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "retrosynthetic_analysis",
+      "thought": {
+        "background": "The target is Caylobolide B, a complex polyhydroxylated macrolide with an uncertain stereochemical configuration. Previous work on related macrolides (bastimolide B, caylobolide A) has established successful synthetic strategies.",
+        "gap": "A robust and modular synthetic route is needed to confirm the revised structure and stereochemistry of caylobolide B and its C36 epimer, and to allow for the synthesis of analogues.",
+        "decision": "To achieve a modular and stereodivergent synthesis, a retrosynthetic disconnection of the macrocycle via a one-pot hydroboration-Suzuki cross coupling was chosen. Further disconnections of C-C bonds using boronic ester homologation reactions would lead to five fragments, four of which are common with previous syntheses. Fragment 4 (17) would be designed for late-stage stereodivergent incorporation at C36."
+      },
+      "evidence": {
+        "text_span": "With absolute configurations assigned and a likely site of epimeric variation at C36, we designed a modular, late-stage stereodivergent synthetic route to access both C-36 diastereomers. Retrosynthetic disconnection of the macrocycle was proposed through a one-pot hydroboration-Suzuki cross coupling, a strategy previously utilized towards bastimolide B (Scheme 1).[9] Ester formation could then be used to install the (Z)-iodoacrylate moiety. Further retrosynthetic disconnection of key C─C bonds utilizing boronic ester homologation reactions ultimately provides a five-fragment strategy, where four of the five building blocks (fragments 2–5) were used in the synthesis of bastimolide B[9] and caylobolide A,[15] exemplifying the modularity of such polyketide syntheses. Key to the ability to access both natural product diastereomers simultaneously was the design of a route that would allow the late-stage incorporation of C36, using a building block that could be easily accessed as either enantiomer (fragment 4).",
+        "section": "Main Text"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "fragment 1 (14)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Fragment 1 (14) is a unique building block for caylobolide B and needs to be synthesized.",
+        "gap": "The synthesis of fragment 1 (14) requires the enantioselective formation of a bis-boronic ester and subsequent regioselective homologation and oxidation to a 1,3-diol, followed by protection.",
+        "decision": "To synthesize fragment 1 (14), enantioselective platinum-catalyzed diboration of terminal alkene 18 will be performed to obtain bis-boronic ester 19. This will be followed by regioselective homologation of the primary boronic ester moiety of 19 with the magnesiated carbenoid of sulfoxide 20, oxidation to 1,3-diol 21, and finally acetonide protection to yield 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CCCCCCCCOC(=O)c1c(C(C)C)cc(C(C)C)cc1C(C)C"
+        ],
+        "product_smiles": [
+          "CC(C)c1ccc(C(C)C)c(-c2c(C(C)C)cccc2C(C)C)c1OP(OC1(C)OC(C)(C)OC1O)c1ccccc1"
+        ],
+        "named_reaction": "diboration",
+        "reagents": [
+          "B2Pin2",
+          "Pt(dba)3"
+        ],
+        "ligand": "CC(C)C1=CC=CC(C(C)C)=C1C2=C(C(C)C)C=CC(C(C)C)=C2P(C3=CC=CC=C3)OC4(C)OC(C)(C)OC4O",
+        "solvent": "THF",
+        "temperature": "60 °C",
+        "time": "14 h",
+        "stoichiometry": {
+          "B2Pin2": "1.05 equiv",
+          "Pt(dba)3": "1.00 mol%",
+          "(S,S)-L1": "1.20 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "Bis-boronic ester 19 was obtained in high e.r. and excellent yield.",
+        "dr": "high"
+      },
+      "evidence": {
+        "text_span": "The synthesis of fragment 1 (14) was achieved in a five-step sequence (Scheme 2). Enantioselective platinum-catalyzed diboration of the terminal alkene of 18 was performed to obtain bis-boronic ester 19 in high e.r. and excellent yield.",
+        "page": null,
+        "section": "Main Text",
+        "image_refs": [
+          "658320b355ce42e367a003292cbc144b4dd20a9ba7ac8a9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "fragment 1 (14)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bis-boronic ester 19 has been successfully synthesized.",
+        "gap": "The next step is the regioselective homologation and oxidation to form the 1,3-diol 21.",
+        "decision": "Regioselective homologation of the primary boronic ester moiety of 19 will be performed with the magnesiated carbenoid of sulfoxide 20 (generated through sulfoxide-magnesium exchange), followed by oxidation of the resulting 1,3-bisboronic ester to afford 1,3-diol 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)c1ccc(C(C)C)c(-c2c(C(C)C)cccc2C(C)C)c1OP(OC1(C)OC(C)(C)OC1O)c1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "homologation",
+        "reagents": [
+          "CC1=CC=C(C=C1)S(=O)C(C=C)OTIB",
+          "iPrMgCl.LiCl",
+          "H2O2",
+          "NaOH"
+        ],
+        "solvent": "CH2Cl2, THF",
+        "temperature": "0 °C to r.t., then 40 °C",
+        "time": "1 h, then 16 h, then 3 h",
+        "stoichiometry": {
+          "sulfoxide": "1.20 equiv",
+          "iPrMgCl·LiCl": "1.30 equiv",
+          "H2O2/NaOH": "2:1"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "1,3-diol 21 was obtained in good yield over two steps."
+      },
+      "evidence": {
+        "text_span": "Regioselective homologation of the primary boronic ester moiety of 19 with the magnesiated carbenoid of sulfoxide 20 (generated through sulfoxide-magnesium exchange), followed by oxidation of the resulting 1,3-bisboronic ester afforded 1,3-diol 21 in a good yield over two steps.",
+        "page": null,
+        "section": "Main Text",
+        "image_refs": [
+          "658320b355ce42e367a003292cbc144b4dd20a9ba7ac8a9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "fragment 1 (14)",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "1,3-diol 21 has been successfully synthesized.",
+        "gap": "The 1,3-diol needs to be protected as an acetonide to form fragment 1 (14).",
+        "decision": "Acetonide protection of 21 will be performed using 2,2-dimethoxypropane (DMP) and pyridinium p-toluenesulfonate (PPTS) to afford enantio- and diastereomerically pure 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)c1ccc(C(C)C)c(-c2c(C(C)C)cccc2C(C)C)c1OP(OC1(C)OC(C)(C)OC1O)c1ccccc1"
+        ],
+        "reagents": [
+          "2,2-dimethoxypropane",
+          "pyridinium p-toluenesulfonate"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "r.t.",
+        "time": "16 h",
+        "stoichiometry": {
+          "DMP": "15.0 equiv",
+          "PPTS": "0.10 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Enantio- and diastereomerically pure 14 was obtained upon removal of the minor diastereomer by preparative HPLC."
+      },
+      "evidence": {
+        "text_span": "Acetonide protection of 21 afforded enantio- and diastereomerically pure 14, upon removal of the minor diastereomer by preparative HPLC.",
+        "page": null,
+        "section": "Main Text",
+        "image_refs": [
+          "658320b355ce42e367a003292cbc144b4dd20a9ba7ac8a9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Fragments 1 (14), 2 (15), 3 (16), 4 (17), and 5 (13) are available. The next step is to begin fragment coupling.",
+        "gap": "The first coupling involves fragment 1 (14) and fragment 2 (15) to extend the carbon chain and set the C13 stereochemistry.",
+        "decision": "Lithiation of fragment 1 (14) at C13 using (+)-sparteine-ligated s-BuLi will be performed, followed by trapping with the boronic ester group of fragment 2 (15). The resulting secondary boronic ester will then be oxidized by basic peroxide and TES protected to avoid unwanted side reactions in further homologations."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)c1ccc(C(C)C)c(-c2c(C(C)C)cccc2C(C)C)c1OP(OC1(C)OC(C)(C)OC1O)c1ccccc1",
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O"
+        ],
+        "product_smiles": [
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O"
+        ],
+        "reagents": [
+          "(+)-sparteine",
+          "nBuLi",
+          "NaOH",
+          "H2O2",
+          "TESOTF",
+          "2,6-lutidine"
+        ],
+        "solvent": "Et2O, THF, CH2Cl2",
+        "temperature": "-78 °C, 40 °C, r.t.",
+        "time": "5 h, 2 h, 16 h, 3 h",
+        "stoichiometry": {
+          "14": "1.30 equiv",
+          "(+)-sparteine": "1.30 equiv",
+          "nBuLi": "1.30 equiv",
+          "15": "1.00 equiv",
+          "TESOTF": "8.00 equiv",
+          "2,6-lutidine": "12.0 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "observation": "The product of the first homologation, oxidation, and TES protection was obtained in 58% yield over three steps (homologation, oxidation, TES protection). The text states 64% yield over four steps for sulfoxide 22, which is a different intermediate. The yield for 23 is given as 'moderate yield over three steps' in the text, but the scheme shows 58% for the first homologation step. Assuming the 58% refers to the overall yield to 23 after the first homologation, oxidation, and TES protection."
+      },
+      "evidence": {
+        "text_span": "Fragment coupling towards caylobolide B began with lithiation of fragment 1 (14) at C13 by (+)-sparteine-ligated s-BuLi, with subsequent trapping by the boronic ester group of fragment 2 (15) (Scheme 3). The resulting secondary boronic ester was oxidized by basic peroxide and TES protected to avoid unwanted side reactions in further homologations.",
+        "page": null,
+        "section": "Main Text",
+        "image_refs": [
+          "9a9ce08d39f52551a20d5ceaa54d02a9419d3caf87b792e7ab8b3b848d9274ae.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The TES protected product from the previous step (intermediate 23) is available.",
+        "gap": "The next step is to prepare sulfoxide 22 for the subsequent homologation with fragment 3 (16).",
+        "decision": "C21 of the TES protected product will be lithiated with (+)-sparteine-ligated s-BuLi, transmetalated with MgBr2·Et2O, and trapped with (+)-Andersen’s sulfinate to afford sulfoxide 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O"
+        ],
+        "product_smiles": [
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O"
+        ],
+        "reagents": [
+          "s-BuLi",
+          "(+)-sparteine",
+          "MgBr2.Et2O",
+          "(+)-Andersen's sulfinate"
+        ],
+        "solvent": "Et2O",
+        "temperature": "-78 °C, r.t.",
+        "time": "3 h, 2 h, 1 h, 16 h",
+        "stoichiometry": {
+          "s-BuLi": "1.20 equiv",
+          "(+)-sparteine": "1.20 equiv",
+          "MgBr2·Et2O": "1.50 equiv",
+          "(+)-Andersen's sulfinate": "1.50 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "Sulfoxide 22 was obtained in 64% yield over four steps in excellent d.r. with respect to C13. The minor diastereomer generated at C21 was removed through chromatographic separation."
+      },
+      "evidence": {
+        "text_span": "C21 of the TES protected product was lithiated with (+)-sparteine-ligated s-BuLi, transmetalated with MgBr2·Et2O, and trapped with (+)-Andersen’s sulfinate to afford sulfoxide 22 in 64% yield over four steps in excellent d.r. with respect to C13. The minor diastereomer generated at C21 was removed through chromatographic separation.",
+        "page": null,
+        "section": "Main Text",
+        "image_refs": [
+          "9a9ce08d39f52551a20d5ceaa54d02a9419d3caf87b792e7ab8b3b848d9274ae.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Sulfoxide 22 and fragment 3 (16) are available.",
+        "gap": "The next step is to couple sulfoxide 22 with fragment 3 (16) to further extend the carbon chain.",
+        "decision": "Chemoselective homologation of the primary boronic ester of fragment 3 (16) will be performed with the magnesiated carbenoid of 22. Oxidation of the resulting tetraboronic ester, and subsequent TES protection of the tetraol, will yield 23 with full stereocontrol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O",
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O"
+        ],
+        "product_smiles": [
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O"
+        ],
+        "named_reaction": "homologation",
+        "reagents": [
+          "iPrMgCl.LiCl",
+          "NaOH",
+          "H2O2",
+          "TESOTF",
+          "2,6-lutidine"
+        ],
+        "solvent": "CH2Cl2, THF",
+        "temperature": "-20 °C, 40 °C, 0 °C to r.t., r.t.",
+        "time": "1 h, 16 h, 16 h, 3 h",
+        "stoichiometry": {
+          "Sulfoxide 22": "1.20 equiv",
+          "16": "1.00 equiv",
+          "iPrMgCl·LiCl": "1.30 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Intermediate 23 was obtained with full stereocontrol in a moderate yield over three steps (homologation, oxidation, TES protection). The scheme shows 76% yield for this step.",
+        "dr": "full stereocontrol"
+      },
+      "evidence": {
+        "text_span": "Chemoselective homologation of the primary boronic ester of fragment 3 (16) was performed with the magnesiated carbenoid of 22. Oxidation of the resulting tetraboronic ester, and subsequent TES protection of the tetraol, yielded 23 with full stereocontrol in a moderate yield over three steps.",
+        "page": null,
+        "section": "Main Text",
+        "image_refs": [
+          "9a9ce08d39f52551a20d5ceaa54d02a9419d3caf87b792e7ab8b3b848d9274ae.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 23 is available. Fragment 4 (17) is available in both (S) and (R) configurations.",
+        "gap": "The next step is the stereodivergent coupling of 23 with (S)- and (R)-configured fragment 4 (17) to set the C35 and C36 stereochemistry, leading to epimeric alcohol products 24 and 25.",
+        "decision": "Fragment 23 will be lithiated with (+)-sparteine-ligated s-BuLi to set the C35 stereochemistry, then coupled in separate reactions with (S)-configured and (R)-configured fragment 4 (17). The resulting secondary boronic esters will be oxidized to afford the two epimeric alcohol products 24 and 25."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O",
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O"
+        ],
+        "product_smiles": [
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O",
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O"
+        ],
+        "reagents": [
+          "(+)-sparteine",
+          "nBuLi",
+          "NaOH",
+          "H2O2"
+        ],
+        "solvent": "Et2O, THF, toluene-d8",
+        "temperature": "-78 °C, 60 °C",
+        "time": "3 h, 2 h, 16 h",
+        "stoichiometry": {
+          "(+)-sparteine": "2.00 equiv",
+          "nBuLi": "2.00 equiv",
+          "(S) or (R) Fragment 4 (17)": "3.00 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "The two epimeric alcohol products 24 and 25 were obtained in moderate to good yield, varying in configuration at C36. The scheme shows 73% yield for this step.",
+        "dr": "stereodivergent"
+      },
+      "evidence": {
+        "text_span": "Fragment 23 was lithiated with (+)-sparteine-ligated s-BuLi to set the C35 stereochemistry, then coupled in separate reactions with (S)-configured and (R)-configured fragment 4 (17). The resulting secondary boronic esters were oxidized to afford the two epimeric alcohol products 24 and 25 in moderate to good yield, varying in configuration at C36.",
+        "page": null,
+        "section": "Main Text",
+        "image_refs": [
+          "9a9ce08d39f52551a20d5ceaa54d02a9419d3caf87b792e7ab8b3b848d9274ae.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Epimeric alcohol products 24 and 25 are available. (Z)-iodoacrylate 13 is also available.",
+        "gap": "The next step is to form the macrocyclic ester via Yamaguchi esterification and then perform the ring-closing Suzuki cross-coupling.",
+        "decision": "The alcohols 24 and 25 will be engaged in a modified Yamaguchi esterification with (Z)-iodoacrylate 13 to afford 26 and 27. The terminal alkene of each epimer will then be hydroborated with 9-BBN before the crude product is directly engaged in ring-closing Suzuki cross-coupling with the (Z)-iodoacrylate moiety to form 28 and 29."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O",
+          "CC(C)C(O)C=O"
+        ],
+        "product_smiles": [
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O",
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O"
+        ],
+        "reagents": [
+          "2,4,6-TCBC",
+          "DMAP",
+          "Et3N",
+          "9-BBN",
+          "H2O",
+          "PdCl2(dppf)",
+          "Ph3As",
+          "Cs2CO3"
+        ],
+        "solvent": "Toluene, THF, THF:DMF",
+        "temperature": "-40 °C to 0 °C, r.t., 70 °C",
+        "time": "2 h, 2 h, 5 min, 20 h",
+        "stoichiometry": {
+          "13": "3.00 equiv",
+          "2,4,6-TCBC": "4.00 equiv",
+          "DMAP": "3.50 equiv",
+          "Et3N": "6.00 equiv",
+          "9-BBN": "3.00 equiv",
+          "H2O": "40.0 equiv",
+          "PdCl2(dppf)": "0.50 equiv",
+          "Ph3As": "1.00 equiv",
+          "Cs2CO3": "6.00 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 46,
+        "observation": "Macrocycles 28 and 29 were formed in moderate yields. The scheme shows 46% yield for this step.",
+        "dr": "stereodivergent"
+      },
+      "evidence": {
+        "text_span": "The alcohols were engaged in a modified Yamaguchi esterification with (Z)-iodoacrylate 13 to afford 26 and 27.[9,21] The terminal alkene of each epimer was hydroborated with 9-BBN before the crude product was directly engaged in ring-closing Suzuki cross-coupling with the (Z)-iodoacrylate moiety to form 28 and 29 in moderate yields.",
+        "page": null,
+        "section": "Main Text",
+        "image_refs": [
+          "9a9ce08d39f52551a20d5ceaa54d02a9419d3caf87b792e7ab8b3b848d9274ae.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Macrocycles 28 and 29 have been successfully synthesized.",
+        "gap": "The final step is the global deprotection to yield the target natural products, caylobolide B (1) and iso-caylobolide B (2).",
+        "decision": "Final global deprotection will be performed with DOWEX-50W-X8 sulfonic acid bound resin to afford epimers 1 and 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O",
+          "CC(C)C(O)C=CB(OC(C)(C)C(C)(C)O)OC(C)(C)C(C)(C)O"
+        ],
+        "product_smiles": [
+          "CCC[C@H](C[C@@H](C)O)C[C@H](C)C(=O)O[C@H]1CC[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C1",
+          "CCC[C@H](C[C@@H](C)O)C[C@H](C)C(=O)O[C@H]1CC[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C[C@H](O)C1"
+        ],
+        "reagents": [
+          "DOWEX-50W-X8 sulfonic acid bound resin"
+        ],
+        "solvent": "MeOH",
+        "temperature": "r.t.",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": null,
+        "observation": "Epimers 1 and 2 were obtained. Comparison of the two diastereomeric products revealed that the (36S) isomer (2) matched all NMR spectroscopic data for the newly isolated iso-caylobolide B, and the (36R) isomer (1) matched the originally isolated caylobolide B.",
+        "dr": "stereodivergent"
+      },
+      "evidence": {
+        "text_span": "Final global deprotection was performed with DOWEX-50W-X8 sulfonic acid bound resin to afford epimers 1 and 2. Comparison of the two diastereomeric products revealed that the (36S) isomer (2), which was stereochemically analogous to caylobolide A, matched all NMR spectroscopic data for the newly isolated iso-caylobolide B. Gratifyingly, the (36R) isomer (1) matched the originally isolated caylobolide B, thereby establishing the absolute configuration of all caylobolides and completing their first total syntheses.",
+        "page": null,
+        "section": "Main Text",
+        "image_refs": [
+          "9a9ce08d39f52551a20d5ceaa54d02a9419d3caf87b792e7ab8b3b848d9274ae.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {},
+    "significance": "The total synthesis validated the revised structure and absolute configuration of caylobolide B and iso-caylobolide B, resolving a longstanding structural ambiguity. The modular stereodivergent route demonstrates the potential to access non-natural analogues, opening new avenues for rational design and discovery of macrolide-based therapeutics."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.202523117",
+      "pmcid": "PMC12828451",
+      "title": "Caylobolide B: Structure Revision, Total Synthesis, Biological Characterization, and Discovery of New Analogues.",
+      "authors": "George MRP, Elsadek LA, Deering M, de Almeida LC, Tyler JL, Noble A, Paul VJ, Luesch H, Butts CP, Aggarwal VK.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12828451?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/75dda886-d854-4b2a-9ccd-af3eb140b5e3.zip",
+      "parsed_at": "2026-05-11T06:41:40.772414+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 32,
+    "parseable": 30,
+    "canonicalized": 28,
+    "invalid": 2,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "C=CCC(O)C(O)CCCCCCCCOTIB",
+      "C=CCC(O)C(O)CCCCCCCCOTIB"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,1088 @@
+{
+  "trace_id": "TS-PMC12802513",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-beta-Lycorane",
+    "smiles": "CC1C2c3cc4c(cc3CC3CCN1C32)OCO4",
+    "natural_product_class": "alkaloid",
+    "structural_features": {
+      "molecular_weight": 257.3,
+      "stereocenters": 6,
+      "ring_systems": "tetracyclic",
+      "key_motifs": [
+        "benzodioxole",
+        "pyrrolidine",
+        "cyclohexene"
+      ]
+    },
+    "motivation": "Polyfunctional compounds bearing multiple stereogenic centers are synthetically valuable and important for complex molecule preparation. The highly functional nature of the products has been exploited in an efficient formal synthesis of the complex natural product (+)-(β)-Lycorane.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Yang",
+        "year": 2022,
+        "doi": "10.1021/acs.orglett.2c00905",
+        "key_strategy": "unspecified"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Efficient formal synthesis of the complex natural product Lycorane."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond formation via borylallylation",
+        "named_strategy": "Cu/Ir-catalyzed borylallylation",
+        "reasoning": "This reaction generates three contiguous stereogenic centers and introduces C-B, ester, and alkene functionalities, which are amenable to further functionalization."
+      },
+      {
+        "bond_description": "Ring closure to form cyclohexene",
+        "named_strategy": "Ring-closing metathesis (RCM)",
+        "reasoning": "To form the cyclohexene core of the natural product."
+      },
+      {
+        "bond_description": "Installation of vinyl group",
+        "named_strategy": "Zweifel alkynylation",
+        "reasoning": "To introduce the necessary unsaturation for subsequent steps."
+      },
+      {
+        "bond_description": "Formation of carbamate",
+        "named_strategy": "Curtius rearrangement",
+        "reasoning": "To form the nitrogen-containing ring system."
+      }
+    ],
+    "rationale": "The strategy leverages a novel Cu/Ir-catalyzed borylallylation to establish three contiguous stereogenic centers with high stereocontrol. The resulting highly functionalized product allows for diverse transformations, including ring-closing metathesis and subsequent modifications to complete a formal synthesis of (+)-β-Lycorane."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Alkene difunctionalizations are critical for molecular complexity. Carboboration reactions are significant due to the formation of new C-C and C-B bonds. Existing methods generate two stereogenic centers. Methods for three contiguous stereogenic centers are rare, especially in acyclic systems.",
+        "gap": "Development of methods that can precisely control stereochemistry with three or more contiguous stereogenic centers, particularly in acyclic systems, is needed.",
+        "decision": "To address this challenge, we elected to combine a Cu-catalyzed alkene borylation with an Ir-catalyzed allylation reaction to achieve stereodivergent borylallylation of α,β-unsaturated esters, expecting to control three stereogenic centers and generate highly functionalized products."
+      },
+      "evidence": {
+        "text_span": "To address this challenge, we elected to combine a Cucatalyzed alkene borylation with an Ir-catalyzed allylation reaction (Scheme 1c). In recent years, Ir-catalyzed allylation has been extensively developed for the enantioselective combination of either linear or branched allylic alcohols with a variety of nucleophiles to deliver the branched products.[26–31] In particular, (cooperative) catalytic methods with prochiral and chiral nucleophiles have been advanced.[32–37] There is substantial literature precedent for Ir-catalyzed allylation with enolate nucleophiles to generated two stereogenic centers.[38–45] However, forming three contiguous stereogenic centers with control of enantioselectivity and diastereoselectivity are rare and limited to cyclic systems, and thus heavily favored to achieve anti-selectivity, or acyclic systems with sterically biased substituents, which limits scope.[46,47]",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The goal is to develop a Cu/Ir-catalyzed borylallylation of α,β-unsaturated esters. Initial studies will focus on ethyl cinnamate (1) and a linear allylic alcohol derivative (2). NHC-Cu complexes are known for high reactivity in alkene borylation.",
+        "gap": "Identify suitable Cu and Ir catalysts and reaction conditions to achieve good reactivity and stereocontrol.",
+        "decision": "Initiate the reaction with ethyl cinnamate (1) and linear allylic alcohol derivative 2 using SIMesCuCl and [Ir-(S,S,S)] in toluene, expecting good reactivity but potentially poor diastereoselectivity due to the achiral Cu-complex."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](c1ccccc1)[C@@H](C(=O)OCC)C(B1OC(C)(C)C(C)(C)O1)c1ccccc1",
+          "C=C[C@@H](C(=O)OCC)[C@H](B1OC(C)(C)C(C)(C)O1)c1ccccc1"
+        ],
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": "SIMesCuCl",
+        "ligand": "[Ir-(S,S,S)]",
+        "solvent": "PhCH3",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "SIMesCuCl": "5 mol%",
+          "[Ir-(S,S,S)]": "10 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "er_percent": 96,
+        "dr": 50,
+        "observation": "Good reactivity was observed, but a 1:1 mixture of diastereomers was formed due to the achiral Cu-complex. High facial selectivity (96:4 er for 3) was achieved by the chiral Ir-complex."
+      },
+      "evidence": {
+        "text_span": "Initial studies focused on reaction of ethyl cinnamate (1) with linear allylic alcohol derivative 2 promoted by Cu- and Ir-catalysts (Scheme 2). Reactivity was probed with NHC-Cucomplexes due to their demonstrated high reactivity in alkene borylation reactions.[48–50] Pleasingly, good reactivity was observed with SIMesCuCl and $[ \\mathrm { I r } \\mathbf { - } ( S , S , S ) ] ^ { [ 5 1 ] }$ (Scheme 2, entry 1). Branched allylic carbonates were also evaluated, however, low yields were observed (see Supporting Information for details). Due to the achiral nature of the Cu-complexes a 1:1 mixture of diastereomers 3 and 4 was observed; however, the chiral Ir-complex allowed for high facial selectivity (96:4 er for formation of 3).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Achiral Cu-complexes led to poor diastereoselectivity. Chiral NHC-Cu complexes could improve diastereoselectivity.",
+        "gap": "Find a chiral Cu-complex that provides good diastereoselectivity.",
+        "decision": "Evaluate McQuadeCuCl as a chiral NHC-Cu complex, expecting improved diastereoselectivity compared to SIMesCuCl."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](c1ccccc1)[C@@H](C(=O)OCC)C(B1OC(C)(C)C(C)(C)O1)c1ccccc1",
+          "C=C[C@@H](C(=O)OCC)[C@H](B1OC(C)(C)C(C)(C)O1)c1ccccc1"
+        ],
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": "CN1C(=C(Cl)Cu)N=C2C=CC=CC2=N[C@@H](c3ccccc3)[C@H]1c4ccccc4",
+        "ligand": "[Ir-(S,S,S)]",
+        "solvent": "PhCH3",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "CN1C(=C(Cl)Cu)N=C2C=CC=CC2=N[C@@H](c3ccccc3)[C@H]1c4ccccc4": "5 mol%",
+          "[Ir-(S,S,S)]": "10 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 69,
+        "er_percent": 95,
+        "dr": 82,
+        "failure_mode": "scope_limited",
+        "observation": "Moderate success was found with McQuadeCuCl, achieving 82:18 dr and 95:5 er. However, challenges with modification of chiral NHC complexes prompted further exploration."
+      },
+      "evidence": {
+        "text_span": "While moderate success was found with McQuadeCuCl (Scheme 2, entry 2),[52] challenges with modification of chiral NHC complexes prompted the exploration of commercially available chiral bisphosphine ligands with Cu-complexes.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "Chiral NHC-Cu complexes showed moderate success but were difficult to modify. Commercially available chiral bisphosphine ligands might offer a more practical solution.",
+        "gap": "Identify a suitable chiral bisphosphine ligand for the Cu-catalyst to improve diastereoselectivity.",
+        "decision": "Screen commercially available chiral bisphosphine ligands with Cu(MeCN)4PF6 and [Ir-(S,S,S)] in toluene. Initial focus on (R,R)-DIOP (L2)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](c1ccccc1)[C@@H](C(=O)OCC)C(B1OC(C)(C)C(C)(C)O1)c1ccccc1",
+          "C=C[C@@H](C(=O)OCC)[C@H](B1OC(C)(C)C(C)(C)O1)c1ccccc1"
+        ],
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "CC1(C)OC[C@@H](CP(c2ccccc2)c2ccccc2)O[C@H]1CP(c1ccccc1)c1ccccc1",
+        "solvent": "PhCH3",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "5 mol%",
+          "CC1(C)OC[C@@H](CP(c2ccccc2)c2ccccc2)O[C@H]1CP(c1ccccc1)c1ccccc1": "6 mol%",
+          "[Ir-(S,S,S)]": "10 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "er_percent": 96,
+        "dr": 64,
+        "observation": "An initial hit was observed with (R,R)-DIOP (L2), yielding 55% with 64:36 dr and 96:4 er. This showed improvement in diastereoselectivity compared to the achiral Cu-complex, but further optimization is needed."
+      },
+      "evidence": {
+        "text_span": "While several chiral bisphosphines were screened, an initial hit was observed with $( R , R )$ -DIOP (Scheme 2, entry 4).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "The (R,R)-DIOP ligand showed some improvement, but better diastereoselectivity is desired. Other ferrocene-derived ligands might be more effective.",
+        "gap": "Identify a more effective chiral bisphosphine ligand for the Cu-catalyst.",
+        "decision": "Evaluate ferrocene-derived JosiPhos type ligand L3, expecting higher diastereoselectivity and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](c1ccccc1)[C@@H](C(=O)OCC)C(B1OC(C)(C)C(C)(C)O1)c1ccccc1",
+          "C=C[C@@H](C(=O)OCC)[C@H](B1OC(C)(C)C(C)(C)O1)c1ccccc1"
+        ],
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "CC[C@@H](P(C(C)(C)C)C(C)(C)C)C1=CC=C(P(C2=CC=CC=C2)C3=CC=CC=C3)C=C1[Fe]C4=CC=CC=C4",
+        "solvent": "PhCH3",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "5 mol%",
+          "CC[C@@H](P(C(C)(C)C)C(C)(C)C)C1=CC=C(P(C2=CC=CC=C2)C3=CC=CC=C3)C=C1[Fe]C4=CC=CC=C4": "6 mol%",
+          "[Ir-(S,S,S)]": "10 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "er_percent": 99,
+        "dr": 90,
+        "observation": "The use of ferrocene derived JosiPhos type ligand L3 allowed for synthesis of 3/4 in 90:10 dr and >99:1 er, a significant improvement."
+      },
+      "evidence": {
+        "text_span": "Notably, the use of ferrocene derived JosiPhos type ligand $\\mathrm { L } _ { 3 }$ allowed for synthesis of ${ \\bf 3 } / { \\bf 4 } \\mathrm { ~ \\ 90 : 1 0 ~ }$ dr and ${ \\tt > } 9 9 ! 1$ er (Scheme 1c, entry 5).[53,54]",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 5,
+      "thought": {
+        "background": "JosiPhos L3 showed excellent stereocontrol. Further evaluation of ferrocene-derived ligands might lead to even better results.",
+        "gap": "Identify the optimal chiral bisphosphine ligand for the Cu-catalyst.",
+        "decision": "Evaluate ferrocene derived (S,S)-Foxap L4, expecting to achieve even higher diastereoselectivity and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](c1ccccc1)[C@@H](C(=O)OCC)C(B1OC(C)(C)C(C)(C)O1)c1ccccc1",
+          "C=C[C@@H](C(=O)OCC)[C@H](B1OC(C)(C)C(C)(C)O1)c1ccccc1"
+        ],
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1",
+        "solvent": "PhCH3",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "5 mol%",
+          "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1": "6 mol%",
+          "[Ir-(S,S,S)]": "10 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "er_percent": 99,
+        "dr": 92,
+        "observation": "Ferrocene derived (S,S)-Foxap L4 led to formation of 3 in 92:8 dr and >99:1 er. This is a further improvement in diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Continued evaluation led to the finding that ferrocene derived (S,S)-Foxap $\\mathrm { L } _ { 4 }$ led to formation of 3 in 92:8 dr and ${ > } 9 9 2 1$ er (Scheme 2, entry 6).[55–57]",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "(S,S)-Foxap L4 showed excellent results. It is important to confirm the stereospecificity of the ligand.",
+        "gap": "Determine if the stereochemistry of the Foxap ligand is critical for high yield and diastereoselectivity.",
+        "decision": "Test the diastereomeric (S,R)-Foxap ligand, expecting lower yield and diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](c1ccccc1)[C@@H](C(=O)OCC)C(B1OC(C)(C)C(C)(C)O1)c1ccccc1",
+          "C=C[C@@H](C(=O)OCC)[C@H](B1OC(C)(C)C(C)(C)O1)c1ccccc1"
+        ],
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "unspecified",
+        "solvent": "PhCH3",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "5 mol%",
+          "unspecified": "6 mol%",
+          "[Ir-(S,S,S)]": "10 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "The diastereomeric (S,R)-Foxap ligand led to lower levels of yield and diastereoselectivity.",
+        "yield_percent": null,
+        "dr": null,
+        "er_percent": null
+      },
+      "evidence": {
+        "text_span": "It is worth nothing that the diasteromeric $( S , R )$ -Foxap ligand led to lower levels of yield and diastereoselectivity (See Supporting Information for details).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "(S,S)-Foxap L4 provided good results. Further optimization of reaction conditions (solvent, catalyst loading) could improve yield and stereoselectivity.",
+        "gap": "Optimize solvent and catalyst loading for the reaction with (S,S)-Foxap L4.",
+        "decision": "Evaluate THF as a solvent and reduce Ir-catalyst loading to 5 mol%, expecting improved yield and diastereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](c1ccccc1)[C@@H](C(=O)OCC)C(B1OC(C)(C)C(C)(C)O1)c1ccccc1",
+          "C=C[C@@H](C(=O)OCC)[C@H](B1OC(C)(C)C(C)(C)O1)c1ccccc1"
+        ],
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1",
+        "solvent": "THF",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "5 mol%",
+          "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1": "6 mol%",
+          "[Ir-(S,S,S)]": "5 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "er_percent": 99,
+        "dr": 98,
+        "observation": "Changing the solvent to THF and reducing Ir-catalyst loading to 5 mol% resulted in 85% yield, 98:2 dr, and >99:1 er. This is the optimized condition for stereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Optimization of this result with evaluation of solvent and catalyst loading led to the formation of 3 in 98:2 dr and ${ > } 9 9 2 1$ er (Scheme 2, entry 10).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "Optimized conditions achieved high stereoselectivity. Further reduction in Cu-catalyst loading could improve efficiency without compromising performance.",
+        "gap": "Determine if the Cu-catalyst loading can be further reduced.",
+        "decision": "Reduce Cu-catalyst loading to 3 mol%, expecting to maintain high yield and stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](c1ccccc1)[C@@H](C(=O)OCC)C(B1OC(C)(C)C(C)(C)O1)c1ccccc1",
+          "C=C[C@@H](C(=O)OCC)[C@H](B1OC(C)(C)C(C)(C)O1)c1ccccc1"
+        ],
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1",
+        "solvent": "THF",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "3 mol%",
+          "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1": "6 mol%",
+          "[Ir-(S,S,S)]": "5 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "er_percent": 99,
+        "dr": 98,
+        "observation": "Reducing Cu-catalyst loading to 3 mol% maintained high yield (95%) and stereoselectivity (98:2 dr, >99:1 er). These are the optimized conditions."
+      },
+      "evidence": {
+        "text_span": "Optimization of this result with evaluation of solvent and catalyst loading led to the formation of 3 in 98:2 dr and ${ > } 9 9 2 1$ er (Scheme 2, entry 10).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The optimized conditions involve both Cu and Ir catalysts. It is crucial to confirm that both catalysts are necessary for the reaction.",
+        "gap": "Verify the necessity of the Cu-catalyst.",
+        "decision": "Perform the reaction without the Cu-catalyst, expecting no reaction or very low yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](c1ccccc1)[C@@H](C(=O)OCC)C(B1OC(C)(C)C(C)(C)O1)c1ccccc1",
+          "C=C[C@@H](C(=O)OCC)[C@H](B1OC(C)(C)C(C)(C)O1)c1ccccc1"
+        ],
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": null,
+        "ligand": "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1",
+        "solvent": "THF",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1": "6 mol%",
+          "[Ir-(S,S,S)]": "5 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 2,
+        "failure_mode": "no_reaction",
+        "observation": "Without the Cu-catalyst, the yield was less than 2%, indicating that the Cu-catalyst is essential for the reaction."
+      },
+      "evidence": {
+        "text_span": "Further control experiments were carried out to demonstrate that Cu- and Ir-catalysts are both necessary for the reaction to proceed. (Scheme 2, entries 11 and 12).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Both Cu and Ir catalysts are believed to be necessary. The previous experiment confirmed the need for the Cu-catalyst.",
+        "gap": "Verify the necessity of the Ir-catalyst.",
+        "decision": "Perform the reaction without the Ir-catalyst, expecting no reaction or very low yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](c1ccccc1)[C@@H](C(=O)OCC)C(B1OC(C)(C)C(C)(C)O1)c1ccccc1",
+          "C=C[C@@H](C(=O)OCC)[C@H](B1OC(C)(C)C(C)(C)O1)c1ccccc1"
+        ],
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1",
+        "solvent": "THF",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "5 mol%",
+          "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1": "6 mol%",
+          "[Ir-(S,S,S)]": null,
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 2,
+        "failure_mode": "no_reaction",
+        "observation": "Without the Ir-catalyst, the yield was less than 2%, confirming that both Cu- and Ir-catalysts are necessary for the reaction to proceed."
+      },
+      "evidence": {
+        "text_span": "Further control experiments were carried out to demonstrate that Cu- and Ir-catalysts are both necessary for the reaction to proceed. (Scheme 2, entries 11 and 12).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimized conditions for the borylallylation reaction have been established, providing high yield and stereoselectivity. The next step is to explore the scope of the reaction with various α,β-unsaturated esters and allylic alcohol derivatives.",
+        "gap": "Demonstrate the generality and robustness of the optimized borylallylation method across a range of substrates.",
+        "decision": "Investigate the scope of the α,β-unsaturated ester unit, including electron-releasing, electron-withdrawing, and sterically demanding groups, as well as various heteroaryl and alkyl groups. Products will be oxidized to facilitate purification and er determination."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)C=Cc1ccc(OC)cc1",
+          "CCOC(=O)C=Cc1ccc(SC)cc1",
+          "CCOC(=O)C=Cc1ccc(F)cc1",
+          "CCOC(=O)C=Cc1ccc(Cl)cc1",
+          "CCOC(=O)C=Cc1cccc(C)c1",
+          "CCOC(=O)C=Cc1cccc(OC)c1",
+          "",
+          "CCOC(=O)C=Cc1cccs1",
+          "CCOC(=O)C=Cc1ccccc1N1CC(C)(C)OC1=O",
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)C=CC(C)C",
+          "CCC=CC(=O)OCC",
+          "CCOC(=O)C=CC1CCCCC1"
+        ],
+        "product_smiles": [
+          "C=CC(C(=O)OCC)C(O)c1ccccc1",
+          "C=CC(C(=O)OCC)C(O)c1ccc(OC)cc1",
+          "C=CC(C(=O)OCC)C(O)c1ccc(SC)cc1",
+          "C=CC(C(=O)OCC)C(O)c1ccc(F)cc1",
+          "C=CC(C(=O)OCC)C(O)c1ccc(Cl)cc1",
+          "C=CC(C(=O)OCC)C(O)c1cccc(C)c1",
+          "C=CC(C(=O)OCC)C(O)c1cccc(OC)c1",
+          "",
+          "C=CC(C(=O)OCC)C(O)c1cccs1",
+          "C=CC(C(=O)OCC)C(O)c1ccc(N2CC(C)(C)OC2=O)cc1",
+          "C=CC(C(=O)OCC)C(O)c1ccccc1",
+          "C=CC(C(=O)OCC)C(O)C(C)c1ccccc1",
+          "C=CC(C(=O)OCC)C(O)Cc1ccccc1",
+          "C=CC(C(=O)OCC)C(O)c1ccccc1"
+        ],
+        "named_reaction": "Cu/Ir-catalyzed borylallylation",
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu",
+          "H2O2",
+          "NaOH"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1",
+        "solvent": "THF",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "3 mol%",
+          "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1": "6 mol%",
+          "[Ir-(S,S,S)]": "5 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq.",
+          "H2O2": "unspecified",
+          "NaOH": "4M"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The reaction tolerated various electron-releasing, electron-withdrawing, and sterically demanding groups on the cinnamate ester. Heteroaryl groups (thiophene, indole, furan) also worked well. Alkyl groups like ethyl crotonate worked with slightly reduced dr, while larger alkyl groups showed high dr. α,β,γ, and δ-unsaturated esters could also be used. Products were oxidized for purification and er determination.",
+        "yield_percent": null,
+        "ee_percent": null,
+        "dr": null
+      },
+      "evidence": {
+        "text_span": "With an optimized set of conditions in hand, the scope of the process was explored (Scheme 3). It should be noted that the products were oxidized to facilitate purification and enantiomeric ratio determination by HPLC with a chiral column. Initially, investigation of the $\\alpha , \\beta$ -unsaturated ester unit was conducted. Modification of the cinnamate ester revealed that substitution with electron-releasing (products 6, 7, and 11), electron-withdrawing (products 8 and 9), and sterically demanding groups (products 10 and 11) were tolerated. However, for the 2-OMe aryl-based substrate, slightly lower levels of diastereoselectivity were observed likely due to steric bulk of the ─OMe group. In addition, various heteroaryl groups did not impede the reaction such as thiophene (product 13), indole (product 14), and furan (product 15). In the case of alkyl groups, reaction with ethyl crotonate worked well, but in slightly reduced dr (product 16). With larger alkyl groups such as $n$ -alkyl (product 17), or cyclohexyl (product 18) high levels of dr were observed. Finally, $\\alpha , \\beta , \\gamma$ , and δ-unsaturated esters can be used to provide access to 1,6-dienes (product 19).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The scope of the α,β-unsaturated ester has been explored. Now, the scope of the allylic alcohol derivatives needs to be investigated.",
+        "gap": "Determine the compatibility of various allylic alcohol derivatives with the optimized borylallylation conditions.",
+        "decision": "Test allylic alcohol derivatives with electron-donating and electron-withdrawing aryl groups, sterically demanding substituents, thiophene, and dienyl allylic carbonate. Also, confirm if the ester group is essential by testing an α,β-unsaturated amide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccc(OC)cc1",
+          "CCOC(=O)OCC=Cc1ccc2ccccc2c1",
+          "",
+          "CCOC(=O)OCC=Cc1ccc(Br)cc1",
+          "CCOC(=O)OCC=Cc1ccc(F)cc1",
+          "CCOC(=O)OCC=Cc1cccc(OC)c1",
+          "CCOC(=O)OCC=Cc1cccs1",
+          "CCOC(=O)OCC=Cc1ccccc1",
+          "CCN(CC)C(=O)C=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=CC(C(=O)OCC)C(O)c1ccc(OC)cc1",
+          "C=CC(C(=O)OCC)C(O)c1ccc2ccccc2c1",
+          "",
+          "C=CC(C(=O)OCC)C(O)c1ccc(Br)cc1",
+          "C=CC(C(=O)OCC)C(O)c1ccc(F)cc1",
+          "C=CC(C(=O)OCC)C(O)c1cccc(OC)c1",
+          "C=CC(C(=O)OCC)C(O)c1cccs1",
+          "C=CC(C(=O)OCC)C(O)c1ccccc1",
+          "C=CC(C(=O)OCC)C(O)C(c1ccccc1)N(CC)CC"
+        ],
+        "named_reaction": "Cu/Ir-catalyzed borylallylation",
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu",
+          "H2O2",
+          "NaOH"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1",
+        "solvent": "THF",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "3 mol%",
+          "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1": "6 mol%",
+          "[Ir-(S,S,S)]": "5 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq.",
+          "H2O2": "unspecified",
+          "NaOH": "4M"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Aryl groups with electron-donating and withdrawing functions worked smoothly with high diastereoselectivity and enantioselectivity. Sterically demanding substituents worked but in reduced yield, sometimes leading to linear products. Thiophene and dienyl allylic carbonate were tolerated. An α,β-unsaturated amide also worked well, demonstrating that the ester is not strictly required.",
+        "yield_percent": null,
+        "ee_percent": null,
+        "dr": null
+      },
+      "evidence": {
+        "text_span": "With respect to the allylic alcohol derivatives, aryl groups with electron-donating (products 20 and 22) and withdrawing (products 23 and 24) function smoothly with high diastereoselectivity and enantioselectivity. For the 4-Br aryl substrate a crystal structure was obtained to confirm the absolute stereochemistry of the products using (S,S)- Foxap and $[ \\mathrm { Ir } { - } ( R , R , R ) ]$ . Sterically demanding substituents worked, but in reduced yield (product 25). In this case, the linear product was observed likely due to steric pressure incurred during addition to the internal position of the Ir-$\\pi$ -allyl complex. Finally, tolerance to thiophene (product 26) and use of dienyl allylic carbonate (product 27) was shown. In one example, it was demonstrated that the ester is not required as an $\\alpha , \\beta$ -unsaturated amide worked well (product 28).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The borylallylation reaction generates three contiguous stereogenic centers. The proposed catalytic cycle suggests that the stereochemistry at C1 is controlled by the Cu-complex, C2 by substrate control, and C3 by the Ir-catalyst.",
+        "gap": "Experimentally demonstrate the stereodivergent control over the three stereogenic centers by varying the chirality of the Cu and Ir catalysts.",
+        "decision": "Perform reactions with different combinations of chiral Cu-complexes ([Cu-(R,R)-L4] or [Cu-(S,S)-L4]) and chiral Ir-catalysts ([Ir-(R,R,R)] or [Ir-(S,S,S)]) to access the four possible stereoisomers (3–5, 29)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=Cc1ccccc1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@@H](C(=O)OCC)[C@@H](O)c1ccccc1",
+          "C=C[C@H](C(=O)OCC)[C@H](O)c1ccccc1",
+          "C=C[C@@H](C(=O)OCC)[C@@H](O)c1ccccc1",
+          "C=C[C@H](C(=O)OCC)[C@H](O)c1ccccc1"
+        ],
+        "named_reaction": "Cu/Ir-catalyzed borylallylation",
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62",
+        "solvent": "THF",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "3 mol%",
+          "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62": "6 mol%",
+          "[Ir-(S,S,S)]": "5 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "er_percent": 99,
+        "dr": 98,
+        "observation": "All four possible stereoisomers (3–5, 29) were prepared in high yield, diastereoselectivity, and enantioselectivity by combining different enantiomers of the chiral Cu-complex and Ir-catalyst. No significant matched or mismatched effect was observed.",
+        "regio_selectivity": "unspecified"
+      },
+      "evidence": {
+        "text_span": "Based on the proposed catalytic cycle (Scheme 4a), control of stereochemistry at C1 is dictated by the enantiomer of chiral Cu-complex, the stereochemistry at C2 is based on substrate control, and finally, the stereochemistry at C3 is established by the enantiomer of chiral Ir-catalyst. Therefore, of the possible eight stereoisomers that could be formed, four should be accessible through various combination of the chiral catalysts. This is demonstrated in Scheme 4b. With either $[ \\mathrm { Ir } { - } ( R , R , R ) ]$ or [Ir-(S,S,S)] and either $[ \\mathrm { C u- } ( R , R ) \\cdot \\mathrm { L } _ { 4 } ]$ or $[ \\mathrm { C u- } ( S , S ) \\mathrm { - } \\mathrm { L } _ { 4 } ]$ the four stereoisomers 3–5, 29 can be prepared in high yield, diastereoselectivity, and enantioselectivity. It does not appear that a significant matched or mismatched effect between chiral catalysts was observed (Scheme 4b).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "The borylallylation reaction has been optimized and its scope and stereodivergent capabilities demonstrated. To prove its synthetic utility, a scale-up synthesis is necessary.",
+        "gap": "Perform the borylallylation reaction on a larger scale to assess its practicality.",
+        "decision": "Conduct a 1.0 mmol scale synthesis between a cyclohexyl substituted α,β-unsaturated ester and allylic carbonate 2 to obtain the allyl-borylated product 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)C=CC1CCCCC1",
+          "CCOC(=O)OCC=Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C[C@H](C(=O)OCC)[C@@H](B1OC(C)(C)C(C)(C)O1)C1CCCCC1"
+        ],
+        "named_reaction": "Cu/Ir-catalyzed borylallylation",
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1",
+        "solvent": "THF",
+        "time": "16h",
+        "temperature": "rt",
+        "scale": "1.0 mmol",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "3 mol%",
+          "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1": "6 mol%",
+          "[Ir-(S,S,S)]": "5 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "er_percent": 98,
+        "dr": 95,
+        "observation": "The scale-up synthesis on a 1.0 mmol scale yielded product 30 in 56% yield with >95:5 dr and >98:2 er, demonstrating the method's scalability."
+      },
+      "evidence": {
+        "text_span": "A scale up synthesis was conducted on a 1.0 mmol scale between cyclohexyl substituted $\\alpha , \\beta$ -unsaturated ester and allylic carbonate 2 to achieve the allyl-borylated product 30 in $5 6 \\% $ yield, ${ > } 9 5 { : } 5$ dr, and ${ > } 9 8 { : } 2$ er (Scheme 5a).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The borylallylation product 30 contains C-B, ester, and alkene functionalities, which are amenable to further transformations.",
+        "gap": "Demonstrate the synthetic versatility of the borylallylation product through various functional group interconversions.",
+        "decision": "Perform several transformations on product 30, including Cu-catalyzed benzoylation, alkynylation, amination, Evans–Zweifel alkenylation, Matteson homologation, ester reduction, and Ir-catalyzed hydroboration of the alkene."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@H](C(=O)OCC)[C@@H](B1OC(C)(C)C(C)(C)O1)C1CCCCC1"
+        ],
+        "product_smiles": [
+          "C=C[C@H](C(=O)OCC)[C@@H](C(=O)c1ccccc1)C1CCCCC1",
+          "C=C[C@H](C(=O)OCC)[C@@H](C#Cc1ccc(C)cc1)C1CCCCC1",
+          "C=C[C@H](C(=O)OCC)[C@@H](CN(Cc1ccccc1)Cc1ccccc1)C1CCCCC1",
+          "C=C[C@H](C(=O)OCC)[C@@H](C(=C)C)C1CCCCC1",
+          "C=C[C@H](C(=O)OCC)[C@@H](CB1OC(C)(C)C(C)(C)O1)C1CCCCC1",
+          "C=C[C@@H](c1ccccc1)[C@@H](C1CCCCC1)[C@H](O)CO",
+          "CCOC(=O)[C@@H](CCCB1OC(C)(C)C(C)(C)O1)[C@@H](c1ccccc1)C1CCCCC1"
+        ],
+        "named_reaction": "Functional group interconversion",
+        "reagents": [
+          "t-BuLi",
+          "CuCN",
+          "PhCOCl",
+          "Bu3SnBr",
+          "BuBCu",
+          "CsF",
+          "CH3C6H4C#CH",
+          "Bn2NH",
+          "I2",
+          "MeOH",
+          "n-BuLi",
+          "CH2Br2",
+          "NaBO3.4H2O",
+          "LiAlH4",
+          "[Ir(cod)Cl2]",
+          "dppm",
+          "HBpin"
+        ],
+        "catalyst": "Cu",
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 68,
+        "observation": "Product 30 was successfully transformed into various derivatives (31-37) with good to high yields and no erosion of diastereoselectivity, demonstrating the versatility of the borylallylation product. This includes benzoylation (31, 51%), alkynylation (32, 79%), amination (33, 64%), alkenylation (34, 75%), homologation (35, 67%), ester reduction (36, 68%), and hydroboration (37, 82%)."
+      },
+      "evidence": {
+        "text_span": "Later, further transformation of the products was carried out (Scheme 5a). Based on recent developments from the Morken group, stereospecific Cu-catalyzed benzoylation and alkynylation can be carried out (products 31 and 32) with high yields and no erosion of diastereoselectivity.[58] In addition to oxidation of the C─B bond (see Scheme 2), Cu-catalyzed amination is also effective (product 33). Additional stereospecific transformation of the C─B bond by Evans–Zweifel alkenylation (product 34)[59–60] and Matteson homologation with dibromomethane worked smoothly (product 35).[61] Finally, reduction of the ester leads to chiral 1,3-diol 36 and Ir-catalyzed hydroboration of the alkene allows for synthesis of 1,5-diborylated compound 37.[62]",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The borylallylation methodology provides access to highly functionalized products with three contiguous stereogenic centers. This makes it suitable for complex natural product synthesis.",
+        "gap": "Apply the developed methodology to a formal synthesis of a complex natural product.",
+        "decision": "Undertake a formal synthesis of (+)-β-Lycorane, using the Cu/Ir-catalyzed borylallylation as a key step, followed by ring-closing metathesis and subsequent transformations to reach a known intermediate."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)OCC=Cc1ccc2c(c1)OCO2",
+          "CCC=CCC(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Cu/Ir-catalyzed borylallylation and Grubbs-II RCM",
+        "reagents": [
+          "(Bpin)2",
+          "LiOtBu",
+          "Grubbs-II catalyst"
+        ],
+        "catalyst": "Cu(MeCN)4PF6",
+        "ligand": "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1",
+        "solvent": "THF",
+        "time": "16h",
+        "temperature": "rt",
+        "stoichiometry": {
+          "Cu(MeCN)4PF6": "3 mol%",
+          "CC(C)[C@@H]1N=C(C2=C(P(C3=CC=CC=C3)C4=CC=CC=C4)C5=CC=CC=C5[Fe]C6=CC=CC=C62)OC1": "6 mol%",
+          "[Ir-(S,S,S)]": "5 mol%",
+          "(Bpin)2": "1.5 eq.",
+          "LiOtBu": "1.3 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 46,
+        "er_percent": 95,
+        "dr": 95,
+        "observation": "The borylallylation of allyl carbonate 38 and α,β-unsaturated ester 39 yielded the product in 65%-69% NMR yield with >95:5 dr (er 95:5 after oxidation). This product was directly subjected to ring-closing metathesis (RCM) to achieve cyclohexene derived product 41 in 46% overall yield and >95:5 dr, marking a key step in the formal synthesis."
+      },
+      "evidence": {
+        "text_span": "In this regard, a formal synthesis of $( + ) \\ – ( \\beta )$ -Lycorane is presented here utilizing this methodology as a key step (Scheme 5b). The synthesis commenced with $\\mathrm { { C u / I r } }$ -catalyzed allylboration of allyl carbonate 38 and $\\alpha , \\beta$ -unsaturated ester 39 to obtain the corresponding product in $6 5 \\% { - } 6 9 \\% $ NMR yield and ${ > } 9 5 { : } 5$ dr (er 95:5 after oxidation of C─Bpin; details in Supporting Information). This product was directly subjected to a ringclosing metathesis (RCM) to achieve cyclohexene derived product (41) in $4 6 \\% $ overall yield and ${ } > 9 5 { : } 5$ dr.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The cyclohexene product 41 has been successfully synthesized. The next step is to saturate the double bond and introduce further functionality.",
+        "gap": "Transform the cyclohexene 41 into the cyclohexane 42 and then introduce a vinyl group.",
+        "decision": "Hydrogenate 41 to obtain cyclohexane 42, followed by Zweifel alkynylation of the secondary boronate ester to install a vinyl group, yielding product 43."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "named_reaction": "Hydrogenation, Zweifel alkynylation",
+        "reagents": [
+          "H2",
+          "CH2=CHMgBr",
+          "I2",
+          "MeOH"
+        ],
+        "catalyst": "Pd/C",
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "dr": 95,
+        "observation": "Hydrogenation of 41 yielded cyclohexane 42 in >95% yield and >95:5 dr. Subsequent Zweifel alkynylation of the secondary boronate ester successfully installed the vinyl group, leading to product 43 in 60% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent, hydrogenation allowed for synthesis of cyclohexane 42 $( > 9 5 \\% $ yield; ${ > } 9 5 { : } 5$ dr). Zweifel alkynylation of the secondary boronate ester led to installation of the vinyl group in product 43.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Product 43 contains a vinyl group and an ester. The next steps involve forming the carbamate and then the final ring system.",
+        "gap": "Convert the ester to a carbamate and then hydroborate the alkene.",
+        "decision": "Treat 43 with TFA to form the carboxylic acid, followed by DPPA to induce a Curtius rearrangement to provide carbamate 44. Then, perform hydroboration–oxidation of 44 to form alcohol 45."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "named_reaction": "Curtius rearrangement, Hydroboration-oxidation",
+        "reagents": [
+          "TFA",
+          "DPPA",
+          "MeOK",
+          "9-BBN",
+          "H2O2",
+          "OH-"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 57,
+        "observation": "Treatment with TFA and subsequent Curtius rearrangement yielded carbamate 44 in 57% yield. Hydroboration–oxidation of 44 resulted in the formation of the corresponding alcohol 45 in 85% yield."
+      },
+      "evidence": {
+        "text_span": "Treatment with TFA resulted in formation of the corresponding carboxylic acid, which was subjected to DPPA to induce a Curtius rearrangement to provide carbamate 44. Hydroboration–oxidation of 44 resulted in formation of the corresponding alcohol 45, which upon treatment with $\\mathbf { M } \\mathbf { s } _ { 2 } \\mathbf { O }$ then NaH led to formation of carbamate 46.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alcohol 45 has been synthesized. The final steps involve cyclization to form the pyrrolidine ring and reaching the known intermediate.",
+        "gap": "Cyclize alcohol 45 to form the carbamate 46, which is a known intermediate in the synthesis of (+)-β-Lycorane.",
+        "decision": "Treat alcohol 45 with Ms2O then NaH to form carbamate 46, a previously reported intermediate by Yang et al."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Cyclization",
+        "reagents": [
+          "Ms2O",
+          "NaH"
+        ],
+        "solvent": "unspecified",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "Treatment of alcohol 45 with Ms2O then NaH led to the formation of carbamate 46 in 60% yield. This intermediate was previously reported by Yang et al. in their total synthesis of (+)-(β)-Lycorane (47), completing the formal synthesis."
+      },
+      "evidence": {
+        "text_span": "Hydroboration–oxidation of 44 resulted in formation of the corresponding alcohol 45, which upon treatment with $\\mathbf { M } \\mathbf { s } _ { 2 } \\mathbf { O }$ then NaH led to formation of carbamate 46. This intermediate was previously reported by Yang et al. in their total synthesis of ( )-(β)-Lycorane (47). [63]",
+        "section": "unspecified"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "HPLC"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 10.5,
+        "unit": "%",
+        "interpretation": "Overall yield for the formal synthesis of (+)-β-Lycorane from starting materials 38 and 39 to intermediate 46."
+      },
+      "Longest Linear Steps": {
+        "value": 4,
+        "unit": "steps",
+        "interpretation": "Number of steps in the longest linear sequence from the borylallylation product to the final intermediate."
+      },
+      "Total Steps": {
+        "value": 5,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps in the formal synthesis from the borylallylation product to the final intermediate."
+      }
+    },
+    "significance": "The developed Cu/Ir-catalyzed borylallylation provides a stereodivergent method for synthesizing three contiguous stereogenic centers. The highly functionalized products enable diverse transformations, leading to an efficient enantioselective formal synthesis of the complex natural product Lycorane. This method represents a significant advancement in cooperative catalysis for complex molecule synthesis."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.202523140",
+      "pmcid": "PMC12802513",
+      "title": "Stereodivergent Synthesis of Three Contiguous Stereogenic Centers by Cu/Ir-Catalyzed Borylallylation.",
+      "authors": "Das S, Dorn SK, Brown MK.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12802513?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/8ea7ac6c-a095-4d39-ad1c-edff4aa684d8.zip",
+      "parsed_at": "2026-05-11T06:40:58.278826+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 116,
+    "parseable": 103,
+    "canonicalized": 62,
+    "invalid": 13,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CCOC(=O)C=Cc1ccc2oco2c1",
+      "CCOC(=O)C(C=C)C(O)C1=CC=C2OCO2C=C1",
+      "CCOC(=O)OCC=Cc1ccc2oco2c1",
+      "CCOC(=O)C(C=C)C(O)C1=CC=C2OCO2C=C1",
+      "CC(C)(C)OC(=O)C1C(B2OC(C)(C)C(C)(C)O2)C=CCC1Ar",
+      "CC(C)(C)OC(=O)C1C(B2OC(C)(C)C(C)(C)O2)C=CCC1Ar",
+      "CC(C)(C)OC(=O)C1C(B2OC(C)(C)C(C)(C)O2)CCCC1Ar",
+      "CC(C)(C)OC(=O)C1C(C=C)CCCC1Ar",
+      "CC(C)(C)OC(=O)C1C(C=C)CCCC1Ar",
+      "COC(=O)NC1C(C=C)CCCC1Ar"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,1368 @@
+{
+  "trace_id": "TS-PMC12705750",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "hapmnioide A",
+    "smiles": "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12",
+    "natural_product_class": "diterpenoid",
+    "structural_features": {
+      "key_motifs": [
+        "1,1'-bicyclopentyl",
+        "labdane core"
+      ]
+    },
+    "motivation": "Haplomitrium diterpenoids exhibit diverse biological significance, including potent anti-inflammatory and allelopathic activities. Their structural complexity and diverse carbon skeletons arise from cascade ring mutations, inspiring the development of synthetic strategies based on biomimetic skeletal reorganization.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Total synthesis of hapmnioide A (1) and haploide O (2) using a common labdane-type intermediate via 1,2-acyl migration."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-1 and C-6 1,2-acyl migrations",
+        "named_strategy": "1,2-acyl migration",
+        "reasoning": "To construct the 1,1'-bicyclopentyl carbon framework of hapmnioide A (1) from a trans-decalin intermediate, mimicking proposed biosynthetic pathways.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-20 1,2-acyl migration",
+        "named_strategy": "1,2-acyl migration",
+        "reasoning": "To access haploide O (2) from the same trans-decalin intermediate, also mimicking proposed biosynthetic pathways.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Tandem C5-isomerization/aldol/retro-Claisen reactions",
+        "named_strategy": "Cascade reaction",
+        "reasoning": "To construct the bicyclo[3,2,1]octane of haploide C (3) from an aldehyde intermediate.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Intramolecular light-initiated [2+2] cycloaddition",
+        "named_strategy": "[2+2] cycloaddition",
+        "reasoning": "To synthesize haplomitrin A (4) from an enone intermediate.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Functional group interconversions",
+        "named_strategy": "Functional group interconversion",
+        "reasoning": "To derive intermediates 5-7 from a common advanced precursor 8, which features the labdane core skeleton.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Installation of furan-containing side chain",
+        "named_strategy": "Fragment coupling",
+        "reasoning": "To derive δ-lactone 8 from γ-lactone 9.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Intramolecular Diels–Alder reaction",
+        "named_strategy": "Diels-Alder reaction",
+        "reasoning": "To access the trans-decalin framework of 9 from trienolide 10, establishing the pivotal C10 quaternary carbon stereogenic center.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "Coupling of aldehyde with selenolactone",
+        "named_strategy": "Fragment coupling",
+        "reasoning": "To generate trienolide 10 from aldehyde 11 and selenolactone 12.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "11",
+        "smiles": "",
+        "role": "chiral aldehyde precursor",
+        "comes_from": "known aldehyde 13"
+      },
+      {
+        "fragment_id": "12",
+        "smiles": "CC[Si](CC)(CC)OC[C@@H]1COC(=O)[C@@H]1[Se]c1ccccc1",
+        "role": "selenolactone precursor",
+        "comes_from": "L-glutamic acid"
+      },
+      {
+        "fragment_id": "10",
+        "smiles": "",
+        "role": "trienolide intermediate",
+        "comes_from": "11 and 12"
+      },
+      {
+        "fragment_id": "9",
+        "smiles": "",
+        "role": "γ-lactone intermediate",
+        "comes_from": "10"
+      },
+      {
+        "fragment_id": "8",
+        "smiles": "",
+        "role": "common advanced precursor (δ-lactone)",
+        "comes_from": "9"
+      },
+      {
+        "fragment_id": "5",
+        "smiles": "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12",
+        "role": "biogenetic precursor for 1,2-acyl migration",
+        "comes_from": "8"
+      },
+      {
+        "fragment_id": "6",
+        "smiles": "CC1=CC(=O)C2C(C(=O)C3(C)CCC(=O)C23)C(C2C=COC=C2)OC(=O)O1",
+        "role": "aldehyde intermediate for haploide C",
+        "comes_from": "8"
+      },
+      {
+        "fragment_id": "7",
+        "smiles": "COC(=O)C1C(C(=O)O)C2(C)OC(=O)C(c3ccco3)C12",
+        "role": "enone intermediate for haplomitrin A",
+        "comes_from": "8"
+      }
+    ],
+    "rationale": "The synthesis plan is inspired by the biosynthetic pathways of Haplomitrium diterpenoids, aiming for a divergent synthesis from a common labdane scaffold. Key strategies include a diastereoselective IMDA reaction to build the core, followed by late-stage biomimetic skeletal reorganizations such as 1,2-acyl migrations, tandem C5-isomerization/aldol/retro-Claisen reactions, and light-initiated [2+2] cyclizations to access the diverse target structures."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The known aldehyde 13 is available.",
+        "gap": "Need to prepare chiral aldehyde 11 from 13.",
+        "decision": "To prepare chiral aldehyde 11, chose a three-step sequence involving epoxidation, Horner–Wadsworth–Emmons reaction, and oxidative cleavage, expecting 60% overall yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Horner–Wadsworth–Emmons reaction, oxidative cleavage",
+        "reagents": [
+          "m-CPBA",
+          "NaHMDS",
+          "H5IO6"
+        ],
+        "solvent": "CH2Cl2, THF, Et2O/H2O"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "Chiral aldehyde 11 was obtained in 60% overall yield."
+      },
+      "evidence": {
+        "text_span": "Our synthesis commenced with the preparation of the chiral aldehyde 11 (Fig. 3), which was obtained via a three-step sequence of the known aldehyde 13 (prepared from geraniol in three steps53,54; see Supplementary Fig. 1a) in 60% overall yield involving epoxidation, Horner–Wadsworth–Emmons reaction, and oxidative cleavage.",
+        "section": "Synthesis of the common intermediate 8",
+        "image_refs": [
+          "faa5ae67d70546534733b90b0aa770e411da96adf56bc32e31a867baa808d0fa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 11 and selenolactone 12 (prepared from L-glutamic acid) are available.",
+        "gap": "Need to couple 11 and 12 to form trienolide 10.",
+        "decision": "To generate trienolide 10, chose condensation of aldehyde 11 with the lithium enolate of selenolactone 12, followed by oxidation, expecting 70% yield with 1:1 selectivity at C1."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC[Si](CC)(CC)OC[C@@H]1COC(=O)[C@@H]1[Se]c1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LDA",
+          "H2O2"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "regio_selectivity": "1:1 at C1",
+        "observation": "Trienolide 10 was afforded with 70% yield and 1:1 selectivity at C1."
+      },
+      "evidence": {
+        "text_span": "Subsequently, aldehyde 11 condensed with the lithium enolate of selenolactone 12 (prepared from L-glutamic acid in four steps55; see Supplementary Fig. 1b), followed by oxidation to afford trienolide 10 with 70% yield and 1:1 selectivity at C1.",
+        "section": "Synthesis of the common intermediate 8",
+        "image_refs": [
+          "faa5ae67d70546534733b90b0aa770e411da96adf56bc32e31a867baa808d0fa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Trienolide 10 is available.",
+        "gap": "Need to form the trans-decalin framework of 9 via intramolecular Diels–Alder reaction.",
+        "decision": "To construct the trans-decalin 9, chose a highly stereospecific IMDA reaction of trienolide 10, expecting to establish the C10 quaternary carbon stereogenic center."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "named_reaction": "Intramolecular Diels-Alder",
+        "reagents": [
+          "BHT"
+        ],
+        "solvent": "Xylene",
+        "temperature": "180 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "observation": "Trienolide 10 underwent a highly stereospecific IMDA reaction to form trans-decalin 9. The structure was confirmed by X-ray crystallography. The selectivity was attributed to steric effects mediated by the endo-selective transition state. The isomeric product C1-iso-9 was also formed.",
+        "dr": "unspecified"
+      },
+      "evidence": {
+        "text_span": "Trienolide 10 underwent a highly stereospecific IMDA reaction to form trans-decalin 9, the structure of which was confirmed by X-ray crystallography52,56–60. The selectivity was attributed to steric effects, which were mediated by the endo-selective transition state (ΠSendo). The isomeric product C1-iso-9, derived from the cyclization of C1-iso-10, could be converted to 9 via a two-step sequence involving oxidation and selective reduction using L-selectride in 90% yield.",
+        "section": "Synthesis of the common intermediate 8",
+        "image_refs": [
+          "faa5ae67d70546534733b90b0aa770e411da96adf56bc32e31a867baa808d0fa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Trans-decalin 9 is available, along with its isomer C1-iso-9.",
+        "gap": "Need to convert C1-iso-9 to 9 to improve overall yield of 9.",
+        "decision": "To convert C1-iso-9 to 9, chose a two-step sequence involving oxidation and selective reduction using L-selectride, expecting 90% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "L-selectride",
+          "oxidizing agent (unspecified)"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "The isomeric product C1-iso-9 could be converted to 9 via a two-step sequence involving oxidation and selective reduction using L-selectride in 90% yield."
+      },
+      "evidence": {
+        "text_span": "The isomeric product C1-iso-9, derived from the cyclization of C1-iso-10, could be converted to 9 via a two-step sequence involving oxidation and selective reduction using L-selectride in 90% yield.",
+        "section": "Synthesis of the common intermediate 8"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Trans-decalin 9 is available.",
+        "gap": "Need to introduce the C6 oxidation state to 9.",
+        "decision": "To introduce the C6 oxidation state, chose a singlet oxygen-mediated ene reaction of 9, expecting moderate regioselectivity and improved productivity in continuous-flow mode."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "O2",
+          "MB",
+          "PPh3"
+        ],
+        "solvent": "unspecified",
+        "time": "48 h (batch), 6 h (continuous-flow)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 49,
+        "regio_selectivity": "moderate",
+        "observation": "A singlet oxygen-mediated ene reaction of 9 yielded allyl alcohol 15 with moderate regioselectivity. This transformation demonstrated a reduced reaction time and enhanced productivity when conducted in continuous-flow mode (49% yield in 6h vs 44% in 48h batch)."
+      },
+      "evidence": {
+        "text_span": "To introduce the C6 oxidation state, a singlet oxygen-mediated ene reaction of 9 was employed, yielding allyl alcohol 15 with moderate regioselectivity61. Notably, this transformation demonstrated a reduced reaction time and enhanced productivity when conducted in continuous-flow mode (see Supplementary Fig. 1c).",
+        "section": "Synthesis of the common intermediate 8",
+        "image_refs": [
+          "faa5ae67d70546534733b90b0aa770e411da96adf56bc32e31a867baa808d0fa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Allyl alcohol 15 is available.",
+        "gap": "Need to selectively protect the C6- and C1-hydroxy groups of 15.",
+        "decision": "To protect the C6- and C1-hydroxy groups, chose a one-pot selective silyl protection using TBSOTf and Et3SiOTf, expecting high yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBSOTf",
+          "DIPEA",
+          "Et3SiOTf"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "Subsequent one-pot selective silyl protection of the C6- and C1-hydroxy groups of 15 furnished silyl ether 16 in 96% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent one-pot selective silyl protection of the C6- and C1-hydroxy groups of 15 furnished silyl ether 16.",
+        "section": "Synthesis of the common intermediate 8",
+        "image_refs": [
+          "faa5ae67d70546534733b90b0aa770e411da96adf56bc32e31a867baa808d0fa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Silyl ether 16 is available.",
+        "gap": "Need to introduce the furan-containing side chain and oxidize to furyl ketone 17.",
+        "decision": "To generate furyl ketone 17, chose IBX-mediated selective desilylation/oxidation to an unstable aldehyde intermediate, followed by treatment with C3’-lithiated furan and further oxidation with DMP, expecting 67% yield. The base for furan lithiation is crucial for regioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "IBX",
+          "n-BuLi",
+          "3-bromofuran",
+          "DMP"
+        ],
+        "solvent": "DMSO, CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "Triethylsilyl ether 16 was subjected to IBX-mediated selective desilylation/oxidation to generate an unstable aldehyde intermediate, which was treated with the C3’-lithiated furan, and further oxidation with DMP yielded furyl ketone 17. n-butyllithium predominantly facilitates lithiation at the C3’ position of the furan ring."
+      },
+      "evidence": {
+        "text_span": "Triethylsilyl ether 16 was then subjected to IBX-mediated selective desilylation/oxidation to generate an unstable aldehyde intermediate62, which was treated with the C3’- lithiated furan, and further oxidation with DMP yielded furyl ketone 17. The base plays a key role in determining the regioselectivity of furan lithiation, where n-butyllithium predominantly facilitates lithiation at the C3’ position of the furan ring (see Supplementary Fig. 1d).",
+        "section": "Synthesis of the common intermediate 8",
+        "image_refs": [
+          "faa5ae67d70546534733b90b0aa770e411da96adf56bc32e31a867baa808d0fa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Furyl ketone 17 is available.",
+        "gap": "Need to reduce the C–O bond adjacent to the ketone and methylate the resulting carboxylic acid to form methyl ester 18.",
+        "decision": "To form methyl ester 18, chose reduction of the C–O bond adjacent to the ketone in 17 with SmI2, followed by methylation of the resulting carboxylic acid using TMSCHN2, expecting 86% yield. Quenching with dilute HCl should remove the C1-hydroxy triethylsilyl group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "SmI2",
+          "TMSCHN2"
+        ],
+        "solvent": "THF/MeOH, MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "The C–O bond adjacent to the ketone in 17 was reduced with SmI2, and subsequent methylation of the resulting carboxylic acid using TMSCHN2 provided methyl ester 18. Quenching SmI2-mediated reduction with dilute HCl efficiently removed the C1-hydroxy triethylsilyl group in 17, resulting in fused cyclic ketal formation."
+      },
+      "evidence": {
+        "text_span": "The C–O bond adjacent to the ketone in 17 was reduced with SmI2, and subsequent methylation of the resulting carboxylic acid using TMSCHN2 provided methyl ester 18. Notably, quenching SmI2-mediated reduction with dilute HCl efficiently removed the C1-hydroxy triethylsilyl group in 17, resulting in fused cyclic ketal formation (see Supplementary Fig. 1e).",
+        "section": "Synthesis of the common intermediate 8",
+        "image_refs": [
+          "faa5ae67d70546534733b90b0aa770e411da96adf56bc32e31a867baa808d0fa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Methyl ester 18 is available.",
+        "gap": "Need to transform 18 into key precursor 8 (δ-lactone).",
+        "decision": "To transform ketone 18 into key precursor 8, chose Corey-Bakshi-Shibata reduction followed by Otera lactonization, expecting 66% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Corey-Bakshi-Shibata reduction, Otera lactonization",
+        "reagents": [
+          "(S)-Me-CBS",
+          "BH3·DMS",
+          "Otera's catalyst"
+        ],
+        "solvent": "toluene",
+        "temperature": "150 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "observation": "Ketone 18 was transformed into key precursor 8 via Corey-Bakshi-Shibata reduction followed by Otera lactonization."
+      },
+      "evidence": {
+        "text_span": "Finally, ketone 18 was transformed into key precursor 8 via Corey-Bakshi-Shibata reduction followed by Otera lactonization63.",
+        "section": "Synthesis of the common intermediate 8",
+        "image_refs": [
+          "faa5ae67d70546534733b90b0aa770e411da96adf56bc32e31a867baa808d0fa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "During lactone ring closure attempts for step 9.",
+        "gap": "Lactone ring closure under basic conditions led to degradation.",
+        "decision": "To achieve lactone ring closure, basic conditions (K2CO3/EtOH) were attempted, expecting lactone formation, but degradation product 19 was observed instead."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "EtOH"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Degradation product 19 was observed under basic conditions (K2CO3/EtOH), arising from C1-C10 bond cleavage."
+      },
+      "evidence": {
+        "text_span": "Interestingly, during lactone ring closure attempts, degradation product 19 was observed under basic conditions (K2CO3/EtOH), arising from C1-C10 bond cleavage (see Supplementary Fig. 1f).",
+        "section": "Synthesis of the common intermediate 8",
+        "image_refs": [
+          "faa5ae67d70546534733b90b0aa770e411da96adf56bc32e31a867baa808d0fa.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Common intermediate 8 is available.",
+        "gap": "Need to remove all three silyl protecting groups to expose hydroxyl groups at C1, C6, and C18, and modulate the oxidation state to access key substrate 5.",
+        "decision": "To remove silyl protecting groups, chose TBAF, expecting to obtain triol 20. This is a prerequisite for accessing substrate 5."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[Si](CC)(CC)COC1C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC2C1O[Si](CC)(CC)CC"
+        ],
+        "product_smiles": [
+          "CC1=CC2C(C1)C(C)C(O)C(C)C2C(=O)Oc1ccco1",
+          "CC1=CC2C(C1)C(C)C(O)C(C)C2C(=O)Oc1ccco1"
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Tetrabutylammonium fluoride (TBAF) was employed to remove all three silyl protecting groups in 8, exposing the hydroxyl groups at the C1, C6, and C18 positions in one step. The major product obtained was the C1 hydroxyl isomer 20 (84% yield), which was likely formed via a retro-aldol/aldol process, analogous to the C1–C10 bond cleavage observed in the formation of degradation product 19."
+      },
+      "evidence": {
+        "text_span": "Tetrabutylammonium fluoride (TBAF) was employed to remove all three silyl protecting groups in 8, exposing the hydroxyl groups at the C1, C6, and C18 positions in one step. Surprisingly, the major product obtained was the C1 hydroxyl isomer 20, which was likely formed via a retro-aldol/aldol process (see Supplementary Fig. 2b)64, analogous to the C1–C10 bond cleavage observed in the formation of degradation product 19. This further highlights the sterically congested environment at C10, which predisposes the C1–C10 bond to cleavage.",
+        "section": "Synthesis of hapmnioide A (1) and haploide O (2)",
+        "image_refs": [
+          "0803a3009816d8c5b3e1ba27e6cff5657571174ae39b8767141667fe2178f02b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Triol 20 is available.",
+        "gap": "Need to convert triol 20 to methyl ester 5, the proposed biogenetic precursor for 1,2-acyl migration.",
+        "decision": "To obtain methyl ester 5, chose treatment of triol 20 with Jones reagent, followed by one-pot methylation of the resulting carboxylic acid, expecting 65% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC2C(C1)C(C)C(O)C(C)C2C(=O)Oc1ccco1"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "reagents": [
+          "Jones reagent",
+          "K2CO3",
+          "MeI"
+        ],
+        "solvent": "acetone"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Treatment of triol 20 with Jones reagent, followed by one-pot methylation of the resulting carboxylic acid, afforded methyl ester 5 in 65% yield, with its structure unequivocally confirmed by X-ray crystallographic analysis."
+      },
+      "evidence": {
+        "text_span": "Treatment of triol 20 with Jones reagent, followed by one-pot methylation of the resulting carboxylic acid, afforded methyl ester 5 in 65% yield, with its structure unequivocally confirmed by X-ray crystallographic analysis.",
+        "section": "Synthesis of hapmnioide A (1) and haploide O (2)",
+        "image_refs": [
+          "0803a3009816d8c5b3e1ba27e6cff5657571174ae39b8767141667fe2178f02b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Proposed biogenetic precursor 5 is available.",
+        "gap": "Need to convert 5 to haploide O (2) via 1,2-acyl migration.",
+        "decision": "To synthesize haploide O (2), chose treatment of 5 with KHMDS at -70 °C, expecting stereospecific 1,2-acyl migration at C-20 through intermediate A2, affording 50% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "-70 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 50,
+        "observation": "Treatment of 5 with KHMDS at -70 °C induced stereospecific 1,2-acyl migration at C-20 through intermediate A2, affording haploide O (2) in 50% yield."
+      },
+      "evidence": {
+        "text_span": "To our delight, treatment of 5 with KHMDS at − 70 °C induced stereospecific 1,2-acyl migration at C-20 through intermediate A2, affording haploide O (2) in 50% yield (Fig. 4b, entry 1).",
+        "section": "Synthesis of hapmnioide A (1) and haploide O (2)",
+        "image_refs": [
+          "0803a3009816d8c5b3e1ba27e6cff5657571174ae39b8767141667fe2178f02b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Proposed biogenetic precursor 5 is available.",
+        "gap": "Need to convert 5 to hapmnioide A (1) via sequential 1,2-acyl migrations.",
+        "decision": "To synthesize hapmnioide A (1), chose treatment of 5 with KHMDS at ambient temperature, expecting sequential stereospecific 1,2-acyl migrations through intermediates A3 and A4, yielding hapmnioide A (1) along with aromatized side products 21 and C4-iso-21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12",
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12",
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 28,
+        "observation": "Increasing the temperature to ambient conditions facilitated sequential stereospecific 1,2-acyl migrations through intermediates A3 and A4, yielding hapmnioide A (1) (28%) together with aromatized side products 21 and C4-iso-21 (27%, d.r = 1:1). The structure of 21 was confirmed by X-ray crystallography. The formation of 21 and C4-iso-21 proceeds through a C-1 1,2-acyl migration followed by retro-Michael cleavage of the C4-C5 bond. Higher reaction temperatures are needed, presumably due to the high TS energy barrier of A3."
+      },
+      "evidence": {
+        "text_span": "Interestingly, increasing the temperature to ambient conditions facilitated sequential stereospecific 1,2-acyl migrations through intermediates A3 and A4, yielding hapmnioide A (1) together with aromatized side products 21 and C4-iso-21 (Fig. 4b, entry 2, the structure of 21 was confirmed by X-ray crystallography). The formation of 21 and C4-iso-21 proceeds through a C-1 1,2-acyl migration followed by retro-Michael cleavage of the C4-C5 bond (see Supplementary Fig. 2c). Higher reaction temperatures are needed, presumably due to the high TS energy barrier of A365.",
+        "section": "Synthesis of hapmnioide A (1) and haploide O (2)",
+        "image_refs": [
+          "0803a3009816d8c5b3e1ba27e6cff5657571174ae39b8767141667fe2178f02b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The yield of hapmnioide A (1) from step 14 was 28%.",
+        "gap": "Need to increase the yield of hapmnioide A (1).",
+        "decision": "To increase the yield of hapmnioide A (1), various reaction conditions were explored, including using tBuOK or L-Proline, expecting improved selectivity or yield, but these attempts failed due to competing reaction pathways."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12",
+          "COC(=O)C(C)C(=O)Oc1c(C)cc2oc3oc(C)cc3c(=O)c2c1O"
+        ],
+        "reagents": [
+          "tBuOK",
+          "L-Proline"
+        ],
+        "solvent": "THF, DMSO",
+        "temperature": "rt, 80 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 5,
+        "failure_mode": "side_product_dominant",
+        "observation": "Using tBuOK yielded haploide O (2) in 5% and using L-Proline yielded 21 & C4-iso-21 (32%, d.r = 1:1). Efforts to increase the yield of hapmnioide A (1) failed due to competing reaction pathways."
+      },
+      "evidence": {
+        "text_span": "Owing to competing reaction pathways, efforts to increase the yield of hapmnioide A (1) failed (Fig. 4b, entries 3 and 4).",
+        "section": "Synthesis of hapmnioide A (1) and haploide O (2)",
+        "image_refs": [
+          "0803a3009816d8c5b3e1ba27e6cff5657571174ae39b8767141667fe2178f02b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Proposed biogenetic precursor 5 is available.",
+        "gap": "Need to find conditions for 1,2-acyl migration without degradation.",
+        "decision": "To investigate the stability of 5, chose reduced-pressure distillation, expecting to isolate 5, but retro-Claisen cleavage occurred, yielding product 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "solvent": "unspecified"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 57,
+        "failure_mode": "decomposition",
+        "observation": "β-ketoester 5 was unstable, and underwent retro-Claisen cleavage to yield product 22 (57%) during reduced-pressure distillation."
+      },
+      "evidence": {
+        "text_span": "Notably, β-ketoester 5 was unstable, and underwent retro-Claisen cleavage to yield product 22 during reduced-pressure distillation (Fig. 4b, entry 5).",
+        "section": "Synthesis of hapmnioide A (1) and haploide O (2)",
+        "image_refs": [
+          "0803a3009816d8c5b3e1ba27e6cff5657571174ae39b8767141667fe2178f02b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Proposed biogenetic precursor 5 is available.",
+        "gap": "Need to isomerize 5 at C5.",
+        "decision": "To isomerize 5 at C5, chose treatment of 5 with (PhO)2PO2H, expecting 70% yield of C5-iso-5."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "reagents": [
+          "(PhO)2PO2H"
+        ],
+        "solvent": "toluene",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Treatment of 5 with (PhO)2PO2H provided the C5-isomerized product C5-iso-5 in 70% yield."
+      },
+      "evidence": {
+        "text_span": "Treatment of 5 with (PhO)2PO2H provided the C5-isomerized product C5-iso-5 in 70% yield (Fig. 4b, entry 6)42.",
+        "section": "Synthesis of hapmnioide A (1) and haploide O (2)",
+        "image_refs": [
+          "0803a3009816d8c5b3e1ba27e6cff5657571174ae39b8767141667fe2178f02b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Photochemical strategies are known for acyl migration processes.",
+        "gap": "Need to find suitable irradiation conditions for 5.",
+        "decision": "To investigate photochemical acyl migration, chose visible light irradiation (395 nm) of compound 5 with triethylamine, expecting acyl migration, but decarboxylative degradation occurred, affording product 23."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "product_smiles": [
+          "COC(=O)C(C)C(=O)Oc1c(C)cc2oc3oc(C)cc3c(=O)c2c1O"
+        ],
+        "reagents": [
+          "Et3N"
+        ],
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "atmosphere": "visible light (395 nm)"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 56,
+        "failure_mode": "decomposition",
+        "observation": "Visible light irradiation (395 nm) of compound 5 with triethylamine triggered decarboxylative degradation, affording product 23 (56%). The structure was unequivocally confirmed by X-ray analysis. Light irradiation is indispensable for this transformation."
+      },
+      "evidence": {
+        "text_span": "Interestingly, visible light irradiation (395 nm) of compound 5 with triethylamine triggered decarboxylative degradation, affording product 23 (structure unequivocally confirmed by X-ray analysis). Notably, light irradiation is indispensable for this transformation. The higher-energy UV light (302 nm) caused substantial decomposition of 5 (Fig. 4b, entries 7 and 8).",
+        "section": "Synthesis of hapmnioide A (1) and haploide O (2)",
+        "image_refs": [
+          "0803a3009816d8c5b3e1ba27e6cff5657571174ae39b8767141667fe2178f02b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Photochemical strategies are known for acyl migration processes.",
+        "gap": "Need to find suitable irradiation conditions for 5.",
+        "decision": "To investigate photochemical acyl migration, chose higher-energy UV light (302 nm), expecting acyl migration, but substantial decomposition occurred."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(=O)C(C)C(C(=O)Oc2ccco2)C2C=C(C)CC12"
+        ],
+        "product_smiles": [],
+        "solvent": "MeCN",
+        "temperature": "rt",
+        "atmosphere": "UV light (302 nm)"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "The higher-energy UV light (302 nm) caused substantial decomposition of 5."
+      },
+      "evidence": {
+        "text_span": "The higher-energy UV light (302 nm) caused substantial decomposition of 5 (Fig. 4b, entries 7 and 8).",
+        "section": "Synthesis of hapmnioide A (1) and haploide O (2)",
+        "image_refs": [
+          "0803a3009816d8c5b3e1ba27e6cff5657571174ae39b8767141667fe2178f02b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "γ-lactone 24 (prepared from 15) is available.",
+        "gap": "Need to investigate 1,2-ester migration on γ-lactone 24.",
+        "decision": "To investigate 1,2-ester migration, chose treatment of γ-lactone 24 with KHMDS at room temperature, expecting isomerized product 25 as the major species."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "Treatment of γ-lactone 24 with KHMDS at room temperature afforded isomerized product 25 as the major species (67% yield). The five-membered lactone moiety resisted 1,2-ester migration."
+      },
+      "evidence": {
+        "text_span": "As exemplified in Fig. 5, treatment of γ-lactone 24 (prepared from 15 in one step; see Supplementary Fig. 3a), whose five-membered lactone moiety resisted 1,2-ester migration, with KHMDS at room temperature afforded isomerized product 25 as the major species.",
+        "section": "Late-stage 1,2-acyl migrations of polycyclic terpenoids",
+        "image_refs": [
+          "862ad65ea061ad9f3a4820f3a9ccc4be83f53dfe7e32561a581b467f060100bb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "γ-lactone 24 is available.",
+        "gap": "Need to investigate the impact of temperature on the reaction selectivity of 1,2-ester migration.",
+        "decision": "To investigate temperature impact, chose treatment of γ-lactone 24 with KHMDS at 60 °C, expecting two consecutive stereospecific 1,2-acyl migrations to predominate, resulting in 1,1’-bicyclopentyl 26 as the major product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 8,
+        "observation": "When the temperature was increased to 60 °C, two consecutive stereospecific 1,2-acyl migrations predominated, resulting in 1,1’-bicyclopentyl 26 as the major product (8% yield). The reaction pathway demonstrated significant temperature sensitivity, impacting the reaction selectivity."
+      },
+      "evidence": {
+        "text_span": "Consistent with δ-lactone 5, the reaction pathway demonstrated significant temperature sensitivity, impacting the reaction selectivity. When the temperature was increased to 60 °C, two consecutive stereospecific 1,2- acyl migrations predominated, resulting in 1,1’-bicyclopentyl 26 as the major product.",
+        "section": "Late-stage 1,2-acyl migrations of polycyclic terpenoids",
+        "image_refs": [
+          "862ad65ea061ad9f3a4820f3a9ccc4be83f53dfe7e32561a581b467f060100bb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cis-decalin 27 (prepared from 4,4-dimethyl cyclohexanone) is available.",
+        "gap": "Need to investigate 1,2-ester migration on open-chain methyl ester 27.",
+        "decision": "To investigate 1,2-ester migration, chose exposure of open-chain methyl ester 27 to KHMDS conditions, expecting only the isomerized product 28, even at elevated temperatures."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 41,
+        "observation": "Exposure of the open-chain methyl ester 27 to KHMDS conditions yielded only the isomerized product 28 (41% yield), even at elevated temperatures."
+      },
+      "evidence": {
+        "text_span": "Interestingly, exposure of the open-chain methyl ester 27 to KHMDS conditions yielded only the isomerized product 28, even at elevated temperatures.",
+        "section": "Late-stage 1,2-acyl migrations of polycyclic terpenoids",
+        "image_refs": [
+          "281342d104e92efcb449f2721eddfc8ac7e30b9116d0f9a6429015f1f301afaf.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Trans-[6.6]-bicyclic δ-lactones 29 (prepared from forskolin) are available.",
+        "gap": "Need to investigate 1,2-ester migration on 29.",
+        "decision": "To investigate 1,2-ester migration, chose treatment of 29 with KHMDS at room temperature, expecting the 1,2-ester migration product 30."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)CC(=O)C2C(O)C(C(=O)O)CCC21"
+        ],
+        "product_smiles": [
+          "CC1(C)CC(=O)C2C(O)C(C(=O)O)CCC21"
+        ],
+        "reagents": [
+          "KHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 33,
+        "observation": "Treatment of 29 with KHMDS at room temperature provided the 1,2-ester migration product 30 in 33% yield."
+      },
+      "evidence": {
+        "text_span": "While treatment of 29 with KHMDS at room temperature provided the 1,2-ester migration product 30 in 33% yield.",
+        "section": "Late-stage 1,2-acyl migrations of polycyclic terpenoids",
+        "image_refs": [
+          "281342d104e92efcb449f2721eddfc8ac7e30b9116d0f9a4820f3a9ccc4be83f53dfe7e32561a581b467f060100bb.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Triol 20 is available.",
+        "gap": "Need to synthesize key aldehyde 6 for the biomimetic synthesis of haploide C (3).",
+        "decision": "To synthesize key aldehyde 6, chose DMP-mediated oxidation of triol 20, expecting to enable exploration of the tandem C5-isomerization/aldol/retro-Claisen cascade."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC2C(C1)C(C)C(O)C(C)C2C(=O)Oc1ccco1"
+        ],
+        "product_smiles": [
+          "CC1=CC(=O)C2C(C(=O)C3(C)CCC(=O)C23)C(C2C=COC=C2)OC(=O)O1"
+        ],
+        "reagents": [
+          "DMP"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "The key aldehyde 6 was synthesized from triol 20 via DMP-mediated oxidation in 76% yield."
+      },
+      "evidence": {
+        "text_span": "The key aldehyde 6 was synthesized from triol 20 via DMP-mediated oxidation, enabling exploration of the tandem C5-isomerization/aldol/retro-Claisen cascade.",
+        "section": "Synthesis of haploide C (3)",
+        "image_refs": [
+          "81438987b1cc5ca27ec28840326bd59480d4f39ff346ec9eefe02af6e1a3a82d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Aldehyde 6 is available.",
+        "gap": "Need to achieve the tandem C5-isomerization/aldol/retro-Claisen cascade to synthesize haploide C (3).",
+        "decision": "To achieve the cascade, chose TBD catalysis, expecting haploide C (3), but B-ring aromatized product 31 was obtained instead, presumably via a retro-Claisen/retro-Michael/aromatization cascade reaction."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC(=O)C2C(C(=O)C3(C)CCC(=O)C23)C(C2C=COC=C2)OC(=O)O1"
+        ],
+        "product_smiles": [
+          "O=C1OC(c2ccco2)CCc2cc(O)ccc21"
+        ],
+        "reagents": [
+          "TBD"
+        ],
+        "solvent": "THF",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 10,
+        "failure_mode": "side_product_dominant",
+        "observation": "Under TBD catalysis, B-ring aromatized product 31 was obtained (10% yield), presumably via a retro-Claisen/retro-Michael/aromatization cascade reaction."
+      },
+      "evidence": {
+        "text_span": "Notably, under TBD catalysis, B-ring aromatized product 31 was obtained, presumably via a retro-Claisen/retro-Michael/aromatization cascade reaction (Fig. 6a, entry 1; see Supplementary Fig. 3d).",
+        "section": "Synthesis of haploide C (3)",
+        "image_refs": [
+          "68734dfedcfef7394e78c29c69549f072ca040207ac72ff0ed4055777ef7775f.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Aldehyde 6 is available.",
+        "gap": "Need to achieve the tandem C5-isomerization/aldol/retro-Claisen cascade to synthesize haploide C (3).",
+        "decision": "To achieve the cascade, chose potassium tert-butoxide, expecting haploide C (3), but C10-iso-3 and C7-C18 cyclized product 32 were obtained as major products, with only a low yield of 3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC(=O)C2C(C(=O)C3(C)CCC(=O)C23)C(C2C=COC=C2)OC(=O)O1"
+        ],
+        "product_smiles": [
+          "CC1=CC(=O)[C@H]2C[C@H]3C(=O)O[C@H]4[C@H]3OC(=O)[C@@H](C1)[C@H]4[C@H]2C",
+          "CC1=CC(=O)C2(C)CC(c3ccco3)OC(=O)C3C(C)CC3(C)OC(=O)C2C1",
+          "CC12CC3C(=O)OC(c4ccco4)CC3C(=O)C1CC(=O)O2"
+        ],
+        "reagents": [
+          "tBuOK"
+        ],
+        "solvent": "DMSO",
+        "temperature": "rt"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 5,
+        "failure_mode": "side_product_dominant",
+        "observation": "Employing potassium tert-butoxide afforded C10-iso-3 (60% yield) and haploide C (3) (5% yield), along with the C7-C18 cyclized product 32 (trace), the structure of which was established by X-ray crystallography. Attempts to isomerize the C10 position of C10-iso-3 were unsuccessful. Systematic evaluation of base-mediated condensation protocols revealed limited efficiency."
+      },
+      "evidence": {
+        "text_span": "Employing potassium tert-butoxide afforded C10-iso-3 (60% yield) and haploide C (3) (5% yield), along with the C7-C18 cyclized product 32, the structure of which was established by X-ray crystallography (Fig. 6a, entry 2). The proposed formation pathways for compounds C10-iso-3 and 32 are detailed in Supplementary Fig. 3e. Attempts to isomerize the C10 position of C10-iso-3 were unsuccessful. Systematic evaluation of base-mediated condensation protocols revealed limited efficiency, prompting us to explore an acid-catalyzed strategy.",
+        "section": "Synthesis of haploide C (3)",
+        "image_refs": [
+          "6b732021dcc9d45a60222ed91247d1a59c1ed4a892fb3f1ea61903b8c5466754.jpg",
+          "4d22ce60b7afb1783bc846388c4b4130c0bae64664ea7dc6deea8e32d96c6eab.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Previous base-mediated attempts to synthesize haploide C (3) from aldehyde 6 were inefficient.",
+        "gap": "Need an efficient method to synthesize haploide C (3).",
+        "decision": "To synthesize haploide C (3), chose an acid-catalyzed strategy, specifically treatment of aldehyde 6 with Brønsted acid (PhO)2PO2H, expecting successful formation in good yield."
+      },
+      "revises_step_id": 26,
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=CC(=O)C2C(C(=O)C3(C)CCC(=O)C23)C(C2C=COC=C2)OC(=O)O1"
+        ],
+        "product_smiles": [
+          "CC1=CC(=O)[C@H]2C[C@H]3C(=O)O[C@H]4[C@H]3OC(=O)[C@@H](C1)[C@H]4[C@H]2C"
+        ],
+        "reagents": [
+          "(PhO)2PO2H"
+        ],
+        "solvent": "toluene",
+        "temperature": "90 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "observation": "Treatment of aldehyde 6 with the Brønsted acid (PhO)2PO2H successfully afforded haploide C (3) in 55% yield. The observed facial selectivity at C18 could be attributed to the double hydrogen bonding coordination of the phosphinic acid catalysts. The spectroscopic data of the synthesized haploide C (3) were consistent with the literature reports."
+      },
+      "evidence": {
+        "text_span": "Fortunately, treatment of aldehyde 6 with the Brønsted acid (PhO)2PO2H successfully afforded haploide C (3) in 55% yield42. The observed facial selectivity at C18 could be attributed to the double hydrogen bonding coordination of the phosphinic acid catalysts (see Supplementary Fig. 3f)70. The spectroscopic data of the synthesized haploide C (3) were consistent with the literature reports38.",
+        "section": "Synthesis of haploide C (3)",
+        "image_refs": [
+          "e5a181c4a19e04969a6c971d9305a4391026becd847284c609de652cd7e01e41.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 28,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Common intermediate 8 is available.",
+        "gap": "Need to prepare haplomitrenolide C (7), bearing a C1-methylene group, for [2+2] cycloaddition attempts.",
+        "decision": "To prepare 7, chose selective C1 triethylsilyl ether deprotection using 1 equiv. TBAF, followed by mesylation and NaBH4 reduction to convert the hydroxyl group to a methylene group, expecting 54% yield over three steps."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBAF",
+          "MsCl",
+          "Et3N",
+          "NaBH4"
+        ],
+        "solvent": "THF, CH2Cl2, DMF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "observation": "Selective C1 triethylsilyl ether deprotection using 1 equiv. TBAF, followed by mesylation and NaBH4 reduction to convert the hydroxyl group to a methylene group, formed 33 in 54% yield over three steps."
+      },
+      "evidence": {
+        "text_span": "Selective C1 triethylsilyl ether deprotection using 1 equiv. TBAF, followed by mesylation and NaBH4 reduction to convert the hydroxyl group to a methylene group, formed 33 in 54% yield over three steps.",
+        "section": "Synthesis of haplomitrins A/C (4/36)",
+        "image_refs": [
+          "846410dbdfa1c72c4520c35747568ee7992905eec543146e3ca7d0aa9062456d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 29,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 33 is available.",
+        "gap": "Need to convert 33 to haplomitrenolide C (7).",
+        "decision": "To obtain haplomitrenolide C (7), chose sequential deprotection of the C6 and C18 silyl groups using HF•Py, followed by Jones oxidation and methyl esterification."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(C(=O)O)C2(C)OC(=O)C(c3ccco3)C12"
+        ],
+        "reagents": [
+          "HF•Py",
+          "Jones oxidation",
+          "methyl esterification"
+        ],
+        "solvent": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 41,
+        "observation": "Sequential deprotection of the C6 and C18 silyl groups using HF•Py, followed by Jones oxidation and methyl esterification, afforded haplomitrenolide C (7) in 41% yield."
+      },
+      "evidence": {
+        "text_span": "Sequential deprotection of the C6 and C18 silyl groups using HF•Py, followed by Jones oxidation and methyl esterification, afforded haplomitrenolide C (7).",
+        "section": "Synthesis of haplomitrins A/C (4/36)",
+        "image_refs": [
+          "50fcee125f5e34d48dfe5b73f2463ecb7b2aeca87b7febf2cc6e134696f9d7fc.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 30,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Haplomitrenolide C (7) is available.",
+        "gap": "Need to synthesize haplomitrin A (4) via [2+2] cycloaddition.",
+        "decision": "To synthesize haplomitrin A (4), chose irradiation of haplomitrenolide C (7) with 365 nm light in MeCN, expecting efficient formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(C(=O)O)C2(C)OC(=O)C(c3ccco3)C12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "solvent": "MeCN",
+        "atmosphere": "365 nm light"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "Irradiation of haplomitrenolide C (7) with 365 nm light in MeCN efficiently formed haplomitrin A (4) in 85% yield. Ring opening of the δ-lactone moiety occurred in ethanol."
+      },
+      "evidence": {
+        "text_span": "To our delight, irradiation of haplomitrenolide C (7) with 365 nm light in MeCN efficiently formed haplomitrin A (4) in 85% yield (ring opening of the δ- lactone moiety occurred in ethanol).",
+        "section": "Synthesis of haplomitrins A/C (4/36)",
+        "image_refs": [
+          "9d75cad224525eb6949bd3c6d9beaf87c88d5bb30b9a43215961634592456e99.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 31,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Haplomitrenolide C (7) is available.",
+        "gap": "Need to synthesize haplomitrenolide D (34) via hydroxylation at C9.",
+        "decision": "To synthesize haplomitrenolide D (34), chose exposure of 7 to tBuOK/P(OEt)3 under O2, expecting direct formation in 40% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(C(=O)O)C2(C)OC(=O)C(c3ccco3)C12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(C(=O)O)C2OC(=O)C(c3ccco3)C1C2C"
+        ],
+        "reagents": [
+          "tBuOK",
+          "P(OEt)3",
+          "O2"
+        ],
+        "solvent": "DMSO"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 40,
+        "observation": "Exposure of 7 to tBuOK/P(OEt)3 under O2 directly provided haplomitrenolide D (34) in 40% yield."
+      },
+      "evidence": {
+        "text_span": "Exposure of 7 to tBuOK/P(OEt)3 under O2 directly provided haplomitrenolide D (34) in 40% yield72.",
+        "section": "Synthesis of haplomitrins A/C (4/36)",
+        "image_refs": [
+          "bfeb2828840d43b9f5b51de95426a759be4c575c91795bebca2386ab9d592e94.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 32,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Haplomitrenolide C (7) is available.",
+        "gap": "Need to synthesize haplomitrenolide D (34) via hydroxylation at C9.",
+        "decision": "To synthesize haplomitrenolide D (34), chose a two-step bromination/hydrolysis sequence, expecting to accomplish enone allylic hydroxylation, but the yield was low."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(C(=O)O)C2(C)OC(=O)C(c3ccco3)C12"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(C(=O)O)C2OC(=O)C(c3ccco3)C1C2C"
+        ],
+        "reagents": [
+          "NBS",
+          "BPO",
+          "AgBF4"
+        ],
+        "solvent": "CCl4, acetone/H2O"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 21,
+        "failure_mode": "low_yield",
+        "observation": "This enone allylic hydroxylation could be accomplished via a two-step bromination/hydrolysis sequence in 21% yield. The choice of silver salt and solvent is crucial. The C9-brominated intermediate was efficiently converted to compound 35, constituting the haploide O (2) skeleton via carbocation-mediated 1,2-acyl migration in AgBF4/dichloromethane."
+      },
+      "evidence": {
+        "text_span": "Alternatively, this enone allylic hydroxylation could be accomplished via a two-step bromination/hydrolysis sequence in 21% yield. Notably, the choice of silver salt and solvent is crucial, and the C9-brominated intermediate was efficiently converted to compound 35, constituting the haploide O (2) skeleton via carbocation-mediated 1,2-acyl migration in AgBF4/ dichloromethane (see Supplementary Fig. 4a)73,74.",
+        "section": "Synthesis of haplomitrins A/C (4/36)",
+        "image_refs": [
+          "bfeb2828840d43b9f5b51de95426a759be4c575c91174ae39b8767141667fe2178f02b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 33,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Haplomitrenolide D (34) is available.",
+        "gap": "Need to synthesize haplomitrin C (36) via [2+2] cycloaddition.",
+        "decision": "To synthesize haplomitrin C (36), chose irradiation of haplomitrenolide D (34) with 365 nm light, expecting efficient formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C1C(C(=O)O)C2OC(=O)C(c3ccco3)C1C2C"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(=O)C2C3CC1(C)CC1C=C4CC(C)(O4)C2C1OC3=O"
+        ],
+        "reagents": [],
+        "solvent": "unspecified",
+        "atmosphere": "365 nm light"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Irradiation of haplomitrenolide D (34) with 365 nm light afforded haplomitrin C (36) in 84% yield. The NMR spectroscopic data of these synthetic natural products matched those reported in the literature."
+      },
+      "evidence": {
+        "text_span": "Similarly, irradiation of haplomitrenolide D (34) with 365 nm light afforded haplomitrin C (36) in 84% yield. The NMR spectroscopic data of these synthetic natural products matched those reported in the literature38.",
+        "section": "Synthesis of haplomitrins A/C (4/36)",
+        "image_refs": [
+          "5594d7fa2885a9a82fe586c29c61794df590b655e77b90af57de878daa235afb.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "X-ray crystallography",
+      "NMR"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield for hapmnioide A (1) and haploide O (2) is not explicitly stated, but individual step yields are provided."
+      }
+    },
+    "significance": "The developed bioinspired and divergent synthesis strategy enables total synthesis of seven biogenetically related haplomitrium diterpenoids. Key features include a diastereoselective IMDA reaction to assemble the labdane core, 1,2-acyl migration for hapmnioide A and haploide O, tandem C5-isomerization/aldol/retro-Claisen reactions for haploide C, and light-initiated [2+2] cyclization for haplomitrins A/C. The work provides mechanistic insights into labdane-type terpenoid assembly, highlighting the role of aldol-like reactions in biosynthesis and demonstrating the applicability of late-stage rearrangements for diverse molecular architectures."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s41467-025-66093-0",
+      "pmcid": "PMC12705750",
+      "title": "Divergent synthesis of Haplomitrium diterpenoids via a late-stage biomimetic skeletal reorganization approach.",
+      "authors": "Gao ZX, Su C, Zhang HX, Zhang YQ, Chen XX, Liu XY, Cheng AX, Xu ZJ, Lou HX.",
+      "journal": "Nat Commun",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC12705750?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/baf8ac9f-51a2-4d38-b927-fa7ef5c7b263.zip",
+      "parsed_at": "2026-05-11T06:39:16.284224+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 82,
+    "parseable": 47,
+    "canonicalized": 47,
+    "invalid": 35,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC=C[C@@H](C=O)CCC(=O)OTBS",
+      "CC=C[C@@H](C=O)C[C@H](O)C1C(=O)OC1OTBS",
+      "CC1=CC[C@H]2[C@@H](C(=O)O[C@H]3C(O[Si](CC)(CC)CC)=C[C@@H]3C2)C(O)C1OTBS",
+      "CC1=CC[C@H]2[C@@H](C(=O)O[C@H]3C(O[Si](CC)(CC)CC)=C[C@@H]3C2)C(O[Si](CC)(CC)CC)C1OTBS",
+      "CC(C)=CCC[C@@H](C=O)OTBS",
+      "CC=C[C@@H](C=O)CCC(=O)OTBS",
+      "CC=C[C@@H](C=O)CCC(=O)OTBS",
+      "CC=C[C@@H](C=O)C[C@H](O)C1C(=O)OC1OTBS",
+      "CC=C[C@@H](C=O)C[C@H](O)C1C(=O)OC1OTBS",
+      "CC1=CC[C@H]2[C@@H](C(=O)O[C@H]3C(O[Si](CC)(CC)CC)=C[C@@H]3C2)C(O)C1OTBS"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

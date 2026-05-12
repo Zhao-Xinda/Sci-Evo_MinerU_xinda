@@ -1,0 +1,462 @@
+{
+  "trace_id": "TS-PMC12680612",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-premarineosin A",
+    "smiles": "CCCCCCCC1=C(C23N=C(c4ccc(N)[nH]4)C=C(OC)[C@@H]2C[C@H]2[C@@H](C)CCC[C@H]2O3)N1",
+    "natural_product_class": "cyclic prodiginine",
+    "structural_features": {
+      "molecular_weight": 407.55,
+      "stereocenters": 6,
+      "ring_systems": "tripyrrole, spiroaminal, bicyclic",
+      "key_motifs": [
+        "tripyrrole",
+        "spiroaminal"
+      ]
+    },
+    "motivation": "Premarineosin A is a potent and selective antimalarial natural product, but its limited availability and synthetic complexity have hindered its exploration. This work aims to overcome these barriers through metabolic engineering and late-stage derivatization to expand its chemical space and identify new therapeutics.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Shi",
+        "year": 2016,
+        "doi": "10.1021/acs.orglett.6b00690",
+        "key_strategy": "Total synthesis of proposed marineosin A structure"
+      },
+      {
+        "lead_author": "Harran",
+        "year": 2019,
+        "doi": "10.1021/jacs.8b12900",
+        "key_strategy": "Total synthesis and stereochemical reassignment of (+)-marineosin A"
+      },
+      {
+        "lead_author": "Kancharla",
+        "year": 2014,
+        "doi": "10.1021/jo502100w",
+        "key_strategy": "Stereospecific synthesis of 23-hydroxyundecylprodiginines and conversion to premarineosins via Rieske oxygenase catalyzed bicyclization"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Increase production of (-)-premarineosin A, define its absolute stereochemistry, and develop high-yield strategies for late-stage derivatization to access a suite of analogs with improved antimalarial potency and selectivity."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [],
+    "fragments": [],
+    "rationale": "The primary goal is to access sufficient quantities of (-)-premarineosin A (3) through metabolic engineering, rather than total synthesis, due to its synthetic complexity and low yields in prior attempts. Once sufficient quantities are available, late-stage functionalization will be pursued to diversify the scaffold. This involves exploring acid-catalyzed electrophilic aromatic substitution at the C12 position and biocatalytic/semi-synthetic bromination at the A-ring and C-ring pyrroles."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Previous studies have shown that marineosin A (1) and premarineosin A (3) are potent antimalarials. However, premarineosin A (3) is less cytotoxic and thus a more promising scaffold. Its availability is limited, and total synthesis efforts have resulted in low overall yields. Bioconversion of 23-HUP (2) to premarineosin A (3) has also been limited by low conversion rates.",
+        "gap": "A sustainable and scalable source of premarineosin A (3) is needed to enable further structural characterization, derivatization, and drug development. The absolute stereochemistry of premarineosin A (3) also needs to be definitively established due to conflicting reports.",
+        "decision": "To address the limited availability, metabolic engineering will be employed to enhance the production of (-)-premarineosin A (3) from a newly identified biosynthetic gene cluster in Streptomyces eitanensis. This will provide sufficient material for late-stage derivatization and stereochemical elucidation."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Identified a previously unexplored premarineosin A (pma) biosynthetic gene cluster (BGC) in Streptomyces eitanensis, which lacks genes for marineosin A production but encodes PmaG, a Rieske oxygenase homolog that catalyzes bicyclization of 23-HUP (2) into premarineosin A (3)."
+      },
+      "evidence": {
+        "text_span": "Recently, we identified the production of 23-HUP (2) in the environmental isolate Streptomyces eitanensis30. Analysis of its genome revealed a cluster with 90% similarity to the canonical marineosin A BGC (MIBiG: BGC0000091)12,37. This newly identified cluster lacks genes previously shown to encode the putative acyltransferase (MarE) and the reductase (MarA) predicted to generate the 1-pyrroline B-ring in marineosin A (1) biosynthesis (Fig. 1a)12. However, it does encode the putative Rieske oxygenase PmaG, a homolog 85% similarity, 77% identity) of the MarG enzyme that catalyzes bicyclization of 23-HUP (2) into the marineosin precursor, premarineosin A (3) (Fig. 1b, c). Closer inspection of the S. eitanensis metabolome detected a compound with the same molecular weight and fragmentation pattern as premarineosin A (3) (Supplementary Fig. 1). As marineosin A (1) production was not observed in this strain, we reasoned that the identified BGC (pma BGC) likely encodes premarineosin A (3) as the terminal product, suggesting that S. eitanensis could serve as an ideal strain for optimizing its large-scale production.",
+        "section": "Genome and metabolome analysis identified a (−)-premarineosin A biosynthetic gene cluster in S. eitanensis"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Trace amounts of (-)-premarineosin A (3) were detected in wild-type S. eitanensis. PmaD, a homolog of the RedD transcriptional activator, is present in the pma BGC and may regulate (-)-premarineosin A (3) production.",
+        "gap": "How to increase the production of (-)-premarineosin A (3) in S. eitanensis.",
+        "decision": "To enhance production, the pmaD gene will be overexpressed under a strong constitutive promoter (kasOp*) in S. eitanensis, expecting increased (-)-premarineosin A (3) titers."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [],
+        "reagents": [
+          "pSET152k-pmaD plasmid",
+          "S. eitanensis wild-type"
+        ],
+        "named_reaction": "Metabolic Engineering (pmaD overexpression)",
+        "solvent": "corn gluten meal (GICYE)",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The FP10017 strain (pmaD overexpressing) produced significantly more (-)-premarineosin A (3) (14.7 ± 1.4 mgL-1) compared to the vector control FP10016 strain (1.0 ± 0.4 mgL-1) and wild-type (below limit of quantification). Accumulation of 23-HUP (2) was also observed.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "Trace amounts of (−)-premarineosin A (3) were detected in wild-type S. eitanensis (Fig. 1d, Supplementary Methods 1 and Supplementary Fig. 1). Annotation of the pma BGC (Supplementary Table 1) revealed PmaD, a homolog 40% protein identity, 52% similarity) of the RedD transcriptional activator from the undecylprodigiosin (UDP) pathway in Streptomyces coelicolor A3(2)38–40, suggesting that PmaD may similarly regulate (−)-premarineosin A (3) production in S. eitanensis. Thus, we engineered S. eitanensis for enhanced (−)-premarineosin A (3) production using a regulatory gene expression strategy30. The pmaD gene, amplified from the S. eitanensis genome, was assembled in pSET152k under the strong constitutive promoter kasOp*, yielding pSET152k-pmaD. This plasmid was integrated at the ΦC31 actinophage integrase attB site in the S. eitanensis genome, generating the pmaD overexpressing strain FP10017 (Supplementary Fig. 2). To ensure that the producing phenotype was directly attributed to overexpression of pmaD, we integrated the empty vector into the S. eitanensis genome, generating the strain FP10016. Plasmid integration at the attB site was confirmed by whole genome sequencing for all engineered S. eitanensis strains (Supplementary Fig. 2). Under non-optimized culture conditions (corn gluten meal, GICYE), the FP10017 strain produced significantly more (−)-premarineosin A (3) (14.7 ± 1.4 mgL−1,) than the vector control FP10016 strain (1.0 ± 0.4 mgL−1)) and the wild-type strain (below the limit of quantification) (Fig. 1d).",
+        "section": "Overexpression of the pma cluster-situated regulator (pmaD) and Rieske oxygenase (pmaG) improved (−)-premarineosin A production in S. eitanensis"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Overexpression of pmaD increased (-)-premarineosin A (3) production, but 23-HUP (2) accumulated, indicating that the PmaG-catalyzed bicyclization step might be a bottleneck. PmaG is the Rieske oxygenase responsible for converting 23-HUP (2) to (-)-premarineosin A (3).",
+        "gap": "How to further increase (-)-premarineosin A (3) production and reduce 23-HUP (2) accumulation.",
+        "decision": "To address the bottleneck, both pmaG and pmaD will be constitutively overexpressed in S. eitanensis, expecting a further increase in (-)-premarineosin A (3) production and a shift in metabolism towards the target compound."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [],
+        "reagents": [
+          "pSET152k-pmaDG plasmid",
+          "S. eitanensis wild-type"
+        ],
+        "named_reaction": "Metabolic Engineering (pmaD and pmaG overexpression)",
+        "solvent": "corn gluten meal (GICYE)",
+        "temperature": "unspecified",
+        "time": "unspecified"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Constitutive overexpression of pmaG and pmaD in strain FP10018 significantly enhanced (-)-premarineosin A (3) production (23.3 ± 0.5 mgL-1), a 1.6-fold increase compared to pmaD overexpression alone. A metabolic shift towards (-)-premarineosin A (3) production was observed.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "In the last step of (−)-premarineosin A (3) biosynthesis, the putative Rieske oxygenase PmaG catalyzes the bicyclization of 23-HUP (2)6,12. As accumulation of 23-HUP (2) was observed in the engineered FP10017 strain (Fig. 1d), we designed pSET152k-pmaDG for constitutive overexpression of pmaG and pmaD in S. eitanensis. This plasmid was integrated into S. eitanensis wild-type, yielding the FP10018 strain. Constitutive overexpression of pmaG and pmaD significantly enhanced (−)-premarineosin A (3) production (23.3 ± 0.5 mgL−1,) in FP10018, a 1.6-fold increase compared to the overexpression of pmaD alone. The metabolic shift toward the production of (−)-premarineosin A (3) is also reflected by the difference in color between the pmaG and pmaD overexpressing strain FP10018 (red) and the FP10016 (green) strain (Fig. 1e).",
+        "section": "Overexpression of the pma cluster-situated regulator (pmaD) and Rieske oxygenase (pmaG) improved (−)-premarineosin A production in S. eitanensis"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Overexpression of pmaD and pmaG increased (-)-premarineosin A (3) production. However, media composition and culture conditions can further enhance secondary metabolite production in Streptomyces.",
+        "gap": "How to further optimize the production of (-)-premarineosin A (3) in the engineered strains.",
+        "decision": "To maximize production, the engineered FP10018 strain will be cultivated in soybean meal medium (GISYE) and optimized culture conditions (temperature, time, extraction solvent) will be investigated, expecting a significant increase in titer."
+      },
+      "reaction": {
+        "substrate_smiles": [],
+        "product_smiles": [],
+        "reagents": [],
+        "solvent": "soybean meal medium (GISYE)",
+        "temperature": "22 °C",
+        "time": "7 days"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Cultivation of FP10018 in GISYE significantly enhanced (-)-premarineosin A (3) production by 1.39-fold compared to GICYE. Optimal conditions (GISYE, 22 °C, 7 days, acetone extraction) led to approximately 174-fold increase in production for FP10017 and FP10018 (34.8 ± 1.6 mgL-1 and 33.7 ± 5.1 mgL-1, respectively) compared to wild-type (0.2 ± 0.1 mgL-1). FP10018 produced nearly twice as much (-)-premarineosin A (3) per gram of dry cell weight as FP10017.",
+        "yield_percent": null
+      },
+      "revises_step_id": 3,
+      "evidence": {
+        "text_span": "In addition to gene overexpression strategies, optimization of media composition and culture conditions can enhance secondary metabolite production in Streptomyces30,36,41,42. Cultivation of the engineered FP10018 strain in soybean meal medium (GISYE) significantly (p < 0.0001) enhanced (−)-premarineosin A (3) production by 1.39-fold compared to cultivation in GICYE (Fig. 1d and Supplementary Fig. 3). Target compound production was assessed throughout cultivation, and while maximum titers of (−)-premarineosin A (3) were obtained around day six, the titers of 23- HUP (2) were lowest on day seven (Fig. 1f and Supplementary Fig. 4). Both acetone and methanol were investigated as extraction solvents, with acetone showing, on average, higher (−)-premarineosin A (3) and 23-HUP (2) recovery (Fig. 1d and Supplementary Fig. 5). Under optimal conditions (GISYE at 22 °C for seven days followed by extraction with acetone), (−)-premarineosin A (3) production increased approximately 174-fold in the engineered strains FP10017 and FP10018 (34.8 ± 1.6 mgL−1 vs. 33.7 ± 5.1 mgL−1, respectively) when compared to wild-type (0.2 ± 0.1 mgL−1)) (Fig. 1d). In GISYE, the vector control strain FP10016 produced 15-fold more (−)-premarineosin A (3) (3.0 ± 2.1 mg L−1.) compared to wild-type. The FP10018 strain produces nearly twice (p < 0.05) as much (−)-premarineosin A (3) per gram of dry cell weight (5.1 mg g−1 DCW) as strain FP10017 2.6 mg g−1 DCW) (Fig. 1f). Production of 23- HUP (2) was also increased in the engineered strains, with significantly (p < 0.0005) increased production in the FP10018 strain compared to the wild-type when cultured in GISYE (Fig. 1d).",
+        "section": "Overexpression of the pma cluster-situated regulator (pmaD) and Rieske oxygenase (pmaG) improved (−)-premarineosin A production in S. eitanensis"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Sufficient quantities of (-)-premarineosin A (3) have been isolated. Previous reports on the stereochemistry of premarineosin-associated molecules are contradictory, and the absolute stereochemistry of (-)-premarineosin A (3) needs to be definitively established.",
+        "gap": "Determine the absolute stereochemistry of the isolated (-)-premarineosin A (3) and resolve discrepancies with prior literature.",
+        "decision": "To establish the absolute stereochemistry, structural characterization will be performed using NMR spectroscopy, X-ray crystallography, and polarimetry. Marineosin A (1) will also be isolated from its original producer and characterized for comparison."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "X-ray crystal data revealed the absolute stereochemistry of (-)-premarineosin A (3) as 8S, 9R, 21R, 23R, which is enantiomeric to previously reported structures from total synthesis. Optical rotation of isolated (-)-premarineosin A (3) was [d]D^24 (c 0.4758 in MeOH) = -104.0 ± 0.1°. Isolated marineosin A (1) was also levorotatory, supporting the enantiomeric relationship.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "Efforts to maximize (−)-premarineosin A (3) isolation and purification from the engineered strains FP10017 and FP10018 yielded 12.9 ± 1.2 mgL−1 and 11.8 ± 2.9 mgL−1, respectively, with >95% purity (Fig. 1g and Supplementary Fig. 6). Structural characterization was conducted using NMR spectroscopy (Supplementary Data 1 and Supplementary Methods 2)12, X-ray crystallography (Fig. 1c, Supplementary Note 1 and Supplementary Data 2), and polarimetry. While the relative stereochemistry of (−)-premarineosin A (3) confirms previously described reports6,20, our X-ray crystal data (Fig. 1c) revealed that its absolute stereochemistry did not agree with the premarineosin A (3) structure obtained by total synthesis26,27. As the optical rotation value for the compound isolated in this work was [d]D^24 (c 0.4758 in MeOH) = −104.0 ± 0.1°; we refer to the compound as (−)-premarineosin A (3). To address the stereochemical discrepancy, marineosin A (1) was isolated from the original producer strain, Streptomyces sp. CNQ-61720. The structural identity of the isolated marineosin A (1) was confirmed by 1H and 13C NMR (Supplementary Data 1 and Supplementary Methods 2) and by optical rotation. The optical rotation value of [a]D^25 = −105.8 ± 2.1° (c 0.2525, MeOH) indicates that the isolated marineosin A (1), like (−)-premarineosin A (3), is levorotatory.",
+        "section": "Overexpression of the pma cluster-situated regulator (pmaD) and Rieske oxygenase (pmaG) improved (−)-premarineosin A production in S. eitanensis"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Sufficient quantities of (-)-premarineosin A (3) are now available, and its absolute stereochemistry is confirmed. Previous synthetic studies showed that 2,5-dimethylpyrroles can undergo acid-catalyzed condensation with ketones to form dimerized products at the 3-position via electrophilic aromatic substitution.",
+        "gap": "Explore the applicability of this dimerization chemistry to the complex natural product scaffold of (-)-premarineosin A (3) to diversify its C12 position.",
+        "decision": "To access new chemical space, (-)-premarineosin A (3) will be reacted with ketones and aldehydes under acidic conditions, expecting dimerization at the C12 position of its C-ring."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCC1=C(C23N=C(c4ccc(N)[nH]4)C=C(OC)[C@@H]2C[C@H]2[C@@H](C)CCC[C@H]2O3)N1"
+        ],
+        "product_smiles": [
+          "COC1=C(C)C(C)=CC(C)CCC[C@@H](C)C12CC1(N=C(C)C)[C@H](C)CCC[C@H](C)[C@@H]1O2",
+          "COC1=C(C)C(C)=CC(C)CCC[C@@H](C)C12CC1(N=C(C)C)[C@H](C)CCC[C@H](C)[C@@H]1O2",
+          "COC1=C(C)C(C(F)(F)F)=CC(C)CCC[C@@H](C)C12CC1(N=C(C)C)[C@H](C)CCC[C@H](C)[C@@H]1O2"
+        ],
+        "reagents": [
+          "ketones",
+          "aldehydes"
+        ],
+        "solvent": "MeCN",
+        "temperature": "RT",
+        "time": "15 min - 6 h",
+        "named_reaction": "Acid-catalyzed electrophilic aromatic substitution"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "(-)-Premarineosin A (3) dimerized under acidic conditions with ketones and aldehydes at the C12 position, forming gem-dimethyl-bridged (4), methylene-bridged (5), and trifluoromethyl-bridged (6) dimers. A crystal structure of 4 confirmed its unique structure and stereochemistry.",
+        "yield_percent": null
+      },
+      "evidence": {
+        "text_span": "With access to sufficient quantities of (−)-premarineosin A (3), we pursued a semi-synthetic approach to conduct the first structure-activity relationship analysis of this scaffold. Dimerization of natural products is a known approach to increase their structural complexity and biological activity43,44. Previous synthetic studies established that simple 2,5-dimethylpyrroles are susceptible to acid-catalyzed condensation with ketones, such as acetone, to form dimerized substrates at the 3-position in an electrophilic aromatic substitution-like reaction45. To our knowledge, this synthetic approach has not been previously applied to any natural product. Thus, we reasoned that exploration of the breadth and flexibility of this chemistry may enable access to previously untapped chemical space. Applying similar methodologies, we found that (−)-premarineosin A (3) dimerizes under acidic conditions with both ketones and aldehydes at the C12 position of its C-ring, forming dimers with a gem-dimethyl-bridge (4), a methylene-bridge (5), and a trifluoromethyl-bridge (6) (Fig. 3a, top). A crystal structure of gemdimethyl-bridged premarineosin A (4) was obtained to confirm its unique structure, stereochemistry, and absolute configuration (Fig. 3b, Supplementary Note 2 and Supplementary Data 3).",
+        "section": "Acid-catalyzed electrophilic aromatic substitution enabled latestage derivatization of (−)-premarineosin A (3)"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Dimerization of (-)-premarineosin A (3) with ketones and aldehydes was successful. However, the goal is also to obtain monomeric derivatives.",
+        "gap": "How to obtain monomeric derivatives of (-)-premarineosin A (3) using electrophilic aromatic substitution conditions.",
+        "decision": "To obtain monomeric intermediates, the reaction with acetone or formaldehyde as electrophiles will be terminated prematurely, expecting to isolate monomeric products."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCC1=C(C23N=C(c4ccc(N)[nH]4)C=C(OC)[C@@H]2C[C@H]2[C@@H](C)CCC[C@H]2O3)N1"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "acetone",
+          "formaldehyde"
+        ],
+        "solvent": "MeCN",
+        "temperature": "RT",
+        "time": "premature termination",
+        "named_reaction": "Acid-catalyzed electrophilic aromatic substitution"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Premature termination using acetone or formaldehyde as the electrophile failed to generate monomeric intermediates. This suggests that isolating monomeric (-)-premarineosin A (3) derivatives under these conditions only occurs when using electron-withdrawing groups."
+      },
+      "evidence": {
+        "text_span": "Functionalization of (−)-premarineosin A (3) with trifluoroacetone also yielded a monomeric derivative (12-trifluoropropanol premarineosin A, dr 1:0.65 (7)), likely due to early reaction termination before complete substrate consumption (Supplementary Fig. 7). Premature termination using acetone or formaldehyde as the electrophile failed to generate monomeric intermediates, suggesting that isolating these monomeric (−)-premarineosin A (3) derivatives under electrophilic aromatic substitution conditions occurs only when using electron-withdrawing groups45.",
+        "section": "Acid-catalyzed electrophilic aromatic substitution enabled latestage derivatization of (−)-premarineosin A (3)"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Monomeric derivatives were not obtained with acetone or formaldehyde. However, trifluoroacetone yielded a monomeric derivative (7), suggesting that electron-withdrawing groups are necessary for isolating monomeric products under these conditions.",
+        "gap": "How to synthesize other monomeric derivatives of (-)-premarineosin A (3).",
+        "decision": "To synthesize other monomeric derivatives, acid chlorides will be used as electrophiles for Friedel-Crafts acylation, expecting to form 12-formyl premarineosin A (8) and 12-acetyl premarineosin A (9)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCC1=C(C23N=C(c4ccc(N)[nH]4)C=C(OC)[C@@H]2C[C@H]2[C@@H](C)CCC[C@H]2O3)N1"
+        ],
+        "product_smiles": [
+          "COC1=CC(N)C2C(=C1)N1C=CC(C)CCC1(C)C(c1ccc[nH]1)C2C",
+          "COC1=CC(N)C2C(=C1)N1C=CC(C)CCC1(C)C(c1ccc[nH]1)C2C"
+        ],
+        "reagents": [
+          "acid chlorides"
+        ],
+        "named_reaction": "Friedel-Crafts acylation"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "12-formyl premarineosin A (8) and 12-acetyl premarineosin A (9) were successfully formed via Friedel-Crafts acylation.",
+        "yield_percent": null
+      },
+      "revises_step_id": 7,
+      "evidence": {
+        "text_span": "Premature termination using acetone or formaldehyde as the electrophile failed to generate monomeric intermediates, suggesting that isolating these monomeric (−)-premarineosin A (3) derivatives under electrophilic aromatic substitution conditions occurs only when using electron-withdrawing groups45. To synthesize other monomeric derivatives of (−)-premarineosin A (3), we used acid chlorides as the electrophile for Friedel-Crafts acylation to form 12- formyl premarineosin A (8) and 12-acetyl premarineosin A (9).",
+        "section": "Acid-catalyzed electrophilic aromatic substitution enabled latestage derivatization of (−)-premarineosin A (3)"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "12-formyl premarineosin A (8) has been synthesized.",
+        "gap": "How to obtain a primary alcohol derivative at the C12 position.",
+        "decision": "To obtain the primary alcohol, 12-formyl premarineosin A (8) will be reduced with sodium borohydride, expecting to form 12-hydroxymethylpremarineosin A (10)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC1=CC(N)C2C(=C1)N1C=CC(C)CCC1(C)C(c1ccc[nH]1)C2C"
+        ],
+        "product_smiles": [
+          "COC1=CC(N)C2C(=C1)N1C=CC(C)CCC1(C)C(c1ccc[nH]1)C2C"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "named_reaction": "Reduction"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The desired primary alcohol, 12-hydroxymethylpremarineosin A (10), was obtained.",
+        "yield_percent": 68
+      },
+      "evidence": {
+        "text_span": "Further reduction of 12-formyl premarineosin A (8) with sodium borohydride provided the desired primary alcohol, forming 12-hydroxymethylpremarineosin A (10) (Fig. 3a, bottom).",
+        "section": "Acid-catalyzed electrophilic aromatic substitution enabled latestage derivatization of (−)-premarineosin A (3)"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bromine can improve pharmacokinetic properties of medicinal compounds. Molecular docking of (-)-premarineosin A (3) with the orphan flavin-dependent halogenase (FDH) D3 suggested that the A-ring pyrrole would be most accessible for bromination.",
+        "gap": "How to site-selectively brominate (-)-premarineosin A (3) at the A-ring pyrrole using biocatalysis.",
+        "decision": "To achieve site-selective bromination, D3 will be reacted with (-)-premarineosin A (3) in vitro, expecting to generate 1-bromo premarineosin A (11)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCC1=C(C23N=C(c4ccc(N)[nH]4)C=C(OC)[C@@H]2C[C@H]2[C@@H](C)CCC[C@H]2O3)N1"
+        ],
+        "product_smiles": [
+          "COC1=C(c2[nH]ccc2Br)N=C2C1N[C@@H]1CCCC(C)C[C@@H]3[C@H]1OC23C"
+        ],
+        "reagents": [
+          "D3 (flavin-dependent halogenase)",
+          "HPAC flavin reductase",
+          "FAD",
+          "NaBr",
+          "NADH"
+        ],
+        "solvent": "HEPES buffer (pH 7.4) with glycerol",
+        "temperature": "30 °C",
+        "time": "4 h",
+        "named_reaction": "Biocatalytic bromination"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Reactions of D3 with (-)-premarineosin A (3) in vitro generated a single brominated derivative, 1-bromo premarineosin A (11), with ~50% substrate conversion efficiency at small-scale and 10% at large-scale.",
+        "yield_percent": 10
+      },
+      "evidence": {
+        "text_span": "Molecular docking of (−)-premarineosin A (3) with D3, an orphan flavin-dependent halogenase (FDH) from Saccharophagus degradans48, revealed strong substrate binding (−8.6 kcalmol−1)), with (−)-premarineosin A (3) oriented within the active site in a conformation that suggests the A-ring pyrrole would be most accessible for bromination (Fig. 4a). Indeed, reactions of D3 with (−)-premarineosin A (3) in vitro generated a single brominated derivative, 1-bromo premarineosin A (11), with ~50% and 10% substrate conversion efficiency at small- and large-scale, respectively (Fig. 4b, c).",
+        "section": "Biocatalytic and semi-synthetic bromination enabled late-stage C-H functionalization of (−)-premarineosin A (3)"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Biocatalytic bromination yielded 1-bromo premarineosin A (11). To evaluate product formation and regioselectivity, a synthetic approach is needed for comparison.",
+        "gap": "How to achieve regioselective bromination of (-)-premarineosin A (3) using a synthetic method.",
+        "decision": "To achieve regioselective bromination, N-bromosuccinimide (NBS) will be used as the brominating agent, expecting to produce a C-ring brominated product, 12-bromo premarineosin A (12)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCCCCCCC1=C(C23N=C(c4ccc(N)[nH]4)C=C(OC)[C@@H]2C[C@H]2[C@@H](C)CCC[C@H]2O3)N1"
+        ],
+        "product_smiles": [
+          "COC1=C(c2ccc[nH]2)N=C2C(N[C@@H]3CCCC(C)C[C@@H]4[C@H]3OC24C)C1Br"
+        ],
+        "reagents": [
+          "N-bromosuccinimide (NBS)"
+        ],
+        "solvent": "DCM",
+        "temperature": "4 °C",
+        "time": "2 h",
+        "named_reaction": "Electrophilic aromatic bromination"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Reaction with NBS primarily produced a C-ring brominated product, 12-bromo premarineosin A (12), with 55% isolated yield.",
+        "yield_percent": 55
+      },
+      "evidence": {
+        "text_span": "To evaluate product formation and regioselectivity, we compared this enzyme-catalyzed bromination with a synthetic approach. N-bromosuccinimide (NBS) was selected as the brominating agent because of its proven effectiveness in regioselective electrophilic aromatic bromination49. Reaction with NBS at 4 °C in DCM for 2h nearly consumed (−)-premarineosin A (3), primarily producing a C-ring brominated product 55% isolated yield, 10 mg reaction), 12-bromo premarineosin A (12, Fig. 4b, d).",
+        "section": "Biocatalytic and semi-synthetic bromination enabled late-stage C-H functionalization of (−)-premarineosin A (3)"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "X-ray crystallography",
+      "specific_rotation",
+      "HRMS",
+      "HPLC",
+      "LC-MS/MS"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield for the entire derivatization campaign is not explicitly stated, but individual reaction yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 1,
+        "unit": "steps",
+        "interpretation": "The longest linear sequence for the derivatization of (-)-premarineosin A to 12-hydroxymethylpremarineosin A (10) is 2 steps (3 -> 8 -> 10)."
+      },
+      "Total Steps": {
+        "value": 6,
+        "unit": "steps",
+        "interpretation": "Total number of synthetic steps for derivatization (excluding metabolic engineering and characterization)."
+      },
+      "Failed Attempts Count": {
+        "value": 1,
+        "unit": "attempts",
+        "interpretation": "One failed attempt to generate monomeric derivatives using premature termination with acetone or formaldehyde."
+      }
+    },
+    "comparison_to_prior": "The metabolic engineering approach significantly increased the production of (-)-premarineosin A (3) (174-fold increase) compared to wild-type, overcoming the limited availability reported in prior studies. The absolute stereochemistry of (-)-premarineosin A (3) was definitively established as 8S, 9R, 21R, 23R, resolving discrepancies with previous total synthesis reports that yielded enantiomeric products. The derivatization campaign explored previously untapped chemical space, demonstrating that the C12 position plays a crucial role in antimalarial activity and that C-ring functionalization can decrease cytotoxicity. 12-bromo premarineosin A (12) showed enhanced potency against drug-sensitive P. falciparum 3D7 compared to (-)-premarineosin A (3) and both artesunate and chloroquine. The biocatalytic bromination demonstrated the feasibility of using non-native halogenases to derivatize complex natural products, expanding beyond the C12 position.",
+    "significance": "This work establishes (-)-premarineosin A as a tractable and evolvable antimalarial scaffold. The metabolic engineering strategy provides a sustainable and scalable source of the natural product. The late-stage functionalization campaign, combining semi-synthesis and biocatalysis, successfully diversified the scaffold, leading to the discovery of 12-bromo premarineosin A (12) as a compelling lead compound with nanomolar potency against P. falciparum and improved selectivity. This integrated chemical biology approach provides a roadmap for exploring the chemical space of complex microbial metabolites for drug discovery."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s42004-025-01779-6",
+      "pmcid": "PMC12680612",
+      "title": "Metabolic engineering and late-stage functionalization expand the chemical space of the antimalarial premarineosin A.",
+      "authors": "McBride CM, McCauley M, Harris NR, Amin S, Curtis BJ, Verhey-Henke L, Teklemichael AA, Oliphant EN, Dranchak P, Lev KL, Qu F, Snodgrass HM, Lewis JC, Inglese J, Su XZ, Pereira F, Sherman DH.",
+      "journal": "Commun Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12680612?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/428fc7de-5953-44a5-aced-862aab916a3d.zip",
+      "parsed_at": "2026-05-11T06:39:34.683763+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 15,
+    "parseable": 15,
+    "canonicalized": 15,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

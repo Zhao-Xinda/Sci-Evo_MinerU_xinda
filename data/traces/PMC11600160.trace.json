@@ -1,0 +1,1004 @@
+{
+  "trace_id": "TS-PMC11600160",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-Bipolarolide D",
+    "smiles": "CC1=CC2[C@@H]3[C@@H](C(C)C=CC(C)(C)CO)C(C)=C[C@@H]3[C@]2(C)OC1=O",
+    "natural_product_class": "sesteterpenoid",
+    "structural_features": {
+      "stereocenters": 5,
+      "ring_systems": "5/5/5/5 tetraquinane",
+      "key_motifs": [
+        "enone",
+        "allylic alcohol",
+        "isolated double bond"
+      ]
+    },
+    "motivation": "Bipolarolide D possesses an unprecedented 5/5/5/5 tetraquinane carbon backbone decorated with a side chain and containing an isolated stereocenter at C(15). Within the tetraquinane core, bipolarolide D accommodates four contiguous stereocenters, three of which are quaternary. There are also several functional groups embedded into the structure: an enone in the C ring, an allylic alcohol in the D ring, and an isolated double bond in the A ring. The carbon framework of bipolarolide D includes one linear and two angular triquinane motifs. All these features render bipolarolide D a synthetically challenging yet captivating and inspiring target.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Lu",
+        "year": 2024,
+        "doi": "10.1021/jacs.4c00680",
+        "key_strategy": "unspecified"
+      }
+    ],
+    "success_criteria": {
+      "yield_target_percent": 1.8,
+      "scale_target": ">100 mg",
+      "stereochemistry_required": true,
+      "free_text": "Robust, scalable, and efficient total synthesis."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C(14)-C(15) bond",
+        "named_strategy": "1,2-addition",
+        "reasoning": "Installation of the side chain by 1,2-addition to the corresponding ketoenone 3 with subsequent dehydration of the intermediate tertiary alcohol."
+      },
+      {
+        "bond_description": "C ring enone",
+        "named_strategy": "Babler-Dauben oxidative 1,3-transposition",
+        "reasoning": "The α,β-enone functionality in the C ring might be installed via Babler−Dauben oxidative 1,3-transposition."
+      },
+      {
+        "bond_description": "D ring closure",
+        "named_strategy": "radical cyclization",
+        "reasoning": "The D ring can be closed in turn by radical cyclization, leading to compound 4."
+      },
+      {
+        "bond_description": "cyclopentenone moiety",
+        "named_strategy": "Au(I)-catalyzed Rautenstrauch cycloisomerization",
+        "reasoning": "The cyclopentenone moiety in linear triquinane 4 can be assembled via a Au(I)-catalyzed Rautenstrauch cycloisomerization, which can be traced back to enyne 5."
+      },
+      {
+        "bond_description": "alkyne moiety",
+        "named_strategy": "Sonogashira cross-coupling",
+        "reasoning": "The alkyne moiety in 5 suggests Sonogashira cross-coupling."
+      },
+      {
+        "bond_description": "side chain installation",
+        "named_strategy": "Cu(I)-mediated 1,4-addition",
+        "reasoning": "The side chain might be installed via Cu(I)-mediated 1,4-addition."
+      },
+      {
+        "bond_description": "bicyclo[3.3.0]octane carbon framework",
+        "named_strategy": "Pauson-Khand reaction",
+        "reasoning": "The bicyclo[3.3.0]octane carbon framework of 5 was envisaged to be constructed via a Pauson−Khand reaction starting from literature-known alcohol 6."
+      }
+    ]
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The synthesis commenced with the preparation of the literature-known alcohol 6 from commercially available N-methoxy-N,4-dimethyl-4-pentenamide via Li TMS-acetylenide addition followed by Noyori transfer hydrogenation, delivering (S)-6 in 92% yield with 99.7% ee. The absolute configuration of compound 6 was confirmed by Mosher ester analysis.",
+        "gap": "The TMS group needs to be removed and the hydroxyl group protected to prepare the substrate for the Pauson-Khand reaction.",
+        "decision": "To prepare the substrate for the Pauson-Khand reaction, protodesilylation of the TMS group in 6 was achieved by treatment with K2CO3 in wet MeOH, and the hydroxy group was protected with p-methylbenzyl (MBn), delivering the starting material for the Pauson−Khand reaction 7 in 87% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C#C[C@H](OC(C)C)C(=C)C"
+        ],
+        "reagents": [
+          "K2CO3",
+          "NaH",
+          "TBAI",
+          "MBnCl"
+        ],
+        "solvent": "MeOH, THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Protodesilylation of the TMS group in 6 was achieved by treatment with K2CO3 in wet MeOH, and the hydroxy group was protected with p-methylbenzyl (MBn), delivering the starting material for the Pauson−Khand reaction 7 in 87% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Protodesilylation of the TMS group in 6 was achieved by treatment with K2CO3 in wet MeOH, and the hydroxy group was protected with p-methylbenzyl (MBn), delivering the starting material for the Pauson−Khand reaction 7 in 87% yield (Scheme 2).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enyne 7 was prepared as the substrate for the Pauson-Khand cyclization.",
+        "gap": "The bicyclic enone 8 needs to be formed via Pauson-Khand reaction.",
+        "decision": "To form the bicyclic enone 8, an equimolar amount of Co2(CO)8 together with heating in MeCN was used, converting enyne 7 to the corresponding bicyclic enone 8 in 66% yield with 3.1:1 dr at C(11)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#C[C@H](OC(C)C)C(=C)C"
+        ],
+        "product_smiles": [
+          "CC(C)O[C@@H]1CCC2(C)CCC(=O)C=C12"
+        ],
+        "named_reaction": "Pauson-Khand",
+        "reagents": [
+          "Co2(CO)8"
+        ],
+        "solvent": "MeCN",
+        "temperature": "75 °C",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "dr": "3.1:1",
+        "observation": "Under the optimized conditions, enyne 7 was converted to the corresponding bicyclic enone 8 in 66% yield with 3.1:1 dr at C(11)."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Screening of various conditions (see Table SI-1) for the Pauson−Khand cyclization of enyne 7 identified utilization of an equimolar amount of Co2(CO)8 together with heating in MeCN as crucial for the success of the transformation.8 Unfortunately, the performance of the catalytic system was inferior. Thus, under the optimized conditions, enyne 7 was converted to the corresponding bicyclic enone 8 in 66% yield with 3.1:1 dr at C(11).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Bicyclic enone 8 was obtained from the Pauson-Khand reaction.",
+        "gap": "A 1,4-addition and subsequent trapping with Comins' reagent is needed to form vinyl triflate 9.",
+        "decision": "To form vinyl triflate 9, compound 8 was treated with lithium dialkylcuprate, prepared in situ from (3-bromopropoxy)-tert-butyldimethylsilane, and the intermediate Cu enolate was trapped with Comins’ reagent, directly obtaining vinyl triflate 9 in 93% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)O[C@@H]1CCC2(C)CCC(=O)C=C12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Br(CH2)3OTBS",
+          "t-BuLi",
+          "CuI",
+          "Comins' reagent"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C to 0 °C",
+        "time": "5.5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 93,
+        "observation": "When compound 8 was treated with lithium dialkylcuprate, prepared in situ from (3-bromopropoxy)-tert-butyldimethylsilane, and the intermediate Cu enolate was trapped with Comins’ reagent, vinyl triflate 9 was directly obtained in 93% yield. As expected based on their energy difference, only the cis-fused bicyclo[3.3.0]octane product 9 was observed."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Testing of different Cu(I) sources (CuI, CuCN, CuBr·DMS, and iPrCCGu) demonstrated superior performance of a CuI-based lithium cuprate. When compound 8 was treated with lithium dialkylcuprate, prepared in situ from (3-bromopropoxy)-tert-butyldimethylsilane, and the intermediate Cu enolate was trapped with Comins’ reagent, vinyl triflate 9 was directly obtained in 93% yield. As expected based on their energy difference, only the cis-fused bicyclo[3.3.0]octane product 9 was observed.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Vinyl triflate 9 was obtained from the previous step.",
+        "gap": "Enyne 10 needs to be formed via Sonogashira cross-coupling with propargyl alcohol and subsequent acetylation.",
+        "decision": "To form enyne 10, vinyl triflate 9 was subjected to cross-coupling with propargyl alcohol under Sonogashira conditions, and the intermediate product was directly acetylated with acetic anhydride, resulting in enyne 10 in 95% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(=O)OCCC[C@H]1C[C@@H](OC(C)C)C2=CCCC21C"
+        ],
+        "named_reaction": "Sonogashira",
+        "reagents": [
+          "Pd(PPh3)2Cl2",
+          "CuI",
+          "propargyl alcohol",
+          "Ac2O",
+          "NEt3"
+        ],
+        "solvent": "THF/NEt3",
+        "temperature": "60 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Vinyl triflate 9 was then subjected to cross-coupling with propargyl alcohol under Sonogashira conditions, and the intermediate product was directly acetylated with acetic anhydride, resulting in enyne 10 in 95% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Vinyl triflate 9 was then subjected to cross-coupling with propargyl alcohol under Sonogashira conditions, and the intermediate product was directly acetylated with acetic anhydride, resulting in enyne 10 in 95% yield (Scheme 2).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Enyne 10 was prepared for the Rautenstrauch cycloisomerization.",
+        "gap": "The cyclopentenone moiety needs to be installed to form linear triquinane 11.",
+        "decision": "To install the cyclopentenone moiety, (Ph3P)AuCl as the precatalyst and AgSbF6 as the activator in DCM at room temperature was used, successfully installing the desired cyclopentenone moiety in 11 in 72% overall yield. The resulting mixture of three products was then directly submitted to desilylation and methanolysis conditions to cleanly deliver the desired linear triquinane 11 in 88% overall yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)OCCC[C@H]1C[C@@H](OC(C)C)C2=CCCC21C"
+        ],
+        "product_smiles": [
+          "CC12CCC(=O)C=C1[C@H](O)C[C@@H]2CCCO"
+        ],
+        "named_reaction": "Rautenstrauch cycloisomerization",
+        "reagents": [
+          "(Ph3P)AuCl",
+          "AgNTf2",
+          "AcCl",
+          "K2CO3"
+        ],
+        "solvent": "DCM, H2O, MeOH/THF",
+        "temperature": "RT",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Delightfully, already the first attempt of the transformation with (Ph3P)AuCl as the precatalyst and AgSbF6 as the activator in DCM at room temperature successfully installed the desired cyclopentenone moiety in 11 in 72% overall yield. It is noteworthy that the reaction results in three products: in addition to the desired hydroxyenone 11, the TBS- and Ac-protected analogues of the OH group at C(7) were obtained. The ratio of these products was not very well reproducible, but the combined yield remained consistent. Further screening of solvents (e.g., THF, acetone, toluene; see Table SI-2) and Ag-based activators (AgNTf2, AgBF4, AgOTf) identified AgNTf2 as the most potent activator and wet DCM as the best reaction medium. It is important to mention that addition of water turned out to be crucial for smooth reaction performance, presumably due to facilitation of proton-transfer events.10 Under the optimized conditions, (Ph3P)AuCl was activated with AgNTf2, followed by addition of enyne 10 in DCM and H2O. The resulting mixture of three products was then directly submitted to desilylation and methanolysis conditions to cleanly deliver the desired linear triquinane 11 in 88% overall yield. Interestingly, no product with the less substituted C(4)=C(5) double bond was observed. It is noteworthy that the Rautenstrauch cycloizomerization step was performed on 38 g of 10, showcasing the robustness and efficiency of the procedure.",
+        "free_text": "Performed on 38 g scale."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Delightfully, already the first attempt of the transformation with (Ph3P)AuCl as the precatalyst and AgSbF6 as the activator in DCM at room temperature successfully installed the desired cyclopentenone moiety in 11 in 72% overall yield.9 It is noteworthy that the reaction results in three products: in addition to the desired hydroxyenone 11, the TBS- and Ac-protected analogues of the OH group at C(7) were obtained. The ratio of these products was not very well reproducible, but the combined yield remained consistent. Further screening of solvents (e.g., THF, acetone, toluene; see Table SI-2) and Ag-based activators (AgNTf2, AgBF4, AgOTf) identified AgNTf2 as the most potent activator and wet DCM as the best reaction medium. It is important to mention that addition of water turned out to be crucial for smooth reaction performance, presumably due to facilitation of proton-transfer events.10 Under the optimized conditions, (Ph3P)AuCl was activated with AgNTf2, followed by addition of enyne 10 in DCM and H2O. The resulting mixture of three products was then directly submitted to desilylation and methanolysis conditions to cleanly deliver the desired linear triquinane 11 in 88% overall yield. Interestingly, no product with the less substituted C(4)=C(5) double bond was observed. It is noteworthy that the Rautenstrauch cycloizomerization step was performed on 38 g of 10, showcasing the robustness and efficiency of the procedure.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Linear triquinane 11 was obtained from the Rautenstrauch cycloisomerization.",
+        "gap": "The free OH group at C(7) needs to be converted to an alkyne to set the stage for D ring closure.",
+        "decision": "To convert the OH group to an alkyne, the free OH group at C(7) in 11 was first oxidized to the corresponding aldehyde under Parikh−Doering conditions, followed by Seyferth−Gilbert homologation with the Ohira−Bestmann reagent to obtain alkyne 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC(=O)C=C1[C@H](O)C[C@@H]2CCCO"
+        ],
+        "product_smiles": [
+          "C#CCC[C@H]1C[C@@H](OC(C)C)C2=CC(=O)CCC21C"
+        ],
+        "named_reaction": "Ohira-Bestmann reagent",
+        "reagents": [
+          "SO3•Py",
+          "NEt3",
+          "K2CO3"
+        ],
+        "solvent": "DMSO/CH2Cl2, MeOH/THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "observation": "Next, the free OH group at C(7) in 11 was first oxidized to the corresponding aldehyde under Parikh−Doering conditions,11 followed by Seyferth−Gilbert homologation12 with the Ohira−Bestmann reagent13 to obtain alkyne 12, which set the stage for closure of the D ring of bipolarolide D (2). The forging of the D ring of bipolarolide D was performed under radical conditions with tributyltin hydride in the presence of AIBN as a radical initiator. The crude vinylstannane was protodestannylated with CSA in DCM, affording the tetraquinane core 13 of bipolarolides C and D in 89% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Next, the free OH group at C(7) in 11 was first oxidized to the corresponding aldehyde under Parikh−Doering conditions,11 followed by Seyferth−Gilbert homologation12 with the Ohira−Bestmann reagent13 to obtain alkyne 12, which set the stage for closure of the D ring of bipolarolide D (2).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alkyne 12 was obtained from the previous step.",
+        "gap": "The D ring needs to be closed via radical cyclization to form the tetraquinane core 13.",
+        "decision": "To close the D ring, radical cyclization was performed with tributyltin hydride in the presence of AIBN as a radical initiator. The crude vinylstannane was protodestannylated with CSA in DCM, affording the tetraquinane core 13 in 89% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C#CCC[C@H]1C[C@@H](OC(C)C)C2=CC(=O)CCC21C"
+        ],
+        "product_smiles": [
+          "C=C1CCC2C(=O)C[C@@H]3[C@H](OC(C)C)CCC3(C)C12"
+        ],
+        "named_reaction": "Radical cyclization",
+        "reagents": [
+          "HSnBu3",
+          "AIBN",
+          "CSA"
+        ],
+        "solvent": "PhH, DCM"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 89,
+        "observation": "The forging of the D ring of bipolarolide D was performed under radical conditions with tributyltin hydride in the presence of AIBN as a radical initiator. The crude vinylstannane was protodestannylated with CSA in DCM, affording the tetraquinane core 13 of bipolarolides C and D in 89% yield. It should be highlighted that more than 10 g of intermediate 13 was prepared in one run."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "The forging of the D ring of bipolarolide D was performed under radical conditions with tributyltin hydride in the presence of AIBN as a radical initiator. The crude vinylstannane was protodestannylated with CSA in DCM, affording the tetraquinane core 13 of bipolarolides C and D in 89% yield.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Tetraquinane intermediate 13 was obtained from the previous step.",
+        "gap": "The α,β-enone functionality needs to be installed via Saegusa-Ito oxidation.",
+        "decision": "To install the α,β-enone functionality, tetraquinane intermediate 13 was oxidized via the catalytic Saegusa−Ito protocol to install α,β-enone functionality in 14 in 86% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C1CCC2C(=O)C[C@@H]3[C@H](OC(C)C)CCC3(C)C12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiHMDS",
+          "TMSCl",
+          "O2",
+          "Pd(OAc)2"
+        ],
+        "solvent": "THF, DMSO"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "Then tetraquinane intermediate 13 was oxidized via the catalytic Saegusa−Ito protocol to install α,β-enone functionality in 14 in 86% yield14 and set a handle for further Babler−Dauben oxidative 1,3-transposition (Scheme 3)."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Then tetraquinane intermediate 13 was oxidized via the catalytic Saegusa−Ito protocol to install α,β-enone functionality in 14 in 86% yield14 and set a handle for further Babler−Dauben oxidative 1,3-transposition (Scheme 3).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 14 was obtained from the Saegusa-Ito oxidation.",
+        "gap": "The isolated double bond in 14 needs to be epoxidized and then opened with MeLi to introduce the methyl group at C(3).",
+        "decision": "To introduce the methyl group at C(3), the isolated double bond (C(7)=C(21)) in 14 was epoxidized with m-CPBA almost quantitatively, giving a 3.7:1 mixture of diastereoisomeric epoxides, which was in turn treated with MeLi in Et2O to diastereoselectively furnish the Me group at C(3) in compound 15."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "m-CPBA",
+          "MeLi"
+        ],
+        "solvent": "CH2Cl2, Et2O"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 78,
+        "dr": "3.7:1",
+        "observation": "First, the isolated double bond (C(7)=C(21)) in 14 was epoxidized with m-CPBA almost quantitatively, giving a 3.7:1 mixture of diastereoisomeric epoxides, which was in turn treated with MeLi in Et2O to diastereoselectively furnish the Me group at C(3) in compound 15. Interestingly, the spatial architecture of the molecule guided the 1,2-addtion exclusively from the convex face of the linear triquinane moiety of the A/B/C ring system."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "First, the isolated double bond (C(7)=C(21)) in 14 was epoxidized with m-CPBA almost quantitatively, giving a 3.7:1 mixture of diastereoisomeric epoxides, which was in turn treated with MeLi in Et2O to diastereoselectively furnish the Me group at C(3) in compound 15.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Epoxide 15 was obtained from the previous step.",
+        "gap": "Epoxide 15 needs to be isomerized to the corresponding allylic alcohol 16.",
+        "decision": "To isomerize the epoxide to the corresponding allylic alcohol 16, acidic conditions (TMSOTf/2,6-lutidine) were investigated."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TMSOTf",
+          "2,6-lutidine"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Interestingly, in case of acidic conditions (TMSOTf/2,6-lutidine), the occurrence of a Meinwald rearrangement could be postulated based on the presence of aldehydes in the reaction mixture, as evidenced by NMR spectroscopy."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Interestingly, in case of acidic conditions (TMSOTf/2,6-lutidine), the occurrence of a Meinwald rearrangement could be postulated based on the presence of aldehydes in the reaction mixture, as evidenced by NMR spectroscopy.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Epoxide 15 was obtained from the previous step. Acidic conditions for isomerization to allylic alcohol 16 led to side products.",
+        "gap": "Epoxide 15 needs to be isomerized to the corresponding allylic alcohol 16 without side reactions.",
+        "decision": "To isomerize the epoxide to the corresponding allylic alcohol 16, ambiphilic Et2AlTMP was used. Slow warming of 15 in toluene in the presence of Et2AlTMP from -78 to -20 °C allowed for smooth installation of the desired allylic alcohol functionality in 18 in 74% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Et2AlTMP"
+        ],
+        "solvent": "toluene",
+        "temperature": "-78 °C to -20 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 74,
+        "observation": "Extensive screening of both acidic and basic reagents (see Table SI-3) revealed ambiphilic Et2AlTMP to be the optimal reagent for the purpose.15 Thus, slow warming of 15 in toluene in the presence of Et2AlTMP from -78 to -20 °C allows for smooth installation of the desired allylic alcohol functionality in 18 in 74% yield."
+      },
+      "revises_step_id": 10,
+      "references": [],
+      "evidence": {
+        "text_span": "Extensive screening of both acidic and basic reagents (see Table SI-3) revealed ambiphilic Et2AlTMP to be the optimal reagent for the purpose.15 Thus, slow warming of 15 in toluene in the presence of Et2AlTMP from -78 to -20 °C allows for smooth installation of the desired allylic alcohol functionality in 18 in 74% yield.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Allylic alcohol 16 was obtained from the previous step. The allylic OH group at C(21) needs to be protected and the MBn protecting group removed from the hydroxy group at C(14).",
+        "gap": "The MBn group needs to be removed without oxidizing the TBS allylic ether.",
+        "decision": "To remove the MBn group, DDQ was considered."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DDQ"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Originally, the MBn group removal was planned with DDQ16 but unfortunately, this reagent induced oxidation of the TBS allylic ether at C(21), forming the corresponding aldehyde."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Originally, the MBn group removal was planned with DDQ16 but unfortunately, this reagent induced oxidation of the TBS allylic ether at C(21), forming the corresponding aldehyde.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Allylic alcohol 16 was obtained from the previous step. DDQ failed to remove the MBn group without oxidizing the TBS allylic ether.",
+        "gap": "The allylic OH group at C(21) needs to be protected and the MBn protecting group removed from the hydroxy group at C(14) without side reactions.",
+        "decision": "To protect the allylic OH group and remove the MBn group, the allylic OH group at C(21) was protected with TBSCl/Im-H and the MBn protecting group was removed from the hydroxy group at C(14) under Birch conditions to give 17 in 86% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Im-H",
+          "TBSCl",
+          "Na",
+          "NH3 (l.)"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "Then, to set the stage for Babler−Dauben oxidative 1,3- transposition, the allylic OH group at C(21) was protected with TBSCl/Im-H and the MBn protecting group was removed from the hydroxy group at C(14) under Birch conditions to give 17 in 86% yield."
+      },
+      "revises_step_id": 12,
+      "references": [],
+      "evidence": {
+        "text_span": "Then, to set the stage for Babler−Dauben oxidative 1,3- transposition, the allylic OH group at C(21) was protected with TBSCl/Im-H and the MBn protecting group was removed from the hydroxy group at C(14) under Birch conditions to give 17 in 86% yield.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 17 was obtained from the previous step. The Babler-Dauben oxidative 1,3-transposition needs to be performed.",
+        "gap": "The Babler-Dauben reaction needs to be performed with simultaneous oxidation of the secondary alcohol at C(14).",
+        "decision": "To perform the Babler-Dauben reaction, PDC/NaOAc was screened."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PDC",
+          "NaOAc"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "It was eventually found that PDC/NaOAc was not reactive enough to induce the desired transformation, performing only oxidation of the secondary alcohol at C(14)."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "It was eventually found that PDC/NaOAc was not reactive enough to induce the desired transformation, performing only oxidation of the secondary alcohol at C(14).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 17 was obtained from the previous step. PDC/NaOAc failed to perform the Babler-Dauben oxidative 1,3-transposition.",
+        "gap": "The Babler-Dauben reaction needs to be performed with simultaneous oxidation of the secondary alcohol at C(14).",
+        "decision": "To perform the Babler-Dauben reaction, the PCC/NaOAc system was tested."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PCC",
+          "NaOAc"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "An interesting observation was made when the PCC/NaOAc system was tested: oxidation of the secondary OH group is fast and is done within 10 min (see Table SI-4); then 1,3-transposition happens within the next 1−2 h, and the intermediate transposed alcohol is then intramolecularly trapped by the newly formed carbonyl group at C(14) to form the corresponding hemiacetal 18, which can be isolated in up to 63% yield (see the SI). If the reaction mixture is allowed to stir overnight, conversion to the desired product 19 is induced in 61% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "An interesting observation was made when the PCC/NaOAc system was tested: oxidation of the secondary OH group is fast and is done within 10 min (see Table SI-4); then 1,3-transposition happens within the next 1−2 h, and the intermediate transposed alcohol is then intramolecularly trapped by the newly formed carbonyl group at C(14) to form the corresponding hemiacetal 18, which can be isolated in up to 63% yield (see the SI).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Compound 17 was obtained from the previous step. PDC/NaOAc and PCC/NaOAc systems had issues with the Babler-Dauben oxidative 1,3-transposition.",
+        "gap": "The Babler-Dauben reaction needs to be performed with simultaneous oxidation of the secondary alcohol at C(14).",
+        "decision": "To perform the Babler-Dauben reaction, Collins reagent was tested."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Collins reagent"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Collins reagent was also tested and showed the highest reactivity (formation of the desired product 19 in less than 1 h), but due to relatively high acidity, a considerable amount of tertiary alcohol elimination product was isolated (see Table SI-4)."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Collins reagent was also tested and showed the highest reactivity (formation of the desired product 19 in less than 1 h), but due to relatively high acidity, a considerable amount of tertiary alcohol elimination product was isolated (see Table SI-4).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Compound 17 was obtained from the previous step. Previous attempts at Babler-Dauben oxidative 1,3-transposition had issues with reactivity or side products.",
+        "gap": "The Babler-Dauben reaction needs to be performed with simultaneous oxidation of the secondary alcohol at C(14) to form product 19.",
+        "decision": "To perform the Babler-Dauben reaction, the PCC/NaOAc system was used, allowing the reaction mixture to stir overnight to induce conversion to the desired product 19 in 61% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(=O)C1C(C)CC2(C)C=CC(=O)C12"
+        ],
+        "reagents": [
+          "PCC",
+          "NaOAc"
+        ],
+        "solvent": "CH2Cl2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "If the reaction mixture is allowed to stir overnight, conversion to the desired product 19 is induced in 61% yield."
+      },
+      "revises_step_id": 15,
+      "references": [],
+      "evidence": {
+        "text_span": "If the reaction mixture is allowed to stir overnight, conversion to the desired product 19 is induced in 61% yield.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Ketoenone 19 was obtained from the previous step.",
+        "gap": "The 1,2-addition to ketoenone 19 needs to be performed to install the side chain.",
+        "decision": "To perform the 1,2-addition, isopropyl-based organometallic reagents (i-PrMgCl, i-PrLi, i-PrMgCl/LaCl3·2LiCl) were tested as models for the side chain."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)C1C(C)CC2(C)C=CC(=O)C12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "i-PrMgCl",
+          "i-PrLi",
+          "i-PrMgCl/LaCl3·2LiCl"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "First, isopropyl-based organometallic reagents (i-PrMgCl, i-PrLi, i-PrMgCl/LaCl3·2LiCl) as models for the side chain were tested under various conditions, yet without any trace of the desired product formed."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "First, isopropyl-based organometallic reagents (i-PrMgCl, i-PrLi, i-PrMgCl/LaCl3·2LiCl) as models for the side chain were tested under various conditions, yet without any trace of the desired product formed.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Ketoenone 19 was obtained from the previous step. Isopropyl-based organometallic reagents failed to perform the 1,2-addition.",
+        "gap": "The 1,2-addition to ketoenone 19 needs to be performed to install the side chain.",
+        "decision": "To perform the 1,2-addition, MeMgBr/LaCl3·2LiCl was tested."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)C1C(C)CC2(C)C=CC(=O)C12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MeMgBr/LaCl3·2LiCl"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 55,
+        "failure_mode": "low_yield",
+        "observation": "Better results were obtained with MeMgBr/LaCl3·2LiCl: the expected product was isolated in 55% yield."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "Better results were obtained with MeMgBr/LaCl3·2LiCl: the expected product was isolated in 55% yield.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Ketoenone 19 was obtained from the previous step. Previous attempts at 1,2-addition were unsuccessful or gave low yields.",
+        "gap": "The 1,2-addition to ketoenone 19 needs to be performed to install the side chain, specifically via crotylation.",
+        "decision": "To perform the crotylation, 1-methyl-2-propenylmagnesium chloride was used. Further screening of the conditions allowed for isolation of the desired crotylated product 20 in 56% yield when the reaction was performed in a toluene/cyclohexane mixture at 0 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)C1C(C)CC2(C)C=CC(=O)C12"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "1-methyl-2-propenylmagnesium chloride"
+        ],
+        "solvent": "toluene/cyclohexane",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 56,
+        "observation": "Allylic Grignard reagents are known to be more reactive,18 and delightfully already the first try with 1-methyl-2-propenylmagnesium chloride in THF showed the formation of three new products and full consumption of the starting material (see the SI). Further screening of the conditions allowed for isolation of the desired crotylated product 20 in 56% yield when the reaction was performed in a toluene/cyclohexane mixture at 0 °C. The structure of hemiacetal 20 was confirmed by 2D NOESY NMR experiments. It is important to mention that polar solvents (THF) favor formation of the product of formal γ-addition of 1-methyl-2-propenylmagnesium chloride to the carbonyl group in 19, whereas apolar solvents (toluene and cyclohexane), on the contrary, favor formation of the products of formal α- addition."
+      },
+      "revises_step_id": 19,
+      "references": [],
+      "evidence": {
+        "text_span": "Allylic Grignard reagents are known to be more reactive,18 and delightfully already the first try with 1-methyl-2-propenylmagnesium chloride in THF showed the formation of three new products and full consumption of the starting material (see the SI). Further screening of the conditions allowed for isolation of the desired crotylated product 20 in 56% yield when the reaction was performed in a toluene/cyclohexane mixture at 0 °C.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Crotylated product 20 was obtained from the previous step.",
+        "gap": "The side chain needs to be attached to the vinyl group via Suzuki coupling.",
+        "decision": "To attach the side chain, hemiacetal 20 was treated with 9-BBN, and the resulting trialkylborane was then coupled with vinyl iodide 23, following Suzuki’s protocol, to obtain the side-chain-elongated product 24 in 95% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Suzuki coupling",
+        "reagents": [
+          "9-BBN",
+          "vinyl iodide 23",
+          "NaOH",
+          "Pd(PPh3)4"
+        ],
+        "solvent": "THF",
+        "temperature": "65 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "With crotylated product 20 in hand, the side chain was then attached to the vinyl group via Suzuki coupling. Hemiacetal 20 was treated with 9-BBN, and the resulting trialkylborane was then coupled with vinyl iodide 23, following Suzuki’s protocol,19 to obtain the side-chain-elongated product 24 in 95% yield (Scheme 3)."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "With crotylated product 20 in hand, the side chain was then attached to the vinyl group via Suzuki coupling. Hemiacetal 20 was treated with 9-BBN, and the resulting trialkylborane was then coupled with vinyl iodide 23, following Suzuki’s protocol,19 to obtain the side-chain-elongated product 24 in 95% yield (Scheme 3).",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Product 24 was obtained from the Suzuki coupling. The hemiacetal in 24 needs to be broken to install the C(13)=C(15) double bond.",
+        "gap": "The hemiacetal needs to be broken and dehydrated to form the desired double bond without isomerization.",
+        "decision": "To break the hemiacetal and dehydrate, standard conditions for tertiary alcohol dehydration (SOCl2, Py, 0 °C) were tested."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "SOCl2",
+          "Pyridine"
+        ],
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "First, standard conditions for tertiary alcohol dehydration were tested (SOCl2, Py, 0 °C) and afforded the desired compound 25 together with isomerized byproduct 26 with a C(14)=C(15) double bond; however, the conversion was not complete."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "First, standard conditions for tertiary alcohol dehydration were tested (SOCl2, Py, 0 °C) and afforded the desired compound 25 together with isomerized byproduct 26 with a C(14)=C(15) double bond; however, the conversion was not complete.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "revision",
+      "thought": {
+        "background": "Product 24 was obtained from the Suzuki coupling. Standard dehydration conditions led to incomplete conversion and byproduct formation.",
+        "gap": "The hemiacetal needs to be broken and dehydrated to form the desired double bond without isomerization and with complete conversion.",
+        "decision": "To break the hemiacetal and dehydrate, 2,6-lutidine was used instead of pyridine. A fast reaction was observed, and the mixture of the same two products was obtained, from which the desired product was isolated in 59% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "SOCl2",
+          "2,6-lutidine"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "RT"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 59,
+        "observation": "When 2,6-lutidine was used instead, a fast reaction was observed, and the mixture of the same two products was obtained, from which the desired product was isolated in 59% yield. Unfortunately, further screening under these conditions was not fruitful. Presumably, the conformer with an antiperiplanar configuration between the hydrogen at C(15) and the oxygen atom of the ether bridge, being the most stable, is responsible for the ease of the byproduct formation."
+      },
+      "revises_step_id": 22,
+      "references": [],
+      "evidence": {
+        "text_span": "When 2,6-lutidine was used instead, a fast reaction was observed, and the mixture of the same two products was obtained, from which the desired product was isolated in 59% yield. Unfortunately, further screening under these conditions was not fruitful. Presumably, the conformer with an antiperiplanar configuration between the hydrogen at C(15) and the oxygen atom of the ether bridge, being the most stable, is responsible for the ease of the byproduct formation.",
+        "section": "unspecified"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Dehydrated product 25 was obtained from the previous step.",
+        "gap": "The TBS protecting group needs to be removed to afford totally synthetic bipolarolide D (2).",
+        "decision": "To remove the TBS protecting group, the dehydrated product 25 was quantitatively deprotected with TBAF to afford totally synthetic bipolarolide D (2)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC1=CC2[C@@H]3[C@@H](C(C)C=CC(C)(C)CO)C(C)=C[C@@H]3[C@]2(C)OC1=O"
+        ],
+        "reagents": [
+          "TBAF"
+        ],
+        "solvent": "THF"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "The dehydrated product 25 was then quantitatively deprotected with TBAF to afford totally synthetic bipolarolide D (2). It is noteworthy that >100 mg of (−)-bipolarolide D was prepared in one run."
+      },
+      "revises_step_id": null,
+      "references": [],
+      "evidence": {
+        "text_span": "The dehydrated product 25 was then quantitatively deprotected with TBAF to afford totally synthetic bipolarolide D (2). It is noteworthy that >100 mg of (−)-bipolarolide D was prepared in one run.",
+        "section": "unspecified"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "2D NMR",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 1.8,
+        "unit": "%",
+        "interpretation": "Overall yield for the total synthesis."
+      },
+      "Longest Linear Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "unspecified"
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "unspecified"
+      },
+      "Failed Attempts Count": {
+        "value": 6,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly mentioned failed attempts."
+      }
+    },
+    "comparison_to_prior": "This approach resulted in preparation of the natural product in 1.8% overall yield, compared to Lu et al.'s 0.4% overall yield. This study improves both the overall yield by a factor of 4 and the scalability of the overall synthetic sequence.",
+    "significance": "A robust, scalable, and efficient total synthesis of (−)-bipolarolide D (2) was achieved in 1.8% overall yield. Salient features include sequential formation of the four five-membered rings, a diastereoselective Pauson−Khand reaction, a highly efficient Rautenstrauch cycloisomerization on a large scale, a radical cyclization to forge the D ring, and installation of the side chain via crotylation followed by Suzuki cross-coupling. The developed route expands the chemical subspace of tetraquinanes, allowing for further search for novel biological activities."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacsau.4c00680",
+      "pmcid": "PMC11600160",
+      "title": "Total Synthesis of (-)-Bipolarolide D.",
+      "authors": "Chesnokov GA, Friedli J, Carta FJ, Gademann K.",
+      "journal": "JACS Au",
+      "year": 2024,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC11600160?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/6a58c183-ce35-46ae-8e0c-8c8cebc36eeb.zip",
+      "parsed_at": "2026-05-11T06:36:08.298367+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 51,
+    "parseable": 18,
+    "canonicalized": 16,
+    "invalid": 33,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(=C)[C@@H](O)C#CTMS",
+      "CC12CCC(OTf)=C1[C@H](OC(C)C)C[C@@H]2CCCOTBS",
+      "CC12CCC(OTf)=C1[C@H](OC(C)C)C[C@@H]2CCCOTBS",
+      "CC12C(C=C(C(=O)C1)C)C(C(C2)OCBn)C",
+      "CC12C(C=C(C(=O)C1)C)C(C(C2)OCBn)C",
+      "CC12C(C(C(C1)O)C3(O3)C)C(C(C2)OCBn)C",
+      "CC12C(C(C(C1)O)C3(O3)C)C(C(C2)OCBn)C",
+      "CC12C(C(C(C1)O)C3(O3)C)C(C(C2)OCBn)C",
+      "CC12C(C(C(C1)O)C=C)C(C(C2)OCBn)C",
+      "CC12C(C(C(C1)O)C=C)C(C(C2)OCBn)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

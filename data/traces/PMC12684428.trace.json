@@ -1,0 +1,985 @@
+{
+  "trace_id": "TS-PMC12684428",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "rhodexin A",
+    "smiles": "C[C@H]1O[C@@H](O[C@H]2CC[C@@H]3[C@H]4CC[C@H]5C[C@H]2[C@H](O)[C@]4(C)[C@H]3[C@@]5(C)O)[C@H](O)[C@@H](O)[C@@H]1O",
+    "natural_product_class": "cardiac glycoside",
+    "structural_features": {
+      "key_motifs": [
+        "cardenolide aglycone",
+        "L-rhamnose"
+      ]
+    },
+    "motivation": "Rhodexin A exhibits cardiotonic activity and strong inhibitory activity on human leukemia K562 cells (IC50 = 19 nM), as well as strong antiproliferation activity by inhibiting HIF-1α synthesis. Its synthesis is challenging due to the A/B and C/D cis-fused rings, and stereocontrolled introduction of hydroxy groups and glycoside.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Jung",
+        "year": 2011,
+        "doi": "10.1021/ol200796r",
+        "key_strategy": "Inverse-electron demand Diels–Alder (IEDDA) reaction to construct BCD tricyclic structure, but required extensive protecting group manipulations."
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Concise chemoenzymatic synthesis in 9 steps from 17-deoxycortisone, with protecting-group-free synthesis of sarmentogenin in 7 steps."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C3-O glycosidic bond",
+        "reasoning": "Rhodexin A (1) can be assembled from sarmentogenin (2) and an L-rhamnose donor through late-stage glycosylation."
+      },
+      {
+        "bond_description": "C14-C15 double bond",
+        "named_strategy": "Mukaiyama hydration",
+        "reasoning": "Aglycone 2 can be derived from Δ14 olefin intermediate 3 via Mukaiyama hydration and functional group transformations."
+      },
+      {
+        "bond_description": "C14-H bond",
+        "reasoning": "Intermediate 3 would be generated from key C14α-hydroxylated intermediate 4 via an elimination process. For 4, an enzymatic C14–H α-hydroxylation of 17-deoxycortisone (5) could be adopted."
+      }
+    ],
+    "rationale": "The strategy aims for a concise chemoenzymatic synthesis by leveraging enzymatic C14-H α-hydroxylation and a Bestmann ylide-enabled one-step construction of the butenolide motif, followed by late-stage Mukaiyama hydration and stereoselective C11 carbonyl reduction. This approach seeks to minimize protecting group manipulations."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Previous work showed enzymatic C14-H α-hydroxylation of common steroids using CYP14A mutant, but with low substrate loading.",
+        "gap": "Need a scalable method for C14α-hydroxylation of 17-deoxycortisone (5).",
+        "decision": "To achieve scalable C14α-hydroxylation, chose to investigate Thamnostylum piriforme NBRC 6117 as a whole cell biocatalyst, expecting it to oxidize 5 at C14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC2C3CCC4=CC(=O)CCC4(C)C3(C)CCC2(C(=O)CO)C1"
+        ],
+        "product_smiles": [
+          "CC12CCC(=O)C=C1CCC1C3CC(O)CC3(C(=O)CO)CCC12C",
+          "CC12CCC(=O)C=C1CCC1C3C(O)CCC3(C(=O)CO)CCC12C"
+        ],
+        "reagents": [
+          "Thamnostylum piriforme NBRC 6117"
+        ],
+        "scale": "0.1 g/L"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Compound 4 was obtained in 65% yield, along with 30% of C9 α-hydroxylated side product 4', which was readily separable. However, the substrate loading was low."
+      },
+      "evidence": {
+        "text_span": "Delightfully, based on our previous study on enzymatic α-hydroxylation of C14–H of common steroids [27], compound 4 could be successfully obtained in 69% yield by using the biocatalyst CYP14A mutant. However, the maximum substrate loading was only 0.1 g/L, which was not sufficient for the enrichment of 4. Thus, we changed our focus to another microorganism Thamnostylum piriforme NBRC 6117, which could act as whole cell biocatalyst to oxidize progesterone at the C14 position [28]. Fortunately, 17-deoxycortisone 5 could also be transformed into 4 in 65% yield after incubation in the Thamnostylum piriforme NBRC 6117 liquid medium (Table 1, entry 1). Notably, a major C9 α-hydroxylated side product 4' was also generated in 30% yield, which could be readily separated by column chromatography.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Initial enzymatic hydroxylation of 5 to 4 was successful but at low substrate loading (0.1 g/L).",
+        "gap": "Need to increase substrate loading for a scalable synthesis of 4.",
+        "decision": "To increase substrate loading, tried 0.25 g/L, expecting a longer reaction time but improved scalability."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC2C3CCC4=CC(=O)CCC4(C)C3(C)CCC2(C(=O)CO)C1"
+        ],
+        "product_smiles": [
+          "CC12CCC(=O)C=C1CCC1C3CC(O)CC3(C(=O)CO)CCC12C",
+          "CC12CCC(=O)C=C1CCC1C3C(O)CCC3(C(=O)CO)CCC12C"
+        ],
+        "reagents": [
+          "Thamnostylum piriforme NBRC 6117"
+        ],
+        "time": "2 days",
+        "scale": "0.25 g/L"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "Compound 4 was obtained in 64% yield, with 32% of 4'. Required a longer reaction time (2 days) for complete conversion."
+      },
+      "evidence": {
+        "text_span": "As shown in Table 1, when the substrate loading was increased to 0.25 g/L, a much longer reaction time (2 days) was required to allow complete conversion, affording 4 in 64% yield (Table 1, entry 2).",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Substrate loading of 0.25 g/L was successful but further increase is desired for scalability.",
+        "gap": "Need to achieve higher substrate loading without compromising conversion.",
+        "decision": "To further increase substrate loading, tried 0.5 g/L, expecting to find optimal conditions for scalability."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC2C3CCC4=CC(=O)CCC4(C)C3(C)CCC2(C(=O)CO)C1"
+        ],
+        "product_smiles": [
+          "CC12CCC(=O)C=C1CCC1C3CC(O)CC3(C(=O)CO)CCC12C",
+          "CC12CCC(=O)C=C1CCC1C3C(O)CCC3(C(=O)CO)CCC12C"
+        ],
+        "reagents": [
+          "Thamnostylum piriforme NBRC 6117"
+        ],
+        "time": "4 days",
+        "scale": "0.5 g/L"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 30,
+        "failure_mode": "low_yield",
+        "observation": "Only 30% of 4 was isolated, with a significant amount of starting material 5 remaining unconverted even after 4 days."
+      },
+      "evidence": {
+        "text_span": "However, at a higher concentration (0.5 g/L), a significant amount of starting compound 5 remained unconverted even after 4 days, and only 30% of 4 was isolated (Table 1, entry 3).",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 3,
+      "thought": {
+        "background": "Increasing substrate loading to 0.5 g/L resulted in low conversion and yield.",
+        "gap": "Need to improve conversion at higher substrate concentrations.",
+        "decision": "To improve conversion, added 2-hydroxypropyl-β-cyclodextrin (HP-β-CD) as a solubilizer to the fermentation broth, expecting better substrate availability for the biocatalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC2C3CCC4=CC(=O)CCC4(C)C3(C)CCC2(C(=O)CO)C1"
+        ],
+        "product_smiles": [
+          "CC12CCC(=O)C=C1CCC1C3CC(O)CC3(C(=O)CO)CCC12C",
+          "CC12CCC(=O)C=C1CCC1C3C(O)CCC3(C(=O)CO)CCC12C"
+        ],
+        "reagents": [
+          "Thamnostylum piriforme NBRC 6117",
+          "HP-β-CD"
+        ],
+        "time": "3 days",
+        "scale": "0.5 g/L"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "Complete conversion of 5 was achieved within 3 days, affording 4 in 60% yield (with 34% of 4')."
+      },
+      "evidence": {
+        "text_span": "To our delight, upon adding 2-hydroxypropyl-β-cyclodextrin (HP-β-CD) [29] as the solubilizer to the fermentation broth, a complete conversion of 5 was achieved within 3 days to afford 4 in 60% yield (Table 1, entry 4).",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "HP-β-CD improved conversion at 0.5 g/L substrate loading.",
+        "gap": "Need to further increase substrate loading for gram-scale synthesis.",
+        "decision": "To further increase substrate loading, tried 1.0 g/L with HP-β-CD, expecting to maintain good conversion."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC2C3CCC4=CC(=O)CCC4(C)C3(C)CCC2(C(=O)CO)C1"
+        ],
+        "product_smiles": [
+          "CC12CCC(=O)C=C1CCC1C3CC(O)CC3(C(=O)CO)CCC12C",
+          "CC12CCC(=O)C=C1CCC1C3C(O)CCC3(C(=O)CO)CCC12C"
+        ],
+        "reagents": [
+          "Thamnostylum piriforme NBRC 6117",
+          "HP-β-CD"
+        ],
+        "time": "4 days",
+        "scale": "1.0 g/L"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 52,
+        "failure_mode": "low_yield",
+        "observation": "A small amount of starting material remained after 4 days of fermentation, and 4 was obtained in 52% yield (with 26% of 4')."
+      },
+      "evidence": {
+        "text_span": "When the substrate loading was further increased to 1.0 g/L in the presence of HP-β-CD, there was a small amount of starting material remained after 4 days of fermentation (Table 1, entry 5).",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 5,
+      "thought": {
+        "background": "At 1.0 g/L substrate loading with HP-β-CD, some starting material remained.",
+        "gap": "Need to achieve complete conversion at 1.0 g/L substrate loading.",
+        "decision": "To achieve complete conversion, added 1% Tween 80 to the fermentation broth along with HP-β-CD, expecting improved substrate dispersion and availability."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC2C3CCC4=CC(=O)CCC4(C)C3(C)CCC2(C(=O)CO)C1"
+        ],
+        "product_smiles": [
+          "CC12CCC(=O)C=C1CCC1C3CC(O)CC3(C(=O)CO)CCC12C",
+          "CC12CCC(=O)C=C1CCC1C3C(O)CCC3(C(=O)CO)CCC12C"
+        ],
+        "reagents": [
+          "Thamnostylum piriforme NBRC 6117",
+          "HP-β-CD",
+          "Tween 80"
+        ],
+        "time": "4 days",
+        "scale": "1.0 g/L"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 64,
+        "observation": "Complete conversion was observed in 4 days, and compound 4 was obtained in 64% yield (with 30% of 4'). These were identified as optimized conditions for gram-scale synthesis."
+      },
+      "evidence": {
+        "text_span": "Delightfully, after adding 1% Tween 80 to the above fermentation broth, a complete conversion was observed in 4 days, and compound 4 was obtained in 64% yield (Table 1, entry 6). However, further increasing the substrate concentration to 2.0 g/L resulted in a much lower conversion rate owing to inhibited microbial growth (Table 1, entry 7). Therefore, the conditions from Table 1, entry 6 were identified as the optimized fermentation conditions that secured the gram-scale synthesis of 4 effortlessly.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Optimized conditions for 1.0 g/L substrate loading were established.",
+        "gap": "Need to explore the upper limit of substrate concentration for even higher scalability.",
+        "decision": "To test the limits of scalability, tried increasing substrate concentration to 2.0 g/L, expecting to potentially achieve even higher throughput."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CC2C3CCC4=CC(=O)CCC4(C)C3(C)CCC2(C(=O)CO)C1"
+        ],
+        "product_smiles": [
+          "CC12CCC(=O)C=C1CCC1C3CC(O)CC3(C(=O)CO)CCC12C",
+          "CC12CCC(=O)C=C1CCC1C3C(O)CCC3(C(=O)CO)CCC12C"
+        ],
+        "reagents": [
+          "Thamnostylum piriforme NBRC 6117",
+          "HP-β-CD",
+          "Tween 80"
+        ],
+        "time": "6 days",
+        "scale": "2.0 g/L"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 28,
+        "failure_mode": "low_yield",
+        "observation": "Resulted in a much lower conversion rate (28% yield of 4, 15% of 4') owing to inhibited microbial growth."
+      },
+      "evidence": {
+        "text_span": "However, further increasing the substrate concentration to 2.0 g/L resulted in a much lower conversion rate owing to inhibited microbial growth (Table 1, entry 7).",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 4 is available in sufficient quantities.",
+        "gap": "Need to transform 4 into the pivotal C14 β-hydroxylated steroidal intermediate.",
+        "decision": "To introduce the C14-C15 double bond, chose BF3·Et2O-promoted elimination of 4, expecting to form the 14-olefinated intermediate 3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "BF3.OEt2"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "50 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 42,
+        "observation": "The 14-olefinated intermediate 3 was afforded in a moderate yield."
+      },
+      "evidence": {
+        "text_span": "As shown in Scheme 2, a BF3·Et2O-promoted elimination afforded the 14-olefinated intermediate 3 in a moderate yield.",
+        "image_refs": [
+          "8d69cc3c8e860af17ff7976ea1184bbb970ce097adb8d3f55860f31e9d805c28.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 3, with a C14-C15 double bond, is available.",
+        "gap": "Need to introduce the C14 β-hydroxy group via Mukaiyama hydration.",
+        "decision": "To install the C14 β-hydroxy group, attempted Mukaiyama hydration on 3, expecting a direct conversion."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Mukaiyama hydration"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Mukaiyama hydration was unsuccessful. A set of side reactions (e.g., reduction of the C20 carbonyl, hydrogenation of Δ4 and Δ14 double bonds) occurred due to the reactive C17 side chain (α-hydroxycarbonyl group)."
+      },
+      "evidence": {
+        "text_span": "However, the following Mukaiyama hydration to introduce the C14 β-hydroxy group was unsuccessful. Owing to the reactive C17 side chain including an α-hydroxycarbonyl group, a set of side reactions (e.g., reduction of the C20 carbonyl, hydrogenation of Δ4 and Δ14 double bonds, etc.) occurred under the Mukaiyama hydration conditions [30,31]. Therefore, it was necessary to alter the side chain before installing the C14 β-OH group.",
+        "image_refs": [
+          "8d69cc3c8e860af17ff7976ea1184bbb970ce097adb8d3f55860f31e9d805c28.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "Direct Mukaiyama hydration on 3 failed due to the reactive C17 side chain.",
+        "gap": "Need to protect or modify the C17 side chain before attempting C14 β-hydroxylation.",
+        "decision": "To address the reactive C17 side chain, chose to hydrogenate 4 first to form the A/B-cis fused intermediate 7, expecting to simplify the molecule for subsequent steps."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Pd/C",
+          "H2",
+          "Et3N"
+        ],
+        "solvent": "MeOH",
+        "temperature": "50 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "The desired A/B-cis fused intermediate 7 was obtained along with its C5 epimer as a 2:1 separable mixture in a quantitative yield."
+      },
+      "evidence": {
+        "text_span": "The revised synthetic route is described in Scheme 2. At first, 4 was subjected to a Pd/C-catalyzed hydrogenation to afford the desired A/B-cis fused intermediate 7 along with its C5 epimer as a 2:1 separable mixture in a quantitative yield.",
+        "image_refs": [
+          "8d69cc3c8e860af17ff7976ea1184bbb970ce097adb8d3f55860f31e9d805c28.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 7, with a modified C17 side chain, is available.",
+        "gap": "Need to construct the butenolide motif at C17.",
+        "decision": "To construct the butenolide motif, chose to treat 7 with the Bestmann ylide reagent, expecting a one-step formation of the desired motif."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Ph3P=C=C=O",
+          "Et3N"
+        ],
+        "solvent": "toluene",
+        "temperature": "110 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "The key intermediate 8 bearing a butenolide motif was obtained in 76% yield."
+      },
+      "evidence": {
+        "text_span": "By treating 7 with the Bestmann ylide reagent [20], the key intermediate 8 bearing a butenolide motif was obtained in 76% yield.",
+        "image_refs": [
+          "8d69cc3c8e860af17ff7976ea1184bbb970ce097adb8d3f55860f31e9d805c28.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 8, with the butenolide motif, is available.",
+        "gap": "Need to introduce the C14-C15 double bond for subsequent Mukaiyama hydration.",
+        "decision": "To introduce the C14-C15 double bond, chose Bi(OTf)3-catalyzed regioselective elimination of 8, expecting to form the Δ14 olefin intermediate 9."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Bi(OTf)3"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "50 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "The regioselective elimination of 8 was achieved to produce the Δ14 olefin intermediate 9 in 86% yield."
+      },
+      "evidence": {
+        "text_span": "Next, with the aid of the strong Lewis acid Bi(OTf)3, the regioselective elimination of 8 was achieved to produce the Δ14 olefin intermediate 9 in 86% yield.",
+        "image_refs": [
+          "8d69cc3c8e860af17ff7976ea1184bbb970ce097adb8d3f55860f31e9d805c28.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 9, with the Δ14 olefin, is available.",
+        "gap": "Need to install the C14 β-hydroxy group via Mukaiyama hydration.",
+        "decision": "To install the C14 β-hydroxy group, evaluated the reactivity of 9 towards typical Mukaiyama hydration conditions, expecting to form the desired C14 β-hydroxylated product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Mukaiyama hydration",
+        "reagents": [
+          "Fe(acac)3",
+          "PhSiH3",
+          "O2"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Only a trace amount of the undesired C14α-hydroxylated product 10 was obtained. Additional optimizations regarding the transition-metal catalyst, hydrogen source, and solvent all failed to improve the results."
+      },
+      "evidence": {
+        "text_span": "Afterwards, we evaluated the reactivity of 9 towards typical Mukaiyama hydration conditions [30-32] to install the C14 β-hydroxy group. However, only a trace amount of the undesired C14α-hydroxylated product 10 was obtained. Additional optimizations regarding the transition-metal catalyst, hydrogen source and solvent all failed to improve the results. Therefore, we decided to perform the Mukaiyama hydration on advanced intermediates.",
+        "image_refs": [
+          "8d69cc3c8e860af17ff7976ea1184bbb970ce097adb8d3f55860f31e9d805c28.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "Mukaiyama hydration on 9 was unsuccessful, yielding only trace amounts of the undesired C14α-hydroxylated product.",
+        "gap": "Need to perform Mukaiyama hydration on a more advanced intermediate to achieve desired regioselectivity and yield.",
+        "decision": "To enable successful Mukaiyama hydration, chose to first perform a chemo- and stereoselective reduction of the C3 carbonyl of 9 using K-selectride, expecting to obtain intermediate 11 with a modified C3 position."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC12CCC(O)C3C(CC1)C(C1C=CCOC1=O)=CC(=O)C32C"
+        ],
+        "reagents": [
+          "K-selectride"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "A K-selectride-promoted chemo- and stereoselective reduction of the C3 carbonyl of 9 was realized to solely deliver 11 in 85% yield."
+      },
+      "evidence": {
+        "text_span": "Next, a K-selectride-promoted chemo- and stereoselective reduction of the C3 carbonyl of 9 was realized to solely deliver 11 in 85% yield [33].",
+        "image_refs": [
+          "5cef28b9b0464e092f50535e09ae3dfe832386e4e797ece6fcd00122bd0bacff.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 11 is available, and Mukaiyama hydration is planned.",
+        "gap": "Need to achieve stereoselective C14 β-hydroxylation.",
+        "decision": "To install the C14 β-hydroxy group, subjected 11 to Mukaiyama hydration conditions with Fe(acac)3 as catalyst, expecting to obtain the desired C14 β-hydroxylated product."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC(O)C3C(CC1)C(C1C=CCOC1=O)=CC(=O)C32C"
+        ],
+        "product_smiles": [
+          "CC12CCC3C(C4C=CCOC4=O)=CC(=O)C1(C)C3C(O)CC2O"
+        ],
+        "named_reaction": "Mukaiyama hydration",
+        "catalyst": "Fe(acac)3",
+        "reagents": [
+          "PhSiH3",
+          "O2"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 42,
+        "dr": "1:5",
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "11 was transformed into the C14 hydroxylated intermediate 12 as an epimeric mixture in 42% yield, with dr = 1:5, where the undesired 14α-hydroxy epimer was the major component."
+      },
+      "evidence": {
+        "text_span": "Then, 11 was subjected to Mukaiyama hydration conditions. Under the Fe(acac)3-catalyzed anaerobic conditions [30], 11 was transformed into the C14 hydroxylated intermediate 12 as epimeric mixture in 42% yield and dr = 1:5, among which the undesired 14α-hydroxy epimer was the major component.",
+        "image_refs": [
+          "5cef28b9b0464e092f50535e09ae3dfe832386e4e797ece6fcd00122bd0bacff.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 15,
+      "thought": {
+        "background": "Fe(acac)3-catalyzed Mukaiyama hydration of 11 yielded predominantly the undesired 14α-hydroxy epimer.",
+        "gap": "Need to reverse the diastereomeric ratio to favor the desired 14β-hydroxy epimer.",
+        "decision": "To improve diastereoselectivity, tried using Co(acac)2 or Mn(acac)2 as catalysts instead of Fe(acac)3, expecting to reverse the dr."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC(O)C3C(CC1)C(C1C=CCOC1=O)=CC(=O)C32C"
+        ],
+        "product_smiles": [
+          "CC12CCC3C(C4C=CCOC4=O)=CC(=O)C1(C)C3C(O)CC2O"
+        ],
+        "named_reaction": "Mukaiyama hydration",
+        "catalyst": "Co(acac)2 or Mn(acac)2",
+        "reagents": [
+          "PhSiH3",
+          "O2"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 48,
+        "dr": "1.7:1",
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "The use of Co(acac)2 or Mn(acac)2 reversed the diastereomeric ratio to dr = 1.5–1.7:1 and increased the yield to 48–58%. However, the diastereoselectivity was still unsatisfactory, prompting a decision for late-stage Mukaiyama hydration."
+      },
+      "evidence": {
+        "text_span": "Interestingly, the use of Co(acac)2 or Mn(acac)2 as the catalyst [31,32] instead of Fe(acac)3 could reverse the diastereomeric ratio of the C14-hydroxylated products to dr = 1.5–1.7:1 and increased the yield to 48–58% as well. Nevertheless, the unsatisfactory diastereoselectivity urged us to explore a late-stage Mukaiyama hydration.",
+        "image_refs": [
+          "5cef28b9b0464e092f50535e09ae3dfe832386e4e797ece6fcd00122bd0bacff.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Mukaiyama hydration on 11 showed unsatisfactory diastereoselectivity.",
+        "gap": "Need to achieve high diastereoselectivity for C14 β-hydroxylation by performing it at a later stage.",
+        "decision": "To enable late-stage Mukaiyama hydration, chose to first perform the thermodynamic C11-carbonyl reduction of 11 using dissolved lithium metal in liquid NH3 solution, expecting to obtain the C11 α-hydroxylated intermediate 13 as a single diastereoisomer."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC(O)C3C(CC1)C(C1C=CCOC1=O)=CC(=O)C32C"
+        ],
+        "product_smiles": [
+          "CC12CCC3C(C4C=CCOC4=O)=CC(O)C1(C)C3C(O)CC2O"
+        ],
+        "reagents": [
+          "Li"
+        ],
+        "solvent": "NH3",
+        "temperature": "-78 °C",
+        "time": "20 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "observation": "The C11 α-hydroxylated intermediate 13 was obtained as a single diastereoisomer in 54% yield."
+      },
+      "evidence": {
+        "text_span": "To this end, we next performed the thermodynamic C11-carbonyl reduction by dissolved lithium metal in liquid NH3 solution, and the C11 α-hydroxylated intermediate 13 was obtained as a single diastereoisomer in 54% yield.",
+        "image_refs": [
+          "5cef28b9b0464e092f50535e09ae3dfe832386e4e797ece6fcd00122bd0bacff.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 13, with the C11 α-hydroxy group, is available.",
+        "gap": "Need to achieve highly diastereoselective C14 β-hydroxylation to synthesize sarmentogenin (2).",
+        "decision": "To synthesize sarmentogenin, chose Co(acac)2-catalyzed Mukaiyama hydration of 13, expecting high diastereoselectivity for the C14 β-hydroxy group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC3C(C4C=CCOC4=O)=CC(O)C1(C)C3C(O)CC2O"
+        ],
+        "product_smiles": [
+          "CC12CCC3C(C4C=CCOC4=O)=CC(=O)C1(C)C3C(O)CC2O"
+        ],
+        "named_reaction": "Mukaiyama hydration",
+        "catalyst": "Co(acac)2",
+        "reagents": [
+          "PhSiH3",
+          "O2"
+        ],
+        "solvent": "dioxane"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "dr": "6.7:1",
+        "observation": "The desired natural product sarmentogenin (2) was afforded in 69% yield with high diastereoselectivity (dr = 14β/14α = 6.7:1). The minor component 14-epi-sarmentogenin was readily separated. This represents the first protecting-group-free synthesis of sarmentogenin in 7 steps from 17-deoxycortisone."
+      },
+      "evidence": {
+        "text_span": "Lastly, as expected, a Co(acac)2-catalyzed Mukaiyama hydration of 13 afforded the desired natural product sarmentogenin (2) in 69% yield with high diastereoselectivity (dr = 14β/14α = 6.7:1), and the minor component 14-epi-sarmentogenin could be readily separated. Notably, our work represents the first protecting-group-free synthesis [34,35] of sarmentogenin in just 7 steps from 17-deoxycortisone.",
+        "image_refs": [
+          "5cef28b9b0464e092f50535e09ae3dfe832386e4e797ece6fcd00122bd0bacff.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Sarmentogenin (2) is available.",
+        "gap": "Need to synthesize rhodexin A through glycosylation with L-rhamnose donor 14, selectively at C3-hydroxy group.",
+        "decision": "To synthesize rhodexin A, attempted direct glycosylation of 2 with 14, expecting selective glycosylation at C3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC3C(C4C=CCOC4=O)=CC(=O)C1(C)C3C(O)CC2O",
+          ""
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "Competitive glycosylations of other hydroxy groups of 2 could not be avoided, resulting in a complex mixture including mono-, di-, and triglycosylated products."
+      },
+      "evidence": {
+        "text_span": "With the aglycone sarmentogenin (2) in hand, we first tried the synthesis of rhodexin A through direct glycosylation of 2 by the L-rhamnose donor 2,3,4-tri-O-benzoyl-α-L-rhamnopyranosyl trichloroacetimidate (14). However, the selective glycosylation at the C3-hydroxy group of 2 was a formidable challenge since competitive glycosylations of the other hydroxy groups of 2 could not be avoided, resulting in a complex mixture including mono-, di-, and triglycosylated products (Scheme 3A). Thus, both C11–OH and C14–OH needed to be masked before glycosylation.",
+        "image_refs": [
+          "9c705dc6867fb759310b1e6c783768762ecdbbc3699c006dbea6c95b5ebfd1fe.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 19,
+      "thought": {
+        "background": "Direct glycosylation of sarmentogenin (2) was unselective due to multiple free hydroxyl groups.",
+        "gap": "Need to selectively glycosylate at C3 by masking C11-OH and C14-OH.",
+        "decision": "To achieve selective glycosylation, chose intermediate 11 (which has C11 and C14 carbonyls instead of hydroxyls) as a suitable substrate for glycosylation with 14, using TMSOTf as promoter, expecting stereospecific glycosylation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC12CCC(O)C3C(CC1)C(C1C=CCOC1=O)=CC(=O)C32C",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TMSOTf"
+        ],
+        "solvent": "CH2Cl2",
+        "catalyst": "4 Å MS"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "The glycosylation between 11 and 14 proceeded smoothly in a stereospecific manner, delivering the key intermediate 15 in 98% yield."
+      },
+      "evidence": {
+        "text_span": "Based on this thought, we selected intermediate 11 as a suitable substrate for glycosylation. To our delight, as shown in Scheme 3B, with TMSOTf as the promoter, the glycosylation between 11 and 14 proceeded smoothly in a stereospecific manner, delivering the key intermediate 15 in 98% yield.",
+        "image_refs": [
+          "7cc7a27fdbefda849f92c1c33895e4fcee6581b28ab2553d4a6152f75139cdd7.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 15, with the glycosyl moiety installed, is available.",
+        "gap": "Need to introduce the C14 β-hydroxy group.",
+        "decision": "To introduce the C14 β-hydroxy group, chose Mn(acac)2-catalyzed Mukaiyama hydration of 15, expecting to form the C14 β-hydroxylated intermediate 16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "named_reaction": "Mukaiyama hydration",
+        "catalyst": "Mn(acac)2",
+        "reagents": [
+          "PPh3",
+          "PhSiH3",
+          "O2"
+        ],
+        "solvent": "dioxane"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 53,
+        "observation": "The key C14 β-hydroxylated intermediate 16 was yielded in 53% yield, accompanied by the separable C14 α-OH epimer in 27% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequently, treating 15 under Mn(acac)2-catalyzed Mukaiyama hydration conditions yielded the key C14 β-hydroxylated intermediate 16 in 53% yield, accompanied by the separable C14 α-OH epimer in 27% yield.",
+        "image_refs": [
+          "7cc7a27fdbefda849f92c1c33895e4fcee6581b28ab2553d4a6152f75139cdd7.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Intermediate 16, with the glycosyl moiety and C14 β-hydroxy group, is available.",
+        "gap": "Need to deprotect the sugar motif and reduce the C11 carbonyl to obtain rhodexin A.",
+        "decision": "To achieve both deprotection and C11 carbonyl reduction in one step, subjected 16 directly to Li-NH3(l) conditions, expecting to directly afford rhodexin A."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C[C@H]1OC(O[C@@H]2CC[C@@H]3[C@@H]4C[C@@H](O)C5[C@@H](CC(=O)C5(C)C)[C@@H]4CC[C@@H]32)[C@H](O)[C@@H](O)[C@@H]1O"
+        ],
+        "reagents": [
+          "Li"
+        ],
+        "solvent": "NH3(l)",
+        "temperature": "-30 °C",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 10,
+        "failure_mode": "side_product_dominant",
+        "observation": "Rhodexin A was afforded in only 10% yield. The required longer reaction time and elevated temperature for deprotection of the sugar motif resulted in an overreduction of the butenolide motif."
+      },
+      "evidence": {
+        "text_span": "Later on, we assumed to achieve the deprotection of the sugar motif and the reduction of the C11 carbonyl of 16 simultaneously under Li-NH3(l) conditions, which would directly afford the final natural product rhodexin A in one step. Just as expected, when directly subjecting 16 to the abovementioned conditions, rhodexin A was indeed afforded albeit in only 10% yield. The required longer reaction time and elevated temperature to achieve deprotection of the sugar motif resulted in an overreduction of the butenolide motif. The low efficiency of this reaction prompted us to pursue an alternative two-step approach.",
+        "image_refs": [
+          "7cc7a27fdbefda849f92c1c33895e4fcee6581b28ab2553d4a6152f75139cdd7.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 22,
+      "thought": {
+        "background": "One-step deprotection and C11 carbonyl reduction of 16 was inefficient due to overreduction.",
+        "gap": "Need a more efficient, two-step approach for deprotection and C11 carbonyl reduction.",
+        "decision": "To improve efficiency, chose to first perform deprotection of the Bz groups of 16 using NH3/MeOH, expecting to obtain the saccharide 17."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "C[C@H]1OC(O[C@@H]2CC[C@@H]3[C@@H]4C[C@@H](O)C5[C@@H](CC(=O)C5(C)C)[C@@H]4CC[C@@H]32)[C@H](O)[C@@H](O)[C@@H]1O"
+        ],
+        "reagents": [
+          "NH3"
+        ],
+        "solvent": "MeOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Deprotection to remove all the Bz groups of 16 furnished the saccharide 17 in 95% yield."
+      },
+      "evidence": {
+        "text_span": "First, we performed the deprotection to remove all the Bz groups of 16 by NH3/MeOH, furnishing the saccharide 17 in 95% yield.",
+        "image_refs": [
+          "7cc7a27fdbefda849f92c1c33895e4fcee6581b28ab2553d4a6152f75139cdd7.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Saccharide 17 is available after deprotection.",
+        "gap": "Need to stereospecifically reduce the C11 carbonyl to obtain rhodexin A.",
+        "decision": "To obtain rhodexin A, performed a quick stereospecific C11 carbonyl reduction of 17 by Li-NH3(l), expecting high yield and stereoselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H]1OC(O[C@@H]2CC[C@@H]3[C@@H]4C[C@@H](O)C5[C@@H](CC(=O)C5(C)C)[C@@H]4CC[C@@H]32)[C@H](O)[C@@H](O)[C@@H]1O"
+        ],
+        "product_smiles": [
+          "C[C@H]1O[C@@H](O[C@H]2CC[C@@H]3[C@H]4CC[C@H]5C[C@H]2[C@H](O)[C@]4(C)[C@H]3[C@@]5(C)O)[C@H](O)[C@@H](O)[C@@H]1O"
+        ],
+        "reagents": [
+          "Li"
+        ],
+        "solvent": "NH3(l)",
+        "temperature": "-78 °C",
+        "time": "3 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "observation": "Rhodexin A was afforded in 60% isolated yield. The synthetic sample exhibited identical NMR spectroscopic data to the literature precedent, confirming the completion of the chemoenzymatic synthesis of rhodexin A in 9 steps from 17-deoxycortisone."
+      },
+      "evidence": {
+        "text_span": "Eventually, the quick stereospecific C11 carbonyl reduction by Li-NH3(l) was accomplished in just 3 minutes to afford rhodexin A in 60% isolated yield. The synthetic sample exhibited identical NMR spectroscopic data to the literature precedent [20], which confirmed the completion of the chemoenzymatic synthesis of rhodexin A in 9 steps from 17-deoxycortisone.",
+        "image_refs": [
+          "7cc7a27fdbefda849f92c1c33895e4fcee6581b28ab2553d4a6152f75139cdd7.jpg"
+        ],
+        "section": "Results and Discussion"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "NMR",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield for rhodexin A not explicitly stated, but individual step yields are given."
+      },
+      "Longest Linear Steps": {
+        "value": 9,
+        "unit": "steps",
+        "interpretation": "Total steps for rhodexin A synthesis from 17-deoxycortisone."
+      },
+      "Total Steps": {
+        "value": 9,
+        "unit": "steps",
+        "interpretation": "Total steps for rhodexin A synthesis from 17-deoxycortisone."
+      },
+      "Failed Attempts Count": {
+        "value": 5,
+        "unit": "attempts",
+        "interpretation": "Number of explicitly described failed attempts during the synthesis."
+      }
+    },
+    "comparison_to_prior": "The synthetic sample of rhodexin A exhibited identical NMR spectroscopic data to the literature precedent [20]. The synthesis of sarmentogenin is the first protecting-group-free synthesis.",
+    "significance": "This work provides a concise chemoenzymatic synthesis of rhodexin A in 9 steps and the first protecting-group-free synthesis of its aglycone sarmentogenin in 7 steps from 17-deoxycortisone. Key features include a scalable enzymatic C14-H α-hydroxylation, a Bestmann ylide-enabled one-step butenolide construction, late-stage Mukaiyama hydration, and stereoselective C11 carbonyl reduction. This strategy is expected to inspire future syntheses of complex steroids and bioactive natural products."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.3762/bjoc.21.204",
+      "pmcid": "PMC12684428",
+      "title": "Chemoenzymatic synthesis of the cardenolide rhodexin A and its aglycone sarmentogenin.",
+      "authors": "Song F, Zheng M, Wang D, Qu X, Zhou Q.",
+      "journal": "Beilstein J Org Chem",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12684428?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/13fab99d-d5ee-4833-b44e-eab983811d66.zip",
+      "parsed_at": "2026-05-11T06:40:53.296922+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 59,
+    "parseable": 37,
+    "canonicalized": 37,
+    "invalid": 22,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC12CCC3C(C1(C)C(=O)C=C3)C(C)C(O)CO",
+      "CC12CCC3C(C1(C)C(=O)C=C3)C(C)C=C(O)C",
+      "CC12CCC3C(C1(C)C(=O)C=C3)C(C)C=C(O)C",
+      "CC12CCC3C(C1(C)C(=O)C=C3)C(C)C(O)C(O)C",
+      "CC12CCC3C(C1(C)C(=O)C=C3)C(C)C(O)CO",
+      "CC12CCC3C(C1(C)C(=O)CCC3)C(C)C(O)CO",
+      "CC12CCC3C(C1(C)C(=O)CCC3)C(C)C(O)CO",
+      "CC12CCC3C(C1(C)C(=O)CCC3)C(C)C(O)C(=O)C=C",
+      "CC12CCC3C(C1(C)C(=O)CCC3)C(C)C(O)C(=O)C=C",
+      "CC12CCC3C(C1(C)C(=O)CCC3)C(C)C=C(C(=O)O)C"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,708 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/schemas/sci_evo_total_synthesis.schema.json",
+  "title": "Sci-Evo Total-Synthesis Trace",
+  "description": "Structured record of a published total-synthesis study, designed natively for synthetic chemistry. Captures (1) the target and its scientific motivation, (2) the retrosynthetic strategy (a tree of disconnections + fragments), (3) the actual execution trajectory (a graph of reactions, characterizations, failed attempts, and revisions), and (4) final validation. Each execution step carries a structured [Background]/[Gap]/[Decision] thought adapted from the Sci-Evo reference, and failed attempts are first-class with a typed failure_mode + a revises_step_id pointer to their successor.",
+  "type": "object",
+  "required": [
+    "trace_id",
+    "target",
+    "retrosynthetic_strategy",
+    "execution_trace",
+    "_provenance"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "trace_id": {
+      "type": "string",
+      "description": "Stable ID, e.g. 'TS-PMC13077694'."
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "1.0.0"
+    },
+    "license": {
+      "type": "string",
+      "default": "CC-BY-4.0"
+    },
+    "target": {
+      "$ref": "#/$defs/Target"
+    },
+    "retrosynthetic_strategy": {
+      "$ref": "#/$defs/RetrosyntheticStrategy"
+    },
+    "execution_trace": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/ExecutionStep"
+      }
+    },
+    "validation": {
+      "$ref": "#/$defs/Validation"
+    },
+    "_provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "_smiles_qc": {
+      "type": "object",
+      "description": "Programmatic SMILES QC summary added by validate_smiles.py post-processing. Counts canonical/parseable/invalid SMILES across the trace plus any name-based overrides. Not part of the LLM's emitted content."
+    }
+  },
+  "$defs": {
+    "Target": {
+      "type": "object",
+      "required": [
+        "name",
+        "smiles",
+        "motivation",
+        "success_criteria"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Common/IUPAC name, e.g. '(-)-strychnine'."
+        },
+        "smiles": {
+          "type": "string",
+          "description": "Canonical SMILES."
+        },
+        "inchi": {
+          "type": "string"
+        },
+        "inchi_key": {
+          "type": "string"
+        },
+        "natural_product_class": {
+          "type": "string",
+          "description": "e.g. 'macrolide', 'indole alkaloid', 'terpenoid', 'polyketide'."
+        },
+        "structural_features": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "molecular_weight": {
+              "type": "number"
+            },
+            "stereocenters": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "ring_systems": {
+              "type": "string",
+              "description": "e.g. 'fused 6-6-6 + bridged 7' or '18-membered macrolactone'."
+            },
+            "key_motifs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Hard-to-build features: quaternary stereocenter, vicinal diol, N-O bond, etc."
+            }
+          }
+        },
+        "motivation": {
+          "type": "string",
+          "description": "Why synthesize this target — biological activity, mechanism probe, scaffold validation, scale-up, structural revision, etc."
+        },
+        "prior_syntheses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "lead_author": {
+                "type": "string"
+              },
+              "year": {
+                "type": [
+                  "integer",
+                  "string"
+                ]
+              },
+              "doi": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "key_strategy": {
+                "type": "string",
+                "description": "How prior route differed (e.g. 'NHK macrocyclization', 'RCAM endgame')."
+              }
+            }
+          }
+        },
+        "success_criteria": {
+          "type": "object",
+          "description": "Quantifiable goals the authors set or implied.",
+          "additionalProperties": true,
+          "properties": {
+            "yield_target_percent": {
+              "type": [
+                "number",
+                "string"
+              ]
+            },
+            "lls_target": {
+              "type": [
+                "integer",
+                "string"
+              ],
+              "description": "Target longest-linear-step count."
+            },
+            "scale_target": {
+              "type": "string"
+            },
+            "stereochemistry_required": {
+              "type": [
+                "string",
+                "boolean"
+              ],
+              "description": "Free text (e.g. 'single enantiomer, all 6 stereocenters set') or boolean if author only marks racemic vs enantioselective."
+            },
+            "free_text": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "RetrosyntheticStrategy": {
+      "type": "object",
+      "description": "The high-level disconnection plan as designed on paper before execution.",
+      "required": [
+        "is_convergent",
+        "key_disconnections"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "is_convergent": {
+          "type": "boolean",
+          "description": "true if synthesis joins independently built fragments."
+        },
+        "key_disconnections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Disconnection"
+          }
+        },
+        "fragments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Fragment"
+          }
+        },
+        "rationale": {
+          "type": "string",
+          "description": "Free-text overall strategy rationale."
+        }
+      }
+    },
+    "Disconnection": {
+      "type": "object",
+      "required": [
+        "bond_description",
+        "reasoning"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "bond_description": {
+          "type": "string",
+          "description": "e.g. 'C11-C12 bond', 'amide bond between A and B', 'macrolactonization at C1-O17'."
+        },
+        "named_strategy": {
+          "type": "string",
+          "description": "e.g. 'NHK', 'RCM', 'Suzuki coupling', 'Diels-Alder'."
+        },
+        "reasoning": {
+          "type": "string",
+          "description": "Why this disconnection — strategic bond, FGI feasibility, stereochem control, convergence."
+        },
+        "alternatives_considered": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "strategy": {
+                "type": "string"
+              },
+              "rejected_because": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Fragment": {
+      "type": "object",
+      "required": [
+        "fragment_id",
+        "smiles",
+        "role"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "fragment_id": {
+          "type": "string",
+          "description": "e.g. 'F1', 'C1-C7-aldehyde'."
+        },
+        "smiles": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string",
+          "description": "e.g. 'left half', 'macrolactone precursor', 'side chain'."
+        },
+        "comes_from": {
+          "type": "string",
+          "description": "Starting material or commercial source."
+        }
+      }
+    },
+    "Thought": {
+      "type": "object",
+      "description": "Structured reasoning at each step. Adapted from Sci-Evo reference [Background]/[Gap]/[Decision] format.",
+      "required": [
+        "background",
+        "gap",
+        "decision"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "background": {
+          "type": "string",
+          "description": "What is known/completed up to this point in the synthesis."
+        },
+        "gap": {
+          "type": "string",
+          "description": "What still needs to be solved."
+        },
+        "decision": {
+          "type": "string",
+          "description": "Format: 'To <goal>, chose <tool/strategy>, expecting <expected outcome>.'"
+        }
+      }
+    },
+    "Reaction": {
+      "type": "object",
+      "description": "Concrete chemical transformation. Present when action involves a real reaction (forward_reaction, failed_attempt, scale_up).",
+      "additionalProperties": true,
+      "properties": {
+        "substrate_smiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "product_smiles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rxn_smiles": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Reaction SMILES: 'A.B>>C'."
+        },
+        "named_reaction": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bond_formed": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bond_broken": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reagents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "catalyst": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ligand": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "solvent": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "temperature": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "time": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "atmosphere": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "stoichiometry": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Map of reagent_name -> amount expression. Use the same names that appear in the 'reagents' array. Examples: {'Cs2CO3': '10.0 equiv', 'substrate_3': '1.0 equiv'}."
+        }
+      }
+    },
+    "Outcome": {
+      "type": "object",
+      "required": [
+        "valid"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "valid": {
+          "type": "boolean",
+          "description": "true if step achieved its decision goal. false marks a FAILED ATTEMPT (must be followed by a revises_step_id revision later in the trace)."
+        },
+        "yield_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "ee_percent": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "dr": {
+          "type": [
+            "string",
+            "number"
+          ],
+          "description": "e.g. '10:1', '>20:1'. Numbers also accepted (LLM occasionally emits a single dr ratio as a number)."
+        },
+        "regio_selectivity": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "failure_mode": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Required when valid=false. null when valid=true. Recommended canonical values (allowed but not enforced): low_yield, no_reaction, wrong_regiochemistry, wrong_stereochemistry, epimerization, decomposition, side_product_dominant, scope_limited, scale_limited, incompatible_protecting_group, purification_failed, characterization_inconclusive, reactor_clogging, other."
+        },
+        "observation": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Free-text outcome description (yield, side-products, characterization deltas, lessons)."
+        }
+      }
+    },
+    "ExecutionStep": {
+      "type": "object",
+      "required": [
+        "step_id",
+        "action",
+        "thought"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "step_id": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Position in chronological execution sequence."
+        },
+        "fragment_id": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "Which sub-route this step belongs to. null = main/convergent line."
+        },
+        "action": {
+          "type": "string",
+          "enum": [
+            "retrosynthetic_analysis",
+            "forward_reaction",
+            "failed_attempt",
+            "revision",
+            "characterization",
+            "scale_up",
+            "literature_review",
+            "hypothesis_formation"
+          ]
+        },
+        "thought": {
+          "$ref": "#/$defs/Thought"
+        },
+        "reaction": {
+          "$ref": "#/$defs/Reaction",
+          "description": "Required when action in {forward_reaction, failed_attempt, scale_up}."
+        },
+        "outcome": {
+          "$ref": "#/$defs/Outcome"
+        },
+        "revises_step_id": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "When action='revision', the step_id of the failed attempt this step replaces."
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "External cite keys / DOIs referenced by the author for this step."
+        },
+        "evidence": {
+          "type": "object",
+          "required": [
+            "text_span"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "text_span": {
+              "type": "string",
+              "description": "Verbatim quote from paper main text or SI that supports this step's thought + outcome. Used for traceability."
+            },
+            "page": {
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "section": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "description": "e.g. 'Results & Discussion', 'SI section 2.3'."
+            },
+            "image_refs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "MinerU image filenames showing the structures/scheme."
+            }
+          }
+        }
+      },
+      "_recommended_invariants": "When outcome.valid=false, outcome.failure_mode SHOULD be present. When action='revision', revises_step_id SHOULD point to a prior failed step. When action in {forward_reaction, failed_attempt, scale_up}, reaction SHOULD be present. Pilot dataset enforces these as soft recommendations rather than hard schema rules so partial extractions still validate."
+    },
+    "Validation": {
+      "type": "object",
+      "required": [
+        "characterization",
+        "metrics",
+        "significance"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "characterization": {
+          "type": "array",
+          "description": "Free-form list of techniques used to confirm the final product. Recommended canonical values: '1H NMR', '13C NMR', '2D NMR', 'HRMS', 'X-ray crystallography', 'IR', 'specific_rotation', 'optical_rotation', 'NOE', 'NOESY', 'ROESY', 'COSY', 'HSQC', 'HMBC', 'comparison_to_authentic', 'circular_dichroism', 'elemental_analysis', 'other'. Authors' free-text labels also acceptable.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "metrics": {
+          "type": "object",
+          "description": "Map metric_name -> {value, unit, interpretation}. Canonical metrics for total synthesis: 'Overall Yield', 'Longest Linear Steps', 'Total Steps', 'ee', 'Largest Scale', 'Failed Attempts Count'.",
+          "additionalProperties": {
+            "type": "object",
+            "required": [
+              "value",
+              "unit",
+              "interpretation"
+            ],
+            "additionalProperties": true,
+            "properties": {
+              "value": {
+                "type": [
+                  "string",
+                  "number"
+                ]
+              },
+              "unit": {
+                "type": "string"
+              },
+              "interpretation": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "comparison_to_prior": {
+          "type": "string",
+          "description": "How this synthesis improves on or differs from earlier routes."
+        },
+        "significance": {
+          "type": "string",
+          "description": "Final verdict: were the goals achieved, broader impact, lessons for future syntheses."
+        }
+      }
+    },
+    "Provenance": {
+      "type": "object",
+      "required": [
+        "source",
+        "mineru",
+        "extraction_models"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "source": {
+          "type": "object",
+          "required": [
+            "doi_or_id"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "doi_or_id": {
+              "type": "string"
+            },
+            "pmcid": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "authors": {
+              "type": "string"
+            },
+            "journal": {
+              "type": "string"
+            },
+            "year": {
+              "type": "integer"
+            },
+            "license": {
+              "type": "string"
+            },
+            "pdf_url": {
+              "type": "string"
+            }
+          }
+        },
+        "mineru": {
+          "type": "object",
+          "required": [
+            "method"
+          ],
+          "additionalProperties": true,
+          "properties": {
+            "method": {
+              "enum": [
+                "MinerU API (cloud)",
+                "MinerU OSS (local)",
+                "Sci-Base (pre-parsed)"
+              ]
+            },
+            "model_version": {
+              "type": "string"
+            },
+            "batch_id": {
+              "type": "string"
+            },
+            "result_zip_url": {
+              "type": "string"
+            },
+            "parsed_at": {
+              "type": "string",
+              "format": "date-time"
+            }
+          }
+        },
+        "extraction_models": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "stage": {
+                "type": "string",
+                "description": "'image_smiles' | 'trace_extraction' | 'rdkit_canonicalization'."
+              },
+              "name": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "validators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "e.g. 'RDKit canonicalize', 'ORD nearest-match', 'manual review'."
+              },
+              "result": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "human_reviewed": {
+          "type": "boolean",
+          "default": false
+        },
+        "review_notes": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,851 @@
+{
+  "trace_id": "TS-PMC12395478",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Precyanobacterin (11)",
+    "smiles": "CC(C)C1=C(Cc2ccc(O)cc2)C(=O)OC1=Cc1ccc(O)cc1",
+    "natural_product_class": "Furanolide",
+    "structural_features": {
+      "key_motifs": [
+        "trisubstituted γ-butyrolactone/furan-2(5H)-one core"
+      ]
+    },
+    "motivation": "Furanolides are an emerging class of natural products with diverse bioactivities, but their low natural abundance and tedious isolation limit in-depth biological investigations. Current chemical syntheses are often linear and inefficient for structural variations. This work aims to develop a cost-effective, chemo-enzymatic platform for furanolide synthesis to enable systematic exploration of their biological activity profiles and SARs.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Muddala",
+        "year": 2017,
+        "doi": "10.1021/acs.jnatprod.7b00340",
+        "key_strategy": "Utilizes tetronic acid as starting material, followed by organocatalytic condensation, acylation, iron-catalyzed addition, aldol condensation, and O-demethylation. 5 linear steps, 54% overall yield for enhygrolide A."
+      },
+      {
+        "lead_author": "Sghairi",
+        "year": 2020,
+        "doi": "10.1016/j.tetlet.2020.151786",
+        "key_strategy": "Starts with an alkyne, followed by terminal deprotonation, CO2 addition, dibromination, domino Sonogashira/oxacyclization, Suzuki coupling, and O-demethylation. Overall yields are lower (e.g., 17% for enhygrolide A)."
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Develop a cost-effective, one-pot enzymatic toolbox for fast generation of hundreds of furanolide structural analogs. Systematically evaluate antimicrobial activities and cytotoxicity, and explore SARs. Identify derivatives with significant cytotoxicity, particularly against lung cancer stem cells, and promising antibacterial activity."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond between α- and β-positions of furanolide core",
+        "named_strategy": "Morita-Baylis-Hillman reaction",
+        "reasoning": "Mimicking the biosynthetic pathway catalyzed by CybF, which involves an O-acylation, a formal Morita-Baylis-Hillman (MBH) reaction, and a final 1,4-hydride shift to build the C,C-bond between the α- and β-positions.",
+        "alternatives_considered": []
+      },
+      {
+        "bond_description": "C-C bond between β- and γ-positions of furanolide core",
+        "named_strategy": "Acyloin condensation",
+        "reasoning": "Mimicking the biosynthetic pathway catalyzed by the TPP-dependent enzyme CybE, which catalyzes the formation of a carboxylic acid by acyloin condensation of ketoisovaleric acid and 4-hydroxyphenylpyruvic acid, establishing the C,C-bond between the β- and γ-positions.",
+        "alternatives_considered": []
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "12",
+        "smiles": "",
+        "role": "R1 precursor (coumaric acid analog)",
+        "comes_from": "biosynthetic building block"
+      },
+      {
+        "fragment_id": "13",
+        "smiles": "",
+        "role": "R2 precursor (ketoisovaleric acid analog)",
+        "comes_from": "biosynthetic building block"
+      },
+      {
+        "fragment_id": "14",
+        "smiles": "",
+        "role": "R3 precursor (4-hydroxyphenylpyruvic acid analog)",
+        "comes_from": "biosynthetic building block"
+      }
+    ],
+    "rationale": "The strategy is based on a chemo-enzymatic approach that mimics the highly efficient biosynthetic pathway of furanolides, involving three key enzymes (At4CL1, CybE, CybF) to assemble the furanolide core from three distinct building blocks. This modular approach allows for systematic variation of substituents at R1, R2, and R3 positions, enabling the generation of a diverse furanolide library."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Furanolides are natural products with promising bioactivities, but their low natural abundance and complex isolation limit research. Existing total syntheses are linear and inefficient for structural variations.",
+        "gap": "A modular and efficient synthetic route is needed to access diverse furanolide analogs for SAR studies and drug discovery.",
+        "decision": "To overcome limitations of traditional synthesis, we will explore a chemo-enzymatic approach inspired by furanolide biosynthesis, which is known to be highly efficient and modular."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Identified the biosynthetic pathway of precyanobacterin (11) involving enzymes CybC, CybE, and CybF as a promising starting point for a chemo-enzymatic platform."
+      },
+      "evidence": {
+        "text_span": "Despite these promising bioactivities reported across structurally diverse furanolide NPs, however, no systematic evaluation of their activity profiles has so far been conducted. Such investigations are primarily hampered by the relatively small number of furanolide structural analogs produced in sufficient amounts by a given natural producer and their tedious isolation from complex fermentation extracts. While chemical synthesis could help solve this problem in principle, current total synthetic approaches have not yet fulfilled this promise. This is a consequence of the often strictly linear synthetic routes that make structural variations of the furanolide substituents laborious. In addition, syntheses often rely on expensive transformations with low overall atom economy, even for the structurally least challenging furanolides. For enhygrolide A (1), for example, two total synthetic approaches currently exist, both of which requiring five linear steps. The first approach published by Muddala et al. (Figure 2A)8 utilizes tetronic acid 5 as the starting material, which is initially condensed with 4- methoxybenzaldehyde using an organocatalytic approach with L-proline and Hantzsch ester as hydride source, installing the R1 residue to give 6. Acylation of 6 with pivaloyl chloride sets the stage for installation of the R2 substituent by iron-catalyzed addition of iBuMgBr to yield 7. Aldol condensation of 7 with benzaldehyde followed by BBr3 -induced O-demethylation delivers 1 in 54% overall yield. The alternative approach by Sghairi et al. starts with alkyne 8 containing the later R2 residue.9 Terminal deprotonation of 8 using EtMgBr followed by addition to CO2 and dibromination of the triple bond delivers alkene 9, which gets fused to phenylacetylene in a domino Sonogashira/ oxacyclization sequence to give 10. Installation of the R1 substituent is achieved by Suzuki coupling to p-methoxy benzyltrifluoroborate, followed by O-demethylation using BBr3 . While this approach was also used to install slight structural variations R2 = Me ; R1 = benzyl, m-hydroxybenzyl), overall yields are even lower, e.g., 17% for 1. In contrast, the biosynthetic assembly of furanolides is very straightforward, although mechanistically complex. Previous studies in our laboratory on the biosynthesis of precyanobacterin (11; Figure 2B), an important member of the furanolide family, have provided in-depth insights into this process.10 The enzymatic machinery efficiently fuses the three biosynthetic building blocks 4-coumaric acid (12a, in turn derived of Ltyrosine by action of the pathway-specific ammonia lyase CybB), ketoisovaleric acid (13a), and 4-hydroxyphenylpyruvic acid (14a). First, the long-chain acyl-CoA synthetase CybC catalyzes the conversion of coumaric acid (12a) to coumaroyl-CoA (15), a process that can also be achieved using the homologous enzyme At4CL1 fromArabidopsis thaliana.11 The thiamine pyrophosphate (TPP)-dependent enzyme CybE then catalyzes the formation of carboxylic acid 16 by acyloin condensation of 13a and 14a, establishing the C,C-bond between the later β. - and γ-positions of the furanolide core. Finally, the furanolide synthase CybF facilitates a reaction cascade involving an Oacylation, a formal Morita−Baylis−Hillman (MBH) reaction, and a final 1,4-hydride shift using 15 and 16 to build the C,Cbond between the later α- and β-positions and ultimately form 11. This highly efficient biosynthetic route to 11, involving only three biocatalysts, seemed attractive for the development of enzymatic syntheses toward structurally diverse furanolides.",
+        "section": "INTRODUCTION"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "To explore the substrate plasticity of the furanolide biosynthetic enzymes, a diverse set of coumaric acid analogs (12a-l) is needed. Most are commercially available, but 12h, 12i, and 12l require synthesis.",
+        "gap": "Need to synthesize 12i, 12h, and 12l efficiently.",
+        "decision": "To synthesize 12i, we will use condensation of 5-chlorovanillin (17) with ylide 18, followed by saponification. 12h will be obtained by O-demethylation of 12i. For 12l, dibromination of 4-hydroxybenzaldehyde (19) to 20, followed by condensation with 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(O)c(Cl)c(C=O)c1",
+          "CCOC(=O)C=C[PH](c1ccccc1)(c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "COc1cc(O)c(Cl)c(C=CC(=O)O)c1"
+        ],
+        "reagents": [
+          "LiOH",
+          "KOH"
+        ],
+        "solvent": "THF/H2O",
+        "time": "6 d"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "12i was successfully synthesized in high yield after saponification."
+      },
+      "evidence": {
+        "text_span": "For substrate analogs 12, compounds 12h, 12i, and 12l were synthesized. The synthesis of 12i was realized by condensation of 5-chlorovanillin (17, Figure 3B) with commercially available ylide 18 (82%) and subsequent saponification in 97% yield.",
+        "page": 3,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "f80f3ff0a6d85ab0edbd0e199fcc5f1e1d30209bef4f75816cb8c03bb22a2192.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "12i has been successfully synthesized. Now, 12h needs to be prepared.",
+        "gap": "Need to O-demethylate 12i to obtain 12h.",
+        "decision": "To obtain 12h, we will perform O-demethylation of 12i using BBr3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1cc(O)c(Cl)c(C=CC(=O)O)c1"
+        ],
+        "product_smiles": [
+          "COc1cc(O)c(Cl)c(CCC(=O)O)c1"
+        ],
+        "reagents": [
+          "BBr3"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C to r.t.",
+        "time": "1 d"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 61,
+        "observation": "12h was successfully afforded in 61% yield."
+      },
+      "evidence": {
+        "text_span": "Subsequent O-demethylation of 12i using BBr3 afforded 12h in 61% yield.",
+        "page": 3,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "f80f3ff0a6d85ab0edbd0e199fcc5f1e1d30209bef4f75816cb8c03bb22a2192.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "12h and 12i are synthesized. Now, 12l needs to be prepared.",
+        "gap": "Need to synthesize 12l from 4-hydroxybenzaldehyde (19).",
+        "decision": "To synthesize 12l, we will first dibrominate 4-hydroxybenzaldehyde (19) using NBS to get 20, then condense 20 with 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "O=Cc1cc(Br)c(O)c(Br)c1"
+        ],
+        "reagents": [
+          "NBS"
+        ],
+        "solvent": "DCM/THF",
+        "temperature": "0 °C to r.t.",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "3,5-dibromo-4-hydroxybenzaldehyde (20) was obtained in 91% yield."
+      },
+      "evidence": {
+        "text_span": "For the synthesis of 12l, dibromination of 4-hydroxybenzaldehyde (19, Figure 3B) with N-bromosuccinimide (NBS) gave 3,5-dibromo-4-hydroxybenzaldehyde (20) in 91% yield.",
+        "page": 3,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "f80f3ff0a6d85ab0edbd0e199fcc5f1e1d30209bef4f75816cb8c03bb22a2192.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "12",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 20 is available.",
+        "gap": "Need to condense 20 with 21 to form 12l.",
+        "decision": "To synthesize 12l, we will condense 20 with 21."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=Cc1cc(Br)c(O)c(Br)c1",
+          "O=C(O)CC(=O)O"
+        ],
+        "product_smiles": [
+          "O=C(O)CC=Cc1cc(Br)c(O)c(Br)c1"
+        ],
+        "reagents": [
+          "C5H11N"
+        ],
+        "solvent": "Py",
+        "temperature": "90 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "12l was produced in 92% yield."
+      },
+      "evidence": {
+        "text_span": "Condensation of 20 with 21 (Figure 3B) produced 12l in 92% yield.",
+        "page": 3,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "f80f3ff0a6d85ab0edbd0e199fcc5f1e1d30209bef4f75816cb8c03bb22a2192.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "13",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "For substrate analogs 13, only 13k required synthesis.",
+        "gap": "Need to synthesize 13k from L-4-hydroxyphenylglycine methyl ester (22).",
+        "decision": "To synthesize 13k, we will use a three-step process involving transamination, bromination, and saponification starting from 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COC(=O)C(N)c1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "COC(=O)C(=O)c1ccc(O)cc1"
+        ],
+        "reagents": [
+          "Glyoxylic acid",
+          "CuSO4.5H2O"
+        ],
+        "solvent": "Py, AcOH, H2O",
+        "time": "18 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 43,
+        "observation": "13k was synthesized through a three-step process in 43% overall yield."
+      },
+      "evidence": {
+        "text_span": "For substrate analogs 13, only 13k required synthesis. Starting from L-4-hydroxyphenylglycine methyl ester (22, Figure 3C), 13k was synthesized through a three-step process involving transamination, bromination, and saponification (43% overall yield).15",
+        "page": 3,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "99c59ad451103a7b9e6b542a8a5534098b2a6d29721203aaa5b74d36d2ee357e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "14",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "For the desired analogs 14, 14c−g needed to be prepared.",
+        "gap": "Need to synthesize 14c,e-g from their corresponding amino acid precursors 24c,e-g.",
+        "decision": "To synthesize 14c,e-g, we will react amino acid precursors 24c,e-g with trifluoroacetic anhydride (TFAA) to form trifluoromethyloxazolones 25c,e-g, followed by hydrolysis with aqueous trifluoroacetic acid (TFA)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "DMAP"
+        ],
+        "solvent": "TFAA",
+        "temperature": "45 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Trifluoromethyloxazolones 25c,e-g were formed."
+      },
+      "evidence": {
+        "text_span": "The corresponding amino acid precursors 24c,e−g (Figure 3D) were reacted with trifluoroacetic anhydride (TFAA) to form trifluoromethyloxazolones 25c,e−g,",
+        "page": 3,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "99c59ad451103a7b9e6b542a8a5534098b2a6d29721203aaa5b74d36d2ee357e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "14",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Trifluoromethyloxazolones 25c,e-g are available.",
+        "gap": "Need to hydrolyze 25c,e-g to yield the desired substrates 14c,e-g.",
+        "decision": "To obtain 14c,e-g, we will hydrolyze 25c,e-g with aqueous trifluoroacetic acid (TFA)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "H2O",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 35,
+        "observation": "Desired substrates 14c,e-g were obtained in 1% to 35% yield."
+      },
+      "evidence": {
+        "text_span": "which were hydrolyzed with aqueous trifluoroacetic acid (TFA) to yield the desired substrates 14c,e−g in 1% to 35% yield.",
+        "page": 3,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "99c59ad451103a7b9e6b542a8a5534098b2a6d29721203aaa5b74d36d2ee357e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "14",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The previous synthesis of 14c yielded only 1%.",
+        "gap": "Need a more efficient synthetic route for 14c and 14d.",
+        "decision": "To improve the yield of 14c and synthesize 14d, we will adopt an alternative synthetic route using the Erlenmeyer synthesis."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "H2O",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "observation": "The yield of 14c was unsatisfactory (1%)."
+      },
+      "evidence": {
+        "text_span": "Since particularly the yield of 14c was unsatisfactory (1%).",
+        "page": 3,
+        "section": "RESULTS AND DISCUSSION"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": "14",
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "The previous synthesis of 14c was inefficient.",
+        "gap": "Need a more efficient synthetic route for 14c and 14d.",
+        "decision": "To improve the yield, we will use the Erlenmeyer synthesis, reacting aldehydes 26c,d, N-acetylglycine (27), and sodium acetate in acetic anhydride at elevated temperature to form oxazolones 28c,d."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(=O)NCC(=O)O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "NaOAc"
+        ],
+        "solvent": "Ac2O",
+        "temperature": "140 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "observation": "Oxazolones 28c,d were formed in 73%/80% yield."
+      },
+      "evidence": {
+        "text_span": "Using the Erlenmeyer synthesis, the corresponding aldehydes 26c,d (Figure 3D), N-acetylglycine (27), and sodium acetate were reacted in acetic anhydride at elevated temperature to form oxazolones 28c,d.",
+        "page": 3,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "99c59ad451103a7b9e6b542a8a5534098b2a6d29721203aaa5b74d36d2ee357e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": "14",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Oxazolones 28c,d are available.",
+        "gap": "Need to convert 28c,d to 14c and 14d.",
+        "decision": "To obtain 14c and 14d, we will treat 28c,d with an aqueous HCl solution."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [],
+        "solvent": "3n HCl(aq)",
+        "temperature": "100 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "14c and 14d were provided in yields of 73% and 52%, respectively."
+      },
+      "evidence": {
+        "text_span": "Treatment of 28c,d with an aqueous HCl solution provided 14c and 14d in yields of 73% and 52%, respectively.",
+        "page": 3,
+        "section": "RESULTS AND DISCUSSION",
+        "image_refs": [
+          "99c59ad451103a7b9e6b542a8a5534098b2a6d29721203aaa5b74d36d2ee357e.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A diverse set of 31 substrate analogs (12, 13, 14) are now available.",
+        "gap": "Need to evaluate the utility of these substrates for enzymatic conversion into furanolide analogs and determine individual conversion efficiency.",
+        "decision": "To test substrate plasticity, we will conduct enzymatic assays at an analytical scale (500 μM substrate) using CybE, CybF, and At4CL1, varying one substrate at a time while keeping others constant (13a and 14a for 12 variations, 12a and 14a for 13 variations, 12a and 13a for 14 variations). Product formation and substrate consumption will be analyzed by HRLC-MS/MS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)C=Cc1ccc(O)cc1",
+          "CC(=O)C(=O)O",
+          "O=CCC(=O)Cc1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "CC(C)C1=C(Cc2ccc(O)cc2)OC(=O)C1Cc1ccc(O)cc1"
+        ],
+        "reagents": [
+          "MgCl2",
+          "ATP",
+          "CoA",
+          "TPP"
+        ],
+        "catalyst": "At4CL1, CybE, CybF",
+        "solvent": "100 mM Tris-HCl buffer (pH 7.8)",
+        "temperature": "25 °C",
+        "time": "overnight"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "HRLC-MS/MS analysis revealed furanolide formation for all 12 substrate analogs 12 (22.7% to 99.3% conversion), 13a-e (14.9% to 94.3% conversion), and 14a-g (5.3% to 93.2% conversion). This demonstrated high tolerance of CybF to R1 alterations, promiscuity of At4CL1, and flexibility of the system towards aliphatic R2 substituents. 12 suitable substrates 12, five substrates 13, and seven substrates 14 were identified."
+      },
+      "evidence": {
+        "text_span": "With the substrate analogs 12a−l, 13a−k, and 14a−h in hand, we first aimed to evaluate their utility for enzymatic conversion into the corresponding furanolide analogs and to determine individual conversion efficiency. The enzymatic assays for this analysis were conducted at an analytical scale of 500 μM substrate. The enzymatic reaction setup contained the enzymes CybE (5 μM) and CybF (6.5 μM) catalyzing all bondforming reactions. At4CL1 (5 μM) , a promiscuous homolog of CybB, was employed for activation of 12a−l into their required CoA-thioesters 15a−l (cf. Figure 2). The remaining additives were MgCl2 (5 mM), ATP (5 mM), coenzyme A (1 mM), and TPP (1 mM) in 100 mM Tris-HCl buffer (pH 7.8) . All transformations were conducted in 100 μL scale at 25 °C overnight with subsequent detection of product formation and substrate consumption by high-resolution liquid chromatography-tandem mass spectrometry (HRLC-MS/MS). In the initial set of experiments, only substrate 12 was varied, while 13a and 14a were used across all assays. HRLC-MS/MS analysis revealed the formation of products with characteristic furanolide absorption at 330−360 nm for all 12 substrate analogs 12. The detected high-resolution molecular masses of all products matched those of the desired furanolides (Figure S2), with conversion rates ranging from acceptable 22.7% to excellent 99.3% (Figure 4). This clearly demonstrated that CybF is highly tolerant to alterations of the aromatic substitution pattern of substrates 12. At the same time, these results also evidence the promiscuity of At4CL1, which successfully catalyzed thioester formation for all substrates 12. The same enzymatic conversion protocol was applied to test substrate analogs 13 (using 12a and 14a as further building blocks). HRLC-MS/MS analyses of the assays using 13a−e again showed conversion to the anticipated furanolide analogs, with yields ranging from 14.9% to 94.3% (Figure 4). However, for analogs 13g, i, k no product formation was observed, and for 13f,h. ,j only minute product amounts were visible by HRMS analysis when extracting the expected molecular ion peaks (Figure S3), with conversion rates thus approaching 0% . These results show that the enzymatic system exhibits substantial flexibility, yet only toward aliphatic substituents at the furanolide β position, successfully accommodating methyl (13b), ethyl (13c), isopropyl (13a), sec-butyl (rac-13d), and iso-butyl (13e) groups (Figure S4). Analysis of the assays with individual variation of substrate analogs 14 (using 12a and 13a as further building blocks) showed that 14a−g with various modifications at the benzene ring were accepted to generate the corresponding furanolide products with conversion rates ranging from 5.3% to 93.2% . Only the conversion rate with substrate 14h was very low (approximately 1.2%) ), proving that the indole group represents a challenge for CybE and CybF, likely due to the significantly increased size and rigidity when compared to substituted benzenes. Overall, these preliminary substrate-screening experiments to test the fidelity of CybE and CybF identified 12 suitable substrates 12, five substrates 13, and seven substrates 14 from the initial substrate portfolio. This opens up new possibilities for expanding the structural and functional space of furanolides through combinatorial biocatalytic approaches.",
+        "page": 4,
+        "section": "Evaluating CybE and CybF Substrate Plasticity In Vitro",
+        "image_refs": [
+          "a5f840906afab00c854d2be3597bcc62ca4b588cb14b92a6d1f7fcdcac87a730.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Initial substrate screening showed that some substrate analogs for 13 and 14 did not yield products or had very low conversion rates.",
+        "gap": "Need to identify which specific substrate analogs are not compatible with the enzymatic system.",
+        "decision": "To identify incompatible substrates, we will analyze the results for 13g,i,k and 13f,h,j, and 14h."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)C=Cc1ccc(O)cc1",
+          "",
+          "O=CCC(=O)Cc1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MgCl2",
+          "ATP",
+          "CoA",
+          "TPP"
+        ],
+        "catalyst": "At4CL1, CybE, CybF",
+        "solvent": "100 mM Tris-HCl buffer (pH 7.8)",
+        "temperature": "25 °C",
+        "time": "overnight"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "For analogs 13g, i, k no product formation was observed, and for 13f,h,j only minute product amounts were visible by HRMS analysis, with conversion rates thus approaching 0%. The conversion rate with substrate 14h was very low (approximately 1.2%)."
+      },
+      "evidence": {
+        "text_span": "However, for analogs 13g, i, k no product formation was observed, and for 13f,h. ,j only minute product amounts were visible by HRMS analysis when extracting the expected molecular ion peaks (Figure S3), with conversion rates thus approaching 0% . These results show that the enzymatic system exhibits substantial flexibility, yet only toward aliphatic substituents at the furanolide β position, successfully accommodating methyl (13b), ethyl (13c), isopropyl (13a), sec-butyl (rac-13d), and iso-butyl (13e) groups (Figure S4). Analysis of the assays with individual variation of substrate analogs 14 (using 12a and 13a as further building blocks) showed that 14a−g with various modifications at the benzene ring were accepted to generate the corresponding furanolide products with conversion rates ranging from 5.3% to 93.2% . Only the conversion rate with substrate 14h was very low (approximately 1.2%) ), proving that the indole group represents a challenge for CybE and CybF, likely due to the significantly increased size and rigidity when compared to substituted benzenes.",
+        "page": 4,
+        "section": "Evaluating CybE and CybF Substrate Plasticity In Vitro"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The enzymatic system shows catalytic flexibility towards a subset of substrates 12, 13, and 14. This opens possibilities for combinatorial synthesis.",
+        "gap": "Need to expand the structural diversity of furanolides by combining the feasible substrates.",
+        "decision": "To expand diversity, we will employ a combinatorial enzymatic synthetic approach using all possible combinations of the 12 suitable substrates 12, five substrates 13 (13a-e), and seven substrates 14 (14a-g). Reactions will be conducted as before and analyzed by HRLC-MS/MS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MgCl2",
+          "ATP",
+          "CoA",
+          "TPP"
+        ],
+        "catalyst": "At4CL1, CybE, CybF",
+        "solvent": "100 mM Tris-HCl buffer (pH 7.8)",
+        "temperature": "25 °C",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Furanolide formation was detected in 385 out of 420 combinatorial assays (91.7% overall hit rate). This approach yielded hundreds of new-to-nature analogs and known furanolide NPs. Some combinations (e.g., 13b/14f, 13b/14g, 12d/14d) did not yield furanolides, indicating specific incompatibilities."
+      },
+      "evidence": {
+        "text_span": "Given the above-established catalytic flexibility of CybE and CybF toward the tested substrates, we sought to further expand the structural diversity of furanolides and test construction of a comprehensive library of furanolide derivatives. To achieve this, a combinatorial enzymatic synthetic approach was employed, using all possible combinations of substrates 12a−l, 13a−e, and 14a−g that have individually proven feasible during the previous experiments (14h was not included due to the very low conversion rate). Overall, this setup could theoretically yield 12 × 5 × 7 , totaling 420 different furanolide derivatives (Figure 5A). All enzymatic reactions were conducted as described above and again analyzed by HRLC-MS/MS. To our delight, furanolide formation was detected in 385 out of the 420 combinatorial assays (Figure 5B), attesting to an excellent 91.7% overall hit rate (Figures S5-38). Aside from hundreds of new-to-nature analogs, this approach also covered the enzymatic total synthesis of previously discovered furanolide NPs, including enhygrolides A/B,4 deoxyenhygrolides A/B18 and C/D2 , nostoclides N1 and N2,19 nostoclides I and II,5 and anhydrocyanobacterin.20 Remarkably, the corresponding derivatives were detected for all 35 combinatorial assays involving 12a with all tested substrates 13a−e (altering substituent R2 ) and 14a−g (altering R3 ). The same catalytic proficiency was detected for all assays with 12b, 12g, and 12k, consistent with the previously observed high catalytic efficiency of over 70% toward these substrate analogs of 12 (cf. Figure 4). However, some combinations − such as 13b/14f, 13b/14g with various substrates 12 − did not yield furanolides. A closer examination revealed that even in positive combined assays involving 13b/14f or 13b/14g , product formation was rather low, suggesting that CybE struggles to assemble these specific substrate pairs. Similarly, assays involving 12d and 14d in combination with all substrates 13 failed to produce furanolides, highlighting that the combination of 12d and 14d is not accepted by CybF. Furthermore, in the assays of 12d/13b and 12d/13c, furanolides were only generated when paired with 14a−c, representing the most efficient substrates 14 in the initial substrate screening assays (cf. Figure 4). Compound 12h, which differs from 12d by a single chlorine substitution only, exhibited similar behavior but also showed differences, such as product formation in assays with 13a/14d and 13e/14d. Furthermore, no products were observed when combining 12h/13b with any substrate 14. Interestingly, the 12h/13c/14a combination did not produce any product, but when natural substrate 14a was replaced with 14b or 14c, products were observed. Taken together, this work established a furanolide biosynthetic enzyme−substrate activity matrix with the successful assembly of a compound library with 385 structurally diverse furanolide derivatives, providing a valuable resource for future one-pot enzymatic synthesis of these compounds.",
+        "page": 4,
+        "section": "Combinatorial Enzymatic Synthesis Expanding Furanolide Structural Diversity",
+        "image_refs": [
+          "fe16aea8788734e98a6e09488504895e01e6084746bcbc955554720b854ed26d.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The combinatorial enzymatic synthesis was successful, but CoA is expensive and required in at least equimolar amounts for high yields.",
+        "gap": "Need to reduce the cost associated with CoA for larger-scale enzymatic furanolide synthesis.",
+        "decision": "To optimize cost-efficiency, we will investigate N-acetyl cysteamine (SNAC) as a potential cost-effective substitute for CoA."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)C=Cc1ccc(O)cc1",
+          "CC(=O)C(=O)O",
+          "O=CCC(=O)Cc1ccc(O)cc1"
+        ],
+        "product_smiles": [
+          "CC(C)C1=C(Cc2ccc(O)cc2)OC(=O)C1Cc1ccc(O)cc1"
+        ],
+        "reagents": [
+          "MgCl2",
+          "ATP",
+          "CoA",
+          "TPP"
+        ],
+        "catalyst": "At4CL1, CybE, CybF",
+        "solvent": "100 mM Tris-HCl buffer (pH 7.8)",
+        "temperature": "25 °C",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "scale_limited",
+        "observation": "CoA released from substrates 15 during biocatalytic furanolide assembly is not efficiently reused by CybB/At4CL1 during the reaction. CoA thus must be present in at least equimolar amounts to ensure high yields, an observation detrimental to cost-efficient, larger-scale enzymatic furanolide synthesis."
+      },
+      "evidence": {
+        "text_span": "Before embarking on the chemo-enzymatic synthesis of natural and unnatural furanolide derivatives at a preparative scale enabling bioactivity profiling, we desired to reduce the high costs associated with the use of CoA, which can exceed 500€ per 0.1 mmol. CoA plays a pivotal role in enzymatic furanolide assembly, as it is required for activation of substrates 12 to 15 by CybB/At4CL1 to enable the initial esterification reaction catalyzed by CybF (cf. Figure 2B). To determine how CoA concentration influences product formation, we tested varying concentrations of CoA—10, 50, 250, 500, and 1000 μM—using a standard substrate concentration of 500 μM of each substrate 12a, 13a, and 14a. The highest conversion rate was observed at 1000 μM CoA (defined as 100% conversion), corresponding to two equivalents CoA with respect to the substrates. At 500 μM, the conversion rate remained high at relative 93% , but gradually decreased at lower concentrations, with 66% conversion at 250 μM. , 12.4% at 50 μM, and 6.3% at 10 μM (Figure S39). These findings indicate that CoA released from substrates 15 during biocatalytic furanolide assembly is not efficiently reused by CybB/At4CL1 during the reaction. CoA thus must be present in at least equimolar amounts to ensure high yields, an observation detrimental to cost-efficient, larger-scale enzymatic furanolide synthesis.",
+        "page": 5,
+        "section": "Optimization of Cost-Efficiency of Enzymatic Furanolide Assembly"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 15,
+      "thought": {
+        "background": "CoA is too expensive for large-scale synthesis. SNAC is a known cost-effective substitute.",
+        "gap": "Need to test if SNAC-activated coumaric acid analogs can serve as a viable substrate for CybF.",
+        "decision": "To investigate SNAC applicability, we will synthesize a small set of SNAC-thioesters (30a-c and 30k) from coumaric acids (12a-c and 12k) using DIC and DMAP in the presence of SNAC (29). These will then be tested in enzyme assays with 13a and 14a, omitting At4CL1 and ATP."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CSCCNC(C)=O"
+        ],
+        "product_smiles": [
+          "CC(=O)NCCCSc1ccc(O)cc1",
+          "CC(=O)NCCCSc1ccccc1",
+          "COc1ccc(SCCCNC(C)=O)cc1",
+          "CC(=O)NCCCSc1ccc2c(c1)OCO2"
+        ],
+        "reagents": [
+          "DIC",
+          "DMAP"
+        ],
+        "solvent": "DCM",
+        "temperature": "0 °C to r.t.",
+        "time": "1 d"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "Desired thioesters 30a-c and 30k were delivered with yields ranging from 17% to 83%. Reactions with 30a-c yielded expected products with 92.5%, 74.8%, and 24.6% yields, comparable to CoA-substrates. However, 30k exhibited poor solubility and led to only trace product."
+      },
+      "evidence": {
+        "text_span": "N-Acetyl cysteamine (29, SNAC) is frequently used as a costeffective substitute for CoA when studying biosynthetic assembly of NPs.21 To investigate whether SNAC-activated coumaric acid analogs will serve as a viable substrate for CybF, we synthesized a small set of SNAC-thioesters for initial testing. The coumaric acids 12a−c and the highly substituted 12k were reacted overnight with N,N-diisopropylcarbodiimide (DIC) and 4-dimethylaminopyridine (DMAP) in the presence of 29, delivering the desired thioesters 30a−c and 30k with yields ranging from 17% to 83% (Figure 3E). We then tested the applicability of 30a−c and 30k in enzyme assays together with substrates 13a and 14a, thereby not only eliminating the need for use of CoA, but also allowing to omit the thioester-forming enzyme At4CL1 and the reaction fuel ATP from the previously established enzymatic reaction system. Reactions with substrates 30a−c yielded the expected products with yields of 92.5% , 74.8% , and 24.6% , respectively, which were hence comparable to the yields of the respective CoA-substrates formed in vitro using At4CL1 (Figure S40). However, 30k exhibited poor solubility in the enzyme reaction buffer system. Even after addition of 50% (v/v) DMSO, precipitation of 30k occurred, leading to only trace or undetectable amounts of product.",
+        "page": 5,
+        "section": "Optimization of Cost-Efficiency of Enzymatic Furanolide Assembly",
+        "image_refs": [
+          "4466491e1e6cb4151e44c10a2819353299f39cb4b454d35b02b9634c772c0698.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Directly synthesized SNAC-thioester 30k had solubility issues. Previous studies showed FACLs can convert carboxylic acids to acyl-SNAC analogs.",
+        "gap": "Need to evaluate if At4CL1 can catalyze coumaric acid activation as acyl-SNAC derivatives in situ, potentially solving solubility issues.",
+        "decision": "To probe general applicability and address solubility, we will replace CoA with SNAC in our standard assay system containing natural substrates 12a, 13a, and 14a, and include At4CL1. We will then test all remaining substrates 12b-l."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)C=Cc1ccc(O)cc1",
+          "CC(=O)C(=O)O",
+          "O=CCC(=O)Cc1ccc(O)cc1",
+          "CSCCNC(C)=O"
+        ],
+        "product_smiles": [
+          "CC(C)C1=C(Cc2ccc(O)cc2)OC(=O)C1Cc1ccc(O)cc1"
+        ],
+        "reagents": [
+          "MgCl2",
+          "ATP",
+          "TPP"
+        ],
+        "catalyst": "At4CL1, CybE, CybF",
+        "solvent": "100 mM Tris-HCl buffer (pH 7.8)",
+        "temperature": "25 °C",
+        "time": "16 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91.2,
+        "observation": "The reaction yielded the expected furanolide product in high yield (91.2%). All remaining substrates 12b-l also formed corresponding products. Enzymatic generation of activated SNAC thioesters in situ solved the solubility issues observed for 30k. This confirms SNAC thioesters as a functional substitute for CoA thioesters."
+      },
+      "evidence": {
+        "text_span": "Previous studies had demonstrated that fatty acyl-CoA ligases (FACLs) can catalyze the conversion of carboxylic acids into acyl-SNAC analogs,22 prompting us to evaluate whether At4CL1 is capable of coumaric acid activation as acyl-SNAC derivatives. To explore this, we replaced CoA with SNAC in our standard assay system containing the natural substrates 12a, 13a, and 14a. The reaction indeed yielded the expected furanolide product in high yield of 91.2% (Figure S41), showcasing that At4CL1 can effectively catalyze the conversion of coumaric acid analogs into acyl-SNAC intermediates, thus offering a costeffective pathway for the biocatalytic synthesis of furanolides. To probe the general applicability of this approach, all remaining substrates 12b−l were also tested and all corresponding products were indeed formed as anticipated (Figure S41). Importantly, the enzymatic generation of activated SNAC thioesters in situ also solved the solubility issues observed for 30k (Figure S41). These findings underscore the potential of SNAC thioesters as a functional substitute for CoA thioesters in the cost-efficient biocatalytic synthesis of furanolides, broadening the utility of At4CL1.",
+        "page": 5,
+        "section": "Optimization of Cost-Efficiency of Enzymatic Furanolide Assembly"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "We have established the catalytic flexibility of CybEF and an improved biocatalytic setup using SNAC.",
+        "gap": "Need to preparatively synthesize a focused series of representative furanolide derivatives for bioactivity profiling.",
+        "decision": "To synthesize a focused furanolide library (11, 31-46), we will perform large-scale (40 mL) in vitro reactions using the optimized SNAC-based system with ten substrates 12a-h, 12j, 12k combined with 13a and 14a, and additional variations using 13c, rac-13d, 14b, and 14c, as well as arbitrary combinations."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=C(O)C=Cc1ccc(O)cc1",
+          "CC(=O)C(=O)O",
+          "O=CCC(=O)Cc1ccc(O)cc1",
+          "CSCCNC(C)=O"
+        ],
+        "product_smiles": [
+          "CC(C)C(Cc1ccc(O)cc1)=C1C(=O)OC1=O"
+        ],
+        "reagents": [
+          "MgCl2",
+          "SNAC",
+          "ATP",
+          "TPP"
+        ],
+        "catalyst": "At4CL1, CybE, CybF",
+        "solvent": "100 mM Tris-HCl buffer (pH 7.8)",
+        "temperature": "25 °C",
+        "time": "16 h",
+        "scale": "40 mL reaction volume"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85.5,
+        "observation": "Natural precyanobacterin (11) was synthesized in 85.5% yield. Derivatives 31-39 were obtained in 18.3-89.7% yields. Derivatives 40 (31.1%), rac-41 (57.1%), 42 (27.3%), 43 (57.1%), rac-44 (59.8%), rac-45 (39.8%), and rac-46 (69.7%) were also successfully synthesized. A total of 17 representative furanolide derivatives were obtained."
+      },
+      "evidence": {
+        "text_span": "Leveraging our generated understanding of CybEF enzyme catalytic flexibility and the improved biocatalytic setup employing SNAC, we set out to preparatively synthesize a focused series of representative furanolide derivatives (11, 31−46) (Figure 6). We initiated the synthesis with ten substrates 12a−h, 12j, 12k combined with 13a and 14a, achieving excellent 85.5% yields for natural precyanobacterin (11) and acceptable to excellent yields (18.3−89.7%) for all other derivatives 31−39. Subsequent additional variations using 13c and rac-13d together with 12a/ 14a afforded derivatives 40 (31.1%) and rac-41 (57.1%) , while alterations using 14b or 14c together with 12a/13a led to compounds 42 (27.3%) and 43 (57.1%) . We furthermore added three arbitrarily chosen substrate combinations with multiple changes, namely 12b/rac-13d/14a, 12c/rac-13d/14a, and 12k/ rac-13d/14a, giving rise to derivatives rac-44 (59.8%) , rac-45 (39.8%) , and rac-46 (69.7%) , respectively.",
+        "page": 5,
+        "section": "Biocatalytic Total Synthesis of a Focused Furanolide Library and Its Biological Activity Evaluation",
+        "image_refs": [
+          "28af8a6d5deb129a06652c4ce247353299f39cb4b454d35b02b9634c772c0698.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "A focused furanolide library has been synthesized.",
+        "gap": "Need to evaluate the biological activity of these derivatives.",
+        "decision": "To assess bioactivity, we will conduct cytotoxicity screening using the human lung adenocarcinoma cell line A549 via MTT cell viability assay. We will also evaluate inhibitory effects on lung cancer stem cells (lung CSCs) using immunofluorescence imaging for CD133 and F-actin. Additionally, we will test antimicrobial activity against a panel of Gram-positive and Gram-negative bacteria."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "All derivatives exhibited inhibitory activity against A549 cells (IC50 values 5.7-112.1 μM). Derivatives 39 and 43 showed potent cytotoxicity (IC50 10.3 μM and 5.7 μM, respectively) and strong inhibitory effects on lung CSCs. SAR analysis revealed that chlorination and O-methylation enhanced cytotoxicity. Several derivatives efficiently inhibited Gram-positive bacteria, with rac-44 showing broad-spectrum activity and 36, rac-45/rac-46 showing potent, species-specific activities. No pronounced antifungal or Gram-negative activity was found."
+      },
+      "evidence": {
+        "text_span": "Given the reported cytotoxicity of furanolides against tumor cells,5 we conducted a cytotoxicity screening of the synthesized furanolide derivatives using the human lung adenocarcinoma cell line A549. In preliminary assays, we employed the MTT cell viability assay to assess the antiproliferative effects of furanolides across a range of concentrations. All derivatives exhibited inhibitory activity against A549 cells, with IC50 values spanning from 5.7 μM to 112.1 μM (Table S1). Notably, derivatives 39 and 43 demonstrated potent cytotoxicity, with IC50 values of 10.3 μM and 5.7 μM; respectively. Analysis of structure−activity relationships (SARs) revealed significant trends. Hydroxylation of the aromatic ring at the R1 position generally reduced potency. For instance, compound 31, which features an unsubstituted benzene ring at R1 , had an IC50 of 23.52 μM, while its hydroxylated counterparts, derivatives 11 (IC50 28.28 μM, with one hydroxy group) and 33 (IC50 112.1 μM, with two hydroxy groups), showed progressively diminished activity. Conversely, chlorination of the aromatic ring at the R1 position significantly enhanced cytotoxicity. For example, derivative 39 (IC50 10.34 μM) , which contains a chlorine substitution, was nearly four times more potent than derivative 38 (IC50 38.75 μM) , which lacks this modification. Methylation of the phenolic hydroxy group at R3 resulted in a dramatic increase in cytotoxicity. For example, derivative 43 (IC50 5.734 IC50 μM) ), which carries a methyl group within R3 , exhibited a 5-fold increase in cytotoxicity compared to its parent compound 11 (IC50 28.28 μM) . Additionally, modifications such as chlorina-50 tion23 and oxygen methylation, which are frequently observed in natural products, are known to improve both stability and bioavailability.24 This trend aligns with findings for other bioactive compounds; for instance, the oxygen-methylated resveratrol analog, pterostilbene, displayed a 1.9-fold increase in cytotoxicity against human cervical carcinoma (HeLa) cells compared to its unmodified counterpart.25 These results collectively underscore that chlorination and oxygen methyl-ation are promising strategies for enhancing the biological activity of furanolide derivatives. In addition, we also selected two highly active furanolide derivatives, 39 and 43, along with two less active compounds, 33 and 37, to evaluate their inhibitory effects on lung cancer stem cells (lung CSCs). The CSC population in A549 cells was identified using the CD133 surface marker labeled with green fluorescence for clear visualization. Through immunofluorescence imaging, we observed the morphology and density of A549 cells by staining their F-actin cytoskeleton. Compared with the DMSO control group, treatment with compounds 39 and 43 at a concentration of 10 μM resulted in a notable reduction in the number of lung cancer cells (Figure 7). Notably, both compounds exhibited even stronger inhibitory effects on A549 cells than the clinical drug cisplatin (IC50 33 μM).26 In contrast, no significant reduction was observed in the groups treated with compounds 33 and 37 at the same concentration. Further analysis revealed that CD133, a marker of lung CSCs, showed differential expression across treatments. In the DMSO control group, the rate of CD133+ cells within the A549 cell population was 38% . However, in the treatment groups with compounds 39 and 43, the percentage of CD133+ cells were significantly reduced, indicating that these compounds effectively targeted lung CSCs. Conversely, treatment with compounds 33 and 37 showed no significant impact on the viability of CD133+ cells. This shows that furanolide derivatives 39 and 43 possess potent anticancer stem cell activity, highlighting their potential in targeting aggressive cancer cell populations that contribute to tumor progression and resistance. Since some natural furanolide analogs display antimicrobial activity, we additionally tested the representative set of upscaled derivatives (11, 31−46) in an antimicrobial testing panel. We did not find pronounced antifungal activity (Candida albicans) nor activity against Gram-negativeKlebsiella pneumoniae and Escherichia coli, including an efflux-deficient strain (E. coli ΔtolC) with minimum inhibitory concentrations (MICs) > 64 μg/mL. Intriguingly, several derivatives efficiently inhibited the growth of often multidrug resistant (MDR) Gram-positive bacteria that are a major concern in the clinics (Table 1). Most of the tested furanolide derivatives showed moderate potency with MICs ≥ 16 μg/mL againstS. aureus,Enterococcus spp. andS. pneumoniae. Importantly, also the two highly cytotoxic derivatives (39 and 43) were among the compounds with only moderate activity against the panel of tested bacteria, hinting toward specific mechanisms of action in eukaryotic versus prokaryotic cells. Among the derivatives containing a hydroxy group at R3 and iso-propyl at R2 (11, 31−39), derivative 36 with a monochlorinated and hydroxylated phenyl ring R1 was the most active derivative with particularly promising activity against MDRE. faecium andS. pneumoniae (MIC of 8 μg/mL,). Overall, R2 appeared to be the main driver for antibacterial activity with sec-butyl as most favorable residue (incorporated in racemic 41, 44−46), while fine-tuning of activity might be achieved through variations in R1 and R3 . While dihydroxylated rac-41 displayed MICs ≥ 16 μg/mL across all tested organisms, compounds rac-44−46 that do not contain a free phenol at R1 showed significantly improved antibacterial activity, which is in part species-specific. Overall, we found rac-44 as the most promising antibacterial hit with broad-spectrum activity in the Grampositive panel, approaching activity levels of vancomycin used as positive control in our screening.",
+        "page": 6,
+        "section": "Biocatalytic Total Synthesis of a Focused Furanolide Library and Its Biological Activity Evaluation",
+        "image_refs": [
+          "e2daab1f9f14ba500722ec9629edff620f4b0beb67b280f44702db063.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "HRLC-MS/MS",
+      "MTT cell viability assay",
+      "immunofluorescence imaging",
+      "MIC assays"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for the entire synthesis is not explicitly stated, but individual step yields and yields for the final library compounds are provided."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "The total number of steps for the entire chemo-enzymatic platform is not explicitly stated, but the biosynthetic route involves three enzymes."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Two explicit failed attempts were identified and revised."
+      }
+    },
+    "significance": "The developed chemo-enzymatic platform provides a streamlined, cost-effective method for synthesizing a diverse library of furanolide derivatives. This approach enabled the discovery of potent cytotoxic agents against lung cancer cells and cancer stem cells (compounds 39 and 43), and promising antibacterial agents against Gram-positive bacteria (rac-44, 36, rac-45/rac-46). The study also provides valuable SAR insights and a rich HR-LCMS/MS dataset for future furanolide identification."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.5c08354",
+      "pmcid": "PMC12395478",
+      "title": "A Chemo-Enzymatic Platform for Furanolide Synthesis and Functional Exploration.",
+      "authors": "Ji X, Einsiedler M, D'Agostino PM, Herrmann J, Müller R, Gulder TAM.",
+      "journal": "J Am Chem Soc",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12395478?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/cb615ca1-b223-4847-ad99-a950daadd09b.zip",
+      "parsed_at": "2026-05-11T06:27:00.458497+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 59,
+    "parseable": 39,
+    "canonicalized": 17,
+    "invalid": 20,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C(O)C=CR",
+      "O=C(O)CR",
+      "O=C(O)CC(=O)CR",
+      "OC(=O)C(N)CR",
+      "O=C1OC(C(F)(F)F)=NC1CR",
+      "O=C1OC(C(F)(F)F)=NC1CR",
+      "CC(=O)NC(C(=O)O)CR",
+      "OC(=O)C(N)CR",
+      "CC(=O)NC(C(=O)O)CR",
+      "O=CR"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

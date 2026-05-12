@@ -1,0 +1,315 @@
+{
+  "trace_id": "TS-PMC12814184",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(+)-Cuspareine",
+    "smiles": "COc1ccc(OC)c(CCC2CCc3ccccc3N2C)c1",
+    "natural_product_class": "alkaloid",
+    "structural_features": {
+      "molecular_weight": 355.45,
+      "stereocenters": 1,
+      "ring_systems": "quinoline, benzene",
+      "key_motifs": [
+        "tetrahydroquinoline",
+        "dimethoxybenzene"
+      ]
+    },
+    "motivation": "Cuspareine is a Hancock alkaloid used to treat dysentery and fever. The synthesis demonstrates excellent green chemistry metrics and allows for the first time the synthesis of deuterium-labeled cuspareine[D].",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "Synthesis of cytotoxic and antiviral (±) cuspareine and its deuterated analogue."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "N-C bond formation (methylation)",
+        "named_strategy": "N-methylation",
+        "reasoning": "Final step to introduce the N-methyl group of cuspareine from the NH-tetrahydroquinoline intermediate."
+      },
+      {
+        "bond_description": "C=C bond hydrogenation in quinoline ring",
+        "named_strategy": "Selective Heteroarene Hydrogenation",
+        "reasoning": "Key step to selectively hydrogenate the quinoline ring to 1,2,3,4-tetrahydroquinoline while leaving the aromatic carbocycle intact, using the developed RuP@SILP catalyst."
+      },
+      {
+        "bond_description": "C-C bond formation between quinoline and dimethoxybenzene",
+        "named_strategy": "Alkylation",
+        "reasoning": "Connects the 2-methyl quinoline with 4-(bromomethyl)-1,2-dimethoxybenzene to form the precursor for hydrogenation."
+      }
+    ],
+    "rationale": "The synthesis of cuspareine was chosen to demonstrate the synthetic potential of the Ru50P50@SILP catalyst for the selective partial hydrogenation of N-containing heterocycles. The strategy involves a convergent approach, first constructing the quinoline-dimethoxybenzene precursor, followed by the crucial selective hydrogenation, and finally N-methylation. This allows for the introduction of deuterium labeling at the hydrogenation step."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The paper describes the synthesis of the SILP support and the Ru_xP_100-x@SILP catalysts, and their characterization. The optimal catalyst Ru50P50@SILP was identified for selective hydrogenation of quinoline.",
+        "gap": "Need to synthesize the precursor 17 for cuspareine.",
+        "decision": "To synthesize 17, chose coupling of 2-methyl quinoline with 4-(bromomethyl)-1,2-dimethoxybenzene using n-BuLi, expecting to form the C-C bond."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cc1ccnc2ccccc12",
+          "COc1ccc(OC)c(CBr)c1"
+        ],
+        "product_smiles": [
+          "COc1ccc(OC)c(CCC2=NCCc3ccccc32)c1"
+        ],
+        "reagents": [
+          "n-BuLi"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C -> RT",
+        "time": "19 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "observation": "Substrate 17 was prepared by coupling of 2-methyl quinoline with 4-(bromomethyl)-1,2-dimethoxybenzene, purified in 91% yield by flash column chromatography."
+      },
+      "evidence": {
+        "text_span": "The substrate 17 was prepared by coupling of 2-methyl quinoline with 4-(bromomethyl)-1,2-dimethoxybenzene, purified in 91% yield by flash column chromatography, and used for selective hydrogenation to give 17a (>99%).",
+        "section": "Synthetic Applications",
+        "image_refs": [
+          "49a59ece89dc4c3e8228477e5029e266c47946a8d24a349758ee76dbfc4c1c9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Precursor 17 is synthesized. The Ru50P50@SILP catalyst has been shown to be highly selective for the partial hydrogenation of quinolines.",
+        "gap": "Need to selectively hydrogenate the quinoline ring of 17 to form 17a.",
+        "decision": "To form 17a, chose selective hydrogenation of 17 using Ru50P50@SILP under H2 (50 bar) in heptane at 90 °C for 1 h, expecting high yield and selectivity to the tetrahydroquinoline."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(OC)c(CCC2=NCCc3ccccc32)c1"
+        ],
+        "product_smiles": [
+          "COc1ccc(OC)c(CCC2CCc3ccccc3N2)c1"
+        ],
+        "catalyst": "Ru50P50@SILP",
+        "solvent": "Heptane",
+        "temperature": "90 °C",
+        "time": "1 h",
+        "atmosphere": "H2 (50 bar)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Selective hydrogenation of 17 to 17a was achieved with >99% yield."
+      },
+      "evidence": {
+        "text_span": "The substrate 17 was prepared by coupling of 2-methyl quinoline with 4-(bromomethyl)-1,2-dimethoxybenzene, purified in 91% yield by flash column chromatography, and used for selective hydrogenation to give 17a (>99%).",
+        "section": "Synthetic Applications",
+        "image_refs": [
+          "49a59ece89dc4c3e8228477e5029e266c47946a8d24a349758ee76dbfc4c1c9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The intermediate 17a (tetrahydroquinoline) is formed.",
+        "gap": "Need to introduce the N-methyl group to complete the synthesis of (±) cuspareine (17a').",
+        "decision": "To synthesize 17a', chose methylation of the NH group of 17a using MeI and K2CO3 in THF at 50 °C for 48 h."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(OC)c(CCC2CCc3ccccc3N2)c1"
+        ],
+        "product_smiles": [
+          "COc1ccc(OC)c(CCC2CCc3ccccc3N2C)c1"
+        ],
+        "reagents": [
+          "MeI",
+          "K2CO3"
+        ],
+        "solvent": "THF",
+        "temperature": "50 °C",
+        "time": "48 h",
+        "stoichiometry": {
+          "MeI": "2.0 eq.",
+          "K2CO3": "1.05 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "Methylation at the NH group finalized the synthesis of cytotoxic and antiviral (±) cuspareine 17a' in 88% overall yield (97% for this step)."
+      },
+      "evidence": {
+        "text_span": "Methylation at the NH group finalized the synthesis of cytotoxic and antiviral (±) cuspareine 17a' , 88% overall yield, Scheme 2), a Hancock alkaloid used to treat dysentery and fever.",
+        "section": "Synthetic Applications",
+        "image_refs": [
+          "49a59ece89dc4c3e82288477e5029e266c47946a8d24a349758ee76dbfc4c1c9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The selective hydrogenation step (step 2) was successful with H2.",
+        "gap": "Need to synthesize a deuterium-labeled analogue of cuspareine.",
+        "decision": "To synthesize deuterium-labeled cuspareine, chose selective catalytic deuteration of 17 to 17a[D] using D2 instead of H2 under the same conditions as step 2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(OC)c(CCC2=NCCc3ccccc32)c1"
+        ],
+        "product_smiles": [
+          "[2H]C1c2ccccc2N([2H])C(CCc2cc(OC)ccc2OC)C1[2H]"
+        ],
+        "catalyst": "Ru50P50@SILP",
+        "solvent": "Heptane",
+        "temperature": "90 °C",
+        "time": "2 h",
+        "atmosphere": "D2 (50 bar)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "observation": "Selective catalytic deuteration of 17 to 17a[D] was achieved. NMR characterizations revealed expected deuterium incorporation via reduction of the heterocyclic C=C bond, along with H/D exchanges at methylene groups and the bridging methylene group."
+      },
+      "evidence": {
+        "text_span": "In particular, the pathway allowed for the first time the synthesis of deuterium-labeled cuspareine[D] (17a'[D]) via selective catalytic deuteration of 17 to 17a[D] . NMR characterizations, including 2H and 13C{1H,2H} experiments, revealed the expected deuterium incorporation via reduction of the heterocyclic C=C bond, along with H/D exchanges occurring not only at the methylene groups of the heterocycle, but also at the bridging methylene group in the vicinity of the nitrogen atom (Scheme 2, and see SI Section S10 for detailed characterization).",
+        "section": "Synthetic Applications",
+        "image_refs": [
+          "49a59ece89dc4c3e8228477e5029e266c47946a8d24a349758ee76dbfc4c1c9.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Deuterated intermediate 17a[D] is formed.",
+        "gap": "Need to complete the synthesis of deuterium-labeled cuspareine (17a'[D]).",
+        "decision": "To synthesize 17a'[D], chose methylation of the NH group of 17a[D] using MeI and K2CO3 in THF at 50 °C for 48 h, similar to step 3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "[2H]C1c2ccccc2N([2H])C(CCc2cc(OC)ccc2OC)C1[2H]"
+        ],
+        "product_smiles": [
+          "[2H]C1c2ccccc2N(C)C(CCc2cc(OC)ccc2OC)C1[2H]"
+        ],
+        "reagents": [
+          "MeI",
+          "K2CO3"
+        ],
+        "solvent": "THF",
+        "temperature": "50 °C",
+        "time": "48 h",
+        "stoichiometry": {
+          "MeI": "2.0 eq.",
+          "K2CO3": "1.05 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 98,
+        "observation": "Deuterium-labeled cuspareine (17a'[D]) was synthesized. HR-MS analysis showed predominance of the [D4] isotopomer."
+      },
+      "evidence": {
+        "text_span": "HR-MS analysis of 17a[D] and 17a'[D] showed the predominance of the [D4] isotopomer in the obtained mixtures (containing [D1] to [D6], see SI Section S10).",
+        "section": "Synthetic Applications",
+        "image_refs": [
+          "49a59ece89dc4c3e8228477e5029e266c47946a8d24a349758ee76dbfc4c1c9.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 88,
+        "unit": "%",
+        "interpretation": "Overall yield for (±) cuspareine (17a') from 2-methyl quinoline and 4-(bromomethyl)-1,2-dimethoxybenzene."
+      },
+      "E-factor": {
+        "value": 2.01,
+        "unit": null,
+        "interpretation": "E-factor for the selective hydrogenation of 17 to 17a, indicating an effective synthetic step with little waste."
+      },
+      "Atom Efficiency": {
+        "value": 100,
+        "unit": "%",
+        "interpretation": "Atom efficiency for the selective hydrogenation of 17 to 17a."
+      },
+      "Carbon Efficiency": {
+        "value": 100,
+        "unit": "%",
+        "interpretation": "Carbon efficiency for the selective hydrogenation of 17 to 17a."
+      },
+      "Reaction Mass Efficiency": {
+        "value": 86,
+        "unit": "%",
+        "interpretation": "Reaction mass efficiency for the selective hydrogenation of 17 to 17a, well within industrial targets."
+      }
+    },
+    "significance": "The synthesis of (±) cuspareine and its deuterated analogue demonstrates the broad synthetic utility and green chemistry metrics of the Ru50P50@SILP catalyst for selective partial hydrogenation of N-heterocycles. The ability to perform isotopic labeling is particularly valuable for drug discovery and development."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1021/jacs.5c16144",
+      "pmcid": "PMC12814184",
+      "title": "Selective Hydrogenation of Heteroarenes Using Supported Ruthenium Phosphide Nanoparticle Catalysts.",
+      "authors": "Ghazi Zahedi H, Hertel J, Paul B, Kang L, Johny J, Wu Y, Wiegand T, DeBeer S, Leitner W, Bordet A.",
+      "journal": "J Am Chem Soc",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12814184?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/f01e00f7-57e5-4f71-b61d-4a302f983a11.zip",
+      "parsed_at": "2026-05-11T06:41:10.283498+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 12,
+    "parseable": 12,
+    "canonicalized": 11,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

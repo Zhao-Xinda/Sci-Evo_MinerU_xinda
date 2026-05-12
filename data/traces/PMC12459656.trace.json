@@ -1,0 +1,1021 @@
+{
+  "trace_id": "TS-PMC12459656",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Linezolid",
+    "smiles": "CC(=O)NC[C@H]1COC(=O)N1c1ccc(N2CCOCC2)c(F)c1",
+    "natural_product_class": "unspecified",
+    "structural_features": {
+      "molecular_weight": 337.35,
+      "stereocenters": 1,
+      "ring_systems": "oxazolidinone, morpholine, benzene",
+      "key_motifs": [
+        "oxazolidinone",
+        "morpholine",
+        "fluorobenzene"
+      ]
+    },
+    "motivation": "Linezolid, as the first oxazolidinone antibacterial agent, was approved by the FDA in 2000 for the treatment of infections caused by multi-drug resistant (MDR) Gram-positive bacteria. The key step in the synthesis of this series of drugs is the formation of the versatile common chiral 5-substituted oxazolidinone unit. Simple and efficient protocols to build the structural units are still quite underexplored.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Perrault",
+        "year": 2003,
+        "doi": "10.1021/op030002o",
+        "key_strategy": "using commercially available chiral oxiranes, such as epichlorohydrin or glycidol"
+      },
+      {
+        "lead_author": "Kelly",
+        "year": 2017,
+        "doi": "10.1021/acs.orglett.7b01100",
+        "key_strategy": "Direct coupling between aryl halogen and the oxazolidinone ring (generated from enantiopure aziridine-2-carboxamides)"
+      },
+      {
+        "lead_author": "Song",
+        "year": 2008,
+        "doi": "10.1021/ol802290w",
+        "key_strategy": "catalytic enantioselective aldol reaction between amino aldehydes and acetone"
+      },
+      {
+        "lead_author": "Piccionello",
+        "year": 2013,
+        "doi": "10.1039/c3ra22946a",
+        "key_strategy": "catalytic asymmetric Henry reaction to construct a chiral 3-amino-2-hydroxy-1-nitro skeleton"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Achieve high enantioselectivity and yield for the key chiral nitroalcohol intermediate, and a concise and efficient total synthesis."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-N bond in the oxazolidinone ring",
+        "named_strategy": "Cyclization",
+        "reasoning": "The oxazolidinone ring is a key structural feature, and its formation from a precursor with the correct stereochemistry is crucial."
+      },
+      {
+        "bond_description": "C-C bond between the hydroxyl-bearing carbon and the nitro-bearing carbon",
+        "named_strategy": "Henry reaction (nitroaldol reaction)",
+        "reasoning": "This disconnection allows for the introduction of the chiral center and the nitro group, which can be further transformed into the amino group for oxazolidinone formation. The authors aim to improve the enantioselectivity of this reaction."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "1sa",
+        "smiles": "CCOC(=O)N(CC=O)c1ccc(N2CCOCC2)c(F)c1",
+        "role": "aldehyde precursor",
+        "comes_from": "synthesis"
+      },
+      {
+        "fragment_id": "nitromethane",
+        "smiles": "C[N+](=O)[O-]",
+        "role": "nitro source",
+        "comes_from": "commercial"
+      }
+    ],
+    "rationale": "The strategy focuses on an asymmetric Henry reaction to construct the chiral 3-amino-2-hydroxy-1-nitro skeleton, which is then cyclized to form the oxazolidinone ring. This approach aims for high enantioselectivity and conciseness, addressing limitations of previous methods."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Previous methods for synthesizing the chiral 5-substituted oxazolidinone unit often involve commercially available chiral oxiranes or catalytic enantioselective aldol reactions with moderate enantioselectivity. Catalytic asymmetric Henry reactions have been explored but with unsatisfactory results.",
+        "gap": "A simple and efficient protocol to build the chiral 5-substituted oxazolidinone unit with high enantioselectivity is needed.",
+        "decision": "To achieve high enantioselectivity in the formation of the chiral 3-amino-2-hydroxy-1-nitro skeleton, chose to investigate a Cu–diamine complex catalytic system for asymmetric Henry reactions, expecting improved enantioselectivity and yield."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The hypothesis led to the development of a new catalytic system."
+      },
+      "evidence": {
+        "text_span": "Among these methods for 3-amino-2-hydroxy-1-nitro skeleton synthesis, the catalytic asymmetric Henry approach is the most efficient and deserves further study.15 Herein, we utilize a Cu–diamine complex catalytic system to construct chiral 3-amino-2-hydroxy-1-nitro derivatives in excellent yields and enantioselectivities via asymmetric Henry reactions (Scheme 1 and eqn (5)); then, 5- substituted oxazolidinones, as important building blocks, were synthesized, which further opened the door to the total synthesis of an elaborate series of oxazolidinones, such as linezolid, rivaroxaban, and the formal synthesis of radezolid, eperezolid and ranbezolid.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A Cu-bis(sulfonamide)–diamine complex catalytic system was proposed for asymmetric Henry reactions.",
+        "gap": "The optimal metal catalyst and ligand for the Henry reaction between aminoacetaldehyde 1a and nitromethane 2a need to be identified.",
+        "decision": "To find the optimum catalytic system, chose to screen various copper salts (Cu(OAc)2·H2O, CuI, Cu(CN)4PF6, CuOAc) with ligand L1, expecting to identify the most active catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "Cu(OAc)2·H2O",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "time": "48",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 91,
+        "ee_percent": 93,
+        "observation": "Cu(OAc)2·H2O with L1 gave 91% yield and 93% ee."
+      },
+      "evidence": {
+        "text_span": "We initially selected the reaction between aminoacetaldehyde 1a and nitromethane 2a as the model reaction to find the optimum catalytic system for the Henry reactions (Table 1). To our delight, the chiral bis(sulfonamide)–diamine ligand L1 and the copper salt could efficiently catalyze the reaction (entries 1–4).",
+        "section": "Table 1, Entry 1"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cu(OAc)2·H2O showed good activity.",
+        "gap": "Other copper salts might perform better.",
+        "decision": "To further optimize the metal catalyst, chose to test CuI with L1, expecting to improve yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuI",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "time": "48",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "ee_percent": 95,
+        "observation": "CuI with L1 gave 94% yield and 95% ee."
+      },
+      "evidence": {
+        "text_span": "We initially selected the reaction between aminoacetaldehyde 1a and nitromethane 2a as the model reaction to find the optimum catalytic system for the Henry reactions (Table 1). To our delight, the chiral bis(sulfonamide)–diamine ligand L1 and the copper salt could efficiently catalyze the reaction (entries 1–4).",
+        "section": "Table 1, Entry 2"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "CuI showed excellent activity.",
+        "gap": "Other copper salts might still be better.",
+        "decision": "To further optimize the metal catalyst, chose to test Cu(CN)4PF6 with L1, expecting to identify the best catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "Cu(CN)4PF6",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "time": "48",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "ee_percent": 89,
+        "observation": "Cu(CN)4PF6 with L1 gave 90% yield and 89% ee."
+      },
+      "evidence": {
+        "text_span": "We initially selected the reaction between aminoacetaldehyde 1a and nitromethane 2a as the model reaction to find the optimum catalytic system for the Henry reactions (Table 1). To our delight, the chiral bis(sulfonamide)–diamine ligand L1 and the copper salt could efficiently catalyze the reaction (entries 1–4).",
+        "section": "Table 1, Entry 3"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "CuI showed good activity, but Cu(CN)4PF6 was less effective.",
+        "gap": "The optimal copper salt needs to be confirmed.",
+        "decision": "To confirm the optimal metal catalyst, chose to test CuOAc with L1, expecting to achieve the highest activity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "time": "48",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "ee_percent": 95,
+        "observation": "CuOAc with L1 showed the highest activity, giving 95% yield and 95% ee."
+      },
+      "evidence": {
+        "text_span": "We initially selected the reaction between aminoacetaldehyde 1a and nitromethane 2a as the model reaction to find the optimum catalytic system for the Henry reactions (Table 1). To our delight, the chiral bis(sulfonamide)–diamine ligand L1 and the copper salt could efficiently catalyze the reaction (entries 1–4). CuOAc, as a metal catalyst, showed the highest activity, giving the key chiral nitroalcohol 3aa in 95% yield and 95% ee.",
+        "section": "Table 1, Entry 4"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "CuOAc and L1 were identified as the optimal metal catalyst and ligand combination.",
+        "gap": "Other chiral diamine ligands might further improve the reaction efficiency.",
+        "decision": "To investigate the ligand effect, chose to test L2 with CuOAc, expecting to potentially improve yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)Cc2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)Cc2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "time": "48",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "ee_percent": 77,
+        "observation": "L2 with CuOAc gave 87% yield and 77% ee, which was lower than L1."
+      },
+      "evidence": {
+        "text_span": "Meanwhile, other chiral diamine ligands (L2–L4) could not significantly improve the reaction efficiency (entries 5–7).",
+        "section": "Table 1, Entry 5"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "L2 did not improve the reaction efficiency.",
+        "gap": "Other chiral diamine ligands might still be beneficial.",
+        "decision": "To further investigate the ligand effect, chose to test L3 with CuOAc, expecting to potentially improve yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "O=S(=O)(N[C@@H](C[C@H](N)c1ccccc1)c1ccccc1)c1ccccc1.O=S(=O)(N[C@@H](C[C@H](N)c1ccccc1)c1ccccc1)c1ccccc1",
+        "solvent": "EtOH",
+        "time": "48",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "ee_percent": 93,
+        "observation": "L3 with CuOAc gave 94% yield and 93% ee, which was comparable to L1 but not an improvement."
+      },
+      "evidence": {
+        "text_span": "Meanwhile, other chiral diamine ligands (L2–L4) could not significantly improve the reaction efficiency (entries 5–7).",
+        "section": "Table 1, Entry 6"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "L2 and L3 did not significantly improve the reaction efficiency compared to L1.",
+        "gap": "One more chiral diamine ligand (L4) should be tested to confirm the optimal ligand.",
+        "decision": "To confirm the optimal ligand, chose to test L4 with CuOAc, expecting to identify if any other ligand is superior to L1."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)c(C)c1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)c(C)c1",
+        "solvent": "EtOH",
+        "time": "48",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "ee_percent": 93,
+        "observation": "L4 with CuOAc gave 92% yield and 93% ee, confirming L1 as the best ligand."
+      },
+      "evidence": {
+        "text_span": "Meanwhile, other chiral diamine ligands (L2–L4) could not significantly improve the reaction efficiency (entries 5–7).",
+        "section": "Table 1, Entry 7"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "CuOAc and L1 were identified as the optimal catalyst system in EtOH.",
+        "gap": "The solvent might play an important role in the nitroaldol reaction.",
+        "decision": "To investigate the solvent effect, chose to test THF as a solvent with CuOAc and L1, expecting to potentially improve yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "THF",
+        "time": "48",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "ee_percent": 86,
+        "observation": "THF as solvent resulted in lower yield and ee compared to EtOH."
+      },
+      "evidence": {
+        "text_span": "Solvent played an important role in the nitroaldol reaction (entries 8 and 9).",
+        "section": "Table 1, Entry 8"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "THF was not as effective as EtOH.",
+        "gap": "Another solvent, Toluene, should be tested to confirm the optimal solvent.",
+        "decision": "To further investigate the solvent effect, chose to test Toluene as a solvent with CuOAc and L1, expecting to identify the best solvent."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "toluene",
+        "time": "48",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "ee_percent": 80,
+        "observation": "Toluene as solvent resulted in lower yield and ee compared to EtOH, confirming EtOH as the optimal solvent."
+      },
+      "evidence": {
+        "text_span": "Solvent played an important role in the nitroaldol reaction (entries 8 and 9).",
+        "section": "Table 1, Entry 9"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimal conditions were established at room temperature.",
+        "gap": "Lowering the temperature might improve enantioselectivity.",
+        "decision": "To investigate the effect of temperature, chose to perform the reaction at 5 °C with CuOAc and L1 in EtOH, expecting to maintain excellent enantioselectivity while potentially affecting yield and reaction time."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "time": "72",
+        "temperature": "5 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "ee_percent": 95,
+        "observation": "Lowering the temperature to 5 °C maintained excellent enantioselectivity (95% ee) but slightly decreased the yield (88%) and prolonged the reaction time (72 h)."
+      },
+      "evidence": {
+        "text_span": "Reducing the temperature could still maintain excellent enantioselectivity but slightly decreased the yield and prolonged the reaction time (entry 10).",
+        "section": "Table 1, Entry 10"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Optimal catalyst loading was 10 mol% for both ligand and metal catalyst.",
+        "gap": "Reducing catalyst loading could be more economical.",
+        "decision": "To investigate the effect of catalyst loading, chose to reduce the amounts of CuOAc and L1 to 5 mol% each, expecting to maintain high yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "time": "72",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 90,
+        "ee_percent": 91,
+        "failure_mode": "low_yield",
+        "observation": "Reducing catalyst loading to 5 mol% resulted in a lower yield (90%) and lower enantioselectivity (91% ee) compared to 10 mol%."
+      },
+      "evidence": {
+        "text_span": "When the amounts of the ligand and metal catalyst were reduced, low yields and low enantioselectivities were achieved (entries 11 and 12).",
+        "section": "Table 1, Entry 11"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Reducing catalyst loading to 5 mol% resulted in lower yield and ee.",
+        "gap": "Further reduction in catalyst loading might still be viable.",
+        "decision": "To further investigate the effect of catalyst loading, chose to reduce the amounts of CuOAc and L1 to 2.5 mol% each, expecting to maintain high yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "time": "72",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 89,
+        "ee_percent": 90,
+        "failure_mode": "low_yield",
+        "observation": "Further reducing catalyst loading to 2.5 mol% resulted in even lower yield (89%) and enantioselectivity (90% ee)."
+      },
+      "evidence": {
+        "text_span": "When the amounts of the ligand and metal catalyst were reduced, low yields and low enantioselectivities were achieved (entries 11 and 12).",
+        "section": "Table 1, Entry 12"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "Reducing catalyst loading below 10 mol% led to decreased yield and enantioselectivity.",
+        "gap": "The optimal catalyst loading needs to be maintained.",
+        "decision": "To ensure optimal reaction efficiency, chose to revert to 10 mol% of both CuOAc and L1, expecting to achieve the highest yield and enantioselectivity."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The optimal catalyst loading was confirmed to be 10 mol% for both CuOAc and L1."
+      },
+      "evidence": {
+        "text_span": "When the amounts of the ligand and metal catalyst were reduced, low yields and low enantioselectivities were achieved (entries 11 and 12).",
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Optimal reaction time was 48 hours.",
+        "gap": "Shorter reaction times could improve efficiency.",
+        "decision": "To investigate the effect of reaction time, chose to reduce the reaction time to 24 hours, expecting to maintain high yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "time": "24",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 76,
+        "ee_percent": 94,
+        "failure_mode": "low_yield",
+        "observation": "Reducing reaction time to 24 hours resulted in a significantly lower yield (76%) due to unreacted starting material."
+      },
+      "evidence": {
+        "text_span": "Reaction time had a significant impact on the reaction yield. When the reaction time was reduced to 24 h or even 12 h, a large amount of raw material 1a remained unreacted, resulting in a decrease in the yield (entries 13 and 14).",
+        "section": "Table 1, Entry 13"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "24-hour reaction time led to low yield.",
+        "gap": "Even shorter reaction times might be possible.",
+        "decision": "To further investigate the effect of reaction time, chose to reduce the reaction time to 12 hours, expecting to maintain high yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(C=O)c1ccccc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(c1ccccc1)C(O)C[N+](=O)[O-]"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "time": "12",
+        "temperature": "room temperature"
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 49,
+        "ee_percent": 95,
+        "failure_mode": "low_yield",
+        "observation": "Reducing reaction time to 12 hours resulted in a very low yield (49%) due to unreacted starting material."
+      },
+      "evidence": {
+        "text_span": "Reaction time had a significant impact on the reaction yield. When the reaction time was reduced to 24 h or even 12 h, a large amount of raw material 1a remained unreacted, resulting in a decrease in the yield (entries 13 and 14).",
+        "section": "Table 1, Entry 14"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Shorter reaction times (24h and 12h) led to significantly decreased yields due to incomplete reaction.",
+        "gap": "The optimal reaction time needs to be maintained.",
+        "decision": "To ensure optimal reaction efficiency, chose to revert to a reaction time of 48-72 hours, expecting to achieve high yield and enantioselectivity.",
+        "outcome": "The optimal reaction time was confirmed to be 48-72 hours."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The optimal reaction time was confirmed to be 48-72 hours."
+      },
+      "evidence": {
+        "text_span": "Reaction time had a significant impact on the reaction yield. When the reaction time was reduced to 24 h or even 12 h, a large amount of raw material 1a remained unreacted, resulting in a decrease in the yield (entries 13 and 14).",
+        "section": "Table 1"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": "1sa",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimal conditions for the Henry reaction were established: 10 mol% L1, 10 mol% CuOAc, 1.0 equiv. pyridine, 0.6 mL EtOH, room temperature, 48–72 h.",
+        "gap": "The applicability of these conditions to the synthesis of linezolid's key intermediate needs to be demonstrated.",
+        "decision": "To synthesize the key intermediate for linezolid, chose to apply the optimized Henry reaction conditions to aminoacetaldehyde 1sa and nitromethane, expecting to obtain 3sa in high yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(CC=O)c1ccc(N2CCOCC2)c(F)c1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(Cc1ccc(N2CCOCC2)c(F)c1)C[C@@H](O)C(N)=O"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "temperature": "room temperature",
+        "time": "48-72 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "ee_percent": 94,
+        "observation": "The key synthetic intermediate 3sa was obtained in 92% yield and with 94% ee, which was a significant improvement over previously reported results (76% yield and 71% ee)."
+      },
+      "evidence": {
+        "text_span": "Using the Cu–diamine complex catalytic system, the key synthetic intermediate 3sa was obtained in 92% yield and with 94% ee, which was once reported in only 76% yield and with 71% ee.13",
+        "section": "Scheme 3"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": "3sa",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 3sa was successfully synthesized.",
+        "gap": "The nitro group needs to be reduced to an amino group and then acetylated to form the amide.",
+        "decision": "To convert 3sa to compound 4, chose to perform a two-step reaction: first, reduction of the nitro group using Pd/C and H2, followed by amidation with Ac2O and DIPEA, expecting to obtain compound 4 in good yield.",
+        "outcome": "Compound 4 was obtained in 70% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(Cc1ccc(N2CCOCC2)c(F)c1)C[C@@H](O)C(N)=O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(Cc1ccc(N2CCOCC2)c(F)c1)C[C@@H](O)NC(C)=O"
+        ],
+        "reagents": [
+          "H2",
+          "Ac2O",
+          "DIPEA"
+        ],
+        "catalyst": "Pd/C",
+        "solvent": "MeOH, DCM"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "observation": "Compound 4 was obtained in 70% yield after nitro reduction and amidation."
+      },
+      "evidence": {
+        "text_span": "The intermediate 3sa on further reaction with Pd/C and H2 underwent amidation reaction, providing compound 4 in 70% yield.",
+        "section": "Scheme 3"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": "4",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 4 was successfully synthesized.",
+        "gap": "The oxazolidinone ring needs to be formed to complete the synthesis of linezolid.",
+        "decision": "To synthesize linezolid 6, chose to treat compound 4 with K2CO3, expecting to achieve cyclization and obtain linezolid in high yield.",
+        "outcome": "Linezolid 6 was obtained in 92% yield with an optical rotation value close to the standard."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(Cc1ccc(N2CCOCC2)c(F)c1)C[C@@H](O)NC(C)=O"
+        ],
+        "product_smiles": [
+          "CC(=O)N[C@H]1COC(=O)N1c1ccc(N2CCOCC2)c(F)c1"
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "EtOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Linezolid 6 was obtained in 92% yield, and its optical rotation value was very close to the standard value."
+      },
+      "evidence": {
+        "text_span": "The treatment of 4 with K2CO3 provided linezolid 6 in 92% yield, with its optical rotation value very close to the standard value.14",
+        "section": "Scheme 3"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": "1ta",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimized Henry reaction conditions were successful for linezolid synthesis.",
+        "gap": "The applicability of these conditions to the synthesis of rivaroxaban's key intermediate needs to be demonstrated.",
+        "decision": "To synthesize the key intermediate for rivaroxaban, chose to apply the optimized Henry reaction conditions to aminoacetaldehyde 1ta and nitromethane, expecting to obtain 3ta in high yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(CC=O)c1ccc(N2CCOCCC2=O)cc1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(Cc1ccc(N2CCOCCC2=O)cc1)C[C@@H](O)C(N)=O"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "temperature": "room temperature",
+        "time": "48-72 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 94,
+        "ee_percent": 95,
+        "observation": "The key chiral intermediate 3ta for rivaroxaban was obtained in 94% yield with 95% ee, which was an improvement over previously reported results (72% yield and 87% ee)."
+      },
+      "evidence": {
+        "text_span": "The key chiral intermediate 3ta of rivaroxaban 7 could also be obtained in 94% yield with 95% ee through a similar way based on the Henry reaction from 1ta, which was synthesized in only 72% yield and 87% ee.12",
+        "section": "Scheme 3"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": "3ta",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Intermediate 3ta was successfully synthesized.",
+        "gap": "The nitro group needs to be reduced to an amino group and then coupled with the thiophene carbonyl chloride to form the amide.",
+        "decision": "To convert 3ta to compound 5, chose to perform a two-step reaction: first, reduction of the nitro group using Pd/C and H2, followed by amidation with ClC(=O)c1csc(Cl)c1 and TEA, expecting to obtain compound 5 in good yield.",
+        "outcome": "Compound 5 was obtained in 75% yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(Cc1ccc(N2CCOCCC2=O)cc1)C[C@@H](O)C(N)=O"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(Cc1ccc(N2CCOCCC2=O)cc1)C[C@@H](O)NC(=O)c1csc(Cl)c1"
+        ],
+        "reagents": [
+          "H2",
+          "ClC(=O)c1csc(Cl)c1",
+          "TEA"
+        ],
+        "catalyst": "Pd/C",
+        "solvent": "MeOH, DCM"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "Compound 5 was obtained in 75% yield after nitro reduction and amidation."
+      },
+      "evidence": {
+        "text_span": "The key chiral intermediate 3ta of rivaroxaban 7 could also be obtained in 94% yield with 95% ee through a similar way based on the Henry reaction from 1ta, which was synthesized in only 72% yield and 87% ee.12",
+        "section": "Scheme 3"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": "5",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 5 was successfully synthesized.",
+        "gap": "The oxazolidinone ring needs to be formed to complete the synthesis of rivaroxaban.",
+        "decision": "To synthesize rivaroxaban 7, chose to treat compound 5 with K2CO3, expecting to achieve cyclization and obtain rivaroxaban in high yield.",
+        "outcome": "Rivaroxaban 7 was obtained in 95% yield with an optical rotation value close to the literature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(Cc1ccc(N2CCOCCC2=O)cc1)C[C@@H](O)NC(=O)c1csc(Cl)c1"
+        ],
+        "product_smiles": [
+          "O=C(N[C@H]1COC(=O)N1Cc1ccc(N2CCOCCC2=O)cc1)c1csc(Cl)c1"
+        ],
+        "reagents": [
+          "K2CO3"
+        ],
+        "solvent": "EtOH"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 95,
+        "observation": "Rivaroxaban 7 was obtained in 95% yield, and its optical rotation result was close to those reported in the literature."
+      },
+      "evidence": {
+        "text_span": "The optical rotation result of rivaroxaban 7 was close to those reported in the literature.14",
+        "section": "Scheme 3"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": "1ua",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimized Henry reaction conditions were successful for linezolid and rivaroxaban synthesis.",
+        "gap": "The applicability of these conditions to the synthesis of radezolid's key intermediate needs to be demonstrated.",
+        "decision": "To synthesize the key intermediate for radezolid, chose to apply the optimized Henry reaction conditions to aminoacetaldehyde 1ua and nitromethane, expecting to obtain 3ua in high enantioselectivity.",
+        "outcome": "Compound 3ua was obtained with 90% ee."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CCOC(=O)N(CC=O)c1cccc(F)c1",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "CCOC(=O)N(C[C@@H](O)C[N+](=O)[O-])c1cccc(F)c1"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "temperature": "room temperature",
+        "time": "48-72 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "ee_percent": 90,
+        "observation": "The chiral nitroalcohol compound 3ua was obtained with 90% ee, which could further make radezolid."
+      },
+      "evidence": {
+        "text_span": "The chiral nitroalcohol compound 3ua was obtained with 90% ee, which could further make radezolid.16",
+        "section": "Scheme 4"
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": "1va",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The optimized Henry reaction conditions were successful for linezolid, rivaroxaban, and radezolid intermediates.",
+        "gap": "The applicability of these conditions to the synthesis of eperezolid and ranbezolid's key intermediate needs to be demonstrated.",
+        "decision": "To synthesize the key intermediate for eperezolid and ranbezolid, chose to apply the optimized Henry reaction conditions to aminoacetaldehyde 1va and nitromethane, expecting to obtain 3va in high enantioselectivity.",
+        "outcome": "Compound 3va was obtained with 92% ee."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "O=CCN(C(=O)OCc1ccccc1)c1ccc(N2CCN(C(=O)OCc3ccccc3)CC2)cc1F",
+          "C[N+](=O)[O-]"
+        ],
+        "product_smiles": [
+          "O=C(OCc1ccccc1)N1CCN(c2ccc(N(C[C@@H](O)C[N+](=O)[O-])C(=O)OCc3ccccc3)c(F)c2)CC1"
+        ],
+        "reagents": [
+          "pyridine"
+        ],
+        "catalyst": "CuOAc",
+        "ligand": "Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1.Cc1ccc(S(=O)(=O)N[C@@H](C[C@H](N)c2ccccc2)c2ccccc2)cc1",
+        "solvent": "EtOH",
+        "temperature": "room temperature",
+        "time": "48-72 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "ee_percent": 92,
+        "observation": "Compound 3va was obtained with 92% ee, which could then transform to eperezolid and ranbezolid."
+      },
+      "evidence": {
+        "text_span": "Meanwhile, compound 3va was obtained with 92% ee, which could then transform to eperezolid and ranbezolid, according to a method reported in the literature.17",
+        "section": "Scheme 4"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HPLC",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 59.9,
+        "unit": "%",
+        "interpretation": "Calculated from the product of yields of steps 18, 19, and 20 (0.92 * 0.70 * 0.92 = 0.599)."
+      },
+      "Longest Linear Steps": {
+        "value": 3,
+        "unit": "steps",
+        "interpretation": "From 1sa to Linezolid (6)."
+      },
+      "Total Steps": {
+        "value": 25,
+        "unit": "steps",
+        "interpretation": "Total number of execution steps, including optimization and failed attempts."
+      },
+      "Failed Attempts Count": {
+        "value": 4,
+        "unit": "attempts",
+        "interpretation": "Number of steps with outcome.valid=false."
+      }
+    },
+    "comparison_to_prior": "The synthesis of intermediate 3sa for linezolid achieved 92% yield and 94% ee, significantly improving upon a previous report of 76% yield and 71% ee. Similarly, intermediate 3ta for rivaroxaban was obtained in 94% yield with 95% ee, compared to a previous 72% yield and 87% ee. The optical rotation values for the final products were close to standard/literature values.",
+    "significance": "The developed Cu–chiral diamine complex catalyzed asymmetric Henry reaction provides a simple and efficient strategy for synthesizing the 3-amino-2-hydroxy-1-nitro skeleton with high enantioselectivity. This method enabled concise total syntheses of linezolid and rivaroxaban, and formal syntheses of radezolid, eperezolid, and ranbezolid, offering new ideas for asymmetric total syntheses of similar drugs."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5ra05795g",
+      "pmcid": "PMC12459656",
+      "title": "Cu-diamine ligand-controlled asymmetric Henry reactions and their application in concise total syntheses of linezolid and rivaroxaban.",
+      "authors": "Zhang Y, Xiao W.",
+      "journal": "RSC Adv",
+      "year": 2025,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC12459656?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/8ce6ecda-37b4-4465-8909-0c39c356f8fe.zip",
+      "parsed_at": "2026-05-11T06:28:39.590802+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 65,
+    "parseable": 65,
+    "canonicalized": 44,
+    "invalid": 0,
+    "overridden_by_name": 0,
+    "invalid_examples": [],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

@@ -1,0 +1,1088 @@
+{
+  "trace_id": "TS-PMC11829995",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "lycoposerramine W",
+    "smiles": "CC1(C)CC[C@@H](C[C@H]2[C@@H](O)CCC[N+]2(C)C)[C@H](c2cccnc2)C1",
+    "natural_product_class": "Lycopodium alkaloid",
+    "structural_features": {
+      "molecular_weight": 344.5,
+      "stereocenters": 7,
+      "ring_systems": "piperidine, tetrahydroquinoline",
+      "key_motifs": [
+        "decahydroquinoline",
+        "tetrahydroquinoline",
+        "piperidine"
+      ]
+    },
+    "motivation": "Lycopodium alkaloids are attractive synthetic targets due to their diverse and unusual skeletal features. Lycoposerramine W is a phlegmarine-class alkaloid with a challenging C5, C7, C15 stereotriad and a C3 hydroxyl group on the piperidine.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Takayama",
+        "year": 2007,
+        "doi": "10.1021/ol701700w",
+        "key_strategy": "SmI2-mediated construction of the hydroxylated piperidine ring"
+      }
+    ],
+    "success_criteria": {
+      "yield_target_percent": null,
+      "lls_target": 10,
+      "scale_target": null,
+      "stereochemistry_required": true,
+      "free_text": "Concise total synthesis, improved step count compared to prior syntheses (23 steps previously), modular access to epimers."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond between piperidine and tetrahydroquinoline fragments",
+        "named_strategy": "N-deletion strategy",
+        "reasoning": "Prior coupling strategies (HWE olefination, olefin metathesis, NHK reaction, deoxygenative cross-coupling) failed to deliver the desired coupling product. N-deletion allows for C-C bond formation from a secondary amine through in-cage diradical coupling with N2 evolution via an isodiazene intermediate, potentially maintaining stereochemistry.",
+        "alternatives_considered": [
+          {
+            "strategy": "Horner-Wadsworth-Emmons (HWE) olefination",
+            "rejected_because": "afforded either a complex mixture of products or unreacted starting materials"
+          },
+          {
+            "strategy": "Olefin metathesis by Grubbs catalyst",
+            "rejected_because": "afforded either a complex mixture of products or unreacted starting materials"
+          },
+          {
+            "strategy": "Nozaki-Hiyama-Kishi (NHK) reaction",
+            "rejected_because": "afforded either a complex mixture of products or unreacted starting materials"
+          },
+          {
+            "strategy": "Deoxygenative cross-coupling reactions (Weix and MacMillan groups)",
+            "rejected_because": "afforded either a complex mixture of products or unreacted starting materials"
+          }
+        ]
+      },
+      {
+        "bond_description": "C-N bond in N-deletion precursor",
+        "named_strategy": "Reductive amination",
+        "reasoning": "To combine the piperidine aldehyde and the tetrahydroquinoline amine fragments to form the N-deletion precursor."
+      },
+      {
+        "bond_description": "C-C bond in THQ fragment",
+        "named_strategy": "Cu-catalyzed oxidative annulation",
+        "reasoning": "Efficient construction of the tetrahydroquinoline core from a 1,3-diketone and propargyl amine."
+      },
+      {
+        "bond_description": "C-H bond in L-pipecolic acid",
+        "named_strategy": "Enzymatic C-H oxidation",
+        "reasoning": "Site- and stereo-selective functionalization of the 4-position of L-pipecolic acid to install the C3-OH early in a scalable manner."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "piperidine_fragment",
+        "smiles": "",
+        "role": "aldehyde component for reductive amination",
+        "comes_from": "L-pipecolic acid"
+      },
+      {
+        "fragment_id": "tetrahydroquinoline_fragment",
+        "smiles": "CC1N=CC=C2[C@@H](N)CCC[C@@H]21",
+        "role": "amine component for reductive amination",
+        "comes_from": "(R)-pulegone"
+      }
+    ],
+    "rationale": "The synthesis aims for a convergent approach by independently preparing a fully elaborated piperidine fragment and a tetrahydroquinoline fragment. The key challenge of coupling these fragments is addressed by a late-stage N-deletion strategy, which was found to be the only feasible method after other C-C bond forming reactions failed. The piperidine fragment's C3-OH is installed early via enzymatic oxidation, while the THQ fragment is built from (R)-pulegone via Cu-catalyzed annulation and subsequent stereoselective transformations. This modular approach allows for access to various stereoisomers."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": "piperidine_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "L-pipecolic acid (7) is a readily available starting material. The target molecule, lycoposerramine W, has a hydroxyl group at the 3-position of the piperidine ring.",
+        "gap": "How to site- and stereo-selectively install the hydroxyl group at the 4-position of L-pipecolic acid (which corresponds to the 3-position of the final piperidine ring after numbering changes).",
+        "decision": "To install the hydroxyl group, chose direct enzymatic C–H oxidation using FoPip4H, expecting site- and stereo-selectivity. Subsequent Boc protection is needed for further transformations."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "N[C@H]1CCCCC1C(=O)O"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)N1C[C@H](O)CC[C@H]1C(=O)O"
+        ],
+        "reagents": [
+          "alpha-ketoglutaric acid",
+          "FeSO4.7H2O",
+          "L-ascorbic acid",
+          "(Boc)2O",
+          "NaOH"
+        ],
+        "catalyst": "FoPip4H (enzyme)",
+        "solvent": "KPi buffer, EtOH",
+        "temperature": "22 °C, room temperature",
+        "time": "20 h, 21 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "Gram-scale enzymatic oxidation and successive Boc protection afforded the hydroxylated L-Pip derivative 8 in 86% over 2 steps."
+      },
+      "evidence": {
+        "text_span": "The 4-position of L-pipecolic acid (L-Pip, 7) was site- and stereo-selectively functionalized through a direct enzymatic C–H oxidation by the α-ketoglutarate dependent dioxygenase FoPip4H, which has been examined in a different synthetic context in our previous report12. This gram-scale enzymatic oxidation and successive Boc protection afforded the hydroxylated L-Pip derivative 8 in 86% over 2 steps.",
+        "section": "Biocatalytic and chemocatalytic preparation of the pendant piperidine and tetrahydroquinoline fragments"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "piperidine_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The hydroxylated L-Pip derivative 8 has a free secondary alcohol.",
+        "gap": "The secondary alcohol needs to be protected for subsequent steps.",
+        "decision": "To protect the secondary alcohol, chose TBS ether formation, expecting high yield on a multi-gram scale."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N1C[C@H](O)CC[C@H]1C(=O)O"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TBSCl",
+          "imidazole"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Protection of the secondary alcohol as the tert-butyl dimethylsilyl (TBS) ether in 90% on a multi-gram scale."
+      },
+      "evidence": {
+        "text_span": "Following protection of the secondary alcohol as the tert-butyl dimethylsilyl (TBS) ether in 90% on a multi-gram scale, the carboxylic acid moiety was reduced to the corresponding primary alcohol by using BH3•SMe2 to obtain 10.",
+        "section": "Biocatalytic and chemocatalytic preparation of the pendant piperidine and tetrahydroquinoline fragments"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "piperidine_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The protected L-Pip derivative 9 has a carboxylic acid moiety.",
+        "gap": "The carboxylic acid needs to be reduced to a primary alcohol.",
+        "decision": "To reduce the carboxylic acid, chose BH3•SMe2."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "BH3.SMe2"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The carboxylic acid moiety was reduced to the corresponding primary alcohol by using BH3•SMe2 to obtain 10."
+      },
+      "evidence": {
+        "text_span": "Following protection of the secondary alcohol as the tert-butyl dimethylsilyl (TBS) ether in 90% on a multi-gram scale, the carboxylic acid moiety was reduced to the corresponding primary alcohol by using BH3•SMe2 to obtain 10.",
+        "section": "Biocatalytic and chemocatalytic preparation of the pendant piperidine and tetrahydroquinoline fragments"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": "piperidine_fragment",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The primary alcohol 10 needs to be converted to a leaving group for subsequent coupling reactions.",
+        "gap": "How to convert the primary alcohol to a suitable leaving group without intramolecular side reactions.",
+        "decision": "To convert the alcohol to a leaving group, chose Mitsunobu conditions (halogenation) and mesylation, expecting to form the intended coupling partners."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [],
+        "named_reaction": "Mitsunobu reaction",
+        "reagents": [
+          "unspecified halogenating agent",
+          "unspecified mesylating agent"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "side_product_dominant",
+        "observation": "A bicyclic compound (SI-7) was obtained in both cases, presumably arising from an intramolecular nucleophilic attack from the Boc oxygen to the activated alcohol."
+      },
+      "evidence": {
+        "text_span": "Initial attempts to prepare the intended coupling partners from 10 included halogenation of the primary alcohol under Mitsunobu conditions and conversion of the alcohol to the methanesulfonyl (Ms) group. However, a bicyclic compound (SI-7) was obtained in both cases, presumably arising from an intramolecular nucleophilic attack from the Boc oxygen to the activated alcohol (Supplementary Table S1).",
+        "section": "Biocatalytic and chemocatalytic preparation of the pendant piperidine and tetrahydroquinoline fragments"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": "piperidine_fragment",
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "Attempts to convert the primary alcohol 10 to a leaving group resulted in intramolecular cyclization due to the Boc protecting group.",
+        "gap": "A different strategy is needed to enable conversion of the primary alcohol to a leaving group, avoiding intramolecular attack from the Boc oxygen.",
+        "decision": "To circumvent the intramolecular cyclization, chose N-Boc to N-methyl conversion by reduction with LiAlH4, expecting to remove the problematic Boc group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiAlH4"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "observation": "N-Boc to N-methyl conversion was effected by reduction with LiAlH4 to produce 11 in quantitative yield over 2 steps from 9."
+      },
+      "evidence": {
+        "text_span": "As a workaround, N-Boc to N-methyl conversion was effected by reduction with LiAlH4 to produce 11 in quantitative yield over 2 steps from 9.",
+        "section": "Biocatalytic and chemocatalytic preparation of the pendant piperidine and tetrahydroquinoline fragments"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": "piperidine_fragment",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The N-methylated primary alcohol 11 was obtained.",
+        "gap": "The primary alcohol needs to be converted to a suitable leaving group (bromide or tosylate) for subsequent coupling reactions.",
+        "decision": "To convert the alcohol to a leaving group, chose standard conditions for bromide or tosylate formation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "unspecified brominating agent",
+          "unspecified tosylating agent"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "The conversion of this alcohol to the corresponding bromide or tosylate failed to proceed and resulted in either the recovery (87%) or decomposition of 11, or the formation of a complex mixture of products."
+      },
+      "evidence": {
+        "text_span": "Unfortunately, the conversion of this alcohol to the corresponding bromide or tosylate failed to proceed and resulted in either the recovery (87%) or decomposition of 11, or the formation of a complex mixture of products (Supplementary Table S1).",
+        "section": "Biocatalytic and chemocatalytic preparation of the pendant piperidine and tetrahydroquinoline fragments"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": "piperidine_fragment",
+      "action": "revision",
+      "revises_step_id": 6,
+      "thought": {
+        "background": "Attempts to convert the primary alcohol 11 to a leaving group failed.",
+        "gap": "Alternative functionalization of the piperidine fragment is needed to enable fragment coupling.",
+        "decision": "To prepare alternative coupling partners, chose Dess-Martin periodinane (DMP) oxidation to form aldehyde 12, and subsequent Wittig reaction to form alkene 13."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Dess-Martin periodinane"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "observation": "Aldehyde 12 was synthesized via Dess-Martin periodinane (DMP) oxidation in 77% over 2 steps from 9 on a multi-gram scale."
+      },
+      "evidence": {
+        "text_span": "To broadly examine a variety of fragment coupling reactions, several additional piperidine units were synthesized, including aldehyde 12 and alkene 13 via Dess-Martin periodinane (DMP) oxidation (77% over 2 steps from 9 on a multi-gram scale) and Wittig reaction with MePPh3Br (69% from 12), respectively.",
+        "section": "Biocatalytic and chemocatalytic preparation of the pendant piperidine and tetrahydroquinoline fragments"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": "piperidine_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Aldehyde 12 was prepared.",
+        "gap": "Another type of coupling partner, an alkene, could be useful for fragment coupling.",
+        "decision": "To prepare an alkene coupling partner, chose Wittig reaction with MePPh3Br from aldehyde 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MePPh3Br",
+          "tBuOK"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 69,
+        "observation": "Alkene 13 was synthesized via Wittig reaction with MePPh3Br in 69% from 12."
+      },
+      "evidence": {
+        "text_span": "To broadly examine a variety of fragment coupling reactions, several additional piperidine units were synthesized, including aldehyde 12 and alkene 13 via Dess-Martin periodinane (DMP) oxidation (77% over 2 steps from 9 on a multi-gram scale) and Wittig reaction with MePPh3Br (69% from 12), respectively.",
+        "section": "Biocatalytic and chemocatalytic preparation of the pendant piperidine and tetrahydroquinoline fragments"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": "tetrahydroquinoline_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "A tetrahydroquinoline (THQ) fragment is needed for coupling.",
+        "gap": "How to efficiently construct the pyridine ring of the THQ fragment.",
+        "decision": "To construct the pyridine ring, chose a Cu-catalyzed annulation method with 1,3-diketone 14 and propargyl amine 15, expecting reliable formation of (±)-16."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CCC(=O)CC1=O",
+          "C#CCCN"
+        ],
+        "product_smiles": [
+          "CC1CCC(=O)c2ncccc21"
+        ],
+        "named_reaction": "Cu-catalyzed pyridine synthesis",
+        "reagents": [
+          "CuCl2"
+        ],
+        "stoichiometry": {
+          "CuCl2": "20 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 49,
+        "observation": "A Cu-catalyzed annulation method was found to reliably afford (±)-16 from 14 and propargyl amine (15) in 49% on a multi-gram scale."
+      },
+      "evidence": {
+        "text_span": "A Cu-catalyzed annulation method13 was found to reliably afford (±)-16 from 14 and propargyl amine (15) in 49% on a multi-gram scale.",
+        "section": "Biocatalytic and chemocatalytic preparation of the pendant piperidine and tetrahydroquinoline fragments"
+      }
+    },
+    {
+      "step_id": 10,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Both piperidine (10-13) and pyridine (16-20) fragments were prepared.",
+        "gap": "How to form the C-C bond between the piperidine and pyridine units.",
+        "decision": "To achieve fragment coupling, chose HWE olefination, olefin metathesis by Grubbs catalyst, Nozaki-Hiyama-Kishi (NHK) reaction, and deoxygenative cross-coupling reactions (Weix and MacMillan groups)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CCOP(=O)(OCC)C1CCC(C)c2cccnc21",
+          "",
+          "C=C1CCC(C)c2cccnc21",
+          "",
+          "C=C1CCc2ncccc2C1C.O=S(=O)(O)C(F)(F)F",
+          "CC1CCC=C(OS(=O)(=O)CF)c2ncccc21",
+          "CC1CCC(Br)c2ncccc21"
+        ],
+        "product_smiles": [],
+        "named_reaction": "HWE olefination, olefin metathesis, NHK reaction, deoxygenative cross-coupling",
+        "reagents": []
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "complex_mixture",
+        "observation": "These reactions afforded either a complex mixture of products or unreacted starting materials."
+      },
+      "evidence": {
+        "text_span": "Fragment coupling between the piperidine and pyridine units was initially examined by means of HWE olefination, olefin metathesis by Grubbs catalyst, Nozaki-Hiyama-Kishi (NHK) reaction, and deoxygenative cross-coupling reactions previously developed by the Weix15 and MacMillan groups16 (Fig. 3A and Supplementary Table S3). Unfortunately, these reactions afforded either a complex mixture of products or unreacted starting materials.",
+        "section": "Attempts of fragment coupling and revised retrosynthesis of 6"
+      }
+    },
+    {
+      "step_id": 11,
+      "action": "revision",
+      "revises_step_id": 10,
+      "thought": {
+        "background": "Traditional C-C bond forming reactions failed to couple the piperidine and pyridine fragments.",
+        "gap": "A new strategy is needed to achieve the desired C-C bond construction.",
+        "decision": "To achieve the desired C-C bond construction, pivoted to the N-deletion strategy, expecting stereospecific coupling through an in-cage diradical mechanism."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "To achieve the desired C–C bond construction, we then pivoted to the use of N-deletion strategy, in which a new C–C bond is formed from a secondary amine through in-cage diradical coupling with N2 evolution via an isodiazene intermediate upon reacting the amine with a nitrogen transfer reagent."
+      },
+      "evidence": {
+        "text_span": "To achieve the desired C–C bond construction, we then pivoted to the use of N-deletion strategy, in which a new C–C bond is formed from a secondary amine through in-cage diradical coupling with N2 evolution via an isodiazene intermediate upon reacting the amine with a nitrogen transfer reagent17–22.",
+        "section": "Attempts of fragment coupling and revised retrosynthesis of 6"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": "tetrahydroquinoline_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The N-deletion strategy requires an amine precursor (23). Initial attempts to obtain 23 involved asymmetric reduction of (±)-16.",
+        "gap": "How to obtain optically pure amine 23 from (±)-16.",
+        "decision": "To obtain optically pure 23, chose asymmetric reduction of (±)-16 using Noyori’s Ru catalyst in the presence of HCO2H and NEt3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1CCC(=O)c2ncccc21"
+        ],
+        "product_smiles": [
+          "C[C@@H]1CC[C@H](O)c2ncccc2C1",
+          "C[C@H]1CC[C@H](O)c2ncccc2C1"
+        ],
+        "named_reaction": "Noyori asymmetric reduction",
+        "catalyst": "Noyori's Ru catalyst",
+        "reagents": [
+          "HCO2H",
+          "NEt3"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 26,
+        "observation": "Asymmetric reduction of (±)-16 utilizing Noyori’s Ru catalyst in the presence of HCO2H and NEt3 gave an optically pure product 24a in 26% (Entry 2 of Supplementary Table S5). Further optimization afforded 24a (42%) and 24b (28%)."
+      },
+      "evidence": {
+        "text_span": "Conversely, asymmetric reduction of (±)-16 utilizing Noyori’s Ru catalyst in the presence of HCO2H and NEt3 gave an optically pure product 24a in 26% (Entry 2 of Supplementary Table S5). Further optimization of this reaction afforded 24a (42%) and 24b (28%)",
+        "section": "Preparation of amine 23 from a chiral building block and N-deletion precursor 22"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": "tetrahydroquinoline_fragment",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Optically pure 24a and 24b were obtained from Noyori reduction.",
+        "gap": "The route to 23 from 24a/24b needs to be efficient and scalable.",
+        "decision": "To obtain 23, considered the route from 24b, but separation of diastereomers was challenging."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "purification_failed",
+        "observation": "While 24b could be obtained with Noyori reduction, separation of product diastereomers with flash column chromatography was highly challenging, rendering the route unsuitable for large-scale use."
+      },
+      "evidence": {
+        "text_span": "It is worth noting that while 24b could be obtained with Noyori reduction, separation of product diastereomers with flash column chromatography was highly challenging, rendering the route unsuitable for large-scale use.",
+        "section": "Preparation of amine 23 from a chiral building block and N-deletion precursor 22"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": "tetrahydroquinoline_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optically pure 24a was obtained.",
+        "gap": "How to convert 24a to the desired amine 23.",
+        "decision": "To convert 24a to 23, chose stereoinvertive azide displacement of the alcohol under Mitsunobu conditions, followed by hydrogenation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1CC[C@H](O)c2ncccc2C1"
+        ],
+        "product_smiles": [
+          "C[C@H]1CC[C@H](N)c2ncccc2C1"
+        ],
+        "named_reaction": "Mitsunobu reaction, hydrogenation",
+        "reagents": [
+          "DPPA",
+          "DBU",
+          "H2",
+          "Pd/C"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "observation": "Stereoinvertive azide displacement of the alcohol on 24b under Mitsunobu conditions proceeded in 91% yield, which was followed by hydrogenation to give optically pure (5S, 7R)-23 in 83%."
+      },
+      "evidence": {
+        "text_span": "Stereoinvertive azide displacement of the alcohol on 24b under Mitsunobu conditions proceeded in 91% yield, which was followed by hydrogenation to give optically pure (5S, 7R)-23 in 83%.",
+        "section": "Preparation of amine 23 from a chiral building block and N-deletion precursor 22"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": "tetrahydroquinoline_fragment",
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "The first-generation synthesis of 23 was inefficient due to difficult purification and several steps.",
+        "gap": "A more efficient and scalable route to 23 is needed.",
+        "decision": "To develop a second-generation synthesis, chose (R)-pulegone (25) as a chiral building block and initiated a retro-aldol reaction, followed by Cu-catalyzed annulation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1=C(C)[C@H](C)CCC1=O",
+          "C#CCCN"
+        ],
+        "product_smiles": [
+          "C[C@@H]1CCc2cccnc2C1",
+          "C[C@H]1CCc2cccnc2C1"
+        ],
+        "reagents": [
+          "H2SO4",
+          "H2O",
+          "CPC",
+          "CuCl2"
+        ],
+        "stoichiometry": {
+          "CPC": "1 mol%",
+          "CuCl2": "2.5 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 45,
+        "observation": "A second-generation synthesis commenced with a retro-aldol reaction on (R)-pulegone 25 under aqueous acidic condition in the presence of cetylpyridinium chloride (CPC) to afford (R)-3-methylcyclohexanone (R)-SI-6. This chiral ketone was subjected to the Cu-catalyzed annulation with propargyl amine 15 to give a mixture of (R)-26 and its regioisomer (R)-27 with a ratio of 3.0:1.0 in 45% over 2 steps."
+      },
+      "evidence": {
+        "text_span": "To this end, a second-generation synthesis commenced with a retro-aldol reaction on (R)-pulegone 25, a useful chiral building block, under aqueous acidic condition in the presence of cetylpyridinium chloride (CPC)23 to afford (R)-3-methylcyclohexanone (R)-SI-6. This chiral ketone was subjected to the Cu-catalyzed annulation with propargyl amine 15 to give a mixture of (R)-26 and its regioisomer (R)-27 with a ratio of 3.0:1.0 in 45% over 2 steps (see Supplementary Table S6 for reaction optimization).",
+        "section": "Preparation of amine 23 from a chiral building block and N-deletion precursor 22"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": "tetrahydroquinoline_fragment",
+      "action": "failed_attempt",
+      "thought": {
+        "background": "A mixture of (R)-26 and (R)-27 was obtained.",
+        "gap": "How to convert this mixture to the desired ketone (S)-16 or its derivatives directly.",
+        "decision": "To directly generate SI-10 and 24b, briefly explored chemocatalytic benzylic azidation and biocatalytic benzylic oxidation of this mixture."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Chemocatalytic benzylic azidation and biocatalytic benzylic oxidation of this mixture to directly generate SI-10 and 24b, respectively, were briefly explored but proved fruitless."
+      },
+      "evidence": {
+        "text_span": "Chemocatalytic benzylic azidation and biocatalytic benzylic oxidation of this mixture to directly generate SI-10 and 24b, respectively, were briefly explored but proved fruitless (Supplementary Fig. S3).",
+        "section": "Preparation of amine 23 from a chiral building block and N-deletion precursor 22"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": "tetrahydroquinoline_fragment",
+      "action": "revision",
+      "revises_step_id": 16,
+      "thought": {
+        "background": "Direct conversion of the mixture of (R)-26 and (R)-27 to the desired products failed.",
+        "gap": "A method is needed to selectively oxidize (R)-26 to (S)-16 and separate it from (R)-27.",
+        "decision": "To obtain (S)-16, chose benzylic oxidation of (R)-26 using manganese salts in the presence of tert-butyl hydrogen peroxide, followed by optimization."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1CCc2cccnc2C1",
+          "C[C@H]1CCc2cccnc2C1"
+        ],
+        "product_smiles": [
+          "C[C@@H]1CCC(=O)c2cccnc21"
+        ],
+        "reagents": [
+          "Mn(OAc)3.2H2O",
+          "tBuOOH"
+        ],
+        "stoichiometry": {
+          "Mn(OAc)3.2H2O": "10 mol%"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 41,
+        "observation": "Initial screening of reaction conditions, including the use of metal- and photoredox-catalyzed oxidation, produced promising results with manganese salts in the presence of tert-butyl hydrogen peroxide. In subsequent optimization, loading an increased amount of Mn(OAc)3 (10 mol%) and using a higher substrate concentration (0.5 M) improved the reaction yield to 32%. Finally, extending the reaction time from 16 h to 24 h furnished the desired pyridyl ketone (S)-16 in 41% on a gram scale."
+      },
+      "evidence": {
+        "text_span": "Our effort thus turned to benzylic oxidation of (R)-26 to obtain (S)-16 and separate it from (R)-27 (Fig. 4D and see Supplementary Table S7 in the Supplementary Information for reaction optimization Table S7). Initial screening of reaction conditions, including the use of metal- and photoredox-catalyzed oxidation24–29, produced promising results with manganese salts in the presence of tert-butyl hydrogen peroxide (Fig. 4D and Entry 2 and 3 of Table S7). In subsequent optimization, we varied the identity of the manganese salt, solvent and additives and ultimately identified that loading an increased amount of Mn(OAc)3 (10 mol%) and using a higher substrate concentration (0.5 M) improved the reaction yield to 32% (Entry 24 of Supplementary Table S7). Finally, extending the reaction time from 16 h to 24 h furnished the desired pyridyl ketone (S)-16 in 41% on a gram scale (Fig. 4B).",
+        "section": "Preparation of amine 23 from a chiral building block and N-deletion precursor 22"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": "tetrahydroquinoline_fragment",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Chiral (S)-16 was obtained.",
+        "gap": "How to convert (S)-16 to the desired amine (5S, 7R)-23 with high yield and diastereoselectivity.",
+        "decision": "To obtain (5S, 7R)-23, chose oxime formation with o-benzylhydroxylamine, followed by hydrogenation, based on superior yield and diastereoselectivity compared to other oximes."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1CCC(=O)c2cccnc21"
+        ],
+        "product_smiles": [
+          "C[C@@H]1CCC(N)[C@@H]2C=CC=CN=C12"
+        ],
+        "reagents": [
+          "BnONH2.HCl",
+          "NEt3",
+          "H2",
+          "Pd/C"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "dr": "20:1",
+        "observation": "(S)-16 was subjected to oxime formation with o-benzylhydroxylamine, followed by hydrogenation to provide (5S, 7R)-23 in 66% over 2 steps (d.r. = 20:1)."
+      },
+      "evidence": {
+        "text_span": "With this insight, (S)-16 was subjected to oxime formation with o-benzylhydroxylamine, followed by hydrogenation to provide (5S, 7R)-23 in 66% over 2 steps (d.r. = 20:1)).",
+        "section": "Preparation of amine 23 from a chiral building block and N-deletion precursor 22"
+      }
+    },
+    {
+      "step_id": 19,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The piperidine aldehyde 12 and the tetrahydroquinoline amine (5S, 7R)-23 are available.",
+        "gap": "How to combine these two fragments to form the N-deletion precursor 22.",
+        "decision": "To form the N-deletion precursor, chose reductive amination of 23 with aldehyde 12 using NaBH(OAc)3."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC1N=CC=C2[C@@H](N)CCC[C@@H]21"
+        ],
+        "product_smiles": [
+          "C[C@H]1Cc2cc(N)ccc2C[C@@H]1CN[C@H]1CCN(C(=O)OC(C)(C)C)C[C@@H]1C[Si](C)(C)OC(C)(C)C"
+        ],
+        "named_reaction": "reductive amination",
+        "reagents": [
+          "NaBH(OAc)3"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "Reductive amination of 23 with aldehyde 12 using NaBH(OAc)3 provided the N-deletion precursor 22 in 86% on a gram-scale as a single diastereomer."
+      },
+      "evidence": {
+        "text_span": "Finally, reductive amination of 23 with aldehyde 12 using NaBH(OAc)3 provided the N-deletion precursor 22 in 86% on a gram-scale as a single diastereomer (Fig. 4C).",
+        "section": "Preparation of amine 23 from a chiral building block and N-deletion precursor 22"
+      }
+    },
+    {
+      "step_id": 20,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The N-deletion precursor 22 was in hand.",
+        "gap": "How to perform the N-deletion reaction to form the C-C bond.",
+        "decision": "To perform N-deletion, examined Levin’s anomeric amide 28, sulfamoyl azides, and hypervalent iodine reagent 29a as nitrogen transfer reagents."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H]1Cc2cc(N)ccc2C[C@@H]1CN[C@H]1CCN(C(=O)OC(C)(C)C)C[C@@H]1C[Si](C)(C)OC(C)(C)C"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "O=C(N(OBn)OP(C)(C)(C))c1ccc(C(F)(F)F)cc1",
+          "N3SO2N3",
+          "DBU",
+          "tBuOLi",
+          "O=S(=O)(O[I](O)c1ccccc1)c1ccccc1"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "Initial results were disappointing as no desired product could be observed with the anomeric amide, sulfamoyl azides, and 29a."
+      },
+      "evidence": {
+        "text_span": "Initial results were disappointing as no desired product could be observed with the anomeric amide, sulfamoyl azides, and 29a.",
+        "section": "Nitrogen-deletion of 22 and total synthesis of lycoposerramine W 6"
+      }
+    },
+    {
+      "step_id": 21,
+      "action": "revision",
+      "revises_step_id": 20,
+      "thought": {
+        "background": "Initial N-deletion attempts with various reagents failed.",
+        "gap": "A more effective nitrogen transfer reagent and optimized conditions are needed for the N-deletion reaction.",
+        "decision": "To achieve N-deletion, switched the hypervalent iodine reagent from 29a to its mesyloxy substituent 29b, and optimized reaction conditions (temperature, addition method, scale)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H]1Cc2cc(N)ccc2C[C@@H]1CN[C@H]1CCN(C(=O)OC(C)(C)C)C[C@@H]1C[Si](C)(C)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "C[C@H]1CCC2C=C[C@@H](C[C@H]3CCN(C(=O)OC(C)(C)C)C[C@@H]3C[Si](C)(C)OC(C)(C)C)[C@H]2C1"
+        ],
+        "reagents": [
+          "O=S(=O)(O)OI(C1=CC=CC=C1)O",
+          "NH2CO2NH4"
+        ],
+        "solvent": "2,2,2-trifluoroethanol (TFE)",
+        "temperature": "room temperature",
+        "time": "1 h",
+        "stoichiometry": {
+          "29b": "8 eq.",
+          "NH2CO2NH4": "8 eq."
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 51,
+        "observation": "Switching the hypervalent iodine reagent from 29a to its mesyloxy substituent 29b led to an initial hit of 4% yield of 21. Lowering the reaction temperature and adjusting the reagent introduction to drop-wise addition in TFE provided a 29% yield, which improved further to 51% upon conducting the reaction on a 0.1 mmol scale. 21 was formed as a single diastereomer."
+      },
+      "evidence": {
+        "text_span": "However, switching the hypervalent iodine reagent from 29a to its mesyloxy substituent 29b30 led to an initial hit of 4% yield of 21, which provided a starting point for further optimization. Lowering the reaction temperature and adjusting the reagent introduction to drop-wise addition in 2,2,2-trifluoroethanol (TFE) provided a 29% yield (Supplementary Fig. S7), which improved further to 51% upon conducting the reaction on a 0.1 mmol scale, and 21 was formed as a single diastereomer in the reaction, suggesting a complete transfer of stereo information without erosion.",
+        "section": "Nitrogen-deletion of 22 and total synthesis of lycoposerramine W 6"
+      }
+    },
+    {
+      "step_id": 22,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The N-deletion product 21 was obtained.",
+        "gap": "The protecting groups (Boc and TBS) need to be removed, and the nitrogen needs to be methylated to complete the synthesis of lycoposerramine W.",
+        "decision": "To complete the synthesis, chose Boc deprotection, N-methylation, and TBS deprotection under acidic conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H]1CCC2C=C[C@@H](C[C@H]3CCN(C(=O)OC(C)(C)C)C[C@@H]3C[Si](C)(C)OC(C)(C)C)[C@H]2C1"
+        ],
+        "product_smiles": [
+          "CC1(C)CC[C@@H](C[C@H]2[C@@H](O)CCC[N+]2(C)C)[C@H](c2cccnc2)C1"
+        ],
+        "reagents": [
+          "TFA",
+          "HCHO aq.",
+          "NaBH(OAc)3",
+          "HCl/1,4-dioxane"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "observation": "Boc deprotection, N-methylation (86% over 2 steps), and TBS deprotection under acidic conditions (71%) completed our total synthesis of lycoposerramine W in 10 steps (longest linear sequence, LLS)."
+      },
+      "evidence": {
+        "text_span": "Boc deprotection, N-methylation (86% over 2 steps), and TBS deprotection under acidic conditions (71%) completed our total synthesis of lycoposerramine W in 10 steps (longest linear sequence, LLS).",
+        "section": "Nitrogen-deletion of 22 and total synthesis of lycoposerramine W 6"
+      }
+    },
+    {
+      "step_id": 23,
+      "action": "forward_reaction",
+      "fragment_id": null,
+      "thought": {
+        "background": "The N-deletion strategy proved successful for lycoposerramine W.",
+        "gap": "Can this strategy be applied to other THQ-containing phlegmarine alkaloids, such as lycoposerramine V (5)?",
+        "decision": "To synthesize lycoposerramine V, prepared a chiral piperidine fragment (S)-30 and reacted it with (5S, 7R)-23 to afford N-deletion precursor 31 via reductive amination."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N1CCC[C@H](C=O)C1",
+          "CC1N=CC=C2[C@H](N)CCC[C@@H]21"
+        ],
+        "product_smiles": [
+          "C[C@H]1CCC[C@H](CN2CCC[C@@H]2N(C)C(=O)OC(C)(C)C)c2cccnc21"
+        ],
+        "named_reaction": "reductive amination",
+        "reagents": [
+          "NaBH(OAc)3"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "A chiral piperidine fragment (S)-30 was prepared from commercially available N-Boc-L-pipecolic acid (S)-SI-14 in 56% over 2 steps and then reacted with (5S, 7R)-23 to afford N-deletion precursor 31 in 82% yield."
+      },
+      "evidence": {
+        "text_span": "A chiral piperidine fragment (S)-30 was prepared from commercially available N-Boc-L-pipecolic acid (S)-SI-14 in 56% over 2 steps and then reacted with (5S, 7R)-23 to afford N-deletion precursor 31 in 82% yield.",
+        "section": "Total synthesis of lycoposerramine V 5 and epimers through late-stage N-deletion strategy"
+      }
+    },
+    {
+      "step_id": 24,
+      "action": "failed_attempt",
+      "fragment_id": null,
+      "thought": {
+        "background": "The N-deletion precursor 31 for lycoposerramine V was obtained.",
+        "gap": "How to perform the N-deletion reaction to form the C-C bond for lycoposerramine V.",
+        "decision": "To perform N-deletion, used the optimized conditions with reagent 29b that were successful for lycoposerramine W."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H]1CCC[C@H](CN2CCC[C@@H]2N(C)C(=O)OC(C)(C)C)c2cccnc21"
+        ],
+        "product_smiles": [],
+        "reagents": [
+          "O=S(=O)(O)OI(C1=CC=CC=C1)O",
+          "NH2CO2NH4"
+        ]
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "complex_mixture",
+        "observation": "The initial attempt of N-deletion on 29b under the optimized conditions resulted in a mixture of inseparable products even after Boc deprotection."
+      },
+      "evidence": {
+        "text_span": "The initial attempt of N-deletion on 29b under the optimized conditions resulted in a mixture of inseparable products even after Boc deprotection.",
+        "section": "Total synthesis of lycoposerramine V 5 and epimers through late-stage N-deletion strategy"
+      }
+    },
+    {
+      "step_id": 25,
+      "action": "revision",
+      "revises_step_id": 24,
+      "thought": {
+        "background": "N-deletion of precursor 31 with reagent 29b resulted in an inseparable mixture.",
+        "gap": "A different nitrogen transfer reagent is needed for the N-deletion of 31.",
+        "decision": "To achieve N-deletion, changed the nitrogen transfer reagent from 29b to DPPH (o-diphenylphosphinylhydroxyulamine)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@H]1CCC[C@H](CN2CCC[C@@H]2N(C)C(=O)OC(C)(C)C)c2cccnc21"
+        ],
+        "product_smiles": [
+          "C[C@H]1CCC[C@H]2C1=CC=NC2C[C@H]1CCCN1"
+        ],
+        "reagents": [
+          "Ph2P(=O)ONH2",
+          "K2CO3",
+          "TFA"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 16,
+        "observation": "Changing the nitrogen transfer reagent from 29b to DPPH successfully delivered the N-deletion product. Subsequent Boc deprotection afforded 5 as a single diastereomer in 16% yield over 2 steps, completing the total synthesis of 5 in 8 steps (LLS) overall."
+      },
+      "evidence": {
+        "text_span": "Fortunately, changing the nitrogen transfer reagent from 29b to DPPH22 successfully delivered the N-deletion product. Subsequent Boc deprotection afforded 5 as a single diastereomer in 16% yield over 2 steps, completing the total synthesis of 5 in 8 steps (LLS) overall.",
+        "section": "Total synthesis of lycoposerramine V 5 and epimers through late-stage N-deletion strategy"
+      }
+    },
+    {
+      "step_id": 26,
+      "action": "forward_reaction",
+      "fragment_id": null,
+      "thought": {
+        "background": "The N-deletion strategy was successful for lycoposerramine W and V.",
+        "gap": "Can this strategy be applied to synthesize epimers, such as 5-epi-lycoposerramine V?",
+        "decision": "To synthesize 5-epi-lycoposerramine V, started from the corresponding stereoisomers of the coupling fragments, specifically (R)-30, and used appropriate N-deletion conditions (DPPH)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N1CCC[C@@H]1C=O",
+          "N[C@@H]1CCc2ncccc2[C@H]1N"
+        ],
+        "product_smiles": [
+          "C[C@@H]1CCc2ncccc2[C@H]1N[C@H]1CCCN(C(=O)OC(C)(C)C)C1"
+        ],
+        "named_reaction": "reductive amination",
+        "reagents": [
+          "NaBH(OAc)3"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "observation": "The established strategy was also applied in the synthesis of 5-epi-lycoposerramine V (5-epi-5) by starting from the corresponding stereoisomers of the coupling fragments and using the appropriate N-deletion conditions. Reductive amination of (R)-30 with (5S, 7R)-23 afforded 5-epi-31 in 82% yield."
+      },
+      "evidence": {
+        "text_span": "Finally, the established strategy was also applied in the synthesis of 5-epi-lycoposerramine V (5-epi-5) and 15-epi-lycoposerramine W (15-epi-6), by starting from the corresponding stereoisomers of the coupling fragments and using the appropriate N-deletion conditions (Fig. 5B and C).",
+        "section": "Total synthesis of lycoposerramine V 5 and epimers through late-stage N-deletion strategy"
+      }
+    },
+    {
+      "step_id": 27,
+      "action": "forward_reaction",
+      "fragment_id": null,
+      "thought": {
+        "background": "The N-deletion precursor 5-epi-31 was obtained.",
+        "gap": "How to perform the N-deletion reaction and deprotection to yield 5-epi-lycoposerramine V.",
+        "decision": "To synthesize 5-epi-lycoposerramine V, applied the N-deletion conditions with DPPH, followed by TFA deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1CCc2ncccc2[C@H]1N[C@H]1CCCN(C(=O)OC(C)(C)C)C1"
+        ],
+        "product_smiles": [
+          "C[C@@H]1CCc2ncccc2[C@H]1N[C@H]1CCCN1"
+        ],
+        "reagents": [
+          "Ph2P(=O)ONH2",
+          "K2CO3",
+          "TFA"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 13,
+        "observation": "N-deletion of 5-epi-31 with DPPH and subsequent TFA deprotection afforded 5-epi-lycoposerramine V in 13% yield over 2 steps."
+      },
+      "evidence": {
+        "text_span": "N-deletion of 5-epi-31 with DPPH and subsequent TFA deprotection afforded 5-epi-lycoposerramine V in 13% yield over 2 steps.",
+        "section": "Total synthesis of lycoposerramine V 5 and epimers through late-stage N-deletion strategy"
+      }
+    },
+    {
+      "step_id": 28,
+      "action": "forward_reaction",
+      "fragment_id": null,
+      "thought": {
+        "background": "The N-deletion strategy was successful for lycoposerramine W and V, and 5-epi-lycoposerramine V.",
+        "gap": "Can this strategy be applied to synthesize other epimers, such as 15-epi-lycoposerramine W?",
+        "decision": "To synthesize 15-epi-lycoposerramine W, started from the corresponding stereoisomers of the coupling fragments, specifically (5S, 7S)-23, and used appropriate N-deletion conditions (29b)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N1CC(O[Si](C)(C)C(C)(C)C)CC[C@H]1C=O",
+          "CC1CCc2cccnc2[C@H]1N"
+        ],
+        "product_smiles": [
+          "C[C@@H]1c2ncccc2CC[C@@H]1NC[C@@H]1CCC(O[Si](C)(C)C(C)(C)C)CN1C(=O)OC(C)(C)C"
+        ],
+        "named_reaction": "reductive amination",
+        "reagents": [
+          "NaBH(OAc)3"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "observation": "Reductive amination of 12 with (5S, 7S)-23 afforded 15-epi-22 in 73% yield."
+      },
+      "evidence": {
+        "text_span": "Reductive amination of 12 with (5S, 7S)-23 afforded 15-epi-22 in 73% yield.",
+        "section": "Total synthesis of lycoposerramine V 5 and epimers through late-stage N-deletion strategy"
+      }
+    },
+    {
+      "step_id": 29,
+      "action": "forward_reaction",
+      "fragment_id": null,
+      "thought": {
+        "background": "The N-deletion precursor 15-epi-22 was obtained.",
+        "gap": "How to perform the N-deletion reaction to yield 15-epi-lycoposerramine W.",
+        "decision": "To synthesize 15-epi-lycoposerramine W, applied the N-deletion conditions with reagent 29b, followed by N-methylation and deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C[C@@H]1c2ncccc2CC[C@@H]1NC[C@@H]1CCC(O[Si](C)(C)C(C)(C)C)CN1C(=O)OC(C)(C)C"
+        ],
+        "product_smiles": [
+          "C[C@@H]1c2ncccc2CC[C@@H]1CC1[C@@H](O)CCCN1C"
+        ],
+        "reagents": [
+          "O=S(O)(C)O[C@@H](O)C1=CC=CC=C1",
+          "NH2CO2NH4",
+          "N-methylation deprotection"
+        ]
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 53,
+        "observation": "N-deletion of 15-epi-22 with 29b afforded 15-epi-21 in 46% yield. Subsequent N-methylation and deprotection afforded 15-epi-lycoposerramine W in 53% yield over 3 steps."
+      },
+      "evidence": {
+        "text_span": "N-deletion of 15-epi-22 with 29b afforded 15-epi-21 in 46% yield. Subsequent N-methylation and deprotection afforded 15-epi-lycoposerramine W in 53% yield over 3 steps.",
+        "section": "Total synthesis of lycoposerramine V 5 and epimers through late-stage N-deletion strategy"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": null,
+        "unit": "%",
+        "interpretation": "Not explicitly stated for overall synthesis, but individual step yields are provided."
+      },
+      "Longest Linear Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "For lycoposerramine W, significantly improved from 23 steps in prior syntheses."
+      },
+      "Total Steps": {
+        "value": null,
+        "unit": "steps",
+        "interpretation": "Not explicitly stated for overall synthesis, but individual step counts are provided."
+      },
+      "Failed Attempts Count": {
+        "value": 5,
+        "unit": "attempts",
+        "interpretation": "Multiple strategies were explored and failed before identifying the successful N-deletion approach."
+      }
+    },
+    "comparison_to_prior": "The spectroscopic data of the synthetic lycoposerramine W sample are in good agreement with those of natural and synthetic ones reported by Takayama et al. The synthesis of lycoposerramine W was achieved in 10 steps (LLS), compared to 23 steps previously. Lycoposerramine V was synthesized in 8 steps (LLS), compared to 18 or 22 steps previously. The N-deletion strategy provides modular access to various stereochemical diads.",
+    "significance": "This work demonstrates the viability of an N-deletion strategy for coupling fully functionalized fragments in the synthesis of complex natural products. It expands the utility of Antonchick’s hypervalent iodine-based N-deletion method beyond its original scope in cyclobutane formation. The strategy offers a straightforward and intuitive logic for designing nitrogen 'traceless linchpin' strategies, enabling stereocontrolled C–C bond formation and modular access to various stereoisomers, including unnatural epimers. This approach streamlines access to complex molecules and highlights the benefits of incorporating modern synthetic methodologies."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s41467-025-56956-x",
+      "pmcid": "PMC11829995",
+      "title": "Enantioselective total synthesis of lycoposerramine congeners through late-stage nitrogen deletion.",
+      "authors": "Yokoi K, Renata H.",
+      "journal": "Nat Commun",
+      "year": 2025,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC11829995?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/96787a20-7572-4fbf-abef-73b6804ea4d4.zip",
+      "parsed_at": "2026-05-11T06:37:48.542098+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 66,
+    "parseable": 50,
+    "canonicalized": 48,
+    "invalid": 16,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C(OC(C)(C)C)N1C[C@H](OSi(C)(C)C(C)(C)C)CC[C@H]1C=O",
+      "O=C(OC(C)(C)C)N1C[C@H](OSi(C)(C)C(C)(C)C)CC[C@H]1C(O)=O",
+      "O=C(OC(C)(C)C)N1C[C@H](OSi(C)(C)C(C)(C)C)CC[C@H]1C(O)=O",
+      "O=C(OC(C)(C)C)N1C[C@H](OSi(C)(C)C(C)(C)C)CC[C@H]1CO",
+      "O=C(OC(C)(C)C)N1C[C@H](OSi(C)(C)C(C)(C)C)CC[C@H]1CO",
+      "O=C(OC(C)(C)C)N1C[C@H](OSi(C)(C)C(C)(C)C)CC[C@H]1CO",
+      "CN1C[C@H](OSi(C)(C)C(C)(C)C)CC[C@H]1CO",
+      "CN1C[C@H](OSi(C)(C)C(C)(C)C)CC[C@H]1CO",
+      "O=C(OC(C)(C)C)N1C[C@H](OSi(C)(C)C(C)(C)C)CC[C@H]1CO",
+      "O=C(OC(C)(C)C)N1C[C@H](OSi(C)(C)C(C)(C)C)CC[C@H]1C=O"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

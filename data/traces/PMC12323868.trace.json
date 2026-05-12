@@ -1,0 +1,736 @@
+{
+  "trace_id": "TS-PMC12323868",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "rumphellclovane E and sarinfacetamides A and B",
+    "smiles": "CC(=O)OC1C(C)C2CC(C(C=CC(C)(C)OC(C)=O)C(C)=O)C(C)C2C1C",
+    "natural_product_class": "terpenoid",
+    "structural_features": {
+      "key_motifs": [
+        "clovane-type terpenoid",
+        "tricyclo[6.3.1.01,5]dodecane"
+      ]
+    },
+    "motivation": "Highly functionalized clovane-type terpenoids like rumphellclovane E and sarinfacetamides A and B possess additional functional groups beyond C2 and C9, making their synthesis challenging. Sarinfacetamide A exhibits unique biological activity. A general strategy for synthesizing clovane-type terpenoids with functionalized cores and/or side chains is needed.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Fu and Liu",
+        "year": 2021,
+        "doi": "10.1021/acs.orglett.0c04000",
+        "key_strategy": "cyclopropanation/C–C bond cleavage"
+      },
+      {
+        "lead_author": "Ninomiya, Nagasawa, Iwabuchi",
+        "year": 2022,
+        "doi": "10.1021/acs.orglett.2c03000",
+        "key_strategy": "synthesis of versatile intermediate 12 from (-)-carvone (11 steps, 9% overall yield)"
+      }
+    ],
+    "success_criteria": {
+      "free_text": "Enantioselective collective total synthesis of rumphellclovane E (4), sarinfacetamides A (5) and B (6) via a highly efficient and scalable route to a versatile intermediate (12/ent-12) in five steps from dihydrocarvone."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C4-side chain elongation",
+        "reasoning": "Sarinfacetamides A and B require elongation of the C4 side chain, with a vinyl group serving as a precursor.",
+        "named_strategy": "conjugate addition"
+      },
+      {
+        "bond_description": "C2 ketone carbonyl reduction",
+        "reasoning": "Rumphellclovane E requires diastereoselective reduction of the C2 ketone carbonyl group.",
+        "named_strategy": "diastereoselective reduction"
+      },
+      {
+        "bond_description": "cyclopentenone moiety formation",
+        "reasoning": "The cyclopentenone moiety of 12/ent-12 can be constructed from aldehyde 14/ent-14.",
+        "named_strategy": "ring-closing metathesis"
+      },
+      {
+        "bond_description": "bicyclo[3.3.1]nonane motif assembly",
+        "reasoning": "The bicyclo[3.3.1]nonane motif of 15 can be assembled through a domino Michael–aldol reaction of β-ketoaldehyde 17/ent-17 and acrolein (15) in a single step.",
+        "named_strategy": "domino Michael–aldol reaction"
+      },
+      {
+        "bond_description": "β-ketoaldehyde 17/ent-17 formation",
+        "reasoning": "β-Ketoaldehyde 17/ent-17 can be readily derived from dihydrocarvone (18/ent-18) through conventional formylation. The C2 oxygen functional group is introduced early as an activating group for the domino Michael–aldol reaction.",
+        "named_strategy": "formylation"
+      }
+    ],
+    "rationale": "The strategy aims for a unified and enantiocontrolled synthesis of highly functionalized clovane-type terpenoids using a versatile intermediate (12/ent-12). This intermediate is designed to be accessible in both enantiomeric forms from commercially available chiral building blocks, incorporate all key oxygen atoms, and allow for diversification at C4 via conjugate addition. The key improvement over previous work is a drastically shortened route to 12/ent-12 via a domino Michael–aldol reaction using a novel acrolein surrogate, enabling multigram scale synthesis."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Previous synthesis of versatile intermediate 12 from (-)-carvone was lengthy (11 steps, 9% overall yield) and inefficient, limiting its application. Acrolein is an unstable and toxic reagent, making its direct use challenging.",
+        "gap": "A more efficient and scalable route to the versatile intermediate 12/ent-12 is needed. A practical method for in situ generation of acrolein for the domino Michael–aldol reaction is required.",
+        "decision": "To enable an efficient domino Michael–aldol reaction, we will design an acrolein precursor (16) that can release acrolein (15) in situ through E1cB elimination under basic conditions. This will allow the reaction to proceed without purification of acrolein."
+      },
+      "evidence": {
+        "text_span": "More importantly, as of 2025, there are limited reliable and practical suppliers of reagent-grade acrolein, mainly due to its instability and toxicity. This situation prompted us to develop a novel methodology to generate acrolein from an appropriate precursor (16) in situ. β-Ketoaldehyde 17/ent-17 can be readily derived from dihydrocarvone (18/ent-18) through a conventional formylation.11 In this revised plan, the C2 oxygen functional group of the versatile intermediate is introduced early in the synthesis as an activating group (formyl group in 17/ent-17) for the domino Michael–aldol reaction, rationally avoiding latestage functional group manipulations.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "β-Ketoaldehyde 17, derived from (+)-dihydrocarvone (18) via formylation, is available. Acrolein precursor 16-Trt is designed to release acrolein via E1cB elimination.",
+        "gap": "The optimal conditions for the domino Michael–aldol reaction using 16-Trt and 17 need to be determined, specifically regarding temperature and diastereoselectivity.",
+        "decision": "To test the domino Michael–aldol reaction, we will use 16-Trt and 17 in the presence of DBU. We will start at room temperature and increase if necessary, expecting the formation of cyclized product 20."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)[C@H]1[C@H]2C(=O)CC(C=O)[C@@H]2CC(=O)[C@H]1C",
+          "O=CCCCOCc1ccccc1C(c1ccccc1)c1ccccc1"
+        ],
+        "product_smiles": [
+          "C=C(C)[C@H]1[C@H]2C(=O)C[C@@H]([C@@H](C)O)[C@@H]2CC(=O)[C@H]1C"
+        ],
+        "reagents": [
+          "DBU"
+        ],
+        "solvent": "toluene",
+        "temperature": "room temperature, then increased"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "16-Trt failed to release acrolein at room temperature. Increasing the temperature led to slow disappearance of 16-Trt and generation of desired cyclized product 20, but as an inseparable mixture of diastereomers with undesired endo-20 as the major product (78%, exo:endo = 1:2). Heating the mixture further increased the proportion of endo-20, confirming its thermodynamic stability."
+      },
+      "evidence": {
+        "text_span": "While 16-Trt failed to release acrolein at room temperature in the presence of DBU, increasing the temperature led to the slow disappearance of 16-Trt and the generation of the desired cyclized product 20. Aer the reaction, 20 was obtained as an inseparable mixture of diastereomers, with undesired endo-20 being the main diastereomer $( 7 8 \\% , e x o : e n d o = 1 : 2 )$ $7 8 \\%$ ). The denition of exo/endo is based on the stereochemistry of the newly generated hydroxy group at C9. This result is presumably owing to its thermodynamic stability. Heating the mixture of endo-20 and exo-20 in the presence of a base further increased the proportion of endo-20, conrming its thermodynamically favored character (see the SI for details).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "The previous attempt with 16-Trt yielded the thermodynamically favored endo-isomer of 20. The desired exo isomer is kinetically favored.",
+        "gap": "A milder condition is needed to achieve kinetic control and reverse the stereoselectivity towards the exo isomer.",
+        "decision": "To achieve kinetic control and favor the exo isomer, we will change the leaving group from an alkoxy (Trt) to an acyloxy (Piv) group, which has a higher leaving ability. We will use 16-Piv as the acrolein precursor, expecting it to release acrolein at room temperature."
+      },
+      "evidence": {
+        "text_span": "Reasoning that the desired exo isomer would be kinetically favored, we sought milder conditions to reverse the stereoselectivity. Specically, we anticipated that changing the leaving group from an alkoxy to an acyloxy group, which has a higher leaving ability than the alkoxy group, would achieve this goal. As expected, 16-Piv released acrolein at room temperature,13 favoring the formation of the desired exo isomer ( $6 9 \\%$ , $e x o : e n d o \\ : = \\ : 2 . 5 : 1$ ).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The domino Michael–aldol reaction using 16-Piv is expected to favor the desired exo isomer kinetically.",
+        "gap": "The reaction conditions need to be optimized for yield and diastereoselectivity, and the resulting alcohol 20 needs to be protected and purified.",
+        "decision": "We will perform the domino Michael–aldol reaction using β-ketoaldehyde 17 (derived from (+)-dihydrocarvone (18)) and 16-Piv. The resulting alcohol 20 will be acetylated in a one-pot procedure to afford aldehyde 14, allowing for separation of exo-14 and endo-14 by silica gel column chromatography."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)[C@H]1CCC(=O)C[C@@H]1C",
+          "O=CCCCOP(=O)(O)O"
+        ],
+        "product_smiles": [
+          "",
+          ""
+        ],
+        "reagents": [
+          "ethyl formate",
+          "tBuOK",
+          "DBU",
+          "Ac2O",
+          "pyridine",
+          "DMAP"
+        ],
+        "solvent": "benzene, toluene",
+        "temperature": "rt",
+        "time": "4 h (formylation); 20 min (Michael-aldol); 17 h (acetylation)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 50,
+        "observation": "The reaction with 16-Piv released acrolein at room temperature, favoring the formation of the desired exo isomer (69% yield, exo:endo = 2.5:1). After one-pot acetylation, exo-14 and endo-14 were easily separated by silica gel column chromatography, yielding desired exo-14 in 50% yield. The acetyl group was chosen for protection despite concerns about instability, as sarinfacetamides possess an acetoxy group at C9."
+      },
+      "evidence": {
+        "text_span": "As expected, 16-Piv released acrolein at room temperature,13 favoring the formation of the desired exo isomer ( $6 9 \\%$ , $e x o : e n d o \\ : = \\ : 2 . 5 : 1$ ). The same conditions were also applied to 16-Cl, which has a higher leaving ability, and the results were evaluated aer one-pot acetylation. Compared with 16-Piv, the yield was signicantly lower with similar diastereoselectivity $( 3 5\\% , e x o : e n d o = 2 . 8 : 1 )$ $3 5 \\%$ ). Based on this successful domino Michael–aldol reaction, we focused on a concise synthesis of the versatile intermediate (12) (Scheme 1c). Aer the domino Michael–aldol reaction, the resulting alcohol 20 was acetylated in a one-pot procedure using $\\mathbf { Ac } _ { 2 } \\mathbf { O }$ , pyridine, and DMAP to afford aldehyde 14. At this point, exo-14 and endo-14 were easily separated by silica gel column chromatography, and we obtained the desired exo-14 in $5 0 \\%$ yield. Although we had employed a TBS group to protect the C9 hydroxyl group in our previous synthesis,8 in alcohol 20, TBS protection was accompanied by side reactions involving the formyl group or epimerization via a retro-aldol reaction. As sarinfacetamides possess an acetoxy group at C9, we opted to use an acetyl group for protection despite concerns about its potential instability.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Exo-14 is available. The cyclopentene ring needs to be constructed.",
+        "gap": "An efficient method for forming the cyclopentene ring from exo-14 is required.",
+        "decision": "To rapidly construct the cyclopentene ring, we will perform a 1,2-addition of vinylmagnesium bromide to exo-14, followed by ring-closing metathesis to obtain allylic alcohol 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "MgBr"
+        ],
+        "catalyst": "Grubbs 2nd generation catalyst",
+        "solvent": "THF, 1,2-DCE",
+        "temperature": "-60 °C (addition); 80 °C (metathesis)",
+        "time": "1 h (addition); 1 h (metathesis)"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "observation": "1,2-addition of vinylmagnesium bromide to exo-14 gave 21 in 95% yield. Subsequent ring-closing metathesis furnished allylic alcohol 22 as a mixture of diastereomers in 90% yield. Overall yield for these two steps is 85.5%."
+      },
+      "evidence": {
+        "text_span": "The cyclopentene ring was then rapidly constructed by 1,2-addition of vinylmagnesium bromide (exo-14 to 21), followed by ring-closing metathesis14 to obtain allylic alcohol 22 as a mixture of diastereomers.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Allylic alcohol 22 is available as a mixture of diastereomers. The versatile intermediate 12 is the target.",
+        "gap": "An efficient oxidation method is needed to convert allylic alcohol 22 to the enone moiety of 12.",
+        "decision": "To obtain the desired versatile intermediate 12, we will perform nor-AZADO-catalyzed oxidation of allylic alcohol 22."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "PhI(OAc)2"
+        ],
+        "catalyst": "C1C[N+](C2C1C3C2C3)O",
+        "solvent": "DCM",
+        "temperature": "rt",
+        "time": "2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 90,
+        "observation": "Nor-AZADO-catalyzed oxidation of 22 furnished the desired versatile intermediate (12) in 90% yield. The synthesis of 12 represents a significant improvement in efficiency and conciseness compared to previous work (five steps vs. eleven steps). The (-)-enantiomer (ent-12) was synthesized using the same route, enabling multigram scale preparation of both enantiomers."
+      },
+      "evidence": {
+        "text_span": "Finally, nor-AZADO15- catalyzed oxidation of 22 furnished the desired versatile intermediate (12). This synthesis of 12 represents a signicant improvement in efficiency and conciseness compared to our previous work8 (eleven steps vs. ve steps). The $( - ) \\cdot$ -enantiomer of the versatile intermediate (ent-12) from $( - ) \\cdot$ -dihydrocarvone (ent-18) was synthesized using the same route. The efficiency of this synthesis enabled the preparation of both enantiomers of the versatile intermediate on a multigram scale (see the SI for details).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Versatile intermediate 12 is available. Rumphellclovane E (4) requires a dimethyl cyclopentanone moiety.",
+        "gap": "An efficient method for introducing the methyl groups via conjugate addition is needed.",
+        "decision": "To introduce the dimethyl cyclopentanone moiety, we will perform a 1,4-addition of a Gilman reagent (MeMgBr, CuBr, LiCl, TMSCl) to 12."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(=O)OC1CC2C3=CC(=O)C(C)C3C(C)(C)C2C1"
+        ],
+        "reagents": [
+          "MeMgBr",
+          "CuBr",
+          "LiCl",
+          "TMSCl"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "45 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 96,
+        "observation": "1,4-Addition of a Gilman reagent to 12 efficiently provided diketone 23 bearing the desired dimethyl cyclopentanone moiety in 96% yield."
+      },
+      "evidence": {
+        "text_span": "1,4- Addition of a Gilman reagent to 12 efficiently provided diketone 23 bearing the desired dimethyl cyclopentanone moiety.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Diketone 23 is available. Diastereoselective reduction of 23 is required for rumphellclovane E (4). Fu and Liu reported that SmI2 imparted desired diastereoselectivity on similar substrates.",
+        "gap": "The diastereoselectivity of the reduction of 23 needs to be controlled to obtain the desired 26a.",
+        "decision": "We will attempt the diastereoselective reduction of diketone 23 using SmI2, expecting to obtain the desired 26a based on prior literature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)OC1CC2C3=CC(=O)C(C)C3C(C)(C)C2C1"
+        ],
+        "product_smiles": [
+          "CC(=O)OC1CC2C3C(O)C(O)C(C)C3C(C)(C)C2C1",
+          "CC(=O)OC1CC2C3C(O)C(O)C(C)C3C(C)(C)C2C1"
+        ],
+        "reagents": [
+          "SmI2"
+        ],
+        "solvent": "THF/H2O",
+        "temperature": "0 °C",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "wrong_stereochemistry",
+        "observation": "Unexpectedly, in the case of diketone 23, the undesired 26b was the major product. This is hypothesized to be due to bidentate coordination of Sm(II) through the C12 ketone carbonyl and the C9 acetoxy group, favoring reduction from the more vacant α-face, leading to 26b."
+      },
+      "evidence": {
+        "text_span": "Subsequent diastereoselective reduction of 23 was then examined. Fu and Liu reported that $\\operatorname { SmI } _ { 2 }$ imparted the desired diastereoselectivity on substrates similar to 23 in their total synthesis of rumphellclovane E.7 Unexpectedly, in the case of diketone 23, the undesired 26b was the major product. According to their proposed mechanism, the C12 ketone carbonyl directs the selective single-electron transfer from the $\beta \\cdot$ -plane of the C2 ketone carbonyl group (see intermediate 24). We hypothesized that, owing to the relatively large ionic radius of samarium,16 bidentate coordination to $\\mathrm { { Sm } ( \\mathrm { { I } I } ) }$ occurs through the C12 ketone carbonyl and the C9 acetoxy group (see intermediate 25). This coordination would favor reduction from the more vacant $\\pmb { \\alpha }$ -face, leading to the preferential formation of 26b.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 8,
+      "thought": {
+        "background": "SmI2 reduction of 23 yielded the undesired diastereomer 26b, likely due to bidentate coordination of Sm(II).",
+        "gap": "A reductant with a smaller ionic radius and strong oxygen affinity is needed to avoid undesired bidentate coordination and achieve the desired diastereoselectivity.",
+        "decision": "To circumvent undesired coordination, we will explore metallic single-electron reductants with smaller ionic radii than samarium. We will use a low-valent titanium reagent, expecting it to promote diastereoselective reduction to furnish alcohol 26a. EDTE will be used to prevent aggregation of the titanium reagent."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)OC1CC2C3=CC(=O)C(C)C3C(C)(C)C2C1"
+        ],
+        "product_smiles": [
+          "CC(=O)OC1CC2C3C(O)C(O)C(C)C3C(C)(C)C2C1"
+        ],
+        "reagents": [
+          "Ti(iPrO)4",
+          "Mg",
+          "TMSCl",
+          "OCCN(CCO)CCN(CCO)CCO"
+        ],
+        "solvent": "THF",
+        "temperature": "rt",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "A low-valent titanium reagent effectively promoted the diastereoselective reduction to furnish alcohol 26a. Treatment with EDTE proved crucial to prevent undesired aggregation of the titanium reagent and enable efficient recovery of 26a."
+      },
+      "evidence": {
+        "text_span": "To circumvent this undesired coordination, we explored metallic single-electron reductants with smaller ionic radii than samarium. We ultimately found that a low-valent titanium reagent,17 possessing a smaller ionic radius and strong oxygen affinity, effectively promoted the diastereoselective reduction to furnish alcohol 26a. Treatment with EDTE $\\left( N , N , N ^ { \\prime } , N ^ { \\prime } \right)$ -tetrakis(2- hydroxyethyl)-ethylenediamine) proved crucial to prevent undesired aggregation of the titanium reagent and enable efficient recovery of 26a.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alcohol 26a is available. The final step for rumphellclovane E (4) is deprotection.",
+        "gap": "The acetyl group needs to be selectively removed to yield rumphellclovane E (4).",
+        "decision": "To complete the synthesis of rumphellclovane E (4), we will deprotect the acetyl group of 26a using DIBAL-H."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)OC1CC2C3C(O)C(O)C(C)C3C(C)(C)C2C1"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)C(O)C2C1CC(O)C2(C)C"
+        ],
+        "reagents": [
+          "DIBAL-H"
+        ],
+        "solvent": "DCM",
+        "temperature": "-78 °C",
+        "time": "3 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "observation": "Deprotection of the acetyl group with DIBAL-H completed the enantioselective total synthesis of rumphellclovane E (4) in 86% yield. The spectral data matched those reported by Fu and Liu."
+      },
+      "evidence": {
+        "text_span": "Finally, deprotection of the acetyl group with DIBAL-H completed the enantioselective total synthesis of rumphellclovane E (4). The spectral data of our synthetic sample matched those reported by Fu and Liu (see the SI for details).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The (-)-enantiomer of the versatile intermediate (ent-12) is available. Sarinfacetamides A (5) and B (6) require a vinyl group at C4.",
+        "gap": "An efficient and diastereoselective method for introducing a vinyl group at C4 of ent-12 is needed.",
+        "decision": "To introduce a vinyl group as a side chain precursor to ent-12, we will perform a diastereoselective conjugate addition using an organocuprate reagent (MgBr, CuBr, LiCl, TMSCl)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)OC1C(C)C(=O)C2CC(C)(C)C3CC1(C)C2C(=O)C3C"
+        ],
+        "product_smiles": [
+          "C=CC1C2C(=O)C(C)C(OC(C)=O)C3(C)CC(C(C)C(=O)C23)C1(C)C"
+        ],
+        "reagents": [
+          "MgBr",
+          "CuBr",
+          "LiCl",
+          "TMSCl"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C",
+        "time": "45 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "The introduction of a vinyl group as a side chain precursor to ent-12 was accomplished diastereoselectively via conjugate addition of an organocuprate reagent, affording diketone 27 in 87% yield."
+      },
+      "evidence": {
+        "text_span": "The introduction of a vinyl group as a side chain precursor to ent-12 was accomplished diastereoselectively via conjugate addition of an organocuprate reagent, affording diketone 27.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Diketone 27 is available. A regio- and stereoselective reduction of the C2 ketone carbonyl group is required.",
+        "gap": "An efficient method for selective reduction of the C2 ketone carbonyl of 27 to form β-alcohol 28 is needed.",
+        "decision": "To achieve regio- and stereoselective reduction of the C2 ketone carbonyl group, we will treat diketone 27 with NaBH4."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C2C(=O)C(C)C(OC(C)=O)C3(C)CC(C(C)C(=O)C23)C1(C)C"
+        ],
+        "product_smiles": [
+          "C=CC1C2C(O)C(C)C(OC(C)=O)C3(C)CC(C(C)C(=O)C23)C1(C)C"
+        ],
+        "reagents": [
+          "NaBH4"
+        ],
+        "solvent": "MeOH",
+        "temperature": "0 °C",
+        "time": "45 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "observation": "Treatment of 27 with NaBH4 allowed a regio- and stereoselective reduction of the C2 ketone carbonyl group smoothly providing β-alcohol 28 as a single diastereomer in 79% yield."
+      },
+      "evidence": {
+        "text_span": "Treatment of 27 with NaBH4 allowed a regio- and stereoselective reduction of the C2 ketone carbonyl group smoothly providing $\beta$ -alcohol 28 as a single diastereomer.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "β-Alcohol 28 is available. The acetamide moiety needs to be incorporated via stereochemical inversion.",
+        "gap": "Direct incorporation of an amine or acetamide functional group (via Mitsunobu or Ritter-type reaction) proved challenging.",
+        "decision": "We will attempt direct incorporation of an amine or acetamide functional group into β-alcohol 28 via Mitsunobu or Ritter-type reaction, expecting to achieve stereochemical inversion."
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "Direct incorporation of an amine or acetamide functional group (via Mitsunobu or Ritter-type reaction) proved challenging, primarily owing to the elimination of the C2 functional group to form alkene 29."
+      },
+      "evidence": {
+        "text_span": "We then attempted to incorporate the acetamide moiety into $\beta$ -alcohol 28 via a stereochemical inversion manner. Direct incorporation of an amine or acetamide functional group (via Mitsunobu or Ritter-type reaction; see the SI for details) proved challenging, primarily owing to the elimination of the C2 functional group to form alkene 29.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 13,
+      "thought": {
+        "background": "Direct incorporation of an amine or acetamide into β-alcohol 28 failed due to elimination.",
+        "gap": "A method for incorporating the nitrogen atom with stereochemical inversion, while minimizing elimination, is needed.",
+        "decision": "We will opt to use azide as a nucleophile. A combination of TMSN3 and TBAF will be used for azide introduction, followed by Staudinger reduction to obtain amine 30, and then acetylation to form acetamide 31."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C2C(O)C(C)C(OC(C)=O)C3(C)CC(C(C)C(=O)C23)C1(C)C"
+        ],
+        "product_smiles": [
+          "C=CC1C2C(N)C(C)C(OC(C)=O)C3(C)CC(C(C)C(=O)C23)C1(C)C",
+          "C=CC1C2C(=O)C(C)C(OC(C)=O)C3(C)CC(C(C)C(=O)C23)C1(C)C"
+        ],
+        "reagents": [
+          "Tf2O",
+          "pyridine",
+          "nBu4NF",
+          "TMSN3",
+          "Ph3P",
+          "Ac2O",
+          "Et3N"
+        ],
+        "solvent": "DCM, toluene, THF/H2O",
+        "temperature": "rt, 0 °C, 60 °C",
+        "time": "50 min, 9 h, 9 h, 1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 100,
+        "observation": "A combination of TMSN3 and TBAF proved optimal for azide introduction. Although elimination to 29 could not be completely suppressed, amine 30 was obtained after Staudinger reduction of the azide compound. Acetylation of 30 gave the desired acetamide 31 in 100% yield."
+      },
+      "evidence": {
+        "text_span": "Therefore, we opted to use azide as a nucleophile. A combination of $\\mathbf { T M S N } _ { 3 }$ and $\\mathrm { T B A F } ^ { 1 9 }$ proved optimal for azide introduction. Although we could not completely suppress the undesired elimination, we obtained the amine 30 aer the Staudinger reduction of the azide compound. We then obtained the desired acetamide 31 by acetylation of 30.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Acetamide 31 is available. The sterically hindered C12 ketone oxygen needs to be removed.",
+        "gap": "An efficient method for deoxygenation of the C12 ketone is required.",
+        "decision": "To remove the C12 ketone oxygen, we will employ a three-step sequence: Luche reduction to obtain alcohol 32, xanthate (33) synthesis, and Barton–McCombie deoxygenation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=CC1C2C(NC(C)=O)C(C)C(OC(C)=O)C3(C)CC(C(C)C(=O)C23)C1(C)C"
+        ],
+        "product_smiles": [
+          "CC(=O)NC1C(C)C(OC(C)=O)C2(C)CC3C(C)C(=O)C2C1C(C(C)=O)C3(C)C"
+        ],
+        "reagents": [
+          "NaBH4",
+          "CeCl3.7H2O",
+          "CS2",
+          "NaH",
+          "MeI",
+          "nBu3SnH",
+          "Co(acac)2",
+          "AIBN",
+          "PhSiH3",
+          "O2"
+        ],
+        "solvent": "MeOH, THF, toluene, EtOH",
+        "temperature": "0 °C, rt, 110 °C",
+        "time": "20 min, 1 h, 1 h, 6 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 27,
+        "observation": "Luche reduction of 31 gave alcohol 32 in 100% yield. Xanthate 33 was synthesized in 93% yield. Barton–McCombie deoxygenation, followed by Mukaiyama hydration and Dess–Martin oxidation, furnished methylketone 34. The overall yield for these steps is 27%."
+      },
+      "evidence": {
+        "text_span": "Subsequent removal of the sterically hindered C12 ketone oxygen was achieved through a three-step reaction sequence: Luche reduction20 to obtain alcohol 32, xanthate (33) synthesis, and Barton–McCombie deoxygenation. Then, we proceeded to the nal task, namely, elaborating the side chain. We accomplished this transformation by utilizing Mukaiyama hydration and following Dess–Martin oxidation to give methylketone 34.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Methylketone 34 and aldehyde 35 are available. The final side chain elaboration for sarinfacetamide B (6) is required.",
+        "gap": "An efficient method for condensing 34 and 35, and concomitant deprotection of the TBS group, is needed.",
+        "decision": "To elaborate the side chain and obtain sarinfacetamide B (6), we will condense methylketone 34 with aldehyde 35 using NaH as a base, expecting it to promote both aldol condensation and TBS deprotection."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)NC1C(C)C(OC(C)=O)C2(C)CC3C(C)C(=O)C2C1C(C(C)=O)C3(C)C",
+          ""
+        ],
+        "product_smiles": [
+          "CC(=O)NC1C(C)C(OC(C)=O)C2(C)CC3C(C)C(=O)C2C1C(C(=O)C=C(C)O)C3(C)C"
+        ],
+        "reagents": [
+          "NaH"
+        ],
+        "solvent": "THF",
+        "temperature": "rt",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 43,
+        "observation": "Condensation of methylketone 34 with aldehyde 35 using NaH as a base promoted not only the aldol condensation but also concomitant deprotection of the TBS group, presumably via 1,2-silyl migration of aldolate 36 and subsequent E1cB elimination of the TBS-oxy group, to furnish sarinfacetamide B (6) in 43% yield."
+      },
+      "evidence": {
+        "text_span": "Obtained methylketone 34 was condensed with aldehyde 35 (ref. 21) using NaH as a base. Fortunately, this condition promoted not only the aldol condensation but also concomitant deprotection of the TBS group, presumably via 1,2- silyl migration of aldolate 36 and the following E1cB elimination of the TBS-oxy group (see intermediate 37) to furnish sarinfacetamide B (6) (Scheme 2c).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Sarinfacetamide B (6) is available. Sarinfacetamide A (5) is the target.",
+        "gap": "Sarinfacetamide B (6) needs to be acetylated to form sarinfacetamide A (5).",
+        "decision": "To achieve the first total synthesis of sarinfacetamide A (5), we will perform acetylation of sarinfacetamide B (6) using DMAP in a solvent amount of Ac2O."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)NC1C(C)C(OC(C)=O)C2(C)CC3C(C)C(=O)C2C1C(C(=O)C=C(C)O)C3(C)C"
+        ],
+        "product_smiles": [
+          "CC(=O)NC1C(C)C(OC(C)=O)C2(C)CC3C(C)C(=O)C2C1C(C(=O)C=C(C)OC(C)=O)C3(C)C"
+        ],
+        "reagents": [
+          "DMAP",
+          "Ac2O"
+        ],
+        "temperature": "rt",
+        "time": "5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "observation": "The first total synthesis of sarinfacetamide A (5) was achieved by acetylation of sarinfacetamide B (6) using DMAP in a solvent amount of Ac2O in 63% yield. Standard acetylation conditions were ineffective due to steric hindrance of the tertiary alcohol. All spectral data and specific rotations matched those of the natural products."
+      },
+      "evidence": {
+        "text_span": "The rst total synthesis of sarinfacetamide A (5) was then achieved by acetylation of sarinfacetamide B (6) using DMAP in a solvent amount of $\\mathbf { A c } _ { 2 } \\mathbf { O }$ . Presumably, owing to the steric hindrance of the tertiary alcohol, standard acetylation conditions $\\left( { \bf A c _ { 2 } O } / { \bf E t _ { 3 } N } / { \bf D M A P } \right)$ were ineffective. All the spectral data of our synthetic samples of sarinfacetamides A (5) and B (6) were in agreement with those reported for the isolated natural products. Furthermore, the specic rotations of our synthetic samples matched those of the natural products (see the SI for details).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The versatile intermediate (ent-12) is available. Sinubatin B (8) features a furan substitution pattern at C4, suggesting the existence of C4-decorated clovanes.",
+        "gap": "It is unclear if a bulkier nucleophile, such as a furan moiety, can be introduced into C4 of ent-12 to construct an all-carbon quaternary chiral center.",
+        "decision": "To explore the versatility of ent-12, we will attempt to introduce a 5-methylfuranyl cuprate to ent-12 via conjugate addition to obtain 38, followed by stereoselective reduction and deprotection to synthesize structural analogue 39."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)O[C@H]1C[C@@H]2C(=O)C3=C(C)C(=O)[C@@H]4[C@H]2[C@@H]1C[C@@H]34"
+        ],
+        "product_smiles": [
+          "CC1=CC(C2C=CC3OC2C3(C)C)OC=C1"
+        ],
+        "reagents": [
+          "CuCN",
+          "BF3.OEt2",
+          "Ti(iPrO)4",
+          "Mg",
+          "TMSCl",
+          "OCCN(CCO)CCN(CCO)CCO",
+          "DIBAL-H"
+        ],
+        "solvent": "THF, DCM",
+        "temperature": "rt, 50 °C, -78 °C",
+        "time": "30 min, 1 h, 5 min"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 19,
+        "observation": "Conjugate addition of a furan nucleophile to ent-12 using a higher-order cuprate reagent (CuCN, BF3.OEt2) gave 38 in moderate yield (46%). Standard conjugate addition conditions were ineffective due to steric hindrance. Subsequent stereoselective reduction with a low-valent titanium reagent and deprotection with DIBAL-H completed the synthesis of 39. The overall yield for these steps is 19% (46% * 41%)."
+      },
+      "evidence": {
+        "text_span": "As a test case, we selected a 5-methylfuranyl cuprate (Scheme 3). Notably, sinubatin B (8), a member of the xeniaphyllane family, features a similar substitution pattern at the C4 position. We began the synthesis of C4-decorated structural analogue 39 by introducing a furan moiety to ent-12. Conjugate addition of a furan nucleophile to obtain 38 was achieved, albeit in moderate yield, using a higher-order cuprate reagent reported by Lipshutz.22 Note that standard conjugate addition conditions were not effective, presumably due to the steric hindrance of the enone moiety. Subsequent stereoselective reduction was accomplished with a low-valent titanium reagent, as in the synthesis of rumphellclovane E (4). Finally, deprotection of the acetyl group with DIBAL-H completed the synthesis of 39.",
+        "section": "Results and discussion"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "2D NMR",
+      "HRMS",
+      "specific_rotation"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "percent",
+        "interpretation": "Overall yield for rumphellclovane E (4) is 43% (0.50 * 0.85 * 0.90 * 0.96 * 0.86). Overall yield for sarinfacetamides A (5) and B (6) is 6.5% (0.50 * 0.85 * 0.90 * 0.87 * 0.79 * 0.27 * 0.43 * 0.63)."
+      },
+      "Longest Linear Steps": {
+        "value": 5,
+        "unit": "steps",
+        "interpretation": "Longest linear sequence to versatile intermediate 12/ent-12."
+      },
+      "Total Steps": {
+        "value": 10,
+        "unit": "steps",
+        "interpretation": "Total steps for rumphellclovane E (4) from dihydrocarvone."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "count",
+        "interpretation": "Two failed attempts were reported during the synthesis."
+      }
+    },
+    "significance": "This study presents an enantioselective collective total synthesis of highly functionalized clovane-type terpenoids, rumphellclovane E and sarinfacetamides A and B. A highly efficient and scalable 5-step route to a versatile intermediate (12/ent-12) from dihydrocarvone was developed, enabled by a key domino Michael–aldol reaction using a novel acrolein surrogate. This strategy allows for both unified and divergent access to known and potentially new C4-decorated clovane-type terpenoids, demonstrating the versatility of the designed intermediate."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5sc04197j",
+      "pmcid": "PMC12323868",
+      "title": "A unified approach to highly functionalized clovane-type terpenoids: enantiocontrolled total synthesis of rumphellclovane E and sarinfacetamides A and B.",
+      "authors": "Ninomiya D, Nagasawa S, Iwabuchi Y.",
+      "journal": "Chem Sci",
+      "year": 2025,
+      "license": "cc by-nc",
+      "pdf_url": "https://europepmc.org/articles/PMC12323868?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/e970af6f-56fd-4925-bc03-f0b7a369916f.zip",
+      "parsed_at": "2026-05-11T06:24:41.457497+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 37,
+    "parseable": 29,
+    "canonicalized": 26,
+    "invalid": 8,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(=C)[C@@H]1CC[C@H]2[C@@H](C(=O)C[C@@H]12C)OC(C)=O",
+      "CC(=C)[C@@H]1CC[C@H]2[C@H](C(=O)C[C@@H]12C)OC(C)=O",
+      "CC(=C)[C@@H]1CC[C@H]2[C@@H](C(=O)C[C@@H]12C)OC(C)=O",
+      "CC(=C)[C@@H]1CC[C@H]2[C@@H](C(=O)C[C@@H]12C)OC(C)=O",
+      "CC(=C)[C@@H]1CC[C@H]2[C@@H](C(=O)C[C@@H]12C)OC(C)=O",
+      "CC(=C)[C@@H]1CC[C@H]2[C@@H](C(=O)C[C@@H]12C)OC(C)=O",
+      "CC(=C)[C@@H]1CC[C@H]2[C@@H](C(=O)C[C@@H]12C)OC(C)=O",
+      "CC(C)(OSi(C)(C)C(C)(C)C)C(=O)C=O"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

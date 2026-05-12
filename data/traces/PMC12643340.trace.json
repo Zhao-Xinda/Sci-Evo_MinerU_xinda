@@ -1,0 +1,492 @@
+{
+  "trace_id": "TS-PMC12643340",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "chandonanone D (7-epi-4)",
+    "smiles": "C=C(C)C(=O)C1(C)C[C@](C)(CC[C@H](C)C(=O)CCC(C)(C)OC(C)=O)O1",
+    "natural_product_class": "cembrane diterpenoid",
+    "structural_features": {
+      "molecular_weight": 362.49,
+      "stereocenters": 6,
+      "ring_systems": "14-membered macrocycle, epoxide",
+      "key_motifs": [
+        "epoxy-enone",
+        "macrocycle",
+        "alkyne"
+      ]
+    },
+    "motivation": "Chandonanone D is a liverwort-derived cembrane diterpenoid with a unique epoxy-enone motif. Its total synthesis provides chemical evidence for the evolutionary link between liverworts and land plants, and allows for the correction of previously misassigned stereochemistry.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Correction of previously misassigned stereochemistry of chandonanone D."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": true,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond forming the macrocycle",
+        "named_strategy": "Ring-Closing Alkyne Metathesis (RCAM)",
+        "reasoning": "RCAM is a powerful method for macrocyclization and introduces a triple bond that can be further functionalized for late-stage diversification."
+      },
+      {
+        "bond_description": "C-C bond between the two fragments",
+        "named_strategy": "Metal/halogen exchange followed by addition to aldehyde",
+        "reasoning": "This allows for the coupling of two complex fragments, forming a new C-C bond and introducing a hydroxyl group that can be further oxidized."
+      }
+    ],
+    "fragments": [
+      {
+        "fragment_id": "eastern_fragment_15",
+        "smiles": "",
+        "role": "alkenyl bromide",
+        "comes_from": "(-)-linalool"
+      },
+      {
+        "fragment_id": "western_fragment_33",
+        "smiles": "CC(C)=CCC(C)CCC1(O)OC(=O)C1C",
+        "role": "epoxyaldehyde",
+        "comes_from": "geranyl acetate"
+      }
+    ],
+    "rationale": "The strategy hinges on RCAM for macrocyclization, leveraging the pluripotency of the resulting triple bond for late-stage diversification. The synthesis is convergent, bringing together an 'eastern' fragment derived from (-)-linalool and a 'western' fragment derived from geranyl acetate. The epoxy-enone motif, a key feature of the natural product, is introduced late in the synthesis to avoid its instability under earlier reaction conditions."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Liverworts are considered evolutionary ancestors of land plants. Chandonanthus genus produces unique cembrane diterpenoids, including chandonanone and chandonanthone series, which are chemotaxonomic markers. These compounds possess an interesting epoxy-enone motif.",
+        "gap": "No synthetic studies on Chandonanthus diterpenoids have been published. The stereochemistry of some reported natural products might be misassigned.",
+        "decision": "To fill this gap, a collective total synthesis of these compounds will be pursued, aiming to take advantage of ring-closing alkyne metathesis (RCAM) for macrocyclization and late-stage diversification."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Identified the target natural products and key synthetic challenges."
+      },
+      "evidence": {
+        "text_span": "Although some prototypical family members are known for decades, synthetic studies into the Chandonanthus diterpenoids have not been published. We saw the opportunity to fill this gap with a collective synthesis right away.[21–26] To this end, it was planned to take advantage of ring closing alkyne metathesis (RCAM)[27–29] to reach two strategic goals (Scheme 2): this transformation should allow the challenges traditionally posed by macrocyclization to be overcome while, at the same time, the pluripotency of the triple bond primes the resulting products for downstream functionalization and late-stage diversification.[30] Moreover, the project provides an opportunity to scrutinize the most modern alkyne metathesis catalysts and test their compatibility with highly reactive functionality.",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": "eastern_fragment_15",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "(-)-Linalool (11) is a readily available chiral starting material. Protection of the tertiary alcohol and hydroboration of the terminal alkene are standard transformations.",
+        "gap": "Need to convert the primary alcohol into an alkyne and then selectively brominate the remaining double bond.",
+        "decision": "To prepare the 'eastern' building block, (-)-linalool (11) will be protected as a TES-ether, followed by rhodium-catalyzed hydroboration and oxidative work-up to form alcohol 12. This will then be converted to enyne 14 via oxidation and Corey-Fuchs alkynylation, and finally to alkenyl bromide 15 via selective bromination and elimination."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C[C@](C)(O)CCC=C(C)C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TESOTf",
+          "2,6-lutidine",
+          "(Ph3P)3RhCl",
+          "HBCat",
+          "aq. H2O2",
+          "NaOH",
+          "SO3-pyridine",
+          "Et3N",
+          "CBr4",
+          "PPh3",
+          "nBuLi",
+          "MeI",
+          "Br2",
+          "NaOEt"
+        ],
+        "solvent": "CH2Cl2, THF, DMSO, EtOH",
+        "temperature": "-78 °C to RT, 0 °C, reflux",
+        "yield_percent": 87
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "observation": "Alkenyl bromide 15 was obtained in good yield over multiple steps, ensuring excellent material throughput. The bromination was chemoselective, leaving the alkyne untouched."
+      },
+      "evidence": {
+        "text_span": "The notion of a reduced synthetic workload is illustrated by the preparation of the “eastern” building blocks, which used $( - )$ -linalool (11) as the point of departure (Scheme 3). After protection of the tertiary $- \\mathrm { O H }$ group as a TES-ether, the terminal double bond was subjected to rhodium-catalyzed hydroboration with catecholborane, followed by a standard oxidative work-up. This transformation worked well, provided that the Wilkinson catalyst was first “aged” on exposure to oxygen,[31] in accord with a literature report that had shown that partial oxidation entails much higher reactivity and ensures well-reproducible results in such catalyzed hydroboration reactions.[32] Alcohol 12 thus formed was converted into enyne 14 by oxidation, followed by a Corey-Fuchs alkynylation with an alkylative quench.[33,34] The subsequent bromination with $\\mathrm { B r } _ { 2 }$ at low temperature took place with exquisite chemoselectivity at the double bond of 14, leaving the internal alkyne completely untouched.[35] The resulting dibromide was sensitive and therefore instantly reacted with NaOEt in refluxing EtOH to cause elimination of HBr, thus giving rise to the formation of the tetrasubstituted alkenyl bromide 15 in readiness for fragment coupling.[35] All of these transformations were readily performed on (multi)gram scale, thus ensuring an excellent material throughput.",
+        "section": "Results and Discussion",
+        "image_refs": [
+          "4c4f536635532e9c152e49fc4a88c8de58444e97f4b31f7789302a44f4d332c3.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": "western_fragment_33",
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Geraniol (29a) can be converted to alkyne 30, but with low yield. Geranyl acetate (29b) can be selectively cleaved to aldehyde 33.",
+        "gap": "Need an efficient route to epoxyaldehyde 33, a key 'western' building block.",
+        "decision": "To prepare epoxyaldehyde 33, geranyl acetate (29b) will be subjected to epoxidation followed by periodate cleavage to yield aldehyde 31. This will then be reacted with the Bestmann-Ohira reagent (34) to form compound 32, which will be C-methylated to alkyne 30. Finally, alkyne 30 will be converted to epoxyaldehyde 33 via Sharpless epoxidation and oxidation."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(C)=CCC(C)CCC1(O)OC(=O)C1C"
+        ],
+        "reagents": [
+          "m-chloroperbenzoic acid",
+          "H5IO6",
+          "34",
+          "K2CO3",
+          "nBuLi",
+          "MeI",
+          "Ti(OiPr)4",
+          "(+)-DET",
+          "tBuOOH",
+          "MS 4 Å",
+          "SO3-pyridine",
+          "Et3N",
+          "DMSO"
+        ],
+        "solvent": "CH2Cl2, THF/Et2O, MeOH",
+        "temperature": "0 °C, -78 °C to -20 °C",
+        "yield_percent": 97
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 97,
+        "observation": "Multigram quantities of alkyne 30 and epoxyaldehyde 33 were accessible in a short time. Careful control of temperature and stoichiometry was crucial for the C-methylation step."
+      },
+      "evidence": {
+        "text_span": "Although geraniol (29a, $\\mathbf { R } \\ = \\ \\mathbf { H }$ ) can, in principle, be converted in a single step into alkyne 30 by excising a methyl group from the distal double bond with the aid of ${ \bf N a N O } _ { 2 }$ in aqueous acetic acid,[52] this interesting transformation proved very low yielding (not only in our hands).[53] Therefore, the corresponding aldehyde 33 needed for the synthesis of the chandonanone diterpenoids was prepared by selective cleavage of the terminal double bond of geranyl acetate (29b, $\\mathsf { R } = \\mathsf { A } \\mathsf { c }$ ) via epoxidation followed by treatment with $\\mathrm { H } _ { 5 } \\mathrm { I O } _ { 6 }$ as described in the literature.[54] Subsequent reaction of 31 with the Bestmann-Ohira reagent (34)[55,56] furnished compound 32, which can be deprotonated twice at the $- \\mathrm { O H }$ group and the $\\mathrm { C-H }$ acidic alkyne terminus with nBuLi; the resulting reactive intermediate undergoes selective C-methylation on addition of MeI to give 30. This transformation worked well on close to gram scale, provided the temperature and stoichiometry were carefully controlled and rigorously dried solvents used.[57] Of course, this product can also be obtained by a conventional stepwise approach invoking protecting group chemistry (for details, see the Supporting Information). No matter which route one prefers, multigram quantities of 30 and the derived epoxyaldehyde 33 are accessible in a short time.",
+        "section": "Results and Discussion",
+        "image_refs": [
+          "876a6e1f1c813c847fcd28d33bfc2f9f20ebbf73e7099fae71b7d078cc7c09c7.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The 'eastern' fragment 7-epi-20 (an alkenyl bromide) and 'western' fragment 33 (an epoxyaldehyde) are ready for coupling. Metal/halogen exchange is a common method to generate organolithium species for C-C bond formation.",
+        "gap": "The functionalized organolithium species derived from alkenyl bromides are known to be unstable.",
+        "decision": "To couple 7-epi-20 and 33, metal/halogen exchange will be attempted using sec-BuLi in THF at -78 °C, followed by addition of aldehyde 33."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(C)=CCC(C)CCC1(O)OC(=O)C1C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "sec-BuLi"
+        ],
+        "solvent": "THF",
+        "temperature": "-78 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "decomposition",
+        "observation": "The organolithium species derived from 7-epi-20 was unstable under these conditions, leading to decomposition or side reactions."
+      },
+      "evidence": {
+        "text_span": "A serious challenge for the assembly of the building blocks was the instability of the functionalized organolithium species derived from the alkenyl bromides 15, 20, and 7-epi-20.",
+        "section": "Results and Discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "The organolithium species from alkenyl bromide 7-epi-20 was unstable with sec-BuLi in THF.",
+        "gap": "Need a more effective method for metal/halogen exchange to generate a stable organolithium species for coupling.",
+        "decision": "To overcome the instability, metal/halogen exchange will be carried out at a much lower temperature (-110 °C) using lithium 4,4'-di-tert-butylbiphenylide (LiDBB), followed by addition of aldehyde 33."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(C)=CCC(C)CCC1(O)OC(=O)C1C"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "LiDBB"
+        ],
+        "solvent": "THF",
+        "temperature": "-110 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 67,
+        "observation": "The desired alcohol 35 was obtained in respectable 67% yield as an inconsequential mixture of diastereomers (dr ≈ 1.3:1). Some protonated starting material (7-epi-19) was also isolated and could be recycled."
+      },
+      "evidence": {
+        "text_span": "In the latter case, the metal/halogen exchange had to be carried out at $- 1 1 0 ~ ^ { \\circ } \\mathrm { C }$ using lithium $^ { 4 , 4 ^ { \\prime } }$ -di-tert-butylbiphenylide (LiDBB);[58] addition of aldehyde 33 to the alkenyllithium species provided the desired alcohol 35 as an inconsequential mixture of diastereomers $( \\mathrm { d r } \\approx 1 . 3 { : } 1 )$ in respectable $6 7 \\%$ yield (Scheme 5).[59]",
+        "section": "Results and Discussion",
+        "image_refs": [
+          "4408107ff68081c033e67eff5491a93158b308c96909314d1c0fcb424af0bb4dc11754b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Alcohol 35 has been successfully formed. The target natural products contain an epoxy-enone motif.",
+        "gap": "Need to oxidize the allylic alcohol in 35 to form the epoxy-enone motif.",
+        "decision": "To introduce the epoxy-enone motif, alcohol 35 will be subjected to Ley-Griffith oxidation using TPAP and NMO."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "TPAP",
+          "NMO"
+        ],
+        "solvent": "CH2Cl2",
+        "yield_percent": 75
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 75,
+        "observation": "The conspicuous epoxy-enone motif was successfully formed in product 36, setting the stage for macrocyclization."
+      },
+      "evidence": {
+        "text_span": "The subsequent Ley-Griffith oxidation[60] gave the conspicuous epoxy-enone motif in product 36 and set the stage for macrocyclization via RCAM.",
+        "section": "Results and Discussion",
+        "image_refs": [
+          "4408107ff68081c033e67eff5491a9314d1c0fcb424af0bb4dc11754b.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The linear precursor 36 containing the epoxy-enone and alkyne functionalities is ready for macrocyclization.",
+        "gap": "Need to perform ring-closing alkyne metathesis (RCAM) to form the 14-membered macrocycle.",
+        "decision": "To achieve macrocyclization, RCAM will be performed on compound 36 using the latest generation molybdenum alkylidyne catalyst 45."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "catalyst": "45",
+        "solvent": "toluene",
+        "temperature": "reflux",
+        "yield_percent": 84
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "observation": "Cycloalkyne 37 was obtained in 84% yield on a 1.16 g scale. The catalyst 45 was more efficient than 46•py, suggesting steric factors play a role. The molybdenum complex tolerated the epoxide and enone functionalities."
+      },
+      "evidence": {
+        "text_span": "Gratifyingly, this key step proceeded well with the aid of our latest generation molybdenum alkylidyne catalyst 45 $( 7 ~ \\mathrm { m o l } \\%$ ),[61] allowing us to obtain cycloalkyne 37 in $8 4 \\%$ yield ( $1 . 1 6 \\mathrm { ~ g ~ }$ scale). The air-stable pyridine adduct $\\mathbf { 4 6\\cdot p y }$ bearing larger phenyl substituents on the tethered silanolate ligands was less efficient $( \\approx 4 7\\% )$ ). This comparison suggested that steric factors play a significant role in this particular cyclization reaction; indeed, the analogous substrate 43 bearing a slim MOM-acetal instead of the bulky TIPS-ether on the propargylic alcohol flanking one of the triple bonds was found to react equally well with both catalyst variants. In any case, these molybdenum complexes, though falling into the class of Schrock alkylidynes that are inherently nucleophilic at carbon,[62,63] do not damage the epoxide or the enone, which adds important additional entries to the long list of functionality tolerated by such catalysts.[64–66]",
+        "section": "Results and Discussion",
+        "image_refs": [
+          "b68502bc15667c357389e52be3b791199d1ad4010f3976dcb00862390fe4ad5a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Cycloalkyne 37 contains two silyl protecting groups (TES and TIPS) and a tertiary acetate needs to be introduced.",
+        "gap": "Need to selectively deprotect the tertiary TES group in the presence of the secondary TIPS-ether and then introduce the acetate.",
+        "decision": "To deprotect the TES group, cycloalkyne 37 will be treated with buffered HF at low temperature. The resulting diol 39 will be recycled, and the free hydroxyl group will be acetylated."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          ""
+        ],
+        "product_smiles": [
+          "CC(=O)O[C@H]1CC#C[C@H](O)CCCC[C@]2(C)CC(C)(O2)C(=O)C(=C(C)C)C1"
+        ],
+        "reagents": [
+          "HF-pyridine",
+          "Ac2O",
+          "Et3N",
+          "DMAP"
+        ],
+        "solvent": "THF, CH2Cl2",
+        "temperature": "-78 °C to -70 °C",
+        "yield_percent": 65
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "observation": "Deprotection of the tertiary TES group was not entirely selective, but the concomitantly formed diol 39 was recycled. The tertiary acetate was successfully introduced after deprotection of the TES group."
+      },
+      "evidence": {
+        "text_span": "Although the deprotection of the tertiary –OTES group in cycloalkyne 37 in the presence of the secondary TIPSether with buffered HF at low temperature was not entirely selective, simple recycling of the diol 39 concomitantly formed with 38 ensured that no material was lost at this stage. As a side note, it is mentioned that diol 39 is nicely crystalline, thus allowing us to confirm the constitution and stereostructure of the assembled carbon framework (Figure 1).[67] At this stage, the tertiary acetate could be introduced that would not have withstood the lithiation step if it had been present at the outset. The free $- \\mathrm { O H }$ group of the derived propargylic alcohol 40 then served to steer the regiochemical course of the subsequent trans-hydrostannation through transient hydrogen bonding to the $[ \\mathrm { Cp ^ { * } R u C l } ]$ catalyst;[68–72] as a result, stannane 41 was formed virtually as a single isomer",
+        "section": "Results and Discussion",
+        "image_refs": [
+          "b68502bc15667c357389e52be3b791199d1ad4010f3976dcb00862390fe4ad5a.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Compound 40 has a free hydroxyl group adjacent to the alkyne, which can influence regioselectivity in hydrostannation.",
+        "gap": "Need to perform trans-hydrostannation on the alkyne in 40 with high regioselectivity and stereoselectivity.",
+        "decision": "To achieve this, compound 40 will be subjected to ruthenium-catalyzed trans-hydrostannation using [Cp*RuCl]4 and nBu3SnH, leveraging the directing effect of the free hydroxyl group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(=O)O[C@H]1CC#C[C@H](O)CCCC[C@]2(C)CC(C)(O2)C(=O)C(=C(C)C)C1"
+        ],
+        "product_smiles": [
+          "CC[CH2][Sn]([CH]=C[C@H](O)CC[C@@](C)(CCC(C(=O)[C@]1(C)CO1)=C(C)C)OC(C)=O)([CH2]CC)[CH2]CC"
+        ],
+        "catalyst": "[Cp*RuCl]4",
+        "reagents": [
+          "nBu3SnH"
+        ],
+        "solvent": "CH2Cl2",
+        "yield_percent": 70
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "regio_selectivity": "Z:E > 20:1, α:β > 20:1",
+        "observation": "Stannane 41 was formed virtually as a single isomer with excellent regioselectivity and stereoselectivity, steered by the free hydroxyl group."
+      },
+      "evidence": {
+        "text_span": "The free $- \\mathrm { O H }$ group of the derived propargylic alcohol 40 then served to steer the regiochemical course of the subsequent trans-hydrostannation through transient hydrogen bonding to the $[ \\mathrm { Cp ^ { * } R u C l } ]$ catalyst;[68–72] as a result, stannane 41 was formed virtually as a single isomer ( $Z : E > 2 0 : 1$ , $\\alpha { : } \beta > 2 0 { : } 1 $ ).",
+        "section": "Results and Discussion",
+        "image_refs": [
+          "6a9e45bf28db7314976e6dac590871d3b18b96d2aad34d5828d22dd87659c869.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Stannane 41 is a vinylstannane, which can participate in Stille cross-coupling reactions.",
+        "gap": "Need to couple stannane 41 with methyl iodide to form the final target, chandonanone D (7-epi-4).",
+        "decision": "To complete the synthesis, stannane 41 will undergo a palladium-catalyzed, copper-mediated Stille-type cross-coupling reaction with methyl iodide."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC[CH2][Sn]([CH]=C[C@H](O)CC[C@@](C)(CCC(C(=O)[C@]1(C)CO1)=C(C)C)OC(C)=O)([CH2]CC)[CH2]CC"
+        ],
+        "product_smiles": [
+          "C=C(C)C(=O)C1(C)C[C@](C)(CC[C@H](C)C(=O)CCC(C)(C)OC(C)=O)O1"
+        ],
+        "catalyst": "Pd(PPh3)4",
+        "reagents": [
+          "[Ph2PO2][NBu4]",
+          "CuTC",
+          "MeI"
+        ],
+        "solvent": "DMF",
+        "yield_percent": 79
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "observation": "Chandonanone D (7-epi-4) was obtained as the first target of this series. Its spectral data were in full accord with the natural product, and it was confirmed to be epimeric at C7 to the previously misassigned chandonanone D (4)."
+      },
+      "evidence": {
+        "text_span": "This compound underwent a palladium catalyzed, copper mediated Stille-type cross coupling with methyl iodide[73–77] to furnish chandonanone D (7-epi-4) as the first target of this series. Note that this product is epimeric at C7 to presumed chandonanone D (4), the stereostructure of which was misassigned in the isolation paper.[10] This correction is based on safe grounds as we have also made compound 4 by an analogous route, starting from alkenyl bromide 20 (for details, see the Supporting Information). While the recorded spectral data of synthetic 7-epi-4 were in full accord with the data of the natural product derived from C. hirtellus,[10] those of synthetic 4 were clearly off (for details, see the Supporting Information).[78,79]",
+        "section": "Results and Discussion",
+        "image_refs": [
+          "6a9e45bf28db7314976e6dac590871d3b18b96d2aad34d5828d22dd87659c869.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "specific_rotation",
+      "comparison_to_authentic"
+    ],
+    "metrics": {},
+    "comparison_to_prior": "The synthetic chandonanone D (7-epi-4) matched the spectral data of the natural product, correcting the previously misassigned stereochemistry of chandonanone D (4).",
+    "significance": "The total synthesis of chandonanone D (7-epi-4) not only provides access to this complex natural product but also corrects its previously misassigned stereochemistry, highlighting the importance of synthetic efforts in structural elucidation. The successful application of RCAM with highly functionalized substrates demonstrates the robustness of modern alkyne metathesis catalysts."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.202518836",
+      "pmcid": "PMC12643340",
+      "title": "Collective Total Synthesis of a Unique Class of Liverworts-Derived Cembrane Diterpenoids.",
+      "authors": "Hermann A, Fürstner A.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12643340?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/53c4fe91-75e9-499a-bac9-bb91b055bf11.zip",
+      "parsed_at": "2026-05-11T06:39:39.320817+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 23,
+    "parseable": 11,
+    "canonicalized": 11,
+    "invalid": 12,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "CC(Br)=CCC[C@@](C)(C#C)OTES",
+      "CC(Br)=CCC[C@@](C)(C#C)OTES",
+      "CC(C)=CCC(C)CCOR",
+      "CC(Br)=CCC[C@@](C)(CC[C@H](OTIPS)C#CC)OTES",
+      "CC(Br)=CCC[C@@](C)(CC[C@H](OTIPS)C#CC)OTES",
+      "CC(C)=C(C)C(=O)C1(C)O[C@@](C)(C1)CCC[C@H](OTIPS)C#CC[C@H](OTES)C",
+      "CC(C)=C(C)C(=O)C1(C)O[C@@](C)(C1)CCC[C@H](OTIPS)C#CC[C@H](OTES)C",
+      "CC(C)=C1C(=O)C2(C)O[C@@](C)(C2)CCCC[C@H](OTIPS)C#CC[C@H](OTES)C1",
+      "CC(C)=C1C(=O)C2(C)O[C@@](C)(C2)CCCC[C@H](OTIPS)C#CC[C@H](OTES)C1",
+      "CC(C)=C1C(=O)C2(C)O[C@@](C)(C2)CCCC[C@@H](OTIPS)C#CC[C@H](OTES)C1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

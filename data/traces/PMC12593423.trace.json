@@ -1,0 +1,1293 @@
+{
+  "trace_id": "TS-PMC12593423",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "Calcicamide B",
+    "smiles": "O=C(O)C(F)(F)F.[NH3+][C@@H](CNC(=O)C(=O)c1c[nH]c2ccccc12)c1c[nH]c2ccc(Br)cc12",
+    "natural_product_class": "bisindole alkaloid",
+    "structural_features": {
+      "key_motifs": [
+        "indole",
+        "diamine",
+        "alpha-amino acid derivative"
+      ]
+    },
+    "motivation": "Marine-derived anti-tumor bisindole alkaloid with significant biological activity. The first asymmetric total synthesis was achieved.",
+    "prior_syntheses": [],
+    "success_criteria": {
+      "free_text": "First successful asymmetric total synthesis of Calcicamide B."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-N bond of the tert-butanesulfinyl group",
+        "reasoning": "Removal of the chiral auxiliary to reveal the free amine.",
+        "named_strategy": "deprotection"
+      },
+      {
+        "bond_description": "C-N bond of the amide linkage",
+        "reasoning": "Formation of the bisindole structure via condensation with oxalyl chloride and indole.",
+        "named_strategy": "amide formation"
+      },
+      {
+        "bond_description": "C-N bond of the amine",
+        "reasoning": "Reduction of the amide to form the chiral diamine.",
+        "named_strategy": "reduction"
+      },
+      {
+        "bond_description": "C-C bond between indole and glycine derivative",
+        "reasoning": "Key chiral control step via diastereoselective Friedel–Crafts alkylation.",
+        "named_strategy": "Friedel–Crafts alkylation"
+      }
+    ],
+    "rationale": "The synthesis of Calcicamide B relies on a key asymmetric Friedel–Crafts alkylation to establish the crucial chiral center, followed by a series of transformations including reduction, amide formation, and deprotection to construct the final bisindole alkaloid."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "literature_review",
+      "thought": {
+        "background": "Indoles and pyrroles are important nitrogen heterocycles with diverse bioactivity. Optically active non-proteinogenic amino acids, especially α-(3-indolyl)glycine and α-(2-pyrrolyl)glycine, are prevalent in natural products and drug discovery. Asymmetric Friedel–Crafts reactions of indoles/pyrroles with glyoxylate imines are a straightforward method for their synthesis.",
+        "gap": "There is a scarcity of techniques with wide substrate adaptability that efficiently produce these compounds in a highly enantioenriched form, particularly regarding challenges with unprotected indole substrates, stereoselectivity control, and N-substituent removal. Boron catalysis, especially B(C6F5)3, has shown promise in activating small molecules.",
+        "decision": "To address the need for efficient and stereoselective synthesis of α-(3-indolyl)glycine and α-(2-pyrrolyl)glycine derivatives, we will investigate a novel asymmetric Friedel–Crafts reaction using indoles/pyrroles and chiral N-tert-butanesulfinylimines promoted by NaHMDS/B(C6F5)3."
+      },
+      "evidence": {
+        "text_span": "Indoles and pyrroles, key members of the nitrogen heterocycles, have garnered considerable interest in the realms of medicinal, synthetic, and natural product chemistry due to their extensive bioactivity spectrum.1–6 These compounds have been integral to pharmaceutical science since its inception, especially in the realm of drug development. The current focus in this eld lies on optically active non-proteinogenic amino acids, renowned for their signicant biological functions and their role in organic synthesis and pioneering drug discovery. Particularly, a-(3-indolyl)glycine and α-(2-pyrrolyl)glycine, along with their variants, are prevalent in a myriad of biologically relevant natural and synthetic products, drawing substantial scientic interest.7–9 This has led to a focused effort towards developing stereoselective methods for their production.10–12 Typically, the asymmetric Friedel–Cras interaction of indoles/pyrroles with glyoxylate imines is considered the most straightforward and accessible method, considering the ease of obtaining reactants.13–15 Nevertheless, there is a scarcity of techniques with wide substrate adaptability that efficiently produce these compounds in a highly enantioenriched form. The challenges in using unprotected indole substrates, controlling reaction stereoselectivity, and removing amine N-substituents are under active investigation. Boron catalysis has recently emerged as a focal point, especially since the advent of frustrated Lewis pairs (FLPs) in metal-free catalysis and the activation of small molecules.16,17 Among boron-based catalysts, B(C6F5)3 has received much attention owing to its highly electrophilic but sterically protected nature, and has the ability to reversibly bond with oxygen or nitrogen.18–25 In this vein, we present a novel and practical asymmetric Friedel–Cras reaction using indoles/ pyrroles and chiral N-tert-butanesulnimines under NaHMDS/ B(C6F5)3 promotion. This method efficiently yields enantioenriched α-(3-indolyl)glycines and α-(2-pyrrolyl)glycines. Utilizing this reaction as a pivotal step in chiral control, we have successfully accomplished the rst asymmetric total synthesis of marine-derived anti-tumor bisindole alkaloid Calcicamide B26,27 (Scheme 1).",
+        "section": "Introduction"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The goal is to optimize the Friedel–Crafts reaction of indole (1a) with (S,E)-N-benzyl-2-((tert-butylsulfinyl)imino)acetamide (2a). Initial screening of Lewis acids is necessary.",
+        "gap": "Identify an effective Lewis acid catalyst for the Friedel–Crafts alkylation.",
+        "decision": "To find an effective catalyst, we will test BF3·Et2O, Cu(OTf)2, AlCl3, and B(C6F5)3 at room temperature in MeCN."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "BF3.OEt2"
+        ],
+        "solvent": "MeCN",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 36,
+        "dr": "5:1",
+        "observation": "Low yield and diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Initially, Friedel–Cras reaction of simple indole (1a) with (S,E)-N-benzyl-2-((tert-butylsulnyl)imino)acetamide (2a) was conducted in the presence of different Lewis acids including BF3·Et2O, Cu(OTf)2, AlCl3, and B(C6F5)3 at room temperature (Table 1, Entries 1–4). Despite the lack of satisfactory results, B(C6F5)3 served as the most effective catalyst for synthesizing product 3, yielding 79% with a diastereomeric ratio (dr) of 16 : 1 (Table 1, Entry 4).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "BF3·Et2O gave low yield and dr. Continue screening Lewis acids.",
+        "gap": "Identify a more effective Lewis acid catalyst.",
+        "decision": "Test Cu(OTf)2 as a catalyst under the same conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "Cu(OTf)2"
+        ],
+        "solvent": "MeCN",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "dr": "15:1",
+        "observation": "Improved yield and dr compared to BF3·Et2O, but still not optimal."
+      },
+      "evidence": {
+        "text_span": "Initially, Friedel–Cras reaction of simple indole (1a) with (S,E)-N-benzyl-2-((tert-butylsulnyl)imino)acetamide (2a) was conducted in the presence of different Lewis acids including BF3·Et2O, Cu(OTf)2, AlCl3, and B(C6F5)3 at room temperature (Table 1, Entries 1–4). Despite the lack of satisfactory results, B(C6F5)3 served as the most effective catalyst for synthesizing product 3, yielding 79% with a diastereomeric ratio (dr) of 16 : 1 (Table 1, Entry 4).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "BF3·Et2O and Cu(OTf)2 showed some activity. Continue screening Lewis acids.",
+        "gap": "Find a more effective Lewis acid catalyst.",
+        "decision": "Test AlCl3 as a catalyst under the same conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "AlCl3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 0,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction occurred."
+      },
+      "evidence": {
+        "text_span": "Initially, Friedel–Cras reaction of simple indole (1a) with (S,E)-N-benzyl-2-((tert-butylsulnyl)imino)acetamide (2a) was conducted in the presence of different Lewis acids including BF3·Et2O, Cu(OTf)2, AlCl3, and B(C6F5)3 at room temperature (Table 1, Entries 1–4). Despite the lack of satisfactory results, B(C6F5)3 served as the most effective catalyst for synthesizing product 3, yielding 79% with a diastereomeric ratio (dr) of 16 : 1 (Table 1, Entry 4).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "AlCl3 was ineffective. Continue screening Lewis acids.",
+        "gap": "Identify a more effective Lewis acid catalyst.",
+        "decision": "Test B(C6F5)3 as a catalyst under the same conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3"
+        ],
+        "solvent": "MeCN",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "dr": "16:1",
+        "observation": "B(C6F5)3 was the most effective catalyst among those tested, showing good yield and dr."
+      },
+      "evidence": {
+        "text_span": "Initially, Friedel–Cras reaction of simple indole (1a) with (S,E)-N-benzyl-2-((tert-butylsulnyl)imino)acetamide (2a) was conducted in the presence of different Lewis acids including BF3·Et2O, Cu(OTf)2, AlCl3, and B(C6F5)3 at room temperature (Table 1, Entries 1–4). Despite the lack of satisfactory results, B(C6F5)3 served as the most effective catalyst for synthesizing product 3, yielding 79% with a diastereomeric ratio (dr) of 16 : 1 (Table 1, Entry 4).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "B(C6F5)3 showed the best performance. Previous research suggested that bases containing alkali metal ions could improve the reaction.",
+        "gap": "Investigate the effect of adding a base to the B(C6F5)3 catalyzed reaction.",
+        "decision": "Add NaHMDS as a base to the B(C6F5)3 catalyzed reaction in MeCN at room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "dr": ">25:1",
+        "observation": "NaHMDS significantly improved both yield and diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Inspired by the authors' previous research,28,29 bases containing alkali metal ions, such as NaHMDS, LiHMDS, KHMDS, and t-BuOK, were introduced into the reaction (Table 1, Entries 5–8). Fortunately, NaHMDS resulted in a higher yield (83%) and enhanced diastereoselectivity (dr > 25 : 1) (Table 1, Entry 5).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "NaHMDS showed excellent results. Explore other alkali metal bases.",
+        "gap": "Determine if other alkali metal bases can achieve similar or better results.",
+        "decision": "Test LiHMDS as a base with B(C6F5)3 in MeCN at room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "LiHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "dr": "17:1",
+        "observation": "Good yield, but lower diastereoselectivity compared to NaHMDS."
+      },
+      "evidence": {
+        "text_span": "Inspired by the authors' previous research,28,29 bases containing alkali metal ions, such as NaHMDS, LiHMDS, KHMDS, and t-BuOK, were introduced into the reaction (Table 1, Entries 5–8). Fortunately, NaHMDS resulted in a higher yield (83%) and enhanced diastereoselectivity (dr > 25 : 1) (Table 1, Entry 5).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "LiHMDS was less effective than NaHMDS for dr. Explore other alkali metal bases.",
+        "gap": "Determine if other alkali metal bases can achieve similar or better results.",
+        "decision": "Test KHMDS as a base with B(C6F5)3 in MeCN at room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "KHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "dr": ">25:1",
+        "observation": "Good yield and high diastereoselectivity, comparable to NaHMDS."
+      },
+      "evidence": {
+        "text_span": "Inspired by the authors' previous research,28,29 bases containing alkali metal ions, such as NaHMDS, LiHMDS, KHMDS, and t-BuOK, were introduced into the reaction (Table 1, Entries 5–8). Fortunately, NaHMDS resulted in a higher yield (83%) and enhanced diastereoselectivity (dr > 25 : 1) (Table 1, Entry 5).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "KHMDS showed good results. Explore other alkali metal bases.",
+        "gap": "Determine if other alkali metal bases can achieve similar or better results.",
+        "decision": "Test t-BuOK as a base with B(C6F5)3 in MeCN at room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "KOtBu"
+        ],
+        "solvent": "MeCN",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 73,
+        "dr": ">25:1",
+        "observation": "Lower yield compared to NaHMDS and KHMDS, but high diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Inspired by the authors' previous research,28,29 bases containing alkali metal ions, such as NaHMDS, LiHMDS, KHMDS, and t-BuOK, were introduced into the reaction (Table 1, Entries 5–8). Fortunately, NaHMDS resulted in a higher yield (83%) and enhanced diastereoselectivity (dr > 25 : 1) (Table 1, Entry 5).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Alkali metal bases improve the reaction. It is important to confirm the necessity of the B(C6F5)3 catalyst.",
+        "gap": "Determine if the reaction proceeds without the B(C6F5)3 catalyst.",
+        "decision": "Attempt the reaction with NaHMDS but no B(C6F5)3 catalyst."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": false,
+        "yield_percent": 0,
+        "failure_mode": "no_reaction",
+        "observation": "No reaction occurred, confirming the necessity of the catalyst."
+      },
+      "evidence": {
+        "text_span": "However, when no catalyst is added to the reaction, the reaction cannot be carried out (Table 1, Entry 9).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "NaHMDS and B(C6F5)3 in MeCN at room temperature gave good results. Investigate solvent effects.",
+        "gap": "Identify the optimal solvent for the reaction.",
+        "decision": "Test DMF as a solvent with B(C6F5)3 and NaHMDS at room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "DMF",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 72,
+        "dr": ">25:1",
+        "observation": "Lower yield compared to MeCN, but high diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Various solvents were examined (Table 1, Entries 11–15), revealing that the diastereoselectivity and yields of product 3 were typically low in protic solvents (Table 1, Entries 12 and 13). Additionally, it was observed that no solvent outperformed MeCN (Table 1, Entry 8).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "DMF gave lower yield. Continue investigating solvent effects.",
+        "gap": "Identify the optimal solvent for the reaction.",
+        "decision": "Test THF as a solvent with B(C6F5)3 and NaHMDS at room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "THF",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 65,
+        "dr": ">25:1",
+        "observation": "Lower yield compared to MeCN, but high diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Various solvents were examined (Table 1, Entries 11–15), revealing that the diastereoselectivity and yields of product 3 were typically low in protic solvents (Table 1, Entries 12 and 13). Additionally, it was observed that no solvent outperformed MeCN (Table 1, Entry 8).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "THF gave lower yield. Continue investigating solvent effects, focusing on protic solvents.",
+        "gap": "Identify the optimal solvent for the reaction.",
+        "decision": "Test MeOH as a solvent with B(C6F5)3 and NaHMDS at room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeOH",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 66,
+        "dr": "10:1",
+        "observation": "Low yield and diastereoselectivity in protic solvent."
+      },
+      "evidence": {
+        "text_span": "Various solvents were examined (Table 1, Entries 11–15), revealing that the diastereoselectivity and yields of product 3 were typically low in protic solvents (Table 1, Entries 12 and 13). Additionally, it was observed that no solvent outperformed MeCN (Table 1, Entry 8).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "MeOH gave low yield and dr. Continue investigating solvent effects, focusing on protic solvents.",
+        "gap": "Identify the optimal solvent for the reaction.",
+        "decision": "Test EtOH as a solvent with B(C6F5)3 and NaHMDS at room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "EtOH",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 63,
+        "dr": "12:1",
+        "observation": "Low yield and diastereoselectivity in protic solvent."
+      },
+      "evidence": {
+        "text_span": "Various solvents were examined (Table 1, Entries 11–15), revealing that the diastereoselectivity and yields of product 3 were typically low in protic solvents (Table 1, Entries 12 and 13). Additionally, it was observed that no solvent outperformed MeCN (Table 1, Entry 8).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Protic solvents were not effective. Continue investigating solvent effects.",
+        "gap": "Identify the optimal solvent for the reaction.",
+        "decision": "Test DMSO as a solvent with B(C6F5)3 and NaHMDS at room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "DMSO",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "dr": "7:1",
+        "observation": "Good yield, but very low diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Various solvents were examined (Table 1, Entries 11–15), revealing that the diastereoselectivity and yields of product 3 were typically low in protic solvents (Table 1, Entries 12 and 13). Additionally, it was observed that no solvent outperformed MeCN (Table 1, Entry 8).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "DMSO gave low dr. Continue investigating solvent effects.",
+        "gap": "Identify the optimal solvent for the reaction.",
+        "decision": "Test Acetone as a solvent with B(C6F5)3 and NaHMDS at room temperature."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "Acetone",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 70,
+        "dr": "15:1",
+        "observation": "Lower yield and dr compared to MeCN."
+      },
+      "evidence": {
+        "text_span": "Various solvents were examined (Table 1, Entries 11–15), revealing that the diastereoselectivity and yields of product 3 were typically low in protic solvents (Table 1, Entries 12 and 13). Additionally, it was observed that no solvent outperformed MeCN (Table 1, Entry 8).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "MeCN was the best solvent. Investigate temperature effects.",
+        "gap": "Identify the optimal temperature for the reaction.",
+        "decision": "Test the reaction at 50 °C in MeCN with B(C6F5)3 and NaHMDS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "50 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "dr": ">25:1",
+        "observation": "Lower yield compared to room temperature, but high diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Further testing in MeCN at different temperatures revealed that both high (Table 1, Entry 16) and low temperatures (Table 1, Entry 18) were unfavorable, with the optimal yield achieved at 0 °C (Table 1, Entry 17), maintaining high diastereoselectivity (dr > 25 : 1).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "50 °C was not optimal. Continue investigating temperature effects.",
+        "gap": "Identify the optimal temperature for the reaction.",
+        "decision": "Test the reaction at 0 °C in MeCN with B(C6F5)3 and NaHMDS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "dr": ">25:1",
+        "observation": "Optimal yield and high diastereoselectivity achieved at 0 °C."
+      },
+      "evidence": {
+        "text_span": "Further testing in MeCN at different temperatures revealed that both high (Table 1, Entry 16) and low temperatures (Table 1, Entry 18) were unfavorable, with the optimal yield achieved at 0 °C (Table 1, Entry 17), maintaining high diastereoselectivity (dr > 25 : 1).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "0 °C was optimal. Continue investigating temperature effects.",
+        "gap": "Confirm the optimal temperature for the reaction.",
+        "decision": "Test the reaction at -20 °C in MeCN with B(C6F5)3 and NaHMDS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "-20 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "dr": ">25:1",
+        "observation": "Lower yield compared to 0 °C, but high diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Further testing in MeCN at different temperatures revealed that both high (Table 1, Entry 16) and low temperatures (Table 1, Entry 18) were unfavorable, with the optimal yield achieved at 0 °C (Table 1, Entry 17), maintaining high diastereoselectivity (dr > 25 : 1).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "0 °C was identified as the optimal temperature. Investigate catalyst loading.",
+        "gap": "Determine the optimal amount of B(C6F5)3 catalyst.",
+        "decision": "Test the reaction with 0.12 equivalents of B(C6F5)3 at 0 °C in MeCN with NaHMDS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C",
+        "stoichiometry": {
+          "B(C6F5)3": "0.12 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "dr": ">25:1",
+        "observation": "Highest yield achieved with 0.12 equivalents of catalyst."
+      },
+      "evidence": {
+        "text_span": "Variations in the equivalents of B(C6F5)3 (Table 1, Entries 19–21) indicated that the most effective catalyst amount was 0.12 equivalents (Table 1, Entry 19). In summary, the conditions outlined in Entry 19 of Table 1 were optimal. Under these conditions, the reaction was completed in 3 hours, yielding 3 with an 86% yield and high diastereoselectivity (dr > 25 : 1).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "0.12 equivalents of B(C6F5)3 gave the best yield. Investigate lower catalyst loading.",
+        "gap": "Determine if a lower catalyst loading can maintain high yield and dr.",
+        "decision": "Test the reaction with 0.10 equivalents of B(C6F5)3 at 0 °C in MeCN with NaHMDS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C",
+        "stoichiometry": {
+          "B(C6F5)3": "0.10 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "dr": ">25:1",
+        "observation": "Slightly lower yield compared to 0.12 equivalents, but high diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Variations in the equivalents of B(C6F5)3 (Table 1, Entries 19–21) indicated that the most effective catalyst amount was 0.12 equivalents (Table 1, Entry 19).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "0.10 equivalents of B(C6F5)3 resulted in a slightly lower yield. Investigate even lower catalyst loading.",
+        "gap": "Determine if a lower catalyst loading can maintain high yield and dr.",
+        "decision": "Test the reaction with 0.05 equivalents of B(C6F5)3 at 0 °C in MeCN with NaHMDS."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C",
+        "stoichiometry": {
+          "B(C6F5)3": "0.05 equiv"
+        }
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "dr": ">25:1",
+        "observation": "Lower yield compared to 0.12 equivalents, but high diastereoselectivity."
+      },
+      "evidence": {
+        "text_span": "Variations in the equivalents of B(C6F5)3 (Table 1, Entries 19–21) indicated that the most effective catalyst amount was 0.12 equivalents (Table 1, Entry 19).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimal conditions are 0.12 equiv B(C6F5)3, 100 mol% NaHMDS, MeCN, 0 °C. Investigate other sodium salts.",
+        "gap": "Determine if other sodium salts can replace NaHMDS.",
+        "decision": "Test NaBF4 as a base with B(C6F5)3 at 0 °C in MeCN."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaBF4"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "dr": ">25:1",
+        "observation": "Good yield and high stereoselectivity, suggesting other sodium salts can be used."
+      },
+      "evidence": {
+        "text_span": "Other sodium salts were also used in the reaction, showing high yield and high stereoselectivity (dr > 25 : 1 Å) (Table 1, Entries 22 and 23).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "NaBF4 showed good results. Investigate another sodium salt.",
+        "gap": "Determine if other sodium salts can replace NaHMDS.",
+        "decision": "Test t-BuONa as a base with B(C6F5)3 at 0 °C in MeCN."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          "CC(C)(C)[SH](C)(=O)N=C(N)Cc1ccccc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)[SH](C)(=O)C(NC(=O)Cc1ccccc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaOtBu"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "dr": ">25:1",
+        "observation": "Good yield and high stereoselectivity, further supporting the use of other sodium salts."
+      },
+      "evidence": {
+        "text_span": "Other sodium salts were also used in the reaction, showing high yield and high stereoselectivity (dr > 25 : 1 Å) (Table 1, Entries 22 and 23).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimal conditions for the Friedel–Crafts reaction were established: B(C6F5)3 (12 mol%), NaHMDS (100 mol%), MeCN, 0 °C. Now, investigate the substrate scope with various indoles.",
+        "gap": "Determine the effect of different substituents on the indole ring on the reaction yield and stereoselectivity.",
+        "decision": "Screen various indole substrates with electron-donating and electron-withdrawing groups, as well as different N-substituents."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(C)(C)S(=O)(=O)NC(=O)CNc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Electron-donating groups on indole promoted the reaction (4–6, high yield, dr > 25:1). Electron-withdrawing groups reduced the yield (7, 8). Halogen substituents (9–13) gave good yields (79–88%) and high dr (>25:1). Methyl substitution at position 2 (14) did not affect yield or stereoselectivity. Electron-donating groups on the indole nitrogen (15, 16) gave good results (82–93% yield, dr > 25:1).",
+        "yield_percent": 86,
+        "dr": ">25:1"
+      },
+      "evidence": {
+        "text_span": "As depicted in Table 2, we rst screened the different indole substrates. We found that electron-donating group substitution on indole promoted the reaction (4–6), while electronwithdrawing groups on indole reduced the reaction yield (7, 8). Using indoles with halogens as substituents on the benzenic ring, the reaction could proceed well (9–13, yield 79-88%, dr > 25 : 1). Methyl substitution at position 2 of indole did not affect yield and stereoselectivity (14). Indeed, an electron-donating group (e.g. methyl, phenyl) on the nitrogen atom of indole resulted in a good reaction results (15–16, yield 82-93%, dr > 25 : 1), but when there were electron-withdrawing substitutions (e.g. TS, Boc) on the nitrogen atom of indole, the reaction failed to proceed (17, 18).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "The Friedel–Crafts reaction works well with various indoles, but electron-withdrawing groups on the indole nitrogen might be problematic.",
+        "gap": "Determine if electron-withdrawing groups on the indole nitrogen hinder the reaction.",
+        "decision": "Test indole substrates with electron-withdrawing groups (e.g., TS, Boc) on the nitrogen atom."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(C)(C)S(=O)(=O)NC(=O)CNc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The reaction failed to proceed when electron-withdrawing groups (TS, Boc) were present on the indole nitrogen (17, 18)."
+      },
+      "evidence": {
+        "text_span": "Indeed, an electron-donating group (e.g. methyl, phenyl) on the nitrogen atom of indole resulted in a good reaction results (15–16, yield 82-93%, dr > 25 : 1), but when there were electron-withdrawing substitutions (e.g. TS, Boc) on the nitrogen atom of indole, the reaction failed to proceed (17, 18).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Friedel–Crafts reaction conditions are optimized for indole substrates. Now, investigate the applicability with various imines.",
+        "gap": "Determine the substrate scope of the imine component.",
+        "decision": "Test the reaction with indole (1a) and various N-tert-butanesulfinylimines (2b-2j) containing aliphatic and aromatic amines."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "c1ccc2[nH]ccc2c1",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "dr": ">25:1",
+        "observation": "When R groups were aliphatic amines (19–24) and aromatic amines (25, 26), the reactions consistently yielded high efficiency (79–91%) and pronounced stereoselectivity (dr > 25:1)."
+      },
+      "evidence": {
+        "text_span": "Subsequently, this study focused on investigating the applicability of the novel Friedel–Cras reaction with various imines, as detailed in Table 3. To facilitate comparative analysis, all reactions were performed under standardized conditions. The outcomes demonstrated that when the R groups of the substrates were aliphatic amines (19–24) and aromatic amines (25, 26), the reactions consistently yielded high efficiency (79–91%) and pronounced stereoselectivity (dr > 25 : 1).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 28,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Friedel–Crafts reaction is effective with various indoles and imines. Now, extend the approach to include pyrroles as substrates.",
+        "gap": "Determine if pyrroles can be used as substrates in the Friedel–Crafts reaction and how substituents affect the outcome.",
+        "decision": "Test pyrrole substrates with and without substituents, including electron-donating and electron-withdrawing groups on the nitrogen atom, under standard conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cn1cccc1",
+          "CNC(=O)C(C)=NS(=O)C(C)(C)C"
+        ],
+        "product_smiles": [
+          "CNC(=O)C(NS(=O)C(C)(C)C)C1=CN=C1"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "dr": ">25:1",
+        "observation": "Reactions with pyrroles (27–29) showed similar trends to indoles, proceeding smoothly with no substitution or electron-donating groups on the nitrogen atom, yielding high stereoselectivity and high yield."
+      },
+      "evidence": {
+        "text_span": "Encouraged by above success, we extended our approach to include pyrroles as substrates (Table 4). The reactions using pyrroles as substrates demonstrated a similar trend to that observed with indole substrates (27–30). Reactions proceeded smoothly without substitution or with electron-donating groups on the nitrogen atom of pyrrole, yielding high stereoselectivity and high yield (27–29).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 29,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Pyrroles generally work well, but electron-withdrawing groups on the nitrogen atom were problematic for indoles.",
+        "gap": "Determine if electron-withdrawing groups on the pyrrole nitrogen also hinder the reaction.",
+        "decision": "Test pyrrole substrates with an electron-withdrawing group on the nitrogen atom (30)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cn1cccc1",
+          "CNC(=O)C(C)=NS(=O)C(C)(C)C"
+        ],
+        "product_smiles": [
+          "CNC(=O)C(NS(=O)C(C)(C)C)C1=CN=C1"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "The presence of an electron-withdrawing group on the nitrogen atom of pyrrole hindered the reaction (30)."
+      },
+      "evidence": {
+        "text_span": "Conversely, the presence of an electronwithdrawing group on the nitrogen atom of pyrrole hindered the reaction (30).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 30,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Friedel–Crafts reaction is applicable to pyrroles. Now, investigate the applicability with various chiral imines using pyrrole as a substrate.",
+        "gap": "Determine the substrate scope of the imine component when using pyrrole as the nucleophile.",
+        "decision": "React pyrrole with a range of chiral imines (31–39) containing aliphatic and aromatic amines under standard conditions."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "Cn1cccc1",
+          "CNC(=O)C(C)=NS(=O)C(C)(C)C"
+        ],
+        "product_smiles": [
+          "CNC(=O)C(NS(=O)C(C)(C)C)C1=CN=C1"
+        ],
+        "reagents": [
+          "B(C6F5)3",
+          "NaHMDS"
+        ],
+        "solvent": "MeCN",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "dr": ">25:1",
+        "observation": "A series of α-(2-pyrrolyl)glycine derivatives were synthesized with high yields and pronounced stereoselectivity, demonstrating versatility and general applicability."
+      },
+      "evidence": {
+        "text_span": "Fortunately, under standard conditions, we utilized pyrrole as a substrate and reacted it with a range of chiral imines (Table 4), R groups including aliphatic amines (31–37) and aromatic amines (38–39) to synthesize a series of α-(2-pyrrolyl)glycine derivatives, achieving high yields and pronounced stereoselectivity. These outcomes demonstrate the versatility and general applicability of the reaction conditions.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 31,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The Friedel–Crafts reaction products were not crystalline, making direct X-ray characterization difficult.",
+        "gap": "Obtain single crystal structure to confirm stereoselectivity.",
+        "decision": "Derivatize product 24 to a crystalline compound (40) by removing the tert-butylsulfinyl group and reacting with oxalyl methyl chloride."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "COc1ccc(CNC(=O)[C@H](NS(=O)C(C)(C)C)c2c[nH]c3ccccc23)cc1"
+        ],
+        "product_smiles": [
+          "COC(=O)C(=O)N[C@@H](C(=O)NCc1ccc(OC)cc1)c1c[nH]c2ccccc12"
+        ],
+        "reagents": [
+          "4M HCl/MeOH",
+          "Methyl Oxalyl Chloride",
+          "Et3N"
+        ],
+        "solvent": "THF",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 87,
+        "ee_percent": 99,
+        "observation": "Compound 40 was successfully synthesized with high ee and its single crystal structure was obtained, confirming the stereoselectivity of the Friedel–Crafts reaction."
+      },
+      "evidence": {
+        "text_span": "All of the above products from the Friedel–Cras reaction, as described in Tables 2–4, were not crystalline. Therefore, we derivatized these products to yield compounds that could readily form single crystals. As illustrated in Scheme 3a, compound 24 underwent removal of the tert-butylsulnyl group from its chiral nitrogen atom under acidic conditions, followed by a reaction with oxalyl methyl chloride in an alkaline environment to synthesize compound 40 (ee > 99%). Fortunately, we successfully obtained the single crystal structure of compound 40 (CCDC 2322830), conrming the stereoselectivity of this Friedel–Cras reaction (Scheme 3a).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "acd9a7ae9cacca11844306c9b4cd6efd244832976f92fa286006ff8ca0cd45af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 32,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Friedel–Crafts reaction is a key chiral control step. To demonstrate its utility, it will be applied in the total synthesis of Calcicamide B. Compound 11, synthesized on a gram scale, is the starting material.",
+        "gap": "Transform compound 11 into the chiral diamine 41.",
+        "decision": "Reduce compound 11 using LiAlH4, then remove the benzyl group via hydrogenation to form chiral diamine 41."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)S(=O)N[C@@H](C(=O)NCc1ccccc1)c1c[nH]c2ccc(Br)cc12"
+        ],
+        "product_smiles": [
+          "CC(C)(C)S(=O)N[C@@H](CN)c1c[nH]c2ccc(Br)cc12"
+        ],
+        "reagents": [
+          "LiAlH4",
+          "H2",
+          "Pd/C"
+        ],
+        "solvent": "THF",
+        "temperature": "reflux",
+        "atmosphere": "H2"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "observation": "Chiral diamine 41 was successfully formed."
+      },
+      "evidence": {
+        "text_span": "As illustrated in Scheme 3b, compound 11, which was successfully synthesized on a gram scale (Table 2), was reduced using LiAlH4, then benzyl group was removed to form chiral diamine 41.",
+        "section": "Results and discussion",
+        "image_refs": [
+          "acd9a7ae9cacca11844306c976f92fa286006ff8ca0cd45af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 33,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Chiral diamine 41 is formed. The next step is to construct the bisindole structure.",
+        "gap": "Condense chiral diamine 41 with indole and oxalyl chloride to form precursor 42.",
+        "decision": "React indole with oxalyl chloride, then condense the resulting intermediate with 41 in an alkaline environment."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)S(=O)N[C@@H](CN)c1c[nH]c2ccc(Br)cc12",
+          "c1ccc2[nH]ccc2c1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)S(=O)N[C@@H](CNC(=O)C(=O)c1c[nH]c2ccccc12)c1c[nH]c2ccc(Br)cc12"
+        ],
+        "reagents": [
+          "Oxalyl Chloride",
+          "Et3N"
+        ],
+        "solvent": "THF",
+        "temperature": "0 °C"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "observation": "Precursor 42 was successfully synthesized."
+      },
+      "evidence": {
+        "text_span": "Indole upon reaction with oxalyl chloride and subsequent condensation with intermediate 41 could yield precursor 42",
+        "section": "Results and discussion",
+        "image_refs": [
+          "acd9a7ae9cacca11844306c9b4cd6efd244832976f92fa286006ff8ca0cd45af.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 34,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Precursor 42 is formed. The final step is to deprotect the tert-butylsulfinyl group to obtain Calcicamide B.",
+        "gap": "Remove the tert-butylsulfinyl group from precursor 42.",
+        "decision": "Perform TFA-catalyzed hydrolysis to remove the tert-butylsulfinyl group."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)S(=O)N[C@@H](CNC(=O)C(=O)c1c[nH]c2ccccc12)c1c[nH]c2ccc(Br)cc12"
+        ],
+        "product_smiles": [
+          "O=C(O)C(F)(F)F.[NH3+][C@@H](CNC(=O)C(=O)c1c[nH]c2ccccc12)c1c[nH]c2ccc(Br)cc12"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "DCM",
+        "temperature": "r.t."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 92,
+        "observation": "Anti-tumor bisindole alkaloid Calcicamide B was successfully synthesized."
+      },
+      "evidence": {
+        "text_span": "and subsequently, TFA-catalyzed hydrolysis was performed to remove the tert-butylsulnyl group, resulting in anti-tumor bisindole alkaloid Calcicamide B (Scheme 3b).",
+        "section": "Results and discussion",
+        "image_refs": [
+          "acd9a7ae9cacca11844306c9b4cd6efd244832976f92fa286006ff8ca0cd45af.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "X-ray crystallography",
+      "chiral HPLC"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for the total synthesis of Calcicamide B is not explicitly stated, but individual steps show good yields."
+      }
+    },
+    "significance": "The first asymmetric total synthesis of marine-derived anti-tumor bisindole alkaloid Calcicamide B was achieved, demonstrating the utility of the developed diastereoselective Friedel–Crafts alkylation as a key chiral control step. This method provides access to enantioenriched α-(3-indolyl)glycine and α-(2-pyrrolyl)glycine derivatives, which are important intermediates in medicinal chemistry and organic synthesis."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1039/d5ra06138e",
+      "pmcid": "PMC12593423",
+      "title": "NaHMDS/B(C&lt;sub&gt;6&lt;/sub&gt;F&lt;sub&gt;5&lt;/sub&gt;)&lt;sub&gt;3&lt;/sub&gt;-promoted diastereoselective Friedel-Crafts alkylation of indoles/pyrroles with &lt;i&gt;N-tert&lt;/i&gt;-butanesulfinylimines: towards the asymmetric synthesis of bisindole alkaloid Calcicamide B.",
+      "authors": "Zhang G, Chen X, Liu Y, Peng R, Xu M, Yan S, Xiao J, Liu Z, Min Q, Liao G, Wang X, Qin S.",
+      "journal": "RSC Adv",
+      "year": 2025,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12593423?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/db895592-e758-4c99-a72c-5e4100579a0d.zip",
+      "parsed_at": "2026-05-11T06:31:35.665492+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 97,
+    "parseable": 91,
+    "canonicalized": 91,
+    "invalid": 6,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "c1ccc2c(c1)c(C(R3)=C2)N(R2)C1=CC=CC=C1",
+      "CC(C)(C)S(=O)(NC(=O)C(C1=C(N(R2)C2=CC=CC=C2)C=C(R3)C=C1)C1=CC=CC=C1)=O",
+      "c1ccc2c(c1)c(C(R3)=C2)N(R2)C1=CC=CC=C1",
+      "CC(C)(C)S(=O)(NC(=O)C(C1=C(N(R2)C2=CC=CC=C2)C=C(R3)C=C1)C1=CC=CC=C1)=O",
+      "CC(C)(C)S(=O)C(C(=O)NR)NC",
+      "CC(C)(C)S(=O)C(C(=O)NR)NC1=CC=CC2=C1NC=C2"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

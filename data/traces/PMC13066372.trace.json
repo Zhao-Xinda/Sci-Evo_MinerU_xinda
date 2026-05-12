@@ -1,0 +1,1182 @@
+{
+  "trace_id": "TS-PMC13066372",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "N-bridged [3.2.1]octane scaffolds",
+    "smiles": "Cc1ccc(C2[C@@H]3C=C[C@H]2N(C)C3)cc1F",
+    "natural_product_class": "Alkaloid",
+    "structural_features": {
+      "ring_systems": "[3.2.1]octane",
+      "key_motifs": [
+        "tropane"
+      ]
+    },
+    "motivation": "N-bridged [3.2.1]octanes (tropanes) and their related bridged bicyclic systems constitute highly sought-after scaffolds in drug discovery and development. The enantioselective synthesis of chiral 3-aryltropanes, widely distributed across bioactive pharmaceutical agents, remains underdeveloped. This work aims to develop an enantioselective catalytic method for their synthesis, starting from cost-effective tropinone.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Vlahovic",
+        "year": 2013,
+        "doi": "10.1002/ejoc.201300002",
+        "key_strategy": "Three-step protocol involving deprotonation of tropanone with a chiral lithium amide base, enol triflate formation, and Fe-catalyzed Kumada coupling. Chirality was not preserved, leading to an inseparable mixture of diastereomers."
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Achieve enantioselective synthesis of chiral tropanes and oxatropane scaffolds with good enantiocontrol, broad functional group tolerance, and easy scale-up. Demonstrate synthetic value by preparing drugs for Alzheimer's disease and monoamine transporter ligands."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-C bond formation at the 3-position of the tropane scaffold",
+        "named_strategy": "Pd-catalyzed β-H elimination reaction",
+        "reasoning": "This disconnection allows for the introduction of diverse aryl groups onto the tropane core in an enantioselective manner, starting from readily available tropinone-derived N-arylsulfonylhydrazones and aryl bromides. The β-H elimination is proposed to be the key enantioselective step."
+      }
+    ],
+    "rationale": "The strategy focuses on an enantioselective Pd/Ming-Phos-catalyzed β-H elimination reaction. This approach is designed to address the challenge of simultaneously controlling diastereoselectivity during migratory insertion and enantioselectivity during β-H elimination, especially in the presence of two distinct β-H elimination sites. The use of cost-effective tropinone as a starting material is also a key consideration for synthetic efficiency."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "N-bridged [3.2.1]octane (tropane) scaffolds are important in medicinal chemistry, but enantioselective synthesis of chiral 3-aryltropanes is underdeveloped. Existing methods often lack enantioselectivity or require harsh conditions. β-H elimination is a fundamental process in transition-metal catalysis, but its stereoselectivity is rarely investigated, especially when multiple β-H sites are present.",
+        "gap": "No straightforward methodology exists for the enantioselective synthesis of chiral 3-aryltropanes through asymmetric catalysis. Specifically, achieving enantioselective β-H elimination when two distinct β-H elimination sites are present is a significant challenge.",
+        "decision": "To achieve enantioselective synthesis of chiral 3-aryltropanes, we hypothesized that a Pd/Ming-Phos-catalyzed β-H elimination reaction of tropinone-derived N-arylsulfonylhydrazones and aryl bromides could be developed. This approach aims to control both diastereoselectivity during migratory insertion and enantioselectivity during β-H elimination."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Hypothesis formed to develop a Pd/Ming-Phos-catalyzed enantioselective β-H elimination reaction for chiral tropanes."
+      },
+      "evidence": {
+        "text_span": "In this work, we report the meticulous design of a Pd/Ming-Phos catalyst that enables enantioselective β-H elimination (Fig. 1b, c). This catalytic strategy, which initiates from cost-effective tropinone, achieves the synthesis of chiral tropanes and oxatropane scaffolds with good enantiocontrol.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The hypothesis is to use a Pd-catalyzed β-H elimination. Initial screening of commercially available ligands is a standard first step to identify potential catalysts.",
+        "gap": "Identify a suitable ligand for the enantioselective β-H elimination reaction.",
+        "decision": "To test the working hypothesis, we initially reacted N-arylsulfonylhydrazone 1a with phenyl bromide 2a in the presence of Pd(OAc)2, various commercially available ligands, and tBuOLi in 1,4-Dioxane at 80 °C for 20 h, expecting to find a ligand that could induce enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "Brc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C(N[C@H]1C[C@@H](c2ccccc2)C1)OCc1ccccc1"
+        ],
+        "reagents": [
+          "tBuOLi"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "ligand": "various commercially available ligands",
+        "solvent": "1,4-Dioxane",
+        "temperature": "80 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "no_reaction",
+        "observation": "An exhaustive screening of various types of commercially available ligands failed to yield satisfactory results."
+      },
+      "evidence": {
+        "text_span": "To test our working hypothesis, we initially reacted N-arylsulfonylhydrazone 1a with phenyl bromide 2a in the presence of 10% mol Pd(OAc)2, 20 mol% of ligand, and tBuOLi in 1,4-Dioxane at 80 °C for 20 h. Initially, an exhaustive screening of various types of commercially available ligands failed to yield satisfactory results (See Supplementary information Table S1).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 2,
+      "thought": {
+        "background": "Commercially available ligands were unsuccessful. Our group has developed 'Sadphos' ligands that have shown promise in asymmetric catalysis.",
+        "gap": "Find a suitable ligand for enantioselective β-H elimination.",
+        "decision": "To find a suitable ligand, we turned attention to our developed ligands (Sadphos), expecting that N-H ligands might deliver good ee based on previous experience."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "ee_percent": 42,
+        "observation": "M1 (an N-H Sadphos ligand) was the optimal choice, affording the tropane product 3a in 54% yield with 42% ee. N-Me ligands shut down enantioselectivity."
+      },
+      "evidence": {
+        "text_span": "Then, we turned attention to our developed ligands (Sadphos), which have emerged as powerful ligands in various asymmetric catalysis40–43. The examination of the Sadphos ligand kit indicated that only N-H ligands could deliver good ee, in which M1 was the optimal choice, affording the tropane product 3a in 54% yield with 42% ee. Additionally, the use of N-Me ligands obviously shut down the enantioselectivity (See SI Table S1).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Sadphos ligand M1 provided 42% ee. A proposed interaction model for β-H elimination suggests hydrogen bonding between the substrate and ligand is crucial for enantioselectivity. Ming-Phos ligands are easily synthesized and modified.",
+        "gap": "Improve enantioselectivity by systematically modifying the Ming-Phos ligand based on the proposed interaction model.",
+        "decision": "To improve enantioselectivity, we proceeded to screen a series of Ming-Phos ligands, starting with tuning the C4-substituted group (R) of Ming-Phos (M2-M8), expecting to identify structural features that enhance enantiocontrol."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "Brc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C(N[C@H]1C[C@@H](c2ccccc2)C1)OCc1ccccc1"
+        ],
+        "reagents": [
+          "tBuOLi"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "ligand": "M2-M8 (Ming-Phos derivatives)",
+        "solvent": "1,4-Dioxane",
+        "temperature": "80 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 54,
+        "ee_percent": 42,
+        "observation": "OMe-substitution (M2) conferred a slight improvement in ee values without yield erosion (from 42% to 44% ee). Ligands M3-M8 failed to work satisfactorily, showing low ee and yield."
+      },
+      "evidence": {
+        "text_span": "We next proposed a model for the interaction between Ming-Phos and 1a (Fig. 2a). Inspired by the easy synthesis and modification of Ming-Phos, we proceeded to screen a series of Ming-Phos (Fig. 2b). Subsequently, the tuning of the C4-substituted group (R) of Ming-Phos (M2-M8) was first carried out. The OMe-substitution (M2) conferred a slight improvement in ee values without yield erosion. By contrast, ligands M3-M8 failed to work satisfactorily.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 4,
+      "thought": {
+        "background": "C4-substituted Ming-Phos ligands showed limited improvement. The proposed model suggests that the ortho position might be crucial for controlling the chiral pocket.",
+        "gap": "Further optimize the ligand structure to improve enantioselectivity.",
+        "decision": "To improve enantioselectivity, we systematically evaluated the OMe group at different positions of the benzene ring, aiming to elucidate aromatic substitution effects, expecting that an ortho-OMe group would enhance control over the chiral pocket."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "Brc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C(N[C@H]1C[C@@H](c2ccccc2)C1)OCc1ccccc1"
+        ],
+        "reagents": [
+          "tBuOLi"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "ligand": "M10 (ortho-OMe Ming-Phos)",
+        "solvent": "1,4-Dioxane",
+        "temperature": "80 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 80,
+        "ee_percent": 74,
+        "observation": "When the OMe group was positioned at the ortho-site (M10), a significant enhancement in yield (80%) and ee (74%) was observed. Meta- or para-OMe substitutions resulted in low ee and yield."
+      },
+      "evidence": {
+        "text_span": "We then systematically evaluated the OMe group at different positions of the benzene ring, aiming to elucidate aromatic substitution effects. Satisfyingly, when the OMe group was positioned at the ortho-site (M10), a significant enhancement in yield (80%) and ee (74%) was observed. However, when the OMe group was positioned at the meta- or para-position, irrespective of using mono- or disubstituted ligands, the ee and yield of product remained low. These results indicated that the ortho position is closer to the reactive site to control the chiral pocket.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 5,
+      "thought": {
+        "background": "Ortho-OMe substitution significantly improved ee. Further modifications around the ortho-OMe group might lead to even better enantioselectivity.",
+        "gap": "Further optimize the ortho-OMe-modified ligand structure.",
+        "decision": "To further improve ee, a series of ortho-OMe-modified ligands were evaluated, expecting to find a ligand that provides even higher enantioselectivity."
+      },
+      "outcome": {
+        "valid": true,
+        "ee_percent": 81,
+        "observation": "M14 afforded an improved 81% ee of 3a."
+      },
+      "evidence": {
+        "text_span": "Therefore, a series of ortho-OMe-modified ligands were evaluated. Fortunately, M14 afforded an improved 81% ee of 3a.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "M14 provided 81% ee. The next step in ligand optimization is to vary the aryl group (Ar2) on the P atom, considering the matching of the rate between oxidative addition and metal carbene generation.",
+        "gap": "Identify further ligand modifications to improve enantioselectivity.",
+        "decision": "To further optimize the ligand, the variation of the aryl group (Ar2) on the P atom was investigated (M16–M21), expecting to find ligands that give better results by influencing the reaction rates."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "Brc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C(N[C@H]1C[C@@H](c2ccccc2)C1)OCc1ccccc1"
+        ],
+        "reagents": [
+          "tBuOLi"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "ligand": "M16-M21 (Ming-Phos derivatives with varied Ar2)",
+        "solvent": "1,4-Dioxane",
+        "temperature": "80 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "observation": "Unfortunately, those ligands did not give better results."
+      },
+      "evidence": {
+        "text_span": "Next, in view of the matching of the rate between oxidative addition and metal carbene generation, the variation of the aryl group (Ar2) on the P atom was investigated (M16–M21). Unfortunately, those ligands did not give better results.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 7,
+      "thought": {
+        "background": "Varying the aryl group on the P atom did not improve results. The ligand model suggests that the electronic properties of R'' might influence the interaction between the ligand and the β-H atoms.",
+        "gap": "Identify further ligand modifications to improve enantioselectivity.",
+        "decision": "To further optimize the ligand, we hypothesized that the electronic properties of R'' might influence the interaction between the ligand and the β-H atoms, prompting us to modify R'' with an electron-donating OMe group, expecting to achieve the best ee."
+      },
+      "outcome": {
+        "valid": true,
+        "ee_percent": 83,
+        "observation": "M26, with an electron-donating OMe group at R'', gave the best ee (83%)."
+      },
+      "evidence": {
+        "text_span": "Finally, on the basis of the ligand model presented in Fig. 2a, we hypothesized that the electronic properties of R'' might influence the interaction between the ligand and the β-H atoms. This prompted us to modify the R'' and, with an electron-donating OMe group, M26 gave the best ee (83%).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 9,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Ligand M26 provided 83% ee. Reaction conditions (solvent, palladium source, base, temperature) are known to significantly impact yield and enantioselectivity.",
+        "gap": "Optimize reaction conditions to further improve yield and ee.",
+        "decision": "To further optimize the reaction, we systematically evaluated different polar and nonpolar solvents, expecting to find a solvent that enhances both yield and ee."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "Brc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C(N[C@H]1C[C@@H](c2ccccc2)C1)OCc1ccccc1"
+        ],
+        "reagents": [
+          "tBuOLi"
+        ],
+        "catalyst": "Pd(OAc)2",
+        "ligand": "M26",
+        "solvent": "various polar and nonpolar solvents",
+        "temperature": "80 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 82,
+        "ee_percent": 86,
+        "observation": "The polar solvent DMA performed better, giving 82% yield and 86% ee."
+      },
+      "evidence": {
+        "text_span": "With the best ligand M26, further studies of the influence of the solvent, palladium, and temperature were conducted (Fig. 3). We systematically evaluated different polar and nonpolar solvents (Fig. 3, entries 1–7) and found that the polar solvent DMA performed better 82% yield, 86% ee).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 10,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 9,
+      "thought": {
+        "background": "DMA was identified as the best solvent, giving 82% yield and 86% ee. The metal salt and base are also critical components of the catalytic system.",
+        "gap": "Further optimize the metal salt and base to improve yield and ee.",
+        "decision": "To further optimize the reaction, we focused on the optimization of metal salt and base, expecting to find a combination that provides higher yield and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "Brc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C(N[C@H]1C[C@@H](c2ccccc2)C1)OCc1ccccc1"
+        ],
+        "reagents": [
+          "Cs2CO3"
+        ],
+        "catalyst": "Pd2(dba)3·CHCl3",
+        "ligand": "M26",
+        "solvent": "DMA",
+        "temperature": "80 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 84,
+        "ee_percent": 89,
+        "observation": "When the metal salt and base were changed to Pd2dba3·CHCl3 and Cs2CO3, respectively, the desired product 3a was obtained in 84% yield with 89% ee."
+      },
+      "evidence": {
+        "text_span": "Subsequently, we focused on the optimization of metal salt and base (entries 8-17). When the metal salt and base were changed to Pd2dba3·CHCl3 and Cs2CO3, respectively, the desired product 3a was obtained in 84% yield with 89% ee (entry 17).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 11,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Optimized conditions yielded 84% yield and 89% ee. Lowering the temperature can sometimes improve enantioselectivity.",
+        "gap": "Further improve ee while maintaining acceptable yield.",
+        "decision": "To improve ee, we lowered the reaction temperature, expecting to enhance enantioselectivity, but also considering the potential impact on yield."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "Brc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C(N[C@H]1C[C@@H](c2ccccc2)C1)OCc1ccccc1"
+        ],
+        "reagents": [
+          "Cs2CO3"
+        ],
+        "catalyst": "Pd2(dba)3·CHCl3",
+        "ligand": "M26",
+        "solvent": "DMA",
+        "temperature": "50 °C",
+        "time": "20 h"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "yield_percent": null,
+        "ee_percent": 91,
+        "observation": "Lowering the temperature could improve the ee to 91% but resulted in a sharply lower yield. The unsatisfactory yield of 3a may be ascribed to the mismatched rates for carbene generation and benzylpalladium intermediate formation."
+      },
+      "evidence": {
+        "text_span": "At the same time, we found that lowering the temperature could improve the ee to 91% but resulted in a sharply lower yield (entry 18). The unsatisfactory yield of 3a may be ascribed to the mismatched rates for carbene generation and benzylpalladium intermediate formation.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 12,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 11,
+      "thought": {
+        "background": "Lowering the temperature improved ee but significantly reduced yield due to mismatched reaction rates. Carbene precursors with distinctive substituents on the sulfonylphenyls might influence the rate of carbene generation.",
+        "gap": "Improve yield while maintaining high ee by addressing the mismatched reaction rates.",
+        "decision": "To address the unsatisfactory yield, carbene precursors with distinctive substituents on the sulfonylphenyls were investigated, expecting that a suitable precursor could balance the rates for carbene generation and benzylpalladium intermediate formation, leading to both high yield and ee."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "Brc1ccccc1"
+        ],
+        "product_smiles": [
+          "O=C(N[C@H]1C[C@@H](c2ccccc2)C1)OCc1ccccc1"
+        ],
+        "reagents": [
+          "Cs2CO3"
+        ],
+        "catalyst": "Pd2(dba)3·CHCl3",
+        "ligand": "M26",
+        "solvent": "DMA",
+        "temperature": "50 °C",
+        "time": "36 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 88,
+        "ee_percent": 91,
+        "observation": "Easy-decomposed (2,4,6-triisopropylphenyl) sulfonylhydrazone 1c outperformed other carbene precursors, affording 3a in 88% yield with 91% ee."
+      },
+      "evidence": {
+        "text_span": "To this end, carbene precursors with distinctive substituents on the sulfonylphenyls were investigated. It is satisfactory to discover that easy-decomposed (2,4,6-triisopropylphenyl) sulfonylhydrazone 1c outperformed the other carbene precursors screened, affording 3a in 88% yield with 91% ee.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 13,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimized conditions (ligand M26, Pd2dba3·CHCl3, Cs2CO3, DMA, 50 °C, 36 h, with carbene precursor 1c) provide 88% yield and 91% ee for 3a. Now, the scope of the reaction with various aryl bromides needs to be explored.",
+        "gap": "Determine the functional group tolerance and generality of the reaction with different aryl bromides.",
+        "decision": "To ascertain the scope of the method, various aryl bromides bearing para-electron-donating or electron-withdrawing groups were examined under the optimized conditions, expecting to deliver the corresponding products with good yields and ees."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Cs2CO3"
+        ],
+        "catalyst": "Pd2(dba)3·CHCl3",
+        "ligand": "M26",
+        "solvent": "DMA",
+        "temperature": "50 °C",
+        "time": "36 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 76,
+        "ee_percent": 93,
+        "observation": "Aryl bromides bearing para-electron-donating groups or electron-withdrawing groups proceeded well to deliver 3a–3p. For substrates with para-strong electron-withdrawing substituents (3o–3p), yields were 76-77% with 93-94% ees when changing M26 to M27."
+      },
+      "evidence": {
+        "text_span": "Having established the optimized conditions, the scope of this reaction was examined by using various aryl bromides (Fig. 4). The results showed that aryl bromides bearing para-electron-donating groups or electron-withdrawing groups proceeded well to deliver 3a–3p. In regard to the substrates with para-strong electron-withdrawing substituents, the products 3o–3p were exclusively obtained in 76-77% yields with 93-94% ees when changing M26 to M27.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 14,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The reaction shows good tolerance for para-substituted aryl bromides. Now, the scope needs to be extended to meta- and ortho-substituted aryl bromides, as well as disubstituted and heterocyclic aryl bromides.",
+        "gap": "Determine the generality of the reaction for a broader range of aryl bromide substituents and structures.",
+        "decision": "To further ascertain the scope, meta-substituents, ortho-substituents, disubstituted aryl bromides, and heterocyclic rings were investigated, expecting to achieve good functional group tolerance and enantioselectivity."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Cs2CO3"
+        ],
+        "catalyst": "Pd2(dba)3·CHCl3",
+        "ligand": "M26 or M27",
+        "solvent": "DMA or PhMe",
+        "temperature": "50 °C",
+        "time": "36 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "ee_percent": 87,
+        "observation": "Good functional group tolerance was achieved for meta-substituents (3s–3y). Ortho-substituted substrates (3z–3ba) achieved good ees, although yields were moderate due to steric hindrance. The method was applicable to disubstituted aryl bromides (3bb–3bi) and benzannulated ring systems (3bj–3bo). Heterocyclic rings (3bp–3bv) also yielded products with 60% yields and 87–94% ees, including the challenging pyridine substrate."
+      },
+      "evidence": {
+        "text_span": "Some functional groups, such as ester (3p), trimethylsilyl (3q), and vinyl (3r), were incorporated, allowing the products to be amenable to further transformations. Generally, good functional group tolerance was also achieved for meta-substituents of aryl bromides (3s–3y). Furthermore, ortho-substituted substrates (3z–3ba) achieved good ees, although the yields were moderate. This outcome may be attributed to the steric hindrance posed by the bulky substituents. Notably, this strategy could also be extended to disubstituted aryl bromides, generating the products 3bb–3bi in satisfactory yields and ees. We also found that our method was applicable to benzannulated ring systems, regardless of bearing electron-withdrawing or electron-donating substituents (3bj–3bo). To explore the scope of our reaction further, we incorporated heterocyclic rings into the aryl bromides, successfully synthesizing products 3bp–3bv with 60% yields and 87–94% ees. Notably, the transformation was effective even with the more challenging pyridine substrate (3bv).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 15,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The reaction has been shown to be broadly applicable to various aryl bromides. Confirmation of the absolute configuration is crucial for understanding the enantioselectivity.",
+        "gap": "Determine the absolute configuration of the products.",
+        "decision": "To confirm the absolute configuration, X-ray diffraction analysis of compound 3bd was performed, expecting to unambiguously establish the stereochemistry."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The absolute configuration of the product was unambiguously confirmed by X-ray diffraction analysis of compound 3bd."
+      },
+      "evidence": {
+        "text_span": "Furthermore, the absolute configuration of the product was unambiguously confirmed by X-ray diffraction analysis of compound 3bd.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 16,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The reaction works well for various aryl bromides. The effect of substituents on the tropane scaffold itself, particularly different N-protecting groups, needs to be investigated.",
+        "gap": "Determine the applicability of the method to tropanes with different N-protecting groups.",
+        "decision": "To ascertain the scope of the method, the effect of substituents on the tropane scaffolds, specifically different N-protecting groups, was investigated under the standard reaction conditions, expecting to deliver the corresponding products with high yields and ees."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "Brc1ccccc1"
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Cs2CO3"
+        ],
+        "catalyst": "Pd2(dba)3·CHCl3",
+        "ligand": "M26",
+        "solvent": "DMA",
+        "temperature": "50 °C",
+        "time": "36 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "ee_percent": 87,
+        "observation": "This asymmetric β-H elimination was applicable to tropanes bearing different N-protecting groups, delivering products 4a–4k with high yields (71-96%) and ees (87-95%). Changing N-substituents to o-substituents on the tropanes also proceeded smoothly."
+      },
+      "evidence": {
+        "text_span": "Next, the effect of substituents on the tropane scaffolds was investigated under the standard reaction conditions (Fig. 4). Satisfactorily, this asymmetric β-H elimination was also applicable to the tropanes bearing different N-protecting groups, delivering the products 4a–4k with high yields (71-96%) and ees (87-95%). Furthermore, changing N-substituents to o-substituents on the tropanes proceeded smoothly, affording the corresponding products 4k with satisfactory results.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 17,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The method shows broad scope for both aryl bromides and N-protected tropanes. To demonstrate its synthetic utility, late-stage modification of drug molecules and larger-scale synthesis are important.",
+        "gap": "Demonstrate the practicality and synthetic utility of the method for complex molecules and scale-up.",
+        "decision": "To ascertain the scope of this method, several aryl bromides derived from the core structures of natural products were further investigated, expecting to demonstrate the applicability to structurally complex substrates."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          ""
+        ],
+        "product_smiles": [
+          ""
+        ],
+        "reagents": [
+          "Cs2CO3"
+        ],
+        "catalyst": "Pd2(dba)3·CHCl3",
+        "ligand": "M26",
+        "solvent": "DMA",
+        "temperature": "50 °C",
+        "time": "36 h"
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "All structurally complex substrates (3ca–3ce) underwent the β-H elimination to afford the corresponding products in high yields and diastereoselectivities."
+      },
+      "evidence": {
+        "text_span": "To ascertain the scope of this method, several aryl bromides derived from the core structures of natural products were further investigated (Fig. 5a). All these structurally complex substrates (3ca–3ce) underwent the β-H elimination to afford the corresponding products in high yields and diastereoselectivities.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 18,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "The method is effective for complex substrates. Practical application requires demonstrating scalability.",
+        "gap": "Demonstrate the scalability of the reaction.",
+        "decision": "To illustrate the practicality of this β-H elimination reaction, a larger-scale synthesis of 3c and 4b was carried out under standard conditions, expecting to isolate the products in good yields and ees."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(C)c1ccc(Br)cc1"
+        ],
+        "product_smiles": [
+          "CC(C)c1ccc([C@H]2C[C@@H]3C[C@H](C2)N(C)C3)cc1"
+        ],
+        "reagents": [
+          "Cs2CO3"
+        ],
+        "catalyst": "Pd2(dba)3·CHCl3",
+        "ligand": "M26",
+        "solvent": "DMA",
+        "temperature": "50 °C",
+        "time": "36 h",
+        "scale": "gram scale"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 86,
+        "ee_percent": 92,
+        "observation": "Under the standard conditions, product 3c was isolated in 86% yield with 92% ee."
+      },
+      "evidence": {
+        "text_span": "To illustrate the practicality of this β-H elimination reaction, a larger-scale synthesis of 3c and 4b was carried out (Fig. 5b, c). Under the standard conditions, the products 3c and 4b were isolated in 86% yield with 92% ee and 71% yield with 91% ee, respectively.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 19,
+      "fragment_id": null,
+      "action": "scale_up",
+      "thought": {
+        "background": "The method is effective for complex substrates and scalable for 3c. Scalability for 4b, another representative product, also needs to be demonstrated.",
+        "gap": "Demonstrate the scalability of the reaction for product 4b.",
+        "decision": "To illustrate the practicality of this β-H elimination reaction, a larger-scale synthesis of 4b was carried out under standard conditions, expecting to isolate the product in good yield and ee."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "",
+          "CC(C)(C)c1ccc(Br)cc1"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)N1C[C@H](c2ccc(C(C)(C)C)cc2)C[C@@H]1N"
+        ],
+        "reagents": [
+          "Cs2CO3"
+        ],
+        "catalyst": "Pd2(dba)3·CHCl3",
+        "ligand": "M26",
+        "solvent": "DMA",
+        "temperature": "50 °C",
+        "time": "36 h",
+        "scale": "gram scale"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "ee_percent": 91,
+        "observation": "Under the standard conditions, product 4b was isolated in 71% yield with 91% ee."
+      },
+      "evidence": {
+        "text_span": "To illustrate the practicality of this β-H elimination reaction, a larger-scale synthesis of 3c and 4b was carried out (Fig. 5b, c). Under the standard conditions, the products 3c and 4b were isolated in 86% yield with 92% ee and 71% yield with 91% ee, respectively.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 20,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The Boc group on the tropane scaffold can be a versatile handle for further functionalization. Demonstrating its substitution with other groups would highlight the synthetic utility.",
+        "gap": "Show the versatility of the Boc-protected tropane products for further transformations.",
+        "decision": "To demonstrate synthetic utility, the Boc group of 4b was substituted by different other groups, expecting to lead to new derivatives (5-7) with good yields and ees."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N1C[C@H](c2ccc(C(C)(C)C)cc2)C[C@@H]1N"
+        ],
+        "product_smiles": [
+          "CN1C[C@@H]2C[C@H](c3ccc(C(C)(C)C)cc3)C[C@H]1C2",
+          "CN1C[C@@H]2C[C@H](c3ccc(C(C)(C)C)cc3)C[C@H]1C2",
+          "CN1C[C@@H]2C[C@H](c3ccc(C(C)(C)C)cc3)C[C@H]1C2"
+        ],
+        "reagents": [
+          "TFA",
+          "FmocCl",
+          "TEA",
+          "EtSCl"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to rt",
+        "time": "1 h to 5 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 71,
+        "ee_percent": 89,
+        "observation": "The Boc group could be substituted by different other groups, thus leading to 5-7 in 71% yields and 89-91% ee."
+      },
+      "evidence": {
+        "text_span": "Subsequently, the Boc group could be substituted by different other groups, thus leading to 5-7 in 71% yields and 89-91% ee.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 21,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The product 3c is a versatile intermediate. Demonstrating its transformation into other functionalized products would further highlight the synthetic utility.",
+        "gap": "Show the versatility of product 3c for further transformations.",
+        "decision": "To demonstrate synthetic utility, 3c was subjected to hydroboration-oxidation and Dess-Martin oxidation, expecting to furnish 8 and then unsaturated 9 in good overall yield and ee."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)c1ccc([C@H]2C[C@@H]3C[C@H](C2)N(C)C3)cc1"
+        ],
+        "product_smiles": [
+          "CC(C)c1ccc([C@@H]2C[C@H]3C[C@H](CN3C)C2O)cc1",
+          "CC(C)c1ccc([C@@H]2C[C@H]3C[C@H](CN3C)C2=O)cc1"
+        ],
+        "reagents": [
+          "BH3·DMS",
+          "NaBO3·4H2O",
+          "Dess-Martin"
+        ],
+        "solvent": "THF, H2O, DCM",
+        "temperature": "-15 °C to rt",
+        "time": "overnight, 8 h, 2 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 60,
+        "ee_percent": 89,
+        "observation": "Upon oxidation by NaBO3·4H2O, 3c could undergo hydroboration-oxidation reaction to furnish 8 and further proceed Dess-Martin oxidation reaction to give unsaturated 9 in an overall 60% yield with 89% ee."
+      },
+      "evidence": {
+        "text_span": "Moreover, upon oxidation by NaBO3·4H2O, the 3c could undergo hydroboration-oxidation reaction to furnish 8 and further proceed Dess-Martin oxidation reaction to give unsaturated 9 in an overall 60% yield with 89% ee.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 22,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Product 3c can be transformed into other functionalized products. Epoxidation is another common transformation.",
+        "gap": "Demonstrate epoxidation of 3c.",
+        "decision": "To further demonstrate synthetic utility, the epoxidation of 3c was performed with m-CPBA, expecting to deliver 10 in good yield and ee."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)c1ccc([C@H]2C[C@@H]3C[C@H](C2)N(C)C3)cc1"
+        ],
+        "product_smiles": [
+          "CC(C)c1ccc([C@@H]2C[C@H]3C[C@H](CN3C)C2O)cc1"
+        ],
+        "reagents": [
+          "m-CPBA"
+        ],
+        "solvent": "DCM",
+        "temperature": "-15 °C",
+        "time": "4 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 83,
+        "ee_percent": 91,
+        "observation": "Meanwhile, with the existence of m-CPBA, the epoxidation of 3c could deliver 10 in 83% yield and 91% ee."
+      },
+      "evidence": {
+        "text_span": "Meanwhile, with the existence of m-CPBA, the epoxidation of 3c could deliver 10 in 83% yield and 91% ee.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 23,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Product 3c can be transformed into other functionalized products. Dihydroxylation is another common transformation.",
+        "gap": "Demonstrate dihydroxylation of 3c.",
+        "decision": "To further demonstrate synthetic utility, 3c was subjected to dihydroxylation with K2OsO4·2H2O and NMO, expecting to afford dihydroxylation product 11 in good yield and ee."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)c1ccc([C@H]2C[C@@H]3C[C@H](C2)N(C)C3)cc1"
+        ],
+        "product_smiles": [
+          "CC(C)c1ccc([C@@H]2C[C@H]3C[C@H](CN3C)C2(O)O)cc1"
+        ],
+        "reagents": [
+          "K2OsO4·2H2O",
+          "NMO"
+        ],
+        "solvent": "acetone",
+        "temperature": "rt",
+        "time": "overnight"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "ee_percent": 90,
+        "observation": "In addition, 3c was able to afford dihydroxylation product 11 in good yield and ee."
+      },
+      "evidence": {
+        "text_span": "In addition, 3c was able to afford dihydroxylation product 11 in good yield and ee.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 24,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Product 3c can be transformed into other functionalized products. Accessing enantioenriched compound 12, which bears an intrinsically synthetic challenge, would be a significant demonstration.",
+        "gap": "Demonstrate the synthesis of enantioenriched compound 12 from 3c.",
+        "decision": "To demonstrate the synthetic utility, 3c was subjected to a three-step transformation to access enantioenriched compound 12, expecting to overcome the intrinsic synthetic challenge."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)c1ccc([C@H]2C[C@@H]3C[C@H](C2)N(C)C3)cc1"
+        ],
+        "product_smiles": [
+          "CC(C)c1ccc([C@@H]2C[C@H]3C[C@H](CN3C)C2Cl)cc1"
+        ],
+        "reagents": [
+          "BH3·DMS",
+          "NaBO3·4H2O",
+          "POCl3"
+        ],
+        "solvent": "THF, H2O, DMF",
+        "temperature": "-15 °C to rt",
+        "time": "overnight, 8 h, 8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 55,
+        "ee_percent": 89,
+        "observation": "Finally, enantioenriched compound 12 that bears an intrinsically synthetic challenge could be easily accessed via three-step transformations of 3c."
+      },
+      "evidence": {
+        "text_span": "Finally, enantioenriched compound 12 that bears an intrinsically synthetic challenge could be easily accessed via three-step transformations of 3c.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 25,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The method provides access to various functionalized tropanes. Chiral N-bridged [3.2.1]octanes 15 and 19 are present in pharmaceuticals treating Alzheimer's disease. Previous routes to 15 involved chiral resolution and harsh conditions.",
+        "gap": "Provide a straightforward and efficient approach to 15 under mild conditions, avoiding chiral resolution and harsh conditions.",
+        "decision": "To demonstrate the synthetic value, our method was applied to synthesize 15, expecting to achieve high ee under mild conditions, significantly reducing synthesis cost compared to previous routes."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N1C2CCC(C=NN)C1C2",
+          "Brc1ccc(COCc2ccccc2)cc1"
+        ],
+        "product_smiles": [
+          "N[C@H]1CCC[C@H]1O[C@H]1CC[C@@H](Cc2ccc(OCc3ccccc3)cc2)C1"
+        ],
+        "reagents": [
+          "Cs2CO3"
+        ],
+        "catalyst": "Pd2(dba)3·CHCl3",
+        "ligand": "M26",
+        "solvent": "DMA",
+        "temperature": "50 °C",
+        "time": "36 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 58,
+        "ee_percent": 94,
+        "observation": "Our method provided a straightforward approach to 15 in 58% overall yield and 94% ee, under mild conditions, in contrast to previous routes requiring chiral resolution and harsh conditions."
+      },
+      "evidence": {
+        "text_span": "Our method provided a straightforward approach to 15 in 58% overall yield and 94% ee. In contrast to previous routes, which required chiral resolution and harsh reaction conditions involving high-pressure, high-temperature, and toxic CO gas, this reaction produced 15 in high ee under mild conditions, significantly reducing the synthesis cost.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 26,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The method can synthesize 15, a drug for Alzheimer's. Compound 19 is another Alzheimer's drug, and 18 is a key intermediate for its synthesis.",
+        "gap": "Demonstrate the synthesis of 18 from 4c, which can then be transformed into 19.",
+        "decision": "To further demonstrate synthetic utility, 4c was subjected to hydroboration-oxidation to be transformed into 18, expecting to provide a key intermediate for the total synthesis of 19."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N1C[C@H](c2ccc(F)cc2)C[C@@H]1N"
+        ],
+        "product_smiles": [
+          "CC(C)(C)OC(=O)N1C2CCC1C(c1ccc(F)cc1)C(O)C2"
+        ],
+        "reagents": [
+          "BH3·DMS",
+          "NaBO3·4H2O"
+        ],
+        "solvent": "THF, H2O",
+        "temperature": "-15 °C to rt",
+        "time": "overnight, 8 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 77,
+        "ee_percent": 94,
+        "dr": "20:1",
+        "observation": "4c could also undergo hydroboration-oxidation and be transformed into 18 (77% yield, 94% ee, >20:1 dr), which was a key intermediate in the total synthesis of 19."
+      },
+      "evidence": {
+        "text_span": "Furthermore, 4c could also undergo hydroboration-oxidation and be transformed into 18, which was a key intermediate in the total synthesis of 19 (Fig. 6b).",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 27,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The method provides access to tropane derivatives. Compounds 21 and 22 are known monoamine transporter ligands.",
+        "gap": "Demonstrate the synthesis of 21 and 22 from 4g and 4c, respectively.",
+        "decision": "To demonstrate the synthetic utility, the Boc group of 4g and 4c was removed to afford 21 and 22, expecting to provide an efficient strategy to prepare analogs by starting with different aryl bromides."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC(C)(C)OC(=O)N1C[C@H](c2ccc(Cl)cc2)C[C@@H]1N",
+          "CC(C)(C)OC(=O)N1C[C@H](c2ccc(F)cc2)C[C@@H]1N"
+        ],
+        "product_smiles": [
+          "C1=C[C@H](Nc2ccccc2)[C@H]2CCCC12",
+          "FC1=CCC(N2[C@@H]3CCC[C@H]2C3)C=C1"
+        ],
+        "reagents": [
+          "TFA"
+        ],
+        "solvent": "CH2Cl2",
+        "temperature": "0 °C to rt",
+        "time": "1 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 99,
+        "ee_percent": 87,
+        "observation": "Removal of the Boc group of 4g and 4c afforded 21 (>99% yield, 87% ee) and 22 (>99% yield, 93% ee), which were recently shown to have affinity and high selectivity for monoamine transporters."
+      },
+      "evidence": {
+        "text_span": "To our delight, removal of the Boc group of 4g and 4c afforded 21 and 22, which were recently shown to have affinity and high selectivity for monoamine transporters (Fig. 6c)45.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 28,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The synthesized N-bridged [3.2.1]octane scaffolds have potential biological activities. Evaluating their cytotoxic effects on cancer cells is a relevant preliminary investigation.",
+        "gap": "Assess the biological activity of the synthesized compounds.",
+        "decision": "To investigate potential biological activities, the cytotoxic effects of these chiral N-bridged [3.2.1]octane scaffolds against cancer cells were evaluated by Cell Counting Kit-8 (CCK-8) assay, expecting to identify compounds with significant cytotoxic effects."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Preliminary studies demonstrated that many of them exhibited significant cytotoxic effects on cancer cells at the concentration of 20 μM. Compound 3l showed promising potential with an IC50 value in the range of 10-20 μM."
+      },
+      "evidence": {
+        "text_span": "In view of the broad bioactive properties of tropanes family, we were intrigued by the potential biological activities of these chiral N-bridged [3.2.1]octane scaffolds. Accordingly, the cytotoxic effects of these compounds against cancer cells were evaluated by Cell Counting Kit-8 (CCK-8) assay. Our preliminary studies demonstrated that many of them exhibited significant cytotoxic effects on cancer cells at the concentration of 20 μM (see Table S2 in Supplementary information for details). Next, we further determined the cytotoxic IC50 Values of some selected active compounds (Fig. 6d). Notably, the IC50 value of 3l was in the range of 10-20 μM, which indicated that 3l showed potential for further development into an anticancer drug.",
+        "section": "Results and discussion"
+      }
+    },
+    {
+      "step_id": 29,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The reaction mechanism is crucial for further development and understanding. Nonlinear effect studies can provide insights into the catalyst's role.",
+        "gap": "Investigate the reaction mechanism, starting with nonlinear effect studies.",
+        "decision": "To gain insights into this asymmetric β-H elimination reaction, nonlinear effect studies were carried out, expecting to determine the dependence on the catalyst."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "Nonlinear effect studies indicated that there was a significant first-order dependence on catalyst."
+      },
+      "evidence": {
+        "text_span": "First, nonlinear effect studies indicated that there was a significant first-order dependence on catalyst (Fig. 7a).",
+        "section": "Mechanistic investigations"
+      }
+    },
+    {
+      "step_id": 30,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Nonlinear effect studies showed first-order dependence on the catalyst. Identifying the rate-determining step is critical for mechanistic understanding.",
+        "gap": "Determine the rate-determining step of the reaction.",
+        "decision": "To identify the rate-determining step, Hammett plots of various para-substituted aryl bromides were investigated, expecting to determine if electronic variation of aryl bromides impacts the rate."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "These results indicated that electronic variation of the aryl bromides had no impact on the rate. Therefore, oxidative addition of aryl bromides might not be the rate-determining step."
+      },
+      "evidence": {
+        "text_span": "To identify the rate-determining step of the reaction, we next investigated the Hammett plots of various para-substituted aryl bromides (Fig. 7b). These results indicated that electronic variation of the aryl bromides had no impact on the rate. Therefore, oxidative addition of aryl bromides might not be the rate-determining step.",
+        "section": "Mechanistic investigations"
+      }
+    },
+    {
+      "step_id": 31,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Oxidative addition is likely not the rate-determining step. Deuterium kinetic isotope effect (KIE) experiments can shed light on whether β-H elimination is the rate-determining step.",
+        "gap": "Determine if β-H elimination is the rate-determining step.",
+        "decision": "To investigate if β-H elimination is the rate-determining step, experiments with N-sulfonylhydrazones 1 and [D]−1 were performed to measure the initial reaction rate, expecting to obtain a KIE value that indicates the involvement of C-H bond cleavage in the rate-determining step."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The side-by-side experiments provided a KH/KD value of 1.08. The intermolecular competition reaction of 1 and [D]−1c in one pot showed a KH/KD value of 1.2. These results suggested that the β-H elimination process might not be the rate-determining step."
+      },
+      "evidence": {
+        "text_span": "Moreover, we performed experiments with N-sulfonylhydrazones 1 and [D]−1 to measure the initial reaction rate, respectively. The side-by-side experiments provided a KH/KD value of 1.08 (Fig. 7c). The intermolecular competition reaction of 1 and [D]−1c in one pot showed a KH/KD value of 1.2 calculated from the generation of 3a and [D]−3a (Fig. 7d). These results suggested that the β-H elimination process might not be the rate-determining step.",
+        "section": "Mechanistic investigations"
+      }
+    },
+    {
+      "step_id": 32,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Oxidative addition and β-H elimination are likely not the rate-determining steps. Kinetic analysis experiments can provide reaction orders with respect to substrates and catalyst, further pinpointing the rate-determining step.",
+        "gap": "Determine the reaction orders with respect to substrate 1c, PhBr 2a, and the palladium catalyst.",
+        "decision": "To further elucidate the mechanism, kinetic analysis experiments were conducted employing 1c and 2a, expecting to determine the initial reaction rate and reaction orders for each component."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The reaction exhibits approximately first-order kinetics with substrate 1c, fractional order for the catalyst (0.58), and approximately zero-order kinetics with PhBr 2a. This suggests that carbene generation might be the rate-determining step and proceeded via a concerted process."
+      },
+      "evidence": {
+        "text_span": "Next, the kinetic analysis experiments were conducted employing 1c and 2a (Fig. 7e). Based on the kinetic experiment’s data, we plotted the logarithm of the reaction rate (-Ln(K)) against the logarithm of the concentration of Pd, sulfonylhydrazones 1c, and PhBr 2a, respectively. Thus, we obtained the initial reaction rate: Rateinitial = Kobs [1c]1.01 [2a]0.07 [PdL*]0.58 (Supplementary information Fig. S1). Therefore, we determined that the reaction exhibits approximately first-order kinetics with substrate 1c and fractional order for the catalyst, and approximately zero-order kinetics with PhBr 2a. Firstly, the kinetic results indicated that the reaction was zero-order in aryl bromide 2a, which suggested that changes of aryl bromide (bond cleavage or 1,2-migratory insertion) were not involved in the rate-determining intermediate. Secondly, the first-order dependence for 1c and the fractional order for palladium catalyst disclosed that the rate-determining step involved interactions (bond formation or cleavage) between the Pd and 1c. Since KIE experiments excluded β-H elimination as the rate-determining step, we inferred that carbene generation might be the rate-determining step and proceeded via a concerted process, which was consistent with the result of the Hammett plot.",
+        "section": "Mechanistic investigations"
+      }
+    },
+    {
+      "step_id": 33,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Kinetic studies suggest carbene generation is the rate-determining step. Previous reports indicate that decomposition rates of N-sulfonylhydrazones vary with steric bulk.",
+        "gap": "Further support the hypothesis that carbene formation is the rate-determining step.",
+        "decision": "To further support the hypothesis, the initial reaction rates for 1a (Ts), 1b (Mes), and 1c (Tris) were determined at 50 °C, expecting to observe a correlation between steric bulk and reaction rate consistent with carbene formation being rate-determining."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The experimental results showed that the initial reaction rates follow the order 1c (Tris) > 1b (Mes) > 1a (Ts), which further supports that carbene formation might be the rate-determining step in this reaction."
+      },
+      "evidence": {
+        "text_span": "According to the previous reports34,35, the decomposition rates of Ts-, Mes-, and Tris-groups increased with the steric bulk of the substituent. Finally, we determined the initial reaction rates for 1a (Ts), 1b (Mes), and 1c (Tris) at 50 °CI, the experimental results showed that the initial reaction rates follow the order 1c (Tris) > 16 (Mes) > 1a (Tς)47,48, which further supports that carbene formation might be the rate-determining step in this reaction (see SI Fig. S9).",
+        "section": "Mechanistic investigations"
+      }
+    },
+    {
+      "step_id": 34,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "Mechanistic studies are ongoing. It's important to rule out alternative mechanisms, such as radical pathways.",
+        "gap": "Determine if a single-electron transfer mechanism is involved.",
+        "decision": "To rule out a single-electron transfer mechanism, radical inhibition experiments were conducted under standard conditions with TEMPO or BHT, expecting to observe inhibition if a radical pathway was involved."
+      },
+      "outcome": {
+        "valid": true,
+        "observation": "The reaction was not inhibited regardless of whether TEMPO or BHT was added. Therefore, a single-electron transfer mechanism had been ruled out."
+      },
+      "evidence": {
+        "text_span": "Additionally, some control experiments were then conducted. We conducted radical inhibition experiments under standard conditions (Supplementary information Fig. S10). The reaction was not inhibited regardless of whether TEMPO or BHT was added. Therefore, a single-electron transfer mechanism had been ruled out.",
+        "section": "Mechanistic investigations"
+      }
+    },
+    {
+      "step_id": 35,
+      "fragment_id": null,
+      "action": "characterization",
+      "thought": {
+        "background": "The reaction mechanism is being elucidated. Catalyst deactivation is a common issue in catalysis and should be checked.",
+        "gap": "Determine if significant catalyst deactivation occurs during the reaction.",
+        "decision": "To check for catalyst deactivation, additional starting material 1c, bromobenzene 2a, and Cs2CO3 were added to the reaction mixture after 36 h, expecting to see a decrease in yield if deactivation was significant."
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 85,
+        "ee_percent": 90,
+        "observation": "After the reaction proceeded under standard conditions for 36 h, product 3a was obtained with 88% yield and 91% ee. Adding additional starting material, bromobenzene, and Cs2CO3 to the mixture still yielded 3a with 85% yield and 90% ee. Therefore, no significant catalyst deactivation occurred in this reaction."
+      },
+      "evidence": {
+        "text_span": "Then, after the reaction proceeded under standard conditions for 36 h, the product 3a was obtained with an 88% yield and 91% ee. Then we added additional starting material 1c, bromobenzene 2a, and Cs2CO3 to the mixture, and the product 3a was still obtained with an 85% yield and 90% ee (See SI Fig. S11). Therefore, we inferred that no significant catalyst deactivation occurred in this reaction.",
+        "section": "Mechanistic investigations"
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "X-ray crystallography",
+      "specific_rotation",
+      "HPLC"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": "unspecified",
+        "unit": "%",
+        "interpretation": "Overall yield for the total synthesis of target molecules is not explicitly stated, but individual step yields are high."
+      },
+      "Longest Linear Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Not explicitly stated, but the core reaction is a single step."
+      },
+      "Total Steps": {
+        "value": "unspecified",
+        "unit": "steps",
+        "interpretation": "Not explicitly stated, but the core reaction is a single step."
+      },
+      "Failed Attempts Count": {
+        "value": 2,
+        "unit": "attempts",
+        "interpretation": "Two explicit failed attempts were reported during ligand optimization."
+      }
+    },
+    "comparison_to_prior": "The method provides a straightforward approach to compound 15 (Alzheimer's drug) in high ee under mild conditions, significantly reducing synthesis cost compared to previous routes which required chiral resolution and harsh reaction conditions (high-pressure, high-temperature, toxic CO gas).",
+    "significance": "This work developed a highly enantioselective Pd/Ming-Phos-catalyzed β-H elimination for synthesizing multifunctional N-bridged [3.2.1]octane scaffolds. It successfully addresses the challenge of controlling both diastereoselectivity and enantioselectivity in the presence of multiple β-H elimination sites. The synthetic value is demonstrated by the enantioselective catalytic total synthesis of drugs for Alzheimer’s disease and monoamine transporter ligands. Preliminary biological activities show potential for anticancer drug development. Mechanistic studies provide insights into the rate-determining step and rule out radical pathways."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1038/s41467-026-69960-6",
+      "pmcid": "PMC13066372",
+      "title": "Asymmetric synthesis of Heteroatom-bridged [3.2.1]Octane scaffolds via enantioselective β-H elimination reaction.",
+      "authors": "Fang C, Ai J, Wang Q, Xu B, Zhang J, Zhang ZM.",
+      "journal": "Nat Commun",
+      "year": 2026,
+      "license": "cc by-nc-nd",
+      "pdf_url": "https://europepmc.org/articles/PMC13066372?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/274f572a-8dcf-4819-9db7-3437961f7b84.zip",
+      "parsed_at": "2026-05-11T06:44:13.470980+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 65,
+    "parseable": 44,
+    "canonicalized": 43,
+    "invalid": 21,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C(OCC1=CC=CC=C1)N[C@H]2C[C@@H](NN=S(=O)(=O)C)C2",
+      "O=C(OCC1=CC=CC=C1)N[C@H]2C[C@@H](NN=S(=O)(=O)C)C2",
+      "O=C(OCC1=CC=CC=C1)N[C@H]2C[C@@H](NN=S(=O)(=O)C)C2",
+      "O=C(OCC1=CC=CC=C1)N[C@H]2C[C@@H](NN=S(=O)(=O)C)C2",
+      "O=C(OCC1=CC=CC=C1)N[C@H]2C[C@@H](NN=S(=O)(=O)C)C2",
+      "O=C(OCC1=CC=CC=C1)N[C@H]2C[C@@H](NN=S(=O)(=O)C)C2",
+      "O=C(OCC1=CC=CC=C1)N[C@H]2C[C@@H](NN=S(=O)(=O)C)C2",
+      "O=C(OCC1=CC=CC=C1)N[C@H]2C[C@@H](NN=S(=O)(=O)C(C)(C)C)C2",
+      "O=C(OCC1=CC=CC=C1)N[C@H]2C[C@@H](NN=S(=O)(=O)C(C)(C)C)C2",
+      "BrC1=CC=C(R)C=C1"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}

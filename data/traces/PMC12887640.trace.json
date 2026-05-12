@@ -1,0 +1,513 @@
+{
+  "trace_id": "TS-PMC12887640",
+  "schema_version": "1.0.0",
+  "license": "CC-BY-4.0",
+  "target": {
+    "name": "(-)-Longifolene",
+    "smiles": "C=C1CCC2C(C)C1C2(C)C",
+    "natural_product_class": "Terpenoid",
+    "structural_features": {
+      "stereocenters": 6,
+      "ring_systems": "bicyclo[2.2.1]heptane",
+      "key_motifs": [
+        "bridged polycyclic lactones"
+      ]
+    },
+    "motivation": "The efficient synthesis of complex chiral molecules from achiral precursors is essential for sustainable pharmaceutical development. Bridged polycyclic terpenoids represent an important class of natural products, widely distributed in biologically active compounds and characterized by their intricate topological architectures. The structural complexity of these molecules, exemplified by prominent targets such as longifolene, longiborneol, and culmorone featuring the bicyclo[2.2.1]heptane framework, has long captivated the synthetic chemistry community, presenting formidable challenges for chemical synthesis. The scarcity of catalytic asymmetric methods limits the scope of application.",
+    "prior_syntheses": [
+      {
+        "lead_author": "Corey",
+        "year": 1961,
+        "doi": "10.1021/ja01466a056",
+        "key_strategy": "Total synthesis"
+      },
+      {
+        "lead_author": "Corey",
+        "year": 1964,
+        "doi": "10.1021/ja01057a039",
+        "key_strategy": "Total synthesis"
+      },
+      {
+        "lead_author": "Volkmann",
+        "year": 1975,
+        "doi": "10.1021/ja00849a062",
+        "key_strategy": "Total synthesis"
+      }
+    ],
+    "success_criteria": {
+      "stereochemistry_required": true,
+      "free_text": "Enantioselective formal synthesis of (-)-longifolene, establishing a versatile platform for accessing norbornane-based natural products."
+    }
+  },
+  "retrosynthetic_strategy": {
+    "is_convergent": false,
+    "key_disconnections": [
+      {
+        "bond_description": "C-Br bond and lactone ring formation",
+        "named_strategy": "Asymmetric Halolactonization",
+        "reasoning": "This disconnection allows for the simultaneous introduction of multiple stereocenters and a versatile halogen functionality in a single operation, starting from a meso-dicarboxylic acid and a symmetrical olefin. This approach enables double desymmetrization of both the meso-dicarboxylic acid and the haliranium intermediate."
+      },
+      {
+        "bond_description": "C-C bond formation (methylation), C=C bond reduction (hydrogenation), C-Br bond reduction (debromination)",
+        "reasoning": "These steps are standard transformations to convert the bromolactone intermediate into the advanced intermediate for longifolene, followed by known steps to complete the formal synthesis."
+      }
+    ],
+    "rationale": "The overall strategy involves a key catalytic asymmetric halolactonization step to construct the complex polycyclic lactone with multiple stereocenters from readily available meso-dicarboxylic acids and symmetrical olefins. This step achieves a 'double desymmetrization' and provides a brominated intermediate that can be further elaborated to the target natural product. The choice of a cinchonidine-derived urea catalyst is crucial for controlling the enantioselectivity, with mechanistic studies highlighting the role of a halide bond in enantiodifferentiation."
+  },
+  "execution_trace": [
+    {
+      "step_id": 1,
+      "fragment_id": null,
+      "action": "hypothesis_formation",
+      "thought": {
+        "background": "Desymmetrization of meso compounds is a powerful strategy for constructing multiple stereocenters. Catalytic asymmetric halolactonization is a valuable synthetic strategy for lactone synthesis. However, desymmetrizing halolactonization of meso-dicarboxylic acids with electronically unbiased olefins has not been reported.",
+        "gap": "Developing a catalytic method for the desymmetrization of meso-dicarboxylic acids with electronically unbiased olefins, which is challenging due to low nucleophilicity of carboxylates and multiple competing hydrogen bond donor sites.",
+        "decision": "To achieve double desymmetrization of meso-dicarboxylic acids and haliranium intermediates, we envisioned using a chiral hydrogen bond catalyst to control the stereoconformation of the two carboxylic acids during asymmetric halolactonization."
+      },
+      "evidence": {
+        "text_span": "Although meso-dicarboxylic acids are promising feedstocks, their catalytic asymmetric desymmetrization remains a significant challenge. Herein we report a catalytic asymmetric halolactonization of meso-dicarboxylic acids with electronically unbiased olefins, achieving simultaneous desymmetrization of both the meso-dicarboxylic acid and haliranium intermediate. This method efficiently constructs chiral caged polycyclic lactones bearing six stereocenters in a single operation. [...] We envisioned that effectively controlling the stereoconformation of the two carboxylic acids by chiral hydrogen bond catalysts could achieve our goal.",
+        "section": "Abstract, Introduction, Results and Discussion"
+      }
+    },
+    {
+      "step_id": 2,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The hypothesis is that a chiral hydrogen bond catalyst can control the stereoconformation of meso-dicarboxylic acids during halolactonization.",
+        "gap": "Identify a suitable catalyst for the double desymmetrization process.",
+        "decision": "To identify a suitable catalyst, we screened various chiral hydrogen bond catalysts for the bromolactonization of olefinic meso-diacid 3a with NBS in toluene at -40 °C."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C2CC(C)(C(C(=O)O)C2C(=O)O)C1(C)C"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)OC2C(C(=O)O)C(C)(C1Br)C2(C)C"
+        ],
+        "reagents": [
+          "NBS",
+          "AU1"
+        ],
+        "catalyst": "AU1",
+        "solvent": "toluene",
+        "temperature": "-40 °C",
+        "time": "4 d"
+      },
+      "outcome": {
+        "valid": true,
+        "ee_percent": 30,
+        "observation": "Catalyst AU1 gave chiral norbornane lactone 6a in appreciable enantioselectivity (e.r. 65.0:35.0)."
+      },
+      "evidence": {
+        "text_span": "Olefinic meso-diacid 3a was chosen as a starting material in the study (Scheme 2a). NBS was used as the brominating agent, and the reaction was conducted in toluene at $- 4 0 ~ ^ { \\circ } \\mathrm { C } .$ After a survey of different chiral hydrogen bond catalysts (Figure S1), amino-urea AU1 was identified to be a suitable candidate to catalyze the bromolactonization of 3a, giving chiral norbornane lactone 6a in appreciable enantioselectivity (e.r. 65.0:35.0).",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "fdb07ebf834b2f76c847ec023f334c36fd3f69dd829bd2658cfab59c886c0a33.jpg",
+          "2c3d9a8a115cacb481f15517628a851b4863b7c89b2234798c20e3a7dd034533.jpg",
+          "a34ac14a897da8686d12ee2e2e482676aef63eec08a30bfcd7f3f608227082cc.jpg",
+          "5c92704e47f92322884fa2ffc9b91a1a68ea7d46e7dbf58b24194223d0ef7c40.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 3,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "AU1 showed appreciable enantioselectivity. Substituents at C(2) of the aryl urea might impact enantioselectivity.",
+        "gap": "Improve enantioselectivity by varying substituents on the catalyst.",
+        "decision": "To improve enantioselectivity, we tested catalysts AU2 (nitro), AU3 (fluoro), AU4 (chloro), AU6 (iodo), and AU5 (bromo) at the C(2) position of the aryl urea."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C2CC(C)(C(C(=O)O)C2C(=O)O)C1(C)C"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)OC2C(C(=O)O)C(C)(C1Br)C2(C)C"
+        ],
+        "reagents": [
+          "NBS",
+          "AU2",
+          "AU3",
+          "AU4",
+          "AU6",
+          "AU5"
+        ],
+        "catalyst": "AU2, AU3, AU4, AU6, AU5",
+        "solvent": "toluene",
+        "temperature": "-40 °C",
+        "time": "4 d"
+      },
+      "outcome": {
+        "valid": true,
+        "ee_percent": 84,
+        "observation": "AU2 (nitro) gave 82.0:18.0 e.r., AU3 (fluoro) gave 84.0:16.0 e.r., AU4 (chloro) gave 87.0:13.0 e.r., AU6 (iodo) gave 83.0:17.0 e.r. The C(2)-Br catalyst AU5 was found to be optimal, giving 6a in e.r. 92.0:8.0.",
+        "yield_percent": 60
+      },
+      "evidence": {
+        "text_span": "Interestingly, further studies revealed that substituent at C(2) position of the aryl urea has a remarkable impact on the enantioselectivity; when catalysts AU2 and AU3 bearing nitro and fluorine were used, the e.r. was significantly improved. Other catalysts with different halogen substituents at C(2) were investigated. Although bromine is not the most electron-withdrawing substituent among the catalysts that were studied, the C(2)- Br catalyst AU5 was found to be optimal, giving 6a in e.r. 92.0:8.0.",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "fdb07ebf834b2f76c847ec023f334c36fd3f69dd829bd2658cfab59c886c0a33.jpg",
+          "2c3d9a8a115cacb481f15517628a851b4863b7c89b2234798c20e3a7dd034533.jpg",
+          "a34ac14a897da8686d12ee2e2e482676aef63eec08a30bfcd7f3f608227082cc.jpg",
+          "5c92704e47f92322884fa2ffc9b91a1a68ea7d46e7dbf58b24194223d0ef7c40.jpg",
+          "5d54996b606e460b63b6c0be296b2d4d502ad612ae96d53bd8b13df816df6260.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 4,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "Catalyst AU5 showed the best enantioselectivity (92:8 e.r.). We need to further optimize the reaction conditions.",
+        "gap": "Determine the effect of additives on the reaction.",
+        "decision": "To activate NBS, we examined acid additives like BzOH."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C2CC(C)(C(C(=O)O)C2C(=O)O)C1(C)C"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)OC2C(C(=O)O)C(C)(C1Br)C2(C)C"
+        ],
+        "reagents": [
+          "NBS",
+          "AU5",
+          "BzOH"
+        ],
+        "catalyst": "AU5",
+        "solvent": "toluene",
+        "temperature": "-40 °C",
+        "time": "4 d"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "low_yield",
+        "yield_percent": 42,
+        "ee_percent": 87,
+        "observation": "BzOH addition resulted in a slight improvement on the e.r. (93.5:6.5) but a decrease in yield (42%)."
+      },
+      "evidence": {
+        "text_span": "While BzOH has a slight improvement on the e.r., the addition of ${ \\mathrm { N s N H } } _ { 2 }$ had a deteriorating effect (Scheme 2b, entries 2–3).",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "8e0449efda53e5c08ba09ad300c85954069663e68bf93c9ba1aef43b81b812b4.jpg",
+          "7e0e58d74c528e63631b6de8f1f5bcee9093bcc47f1585ccb9a6eb82ea9233c1.jpg",
+          "81518979b74290cfe727c0a3cceeea9fd46bb2c2383f14cd1da38b62735edcfb.jpg",
+          "7d28fc9b55a7eca2445ce80ae6399df35e8ad8190bc06894e76976ab18ac2d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 5,
+      "fragment_id": null,
+      "action": "failed_attempt",
+      "thought": {
+        "background": "BzOH improved e.r. but lowered yield. We need to find an additive that improves both.",
+        "gap": "Determine the effect of other additives on the reaction.",
+        "decision": "To improve the reaction, we examined ${ \\mathrm { N s N H } } _ { 2 }$ as an additive."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C2CC(C)(C(C(=O)O)C2C(=O)O)C1(C)C"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)OC2C(C(=O)O)C(C)(C1Br)C2(C)C"
+        ],
+        "reagents": [
+          "NBS",
+          "AU5",
+          "NsNH2"
+        ],
+        "catalyst": "AU5",
+        "solvent": "toluene",
+        "temperature": "-40 °C",
+        "time": "4 d"
+      },
+      "outcome": {
+        "valid": false,
+        "failure_mode": "other",
+        "yield_percent": 99,
+        "ee_percent": 52,
+        "observation": "The addition of ${ \\mathrm { N s N H } } _ { 2 }$ had a deteriorating effect on enantioselectivity (76.0:24.0 e.r.), despite a high yield (99%)."
+      },
+      "evidence": {
+        "text_span": "While BzOH has a slight improvement on the e.r., the addition of ${ \\mathrm { N s N H } } _ { 2 }$ had a deteriorating effect (Scheme 2b, entries 2–3).",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "8e0449efda53e5c08ba09ad300c8594069663e68bf93c9ba1aef43b81b812b4.jpg",
+          "7e0e58d74c528e63631b6de8f1f5bcee9093bcc47f1585ccb9a6eb82ea9233c1.jpg",
+          "81518979b74290cfe727c0a3cceeea9fd46bb2c2383f14cd1da38b62735edcfb.jpg",
+          "7d28fc9b55a7eca2445ce80ae6399df35e8ad8190bc06894e76976ab18ac2d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 6,
+      "fragment_id": null,
+      "action": "revision",
+      "revises_step_id": 5,
+      "thought": {
+        "background": "Acid additives did not significantly improve the reaction. Hydrogen bond networks are likely involved in catalyst-substrate complexation, and moisture could interrupt this interaction.",
+        "gap": "Find an additive that supports the hydrogen bond network and improves both yield and enantioselectivity.",
+        "decision": "To maintain the hydrogen bond network and improve the reaction, we added 3 Å molecular sieves (MS) as an additive."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C2CC(C)(C(C(=O)O)C2C(=O)O)C1(C)C"
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)OC2C(C(=O)O)C(C)(C1Br)C2(C)C"
+        ],
+        "reagents": [
+          "NBS",
+          "AU5",
+          "3 Å MS"
+        ],
+        "catalyst": "AU5",
+        "solvent": "toluene",
+        "temperature": "-40 °C",
+        "time": "4 d"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 62,
+        "ee_percent": 90,
+        "observation": "Adding 3 Å MS gave a 62% yield and good e.r. (95:5). Extending the reaction time led to 99% yield and 95:5 e.r."
+      },
+      "evidence": {
+        "text_span": "Since the hydrogen bond network might be involved in the catalyst-substrate complexation and too much moisture could interrupt the interaction and so molecular sieves (MS) were added. To our satisfaction, adding 3 Å MS gave a $6 2 \\%$ yield and good e.r. (95:5) of product 6a (Scheme 2b, entry 4). The meso-diacid 3a was completely consumed after extending the reaction time and an excellent yield $( 9 9 \\% )$ of the desired product 6a was obtained.",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "8e0449efda53e5c08ba09ad300c8594069663e68bf93c9ba1aef43b81b812b4.jpg",
+          "7e0e58d74c528e63631b6de8f1f5bcee9093bcc47f1585ccb9a6eb82ea9233c1.jpg",
+          "81518979b74290cfe727c0a3cceeea9fd46bb2c2383f14cd1da38b62735edcfb.jpg",
+          "7d28fc9b55a7eca2445ce80ae6399df35e8ad8190bc06894e76976ab18ac2d3c.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 7,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "Optimized conditions with AU5 and 3 Å MS in toluene at -40 °C gave 99% yield and 95:5 e.r. for 6a.",
+        "gap": "Evaluate the substrate scope of the bromolactonization reaction.",
+        "decision": "To demonstrate the broad applicability of the method, we explored the bromolactonization of various norbornene-derived olefinic meso-diacids 3 (3a-3k) and diolefinic meso-diacids 7 (7a-7g)."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "CC1(C)C2CC(C)(C(C(=O)O)C2C(=O)O)C1(C)C",
+          "CCCCOC(=O)C12OC3C(CC1(C)C3Br)C2C(=O)O",
+          "CC12C(Br)C3C(=O)OC1C3C2C(=O)O",
+          "",
+          "CC(C)=C1C[C@@H]2C(C(=O)O)C(=O)OC[C@H]2C1Br",
+          "CCC/C(=C/C1C(Br)C2OC(=O)C(C(=O)O)C12)C(C)CCC",
+          "O=C(O)C1C2OC(=O)C3(Br)C1C=C(C1CCCC1)C23",
+          "O=C1OC2C(=C(c3ccccc3)c3ccccc3)CC(C(=O)O)C2C1Br",
+          "",
+          "O=C(O)C1C(Br)C2C3OC(=O)C2C31",
+          "CC1(O)C2C(=O)OC(CC2C(=O)O)C1(C)Br",
+          "C=C(C)C12C=CC(C1C(=O)O)C2C(=O)O",
+          "CC1(C)OC(=O)C2C3C=CC(C2C(=O)O)C3C1Br",
+          "CCCC(CCC)O[C@@](C)(C(=O)O)C(=O)C1C=CC2CC(Br)C21",
+          "CC12CC3C(OCC(C(=O)O)C(=O)C31)C2Br",
+          "CC1CCC[C@@H]1[C@@]1(Br)[C@@H]2C=C[C@H]1C(=O)C(=O)O2",
+          "O=C(O)C1C2OC(C3CCCCC3)C1(Br)C1C=CC21",
+          "CC1CC2(CO1)C1C(=O)C(C(=O)O)C2(Br)C2C=CC12",
+          ""
+        ],
+        "product_smiles": [
+          "CC1(C)C(=O)OC2C(C(=O)O)C(C)(C1Br)C2(C)C",
+          "CCCCOC(=O)C12OC3C(CC1(C)C3Br)C2C(=O)O",
+          "CC12C(Br)C3C(=O)OC1C3C2C(=O)O",
+          "O=C1OC2C(=C(c3ccccc3)c3ccccc3)CC(C(=O)O)C2C1Br",
+          "CC(C)=C1C[C@@H]2C(C(=O)O)C(=O)OC[C@H]2C1Br",
+          "CCC/C(=C/C1C(Br)C2OC(=O)C(C(=O)O)C12)C(C)CCC",
+          "O=C(O)C1C2OC(=O)C3(Br)C1C=C(C1CCCC1)C23",
+          "O=C1OC2C(=C(c3ccccc3)c3ccccc3)CC(C(=O)O)C2C1Br",
+          "O=C1OC2C(=C(c3ccccc3)c3ccccc3)CC(C(=O)O)C2C1Br",
+          "O=C(O)C1C(Br)C2C3OC(=O)C2C31",
+          "CC1(O)C2C(=O)OC(CC2C(=O)O)C1(C)Br",
+          "CC1(C)OC(=O)C2C3C=CC(C2C(=O)O)C3C1Br",
+          "CC1(C)OC(=O)C2C3C=CC(C2C(=O)O)C3C1Br",
+          "CCCC(CCC)O[C@@](C)(C(=O)O)C(=O)C1C=CC2CC(Br)C21",
+          "CC12CC3C(OCC(C(=O)O)C(=O)C31)C2Br",
+          "CC1CCC[C@@H]1[C@@]1(Br)[C@@H]2C=C[C@H]1C(=O)C(=O)O2",
+          "O=C(O)C1C2OC(C3CCCCC3)C1(Br)C1C=CC21",
+          "CC1CC2(CO1)C1C(=O)C(C(=O)O)C2(Br)C2C=CC12",
+          ""
+        ],
+        "reagents": [
+          "NBS",
+          "AU5",
+          "3 Å MS"
+        ],
+        "catalyst": "AU5",
+        "solvent": "toluene",
+        "temperature": "-40 °C",
+        "time": "2-9 d"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 79,
+        "ee_percent": 74,
+        "observation": "The reaction proved broadly applicable, delivering high conversions and excellent stereoselectivity across diverse substrates (6a-6k and 10a-10g). Yields up to 99% and e.r. up to 96:4 were observed. The absolute configuration of 6c was determined by X-ray crystallography.",
+        "regio_selectivity": "up to 2:1 dr for 10g"
+      },
+      "evidence": {
+        "text_span": "With the optimized conditions established, we explored the bromolactonization of various norbornene-derived olefinic meso-diacids 3 (Scheme 3a). The reaction proved broadly applicable, delivering high conversions and excellent stereoselectivity across diverse substrates. Substrates 3a and 3b bearing substituents at the bridgehead [C(1) and C(4)] and the cyclohexene ring [C(2) and C(3)] underwent smooth conversion to the corresponding norbornane lactones 6a and 6b in good yields with enantiomeric ratios (95:5 e.r.). The unsubstituted norbornene derivative 3c also performed well under the optimal conditions, affording 6c efficiently. While the C(7)-substituted norbornene 3d exhibited reduced reaction efficiency and an extended reaction time was required, the polycyclic product 6d was still obtained in good yield and enantioselectivity. Further evaluation of substrates 3e–3i, featuring exocyclic aliphatic and cyclic alkyl olefins at the C(7) position of bicyclo[2.2.1]heptane scaffold, demonstrated excellent functional group tolerance. These substrates underwent efficient desymmetrizing asymmetric halogenation at the endocyclic double bond, furnishing the corresponding lactones 6e–6i in good yields (up to $9 1 \\%$ ) while maintaining high enantioselectivity. The reaction scope extended beyond norbornene frameworks, accommodating bicyclo[2.2.2]octene 3j and cyclohexene 3k substrates, furnishing 6j and 6k smoothly. The absolute configuration of 6c was unambiguously determined by X-ray crystallographic analysis,[70] with the stereochemistry of other products assigned by analogy. Next, we implemented the catalytic protocol for the desymmetrization of diolefinic meso-diacids 7, which was anticipated to favor the cyclization olefins at the C(7) position of norbornane (Scheme 3b). Gratefully, good yields and enantioselectivity of 10 were generally observed. Notably, the four-membered ring substrate 7c, characterized by significant ring strain successfully endured the reaction conditions to give 10c. Among the substrates with cycloalkane substituents (7c-7e), substrate 7d bearing a cyclopentane, exhibited the least ring tension and yielded 10d with the most favorable enantiomeric ratio (95:5). Furthermore, substrate 7f containing a tetrahydropyran demonstrated compatibility with our catalytic protocol to give 10f smoothly. The reaction with substrate 7g, which possesses unsymmetrical substituents (methyl and $n$ -butyl) also yielded 10g having six stereogenic centers with promising stereoselectivity.",
+        "page": 3,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "497773e935d631016af93b6ceba52dabfa42d58a8073f6ebb7b552c672f06a77.jpg",
+          "3789b8b2ea969a5c1560fa35967fe2d4f0d09ae61a88f1429b1be1b2134b071b.jpg",
+          "71b90fbd8a782f37943742e844e8cbc84545785b7fd043e51b066402da85a293.jpg",
+          "6cdbba9c6e84c2406f38f1906494c733773d5b0edb65b0fad909efb956e58967.jpg",
+          "944cf6961428fc5c4cae72ae7e7edfb21d14b42688e2a95edf16928a84c550b4.jpg",
+          "5378aa5867a1cfaabb0f606441293ced350a6183a131856285322a7c826acbef.jpg",
+          "2297a185f52da21df142b6c127a39b4eddfb026ede3a2842ca50da96366c5a14.jpg",
+          "c850af7de0976d1ff8ccdcf9ac5dfbd3d8d4f67d59d46992774a5f14b11f8996.jpg",
+          "92615602b9d79134074335b0fd6b3eef8f29beb39423a9d87837d41d0f89b1e9.jpg",
+          "f3d4838d36eed4cb009b5197a19c6e7ae8a19061c38c55bde849dbd1bf4f8487.jpg",
+          "3ad7bc4627c6445e3311517afcc23c526c5c0a05e225b2f2e38f6d6aafcc05a7.jpg",
+          "15bf8d6366da9142fadf134f31e23eeaa7aee9c6bc55cd8d8ac238b4631968ad.jpg",
+          "74a63d7a89efaa5f340f2de4a9715f02fb4ec8c14e87af851d83caf2e93bbf78.jpg",
+          "86b51a0200dae7382690629e886cd1166d150d981fa34aeba7fe5ab11bc8d6ae.jpg",
+          "69c3e054acacd53a0270472e0efa81435b30e8877712a4ab8f5845baa47b2ff5.jpg",
+          "180208de89a462460fbf3a79998d7892692956bd4ff38617220c180f18e29007dd69.jpg",
+          "0fa70111010a1150faf5ca92dd76a30fc662e9210b40e1511044b0fd1bd1a990.jpg",
+          "0e8929f63ad455796f9f38c8570845907f99e63a7d31feb716ffbfa951796146.jpg",
+          "2137d016b5e04f5d4428d4c0e8769d173c43a911650e1c1bd954ea562538be32.jpg",
+          "0d9809404612b1ad7addf7932117b651f9537909a44e43c44798a078bd95801a.jpg",
+          "33f396e9c65967e95a4e8c00adaf6397a878632befdfb05f4a38232ebb9a38e7.jpg",
+          "3f5150bc3473cbe08f8730bc9ba1cfb61f37ca1eaaf9237707f0c6d0c4aebc26.jpg",
+          "d85cc3c931564393304099c78c04e4e260a5b224102098e3a9effb609df8d550.jpg",
+          "b5ec80c12e80966a057a3c66a58350edca4d16931ed09a029284ff3f750ab927.jpg"
+        ]
+      }
+    },
+    {
+      "step_id": 8,
+      "fragment_id": null,
+      "action": "forward_reaction",
+      "thought": {
+        "background": "The bromolactonization of 7a to 10a was successful and scalable.",
+        "gap": "Convert the bromolactone 10a into an advanced intermediate for (-)-longifolene.",
+        "decision": "To achieve the formal synthesis of (-)-longifolene, we performed methylation, hydrogenation, and free radical-mediated debromination on 10a to obtain intermediate 14."
+      },
+      "reaction": {
+        "substrate_smiles": [
+          "C=C(C)C12C=CC(C1C(=O)O)C2C(=O)O"
+        ],
+        "product_smiles": [
+          "COC(=O)C1C(=O)OC(C)(C)C2C3CCC132"
+        ],
+        "reagents": [
+          "Me2SO4",
+          "K2CO3",
+          "Pd/C",
+          "H2",
+          "AIBN",
+          "nBu3SnH"
+        ],
+        "solvent": "Acetone, EtOAc, PhMe",
+        "temperature": "23 °C, reflux",
+        "time": "24 h"
+      },
+      "outcome": {
+        "valid": true,
+        "yield_percent": 81,
+        "ee_percent": 86,
+        "observation": "The polycyclic compound 14 was obtained in 81% yield with 93:7 e.r. over three steps. The configuration of 14 was validated by X-ray crystallographic analysis.",
+        "free_text": "This finding paves the way for the catalytic asymmetric total synthesis of structurally relevant compounds."
+      },
+      "evidence": {
+        "text_span": "The synthetic utility of this catalytic protocol was exemplified through the formal synthesis of (–)-longifolene (11) (Scheme 4). The preparation of compound 10a from 7a via our catalytic system demonstrated excellent scalability while maintaining both efficiency and enantioselectivity. Following the processes of methylation, hydrogenation, and free radical-mediated debromination $\\mathbf { 1 0 a {  } 1 2 {  } 1 3 {  } 1 4 } _ { , }$ ), the polycyclic compound 14 was obtained as an advanced intermediate for the total synthesis of (–)-longifolene (11),[71–73] achieving a smooth yield of $8 1 \\%$ with an enantiomeric ratio of 93:7 over three steps. The configuration of compound 14 was validated through X-ray crystallographic analysis.[70] This finding paves the way for the catalytic asymmetric total synthesis of structurally relevant compounds, facilitating the preparation of other topologically intricate natural products that feature the bicyclo[2.2.1]heptane framework, a significant category of bioactive compounds.[60–68]",
+        "page": 4,
+        "section": "Results and Discussion",
+        "image_refs": [
+          "d38fb4392aeb7f6df2fe594729ff28aea8ff7677cdb9323ba111312db4cb2ad8.jpg",
+          "3f95dfa4610550a2837128edbb75bec03b1d68cdaacdc74d07efef9913fa473c.jpg",
+          "7081eca7fdfdc415f1a9b24d92a3f01f620840954a7b0ca54fd1f80dea794825.jpg"
+        ]
+      }
+    }
+  ],
+  "validation": {
+    "characterization": [
+      "1H NMR",
+      "13C NMR",
+      "HRMS",
+      "X-ray crystallography"
+    ],
+    "metrics": {
+      "Overall Yield": {
+        "value": 81,
+        "unit": "%",
+        "interpretation": "Yield for the formal synthesis of (-)-longifolene from 7a to 14 over three steps."
+      },
+      "Total Steps": {
+        "value": 4,
+        "unit": "steps",
+        "interpretation": "Total steps from initial meso-diacid to the advanced intermediate for (-)-longifolene."
+      }
+    },
+    "significance": "This work marks a substantial advancement in terpenoid synthesis, merging operational simplicity with the efficient generation of multiple stereocenters in a single transformation. It provides a powerful platform for synthesizing complex terpenoid natural products, particularly those featuring the bicyclo[2.2.1]heptane framework. The mechanistic studies revealed a novel halide bond interaction, where the bromine substituent on the catalyst acts as an unconventional Brønsted base, which is critical for enantiodifferentiation."
+  },
+  "_provenance": {
+    "source": {
+      "doi_or_id": "10.1002/anie.202520866",
+      "pmcid": "PMC12887640",
+      "title": "Halide Bond Assisted Double Desymmetrization of Meso-Dicarboxylic Acids with Symmetrical Olefins via Asymmetric Halogenation.",
+      "authors": "Zhang Q, Wang H, Tse YS, Yeung YY.",
+      "journal": "Angew Chem Int Ed Engl",
+      "year": 2026,
+      "license": "cc by",
+      "pdf_url": "https://europepmc.org/articles/PMC12887640?pdf=render"
+    },
+    "mineru": {
+      "method": "MinerU API (cloud)",
+      "model_version": "vlm",
+      "batch_id": "6cb7add1-3a07-476f-b21f-64c928691542+aa6addeb-274a-498d-be01-4d9f8be48004+e792a631-d9a3-45ec-809d-299f0f032cfb+e99f1e69-3f41-4595-9991-a25ba39a8467",
+      "result_zip_url": "https://cdn-mineru.openxlab.org.cn/pdf/2026-05-08/a014f5cc-aeb9-4238-a3fe-7f41f7892da1.zip",
+      "parsed_at": "2026-05-11T06:42:27.698649+00:00"
+    },
+    "extraction_models": [
+      {
+        "stage": "image_smiles",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      },
+      {
+        "stage": "trace_extraction",
+        "name": "google/gemini-2.5-flash",
+        "version": ""
+      }
+    ],
+    "human_reviewed": false
+  },
+  "_smiles_qc": {
+    "total": 51,
+    "parseable": 47,
+    "canonicalized": 45,
+    "invalid": 4,
+    "overridden_by_name": 0,
+    "invalid_examples": [
+      "O=C(O)C1C2C(C(=O)O)C(=C(C3=CC=CC=C3)C3=CC=CC=C3)C1)OC(=O)C2Br",
+      "O=C(O)C1C2C(C(=O)O)C(=C(C3=CC=CC=C3)C3=CC=CC=C3)C1)OC(=O)C2Br",
+      "CCCC[C@@]1(C)C2C(Br)C3C=CC(C2)C1(O)C(=O)O",
+      "CCCC[C@@]1(C)C2C(Br)C3C=CC(C2)C1(O)C(=O)O"
+    ],
+    "overrides": [],
+    "pubchem_fills": []
+  }
+}
